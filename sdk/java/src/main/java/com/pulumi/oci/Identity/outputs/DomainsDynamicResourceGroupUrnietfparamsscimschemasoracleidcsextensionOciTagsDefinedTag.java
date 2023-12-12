@@ -152,11 +152,11 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
             return this;
         }
         public DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag build() {
-            final var o = new DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

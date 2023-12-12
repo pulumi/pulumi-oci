@@ -171,15 +171,15 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemAdditiona
             return this;
         }
         public GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential build() {
-            final var o = new GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential();
-            o.credentialType = credentialType;
-            o.description = description;
-            o.keyId = keyId;
-            o.name = name;
-            o.properties = properties;
-            o.source = source;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential();
+            _resultValue.credentialType = credentialType;
+            _resultValue.description = description;
+            _resultValue.keyId = keyId;
+            _resultValue.name = name;
+            _resultValue.properties = properties;
+            _resultValue.source = source;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

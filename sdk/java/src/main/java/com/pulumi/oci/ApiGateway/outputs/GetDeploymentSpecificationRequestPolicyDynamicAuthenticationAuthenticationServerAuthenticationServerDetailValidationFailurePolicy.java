@@ -311,22 +311,22 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy();
-            o.clientDetails = clientDetails;
-            o.fallbackRedirectPath = fallbackRedirectPath;
-            o.logoutPath = logoutPath;
-            o.maxExpiryDurationInHours = maxExpiryDurationInHours;
-            o.responseCode = responseCode;
-            o.responseHeaderTransformations = responseHeaderTransformations;
-            o.responseMessage = responseMessage;
-            o.responseType = responseType;
-            o.scopes = scopes;
-            o.sourceUriDetails = sourceUriDetails;
-            o.type = type;
-            o.useCookiesForIntermediateSteps = useCookiesForIntermediateSteps;
-            o.useCookiesForSession = useCookiesForSession;
-            o.usePkce = usePkce;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy();
+            _resultValue.clientDetails = clientDetails;
+            _resultValue.fallbackRedirectPath = fallbackRedirectPath;
+            _resultValue.logoutPath = logoutPath;
+            _resultValue.maxExpiryDurationInHours = maxExpiryDurationInHours;
+            _resultValue.responseCode = responseCode;
+            _resultValue.responseHeaderTransformations = responseHeaderTransformations;
+            _resultValue.responseMessage = responseMessage;
+            _resultValue.responseType = responseType;
+            _resultValue.scopes = scopes;
+            _resultValue.sourceUriDetails = sourceUriDetails;
+            _resultValue.type = type;
+            _resultValue.useCookiesForIntermediateSteps = useCookiesForIntermediateSteps;
+            _resultValue.useCookiesForSession = useCookiesForSession;
+            _resultValue.usePkce = usePkce;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class RemediationRecipeNetworkConfiguration {
             return this;
         }
         public RemediationRecipeNetworkConfiguration build() {
-            final var o = new RemediationRecipeNetworkConfiguration();
-            o.nsgIds = nsgIds;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new RemediationRecipeNetworkConfiguration();
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

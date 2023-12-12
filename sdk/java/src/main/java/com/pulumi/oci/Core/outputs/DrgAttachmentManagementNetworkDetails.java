@@ -113,12 +113,12 @@ public final class DrgAttachmentManagementNetworkDetails {
             return this;
         }
         public DrgAttachmentManagementNetworkDetails build() {
-            final var o = new DrgAttachmentManagementNetworkDetails();
-            o.id = id;
-            o.ipsecConnectionId = ipsecConnectionId;
-            o.routeTableId = routeTableId;
-            o.type = type;
-            return o;
+            final var _resultValue = new DrgAttachmentManagementNetworkDetails();
+            _resultValue.id = id;
+            _resultValue.ipsecConnectionId = ipsecConnectionId;
+            _resultValue.routeTableId = routeTableId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

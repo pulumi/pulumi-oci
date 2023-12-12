@@ -66,10 +66,10 @@ public final class GetMigrationGoldenGateServiceDetailSettingExtract {
             return this;
         }
         public GetMigrationGoldenGateServiceDetailSettingExtract build() {
-            final var o = new GetMigrationGoldenGateServiceDetailSettingExtract();
-            o.longTransDuration = longTransDuration;
-            o.performanceProfile = performanceProfile;
-            return o;
+            final var _resultValue = new GetMigrationGoldenGateServiceDetailSettingExtract();
+            _resultValue.longTransDuration = longTransDuration;
+            _resultValue.performanceProfile = performanceProfile;
+            return _resultValue;
         }
     }
 }

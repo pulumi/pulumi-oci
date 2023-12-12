@@ -66,10 +66,10 @@ public final class GetAssetComputeNvdimmController {
             return this;
         }
         public GetAssetComputeNvdimmController build() {
-            final var o = new GetAssetComputeNvdimmController();
-            o.busNumber = busNumber;
-            o.label = label;
-            return o;
+            final var _resultValue = new GetAssetComputeNvdimmController();
+            _resultValue.busNumber = busNumber;
+            _resultValue.label = label;
+            return _resultValue;
         }
     }
 }

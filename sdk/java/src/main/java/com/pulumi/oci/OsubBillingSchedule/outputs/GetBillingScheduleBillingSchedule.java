@@ -260,20 +260,20 @@ public final class GetBillingScheduleBillingSchedule {
             return this;
         }
         public GetBillingScheduleBillingSchedule build() {
-            final var o = new GetBillingScheduleBillingSchedule();
-            o.amount = amount;
-            o.arCustomerTransactionId = arCustomerTransactionId;
-            o.arInvoiceNumber = arInvoiceNumber;
-            o.billingFrequency = billingFrequency;
-            o.invoiceStatus = invoiceStatus;
-            o.netUnitPrice = netUnitPrice;
-            o.orderNumber = orderNumber;
-            o.products = products;
-            o.quantity = quantity;
-            o.timeEnd = timeEnd;
-            o.timeInvoicing = timeInvoicing;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetBillingScheduleBillingSchedule();
+            _resultValue.amount = amount;
+            _resultValue.arCustomerTransactionId = arCustomerTransactionId;
+            _resultValue.arInvoiceNumber = arInvoiceNumber;
+            _resultValue.billingFrequency = billingFrequency;
+            _resultValue.invoiceStatus = invoiceStatus;
+            _resultValue.netUnitPrice = netUnitPrice;
+            _resultValue.orderNumber = orderNumber;
+            _resultValue.products = products;
+            _resultValue.quantity = quantity;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeInvoicing = timeInvoicing;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

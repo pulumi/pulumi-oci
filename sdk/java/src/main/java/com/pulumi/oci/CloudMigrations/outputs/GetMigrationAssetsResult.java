@@ -155,15 +155,15 @@ public final class GetMigrationAssetsResult {
             return this;
         }
         public GetMigrationAssetsResult build() {
-            final var o = new GetMigrationAssetsResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.migrationAssetCollections = migrationAssetCollections;
-            o.migrationAssetId = migrationAssetId;
-            o.migrationId = migrationId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMigrationAssetsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.migrationAssetCollections = migrationAssetCollections;
+            _resultValue.migrationAssetId = migrationAssetId;
+            _resultValue.migrationId = migrationId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

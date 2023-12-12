@@ -371,26 +371,26 @@ public final class GetDatabaseSoftwareImagesDatabaseSoftwareImage {
             return this;
         }
         public GetDatabaseSoftwareImagesDatabaseSoftwareImage build() {
-            final var o = new GetDatabaseSoftwareImagesDatabaseSoftwareImage();
-            o.compartmentId = compartmentId;
-            o.databaseSoftwareImageIncludedPatches = databaseSoftwareImageIncludedPatches;
-            o.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
-            o.databaseVersion = databaseVersion;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imageShapeFamily = imageShapeFamily;
-            o.imageType = imageType;
-            o.includedPatchesSummary = includedPatchesSummary;
-            o.isUpgradeSupported = isUpgradeSupported;
-            o.lifecycleDetails = lifecycleDetails;
-            o.lsInventory = lsInventory;
-            o.patchSet = patchSet;
-            o.sourceDbHomeId = sourceDbHomeId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDatabaseSoftwareImagesDatabaseSoftwareImage();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseSoftwareImageIncludedPatches = databaseSoftwareImageIncludedPatches;
+            _resultValue.databaseSoftwareImageOneOffPatches = databaseSoftwareImageOneOffPatches;
+            _resultValue.databaseVersion = databaseVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imageShapeFamily = imageShapeFamily;
+            _resultValue.imageType = imageType;
+            _resultValue.includedPatchesSummary = includedPatchesSummary;
+            _resultValue.isUpgradeSupported = isUpgradeSupported;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.lsInventory = lsInventory;
+            _resultValue.patchSet = patchSet;
+            _resultValue.sourceDbHomeId = sourceDbHomeId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

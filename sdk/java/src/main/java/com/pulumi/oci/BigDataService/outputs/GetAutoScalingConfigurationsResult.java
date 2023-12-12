@@ -123,15 +123,15 @@ public final class GetAutoScalingConfigurationsResult {
             return this;
         }
         public GetAutoScalingConfigurationsResult build() {
-            final var o = new GetAutoScalingConfigurationsResult();
-            o.autoScalingConfigurations = autoScalingConfigurations;
-            o.bdsInstanceId = bdsInstanceId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsResult();
+            _resultValue.autoScalingConfigurations = autoScalingConfigurations;
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

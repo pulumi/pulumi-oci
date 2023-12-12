@@ -65,10 +65,10 @@ public final class GetCertificatesCertificateCollectionItemCurrentVersionValidit
             return this;
         }
         public GetCertificatesCertificateCollectionItemCurrentVersionValidity build() {
-            final var o = new GetCertificatesCertificateCollectionItemCurrentVersionValidity();
-            o.timeOfValidityNotAfter = timeOfValidityNotAfter;
-            o.timeOfValidityNotBefore = timeOfValidityNotBefore;
-            return o;
+            final var _resultValue = new GetCertificatesCertificateCollectionItemCurrentVersionValidity();
+            _resultValue.timeOfValidityNotAfter = timeOfValidityNotAfter;
+            _resultValue.timeOfValidityNotBefore = timeOfValidityNotBefore;
+            return _resultValue;
         }
     }
 }

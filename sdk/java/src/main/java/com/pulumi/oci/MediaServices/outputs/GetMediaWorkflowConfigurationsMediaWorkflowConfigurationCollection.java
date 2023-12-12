@@ -42,9 +42,9 @@ public final class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationColle
             return items(List.of(items));
         }
         public GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection build() {
-            final var o = new GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

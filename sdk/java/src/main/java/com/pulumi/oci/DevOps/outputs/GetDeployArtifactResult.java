@@ -330,24 +330,24 @@ public final class GetDeployArtifactResult {
             return this;
         }
         public GetDeployArtifactResult build() {
-            final var o = new GetDeployArtifactResult();
-            o.argumentSubstitutionMode = argumentSubstitutionMode;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.deployArtifactId = deployArtifactId;
-            o.deployArtifactSources = deployArtifactSources;
-            o.deployArtifactType = deployArtifactType;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDeployArtifactResult();
+            _resultValue.argumentSubstitutionMode = argumentSubstitutionMode;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deployArtifactId = deployArtifactId;
+            _resultValue.deployArtifactSources = deployArtifactSources;
+            _resultValue.deployArtifactType = deployArtifactType;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

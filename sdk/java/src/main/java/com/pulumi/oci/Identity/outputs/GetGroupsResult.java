@@ -144,14 +144,14 @@ public final class GetGroupsResult {
             return this;
         }
         public GetGroupsResult build() {
-            final var o = new GetGroupsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.groups = groups;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.groups = groups;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

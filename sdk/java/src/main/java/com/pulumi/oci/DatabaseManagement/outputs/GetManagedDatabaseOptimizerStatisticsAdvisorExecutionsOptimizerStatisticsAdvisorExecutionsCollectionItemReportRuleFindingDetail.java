@@ -73,10 +73,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
             return schemas(List.of(schemas));
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail();
-            o.operations = operations;
-            o.schemas = schemas;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFindingDetail();
+            _resultValue.operations = operations;
+            _resultValue.schemas = schemas;
+            return _resultValue;
         }
     }
 }

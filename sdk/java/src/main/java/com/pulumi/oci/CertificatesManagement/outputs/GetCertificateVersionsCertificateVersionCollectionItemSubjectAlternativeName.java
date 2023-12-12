@@ -65,10 +65,10 @@ public final class GetCertificateVersionsCertificateVersionCollectionItemSubject
             return this;
         }
         public GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName build() {
-            final var o = new GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeName();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -361,25 +361,25 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItem {
             return this;
         }
         public GetDeployEnvironmentsDeployEnvironmentCollectionItem build() {
-            final var o = new GetDeployEnvironmentsDeployEnvironmentCollectionItem();
-            o.clusterId = clusterId;
-            o.compartmentId = compartmentId;
-            o.computeInstanceGroupSelectors = computeInstanceGroupSelectors;
-            o.definedTags = definedTags;
-            o.deployEnvironmentType = deployEnvironmentType;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.functionId = functionId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.networkChannels = networkChannels;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentsDeployEnvironmentCollectionItem();
+            _resultValue.clusterId = clusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeInstanceGroupSelectors = computeInstanceGroupSelectors;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deployEnvironmentType = deployEnvironmentType;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.functionId = functionId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.networkChannels = networkChannels;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

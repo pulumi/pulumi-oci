@@ -68,10 +68,10 @@ public final class BackendSetSessionPersistenceConfiguration {
             return this;
         }
         public BackendSetSessionPersistenceConfiguration build() {
-            final var o = new BackendSetSessionPersistenceConfiguration();
-            o.cookieName = cookieName;
-            o.disableFallback = disableFallback;
-            return o;
+            final var _resultValue = new BackendSetSessionPersistenceConfiguration();
+            _resultValue.cookieName = cookieName;
+            _resultValue.disableFallback = disableFallback;
+            return _resultValue;
         }
     }
 }

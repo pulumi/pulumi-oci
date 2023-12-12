@@ -166,15 +166,15 @@ public final class GetNodePoolsResult {
             return states(List.of(states));
         }
         public GetNodePoolsResult build() {
-            final var o = new GetNodePoolsResult();
-            o.clusterId = clusterId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.nodePools = nodePools;
-            o.states = states;
-            return o;
+            final var _resultValue = new GetNodePoolsResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.nodePools = nodePools;
+            _resultValue.states = states;
+            return _resultValue;
         }
     }
 }

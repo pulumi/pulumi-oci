@@ -40,9 +40,9 @@ public final class LoadBalancerIpAddressDetailReservedIp {
             return this;
         }
         public LoadBalancerIpAddressDetailReservedIp build() {
-            final var o = new LoadBalancerIpAddressDetailReservedIp();
-            o.id = id;
-            return o;
+            final var _resultValue = new LoadBalancerIpAddressDetailReservedIp();
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -67,10 +67,10 @@ public final class ApiValidationResult {
             return this;
         }
         public ApiValidationResult build() {
-            final var o = new ApiValidationResult();
-            o.name = name;
-            o.result = result;
-            return o;
+            final var _resultValue = new ApiValidationResult();
+            _resultValue.name = name;
+            _resultValue.result = result;
+            return _resultValue;
         }
     }
 }

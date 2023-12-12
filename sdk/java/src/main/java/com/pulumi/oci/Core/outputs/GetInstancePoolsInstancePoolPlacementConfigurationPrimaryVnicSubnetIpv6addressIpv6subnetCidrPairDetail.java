@@ -46,9 +46,9 @@ public final class GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnic
             return this;
         }
         public GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail build() {
-            final var o = new GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail();
-            o.ipv6subnetCidr = ipv6subnetCidr;
-            return o;
+            final var _resultValue = new GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail();
+            _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            return _resultValue;
         }
     }
 }

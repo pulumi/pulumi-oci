@@ -68,10 +68,10 @@ public final class AutonomousContainerDatabaseBackupConfig {
             return this;
         }
         public AutonomousContainerDatabaseBackupConfig build() {
-            final var o = new AutonomousContainerDatabaseBackupConfig();
-            o.backupDestinationDetails = backupDestinationDetails;
-            o.recoveryWindowInDays = recoveryWindowInDays;
-            return o;
+            final var _resultValue = new AutonomousContainerDatabaseBackupConfig();
+            _resultValue.backupDestinationDetails = backupDestinationDetails;
+            _resultValue.recoveryWindowInDays = recoveryWindowInDays;
+            return _resultValue;
         }
     }
 }

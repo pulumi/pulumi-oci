@@ -278,21 +278,21 @@ public final class GetCategoryResult {
             return this;
         }
         public GetCategoryResult build() {
-            final var o = new GetCategoryResult();
-            o.categoryId = categoryId;
-            o.compartmentId = compartmentId;
-            o.compartmentName = compartmentName;
-            o.description = description;
-            o.estimatedCostSaving = estimatedCostSaving;
-            o.extendedMetadata = extendedMetadata;
-            o.id = id;
-            o.name = name;
-            o.recommendationCounts = recommendationCounts;
-            o.resourceCounts = resourceCounts;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetCategoryResult();
+            _resultValue.categoryId = categoryId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentName = compartmentName;
+            _resultValue.description = description;
+            _resultValue.estimatedCostSaving = estimatedCostSaving;
+            _resultValue.extendedMetadata = extendedMetadata;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.recommendationCounts = recommendationCounts;
+            _resultValue.resourceCounts = resourceCounts;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

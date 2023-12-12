@@ -128,13 +128,13 @@ public final class GetScriptsScriptCollectionItemParameter {
             return scriptParameters(List.of(scriptParameters));
         }
         public GetScriptsScriptCollectionItemParameter build() {
-            final var o = new GetScriptsScriptCollectionItemParameter();
-            o.isOverwritten = isOverwritten;
-            o.isSecret = isSecret;
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            o.scriptParameters = scriptParameters;
-            return o;
+            final var _resultValue = new GetScriptsScriptCollectionItemParameter();
+            _resultValue.isOverwritten = isOverwritten;
+            _resultValue.isSecret = isSecret;
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            _resultValue.scriptParameters = scriptParameters;
+            return _resultValue;
         }
     }
 }

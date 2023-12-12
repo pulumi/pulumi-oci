@@ -140,15 +140,15 @@ public final class GetManagedDatabasesDatabaseParametersResult {
             return this;
         }
         public GetManagedDatabasesDatabaseParametersResult build() {
-            final var o = new GetManagedDatabasesDatabaseParametersResult();
-            o.databaseParametersCollections = databaseParametersCollections;
-            o.filters = filters;
-            o.id = id;
-            o.isAllowedValuesIncluded = isAllowedValuesIncluded;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.source = source;
-            return o;
+            final var _resultValue = new GetManagedDatabasesDatabaseParametersResult();
+            _resultValue.databaseParametersCollections = databaseParametersCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isAllowedValuesIncluded = isAllowedValuesIncluded;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

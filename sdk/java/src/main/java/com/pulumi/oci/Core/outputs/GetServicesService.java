@@ -103,12 +103,12 @@ public final class GetServicesService {
             return this;
         }
         public GetServicesService build() {
-            final var o = new GetServicesService();
-            o.cidrBlock = cidrBlock;
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetServicesService();
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

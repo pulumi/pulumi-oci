@@ -122,13 +122,13 @@ public final class GetManagementStationsManagementStationCollectionItemMirrorSyn
             return this;
         }
         public GetManagementStationsManagementStationCollectionItemMirrorSyncStatus build() {
-            final var o = new GetManagementStationsManagementStationCollectionItemMirrorSyncStatus();
-            o.failed = failed;
-            o.queued = queued;
-            o.synced = synced;
-            o.syncing = syncing;
-            o.unsynced = unsynced;
-            return o;
+            final var _resultValue = new GetManagementStationsManagementStationCollectionItemMirrorSyncStatus();
+            _resultValue.failed = failed;
+            _resultValue.queued = queued;
+            _resultValue.synced = synced;
+            _resultValue.syncing = syncing;
+            _resultValue.unsynced = unsynced;
+            return _resultValue;
         }
     }
 }

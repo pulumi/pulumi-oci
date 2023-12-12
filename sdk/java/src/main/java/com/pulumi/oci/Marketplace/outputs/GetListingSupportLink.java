@@ -65,10 +65,10 @@ public final class GetListingSupportLink {
             return this;
         }
         public GetListingSupportLink build() {
-            final var o = new GetListingSupportLink();
-            o.name = name;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetListingSupportLink();
+            _resultValue.name = name;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

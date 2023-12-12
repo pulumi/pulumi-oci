@@ -51,9 +51,9 @@ public final class TargetAssetRecommendedSpecPreemptibleInstanceConfig {
             return preemptionActions(List.of(preemptionActions));
         }
         public TargetAssetRecommendedSpecPreemptibleInstanceConfig build() {
-            final var o = new TargetAssetRecommendedSpecPreemptibleInstanceConfig();
-            o.preemptionActions = preemptionActions;
-            return o;
+            final var _resultValue = new TargetAssetRecommendedSpecPreemptibleInstanceConfig();
+            _resultValue.preemptionActions = preemptionActions;
+            return _resultValue;
         }
     }
 }

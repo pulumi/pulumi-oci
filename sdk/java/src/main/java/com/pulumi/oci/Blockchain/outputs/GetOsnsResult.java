@@ -109,13 +109,13 @@ public final class GetOsnsResult {
             return osnCollections(List.of(osnCollections));
         }
         public GetOsnsResult build() {
-            final var o = new GetOsnsResult();
-            o.blockchainPlatformId = blockchainPlatformId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.osnCollections = osnCollections;
-            return o;
+            final var _resultValue = new GetOsnsResult();
+            _resultValue.blockchainPlatformId = blockchainPlatformId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.osnCollections = osnCollections;
+            return _resultValue;
         }
     }
 }

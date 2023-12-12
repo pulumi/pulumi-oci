@@ -65,10 +65,10 @@ public final class CloudDatabaseManagementCredentialdetails {
             return this;
         }
         public CloudDatabaseManagementCredentialdetails build() {
-            final var o = new CloudDatabaseManagementCredentialdetails();
-            o.passwordSecretId = passwordSecretId;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new CloudDatabaseManagementCredentialdetails();
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

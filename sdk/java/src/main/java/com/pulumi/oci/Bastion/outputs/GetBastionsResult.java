@@ -147,15 +147,15 @@ public final class GetBastionsResult {
             return this;
         }
         public GetBastionsResult build() {
-            final var o = new GetBastionsResult();
-            o.bastionId = bastionId;
-            o.bastionLifecycleState = bastionLifecycleState;
-            o.bastions = bastions;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetBastionsResult();
+            _resultValue.bastionId = bastionId;
+            _resultValue.bastionLifecycleState = bastionLifecycleState;
+            _resultValue.bastions = bastions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

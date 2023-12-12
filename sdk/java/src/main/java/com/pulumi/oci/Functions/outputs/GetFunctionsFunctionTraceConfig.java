@@ -46,9 +46,9 @@ public final class GetFunctionsFunctionTraceConfig {
             return this;
         }
         public GetFunctionsFunctionTraceConfig build() {
-            final var o = new GetFunctionsFunctionTraceConfig();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetFunctionsFunctionTraceConfig();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

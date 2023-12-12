@@ -208,17 +208,17 @@ public final class ModelModelTrainingResultSignalDetail {
             return this;
         }
         public ModelModelTrainingResultSignalDetail build() {
-            final var o = new ModelModelTrainingResultSignalDetail();
-            o.details = details;
-            o.fap = fap;
-            o.isQuantized = isQuantized;
-            o.max = max;
-            o.min = min;
-            o.mviRatio = mviRatio;
-            o.signalName = signalName;
-            o.status = status;
-            o.std = std;
-            return o;
+            final var _resultValue = new ModelModelTrainingResultSignalDetail();
+            _resultValue.details = details;
+            _resultValue.fap = fap;
+            _resultValue.isQuantized = isQuantized;
+            _resultValue.max = max;
+            _resultValue.min = min;
+            _resultValue.mviRatio = mviRatio;
+            _resultValue.signalName = signalName;
+            _resultValue.status = status;
+            _resultValue.std = std;
+            return _resultValue;
         }
     }
 }

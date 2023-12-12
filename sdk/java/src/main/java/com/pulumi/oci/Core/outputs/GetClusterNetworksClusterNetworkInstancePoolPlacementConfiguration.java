@@ -134,13 +134,13 @@ public final class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigur
             return secondaryVnicSubnets(List.of(secondaryVnicSubnets));
         }
         public GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration build() {
-            final var o = new GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration();
-            o.availabilityDomain = availabilityDomain;
-            o.faultDomains = faultDomains;
-            o.primarySubnetId = primarySubnetId;
-            o.primaryVnicSubnets = primaryVnicSubnets;
-            o.secondaryVnicSubnets = secondaryVnicSubnets;
-            return o;
+            final var _resultValue = new GetClusterNetworksClusterNetworkInstancePoolPlacementConfiguration();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.faultDomains = faultDomains;
+            _resultValue.primarySubnetId = primarySubnetId;
+            _resultValue.primaryVnicSubnets = primaryVnicSubnets;
+            _resultValue.secondaryVnicSubnets = secondaryVnicSubnets;
+            return _resultValue;
         }
     }
 }

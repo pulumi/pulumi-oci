@@ -174,16 +174,16 @@ public final class GetDatabasesResult {
             return this;
         }
         public GetDatabasesResult build() {
-            final var o = new GetDatabasesResult();
-            o.compartmentId = compartmentId;
-            o.databases = databases;
-            o.dbHomeId = dbHomeId;
-            o.dbName = dbName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.systemId = systemId;
-            return o;
+            final var _resultValue = new GetDatabasesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databases = databases;
+            _resultValue.dbHomeId = dbHomeId;
+            _resultValue.dbName = dbName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.systemId = systemId;
+            return _resultValue;
         }
     }
 }

@@ -180,16 +180,16 @@ public final class GetConfigurationsConfigurationCollectionItemConfigurationDeta
             return this;
         }
         public GetConfigurationsConfigurationCollectionItemConfigurationDetailItem build() {
-            final var o = new GetConfigurationsConfigurationCollectionItemConfigurationDetailItem();
-            o.allowedValues = allowedValues;
-            o.configKey = configKey;
-            o.dataType = dataType;
-            o.defaultConfigValue = defaultConfigValue;
-            o.description = description;
-            o.isOverridable = isOverridable;
-            o.isRestartRequired = isRestartRequired;
-            o.overridenConfigValue = overridenConfigValue;
-            return o;
+            final var _resultValue = new GetConfigurationsConfigurationCollectionItemConfigurationDetailItem();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.configKey = configKey;
+            _resultValue.dataType = dataType;
+            _resultValue.defaultConfigValue = defaultConfigValue;
+            _resultValue.description = description;
+            _resultValue.isOverridable = isOverridable;
+            _resultValue.isRestartRequired = isRestartRequired;
+            _resultValue.overridenConfigValue = overridenConfigValue;
+            return _resultValue;
         }
     }
 }

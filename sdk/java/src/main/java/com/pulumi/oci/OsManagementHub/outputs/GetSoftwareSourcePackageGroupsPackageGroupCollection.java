@@ -42,9 +42,9 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollection {
             return items(List.of(items));
         }
         public GetSoftwareSourcePackageGroupsPackageGroupCollection build() {
-            final var o = new GetSoftwareSourcePackageGroupsPackageGroupCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSoftwareSourcePackageGroupsPackageGroupCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

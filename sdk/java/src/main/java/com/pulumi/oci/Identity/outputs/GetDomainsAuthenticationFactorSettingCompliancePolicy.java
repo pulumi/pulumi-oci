@@ -84,11 +84,11 @@ public final class GetDomainsAuthenticationFactorSettingCompliancePolicy {
             return this;
         }
         public GetDomainsAuthenticationFactorSettingCompliancePolicy build() {
-            final var o = new GetDomainsAuthenticationFactorSettingCompliancePolicy();
-            o.action = action;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingCompliancePolicy();
+            _resultValue.action = action;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

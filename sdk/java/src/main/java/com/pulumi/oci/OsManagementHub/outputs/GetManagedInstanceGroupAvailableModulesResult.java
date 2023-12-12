@@ -139,15 +139,15 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
             return this;
         }
         public GetManagedInstanceGroupAvailableModulesResult build() {
-            final var o = new GetManagedInstanceGroupAvailableModulesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.managedInstanceGroupAvailableModuleCollections = managedInstanceGroupAvailableModuleCollections;
-            o.managedInstanceGroupId = managedInstanceGroupId;
-            o.name = name;
-            o.nameContains = nameContains;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailableModulesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedInstanceGroupAvailableModuleCollections = managedInstanceGroupAvailableModuleCollections;
+            _resultValue.managedInstanceGroupId = managedInstanceGroupId;
+            _resultValue.name = name;
+            _resultValue.nameContains = nameContains;
+            return _resultValue;
         }
     }
 }

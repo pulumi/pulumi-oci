@@ -109,12 +109,12 @@ public final class GetAuditPolicyAuditCondition {
             return this;
         }
         public GetAuditPolicyAuditCondition build() {
-            final var o = new GetAuditPolicyAuditCondition();
-            o.auditPolicyName = auditPolicyName;
-            o.enableConditions = enableConditions;
-            o.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
-            o.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
-            return o;
+            final var _resultValue = new GetAuditPolicyAuditCondition();
+            _resultValue.auditPolicyName = auditPolicyName;
+            _resultValue.enableConditions = enableConditions;
+            _resultValue.isDataSafeServiceAccountAudited = isDataSafeServiceAccountAudited;
+            _resultValue.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
+            return _resultValue;
         }
     }
 }

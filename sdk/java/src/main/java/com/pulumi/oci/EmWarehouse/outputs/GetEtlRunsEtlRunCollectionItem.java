@@ -50,9 +50,9 @@ public final class GetEtlRunsEtlRunCollectionItem {
             return items(List.of(items));
         }
         public GetEtlRunsEtlRunCollectionItem build() {
-            final var o = new GetEtlRunsEtlRunCollectionItem();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetEtlRunsEtlRunCollectionItem();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

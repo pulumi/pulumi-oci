@@ -67,11 +67,11 @@ public final class GetControlsFilter {
             return values(List.of(values));
         }
         public GetControlsFilter build() {
-            final var o = new GetControlsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetControlsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

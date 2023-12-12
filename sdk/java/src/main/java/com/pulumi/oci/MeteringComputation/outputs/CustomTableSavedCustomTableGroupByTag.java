@@ -86,11 +86,11 @@ public final class CustomTableSavedCustomTableGroupByTag {
             return this;
         }
         public CustomTableSavedCustomTableGroupByTag build() {
-            final var o = new CustomTableSavedCustomTableGroupByTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new CustomTableSavedCustomTableGroupByTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

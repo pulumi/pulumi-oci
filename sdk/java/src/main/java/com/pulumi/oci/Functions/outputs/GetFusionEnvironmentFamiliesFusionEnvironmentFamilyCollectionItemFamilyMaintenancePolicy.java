@@ -85,11 +85,11 @@ public final class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection
             return this;
         }
         public GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy build() {
-            final var o = new GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy();
-            o.concurrentMaintenance = concurrentMaintenance;
-            o.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
-            o.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy();
+            _resultValue.concurrentMaintenance = concurrentMaintenance;
+            _resultValue.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            _resultValue.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
+            return _resultValue;
         }
     }
 }

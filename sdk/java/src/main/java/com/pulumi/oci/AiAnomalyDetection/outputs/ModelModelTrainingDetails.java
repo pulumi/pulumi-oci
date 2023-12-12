@@ -130,13 +130,13 @@ public final class ModelModelTrainingDetails {
             return this;
         }
         public ModelModelTrainingDetails build() {
-            final var o = new ModelModelTrainingDetails();
-            o.algorithmHint = algorithmHint;
-            o.dataAssetIds = dataAssetIds;
-            o.targetFap = targetFap;
-            o.trainingFraction = trainingFraction;
-            o.windowSize = windowSize;
-            return o;
+            final var _resultValue = new ModelModelTrainingDetails();
+            _resultValue.algorithmHint = algorithmHint;
+            _resultValue.dataAssetIds = dataAssetIds;
+            _resultValue.targetFap = targetFap;
+            _resultValue.trainingFraction = trainingFraction;
+            _resultValue.windowSize = windowSize;
+            return _resultValue;
         }
     }
 }

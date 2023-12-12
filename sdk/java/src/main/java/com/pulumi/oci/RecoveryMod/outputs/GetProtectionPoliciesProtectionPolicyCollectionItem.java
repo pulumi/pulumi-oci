@@ -259,20 +259,20 @@ public final class GetProtectionPoliciesProtectionPolicyCollectionItem {
             return this;
         }
         public GetProtectionPoliciesProtectionPolicyCollectionItem build() {
-            final var o = new GetProtectionPoliciesProtectionPolicyCollectionItem();
-            o.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isPredefinedPolicy = isPredefinedPolicy;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetProtectionPoliciesProtectionPolicyCollectionItem();
+            _resultValue.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isPredefinedPolicy = isPredefinedPolicy;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

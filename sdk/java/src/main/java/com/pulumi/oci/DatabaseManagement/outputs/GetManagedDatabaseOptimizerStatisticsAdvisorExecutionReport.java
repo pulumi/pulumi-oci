@@ -70,10 +70,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport {
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport();
-            o.rules = rules;
-            o.summary = summary;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport();
+            _resultValue.rules = rules;
+            _resultValue.summary = summary;
+            return _resultValue;
         }
     }
 }

@@ -174,16 +174,16 @@ public final class GetNetworkSecurityGroupsResult {
             return this;
         }
         public GetNetworkSecurityGroupsResult build() {
-            final var o = new GetNetworkSecurityGroupsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.networkSecurityGroups = networkSecurityGroups;
-            o.state = state;
-            o.vcnId = vcnId;
-            o.vlanId = vlanId;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkSecurityGroups = networkSecurityGroups;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            _resultValue.vlanId = vlanId;
+            return _resultValue;
         }
     }
 }

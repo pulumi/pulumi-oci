@@ -117,13 +117,13 @@ public final class GetDrgRouteTableRouteRulesResult {
             return this;
         }
         public GetDrgRouteTableRouteRulesResult build() {
-            final var o = new GetDrgRouteTableRouteRulesResult();
-            o.drgRouteRules = drgRouteRules;
-            o.drgRouteTableId = drgRouteTableId;
-            o.filters = filters;
-            o.id = id;
-            o.routeType = routeType;
-            return o;
+            final var _resultValue = new GetDrgRouteTableRouteRulesResult();
+            _resultValue.drgRouteRules = drgRouteRules;
+            _resultValue.drgRouteTableId = drgRouteTableId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.routeType = routeType;
+            return _resultValue;
         }
     }
 }

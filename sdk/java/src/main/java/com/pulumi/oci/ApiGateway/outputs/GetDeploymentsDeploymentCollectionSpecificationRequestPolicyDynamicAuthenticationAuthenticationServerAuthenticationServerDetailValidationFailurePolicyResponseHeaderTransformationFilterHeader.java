@@ -70,10 +70,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeader build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeader();
-            o.items = items;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeader();
+            _resultValue.items = items;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetAutoScalingConfigurationPolicyRule {
             return metrics(List.of(metrics));
         }
         public GetAutoScalingConfigurationPolicyRule build() {
-            final var o = new GetAutoScalingConfigurationPolicyRule();
-            o.action = action;
-            o.metrics = metrics;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyRule();
+            _resultValue.action = action;
+            _resultValue.metrics = metrics;
+            return _resultValue;
         }
     }
 }

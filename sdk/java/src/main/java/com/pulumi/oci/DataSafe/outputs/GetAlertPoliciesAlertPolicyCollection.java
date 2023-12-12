@@ -42,9 +42,9 @@ public final class GetAlertPoliciesAlertPolicyCollection {
             return items(List.of(items));
         }
         public GetAlertPoliciesAlertPolicyCollection build() {
-            final var o = new GetAlertPoliciesAlertPolicyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAlertPoliciesAlertPolicyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

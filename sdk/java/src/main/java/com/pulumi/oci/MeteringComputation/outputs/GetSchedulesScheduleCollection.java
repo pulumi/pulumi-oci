@@ -42,9 +42,9 @@ public final class GetSchedulesScheduleCollection {
             return items(List.of(items));
         }
         public GetSchedulesScheduleCollection build() {
-            final var o = new GetSchedulesScheduleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSchedulesScheduleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

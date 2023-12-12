@@ -65,10 +65,10 @@ public final class TargetDatabaseCredentials {
             return this;
         }
         public TargetDatabaseCredentials build() {
-            final var o = new TargetDatabaseCredentials();
-            o.password = password;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new TargetDatabaseCredentials();
+            _resultValue.password = password;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

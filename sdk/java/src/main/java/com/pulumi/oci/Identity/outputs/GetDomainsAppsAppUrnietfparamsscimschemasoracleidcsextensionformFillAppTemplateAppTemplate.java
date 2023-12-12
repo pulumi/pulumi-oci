@@ -204,17 +204,17 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionf
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate();
-            o.configuration = configuration;
-            o.formCredMethod = formCredMethod;
-            o.formCredentialSharingGroupId = formCredentialSharingGroupId;
-            o.formFillUrlMatches = formFillUrlMatches;
-            o.formType = formType;
-            o.revealPasswordOnForm = revealPasswordOnForm;
-            o.syncFromTemplate = syncFromTemplate;
-            o.userNameFormExpression = userNameFormExpression;
-            o.userNameFormTemplate = userNameFormTemplate;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate();
+            _resultValue.configuration = configuration;
+            _resultValue.formCredMethod = formCredMethod;
+            _resultValue.formCredentialSharingGroupId = formCredentialSharingGroupId;
+            _resultValue.formFillUrlMatches = formFillUrlMatches;
+            _resultValue.formType = formType;
+            _resultValue.revealPasswordOnForm = revealPasswordOnForm;
+            _resultValue.syncFromTemplate = syncFromTemplate;
+            _resultValue.userNameFormExpression = userNameFormExpression;
+            _resultValue.userNameFormTemplate = userNameFormTemplate;
+            return _resultValue;
         }
     }
 }

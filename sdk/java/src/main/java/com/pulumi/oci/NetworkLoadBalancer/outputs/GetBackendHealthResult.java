@@ -132,14 +132,14 @@ public final class GetBackendHealthResult {
             return this;
         }
         public GetBackendHealthResult build() {
-            final var o = new GetBackendHealthResult();
-            o.backendName = backendName;
-            o.backendSetName = backendSetName;
-            o.healthCheckResults = healthCheckResults;
-            o.id = id;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetBackendHealthResult();
+            _resultValue.backendName = backendName;
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.healthCheckResults = healthCheckResults;
+            _resultValue.id = id;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

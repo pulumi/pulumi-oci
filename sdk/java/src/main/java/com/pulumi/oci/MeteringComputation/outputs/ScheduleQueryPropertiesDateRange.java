@@ -97,12 +97,12 @@ public final class ScheduleQueryPropertiesDateRange {
             return this;
         }
         public ScheduleQueryPropertiesDateRange build() {
-            final var o = new ScheduleQueryPropertiesDateRange();
-            o.dateRangeType = dateRangeType;
-            o.dynamicDateRangeType = dynamicDateRangeType;
-            o.timeUsageEnded = timeUsageEnded;
-            o.timeUsageStarted = timeUsageStarted;
-            return o;
+            final var _resultValue = new ScheduleQueryPropertiesDateRange();
+            _resultValue.dateRangeType = dateRangeType;
+            _resultValue.dynamicDateRangeType = dynamicDateRangeType;
+            _resultValue.timeUsageEnded = timeUsageEnded;
+            _resultValue.timeUsageStarted = timeUsageStarted;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class GetScheduleResultLocation {
             return this;
         }
         public GetScheduleResultLocation build() {
-            final var o = new GetScheduleResultLocation();
-            o.bucket = bucket;
-            o.locationType = locationType;
-            o.namespace = namespace;
-            o.region = region;
-            return o;
+            final var _resultValue = new GetScheduleResultLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.locationType = locationType;
+            _resultValue.namespace = namespace;
+            _resultValue.region = region;
+            return _resultValue;
         }
     }
 }

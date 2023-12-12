@@ -42,9 +42,9 @@ public final class GetBackupsBackupCollection {
             return items(List.of(items));
         }
         public GetBackupsBackupCollection build() {
-            final var o = new GetBackupsBackupCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBackupsBackupCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -255,20 +255,20 @@ public final class GetManagedDatabaseAddmTasksAddmTasksCollectionItem {
             return this;
         }
         public GetManagedDatabaseAddmTasksAddmTasksCollectionItem build() {
-            final var o = new GetManagedDatabaseAddmTasksAddmTasksCollectionItem();
-            o.beginSnapshotId = beginSnapshotId;
-            o.dbUser = dbUser;
-            o.description = description;
-            o.endSnapshotId = endSnapshotId;
-            o.endSnapshotTime = endSnapshotTime;
-            o.findings = findings;
-            o.howCreated = howCreated;
-            o.startSnapshotTime = startSnapshotTime;
-            o.status = status;
-            o.taskId = taskId;
-            o.taskName = taskName;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAddmTasksAddmTasksCollectionItem();
+            _resultValue.beginSnapshotId = beginSnapshotId;
+            _resultValue.dbUser = dbUser;
+            _resultValue.description = description;
+            _resultValue.endSnapshotId = endSnapshotId;
+            _resultValue.endSnapshotTime = endSnapshotTime;
+            _resultValue.findings = findings;
+            _resultValue.howCreated = howCreated;
+            _resultValue.startSnapshotTime = startSnapshotTime;
+            _resultValue.status = status;
+            _resultValue.taskId = taskId;
+            _resultValue.taskName = taskName;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

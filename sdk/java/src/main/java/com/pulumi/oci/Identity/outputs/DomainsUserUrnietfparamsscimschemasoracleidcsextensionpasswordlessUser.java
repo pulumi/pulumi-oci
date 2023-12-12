@@ -159,11 +159,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser();
-            o.factorIdentifier = factorIdentifier;
-            o.factorMethod = factorMethod;
-            o.factorType = factorType;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser();
+            _resultValue.factorIdentifier = factorIdentifier;
+            _resultValue.factorMethod = factorMethod;
+            _resultValue.factorType = factorType;
+            return _resultValue;
         }
     }
 }

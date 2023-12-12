@@ -322,23 +322,23 @@ public final class GetDataMaskRulesDataMaskRuleCollectionItem {
             return this;
         }
         public GetDataMaskRulesDataMaskRuleCollectionItem build() {
-            final var o = new GetDataMaskRulesDataMaskRuleCollectionItem();
-            o.compartmentId = compartmentId;
-            o.dataMaskCategories = dataMaskCategories;
-            o.dataMaskRuleStatus = dataMaskRuleStatus;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.iamGroupId = iamGroupId;
-            o.id = id;
-            o.lifecyleDetails = lifecyleDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targetSelecteds = targetSelecteds;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDataMaskRulesDataMaskRuleCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataMaskCategories = dataMaskCategories;
+            _resultValue.dataMaskRuleStatus = dataMaskRuleStatus;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.iamGroupId = iamGroupId;
+            _resultValue.id = id;
+            _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetSelecteds = targetSelecteds;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

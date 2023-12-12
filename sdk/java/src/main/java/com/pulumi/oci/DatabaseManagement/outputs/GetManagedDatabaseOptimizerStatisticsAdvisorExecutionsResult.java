@@ -120,14 +120,14 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult 
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult();
-            o.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.optimizerStatisticsAdvisorExecutionsCollections = optimizerStatisticsAdvisorExecutionsCollections;
-            o.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult();
+            _resultValue.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.optimizerStatisticsAdvisorExecutionsCollections = optimizerStatisticsAdvisorExecutionsCollections;
+            _resultValue.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            return _resultValue;
         }
     }
 }

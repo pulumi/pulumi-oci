@@ -46,9 +46,9 @@ public final class GetDomainsOauth2clientCredentialUrnietfparamsscimschemasoracl
             return this;
         }
         public GetDomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new GetDomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new GetDomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

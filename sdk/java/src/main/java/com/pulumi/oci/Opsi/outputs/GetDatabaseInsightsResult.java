@@ -277,21 +277,21 @@ public final class GetDatabaseInsightsResult {
             return statuses(List.of(statuses));
         }
         public GetDatabaseInsightsResult build() {
-            final var o = new GetDatabaseInsightsResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.databaseIds = databaseIds;
-            o.databaseInsightsCollections = databaseInsightsCollections;
-            o.databaseTypes = databaseTypes;
-            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-            o.exadataInsightId = exadataInsightId;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.opsiPrivateEndpointId = opsiPrivateEndpointId;
-            o.states = states;
-            o.statuses = statuses;
-            return o;
+            final var _resultValue = new GetDatabaseInsightsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.databaseIds = databaseIds;
+            _resultValue.databaseInsightsCollections = databaseInsightsCollections;
+            _resultValue.databaseTypes = databaseTypes;
+            _resultValue.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            _resultValue.exadataInsightId = exadataInsightId;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            _resultValue.states = states;
+            _resultValue.statuses = statuses;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFi
             return filePaths(List.of(filePaths));
         }
         public GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter build() {
-            final var o = new GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter();
-            o.filePaths = filePaths;
-            return o;
+            final var _resultValue = new GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter();
+            _resultValue.filePaths = filePaths;
+            return _resultValue;
         }
     }
 }

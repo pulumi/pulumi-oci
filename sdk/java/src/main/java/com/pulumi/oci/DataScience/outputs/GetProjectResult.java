@@ -211,18 +211,18 @@ public final class GetProjectResult {
             return this;
         }
         public GetProjectResult build() {
-            final var o = new GetProjectResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.projectId = projectId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetProjectResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -163,15 +163,15 @@ public final class GetComputeCapacityReservationsResult {
             return this;
         }
         public GetComputeCapacityReservationsResult build() {
-            final var o = new GetComputeCapacityReservationsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.computeCapacityReservations = computeCapacityReservations;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetComputeCapacityReservationsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeCapacityReservations = computeCapacityReservations;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

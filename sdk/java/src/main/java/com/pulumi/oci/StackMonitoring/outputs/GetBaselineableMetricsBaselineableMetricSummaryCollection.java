@@ -42,9 +42,9 @@ public final class GetBaselineableMetricsBaselineableMetricSummaryCollection {
             return items(List.of(items));
         }
         public GetBaselineableMetricsBaselineableMetricSummaryCollection build() {
-            final var o = new GetBaselineableMetricsBaselineableMetricSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBaselineableMetricsBaselineableMetricSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

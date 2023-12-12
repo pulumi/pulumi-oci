@@ -197,12 +197,12 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
             return this;
         }
         public DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant build() {
-            final var o = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant();
-            o.appId = appId;
-            o.grantMechanism = grantMechanism;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant();
+            _resultValue.appId = appId;
+            _resultValue.grantMechanism = grantMechanism;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -163,15 +163,15 @@ public final class GetStreamsResult {
             return streams(List.of(streams));
         }
         public GetStreamsResult build() {
-            final var o = new GetStreamsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            o.streamPoolId = streamPoolId;
-            o.streams = streams;
-            return o;
+            final var _resultValue = new GetStreamsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.streamPoolId = streamPoolId;
+            _resultValue.streams = streams;
+            return _resultValue;
         }
     }
 }

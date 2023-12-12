@@ -234,13 +234,13 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
             return this;
         }
         public DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings build() {
-            final var o = new DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings();
-            o.apiHostname = apiHostname;
-            o.attestationKey = attestationKey;
-            o.integrationKey = integrationKey;
-            o.secretKey = secretKey;
-            o.userMappingAttribute = userMappingAttribute;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings();
+            _resultValue.apiHostname = apiHostname;
+            _resultValue.attestationKey = attestationKey;
+            _resultValue.integrationKey = integrationKey;
+            _resultValue.secretKey = secretKey;
+            _resultValue.userMappingAttribute = userMappingAttribute;
+            return _resultValue;
         }
     }
 }

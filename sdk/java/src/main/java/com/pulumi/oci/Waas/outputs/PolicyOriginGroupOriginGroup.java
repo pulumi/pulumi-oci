@@ -60,10 +60,10 @@ public final class PolicyOriginGroupOriginGroup {
             return this;
         }
         public PolicyOriginGroupOriginGroup build() {
-            final var o = new PolicyOriginGroupOriginGroup();
-            o.origin = origin;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new PolicyOriginGroupOriginGroup();
+            _resultValue.origin = origin;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

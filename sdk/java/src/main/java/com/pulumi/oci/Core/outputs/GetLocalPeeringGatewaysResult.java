@@ -125,13 +125,13 @@ public final class GetLocalPeeringGatewaysResult {
             return this;
         }
         public GetLocalPeeringGatewaysResult build() {
-            final var o = new GetLocalPeeringGatewaysResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.localPeeringGateways = localPeeringGateways;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetLocalPeeringGatewaysResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.localPeeringGateways = localPeeringGateways;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

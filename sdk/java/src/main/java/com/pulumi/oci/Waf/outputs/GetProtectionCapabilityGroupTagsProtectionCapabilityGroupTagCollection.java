@@ -50,9 +50,9 @@ public final class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagC
             return items(List.of(items));
         }
         public GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection build() {
-            final var o = new GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

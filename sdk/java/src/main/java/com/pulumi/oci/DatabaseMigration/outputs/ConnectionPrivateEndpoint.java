@@ -105,12 +105,12 @@ public final class ConnectionPrivateEndpoint {
             return this;
         }
         public ConnectionPrivateEndpoint build() {
-            final var o = new ConnectionPrivateEndpoint();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.subnetId = subnetId;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new ConnectionPrivateEndpoint();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

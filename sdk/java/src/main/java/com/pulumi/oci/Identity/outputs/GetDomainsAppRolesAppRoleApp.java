@@ -122,13 +122,13 @@ public final class GetDomainsAppRolesAppRoleApp {
             return this;
         }
         public GetDomainsAppRolesAppRoleApp build() {
-            final var o = new GetDomainsAppRolesAppRoleApp();
-            o.display = display;
-            o.name = name;
-            o.ref = ref;
-            o.serviceInstanceIdentifier = serviceInstanceIdentifier;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppRolesAppRoleApp();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.serviceInstanceIdentifier = serviceInstanceIdentifier;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

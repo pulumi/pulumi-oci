@@ -216,18 +216,18 @@ public final class GetAddressListResult {
             return this;
         }
         public GetAddressListResult build() {
-            final var o = new GetAddressListResult();
-            o.addressCount = addressCount;
-            o.addressListId = addressListId;
-            o.addresses = addresses;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetAddressListResult();
+            _resultValue.addressCount = addressCount;
+            _resultValue.addressListId = addressListId;
+            _resultValue.addresses = addresses;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

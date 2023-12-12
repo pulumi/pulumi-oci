@@ -205,18 +205,18 @@ public final class GetDataSourcesResult {
             return this;
         }
         public GetDataSourcesResult build() {
-            final var o = new GetDataSourcesResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.dataSourceCollections = dataSourceCollections;
-            o.dataSourceFeedProvider = dataSourceFeedProvider;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.loggingQueryType = loggingQueryType;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDataSourcesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dataSourceCollections = dataSourceCollections;
+            _resultValue.dataSourceFeedProvider = dataSourceFeedProvider;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.loggingQueryType = loggingQueryType;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

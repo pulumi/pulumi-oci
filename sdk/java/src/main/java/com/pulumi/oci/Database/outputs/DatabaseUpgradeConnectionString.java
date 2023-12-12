@@ -88,11 +88,11 @@ public final class DatabaseUpgradeConnectionString {
             return this;
         }
         public DatabaseUpgradeConnectionString build() {
-            final var o = new DatabaseUpgradeConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.cdbDefault = cdbDefault;
-            o.cdbIpDefault = cdbIpDefault;
-            return o;
+            final var _resultValue = new DatabaseUpgradeConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.cdbDefault = cdbDefault;
+            _resultValue.cdbIpDefault = cdbIpDefault;
+            return _resultValue;
         }
     }
 }

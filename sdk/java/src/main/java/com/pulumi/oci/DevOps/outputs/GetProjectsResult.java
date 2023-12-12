@@ -144,14 +144,14 @@ public final class GetProjectsResult {
             return this;
         }
         public GetProjectsResult build() {
-            final var o = new GetProjectsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.projectCollections = projectCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetProjectsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.projectCollections = projectCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -81,11 +81,11 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailResult {
             return subscriptions(List.of(subscriptions));
         }
         public GetFusionEnvironmentFamilySubscriptionDetailResult build() {
-            final var o = new GetFusionEnvironmentFamilySubscriptionDetailResult();
-            o.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
-            o.id = id;
-            o.subscriptions = subscriptions;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamilySubscriptionDetailResult();
+            _resultValue.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
+            _resultValue.id = id;
+            _resultValue.subscriptions = subscriptions;
+            return _resultValue;
         }
     }
 }

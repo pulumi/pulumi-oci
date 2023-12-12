@@ -42,9 +42,9 @@ public final class GetTriggerActionFilterExcludeFileFilter {
             return filePaths(List.of(filePaths));
         }
         public GetTriggerActionFilterExcludeFileFilter build() {
-            final var o = new GetTriggerActionFilterExcludeFileFilter();
-            o.filePaths = filePaths;
-            return o;
+            final var _resultValue = new GetTriggerActionFilterExcludeFileFilter();
+            _resultValue.filePaths = filePaths;
+            return _resultValue;
         }
     }
 }

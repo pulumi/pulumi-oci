@@ -50,9 +50,9 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollection {
             return items(List.of(items));
         }
         public GetNamespaceEffectivePropertiesEffectivePropertyCollection build() {
-            final var o = new GetNamespaceEffectivePropertiesEffectivePropertyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNamespaceEffectivePropertiesEffectivePropertyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -163,15 +163,15 @@ public final class GetDeployStagesResult {
             return this;
         }
         public GetDeployStagesResult build() {
-            final var o = new GetDeployStagesResult();
-            o.compartmentId = compartmentId;
-            o.deployPipelineId = deployPipelineId;
-            o.deployStageCollections = deployStageCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDeployStagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deployPipelineId = deployPipelineId;
+            _resultValue.deployStageCollections = deployStageCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

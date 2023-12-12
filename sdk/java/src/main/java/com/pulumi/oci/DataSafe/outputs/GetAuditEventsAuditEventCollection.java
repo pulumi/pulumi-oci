@@ -50,9 +50,9 @@ public final class GetAuditEventsAuditEventCollection {
             return items(List.of(items));
         }
         public GetAuditEventsAuditEventCollection build() {
-            final var o = new GetAuditEventsAuditEventCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAuditEventsAuditEventCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

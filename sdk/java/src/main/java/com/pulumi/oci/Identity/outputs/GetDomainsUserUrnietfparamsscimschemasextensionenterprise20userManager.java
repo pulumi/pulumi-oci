@@ -84,11 +84,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasextensionenterprise20us
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasextensionenterprise20userManager build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasextensionenterprise20userManager();
-            o.displayName = displayName;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasextensionenterprise20userManager();
+            _resultValue.displayName = displayName;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

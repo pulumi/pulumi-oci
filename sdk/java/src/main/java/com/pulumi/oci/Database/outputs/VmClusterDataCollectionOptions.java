@@ -86,11 +86,11 @@ public final class VmClusterDataCollectionOptions {
             return this;
         }
         public VmClusterDataCollectionOptions build() {
-            final var o = new VmClusterDataCollectionOptions();
-            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            return o;
+            final var _resultValue = new VmClusterDataCollectionOptions();
+            _resultValue.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            _resultValue.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            _resultValue.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return _resultValue;
         }
     }
 }

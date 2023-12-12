@@ -122,13 +122,13 @@ public final class GetDomainsKmsiSettingsKmsiSettingMeta {
             return this;
         }
         public GetDomainsKmsiSettingsKmsiSettingMeta build() {
-            final var o = new GetDomainsKmsiSettingsKmsiSettingMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDomainsKmsiSettingsKmsiSettingMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

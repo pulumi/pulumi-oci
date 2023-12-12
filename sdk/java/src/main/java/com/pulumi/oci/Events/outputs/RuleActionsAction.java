@@ -213,17 +213,17 @@ public final class RuleActionsAction {
             return this;
         }
         public RuleActionsAction build() {
-            final var o = new RuleActionsAction();
-            o.actionType = actionType;
-            o.description = description;
-            o.functionId = functionId;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.lifecycleMessage = lifecycleMessage;
-            o.state = state;
-            o.streamId = streamId;
-            o.topicId = topicId;
-            return o;
+            final var _resultValue = new RuleActionsAction();
+            _resultValue.actionType = actionType;
+            _resultValue.description = description;
+            _resultValue.functionId = functionId;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.lifecycleMessage = lifecycleMessage;
+            _resultValue.state = state;
+            _resultValue.streamId = streamId;
+            _resultValue.topicId = topicId;
+            return _resultValue;
         }
     }
 }

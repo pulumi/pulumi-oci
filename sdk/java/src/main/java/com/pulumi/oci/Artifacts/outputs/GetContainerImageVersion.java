@@ -84,11 +84,11 @@ public final class GetContainerImageVersion {
             return this;
         }
         public GetContainerImageVersion build() {
-            final var o = new GetContainerImageVersion();
-            o.createdBy = createdBy;
-            o.timeCreated = timeCreated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetContainerImageVersion();
+            _resultValue.createdBy = createdBy;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -150,14 +150,14 @@ public final class AuthenticationPolicyPasswordPolicy {
             return this;
         }
         public AuthenticationPolicyPasswordPolicy build() {
-            final var o = new AuthenticationPolicyPasswordPolicy();
-            o.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
-            o.isNumericCharactersRequired = isNumericCharactersRequired;
-            o.isSpecialCharactersRequired = isSpecialCharactersRequired;
-            o.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
-            o.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
-            o.minimumPasswordLength = minimumPasswordLength;
-            return o;
+            final var _resultValue = new AuthenticationPolicyPasswordPolicy();
+            _resultValue.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
+            _resultValue.isNumericCharactersRequired = isNumericCharactersRequired;
+            _resultValue.isSpecialCharactersRequired = isSpecialCharactersRequired;
+            _resultValue.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
+            _resultValue.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
+            _resultValue.minimumPasswordLength = minimumPasswordLength;
+            return _resultValue;
         }
     }
 }

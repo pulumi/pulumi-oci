@@ -346,25 +346,25 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         public GetConnectionsConnectionCollectionItem build() {
-            final var o = new GetConnectionsConnectionCollectionItem();
-            o.catalogId = catalogId;
-            o.createdById = createdById;
-            o.dataAssetKey = dataAssetKey;
-            o.description = description;
-            o.displayName = displayName;
-            o.encProperties = encProperties;
-            o.externalKey = externalKey;
-            o.isDefault = isDefault;
-            o.key = key;
-            o.properties = properties;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeStatusUpdated = timeStatusUpdated;
-            o.timeUpdated = timeUpdated;
-            o.typeKey = typeKey;
-            o.updatedById = updatedById;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItem();
+            _resultValue.catalogId = catalogId;
+            _resultValue.createdById = createdById;
+            _resultValue.dataAssetKey = dataAssetKey;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.encProperties = encProperties;
+            _resultValue.externalKey = externalKey;
+            _resultValue.isDefault = isDefault;
+            _resultValue.key = key;
+            _resultValue.properties = properties;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeStatusUpdated = timeStatusUpdated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.typeKey = typeKey;
+            _resultValue.updatedById = updatedById;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

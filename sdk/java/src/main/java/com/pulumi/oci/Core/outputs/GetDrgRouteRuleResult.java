@@ -242,20 +242,20 @@ public final class GetDrgRouteRuleResult {
             return this;
         }
         public GetDrgRouteRuleResult build() {
-            final var o = new GetDrgRouteRuleResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.drgId = drgId;
-            o.drgRouteTableId = drgRouteTableId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.importDrgRouteDistributionId = importDrgRouteDistributionId;
-            o.isEcmpEnabled = isEcmpEnabled;
-            o.removeImportTrigger = removeImportTrigger;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDrgRouteRuleResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.drgId = drgId;
+            _resultValue.drgRouteTableId = drgRouteTableId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.importDrgRouteDistributionId = importDrgRouteDistributionId;
+            _resultValue.isEcmpEnabled = isEcmpEnabled;
+            _resultValue.removeImportTrigger = removeImportTrigger;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

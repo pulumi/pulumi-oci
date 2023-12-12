@@ -75,11 +75,11 @@ public final class GetReplicationPoliciesFilter {
             return values(List.of(values));
         }
         public GetReplicationPoliciesFilter build() {
-            final var o = new GetReplicationPoliciesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetReplicationPoliciesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

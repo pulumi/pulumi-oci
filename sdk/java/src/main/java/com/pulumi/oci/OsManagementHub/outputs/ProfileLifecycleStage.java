@@ -67,10 +67,10 @@ public final class ProfileLifecycleStage {
             return this;
         }
         public ProfileLifecycleStage build() {
-            final var o = new ProfileLifecycleStage();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new ProfileLifecycleStage();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

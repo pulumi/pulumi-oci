@@ -224,13 +224,13 @@ public final class DomainsAuthenticationFactorSettingIdcsCreatedBy {
             return this;
         }
         public DomainsAuthenticationFactorSettingIdcsCreatedBy build() {
-            final var o = new DomainsAuthenticationFactorSettingIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetVolumeGroupReplicasFilter {
             return values(List.of(values));
         }
         public GetVolumeGroupReplicasFilter build() {
-            final var o = new GetVolumeGroupReplicasFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVolumeGroupReplicasFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

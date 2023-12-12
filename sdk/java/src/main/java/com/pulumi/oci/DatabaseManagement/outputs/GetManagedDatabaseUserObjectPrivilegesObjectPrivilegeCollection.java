@@ -50,9 +50,9 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
             return items(List.of(items));
         }
         public GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection build() {
-            final var o = new GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

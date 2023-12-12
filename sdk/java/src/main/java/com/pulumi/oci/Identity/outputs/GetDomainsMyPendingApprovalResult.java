@@ -534,35 +534,35 @@ public final class GetDomainsMyPendingApprovalResult {
             return this;
         }
         public GetDomainsMyPendingApprovalResult build() {
-            final var o = new GetDomainsMyPendingApprovalResult();
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.expires = expires;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.justification = justification;
-            o.metas = metas;
-            o.myPendingApprovalId = myPendingApprovalId;
-            o.ocid = ocid;
-            o.requestCreatedTime = requestCreatedTime;
-            o.requestDetails = requestDetails;
-            o.requestId = requestId;
-            o.requestOcid = requestOcid;
-            o.resourceDisplayName = resourceDisplayName;
-            o.resourceType = resourceType;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.responseTime = responseTime;
-            o.schemas = schemas;
-            o.status = status;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            return o;
+            final var _resultValue = new GetDomainsMyPendingApprovalResult();
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.expires = expires;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.justification = justification;
+            _resultValue.metas = metas;
+            _resultValue.myPendingApprovalId = myPendingApprovalId;
+            _resultValue.ocid = ocid;
+            _resultValue.requestCreatedTime = requestCreatedTime;
+            _resultValue.requestDetails = requestDetails;
+            _resultValue.requestId = requestId;
+            _resultValue.requestOcid = requestOcid;
+            _resultValue.resourceDisplayName = resourceDisplayName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.responseTime = responseTime;
+            _resultValue.schemas = schemas;
+            _resultValue.status = status;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            return _resultValue;
         }
     }
 }

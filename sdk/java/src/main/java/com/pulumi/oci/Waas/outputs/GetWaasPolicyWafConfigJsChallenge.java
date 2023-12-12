@@ -207,17 +207,17 @@ public final class GetWaasPolicyWafConfigJsChallenge {
             return this;
         }
         public GetWaasPolicyWafConfigJsChallenge build() {
-            final var o = new GetWaasPolicyWafConfigJsChallenge();
-            o.action = action;
-            o.actionExpirationInSeconds = actionExpirationInSeconds;
-            o.areRedirectsChallenged = areRedirectsChallenged;
-            o.challengeSettings = challengeSettings;
-            o.criterias = criterias;
-            o.failureThreshold = failureThreshold;
-            o.isEnabled = isEnabled;
-            o.isNatEnabled = isNatEnabled;
-            o.setHttpHeader = setHttpHeader;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigJsChallenge();
+            _resultValue.action = action;
+            _resultValue.actionExpirationInSeconds = actionExpirationInSeconds;
+            _resultValue.areRedirectsChallenged = areRedirectsChallenged;
+            _resultValue.challengeSettings = challengeSettings;
+            _resultValue.criterias = criterias;
+            _resultValue.failureThreshold = failureThreshold;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isNatEnabled = isNatEnabled;
+            _resultValue.setHttpHeader = setHttpHeader;
+            return _resultValue;
         }
     }
 }

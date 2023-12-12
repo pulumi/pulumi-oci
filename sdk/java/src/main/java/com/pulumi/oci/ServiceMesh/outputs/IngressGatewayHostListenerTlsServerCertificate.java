@@ -86,11 +86,11 @@ public final class IngressGatewayHostListenerTlsServerCertificate {
             return this;
         }
         public IngressGatewayHostListenerTlsServerCertificate build() {
-            final var o = new IngressGatewayHostListenerTlsServerCertificate();
-            o.certificateId = certificateId;
-            o.secretName = secretName;
-            o.type = type;
-            return o;
+            final var _resultValue = new IngressGatewayHostListenerTlsServerCertificate();
+            _resultValue.certificateId = certificateId;
+            _resultValue.secretName = secretName;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

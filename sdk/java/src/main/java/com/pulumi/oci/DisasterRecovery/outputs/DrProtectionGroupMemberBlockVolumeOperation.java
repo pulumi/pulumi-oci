@@ -88,11 +88,11 @@ public final class DrProtectionGroupMemberBlockVolumeOperation {
             return this;
         }
         public DrProtectionGroupMemberBlockVolumeOperation build() {
-            final var o = new DrProtectionGroupMemberBlockVolumeOperation();
-            o.attachmentDetails = attachmentDetails;
-            o.blockVolumeId = blockVolumeId;
-            o.mountDetails = mountDetails;
-            return o;
+            final var _resultValue = new DrProtectionGroupMemberBlockVolumeOperation();
+            _resultValue.attachmentDetails = attachmentDetails;
+            _resultValue.blockVolumeId = blockVolumeId;
+            _resultValue.mountDetails = mountDetails;
+            return _resultValue;
         }
     }
 }

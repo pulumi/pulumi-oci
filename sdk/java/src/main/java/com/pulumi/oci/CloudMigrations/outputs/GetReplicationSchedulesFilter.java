@@ -67,11 +67,11 @@ public final class GetReplicationSchedulesFilter {
             return values(List.of(values));
         }
         public GetReplicationSchedulesFilter build() {
-            final var o = new GetReplicationSchedulesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetReplicationSchedulesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

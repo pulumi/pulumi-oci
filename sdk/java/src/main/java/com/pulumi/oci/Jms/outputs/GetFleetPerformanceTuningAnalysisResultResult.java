@@ -362,26 +362,26 @@ public final class GetFleetPerformanceTuningAnalysisResultResult {
             return this;
         }
         public GetFleetPerformanceTuningAnalysisResultResult build() {
-            final var o = new GetFleetPerformanceTuningAnalysisResultResult();
-            o.applicationId = applicationId;
-            o.applicationInstallationId = applicationInstallationId;
-            o.applicationInstallationPath = applicationInstallationPath;
-            o.applicationName = applicationName;
-            o.bucket = bucket;
-            o.fleetId = fleetId;
-            o.hostName = hostName;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.namespace = namespace;
-            o.object = object;
-            o.performanceTuningAnalysisResultId = performanceTuningAnalysisResultId;
-            o.result = result;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.warningCount = warningCount;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetFleetPerformanceTuningAnalysisResultResult();
+            _resultValue.applicationId = applicationId;
+            _resultValue.applicationInstallationId = applicationInstallationId;
+            _resultValue.applicationInstallationPath = applicationInstallationPath;
+            _resultValue.applicationName = applicationName;
+            _resultValue.bucket = bucket;
+            _resultValue.fleetId = fleetId;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.performanceTuningAnalysisResultId = performanceTuningAnalysisResultId;
+            _resultValue.result = result;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.warningCount = warningCount;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

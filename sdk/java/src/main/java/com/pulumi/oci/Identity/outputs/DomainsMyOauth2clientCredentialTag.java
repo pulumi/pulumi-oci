@@ -111,10 +111,10 @@ public final class DomainsMyOauth2clientCredentialTag {
             return this;
         }
         public DomainsMyOauth2clientCredentialTag build() {
-            final var o = new DomainsMyOauth2clientCredentialTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyOauth2clientCredentialTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

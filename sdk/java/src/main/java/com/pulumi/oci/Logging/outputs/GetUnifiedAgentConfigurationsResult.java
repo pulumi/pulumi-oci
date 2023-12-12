@@ -178,17 +178,17 @@ public final class GetUnifiedAgentConfigurationsResult {
             return unifiedAgentConfigurationCollections(List.of(unifiedAgentConfigurationCollections));
         }
         public GetUnifiedAgentConfigurationsResult build() {
-            final var o = new GetUnifiedAgentConfigurationsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.groupId = groupId;
-            o.id = id;
-            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-            o.logId = logId;
-            o.state = state;
-            o.unifiedAgentConfigurationCollections = unifiedAgentConfigurationCollections;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            _resultValue.logId = logId;
+            _resultValue.state = state;
+            _resultValue.unifiedAgentConfigurationCollections = unifiedAgentConfigurationCollections;
+            return _resultValue;
         }
     }
 }

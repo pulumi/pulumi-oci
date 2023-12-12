@@ -70,10 +70,10 @@ public final class GetServiceConnectorTargetDimension {
             return this;
         }
         public GetServiceConnectorTargetDimension build() {
-            final var o = new GetServiceConnectorTargetDimension();
-            o.dimensionValues = dimensionValues;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetServiceConnectorTargetDimension();
+            _resultValue.dimensionValues = dimensionValues;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class GetJavaDownloadsJavaLicenseResult {
             return this;
         }
         public GetJavaDownloadsJavaLicenseResult build() {
-            final var o = new GetJavaDownloadsJavaLicenseResult();
-            o.displayName = displayName;
-            o.id = id;
-            o.licenseType = licenseType;
-            o.licenseUrl = licenseUrl;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaLicenseResult();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.licenseType = licenseType;
+            _resultValue.licenseUrl = licenseUrl;
+            return _resultValue;
         }
     }
 }

@@ -127,13 +127,13 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
             return this;
         }
         public GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem build() {
-            final var o = new GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem();
-            o.defaultValue = defaultValue;
-            o.description = description;
-            o.displayName = displayName;
-            o.levels = levels;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.levels = levels;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

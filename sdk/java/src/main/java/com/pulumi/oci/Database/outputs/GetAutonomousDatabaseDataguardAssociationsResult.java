@@ -105,12 +105,12 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
             return this;
         }
         public GetAutonomousDatabaseDataguardAssociationsResult build() {
-            final var o = new GetAutonomousDatabaseDataguardAssociationsResult();
-            o.autonomousDatabaseDataguardAssociations = autonomousDatabaseDataguardAssociations;
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseDataguardAssociationsResult();
+            _resultValue.autonomousDatabaseDataguardAssociations = autonomousDatabaseDataguardAssociations;
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetContainerInstanceShapesFilter {
             return values(List.of(values));
         }
         public GetContainerInstanceShapesFilter build() {
-            final var o = new GetContainerInstanceShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

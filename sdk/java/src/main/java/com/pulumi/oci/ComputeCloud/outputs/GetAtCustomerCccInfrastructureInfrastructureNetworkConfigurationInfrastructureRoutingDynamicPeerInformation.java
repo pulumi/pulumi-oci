@@ -66,10 +66,10 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
             return this;
         }
         public GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation build() {
-            final var o = new GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation();
-            o.asn = asn;
-            o.ip = ip;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation();
+            _resultValue.asn = asn;
+            _resultValue.ip = ip;
+            return _resultValue;
         }
     }
 }

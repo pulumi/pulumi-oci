@@ -308,22 +308,22 @@ public final class GetDataSourcesDataSourceCollectionItem {
             return this;
         }
         public GetDataSourcesDataSourceCollectionItem build() {
-            final var o = new GetDataSourcesDataSourceCollectionItem();
-            o.compartmentId = compartmentId;
-            o.dataSourceDetails = dataSourceDetails;
-            o.dataSourceDetectorMappingInfos = dataSourceDetectorMappingInfos;
-            o.dataSourceFeedProvider = dataSourceFeedProvider;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.regionStatusDetails = regionStatusDetails;
-            o.state = state;
-            o.status = status;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDataSourcesDataSourceCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataSourceDetails = dataSourceDetails;
+            _resultValue.dataSourceDetectorMappingInfos = dataSourceDetectorMappingInfos;
+            _resultValue.dataSourceFeedProvider = dataSourceFeedProvider;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.regionStatusDetails = regionStatusDetails;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

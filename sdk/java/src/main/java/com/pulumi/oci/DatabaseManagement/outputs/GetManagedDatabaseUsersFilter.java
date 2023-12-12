@@ -75,11 +75,11 @@ public final class GetManagedDatabaseUsersFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseUsersFilter build() {
-            final var o = new GetManagedDatabaseUsersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUsersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

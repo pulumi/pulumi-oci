@@ -46,9 +46,9 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetai
             return this;
         }
         public GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail build() {
-            final var o = new GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail();
-            o.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail();
+            _resultValue.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
+            return _resultValue;
         }
     }
 }

@@ -142,14 +142,14 @@ public final class GetNamespaceScheduledTaskScheduleSchedule {
             return this;
         }
         public GetNamespaceScheduledTaskScheduleSchedule build() {
-            final var o = new GetNamespaceScheduledTaskScheduleSchedule();
-            o.expression = expression;
-            o.misfirePolicy = misfirePolicy;
-            o.recurringInterval = recurringInterval;
-            o.repeatCount = repeatCount;
-            o.timeZone = timeZone;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTaskScheduleSchedule();
+            _resultValue.expression = expression;
+            _resultValue.misfirePolicy = misfirePolicy;
+            _resultValue.recurringInterval = recurringInterval;
+            _resultValue.repeatCount = repeatCount;
+            _resultValue.timeZone = timeZone;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

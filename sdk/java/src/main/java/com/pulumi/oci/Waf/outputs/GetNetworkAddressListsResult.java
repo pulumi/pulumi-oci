@@ -147,14 +147,14 @@ public final class GetNetworkAddressListsResult {
             return states(List.of(states));
         }
         public GetNetworkAddressListsResult build() {
-            final var o = new GetNetworkAddressListsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.networkAddressListCollections = networkAddressListCollections;
-            o.states = states;
-            return o;
+            final var _resultValue = new GetNetworkAddressListsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkAddressListCollections = networkAddressListCollections;
+            _resultValue.states = states;
+            return _resultValue;
         }
     }
 }

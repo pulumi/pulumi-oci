@@ -523,33 +523,33 @@ public final class GetMysqlBackupDbSystemSnapshot {
             return this;
         }
         public GetMysqlBackupDbSystemSnapshot build() {
-            final var o = new GetMysqlBackupDbSystemSnapshot();
-            o.adminUsername = adminUsername;
-            o.availabilityDomain = availabilityDomain;
-            o.backupPolicies = backupPolicies;
-            o.compartmentId = compartmentId;
-            o.configurationId = configurationId;
-            o.crashRecovery = crashRecovery;
-            o.dataStorageSizeInGb = dataStorageSizeInGb;
-            o.databaseManagement = databaseManagement;
-            o.definedTags = definedTags;
-            o.deletionPolicies = deletionPolicies;
-            o.description = description;
-            o.displayName = displayName;
-            o.endpoints = endpoints;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.isHighlyAvailable = isHighlyAvailable;
-            o.maintenances = maintenances;
-            o.mysqlVersion = mysqlVersion;
-            o.port = port;
-            o.portX = portX;
-            o.shapeName = shapeName;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetMysqlBackupDbSystemSnapshot();
+            _resultValue.adminUsername = adminUsername;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.backupPolicies = backupPolicies;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationId = configurationId;
+            _resultValue.crashRecovery = crashRecovery;
+            _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
+            _resultValue.databaseManagement = databaseManagement;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deletionPolicies = deletionPolicies;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoints = endpoints;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isHighlyAvailable = isHighlyAvailable;
+            _resultValue.maintenances = maintenances;
+            _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.port = port;
+            _resultValue.portX = portX;
+            _resultValue.shapeName = shapeName;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

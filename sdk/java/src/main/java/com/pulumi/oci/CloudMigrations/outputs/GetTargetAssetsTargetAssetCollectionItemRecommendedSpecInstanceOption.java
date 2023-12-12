@@ -46,9 +46,9 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstan
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption();
-            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOption();
+            _resultValue.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return _resultValue;
         }
     }
 }

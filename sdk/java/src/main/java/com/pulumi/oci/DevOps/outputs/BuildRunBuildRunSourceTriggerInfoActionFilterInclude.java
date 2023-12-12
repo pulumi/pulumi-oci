@@ -102,12 +102,12 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterInclude {
             return this;
         }
         public BuildRunBuildRunSourceTriggerInfoActionFilterInclude build() {
-            final var o = new BuildRunBuildRunSourceTriggerInfoActionFilterInclude();
-            o.baseRef = baseRef;
-            o.fileFilters = fileFilters;
-            o.headRef = headRef;
-            o.repositoryName = repositoryName;
-            return o;
+            final var _resultValue = new BuildRunBuildRunSourceTriggerInfoActionFilterInclude();
+            _resultValue.baseRef = baseRef;
+            _resultValue.fileFilters = fileFilters;
+            _resultValue.headRef = headRef;
+            _resultValue.repositoryName = repositoryName;
+            return _resultValue;
         }
     }
 }

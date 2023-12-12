@@ -53,10 +53,10 @@ public final class GetShapeShapePlatformConfigOptionInputOutputMemoryManagementU
             return this;
         }
         public GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption build() {
-            final var o = new GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption();
-            o.allowedValues = allowedValues;
-            o.isDefaultEnabled = isDefaultEnabled;
-            return o;
+            final var _resultValue = new GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.isDefaultEnabled = isDefaultEnabled;
+            return _resultValue;
         }
     }
 }

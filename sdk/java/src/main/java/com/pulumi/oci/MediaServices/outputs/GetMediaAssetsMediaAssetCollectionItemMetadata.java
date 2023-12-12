@@ -46,9 +46,9 @@ public final class GetMediaAssetsMediaAssetCollectionItemMetadata {
             return this;
         }
         public GetMediaAssetsMediaAssetCollectionItemMetadata build() {
-            final var o = new GetMediaAssetsMediaAssetCollectionItemMetadata();
-            o.metadata = metadata;
-            return o;
+            final var _resultValue = new GetMediaAssetsMediaAssetCollectionItemMetadata();
+            _resultValue.metadata = metadata;
+            return _resultValue;
         }
     }
 }

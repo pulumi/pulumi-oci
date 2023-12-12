@@ -218,18 +218,18 @@ public final class GetSubscriptionRedemptionsRedemptionCollectionItemItem {
             return this;
         }
         public GetSubscriptionRedemptionsRedemptionCollectionItemItem build() {
-            final var o = new GetSubscriptionRedemptionsRedemptionCollectionItemItem();
-            o.baseRewards = baseRewards;
-            o.fxRate = fxRate;
-            o.invoiceCurrency = invoiceCurrency;
-            o.invoiceNumber = invoiceNumber;
-            o.invoiceTotalAmount = invoiceTotalAmount;
-            o.redeemedRewards = redeemedRewards;
-            o.redemptionCode = redemptionCode;
-            o.redemptionEmail = redemptionEmail;
-            o.timeInvoiced = timeInvoiced;
-            o.timeRedeemed = timeRedeemed;
-            return o;
+            final var _resultValue = new GetSubscriptionRedemptionsRedemptionCollectionItemItem();
+            _resultValue.baseRewards = baseRewards;
+            _resultValue.fxRate = fxRate;
+            _resultValue.invoiceCurrency = invoiceCurrency;
+            _resultValue.invoiceNumber = invoiceNumber;
+            _resultValue.invoiceTotalAmount = invoiceTotalAmount;
+            _resultValue.redeemedRewards = redeemedRewards;
+            _resultValue.redemptionCode = redemptionCode;
+            _resultValue.redemptionEmail = redemptionEmail;
+            _resultValue.timeInvoiced = timeInvoiced;
+            _resultValue.timeRedeemed = timeRedeemed;
+            return _resultValue;
         }
     }
 }

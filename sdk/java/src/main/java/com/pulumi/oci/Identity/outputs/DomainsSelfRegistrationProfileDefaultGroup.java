@@ -152,11 +152,11 @@ public final class DomainsSelfRegistrationProfileDefaultGroup {
             return this;
         }
         public DomainsSelfRegistrationProfileDefaultGroup build() {
-            final var o = new DomainsSelfRegistrationProfileDefaultGroup();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSelfRegistrationProfileDefaultGroup();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

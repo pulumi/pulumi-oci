@@ -67,11 +67,11 @@ public final class GetDiscoveryJobsResultsFilter {
             return values(List.of(values));
         }
         public GetDiscoveryJobsResultsFilter build() {
-            final var o = new GetDiscoveryJobsResultsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDiscoveryJobsResultsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -81,11 +81,11 @@ public final class GetLogAnalyticsPreferenceResult {
             return this;
         }
         public GetLogAnalyticsPreferenceResult build() {
-            final var o = new GetLogAnalyticsPreferenceResult();
-            o.id = id;
-            o.items = items;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetLogAnalyticsPreferenceResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

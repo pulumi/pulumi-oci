@@ -123,13 +123,13 @@ public final class GetDomainsUsersUserPhoneNumber {
             return this;
         }
         public GetDomainsUsersUserPhoneNumber build() {
-            final var o = new GetDomainsUsersUserPhoneNumber();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            o.verified = verified;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserPhoneNumber();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            _resultValue.verified = verified;
+            return _resultValue;
         }
     }
 }

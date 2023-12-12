@@ -104,12 +104,12 @@ public final class GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsex
             return this;
         }
         public GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy build() {
-            final var o = new GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy();
-            o.name = name;
-            o.priority = priority;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy();
+            _resultValue.name = name;
+            _resultValue.priority = priority;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

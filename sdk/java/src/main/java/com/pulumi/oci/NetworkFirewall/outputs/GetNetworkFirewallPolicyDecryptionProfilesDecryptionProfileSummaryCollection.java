@@ -42,9 +42,9 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSu
             return items(List.of(items));
         }
         public GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection build() {
-            final var o = new GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyDecryptionProfilesDecryptionProfileSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

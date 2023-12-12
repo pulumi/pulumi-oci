@@ -50,9 +50,9 @@ public final class GetManagedDatabasesUserProxyUsersProxyUserCollection {
             return items(List.of(items));
         }
         public GetManagedDatabasesUserProxyUsersProxyUserCollection build() {
-            final var o = new GetManagedDatabasesUserProxyUsersProxyUserCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabasesUserProxyUsersProxyUserCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

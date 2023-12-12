@@ -165,15 +165,15 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector();
-            o.agentId = agentId;
-            o.connectionFailureMessage = connectionFailureMessage;
-            o.connectionInfos = connectionInfos;
-            o.connectionStatus = connectionStatus;
-            o.connectorType = connectorType;
-            o.displayName = displayName;
-            o.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnector();
+            _resultValue.agentId = agentId;
+            _resultValue.connectionFailureMessage = connectionFailureMessage;
+            _resultValue.connectionInfos = connectionInfos;
+            _resultValue.connectionStatus = connectionStatus;
+            _resultValue.connectorType = connectorType;
+            _resultValue.displayName = displayName;
+            _resultValue.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
             return this;
         }
         public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination build() {
-            final var o = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination();
-            o.port = port;
-            o.virtualServiceId = virtualServiceId;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestination();
+            _resultValue.port = port;
+            _resultValue.virtualServiceId = virtualServiceId;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

@@ -87,11 +87,11 @@ public final class MysqlDbSystemDeletionPolicy {
             return this;
         }
         public MysqlDbSystemDeletionPolicy build() {
-            final var o = new MysqlDbSystemDeletionPolicy();
-            o.automaticBackupRetention = automaticBackupRetention;
-            o.finalBackup = finalBackup;
-            o.isDeleteProtected = isDeleteProtected;
-            return o;
+            final var _resultValue = new MysqlDbSystemDeletionPolicy();
+            _resultValue.automaticBackupRetention = automaticBackupRetention;
+            _resultValue.finalBackup = finalBackup;
+            _resultValue.isDeleteProtected = isDeleteProtected;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
             return items(List.of(items));
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeader build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeader();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationRenameHeader();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

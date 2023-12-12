@@ -104,12 +104,12 @@ public final class GetNamespaceResult {
             return this;
         }
         public GetNamespaceResult build() {
-            final var o = new GetNamespaceResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isOnboarded = isOnboarded;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetNamespaceResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isOnboarded = isOnboarded;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

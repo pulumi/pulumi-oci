@@ -93,11 +93,11 @@ public final class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig {
             return this;
         }
         public ComputeCapacityReportShapeAvailabilityInstanceShapeConfig build() {
-            final var o = new ComputeCapacityReportShapeAvailabilityInstanceShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new ComputeCapacityReportShapeAvailabilityInstanceShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDataKeysDataKey {
             return this;
         }
         public GetDataKeysDataKey build() {
-            final var o = new GetDataKeysDataKey();
-            o.name = name;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDataKeysDataKey();
+            _resultValue.name = name;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

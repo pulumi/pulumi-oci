@@ -199,17 +199,17 @@ public final class GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting();
-            o.blockAction = blockAction;
-            o.blockErrorPageCode = blockErrorPageCode;
-            o.blockErrorPageDescription = blockErrorPageDescription;
-            o.blockErrorPageMessage = blockErrorPageMessage;
-            o.blockResponseCode = blockResponseCode;
-            o.captchaFooter = captchaFooter;
-            o.captchaHeader = captchaHeader;
-            o.captchaSubmitLabel = captchaSubmitLabel;
-            o.captchaTitle = captchaTitle;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting();
+            _resultValue.blockAction = blockAction;
+            _resultValue.blockErrorPageCode = blockErrorPageCode;
+            _resultValue.blockErrorPageDescription = blockErrorPageDescription;
+            _resultValue.blockErrorPageMessage = blockErrorPageMessage;
+            _resultValue.blockResponseCode = blockResponseCode;
+            _resultValue.captchaFooter = captchaFooter;
+            _resultValue.captchaHeader = captchaHeader;
+            _resultValue.captchaSubmitLabel = captchaSubmitLabel;
+            _resultValue.captchaTitle = captchaTitle;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetProfileLevelsConfiguration {
             return items(List.of(items));
         }
         public GetProfileLevelsConfiguration build() {
-            final var o = new GetProfileLevelsConfiguration();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProfileLevelsConfiguration();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

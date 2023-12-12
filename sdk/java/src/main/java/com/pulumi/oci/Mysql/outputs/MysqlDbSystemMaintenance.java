@@ -62,9 +62,9 @@ public final class MysqlDbSystemMaintenance {
             return this;
         }
         public MysqlDbSystemMaintenance build() {
-            final var o = new MysqlDbSystemMaintenance();
-            o.windowStartTime = windowStartTime;
-            return o;
+            final var _resultValue = new MysqlDbSystemMaintenance();
+            _resultValue.windowStartTime = windowStartTime;
+            return _resultValue;
         }
     }
 }

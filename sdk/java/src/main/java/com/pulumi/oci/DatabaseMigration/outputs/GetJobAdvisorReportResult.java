@@ -177,16 +177,16 @@ public final class GetJobAdvisorReportResult {
             return this;
         }
         public GetJobAdvisorReportResult build() {
-            final var o = new GetJobAdvisorReportResult();
-            o.id = id;
-            o.jobId = jobId;
-            o.numberOfFatal = numberOfFatal;
-            o.numberOfFatalBlockers = numberOfFatalBlockers;
-            o.numberOfInformationalResults = numberOfInformationalResults;
-            o.numberOfWarnings = numberOfWarnings;
-            o.reportLocationDetails = reportLocationDetails;
-            o.result = result;
-            return o;
+            final var _resultValue = new GetJobAdvisorReportResult();
+            _resultValue.id = id;
+            _resultValue.jobId = jobId;
+            _resultValue.numberOfFatal = numberOfFatal;
+            _resultValue.numberOfFatalBlockers = numberOfFatalBlockers;
+            _resultValue.numberOfInformationalResults = numberOfInformationalResults;
+            _resultValue.numberOfWarnings = numberOfWarnings;
+            _resultValue.reportLocationDetails = reportLocationDetails;
+            _resultValue.result = result;
+            return _resultValue;
         }
     }
 }

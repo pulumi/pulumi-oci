@@ -46,9 +46,9 @@ public final class GetApplicationsApplicationImagePolicyConfigKeyDetail {
             return this;
         }
         public GetApplicationsApplicationImagePolicyConfigKeyDetail build() {
-            final var o = new GetApplicationsApplicationImagePolicyConfigKeyDetail();
-            o.kmsKeyId = kmsKeyId;
-            return o;
+            final var _resultValue = new GetApplicationsApplicationImagePolicyConfigKeyDetail();
+            _resultValue.kmsKeyId = kmsKeyId;
+            return _resultValue;
         }
     }
 }

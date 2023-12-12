@@ -575,37 +575,37 @@ public final class GetDomainsCloudGateMappingResult {
             return upstreamServerGroups(List.of(upstreamServerGroups));
         }
         public GetDomainsCloudGateMappingResult build() {
-            final var o = new GetDomainsCloudGateMappingResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.cloudGateMappingId = cloudGateMappingId;
-            o.cloudGates = cloudGates;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.domainOcid = domainOcid;
-            o.gatewayApps = gatewayApps;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.isOpcService = isOpcService;
-            o.metas = metas;
-            o.nginxSettings = nginxSettings;
-            o.ocid = ocid;
-            o.policyName = policyName;
-            o.proxyPass = proxyPass;
-            o.resourcePrefix = resourcePrefix;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.servers = servers;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.upstreamServerGroups = upstreamServerGroups;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateMappingResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.cloudGateMappingId = cloudGateMappingId;
+            _resultValue.cloudGates = cloudGates;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.gatewayApps = gatewayApps;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.isOpcService = isOpcService;
+            _resultValue.metas = metas;
+            _resultValue.nginxSettings = nginxSettings;
+            _resultValue.ocid = ocid;
+            _resultValue.policyName = policyName;
+            _resultValue.proxyPass = proxyPass;
+            _resultValue.resourcePrefix = resourcePrefix;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.servers = servers;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.upstreamServerGroups = upstreamServerGroups;
+            return _resultValue;
         }
     }
 }

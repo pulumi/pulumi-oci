@@ -186,17 +186,17 @@ public final class GetDataSafePrivateEndpointsResult {
             return this;
         }
         public GetDataSafePrivateEndpointsResult build() {
-            final var o = new GetDataSafePrivateEndpointsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.dataSafePrivateEndpoints = dataSafePrivateEndpoints;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetDataSafePrivateEndpointsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dataSafePrivateEndpoints = dataSafePrivateEndpoints;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

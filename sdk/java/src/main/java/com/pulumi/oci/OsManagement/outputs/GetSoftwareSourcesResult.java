@@ -144,14 +144,14 @@ public final class GetSoftwareSourcesResult {
             return this;
         }
         public GetSoftwareSourcesResult build() {
-            final var o = new GetSoftwareSourcesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.softwareSources = softwareSources;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSoftwareSourcesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.softwareSources = softwareSources;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

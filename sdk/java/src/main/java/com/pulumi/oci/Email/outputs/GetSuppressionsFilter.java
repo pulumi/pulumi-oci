@@ -67,11 +67,11 @@ public final class GetSuppressionsFilter {
             return values(List.of(values));
         }
         public GetSuppressionsFilter build() {
-            final var o = new GetSuppressionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSuppressionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -97,12 +97,12 @@ public final class GetOrganizationSubscriptionsResult {
             return organizationSubscriptions(List.of(organizationSubscriptions));
         }
         public GetOrganizationSubscriptionsResult build() {
-            final var o = new GetOrganizationSubscriptionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.organizationSubscriptions = organizationSubscriptions;
-            return o;
+            final var _resultValue = new GetOrganizationSubscriptionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.organizationSubscriptions = organizationSubscriptions;
+            return _resultValue;
         }
     }
 }

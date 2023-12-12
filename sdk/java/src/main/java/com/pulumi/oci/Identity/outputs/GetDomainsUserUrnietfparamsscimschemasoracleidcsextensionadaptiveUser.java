@@ -70,10 +70,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadap
             return riskScores(List.of(riskScores));
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser();
-            o.riskLevel = riskLevel;
-            o.riskScores = riskScores;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser();
+            _resultValue.riskLevel = riskLevel;
+            _resultValue.riskScores = riskScores;
+            return _resultValue;
         }
     }
 }

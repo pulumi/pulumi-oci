@@ -163,15 +163,15 @@ public final class GetPrivateIpsResult {
             return this;
         }
         public GetPrivateIpsResult build() {
-            final var o = new GetPrivateIpsResult();
-            o.filters = filters;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.privateIps = privateIps;
-            o.subnetId = subnetId;
-            o.vlanId = vlanId;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetPrivateIpsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.privateIps = privateIps;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vlanId = vlanId;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

@@ -265,24 +265,24 @@ public final class GetDomainsMyRequestsResult {
             return this;
         }
         public GetDomainsMyRequestsResult build() {
-            final var o = new GetDomainsMyRequestsResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.myRequestCount = myRequestCount;
-            o.myRequestFilter = myRequestFilter;
-            o.myRequests = myRequests;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsMyRequestsResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.myRequestCount = myRequestCount;
+            _resultValue.myRequestFilter = myRequestFilter;
+            _resultValue.myRequests = myRequests;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

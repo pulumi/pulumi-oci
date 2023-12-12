@@ -71,10 +71,10 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigP
             return this;
         }
         public InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig build() {
-            final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

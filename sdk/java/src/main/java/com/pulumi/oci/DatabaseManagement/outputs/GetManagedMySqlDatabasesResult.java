@@ -105,12 +105,12 @@ public final class GetManagedMySqlDatabasesResult {
             return managedMySqlDatabaseCollections(List.of(managedMySqlDatabaseCollections));
         }
         public GetManagedMySqlDatabasesResult build() {
-            final var o = new GetManagedMySqlDatabasesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.managedMySqlDatabaseCollections = managedMySqlDatabaseCollections;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabasesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedMySqlDatabaseCollections = managedMySqlDatabaseCollections;
+            return _resultValue;
         }
     }
 }

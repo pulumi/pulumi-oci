@@ -246,19 +246,19 @@ public final class GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEnt
             return this;
         }
         public GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry build() {
-            final var o = new GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry();
-            o.action = action;
-            o.additionalCdbParams = additionalCdbParams;
-            o.cdbName = cdbName;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.sourceDatabaseId = sourceDatabaseId;
-            o.state = state;
-            o.target = target;
-            o.targetDatabaseId = targetDatabaseId;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntry();
+            _resultValue.action = action;
+            _resultValue.additionalCdbParams = additionalCdbParams;
+            _resultValue.cdbName = cdbName;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.sourceDatabaseId = sourceDatabaseId;
+            _resultValue.state = state;
+            _resultValue.target = target;
+            _resultValue.targetDatabaseId = targetDatabaseId;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

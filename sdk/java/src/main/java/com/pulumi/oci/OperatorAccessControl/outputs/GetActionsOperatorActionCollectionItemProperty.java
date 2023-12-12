@@ -65,10 +65,10 @@ public final class GetActionsOperatorActionCollectionItemProperty {
             return this;
         }
         public GetActionsOperatorActionCollectionItemProperty build() {
-            final var o = new GetActionsOperatorActionCollectionItemProperty();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetActionsOperatorActionCollectionItemProperty();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

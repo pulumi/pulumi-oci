@@ -65,10 +65,10 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption {
             return this;
         }
         public GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption build() {
-            final var o = new GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption();
-            o.code = code;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption();
+            _resultValue.code = code;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

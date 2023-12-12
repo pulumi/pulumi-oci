@@ -88,11 +88,11 @@ public final class GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion {
             return this;
         }
         public GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion build() {
-            final var o = new GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion();
-            o.description = description;
-            o.supportedHostShapeNames = supportedHostShapeNames;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion();
+            _resultValue.description = description;
+            _resultValue.supportedHostShapeNames = supportedHostShapeNames;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

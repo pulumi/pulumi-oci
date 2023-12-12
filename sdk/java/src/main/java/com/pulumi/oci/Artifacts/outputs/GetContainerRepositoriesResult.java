@@ -186,17 +186,17 @@ public final class GetContainerRepositoriesResult {
             return this;
         }
         public GetContainerRepositoriesResult build() {
-            final var o = new GetContainerRepositoriesResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.containerRepositoryCollections = containerRepositoryCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isPublic = isPublic;
-            o.repositoryId = repositoryId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetContainerRepositoriesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.containerRepositoryCollections = containerRepositoryCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isPublic = isPublic;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

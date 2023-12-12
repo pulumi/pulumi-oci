@@ -89,11 +89,11 @@ public final class GetListingRegion {
             return this;
         }
         public GetListingRegion build() {
-            final var o = new GetListingRegion();
-            o.code = code;
-            o.countries = countries;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingRegion();
+            _resultValue.code = code;
+            _resultValue.countries = countries;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

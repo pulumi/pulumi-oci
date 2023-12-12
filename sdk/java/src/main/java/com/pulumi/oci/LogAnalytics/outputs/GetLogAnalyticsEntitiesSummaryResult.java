@@ -134,14 +134,14 @@ public final class GetLogAnalyticsEntitiesSummaryResult {
             return this;
         }
         public GetLogAnalyticsEntitiesSummaryResult build() {
-            final var o = new GetLogAnalyticsEntitiesSummaryResult();
-            o.activeEntitiesCount = activeEntitiesCount;
-            o.compartmentId = compartmentId;
-            o.entitiesWithHasLogsCollectedCount = entitiesWithHasLogsCollectedCount;
-            o.entitiesWithManagementAgentCount = entitiesWithManagementAgentCount;
-            o.id = id;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntitiesSummaryResult();
+            _resultValue.activeEntitiesCount = activeEntitiesCount;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.entitiesWithHasLogsCollectedCount = entitiesWithHasLogsCollectedCount;
+            _resultValue.entitiesWithManagementAgentCount = entitiesWithManagementAgentCount;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

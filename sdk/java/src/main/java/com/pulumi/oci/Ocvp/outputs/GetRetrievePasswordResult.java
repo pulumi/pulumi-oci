@@ -89,12 +89,12 @@ public final class GetRetrievePasswordResult {
             return this;
         }
         public GetRetrievePasswordResult build() {
-            final var o = new GetRetrievePasswordResult();
-            o.id = id;
-            o.sddcId = sddcId;
-            o.sddcPassword = sddcPassword;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRetrievePasswordResult();
+            _resultValue.id = id;
+            _resultValue.sddcId = sddcId;
+            _resultValue.sddcPassword = sddcPassword;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoraclei
             return this;
         }
         public GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag build() {
-            final var o = new GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

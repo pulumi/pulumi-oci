@@ -213,17 +213,17 @@ public final class GetWaasPoliciesWaasPolicyWafConfigJsChallenge {
             return setHttpHeaders(List.of(setHttpHeaders));
         }
         public GetWaasPoliciesWaasPolicyWafConfigJsChallenge build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigJsChallenge();
-            o.action = action;
-            o.actionExpirationInSeconds = actionExpirationInSeconds;
-            o.areRedirectsChallenged = areRedirectsChallenged;
-            o.challengeSettings = challengeSettings;
-            o.criterias = criterias;
-            o.failureThreshold = failureThreshold;
-            o.isEnabled = isEnabled;
-            o.isNatEnabled = isNatEnabled;
-            o.setHttpHeaders = setHttpHeaders;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigJsChallenge();
+            _resultValue.action = action;
+            _resultValue.actionExpirationInSeconds = actionExpirationInSeconds;
+            _resultValue.areRedirectsChallenged = areRedirectsChallenged;
+            _resultValue.challengeSettings = challengeSettings;
+            _resultValue.criterias = criterias;
+            _resultValue.failureThreshold = failureThreshold;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isNatEnabled = isNatEnabled;
+            _resultValue.setHttpHeaders = setHttpHeaders;
+            return _resultValue;
         }
     }
 }

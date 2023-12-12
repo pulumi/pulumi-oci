@@ -163,15 +163,15 @@ public final class GetNatGatewaysResult {
             return this;
         }
         public GetNatGatewaysResult build() {
-            final var o = new GetNatGatewaysResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.natGateways = natGateways;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetNatGatewaysResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.natGateways = natGateways;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

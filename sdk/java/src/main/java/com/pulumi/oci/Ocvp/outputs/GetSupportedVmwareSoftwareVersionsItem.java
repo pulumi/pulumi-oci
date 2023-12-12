@@ -89,11 +89,11 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
             return this;
         }
         public GetSupportedVmwareSoftwareVersionsItem build() {
-            final var o = new GetSupportedVmwareSoftwareVersionsItem();
-            o.description = description;
-            o.esxiSoftwareVersions = esxiSoftwareVersions;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetSupportedVmwareSoftwareVersionsItem();
+            _resultValue.description = description;
+            _resultValue.esxiSoftwareVersions = esxiSoftwareVersions;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

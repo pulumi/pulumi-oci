@@ -46,9 +46,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
             return this;
         }
         public GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth build() {
-            final var o = new GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonth();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

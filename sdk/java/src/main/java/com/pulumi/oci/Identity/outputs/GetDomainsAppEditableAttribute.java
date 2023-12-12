@@ -46,9 +46,9 @@ public final class GetDomainsAppEditableAttribute {
             return this;
         }
         public GetDomainsAppEditableAttribute build() {
-            final var o = new GetDomainsAppEditableAttribute();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetDomainsAppEditableAttribute();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

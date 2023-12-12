@@ -189,16 +189,16 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             return this;
         }
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail build() {
-            final var o = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail();
-            o.cmds = cmds;
-            o.entrypoints = entrypoints;
-            o.environmentConfigurationType = environmentConfigurationType;
-            o.environmentVariables = environmentVariables;
-            o.healthCheckPort = healthCheckPort;
-            o.image = image;
-            o.imageDigest = imageDigest;
-            o.serverPort = serverPort;
-            return o;
+            final var _resultValue = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail();
+            _resultValue.cmds = cmds;
+            _resultValue.entrypoints = entrypoints;
+            _resultValue.environmentConfigurationType = environmentConfigurationType;
+            _resultValue.environmentVariables = environmentVariables;
+            _resultValue.healthCheckPort = healthCheckPort;
+            _resultValue.image = image;
+            _resultValue.imageDigest = imageDigest;
+            _resultValue.serverPort = serverPort;
+            return _resultValue;
         }
     }
 }

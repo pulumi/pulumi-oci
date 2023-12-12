@@ -163,15 +163,15 @@ public final class GetExportSetsResult {
             return this;
         }
         public GetExportSetsResult build() {
-            final var o = new GetExportSetsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.exportSets = exportSets;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetExportSetsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.exportSets = exportSets;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class UsageItemTag {
             return this;
         }
         public UsageItemTag build() {
-            final var o = new UsageItemTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new UsageItemTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

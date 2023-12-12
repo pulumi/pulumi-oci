@@ -185,17 +185,17 @@ public final class GetComputeCapacityTopologyComputeBareMetalHostsResult {
             return this;
         }
         public GetComputeCapacityTopologyComputeBareMetalHostsResult build() {
-            final var o = new GetComputeCapacityTopologyComputeBareMetalHostsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.computeBareMetalHostCollections = computeBareMetalHostCollections;
-            o.computeCapacityTopologyId = computeCapacityTopologyId;
-            o.computeHpcIslandId = computeHpcIslandId;
-            o.computeLocalBlockId = computeLocalBlockId;
-            o.computeNetworkBlockId = computeNetworkBlockId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologyComputeBareMetalHostsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeBareMetalHostCollections = computeBareMetalHostCollections;
+            _resultValue.computeCapacityTopologyId = computeCapacityTopologyId;
+            _resultValue.computeHpcIslandId = computeHpcIslandId;
+            _resultValue.computeLocalBlockId = computeLocalBlockId;
+            _resultValue.computeNetworkBlockId = computeNetworkBlockId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

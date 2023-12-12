@@ -239,19 +239,19 @@ public final class GetQuotasQuota {
             return this;
         }
         public GetQuotasQuota build() {
-            final var o = new GetQuotasQuota();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isLockOverride = isLockOverride;
-            o.locks = locks;
-            o.name = name;
-            o.state = state;
-            o.statements = statements;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetQuotasQuota();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
+            _resultValue.locks = locks;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.statements = statements;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

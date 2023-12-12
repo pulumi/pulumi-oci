@@ -123,13 +123,13 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus 
             return this;
         }
         public GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus build() {
-            final var o = new GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus();
-            o.description = description;
-            o.licensePartDescription = licensePartDescription;
-            o.metricName = metricName;
-            o.quantity = quantity;
-            o.sku = sku;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkus();
+            _resultValue.description = description;
+            _resultValue.licensePartDescription = licensePartDescription;
+            _resultValue.metricName = metricName;
+            _resultValue.quantity = quantity;
+            _resultValue.sku = sku;
+            return _resultValue;
         }
     }
 }

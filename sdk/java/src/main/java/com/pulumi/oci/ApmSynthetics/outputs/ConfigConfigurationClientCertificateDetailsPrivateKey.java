@@ -67,10 +67,10 @@ public final class ConfigConfigurationClientCertificateDetailsPrivateKey {
             return this;
         }
         public ConfigConfigurationClientCertificateDetailsPrivateKey build() {
-            final var o = new ConfigConfigurationClientCertificateDetailsPrivateKey();
-            o.content = content;
-            o.fileName = fileName;
-            return o;
+            final var _resultValue = new ConfigConfigurationClientCertificateDetailsPrivateKey();
+            _resultValue.content = content;
+            _resultValue.fileName = fileName;
+            return _resultValue;
         }
     }
 }

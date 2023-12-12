@@ -159,11 +159,11 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
             return this;
         }
         public DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags build() {
-            final var o = new DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.tagSlug = tagSlug;
-            return o;
+            final var _resultValue = new DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.tagSlug = tagSlug;
+            return _resultValue;
         }
     }
 }

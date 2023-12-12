@@ -126,13 +126,13 @@ public final class DeployStageRolloutPolicy {
             return this;
         }
         public DeployStageRolloutPolicy build() {
-            final var o = new DeployStageRolloutPolicy();
-            o.batchCount = batchCount;
-            o.batchDelayInSeconds = batchDelayInSeconds;
-            o.batchPercentage = batchPercentage;
-            o.policyType = policyType;
-            o.rampLimitPercent = rampLimitPercent;
-            return o;
+            final var _resultValue = new DeployStageRolloutPolicy();
+            _resultValue.batchCount = batchCount;
+            _resultValue.batchDelayInSeconds = batchDelayInSeconds;
+            _resultValue.batchPercentage = batchPercentage;
+            _resultValue.policyType = policyType;
+            _resultValue.rampLimitPercent = rampLimitPercent;
+            return _resultValue;
         }
     }
 }

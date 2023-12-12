@@ -48,9 +48,9 @@ public final class PathAnalysiQueryOptions {
             return this;
         }
         public PathAnalysiQueryOptions build() {
-            final var o = new PathAnalysiQueryOptions();
-            o.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
-            return o;
+            final var _resultValue = new PathAnalysiQueryOptions();
+            _resultValue.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
+            return _resultValue;
         }
     }
 }

@@ -89,11 +89,11 @@ public final class GetListingPackagesListingPackageRegion {
             return this;
         }
         public GetListingPackagesListingPackageRegion build() {
-            final var o = new GetListingPackagesListingPackageRegion();
-            o.code = code;
-            o.countries = countries;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingPackagesListingPackageRegion();
+            _resultValue.code = code;
+            _resultValue.countries = countries;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

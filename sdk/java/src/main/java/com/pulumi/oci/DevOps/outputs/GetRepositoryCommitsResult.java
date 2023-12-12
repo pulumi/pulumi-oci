@@ -191,19 +191,19 @@ public final class GetRepositoryCommitsResult {
             return this;
         }
         public GetRepositoryCommitsResult build() {
-            final var o = new GetRepositoryCommitsResult();
-            o.authorName = authorName;
-            o.commitMessage = commitMessage;
-            o.excludeRefName = excludeRefName;
-            o.filePath = filePath;
-            o.filters = filters;
-            o.id = id;
-            o.refName = refName;
-            o.repositoryCommitCollections = repositoryCommitCollections;
-            o.repositoryId = repositoryId;
-            o.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
-            o.timestampLessThanOrEqualTo = timestampLessThanOrEqualTo;
-            return o;
+            final var _resultValue = new GetRepositoryCommitsResult();
+            _resultValue.authorName = authorName;
+            _resultValue.commitMessage = commitMessage;
+            _resultValue.excludeRefName = excludeRefName;
+            _resultValue.filePath = filePath;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.refName = refName;
+            _resultValue.repositoryCommitCollections = repositoryCommitCollections;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
+            _resultValue.timestampLessThanOrEqualTo = timestampLessThanOrEqualTo;
+            return _resultValue;
         }
     }
 }

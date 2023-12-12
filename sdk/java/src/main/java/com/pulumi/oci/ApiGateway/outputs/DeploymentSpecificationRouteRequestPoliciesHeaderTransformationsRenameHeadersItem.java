@@ -65,10 +65,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderTransformati
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem();
-            o.from = from;
-            o.to = to;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem();
+            _resultValue.from = from;
+            _resultValue.to = to;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetRecommendationsRecommendationCollectionItemSupportedLevelI
             return this;
         }
         public GetRecommendationsRecommendationCollectionItemSupportedLevelItem build() {
-            final var o = new GetRecommendationsRecommendationCollectionItemSupportedLevelItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetRecommendationsRecommendationCollectionItemSupportedLevelItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

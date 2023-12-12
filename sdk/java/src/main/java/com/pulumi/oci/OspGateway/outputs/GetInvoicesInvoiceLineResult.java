@@ -103,13 +103,13 @@ public final class GetInvoicesInvoiceLineResult {
             return this;
         }
         public GetInvoicesInvoiceLineResult build() {
-            final var o = new GetInvoicesInvoiceLineResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.internalInvoiceId = internalInvoiceId;
-            o.items = items;
-            o.ospHomeRegion = ospHomeRegion;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceLineResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.internalInvoiceId = internalInvoiceId;
+            _resultValue.items = items;
+            _resultValue.ospHomeRegion = ospHomeRegion;
+            return _resultValue;
         }
     }
 }

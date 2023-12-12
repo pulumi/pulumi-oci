@@ -230,19 +230,19 @@ public final class GetBackendsBackendCollectionItem {
             return this;
         }
         public GetBackendsBackendCollectionItem build() {
-            final var o = new GetBackendsBackendCollectionItem();
-            o.backendSetName = backendSetName;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.isBackup = isBackup;
-            o.isDrain = isDrain;
-            o.isOffline = isOffline;
-            o.name = name;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.port = port;
-            o.targetId = targetId;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetBackendsBackendCollectionItem();
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isBackup = isBackup;
+            _resultValue.isDrain = isDrain;
+            _resultValue.isOffline = isOffline;
+            _resultValue.name = name;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.port = port;
+            _resultValue.targetId = targetId;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

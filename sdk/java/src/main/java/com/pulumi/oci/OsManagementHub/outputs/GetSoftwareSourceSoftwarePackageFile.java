@@ -141,14 +141,14 @@ public final class GetSoftwareSourceSoftwarePackageFile {
             return this;
         }
         public GetSoftwareSourceSoftwarePackageFile build() {
-            final var o = new GetSoftwareSourceSoftwarePackageFile();
-            o.checksum = checksum;
-            o.checksumType = checksumType;
-            o.path = path;
-            o.sizeInBytes = sizeInBytes;
-            o.timeModified = timeModified;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetSoftwareSourceSoftwarePackageFile();
+            _resultValue.checksum = checksum;
+            _resultValue.checksumType = checksumType;
+            _resultValue.path = path;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.timeModified = timeModified;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

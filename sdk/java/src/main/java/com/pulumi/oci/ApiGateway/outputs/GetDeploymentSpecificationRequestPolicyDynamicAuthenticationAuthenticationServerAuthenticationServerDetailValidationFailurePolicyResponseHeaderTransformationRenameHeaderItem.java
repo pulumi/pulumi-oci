@@ -65,10 +65,10 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItem build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItem();
-            o.from = from;
-            o.to = to;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationRenameHeaderItem();
+            _resultValue.from = from;
+            _resultValue.to = to;
+            return _resultValue;
         }
     }
 }

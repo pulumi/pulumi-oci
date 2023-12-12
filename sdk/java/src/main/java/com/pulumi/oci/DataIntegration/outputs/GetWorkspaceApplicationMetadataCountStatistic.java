@@ -50,9 +50,9 @@ public final class GetWorkspaceApplicationMetadataCountStatistic {
             return objectTypeCountLists(List.of(objectTypeCountLists));
         }
         public GetWorkspaceApplicationMetadataCountStatistic build() {
-            final var o = new GetWorkspaceApplicationMetadataCountStatistic();
-            o.objectTypeCountLists = objectTypeCountLists;
-            return o;
+            final var _resultValue = new GetWorkspaceApplicationMetadataCountStatistic();
+            _resultValue.objectTypeCountLists = objectTypeCountLists;
+            return _resultValue;
         }
     }
 }

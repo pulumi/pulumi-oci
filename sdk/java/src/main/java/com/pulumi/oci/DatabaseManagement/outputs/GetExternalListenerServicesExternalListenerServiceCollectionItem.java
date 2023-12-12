@@ -84,11 +84,11 @@ public final class GetExternalListenerServicesExternalListenerServiceCollectionI
             return this;
         }
         public GetExternalListenerServicesExternalListenerServiceCollectionItem build() {
-            final var o = new GetExternalListenerServicesExternalListenerServiceCollectionItem();
-            o.listenerId = listenerId;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetExternalListenerServicesExternalListenerServiceCollectionItem();
+            _resultValue.listenerId = listenerId;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

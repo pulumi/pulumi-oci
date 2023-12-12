@@ -412,28 +412,28 @@ public final class GetCertificatesCertificate {
             return this;
         }
         public GetCertificatesCertificate build() {
-            final var o = new GetCertificatesCertificate();
-            o.certificateData = certificateData;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.extensions = extensions;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isTrustVerificationDisabled = isTrustVerificationDisabled;
-            o.issuedBy = issuedBy;
-            o.issuerNames = issuerNames;
-            o.privateKeyData = privateKeyData;
-            o.publicKeyInfos = publicKeyInfos;
-            o.serialNumber = serialNumber;
-            o.signatureAlgorithm = signatureAlgorithm;
-            o.state = state;
-            o.subjectNames = subjectNames;
-            o.timeCreated = timeCreated;
-            o.timeNotValidAfter = timeNotValidAfter;
-            o.timeNotValidBefore = timeNotValidBefore;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetCertificatesCertificate();
+            _resultValue.certificateData = certificateData;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.extensions = extensions;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isTrustVerificationDisabled = isTrustVerificationDisabled;
+            _resultValue.issuedBy = issuedBy;
+            _resultValue.issuerNames = issuerNames;
+            _resultValue.privateKeyData = privateKeyData;
+            _resultValue.publicKeyInfos = publicKeyInfos;
+            _resultValue.serialNumber = serialNumber;
+            _resultValue.signatureAlgorithm = signatureAlgorithm;
+            _resultValue.state = state;
+            _resultValue.subjectNames = subjectNames;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeNotValidAfter = timeNotValidAfter;
+            _resultValue.timeNotValidBefore = timeNotValidBefore;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

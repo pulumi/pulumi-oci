@@ -103,12 +103,12 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail();
-            o.clientId = clientId;
-            o.clientSecretId = clientSecretId;
-            o.clientSecretVersionNumber = clientSecretVersionNumber;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail();
+            _resultValue.clientId = clientId;
+            _resultValue.clientSecretId = clientSecretId;
+            _resultValue.clientSecretVersionNumber = clientSecretVersionNumber;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

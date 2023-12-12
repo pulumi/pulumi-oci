@@ -46,9 +46,9 @@ public final class GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new GetDomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

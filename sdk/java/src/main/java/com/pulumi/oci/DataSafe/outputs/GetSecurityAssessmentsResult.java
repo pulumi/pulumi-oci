@@ -279,24 +279,24 @@ public final class GetSecurityAssessmentsResult {
             return this;
         }
         public GetSecurityAssessmentsResult build() {
-            final var o = new GetSecurityAssessmentsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isBaseline = isBaseline;
-            o.isScheduleAssessment = isScheduleAssessment;
-            o.scheduleAssessmentId = scheduleAssessmentId;
-            o.securityAssessments = securityAssessments;
-            o.state = state;
-            o.targetId = targetId;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            o.triggeredBy = triggeredBy;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isBaseline = isBaseline;
+            _resultValue.isScheduleAssessment = isScheduleAssessment;
+            _resultValue.scheduleAssessmentId = scheduleAssessmentId;
+            _resultValue.securityAssessments = securityAssessments;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            _resultValue.triggeredBy = triggeredBy;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

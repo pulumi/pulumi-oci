@@ -253,20 +253,20 @@ public final class GetCatalogTypesResult {
             return typeCollections(List.of(typeCollections));
         }
         public GetCatalogTypesResult build() {
-            final var o = new GetCatalogTypesResult();
-            o.catalogId = catalogId;
-            o.externalTypeName = externalTypeName;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.isApproved = isApproved;
-            o.isInternal = isInternal;
-            o.isTag = isTag;
-            o.name = name;
-            o.state = state;
-            o.typeCategory = typeCategory;
-            o.typeCollections = typeCollections;
-            return o;
+            final var _resultValue = new GetCatalogTypesResult();
+            _resultValue.catalogId = catalogId;
+            _resultValue.externalTypeName = externalTypeName;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isApproved = isApproved;
+            _resultValue.isInternal = isInternal;
+            _resultValue.isTag = isTag;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.typeCategory = typeCategory;
+            _resultValue.typeCollections = typeCollections;
+            return _resultValue;
         }
     }
 }

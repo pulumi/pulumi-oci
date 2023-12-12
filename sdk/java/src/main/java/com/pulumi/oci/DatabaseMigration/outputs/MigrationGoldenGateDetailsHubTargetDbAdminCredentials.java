@@ -65,10 +65,10 @@ public final class MigrationGoldenGateDetailsHubTargetDbAdminCredentials {
             return this;
         }
         public MigrationGoldenGateDetailsHubTargetDbAdminCredentials build() {
-            final var o = new MigrationGoldenGateDetailsHubTargetDbAdminCredentials();
-            o.password = password;
-            o.username = username;
-            return o;
+            final var _resultValue = new MigrationGoldenGateDetailsHubTargetDbAdminCredentials();
+            _resultValue.password = password;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

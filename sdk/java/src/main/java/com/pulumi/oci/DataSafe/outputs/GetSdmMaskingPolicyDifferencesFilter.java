@@ -67,11 +67,11 @@ public final class GetSdmMaskingPolicyDifferencesFilter {
             return values(List.of(values));
         }
         public GetSdmMaskingPolicyDifferencesFilter build() {
-            final var o = new GetSdmMaskingPolicyDifferencesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSdmMaskingPolicyDifferencesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

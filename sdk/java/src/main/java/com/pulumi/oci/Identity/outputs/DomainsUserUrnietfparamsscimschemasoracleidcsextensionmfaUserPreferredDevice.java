@@ -150,11 +150,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -48,9 +48,9 @@ public final class PluggableDatabasesLocalClonePluggableDatabaseManagementConfig
             return this;
         }
         public PluggableDatabasesLocalClonePluggableDatabaseManagementConfig build() {
-            final var o = new PluggableDatabasesLocalClonePluggableDatabaseManagementConfig();
-            o.managementStatus = managementStatus;
-            return o;
+            final var _resultValue = new PluggableDatabasesLocalClonePluggableDatabaseManagementConfig();
+            _resultValue.managementStatus = managementStatus;
+            return _resultValue;
         }
     }
 }

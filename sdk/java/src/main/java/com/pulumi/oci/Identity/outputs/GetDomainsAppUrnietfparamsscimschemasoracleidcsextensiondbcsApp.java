@@ -70,10 +70,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsA
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp();
-            o.domainApps = domainApps;
-            o.domainName = domainName;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp();
+            _resultValue.domainApps = domainApps;
+            _resultValue.domainName = domainName;
+            return _resultValue;
         }
     }
 }

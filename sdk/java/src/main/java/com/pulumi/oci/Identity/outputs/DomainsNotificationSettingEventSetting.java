@@ -108,10 +108,10 @@ public final class DomainsNotificationSettingEventSetting {
             return this;
         }
         public DomainsNotificationSettingEventSetting build() {
-            final var o = new DomainsNotificationSettingEventSetting();
-            o.enabled = enabled;
-            o.eventId = eventId;
-            return o;
+            final var _resultValue = new DomainsNotificationSettingEventSetting();
+            _resultValue.enabled = enabled;
+            _resultValue.eventId = eventId;
+            return _resultValue;
         }
     }
 }

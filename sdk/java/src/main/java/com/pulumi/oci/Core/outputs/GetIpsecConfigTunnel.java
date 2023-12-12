@@ -84,11 +84,11 @@ public final class GetIpsecConfigTunnel {
             return this;
         }
         public GetIpsecConfigTunnel build() {
-            final var o = new GetIpsecConfigTunnel();
-            o.ipAddress = ipAddress;
-            o.sharedSecret = sharedSecret;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetIpsecConfigTunnel();
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.sharedSecret = sharedSecret;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

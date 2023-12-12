@@ -66,10 +66,10 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
             return this;
         }
         public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost build() {
-            final var o = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost();
-            o.name = name;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHost();
+            _resultValue.name = name;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

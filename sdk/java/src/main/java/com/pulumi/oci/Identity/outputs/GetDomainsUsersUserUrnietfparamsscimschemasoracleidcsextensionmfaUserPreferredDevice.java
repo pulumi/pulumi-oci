@@ -84,11 +84,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

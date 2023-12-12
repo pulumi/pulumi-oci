@@ -105,12 +105,12 @@ public final class ConfigInUseBy {
             return this;
         }
         public ConfigInUseBy build() {
-            final var o = new ConfigInUseBy();
-            o.configType = configType;
-            o.displayName = displayName;
-            o.id = id;
-            o.optionsGroup = optionsGroup;
-            return o;
+            final var _resultValue = new ConfigInUseBy();
+            _resultValue.configType = configType;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.optionsGroup = optionsGroup;
+            return _resultValue;
         }
     }
 }

@@ -165,15 +165,15 @@ public final class GetDomainsSettingTenantCustomClaim {
             return this;
         }
         public GetDomainsSettingTenantCustomClaim build() {
-            final var o = new GetDomainsSettingTenantCustomClaim();
-            o.allScopes = allScopes;
-            o.expression = expression;
-            o.mode = mode;
-            o.name = name;
-            o.scopes = scopes;
-            o.tokenType = tokenType;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSettingTenantCustomClaim();
+            _resultValue.allScopes = allScopes;
+            _resultValue.expression = expression;
+            _resultValue.mode = mode;
+            _resultValue.name = name;
+            _resultValue.scopes = scopes;
+            _resultValue.tokenType = tokenType;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

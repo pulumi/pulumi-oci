@@ -84,11 +84,11 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSe
             return this;
         }
         public GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat build() {
-            final var o = new GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat();
-            o.mapParallelism = mapParallelism;
-            o.maxApplyParallelism = maxApplyParallelism;
-            o.minApplyParallelism = minApplyParallelism;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat();
+            _resultValue.mapParallelism = mapParallelism;
+            _resultValue.maxApplyParallelism = maxApplyParallelism;
+            _resultValue.minApplyParallelism = minApplyParallelism;
+            return _resultValue;
         }
     }
 }

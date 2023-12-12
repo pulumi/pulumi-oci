@@ -103,12 +103,12 @@ public final class GetDomainsMyDevicesMyDeviceThirdPartyFactor {
             return this;
         }
         public GetDomainsMyDevicesMyDeviceThirdPartyFactor build() {
-            final var o = new GetDomainsMyDevicesMyDeviceThirdPartyFactor();
-            o.ref = ref;
-            o.thirdPartyFactorType = thirdPartyFactorType;
-            o.thirdPartyVendorName = thirdPartyVendorName;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyDevicesMyDeviceThirdPartyFactor();
+            _resultValue.ref = ref;
+            _resultValue.thirdPartyFactorType = thirdPartyFactorType;
+            _resultValue.thirdPartyVendorName = thirdPartyVendorName;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

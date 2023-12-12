@@ -109,10 +109,10 @@ public final class DomainsAppIdpPolicy {
             return this;
         }
         public DomainsAppIdpPolicy build() {
-            final var o = new DomainsAppIdpPolicy();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppIdpPolicy();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

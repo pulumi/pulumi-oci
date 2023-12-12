@@ -141,15 +141,15 @@ public final class GetTrailSequenceResult {
             return this;
         }
         public GetTrailSequenceResult build() {
-            final var o = new GetTrailSequenceResult();
-            o.deploymentId = deploymentId;
-            o.displayName = displayName;
-            o.id = id;
-            o.items = items;
-            o.timeLastFetched = timeLastFetched;
-            o.trailFileId = trailFileId;
-            o.trailSequenceId = trailSequenceId;
-            return o;
+            final var _resultValue = new GetTrailSequenceResult();
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.timeLastFetched = timeLastFetched;
+            _resultValue.trailFileId = trailFileId;
+            _resultValue.trailSequenceId = trailSequenceId;
+            return _resultValue;
         }
     }
 }

@@ -25,8 +25,8 @@ public final class GetUserAssessmentUserAnalyticsUserAggregationItem {
         }
 
         public GetUserAssessmentUserAnalyticsUserAggregationItem build() {
-            final var o = new GetUserAssessmentUserAnalyticsUserAggregationItem();
-            return o;
+            final var _resultValue = new GetUserAssessmentUserAnalyticsUserAggregationItem();
+            return _resultValue;
         }
     }
 }

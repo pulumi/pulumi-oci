@@ -95,12 +95,12 @@ public final class GetConnectionSshDetail {
             return this;
         }
         public GetConnectionSshDetail build() {
-            final var o = new GetConnectionSshDetail();
-            o.host = host;
-            o.sshkey = sshkey;
-            o.sudoLocation = sudoLocation;
-            o.user = user;
-            return o;
+            final var _resultValue = new GetConnectionSshDetail();
+            _resultValue.host = host;
+            _resultValue.sshkey = sshkey;
+            _resultValue.sudoLocation = sudoLocation;
+            _resultValue.user = user;
+            return _resultValue;
         }
     }
 }

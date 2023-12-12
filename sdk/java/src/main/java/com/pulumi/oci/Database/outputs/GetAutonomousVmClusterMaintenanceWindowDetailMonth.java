@@ -46,9 +46,9 @@ public final class GetAutonomousVmClusterMaintenanceWindowDetailMonth {
             return this;
         }
         public GetAutonomousVmClusterMaintenanceWindowDetailMonth build() {
-            final var o = new GetAutonomousVmClusterMaintenanceWindowDetailMonth();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousVmClusterMaintenanceWindowDetailMonth();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

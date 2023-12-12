@@ -50,9 +50,9 @@ public final class GetRepositoryPathsRepositoryPathCollection {
             return items(List.of(items));
         }
         public GetRepositoryPathsRepositoryPathCollection build() {
-            final var o = new GetRepositoryPathsRepositoryPathCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRepositoryPathsRepositoryPathCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

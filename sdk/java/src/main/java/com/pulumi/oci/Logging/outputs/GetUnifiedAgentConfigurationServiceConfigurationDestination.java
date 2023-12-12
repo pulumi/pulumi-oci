@@ -70,10 +70,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestination {
             return operationalMetricsConfigurations(List.of(operationalMetricsConfigurations));
         }
         public GetUnifiedAgentConfigurationServiceConfigurationDestination build() {
-            final var o = new GetUnifiedAgentConfigurationServiceConfigurationDestination();
-            o.logObjectId = logObjectId;
-            o.operationalMetricsConfigurations = operationalMetricsConfigurations;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationServiceConfigurationDestination();
+            _resultValue.logObjectId = logObjectId;
+            _resultValue.operationalMetricsConfigurations = operationalMetricsConfigurations;
+            return _resultValue;
         }
     }
 }

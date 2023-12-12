@@ -106,12 +106,12 @@ public final class ModelEvaluationResultEntityMetric {
             return this;
         }
         public ModelEvaluationResultEntityMetric build() {
-            final var o = new ModelEvaluationResultEntityMetric();
-            o.f1 = f1;
-            o.label = label;
-            o.precision = precision;
-            o.recall = recall;
-            return o;
+            final var _resultValue = new ModelEvaluationResultEntityMetric();
+            _resultValue.f1 = f1;
+            _resultValue.label = label;
+            _resultValue.precision = precision;
+            _resultValue.recall = recall;
+            return _resultValue;
         }
     }
 }

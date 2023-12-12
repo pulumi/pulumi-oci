@@ -113,12 +113,12 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
             return scalingPolicies(List.of(scalingPolicies));
         }
         public GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail build() {
-            final var o = new GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail();
-            o.bandwidthMbps = bandwidthMbps;
-            o.instanceConfigurations = instanceConfigurations;
-            o.modelId = modelId;
-            o.scalingPolicies = scalingPolicies;
-            return o;
+            final var _resultValue = new GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail();
+            _resultValue.bandwidthMbps = bandwidthMbps;
+            _resultValue.instanceConfigurations = instanceConfigurations;
+            _resultValue.modelId = modelId;
+            _resultValue.scalingPolicies = scalingPolicies;
+            return _resultValue;
         }
     }
 }

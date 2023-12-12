@@ -90,11 +90,11 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
             return peerInformations(List.of(peerInformations));
         }
         public GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic build() {
-            final var o = new GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic();
-            o.bgpTopology = bgpTopology;
-            o.oracleAsn = oracleAsn;
-            o.peerInformations = peerInformations;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic();
+            _resultValue.bgpTopology = bgpTopology;
+            _resultValue.oracleAsn = oracleAsn;
+            _resultValue.peerInformations = peerInformations;
+            return _resultValue;
         }
     }
 }

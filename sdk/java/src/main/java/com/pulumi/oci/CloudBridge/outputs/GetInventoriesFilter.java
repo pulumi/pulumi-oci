@@ -67,11 +67,11 @@ public final class GetInventoriesFilter {
             return values(List.of(values));
         }
         public GetInventoriesFilter build() {
-            final var o = new GetInventoriesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetInventoriesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

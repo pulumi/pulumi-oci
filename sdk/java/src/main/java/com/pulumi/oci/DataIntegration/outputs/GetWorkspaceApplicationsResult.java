@@ -172,16 +172,16 @@ public final class GetWorkspaceApplicationsResult {
             return this;
         }
         public GetWorkspaceApplicationsResult build() {
-            final var o = new GetWorkspaceApplicationsResult();
-            o.applicationSummaryCollections = applicationSummaryCollections;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.identifiers = identifiers;
-            o.name = name;
-            o.nameContains = nameContains;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceApplicationsResult();
+            _resultValue.applicationSummaryCollections = applicationSummaryCollections;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.identifiers = identifiers;
+            _resultValue.name = name;
+            _resultValue.nameContains = nameContains;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

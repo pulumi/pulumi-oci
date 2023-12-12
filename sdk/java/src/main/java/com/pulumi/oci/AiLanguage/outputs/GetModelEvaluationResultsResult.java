@@ -97,12 +97,12 @@ public final class GetModelEvaluationResultsResult {
             return this;
         }
         public GetModelEvaluationResultsResult build() {
-            final var o = new GetModelEvaluationResultsResult();
-            o.evaluationResultCollections = evaluationResultCollections;
-            o.filters = filters;
-            o.id = id;
-            o.modelId = modelId;
-            return o;
+            final var _resultValue = new GetModelEvaluationResultsResult();
+            _resultValue.evaluationResultCollections = evaluationResultCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.modelId = modelId;
+            return _resultValue;
         }
     }
 }

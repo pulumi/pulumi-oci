@@ -84,11 +84,11 @@ public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
             return this;
         }
         public GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic build() {
-            final var o = new GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic();
-            o.resourceId = resourceId;
-            o.timeAssociated = timeAssociated;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic();
+            _resultValue.resourceId = resourceId;
+            _resultValue.timeAssociated = timeAssociated;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDomainsAppsAppTermsOfUse {
             return this;
         }
         public GetDomainsAppsAppTermsOfUse build() {
-            final var o = new GetDomainsAppsAppTermsOfUse();
-            o.name = name;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppTermsOfUse();
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

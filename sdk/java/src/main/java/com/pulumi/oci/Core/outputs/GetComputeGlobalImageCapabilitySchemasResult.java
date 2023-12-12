@@ -125,13 +125,13 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
             return this;
         }
         public GetComputeGlobalImageCapabilitySchemasResult build() {
-            final var o = new GetComputeGlobalImageCapabilitySchemasResult();
-            o.compartmentId = compartmentId;
-            o.computeGlobalImageCapabilitySchemas = computeGlobalImageCapabilitySchemas;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetComputeGlobalImageCapabilitySchemasResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeGlobalImageCapabilitySchemas = computeGlobalImageCapabilitySchemas;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -88,11 +88,11 @@ public final class PluggableDatabasesRemoteCloneConnectionString {
             return this;
         }
         public PluggableDatabasesRemoteCloneConnectionString build() {
-            final var o = new PluggableDatabasesRemoteCloneConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.pdbDefault = pdbDefault;
-            o.pdbIpDefault = pdbIpDefault;
-            return o;
+            final var _resultValue = new PluggableDatabasesRemoteCloneConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.pdbDefault = pdbDefault;
+            _resultValue.pdbIpDefault = pdbIpDefault;
+            return _resultValue;
         }
     }
 }

@@ -161,16 +161,16 @@ public final class GetWorkRequestsResult {
             return workRequests(List.of(workRequests));
         }
         public GetWorkRequestsResult build() {
-            final var o = new GetWorkRequestsResult();
-            o.clusterId = clusterId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.resourceId = resourceId;
-            o.resourceType = resourceType;
-            o.statuses = statuses;
-            o.workRequests = workRequests;
-            return o;
+            final var _resultValue = new GetWorkRequestsResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceType = resourceType;
+            _resultValue.statuses = statuses;
+            _resultValue.workRequests = workRequests;
+            return _resultValue;
         }
     }
 }

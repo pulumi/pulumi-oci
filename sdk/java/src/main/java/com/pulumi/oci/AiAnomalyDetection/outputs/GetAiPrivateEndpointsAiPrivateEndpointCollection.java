@@ -42,9 +42,9 @@ public final class GetAiPrivateEndpointsAiPrivateEndpointCollection {
             return items(List.of(items));
         }
         public GetAiPrivateEndpointsAiPrivateEndpointCollection build() {
-            final var o = new GetAiPrivateEndpointsAiPrivateEndpointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAiPrivateEndpointsAiPrivateEndpointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

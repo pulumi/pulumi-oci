@@ -67,11 +67,11 @@ public final class GetLogsFilter {
             return values(List.of(values));
         }
         public GetLogsFilter build() {
-            final var o = new GetLogsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetLogsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -118,13 +118,13 @@ public final class BdsInstanceKafkaBrokerNode {
             return this;
         }
         public BdsInstanceKafkaBrokerNode build() {
-            final var o = new BdsInstanceKafkaBrokerNode();
-            o.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
-            o.numberOfKafkaNodes = numberOfKafkaNodes;
-            o.shape = shape;
-            o.shapeConfig = shapeConfig;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new BdsInstanceKafkaBrokerNode();
+            _resultValue.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
+            _resultValue.numberOfKafkaNodes = numberOfKafkaNodes;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfig = shapeConfig;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

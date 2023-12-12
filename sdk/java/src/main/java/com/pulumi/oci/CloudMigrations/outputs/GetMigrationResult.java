@@ -269,21 +269,21 @@ public final class GetMigrationResult {
             return this;
         }
         public GetMigrationResult build() {
-            final var o = new GetMigrationResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isCompleted = isCompleted;
-            o.lifecycleDetails = lifecycleDetails;
-            o.migrationId = migrationId;
-            o.replicationScheduleId = replicationScheduleId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMigrationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isCompleted = isCompleted;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.migrationId = migrationId;
+            _resultValue.replicationScheduleId = replicationScheduleId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

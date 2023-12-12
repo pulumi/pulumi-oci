@@ -97,12 +97,12 @@ public final class GetNotebookSessionShapesResult {
             return notebookSessionShapes(List.of(notebookSessionShapes));
         }
         public GetNotebookSessionShapesResult build() {
-            final var o = new GetNotebookSessionShapesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.notebookSessionShapes = notebookSessionShapes;
-            return o;
+            final var _resultValue = new GetNotebookSessionShapesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.notebookSessionShapes = notebookSessionShapes;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetTableSchemaIdentity {
             return this;
         }
         public GetTableSchemaIdentity build() {
-            final var o = new GetTableSchemaIdentity();
-            o.columnName = columnName;
-            o.isAlways = isAlways;
-            o.isNull = isNull;
-            return o;
+            final var _resultValue = new GetTableSchemaIdentity();
+            _resultValue.columnName = columnName;
+            _resultValue.isAlways = isAlways;
+            _resultValue.isNull = isNull;
+            return _resultValue;
         }
     }
 }

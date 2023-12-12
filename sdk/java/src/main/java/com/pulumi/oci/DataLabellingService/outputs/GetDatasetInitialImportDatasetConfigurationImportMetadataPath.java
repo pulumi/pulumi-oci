@@ -103,12 +103,12 @@ public final class GetDatasetInitialImportDatasetConfigurationImportMetadataPath
             return this;
         }
         public GetDatasetInitialImportDatasetConfigurationImportMetadataPath build() {
-            final var o = new GetDatasetInitialImportDatasetConfigurationImportMetadataPath();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.path = path;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new GetDatasetInitialImportDatasetConfigurationImportMetadataPath();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.path = path;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

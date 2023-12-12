@@ -105,10 +105,10 @@ public final class DomainsConditionTag {
             return this;
         }
         public DomainsConditionTag build() {
-            final var o = new DomainsConditionTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsConditionTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

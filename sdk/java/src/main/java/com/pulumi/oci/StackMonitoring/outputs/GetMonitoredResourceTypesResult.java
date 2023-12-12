@@ -195,18 +195,18 @@ public final class GetMonitoredResourceTypesResult {
             return this;
         }
         public GetMonitoredResourceTypesResult build() {
-            final var o = new GetMonitoredResourceTypesResult();
-            o.compartmentId = compartmentId;
-            o.excludeFields = excludeFields;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.isExcludeSystemTypes = isExcludeSystemTypes;
-            o.metricNamespace = metricNamespace;
-            o.monitoredResourceTypesCollections = monitoredResourceTypesCollections;
-            o.name = name;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTypesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.excludeFields = excludeFields;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isExcludeSystemTypes = isExcludeSystemTypes;
+            _resultValue.metricNamespace = metricNamespace;
+            _resultValue.monitoredResourceTypesCollections = monitoredResourceTypesCollections;
+            _resultValue.name = name;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

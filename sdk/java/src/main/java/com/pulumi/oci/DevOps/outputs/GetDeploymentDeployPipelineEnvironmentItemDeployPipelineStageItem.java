@@ -65,10 +65,10 @@ public final class GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStage
             return this;
         }
         public GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem build() {
-            final var o = new GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem();
-            o.deployStageId = deployStageId;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem();
+            _resultValue.deployStageId = deployStageId;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

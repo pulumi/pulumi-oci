@@ -103,12 +103,12 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensions
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute();
-            o.condition = condition;
-            o.format = format;
-            o.groupName = groupName;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute();
+            _resultValue.condition = condition;
+            _resultValue.format = format;
+            _resultValue.groupName = groupName;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

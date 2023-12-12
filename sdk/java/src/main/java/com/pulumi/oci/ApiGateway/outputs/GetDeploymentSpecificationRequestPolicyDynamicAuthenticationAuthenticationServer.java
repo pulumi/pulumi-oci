@@ -73,10 +73,10 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
             return keys(List.of(keys));
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer();
-            o.authenticationServerDetails = authenticationServerDetails;
-            o.keys = keys;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer();
+            _resultValue.authenticationServerDetails = authenticationServerDetails;
+            _resultValue.keys = keys;
+            return _resultValue;
         }
     }
 }

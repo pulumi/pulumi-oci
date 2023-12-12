@@ -259,20 +259,20 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
             return this;
         }
         public GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig build() {
-            final var o = new GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig();
-            o.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
-            o.configMap = configMap;
-            o.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
-            o.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
-            o.isMeasuredBootEnabled = isMeasuredBootEnabled;
-            o.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
-            o.isSecureBootEnabled = isSecureBootEnabled;
-            o.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
-            o.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
-            o.numaNodesPerSocket = numaNodesPerSocket;
-            o.percentageOfCoresEnabled = percentageOfCoresEnabled;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig();
+            _resultValue.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+            _resultValue.configMap = configMap;
+            _resultValue.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
+            _resultValue.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
+            _resultValue.isMeasuredBootEnabled = isMeasuredBootEnabled;
+            _resultValue.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            _resultValue.isSecureBootEnabled = isSecureBootEnabled;
+            _resultValue.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
+            _resultValue.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
+            _resultValue.numaNodesPerSocket = numaNodesPerSocket;
+            _resultValue.percentageOfCoresEnabled = percentageOfCoresEnabled;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

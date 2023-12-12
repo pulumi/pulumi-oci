@@ -50,9 +50,9 @@ public final class GetResourcesResourcesCollection {
             return items(List.of(items));
         }
         public GetResourcesResourcesCollection build() {
-            final var o = new GetResourcesResourcesCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetResourcesResourcesCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

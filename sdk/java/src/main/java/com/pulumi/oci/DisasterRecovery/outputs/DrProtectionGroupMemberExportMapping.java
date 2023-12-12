@@ -67,10 +67,10 @@ public final class DrProtectionGroupMemberExportMapping {
             return this;
         }
         public DrProtectionGroupMemberExportMapping build() {
-            final var o = new DrProtectionGroupMemberExportMapping();
-            o.destinationMountTargetId = destinationMountTargetId;
-            o.exportId = exportId;
-            return o;
+            final var _resultValue = new DrProtectionGroupMemberExportMapping();
+            _resultValue.destinationMountTargetId = destinationMountTargetId;
+            _resultValue.exportId = exportId;
+            return _resultValue;
         }
     }
 }

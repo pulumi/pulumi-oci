@@ -72,10 +72,10 @@ public final class GetDiscoveryJobsResultModifiedAttribute {
             return dbDefinedChildColumnKeys(List.of(dbDefinedChildColumnKeys));
         }
         public GetDiscoveryJobsResultModifiedAttribute build() {
-            final var o = new GetDiscoveryJobsResultModifiedAttribute();
-            o.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
-            o.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
-            return o;
+            final var _resultValue = new GetDiscoveryJobsResultModifiedAttribute();
+            _resultValue.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
+            _resultValue.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
+            return _resultValue;
         }
     }
 }

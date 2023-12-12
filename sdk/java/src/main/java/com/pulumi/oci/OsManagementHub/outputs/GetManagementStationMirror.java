@@ -103,12 +103,12 @@ public final class GetManagementStationMirror {
             return this;
         }
         public GetManagementStationMirror build() {
-            final var o = new GetManagementStationMirror();
-            o.directory = directory;
-            o.port = port;
-            o.sslcert = sslcert;
-            o.sslport = sslport;
-            return o;
+            final var _resultValue = new GetManagementStationMirror();
+            _resultValue.directory = directory;
+            _resultValue.port = port;
+            _resultValue.sslcert = sslcert;
+            _resultValue.sslport = sslport;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetModelEvaluationResultsEvaluationResultCollection {
             return items(List.of(items));
         }
         public GetModelEvaluationResultsEvaluationResultCollection build() {
-            final var o = new GetModelEvaluationResultsEvaluationResultCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetModelEvaluationResultsEvaluationResultCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

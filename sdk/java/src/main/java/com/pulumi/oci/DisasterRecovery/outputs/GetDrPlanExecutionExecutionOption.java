@@ -85,11 +85,11 @@ public final class GetDrPlanExecutionExecutionOption {
             return this;
         }
         public GetDrPlanExecutionExecutionOption build() {
-            final var o = new GetDrPlanExecutionExecutionOption();
-            o.arePrechecksEnabled = arePrechecksEnabled;
-            o.areWarningsIgnored = areWarningsIgnored;
-            o.planExecutionType = planExecutionType;
-            return o;
+            final var _resultValue = new GetDrPlanExecutionExecutionOption();
+            _resultValue.arePrechecksEnabled = arePrechecksEnabled;
+            _resultValue.areWarningsIgnored = areWarningsIgnored;
+            _resultValue.planExecutionType = planExecutionType;
+            return _resultValue;
         }
     }
 }

@@ -103,13 +103,13 @@ public final class GetObjectLifecyclePolicyResult {
             return this;
         }
         public GetObjectLifecyclePolicyResult build() {
-            final var o = new GetObjectLifecyclePolicyResult();
-            o.bucket = bucket;
-            o.id = id;
-            o.namespace = namespace;
-            o.rules = rules;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetObjectLifecyclePolicyResult();
+            _resultValue.bucket = bucket;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.rules = rules;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

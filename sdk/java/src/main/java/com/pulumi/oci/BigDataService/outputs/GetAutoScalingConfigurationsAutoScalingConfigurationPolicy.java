@@ -54,10 +54,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicy {
             return rules(List.of(rules));
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicy build() {
-            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicy();
-            o.policyType = policyType;
-            o.rules = rules;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicy();
+            _resultValue.policyType = policyType;
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

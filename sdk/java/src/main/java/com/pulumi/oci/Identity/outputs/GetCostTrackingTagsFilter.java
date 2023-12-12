@@ -83,11 +83,11 @@ public final class GetCostTrackingTagsFilter {
             return values(List.of(values));
         }
         public GetCostTrackingTagsFilter build() {
-            final var o = new GetCostTrackingTagsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCostTrackingTagsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

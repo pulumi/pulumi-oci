@@ -217,18 +217,18 @@ public final class GetPathAnalyzerTestSourceEndpoint {
             return this;
         }
         public GetPathAnalyzerTestSourceEndpoint build() {
-            final var o = new GetPathAnalyzerTestSourceEndpoint();
-            o.address = address;
-            o.instanceId = instanceId;
-            o.listenerId = listenerId;
-            o.loadBalancerId = loadBalancerId;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.type = type;
-            o.vlanId = vlanId;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetPathAnalyzerTestSourceEndpoint();
+            _resultValue.address = address;
+            _resultValue.instanceId = instanceId;
+            _resultValue.listenerId = listenerId;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.type = type;
+            _resultValue.vlanId = vlanId;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

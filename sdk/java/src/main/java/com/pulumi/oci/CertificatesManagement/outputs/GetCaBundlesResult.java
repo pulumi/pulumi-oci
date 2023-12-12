@@ -155,15 +155,15 @@ public final class GetCaBundlesResult {
             return this;
         }
         public GetCaBundlesResult build() {
-            final var o = new GetCaBundlesResult();
-            o.caBundleCollections = caBundleCollections;
-            o.caBundleId = caBundleId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCaBundlesResult();
+            _resultValue.caBundleCollections = caBundleCollections;
+            _resultValue.caBundleId = caBundleId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader();
-            o.items = items;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeader();
+            _resultValue.items = items;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

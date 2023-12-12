@@ -74,10 +74,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
             return rules(List.of(rules));
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl();
-            o.defaultActionName = defaultActionName;
-            o.rules = rules;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl();
+            _resultValue.defaultActionName = defaultActionName;
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

@@ -116,14 +116,14 @@ public final class GetSubscriptionRedemptionResult {
             return this;
         }
         public GetSubscriptionRedemptionResult build() {
-            final var o = new GetSubscriptionRedemptionResult();
-            o.id = id;
-            o.items = items;
-            o.subscriptionId = subscriptionId;
-            o.tenancyId = tenancyId;
-            o.timeRedeemedGreaterThanOrEqualTo = timeRedeemedGreaterThanOrEqualTo;
-            o.timeRedeemedLessThan = timeRedeemedLessThan;
-            return o;
+            final var _resultValue = new GetSubscriptionRedemptionResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.timeRedeemedGreaterThanOrEqualTo = timeRedeemedGreaterThanOrEqualTo;
+            _resultValue.timeRedeemedLessThan = timeRedeemedLessThan;
+            return _resultValue;
         }
     }
 }

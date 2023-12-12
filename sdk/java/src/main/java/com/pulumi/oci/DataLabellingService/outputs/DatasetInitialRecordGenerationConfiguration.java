@@ -25,8 +25,8 @@ public final class DatasetInitialRecordGenerationConfiguration {
         }
 
         public DatasetInitialRecordGenerationConfiguration build() {
-            final var o = new DatasetInitialRecordGenerationConfiguration();
-            return o;
+            final var _resultValue = new DatasetInitialRecordGenerationConfiguration();
+            return _resultValue;
         }
     }
 }

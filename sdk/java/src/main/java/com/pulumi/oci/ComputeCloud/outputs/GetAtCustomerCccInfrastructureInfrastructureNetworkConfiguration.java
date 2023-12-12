@@ -332,23 +332,23 @@ public final class GetAtCustomerCccInfrastructureInfrastructureNetworkConfigurat
             return this;
         }
         public GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration build() {
-            final var o = new GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration();
-            o.dnsIps = dnsIps;
-            o.infrastructureRoutingDynamics = infrastructureRoutingDynamics;
-            o.infrastructureRoutingStatics = infrastructureRoutingStatics;
-            o.managementNodes = managementNodes;
-            o.mgmtVipHostname = mgmtVipHostname;
-            o.mgmtVipIp = mgmtVipIp;
-            o.spineIps = spineIps;
-            o.spineVip = spineVip;
-            o.uplinkDomain = uplinkDomain;
-            o.uplinkGatewayIp = uplinkGatewayIp;
-            o.uplinkNetmask = uplinkNetmask;
-            o.uplinkPortCount = uplinkPortCount;
-            o.uplinkPortForwardErrorCorrection = uplinkPortForwardErrorCorrection;
-            o.uplinkPortSpeedInGbps = uplinkPortSpeedInGbps;
-            o.uplinkVlanMtu = uplinkVlanMtu;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructureInfrastructureNetworkConfiguration();
+            _resultValue.dnsIps = dnsIps;
+            _resultValue.infrastructureRoutingDynamics = infrastructureRoutingDynamics;
+            _resultValue.infrastructureRoutingStatics = infrastructureRoutingStatics;
+            _resultValue.managementNodes = managementNodes;
+            _resultValue.mgmtVipHostname = mgmtVipHostname;
+            _resultValue.mgmtVipIp = mgmtVipIp;
+            _resultValue.spineIps = spineIps;
+            _resultValue.spineVip = spineVip;
+            _resultValue.uplinkDomain = uplinkDomain;
+            _resultValue.uplinkGatewayIp = uplinkGatewayIp;
+            _resultValue.uplinkNetmask = uplinkNetmask;
+            _resultValue.uplinkPortCount = uplinkPortCount;
+            _resultValue.uplinkPortForwardErrorCorrection = uplinkPortForwardErrorCorrection;
+            _resultValue.uplinkPortSpeedInGbps = uplinkPortSpeedInGbps;
+            _resultValue.uplinkVlanMtu = uplinkVlanMtu;
+            return _resultValue;
         }
     }
 }

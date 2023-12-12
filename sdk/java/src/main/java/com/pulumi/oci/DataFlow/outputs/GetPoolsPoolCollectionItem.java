@@ -347,24 +347,24 @@ public final class GetPoolsPoolCollectionItem {
             return this;
         }
         public GetPoolsPoolCollectionItem build() {
-            final var o = new GetPoolsPoolCollectionItem();
-            o.compartmentId = compartmentId;
-            o.configurations = configurations;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.idleTimeoutInMinutes = idleTimeoutInMinutes;
-            o.lifecycleDetails = lifecycleDetails;
-            o.ownerPrincipalId = ownerPrincipalId;
-            o.ownerUserName = ownerUserName;
-            o.poolMetrics = poolMetrics;
-            o.schedules = schedules;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetPoolsPoolCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurations = configurations;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.idleTimeoutInMinutes = idleTimeoutInMinutes;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.ownerPrincipalId = ownerPrincipalId;
+            _resultValue.ownerUserName = ownerUserName;
+            _resultValue.poolMetrics = poolMetrics;
+            _resultValue.schedules = schedules;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -199,17 +199,17 @@ public final class GetLimitDefinitionsLimitDefinition {
             return this;
         }
         public GetLimitDefinitionsLimitDefinition build() {
-            final var o = new GetLimitDefinitionsLimitDefinition();
-            o.areQuotasSupported = areQuotasSupported;
-            o.description = description;
-            o.isDeprecated = isDeprecated;
-            o.isDynamic = isDynamic;
-            o.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
-            o.isResourceAvailabilitySupported = isResourceAvailabilitySupported;
-            o.name = name;
-            o.scopeType = scopeType;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new GetLimitDefinitionsLimitDefinition();
+            _resultValue.areQuotasSupported = areQuotasSupported;
+            _resultValue.description = description;
+            _resultValue.isDeprecated = isDeprecated;
+            _resultValue.isDynamic = isDynamic;
+            _resultValue.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
+            _resultValue.isResourceAvailabilitySupported = isResourceAvailabilitySupported;
+            _resultValue.name = name;
+            _resultValue.scopeType = scopeType;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

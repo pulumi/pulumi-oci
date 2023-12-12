@@ -93,11 +93,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConne
             return connectionStrings(List.of(connectionStrings));
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo build() {
-            final var o = new GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo();
-            o.componentType = componentType;
-            o.connectionCredentials = connectionCredentials;
-            o.connectionStrings = connectionStrings;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo();
+            _resultValue.componentType = componentType;
+            _resultValue.connectionCredentials = connectionCredentials;
+            _resultValue.connectionStrings = connectionStrings;
+            return _resultValue;
         }
     }
 }

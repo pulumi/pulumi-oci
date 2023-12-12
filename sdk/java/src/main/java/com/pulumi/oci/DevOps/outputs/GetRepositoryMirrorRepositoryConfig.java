@@ -89,11 +89,11 @@ public final class GetRepositoryMirrorRepositoryConfig {
             return triggerSchedules(List.of(triggerSchedules));
         }
         public GetRepositoryMirrorRepositoryConfig build() {
-            final var o = new GetRepositoryMirrorRepositoryConfig();
-            o.connectorId = connectorId;
-            o.repositoryUrl = repositoryUrl;
-            o.triggerSchedules = triggerSchedules;
-            return o;
+            final var _resultValue = new GetRepositoryMirrorRepositoryConfig();
+            _resultValue.connectorId = connectorId;
+            _resultValue.repositoryUrl = repositoryUrl;
+            _resultValue.triggerSchedules = triggerSchedules;
+            return _resultValue;
         }
     }
 }

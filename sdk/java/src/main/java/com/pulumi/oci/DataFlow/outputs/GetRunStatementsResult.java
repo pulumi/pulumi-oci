@@ -125,13 +125,13 @@ public final class GetRunStatementsResult {
             return statementCollections(List.of(statementCollections));
         }
         public GetRunStatementsResult build() {
-            final var o = new GetRunStatementsResult();
-            o.filters = filters;
-            o.id = id;
-            o.runId = runId;
-            o.state = state;
-            o.statementCollections = statementCollections;
-            return o;
+            final var _resultValue = new GetRunStatementsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.runId = runId;
+            _resultValue.state = state;
+            _resultValue.statementCollections = statementCollections;
+            return _resultValue;
         }
     }
 }

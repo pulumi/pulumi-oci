@@ -75,11 +75,11 @@ public final class GetProfilesFilter {
             return values(List.of(values));
         }
         public GetProfilesFilter build() {
-            final var o = new GetProfilesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetProfilesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

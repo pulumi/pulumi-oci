@@ -67,11 +67,11 @@ public final class GetDbNodeConsoleConnectionsFilter {
             return values(List.of(values));
         }
         public GetDbNodeConsoleConnectionsFilter build() {
-            final var o = new GetDbNodeConsoleConnectionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDbNodeConsoleConnectionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

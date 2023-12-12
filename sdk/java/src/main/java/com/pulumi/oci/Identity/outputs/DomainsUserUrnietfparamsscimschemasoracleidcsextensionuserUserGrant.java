@@ -240,13 +240,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant();
-            o.appId = appId;
-            o.grantMechanism = grantMechanism;
-            o.grantorId = grantorId;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant();
+            _resultValue.appId = appId;
+            _resultValue.grantMechanism = grantMechanism;
+            _resultValue.grantorId = grantorId;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

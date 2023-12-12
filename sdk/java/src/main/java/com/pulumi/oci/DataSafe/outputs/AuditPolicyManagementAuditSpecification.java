@@ -243,19 +243,19 @@ public final class AuditPolicyManagementAuditSpecification {
             return this;
         }
         public AuditPolicyManagementAuditSpecification build() {
-            final var o = new AuditPolicyManagementAuditSpecification();
-            o.auditPolicyCategory = auditPolicyCategory;
-            o.auditPolicyName = auditPolicyName;
-            o.databasePolicyNames = databasePolicyNames;
-            o.enableStatus = enableStatus;
-            o.enabledEntities = enabledEntities;
-            o.isCreated = isCreated;
-            o.isEnabledForAllUsers = isEnabledForAllUsers;
-            o.isSeededInDataSafe = isSeededInDataSafe;
-            o.isSeededInTarget = isSeededInTarget;
-            o.isViewOnly = isViewOnly;
-            o.partiallyEnabledMsg = partiallyEnabledMsg;
-            return o;
+            final var _resultValue = new AuditPolicyManagementAuditSpecification();
+            _resultValue.auditPolicyCategory = auditPolicyCategory;
+            _resultValue.auditPolicyName = auditPolicyName;
+            _resultValue.databasePolicyNames = databasePolicyNames;
+            _resultValue.enableStatus = enableStatus;
+            _resultValue.enabledEntities = enabledEntities;
+            _resultValue.isCreated = isCreated;
+            _resultValue.isEnabledForAllUsers = isEnabledForAllUsers;
+            _resultValue.isSeededInDataSafe = isSeededInDataSafe;
+            _resultValue.isSeededInTarget = isSeededInTarget;
+            _resultValue.isViewOnly = isViewOnly;
+            _resultValue.partiallyEnabledMsg = partiallyEnabledMsg;
+            return _resultValue;
         }
     }
 }

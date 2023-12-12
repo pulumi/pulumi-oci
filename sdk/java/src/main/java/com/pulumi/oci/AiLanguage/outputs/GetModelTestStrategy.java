@@ -93,11 +93,11 @@ public final class GetModelTestStrategy {
             return validationDatasets(List.of(validationDatasets));
         }
         public GetModelTestStrategy build() {
-            final var o = new GetModelTestStrategy();
-            o.strategyType = strategyType;
-            o.testingDatasets = testingDatasets;
-            o.validationDatasets = validationDatasets;
-            return o;
+            final var _resultValue = new GetModelTestStrategy();
+            _resultValue.strategyType = strategyType;
+            _resultValue.testingDatasets = testingDatasets;
+            _resultValue.validationDatasets = validationDatasets;
+            return _resultValue;
         }
     }
 }

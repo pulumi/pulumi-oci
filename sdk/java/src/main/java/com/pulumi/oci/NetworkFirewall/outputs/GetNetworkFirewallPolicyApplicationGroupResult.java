@@ -130,14 +130,14 @@ public final class GetNetworkFirewallPolicyApplicationGroupResult {
             return this;
         }
         public GetNetworkFirewallPolicyApplicationGroupResult build() {
-            final var o = new GetNetworkFirewallPolicyApplicationGroupResult();
-            o.apps = apps;
-            o.id = id;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.totalApps = totalApps;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyApplicationGroupResult();
+            _resultValue.apps = apps;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.totalApps = totalApps;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPo
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicyAccessLog();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

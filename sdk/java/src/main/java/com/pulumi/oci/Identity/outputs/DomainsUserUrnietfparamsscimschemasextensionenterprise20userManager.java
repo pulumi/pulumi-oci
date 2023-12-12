@@ -150,11 +150,11 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userM
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager();
-            o.displayName = displayName;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasextensionenterprise20userManager();
+            _resultValue.displayName = displayName;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

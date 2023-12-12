@@ -67,11 +67,11 @@ public final class GetMigrationAssetsFilter {
             return values(List.of(values));
         }
         public GetMigrationAssetsFilter build() {
-            final var o = new GetMigrationAssetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetMigrationAssetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

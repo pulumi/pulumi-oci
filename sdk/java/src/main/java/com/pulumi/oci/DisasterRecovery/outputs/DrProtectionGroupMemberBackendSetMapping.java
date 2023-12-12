@@ -87,11 +87,11 @@ public final class DrProtectionGroupMemberBackendSetMapping {
             return this;
         }
         public DrProtectionGroupMemberBackendSetMapping build() {
-            final var o = new DrProtectionGroupMemberBackendSetMapping();
-            o.destinationBackendSetName = destinationBackendSetName;
-            o.isBackendSetForNonMovable = isBackendSetForNonMovable;
-            o.sourceBackendSetName = sourceBackendSetName;
-            return o;
+            final var _resultValue = new DrProtectionGroupMemberBackendSetMapping();
+            _resultValue.destinationBackendSetName = destinationBackendSetName;
+            _resultValue.isBackendSetForNonMovable = isBackendSetForNonMovable;
+            _resultValue.sourceBackendSetName = sourceBackendSetName;
+            return _resultValue;
         }
     }
 }

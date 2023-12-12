@@ -66,10 +66,10 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
             return this;
         }
         public ConnectorSourceMonitoringSourceNamespaceDetailsNamespace build() {
-            final var o = new ConnectorSourceMonitoringSourceNamespaceDetailsNamespace();
-            o.metrics = metrics;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new ConnectorSourceMonitoringSourceNamespaceDetailsNamespace();
+            _resultValue.metrics = metrics;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

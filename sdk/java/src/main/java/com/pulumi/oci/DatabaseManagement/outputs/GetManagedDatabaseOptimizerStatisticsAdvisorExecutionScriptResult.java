@@ -98,13 +98,13 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptRe
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult();
-            o.executionName = executionName;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.script = script;
-            o.taskName = taskName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResult();
+            _resultValue.executionName = executionName;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.script = script;
+            _resultValue.taskName = taskName;
+            return _resultValue;
         }
     }
 }

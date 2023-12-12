@@ -77,11 +77,11 @@ public final class GetManagementAgentGetAutoUpgradableConfigResult {
             return this;
         }
         public GetManagementAgentGetAutoUpgradableConfigResult build() {
-            final var o = new GetManagementAgentGetAutoUpgradableConfigResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isAgentAutoUpgradable = isAgentAutoUpgradable;
-            return o;
+            final var _resultValue = new GetManagementAgentGetAutoUpgradableConfigResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isAgentAutoUpgradable = isAgentAutoUpgradable;
+            return _resultValue;
         }
     }
 }

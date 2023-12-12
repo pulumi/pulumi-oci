@@ -186,16 +186,16 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicy {
             return this;
         }
         public GetVolumeBackupPoliciesVolumeBackupPolicy build() {
-            final var o = new GetVolumeBackupPoliciesVolumeBackupPolicy();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.destinationRegion = destinationRegion;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.schedules = schedules;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetVolumeBackupPoliciesVolumeBackupPolicy();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.destinationRegion = destinationRegion;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.schedules = schedules;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

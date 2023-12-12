@@ -66,10 +66,10 @@ public final class GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomo
             return this;
         }
         public GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster build() {
-            final var o = new GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster();
-            o.id = id;
-            o.unAllocatedAdbStorageInTbs = unAllocatedAdbStorageInTbs;
-            return o;
+            final var _resultValue = new GetCloudExadataInfrastructureUnAllocatedResourceCloudAutonomousVmCluster();
+            _resultValue.id = id;
+            _resultValue.unAllocatedAdbStorageInTbs = unAllocatedAdbStorageInTbs;
+            return _resultValue;
         }
     }
 }

@@ -166,15 +166,15 @@ public final class GetAccessRequestHistoryItem {
             return this;
         }
         public GetAccessRequestHistoryItem build() {
-            final var o = new GetAccessRequestHistoryItem();
-            o.actionsLists = actionsLists;
-            o.description = description;
-            o.duration = duration;
-            o.isAutoApproved = isAutoApproved;
-            o.state = state;
-            o.timeOfAction = timeOfAction;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetAccessRequestHistoryItem();
+            _resultValue.actionsLists = actionsLists;
+            _resultValue.description = description;
+            _resultValue.duration = duration;
+            _resultValue.isAutoApproved = isAutoApproved;
+            _resultValue.state = state;
+            _resultValue.timeOfAction = timeOfAction;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

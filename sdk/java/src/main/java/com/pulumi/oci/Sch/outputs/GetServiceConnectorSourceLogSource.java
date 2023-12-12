@@ -84,11 +84,11 @@ public final class GetServiceConnectorSourceLogSource {
             return this;
         }
         public GetServiceConnectorSourceLogSource build() {
-            final var o = new GetServiceConnectorSourceLogSource();
-            o.compartmentId = compartmentId;
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new GetServiceConnectorSourceLogSource();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

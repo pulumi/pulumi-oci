@@ -54,10 +54,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
             return thresholds(List.of(thresholds));
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric build() {
-            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric();
-            o.metricType = metricType;
-            o.thresholds = thresholds;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric();
+            _resultValue.metricType = metricType;
+            _resultValue.thresholds = thresholds;
+            return _resultValue;
         }
     }
 }

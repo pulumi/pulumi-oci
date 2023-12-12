@@ -67,11 +67,11 @@ public final class GetVcnsFilter {
             return values(List.of(values));
         }
         public GetVcnsFilter build() {
-            final var o = new GetVcnsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVcnsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

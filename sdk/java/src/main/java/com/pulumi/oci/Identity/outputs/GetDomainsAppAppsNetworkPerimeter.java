@@ -65,10 +65,10 @@ public final class GetDomainsAppAppsNetworkPerimeter {
             return this;
         }
         public GetDomainsAppAppsNetworkPerimeter build() {
-            final var o = new GetDomainsAppAppsNetworkPerimeter();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppAppsNetworkPerimeter();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

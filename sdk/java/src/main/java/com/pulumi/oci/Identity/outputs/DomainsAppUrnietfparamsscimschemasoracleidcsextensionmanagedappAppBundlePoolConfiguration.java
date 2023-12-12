@@ -224,13 +224,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration();
-            o.maxIdle = maxIdle;
-            o.maxObjects = maxObjects;
-            o.maxWait = maxWait;
-            o.minEvictableIdleTimeMillis = minEvictableIdleTimeMillis;
-            o.minIdle = minIdle;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration();
+            _resultValue.maxIdle = maxIdle;
+            _resultValue.maxObjects = maxObjects;
+            _resultValue.maxWait = maxWait;
+            _resultValue.minEvictableIdleTimeMillis = minEvictableIdleTimeMillis;
+            _resultValue.minIdle = minIdle;
+            return _resultValue;
         }
     }
 }

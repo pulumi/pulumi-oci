@@ -90,11 +90,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnic build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnic();
-            o.createVnicDetails = createVnicDetails;
-            o.displayName = displayName;
-            o.nicIndex = nicIndex;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnic();
+            _resultValue.createVnicDetails = createVnicDetails;
+            _resultValue.displayName = displayName;
+            _resultValue.nicIndex = nicIndex;
+            return _resultValue;
         }
     }
 }

@@ -51,10 +51,10 @@ public final class DefaultSecurityListIngressSecurityRuleIcmpOptions {
             return this;
         }
         public DefaultSecurityListIngressSecurityRuleIcmpOptions build() {
-            final var o = new DefaultSecurityListIngressSecurityRuleIcmpOptions();
-            o.code = code;
-            o.type = type;
-            return o;
+            final var _resultValue = new DefaultSecurityListIngressSecurityRuleIcmpOptions();
+            _resultValue.code = code;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

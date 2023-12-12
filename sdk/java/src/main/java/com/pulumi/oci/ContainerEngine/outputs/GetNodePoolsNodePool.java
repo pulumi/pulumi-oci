@@ -541,33 +541,33 @@ public final class GetNodePoolsNodePool {
             return subnetIds(List.of(subnetIds));
         }
         public GetNodePoolsNodePool build() {
-            final var o = new GetNodePoolsNodePool();
-            o.clusterId = clusterId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.initialNodeLabels = initialNodeLabels;
-            o.kubernetesVersion = kubernetesVersion;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.nodeConfigDetails = nodeConfigDetails;
-            o.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
-            o.nodeImageId = nodeImageId;
-            o.nodeImageName = nodeImageName;
-            o.nodeMetadata = nodeMetadata;
-            o.nodePoolCyclingDetails = nodePoolCyclingDetails;
-            o.nodePoolId = nodePoolId;
-            o.nodeShape = nodeShape;
-            o.nodeShapeConfigs = nodeShapeConfigs;
-            o.nodeSourceDetails = nodeSourceDetails;
-            o.nodeSources = nodeSources;
-            o.nodes = nodes;
-            o.quantityPerSubnet = quantityPerSubnet;
-            o.sshPublicKey = sshPublicKey;
-            o.state = state;
-            o.subnetIds = subnetIds;
-            return o;
+            final var _resultValue = new GetNodePoolsNodePool();
+            _resultValue.clusterId = clusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.initialNodeLabels = initialNodeLabels;
+            _resultValue.kubernetesVersion = kubernetesVersion;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.nodeConfigDetails = nodeConfigDetails;
+            _resultValue.nodeEvictionNodePoolSettings = nodeEvictionNodePoolSettings;
+            _resultValue.nodeImageId = nodeImageId;
+            _resultValue.nodeImageName = nodeImageName;
+            _resultValue.nodeMetadata = nodeMetadata;
+            _resultValue.nodePoolCyclingDetails = nodePoolCyclingDetails;
+            _resultValue.nodePoolId = nodePoolId;
+            _resultValue.nodeShape = nodeShape;
+            _resultValue.nodeShapeConfigs = nodeShapeConfigs;
+            _resultValue.nodeSourceDetails = nodeSourceDetails;
+            _resultValue.nodeSources = nodeSources;
+            _resultValue.nodes = nodes;
+            _resultValue.quantityPerSubnet = quantityPerSubnet;
+            _resultValue.sshPublicKey = sshPublicKey;
+            _resultValue.state = state;
+            _resultValue.subnetIds = subnetIds;
+            return _resultValue;
         }
     }
 }

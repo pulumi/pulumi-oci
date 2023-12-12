@@ -258,20 +258,20 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
             return this;
         }
         public GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem build() {
-            final var o = new GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem();
-            o.compartmentId = compartmentId;
-            o.configurationState = configurationState;
-            o.configurationType = configurationType;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastModified = timeLastModified;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationState = configurationState;
+            _resultValue.configurationType = configurationType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastModified = timeLastModified;
+            return _resultValue;
         }
     }
 }

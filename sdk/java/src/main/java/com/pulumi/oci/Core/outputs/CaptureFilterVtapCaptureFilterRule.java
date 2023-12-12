@@ -198,16 +198,16 @@ public final class CaptureFilterVtapCaptureFilterRule {
             return this;
         }
         public CaptureFilterVtapCaptureFilterRule build() {
-            final var o = new CaptureFilterVtapCaptureFilterRule();
-            o.destinationCidr = destinationCidr;
-            o.icmpOptions = icmpOptions;
-            o.protocol = protocol;
-            o.ruleAction = ruleAction;
-            o.sourceCidr = sourceCidr;
-            o.tcpOptions = tcpOptions;
-            o.trafficDirection = trafficDirection;
-            o.udpOptions = udpOptions;
-            return o;
+            final var _resultValue = new CaptureFilterVtapCaptureFilterRule();
+            _resultValue.destinationCidr = destinationCidr;
+            _resultValue.icmpOptions = icmpOptions;
+            _resultValue.protocol = protocol;
+            _resultValue.ruleAction = ruleAction;
+            _resultValue.sourceCidr = sourceCidr;
+            _resultValue.tcpOptions = tcpOptions;
+            _resultValue.trafficDirection = trafficDirection;
+            _resultValue.udpOptions = udpOptions;
+            return _resultValue;
         }
     }
 }

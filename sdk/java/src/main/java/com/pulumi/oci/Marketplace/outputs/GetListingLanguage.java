@@ -65,10 +65,10 @@ public final class GetListingLanguage {
             return this;
         }
         public GetListingLanguage build() {
-            final var o = new GetListingLanguage();
-            o.code = code;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingLanguage();
+            _resultValue.code = code;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -76,11 +76,11 @@ public final class GetLogSetsCountResult {
             return this;
         }
         public GetLogSetsCountResult build() {
-            final var o = new GetLogSetsCountResult();
-            o.id = id;
-            o.logSetsCount = logSetsCount;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetLogSetsCountResult();
+            _resultValue.id = id;
+            _resultValue.logSetsCount = logSetsCount;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

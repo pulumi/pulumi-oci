@@ -105,12 +105,12 @@ public final class GetImageShapesResult {
             return imageShapeCompatibilities(List.of(imageShapeCompatibilities));
         }
         public GetImageShapesResult build() {
-            final var o = new GetImageShapesResult();
-            o.filters = filters;
-            o.id = id;
-            o.imageId = imageId;
-            o.imageShapeCompatibilities = imageShapeCompatibilities;
-            return o;
+            final var _resultValue = new GetImageShapesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.imageShapeCompatibilities = imageShapeCompatibilities;
+            return _resultValue;
         }
     }
 }

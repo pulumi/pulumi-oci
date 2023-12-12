@@ -144,14 +144,14 @@ public final class GetKnowledgebasesResult {
             return this;
         }
         public GetKnowledgebasesResult build() {
-            final var o = new GetKnowledgebasesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.knowledgeBaseCollections = knowledgeBaseCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetKnowledgebasesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.knowledgeBaseCollections = knowledgeBaseCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

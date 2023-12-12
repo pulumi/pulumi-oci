@@ -161,15 +161,15 @@ public final class GetAssetsAssetCollectionItemComputeDisk {
             return this;
         }
         public GetAssetsAssetCollectionItemComputeDisk build() {
-            final var o = new GetAssetsAssetCollectionItemComputeDisk();
-            o.bootOrder = bootOrder;
-            o.location = location;
-            o.name = name;
-            o.persistentMode = persistentMode;
-            o.sizeInMbs = sizeInMbs;
-            o.uuid = uuid;
-            o.uuidLun = uuidLun;
-            return o;
+            final var _resultValue = new GetAssetsAssetCollectionItemComputeDisk();
+            _resultValue.bootOrder = bootOrder;
+            _resultValue.location = location;
+            _resultValue.name = name;
+            _resultValue.persistentMode = persistentMode;
+            _resultValue.sizeInMbs = sizeInMbs;
+            _resultValue.uuid = uuid;
+            _resultValue.uuidLun = uuidLun;
+            return _resultValue;
         }
     }
 }

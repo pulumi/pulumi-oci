@@ -67,10 +67,10 @@ public final class InvokeRunDriverShapeConfig {
             return this;
         }
         public InvokeRunDriverShapeConfig build() {
-            final var o = new InvokeRunDriverShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new InvokeRunDriverShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

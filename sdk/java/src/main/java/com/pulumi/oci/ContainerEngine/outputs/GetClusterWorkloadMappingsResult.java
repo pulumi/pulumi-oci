@@ -105,12 +105,12 @@ public final class GetClusterWorkloadMappingsResult {
             return workloadMappings(List.of(workloadMappings));
         }
         public GetClusterWorkloadMappingsResult build() {
-            final var o = new GetClusterWorkloadMappingsResult();
-            o.clusterId = clusterId;
-            o.filters = filters;
-            o.id = id;
-            o.workloadMappings = workloadMappings;
-            return o;
+            final var _resultValue = new GetClusterWorkloadMappingsResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.workloadMappings = workloadMappings;
+            return _resultValue;
         }
     }
 }

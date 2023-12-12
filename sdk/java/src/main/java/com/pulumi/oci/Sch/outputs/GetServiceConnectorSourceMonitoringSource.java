@@ -70,10 +70,10 @@ public final class GetServiceConnectorSourceMonitoringSource {
             return namespaceDetails(List.of(namespaceDetails));
         }
         public GetServiceConnectorSourceMonitoringSource build() {
-            final var o = new GetServiceConnectorSourceMonitoringSource();
-            o.compartmentId = compartmentId;
-            o.namespaceDetails = namespaceDetails;
-            return o;
+            final var _resultValue = new GetServiceConnectorSourceMonitoringSource();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.namespaceDetails = namespaceDetails;
+            return _resultValue;
         }
     }
 }

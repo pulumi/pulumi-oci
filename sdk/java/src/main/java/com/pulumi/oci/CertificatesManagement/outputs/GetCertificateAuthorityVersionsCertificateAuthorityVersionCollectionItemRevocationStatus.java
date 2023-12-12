@@ -65,10 +65,10 @@ public final class GetCertificateAuthorityVersionsCertificateAuthorityVersionCol
             return this;
         }
         public GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus build() {
-            final var o = new GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus();
-            o.revocationReason = revocationReason;
-            o.timeOfRevocation = timeOfRevocation;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatus();
+            _resultValue.revocationReason = revocationReason;
+            _resultValue.timeOfRevocation = timeOfRevocation;
+            return _resultValue;
         }
     }
 }

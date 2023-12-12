@@ -112,12 +112,12 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
             return metrics(List.of(metrics));
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule build() {
-            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule();
-            o.actions = actions;
-            o.displayName = displayName;
-            o.id = id;
-            o.metrics = metrics;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule();
+            _resultValue.actions = actions;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.metrics = metrics;
+            return _resultValue;
         }
     }
 }

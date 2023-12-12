@@ -138,13 +138,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationSource {
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationSource build() {
-            final var o = new UnifiedAgentConfigurationServiceConfigurationSource();
-            o.channels = channels;
-            o.name = name;
-            o.parser = parser;
-            o.paths = paths;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationSource();
+            _resultValue.channels = channels;
+            _resultValue.name = name;
+            _resultValue.parser = parser;
+            _resultValue.paths = paths;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

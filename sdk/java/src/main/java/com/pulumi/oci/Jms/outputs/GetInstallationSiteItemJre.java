@@ -103,12 +103,12 @@ public final class GetInstallationSiteItemJre {
             return this;
         }
         public GetInstallationSiteItemJre build() {
-            final var o = new GetInstallationSiteItemJre();
-            o.distribution = distribution;
-            o.jreKey = jreKey;
-            o.vendor = vendor;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetInstallationSiteItemJre();
+            _resultValue.distribution = distribution;
+            _resultValue.jreKey = jreKey;
+            _resultValue.vendor = vendor;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

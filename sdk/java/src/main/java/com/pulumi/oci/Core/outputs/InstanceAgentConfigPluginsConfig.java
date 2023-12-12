@@ -69,10 +69,10 @@ public final class InstanceAgentConfigPluginsConfig {
             return this;
         }
         public InstanceAgentConfigPluginsConfig build() {
-            final var o = new InstanceAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new InstanceAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

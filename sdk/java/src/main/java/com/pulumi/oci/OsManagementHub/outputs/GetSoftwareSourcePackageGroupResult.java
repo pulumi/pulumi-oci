@@ -229,19 +229,19 @@ public final class GetSoftwareSourcePackageGroupResult {
             return this;
         }
         public GetSoftwareSourcePackageGroupResult build() {
-            final var o = new GetSoftwareSourcePackageGroupResult();
-            o.description = description;
-            o.displayOrder = displayOrder;
-            o.groupType = groupType;
-            o.id = id;
-            o.isDefault = isDefault;
-            o.isUserVisible = isUserVisible;
-            o.name = name;
-            o.packageGroupId = packageGroupId;
-            o.packages = packages;
-            o.repositories = repositories;
-            o.softwareSourceId = softwareSourceId;
-            return o;
+            final var _resultValue = new GetSoftwareSourcePackageGroupResult();
+            _resultValue.description = description;
+            _resultValue.displayOrder = displayOrder;
+            _resultValue.groupType = groupType;
+            _resultValue.id = id;
+            _resultValue.isDefault = isDefault;
+            _resultValue.isUserVisible = isUserVisible;
+            _resultValue.name = name;
+            _resultValue.packageGroupId = packageGroupId;
+            _resultValue.packages = packages;
+            _resultValue.repositories = repositories;
+            _resultValue.softwareSourceId = softwareSourceId;
+            return _resultValue;
         }
     }
 }

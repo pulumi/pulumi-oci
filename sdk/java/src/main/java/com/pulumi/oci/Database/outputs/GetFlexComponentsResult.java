@@ -117,13 +117,13 @@ public final class GetFlexComponentsResult {
             return this;
         }
         public GetFlexComponentsResult build() {
-            final var o = new GetFlexComponentsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.flexComponentCollections = flexComponentCollections;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetFlexComponentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.flexComponentCollections = flexComponentCollections;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

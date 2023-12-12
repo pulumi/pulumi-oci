@@ -171,16 +171,16 @@ public final class GetSupportedHostShapesResult {
             return this;
         }
         public GetSupportedHostShapesResult build() {
-            final var o = new GetSupportedHostShapesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.initialHostShapeName = initialHostShapeName;
-            o.isSingleHostSddcSupported = isSingleHostSddcSupported;
-            o.items = items;
-            o.name = name;
-            o.sddcType = sddcType;
-            return o;
+            final var _resultValue = new GetSupportedHostShapesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.initialHostShapeName = initialHostShapeName;
+            _resultValue.isSingleHostSddcSupported = isSingleHostSddcSupported;
+            _resultValue.items = items;
+            _resultValue.name = name;
+            _resultValue.sddcType = sddcType;
+            return _resultValue;
         }
     }
 }

@@ -113,10 +113,10 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -112,12 +112,12 @@ public final class GetIntegrationInstanceNetworkEndpointDetail {
             return this;
         }
         public GetIntegrationInstanceNetworkEndpointDetail build() {
-            final var o = new GetIntegrationInstanceNetworkEndpointDetail();
-            o.allowlistedHttpIps = allowlistedHttpIps;
-            o.allowlistedHttpVcns = allowlistedHttpVcns;
-            o.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
-            o.networkEndpointType = networkEndpointType;
-            return o;
+            final var _resultValue = new GetIntegrationInstanceNetworkEndpointDetail();
+            _resultValue.allowlistedHttpIps = allowlistedHttpIps;
+            _resultValue.allowlistedHttpVcns = allowlistedHttpVcns;
+            _resultValue.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
+            _resultValue.networkEndpointType = networkEndpointType;
+            return _resultValue;
         }
     }
 }

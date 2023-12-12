@@ -122,13 +122,13 @@ public final class GetWorkspaceProjectMetadataAggregator {
             return this;
         }
         public GetWorkspaceProjectMetadataAggregator build() {
-            final var o = new GetWorkspaceProjectMetadataAggregator();
-            o.description = description;
-            o.identifier = identifier;
-            o.key = key;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetWorkspaceProjectMetadataAggregator();
+            _resultValue.description = description;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

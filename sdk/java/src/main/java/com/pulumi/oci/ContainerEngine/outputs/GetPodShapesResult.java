@@ -128,14 +128,14 @@ public final class GetPodShapesResult {
             return podShapes(List.of(podShapes));
         }
         public GetPodShapesResult build() {
-            final var o = new GetPodShapesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.podShapes = podShapes;
-            return o;
+            final var _resultValue = new GetPodShapesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.podShapes = podShapes;
+            return _resultValue;
         }
     }
 }

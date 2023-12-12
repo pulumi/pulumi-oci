@@ -121,14 +121,14 @@ public final class GetNetworkFirewallPolicySecurityRulesResult {
             return securityRuleSummaryCollections(List.of(securityRuleSummaryCollections));
         }
         public GetNetworkFirewallPolicySecurityRulesResult build() {
-            final var o = new GetNetworkFirewallPolicySecurityRulesResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.securityRulePriorityOrder = securityRulePriorityOrder;
-            o.securityRuleSummaryCollections = securityRuleSummaryCollections;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicySecurityRulesResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.securityRulePriorityOrder = securityRulePriorityOrder;
+            _resultValue.securityRuleSummaryCollections = securityRuleSummaryCollections;
+            return _resultValue;
         }
     }
 }

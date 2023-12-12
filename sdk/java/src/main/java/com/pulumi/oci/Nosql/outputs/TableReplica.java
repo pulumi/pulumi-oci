@@ -150,14 +150,14 @@ public final class TableReplica {
             return this;
         }
         public TableReplica build() {
-            final var o = new TableReplica();
-            o.capacityMode = capacityMode;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maxWriteUnits = maxWriteUnits;
-            o.region = region;
-            o.state = state;
-            o.tableId = tableId;
-            return o;
+            final var _resultValue = new TableReplica();
+            _resultValue.capacityMode = capacityMode;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maxWriteUnits = maxWriteUnits;
+            _resultValue.region = region;
+            _resultValue.state = state;
+            _resultValue.tableId = tableId;
+            return _resultValue;
         }
     }
 }

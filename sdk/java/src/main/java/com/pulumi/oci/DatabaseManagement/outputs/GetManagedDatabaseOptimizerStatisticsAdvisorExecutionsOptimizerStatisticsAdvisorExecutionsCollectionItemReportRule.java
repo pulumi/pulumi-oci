@@ -89,11 +89,11 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule();
-            o.description = description;
-            o.findings = findings;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRule();
+            _resultValue.description = description;
+            _resultValue.findings = findings;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

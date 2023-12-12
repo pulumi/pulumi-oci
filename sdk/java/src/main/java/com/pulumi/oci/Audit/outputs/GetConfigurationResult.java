@@ -69,11 +69,11 @@ public final class GetConfigurationResult {
             return this;
         }
         public GetConfigurationResult build() {
-            final var o = new GetConfigurationResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.retentionPeriodDays = retentionPeriodDays;
-            return o;
+            final var _resultValue = new GetConfigurationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.retentionPeriodDays = retentionPeriodDays;
+            return _resultValue;
         }
     }
 }

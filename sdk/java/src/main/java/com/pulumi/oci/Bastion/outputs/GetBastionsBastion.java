@@ -417,28 +417,28 @@ public final class GetBastionsBastion {
             return this;
         }
         public GetBastionsBastion build() {
-            final var o = new GetBastionsBastion();
-            o.bastionType = bastionType;
-            o.clientCidrBlockAllowLists = clientCidrBlockAllowLists;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.dnsProxyStatus = dnsProxyStatus;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
-            o.maxSessionsAllowed = maxSessionsAllowed;
-            o.name = name;
-            o.phoneBookEntry = phoneBookEntry;
-            o.privateEndpointIpAddress = privateEndpointIpAddress;
-            o.state = state;
-            o.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
-            o.systemTags = systemTags;
-            o.targetSubnetId = targetSubnetId;
-            o.targetVcnId = targetVcnId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetBastionsBastion();
+            _resultValue.bastionType = bastionType;
+            _resultValue.clientCidrBlockAllowLists = clientCidrBlockAllowLists;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.dnsProxyStatus = dnsProxyStatus;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maxSessionTtlInSeconds = maxSessionTtlInSeconds;
+            _resultValue.maxSessionsAllowed = maxSessionsAllowed;
+            _resultValue.name = name;
+            _resultValue.phoneBookEntry = phoneBookEntry;
+            _resultValue.privateEndpointIpAddress = privateEndpointIpAddress;
+            _resultValue.state = state;
+            _resultValue.staticJumpHostIpAddresses = staticJumpHostIpAddresses;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetSubnetId = targetSubnetId;
+            _resultValue.targetVcnId = targetVcnId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

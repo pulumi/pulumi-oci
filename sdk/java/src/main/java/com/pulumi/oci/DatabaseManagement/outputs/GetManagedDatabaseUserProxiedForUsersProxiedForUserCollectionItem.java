@@ -84,11 +84,11 @@ public final class GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection
             return this;
         }
         public GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem build() {
-            final var o = new GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem();
-            o.authentication = authentication;
-            o.flags = flags;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItem();
+            _resultValue.authentication = authentication;
+            _resultValue.flags = flags;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

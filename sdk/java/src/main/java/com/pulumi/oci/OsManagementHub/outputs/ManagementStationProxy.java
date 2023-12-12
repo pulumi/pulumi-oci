@@ -116,12 +116,12 @@ public final class ManagementStationProxy {
             return this;
         }
         public ManagementStationProxy build() {
-            final var o = new ManagementStationProxy();
-            o.forward = forward;
-            o.hosts = hosts;
-            o.isEnabled = isEnabled;
-            o.port = port;
-            return o;
+            final var _resultValue = new ManagementStationProxy();
+            _resultValue.forward = forward;
+            _resultValue.hosts = hosts;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

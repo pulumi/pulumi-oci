@@ -48,9 +48,9 @@ public final class BlockchainPlatformComponentDetailOsnOcpuAllocationParam {
             return this;
         }
         public BlockchainPlatformComponentDetailOsnOcpuAllocationParam build() {
-            final var o = new BlockchainPlatformComponentDetailOsnOcpuAllocationParam();
-            o.ocpuAllocationNumber = ocpuAllocationNumber;
-            return o;
+            final var _resultValue = new BlockchainPlatformComponentDetailOsnOcpuAllocationParam();
+            _resultValue.ocpuAllocationNumber = ocpuAllocationNumber;
+            return _resultValue;
         }
     }
 }

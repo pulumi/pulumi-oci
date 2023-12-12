@@ -181,16 +181,16 @@ public final class GetBackendSetsBackendSetCollectionItem {
             return this;
         }
         public GetBackendSetsBackendSetCollectionItem build() {
-            final var o = new GetBackendSetsBackendSetCollectionItem();
-            o.backends = backends;
-            o.healthCheckers = healthCheckers;
-            o.id = id;
-            o.ipVersion = ipVersion;
-            o.isPreserveSource = isPreserveSource;
-            o.name = name;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.policy = policy;
-            return o;
+            final var _resultValue = new GetBackendSetsBackendSetCollectionItem();
+            _resultValue.backends = backends;
+            _resultValue.healthCheckers = healthCheckers;
+            _resultValue.id = id;
+            _resultValue.ipVersion = ipVersion;
+            _resultValue.isPreserveSource = isPreserveSource;
+            _resultValue.name = name;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.policy = policy;
+            return _resultValue;
         }
     }
 }

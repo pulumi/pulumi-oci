@@ -124,13 +124,13 @@ public final class ContainerInstanceImagePullSecret {
             return this;
         }
         public ContainerInstanceImagePullSecret build() {
-            final var o = new ContainerInstanceImagePullSecret();
-            o.password = password;
-            o.registryEndpoint = registryEndpoint;
-            o.secretId = secretId;
-            o.secretType = secretType;
-            o.username = username;
-            return o;
+            final var _resultValue = new ContainerInstanceImagePullSecret();
+            _resultValue.password = password;
+            _resultValue.registryEndpoint = registryEndpoint;
+            _resultValue.secretId = secretId;
+            _resultValue.secretType = secretType;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

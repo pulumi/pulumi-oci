@@ -66,10 +66,10 @@ public final class GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreempt
             return this;
         }
         public GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction build() {
-            final var o = new GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction();
-            o.preserveBootVolume = preserveBootVolume;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction();
+            _resultValue.preserveBootVolume = preserveBootVolume;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

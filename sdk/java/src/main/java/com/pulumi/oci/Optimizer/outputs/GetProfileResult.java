@@ -301,22 +301,22 @@ public final class GetProfileResult {
             return this;
         }
         public GetProfileResult build() {
-            final var o = new GetProfileResult();
-            o.aggregationIntervalInDays = aggregationIntervalInDays;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.levelsConfigurations = levelsConfigurations;
-            o.name = name;
-            o.profileId = profileId;
-            o.state = state;
-            o.targetCompartments = targetCompartments;
-            o.targetTags = targetTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetProfileResult();
+            _resultValue.aggregationIntervalInDays = aggregationIntervalInDays;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.levelsConfigurations = levelsConfigurations;
+            _resultValue.name = name;
+            _resultValue.profileId = profileId;
+            _resultValue.state = state;
+            _resultValue.targetCompartments = targetCompartments;
+            _resultValue.targetTags = targetTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

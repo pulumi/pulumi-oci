@@ -90,11 +90,11 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation();
-            o.contents = contents;
-            o.required = required;
-            o.validationMode = validationMode;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation();
+            _resultValue.contents = contents;
+            _resultValue.required = required;
+            _resultValue.validationMode = validationMode;
+            return _resultValue;
         }
     }
 }

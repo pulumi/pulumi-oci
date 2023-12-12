@@ -115,13 +115,13 @@ public final class GetRegionSubscriptionsRegionSubscription {
             return this;
         }
         public GetRegionSubscriptionsRegionSubscription build() {
-            final var o = new GetRegionSubscriptionsRegionSubscription();
-            o.isHomeRegion = isHomeRegion;
-            o.regionKey = regionKey;
-            o.regionName = regionName;
-            o.state = state;
-            o.tenancyId = tenancyId;
-            return o;
+            final var _resultValue = new GetRegionSubscriptionsRegionSubscription();
+            _resultValue.isHomeRegion = isHomeRegion;
+            _resultValue.regionKey = regionKey;
+            _resultValue.regionName = regionName;
+            _resultValue.state = state;
+            _resultValue.tenancyId = tenancyId;
+            return _resultValue;
         }
     }
 }

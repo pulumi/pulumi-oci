@@ -66,10 +66,10 @@ public final class GetDeployStagesDeployStageCollectionItemApprovalPolicy {
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemApprovalPolicy build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemApprovalPolicy();
-            o.approvalPolicyType = approvalPolicyType;
-            o.numberOfApprovalsRequired = numberOfApprovalsRequired;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemApprovalPolicy();
+            _resultValue.approvalPolicyType = approvalPolicyType;
+            _resultValue.numberOfApprovalsRequired = numberOfApprovalsRequired;
+            return _resultValue;
         }
     }
 }

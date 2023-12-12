@@ -67,10 +67,10 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition build() {
-            final var o = new GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition();
-            o.afterRule = afterRule;
-            o.beforeRule = beforeRule;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPosition();
+            _resultValue.afterRule = afterRule;
+            _resultValue.beforeRule = beforeRule;
+            return _resultValue;
         }
     }
 }

@@ -68,11 +68,11 @@ public final class GetApiContentResult {
             return this;
         }
         public GetApiContentResult build() {
-            final var o = new GetApiContentResult();
-            o.apiId = apiId;
-            o.content = content;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetApiContentResult();
+            _resultValue.apiId = apiId;
+            _resultValue.content = content;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

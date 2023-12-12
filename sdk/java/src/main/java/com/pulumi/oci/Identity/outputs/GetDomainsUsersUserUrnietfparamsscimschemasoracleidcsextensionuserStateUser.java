@@ -208,17 +208,17 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return recoveryLockeds(List.of(recoveryLockeds));
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser();
-            o.lastFailedLoginDate = lastFailedLoginDate;
-            o.lastSuccessfulLoginDate = lastSuccessfulLoginDate;
-            o.lockeds = lockeds;
-            o.loginAttempts = loginAttempts;
-            o.maxConcurrentSessions = maxConcurrentSessions;
-            o.previousSuccessfulLoginDate = previousSuccessfulLoginDate;
-            o.recoveryAttempts = recoveryAttempts;
-            o.recoveryEnrollAttempts = recoveryEnrollAttempts;
-            o.recoveryLockeds = recoveryLockeds;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser();
+            _resultValue.lastFailedLoginDate = lastFailedLoginDate;
+            _resultValue.lastSuccessfulLoginDate = lastSuccessfulLoginDate;
+            _resultValue.lockeds = lockeds;
+            _resultValue.loginAttempts = loginAttempts;
+            _resultValue.maxConcurrentSessions = maxConcurrentSessions;
+            _resultValue.previousSuccessfulLoginDate = previousSuccessfulLoginDate;
+            _resultValue.recoveryAttempts = recoveryAttempts;
+            _resultValue.recoveryEnrollAttempts = recoveryEnrollAttempts;
+            _resultValue.recoveryLockeds = recoveryLockeds;
+            return _resultValue;
         }
     }
 }

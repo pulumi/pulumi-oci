@@ -155,15 +155,15 @@ public final class GetControlsResult {
             return this;
         }
         public GetControlsResult build() {
-            final var o = new GetControlsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.operatorControlCollections = operatorControlCollections;
-            o.resourceType = resourceType;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetControlsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.operatorControlCollections = operatorControlCollections;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

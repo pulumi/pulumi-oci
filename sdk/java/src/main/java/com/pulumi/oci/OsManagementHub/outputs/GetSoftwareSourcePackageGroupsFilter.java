@@ -75,11 +75,11 @@ public final class GetSoftwareSourcePackageGroupsFilter {
             return values(List.of(values));
         }
         public GetSoftwareSourcePackageGroupsFilter build() {
-            final var o = new GetSoftwareSourcePackageGroupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSoftwareSourcePackageGroupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

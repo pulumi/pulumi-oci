@@ -152,15 +152,15 @@ public final class GetScheduledRunResult {
             return this;
         }
         public GetScheduledRunResult build() {
-            final var o = new GetScheduledRunResult();
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.scheduleId = scheduleId;
-            o.scheduledRunId = scheduledRunId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            return o;
+            final var _resultValue = new GetScheduledRunResult();
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.scheduleId = scheduleId;
+            _resultValue.scheduledRunId = scheduledRunId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            return _resultValue;
         }
     }
 }

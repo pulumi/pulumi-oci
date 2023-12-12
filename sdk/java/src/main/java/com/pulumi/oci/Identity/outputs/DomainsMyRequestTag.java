@@ -105,10 +105,10 @@ public final class DomainsMyRequestTag {
             return this;
         }
         public DomainsMyRequestTag build() {
-            final var o = new DomainsMyRequestTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyRequestTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

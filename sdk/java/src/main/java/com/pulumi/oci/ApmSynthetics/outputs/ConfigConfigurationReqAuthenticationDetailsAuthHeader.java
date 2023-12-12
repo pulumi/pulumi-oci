@@ -67,10 +67,10 @@ public final class ConfigConfigurationReqAuthenticationDetailsAuthHeader {
             return this;
         }
         public ConfigConfigurationReqAuthenticationDetailsAuthHeader build() {
-            final var o = new ConfigConfigurationReqAuthenticationDetailsAuthHeader();
-            o.headerName = headerName;
-            o.headerValue = headerValue;
-            return o;
+            final var _resultValue = new ConfigConfigurationReqAuthenticationDetailsAuthHeader();
+            _resultValue.headerName = headerName;
+            _resultValue.headerValue = headerValue;
+            return _resultValue;
         }
     }
 }

@@ -89,11 +89,11 @@ public final class GetImportableComputeEntityResult {
             return items(List.of(items));
         }
         public GetImportableComputeEntityResult build() {
-            final var o = new GetImportableComputeEntityResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetImportableComputeEntityResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

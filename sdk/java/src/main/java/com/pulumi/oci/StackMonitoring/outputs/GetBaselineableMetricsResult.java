@@ -166,16 +166,16 @@ public final class GetBaselineableMetricsResult {
             return this;
         }
         public GetBaselineableMetricsResult build() {
-            final var o = new GetBaselineableMetricsResult();
-            o.baselineableMetricId = baselineableMetricId;
-            o.baselineableMetricSummaryCollections = baselineableMetricSummaryCollections;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.metricNamespace = metricNamespace;
-            o.name = name;
-            o.resourceGroup = resourceGroup;
-            return o;
+            final var _resultValue = new GetBaselineableMetricsResult();
+            _resultValue.baselineableMetricId = baselineableMetricId;
+            _resultValue.baselineableMetricSummaryCollections = baselineableMetricSummaryCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.metricNamespace = metricNamespace;
+            _resultValue.name = name;
+            _resultValue.resourceGroup = resourceGroup;
+            return _resultValue;
         }
     }
 }

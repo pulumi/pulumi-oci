@@ -364,26 +364,26 @@ public final class GetOperationsInsightsWarehouseResult {
             return this;
         }
         public GetOperationsInsightsWarehouseResult build() {
-            final var o = new GetOperationsInsightsWarehouseResult();
-            o.compartmentId = compartmentId;
-            o.cpuAllocated = cpuAllocated;
-            o.cpuUsed = cpuUsed;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.dynamicGroupId = dynamicGroupId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.operationsInsightsTenancyId = operationsInsightsTenancyId;
-            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-            o.state = state;
-            o.storageAllocatedInGbs = storageAllocatedInGbs;
-            o.storageUsedInGbs = storageUsedInGbs;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeLastWalletRotated = timeLastWalletRotated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetOperationsInsightsWarehouseResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.cpuAllocated = cpuAllocated;
+            _resultValue.cpuUsed = cpuUsed;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.dynamicGroupId = dynamicGroupId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.operationsInsightsTenancyId = operationsInsightsTenancyId;
+            _resultValue.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            _resultValue.state = state;
+            _resultValue.storageAllocatedInGbs = storageAllocatedInGbs;
+            _resultValue.storageUsedInGbs = storageUsedInGbs;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastWalletRotated = timeLastWalletRotated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return socialAccounts(List.of(socialAccounts));
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser();
-            o.socialAccounts = socialAccounts;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser();
+            _resultValue.socialAccounts = socialAccounts;
+            return _resultValue;
         }
     }
 }

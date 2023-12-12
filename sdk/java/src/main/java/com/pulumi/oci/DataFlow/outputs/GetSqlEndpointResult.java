@@ -529,34 +529,34 @@ public final class GetSqlEndpointResult {
             return this;
         }
         public GetSqlEndpointResult build() {
-            final var o = new GetSqlEndpointResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.driverShape = driverShape;
-            o.driverShapeConfigs = driverShapeConfigs;
-            o.executorShape = executorShape;
-            o.executorShapeConfigs = executorShapeConfigs;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.jdbcEndpointUrl = jdbcEndpointUrl;
-            o.lakeId = lakeId;
-            o.lastAcceptedRequestToken = lastAcceptedRequestToken;
-            o.maxExecutorCount = maxExecutorCount;
-            o.metastoreId = metastoreId;
-            o.minExecutorCount = minExecutorCount;
-            o.networkConfigurations = networkConfigurations;
-            o.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
-            o.sqlEndpointId = sqlEndpointId;
-            o.sqlEndpointVersion = sqlEndpointVersion;
-            o.state = state;
-            o.stateMessage = stateMessage;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.warehouseBucketUri = warehouseBucketUri;
-            return o;
+            final var _resultValue = new GetSqlEndpointResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.driverShape = driverShape;
+            _resultValue.driverShapeConfigs = driverShapeConfigs;
+            _resultValue.executorShape = executorShape;
+            _resultValue.executorShapeConfigs = executorShapeConfigs;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.jdbcEndpointUrl = jdbcEndpointUrl;
+            _resultValue.lakeId = lakeId;
+            _resultValue.lastAcceptedRequestToken = lastAcceptedRequestToken;
+            _resultValue.maxExecutorCount = maxExecutorCount;
+            _resultValue.metastoreId = metastoreId;
+            _resultValue.minExecutorCount = minExecutorCount;
+            _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
+            _resultValue.sqlEndpointId = sqlEndpointId;
+            _resultValue.sqlEndpointVersion = sqlEndpointVersion;
+            _resultValue.state = state;
+            _resultValue.stateMessage = stateMessage;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.warehouseBucketUri = warehouseBucketUri;
+            return _resultValue;
         }
     }
 }

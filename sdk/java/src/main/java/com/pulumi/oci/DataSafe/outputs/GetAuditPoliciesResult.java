@@ -197,18 +197,18 @@ public final class GetAuditPoliciesResult {
             return this;
         }
         public GetAuditPoliciesResult build() {
-            final var o = new GetAuditPoliciesResult();
-            o.accessLevel = accessLevel;
-            o.auditPolicyCollections = auditPolicyCollections;
-            o.auditPolicyId = auditPolicyId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetAuditPoliciesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.auditPolicyCollections = auditPolicyCollections;
+            _resultValue.auditPolicyId = auditPolicyId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

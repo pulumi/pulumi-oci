@@ -163,16 +163,16 @@ public final class GetRepositoryMirrorRecordResult {
             return this;
         }
         public GetRepositoryMirrorRecordResult build() {
-            final var o = new GetRepositoryMirrorRecordResult();
-            o.id = id;
-            o.mirrorRecordType = mirrorRecordType;
-            o.mirrorStatus = mirrorStatus;
-            o.repositoryId = repositoryId;
-            o.timeEnded = timeEnded;
-            o.timeEnqueued = timeEnqueued;
-            o.timeStarted = timeStarted;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetRepositoryMirrorRecordResult();
+            _resultValue.id = id;
+            _resultValue.mirrorRecordType = mirrorRecordType;
+            _resultValue.mirrorStatus = mirrorStatus;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeEnqueued = timeEnqueued;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

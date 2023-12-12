@@ -65,10 +65,10 @@ public final class GetDomainsBrandingSettingsBrandingSettingDefaultCompanyName {
             return this;
         }
         public GetDomainsBrandingSettingsBrandingSettingDefaultCompanyName build() {
-            final var o = new GetDomainsBrandingSettingsBrandingSettingDefaultCompanyName();
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsBrandingSettingsBrandingSettingDefaultCompanyName();
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

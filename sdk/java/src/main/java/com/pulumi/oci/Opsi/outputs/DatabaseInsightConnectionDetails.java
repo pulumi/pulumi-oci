@@ -130,13 +130,13 @@ public final class DatabaseInsightConnectionDetails {
             return this;
         }
         public DatabaseInsightConnectionDetails build() {
-            final var o = new DatabaseInsightConnectionDetails();
-            o.hostName = hostName;
-            o.hosts = hosts;
-            o.port = port;
-            o.protocol = protocol;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new DatabaseInsightConnectionDetails();
+            _resultValue.hostName = hostName;
+            _resultValue.hosts = hosts;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

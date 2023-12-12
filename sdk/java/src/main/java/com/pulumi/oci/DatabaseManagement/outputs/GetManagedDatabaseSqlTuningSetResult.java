@@ -121,13 +121,13 @@ public final class GetManagedDatabaseSqlTuningSetResult {
             return this;
         }
         public GetManagedDatabaseSqlTuningSetResult build() {
-            final var o = new GetManagedDatabaseSqlTuningSetResult();
-            o.id = id;
-            o.items = items;
-            o.managedDatabaseId = managedDatabaseId;
-            o.nameContains = nameContains;
-            o.owner = owner;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningSetResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.nameContains = nameContains;
+            _resultValue.owner = owner;
+            return _resultValue;
         }
     }
 }

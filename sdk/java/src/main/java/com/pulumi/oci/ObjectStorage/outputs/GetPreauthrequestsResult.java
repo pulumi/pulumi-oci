@@ -136,14 +136,14 @@ public final class GetPreauthrequestsResult {
             return preauthenticatedRequests(List.of(preauthenticatedRequests));
         }
         public GetPreauthrequestsResult build() {
-            final var o = new GetPreauthrequestsResult();
-            o.bucket = bucket;
-            o.filters = filters;
-            o.id = id;
-            o.namespace = namespace;
-            o.objectNamePrefix = objectNamePrefix;
-            o.preauthenticatedRequests = preauthenticatedRequests;
-            return o;
+            final var _resultValue = new GetPreauthrequestsResult();
+            _resultValue.bucket = bucket;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.objectNamePrefix = objectNamePrefix;
+            _resultValue.preauthenticatedRequests = preauthenticatedRequests;
+            return _resultValue;
         }
     }
 }

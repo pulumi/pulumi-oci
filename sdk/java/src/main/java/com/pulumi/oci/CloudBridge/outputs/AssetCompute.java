@@ -601,37 +601,37 @@ public final class AssetCompute {
             return this;
         }
         public AssetCompute build() {
-            final var o = new AssetCompute();
-            o.connectedNetworks = connectedNetworks;
-            o.coresCount = coresCount;
-            o.cpuModel = cpuModel;
-            o.description = description;
-            o.disks = disks;
-            o.disksCount = disksCount;
-            o.dnsName = dnsName;
-            o.firmware = firmware;
-            o.gpuDevices = gpuDevices;
-            o.gpuDevicesCount = gpuDevicesCount;
-            o.guestState = guestState;
-            o.hardwareVersion = hardwareVersion;
-            o.hostName = hostName;
-            o.isPmemEnabled = isPmemEnabled;
-            o.isTpmEnabled = isTpmEnabled;
-            o.latencySensitivity = latencySensitivity;
-            o.memoryInMbs = memoryInMbs;
-            o.nics = nics;
-            o.nicsCount = nicsCount;
-            o.nvdimmController = nvdimmController;
-            o.nvdimms = nvdimms;
-            o.operatingSystem = operatingSystem;
-            o.operatingSystemVersion = operatingSystemVersion;
-            o.pmemInMbs = pmemInMbs;
-            o.powerState = powerState;
-            o.primaryIp = primaryIp;
-            o.scsiController = scsiController;
-            o.storageProvisionedInMbs = storageProvisionedInMbs;
-            o.threadsPerCoreCount = threadsPerCoreCount;
-            return o;
+            final var _resultValue = new AssetCompute();
+            _resultValue.connectedNetworks = connectedNetworks;
+            _resultValue.coresCount = coresCount;
+            _resultValue.cpuModel = cpuModel;
+            _resultValue.description = description;
+            _resultValue.disks = disks;
+            _resultValue.disksCount = disksCount;
+            _resultValue.dnsName = dnsName;
+            _resultValue.firmware = firmware;
+            _resultValue.gpuDevices = gpuDevices;
+            _resultValue.gpuDevicesCount = gpuDevicesCount;
+            _resultValue.guestState = guestState;
+            _resultValue.hardwareVersion = hardwareVersion;
+            _resultValue.hostName = hostName;
+            _resultValue.isPmemEnabled = isPmemEnabled;
+            _resultValue.isTpmEnabled = isTpmEnabled;
+            _resultValue.latencySensitivity = latencySensitivity;
+            _resultValue.memoryInMbs = memoryInMbs;
+            _resultValue.nics = nics;
+            _resultValue.nicsCount = nicsCount;
+            _resultValue.nvdimmController = nvdimmController;
+            _resultValue.nvdimms = nvdimms;
+            _resultValue.operatingSystem = operatingSystem;
+            _resultValue.operatingSystemVersion = operatingSystemVersion;
+            _resultValue.pmemInMbs = pmemInMbs;
+            _resultValue.powerState = powerState;
+            _resultValue.primaryIp = primaryIp;
+            _resultValue.scsiController = scsiController;
+            _resultValue.storageProvisionedInMbs = storageProvisionedInMbs;
+            _resultValue.threadsPerCoreCount = threadsPerCoreCount;
+            return _resultValue;
         }
     }
 }

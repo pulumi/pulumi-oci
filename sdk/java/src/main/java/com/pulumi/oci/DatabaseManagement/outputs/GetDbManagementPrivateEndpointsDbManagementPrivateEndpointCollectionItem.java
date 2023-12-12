@@ -241,19 +241,19 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
             return this;
         }
         public GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem build() {
-            final var o = new GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem();
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.id = id;
-            o.isCluster = isCluster;
-            o.name = name;
-            o.nsgIds = nsgIds;
-            o.privateIp = privateIp;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.isCluster = isCluster;
+            _resultValue.name = name;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateIp = privateIp;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

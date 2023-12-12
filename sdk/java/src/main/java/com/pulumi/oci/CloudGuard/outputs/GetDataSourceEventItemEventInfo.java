@@ -90,13 +90,13 @@ public final class GetDataSourceEventItemEventInfo {
             return this;
         }
         public GetDataSourceEventItemEventInfo build() {
-            final var o = new GetDataSourceEventItemEventInfo();
-            o.dataSourceFeedProvider = dataSourceFeedProvider;
-            o.logResult = logResult;
-            o.observedValue = observedValue;
-            o.operator = operator;
-            o.triggerValue = triggerValue;
-            return o;
+            final var _resultValue = new GetDataSourceEventItemEventInfo();
+            _resultValue.dataSourceFeedProvider = dataSourceFeedProvider;
+            _resultValue.logResult = logResult;
+            _resultValue.observedValue = observedValue;
+            _resultValue.operator = operator;
+            _resultValue.triggerValue = triggerValue;
+            return _resultValue;
         }
     }
 }

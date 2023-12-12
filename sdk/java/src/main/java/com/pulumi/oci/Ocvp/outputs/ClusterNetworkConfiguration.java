@@ -302,19 +302,19 @@ public final class ClusterNetworkConfiguration {
             return this;
         }
         public ClusterNetworkConfiguration build() {
-            final var o = new ClusterNetworkConfiguration();
-            o.hcxVlanId = hcxVlanId;
-            o.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
-            o.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
-            o.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
-            o.nsxVtepVlanId = nsxVtepVlanId;
-            o.provisioningSubnetId = provisioningSubnetId;
-            o.provisioningVlanId = provisioningVlanId;
-            o.replicationVlanId = replicationVlanId;
-            o.vmotionVlanId = vmotionVlanId;
-            o.vsanVlanId = vsanVlanId;
-            o.vsphereVlanId = vsphereVlanId;
-            return o;
+            final var _resultValue = new ClusterNetworkConfiguration();
+            _resultValue.hcxVlanId = hcxVlanId;
+            _resultValue.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
+            _resultValue.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
+            _resultValue.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
+            _resultValue.nsxVtepVlanId = nsxVtepVlanId;
+            _resultValue.provisioningSubnetId = provisioningSubnetId;
+            _resultValue.provisioningVlanId = provisioningVlanId;
+            _resultValue.replicationVlanId = replicationVlanId;
+            _resultValue.vmotionVlanId = vmotionVlanId;
+            _resultValue.vsanVlanId = vsanVlanId;
+            _resultValue.vsphereVlanId = vsphereVlanId;
+            return _resultValue;
         }
     }
 }

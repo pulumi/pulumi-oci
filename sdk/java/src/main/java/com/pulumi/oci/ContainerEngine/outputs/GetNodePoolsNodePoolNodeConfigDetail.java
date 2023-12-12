@@ -195,16 +195,16 @@ public final class GetNodePoolsNodePoolNodeConfigDetail {
             return this;
         }
         public GetNodePoolsNodePoolNodeConfigDetail build() {
-            final var o = new GetNodePoolsNodePoolNodeConfigDetail();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.kmsKeyId = kmsKeyId;
-            o.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
-            o.nsgIds = nsgIds;
-            o.placementConfigs = placementConfigs;
-            o.size = size;
-            return o;
+            final var _resultValue = new GetNodePoolsNodePoolNodeConfigDetail();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.nodePoolPodNetworkOptionDetails = nodePoolPodNetworkOptionDetails;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.placementConfigs = placementConfigs;
+            _resultValue.size = size;
+            return _resultValue;
         }
     }
 }

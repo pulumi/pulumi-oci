@@ -128,14 +128,14 @@ public final class GetProtectionCapabilityGroupTagsResult {
             return this;
         }
         public GetProtectionCapabilityGroupTagsResult build() {
-            final var o = new GetProtectionCapabilityGroupTagsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.protectionCapabilityGroupTagCollections = protectionCapabilityGroupTagCollections;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetProtectionCapabilityGroupTagsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.protectionCapabilityGroupTagCollections = protectionCapabilityGroupTagCollections;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

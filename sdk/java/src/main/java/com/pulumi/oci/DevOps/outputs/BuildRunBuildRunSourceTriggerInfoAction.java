@@ -91,11 +91,11 @@ public final class BuildRunBuildRunSourceTriggerInfoAction {
             return this;
         }
         public BuildRunBuildRunSourceTriggerInfoAction build() {
-            final var o = new BuildRunBuildRunSourceTriggerInfoAction();
-            o.buildPipelineId = buildPipelineId;
-            o.filters = filters;
-            o.type = type;
-            return o;
+            final var _resultValue = new BuildRunBuildRunSourceTriggerInfoAction();
+            _resultValue.buildPipelineId = buildPipelineId;
+            _resultValue.filters = filters;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

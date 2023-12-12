@@ -189,18 +189,18 @@ public final class GetAtCustomerCccUpgradeSchedulesResult {
             return this;
         }
         public GetAtCustomerCccUpgradeSchedulesResult build() {
-            final var o = new GetAtCustomerCccUpgradeSchedulesResult();
-            o.accessLevel = accessLevel;
-            o.cccUpgradeScheduleCollections = cccUpgradeScheduleCollections;
-            o.cccUpgradeScheduleId = cccUpgradeScheduleId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAtCustomerCccUpgradeSchedulesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.cccUpgradeScheduleCollections = cccUpgradeScheduleCollections;
+            _resultValue.cccUpgradeScheduleId = cccUpgradeScheduleId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

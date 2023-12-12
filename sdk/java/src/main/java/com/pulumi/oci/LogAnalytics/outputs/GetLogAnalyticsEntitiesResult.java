@@ -278,23 +278,23 @@ public final class GetLogAnalyticsEntitiesResult {
             return this;
         }
         public GetLogAnalyticsEntitiesResult build() {
-            final var o = new GetLogAnalyticsEntitiesResult();
-            o.cloudResourceId = cloudResourceId;
-            o.compartmentId = compartmentId;
-            o.entityTypeNames = entityTypeNames;
-            o.filters = filters;
-            o.hostname = hostname;
-            o.hostnameContains = hostnameContains;
-            o.id = id;
-            o.isManagementAgentIdNull = isManagementAgentIdNull;
-            o.lifecycleDetailsContains = lifecycleDetailsContains;
-            o.logAnalyticsEntityCollections = logAnalyticsEntityCollections;
-            o.name = name;
-            o.nameContains = nameContains;
-            o.namespace = namespace;
-            o.sourceId = sourceId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntitiesResult();
+            _resultValue.cloudResourceId = cloudResourceId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.entityTypeNames = entityTypeNames;
+            _resultValue.filters = filters;
+            _resultValue.hostname = hostname;
+            _resultValue.hostnameContains = hostnameContains;
+            _resultValue.id = id;
+            _resultValue.isManagementAgentIdNull = isManagementAgentIdNull;
+            _resultValue.lifecycleDetailsContains = lifecycleDetailsContains;
+            _resultValue.logAnalyticsEntityCollections = logAnalyticsEntityCollections;
+            _resultValue.name = name;
+            _resultValue.nameContains = nameContains;
+            _resultValue.namespace = namespace;
+            _resultValue.sourceId = sourceId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

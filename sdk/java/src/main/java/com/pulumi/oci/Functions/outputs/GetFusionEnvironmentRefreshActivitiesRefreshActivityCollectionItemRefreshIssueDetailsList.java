@@ -46,9 +46,9 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
             return this;
         }
         public GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList build() {
-            final var o = new GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList();
-            o.refreshIssues = refreshIssues;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList();
+            _resultValue.refreshIssues = refreshIssues;
+            return _resultValue;
         }
     }
 }

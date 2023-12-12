@@ -67,10 +67,10 @@ public final class KeyStoreAssociatedDatabase {
             return this;
         }
         public KeyStoreAssociatedDatabase build() {
-            final var o = new KeyStoreAssociatedDatabase();
-            o.dbName = dbName;
-            o.id = id;
-            return o;
+            final var _resultValue = new KeyStoreAssociatedDatabase();
+            _resultValue.dbName = dbName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

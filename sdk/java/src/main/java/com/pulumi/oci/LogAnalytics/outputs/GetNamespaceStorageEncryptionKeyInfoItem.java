@@ -84,11 +84,11 @@ public final class GetNamespaceStorageEncryptionKeyInfoItem {
             return this;
         }
         public GetNamespaceStorageEncryptionKeyInfoItem build() {
-            final var o = new GetNamespaceStorageEncryptionKeyInfoItem();
-            o.keyId = keyId;
-            o.keySource = keySource;
-            o.keyType = keyType;
-            return o;
+            final var _resultValue = new GetNamespaceStorageEncryptionKeyInfoItem();
+            _resultValue.keyId = keyId;
+            _resultValue.keySource = keySource;
+            _resultValue.keyType = keyType;
+            return _resultValue;
         }
     }
 }

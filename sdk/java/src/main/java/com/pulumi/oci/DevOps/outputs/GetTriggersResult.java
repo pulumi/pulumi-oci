@@ -171,15 +171,15 @@ public final class GetTriggersResult {
             return triggerCollections(List.of(triggerCollections));
         }
         public GetTriggersResult build() {
-            final var o = new GetTriggersResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.projectId = projectId;
-            o.state = state;
-            o.triggerCollections = triggerCollections;
-            return o;
+            final var _resultValue = new GetTriggersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.triggerCollections = triggerCollections;
+            return _resultValue;
         }
     }
 }

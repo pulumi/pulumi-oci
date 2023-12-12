@@ -403,27 +403,27 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItem {
             return this;
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItem build() {
-            final var o = new GetCertificateAuthoritiesCertificateAuthorityCollectionItem();
-            o.certificateAuthorityConfigs = certificateAuthorityConfigs;
-            o.certificateAuthorityRules = certificateAuthorityRules;
-            o.certificateRevocationListDetails = certificateRevocationListDetails;
-            o.compartmentId = compartmentId;
-            o.configType = configType;
-            o.currentVersions = currentVersions;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-            o.kmsKeyId = kmsKeyId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.signingAlgorithm = signingAlgorithm;
-            o.state = state;
-            o.subjects = subjects;
-            o.timeCreated = timeCreated;
-            o.timeOfDeletion = timeOfDeletion;
-            return o;
+            final var _resultValue = new GetCertificateAuthoritiesCertificateAuthorityCollectionItem();
+            _resultValue.certificateAuthorityConfigs = certificateAuthorityConfigs;
+            _resultValue.certificateAuthorityRules = certificateAuthorityRules;
+            _resultValue.certificateRevocationListDetails = certificateRevocationListDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configType = configType;
+            _resultValue.currentVersions = currentVersions;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.signingAlgorithm = signingAlgorithm;
+            _resultValue.state = state;
+            _resultValue.subjects = subjects;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            return _resultValue;
         }
     }
 }

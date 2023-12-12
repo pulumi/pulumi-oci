@@ -88,11 +88,11 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
             return values(List.of(values));
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem();
-            o.ifExists = ifExists;
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeaderItem();
+            _resultValue.ifExists = ifExists;
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

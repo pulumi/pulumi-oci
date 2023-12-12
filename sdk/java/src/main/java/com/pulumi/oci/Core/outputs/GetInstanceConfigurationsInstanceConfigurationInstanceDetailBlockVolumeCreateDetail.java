@@ -282,21 +282,21 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail();
-            o.autotunePolicies = autotunePolicies;
-            o.availabilityDomain = availabilityDomain;
-            o.backupPolicyId = backupPolicyId;
-            o.blockVolumeReplicas = blockVolumeReplicas;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.isAutoTuneEnabled = isAutoTuneEnabled;
-            o.kmsKeyId = kmsKeyId;
-            o.sizeInGbs = sizeInGbs;
-            o.sourceDetails = sourceDetails;
-            o.vpusPerGb = vpusPerGb;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail();
+            _resultValue.autotunePolicies = autotunePolicies;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.backupPolicyId = backupPolicyId;
+            _resultValue.blockVolumeReplicas = blockVolumeReplicas;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.isAutoTuneEnabled = isAutoTuneEnabled;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.sizeInGbs = sizeInGbs;
+            _resultValue.sourceDetails = sourceDetails;
+            _resultValue.vpusPerGb = vpusPerGb;
+            return _resultValue;
         }
     }
 }

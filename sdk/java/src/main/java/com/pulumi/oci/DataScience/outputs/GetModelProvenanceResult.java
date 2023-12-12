@@ -163,16 +163,16 @@ public final class GetModelProvenanceResult {
             return this;
         }
         public GetModelProvenanceResult build() {
-            final var o = new GetModelProvenanceResult();
-            o.gitBranch = gitBranch;
-            o.gitCommit = gitCommit;
-            o.id = id;
-            o.modelId = modelId;
-            o.repositoryUrl = repositoryUrl;
-            o.scriptDir = scriptDir;
-            o.trainingId = trainingId;
-            o.trainingScript = trainingScript;
-            return o;
+            final var _resultValue = new GetModelProvenanceResult();
+            _resultValue.gitBranch = gitBranch;
+            _resultValue.gitCommit = gitCommit;
+            _resultValue.id = id;
+            _resultValue.modelId = modelId;
+            _resultValue.repositoryUrl = repositoryUrl;
+            _resultValue.scriptDir = scriptDir;
+            _resultValue.trainingId = trainingId;
+            _resultValue.trainingScript = trainingScript;
+            return _resultValue;
         }
     }
 }

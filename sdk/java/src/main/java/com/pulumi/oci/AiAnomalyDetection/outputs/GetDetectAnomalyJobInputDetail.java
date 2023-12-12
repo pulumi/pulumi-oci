@@ -140,15 +140,15 @@ public final class GetDetectAnomalyJobInputDetail {
             return signalNames(List.of(signalNames));
         }
         public GetDetectAnomalyJobInputDetail build() {
-            final var o = new GetDetectAnomalyJobInputDetail();
-            o.content = content;
-            o.contentType = contentType;
-            o.datas = datas;
-            o.inputType = inputType;
-            o.message = message;
-            o.objectLocations = objectLocations;
-            o.signalNames = signalNames;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobInputDetail();
+            _resultValue.content = content;
+            _resultValue.contentType = contentType;
+            _resultValue.datas = datas;
+            _resultValue.inputType = inputType;
+            _resultValue.message = message;
+            _resultValue.objectLocations = objectLocations;
+            _resultValue.signalNames = signalNames;
+            return _resultValue;
         }
     }
 }

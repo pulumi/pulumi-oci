@@ -112,14 +112,14 @@ public final class GetShapeResult {
             return shapes(List.of(shapes));
         }
         public GetShapeResult build() {
-            final var o = new GetShapeResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.imageId = imageId;
-            o.shapes = shapes;
-            return o;
+            final var _resultValue = new GetShapeResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.shapes = shapes;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetServiceConnectorSourceCursor {
             return this;
         }
         public GetServiceConnectorSourceCursor build() {
-            final var o = new GetServiceConnectorSourceCursor();
-            o.kind = kind;
-            return o;
+            final var _resultValue = new GetServiceConnectorSourceCursor();
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

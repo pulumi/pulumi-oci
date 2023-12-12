@@ -109,13 +109,13 @@ public final class GetManagedDatabasesAsmPropertiesResult {
             return this;
         }
         public GetManagedDatabasesAsmPropertiesResult build() {
-            final var o = new GetManagedDatabasesAsmPropertiesResult();
-            o.asmPropertyCollections = asmPropertyCollections;
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabasesAsmPropertiesResult();
+            _resultValue.asmPropertyCollections = asmPropertyCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

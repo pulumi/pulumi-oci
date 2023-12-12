@@ -67,11 +67,11 @@ public final class GetScriptsFilter {
             return values(List.of(values));
         }
         public GetScriptsFilter build() {
-            final var o = new GetScriptsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetScriptsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

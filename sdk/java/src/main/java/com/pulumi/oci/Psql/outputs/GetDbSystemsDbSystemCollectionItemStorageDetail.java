@@ -104,12 +104,12 @@ public final class GetDbSystemsDbSystemCollectionItemStorageDetail {
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemStorageDetail build() {
-            final var o = new GetDbSystemsDbSystemCollectionItemStorageDetail();
-            o.availabilityDomain = availabilityDomain;
-            o.iops = iops;
-            o.isRegionallyDurable = isRegionallyDurable;
-            o.systemType = systemType;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItemStorageDetail();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.iops = iops;
+            _resultValue.isRegionallyDurable = isRegionallyDurable;
+            _resultValue.systemType = systemType;
+            return _resultValue;
         }
     }
 }

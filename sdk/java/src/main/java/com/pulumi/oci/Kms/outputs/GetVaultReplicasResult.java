@@ -97,12 +97,12 @@ public final class GetVaultReplicasResult {
             return vaultReplicas(List.of(vaultReplicas));
         }
         public GetVaultReplicasResult build() {
-            final var o = new GetVaultReplicasResult();
-            o.filters = filters;
-            o.id = id;
-            o.vaultId = vaultId;
-            o.vaultReplicas = vaultReplicas;
-            return o;
+            final var _resultValue = new GetVaultReplicasResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.vaultId = vaultId;
+            _resultValue.vaultReplicas = vaultReplicas;
+            return _resultValue;
         }
     }
 }

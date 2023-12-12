@@ -243,19 +243,19 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
             return this;
         }
         public GetCrossConnectGroupsCrossConnectGroup build() {
-            final var o = new GetCrossConnectGroupsCrossConnectGroup();
-            o.compartmentId = compartmentId;
-            o.customerReferenceName = customerReferenceName;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.macsecProperties = macsecProperties;
-            o.ociLogicalDeviceName = ociLogicalDeviceName;
-            o.ociPhysicalDeviceName = ociPhysicalDeviceName;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetCrossConnectGroupsCrossConnectGroup();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.customerReferenceName = customerReferenceName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.macsecProperties = macsecProperties;
+            _resultValue.ociLogicalDeviceName = ociLogicalDeviceName;
+            _resultValue.ociPhysicalDeviceName = ociPhysicalDeviceName;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

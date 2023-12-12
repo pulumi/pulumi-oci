@@ -50,9 +50,9 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
             return items(List.of(items));
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

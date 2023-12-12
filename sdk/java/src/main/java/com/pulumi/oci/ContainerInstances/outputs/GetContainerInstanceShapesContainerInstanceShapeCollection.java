@@ -50,9 +50,9 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollection {
             return items(List.of(items));
         }
         public GetContainerInstanceShapesContainerInstanceShapeCollection build() {
-            final var o = new GetContainerInstanceShapesContainerInstanceShapeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapesContainerInstanceShapeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

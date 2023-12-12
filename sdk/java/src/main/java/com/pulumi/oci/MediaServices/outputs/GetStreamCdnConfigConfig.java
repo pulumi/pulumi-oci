@@ -256,20 +256,20 @@ public final class GetStreamCdnConfigConfig {
             return this;
         }
         public GetStreamCdnConfigConfig build() {
-            final var o = new GetStreamCdnConfigConfig();
-            o.edgeHostname = edgeHostname;
-            o.edgePathPrefix = edgePathPrefix;
-            o.edgeTokenKey = edgeTokenKey;
-            o.edgeTokenSalt = edgeTokenSalt;
-            o.isEdgeTokenAuth = isEdgeTokenAuth;
-            o.originAuthSecretKeyA = originAuthSecretKeyA;
-            o.originAuthSecretKeyB = originAuthSecretKeyB;
-            o.originAuthSecretKeyNonceA = originAuthSecretKeyNonceA;
-            o.originAuthSecretKeyNonceB = originAuthSecretKeyNonceB;
-            o.originAuthSignEncryption = originAuthSignEncryption;
-            o.originAuthSignType = originAuthSignType;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetStreamCdnConfigConfig();
+            _resultValue.edgeHostname = edgeHostname;
+            _resultValue.edgePathPrefix = edgePathPrefix;
+            _resultValue.edgeTokenKey = edgeTokenKey;
+            _resultValue.edgeTokenSalt = edgeTokenSalt;
+            _resultValue.isEdgeTokenAuth = isEdgeTokenAuth;
+            _resultValue.originAuthSecretKeyA = originAuthSecretKeyA;
+            _resultValue.originAuthSecretKeyB = originAuthSecretKeyB;
+            _resultValue.originAuthSecretKeyNonceA = originAuthSecretKeyNonceA;
+            _resultValue.originAuthSecretKeyNonceB = originAuthSecretKeyNonceB;
+            _resultValue.originAuthSignEncryption = originAuthSignEncryption;
+            _resultValue.originAuthSignType = originAuthSignType;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

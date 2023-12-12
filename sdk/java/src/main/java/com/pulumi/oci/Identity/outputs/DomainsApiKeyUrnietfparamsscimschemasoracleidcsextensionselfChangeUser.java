@@ -70,9 +70,9 @@ public final class DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfC
             return this;
         }
         public DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

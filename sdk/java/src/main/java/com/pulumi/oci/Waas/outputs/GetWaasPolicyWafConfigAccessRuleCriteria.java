@@ -117,11 +117,11 @@ public final class GetWaasPolicyWafConfigAccessRuleCriteria {
             return this;
         }
         public GetWaasPolicyWafConfigAccessRuleCriteria build() {
-            final var o = new GetWaasPolicyWafConfigAccessRuleCriteria();
-            o.condition = condition;
-            o.isCaseSensitive = isCaseSensitive;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigAccessRuleCriteria();
+            _resultValue.condition = condition;
+            _resultValue.isCaseSensitive = isCaseSensitive;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

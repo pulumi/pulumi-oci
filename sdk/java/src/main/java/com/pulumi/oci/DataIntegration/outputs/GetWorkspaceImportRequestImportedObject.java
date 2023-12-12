@@ -217,18 +217,18 @@ public final class GetWorkspaceImportRequestImportedObject {
             return this;
         }
         public GetWorkspaceImportRequestImportedObject build() {
-            final var o = new GetWorkspaceImportRequestImportedObject();
-            o.aggregatorKey = aggregatorKey;
-            o.identifier = identifier;
-            o.name = name;
-            o.namePath = namePath;
-            o.newKey = newKey;
-            o.objectType = objectType;
-            o.objectVersion = objectVersion;
-            o.oldKey = oldKey;
-            o.resolutionAction = resolutionAction;
-            o.timeUpdatedInMillis = timeUpdatedInMillis;
-            return o;
+            final var _resultValue = new GetWorkspaceImportRequestImportedObject();
+            _resultValue.aggregatorKey = aggregatorKey;
+            _resultValue.identifier = identifier;
+            _resultValue.name = name;
+            _resultValue.namePath = namePath;
+            _resultValue.newKey = newKey;
+            _resultValue.objectType = objectType;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.oldKey = oldKey;
+            _resultValue.resolutionAction = resolutionAction;
+            _resultValue.timeUpdatedInMillis = timeUpdatedInMillis;
+            return _resultValue;
         }
     }
 }

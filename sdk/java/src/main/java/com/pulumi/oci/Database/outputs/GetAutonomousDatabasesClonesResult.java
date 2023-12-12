@@ -166,16 +166,16 @@ public final class GetAutonomousDatabasesClonesResult {
             return this;
         }
         public GetAutonomousDatabasesClonesResult build() {
-            final var o = new GetAutonomousDatabasesClonesResult();
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.autonomousDatabases = autonomousDatabases;
-            o.cloneType = cloneType;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesClonesResult();
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.autonomousDatabases = autonomousDatabases;
+            _resultValue.cloneType = cloneType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

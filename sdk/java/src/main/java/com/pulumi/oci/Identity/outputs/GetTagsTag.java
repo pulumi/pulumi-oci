@@ -244,19 +244,19 @@ public final class GetTagsTag {
             return validators(List.of(validators));
         }
         public GetTagsTag build() {
-            final var o = new GetTagsTag();
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isCostTracking = isCostTracking;
-            o.isRetired = isRetired;
-            o.name = name;
-            o.state = state;
-            o.tagNamespaceId = tagNamespaceId;
-            o.timeCreated = timeCreated;
-            o.validators = validators;
-            return o;
+            final var _resultValue = new GetTagsTag();
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isCostTracking = isCostTracking;
+            _resultValue.isRetired = isRetired;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.tagNamespaceId = tagNamespaceId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.validators = validators;
+            return _resultValue;
         }
     }
 }

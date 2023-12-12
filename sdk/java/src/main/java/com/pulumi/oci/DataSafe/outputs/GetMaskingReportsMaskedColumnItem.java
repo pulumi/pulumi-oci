@@ -217,18 +217,18 @@ public final class GetMaskingReportsMaskedColumnItem {
             return this;
         }
         public GetMaskingReportsMaskedColumnItem build() {
-            final var o = new GetMaskingReportsMaskedColumnItem();
-            o.columnName = columnName;
-            o.key = key;
-            o.maskingColumnGroup = maskingColumnGroup;
-            o.maskingFormatUsed = maskingFormatUsed;
-            o.object = object;
-            o.objectType = objectType;
-            o.parentColumnKey = parentColumnKey;
-            o.schemaName = schemaName;
-            o.sensitiveTypeId = sensitiveTypeId;
-            o.totalMaskedValues = totalMaskedValues;
-            return o;
+            final var _resultValue = new GetMaskingReportsMaskedColumnItem();
+            _resultValue.columnName = columnName;
+            _resultValue.key = key;
+            _resultValue.maskingColumnGroup = maskingColumnGroup;
+            _resultValue.maskingFormatUsed = maskingFormatUsed;
+            _resultValue.object = object;
+            _resultValue.objectType = objectType;
+            _resultValue.parentColumnKey = parentColumnKey;
+            _resultValue.schemaName = schemaName;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.totalMaskedValues = totalMaskedValues;
+            return _resultValue;
         }
     }
 }

@@ -124,13 +124,13 @@ public final class DataAssetDataSourceDetailsVersionSpecificDetails {
             return this;
         }
         public DataAssetDataSourceDetailsVersionSpecificDetails build() {
-            final var o = new DataAssetDataSourceDetailsVersionSpecificDetails();
-            o.bucket = bucket;
-            o.databaseName = databaseName;
-            o.influxVersion = influxVersion;
-            o.organizationName = organizationName;
-            o.retentionPolicyName = retentionPolicyName;
-            return o;
+            final var _resultValue = new DataAssetDataSourceDetailsVersionSpecificDetails();
+            _resultValue.bucket = bucket;
+            _resultValue.databaseName = databaseName;
+            _resultValue.influxVersion = influxVersion;
+            _resultValue.organizationName = organizationName;
+            _resultValue.retentionPolicyName = retentionPolicyName;
+            return _resultValue;
         }
     }
 }

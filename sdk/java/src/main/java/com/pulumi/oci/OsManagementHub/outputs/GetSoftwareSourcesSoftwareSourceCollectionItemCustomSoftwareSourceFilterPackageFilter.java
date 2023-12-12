@@ -103,12 +103,12 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareS
             return this;
         }
         public GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter build() {
-            final var o = new GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter();
-            o.filterType = filterType;
-            o.packageName = packageName;
-            o.packageNamePattern = packageNamePattern;
-            o.packageVersion = packageVersion;
-            return o;
+            final var _resultValue = new GetSoftwareSourcesSoftwareSourceCollectionItemCustomSoftwareSourceFilterPackageFilter();
+            _resultValue.filterType = filterType;
+            _resultValue.packageName = packageName;
+            _resultValue.packageNamePattern = packageNamePattern;
+            _resultValue.packageVersion = packageVersion;
+            return _resultValue;
         }
     }
 }

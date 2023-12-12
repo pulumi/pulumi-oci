@@ -65,10 +65,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidationContent build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidationContent();
-            o.mediaType = mediaType;
-            o.validationType = validationType;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyBodyValidationContent();
+            _resultValue.mediaType = mediaType;
+            _resultValue.validationType = validationType;
+            return _resultValue;
         }
     }
 }

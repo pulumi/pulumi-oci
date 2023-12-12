@@ -67,10 +67,10 @@ public final class WorkspaceApplicationParentRef {
             return this;
         }
         public WorkspaceApplicationParentRef build() {
-            final var o = new WorkspaceApplicationParentRef();
-            o.parent = parent;
-            o.rootDocId = rootDocId;
-            return o;
+            final var _resultValue = new WorkspaceApplicationParentRef();
+            _resultValue.parent = parent;
+            _resultValue.rootDocId = rootDocId;
+            return _resultValue;
         }
     }
 }

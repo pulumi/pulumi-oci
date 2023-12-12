@@ -75,11 +75,11 @@ public final class GetExternalListenerServicesFilter {
             return values(List.of(values));
         }
         public GetExternalListenerServicesFilter build() {
-            final var o = new GetExternalListenerServicesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalListenerServicesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

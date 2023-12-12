@@ -103,12 +103,12 @@ public final class GetBackendHealthHealthCheckResult {
             return this;
         }
         public GetBackendHealthHealthCheckResult build() {
-            final var o = new GetBackendHealthHealthCheckResult();
-            o.healthCheckStatus = healthCheckStatus;
-            o.sourceIpAddress = sourceIpAddress;
-            o.subnetId = subnetId;
-            o.timestamp = timestamp;
-            return o;
+            final var _resultValue = new GetBackendHealthHealthCheckResult();
+            _resultValue.healthCheckStatus = healthCheckStatus;
+            _resultValue.sourceIpAddress = sourceIpAddress;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timestamp = timestamp;
+            return _resultValue;
         }
     }
 }

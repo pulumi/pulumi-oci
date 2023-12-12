@@ -111,13 +111,13 @@ public final class GetManagedDatabaseAddmTaskResult {
             return this;
         }
         public GetManagedDatabaseAddmTaskResult build() {
-            final var o = new GetManagedDatabaseAddmTaskResult();
-            o.id = id;
-            o.items = items;
-            o.managedDatabaseId = managedDatabaseId;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAddmTaskResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

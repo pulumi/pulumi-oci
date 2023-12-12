@@ -65,10 +65,10 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensione
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

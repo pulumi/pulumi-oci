@@ -167,16 +167,16 @@ public final class GetSecurityZonesResult {
             return this;
         }
         public GetSecurityZonesResult build() {
-            final var o = new GetSecurityZonesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isRequiredSecurityZonesInSubtree = isRequiredSecurityZonesInSubtree;
-            o.securityRecipeId = securityRecipeId;
-            o.securityZoneCollections = securityZoneCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSecurityZonesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isRequiredSecurityZonesInSubtree = isRequiredSecurityZonesInSubtree;
+            _resultValue.securityRecipeId = securityRecipeId;
+            _resultValue.securityZoneCollections = securityZoneCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

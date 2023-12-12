@@ -340,24 +340,24 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItem 
             return this;
         }
         public GetWorkspaceImportRequestsImportRequestSummaryCollectionItem build() {
-            final var o = new GetWorkspaceImportRequestsImportRequestSummaryCollectionItem();
-            o.bucket = bucket;
-            o.createdBy = createdBy;
-            o.errorMessages = errorMessages;
-            o.fileName = fileName;
-            o.importConflictResolution = importConflictResolution;
-            o.importedObjects = importedObjects;
-            o.key = key;
-            o.name = name;
-            o.objectKeyForImport = objectKeyForImport;
-            o.objectStorageRegion = objectStorageRegion;
-            o.objectStorageTenancyId = objectStorageTenancyId;
-            o.status = status;
-            o.timeEndedInMillis = timeEndedInMillis;
-            o.timeStartedInMillis = timeStartedInMillis;
-            o.totalImportedObjectCount = totalImportedObjectCount;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceImportRequestsImportRequestSummaryCollectionItem();
+            _resultValue.bucket = bucket;
+            _resultValue.createdBy = createdBy;
+            _resultValue.errorMessages = errorMessages;
+            _resultValue.fileName = fileName;
+            _resultValue.importConflictResolution = importConflictResolution;
+            _resultValue.importedObjects = importedObjects;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.objectKeyForImport = objectKeyForImport;
+            _resultValue.objectStorageRegion = objectStorageRegion;
+            _resultValue.objectStorageTenancyId = objectStorageTenancyId;
+            _resultValue.status = status;
+            _resultValue.timeEndedInMillis = timeEndedInMillis;
+            _resultValue.timeStartedInMillis = timeStartedInMillis;
+            _resultValue.totalImportedObjectCount = totalImportedObjectCount;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

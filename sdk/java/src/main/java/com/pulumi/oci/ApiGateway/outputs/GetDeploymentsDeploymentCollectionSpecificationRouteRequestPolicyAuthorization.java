@@ -69,10 +69,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthorization build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthorization();
-            o.allowedScopes = allowedScopes;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyAuthorization();
+            _resultValue.allowedScopes = allowedScopes;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

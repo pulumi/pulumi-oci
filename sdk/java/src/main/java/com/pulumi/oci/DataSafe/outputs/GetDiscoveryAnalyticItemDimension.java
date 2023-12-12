@@ -65,10 +65,10 @@ public final class GetDiscoveryAnalyticItemDimension {
             return this;
         }
         public GetDiscoveryAnalyticItemDimension build() {
-            final var o = new GetDiscoveryAnalyticItemDimension();
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetDiscoveryAnalyticItemDimension();
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

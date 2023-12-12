@@ -97,12 +97,12 @@ public final class GetAlertPolicyRulesResult {
             return this;
         }
         public GetAlertPolicyRulesResult build() {
-            final var o = new GetAlertPolicyRulesResult();
-            o.alertPolicyId = alertPolicyId;
-            o.alertPolicyRuleCollections = alertPolicyRuleCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAlertPolicyRulesResult();
+            _resultValue.alertPolicyId = alertPolicyId;
+            _resultValue.alertPolicyRuleCollections = alertPolicyRuleCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

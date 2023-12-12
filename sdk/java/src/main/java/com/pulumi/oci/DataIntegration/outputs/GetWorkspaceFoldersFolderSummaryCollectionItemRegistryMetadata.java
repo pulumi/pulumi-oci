@@ -128,13 +128,13 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadat
             return this;
         }
         public GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata build() {
-            final var o = new GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata();
-            o.aggregatorKey = aggregatorKey;
-            o.isFavorite = isFavorite;
-            o.key = key;
-            o.labels = labels;
-            o.registryVersion = registryVersion;
-            return o;
+            final var _resultValue = new GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata();
+            _resultValue.aggregatorKey = aggregatorKey;
+            _resultValue.isFavorite = isFavorite;
+            _resultValue.key = key;
+            _resultValue.labels = labels;
+            _resultValue.registryVersion = registryVersion;
+            return _resultValue;
         }
     }
 }

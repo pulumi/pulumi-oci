@@ -90,11 +90,11 @@ public final class GetPipelinesPipelineInfrastructureConfigurationDetail {
             return this;
         }
         public GetPipelinesPipelineInfrastructureConfigurationDetail build() {
-            final var o = new GetPipelinesPipelineInfrastructureConfigurationDetail();
-            o.blockStorageSizeInGbs = blockStorageSizeInGbs;
-            o.shapeConfigDetails = shapeConfigDetails;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new GetPipelinesPipelineInfrastructureConfigurationDetail();
+            _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.shapeConfigDetails = shapeConfigDetails;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

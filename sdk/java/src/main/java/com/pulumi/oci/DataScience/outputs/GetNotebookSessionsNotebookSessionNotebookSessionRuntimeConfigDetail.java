@@ -72,10 +72,10 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfi
             return notebookSessionGitConfigDetails(List.of(notebookSessionGitConfigDetails));
         }
         public GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail build() {
-            final var o = new GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail();
-            o.customEnvironmentVariables = customEnvironmentVariables;
-            o.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
-            return o;
+            final var _resultValue = new GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail();
+            _resultValue.customEnvironmentVariables = customEnvironmentVariables;
+            _resultValue.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
+            return _resultValue;
         }
     }
 }

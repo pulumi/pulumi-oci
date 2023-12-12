@@ -85,11 +85,11 @@ public final class GetDrProtectionGroupMemberBackendSetMapping {
             return this;
         }
         public GetDrProtectionGroupMemberBackendSetMapping build() {
-            final var o = new GetDrProtectionGroupMemberBackendSetMapping();
-            o.destinationBackendSetName = destinationBackendSetName;
-            o.isBackendSetForNonMovable = isBackendSetForNonMovable;
-            o.sourceBackendSetName = sourceBackendSetName;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupMemberBackendSetMapping();
+            _resultValue.destinationBackendSetName = destinationBackendSetName;
+            _resultValue.isBackendSetForNonMovable = isBackendSetForNonMovable;
+            _resultValue.sourceBackendSetName = sourceBackendSetName;
+            return _resultValue;
         }
     }
 }

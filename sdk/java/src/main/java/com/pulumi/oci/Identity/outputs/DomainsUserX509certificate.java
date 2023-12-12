@@ -184,12 +184,12 @@ public final class DomainsUserX509certificate {
             return this;
         }
         public DomainsUserX509certificate build() {
-            final var o = new DomainsUserX509certificate();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserX509certificate();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

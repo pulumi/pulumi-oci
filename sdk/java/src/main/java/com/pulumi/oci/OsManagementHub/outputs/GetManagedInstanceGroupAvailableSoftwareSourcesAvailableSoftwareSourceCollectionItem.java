@@ -84,11 +84,11 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
             return this;
         }
         public GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem build() {
-            final var o = new GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

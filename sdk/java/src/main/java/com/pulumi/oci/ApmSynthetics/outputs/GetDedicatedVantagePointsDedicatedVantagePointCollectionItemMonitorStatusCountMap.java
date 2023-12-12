@@ -103,12 +103,12 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemM
             return this;
         }
         public GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap build() {
-            final var o = new GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap();
-            o.disabled = disabled;
-            o.enabled = enabled;
-            o.invalid = invalid;
-            o.total = total;
-            return o;
+            final var _resultValue = new GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMap();
+            _resultValue.disabled = disabled;
+            _resultValue.enabled = enabled;
+            _resultValue.invalid = invalid;
+            _resultValue.total = total;
+            return _resultValue;
         }
     }
 }

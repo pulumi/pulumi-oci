@@ -67,11 +67,11 @@ public final class GetComputeCapacityReservationInstanceShapesFilter {
             return values(List.of(values));
         }
         public GetComputeCapacityReservationInstanceShapesFilter build() {
-            final var o = new GetComputeCapacityReservationInstanceShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetComputeCapacityReservationInstanceShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -335,24 +335,24 @@ public final class GetSessionResult {
             return this;
         }
         public GetSessionResult build() {
-            final var o = new GetSessionResult();
-            o.bastionId = bastionId;
-            o.bastionName = bastionName;
-            o.bastionPublicHostKeyInfo = bastionPublicHostKeyInfo;
-            o.bastionUserName = bastionUserName;
-            o.displayName = displayName;
-            o.id = id;
-            o.keyDetails = keyDetails;
-            o.keyType = keyType;
-            o.lifecycleDetails = lifecycleDetails;
-            o.sessionId = sessionId;
-            o.sessionTtlInSeconds = sessionTtlInSeconds;
-            o.sshMetadata = sshMetadata;
-            o.state = state;
-            o.targetResourceDetails = targetResourceDetails;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetSessionResult();
+            _resultValue.bastionId = bastionId;
+            _resultValue.bastionName = bastionName;
+            _resultValue.bastionPublicHostKeyInfo = bastionPublicHostKeyInfo;
+            _resultValue.bastionUserName = bastionUserName;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.keyDetails = keyDetails;
+            _resultValue.keyType = keyType;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.sessionId = sessionId;
+            _resultValue.sessionTtlInSeconds = sessionTtlInSeconds;
+            _resultValue.sshMetadata = sshMetadata;
+            _resultValue.state = state;
+            _resultValue.targetResourceDetails = targetResourceDetails;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

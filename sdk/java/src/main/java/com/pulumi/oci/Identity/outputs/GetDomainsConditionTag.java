@@ -65,10 +65,10 @@ public final class GetDomainsConditionTag {
             return this;
         }
         public GetDomainsConditionTag build() {
-            final var o = new GetDomainsConditionTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsConditionTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

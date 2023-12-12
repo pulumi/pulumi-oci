@@ -472,32 +472,32 @@ public final class GetDomainsAuthTokenResult {
             return users(List.of(users));
         }
         public GetDomainsAuthTokenResult build() {
-            final var o = new GetDomainsAuthTokenResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authTokenId = authTokenId;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.domainOcid = domainOcid;
-            o.expiresOn = expiresOn;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.metas = metas;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.status = status;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetDomainsAuthTokenResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authTokenId = authTokenId;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.expiresOn = expiresOn;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.metas = metas;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.status = status;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

@@ -57,10 +57,10 @@ public final class GetCaptureFilterVtapCaptureFilterRuleTcpOption {
             return sourcePortRanges(List.of(sourcePortRanges));
         }
         public GetCaptureFilterVtapCaptureFilterRuleTcpOption build() {
-            final var o = new GetCaptureFilterVtapCaptureFilterRuleTcpOption();
-            o.destinationPortRanges = destinationPortRanges;
-            o.sourcePortRanges = sourcePortRanges;
-            return o;
+            final var _resultValue = new GetCaptureFilterVtapCaptureFilterRuleTcpOption();
+            _resultValue.destinationPortRanges = destinationPortRanges;
+            _resultValue.sourcePortRanges = sourcePortRanges;
+            return _resultValue;
         }
     }
 }

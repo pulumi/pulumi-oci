@@ -174,16 +174,16 @@ public final class GetMigrationPlansResult {
             return this;
         }
         public GetMigrationPlansResult build() {
-            final var o = new GetMigrationPlansResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.migrationId = migrationId;
-            o.migrationPlanCollections = migrationPlanCollections;
-            o.migrationPlanId = migrationPlanId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMigrationPlansResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.migrationId = migrationId;
+            _resultValue.migrationPlanCollections = migrationPlanCollections;
+            _resultValue.migrationPlanId = migrationPlanId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetMysqlVersionVersion {
             return versions(List.of(versions));
         }
         public GetMysqlVersionVersion build() {
-            final var o = new GetMysqlVersionVersion();
-            o.versionFamily = versionFamily;
-            o.versions = versions;
-            return o;
+            final var _resultValue = new GetMysqlVersionVersion();
+            _resultValue.versionFamily = versionFamily;
+            _resultValue.versions = versions;
+            return _resultValue;
         }
     }
 }

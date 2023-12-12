@@ -85,11 +85,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurati
             return this;
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration build() {
-            final var o = new GetExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration();
-            o.address = address;
-            o.networkNumber = networkNumber;
-            o.nodeName = nodeName;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration();
+            _resultValue.address = address;
+            _resultValue.networkNumber = networkNumber;
+            _resultValue.nodeName = nodeName;
+            return _resultValue;
         }
     }
 }

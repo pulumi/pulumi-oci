@@ -65,10 +65,10 @@ public final class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigIt
             return this;
         }
         public GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail build() {
-            final var o = new GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail();
-            o.displayName = displayName;
-            o.unit = unit;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail();
+            _resultValue.displayName = displayName;
+            _resultValue.unit = unit;
+            return _resultValue;
         }
     }
 }

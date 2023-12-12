@@ -50,9 +50,9 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
             return items(List.of(items));
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationSetHeader();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -97,12 +97,12 @@ public final class GetAddonsResult {
             return this;
         }
         public GetAddonsResult build() {
-            final var o = new GetAddonsResult();
-            o.addons = addons;
-            o.clusterId = clusterId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAddonsResult();
+            _resultValue.addons = addons;
+            _resultValue.clusterId = clusterId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

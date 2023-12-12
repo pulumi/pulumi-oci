@@ -188,12 +188,12 @@ public final class DomainsPolicyRule {
             return this;
         }
         public DomainsPolicyRule build() {
-            final var o = new DomainsPolicyRule();
-            o.name = name;
-            o.ref = ref;
-            o.sequence = sequence;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsPolicyRule();
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.sequence = sequence;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

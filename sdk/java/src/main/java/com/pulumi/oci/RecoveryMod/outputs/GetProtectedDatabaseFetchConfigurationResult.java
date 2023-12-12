@@ -101,13 +101,13 @@ public final class GetProtectedDatabaseFetchConfigurationResult {
             return this;
         }
         public GetProtectedDatabaseFetchConfigurationResult build() {
-            final var o = new GetProtectedDatabaseFetchConfigurationResult();
-            o.base64EncodeContent = base64EncodeContent;
-            o.configurationType = configurationType;
-            o.content = content;
-            o.id = id;
-            o.protectedDatabaseId = protectedDatabaseId;
-            return o;
+            final var _resultValue = new GetProtectedDatabaseFetchConfigurationResult();
+            _resultValue.base64EncodeContent = base64EncodeContent;
+            _resultValue.configurationType = configurationType;
+            _resultValue.content = content;
+            _resultValue.id = id;
+            _resultValue.protectedDatabaseId = protectedDatabaseId;
+            return _resultValue;
         }
     }
 }

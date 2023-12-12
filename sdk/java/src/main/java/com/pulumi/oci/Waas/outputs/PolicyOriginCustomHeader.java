@@ -71,10 +71,10 @@ public final class PolicyOriginCustomHeader {
             return this;
         }
         public PolicyOriginCustomHeader build() {
-            final var o = new PolicyOriginCustomHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new PolicyOriginCustomHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

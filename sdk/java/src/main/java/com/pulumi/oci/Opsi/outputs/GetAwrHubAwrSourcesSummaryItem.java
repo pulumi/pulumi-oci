@@ -199,17 +199,17 @@ public final class GetAwrHubAwrSourcesSummaryItem {
             return this;
         }
         public GetAwrHubAwrSourcesSummaryItem build() {
-            final var o = new GetAwrHubAwrSourcesSummaryItem();
-            o.awrHubId = awrHubId;
-            o.awrSourceDatabaseId = awrSourceDatabaseId;
-            o.hoursSinceLastImport = hoursSinceLastImport;
-            o.maxSnapshotIdentifier = maxSnapshotIdentifier;
-            o.minSnapshotIdentifier = minSnapshotIdentifier;
-            o.name = name;
-            o.snapshotsUploaded = snapshotsUploaded;
-            o.timeFirstSnapshotGenerated = timeFirstSnapshotGenerated;
-            o.timeLastSnapshotGenerated = timeLastSnapshotGenerated;
-            return o;
+            final var _resultValue = new GetAwrHubAwrSourcesSummaryItem();
+            _resultValue.awrHubId = awrHubId;
+            _resultValue.awrSourceDatabaseId = awrSourceDatabaseId;
+            _resultValue.hoursSinceLastImport = hoursSinceLastImport;
+            _resultValue.maxSnapshotIdentifier = maxSnapshotIdentifier;
+            _resultValue.minSnapshotIdentifier = minSnapshotIdentifier;
+            _resultValue.name = name;
+            _resultValue.snapshotsUploaded = snapshotsUploaded;
+            _resultValue.timeFirstSnapshotGenerated = timeFirstSnapshotGenerated;
+            _resultValue.timeLastSnapshotGenerated = timeLastSnapshotGenerated;
+            return _resultValue;
         }
     }
 }

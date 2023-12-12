@@ -42,9 +42,9 @@ public final class GetAssociationsAssociationCollection {
             return items(List.of(items));
         }
         public GetAssociationsAssociationCollection build() {
-            final var o = new GetAssociationsAssociationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAssociationsAssociationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

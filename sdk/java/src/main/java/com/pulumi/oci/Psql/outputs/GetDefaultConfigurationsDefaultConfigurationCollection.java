@@ -50,9 +50,9 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollection {
             return items(List.of(items));
         }
         public GetDefaultConfigurationsDefaultConfigurationCollection build() {
-            final var o = new GetDefaultConfigurationsDefaultConfigurationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDefaultConfigurationsDefaultConfigurationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

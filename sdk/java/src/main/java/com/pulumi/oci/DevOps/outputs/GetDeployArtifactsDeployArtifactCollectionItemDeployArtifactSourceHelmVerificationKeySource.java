@@ -103,12 +103,12 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
             return this;
         }
         public GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource build() {
-            final var o = new GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource();
-            o.currentPublicKey = currentPublicKey;
-            o.previousPublicKey = previousPublicKey;
-            o.vaultSecretId = vaultSecretId;
-            o.verificationKeySourceType = verificationKeySourceType;
-            return o;
+            final var _resultValue = new GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceHelmVerificationKeySource();
+            _resultValue.currentPublicKey = currentPublicKey;
+            _resultValue.previousPublicKey = previousPublicKey;
+            _resultValue.vaultSecretId = vaultSecretId;
+            _resultValue.verificationKeySourceType = verificationKeySourceType;
+            return _resultValue;
         }
     }
 }

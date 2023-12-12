@@ -67,11 +67,11 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

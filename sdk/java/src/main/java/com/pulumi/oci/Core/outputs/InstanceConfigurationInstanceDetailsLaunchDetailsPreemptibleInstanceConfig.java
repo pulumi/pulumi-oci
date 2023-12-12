@@ -48,9 +48,9 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleI
             return this;
         }
         public InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig build() {
-            final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig();
-            o.preemptionAction = preemptionAction;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig();
+            _resultValue.preemptionAction = preemptionAction;
+            return _resultValue;
         }
     }
 }

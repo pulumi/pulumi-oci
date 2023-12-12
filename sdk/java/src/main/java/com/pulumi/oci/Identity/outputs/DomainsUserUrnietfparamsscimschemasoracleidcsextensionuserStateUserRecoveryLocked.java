@@ -118,10 +118,10 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked();
-            o.lockDate = lockDate;
-            o.on = on;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked();
+            _resultValue.lockDate = lockDate;
+            _resultValue.on = on;
+            return _resultValue;
         }
     }
 }

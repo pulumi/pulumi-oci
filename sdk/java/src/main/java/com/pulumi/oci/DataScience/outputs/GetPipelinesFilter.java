@@ -67,11 +67,11 @@ public final class GetPipelinesFilter {
             return values(List.of(values));
         }
         public GetPipelinesFilter build() {
-            final var o = new GetPipelinesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPipelinesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

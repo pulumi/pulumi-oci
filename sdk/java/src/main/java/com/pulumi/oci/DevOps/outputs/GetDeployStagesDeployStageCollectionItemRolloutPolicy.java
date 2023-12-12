@@ -124,13 +124,13 @@ public final class GetDeployStagesDeployStageCollectionItemRolloutPolicy {
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemRolloutPolicy build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemRolloutPolicy();
-            o.batchCount = batchCount;
-            o.batchDelayInSeconds = batchDelayInSeconds;
-            o.batchPercentage = batchPercentage;
-            o.policyType = policyType;
-            o.rampLimitPercent = rampLimitPercent;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemRolloutPolicy();
+            _resultValue.batchCount = batchCount;
+            _resultValue.batchDelayInSeconds = batchDelayInSeconds;
+            _resultValue.batchPercentage = batchPercentage;
+            _resultValue.policyType = policyType;
+            _resultValue.rampLimitPercent = rampLimitPercent;
+            return _resultValue;
         }
     }
 }

@@ -122,13 +122,13 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
             return this;
         }
         public GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent build() {
-            final var o = new GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent();
-            o.description = description;
-            o.name = name;
-            o.scheduleEventDuration = scheduleEventDuration;
-            o.scheduleEventRecurrences = scheduleEventRecurrences;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.scheduleEventDuration = scheduleEventDuration;
+            _resultValue.scheduleEventRecurrences = scheduleEventRecurrences;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

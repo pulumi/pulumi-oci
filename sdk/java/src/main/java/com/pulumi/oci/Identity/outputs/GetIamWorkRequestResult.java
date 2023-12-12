@@ -215,18 +215,18 @@ public final class GetIamWorkRequestResult {
             return this;
         }
         public GetIamWorkRequestResult build() {
-            final var o = new GetIamWorkRequestResult();
-            o.compartmentId = compartmentId;
-            o.iamWorkRequestId = iamWorkRequestId;
-            o.id = id;
-            o.operationType = operationType;
-            o.percentComplete = percentComplete;
-            o.resources = resources;
-            o.status = status;
-            o.timeAccepted = timeAccepted;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetIamWorkRequestResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.iamWorkRequestId = iamWorkRequestId;
+            _resultValue.id = id;
+            _resultValue.operationType = operationType;
+            _resultValue.percentComplete = percentComplete;
+            _resultValue.resources = resources;
+            _resultValue.status = status;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

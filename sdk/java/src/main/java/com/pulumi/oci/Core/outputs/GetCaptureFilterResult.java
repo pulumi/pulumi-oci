@@ -239,19 +239,19 @@ public final class GetCaptureFilterResult {
             return vtapCaptureFilterRules(List.of(vtapCaptureFilterRules));
         }
         public GetCaptureFilterResult build() {
-            final var o = new GetCaptureFilterResult();
-            o.captureFilterId = captureFilterId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.filterType = filterType;
-            o.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vtapCaptureFilterRules = vtapCaptureFilterRules;
-            return o;
+            final var _resultValue = new GetCaptureFilterResult();
+            _resultValue.captureFilterId = captureFilterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.filterType = filterType;
+            _resultValue.flowLogCaptureFilterRules = flowLogCaptureFilterRules;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vtapCaptureFilterRules = vtapCaptureFilterRules;
+            return _resultValue;
         }
     }
 }

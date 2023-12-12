@@ -65,10 +65,10 @@ public final class GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance {
             return this;
         }
         public GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance build() {
-            final var o = new GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

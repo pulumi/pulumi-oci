@@ -198,17 +198,17 @@ public final class GetDomainsUserGroup {
             return this;
         }
         public GetDomainsUserGroup build() {
-            final var o = new GetDomainsUserGroup();
-            o.dateAdded = dateAdded;
-            o.display = display;
-            o.externalId = externalId;
-            o.membershipOcid = membershipOcid;
-            o.nonUniqueDisplay = nonUniqueDisplay;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserGroup();
+            _resultValue.dateAdded = dateAdded;
+            _resultValue.display = display;
+            _resultValue.externalId = externalId;
+            _resultValue.membershipOcid = membershipOcid;
+            _resultValue.nonUniqueDisplay = nonUniqueDisplay;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

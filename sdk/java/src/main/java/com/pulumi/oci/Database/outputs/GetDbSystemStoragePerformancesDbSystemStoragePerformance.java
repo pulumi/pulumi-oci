@@ -93,11 +93,11 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformance {
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformance build() {
-            final var o = new GetDbSystemStoragePerformancesDbSystemStoragePerformance();
-            o.dataStoragePerformanceLists = dataStoragePerformanceLists;
-            o.recoStoragePerformanceLists = recoStoragePerformanceLists;
-            o.shapeType = shapeType;
-            return o;
+            final var _resultValue = new GetDbSystemStoragePerformancesDbSystemStoragePerformance();
+            _resultValue.dataStoragePerformanceLists = dataStoragePerformanceLists;
+            _resultValue.recoStoragePerformanceLists = recoStoragePerformanceLists;
+            _resultValue.shapeType = shapeType;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetSecurityAssessmentComparisonTargetFineGrainedAccessControl
             return this;
         }
         public GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference build() {
-            final var o = new GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference();
-            o.cis = cis;
-            o.gdpr = gdpr;
-            o.stig = stig;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference();
+            _resultValue.cis = cis;
+            _resultValue.gdpr = gdpr;
+            _resultValue.stig = stig;
+            return _resultValue;
         }
     }
 }

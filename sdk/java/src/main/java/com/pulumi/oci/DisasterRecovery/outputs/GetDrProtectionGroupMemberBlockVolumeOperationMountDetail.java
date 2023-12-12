@@ -46,9 +46,9 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperationMountDetail {
             return this;
         }
         public GetDrProtectionGroupMemberBlockVolumeOperationMountDetail build() {
-            final var o = new GetDrProtectionGroupMemberBlockVolumeOperationMountDetail();
-            o.mountPoint = mountPoint;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupMemberBlockVolumeOperationMountDetail();
+            _resultValue.mountPoint = mountPoint;
+            return _resultValue;
         }
     }
 }

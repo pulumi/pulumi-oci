@@ -66,10 +66,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
             return this;
         }
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy build() {
-            final var o = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy();
-            o.instanceCount = instanceCount;
-            o.policyType = policyType;
-            return o;
+            final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy();
+            _resultValue.instanceCount = instanceCount;
+            _resultValue.policyType = policyType;
+            return _resultValue;
         }
     }
 }

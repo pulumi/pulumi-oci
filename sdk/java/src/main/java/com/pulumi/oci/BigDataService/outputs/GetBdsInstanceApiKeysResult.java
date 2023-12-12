@@ -139,15 +139,15 @@ public final class GetBdsInstanceApiKeysResult {
             return this;
         }
         public GetBdsInstanceApiKeysResult build() {
-            final var o = new GetBdsInstanceApiKeysResult();
-            o.bdsApiKeys = bdsApiKeys;
-            o.bdsInstanceId = bdsInstanceId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetBdsInstanceApiKeysResult();
+            _resultValue.bdsApiKeys = bdsApiKeys;
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

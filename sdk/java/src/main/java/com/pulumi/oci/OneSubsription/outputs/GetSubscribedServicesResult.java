@@ -155,15 +155,15 @@ public final class GetSubscribedServicesResult {
             return this;
         }
         public GetSubscribedServicesResult build() {
-            final var o = new GetSubscribedServicesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.orderLineId = orderLineId;
-            o.status = status;
-            o.subscribedServices = subscribedServices;
-            o.subscriptionId = subscriptionId;
-            return o;
+            final var _resultValue = new GetSubscribedServicesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.orderLineId = orderLineId;
+            _resultValue.status = status;
+            _resultValue.subscribedServices = subscribedServices;
+            _resultValue.subscriptionId = subscriptionId;
+            return _resultValue;
         }
     }
 }

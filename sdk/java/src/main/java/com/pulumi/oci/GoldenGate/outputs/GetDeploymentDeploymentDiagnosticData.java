@@ -141,14 +141,14 @@ public final class GetDeploymentDeploymentDiagnosticData {
             return this;
         }
         public GetDeploymentDeploymentDiagnosticData build() {
-            final var o = new GetDeploymentDeploymentDiagnosticData();
-            o.bucket = bucket;
-            o.diagnosticState = diagnosticState;
-            o.namespace = namespace;
-            o.object = object;
-            o.timeDiagnosticEnd = timeDiagnosticEnd;
-            o.timeDiagnosticStart = timeDiagnosticStart;
-            return o;
+            final var _resultValue = new GetDeploymentDeploymentDiagnosticData();
+            _resultValue.bucket = bucket;
+            _resultValue.diagnosticState = diagnosticState;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.timeDiagnosticEnd = timeDiagnosticEnd;
+            _resultValue.timeDiagnosticStart = timeDiagnosticStart;
+            return _resultValue;
         }
     }
 }

@@ -67,10 +67,10 @@ public final class ConfigAvailabilityConfiguration {
             return this;
         }
         public ConfigAvailabilityConfiguration build() {
-            final var o = new ConfigAvailabilityConfiguration();
-            o.maxAllowedFailuresPerInterval = maxAllowedFailuresPerInterval;
-            o.minAllowedRunsPerInterval = minAllowedRunsPerInterval;
-            return o;
+            final var _resultValue = new ConfigAvailabilityConfiguration();
+            _resultValue.maxAllowedFailuresPerInterval = maxAllowedFailuresPerInterval;
+            _resultValue.minAllowedRunsPerInterval = minAllowedRunsPerInterval;
+            return _resultValue;
         }
     }
 }

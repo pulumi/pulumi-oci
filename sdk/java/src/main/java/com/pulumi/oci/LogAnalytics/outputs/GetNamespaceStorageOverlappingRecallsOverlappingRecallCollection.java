@@ -50,9 +50,9 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
             return items(List.of(items));
         }
         public GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection build() {
-            final var o = new GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class ScheduleResultLocation {
             return this;
         }
         public ScheduleResultLocation build() {
-            final var o = new ScheduleResultLocation();
-            o.bucket = bucket;
-            o.locationType = locationType;
-            o.namespace = namespace;
-            o.region = region;
-            return o;
+            final var _resultValue = new ScheduleResultLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.locationType = locationType;
+            _resultValue.namespace = namespace;
+            _resultValue.region = region;
+            return _resultValue;
         }
     }
 }

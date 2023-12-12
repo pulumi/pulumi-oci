@@ -204,17 +204,17 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutio
             return this;
         }
         public GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution build() {
-            final var o = new GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution();
-            o.displayName = displayName;
-            o.executionDurationInSec = executionDurationInSec;
-            o.groupId = groupId;
-            o.status = status;
-            o.statusDetails = statusDetails;
-            o.stepExecutions = stepExecutions;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution();
+            _resultValue.displayName = displayName;
+            _resultValue.executionDurationInSec = executionDurationInSec;
+            _resultValue.groupId = groupId;
+            _resultValue.status = status;
+            _resultValue.statusDetails = statusDetails;
+            _resultValue.stepExecutions = stepExecutions;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

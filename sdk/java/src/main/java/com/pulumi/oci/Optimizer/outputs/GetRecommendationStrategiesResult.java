@@ -140,15 +140,15 @@ public final class GetRecommendationStrategiesResult {
             return recommendationStrategyCollections(List.of(recommendationStrategyCollections));
         }
         public GetRecommendationStrategiesResult build() {
-            final var o = new GetRecommendationStrategiesResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.recommendationName = recommendationName;
-            o.recommendationStrategyCollections = recommendationStrategyCollections;
-            return o;
+            final var _resultValue = new GetRecommendationStrategiesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.recommendationName = recommendationName;
+            _resultValue.recommendationStrategyCollections = recommendationStrategyCollections;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetDataKeysFilter {
             return values(List.of(values));
         }
         public GetDataKeysFilter build() {
-            final var o = new GetDataKeysFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDataKeysFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

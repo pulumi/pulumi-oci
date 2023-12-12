@@ -180,18 +180,18 @@ public final class GetCommitmentAggregatedsResult {
             return this;
         }
         public GetCommitmentAggregatedsResult build() {
-            final var o = new GetCommitmentAggregatedsResult();
-            o.compartmentId = compartmentId;
-            o.computedUsageAggregateds = computedUsageAggregateds;
-            o.filters = filters;
-            o.grouping = grouping;
-            o.id = id;
-            o.parentProduct = parentProduct;
-            o.subscriptionId = subscriptionId;
-            o.timeFrom = timeFrom;
-            o.timeTo = timeTo;
-            o.xOneOriginRegion = xOneOriginRegion;
-            return o;
+            final var _resultValue = new GetCommitmentAggregatedsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computedUsageAggregateds = computedUsageAggregateds;
+            _resultValue.filters = filters;
+            _resultValue.grouping = grouping;
+            _resultValue.id = id;
+            _resultValue.parentProduct = parentProduct;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.timeFrom = timeFrom;
+            _resultValue.timeTo = timeTo;
+            _resultValue.xOneOriginRegion = xOneOriginRegion;
+            return _resultValue;
         }
     }
 }

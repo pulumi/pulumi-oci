@@ -103,12 +103,12 @@ public final class GetDomainsMyTrustedUserAgentUser {
             return this;
         }
         public GetDomainsMyTrustedUserAgentUser build() {
-            final var o = new GetDomainsMyTrustedUserAgentUser();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyTrustedUserAgentUser();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

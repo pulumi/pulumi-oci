@@ -75,11 +75,11 @@ public final class GetManagementAgentImagesFilter {
             return values(List.of(values));
         }
         public GetManagementAgentImagesFilter build() {
-            final var o = new GetManagementAgentImagesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagementAgentImagesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

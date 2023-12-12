@@ -67,11 +67,11 @@ public final class GetManagedPreferredCredentialsFilter {
             return values(List.of(values));
         }
         public GetManagedPreferredCredentialsFilter build() {
-            final var o = new GetManagedPreferredCredentialsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedPreferredCredentialsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

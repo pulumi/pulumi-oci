@@ -86,11 +86,11 @@ public final class ManagedDatabasesChangeDatabaseParameterParameter {
             return this;
         }
         public ManagedDatabasesChangeDatabaseParameterParameter build() {
-            final var o = new ManagedDatabasesChangeDatabaseParameterParameter();
-            o.name = name;
-            o.updateComment = updateComment;
-            o.value = value;
-            return o;
+            final var _resultValue = new ManagedDatabasesChangeDatabaseParameterParameter();
+            _resultValue.name = name;
+            _resultValue.updateComment = updateComment;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

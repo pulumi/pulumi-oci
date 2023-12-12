@@ -137,14 +137,14 @@ public final class GetTagNamespacesResult {
             return tagNamespaces(List.of(tagNamespaces));
         }
         public GetTagNamespacesResult build() {
-            final var o = new GetTagNamespacesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.includeSubcompartments = includeSubcompartments;
-            o.state = state;
-            o.tagNamespaces = tagNamespaces;
-            return o;
+            final var _resultValue = new GetTagNamespacesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.includeSubcompartments = includeSubcompartments;
+            _resultValue.state = state;
+            _resultValue.tagNamespaces = tagNamespaces;
+            return _resultValue;
         }
     }
 }

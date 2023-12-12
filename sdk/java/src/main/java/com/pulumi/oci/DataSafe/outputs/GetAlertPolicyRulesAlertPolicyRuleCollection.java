@@ -50,9 +50,9 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollection {
             return items(List.of(items));
         }
         public GetAlertPolicyRulesAlertPolicyRuleCollection build() {
-            final var o = new GetAlertPolicyRulesAlertPolicyRuleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAlertPolicyRulesAlertPolicyRuleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

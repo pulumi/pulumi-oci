@@ -142,11 +142,11 @@ public final class DomainsMyRequestRequestor {
             return this;
         }
         public DomainsMyRequestRequestor build() {
-            final var o = new DomainsMyRequestRequestor();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyRequestRequestor();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

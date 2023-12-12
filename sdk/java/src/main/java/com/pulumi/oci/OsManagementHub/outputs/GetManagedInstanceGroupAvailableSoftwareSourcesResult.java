@@ -150,15 +150,15 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesResult {
             return this;
         }
         public GetManagedInstanceGroupAvailableSoftwareSourcesResult build() {
-            final var o = new GetManagedInstanceGroupAvailableSoftwareSourcesResult();
-            o.availableSoftwareSourceCollections = availableSoftwareSourceCollections;
-            o.compartmentId = compartmentId;
-            o.displayNameContains = displayNameContains;
-            o.displayNames = displayNames;
-            o.filters = filters;
-            o.id = id;
-            o.managedInstanceGroupId = managedInstanceGroupId;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailableSoftwareSourcesResult();
+            _resultValue.availableSoftwareSourceCollections = availableSoftwareSourceCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.displayNames = displayNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedInstanceGroupId = managedInstanceGroupId;
+            return _resultValue;
         }
     }
 }

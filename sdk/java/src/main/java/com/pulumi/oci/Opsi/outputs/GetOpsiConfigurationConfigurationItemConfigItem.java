@@ -168,15 +168,15 @@ public final class GetOpsiConfigurationConfigurationItemConfigItem {
             return this;
         }
         public GetOpsiConfigurationConfigurationItemConfigItem build() {
-            final var o = new GetOpsiConfigurationConfigurationItemConfigItem();
-            o.applicableContexts = applicableContexts;
-            o.configItemType = configItemType;
-            o.defaultValue = defaultValue;
-            o.metadatas = metadatas;
-            o.name = name;
-            o.value = value;
-            o.valueSourceConfig = valueSourceConfig;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationConfigurationItemConfigItem();
+            _resultValue.applicableContexts = applicableContexts;
+            _resultValue.configItemType = configItemType;
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.metadatas = metadatas;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            _resultValue.valueSourceConfig = valueSourceConfig;
+            return _resultValue;
         }
     }
 }

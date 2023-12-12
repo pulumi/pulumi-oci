@@ -197,20 +197,20 @@ public final class GetDomainsIdentitySettingsResult {
             return this;
         }
         public GetDomainsIdentitySettingsResult build() {
-            final var o = new GetDomainsIdentitySettingsResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.identitySettings = identitySettings;
-            o.itemsPerPage = itemsPerPage;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsIdentitySettingsResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.identitySettings = identitySettings;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

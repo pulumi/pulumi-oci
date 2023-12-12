@@ -107,14 +107,14 @@ public final class DefaultRouteTableRouteRule {
             return this;
         }
         public DefaultRouteTableRouteRule build() {
-            final var o = new DefaultRouteTableRouteRule();
-            o.cidrBlock = cidrBlock;
-            o.description = description;
-            o.destination = destination;
-            o.destinationType = destinationType;
-            o.networkEntityId = networkEntityId;
-            o.routeType = routeType;
-            return o;
+            final var _resultValue = new DefaultRouteTableRouteRule();
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.description = description;
+            _resultValue.destination = destination;
+            _resultValue.destinationType = destinationType;
+            _resultValue.networkEntityId = networkEntityId;
+            _resultValue.routeType = routeType;
+            return _resultValue;
         }
     }
 }

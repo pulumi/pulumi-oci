@@ -65,10 +65,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetail build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetail();
-            o.type = type;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetail();
+            _resultValue.type = type;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

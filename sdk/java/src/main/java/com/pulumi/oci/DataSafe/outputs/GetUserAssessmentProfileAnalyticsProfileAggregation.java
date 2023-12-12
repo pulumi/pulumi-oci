@@ -90,11 +90,11 @@ public final class GetUserAssessmentProfileAnalyticsProfileAggregation {
             return items(List.of(items));
         }
         public GetUserAssessmentProfileAnalyticsProfileAggregation build() {
-            final var o = new GetUserAssessmentProfileAnalyticsProfileAggregation();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetUserAssessmentProfileAnalyticsProfileAggregation();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

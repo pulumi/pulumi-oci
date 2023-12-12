@@ -48,9 +48,9 @@ public final class InstanceInstanceOptions {
             return this;
         }
         public InstanceInstanceOptions build() {
-            final var o = new InstanceInstanceOptions();
-            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-            return o;
+            final var _resultValue = new InstanceInstanceOptions();
+            _resultValue.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return _resultValue;
         }
     }
 }

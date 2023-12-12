@@ -50,9 +50,9 @@ public final class GetCertificateAuthorityVersionsCertificateAuthorityVersionCol
             return items(List.of(items));
         }
         public GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection build() {
-            final var o = new GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

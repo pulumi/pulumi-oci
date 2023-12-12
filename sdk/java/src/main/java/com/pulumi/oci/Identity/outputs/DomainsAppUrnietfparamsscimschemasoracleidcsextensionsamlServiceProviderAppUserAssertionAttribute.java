@@ -164,11 +164,11 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute();
-            o.format = format;
-            o.name = name;
-            o.userStoreAttributeName = userStoreAttributeName;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute();
+            _resultValue.format = format;
+            _resultValue.name = name;
+            _resultValue.userStoreAttributeName = userStoreAttributeName;
+            return _resultValue;
         }
     }
 }

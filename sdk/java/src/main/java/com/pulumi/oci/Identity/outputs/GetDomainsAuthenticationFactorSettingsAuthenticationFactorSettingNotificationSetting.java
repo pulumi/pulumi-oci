@@ -46,9 +46,9 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting build() {
-            final var o = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting();
-            o.pullEnabled = pullEnabled;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingNotificationSetting();
+            _resultValue.pullEnabled = pullEnabled;
+            return _resultValue;
         }
     }
 }

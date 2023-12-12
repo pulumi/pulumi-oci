@@ -42,9 +42,9 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollection {
             return items(List.of(items));
         }
         public GetConnectionAssignmentsConnectionAssignmentCollection build() {
-            final var o = new GetConnectionAssignmentsConnectionAssignmentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetConnectionAssignmentsConnectionAssignmentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

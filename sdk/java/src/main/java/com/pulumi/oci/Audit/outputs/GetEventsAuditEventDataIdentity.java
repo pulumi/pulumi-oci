@@ -217,18 +217,18 @@ public final class GetEventsAuditEventDataIdentity {
             return this;
         }
         public GetEventsAuditEventDataIdentity build() {
-            final var o = new GetEventsAuditEventDataIdentity();
-            o.authType = authType;
-            o.callerId = callerId;
-            o.callerName = callerName;
-            o.consoleSessionId = consoleSessionId;
-            o.credentials = credentials;
-            o.ipAddress = ipAddress;
-            o.principalId = principalId;
-            o.principalName = principalName;
-            o.tenantId = tenantId;
-            o.userAgent = userAgent;
-            return o;
+            final var _resultValue = new GetEventsAuditEventDataIdentity();
+            _resultValue.authType = authType;
+            _resultValue.callerId = callerId;
+            _resultValue.callerName = callerName;
+            _resultValue.consoleSessionId = consoleSessionId;
+            _resultValue.credentials = credentials;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.principalId = principalId;
+            _resultValue.principalName = principalName;
+            _resultValue.tenantId = tenantId;
+            _resultValue.userAgent = userAgent;
+            return _resultValue;
         }
     }
 }

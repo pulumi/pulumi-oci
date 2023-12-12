@@ -65,10 +65,10 @@ public final class GetApiDeploymentSpecificationRouteBackendSelectionSource {
             return this;
         }
         public GetApiDeploymentSpecificationRouteBackendSelectionSource build() {
-            final var o = new GetApiDeploymentSpecificationRouteBackendSelectionSource();
-            o.selector = selector;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteBackendSelectionSource();
+            _resultValue.selector = selector;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

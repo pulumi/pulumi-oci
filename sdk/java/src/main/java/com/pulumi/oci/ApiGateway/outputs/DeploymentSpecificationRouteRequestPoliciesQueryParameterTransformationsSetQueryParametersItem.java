@@ -90,11 +90,11 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
             return values(List.of(values));
         }
         public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem();
-            o.ifExists = ifExists;
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem();
+            _resultValue.ifExists = ifExists;
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

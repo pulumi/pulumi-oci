@@ -89,11 +89,11 @@ public final class BuildPipelineStagePrivateAccessConfig {
             return this;
         }
         public BuildPipelineStagePrivateAccessConfig build() {
-            final var o = new BuildPipelineStagePrivateAccessConfig();
-            o.networkChannelType = networkChannelType;
-            o.nsgIds = nsgIds;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new BuildPipelineStagePrivateAccessConfig();
+            _resultValue.networkChannelType = networkChannelType;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetListingLink {
             return this;
         }
         public GetListingLink build() {
-            final var o = new GetListingLink();
-            o.href = href;
-            o.rel = rel;
-            return o;
+            final var _resultValue = new GetListingLink();
+            _resultValue.href = href;
+            _resultValue.rel = rel;
+            return _resultValue;
         }
     }
 }

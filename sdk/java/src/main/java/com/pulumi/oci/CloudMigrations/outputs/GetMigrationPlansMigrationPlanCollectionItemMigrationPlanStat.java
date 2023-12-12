@@ -90,11 +90,11 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
             return this;
         }
         public GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat build() {
-            final var o = new GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat();
-            o.timeUpdated = timeUpdated;
-            o.totalEstimatedCosts = totalEstimatedCosts;
-            o.vmCount = vmCount;
-            return o;
+            final var _resultValue = new GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat();
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.totalEstimatedCosts = totalEstimatedCosts;
+            _resultValue.vmCount = vmCount;
+            return _resultValue;
         }
     }
 }

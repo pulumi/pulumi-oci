@@ -125,13 +125,13 @@ public final class GetRemotePeeringConnectionsResult {
             return remotePeeringConnections(List.of(remotePeeringConnections));
         }
         public GetRemotePeeringConnectionsResult build() {
-            final var o = new GetRemotePeeringConnectionsResult();
-            o.compartmentId = compartmentId;
-            o.drgId = drgId;
-            o.filters = filters;
-            o.id = id;
-            o.remotePeeringConnections = remotePeeringConnections;
-            return o;
+            final var _resultValue = new GetRemotePeeringConnectionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.drgId = drgId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.remotePeeringConnections = remotePeeringConnections;
+            return _resultValue;
         }
     }
 }

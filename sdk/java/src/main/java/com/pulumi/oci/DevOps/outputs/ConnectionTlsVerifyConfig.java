@@ -65,10 +65,10 @@ public final class ConnectionTlsVerifyConfig {
             return this;
         }
         public ConnectionTlsVerifyConfig build() {
-            final var o = new ConnectionTlsVerifyConfig();
-            o.caCertificateBundleId = caCertificateBundleId;
-            o.tlsVerifyMode = tlsVerifyMode;
-            return o;
+            final var _resultValue = new ConnectionTlsVerifyConfig();
+            _resultValue.caCertificateBundleId = caCertificateBundleId;
+            _resultValue.tlsVerifyMode = tlsVerifyMode;
+            return _resultValue;
         }
     }
 }

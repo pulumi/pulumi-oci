@@ -195,18 +195,18 @@ public final class GetCommitmentResult {
             return this;
         }
         public GetCommitmentResult build() {
-            final var o = new GetCommitmentResult();
-            o.availableAmount = availableAmount;
-            o.commitmentId = commitmentId;
-            o.fundedAllocationValue = fundedAllocationValue;
-            o.id = id;
-            o.quantity = quantity;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            o.usedAmount = usedAmount;
-            o.xOneGatewaySubscriptionId = xOneGatewaySubscriptionId;
-            o.xOneOriginRegion = xOneOriginRegion;
-            return o;
+            final var _resultValue = new GetCommitmentResult();
+            _resultValue.availableAmount = availableAmount;
+            _resultValue.commitmentId = commitmentId;
+            _resultValue.fundedAllocationValue = fundedAllocationValue;
+            _resultValue.id = id;
+            _resultValue.quantity = quantity;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            _resultValue.usedAmount = usedAmount;
+            _resultValue.xOneGatewaySubscriptionId = xOneGatewaySubscriptionId;
+            _resultValue.xOneOriginRegion = xOneOriginRegion;
+            return _resultValue;
         }
     }
 }

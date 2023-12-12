@@ -106,12 +106,12 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserNest
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser build() {
-            final var o = new UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser();
-            o.fieldTimeKey = fieldTimeKey;
-            o.isKeepTimeKey = isKeepTimeKey;
-            o.timeFormat = timeFormat;
-            o.timeType = timeType;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser();
+            _resultValue.fieldTimeKey = fieldTimeKey;
+            _resultValue.isKeepTimeKey = isKeepTimeKey;
+            _resultValue.timeFormat = timeFormat;
+            _resultValue.timeType = timeType;
+            return _resultValue;
         }
     }
 }

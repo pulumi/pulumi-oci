@@ -150,14 +150,14 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
             return this;
         }
         public GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy build() {
-            final var o = new GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.isEnabled = isEnabled;
-            o.pitrPolicies = pitrPolicies;
-            o.retentionInDays = retentionInDays;
-            o.windowStartTime = windowStartTime;
-            return o;
+            final var _resultValue = new GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.pitrPolicies = pitrPolicies;
+            _resultValue.retentionInDays = retentionInDays;
+            _resultValue.windowStartTime = windowStartTime;
+            return _resultValue;
         }
     }
 }

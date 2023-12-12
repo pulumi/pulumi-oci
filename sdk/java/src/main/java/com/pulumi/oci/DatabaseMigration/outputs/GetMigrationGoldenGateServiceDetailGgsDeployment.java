@@ -65,10 +65,10 @@ public final class GetMigrationGoldenGateServiceDetailGgsDeployment {
             return this;
         }
         public GetMigrationGoldenGateServiceDetailGgsDeployment build() {
-            final var o = new GetMigrationGoldenGateServiceDetailGgsDeployment();
-            o.deploymentId = deploymentId;
-            o.ggsAdminCredentialsSecretId = ggsAdminCredentialsSecretId;
-            return o;
+            final var _resultValue = new GetMigrationGoldenGateServiceDetailGgsDeployment();
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.ggsAdminCredentialsSecretId = ggsAdminCredentialsSecretId;
+            return _resultValue;
         }
     }
 }

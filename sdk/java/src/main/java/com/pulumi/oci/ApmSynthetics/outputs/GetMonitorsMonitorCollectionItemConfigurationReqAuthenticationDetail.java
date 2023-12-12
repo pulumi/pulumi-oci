@@ -184,16 +184,16 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail build() {
-            final var o = new GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail();
-            o.authHeaders = authHeaders;
-            o.authRequestMethod = authRequestMethod;
-            o.authRequestPostBody = authRequestPostBody;
-            o.authToken = authToken;
-            o.authUrl = authUrl;
-            o.authUserName = authUserName;
-            o.authUserPassword = authUserPassword;
-            o.oauthScheme = oauthScheme;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail();
+            _resultValue.authHeaders = authHeaders;
+            _resultValue.authRequestMethod = authRequestMethod;
+            _resultValue.authRequestPostBody = authRequestPostBody;
+            _resultValue.authToken = authToken;
+            _resultValue.authUrl = authUrl;
+            _resultValue.authUserName = authUserName;
+            _resultValue.authUserPassword = authUserPassword;
+            _resultValue.oauthScheme = oauthScheme;
+            return _resultValue;
         }
     }
 }

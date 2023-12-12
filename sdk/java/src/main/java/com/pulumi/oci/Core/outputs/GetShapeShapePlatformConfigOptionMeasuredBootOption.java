@@ -53,10 +53,10 @@ public final class GetShapeShapePlatformConfigOptionMeasuredBootOption {
             return this;
         }
         public GetShapeShapePlatformConfigOptionMeasuredBootOption build() {
-            final var o = new GetShapeShapePlatformConfigOptionMeasuredBootOption();
-            o.allowedValues = allowedValues;
-            o.isDefaultEnabled = isDefaultEnabled;
-            return o;
+            final var _resultValue = new GetShapeShapePlatformConfigOptionMeasuredBootOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.isDefaultEnabled = isDefaultEnabled;
+            return _resultValue;
         }
     }
 }

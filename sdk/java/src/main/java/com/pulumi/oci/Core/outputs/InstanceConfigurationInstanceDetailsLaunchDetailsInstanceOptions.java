@@ -48,9 +48,9 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOpti
             return this;
         }
         public InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions build() {
-            final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions();
-            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions();
+            _resultValue.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return _resultValue;
         }
     }
 }

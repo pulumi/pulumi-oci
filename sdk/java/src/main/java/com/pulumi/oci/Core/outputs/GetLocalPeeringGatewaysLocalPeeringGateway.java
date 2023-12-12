@@ -319,23 +319,23 @@ public final class GetLocalPeeringGatewaysLocalPeeringGateway {
             return this;
         }
         public GetLocalPeeringGatewaysLocalPeeringGateway build() {
-            final var o = new GetLocalPeeringGatewaysLocalPeeringGateway();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isCrossTenancyPeering = isCrossTenancyPeering;
-            o.peerAdvertisedCidr = peerAdvertisedCidr;
-            o.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
-            o.peerId = peerId;
-            o.peeringStatus = peeringStatus;
-            o.peeringStatusDetails = peeringStatusDetails;
-            o.routeTableId = routeTableId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetLocalPeeringGatewaysLocalPeeringGateway();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isCrossTenancyPeering = isCrossTenancyPeering;
+            _resultValue.peerAdvertisedCidr = peerAdvertisedCidr;
+            _resultValue.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
+            _resultValue.peerId = peerId;
+            _resultValue.peeringStatus = peeringStatus;
+            _resultValue.peeringStatusDetails = peeringStatusDetails;
+            _resultValue.routeTableId = routeTableId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

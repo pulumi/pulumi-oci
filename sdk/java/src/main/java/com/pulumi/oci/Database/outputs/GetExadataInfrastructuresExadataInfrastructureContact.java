@@ -123,13 +123,13 @@ public final class GetExadataInfrastructuresExadataInfrastructureContact {
             return this;
         }
         public GetExadataInfrastructuresExadataInfrastructureContact build() {
-            final var o = new GetExadataInfrastructuresExadataInfrastructureContact();
-            o.email = email;
-            o.isContactMosValidated = isContactMosValidated;
-            o.isPrimary = isPrimary;
-            o.name = name;
-            o.phoneNumber = phoneNumber;
-            return o;
+            final var _resultValue = new GetExadataInfrastructuresExadataInfrastructureContact();
+            _resultValue.email = email;
+            _resultValue.isContactMosValidated = isContactMosValidated;
+            _resultValue.isPrimary = isPrimary;
+            _resultValue.name = name;
+            _resultValue.phoneNumber = phoneNumber;
+            return _resultValue;
         }
     }
 }

@@ -122,13 +122,13 @@ public final class GetListingScreenshot {
             return this;
         }
         public GetListingScreenshot build() {
-            final var o = new GetListingScreenshot();
-            o.contentUrl = contentUrl;
-            o.description = description;
-            o.fileExtension = fileExtension;
-            o.mimeType = mimeType;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingScreenshot();
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.description = description;
+            _resultValue.fileExtension = fileExtension;
+            _resultValue.mimeType = mimeType;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

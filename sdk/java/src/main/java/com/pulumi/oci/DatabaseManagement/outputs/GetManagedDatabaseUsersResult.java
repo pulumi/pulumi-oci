@@ -117,13 +117,13 @@ public final class GetManagedDatabaseUsersResult {
             return userCollections(List.of(userCollections));
         }
         public GetManagedDatabaseUsersResult build() {
-            final var o = new GetManagedDatabaseUsersResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.userCollections = userCollections;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUsersResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.userCollections = userCollections;
+            return _resultValue;
         }
     }
 }

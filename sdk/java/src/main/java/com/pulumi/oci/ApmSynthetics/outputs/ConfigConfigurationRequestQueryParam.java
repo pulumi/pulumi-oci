@@ -67,10 +67,10 @@ public final class ConfigConfigurationRequestQueryParam {
             return this;
         }
         public ConfigConfigurationRequestQueryParam build() {
-            final var o = new ConfigConfigurationRequestQueryParam();
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new ConfigConfigurationRequestQueryParam();
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

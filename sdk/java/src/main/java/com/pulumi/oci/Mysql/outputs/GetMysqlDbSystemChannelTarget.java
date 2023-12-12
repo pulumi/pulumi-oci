@@ -166,15 +166,15 @@ public final class GetMysqlDbSystemChannelTarget {
             return this;
         }
         public GetMysqlDbSystemChannelTarget build() {
-            final var o = new GetMysqlDbSystemChannelTarget();
-            o.applierUsername = applierUsername;
-            o.channelName = channelName;
-            o.dbSystemId = dbSystemId;
-            o.delayInSeconds = delayInSeconds;
-            o.filters = filters;
-            o.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
-            o.targetType = targetType;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemChannelTarget();
+            _resultValue.applierUsername = applierUsername;
+            _resultValue.channelName = channelName;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.delayInSeconds = delayInSeconds;
+            _resultValue.filters = filters;
+            _resultValue.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
+            _resultValue.targetType = targetType;
+            return _resultValue;
         }
     }
 }

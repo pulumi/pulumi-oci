@@ -158,16 +158,16 @@ public final class GetManagedInstanceModuleStreamsResult {
             return this;
         }
         public GetManagedInstanceModuleStreamsResult build() {
-            final var o = new GetManagedInstanceModuleStreamsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.moduleName = moduleName;
-            o.moduleStreamOnManagedInstances = moduleStreamOnManagedInstances;
-            o.streamName = streamName;
-            o.streamStatus = streamStatus;
-            return o;
+            final var _resultValue = new GetManagedInstanceModuleStreamsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.moduleName = moduleName;
+            _resultValue.moduleStreamOnManagedInstances = moduleStreamOnManagedInstances;
+            _resultValue.streamName = streamName;
+            _resultValue.streamStatus = streamStatus;
+            return _resultValue;
         }
     }
 }

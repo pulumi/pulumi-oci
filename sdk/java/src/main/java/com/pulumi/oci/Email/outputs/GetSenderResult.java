@@ -212,18 +212,18 @@ public final class GetSenderResult {
             return this;
         }
         public GetSenderResult build() {
-            final var o = new GetSenderResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.emailAddress = emailAddress;
-            o.emailDomainId = emailDomainId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isSpf = isSpf;
-            o.senderId = senderId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetSenderResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.emailDomainId = emailDomainId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isSpf = isSpf;
+            _resultValue.senderId = senderId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

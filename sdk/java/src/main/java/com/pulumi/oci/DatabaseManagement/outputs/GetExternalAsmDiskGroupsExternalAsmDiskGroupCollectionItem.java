@@ -205,17 +205,17 @@ public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem {
             return this;
         }
         public GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem build() {
-            final var o = new GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem();
-            o.databases = databases;
-            o.dismountingInstanceCount = dismountingInstanceCount;
-            o.isSparse = isSparse;
-            o.mountingInstanceCount = mountingInstanceCount;
-            o.name = name;
-            o.redundancyType = redundancyType;
-            o.totalSizeInMbs = totalSizeInMbs;
-            o.usedPercent = usedPercent;
-            o.usedSizeInMbs = usedSizeInMbs;
-            return o;
+            final var _resultValue = new GetExternalAsmDiskGroupsExternalAsmDiskGroupCollectionItem();
+            _resultValue.databases = databases;
+            _resultValue.dismountingInstanceCount = dismountingInstanceCount;
+            _resultValue.isSparse = isSparse;
+            _resultValue.mountingInstanceCount = mountingInstanceCount;
+            _resultValue.name = name;
+            _resultValue.redundancyType = redundancyType;
+            _resultValue.totalSizeInMbs = totalSizeInMbs;
+            _resultValue.usedPercent = usedPercent;
+            _resultValue.usedSizeInMbs = usedSizeInMbs;
+            return _resultValue;
         }
     }
 }

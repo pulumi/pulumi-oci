@@ -106,12 +106,12 @@ public final class TriggerActionFilterInclude {
             return this;
         }
         public TriggerActionFilterInclude build() {
-            final var o = new TriggerActionFilterInclude();
-            o.baseRef = baseRef;
-            o.fileFilter = fileFilter;
-            o.headRef = headRef;
-            o.repositoryName = repositoryName;
-            return o;
+            final var _resultValue = new TriggerActionFilterInclude();
+            _resultValue.baseRef = baseRef;
+            _resultValue.fileFilter = fileFilter;
+            _resultValue.headRef = headRef;
+            _resultValue.repositoryName = repositoryName;
+            return _resultValue;
         }
     }
 }

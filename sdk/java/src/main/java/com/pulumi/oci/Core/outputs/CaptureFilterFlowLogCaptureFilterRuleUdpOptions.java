@@ -68,10 +68,10 @@ public final class CaptureFilterFlowLogCaptureFilterRuleUdpOptions {
             return this;
         }
         public CaptureFilterFlowLogCaptureFilterRuleUdpOptions build() {
-            final var o = new CaptureFilterFlowLogCaptureFilterRuleUdpOptions();
-            o.destinationPortRange = destinationPortRange;
-            o.sourcePortRange = sourcePortRange;
-            return o;
+            final var _resultValue = new CaptureFilterFlowLogCaptureFilterRuleUdpOptions();
+            _resultValue.destinationPortRange = destinationPortRange;
+            _resultValue.sourcePortRange = sourcePortRange;
+            return _resultValue;
         }
     }
 }

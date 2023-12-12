@@ -144,14 +144,14 @@ public final class GetMetastoresResult {
             return this;
         }
         public GetMetastoresResult build() {
-            final var o = new GetMetastoresResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.metastores = metastores;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMetastoresResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.metastores = metastores;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -155,15 +155,15 @@ public final class GetConfigsResult {
             return this;
         }
         public GetConfigsResult build() {
-            final var o = new GetConfigsResult();
-            o.compartmentId = compartmentId;
-            o.configCollections = configCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetConfigsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configCollections = configCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

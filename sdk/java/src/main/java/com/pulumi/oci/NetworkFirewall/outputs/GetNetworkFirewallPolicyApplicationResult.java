@@ -145,15 +145,15 @@ public final class GetNetworkFirewallPolicyApplicationResult {
             return this;
         }
         public GetNetworkFirewallPolicyApplicationResult build() {
-            final var o = new GetNetworkFirewallPolicyApplicationResult();
-            o.icmpCode = icmpCode;
-            o.icmpType = icmpType;
-            o.id = id;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyApplicationResult();
+            _resultValue.icmpCode = icmpCode;
+            _resultValue.icmpType = icmpType;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

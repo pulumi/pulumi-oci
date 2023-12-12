@@ -521,34 +521,34 @@ public final class GetSubscriptionsSubscriptionCollectionItemBillingAddress {
             return this;
         }
         public GetSubscriptionsSubscriptionCollectionItemBillingAddress build() {
-            final var o = new GetSubscriptionsSubscriptionCollectionItemBillingAddress();
-            o.addressKey = addressKey;
-            o.city = city;
-            o.companyName = companyName;
-            o.contributorClass = contributorClass;
-            o.country = country;
-            o.county = county;
-            o.departmentName = departmentName;
-            o.emailAddress = emailAddress;
-            o.firstName = firstName;
-            o.internalNumber = internalNumber;
-            o.jobTitle = jobTitle;
-            o.lastName = lastName;
-            o.line1 = line1;
-            o.line2 = line2;
-            o.line3 = line3;
-            o.line4 = line4;
-            o.middleName = middleName;
-            o.municipalInscription = municipalInscription;
-            o.phoneCountryCode = phoneCountryCode;
-            o.phoneNumber = phoneNumber;
-            o.postalCode = postalCode;
-            o.province = province;
-            o.state = state;
-            o.stateInscription = stateInscription;
-            o.streetName = streetName;
-            o.streetNumber = streetNumber;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionCollectionItemBillingAddress();
+            _resultValue.addressKey = addressKey;
+            _resultValue.city = city;
+            _resultValue.companyName = companyName;
+            _resultValue.contributorClass = contributorClass;
+            _resultValue.country = country;
+            _resultValue.county = county;
+            _resultValue.departmentName = departmentName;
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.firstName = firstName;
+            _resultValue.internalNumber = internalNumber;
+            _resultValue.jobTitle = jobTitle;
+            _resultValue.lastName = lastName;
+            _resultValue.line1 = line1;
+            _resultValue.line2 = line2;
+            _resultValue.line3 = line3;
+            _resultValue.line4 = line4;
+            _resultValue.middleName = middleName;
+            _resultValue.municipalInscription = municipalInscription;
+            _resultValue.phoneCountryCode = phoneCountryCode;
+            _resultValue.phoneNumber = phoneNumber;
+            _resultValue.postalCode = postalCode;
+            _resultValue.province = province;
+            _resultValue.state = state;
+            _resultValue.stateInscription = stateInscription;
+            _resultValue.streetName = streetName;
+            _resultValue.streetNumber = streetNumber;
+            return _resultValue;
         }
     }
 }

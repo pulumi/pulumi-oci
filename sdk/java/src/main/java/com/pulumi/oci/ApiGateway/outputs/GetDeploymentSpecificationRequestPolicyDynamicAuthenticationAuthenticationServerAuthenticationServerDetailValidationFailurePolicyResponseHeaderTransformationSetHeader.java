@@ -50,9 +50,9 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
             return items(List.of(items));
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeader build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeader();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationSetHeader();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

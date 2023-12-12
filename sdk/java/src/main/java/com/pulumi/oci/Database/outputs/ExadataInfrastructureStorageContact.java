@@ -85,13 +85,13 @@ public final class ExadataInfrastructureStorageContact {
             return this;
         }
         public ExadataInfrastructureStorageContact build() {
-            final var o = new ExadataInfrastructureStorageContact();
-            o.email = email;
-            o.isContactMosValidated = isContactMosValidated;
-            o.isPrimary = isPrimary;
-            o.name = name;
-            o.phoneNumber = phoneNumber;
-            return o;
+            final var _resultValue = new ExadataInfrastructureStorageContact();
+            _resultValue.email = email;
+            _resultValue.isContactMosValidated = isContactMosValidated;
+            _resultValue.isPrimary = isPrimary;
+            _resultValue.name = name;
+            _resultValue.phoneNumber = phoneNumber;
+            return _resultValue;
         }
     }
 }

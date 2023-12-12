@@ -106,13 +106,13 @@ public final class GetProductLicenseConsumersResult {
             return this;
         }
         public GetProductLicenseConsumersResult build() {
-            final var o = new GetProductLicenseConsumersResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-            o.items = items;
-            o.productLicenseId = productLicenseId;
-            return o;
+            final var _resultValue = new GetProductLicenseConsumersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            _resultValue.items = items;
+            _resultValue.productLicenseId = productLicenseId;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConf
             return preemptionActions(List.of(preemptionActions));
         }
         public GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig build() {
-            final var o = new GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig();
-            o.preemptionActions = preemptionActions;
-            return o;
+            final var _resultValue = new GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfig();
+            _resultValue.preemptionActions = preemptionActions;
+            return _resultValue;
         }
     }
 }

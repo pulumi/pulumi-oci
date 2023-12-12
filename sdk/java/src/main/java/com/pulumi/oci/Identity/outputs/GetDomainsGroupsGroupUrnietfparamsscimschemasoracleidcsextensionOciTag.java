@@ -93,11 +93,11 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag build() {
-            final var o = new GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.tagSlug = tagSlug;
-            return o;
+            final var _resultValue = new GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.tagSlug = tagSlug;
+            return _resultValue;
         }
     }
 }

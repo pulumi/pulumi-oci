@@ -144,14 +144,14 @@ public final class GetOdaPrivateEndpointAttachmentsResult {
             return this;
         }
         public GetOdaPrivateEndpointAttachmentsResult build() {
-            final var o = new GetOdaPrivateEndpointAttachmentsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.odaPrivateEndpointAttachmentCollections = odaPrivateEndpointAttachmentCollections;
-            o.odaPrivateEndpointId = odaPrivateEndpointId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointAttachmentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.odaPrivateEndpointAttachmentCollections = odaPrivateEndpointAttachmentCollections;
+            _resultValue.odaPrivateEndpointId = odaPrivateEndpointId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -123,13 +123,13 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformanceCompu
             return this;
         }
         public GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList build() {
-            final var o = new GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList();
-            o.cpuCoreCount = cpuCoreCount;
-            o.memoryInGbs = memoryInGbs;
-            o.networkBandwidthInGbps = networkBandwidthInGbps;
-            o.networkIops = networkIops;
-            o.networkThroughputInMbps = networkThroughputInMbps;
-            return o;
+            final var _resultValue = new GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList();
+            _resultValue.cpuCoreCount = cpuCoreCount;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.networkBandwidthInGbps = networkBandwidthInGbps;
+            _resultValue.networkIops = networkIops;
+            _resultValue.networkThroughputInMbps = networkThroughputInMbps;
+            return _resultValue;
         }
     }
 }

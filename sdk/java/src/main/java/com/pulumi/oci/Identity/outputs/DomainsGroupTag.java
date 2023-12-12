@@ -111,10 +111,10 @@ public final class DomainsGroupTag {
             return this;
         }
         public DomainsGroupTag build() {
-            final var o = new DomainsGroupTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsGroupTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

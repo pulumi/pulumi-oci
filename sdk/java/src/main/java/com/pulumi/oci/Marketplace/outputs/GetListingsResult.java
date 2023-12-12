@@ -248,22 +248,22 @@ public final class GetListingsResult {
             return this;
         }
         public GetListingsResult build() {
-            final var o = new GetListingsResult();
-            o.categories = categories;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.imageId = imageId;
-            o.isFeatured = isFeatured;
-            o.listingId = listingId;
-            o.listingTypes = listingTypes;
-            o.listings = listings;
-            o.names = names;
-            o.operatingSystems = operatingSystems;
-            o.packageType = packageType;
-            o.pricings = pricings;
-            o.publisherId = publisherId;
-            return o;
+            final var _resultValue = new GetListingsResult();
+            _resultValue.categories = categories;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.isFeatured = isFeatured;
+            _resultValue.listingId = listingId;
+            _resultValue.listingTypes = listingTypes;
+            _resultValue.listings = listings;
+            _resultValue.names = names;
+            _resultValue.operatingSystems = operatingSystems;
+            _resultValue.packageType = packageType;
+            _resultValue.pricings = pricings;
+            _resultValue.publisherId = publisherId;
+            return _resultValue;
         }
     }
 }

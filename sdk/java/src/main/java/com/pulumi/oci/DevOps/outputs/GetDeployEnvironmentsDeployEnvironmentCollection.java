@@ -50,9 +50,9 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollection {
             return items(List.of(items));
         }
         public GetDeployEnvironmentsDeployEnvironmentCollection build() {
-            final var o = new GetDeployEnvironmentsDeployEnvironmentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentsDeployEnvironmentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

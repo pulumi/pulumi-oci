@@ -42,9 +42,9 @@ public final class GetWorkspaceFoldersFolderSummaryCollection {
             return items(List.of(items));
         }
         public GetWorkspaceFoldersFolderSummaryCollection build() {
-            final var o = new GetWorkspaceFoldersFolderSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetWorkspaceFoldersFolderSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

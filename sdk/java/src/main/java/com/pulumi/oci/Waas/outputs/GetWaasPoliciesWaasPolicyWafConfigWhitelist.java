@@ -91,11 +91,11 @@ public final class GetWaasPoliciesWaasPolicyWafConfigWhitelist {
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigWhitelist build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigWhitelist();
-            o.addressLists = addressLists;
-            o.addresses = addresses;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigWhitelist();
+            _resultValue.addressLists = addressLists;
+            _resultValue.addresses = addresses;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

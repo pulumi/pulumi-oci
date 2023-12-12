@@ -93,11 +93,11 @@ public final class GetInstanceConfigurationInstanceDetailOptionBlockVolume {
             return this;
         }
         public GetInstanceConfigurationInstanceDetailOptionBlockVolume build() {
-            final var o = new GetInstanceConfigurationInstanceDetailOptionBlockVolume();
-            o.attachDetails = attachDetails;
-            o.createDetails = createDetails;
-            o.volumeId = volumeId;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationInstanceDetailOptionBlockVolume();
+            _resultValue.attachDetails = attachDetails;
+            _resultValue.createDetails = createDetails;
+            _resultValue.volumeId = volumeId;
+            return _resultValue;
         }
     }
 }

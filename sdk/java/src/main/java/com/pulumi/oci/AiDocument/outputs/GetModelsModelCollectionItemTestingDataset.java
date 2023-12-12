@@ -122,13 +122,13 @@ public final class GetModelsModelCollectionItemTestingDataset {
             return this;
         }
         public GetModelsModelCollectionItemTestingDataset build() {
-            final var o = new GetModelsModelCollectionItemTestingDataset();
-            o.bucket = bucket;
-            o.datasetId = datasetId;
-            o.datasetType = datasetType;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemTestingDataset();
+            _resultValue.bucket = bucket;
+            _resultValue.datasetId = datasetId;
+            _resultValue.datasetType = datasetType;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

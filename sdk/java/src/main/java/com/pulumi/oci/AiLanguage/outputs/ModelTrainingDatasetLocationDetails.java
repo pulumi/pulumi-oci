@@ -113,12 +113,12 @@ public final class ModelTrainingDatasetLocationDetails {
             return objectNames(List.of(objectNames));
         }
         public ModelTrainingDatasetLocationDetails build() {
-            final var o = new ModelTrainingDatasetLocationDetails();
-            o.bucket = bucket;
-            o.locationType = locationType;
-            o.namespace = namespace;
-            o.objectNames = objectNames;
-            return o;
+            final var _resultValue = new ModelTrainingDatasetLocationDetails();
+            _resultValue.bucket = bucket;
+            _resultValue.locationType = locationType;
+            _resultValue.namespace = namespace;
+            _resultValue.objectNames = objectNames;
+            return _resultValue;
         }
     }
 }

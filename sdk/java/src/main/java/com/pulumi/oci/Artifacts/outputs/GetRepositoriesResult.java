@@ -164,15 +164,15 @@ public final class GetRepositoriesResult {
             return this;
         }
         public GetRepositoriesResult build() {
-            final var o = new GetRepositoriesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isImmutable = isImmutable;
-            o.repositoryCollections = repositoryCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetRepositoriesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isImmutable = isImmutable;
+            _resultValue.repositoryCollections = repositoryCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

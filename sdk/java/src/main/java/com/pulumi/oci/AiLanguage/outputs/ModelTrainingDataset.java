@@ -87,11 +87,11 @@ public final class ModelTrainingDataset {
             return this;
         }
         public ModelTrainingDataset build() {
-            final var o = new ModelTrainingDataset();
-            o.datasetId = datasetId;
-            o.datasetType = datasetType;
-            o.locationDetails = locationDetails;
-            return o;
+            final var _resultValue = new ModelTrainingDataset();
+            _resultValue.datasetId = datasetId;
+            _resultValue.datasetType = datasetType;
+            _resultValue.locationDetails = locationDetails;
+            return _resultValue;
         }
     }
 }

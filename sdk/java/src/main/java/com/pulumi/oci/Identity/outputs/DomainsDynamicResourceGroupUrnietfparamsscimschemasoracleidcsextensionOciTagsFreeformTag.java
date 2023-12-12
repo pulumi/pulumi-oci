@@ -111,10 +111,10 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
             return this;
         }
         public DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag build() {
-            final var o = new DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

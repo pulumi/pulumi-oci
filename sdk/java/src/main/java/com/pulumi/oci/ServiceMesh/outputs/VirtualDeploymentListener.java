@@ -106,12 +106,12 @@ public final class VirtualDeploymentListener {
             return this;
         }
         public VirtualDeploymentListener build() {
-            final var o = new VirtualDeploymentListener();
-            o.idleTimeoutInMs = idleTimeoutInMs;
-            o.port = port;
-            o.protocol = protocol;
-            o.requestTimeoutInMs = requestTimeoutInMs;
-            return o;
+            final var _resultValue = new VirtualDeploymentListener();
+            _resultValue.idleTimeoutInMs = idleTimeoutInMs;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.requestTimeoutInMs = requestTimeoutInMs;
+            return _resultValue;
         }
     }
 }

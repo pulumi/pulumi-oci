@@ -97,12 +97,12 @@ public final class GetProtocolsResult {
             return protocols(List.of(protocols));
         }
         public GetProtocolsResult build() {
-            final var o = new GetProtocolsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.protocols = protocols;
-            return o;
+            final var _resultValue = new GetProtocolsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.protocols = protocols;
+            return _resultValue;
         }
     }
 }

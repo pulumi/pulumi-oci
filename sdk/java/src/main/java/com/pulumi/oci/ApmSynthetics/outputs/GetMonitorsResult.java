@@ -208,19 +208,19 @@ public final class GetMonitorsResult {
             return this;
         }
         public GetMonitorsResult build() {
-            final var o = new GetMonitorsResult();
-            o.apmDomainId = apmDomainId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isMaintenanceWindowActive = isMaintenanceWindowActive;
-            o.isMaintenanceWindowSet = isMaintenanceWindowSet;
-            o.monitorCollections = monitorCollections;
-            o.monitorType = monitorType;
-            o.scriptId = scriptId;
-            o.status = status;
-            o.vantagePoint = vantagePoint;
-            return o;
+            final var _resultValue = new GetMonitorsResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isMaintenanceWindowActive = isMaintenanceWindowActive;
+            _resultValue.isMaintenanceWindowSet = isMaintenanceWindowSet;
+            _resultValue.monitorCollections = monitorCollections;
+            _resultValue.monitorType = monitorType;
+            _resultValue.scriptId = scriptId;
+            _resultValue.status = status;
+            _resultValue.vantagePoint = vantagePoint;
+            return _resultValue;
         }
     }
 }

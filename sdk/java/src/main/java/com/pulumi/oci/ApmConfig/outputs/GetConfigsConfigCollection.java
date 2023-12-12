@@ -42,9 +42,9 @@ public final class GetConfigsConfigCollection {
             return items(List.of(items));
         }
         public GetConfigsConfigCollection build() {
-            final var o = new GetConfigsConfigCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetConfigsConfigCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

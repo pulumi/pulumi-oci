@@ -144,14 +144,14 @@ public final class GetDbNodeConsoleHistoriesResult {
             return this;
         }
         public GetDbNodeConsoleHistoriesResult build() {
-            final var o = new GetDbNodeConsoleHistoriesResult();
-            o.consoleHistoryCollections = consoleHistoryCollections;
-            o.dbNodeId = dbNodeId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDbNodeConsoleHistoriesResult();
+            _resultValue.consoleHistoryCollections = consoleHistoryCollections;
+            _resultValue.dbNodeId = dbNodeId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

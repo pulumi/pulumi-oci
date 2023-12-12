@@ -67,11 +67,11 @@ public final class GetIdpGroupMappingsFilter {
             return values(List.of(values));
         }
         public GetIdpGroupMappingsFilter build() {
-            final var o = new GetIdpGroupMappingsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetIdpGroupMappingsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

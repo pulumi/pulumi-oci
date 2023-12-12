@@ -85,11 +85,11 @@ public final class GetPbfListingVersionConfig {
             return this;
         }
         public GetPbfListingVersionConfig build() {
-            final var o = new GetPbfListingVersionConfig();
-            o.description = description;
-            o.isOptional = isOptional;
-            o.key = key;
-            return o;
+            final var _resultValue = new GetPbfListingVersionConfig();
+            _resultValue.description = description;
+            _resultValue.isOptional = isOptional;
+            _resultValue.key = key;
+            return _resultValue;
         }
     }
 }

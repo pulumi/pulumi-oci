@@ -84,11 +84,11 @@ public final class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection
             return this;
         }
         public GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy build() {
-            final var o = new GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy();
-            o.displayName = displayName;
-            o.email = email;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy();
+            _resultValue.displayName = displayName;
+            _resultValue.email = email;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

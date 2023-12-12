@@ -42,9 +42,9 @@ public final class GetDiscoverySchedulesDiscoveryScheduleCollection {
             return items(List.of(items));
         }
         public GetDiscoverySchedulesDiscoveryScheduleCollection build() {
-            final var o = new GetDiscoverySchedulesDiscoveryScheduleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDiscoverySchedulesDiscoveryScheduleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

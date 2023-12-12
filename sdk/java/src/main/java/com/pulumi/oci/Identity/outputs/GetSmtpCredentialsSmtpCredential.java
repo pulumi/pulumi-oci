@@ -190,17 +190,17 @@ public final class GetSmtpCredentialsSmtpCredential {
             return this;
         }
         public GetSmtpCredentialsSmtpCredential build() {
-            final var o = new GetSmtpCredentialsSmtpCredential();
-            o.description = description;
-            o.id = id;
-            o.inactiveState = inactiveState;
-            o.password = password;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeExpires = timeExpires;
-            o.userId = userId;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetSmtpCredentialsSmtpCredential();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.password = password;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpires = timeExpires;
+            _resultValue.userId = userId;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
             return items(List.of(items));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeader();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

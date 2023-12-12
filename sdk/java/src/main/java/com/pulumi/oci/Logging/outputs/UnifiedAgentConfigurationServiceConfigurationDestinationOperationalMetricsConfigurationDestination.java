@@ -46,9 +46,9 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination build() {
-            final var o = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination();
-            o.compartmentId = compartmentId;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination();
+            _resultValue.compartmentId = compartmentId;
+            return _resultValue;
         }
     }
 }

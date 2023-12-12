@@ -170,17 +170,17 @@ public final class GetCustomProtectionRulesResult {
             return this;
         }
         public GetCustomProtectionRulesResult build() {
-            final var o = new GetCustomProtectionRulesResult();
-            o.compartmentId = compartmentId;
-            o.customProtectionRules = customProtectionRules;
-            o.displayNames = displayNames;
-            o.filters = filters;
-            o.id = id;
-            o.ids = ids;
-            o.states = states;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetCustomProtectionRulesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.customProtectionRules = customProtectionRules;
+            _resultValue.displayNames = displayNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ids = ids;
+            _resultValue.states = states;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

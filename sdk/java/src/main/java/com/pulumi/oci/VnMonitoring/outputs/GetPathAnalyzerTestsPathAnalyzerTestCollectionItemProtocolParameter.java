@@ -123,13 +123,13 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolPar
             return this;
         }
         public GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter build() {
-            final var o = new GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter();
-            o.destinationPort = destinationPort;
-            o.icmpCode = icmpCode;
-            o.icmpType = icmpType;
-            o.sourcePort = sourcePort;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter();
+            _resultValue.destinationPort = destinationPort;
+            _resultValue.icmpCode = icmpCode;
+            _resultValue.icmpType = icmpType;
+            _resultValue.sourcePort = sourcePort;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetDrgRouteDistributionStatementsFilter {
             return values(List.of(values));
         }
         public GetDrgRouteDistributionStatementsFilter build() {
-            final var o = new GetDrgRouteDistributionStatementsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDrgRouteDistributionStatementsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

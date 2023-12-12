@@ -127,13 +127,13 @@ public final class GetReportDefinitionColumnFilter {
             return this;
         }
         public GetReportDefinitionColumnFilter build() {
-            final var o = new GetReportDefinitionColumnFilter();
-            o.expressions = expressions;
-            o.fieldName = fieldName;
-            o.isEnabled = isEnabled;
-            o.isHidden = isHidden;
-            o.operator = operator;
-            return o;
+            final var _resultValue = new GetReportDefinitionColumnFilter();
+            _resultValue.expressions = expressions;
+            _resultValue.fieldName = fieldName;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isHidden = isHidden;
+            _resultValue.operator = operator;
+            return _resultValue;
         }
     }
 }

@@ -460,31 +460,31 @@ public final class GetVtapResult {
             return this;
         }
         public GetVtapResult build() {
-            final var o = new GetVtapResult();
-            o.captureFilterId = captureFilterId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.encapsulationProtocol = encapsulationProtocol;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isVtapEnabled = isVtapEnabled;
-            o.lifecycleStateDetails = lifecycleStateDetails;
-            o.maxPacketSize = maxPacketSize;
-            o.sourceId = sourceId;
-            o.sourcePrivateEndpointIp = sourcePrivateEndpointIp;
-            o.sourcePrivateEndpointSubnetId = sourcePrivateEndpointSubnetId;
-            o.sourceType = sourceType;
-            o.state = state;
-            o.targetId = targetId;
-            o.targetIp = targetIp;
-            o.targetType = targetType;
-            o.timeCreated = timeCreated;
-            o.trafficMode = trafficMode;
-            o.vcnId = vcnId;
-            o.vtapId = vtapId;
-            o.vxlanNetworkIdentifier = vxlanNetworkIdentifier;
-            return o;
+            final var _resultValue = new GetVtapResult();
+            _resultValue.captureFilterId = captureFilterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.encapsulationProtocol = encapsulationProtocol;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isVtapEnabled = isVtapEnabled;
+            _resultValue.lifecycleStateDetails = lifecycleStateDetails;
+            _resultValue.maxPacketSize = maxPacketSize;
+            _resultValue.sourceId = sourceId;
+            _resultValue.sourcePrivateEndpointIp = sourcePrivateEndpointIp;
+            _resultValue.sourcePrivateEndpointSubnetId = sourcePrivateEndpointSubnetId;
+            _resultValue.sourceType = sourceType;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.targetIp = targetIp;
+            _resultValue.targetType = targetType;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.trafficMode = trafficMode;
+            _resultValue.vcnId = vcnId;
+            _resultValue.vtapId = vtapId;
+            _resultValue.vxlanNetworkIdentifier = vxlanNetworkIdentifier;
+            return _resultValue;
         }
     }
 }

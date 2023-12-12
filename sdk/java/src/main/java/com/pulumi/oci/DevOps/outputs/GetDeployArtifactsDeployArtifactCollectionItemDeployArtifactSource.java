@@ -203,17 +203,17 @@ public final class GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactS
             return this;
         }
         public GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource build() {
-            final var o = new GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource();
-            o.base64encodedContent = base64encodedContent;
-            o.chartUrl = chartUrl;
-            o.deployArtifactPath = deployArtifactPath;
-            o.deployArtifactSourceType = deployArtifactSourceType;
-            o.deployArtifactVersion = deployArtifactVersion;
-            o.helmVerificationKeySources = helmVerificationKeySources;
-            o.imageDigest = imageDigest;
-            o.imageUri = imageUri;
-            o.repositoryId = repositoryId;
-            return o;
+            final var _resultValue = new GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource();
+            _resultValue.base64encodedContent = base64encodedContent;
+            _resultValue.chartUrl = chartUrl;
+            _resultValue.deployArtifactPath = deployArtifactPath;
+            _resultValue.deployArtifactSourceType = deployArtifactSourceType;
+            _resultValue.deployArtifactVersion = deployArtifactVersion;
+            _resultValue.helmVerificationKeySources = helmVerificationKeySources;
+            _resultValue.imageDigest = imageDigest;
+            _resultValue.imageUri = imageUri;
+            _resultValue.repositoryId = repositoryId;
+            return _resultValue;
         }
     }
 }

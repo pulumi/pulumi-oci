@@ -69,9 +69,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
             return secQuestions(List.of(secQuestions));
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser();
-            o.secQuestions = secQuestions;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser();
+            _resultValue.secQuestions = secQuestions;
+            return _resultValue;
         }
     }
 }

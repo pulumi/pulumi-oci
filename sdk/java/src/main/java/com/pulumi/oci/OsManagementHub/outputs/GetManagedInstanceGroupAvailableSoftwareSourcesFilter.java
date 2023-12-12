@@ -67,11 +67,11 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesFilter {
             return values(List.of(values));
         }
         public GetManagedInstanceGroupAvailableSoftwareSourcesFilter build() {
-            final var o = new GetManagedInstanceGroupAvailableSoftwareSourcesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailableSoftwareSourcesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

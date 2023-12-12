@@ -477,31 +477,31 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
             return this;
         }
         public GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem build() {
-            final var o = new GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem();
-            o.allowedValues = allowedValues;
-            o.category = category;
-            o.constraint = constraint;
-            o.containerId = containerId;
-            o.description = description;
-            o.displayValue = displayValue;
-            o.isAdjusted = isAdjusted;
-            o.isBasic = isBasic;
-            o.isDefault = isDefault;
-            o.isDeprecated = isDeprecated;
-            o.isInstanceModifiable = isInstanceModifiable;
-            o.isModified = isModified;
-            o.isPdbModifiable = isPdbModifiable;
-            o.isSessionModifiable = isSessionModifiable;
-            o.isSpecified = isSpecified;
-            o.isSystemModifiable = isSystemModifiable;
-            o.name = name;
-            o.number = number;
-            o.ordinal = ordinal;
-            o.sid = sid;
-            o.type = type;
-            o.updateComment = updateComment;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.category = category;
+            _resultValue.constraint = constraint;
+            _resultValue.containerId = containerId;
+            _resultValue.description = description;
+            _resultValue.displayValue = displayValue;
+            _resultValue.isAdjusted = isAdjusted;
+            _resultValue.isBasic = isBasic;
+            _resultValue.isDefault = isDefault;
+            _resultValue.isDeprecated = isDeprecated;
+            _resultValue.isInstanceModifiable = isInstanceModifiable;
+            _resultValue.isModified = isModified;
+            _resultValue.isPdbModifiable = isPdbModifiable;
+            _resultValue.isSessionModifiable = isSessionModifiable;
+            _resultValue.isSpecified = isSpecified;
+            _resultValue.isSystemModifiable = isSystemModifiable;
+            _resultValue.name = name;
+            _resultValue.number = number;
+            _resultValue.ordinal = ordinal;
+            _resultValue.sid = sid;
+            _resultValue.type = type;
+            _resultValue.updateComment = updateComment;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

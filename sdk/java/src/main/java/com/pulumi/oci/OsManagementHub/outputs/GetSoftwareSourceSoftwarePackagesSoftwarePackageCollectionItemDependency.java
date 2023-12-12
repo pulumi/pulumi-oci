@@ -84,11 +84,11 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency build() {
-            final var o = new GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency();
-            o.dependency = dependency;
-            o.dependencyModifier = dependencyModifier;
-            o.dependencyType = dependencyType;
-            return o;
+            final var _resultValue = new GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependency();
+            _resultValue.dependency = dependency;
+            _resultValue.dependencyModifier = dependencyModifier;
+            _resultValue.dependencyType = dependencyType;
+            return _resultValue;
         }
     }
 }

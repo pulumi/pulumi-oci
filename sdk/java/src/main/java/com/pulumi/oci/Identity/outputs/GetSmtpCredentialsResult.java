@@ -105,12 +105,12 @@ public final class GetSmtpCredentialsResult {
             return this;
         }
         public GetSmtpCredentialsResult build() {
-            final var o = new GetSmtpCredentialsResult();
-            o.filters = filters;
-            o.id = id;
-            o.smtpCredentials = smtpCredentials;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetSmtpCredentialsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.smtpCredentials = smtpCredentials;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

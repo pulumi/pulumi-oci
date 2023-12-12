@@ -144,14 +144,14 @@ public final class GetQuotasResult {
             return this;
         }
         public GetQuotasResult build() {
-            final var o = new GetQuotasResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.quotas = quotas;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetQuotasResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.quotas = quotas;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

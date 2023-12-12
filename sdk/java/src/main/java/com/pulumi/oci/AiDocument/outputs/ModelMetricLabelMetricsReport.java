@@ -112,12 +112,12 @@ public final class ModelMetricLabelMetricsReport {
             return this;
         }
         public ModelMetricLabelMetricsReport build() {
-            final var o = new ModelMetricLabelMetricsReport();
-            o.confidenceEntries = confidenceEntries;
-            o.documentCount = documentCount;
-            o.label = label;
-            o.meanAveragePrecision = meanAveragePrecision;
-            return o;
+            final var _resultValue = new ModelMetricLabelMetricsReport();
+            _resultValue.confidenceEntries = confidenceEntries;
+            _resultValue.documentCount = documentCount;
+            _resultValue.label = label;
+            _resultValue.meanAveragePrecision = meanAveragePrecision;
+            return _resultValue;
         }
     }
 }

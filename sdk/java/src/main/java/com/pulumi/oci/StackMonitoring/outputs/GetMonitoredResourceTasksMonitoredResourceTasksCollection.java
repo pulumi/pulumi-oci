@@ -42,9 +42,9 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollection {
             return items(List.of(items));
         }
         public GetMonitoredResourceTasksMonitoredResourceTasksCollection build() {
-            final var o = new GetMonitoredResourceTasksMonitoredResourceTasksCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTasksMonitoredResourceTasksCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

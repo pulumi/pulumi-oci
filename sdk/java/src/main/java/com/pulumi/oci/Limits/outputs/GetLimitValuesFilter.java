@@ -75,11 +75,11 @@ public final class GetLimitValuesFilter {
             return values(List.of(values));
         }
         public GetLimitValuesFilter build() {
-            final var o = new GetLimitValuesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetLimitValuesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

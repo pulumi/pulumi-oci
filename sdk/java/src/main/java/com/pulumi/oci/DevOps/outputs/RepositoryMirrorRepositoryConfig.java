@@ -87,11 +87,11 @@ public final class RepositoryMirrorRepositoryConfig {
             return this;
         }
         public RepositoryMirrorRepositoryConfig build() {
-            final var o = new RepositoryMirrorRepositoryConfig();
-            o.connectorId = connectorId;
-            o.repositoryUrl = repositoryUrl;
-            o.triggerSchedule = triggerSchedule;
-            return o;
+            final var _resultValue = new RepositoryMirrorRepositoryConfig();
+            _resultValue.connectorId = connectorId;
+            _resultValue.repositoryUrl = repositoryUrl;
+            _resultValue.triggerSchedule = triggerSchedule;
+            return _resultValue;
         }
     }
 }

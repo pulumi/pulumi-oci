@@ -215,19 +215,19 @@ public final class GetImagesResult {
             return this;
         }
         public GetImagesResult build() {
-            final var o = new GetImagesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.images = images;
-            o.operatingSystem = operatingSystem;
-            o.operatingSystemVersion = operatingSystemVersion;
-            o.shape = shape;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetImagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.images = images;
+            _resultValue.operatingSystem = operatingSystem;
+            _resultValue.operatingSystemVersion = operatingSystemVersion;
+            _resultValue.shape = shape;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

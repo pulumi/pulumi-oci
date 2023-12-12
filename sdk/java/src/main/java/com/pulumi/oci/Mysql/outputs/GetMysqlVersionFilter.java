@@ -67,11 +67,11 @@ public final class GetMysqlVersionFilter {
             return values(List.of(values));
         }
         public GetMysqlVersionFilter build() {
-            final var o = new GetMysqlVersionFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetMysqlVersionFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

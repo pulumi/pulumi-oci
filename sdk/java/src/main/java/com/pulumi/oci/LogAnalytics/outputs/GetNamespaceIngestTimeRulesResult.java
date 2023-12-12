@@ -212,18 +212,18 @@ public final class GetNamespaceIngestTimeRulesResult {
             return this;
         }
         public GetNamespaceIngestTimeRulesResult build() {
-            final var o = new GetNamespaceIngestTimeRulesResult();
-            o.compartmentId = compartmentId;
-            o.conditionKind = conditionKind;
-            o.displayName = displayName;
-            o.fieldName = fieldName;
-            o.fieldValue = fieldValue;
-            o.filters = filters;
-            o.id = id;
-            o.ingestTimeRuleSummaryCollections = ingestTimeRuleSummaryCollections;
-            o.namespace = namespace;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetNamespaceIngestTimeRulesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.conditionKind = conditionKind;
+            _resultValue.displayName = displayName;
+            _resultValue.fieldName = fieldName;
+            _resultValue.fieldValue = fieldValue;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ingestTimeRuleSummaryCollections = ingestTimeRuleSummaryCollections;
+            _resultValue.namespace = namespace;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -71,10 +71,10 @@ public final class DatabaseToolsConnectionProxyClientUserPassword {
             return this;
         }
         public DatabaseToolsConnectionProxyClientUserPassword build() {
-            final var o = new DatabaseToolsConnectionProxyClientUserPassword();
-            o.secretId = secretId;
-            o.valueType = valueType;
-            return o;
+            final var _resultValue = new DatabaseToolsConnectionProxyClientUserPassword();
+            _resultValue.secretId = secretId;
+            _resultValue.valueType = valueType;
+            return _resultValue;
         }
     }
 }

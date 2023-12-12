@@ -219,18 +219,18 @@ public final class GetDomainsSettingsSettingCertificateValidation {
             return this;
         }
         public GetDomainsSettingsSettingCertificateValidation build() {
-            final var o = new GetDomainsSettingsSettingCertificateValidation();
-            o.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
-            o.crlEnabled = crlEnabled;
-            o.crlLocation = crlLocation;
-            o.crlRefreshInterval = crlRefreshInterval;
-            o.ocspEnabled = ocspEnabled;
-            o.ocspResponderUrl = ocspResponderUrl;
-            o.ocspSettingsResponderUrlPreferred = ocspSettingsResponderUrlPreferred;
-            o.ocspSigningCertificateAlias = ocspSigningCertificateAlias;
-            o.ocspTimeoutDuration = ocspTimeoutDuration;
-            o.ocspUnknownResponseStatusAllowed = ocspUnknownResponseStatusAllowed;
-            return o;
+            final var _resultValue = new GetDomainsSettingsSettingCertificateValidation();
+            _resultValue.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
+            _resultValue.crlEnabled = crlEnabled;
+            _resultValue.crlLocation = crlLocation;
+            _resultValue.crlRefreshInterval = crlRefreshInterval;
+            _resultValue.ocspEnabled = ocspEnabled;
+            _resultValue.ocspResponderUrl = ocspResponderUrl;
+            _resultValue.ocspSettingsResponderUrlPreferred = ocspSettingsResponderUrlPreferred;
+            _resultValue.ocspSigningCertificateAlias = ocspSigningCertificateAlias;
+            _resultValue.ocspTimeoutDuration = ocspTimeoutDuration;
+            _resultValue.ocspUnknownResponseStatusAllowed = ocspUnknownResponseStatusAllowed;
+            return _resultValue;
         }
     }
 }

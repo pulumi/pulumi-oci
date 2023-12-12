@@ -46,9 +46,9 @@ public final class GetProjectsProjectCollectionItemNotificationConfig {
             return this;
         }
         public GetProjectsProjectCollectionItemNotificationConfig build() {
-            final var o = new GetProjectsProjectCollectionItemNotificationConfig();
-            o.topicId = topicId;
-            return o;
+            final var _resultValue = new GetProjectsProjectCollectionItemNotificationConfig();
+            _resultValue.topicId = topicId;
+            return _resultValue;
         }
     }
 }

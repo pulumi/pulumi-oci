@@ -67,11 +67,11 @@ public final class GetCatalogsFilter {
             return values(List.of(values));
         }
         public GetCatalogsFilter build() {
-            final var o = new GetCatalogsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCatalogsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -150,14 +150,14 @@ public final class GetMonitoredResourceTaskTaskDetail {
             return this;
         }
         public GetMonitoredResourceTaskTaskDetail build() {
-            final var o = new GetMonitoredResourceTaskTaskDetail();
-            o.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
-            o.availabilityProxyMetrics = availabilityProxyMetrics;
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            o.source = source;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTaskTaskDetail();
+            _resultValue.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
+            _resultValue.availabilityProxyMetrics = availabilityProxyMetrics;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            _resultValue.source = source;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

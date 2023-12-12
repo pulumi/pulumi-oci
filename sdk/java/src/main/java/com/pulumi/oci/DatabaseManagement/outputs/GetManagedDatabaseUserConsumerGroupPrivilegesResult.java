@@ -128,14 +128,14 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesResult {
             return this;
         }
         public GetManagedDatabaseUserConsumerGroupPrivilegesResult build() {
-            final var o = new GetManagedDatabaseUserConsumerGroupPrivilegesResult();
-            o.consumerGroupPrivilegeCollections = consumerGroupPrivilegeCollections;
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserConsumerGroupPrivilegesResult();
+            _resultValue.consumerGroupPrivilegeCollections = consumerGroupPrivilegeCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

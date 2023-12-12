@@ -146,11 +146,11 @@ public final class DomainsPasswordPolicyGroup {
             return this;
         }
         public DomainsPasswordPolicyGroup build() {
-            final var o = new DomainsPasswordPolicyGroup();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsPasswordPolicyGroup();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

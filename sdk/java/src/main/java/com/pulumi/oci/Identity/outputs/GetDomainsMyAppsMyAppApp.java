@@ -275,21 +275,21 @@ public final class GetDomainsMyAppsMyAppApp {
             return this;
         }
         public GetDomainsMyAppsMyAppApp build() {
-            final var o = new GetDomainsMyAppsMyAppApp();
-            o.active = active;
-            o.appIcon = appIcon;
-            o.appThumbnail = appThumbnail;
-            o.description = description;
-            o.display = display;
-            o.isAliasApp = isAliasApp;
-            o.isLoginTarget = isLoginTarget;
-            o.isOpcService = isOpcService;
-            o.loginMechanism = loginMechanism;
-            o.ref = ref;
-            o.serviceTypeUrn = serviceTypeUrn;
-            o.showInMyApps = showInMyApps;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyAppsMyAppApp();
+            _resultValue.active = active;
+            _resultValue.appIcon = appIcon;
+            _resultValue.appThumbnail = appThumbnail;
+            _resultValue.description = description;
+            _resultValue.display = display;
+            _resultValue.isAliasApp = isAliasApp;
+            _resultValue.isLoginTarget = isLoginTarget;
+            _resultValue.isOpcService = isOpcService;
+            _resultValue.loginMechanism = loginMechanism;
+            _resultValue.ref = ref;
+            _resultValue.serviceTypeUrn = serviceTypeUrn;
+            _resultValue.showInMyApps = showInMyApps;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

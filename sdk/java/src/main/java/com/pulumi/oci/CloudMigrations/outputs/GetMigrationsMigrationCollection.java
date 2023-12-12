@@ -42,9 +42,9 @@ public final class GetMigrationsMigrationCollection {
             return items(List.of(items));
         }
         public GetMigrationsMigrationCollection build() {
-            final var o = new GetMigrationsMigrationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

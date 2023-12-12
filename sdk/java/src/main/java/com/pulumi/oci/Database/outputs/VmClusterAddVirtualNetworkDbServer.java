@@ -46,9 +46,9 @@ public final class VmClusterAddVirtualNetworkDbServer {
             return this;
         }
         public VmClusterAddVirtualNetworkDbServer build() {
-            final var o = new VmClusterAddVirtualNetworkDbServer();
-            o.dbServerId = dbServerId;
-            return o;
+            final var _resultValue = new VmClusterAddVirtualNetworkDbServer();
+            _resultValue.dbServerId = dbServerId;
+            return _resultValue;
         }
     }
 }

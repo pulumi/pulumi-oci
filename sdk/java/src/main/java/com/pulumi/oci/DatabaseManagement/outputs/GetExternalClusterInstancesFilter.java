@@ -67,11 +67,11 @@ public final class GetExternalClusterInstancesFilter {
             return values(List.of(values));
         }
         public GetExternalClusterInstancesFilter build() {
-            final var o = new GetExternalClusterInstancesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalClusterInstancesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

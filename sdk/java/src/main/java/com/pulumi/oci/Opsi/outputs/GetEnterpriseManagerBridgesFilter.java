@@ -67,11 +67,11 @@ public final class GetEnterpriseManagerBridgesFilter {
             return values(List.of(values));
         }
         public GetEnterpriseManagerBridgesFilter build() {
-            final var o = new GetEnterpriseManagerBridgesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetEnterpriseManagerBridgesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -241,24 +241,24 @@ public final class GetDomainsUsersResult {
             return users(List.of(users));
         }
         public GetDomainsUsersResult build() {
-            final var o = new GetDomainsUsersResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            o.userCount = userCount;
-            o.userFilter = userFilter;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetDomainsUsersResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            _resultValue.userCount = userCount;
+            _resultValue.userFilter = userFilter;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

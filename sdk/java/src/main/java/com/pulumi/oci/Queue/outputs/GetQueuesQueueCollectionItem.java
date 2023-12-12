@@ -376,27 +376,27 @@ public final class GetQueuesQueueCollectionItem {
             return this;
         }
         public GetQueuesQueueCollectionItem build() {
-            final var o = new GetQueuesQueueCollectionItem();
-            o.channelConsumptionLimit = channelConsumptionLimit;
-            o.compartmentId = compartmentId;
-            o.customEncryptionKeyId = customEncryptionKeyId;
-            o.deadLetterQueueDeliveryCount = deadLetterQueueDeliveryCount;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.messagesEndpoint = messagesEndpoint;
-            o.purgeQueue = purgeQueue;
-            o.purgeType = purgeType;
-            o.retentionInSeconds = retentionInSeconds;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.timeoutInSeconds = timeoutInSeconds;
-            o.visibilityInSeconds = visibilityInSeconds;
-            return o;
+            final var _resultValue = new GetQueuesQueueCollectionItem();
+            _resultValue.channelConsumptionLimit = channelConsumptionLimit;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.customEncryptionKeyId = customEncryptionKeyId;
+            _resultValue.deadLetterQueueDeliveryCount = deadLetterQueueDeliveryCount;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.messagesEndpoint = messagesEndpoint;
+            _resultValue.purgeQueue = purgeQueue;
+            _resultValue.purgeType = purgeType;
+            _resultValue.retentionInSeconds = retentionInSeconds;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.timeoutInSeconds = timeoutInSeconds;
+            _resultValue.visibilityInSeconds = visibilityInSeconds;
+            return _resultValue;
         }
     }
 }

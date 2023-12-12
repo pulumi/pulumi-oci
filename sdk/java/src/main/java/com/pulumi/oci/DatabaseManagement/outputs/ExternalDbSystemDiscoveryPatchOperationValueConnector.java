@@ -106,12 +106,12 @@ public final class ExternalDbSystemDiscoveryPatchOperationValueConnector {
             return this;
         }
         public ExternalDbSystemDiscoveryPatchOperationValueConnector build() {
-            final var o = new ExternalDbSystemDiscoveryPatchOperationValueConnector();
-            o.agentId = agentId;
-            o.connectionInfo = connectionInfo;
-            o.connectorType = connectorType;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new ExternalDbSystemDiscoveryPatchOperationValueConnector();
+            _resultValue.agentId = agentId;
+            _resultValue.connectionInfo = connectionInfo;
+            _resultValue.connectorType = connectorType;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

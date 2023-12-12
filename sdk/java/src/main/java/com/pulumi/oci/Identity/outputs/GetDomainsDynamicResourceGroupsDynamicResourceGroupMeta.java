@@ -122,13 +122,13 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupMeta {
             return this;
         }
         public GetDomainsDynamicResourceGroupsDynamicResourceGroupMeta build() {
-            final var o = new GetDomainsDynamicResourceGroupsDynamicResourceGroupMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDomainsDynamicResourceGroupsDynamicResourceGroupMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

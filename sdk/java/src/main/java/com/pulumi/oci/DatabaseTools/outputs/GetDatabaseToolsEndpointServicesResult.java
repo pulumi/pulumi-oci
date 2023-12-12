@@ -163,15 +163,15 @@ public final class GetDatabaseToolsEndpointServicesResult {
             return this;
         }
         public GetDatabaseToolsEndpointServicesResult build() {
-            final var o = new GetDatabaseToolsEndpointServicesResult();
-            o.compartmentId = compartmentId;
-            o.databaseToolsEndpointServiceCollections = databaseToolsEndpointServiceCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDatabaseToolsEndpointServicesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseToolsEndpointServiceCollections = databaseToolsEndpointServiceCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

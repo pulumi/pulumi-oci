@@ -67,10 +67,10 @@ public final class DeployStageSetStringItem {
             return this;
         }
         public DeployStageSetStringItem build() {
-            final var o = new DeployStageSetStringItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new DeployStageSetStringItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

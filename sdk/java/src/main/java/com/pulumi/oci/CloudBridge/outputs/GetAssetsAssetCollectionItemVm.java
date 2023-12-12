@@ -84,11 +84,11 @@ public final class GetAssetsAssetCollectionItemVm {
             return this;
         }
         public GetAssetsAssetCollectionItemVm build() {
-            final var o = new GetAssetsAssetCollectionItemVm();
-            o.hypervisorHost = hypervisorHost;
-            o.hypervisorVendor = hypervisorVendor;
-            o.hypervisorVersion = hypervisorVersion;
-            return o;
+            final var _resultValue = new GetAssetsAssetCollectionItemVm();
+            _resultValue.hypervisorHost = hypervisorHost;
+            _resultValue.hypervisorVendor = hypervisorVendor;
+            _resultValue.hypervisorVersion = hypervisorVersion;
+            return _resultValue;
         }
     }
 }

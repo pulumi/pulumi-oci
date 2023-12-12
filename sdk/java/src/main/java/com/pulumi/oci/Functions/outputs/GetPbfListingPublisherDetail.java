@@ -46,9 +46,9 @@ public final class GetPbfListingPublisherDetail {
             return this;
         }
         public GetPbfListingPublisherDetail build() {
-            final var o = new GetPbfListingPublisherDetail();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPbfListingPublisherDetail();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

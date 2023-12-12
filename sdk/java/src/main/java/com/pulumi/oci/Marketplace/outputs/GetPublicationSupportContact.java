@@ -103,12 +103,12 @@ public final class GetPublicationSupportContact {
             return this;
         }
         public GetPublicationSupportContact build() {
-            final var o = new GetPublicationSupportContact();
-            o.email = email;
-            o.name = name;
-            o.phone = phone;
-            o.subject = subject;
-            return o;
+            final var _resultValue = new GetPublicationSupportContact();
+            _resultValue.email = email;
+            _resultValue.name = name;
+            _resultValue.phone = phone;
+            _resultValue.subject = subject;
+            return _resultValue;
         }
     }
 }

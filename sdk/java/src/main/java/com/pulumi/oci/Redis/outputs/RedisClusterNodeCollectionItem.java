@@ -86,11 +86,11 @@ public final class RedisClusterNodeCollectionItem {
             return this;
         }
         public RedisClusterNodeCollectionItem build() {
-            final var o = new RedisClusterNodeCollectionItem();
-            o.displayName = displayName;
-            o.privateEndpointFqdn = privateEndpointFqdn;
-            o.privateEndpointIpAddress = privateEndpointIpAddress;
-            return o;
+            final var _resultValue = new RedisClusterNodeCollectionItem();
+            _resultValue.displayName = displayName;
+            _resultValue.privateEndpointFqdn = privateEndpointFqdn;
+            _resultValue.privateEndpointIpAddress = privateEndpointIpAddress;
+            return _resultValue;
         }
     }
 }

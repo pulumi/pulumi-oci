@@ -67,11 +67,11 @@ public final class GetWorkRequestLogEntriesFilter {
             return values(List.of(values));
         }
         public GetWorkRequestLogEntriesFilter build() {
-            final var o = new GetWorkRequestLogEntriesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetWorkRequestLogEntriesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

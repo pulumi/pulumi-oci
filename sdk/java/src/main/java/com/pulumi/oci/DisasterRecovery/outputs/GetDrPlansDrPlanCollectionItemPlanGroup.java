@@ -108,12 +108,12 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroup {
             return this;
         }
         public GetDrPlansDrPlanCollectionItemPlanGroup build() {
-            final var o = new GetDrPlansDrPlanCollectionItemPlanGroup();
-            o.displayName = displayName;
-            o.id = id;
-            o.steps = steps;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDrPlansDrPlanCollectionItemPlanGroup();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.steps = steps;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

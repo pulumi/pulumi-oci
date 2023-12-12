@@ -65,10 +65,10 @@ public final class GetListingPublisherLink {
             return this;
         }
         public GetListingPublisherLink build() {
-            final var o = new GetListingPublisherLink();
-            o.href = href;
-            o.rel = rel;
-            return o;
+            final var _resultValue = new GetListingPublisherLink();
+            _resultValue.href = href;
+            _resultValue.rel = rel;
+            return _resultValue;
         }
     }
 }

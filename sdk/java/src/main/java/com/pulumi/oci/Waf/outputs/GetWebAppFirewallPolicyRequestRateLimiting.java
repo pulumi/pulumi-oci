@@ -50,9 +50,9 @@ public final class GetWebAppFirewallPolicyRequestRateLimiting {
             return rules(List.of(rules));
         }
         public GetWebAppFirewallPolicyRequestRateLimiting build() {
-            final var o = new GetWebAppFirewallPolicyRequestRateLimiting();
-            o.rules = rules;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPolicyRequestRateLimiting();
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

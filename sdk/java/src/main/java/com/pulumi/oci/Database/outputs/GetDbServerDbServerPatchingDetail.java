@@ -104,12 +104,12 @@ public final class GetDbServerDbServerPatchingDetail {
             return this;
         }
         public GetDbServerDbServerPatchingDetail build() {
-            final var o = new GetDbServerDbServerPatchingDetail();
-            o.estimatedPatchDuration = estimatedPatchDuration;
-            o.patchingStatus = patchingStatus;
-            o.timePatchingEnded = timePatchingEnded;
-            o.timePatchingStarted = timePatchingStarted;
-            return o;
+            final var _resultValue = new GetDbServerDbServerPatchingDetail();
+            _resultValue.estimatedPatchDuration = estimatedPatchDuration;
+            _resultValue.patchingStatus = patchingStatus;
+            _resultValue.timePatchingEnded = timePatchingEnded;
+            _resultValue.timePatchingStarted = timePatchingStarted;
+            return _resultValue;
         }
     }
 }

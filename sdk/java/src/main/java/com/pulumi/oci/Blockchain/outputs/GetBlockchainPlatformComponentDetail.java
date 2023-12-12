@@ -73,10 +73,10 @@ public final class GetBlockchainPlatformComponentDetail {
             return peers(List.of(peers));
         }
         public GetBlockchainPlatformComponentDetail build() {
-            final var o = new GetBlockchainPlatformComponentDetail();
-            o.osns = osns;
-            o.peers = peers;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformComponentDetail();
+            _resultValue.osns = osns;
+            _resultValue.peers = peers;
+            return _resultValue;
         }
     }
 }

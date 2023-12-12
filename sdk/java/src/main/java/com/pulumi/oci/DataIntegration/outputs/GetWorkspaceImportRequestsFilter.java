@@ -75,11 +75,11 @@ public final class GetWorkspaceImportRequestsFilter {
             return values(List.of(values));
         }
         public GetWorkspaceImportRequestsFilter build() {
-            final var o = new GetWorkspaceImportRequestsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetWorkspaceImportRequestsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

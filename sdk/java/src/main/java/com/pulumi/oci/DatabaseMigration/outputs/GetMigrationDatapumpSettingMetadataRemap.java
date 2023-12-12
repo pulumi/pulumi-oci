@@ -84,11 +84,11 @@ public final class GetMigrationDatapumpSettingMetadataRemap {
             return this;
         }
         public GetMigrationDatapumpSettingMetadataRemap build() {
-            final var o = new GetMigrationDatapumpSettingMetadataRemap();
-            o.newValue = newValue;
-            o.oldValue = oldValue;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMigrationDatapumpSettingMetadataRemap();
+            _resultValue.newValue = newValue;
+            _resultValue.oldValue = oldValue;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

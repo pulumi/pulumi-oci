@@ -66,10 +66,10 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyResponseCache
             return this;
         }
         public GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore build() {
-            final var o = new GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore();
-            o.timeToLiveInSeconds = timeToLiveInSeconds;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore();
+            _resultValue.timeToLiveInSeconds = timeToLiveInSeconds;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

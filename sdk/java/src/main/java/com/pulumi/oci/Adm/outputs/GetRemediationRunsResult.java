@@ -163,15 +163,15 @@ public final class GetRemediationRunsResult {
             return this;
         }
         public GetRemediationRunsResult build() {
-            final var o = new GetRemediationRunsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.remediationRecipeId = remediationRecipeId;
-            o.remediationRunCollections = remediationRunCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetRemediationRunsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.remediationRecipeId = remediationRecipeId;
+            _resultValue.remediationRunCollections = remediationRunCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

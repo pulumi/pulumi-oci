@@ -228,18 +228,18 @@ public final class GetSecurityListsSecurityList {
             return this;
         }
         public GetSecurityListsSecurityList build() {
-            final var o = new GetSecurityListsSecurityList();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.egressSecurityRules = egressSecurityRules;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ingressSecurityRules = ingressSecurityRules;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetSecurityListsSecurityList();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.egressSecurityRules = egressSecurityRules;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ingressSecurityRules = ingressSecurityRules;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

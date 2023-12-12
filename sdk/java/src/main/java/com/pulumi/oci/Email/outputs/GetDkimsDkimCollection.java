@@ -42,9 +42,9 @@ public final class GetDkimsDkimCollection {
             return items(List.of(items));
         }
         public GetDkimsDkimCollection build() {
-            final var o = new GetDkimsDkimCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDkimsDkimCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

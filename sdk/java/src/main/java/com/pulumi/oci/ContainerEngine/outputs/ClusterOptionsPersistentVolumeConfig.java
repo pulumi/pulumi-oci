@@ -68,10 +68,10 @@ public final class ClusterOptionsPersistentVolumeConfig {
             return this;
         }
         public ClusterOptionsPersistentVolumeConfig build() {
-            final var o = new ClusterOptionsPersistentVolumeConfig();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            return o;
+            final var _resultValue = new ClusterOptionsPersistentVolumeConfig();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            return _resultValue;
         }
     }
 }

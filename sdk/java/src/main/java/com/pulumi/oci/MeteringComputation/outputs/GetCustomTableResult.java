@@ -119,13 +119,13 @@ public final class GetCustomTableResult {
             return this;
         }
         public GetCustomTableResult build() {
-            final var o = new GetCustomTableResult();
-            o.compartmentId = compartmentId;
-            o.customTableId = customTableId;
-            o.id = id;
-            o.savedCustomTables = savedCustomTables;
-            o.savedReportId = savedReportId;
-            return o;
+            final var _resultValue = new GetCustomTableResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.customTableId = customTableId;
+            _resultValue.id = id;
+            _resultValue.savedCustomTables = savedCustomTables;
+            _resultValue.savedReportId = savedReportId;
+            return _resultValue;
         }
     }
 }

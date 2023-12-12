@@ -220,18 +220,18 @@ public final class GetFileSystemsResult {
             return this;
         }
         public GetFileSystemsResult build() {
-            final var o = new GetFileSystemsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.fileSystems = fileSystems;
-            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
-            o.filters = filters;
-            o.id = id;
-            o.parentFileSystemId = parentFileSystemId;
-            o.sourceSnapshotId = sourceSnapshotId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetFileSystemsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.fileSystems = fileSystems;
+            _resultValue.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.parentFileSystemId = parentFileSystemId;
+            _resultValue.sourceSnapshotId = sourceSnapshotId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

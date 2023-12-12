@@ -40,9 +40,9 @@ public final class ModelComponentModel {
             return this;
         }
         public ModelComponentModel build() {
-            final var o = new ModelComponentModel();
-            o.modelId = modelId;
-            return o;
+            final var _resultValue = new ModelComponentModel();
+            _resultValue.modelId = modelId;
+            return _resultValue;
         }
     }
 }

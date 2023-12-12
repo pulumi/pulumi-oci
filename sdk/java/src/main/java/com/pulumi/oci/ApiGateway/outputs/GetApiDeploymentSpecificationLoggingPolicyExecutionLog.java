@@ -66,10 +66,10 @@ public final class GetApiDeploymentSpecificationLoggingPolicyExecutionLog {
             return this;
         }
         public GetApiDeploymentSpecificationLoggingPolicyExecutionLog build() {
-            final var o = new GetApiDeploymentSpecificationLoggingPolicyExecutionLog();
-            o.isEnabled = isEnabled;
-            o.logLevel = logLevel;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationLoggingPolicyExecutionLog();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.logLevel = logLevel;
+            return _resultValue;
         }
     }
 }

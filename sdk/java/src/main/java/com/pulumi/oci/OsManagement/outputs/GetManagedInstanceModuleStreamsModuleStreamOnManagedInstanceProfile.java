@@ -122,13 +122,13 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceP
             return this;
         }
         public GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile build() {
-            final var o = new GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile();
-            o.moduleName = moduleName;
-            o.profileName = profileName;
-            o.status = status;
-            o.streamName = streamName;
-            o.timeModified = timeModified;
-            return o;
+            final var _resultValue = new GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile();
+            _resultValue.moduleName = moduleName;
+            _resultValue.profileName = profileName;
+            _resultValue.status = status;
+            _resultValue.streamName = streamName;
+            _resultValue.timeModified = timeModified;
+            return _resultValue;
         }
     }
 }

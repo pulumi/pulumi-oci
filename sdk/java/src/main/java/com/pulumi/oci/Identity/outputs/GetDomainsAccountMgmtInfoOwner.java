@@ -122,13 +122,13 @@ public final class GetDomainsAccountMgmtInfoOwner {
             return this;
         }
         public GetDomainsAccountMgmtInfoOwner build() {
-            final var o = new GetDomainsAccountMgmtInfoOwner();
-            o.display = display;
-            o.email = email;
-            o.ref = ref;
-            o.userName = userName;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAccountMgmtInfoOwner();
+            _resultValue.display = display;
+            _resultValue.email = email;
+            _resultValue.ref = ref;
+            _resultValue.userName = userName;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

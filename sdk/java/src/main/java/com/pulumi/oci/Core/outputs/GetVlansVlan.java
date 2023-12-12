@@ -281,21 +281,21 @@ public final class GetVlansVlan {
             return this;
         }
         public GetVlansVlan build() {
-            final var o = new GetVlansVlan();
-            o.availabilityDomain = availabilityDomain;
-            o.cidrBlock = cidrBlock;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.nsgIds = nsgIds;
-            o.routeTableId = routeTableId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            o.vlanTag = vlanTag;
-            return o;
+            final var _resultValue = new GetVlansVlan();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.routeTableId = routeTableId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            _resultValue.vlanTag = vlanTag;
+            return _resultValue;
         }
     }
 }

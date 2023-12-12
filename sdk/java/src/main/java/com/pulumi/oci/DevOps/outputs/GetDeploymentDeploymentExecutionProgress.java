@@ -86,11 +86,11 @@ public final class GetDeploymentDeploymentExecutionProgress {
             return this;
         }
         public GetDeploymentDeploymentExecutionProgress build() {
-            final var o = new GetDeploymentDeploymentExecutionProgress();
-            o.deployStageExecutionProgress = deployStageExecutionProgress;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetDeploymentDeploymentExecutionProgress();
+            _resultValue.deployStageExecutionProgress = deployStageExecutionProgress;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

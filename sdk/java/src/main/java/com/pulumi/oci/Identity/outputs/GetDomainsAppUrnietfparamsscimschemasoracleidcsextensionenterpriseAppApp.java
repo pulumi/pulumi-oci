@@ -135,13 +135,13 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenter
             return denyAuthzPolicies(List.of(denyAuthzPolicies));
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp();
-            o.allowAuthzDecisionTtl = allowAuthzDecisionTtl;
-            o.allowAuthzPolicies = allowAuthzPolicies;
-            o.appResources = appResources;
-            o.denyAuthzDecisionTtl = denyAuthzDecisionTtl;
-            o.denyAuthzPolicies = denyAuthzPolicies;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp();
+            _resultValue.allowAuthzDecisionTtl = allowAuthzDecisionTtl;
+            _resultValue.allowAuthzPolicies = allowAuthzPolicies;
+            _resultValue.appResources = appResources;
+            _resultValue.denyAuthzDecisionTtl = denyAuthzDecisionTtl;
+            _resultValue.denyAuthzPolicies = denyAuthzPolicies;
+            return _resultValue;
         }
     }
 }

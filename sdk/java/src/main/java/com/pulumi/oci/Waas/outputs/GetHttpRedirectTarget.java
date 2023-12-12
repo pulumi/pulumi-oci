@@ -123,13 +123,13 @@ public final class GetHttpRedirectTarget {
             return this;
         }
         public GetHttpRedirectTarget build() {
-            final var o = new GetHttpRedirectTarget();
-            o.host = host;
-            o.path = path;
-            o.port = port;
-            o.protocol = protocol;
-            o.query = query;
-            return o;
+            final var _resultValue = new GetHttpRedirectTarget();
+            _resultValue.host = host;
+            _resultValue.path = path;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.query = query;
+            return _resultValue;
         }
     }
 }

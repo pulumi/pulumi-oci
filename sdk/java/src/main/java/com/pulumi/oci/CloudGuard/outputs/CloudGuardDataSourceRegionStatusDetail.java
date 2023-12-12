@@ -67,10 +67,10 @@ public final class CloudGuardDataSourceRegionStatusDetail {
             return this;
         }
         public CloudGuardDataSourceRegionStatusDetail build() {
-            final var o = new CloudGuardDataSourceRegionStatusDetail();
-            o.region = region;
-            o.status = status;
-            return o;
+            final var _resultValue = new CloudGuardDataSourceRegionStatusDetail();
+            _resultValue.region = region;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

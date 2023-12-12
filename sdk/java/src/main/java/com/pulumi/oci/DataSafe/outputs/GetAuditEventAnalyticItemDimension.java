@@ -270,19 +270,19 @@ public final class GetAuditEventAnalyticItemDimension {
             return targetNames(List.of(targetNames));
         }
         public GetAuditEventAnalyticItemDimension build() {
-            final var o = new GetAuditEventAnalyticItemDimension();
-            o.auditEventTimes = auditEventTimes;
-            o.auditTypes = auditTypes;
-            o.clientHostnames = clientHostnames;
-            o.clientIds = clientIds;
-            o.clientPrograms = clientPrograms;
-            o.dbUserNames = dbUserNames;
-            o.eventNames = eventNames;
-            o.objectTypes = objectTypes;
-            o.targetClasses = targetClasses;
-            o.targetIds = targetIds;
-            o.targetNames = targetNames;
-            return o;
+            final var _resultValue = new GetAuditEventAnalyticItemDimension();
+            _resultValue.auditEventTimes = auditEventTimes;
+            _resultValue.auditTypes = auditTypes;
+            _resultValue.clientHostnames = clientHostnames;
+            _resultValue.clientIds = clientIds;
+            _resultValue.clientPrograms = clientPrograms;
+            _resultValue.dbUserNames = dbUserNames;
+            _resultValue.eventNames = eventNames;
+            _resultValue.objectTypes = objectTypes;
+            _resultValue.targetClasses = targetClasses;
+            _resultValue.targetIds = targetIds;
+            _resultValue.targetNames = targetNames;
+            return _resultValue;
         }
     }
 }

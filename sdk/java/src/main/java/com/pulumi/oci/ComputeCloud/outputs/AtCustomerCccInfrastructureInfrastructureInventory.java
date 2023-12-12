@@ -125,13 +125,13 @@ public final class AtCustomerCccInfrastructureInfrastructureInventory {
             return this;
         }
         public AtCustomerCccInfrastructureInfrastructureInventory build() {
-            final var o = new AtCustomerCccInfrastructureInfrastructureInventory();
-            o.capacityStorageTrayCount = capacityStorageTrayCount;
-            o.computeNodeCount = computeNodeCount;
-            o.managementNodeCount = managementNodeCount;
-            o.performanceStorageTrayCount = performanceStorageTrayCount;
-            o.serialNumber = serialNumber;
-            return o;
+            final var _resultValue = new AtCustomerCccInfrastructureInfrastructureInventory();
+            _resultValue.capacityStorageTrayCount = capacityStorageTrayCount;
+            _resultValue.computeNodeCount = computeNodeCount;
+            _resultValue.managementNodeCount = managementNodeCount;
+            _resultValue.performanceStorageTrayCount = performanceStorageTrayCount;
+            _resultValue.serialNumber = serialNumber;
+            return _resultValue;
         }
     }
 }

@@ -125,13 +125,13 @@ public final class SteeringPolicyAnswer {
             return this;
         }
         public SteeringPolicyAnswer build() {
-            final var o = new SteeringPolicyAnswer();
-            o.isDisabled = isDisabled;
-            o.name = name;
-            o.pool = pool;
-            o.rdata = rdata;
-            o.rtype = rtype;
-            return o;
+            final var _resultValue = new SteeringPolicyAnswer();
+            _resultValue.isDisabled = isDisabled;
+            _resultValue.name = name;
+            _resultValue.pool = pool;
+            _resultValue.rdata = rdata;
+            _resultValue.rtype = rtype;
+            return _resultValue;
         }
     }
 }

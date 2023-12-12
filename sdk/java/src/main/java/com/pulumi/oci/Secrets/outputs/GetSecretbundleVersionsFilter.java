@@ -67,11 +67,11 @@ public final class GetSecretbundleVersionsFilter {
             return values(List.of(values));
         }
         public GetSecretbundleVersionsFilter build() {
-            final var o = new GetSecretbundleVersionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSecretbundleVersionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

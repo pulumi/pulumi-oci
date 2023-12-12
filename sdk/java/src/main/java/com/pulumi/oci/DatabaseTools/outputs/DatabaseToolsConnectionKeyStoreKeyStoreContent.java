@@ -73,10 +73,10 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContent {
             return this;
         }
         public DatabaseToolsConnectionKeyStoreKeyStoreContent build() {
-            final var o = new DatabaseToolsConnectionKeyStoreKeyStoreContent();
-            o.secretId = secretId;
-            o.valueType = valueType;
-            return o;
+            final var _resultValue = new DatabaseToolsConnectionKeyStoreKeyStoreContent();
+            _resultValue.secretId = secretId;
+            _resultValue.valueType = valueType;
+            return _resultValue;
         }
     }
 }

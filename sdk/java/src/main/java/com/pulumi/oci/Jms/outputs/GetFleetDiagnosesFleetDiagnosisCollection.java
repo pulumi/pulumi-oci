@@ -50,9 +50,9 @@ public final class GetFleetDiagnosesFleetDiagnosisCollection {
             return items(List.of(items));
         }
         public GetFleetDiagnosesFleetDiagnosisCollection build() {
-            final var o = new GetFleetDiagnosesFleetDiagnosisCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFleetDiagnosesFleetDiagnosisCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

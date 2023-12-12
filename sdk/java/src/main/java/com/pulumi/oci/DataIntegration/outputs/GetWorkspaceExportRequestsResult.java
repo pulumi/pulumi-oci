@@ -177,17 +177,17 @@ public final class GetWorkspaceExportRequestsResult {
             return this;
         }
         public GetWorkspaceExportRequestsResult build() {
-            final var o = new GetWorkspaceExportRequestsResult();
-            o.exportRequestSummaryCollections = exportRequestSummaryCollections;
-            o.exportStatus = exportStatus;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.projection = projection;
-            o.timeEndedInMillis = timeEndedInMillis;
-            o.timeStartedInMillis = timeStartedInMillis;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceExportRequestsResult();
+            _resultValue.exportRequestSummaryCollections = exportRequestSummaryCollections;
+            _resultValue.exportStatus = exportStatus;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.projection = projection;
+            _resultValue.timeEndedInMillis = timeEndedInMillis;
+            _resultValue.timeStartedInMillis = timeStartedInMillis;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

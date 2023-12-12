@@ -211,16 +211,16 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
             return responseCacheLookups(List.of(responseCacheLookups));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy();
-            o.authorizations = authorizations;
-            o.bodyValidations = bodyValidations;
-            o.cors = cors;
-            o.headerTransformations = headerTransformations;
-            o.headerValidations = headerValidations;
-            o.queryParameterTransformations = queryParameterTransformations;
-            o.queryParameterValidations = queryParameterValidations;
-            o.responseCacheLookups = responseCacheLookups;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy();
+            _resultValue.authorizations = authorizations;
+            _resultValue.bodyValidations = bodyValidations;
+            _resultValue.cors = cors;
+            _resultValue.headerTransformations = headerTransformations;
+            _resultValue.headerValidations = headerValidations;
+            _resultValue.queryParameterTransformations = queryParameterTransformations;
+            _resultValue.queryParameterValidations = queryParameterValidations;
+            _resultValue.responseCacheLookups = responseCacheLookups;
+            return _resultValue;
         }
     }
 }

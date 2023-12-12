@@ -453,30 +453,30 @@ public final class GetDrPlanExecutionResult {
             return this;
         }
         public GetDrPlanExecutionResult build() {
-            final var o = new GetDrPlanExecutionResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.drPlanExecutionId = drPlanExecutionId;
-            o.drProtectionGroupId = drProtectionGroupId;
-            o.executionDurationInSec = executionDurationInSec;
-            o.executionOptions = executionOptions;
-            o.freeformTags = freeformTags;
-            o.groupExecutions = groupExecutions;
-            o.id = id;
-            o.lifeCycleDetails = lifeCycleDetails;
-            o.logLocations = logLocations;
-            o.peerDrProtectionGroupId = peerDrProtectionGroupId;
-            o.peerRegion = peerRegion;
-            o.planExecutionType = planExecutionType;
-            o.planId = planId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDrPlanExecutionResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.drPlanExecutionId = drPlanExecutionId;
+            _resultValue.drProtectionGroupId = drProtectionGroupId;
+            _resultValue.executionDurationInSec = executionDurationInSec;
+            _resultValue.executionOptions = executionOptions;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.groupExecutions = groupExecutions;
+            _resultValue.id = id;
+            _resultValue.lifeCycleDetails = lifeCycleDetails;
+            _resultValue.logLocations = logLocations;
+            _resultValue.peerDrProtectionGroupId = peerDrProtectionGroupId;
+            _resultValue.peerRegion = peerRegion;
+            _resultValue.planExecutionType = planExecutionType;
+            _resultValue.planId = planId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -247,20 +247,20 @@ public final class GetAutonomousPatchResult {
             return this;
         }
         public GetAutonomousPatchResult build() {
-            final var o = new GetAutonomousPatchResult();
-            o.autonomousPatchId = autonomousPatchId;
-            o.autonomousPatchType = autonomousPatchType;
-            o.description = description;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.patchModel = patchModel;
-            o.quarter = quarter;
-            o.state = state;
-            o.timeReleased = timeReleased;
-            o.type = type;
-            o.version = version;
-            o.year = year;
-            return o;
+            final var _resultValue = new GetAutonomousPatchResult();
+            _resultValue.autonomousPatchId = autonomousPatchId;
+            _resultValue.autonomousPatchType = autonomousPatchType;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.patchModel = patchModel;
+            _resultValue.quarter = quarter;
+            _resultValue.state = state;
+            _resultValue.timeReleased = timeReleased;
+            _resultValue.type = type;
+            _resultValue.version = version;
+            _resultValue.year = year;
+            return _resultValue;
         }
     }
 }

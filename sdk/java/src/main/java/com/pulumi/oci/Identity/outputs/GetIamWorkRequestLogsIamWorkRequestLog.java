@@ -65,10 +65,10 @@ public final class GetIamWorkRequestLogsIamWorkRequestLog {
             return this;
         }
         public GetIamWorkRequestLogsIamWorkRequestLog build() {
-            final var o = new GetIamWorkRequestLogsIamWorkRequestLog();
-            o.message = message;
-            o.timestamp = timestamp;
-            return o;
+            final var _resultValue = new GetIamWorkRequestLogsIamWorkRequestLog();
+            _resultValue.message = message;
+            _resultValue.timestamp = timestamp;
+            return _resultValue;
         }
     }
 }

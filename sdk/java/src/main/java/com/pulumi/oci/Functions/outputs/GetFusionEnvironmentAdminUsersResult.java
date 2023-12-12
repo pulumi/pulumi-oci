@@ -97,12 +97,12 @@ public final class GetFusionEnvironmentAdminUsersResult {
             return this;
         }
         public GetFusionEnvironmentAdminUsersResult build() {
-            final var o = new GetFusionEnvironmentAdminUsersResult();
-            o.adminUserCollections = adminUserCollections;
-            o.filters = filters;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentAdminUsersResult();
+            _resultValue.adminUserCollections = adminUserCollections;
+            _resultValue.filters = filters;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

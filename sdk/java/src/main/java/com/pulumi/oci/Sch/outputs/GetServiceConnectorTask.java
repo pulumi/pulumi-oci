@@ -123,13 +123,13 @@ public final class GetServiceConnectorTask {
             return this;
         }
         public GetServiceConnectorTask build() {
-            final var o = new GetServiceConnectorTask();
-            o.batchSizeInKbs = batchSizeInKbs;
-            o.batchTimeInSec = batchTimeInSec;
-            o.condition = condition;
-            o.functionId = functionId;
-            o.kind = kind;
-            return o;
+            final var _resultValue = new GetServiceConnectorTask();
+            _resultValue.batchSizeInKbs = batchSizeInKbs;
+            _resultValue.batchTimeInSec = batchTimeInSec;
+            _resultValue.condition = condition;
+            _resultValue.functionId = functionId;
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

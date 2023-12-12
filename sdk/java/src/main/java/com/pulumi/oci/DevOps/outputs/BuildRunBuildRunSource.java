@@ -110,12 +110,12 @@ public final class BuildRunBuildRunSource {
             return triggerInfos(List.of(triggerInfos));
         }
         public BuildRunBuildRunSource build() {
-            final var o = new BuildRunBuildRunSource();
-            o.repositoryId = repositoryId;
-            o.sourceType = sourceType;
-            o.triggerId = triggerId;
-            o.triggerInfos = triggerInfos;
-            return o;
+            final var _resultValue = new BuildRunBuildRunSource();
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.sourceType = sourceType;
+            _resultValue.triggerId = triggerId;
+            _resultValue.triggerInfos = triggerInfos;
+            return _resultValue;
         }
     }
 }

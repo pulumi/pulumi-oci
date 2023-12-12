@@ -46,9 +46,9 @@ public final class GetModelComponentModel {
             return this;
         }
         public GetModelComponentModel build() {
-            final var o = new GetModelComponentModel();
-            o.modelId = modelId;
-            return o;
+            final var _resultValue = new GetModelComponentModel();
+            _resultValue.modelId = modelId;
+            return _resultValue;
         }
     }
 }

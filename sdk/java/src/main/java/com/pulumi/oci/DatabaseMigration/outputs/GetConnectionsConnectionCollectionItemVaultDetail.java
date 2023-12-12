@@ -84,11 +84,11 @@ public final class GetConnectionsConnectionCollectionItemVaultDetail {
             return this;
         }
         public GetConnectionsConnectionCollectionItemVaultDetail build() {
-            final var o = new GetConnectionsConnectionCollectionItemVaultDetail();
-            o.compartmentId = compartmentId;
-            o.keyId = keyId;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItemVaultDetail();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.keyId = keyId;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

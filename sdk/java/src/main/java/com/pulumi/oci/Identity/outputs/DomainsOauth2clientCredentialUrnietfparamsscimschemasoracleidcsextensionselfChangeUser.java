@@ -70,9 +70,9 @@ public final class DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleid
             return this;
         }
         public DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

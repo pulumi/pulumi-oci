@@ -288,22 +288,22 @@ public final class GetConfigResult {
             return this;
         }
         public GetConfigResult build() {
-            final var o = new GetConfigResult();
-            o.compartmentId = compartmentId;
-            o.configId = configId;
-            o.configType = configType;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.license = license;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetConfigResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configId = configId;
+            _resultValue.configType = configType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.license = license;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

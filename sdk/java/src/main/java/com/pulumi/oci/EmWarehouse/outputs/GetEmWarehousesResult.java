@@ -163,15 +163,15 @@ public final class GetEmWarehousesResult {
             return this;
         }
         public GetEmWarehousesResult build() {
-            final var o = new GetEmWarehousesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.emWarehouseCollections = emWarehouseCollections;
-            o.filters = filters;
-            o.id = id;
-            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetEmWarehousesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.emWarehouseCollections = emWarehouseCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -108,12 +108,12 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase();
-            o.compartmentId = compartmentId;
-            o.connectors = connectors;
-            o.containerDatabaseId = containerDatabaseId;
-            o.guid = guid;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectors = connectors;
+            _resultValue.containerDatabaseId = containerDatabaseId;
+            _resultValue.guid = guid;
+            return _resultValue;
         }
     }
 }

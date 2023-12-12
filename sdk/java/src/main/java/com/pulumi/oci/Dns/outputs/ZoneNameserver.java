@@ -48,9 +48,9 @@ public final class ZoneNameserver {
             return this;
         }
         public ZoneNameserver build() {
-            final var o = new ZoneNameserver();
-            o.hostname = hostname;
-            return o;
+            final var _resultValue = new ZoneNameserver();
+            _resultValue.hostname = hostname;
+            return _resultValue;
         }
     }
 }

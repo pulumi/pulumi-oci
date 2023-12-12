@@ -171,16 +171,16 @@ public final class GetEnrollmentStatusResult {
             return this;
         }
         public GetEnrollmentStatusResult build() {
-            final var o = new GetEnrollmentStatusResult();
-            o.compartmentId = compartmentId;
-            o.enrollmentStatusId = enrollmentStatusId;
-            o.id = id;
-            o.state = state;
-            o.status = status;
-            o.statusReason = statusReason;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetEnrollmentStatusResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.enrollmentStatusId = enrollmentStatusId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.statusReason = statusReason;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

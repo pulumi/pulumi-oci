@@ -201,17 +201,17 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
             return this;
         }
         public GetDrgRouteTableRouteRulesDrgRouteRule build() {
-            final var o = new GetDrgRouteTableRouteRulesDrgRouteRule();
-            o.attributes = attributes;
-            o.destination = destination;
-            o.destinationType = destinationType;
-            o.id = id;
-            o.isBlackhole = isBlackhole;
-            o.isConflict = isConflict;
-            o.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
-            o.routeProvenance = routeProvenance;
-            o.routeType = routeType;
-            return o;
+            final var _resultValue = new GetDrgRouteTableRouteRulesDrgRouteRule();
+            _resultValue.attributes = attributes;
+            _resultValue.destination = destination;
+            _resultValue.destinationType = destinationType;
+            _resultValue.id = id;
+            _resultValue.isBlackhole = isBlackhole;
+            _resultValue.isConflict = isConflict;
+            _resultValue.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
+            _resultValue.routeProvenance = routeProvenance;
+            _resultValue.routeType = routeType;
+            return _resultValue;
         }
     }
 }

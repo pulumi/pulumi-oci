@@ -133,13 +133,13 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSource {
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSource build() {
-            final var o = new GetUnifiedAgentConfigurationServiceConfigurationSource();
-            o.channels = channels;
-            o.name = name;
-            o.parsers = parsers;
-            o.paths = paths;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationServiceConfigurationSource();
+            _resultValue.channels = channels;
+            _resultValue.name = name;
+            _resultValue.parsers = parsers;
+            _resultValue.paths = paths;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

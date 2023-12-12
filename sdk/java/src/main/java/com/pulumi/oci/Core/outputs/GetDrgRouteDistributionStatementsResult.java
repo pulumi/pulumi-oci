@@ -97,12 +97,12 @@ public final class GetDrgRouteDistributionStatementsResult {
             return this;
         }
         public GetDrgRouteDistributionStatementsResult build() {
-            final var o = new GetDrgRouteDistributionStatementsResult();
-            o.drgRouteDistributionId = drgRouteDistributionId;
-            o.drgRouteDistributionStatements = drgRouteDistributionStatements;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDrgRouteDistributionStatementsResult();
+            _resultValue.drgRouteDistributionId = drgRouteDistributionId;
+            _resultValue.drgRouteDistributionStatements = drgRouteDistributionStatements;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

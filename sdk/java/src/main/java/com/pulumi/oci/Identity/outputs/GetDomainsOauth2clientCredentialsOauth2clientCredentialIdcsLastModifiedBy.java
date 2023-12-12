@@ -122,13 +122,13 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredentialIdcsLa
             return this;
         }
         public GetDomainsOauth2clientCredentialsOauth2clientCredentialIdcsLastModifiedBy build() {
-            final var o = new GetDomainsOauth2clientCredentialsOauth2clientCredentialIdcsLastModifiedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsOauth2clientCredentialsOauth2clientCredentialIdcsLastModifiedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

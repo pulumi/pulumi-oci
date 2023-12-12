@@ -51,9 +51,9 @@ public final class DeploymentDeploymentArguments {
             return items(List.of(items));
         }
         public DeploymentDeploymentArguments build() {
-            final var o = new DeploymentDeploymentArguments();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeploymentDeploymentArguments();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

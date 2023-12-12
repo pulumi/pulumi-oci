@@ -173,16 +173,16 @@ public final class GetObjectsObject {
             return this;
         }
         public GetObjectsObject build() {
-            final var o = new GetObjectsObject();
-            o.archivalState = archivalState;
-            o.etag = etag;
-            o.md5 = md5;
-            o.name = name;
-            o.size = size;
-            o.storageTier = storageTier;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            return o;
+            final var _resultValue = new GetObjectsObject();
+            _resultValue.archivalState = archivalState;
+            _resultValue.etag = etag;
+            _resultValue.md5 = md5;
+            _resultValue.name = name;
+            _resultValue.size = size;
+            _resultValue.storageTier = storageTier;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            return _resultValue;
         }
     }
 }

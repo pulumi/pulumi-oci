@@ -182,16 +182,16 @@ public final class GetDatabaseToolsPrivateEndpointsResult {
             return this;
         }
         public GetDatabaseToolsPrivateEndpointsResult build() {
-            final var o = new GetDatabaseToolsPrivateEndpointsResult();
-            o.compartmentId = compartmentId;
-            o.databaseToolsPrivateEndpointCollections = databaseToolsPrivateEndpointCollections;
-            o.displayName = displayName;
-            o.endpointServiceId = endpointServiceId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetDatabaseToolsPrivateEndpointsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseToolsPrivateEndpointCollections = databaseToolsPrivateEndpointCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.endpointServiceId = endpointServiceId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

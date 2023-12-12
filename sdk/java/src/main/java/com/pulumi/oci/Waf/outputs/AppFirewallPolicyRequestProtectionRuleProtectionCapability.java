@@ -150,14 +150,14 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapability {
             return this;
         }
         public AppFirewallPolicyRequestProtectionRuleProtectionCapability build() {
-            final var o = new AppFirewallPolicyRequestProtectionRuleProtectionCapability();
-            o.actionName = actionName;
-            o.collaborativeActionThreshold = collaborativeActionThreshold;
-            o.collaborativeWeights = collaborativeWeights;
-            o.exclusions = exclusions;
-            o.key = key;
-            o.version = version;
-            return o;
+            final var _resultValue = new AppFirewallPolicyRequestProtectionRuleProtectionCapability();
+            _resultValue.actionName = actionName;
+            _resultValue.collaborativeActionThreshold = collaborativeActionThreshold;
+            _resultValue.collaborativeWeights = collaborativeWeights;
+            _resultValue.exclusions = exclusions;
+            _resultValue.key = key;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

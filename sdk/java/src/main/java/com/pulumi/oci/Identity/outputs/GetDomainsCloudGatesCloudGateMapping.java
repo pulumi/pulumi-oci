@@ -236,19 +236,19 @@ public final class GetDomainsCloudGatesCloudGateMapping {
             return this;
         }
         public GetDomainsCloudGatesCloudGateMapping build() {
-            final var o = new GetDomainsCloudGatesCloudGateMapping();
-            o.appId = appId;
-            o.mappingId = mappingId;
-            o.name = name;
-            o.nginxSettings = nginxSettings;
-            o.policyName = policyName;
-            o.proxyPass = proxyPass;
-            o.ref = ref;
-            o.resourcePrefix = resourcePrefix;
-            o.serverId = serverId;
-            o.upstreamServerGroupId = upstreamServerGroupId;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsCloudGatesCloudGateMapping();
+            _resultValue.appId = appId;
+            _resultValue.mappingId = mappingId;
+            _resultValue.name = name;
+            _resultValue.nginxSettings = nginxSettings;
+            _resultValue.policyName = policyName;
+            _resultValue.proxyPass = proxyPass;
+            _resultValue.ref = ref;
+            _resultValue.resourcePrefix = resourcePrefix;
+            _resultValue.serverId = serverId;
+            _resultValue.upstreamServerGroupId = upstreamServerGroupId;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

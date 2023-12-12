@@ -75,11 +75,11 @@ public final class GetManagedDatabasesAsmPropertiesFilter {
             return values(List.of(values));
         }
         public GetManagedDatabasesAsmPropertiesFilter build() {
-            final var o = new GetManagedDatabasesAsmPropertiesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabasesAsmPropertiesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

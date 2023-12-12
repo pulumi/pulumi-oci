@@ -65,10 +65,10 @@ public final class GetBootVolumesBootVolumeAutotunePolicy {
             return this;
         }
         public GetBootVolumesBootVolumeAutotunePolicy build() {
-            final var o = new GetBootVolumesBootVolumeAutotunePolicy();
-            o.autotuneType = autotuneType;
-            o.maxVpusPerGb = maxVpusPerGb;
-            return o;
+            final var _resultValue = new GetBootVolumesBootVolumeAutotunePolicy();
+            _resultValue.autotuneType = autotuneType;
+            _resultValue.maxVpusPerGb = maxVpusPerGb;
+            return _resultValue;
         }
     }
 }

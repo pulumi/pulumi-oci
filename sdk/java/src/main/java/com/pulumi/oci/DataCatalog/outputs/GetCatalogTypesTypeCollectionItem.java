@@ -160,15 +160,15 @@ public final class GetCatalogTypesTypeCollectionItem {
             return this;
         }
         public GetCatalogTypesTypeCollectionItem build() {
-            final var o = new GetCatalogTypesTypeCollectionItem();
-            o.catalogId = catalogId;
-            o.description = description;
-            o.key = key;
-            o.name = name;
-            o.state = state;
-            o.typeCategory = typeCategory;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetCatalogTypesTypeCollectionItem();
+            _resultValue.catalogId = catalogId;
+            _resultValue.description = description;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.typeCategory = typeCategory;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

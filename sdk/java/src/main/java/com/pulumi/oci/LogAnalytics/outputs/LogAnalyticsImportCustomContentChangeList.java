@@ -227,17 +227,17 @@ public final class LogAnalyticsImportCustomContentChangeList {
             return updatedSourceNames(List.of(updatedSourceNames));
         }
         public LogAnalyticsImportCustomContentChangeList build() {
-            final var o = new LogAnalyticsImportCustomContentChangeList();
-            o.conflictFieldDisplayNames = conflictFieldDisplayNames;
-            o.conflictParserNames = conflictParserNames;
-            o.conflictSourceNames = conflictSourceNames;
-            o.createdFieldDisplayNames = createdFieldDisplayNames;
-            o.createdParserNames = createdParserNames;
-            o.createdSourceNames = createdSourceNames;
-            o.updatedFieldDisplayNames = updatedFieldDisplayNames;
-            o.updatedParserNames = updatedParserNames;
-            o.updatedSourceNames = updatedSourceNames;
-            return o;
+            final var _resultValue = new LogAnalyticsImportCustomContentChangeList();
+            _resultValue.conflictFieldDisplayNames = conflictFieldDisplayNames;
+            _resultValue.conflictParserNames = conflictParserNames;
+            _resultValue.conflictSourceNames = conflictSourceNames;
+            _resultValue.createdFieldDisplayNames = createdFieldDisplayNames;
+            _resultValue.createdParserNames = createdParserNames;
+            _resultValue.createdSourceNames = createdSourceNames;
+            _resultValue.updatedFieldDisplayNames = updatedFieldDisplayNames;
+            _resultValue.updatedParserNames = updatedParserNames;
+            _resultValue.updatedSourceNames = updatedSourceNames;
+            return _resultValue;
         }
     }
 }

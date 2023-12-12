@@ -95,11 +95,11 @@ public final class PathRouteSetPathRoute {
             return this;
         }
         public PathRouteSetPathRoute build() {
-            final var o = new PathRouteSetPathRoute();
-            o.backendSetName = backendSetName;
-            o.path = path;
-            o.pathMatchType = pathMatchType;
-            return o;
+            final var _resultValue = new PathRouteSetPathRoute();
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.path = path;
+            _resultValue.pathMatchType = pathMatchType;
+            return _resultValue;
         }
     }
 }

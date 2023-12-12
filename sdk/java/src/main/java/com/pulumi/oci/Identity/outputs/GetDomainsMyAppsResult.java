@@ -240,22 +240,22 @@ public final class GetDomainsMyAppsResult {
             return this;
         }
         public GetDomainsMyAppsResult build() {
-            final var o = new GetDomainsMyAppsResult();
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.myAppCount = myAppCount;
-            o.myAppFilter = myAppFilter;
-            o.myApps = myApps;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsMyAppsResult();
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.myAppCount = myAppCount;
+            _resultValue.myAppFilter = myAppFilter;
+            _resultValue.myApps = myApps;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

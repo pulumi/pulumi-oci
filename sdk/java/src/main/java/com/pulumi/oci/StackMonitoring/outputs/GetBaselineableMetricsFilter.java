@@ -75,11 +75,11 @@ public final class GetBaselineableMetricsFilter {
             return values(List.of(values));
         }
         public GetBaselineableMetricsFilter build() {
-            final var o = new GetBaselineableMetricsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetBaselineableMetricsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

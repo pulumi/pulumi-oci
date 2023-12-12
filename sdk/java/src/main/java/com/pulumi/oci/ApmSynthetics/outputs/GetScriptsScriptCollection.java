@@ -42,9 +42,9 @@ public final class GetScriptsScriptCollection {
             return items(List.of(items));
         }
         public GetScriptsScriptCollection build() {
-            final var o = new GetScriptsScriptCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetScriptsScriptCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

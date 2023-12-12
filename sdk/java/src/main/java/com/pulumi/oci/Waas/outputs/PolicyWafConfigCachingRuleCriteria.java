@@ -115,10 +115,10 @@ public final class PolicyWafConfigCachingRuleCriteria {
             return this;
         }
         public PolicyWafConfigCachingRuleCriteria build() {
-            final var o = new PolicyWafConfigCachingRuleCriteria();
-            o.condition = condition;
-            o.value = value;
-            return o;
+            final var _resultValue = new PolicyWafConfigCachingRuleCriteria();
+            _resultValue.condition = condition;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

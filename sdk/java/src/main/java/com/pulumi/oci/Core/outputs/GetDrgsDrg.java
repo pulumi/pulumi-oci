@@ -216,18 +216,18 @@ public final class GetDrgsDrg {
             return this;
         }
         public GetDrgsDrg build() {
-            final var o = new GetDrgsDrg();
-            o.compartmentId = compartmentId;
-            o.defaultDrgRouteTables = defaultDrgRouteTables;
-            o.defaultExportDrgRouteDistributionId = defaultExportDrgRouteDistributionId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.redundancyStatus = redundancyStatus;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDrgsDrg();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.defaultDrgRouteTables = defaultDrgRouteTables;
+            _resultValue.defaultExportDrgRouteDistributionId = defaultExportDrgRouteDistributionId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.redundancyStatus = redundancyStatus;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

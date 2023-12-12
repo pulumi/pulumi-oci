@@ -95,12 +95,12 @@ public final class GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
             return this;
         }
         public GetSchedulesScheduleCollectionItemQueryPropertyDateRange build() {
-            final var o = new GetSchedulesScheduleCollectionItemQueryPropertyDateRange();
-            o.dateRangeType = dateRangeType;
-            o.dynamicDateRangeType = dynamicDateRangeType;
-            o.timeUsageEnded = timeUsageEnded;
-            o.timeUsageStarted = timeUsageStarted;
-            return o;
+            final var _resultValue = new GetSchedulesScheduleCollectionItemQueryPropertyDateRange();
+            _resultValue.dateRangeType = dateRangeType;
+            _resultValue.dynamicDateRangeType = dynamicDateRangeType;
+            _resultValue.timeUsageEnded = timeUsageEnded;
+            _resultValue.timeUsageStarted = timeUsageStarted;
+            return _resultValue;
         }
     }
 }

@@ -391,27 +391,27 @@ public final class GetConnectionResult {
             return this;
         }
         public GetConnectionResult build() {
-            final var o = new GetConnectionResult();
-            o.accessToken = accessToken;
-            o.appPassword = appPassword;
-            o.baseUrl = baseUrl;
-            o.compartmentId = compartmentId;
-            o.connectionId = connectionId;
-            o.connectionType = connectionType;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lastConnectionValidationResults = lastConnectionValidationResults;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.tlsVerifyConfigs = tlsVerifyConfigs;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetConnectionResult();
+            _resultValue.accessToken = accessToken;
+            _resultValue.appPassword = appPassword;
+            _resultValue.baseUrl = baseUrl;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionId = connectionId;
+            _resultValue.connectionType = connectionType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lastConnectionValidationResults = lastConnectionValidationResults;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.tlsVerifyConfigs = tlsVerifyConfigs;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

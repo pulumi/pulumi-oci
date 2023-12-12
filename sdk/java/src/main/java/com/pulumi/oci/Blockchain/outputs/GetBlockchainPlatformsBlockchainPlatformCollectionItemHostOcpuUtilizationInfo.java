@@ -85,11 +85,11 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcp
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo build() {
-            final var o = new GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo();
-            o.host = host;
-            o.ocpuCapacityNumber = ocpuCapacityNumber;
-            o.ocpuUtilizationNumber = ocpuUtilizationNumber;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo();
+            _resultValue.host = host;
+            _resultValue.ocpuCapacityNumber = ocpuCapacityNumber;
+            _resultValue.ocpuUtilizationNumber = ocpuUtilizationNumber;
+            return _resultValue;
         }
     }
 }

@@ -105,12 +105,12 @@ public final class GetLicenseRecordsResult {
             return this;
         }
         public GetLicenseRecordsResult build() {
-            final var o = new GetLicenseRecordsResult();
-            o.filters = filters;
-            o.id = id;
-            o.licenseRecordCollections = licenseRecordCollections;
-            o.productLicenseId = productLicenseId;
-            return o;
+            final var _resultValue = new GetLicenseRecordsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.licenseRecordCollections = licenseRecordCollections;
+            _resultValue.productLicenseId = productLicenseId;
+            return _resultValue;
         }
     }
 }

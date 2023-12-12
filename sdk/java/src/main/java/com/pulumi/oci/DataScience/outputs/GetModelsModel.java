@@ -371,28 +371,28 @@ public final class GetModelsModel {
             return this;
         }
         public GetModelsModel build() {
-            final var o = new GetModelsModel();
-            o.artifactContentDisposition = artifactContentDisposition;
-            o.artifactContentLength = artifactContentLength;
-            o.artifactContentMd5 = artifactContentMd5;
-            o.artifactLastModified = artifactLastModified;
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.customMetadataLists = customMetadataLists;
-            o.definedMetadataLists = definedMetadataLists;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.emptyModel = emptyModel;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.inputSchema = inputSchema;
-            o.modelArtifact = modelArtifact;
-            o.outputSchema = outputSchema;
-            o.projectId = projectId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetModelsModel();
+            _resultValue.artifactContentDisposition = artifactContentDisposition;
+            _resultValue.artifactContentLength = artifactContentLength;
+            _resultValue.artifactContentMd5 = artifactContentMd5;
+            _resultValue.artifactLastModified = artifactLastModified;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.customMetadataLists = customMetadataLists;
+            _resultValue.definedMetadataLists = definedMetadataLists;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.emptyModel = emptyModel;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.inputSchema = inputSchema;
+            _resultValue.modelArtifact = modelArtifact;
+            _resultValue.outputSchema = outputSchema;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -339,24 +339,24 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItem {
             return this;
         }
         public GetManagedDatabasesManagedDatabaseCollectionItem build() {
-            final var o = new GetManagedDatabasesManagedDatabaseCollectionItem();
-            o.additionalDetails = additionalDetails;
-            o.compartmentId = compartmentId;
-            o.databaseStatus = databaseStatus;
-            o.databaseSubType = databaseSubType;
-            o.databaseType = databaseType;
-            o.dbSystemId = dbSystemId;
-            o.deploymentType = deploymentType;
-            o.id = id;
-            o.isCluster = isCluster;
-            o.managedDatabaseGroups = managedDatabaseGroups;
-            o.managementOption = managementOption;
-            o.name = name;
-            o.parentContainerId = parentContainerId;
-            o.storageSystemId = storageSystemId;
-            o.timeCreated = timeCreated;
-            o.workloadType = workloadType;
-            return o;
+            final var _resultValue = new GetManagedDatabasesManagedDatabaseCollectionItem();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseStatus = databaseStatus;
+            _resultValue.databaseSubType = databaseSubType;
+            _resultValue.databaseType = databaseType;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.id = id;
+            _resultValue.isCluster = isCluster;
+            _resultValue.managedDatabaseGroups = managedDatabaseGroups;
+            _resultValue.managementOption = managementOption;
+            _resultValue.name = name;
+            _resultValue.parentContainerId = parentContainerId;
+            _resultValue.storageSystemId = storageSystemId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.workloadType = workloadType;
+            return _resultValue;
         }
     }
 }

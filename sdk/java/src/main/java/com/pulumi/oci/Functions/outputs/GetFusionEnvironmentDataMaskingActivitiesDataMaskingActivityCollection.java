@@ -42,9 +42,9 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
             return items(List.of(items));
         }
         public GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection build() {
-            final var o = new GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

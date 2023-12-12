@@ -67,11 +67,11 @@ public final class GetApplicationVipsFilter {
             return values(List.of(values));
         }
         public GetApplicationVipsFilter build() {
-            final var o = new GetApplicationVipsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetApplicationVipsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

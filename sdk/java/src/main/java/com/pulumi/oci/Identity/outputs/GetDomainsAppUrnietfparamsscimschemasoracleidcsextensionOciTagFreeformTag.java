@@ -65,10 +65,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTa
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

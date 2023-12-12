@@ -160,15 +160,15 @@ public final class GetCertificateIssuerName {
             return this;
         }
         public GetCertificateIssuerName build() {
-            final var o = new GetCertificateIssuerName();
-            o.commonName = commonName;
-            o.country = country;
-            o.emailAddress = emailAddress;
-            o.locality = locality;
-            o.organization = organization;
-            o.organizationalUnit = organizationalUnit;
-            o.stateProvince = stateProvince;
-            return o;
+            final var _resultValue = new GetCertificateIssuerName();
+            _resultValue.commonName = commonName;
+            _resultValue.country = country;
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.locality = locality;
+            _resultValue.organization = organization;
+            _resultValue.organizationalUnit = organizationalUnit;
+            _resultValue.stateProvince = stateProvince;
+            return _resultValue;
         }
     }
 }

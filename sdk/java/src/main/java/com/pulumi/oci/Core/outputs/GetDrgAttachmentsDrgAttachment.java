@@ -304,23 +304,23 @@ public final class GetDrgAttachmentsDrgAttachment {
             return this;
         }
         public GetDrgAttachmentsDrgAttachment build() {
-            final var o = new GetDrgAttachmentsDrgAttachment();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.drgId = drgId;
-            o.drgRouteTableId = drgRouteTableId;
-            o.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isCrossTenancy = isCrossTenancy;
-            o.networkDetails = networkDetails;
-            o.removeExportDrgRouteDistributionTrigger = removeExportDrgRouteDistributionTrigger;
-            o.routeTableId = routeTableId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetDrgAttachmentsDrgAttachment();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.drgId = drgId;
+            _resultValue.drgRouteTableId = drgRouteTableId;
+            _resultValue.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isCrossTenancy = isCrossTenancy;
+            _resultValue.networkDetails = networkDetails;
+            _resultValue.removeExportDrgRouteDistributionTrigger = removeExportDrgRouteDistributionTrigger;
+            _resultValue.routeTableId = routeTableId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

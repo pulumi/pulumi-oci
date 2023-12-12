@@ -120,14 +120,14 @@ public final class GetResourcesResult {
             return this;
         }
         public GetResourcesResult build() {
-            final var o = new GetResourcesResult();
-            o.compartmentId = compartmentId;
-            o.entitlementId = entitlementId;
-            o.filters = filters;
-            o.id = id;
-            o.resourcesCollections = resourcesCollections;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new GetResourcesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.entitlementId = entitlementId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.resourcesCollections = resourcesCollections;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

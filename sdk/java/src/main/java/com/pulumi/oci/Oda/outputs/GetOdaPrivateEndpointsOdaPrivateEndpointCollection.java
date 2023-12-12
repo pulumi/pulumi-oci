@@ -42,9 +42,9 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollection {
             return items(List.of(items));
         }
         public GetOdaPrivateEndpointsOdaPrivateEndpointCollection build() {
-            final var o = new GetOdaPrivateEndpointsOdaPrivateEndpointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointsOdaPrivateEndpointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

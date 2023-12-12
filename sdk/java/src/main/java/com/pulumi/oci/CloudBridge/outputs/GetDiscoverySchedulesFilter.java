@@ -67,11 +67,11 @@ public final class GetDiscoverySchedulesFilter {
             return values(List.of(values));
         }
         public GetDiscoverySchedulesFilter build() {
-            final var o = new GetDiscoverySchedulesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDiscoverySchedulesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

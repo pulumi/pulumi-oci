@@ -127,13 +127,13 @@ public final class GetRepositoryFileDiffChange {
             return this;
         }
         public GetRepositoryFileDiffChange build() {
-            final var o = new GetRepositoryFileDiffChange();
-            o.baseLine = baseLine;
-            o.baseSpan = baseSpan;
-            o.diffSections = diffSections;
-            o.targetLine = targetLine;
-            o.targetSpan = targetSpan;
-            return o;
+            final var _resultValue = new GetRepositoryFileDiffChange();
+            _resultValue.baseLine = baseLine;
+            _resultValue.baseSpan = baseSpan;
+            _resultValue.diffSections = diffSections;
+            _resultValue.targetLine = targetLine;
+            _resultValue.targetSpan = targetSpan;
+            return _resultValue;
         }
     }
 }

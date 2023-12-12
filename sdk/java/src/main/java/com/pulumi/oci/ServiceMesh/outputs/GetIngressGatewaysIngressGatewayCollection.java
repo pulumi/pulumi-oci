@@ -42,9 +42,9 @@ public final class GetIngressGatewaysIngressGatewayCollection {
             return items(List.of(items));
         }
         public GetIngressGatewaysIngressGatewayCollection build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

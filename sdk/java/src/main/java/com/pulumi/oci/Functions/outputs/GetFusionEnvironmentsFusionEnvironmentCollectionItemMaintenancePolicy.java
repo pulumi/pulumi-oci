@@ -89,11 +89,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenan
             return quarterlyUpgradeBeginTimes(List.of(quarterlyUpgradeBeginTimes));
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy build() {
-            final var o = new GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy();
-            o.environmentMaintenanceOverride = environmentMaintenanceOverride;
-            o.monthlyPatchingOverride = monthlyPatchingOverride;
-            o.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy();
+            _resultValue.environmentMaintenanceOverride = environmentMaintenanceOverride;
+            _resultValue.monthlyPatchingOverride = monthlyPatchingOverride;
+            _resultValue.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
+            return _resultValue;
         }
     }
 }

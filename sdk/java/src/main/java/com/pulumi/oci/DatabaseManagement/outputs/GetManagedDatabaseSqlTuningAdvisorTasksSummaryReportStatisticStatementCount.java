@@ -103,12 +103,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount();
-            o.distinctSql = distinctSql;
-            o.errorCount = errorCount;
-            o.findingCount = findingCount;
-            o.totalSql = totalSql;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount();
+            _resultValue.distinctSql = distinctSql;
+            _resultValue.errorCount = errorCount;
+            _resultValue.findingCount = findingCount;
+            _resultValue.totalSql = totalSql;
+            return _resultValue;
         }
     }
 }

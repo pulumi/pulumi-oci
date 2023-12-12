@@ -205,17 +205,17 @@ public final class GetGatewaysGatewayCollectionResponseCacheDetail {
             return this;
         }
         public GetGatewaysGatewayCollectionResponseCacheDetail build() {
-            final var o = new GetGatewaysGatewayCollectionResponseCacheDetail();
-            o.authenticationSecretId = authenticationSecretId;
-            o.authenticationSecretVersionNumber = authenticationSecretVersionNumber;
-            o.connectTimeoutInMs = connectTimeoutInMs;
-            o.isSslEnabled = isSslEnabled;
-            o.isSslVerifyDisabled = isSslVerifyDisabled;
-            o.readTimeoutInMs = readTimeoutInMs;
-            o.sendTimeoutInMs = sendTimeoutInMs;
-            o.servers = servers;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetGatewaysGatewayCollectionResponseCacheDetail();
+            _resultValue.authenticationSecretId = authenticationSecretId;
+            _resultValue.authenticationSecretVersionNumber = authenticationSecretVersionNumber;
+            _resultValue.connectTimeoutInMs = connectTimeoutInMs;
+            _resultValue.isSslEnabled = isSslEnabled;
+            _resultValue.isSslVerifyDisabled = isSslVerifyDisabled;
+            _resultValue.readTimeoutInMs = readTimeoutInMs;
+            _resultValue.sendTimeoutInMs = sendTimeoutInMs;
+            _resultValue.servers = servers;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

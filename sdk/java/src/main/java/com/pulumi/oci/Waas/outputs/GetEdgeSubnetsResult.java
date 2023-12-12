@@ -86,11 +86,11 @@ public final class GetEdgeSubnetsResult {
             return this;
         }
         public GetEdgeSubnetsResult build() {
-            final var o = new GetEdgeSubnetsResult();
-            o.edgeSubnets = edgeSubnets;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetEdgeSubnetsResult();
+            _resultValue.edgeSubnets = edgeSubnets;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

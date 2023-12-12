@@ -161,15 +161,15 @@ public final class GetWaasPolicyWafConfigCaptcha {
             return this;
         }
         public GetWaasPolicyWafConfigCaptcha build() {
-            final var o = new GetWaasPolicyWafConfigCaptcha();
-            o.failureMessage = failureMessage;
-            o.footerText = footerText;
-            o.headerText = headerText;
-            o.sessionExpirationInSeconds = sessionExpirationInSeconds;
-            o.submitLabel = submitLabel;
-            o.title = title;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigCaptcha();
+            _resultValue.failureMessage = failureMessage;
+            _resultValue.footerText = footerText;
+            _resultValue.headerText = headerText;
+            _resultValue.sessionExpirationInSeconds = sessionExpirationInSeconds;
+            _resultValue.submitLabel = submitLabel;
+            _resultValue.title = title;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

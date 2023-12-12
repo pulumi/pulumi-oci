@@ -89,11 +89,11 @@ public final class ConnectionBootstrapServer {
             return this;
         }
         public ConnectionBootstrapServer build() {
-            final var o = new ConnectionBootstrapServer();
-            o.host = host;
-            o.port = port;
-            o.privateIp = privateIp;
-            return o;
+            final var _resultValue = new ConnectionBootstrapServer();
+            _resultValue.host = host;
+            _resultValue.port = port;
+            _resultValue.privateIp = privateIp;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicy {
             return backoffRetryPolicies(List.of(backoffRetryPolicies));
         }
         public GetSubscriptionsSubscriptionDeliveryPolicy build() {
-            final var o = new GetSubscriptionsSubscriptionDeliveryPolicy();
-            o.backoffRetryPolicies = backoffRetryPolicies;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionDeliveryPolicy();
+            _resultValue.backoffRetryPolicies = backoffRetryPolicies;
+            return _resultValue;
         }
     }
 }

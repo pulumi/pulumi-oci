@@ -182,16 +182,16 @@ public final class GetMountTargetsResult {
             return this;
         }
         public GetMountTargetsResult build() {
-            final var o = new GetMountTargetsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.exportSetId = exportSetId;
-            o.filters = filters;
-            o.id = id;
-            o.mountTargets = mountTargets;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMountTargetsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.exportSetId = exportSetId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.mountTargets = mountTargets;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

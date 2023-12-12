@@ -84,11 +84,11 @@ public final class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem {
             return this;
         }
         public GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem build() {
-            final var o = new GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem();
-            o.object = object;
-            o.objectType = objectType;
-            o.schemaName = schemaName;
-            return o;
+            final var _resultValue = new GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItem();
+            _resultValue.object = object;
+            _resultValue.objectType = objectType;
+            _resultValue.schemaName = schemaName;
+            return _resultValue;
         }
     }
 }

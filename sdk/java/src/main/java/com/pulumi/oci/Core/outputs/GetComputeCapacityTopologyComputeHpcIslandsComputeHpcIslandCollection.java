@@ -50,9 +50,9 @@ public final class GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCo
             return items(List.of(items));
         }
         public GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollection build() {
-            final var o = new GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

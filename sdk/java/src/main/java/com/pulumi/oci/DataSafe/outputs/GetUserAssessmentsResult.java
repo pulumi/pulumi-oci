@@ -302,25 +302,25 @@ public final class GetUserAssessmentsResult {
             return userAssessments(List.of(userAssessments));
         }
         public GetUserAssessmentsResult build() {
-            final var o = new GetUserAssessmentsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.ignoredTargets = ignoredTargets;
-            o.isBaseline = isBaseline;
-            o.isScheduleAssessment = isScheduleAssessment;
-            o.scheduleUserAssessmentId = scheduleUserAssessmentId;
-            o.state = state;
-            o.targetId = targetId;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            o.triggeredBy = triggeredBy;
-            o.type = type;
-            o.userAssessments = userAssessments;
-            return o;
+            final var _resultValue = new GetUserAssessmentsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ignoredTargets = ignoredTargets;
+            _resultValue.isBaseline = isBaseline;
+            _resultValue.isScheduleAssessment = isScheduleAssessment;
+            _resultValue.scheduleUserAssessmentId = scheduleUserAssessmentId;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            _resultValue.triggeredBy = triggeredBy;
+            _resultValue.type = type;
+            _resultValue.userAssessments = userAssessments;
+            return _resultValue;
         }
     }
 }

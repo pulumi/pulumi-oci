@@ -67,10 +67,10 @@ public final class ConfigDimension {
             return this;
         }
         public ConfigDimension build() {
-            final var o = new ConfigDimension();
-            o.name = name;
-            o.valueSource = valueSource;
-            return o;
+            final var _resultValue = new ConfigDimension();
+            _resultValue.name = name;
+            _resultValue.valueSource = valueSource;
+            return _resultValue;
         }
     }
 }

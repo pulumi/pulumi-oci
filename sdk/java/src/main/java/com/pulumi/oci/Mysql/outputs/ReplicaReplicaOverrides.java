@@ -92,11 +92,11 @@ public final class ReplicaReplicaOverrides {
             return this;
         }
         public ReplicaReplicaOverrides build() {
-            final var o = new ReplicaReplicaOverrides();
-            o.configurationId = configurationId;
-            o.mysqlVersion = mysqlVersion;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new ReplicaReplicaOverrides();
+            _resultValue.configurationId = configurationId;
+            _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetAlarmHistoryCollectionEntry {
             return this;
         }
         public GetAlarmHistoryCollectionEntry build() {
-            final var o = new GetAlarmHistoryCollectionEntry();
-            o.summary = summary;
-            o.timestamp = timestamp;
-            o.timestampTriggered = timestampTriggered;
-            return o;
+            final var _resultValue = new GetAlarmHistoryCollectionEntry();
+            _resultValue.summary = summary;
+            _resultValue.timestamp = timestamp;
+            _resultValue.timestampTriggered = timestampTriggered;
+            return _resultValue;
         }
     }
 }

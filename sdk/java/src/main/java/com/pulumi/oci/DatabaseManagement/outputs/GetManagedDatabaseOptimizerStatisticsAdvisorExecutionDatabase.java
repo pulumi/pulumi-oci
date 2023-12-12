@@ -160,15 +160,15 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase();
-            o.compartmentId = compartmentId;
-            o.dbDeploymentType = dbDeploymentType;
-            o.dbSubType = dbSubType;
-            o.dbType = dbType;
-            o.dbVersion = dbVersion;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbDeploymentType = dbDeploymentType;
+            _resultValue.dbSubType = dbSubType;
+            _resultValue.dbType = dbType;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

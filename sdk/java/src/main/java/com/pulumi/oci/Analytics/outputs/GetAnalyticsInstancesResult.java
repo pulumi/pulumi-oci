@@ -182,16 +182,16 @@ public final class GetAnalyticsInstancesResult {
             return this;
         }
         public GetAnalyticsInstancesResult build() {
-            final var o = new GetAnalyticsInstancesResult();
-            o.analyticsInstances = analyticsInstances;
-            o.capacityType = capacityType;
-            o.compartmentId = compartmentId;
-            o.featureSet = featureSet;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAnalyticsInstancesResult();
+            _resultValue.analyticsInstances = analyticsInstances;
+            _resultValue.capacityType = capacityType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.featureSet = featureSet;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

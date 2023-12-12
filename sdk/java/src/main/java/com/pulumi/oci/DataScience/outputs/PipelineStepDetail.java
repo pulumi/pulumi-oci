@@ -194,16 +194,16 @@ public final class PipelineStepDetail {
             return this;
         }
         public PipelineStepDetail build() {
-            final var o = new PipelineStepDetail();
-            o.dependsOns = dependsOns;
-            o.description = description;
-            o.isArtifactUploaded = isArtifactUploaded;
-            o.jobId = jobId;
-            o.stepConfigurationDetails = stepConfigurationDetails;
-            o.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
-            o.stepName = stepName;
-            o.stepType = stepType;
-            return o;
+            final var _resultValue = new PipelineStepDetail();
+            _resultValue.dependsOns = dependsOns;
+            _resultValue.description = description;
+            _resultValue.isArtifactUploaded = isArtifactUploaded;
+            _resultValue.jobId = jobId;
+            _resultValue.stepConfigurationDetails = stepConfigurationDetails;
+            _resultValue.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
+            _resultValue.stepName = stepName;
+            _resultValue.stepType = stepType;
+            return _resultValue;
         }
     }
 }

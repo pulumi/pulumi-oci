@@ -163,15 +163,15 @@ public final class GetFusionEnvironmentsResult {
             return this;
         }
         public GetFusionEnvironmentsResult build() {
-            final var o = new GetFusionEnvironmentsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.fusionEnvironmentCollections = fusionEnvironmentCollections;
-            o.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.fusionEnvironmentCollections = fusionEnvironmentCollections;
+            _resultValue.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

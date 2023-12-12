@@ -109,13 +109,13 @@ public final class GetDataKeysResult {
             return this;
         }
         public GetDataKeysResult build() {
-            final var o = new GetDataKeysResult();
-            o.apmDomainId = apmDomainId;
-            o.dataKeyType = dataKeyType;
-            o.dataKeys = dataKeys;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDataKeysResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.dataKeyType = dataKeyType;
+            _resultValue.dataKeys = dataKeys;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

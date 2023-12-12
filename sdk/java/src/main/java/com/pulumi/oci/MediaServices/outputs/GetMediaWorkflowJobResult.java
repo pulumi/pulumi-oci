@@ -416,29 +416,29 @@ public final class GetMediaWorkflowJobResult {
             return this;
         }
         public GetMediaWorkflowJobResult build() {
-            final var o = new GetMediaWorkflowJobResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
-            o.mediaWorkflowId = mediaWorkflowId;
-            o.mediaWorkflowJobId = mediaWorkflowJobId;
-            o.mediaWorkflowName = mediaWorkflowName;
-            o.outputs = outputs;
-            o.parameters = parameters;
-            o.runnable = runnable;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.taskLifecycleStates = taskLifecycleStates;
-            o.timeCreated = timeCreated;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.timeUpdated = timeUpdated;
-            o.workflowIdentifierType = workflowIdentifierType;
-            return o;
+            final var _resultValue = new GetMediaWorkflowJobResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
+            _resultValue.mediaWorkflowId = mediaWorkflowId;
+            _resultValue.mediaWorkflowJobId = mediaWorkflowJobId;
+            _resultValue.mediaWorkflowName = mediaWorkflowName;
+            _resultValue.outputs = outputs;
+            _resultValue.parameters = parameters;
+            _resultValue.runnable = runnable;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.taskLifecycleStates = taskLifecycleStates;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.workflowIdentifierType = workflowIdentifierType;
+            return _resultValue;
         }
     }
 }

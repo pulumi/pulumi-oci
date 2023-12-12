@@ -126,13 +126,13 @@ public final class BdsInstanceEdgeNode {
             return this;
         }
         public BdsInstanceEdgeNode build() {
-            final var o = new BdsInstanceEdgeNode();
-            o.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
-            o.numberOfNodes = numberOfNodes;
-            o.shape = shape;
-            o.shapeConfig = shapeConfig;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new BdsInstanceEdgeNode();
+            _resultValue.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
+            _resultValue.numberOfNodes = numberOfNodes;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfig = shapeConfig;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

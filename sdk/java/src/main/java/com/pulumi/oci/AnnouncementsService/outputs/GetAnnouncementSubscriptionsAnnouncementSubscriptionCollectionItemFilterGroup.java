@@ -70,10 +70,10 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
             return this;
         }
         public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup build() {
-            final var o = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup();
-            o.filters = filters;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroup();
+            _resultValue.filters = filters;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

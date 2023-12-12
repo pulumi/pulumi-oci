@@ -66,10 +66,10 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndH
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig build() {
-            final var o = new GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig();
-            o.targetNodeCount = targetNodeCount;
-            o.timeRecurrence = timeRecurrence;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig();
+            _resultValue.targetNodeCount = targetNodeCount;
+            _resultValue.timeRecurrence = timeRecurrence;
+            return _resultValue;
         }
     }
 }

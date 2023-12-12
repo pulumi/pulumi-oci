@@ -229,13 +229,13 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictions {
             return this;
         }
         public DomainsAuthenticationFactorSettingEndpointRestrictions build() {
-            final var o = new DomainsAuthenticationFactorSettingEndpointRestrictions();
-            o.maxEndpointTrustDurationInDays = maxEndpointTrustDurationInDays;
-            o.maxEnrolledDevices = maxEnrolledDevices;
-            o.maxIncorrectAttempts = maxIncorrectAttempts;
-            o.maxTrustedEndpoints = maxTrustedEndpoints;
-            o.trustedEndpointsEnabled = trustedEndpointsEnabled;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingEndpointRestrictions();
+            _resultValue.maxEndpointTrustDurationInDays = maxEndpointTrustDurationInDays;
+            _resultValue.maxEnrolledDevices = maxEnrolledDevices;
+            _resultValue.maxIncorrectAttempts = maxIncorrectAttempts;
+            _resultValue.maxTrustedEndpoints = maxTrustedEndpoints;
+            _resultValue.trustedEndpointsEnabled = trustedEndpointsEnabled;
+            return _resultValue;
         }
     }
 }

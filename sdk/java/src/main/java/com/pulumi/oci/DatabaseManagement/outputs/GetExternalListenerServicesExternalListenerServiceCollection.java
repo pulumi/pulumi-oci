@@ -50,9 +50,9 @@ public final class GetExternalListenerServicesExternalListenerServiceCollection 
             return items(List.of(items));
         }
         public GetExternalListenerServicesExternalListenerServiceCollection build() {
-            final var o = new GetExternalListenerServicesExternalListenerServiceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalListenerServicesExternalListenerServiceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

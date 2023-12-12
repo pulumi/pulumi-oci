@@ -150,16 +150,16 @@ public final class GetRatecardsResult {
             return this;
         }
         public GetRatecardsResult build() {
-            final var o = new GetRatecardsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.partNumber = partNumber;
-            o.rateCards = rateCards;
-            o.subscriptionId = subscriptionId;
-            o.timeFrom = timeFrom;
-            o.timeTo = timeTo;
-            return o;
+            final var _resultValue = new GetRatecardsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.partNumber = partNumber;
+            _resultValue.rateCards = rateCards;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.timeFrom = timeFrom;
+            _resultValue.timeTo = timeTo;
+            return _resultValue;
         }
     }
 }

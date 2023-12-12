@@ -65,10 +65,10 @@ public final class GetDomainsAccountRecoverySettingTag {
             return this;
         }
         public GetDomainsAccountRecoverySettingTag build() {
-            final var o = new GetDomainsAccountRecoverySettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAccountRecoverySettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

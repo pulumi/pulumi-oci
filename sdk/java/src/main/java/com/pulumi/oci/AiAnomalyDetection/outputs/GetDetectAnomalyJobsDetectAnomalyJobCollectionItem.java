@@ -362,25 +362,25 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItem {
             return this;
         }
         public GetDetectAnomalyJobsDetectAnomalyJobCollectionItem build() {
-            final var o = new GetDetectAnomalyJobsDetectAnomalyJobCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.inputDetails = inputDetails;
-            o.lifecycleStateDetails = lifecycleStateDetails;
-            o.modelId = modelId;
-            o.outputDetails = outputDetails;
-            o.projectId = projectId;
-            o.sensitivity = sensitivity;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeAccepted = timeAccepted;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobsDetectAnomalyJobCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.inputDetails = inputDetails;
+            _resultValue.lifecycleStateDetails = lifecycleStateDetails;
+            _resultValue.modelId = modelId;
+            _resultValue.outputDetails = outputDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.sensitivity = sensitivity;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

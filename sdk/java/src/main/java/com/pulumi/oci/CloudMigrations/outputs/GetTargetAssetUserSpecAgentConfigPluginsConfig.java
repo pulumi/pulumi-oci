@@ -65,10 +65,10 @@ public final class GetTargetAssetUserSpecAgentConfigPluginsConfig {
             return this;
         }
         public GetTargetAssetUserSpecAgentConfigPluginsConfig build() {
-            final var o = new GetTargetAssetUserSpecAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetTargetAssetUserSpecAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

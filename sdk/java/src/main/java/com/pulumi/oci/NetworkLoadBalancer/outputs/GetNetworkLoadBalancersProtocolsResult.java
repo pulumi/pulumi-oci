@@ -86,11 +86,11 @@ public final class GetNetworkLoadBalancersProtocolsResult {
             return networkLoadBalancersProtocolCollections(List.of(networkLoadBalancersProtocolCollections));
         }
         public GetNetworkLoadBalancersProtocolsResult build() {
-            final var o = new GetNetworkLoadBalancersProtocolsResult();
-            o.filters = filters;
-            o.id = id;
-            o.networkLoadBalancersProtocolCollections = networkLoadBalancersProtocolCollections;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancersProtocolsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkLoadBalancersProtocolCollections = networkLoadBalancersProtocolCollections;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

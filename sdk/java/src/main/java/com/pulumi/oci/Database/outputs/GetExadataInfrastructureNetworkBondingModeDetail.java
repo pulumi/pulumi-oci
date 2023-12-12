@@ -84,11 +84,11 @@ public final class GetExadataInfrastructureNetworkBondingModeDetail {
             return this;
         }
         public GetExadataInfrastructureNetworkBondingModeDetail build() {
-            final var o = new GetExadataInfrastructureNetworkBondingModeDetail();
-            o.backupNetworkBondingMode = backupNetworkBondingMode;
-            o.clientNetworkBondingMode = clientNetworkBondingMode;
-            o.drNetworkBondingMode = drNetworkBondingMode;
-            return o;
+            final var _resultValue = new GetExadataInfrastructureNetworkBondingModeDetail();
+            _resultValue.backupNetworkBondingMode = backupNetworkBondingMode;
+            _resultValue.clientNetworkBondingMode = clientNetworkBondingMode;
+            _resultValue.drNetworkBondingMode = drNetworkBondingMode;
+            return _resultValue;
         }
     }
 }

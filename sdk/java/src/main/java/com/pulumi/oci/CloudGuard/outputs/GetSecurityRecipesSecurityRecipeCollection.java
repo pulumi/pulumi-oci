@@ -42,9 +42,9 @@ public final class GetSecurityRecipesSecurityRecipeCollection {
             return items(List.of(items));
         }
         public GetSecurityRecipesSecurityRecipeCollection build() {
-            final var o = new GetSecurityRecipesSecurityRecipeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSecurityRecipesSecurityRecipeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

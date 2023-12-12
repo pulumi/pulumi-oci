@@ -125,13 +125,13 @@ public final class GetJavaDownloadsJavaLicensesResult {
             return this;
         }
         public GetJavaDownloadsJavaLicensesResult build() {
-            final var o = new GetJavaDownloadsJavaLicensesResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.javaLicenseCollections = javaLicenseCollections;
-            o.licenseType = licenseType;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaLicensesResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.javaLicenseCollections = javaLicenseCollections;
+            _resultValue.licenseType = licenseType;
+            return _resultValue;
         }
     }
 }

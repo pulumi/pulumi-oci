@@ -65,10 +65,10 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExp
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping();
-            o.destinationMountTargetId = destinationMountTargetId;
-            o.exportId = exportId;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping();
+            _resultValue.destinationMountTargetId = destinationMountTargetId;
+            _resultValue.exportId = exportId;
+            return _resultValue;
         }
     }
 }

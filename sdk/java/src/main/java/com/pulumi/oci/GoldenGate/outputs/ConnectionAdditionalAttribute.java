@@ -67,10 +67,10 @@ public final class ConnectionAdditionalAttribute {
             return this;
         }
         public ConnectionAdditionalAttribute build() {
-            final var o = new ConnectionAdditionalAttribute();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new ConnectionAdditionalAttribute();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

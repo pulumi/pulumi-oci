@@ -124,13 +124,13 @@ public final class GetMountTargetsMountTargetKerbero {
             return this;
         }
         public GetMountTargetsMountTargetKerbero build() {
-            final var o = new GetMountTargetsMountTargetKerbero();
-            o.backupKeyTabSecretVersion = backupKeyTabSecretVersion;
-            o.currentKeyTabSecretVersion = currentKeyTabSecretVersion;
-            o.isKerberosEnabled = isKerberosEnabled;
-            o.kerberosRealm = kerberosRealm;
-            o.keyTabSecretId = keyTabSecretId;
-            return o;
+            final var _resultValue = new GetMountTargetsMountTargetKerbero();
+            _resultValue.backupKeyTabSecretVersion = backupKeyTabSecretVersion;
+            _resultValue.currentKeyTabSecretVersion = currentKeyTabSecretVersion;
+            _resultValue.isKerberosEnabled = isKerberosEnabled;
+            _resultValue.kerberosRealm = kerberosRealm;
+            _resultValue.keyTabSecretId = keyTabSecretId;
+            return _resultValue;
         }
     }
 }

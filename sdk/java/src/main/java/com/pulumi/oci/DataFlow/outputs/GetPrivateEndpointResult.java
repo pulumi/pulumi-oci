@@ -375,26 +375,26 @@ public final class GetPrivateEndpointResult {
             return this;
         }
         public GetPrivateEndpointResult build() {
-            final var o = new GetPrivateEndpointResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.dnsZones = dnsZones;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maxHostCount = maxHostCount;
-            o.nsgIds = nsgIds;
-            o.ownerPrincipalId = ownerPrincipalId;
-            o.ownerUserName = ownerUserName;
-            o.privateEndpointId = privateEndpointId;
-            o.scanDetails = scanDetails;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetPrivateEndpointResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.dnsZones = dnsZones;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maxHostCount = maxHostCount;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.ownerPrincipalId = ownerPrincipalId;
+            _resultValue.ownerUserName = ownerUserName;
+            _resultValue.privateEndpointId = privateEndpointId;
+            _resultValue.scanDetails = scanDetails;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

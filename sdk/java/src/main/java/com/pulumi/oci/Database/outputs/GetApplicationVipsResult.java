@@ -144,14 +144,14 @@ public final class GetApplicationVipsResult {
             return this;
         }
         public GetApplicationVipsResult build() {
-            final var o = new GetApplicationVipsResult();
-            o.applicationVips = applicationVips;
-            o.cloudVmClusterId = cloudVmClusterId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetApplicationVipsResult();
+            _resultValue.applicationVips = applicationVips;
+            _resultValue.cloudVmClusterId = cloudVmClusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

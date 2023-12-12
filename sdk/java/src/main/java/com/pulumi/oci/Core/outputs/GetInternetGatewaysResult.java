@@ -163,15 +163,15 @@ public final class GetInternetGatewaysResult {
             return this;
         }
         public GetInternetGatewaysResult build() {
-            final var o = new GetInternetGatewaysResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.gateways = gateways;
-            o.id = id;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetInternetGatewaysResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.gateways = gateways;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

@@ -338,24 +338,24 @@ public final class GetIngressGatewayResult {
             return this;
         }
         public GetIngressGatewayResult build() {
-            final var o = new GetIngressGatewayResult();
-            o.accessLoggings = accessLoggings;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.hosts = hosts;
-            o.id = id;
-            o.ingressGatewayId = ingressGatewayId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.meshId = meshId;
-            o.mtls = mtls;
-            o.name = name;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetIngressGatewayResult();
+            _resultValue.accessLoggings = accessLoggings;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hosts = hosts;
+            _resultValue.id = id;
+            _resultValue.ingressGatewayId = ingressGatewayId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.meshId = meshId;
+            _resultValue.mtls = mtls;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

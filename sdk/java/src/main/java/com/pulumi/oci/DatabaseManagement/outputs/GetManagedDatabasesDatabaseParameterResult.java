@@ -201,18 +201,18 @@ public final class GetManagedDatabasesDatabaseParameterResult {
             return this;
         }
         public GetManagedDatabasesDatabaseParameterResult build() {
-            final var o = new GetManagedDatabasesDatabaseParameterResult();
-            o.databaseName = databaseName;
-            o.databaseSubType = databaseSubType;
-            o.databaseType = databaseType;
-            o.databaseVersion = databaseVersion;
-            o.id = id;
-            o.isAllowedValuesIncluded = isAllowedValuesIncluded;
-            o.items = items;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.source = source;
-            return o;
+            final var _resultValue = new GetManagedDatabasesDatabaseParameterResult();
+            _resultValue.databaseName = databaseName;
+            _resultValue.databaseSubType = databaseSubType;
+            _resultValue.databaseType = databaseType;
+            _resultValue.databaseVersion = databaseVersion;
+            _resultValue.id = id;
+            _resultValue.isAllowedValuesIncluded = isAllowedValuesIncluded;
+            _resultValue.items = items;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

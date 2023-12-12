@@ -67,11 +67,11 @@ public final class GetProductLicensesFilter {
             return values(List.of(values));
         }
         public GetProductLicensesFilter build() {
-            final var o = new GetProductLicensesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetProductLicensesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

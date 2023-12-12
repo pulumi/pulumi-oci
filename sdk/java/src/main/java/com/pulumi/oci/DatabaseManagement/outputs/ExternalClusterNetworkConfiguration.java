@@ -87,11 +87,11 @@ public final class ExternalClusterNetworkConfiguration {
             return this;
         }
         public ExternalClusterNetworkConfiguration build() {
-            final var o = new ExternalClusterNetworkConfiguration();
-            o.networkNumber = networkNumber;
-            o.networkType = networkType;
-            o.subnet = subnet;
-            return o;
+            final var _resultValue = new ExternalClusterNetworkConfiguration();
+            _resultValue.networkNumber = networkNumber;
+            _resultValue.networkType = networkType;
+            _resultValue.subnet = subnet;
+            return _resultValue;
         }
     }
 }

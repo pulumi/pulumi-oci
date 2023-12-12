@@ -130,13 +130,13 @@ public final class ModelTrainingDataset {
             return this;
         }
         public ModelTrainingDataset build() {
-            final var o = new ModelTrainingDataset();
-            o.bucket = bucket;
-            o.datasetId = datasetId;
-            o.datasetType = datasetType;
-            o.namespaceName = namespaceName;
-            o.object = object;
-            return o;
+            final var _resultValue = new ModelTrainingDataset();
+            _resultValue.bucket = bucket;
+            _resultValue.datasetId = datasetId;
+            _resultValue.datasetType = datasetType;
+            _resultValue.namespaceName = namespaceName;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

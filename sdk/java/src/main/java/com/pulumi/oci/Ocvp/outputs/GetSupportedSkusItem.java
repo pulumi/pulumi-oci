@@ -46,9 +46,9 @@ public final class GetSupportedSkusItem {
             return this;
         }
         public GetSupportedSkusItem build() {
-            final var o = new GetSupportedSkusItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetSupportedSkusItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

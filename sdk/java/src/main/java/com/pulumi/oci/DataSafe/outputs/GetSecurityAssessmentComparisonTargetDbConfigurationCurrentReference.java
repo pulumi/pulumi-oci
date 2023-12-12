@@ -84,11 +84,11 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentRe
             return this;
         }
         public GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference build() {
-            final var o = new GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference();
-            o.cis = cis;
-            o.gdpr = gdpr;
-            o.stig = stig;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference();
+            _resultValue.cis = cis;
+            _resultValue.gdpr = gdpr;
+            _resultValue.stig = stig;
+            return _resultValue;
         }
     }
 }

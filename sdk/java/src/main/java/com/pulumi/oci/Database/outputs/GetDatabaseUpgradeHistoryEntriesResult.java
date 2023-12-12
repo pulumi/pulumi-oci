@@ -128,14 +128,14 @@ public final class GetDatabaseUpgradeHistoryEntriesResult {
             return this;
         }
         public GetDatabaseUpgradeHistoryEntriesResult build() {
-            final var o = new GetDatabaseUpgradeHistoryEntriesResult();
-            o.databaseId = databaseId;
-            o.databaseUpgradeHistoryEntries = databaseUpgradeHistoryEntries;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.upgradeAction = upgradeAction;
-            return o;
+            final var _resultValue = new GetDatabaseUpgradeHistoryEntriesResult();
+            _resultValue.databaseId = databaseId;
+            _resultValue.databaseUpgradeHistoryEntries = databaseUpgradeHistoryEntries;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.upgradeAction = upgradeAction;
+            return _resultValue;
         }
     }
 }

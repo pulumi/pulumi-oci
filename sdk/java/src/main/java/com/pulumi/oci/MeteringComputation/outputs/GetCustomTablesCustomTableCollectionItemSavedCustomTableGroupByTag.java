@@ -84,11 +84,11 @@ public final class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroup
             return this;
         }
         public GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag build() {
-            final var o = new GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

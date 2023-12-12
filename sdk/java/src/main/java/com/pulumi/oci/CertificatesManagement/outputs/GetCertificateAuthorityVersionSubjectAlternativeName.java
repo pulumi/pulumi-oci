@@ -49,10 +49,10 @@ public final class GetCertificateAuthorityVersionSubjectAlternativeName {
             return this;
         }
         public GetCertificateAuthorityVersionSubjectAlternativeName build() {
-            final var o = new GetCertificateAuthorityVersionSubjectAlternativeName();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityVersionSubjectAlternativeName();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

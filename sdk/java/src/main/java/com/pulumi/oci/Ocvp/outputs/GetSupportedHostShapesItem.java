@@ -286,20 +286,20 @@ public final class GetSupportedHostShapesItem {
             return supportedVmwareSoftwareVersions(List.of(supportedVmwareSoftwareVersions));
         }
         public GetSupportedHostShapesItem build() {
-            final var o = new GetSupportedHostShapesItem();
-            o.defaultOcpuCount = defaultOcpuCount;
-            o.description = description;
-            o.isSingleHostSddcSupported = isSingleHostSddcSupported;
-            o.isSupportMonthlyCommitment = isSupportMonthlyCommitment;
-            o.isSupportMonthlySku = isSupportMonthlySku;
-            o.isSupportShieldedInstances = isSupportShieldedInstances;
-            o.name = name;
-            o.shapeFamily = shapeFamily;
-            o.supportedOcpuCounts = supportedOcpuCounts;
-            o.supportedOperations = supportedOperations;
-            o.supportedSddcTypes = supportedSddcTypes;
-            o.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
-            return o;
+            final var _resultValue = new GetSupportedHostShapesItem();
+            _resultValue.defaultOcpuCount = defaultOcpuCount;
+            _resultValue.description = description;
+            _resultValue.isSingleHostSddcSupported = isSingleHostSddcSupported;
+            _resultValue.isSupportMonthlyCommitment = isSupportMonthlyCommitment;
+            _resultValue.isSupportMonthlySku = isSupportMonthlySku;
+            _resultValue.isSupportShieldedInstances = isSupportShieldedInstances;
+            _resultValue.name = name;
+            _resultValue.shapeFamily = shapeFamily;
+            _resultValue.supportedOcpuCounts = supportedOcpuCounts;
+            _resultValue.supportedOperations = supportedOperations;
+            _resultValue.supportedSddcTypes = supportedSddcTypes;
+            _resultValue.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
+            return _resultValue;
         }
     }
 }

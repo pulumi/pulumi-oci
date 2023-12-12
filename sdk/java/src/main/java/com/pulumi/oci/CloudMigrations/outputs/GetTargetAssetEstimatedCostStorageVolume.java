@@ -104,12 +104,12 @@ public final class GetTargetAssetEstimatedCostStorageVolume {
             return this;
         }
         public GetTargetAssetEstimatedCostStorageVolume build() {
-            final var o = new GetTargetAssetEstimatedCostStorageVolume();
-            o.capacityGb = capacityGb;
-            o.description = description;
-            o.totalGbPerMonth = totalGbPerMonth;
-            o.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
-            return o;
+            final var _resultValue = new GetTargetAssetEstimatedCostStorageVolume();
+            _resultValue.capacityGb = capacityGb;
+            _resultValue.description = description;
+            _resultValue.totalGbPerMonth = totalGbPerMonth;
+            _resultValue.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
+            return _resultValue;
         }
     }
 }

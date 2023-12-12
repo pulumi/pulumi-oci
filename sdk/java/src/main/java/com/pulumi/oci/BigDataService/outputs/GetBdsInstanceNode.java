@@ -356,25 +356,25 @@ public final class GetBdsInstanceNode {
             return this;
         }
         public GetBdsInstanceNode build() {
-            final var o = new GetBdsInstanceNode();
-            o.attachedBlockVolumes = attachedBlockVolumes;
-            o.availabilityDomain = availabilityDomain;
-            o.displayName = displayName;
-            o.faultDomain = faultDomain;
-            o.hostname = hostname;
-            o.imageId = imageId;
-            o.instanceId = instanceId;
-            o.ipAddress = ipAddress;
-            o.memoryInGbs = memoryInGbs;
-            o.nodeType = nodeType;
-            o.ocpus = ocpus;
-            o.shape = shape;
-            o.sshFingerprint = sshFingerprint;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
-            return o;
+            final var _resultValue = new GetBdsInstanceNode();
+            _resultValue.attachedBlockVolumes = attachedBlockVolumes;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.displayName = displayName;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.hostname = hostname;
+            _resultValue.imageId = imageId;
+            _resultValue.instanceId = instanceId;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nodeType = nodeType;
+            _resultValue.ocpus = ocpus;
+            _resultValue.shape = shape;
+            _resultValue.sshFingerprint = sshFingerprint;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            return _resultValue;
         }
     }
 }

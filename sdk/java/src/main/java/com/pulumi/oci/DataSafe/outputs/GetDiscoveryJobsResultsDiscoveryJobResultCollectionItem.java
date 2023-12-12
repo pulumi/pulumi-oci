@@ -449,28 +449,28 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
             return this;
         }
         public GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem build() {
-            final var o = new GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem();
-            o.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
-            o.appName = appName;
-            o.columnName = columnName;
-            o.dataType = dataType;
-            o.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
-            o.discoveryJobId = discoveryJobId;
-            o.discoveryType = discoveryType;
-            o.estimatedDataValueCount = estimatedDataValueCount;
-            o.isResultApplied = isResultApplied;
-            o.key = key;
-            o.modifiedAttributes = modifiedAttributes;
-            o.object = object;
-            o.objectType = objectType;
-            o.parentColumnKeys = parentColumnKeys;
-            o.plannedAction = plannedAction;
-            o.relationType = relationType;
-            o.sampleDataValues = sampleDataValues;
-            o.schemaName = schemaName;
-            o.sensitiveColumnkey = sensitiveColumnkey;
-            o.sensitiveTypeId = sensitiveTypeId;
-            return o;
+            final var _resultValue = new GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem();
+            _resultValue.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
+            _resultValue.appName = appName;
+            _resultValue.columnName = columnName;
+            _resultValue.dataType = dataType;
+            _resultValue.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
+            _resultValue.discoveryJobId = discoveryJobId;
+            _resultValue.discoveryType = discoveryType;
+            _resultValue.estimatedDataValueCount = estimatedDataValueCount;
+            _resultValue.isResultApplied = isResultApplied;
+            _resultValue.key = key;
+            _resultValue.modifiedAttributes = modifiedAttributes;
+            _resultValue.object = object;
+            _resultValue.objectType = objectType;
+            _resultValue.parentColumnKeys = parentColumnKeys;
+            _resultValue.plannedAction = plannedAction;
+            _resultValue.relationType = relationType;
+            _resultValue.sampleDataValues = sampleDataValues;
+            _resultValue.schemaName = schemaName;
+            _resultValue.sensitiveColumnkey = sensitiveColumnkey;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            return _resultValue;
         }
     }
 }

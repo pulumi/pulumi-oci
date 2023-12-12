@@ -42,9 +42,9 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection {
             return items(List.of(items));
         }
         public GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection build() {
-            final var o = new GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

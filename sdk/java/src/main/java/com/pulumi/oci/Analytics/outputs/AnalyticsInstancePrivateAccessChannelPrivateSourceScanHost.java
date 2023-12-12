@@ -87,11 +87,11 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
             return this;
         }
         public AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost build() {
-            final var o = new AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost();
-            o.description = description;
-            o.scanHostname = scanHostname;
-            o.scanPort = scanPort;
-            return o;
+            final var _resultValue = new AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost();
+            _resultValue.description = description;
+            _resultValue.scanHostname = scanHostname;
+            _resultValue.scanPort = scanPort;
+            return _resultValue;
         }
     }
 }

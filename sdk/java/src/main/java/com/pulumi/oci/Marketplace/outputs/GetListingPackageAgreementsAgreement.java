@@ -103,12 +103,12 @@ public final class GetListingPackageAgreementsAgreement {
             return this;
         }
         public GetListingPackageAgreementsAgreement build() {
-            final var o = new GetListingPackageAgreementsAgreement();
-            o.author = author;
-            o.contentUrl = contentUrl;
-            o.id = id;
-            o.prompt = prompt;
-            return o;
+            final var _resultValue = new GetListingPackageAgreementsAgreement();
+            _resultValue.author = author;
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.id = id;
+            _resultValue.prompt = prompt;
+            return _resultValue;
         }
     }
 }

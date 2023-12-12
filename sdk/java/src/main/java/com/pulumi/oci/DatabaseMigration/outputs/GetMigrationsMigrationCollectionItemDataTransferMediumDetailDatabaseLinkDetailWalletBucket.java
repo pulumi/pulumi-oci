@@ -65,10 +65,10 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetailD
             return this;
         }
         public GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket build() {
-            final var o = new GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucket();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

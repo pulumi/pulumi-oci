@@ -363,26 +363,26 @@ public final class GetReplicationResult {
             return this;
         }
         public GetReplicationResult build() {
-            final var o = new GetReplicationResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.deltaProgress = deltaProgress;
-            o.deltaStatus = deltaStatus;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lastSnapshotId = lastSnapshotId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.recoveryPointTime = recoveryPointTime;
-            o.replicationId = replicationId;
-            o.replicationInterval = replicationInterval;
-            o.replicationTargetId = replicationTargetId;
-            o.sourceId = sourceId;
-            o.state = state;
-            o.targetId = targetId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetReplicationResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deltaProgress = deltaProgress;
+            _resultValue.deltaStatus = deltaStatus;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lastSnapshotId = lastSnapshotId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.recoveryPointTime = recoveryPointTime;
+            _resultValue.replicationId = replicationId;
+            _resultValue.replicationInterval = replicationInterval;
+            _resultValue.replicationTargetId = replicationTargetId;
+            _resultValue.sourceId = sourceId;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

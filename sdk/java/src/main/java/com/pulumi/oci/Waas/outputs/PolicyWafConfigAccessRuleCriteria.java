@@ -137,11 +137,11 @@ public final class PolicyWafConfigAccessRuleCriteria {
             return this;
         }
         public PolicyWafConfigAccessRuleCriteria build() {
-            final var o = new PolicyWafConfigAccessRuleCriteria();
-            o.condition = condition;
-            o.isCaseSensitive = isCaseSensitive;
-            o.value = value;
-            return o;
+            final var _resultValue = new PolicyWafConfigAccessRuleCriteria();
+            _resultValue.condition = condition;
+            _resultValue.isCaseSensitive = isCaseSensitive;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

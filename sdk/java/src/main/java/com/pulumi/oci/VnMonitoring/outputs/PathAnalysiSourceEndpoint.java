@@ -217,18 +217,18 @@ public final class PathAnalysiSourceEndpoint {
             return this;
         }
         public PathAnalysiSourceEndpoint build() {
-            final var o = new PathAnalysiSourceEndpoint();
-            o.address = address;
-            o.instanceId = instanceId;
-            o.listenerId = listenerId;
-            o.loadBalancerId = loadBalancerId;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.type = type;
-            o.vlanId = vlanId;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new PathAnalysiSourceEndpoint();
+            _resultValue.address = address;
+            _resultValue.instanceId = instanceId;
+            _resultValue.listenerId = listenerId;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.type = type;
+            _resultValue.vlanId = vlanId;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

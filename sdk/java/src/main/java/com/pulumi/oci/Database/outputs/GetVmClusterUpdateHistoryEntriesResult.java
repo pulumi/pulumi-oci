@@ -136,14 +136,14 @@ public final class GetVmClusterUpdateHistoryEntriesResult {
             return vmClusterUpdateHistoryEntries(List.of(vmClusterUpdateHistoryEntries));
         }
         public GetVmClusterUpdateHistoryEntriesResult build() {
-            final var o = new GetVmClusterUpdateHistoryEntriesResult();
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.updateType = updateType;
-            o.vmClusterId = vmClusterId;
-            o.vmClusterUpdateHistoryEntries = vmClusterUpdateHistoryEntries;
-            return o;
+            final var _resultValue = new GetVmClusterUpdateHistoryEntriesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.updateType = updateType;
+            _resultValue.vmClusterId = vmClusterId;
+            _resultValue.vmClusterUpdateHistoryEntries = vmClusterUpdateHistoryEntries;
+            return _resultValue;
         }
     }
 }

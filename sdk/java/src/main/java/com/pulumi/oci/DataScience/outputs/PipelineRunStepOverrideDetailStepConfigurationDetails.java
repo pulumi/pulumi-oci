@@ -88,11 +88,11 @@ public final class PipelineRunStepOverrideDetailStepConfigurationDetails {
             return this;
         }
         public PipelineRunStepOverrideDetailStepConfigurationDetails build() {
-            final var o = new PipelineRunStepOverrideDetailStepConfigurationDetails();
-            o.commandLineArguments = commandLineArguments;
-            o.environmentVariables = environmentVariables;
-            o.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
-            return o;
+            final var _resultValue = new PipelineRunStepOverrideDetailStepConfigurationDetails();
+            _resultValue.commandLineArguments = commandLineArguments;
+            _resultValue.environmentVariables = environmentVariables;
+            _resultValue.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            return _resultValue;
         }
     }
 }

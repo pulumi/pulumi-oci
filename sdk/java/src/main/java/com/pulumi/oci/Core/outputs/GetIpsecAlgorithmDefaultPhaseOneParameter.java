@@ -94,11 +94,11 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
             return defaultEncryptionAlgorithms(List.of(defaultEncryptionAlgorithms));
         }
         public GetIpsecAlgorithmDefaultPhaseOneParameter build() {
-            final var o = new GetIpsecAlgorithmDefaultPhaseOneParameter();
-            o.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
-            o.defaultDhGroups = defaultDhGroups;
-            o.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
-            return o;
+            final var _resultValue = new GetIpsecAlgorithmDefaultPhaseOneParameter();
+            _resultValue.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
+            _resultValue.defaultDhGroups = defaultDhGroups;
+            _resultValue.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
+            return _resultValue;
         }
     }
 }

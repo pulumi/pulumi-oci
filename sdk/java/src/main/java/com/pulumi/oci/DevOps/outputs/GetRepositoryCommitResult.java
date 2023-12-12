@@ -232,19 +232,19 @@ public final class GetRepositoryCommitResult {
             return this;
         }
         public GetRepositoryCommitResult build() {
-            final var o = new GetRepositoryCommitResult();
-            o.authorEmail = authorEmail;
-            o.authorName = authorName;
-            o.commitId = commitId;
-            o.commitMessage = commitMessage;
-            o.committerEmail = committerEmail;
-            o.committerName = committerName;
-            o.id = id;
-            o.parentCommitIds = parentCommitIds;
-            o.repositoryId = repositoryId;
-            o.timeCreated = timeCreated;
-            o.treeId = treeId;
-            return o;
+            final var _resultValue = new GetRepositoryCommitResult();
+            _resultValue.authorEmail = authorEmail;
+            _resultValue.authorName = authorName;
+            _resultValue.commitId = commitId;
+            _resultValue.commitMessage = commitMessage;
+            _resultValue.committerEmail = committerEmail;
+            _resultValue.committerName = committerName;
+            _resultValue.id = id;
+            _resultValue.parentCommitIds = parentCommitIds;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.treeId = treeId;
+            return _resultValue;
         }
     }
 }

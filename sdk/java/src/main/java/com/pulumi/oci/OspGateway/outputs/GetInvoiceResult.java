@@ -561,36 +561,36 @@ public final class GetInvoiceResult {
             return this;
         }
         public GetInvoiceResult build() {
-            final var o = new GetInvoiceResult();
-            o.billToAddresses = billToAddresses;
-            o.compartmentId = compartmentId;
-            o.currencies = currencies;
-            o.id = id;
-            o.internalInvoiceId = internalInvoiceId;
-            o.invoiceAmount = invoiceAmount;
-            o.invoiceAmountAdjusted = invoiceAmountAdjusted;
-            o.invoiceAmountApplied = invoiceAmountApplied;
-            o.invoiceAmountCredited = invoiceAmountCredited;
-            o.invoiceAmountDue = invoiceAmountDue;
-            o.invoiceId = invoiceId;
-            o.invoiceNumber = invoiceNumber;
-            o.invoicePoNumber = invoicePoNumber;
-            o.invoiceRefNumber = invoiceRefNumber;
-            o.invoiceStatus = invoiceStatus;
-            o.invoiceType = invoiceType;
-            o.isCreditCardPayable = isCreditCardPayable;
-            o.isDisplayDownloadPdf = isDisplayDownloadPdf;
-            o.isPayable = isPayable;
-            o.isPdfEmailAvailable = isPdfEmailAvailable;
-            o.lastPaymentDetails = lastPaymentDetails;
-            o.ospHomeRegion = ospHomeRegion;
-            o.paymentTerms = paymentTerms;
-            o.preferredEmail = preferredEmail;
-            o.subscriptionIds = subscriptionIds;
-            o.tax = tax;
-            o.timeInvoice = timeInvoice;
-            o.timeInvoiceDue = timeInvoiceDue;
-            return o;
+            final var _resultValue = new GetInvoiceResult();
+            _resultValue.billToAddresses = billToAddresses;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.currencies = currencies;
+            _resultValue.id = id;
+            _resultValue.internalInvoiceId = internalInvoiceId;
+            _resultValue.invoiceAmount = invoiceAmount;
+            _resultValue.invoiceAmountAdjusted = invoiceAmountAdjusted;
+            _resultValue.invoiceAmountApplied = invoiceAmountApplied;
+            _resultValue.invoiceAmountCredited = invoiceAmountCredited;
+            _resultValue.invoiceAmountDue = invoiceAmountDue;
+            _resultValue.invoiceId = invoiceId;
+            _resultValue.invoiceNumber = invoiceNumber;
+            _resultValue.invoicePoNumber = invoicePoNumber;
+            _resultValue.invoiceRefNumber = invoiceRefNumber;
+            _resultValue.invoiceStatus = invoiceStatus;
+            _resultValue.invoiceType = invoiceType;
+            _resultValue.isCreditCardPayable = isCreditCardPayable;
+            _resultValue.isDisplayDownloadPdf = isDisplayDownloadPdf;
+            _resultValue.isPayable = isPayable;
+            _resultValue.isPdfEmailAvailable = isPdfEmailAvailable;
+            _resultValue.lastPaymentDetails = lastPaymentDetails;
+            _resultValue.ospHomeRegion = ospHomeRegion;
+            _resultValue.paymentTerms = paymentTerms;
+            _resultValue.preferredEmail = preferredEmail;
+            _resultValue.subscriptionIds = subscriptionIds;
+            _resultValue.tax = tax;
+            _resultValue.timeInvoice = timeInvoice;
+            _resultValue.timeInvoiceDue = timeInvoiceDue;
+            return _resultValue;
         }
     }
 }

@@ -81,11 +81,11 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshResult {
             return items(List.of(items));
         }
         public GetFusionEnvironmentTimeAvailableForRefreshResult build() {
-            final var o = new GetFusionEnvironmentTimeAvailableForRefreshResult();
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentTimeAvailableForRefreshResult();
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

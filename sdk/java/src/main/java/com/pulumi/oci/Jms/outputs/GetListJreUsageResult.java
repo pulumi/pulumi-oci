@@ -154,16 +154,16 @@ public final class GetListJreUsageResult {
             return this;
         }
         public GetListJreUsageResult build() {
-            final var o = new GetListJreUsageResult();
-            o.applicationId = applicationId;
-            o.applicationName = applicationName;
-            o.compartmentId = compartmentId;
-            o.hostId = hostId;
-            o.id = id;
-            o.items = items;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetListJreUsageResult();
+            _resultValue.applicationId = applicationId;
+            _resultValue.applicationName = applicationName;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.hostId = hostId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

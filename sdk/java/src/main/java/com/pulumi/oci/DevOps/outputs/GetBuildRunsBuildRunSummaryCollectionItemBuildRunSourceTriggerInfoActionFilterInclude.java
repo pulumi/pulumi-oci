@@ -65,10 +65,10 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude build() {
-            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude();
-            o.baseRef = baseRef;
-            o.headRef = headRef;
-            return o;
+            final var _resultValue = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilterInclude();
+            _resultValue.baseRef = baseRef;
+            _resultValue.headRef = headRef;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDomainsMyAppsMyAppOwner {
             return this;
         }
         public GetDomainsMyAppsMyAppOwner build() {
-            final var o = new GetDomainsMyAppsMyAppOwner();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyAppsMyAppOwner();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetApisApiCollectionItemValidationResult {
             return this;
         }
         public GetApisApiCollectionItemValidationResult build() {
-            final var o = new GetApisApiCollectionItemValidationResult();
-            o.name = name;
-            o.result = result;
-            return o;
+            final var _resultValue = new GetApisApiCollectionItemValidationResult();
+            _resultValue.name = name;
+            _resultValue.result = result;
+            return _resultValue;
         }
     }
 }

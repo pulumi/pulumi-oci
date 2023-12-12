@@ -89,11 +89,11 @@ public final class GetApiValidationValidationDetail {
             return srcs(List.of(srcs));
         }
         public GetApiValidationValidationDetail build() {
-            final var o = new GetApiValidationValidationDetail();
-            o.msg = msg;
-            o.severity = severity;
-            o.srcs = srcs;
-            return o;
+            final var _resultValue = new GetApiValidationValidationDetail();
+            _resultValue.msg = msg;
+            _resultValue.severity = severity;
+            _resultValue.srcs = srcs;
+            return _resultValue;
         }
     }
 }

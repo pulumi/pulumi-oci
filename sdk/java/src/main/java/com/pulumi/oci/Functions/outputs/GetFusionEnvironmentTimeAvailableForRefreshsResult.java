@@ -97,12 +97,12 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsResult {
             return timeAvailableForRefreshCollections(List.of(timeAvailableForRefreshCollections));
         }
         public GetFusionEnvironmentTimeAvailableForRefreshsResult build() {
-            final var o = new GetFusionEnvironmentTimeAvailableForRefreshsResult();
-            o.filters = filters;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.timeAvailableForRefreshCollections = timeAvailableForRefreshCollections;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentTimeAvailableForRefreshsResult();
+            _resultValue.filters = filters;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.timeAvailableForRefreshCollections = timeAvailableForRefreshCollections;
+            return _resultValue;
         }
     }
 }

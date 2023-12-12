@@ -84,11 +84,11 @@ public final class GetCpeDeviceShapeParameter {
             return this;
         }
         public GetCpeDeviceShapeParameter build() {
-            final var o = new GetCpeDeviceShapeParameter();
-            o.displayName = displayName;
-            o.explanation = explanation;
-            o.key = key;
-            return o;
+            final var _resultValue = new GetCpeDeviceShapeParameter();
+            _resultValue.displayName = displayName;
+            _resultValue.explanation = explanation;
+            _resultValue.key = key;
+            return _resultValue;
         }
     }
 }

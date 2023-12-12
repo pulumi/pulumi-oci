@@ -105,12 +105,12 @@ public final class GetDataGuardAssociationsResult {
             return this;
         }
         public GetDataGuardAssociationsResult build() {
-            final var o = new GetDataGuardAssociationsResult();
-            o.dataGuardAssociations = dataGuardAssociations;
-            o.databaseId = databaseId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDataGuardAssociationsResult();
+            _resultValue.dataGuardAssociations = dataGuardAssociations;
+            _resultValue.databaseId = databaseId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -114,10 +114,10 @@ public final class DomainsAppProtectableSecondaryAudience {
             return this;
         }
         public DomainsAppProtectableSecondaryAudience build() {
-            final var o = new DomainsAppProtectableSecondaryAudience();
-            o.readOnly = readOnly;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppProtectableSecondaryAudience();
+            _resultValue.readOnly = readOnly;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

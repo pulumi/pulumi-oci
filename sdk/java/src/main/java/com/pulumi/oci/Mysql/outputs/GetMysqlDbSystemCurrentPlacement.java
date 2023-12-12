@@ -65,10 +65,10 @@ public final class GetMysqlDbSystemCurrentPlacement {
             return this;
         }
         public GetMysqlDbSystemCurrentPlacement build() {
-            final var o = new GetMysqlDbSystemCurrentPlacement();
-            o.availabilityDomain = availabilityDomain;
-            o.faultDomain = faultDomain;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemCurrentPlacement();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.faultDomain = faultDomain;
+            return _resultValue;
         }
     }
 }

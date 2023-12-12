@@ -51,9 +51,9 @@ public final class DeploymentDeployPipelineArtifactItemDeployPipelineStage {
             return items(List.of(items));
         }
         public DeploymentDeployPipelineArtifactItemDeployPipelineStage build() {
-            final var o = new DeploymentDeployPipelineArtifactItemDeployPipelineStage();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeploymentDeployPipelineArtifactItemDeployPipelineStage();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -123,13 +123,13 @@ public final class GetClusterNetworkPlacementConfiguration {
             return secondaryVnicSubnets(List.of(secondaryVnicSubnets));
         }
         public GetClusterNetworkPlacementConfiguration build() {
-            final var o = new GetClusterNetworkPlacementConfiguration();
-            o.availabilityDomain = availabilityDomain;
-            o.placementConstraint = placementConstraint;
-            o.primarySubnetId = primarySubnetId;
-            o.primaryVnicSubnets = primaryVnicSubnets;
-            o.secondaryVnicSubnets = secondaryVnicSubnets;
-            return o;
+            final var _resultValue = new GetClusterNetworkPlacementConfiguration();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.placementConstraint = placementConstraint;
+            _resultValue.primarySubnetId = primarySubnetId;
+            _resultValue.primaryVnicSubnets = primaryVnicSubnets;
+            _resultValue.secondaryVnicSubnets = secondaryVnicSubnets;
+            return _resultValue;
         }
     }
 }

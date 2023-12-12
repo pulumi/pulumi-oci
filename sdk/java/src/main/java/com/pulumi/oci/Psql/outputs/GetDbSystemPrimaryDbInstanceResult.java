@@ -76,11 +76,11 @@ public final class GetDbSystemPrimaryDbInstanceResult {
             return this;
         }
         public GetDbSystemPrimaryDbInstanceResult build() {
-            final var o = new GetDbSystemPrimaryDbInstanceResult();
-            o.dbInstanceId = dbInstanceId;
-            o.dbSystemId = dbSystemId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDbSystemPrimaryDbInstanceResult();
+            _resultValue.dbInstanceId = dbInstanceId;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

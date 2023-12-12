@@ -196,16 +196,16 @@ public final class GetMigrationGoldenGateDetailHub {
             return this;
         }
         public GetMigrationGoldenGateDetailHub build() {
-            final var o = new GetMigrationGoldenGateDetailHub();
-            o.computeId = computeId;
-            o.restAdminCredentials = restAdminCredentials;
-            o.sourceContainerDbAdminCredentials = sourceContainerDbAdminCredentials;
-            o.sourceDbAdminCredentials = sourceDbAdminCredentials;
-            o.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
-            o.targetDbAdminCredentials = targetDbAdminCredentials;
-            o.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetMigrationGoldenGateDetailHub();
+            _resultValue.computeId = computeId;
+            _resultValue.restAdminCredentials = restAdminCredentials;
+            _resultValue.sourceContainerDbAdminCredentials = sourceContainerDbAdminCredentials;
+            _resultValue.sourceDbAdminCredentials = sourceDbAdminCredentials;
+            _resultValue.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
+            _resultValue.targetDbAdminCredentials = targetDbAdminCredentials;
+            _resultValue.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

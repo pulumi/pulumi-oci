@@ -46,9 +46,9 @@ public final class GetTargetAssetUserSpecInstanceOption {
             return this;
         }
         public GetTargetAssetUserSpecInstanceOption build() {
-            final var o = new GetTargetAssetUserSpecInstanceOption();
-            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-            return o;
+            final var _resultValue = new GetTargetAssetUserSpecInstanceOption();
+            _resultValue.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetMonitorConfigurationVerifyText {
             return this;
         }
         public GetMonitorConfigurationVerifyText build() {
-            final var o = new GetMonitorConfigurationVerifyText();
-            o.text = text;
-            return o;
+            final var _resultValue = new GetMonitorConfigurationVerifyText();
+            _resultValue.text = text;
+            return _resultValue;
         }
     }
 }

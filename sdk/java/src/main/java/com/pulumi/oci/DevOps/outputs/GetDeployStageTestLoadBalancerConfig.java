@@ -104,12 +104,12 @@ public final class GetDeployStageTestLoadBalancerConfig {
             return this;
         }
         public GetDeployStageTestLoadBalancerConfig build() {
-            final var o = new GetDeployStageTestLoadBalancerConfig();
-            o.backendPort = backendPort;
-            o.listenerName = listenerName;
-            o.loadBalancerId = loadBalancerId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDeployStageTestLoadBalancerConfig();
+            _resultValue.backendPort = backendPort;
+            _resultValue.listenerName = listenerName;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

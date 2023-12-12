@@ -42,9 +42,9 @@ public final class GetDatabaseInsightsDatabaseInsightsCollection {
             return items(List.of(items));
         }
         public GetDatabaseInsightsDatabaseInsightsCollection build() {
-            final var o = new GetDatabaseInsightsDatabaseInsightsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDatabaseInsightsDatabaseInsightsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

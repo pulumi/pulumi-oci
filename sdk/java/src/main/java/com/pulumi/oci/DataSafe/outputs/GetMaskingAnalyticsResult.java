@@ -151,16 +151,16 @@ public final class GetMaskingAnalyticsResult {
             return this;
         }
         public GetMaskingAnalyticsResult build() {
-            final var o = new GetMaskingAnalyticsResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.groupBy = groupBy;
-            o.id = id;
-            o.maskingAnalyticsCollections = maskingAnalyticsCollections;
-            o.maskingPolicyId = maskingPolicyId;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetMaskingAnalyticsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.groupBy = groupBy;
+            _resultValue.id = id;
+            _resultValue.maskingAnalyticsCollections = maskingAnalyticsCollections;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

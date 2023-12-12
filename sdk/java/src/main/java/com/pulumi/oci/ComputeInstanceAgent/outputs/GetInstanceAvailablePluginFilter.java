@@ -75,11 +75,11 @@ public final class GetInstanceAvailablePluginFilter {
             return values(List.of(values));
         }
         public GetInstanceAvailablePluginFilter build() {
-            final var o = new GetInstanceAvailablePluginFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetInstanceAvailablePluginFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

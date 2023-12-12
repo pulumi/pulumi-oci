@@ -84,11 +84,11 @@ public final class GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationA
             return this;
         }
         public GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule build() {
-            final var o = new GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule();
-            o.ipNotation = ipNotation;
-            o.value = value;
-            o.vcnIps = vcnIps;
-            return o;
+            final var _resultValue = new GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationAccessControlRule();
+            _resultValue.ipNotation = ipNotation;
+            _resultValue.value = value;
+            _resultValue.vcnIps = vcnIps;
+            return _resultValue;
         }
     }
 }

@@ -81,12 +81,12 @@ public final class GetRepositoryObjectContentResult {
             return this;
         }
         public GetRepositoryObjectContentResult build() {
-            final var o = new GetRepositoryObjectContentResult();
-            o.filePath = filePath;
-            o.id = id;
-            o.repositoryId = repositoryId;
-            o.sha = sha;
-            return o;
+            final var _resultValue = new GetRepositoryObjectContentResult();
+            _resultValue.filePath = filePath;
+            _resultValue.id = id;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.sha = sha;
+            return _resultValue;
         }
     }
 }

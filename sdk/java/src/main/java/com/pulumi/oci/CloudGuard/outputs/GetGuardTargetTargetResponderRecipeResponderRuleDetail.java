@@ -109,12 +109,12 @@ public final class GetGuardTargetTargetResponderRecipeResponderRuleDetail {
             return this;
         }
         public GetGuardTargetTargetResponderRecipeResponderRuleDetail build() {
-            final var o = new GetGuardTargetTargetResponderRecipeResponderRuleDetail();
-            o.condition = condition;
-            o.configurations = configurations;
-            o.isEnabled = isEnabled;
-            o.mode = mode;
-            return o;
+            final var _resultValue = new GetGuardTargetTargetResponderRecipeResponderRuleDetail();
+            _resultValue.condition = condition;
+            _resultValue.configurations = configurations;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.mode = mode;
+            return _resultValue;
         }
     }
 }

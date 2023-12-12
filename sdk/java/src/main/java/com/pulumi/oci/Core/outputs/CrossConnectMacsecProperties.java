@@ -107,12 +107,12 @@ public final class CrossConnectMacsecProperties {
             return this;
         }
         public CrossConnectMacsecProperties build() {
-            final var o = new CrossConnectMacsecProperties();
-            o.encryptionCipher = encryptionCipher;
-            o.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
-            o.primaryKey = primaryKey;
-            o.state = state;
-            return o;
+            final var _resultValue = new CrossConnectMacsecProperties();
+            _resultValue.encryptionCipher = encryptionCipher;
+            _resultValue.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
+            _resultValue.primaryKey = primaryKey;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

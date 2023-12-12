@@ -120,14 +120,14 @@ public final class GetAnnouncementsResult {
             return this;
         }
         public GetAnnouncementsResult build() {
-            final var o = new GetAnnouncementsResult();
-            o.announcementCollections = announcementCollections;
-            o.filters = filters;
-            o.id = id;
-            o.summaryContains = summaryContains;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetAnnouncementsResult();
+            _resultValue.announcementCollections = announcementCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.summaryContains = summaryContains;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

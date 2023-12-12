@@ -184,16 +184,16 @@ public final class GetMonitorConfigurationReqAuthenticationDetail {
             return this;
         }
         public GetMonitorConfigurationReqAuthenticationDetail build() {
-            final var o = new GetMonitorConfigurationReqAuthenticationDetail();
-            o.authHeaders = authHeaders;
-            o.authRequestMethod = authRequestMethod;
-            o.authRequestPostBody = authRequestPostBody;
-            o.authToken = authToken;
-            o.authUrl = authUrl;
-            o.authUserName = authUserName;
-            o.authUserPassword = authUserPassword;
-            o.oauthScheme = oauthScheme;
-            return o;
+            final var _resultValue = new GetMonitorConfigurationReqAuthenticationDetail();
+            _resultValue.authHeaders = authHeaders;
+            _resultValue.authRequestMethod = authRequestMethod;
+            _resultValue.authRequestPostBody = authRequestPostBody;
+            _resultValue.authToken = authToken;
+            _resultValue.authUrl = authUrl;
+            _resultValue.authUserName = authUserName;
+            _resultValue.authUserPassword = authUserPassword;
+            _resultValue.oauthScheme = oauthScheme;
+            return _resultValue;
         }
     }
 }

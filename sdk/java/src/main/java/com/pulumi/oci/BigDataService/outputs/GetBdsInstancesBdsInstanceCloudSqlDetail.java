@@ -186,16 +186,16 @@ public final class GetBdsInstancesBdsInstanceCloudSqlDetail {
             return this;
         }
         public GetBdsInstancesBdsInstanceCloudSqlDetail build() {
-            final var o = new GetBdsInstancesBdsInstanceCloudSqlDetail();
-            o.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
-            o.ipAddress = ipAddress;
-            o.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
-            o.kerberosDetails = kerberosDetails;
-            o.memoryInGbs = memoryInGbs;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            o.shape = shape;
-            return o;
+            final var _resultValue = new GetBdsInstancesBdsInstanceCloudSqlDetail();
+            _resultValue.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
+            _resultValue.kerberosDetails = kerberosDetails;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            _resultValue.shape = shape;
+            return _resultValue;
         }
     }
 }

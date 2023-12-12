@@ -68,10 +68,10 @@ public final class DeploymentSpecificationRouteLoggingPolicies {
             return this;
         }
         public DeploymentSpecificationRouteLoggingPolicies build() {
-            final var o = new DeploymentSpecificationRouteLoggingPolicies();
-            o.accessLog = accessLog;
-            o.executionLog = executionLog;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteLoggingPolicies();
+            _resultValue.accessLog = accessLog;
+            _resultValue.executionLog = executionLog;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetReplicationStatusReplicaDetail {
             return this;
         }
         public GetReplicationStatusReplicaDetail build() {
-            final var o = new GetReplicationStatusReplicaDetail();
-            o.region = region;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetReplicationStatusReplicaDetail();
+            _resultValue.region = region;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

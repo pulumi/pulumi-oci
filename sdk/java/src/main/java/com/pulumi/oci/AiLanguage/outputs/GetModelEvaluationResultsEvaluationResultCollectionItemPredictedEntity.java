@@ -85,11 +85,11 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItemPredic
             return this;
         }
         public GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity build() {
-            final var o = new GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity();
-            o.length = length;
-            o.offset = offset;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity();
+            _resultValue.length = length;
+            _resultValue.offset = offset;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

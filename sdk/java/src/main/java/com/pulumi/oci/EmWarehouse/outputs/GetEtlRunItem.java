@@ -238,19 +238,19 @@ public final class GetEtlRunItem {
             return this;
         }
         public GetEtlRunItem build() {
-            final var o = new GetEtlRunItem();
-            o.compartmentId = compartmentId;
-            o.dataReadInBytes = dataReadInBytes;
-            o.dataWritten = dataWritten;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.lifecycleDetails = lifecycleDetails;
-            o.runDurationInMilliseconds = runDurationInMilliseconds;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetEtlRunItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataReadInBytes = dataReadInBytes;
+            _resultValue.dataWritten = dataWritten;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.runDurationInMilliseconds = runDurationInMilliseconds;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetZonesZoneExternalDownstream {
             return this;
         }
         public GetZonesZoneExternalDownstream build() {
-            final var o = new GetZonesZoneExternalDownstream();
-            o.address = address;
-            o.port = port;
-            o.tsigKeyId = tsigKeyId;
-            return o;
+            final var _resultValue = new GetZonesZoneExternalDownstream();
+            _resultValue.address = address;
+            _resultValue.port = port;
+            _resultValue.tsigKeyId = tsigKeyId;
+            return _resultValue;
         }
     }
 }

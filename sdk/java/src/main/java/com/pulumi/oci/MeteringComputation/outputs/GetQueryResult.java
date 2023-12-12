@@ -100,12 +100,12 @@ public final class GetQueryResult {
             return this;
         }
         public GetQueryResult build() {
-            final var o = new GetQueryResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.queryDefinitions = queryDefinitions;
-            o.queryId = queryId;
-            return o;
+            final var _resultValue = new GetQueryResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.queryDefinitions = queryDefinitions;
+            _resultValue.queryId = queryId;
+            return _resultValue;
         }
     }
 }

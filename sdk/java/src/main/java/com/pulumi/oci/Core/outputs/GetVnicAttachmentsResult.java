@@ -163,15 +163,15 @@ public final class GetVnicAttachmentsResult {
             return this;
         }
         public GetVnicAttachmentsResult build() {
-            final var o = new GetVnicAttachmentsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.vnicAttachments = vnicAttachments;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetVnicAttachmentsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.vnicAttachments = vnicAttachments;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

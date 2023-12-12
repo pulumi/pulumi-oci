@@ -117,10 +117,10 @@ public final class DomainsAppCloudControlProperty {
             return values(List.of(values));
         }
         public DomainsAppCloudControlProperty build() {
-            final var o = new DomainsAppCloudControlProperty();
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new DomainsAppCloudControlProperty();
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

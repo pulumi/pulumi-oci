@@ -266,20 +266,20 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
             return this;
         }
         public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem build() {
-            final var o = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.responseCachingPolicies = responseCachingPolicies;
-            o.responseCompressionPolicies = responseCompressionPolicies;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.responseCachingPolicies = responseCachingPolicies;
+            _resultValue.responseCompressionPolicies = responseCompressionPolicies;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

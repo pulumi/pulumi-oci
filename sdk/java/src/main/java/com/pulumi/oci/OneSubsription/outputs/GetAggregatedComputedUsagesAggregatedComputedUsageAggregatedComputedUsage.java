@@ -184,16 +184,16 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
             return this;
         }
         public GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage build() {
-            final var o = new GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage();
-            o.cost = cost;
-            o.costUnrounded = costUnrounded;
-            o.dataCenter = dataCenter;
-            o.netUnitPrice = netUnitPrice;
-            o.products = products;
-            o.quantity = quantity;
-            o.timeMeteredOn = timeMeteredOn;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage();
+            _resultValue.cost = cost;
+            _resultValue.costUnrounded = costUnrounded;
+            _resultValue.dataCenter = dataCenter;
+            _resultValue.netUnitPrice = netUnitPrice;
+            _resultValue.products = products;
+            _resultValue.quantity = quantity;
+            _resultValue.timeMeteredOn = timeMeteredOn;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

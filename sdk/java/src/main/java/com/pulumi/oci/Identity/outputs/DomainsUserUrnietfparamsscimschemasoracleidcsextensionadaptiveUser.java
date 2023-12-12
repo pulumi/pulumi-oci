@@ -118,10 +118,10 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
             return riskScores(List.of(riskScores));
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser();
-            o.riskLevel = riskLevel;
-            o.riskScores = riskScores;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser();
+            _resultValue.riskLevel = riskLevel;
+            _resultValue.riskScores = riskScores;
+            return _resultValue;
         }
     }
 }

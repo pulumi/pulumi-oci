@@ -127,13 +127,13 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConne
             return this;
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString build() {
-            final var o = new GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString();
-            o.hostName = hostName;
-            o.hosts = hosts;
-            o.port = port;
-            o.protocol = protocol;
-            o.service = service;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString();
+            _resultValue.hostName = hostName;
+            _resultValue.hosts = hosts;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.service = service;
+            return _resultValue;
         }
     }
 }

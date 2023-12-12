@@ -179,16 +179,16 @@ public final class GetAuthTokensToken {
             return this;
         }
         public GetAuthTokensToken build() {
-            final var o = new GetAuthTokensToken();
-            o.description = description;
-            o.id = id;
-            o.inactiveState = inactiveState;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeExpires = timeExpires;
-            o.token = token;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetAuthTokensToken();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpires = timeExpires;
+            _resultValue.token = token;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

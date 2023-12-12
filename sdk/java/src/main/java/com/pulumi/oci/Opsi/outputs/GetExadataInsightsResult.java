@@ -203,17 +203,17 @@ public final class GetExadataInsightsResult {
             return statuses(List.of(statuses));
         }
         public GetExadataInsightsResult build() {
-            final var o = new GetExadataInsightsResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-            o.exadataInsightSummaryCollections = exadataInsightSummaryCollections;
-            o.exadataTypes = exadataTypes;
-            o.filters = filters;
-            o.id = id;
-            o.states = states;
-            o.statuses = statuses;
-            return o;
+            final var _resultValue = new GetExadataInsightsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            _resultValue.exadataInsightSummaryCollections = exadataInsightSummaryCollections;
+            _resultValue.exadataTypes = exadataTypes;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            _resultValue.statuses = statuses;
+            return _resultValue;
         }
     }
 }

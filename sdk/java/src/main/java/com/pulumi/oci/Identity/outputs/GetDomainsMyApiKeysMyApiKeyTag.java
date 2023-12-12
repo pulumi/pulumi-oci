@@ -65,10 +65,10 @@ public final class GetDomainsMyApiKeysMyApiKeyTag {
             return this;
         }
         public GetDomainsMyApiKeysMyApiKeyTag build() {
-            final var o = new GetDomainsMyApiKeysMyApiKeyTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyApiKeysMyApiKeyTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -356,25 +356,25 @@ public final class GetDetectorRecipeResult {
             return this;
         }
         public GetDetectorRecipeResult build() {
-            final var o = new GetDetectorRecipeResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.detector = detector;
-            o.detectorRecipeId = detectorRecipeId;
-            o.detectorRules = detectorRules;
-            o.displayName = displayName;
-            o.effectiveDetectorRules = effectiveDetectorRules;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.owner = owner;
-            o.sourceDetectorRecipeId = sourceDetectorRecipeId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targetIds = targetIds;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDetectorRecipeResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.detector = detector;
+            _resultValue.detectorRecipeId = detectorRecipeId;
+            _resultValue.detectorRules = detectorRules;
+            _resultValue.displayName = displayName;
+            _resultValue.effectiveDetectorRules = effectiveDetectorRules;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.owner = owner;
+            _resultValue.sourceDetectorRecipeId = sourceDetectorRecipeId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetIds = targetIds;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

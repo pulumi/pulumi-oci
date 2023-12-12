@@ -97,10 +97,10 @@ public final class DomainsOauth2clientCredentialScope {
             return this;
         }
         public DomainsOauth2clientCredentialScope build() {
-            final var o = new DomainsOauth2clientCredentialScope();
-            o.audience = audience;
-            o.scope = scope;
-            return o;
+            final var _resultValue = new DomainsOauth2clientCredentialScope();
+            _resultValue.audience = audience;
+            _resultValue.scope = scope;
+            return _resultValue;
         }
     }
 }

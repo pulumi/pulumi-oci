@@ -286,20 +286,20 @@ public final class PolicyWafConfig {
             return whitelists(List.of(whitelists));
         }
         public PolicyWafConfig build() {
-            final var o = new PolicyWafConfig();
-            o.accessRules = accessRules;
-            o.addressRateLimiting = addressRateLimiting;
-            o.cachingRules = cachingRules;
-            o.captchas = captchas;
-            o.customProtectionRules = customProtectionRules;
-            o.deviceFingerprintChallenge = deviceFingerprintChallenge;
-            o.humanInteractionChallenge = humanInteractionChallenge;
-            o.jsChallenge = jsChallenge;
-            o.origin = origin;
-            o.originGroups = originGroups;
-            o.protectionSettings = protectionSettings;
-            o.whitelists = whitelists;
-            return o;
+            final var _resultValue = new PolicyWafConfig();
+            _resultValue.accessRules = accessRules;
+            _resultValue.addressRateLimiting = addressRateLimiting;
+            _resultValue.cachingRules = cachingRules;
+            _resultValue.captchas = captchas;
+            _resultValue.customProtectionRules = customProtectionRules;
+            _resultValue.deviceFingerprintChallenge = deviceFingerprintChallenge;
+            _resultValue.humanInteractionChallenge = humanInteractionChallenge;
+            _resultValue.jsChallenge = jsChallenge;
+            _resultValue.origin = origin;
+            _resultValue.originGroups = originGroups;
+            _resultValue.protectionSettings = protectionSettings;
+            _resultValue.whitelists = whitelists;
+            return _resultValue;
         }
     }
 }

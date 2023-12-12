@@ -50,9 +50,9 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreem
             return preemptionActions(List.of(preemptionActions));
         }
         public GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig build() {
-            final var o = new GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig();
-            o.preemptionActions = preemptionActions;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig();
+            _resultValue.preemptionActions = preemptionActions;
+            return _resultValue;
         }
     }
 }

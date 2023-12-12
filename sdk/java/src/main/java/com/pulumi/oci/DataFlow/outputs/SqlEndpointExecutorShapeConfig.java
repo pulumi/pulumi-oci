@@ -67,10 +67,10 @@ public final class SqlEndpointExecutorShapeConfig {
             return this;
         }
         public SqlEndpointExecutorShapeConfig build() {
-            final var o = new SqlEndpointExecutorShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new SqlEndpointExecutorShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetTrailSequencesTrailSequenceCollection {
             return this;
         }
         public GetTrailSequencesTrailSequenceCollection build() {
-            final var o = new GetTrailSequencesTrailSequenceCollection();
-            o.items = items;
-            o.timeLastFetched = timeLastFetched;
-            return o;
+            final var _resultValue = new GetTrailSequencesTrailSequenceCollection();
+            _resultValue.items = items;
+            _resultValue.timeLastFetched = timeLastFetched;
+            return _resultValue;
         }
     }
 }

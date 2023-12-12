@@ -278,22 +278,22 @@ public final class GetNetworkFirewallPolicyDecryptionProfileResult {
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionProfileResult build() {
-            final var o = new GetNetworkFirewallPolicyDecryptionProfileResult();
-            o.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
-            o.id = id;
-            o.isAutoIncludeAltName = isAutoIncludeAltName;
-            o.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
-            o.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
-            o.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;
-            o.isUnknownRevocationStatusBlocked = isUnknownRevocationStatusBlocked;
-            o.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
-            o.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
-            o.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyDecryptionProfileResult();
+            _resultValue.areCertificateExtensionsRestricted = areCertificateExtensionsRestricted;
+            _resultValue.id = id;
+            _resultValue.isAutoIncludeAltName = isAutoIncludeAltName;
+            _resultValue.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
+            _resultValue.isOutOfCapacityBlocked = isOutOfCapacityBlocked;
+            _resultValue.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;
+            _resultValue.isUnknownRevocationStatusBlocked = isUnknownRevocationStatusBlocked;
+            _resultValue.isUnsupportedCipherBlocked = isUnsupportedCipherBlocked;
+            _resultValue.isUnsupportedVersionBlocked = isUnsupportedVersionBlocked;
+            _resultValue.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

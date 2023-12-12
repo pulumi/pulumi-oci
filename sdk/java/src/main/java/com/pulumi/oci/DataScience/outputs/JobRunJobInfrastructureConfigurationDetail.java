@@ -130,13 +130,13 @@ public final class JobRunJobInfrastructureConfigurationDetail {
             return this;
         }
         public JobRunJobInfrastructureConfigurationDetail build() {
-            final var o = new JobRunJobInfrastructureConfigurationDetail();
-            o.blockStorageSizeInGbs = blockStorageSizeInGbs;
-            o.jobInfrastructureType = jobInfrastructureType;
-            o.jobShapeConfigDetails = jobShapeConfigDetails;
-            o.shapeName = shapeName;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new JobRunJobInfrastructureConfigurationDetail();
+            _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.jobInfrastructureType = jobInfrastructureType;
+            _resultValue.jobShapeConfigDetails = jobShapeConfigDetails;
+            _resultValue.shapeName = shapeName;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

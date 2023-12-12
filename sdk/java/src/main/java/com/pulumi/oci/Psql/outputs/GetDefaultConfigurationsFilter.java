@@ -67,11 +67,11 @@ public final class GetDefaultConfigurationsFilter {
             return values(List.of(values));
         }
         public GetDefaultConfigurationsFilter build() {
-            final var o = new GetDefaultConfigurationsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDefaultConfigurationsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

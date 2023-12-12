@@ -199,17 +199,17 @@ public final class GetFilesystemSnapshotPolicySchedule {
             return this;
         }
         public GetFilesystemSnapshotPolicySchedule build() {
-            final var o = new GetFilesystemSnapshotPolicySchedule();
-            o.dayOfMonth = dayOfMonth;
-            o.dayOfWeek = dayOfWeek;
-            o.hourOfDay = hourOfDay;
-            o.month = month;
-            o.period = period;
-            o.retentionDurationInSeconds = retentionDurationInSeconds;
-            o.schedulePrefix = schedulePrefix;
-            o.timeScheduleStart = timeScheduleStart;
-            o.timeZone = timeZone;
-            return o;
+            final var _resultValue = new GetFilesystemSnapshotPolicySchedule();
+            _resultValue.dayOfMonth = dayOfMonth;
+            _resultValue.dayOfWeek = dayOfWeek;
+            _resultValue.hourOfDay = hourOfDay;
+            _resultValue.month = month;
+            _resultValue.period = period;
+            _resultValue.retentionDurationInSeconds = retentionDurationInSeconds;
+            _resultValue.schedulePrefix = schedulePrefix;
+            _resultValue.timeScheduleStart = timeScheduleStart;
+            _resultValue.timeZone = timeZone;
+            return _resultValue;
         }
     }
 }

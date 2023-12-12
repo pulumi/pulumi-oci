@@ -89,11 +89,11 @@ public final class GetVantagePointsPublicVantagePointCollectionItem {
             return this;
         }
         public GetVantagePointsPublicVantagePointCollectionItem build() {
-            final var o = new GetVantagePointsPublicVantagePointCollectionItem();
-            o.displayName = displayName;
-            o.geos = geos;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetVantagePointsPublicVantagePointCollectionItem();
+            _resultValue.displayName = displayName;
+            _resultValue.geos = geos;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

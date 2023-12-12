@@ -185,16 +185,16 @@ public final class GetManagementAgentPluginsManagementAgentPlugin {
             return this;
         }
         public GetManagementAgentPluginsManagementAgentPlugin build() {
-            final var o = new GetManagementAgentPluginsManagementAgentPlugin();
-            o.description = description;
-            o.displayName = displayName;
-            o.id = id;
-            o.isConsoleDeployable = isConsoleDeployable;
-            o.name = name;
-            o.state = state;
-            o.supportedPlatformTypes = supportedPlatformTypes;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetManagementAgentPluginsManagementAgentPlugin();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isConsoleDeployable = isConsoleDeployable;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.supportedPlatformTypes = supportedPlatformTypes;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

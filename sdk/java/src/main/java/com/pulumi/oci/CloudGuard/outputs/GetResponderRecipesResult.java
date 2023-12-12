@@ -178,17 +178,17 @@ public final class GetResponderRecipesResult {
             return this;
         }
         public GetResponderRecipesResult build() {
-            final var o = new GetResponderRecipesResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.resourceMetadataOnly = resourceMetadataOnly;
-            o.responderRecipeCollections = responderRecipeCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetResponderRecipesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.resourceMetadataOnly = resourceMetadataOnly;
+            _resultValue.responderRecipeCollections = responderRecipeCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

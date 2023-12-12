@@ -65,10 +65,10 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOpti
             return this;
         }
         public GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange build() {
-            final var o = new GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOptionDestinationPortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

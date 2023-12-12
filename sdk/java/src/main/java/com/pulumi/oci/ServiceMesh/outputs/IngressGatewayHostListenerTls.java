@@ -88,11 +88,11 @@ public final class IngressGatewayHostListenerTls {
             return this;
         }
         public IngressGatewayHostListenerTls build() {
-            final var o = new IngressGatewayHostListenerTls();
-            o.clientValidation = clientValidation;
-            o.mode = mode;
-            o.serverCertificate = serverCertificate;
-            return o;
+            final var _resultValue = new IngressGatewayHostListenerTls();
+            _resultValue.clientValidation = clientValidation;
+            _resultValue.mode = mode;
+            _resultValue.serverCertificate = serverCertificate;
+            return _resultValue;
         }
     }
 }

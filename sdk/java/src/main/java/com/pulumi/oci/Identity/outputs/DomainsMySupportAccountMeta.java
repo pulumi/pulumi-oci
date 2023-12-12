@@ -224,13 +224,13 @@ public final class DomainsMySupportAccountMeta {
             return this;
         }
         public DomainsMySupportAccountMeta build() {
-            final var o = new DomainsMySupportAccountMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new DomainsMySupportAccountMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -182,16 +182,16 @@ public final class MetricExtensionMetricList {
             return this;
         }
         public MetricExtensionMetricList build() {
-            final var o = new MetricExtensionMetricList();
-            o.computeExpression = computeExpression;
-            o.dataType = dataType;
-            o.displayName = displayName;
-            o.isDimension = isDimension;
-            o.isHidden = isHidden;
-            o.metricCategory = metricCategory;
-            o.name = name;
-            o.unit = unit;
-            return o;
+            final var _resultValue = new MetricExtensionMetricList();
+            _resultValue.computeExpression = computeExpression;
+            _resultValue.dataType = dataType;
+            _resultValue.displayName = displayName;
+            _resultValue.isDimension = isDimension;
+            _resultValue.isHidden = isHidden;
+            _resultValue.metricCategory = metricCategory;
+            _resultValue.name = name;
+            _resultValue.unit = unit;
+            return _resultValue;
         }
     }
 }

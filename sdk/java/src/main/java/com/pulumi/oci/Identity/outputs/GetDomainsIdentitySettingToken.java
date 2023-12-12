@@ -66,10 +66,10 @@ public final class GetDomainsIdentitySettingToken {
             return this;
         }
         public GetDomainsIdentitySettingToken build() {
-            final var o = new GetDomainsIdentitySettingToken();
-            o.expiresAfter = expiresAfter;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDomainsIdentitySettingToken();
+            _resultValue.expiresAfter = expiresAfter;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

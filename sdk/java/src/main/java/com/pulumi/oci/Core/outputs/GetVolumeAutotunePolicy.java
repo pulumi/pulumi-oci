@@ -65,10 +65,10 @@ public final class GetVolumeAutotunePolicy {
             return this;
         }
         public GetVolumeAutotunePolicy build() {
-            final var o = new GetVolumeAutotunePolicy();
-            o.autotuneType = autotuneType;
-            o.maxVpusPerGb = maxVpusPerGb;
-            return o;
+            final var _resultValue = new GetVolumeAutotunePolicy();
+            _resultValue.autotuneType = autotuneType;
+            _resultValue.maxVpusPerGb = maxVpusPerGb;
+            return _resultValue;
         }
     }
 }

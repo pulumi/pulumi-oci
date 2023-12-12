@@ -144,14 +144,14 @@ public final class GetCatalogsResult {
             return this;
         }
         public GetCatalogsResult build() {
-            final var o = new GetCatalogsResult();
-            o.catalogs = catalogs;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCatalogsResult();
+            _resultValue.catalogs = catalogs;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

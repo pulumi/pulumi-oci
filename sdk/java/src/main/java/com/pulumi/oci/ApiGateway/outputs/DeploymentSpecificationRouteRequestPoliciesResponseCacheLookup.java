@@ -124,12 +124,12 @@ public final class DeploymentSpecificationRouteRequestPoliciesResponseCacheLooku
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup();
-            o.cacheKeyAdditions = cacheKeyAdditions;
-            o.isEnabled = isEnabled;
-            o.isPrivateCachingEnabled = isPrivateCachingEnabled;
-            o.type = type;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesResponseCacheLookup();
+            _resultValue.cacheKeyAdditions = cacheKeyAdditions;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isPrivateCachingEnabled = isPrivateCachingEnabled;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

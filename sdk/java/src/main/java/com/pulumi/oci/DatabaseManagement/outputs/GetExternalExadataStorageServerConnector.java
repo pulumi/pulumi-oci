@@ -295,22 +295,22 @@ public final class GetExternalExadataStorageServerConnector {
             return this;
         }
         public GetExternalExadataStorageServerConnector build() {
-            final var o = new GetExternalExadataStorageServerConnector();
-            o.additionalDetails = additionalDetails;
-            o.agentId = agentId;
-            o.connectionUri = connectionUri;
-            o.displayName = displayName;
-            o.id = id;
-            o.internalId = internalId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.status = status;
-            o.storageServerId = storageServerId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServerConnector();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.agentId = agentId;
+            _resultValue.connectionUri = connectionUri;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.internalId = internalId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.storageServerId = storageServerId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

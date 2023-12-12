@@ -84,11 +84,11 @@ public final class GetFusionEnvironmentRefresh {
             return this;
         }
         public GetFusionEnvironmentRefresh build() {
-            final var o = new GetFusionEnvironmentRefresh();
-            o.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
-            o.timeFinished = timeFinished;
-            o.timeOfRestorationPoint = timeOfRestorationPoint;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentRefresh();
+            _resultValue.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeOfRestorationPoint = timeOfRestorationPoint;
+            return _resultValue;
         }
     }
 }

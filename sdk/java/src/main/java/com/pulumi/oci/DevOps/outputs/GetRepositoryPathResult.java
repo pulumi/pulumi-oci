@@ -128,15 +128,15 @@ public final class GetRepositoryPathResult {
             return this;
         }
         public GetRepositoryPathResult build() {
-            final var o = new GetRepositoryPathResult();
-            o.displayName = displayName;
-            o.folderPath = folderPath;
-            o.id = id;
-            o.items = items;
-            o.pathsInSubtree = pathsInSubtree;
-            o.ref = ref;
-            o.repositoryId = repositoryId;
-            return o;
+            final var _resultValue = new GetRepositoryPathResult();
+            _resultValue.displayName = displayName;
+            _resultValue.folderPath = folderPath;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.pathsInSubtree = pathsInSubtree;
+            _resultValue.ref = ref;
+            _resultValue.repositoryId = repositoryId;
+            return _resultValue;
         }
     }
 }

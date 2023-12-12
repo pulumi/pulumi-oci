@@ -70,10 +70,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter();
-            o.items = items;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter();
+            _resultValue.items = items;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

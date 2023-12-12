@@ -65,10 +65,10 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCri
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria build() {
-            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria();
-            o.waitDuration = waitDuration;
-            o.waitType = waitType;
-            return o;
+            final var _resultValue = new GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteria();
+            _resultValue.waitDuration = waitDuration;
+            _resultValue.waitType = waitType;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetAnnotationFormatsAnnotationFormatCollectionItem {
             return this;
         }
         public GetAnnotationFormatsAnnotationFormatCollectionItem build() {
-            final var o = new GetAnnotationFormatsAnnotationFormatCollectionItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAnnotationFormatsAnnotationFormatCollectionItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

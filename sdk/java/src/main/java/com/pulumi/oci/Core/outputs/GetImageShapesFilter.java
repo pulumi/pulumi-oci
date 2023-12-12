@@ -67,11 +67,11 @@ public final class GetImageShapesFilter {
             return values(List.of(values));
         }
         public GetImageShapesFilter build() {
-            final var o = new GetImageShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetImageShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

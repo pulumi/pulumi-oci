@@ -163,15 +163,15 @@ public final class GetSecurityListsResult {
             return this;
         }
         public GetSecurityListsResult build() {
-            final var o = new GetSecurityListsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.securityLists = securityLists;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetSecurityListsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.securityLists = securityLists;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

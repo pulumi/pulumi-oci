@@ -106,14 +106,14 @@ public final class GetBucketSummariesBucketSummaryRetentionRule {
             return this;
         }
         public GetBucketSummariesBucketSummaryRetentionRule build() {
-            final var o = new GetBucketSummariesBucketSummaryRetentionRule();
-            o.displayName = displayName;
-            o.durations = durations;
-            o.retentionRuleId = retentionRuleId;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            o.timeRuleLocked = timeRuleLocked;
-            return o;
+            final var _resultValue = new GetBucketSummariesBucketSummaryRetentionRule();
+            _resultValue.displayName = displayName;
+            _resultValue.durations = durations;
+            _resultValue.retentionRuleId = retentionRuleId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            _resultValue.timeRuleLocked = timeRuleLocked;
+            return _resultValue;
         }
     }
 }

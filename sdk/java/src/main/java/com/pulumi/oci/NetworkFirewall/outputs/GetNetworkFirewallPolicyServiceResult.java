@@ -130,14 +130,14 @@ public final class GetNetworkFirewallPolicyServiceResult {
             return this;
         }
         public GetNetworkFirewallPolicyServiceResult build() {
-            final var o = new GetNetworkFirewallPolicyServiceResult();
-            o.id = id;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.portRanges = portRanges;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyServiceResult();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.portRanges = portRanges;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

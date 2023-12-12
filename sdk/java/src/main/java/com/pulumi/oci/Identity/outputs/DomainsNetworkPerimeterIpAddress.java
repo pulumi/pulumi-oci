@@ -146,11 +146,11 @@ public final class DomainsNetworkPerimeterIpAddress {
             return this;
         }
         public DomainsNetworkPerimeterIpAddress build() {
-            final var o = new DomainsNetworkPerimeterIpAddress();
-            o.type = type;
-            o.value = value;
-            o.version = version;
-            return o;
+            final var _resultValue = new DomainsNetworkPerimeterIpAddress();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -141,14 +141,14 @@ public final class GetSubscribedServicesSubscribedServiceProduct {
             return this;
         }
         public GetSubscribedServicesSubscribedServiceProduct build() {
-            final var o = new GetSubscribedServicesSubscribedServiceProduct();
-            o.billingCategory = billingCategory;
-            o.name = name;
-            o.partNumber = partNumber;
-            o.productCategory = productCategory;
-            o.ucmRateCardPartType = ucmRateCardPartType;
-            o.unitOfMeasure = unitOfMeasure;
-            return o;
+            final var _resultValue = new GetSubscribedServicesSubscribedServiceProduct();
+            _resultValue.billingCategory = billingCategory;
+            _resultValue.name = name;
+            _resultValue.partNumber = partNumber;
+            _resultValue.productCategory = productCategory;
+            _resultValue.ucmRateCardPartType = ucmRateCardPartType;
+            _resultValue.unitOfMeasure = unitOfMeasure;
+            return _resultValue;
         }
     }
 }

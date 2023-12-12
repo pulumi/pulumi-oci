@@ -111,10 +111,10 @@ public final class DomainsApiKeyTag {
             return this;
         }
         public DomainsApiKeyTag build() {
-            final var o = new DomainsApiKeyTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsApiKeyTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

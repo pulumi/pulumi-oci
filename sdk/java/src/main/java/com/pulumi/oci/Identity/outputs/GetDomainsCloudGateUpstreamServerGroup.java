@@ -123,13 +123,13 @@ public final class GetDomainsCloudGateUpstreamServerGroup {
             return this;
         }
         public GetDomainsCloudGateUpstreamServerGroup build() {
-            final var o = new GetDomainsCloudGateUpstreamServerGroup();
-            o.displayName = displayName;
-            o.nginxSettings = nginxSettings;
-            o.ref = ref;
-            o.ssl = ssl;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateUpstreamServerGroup();
+            _resultValue.displayName = displayName;
+            _resultValue.nginxSettings = nginxSettings;
+            _resultValue.ref = ref;
+            _resultValue.ssl = ssl;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

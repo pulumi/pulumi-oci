@@ -67,11 +67,11 @@ public final class GetAwrHubsFilter {
             return values(List.of(values));
         }
         public GetAwrHubsFilter build() {
-            final var o = new GetAwrHubsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAwrHubsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

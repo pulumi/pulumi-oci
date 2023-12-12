@@ -42,9 +42,9 @@ public final class GetEnrollmentStatusesEnrollmentStatusCollection {
             return items(List.of(items));
         }
         public GetEnrollmentStatusesEnrollmentStatusCollection build() {
-            final var o = new GetEnrollmentStatusesEnrollmentStatusCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetEnrollmentStatusesEnrollmentStatusCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

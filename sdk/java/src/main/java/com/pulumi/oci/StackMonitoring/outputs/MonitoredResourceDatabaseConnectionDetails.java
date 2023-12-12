@@ -163,15 +163,15 @@ public final class MonitoredResourceDatabaseConnectionDetails {
             return this;
         }
         public MonitoredResourceDatabaseConnectionDetails build() {
-            final var o = new MonitoredResourceDatabaseConnectionDetails();
-            o.connectorId = connectorId;
-            o.dbId = dbId;
-            o.dbUniqueName = dbUniqueName;
-            o.port = port;
-            o.protocol = protocol;
-            o.serviceName = serviceName;
-            o.sslSecretId = sslSecretId;
-            return o;
+            final var _resultValue = new MonitoredResourceDatabaseConnectionDetails();
+            _resultValue.connectorId = connectorId;
+            _resultValue.dbId = dbId;
+            _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.serviceName = serviceName;
+            _resultValue.sslSecretId = sslSecretId;
+            return _resultValue;
         }
     }
 }

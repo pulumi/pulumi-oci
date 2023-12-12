@@ -65,10 +65,10 @@ public final class GetFileSystemsFileSystemSourceDetail {
             return this;
         }
         public GetFileSystemsFileSystemSourceDetail build() {
-            final var o = new GetFileSystemsFileSystemSourceDetail();
-            o.parentFileSystemId = parentFileSystemId;
-            o.sourceSnapshotId = sourceSnapshotId;
-            return o;
+            final var _resultValue = new GetFileSystemsFileSystemSourceDetail();
+            _resultValue.parentFileSystemId = parentFileSystemId;
+            _resultValue.sourceSnapshotId = sourceSnapshotId;
+            return _resultValue;
         }
     }
 }

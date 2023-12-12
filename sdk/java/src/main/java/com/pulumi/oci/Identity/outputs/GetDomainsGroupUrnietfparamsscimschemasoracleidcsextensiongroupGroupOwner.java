@@ -103,12 +103,12 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongro
             return this;
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner build() {
-            final var o = new GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner();
-            o.display = display;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwner();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

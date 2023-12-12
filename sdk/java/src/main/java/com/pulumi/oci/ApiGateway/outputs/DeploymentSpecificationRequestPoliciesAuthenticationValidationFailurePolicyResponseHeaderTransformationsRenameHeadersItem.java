@@ -67,10 +67,10 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
             return this;
         }
         public DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem build() {
-            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem();
-            o.from = from;
-            o.to = to;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItem();
+            _resultValue.from = from;
+            _resultValue.to = to;
+            return _resultValue;
         }
     }
 }

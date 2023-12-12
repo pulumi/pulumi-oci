@@ -154,14 +154,14 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
             return this;
         }
         public GetGuardTargetTargetDetectorRecipeDetectorRuleDetail build() {
-            final var o = new GetGuardTargetTargetDetectorRecipeDetectorRuleDetail();
-            o.conditionGroups = conditionGroups;
-            o.configurations = configurations;
-            o.isConfigurationAllowed = isConfigurationAllowed;
-            o.isEnabled = isEnabled;
-            o.labels = labels;
-            o.riskLevel = riskLevel;
-            return o;
+            final var _resultValue = new GetGuardTargetTargetDetectorRecipeDetectorRuleDetail();
+            _resultValue.conditionGroups = conditionGroups;
+            _resultValue.configurations = configurations;
+            _resultValue.isConfigurationAllowed = isConfigurationAllowed;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.labels = labels;
+            _resultValue.riskLevel = riskLevel;
+            return _resultValue;
         }
     }
 }

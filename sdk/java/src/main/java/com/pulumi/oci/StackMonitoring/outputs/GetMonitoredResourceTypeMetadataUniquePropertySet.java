@@ -50,9 +50,9 @@ public final class GetMonitoredResourceTypeMetadataUniquePropertySet {
             return properties(List.of(properties));
         }
         public GetMonitoredResourceTypeMetadataUniquePropertySet build() {
-            final var o = new GetMonitoredResourceTypeMetadataUniquePropertySet();
-            o.properties = properties;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTypeMetadataUniquePropertySet();
+            _resultValue.properties = properties;
+            return _resultValue;
         }
     }
 }

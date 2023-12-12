@@ -105,12 +105,12 @@ public final class DbSystemCredentialsPasswordDetails {
             return this;
         }
         public DbSystemCredentialsPasswordDetails build() {
-            final var o = new DbSystemCredentialsPasswordDetails();
-            o.password = password;
-            o.passwordType = passwordType;
-            o.secretId = secretId;
-            o.secretVersion = secretVersion;
-            return o;
+            final var _resultValue = new DbSystemCredentialsPasswordDetails();
+            _resultValue.password = password;
+            _resultValue.passwordType = passwordType;
+            _resultValue.secretId = secretId;
+            _resultValue.secretVersion = secretVersion;
+            return _resultValue;
         }
     }
 }

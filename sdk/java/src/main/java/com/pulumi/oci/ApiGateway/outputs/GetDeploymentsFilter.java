@@ -83,11 +83,11 @@ public final class GetDeploymentsFilter {
             return values(List.of(values));
         }
         public GetDeploymentsFilter build() {
-            final var o = new GetDeploymentsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

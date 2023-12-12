@@ -144,14 +144,14 @@ public final class GetDynamicGroupsResult {
             return this;
         }
         public GetDynamicGroupsResult build() {
-            final var o = new GetDynamicGroupsResult();
-            o.compartmentId = compartmentId;
-            o.dynamicGroups = dynamicGroups;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDynamicGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dynamicGroups = dynamicGroups;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

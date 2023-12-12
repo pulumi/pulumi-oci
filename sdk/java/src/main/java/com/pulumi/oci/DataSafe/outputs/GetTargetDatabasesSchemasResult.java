@@ -151,15 +151,15 @@ public final class GetTargetDatabasesSchemasResult {
             return this;
         }
         public GetTargetDatabasesSchemasResult build() {
-            final var o = new GetTargetDatabasesSchemasResult();
-            o.filters = filters;
-            o.id = id;
-            o.isOracleMaintained = isOracleMaintained;
-            o.schemaNameContains = schemaNameContains;
-            o.schemaNames = schemaNames;
-            o.schemas = schemas;
-            o.targetDatabaseId = targetDatabaseId;
-            return o;
+            final var _resultValue = new GetTargetDatabasesSchemasResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isOracleMaintained = isOracleMaintained;
+            _resultValue.schemaNameContains = schemaNameContains;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.schemas = schemas;
+            _resultValue.targetDatabaseId = targetDatabaseId;
+            return _resultValue;
         }
     }
 }

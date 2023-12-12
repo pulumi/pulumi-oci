@@ -593,37 +593,37 @@ public final class UsageItem {
             return this;
         }
         public UsageItem build() {
-            final var o = new UsageItem();
-            o.ad = ad;
-            o.compartmentId = compartmentId;
-            o.compartmentName = compartmentName;
-            o.compartmentPath = compartmentPath;
-            o.computedAmount = computedAmount;
-            o.computedQuantity = computedQuantity;
-            o.currency = currency;
-            o.discount = discount;
-            o.isForecast = isForecast;
-            o.listRate = listRate;
-            o.overage = overage;
-            o.overagesFlag = overagesFlag;
-            o.platform = platform;
-            o.region = region;
-            o.resourceId = resourceId;
-            o.resourceName = resourceName;
-            o.service = service;
-            o.shape = shape;
-            o.skuName = skuName;
-            o.skuPartNumber = skuPartNumber;
-            o.subscriptionId = subscriptionId;
-            o.tags = tags;
-            o.tenantId = tenantId;
-            o.tenantName = tenantName;
-            o.timeUsageEnded = timeUsageEnded;
-            o.timeUsageStarted = timeUsageStarted;
-            o.unit = unit;
-            o.unitPrice = unitPrice;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new UsageItem();
+            _resultValue.ad = ad;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentName = compartmentName;
+            _resultValue.compartmentPath = compartmentPath;
+            _resultValue.computedAmount = computedAmount;
+            _resultValue.computedQuantity = computedQuantity;
+            _resultValue.currency = currency;
+            _resultValue.discount = discount;
+            _resultValue.isForecast = isForecast;
+            _resultValue.listRate = listRate;
+            _resultValue.overage = overage;
+            _resultValue.overagesFlag = overagesFlag;
+            _resultValue.platform = platform;
+            _resultValue.region = region;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceName = resourceName;
+            _resultValue.service = service;
+            _resultValue.shape = shape;
+            _resultValue.skuName = skuName;
+            _resultValue.skuPartNumber = skuPartNumber;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.tags = tags;
+            _resultValue.tenantId = tenantId;
+            _resultValue.tenantName = tenantName;
+            _resultValue.timeUsageEnded = timeUsageEnded;
+            _resultValue.timeUsageStarted = timeUsageStarted;
+            _resultValue.unit = unit;
+            _resultValue.unitPrice = unitPrice;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

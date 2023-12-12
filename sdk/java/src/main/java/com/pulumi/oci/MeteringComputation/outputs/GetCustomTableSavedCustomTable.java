@@ -153,14 +153,14 @@ public final class GetCustomTableSavedCustomTable {
             return this;
         }
         public GetCustomTableSavedCustomTable build() {
-            final var o = new GetCustomTableSavedCustomTable();
-            o.columnGroupBies = columnGroupBies;
-            o.compartmentDepth = compartmentDepth;
-            o.displayName = displayName;
-            o.groupByTags = groupByTags;
-            o.rowGroupBies = rowGroupBies;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetCustomTableSavedCustomTable();
+            _resultValue.columnGroupBies = columnGroupBies;
+            _resultValue.compartmentDepth = compartmentDepth;
+            _resultValue.displayName = displayName;
+            _resultValue.groupByTags = groupByTags;
+            _resultValue.rowGroupBies = rowGroupBies;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

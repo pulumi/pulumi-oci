@@ -84,11 +84,11 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
             return this;
         }
         public GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria build() {
-            final var o = new GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria();
-            o.attachmentType = attachmentType;
-            o.drgAttachmentId = drgAttachmentId;
-            o.matchType = matchType;
-            return o;
+            final var _resultValue = new GetDrgRouteDistributionStatementsDrgRouteDistributionStatementMatchCriteria();
+            _resultValue.attachmentType = attachmentType;
+            _resultValue.drgAttachmentId = drgAttachmentId;
+            _resultValue.matchType = matchType;
+            return _resultValue;
         }
     }
 }

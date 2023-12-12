@@ -90,11 +90,11 @@ public final class GetPipelineStepDetailStepInfrastructureConfigurationDetail {
             return this;
         }
         public GetPipelineStepDetailStepInfrastructureConfigurationDetail build() {
-            final var o = new GetPipelineStepDetailStepInfrastructureConfigurationDetail();
-            o.blockStorageSizeInGbs = blockStorageSizeInGbs;
-            o.shapeConfigDetails = shapeConfigDetails;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new GetPipelineStepDetailStepInfrastructureConfigurationDetail();
+            _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.shapeConfigDetails = shapeConfigDetails;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetBlockchainPlatformsFilter {
             return values(List.of(values));
         }
         public GetBlockchainPlatformsFilter build() {
-            final var o = new GetBlockchainPlatformsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -117,14 +117,14 @@ public final class GetRepoFileLineResult {
             return this;
         }
         public GetRepoFileLineResult build() {
-            final var o = new GetRepoFileLineResult();
-            o.filePath = filePath;
-            o.id = id;
-            o.lines = lines;
-            o.repositoryId = repositoryId;
-            o.revision = revision;
-            o.startLineNumber = startLineNumber;
-            return o;
+            final var _resultValue = new GetRepoFileLineResult();
+            _resultValue.filePath = filePath;
+            _resultValue.id = id;
+            _resultValue.lines = lines;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.revision = revision;
+            _resultValue.startLineNumber = startLineNumber;
+            return _resultValue;
         }
     }
 }

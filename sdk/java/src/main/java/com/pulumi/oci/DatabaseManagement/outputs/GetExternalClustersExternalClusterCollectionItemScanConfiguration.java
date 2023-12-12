@@ -104,12 +104,12 @@ public final class GetExternalClustersExternalClusterCollectionItemScanConfigura
             return this;
         }
         public GetExternalClustersExternalClusterCollectionItemScanConfiguration build() {
-            final var o = new GetExternalClustersExternalClusterCollectionItemScanConfiguration();
-            o.networkNumber = networkNumber;
-            o.scanName = scanName;
-            o.scanPort = scanPort;
-            o.scanProtocol = scanProtocol;
-            return o;
+            final var _resultValue = new GetExternalClustersExternalClusterCollectionItemScanConfiguration();
+            _resultValue.networkNumber = networkNumber;
+            _resultValue.scanName = scanName;
+            _resultValue.scanPort = scanPort;
+            _resultValue.scanProtocol = scanProtocol;
+            return _resultValue;
         }
     }
 }

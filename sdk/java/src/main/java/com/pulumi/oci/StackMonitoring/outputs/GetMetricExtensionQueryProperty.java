@@ -330,23 +330,23 @@ public final class GetMetricExtensionQueryProperty {
             return this;
         }
         public GetMetricExtensionQueryProperty build() {
-            final var o = new GetMetricExtensionQueryProperty();
-            o.arguments = arguments;
-            o.autoRowPrefix = autoRowPrefix;
-            o.collectionMethod = collectionMethod;
-            o.command = command;
-            o.delimiter = delimiter;
-            o.identityMetric = identityMetric;
-            o.inParamDetails = inParamDetails;
-            o.isMetricServiceEnabled = isMetricServiceEnabled;
-            o.jmxAttributes = jmxAttributes;
-            o.managedBeanQuery = managedBeanQuery;
-            o.outParamDetails = outParamDetails;
-            o.scriptDetails = scriptDetails;
-            o.sqlDetails = sqlDetails;
-            o.sqlType = sqlType;
-            o.startsWith = startsWith;
-            return o;
+            final var _resultValue = new GetMetricExtensionQueryProperty();
+            _resultValue.arguments = arguments;
+            _resultValue.autoRowPrefix = autoRowPrefix;
+            _resultValue.collectionMethod = collectionMethod;
+            _resultValue.command = command;
+            _resultValue.delimiter = delimiter;
+            _resultValue.identityMetric = identityMetric;
+            _resultValue.inParamDetails = inParamDetails;
+            _resultValue.isMetricServiceEnabled = isMetricServiceEnabled;
+            _resultValue.jmxAttributes = jmxAttributes;
+            _resultValue.managedBeanQuery = managedBeanQuery;
+            _resultValue.outParamDetails = outParamDetails;
+            _resultValue.scriptDetails = scriptDetails;
+            _resultValue.sqlDetails = sqlDetails;
+            _resultValue.sqlType = sqlType;
+            _resultValue.startsWith = startsWith;
+            return _resultValue;
         }
     }
 }

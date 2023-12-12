@@ -114,12 +114,12 @@ public final class PluggableDatabaseManagementsManagementConnectionString {
             return this;
         }
         public PluggableDatabaseManagementsManagementConnectionString build() {
-            final var o = new PluggableDatabaseManagementsManagementConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.enablePluggabledatabasemanagement = enablePluggabledatabasemanagement;
-            o.pdbDefault = pdbDefault;
-            o.pdbIpDefault = pdbIpDefault;
-            return o;
+            final var _resultValue = new PluggableDatabaseManagementsManagementConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.enablePluggabledatabasemanagement = enablePluggabledatabasemanagement;
+            _resultValue.pdbDefault = pdbDefault;
+            _resultValue.pdbIpDefault = pdbIpDefault;
+            return _resultValue;
         }
     }
 }

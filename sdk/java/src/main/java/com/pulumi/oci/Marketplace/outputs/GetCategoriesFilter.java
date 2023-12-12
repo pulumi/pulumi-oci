@@ -75,11 +75,11 @@ public final class GetCategoriesFilter {
             return values(List.of(values));
         }
         public GetCategoriesFilter build() {
-            final var o = new GetCategoriesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCategoriesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

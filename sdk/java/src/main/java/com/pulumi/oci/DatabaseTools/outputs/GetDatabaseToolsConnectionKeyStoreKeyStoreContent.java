@@ -65,10 +65,10 @@ public final class GetDatabaseToolsConnectionKeyStoreKeyStoreContent {
             return this;
         }
         public GetDatabaseToolsConnectionKeyStoreKeyStoreContent build() {
-            final var o = new GetDatabaseToolsConnectionKeyStoreKeyStoreContent();
-            o.secretId = secretId;
-            o.valueType = valueType;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionKeyStoreKeyStoreContent();
+            _resultValue.secretId = secretId;
+            _resultValue.valueType = valueType;
+            return _resultValue;
         }
     }
 }

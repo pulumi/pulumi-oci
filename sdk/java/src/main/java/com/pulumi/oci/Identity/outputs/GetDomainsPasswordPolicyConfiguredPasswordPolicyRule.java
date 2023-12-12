@@ -65,10 +65,10 @@ public final class GetDomainsPasswordPolicyConfiguredPasswordPolicyRule {
             return this;
         }
         public GetDomainsPasswordPolicyConfiguredPasswordPolicyRule build() {
-            final var o = new GetDomainsPasswordPolicyConfiguredPasswordPolicyRule();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsPasswordPolicyConfiguredPasswordPolicyRule();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -415,28 +415,28 @@ public final class GetJobRunResult {
             return this;
         }
         public GetJobRunResult build() {
-            final var o = new GetJobRunResult();
-            o.asynchronous = asynchronous;
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
-            o.jobId = jobId;
-            o.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
-            o.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
-            o.jobRunId = jobRunId;
-            o.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
-            o.lifecycleDetails = lifecycleDetails;
-            o.logDetails = logDetails;
-            o.projectId = projectId;
-            o.state = state;
-            o.timeAccepted = timeAccepted;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetJobRunResult();
+            _resultValue.asynchronous = asynchronous;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
+            _resultValue.jobId = jobId;
+            _resultValue.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+            _resultValue.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
+            _resultValue.jobRunId = jobRunId;
+            _resultValue.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.logDetails = logDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

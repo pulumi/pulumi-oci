@@ -137,13 +137,13 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
             return this;
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys build() {
-            final var o = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys();
-            o.isSslVerifyDisabled = isSslVerifyDisabled;
-            o.keys = keys;
-            o.maxCacheDurationInHours = maxCacheDurationInHours;
-            o.type = type;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys();
+            _resultValue.isSslVerifyDisabled = isSslVerifyDisabled;
+            _resultValue.keys = keys;
+            _resultValue.maxCacheDurationInHours = maxCacheDurationInHours;
+            _resultValue.type = type;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

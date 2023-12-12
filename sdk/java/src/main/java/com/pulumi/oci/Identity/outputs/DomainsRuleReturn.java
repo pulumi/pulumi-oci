@@ -142,11 +142,11 @@ public final class DomainsRuleReturn {
             return this;
         }
         public DomainsRuleReturn build() {
-            final var o = new DomainsRuleReturn();
-            o.name = name;
-            o.returnGroovy = returnGroovy;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsRuleReturn();
+            _resultValue.name = name;
+            _resultValue.returnGroovy = returnGroovy;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

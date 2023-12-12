@@ -97,12 +97,12 @@ public final class GetExternalAsmDiskGroupsResult {
             return this;
         }
         public GetExternalAsmDiskGroupsResult build() {
-            final var o = new GetExternalAsmDiskGroupsResult();
-            o.externalAsmDiskGroupCollections = externalAsmDiskGroupCollections;
-            o.externalAsmId = externalAsmId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalAsmDiskGroupsResult();
+            _resultValue.externalAsmDiskGroupCollections = externalAsmDiskGroupCollections;
+            _resultValue.externalAsmId = externalAsmId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

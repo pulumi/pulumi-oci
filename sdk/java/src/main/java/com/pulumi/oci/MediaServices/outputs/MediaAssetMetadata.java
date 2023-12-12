@@ -46,9 +46,9 @@ public final class MediaAssetMetadata {
             return this;
         }
         public MediaAssetMetadata build() {
-            final var o = new MediaAssetMetadata();
-            o.metadata = metadata;
-            return o;
+            final var _resultValue = new MediaAssetMetadata();
+            _resultValue.metadata = metadata;
+            return _resultValue;
         }
     }
 }

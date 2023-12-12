@@ -135,13 +135,13 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
             return this;
         }
         public GetContainerInstanceShapesContainerInstanceShapeCollectionItem build() {
-            final var o = new GetContainerInstanceShapesContainerInstanceShapeCollectionItem();
-            o.memoryOptions = memoryOptions;
-            o.name = name;
-            o.networkingBandwidthOptions = networkingBandwidthOptions;
-            o.ocpuOptions = ocpuOptions;
-            o.processorDescription = processorDescription;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapesContainerInstanceShapeCollectionItem();
+            _resultValue.memoryOptions = memoryOptions;
+            _resultValue.name = name;
+            _resultValue.networkingBandwidthOptions = networkingBandwidthOptions;
+            _resultValue.ocpuOptions = ocpuOptions;
+            _resultValue.processorDescription = processorDescription;
+            return _resultValue;
         }
     }
 }

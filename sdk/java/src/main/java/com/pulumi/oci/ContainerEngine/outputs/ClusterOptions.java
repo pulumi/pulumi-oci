@@ -152,14 +152,14 @@ public final class ClusterOptions {
             return serviceLbSubnetIds(List.of(serviceLbSubnetIds));
         }
         public ClusterOptions build() {
-            final var o = new ClusterOptions();
-            o.addOns = addOns;
-            o.admissionControllerOptions = admissionControllerOptions;
-            o.kubernetesNetworkConfig = kubernetesNetworkConfig;
-            o.persistentVolumeConfig = persistentVolumeConfig;
-            o.serviceLbConfig = serviceLbConfig;
-            o.serviceLbSubnetIds = serviceLbSubnetIds;
-            return o;
+            final var _resultValue = new ClusterOptions();
+            _resultValue.addOns = addOns;
+            _resultValue.admissionControllerOptions = admissionControllerOptions;
+            _resultValue.kubernetesNetworkConfig = kubernetesNetworkConfig;
+            _resultValue.persistentVolumeConfig = persistentVolumeConfig;
+            _resultValue.serviceLbConfig = serviceLbConfig;
+            _resultValue.serviceLbSubnetIds = serviceLbSubnetIds;
+            return _resultValue;
         }
     }
 }

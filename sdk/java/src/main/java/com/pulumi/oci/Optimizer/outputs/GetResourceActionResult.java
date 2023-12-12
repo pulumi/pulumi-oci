@@ -388,27 +388,27 @@ public final class GetResourceActionResult {
             return this;
         }
         public GetResourceActionResult build() {
-            final var o = new GetResourceActionResult();
-            o.actions = actions;
-            o.categoryId = categoryId;
-            o.compartmentId = compartmentId;
-            o.compartmentName = compartmentName;
-            o.estimatedCostSaving = estimatedCostSaving;
-            o.extendedMetadata = extendedMetadata;
-            o.id = id;
-            o.metadata = metadata;
-            o.name = name;
-            o.recommendationId = recommendationId;
-            o.resourceActionId = resourceActionId;
-            o.resourceId = resourceId;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.status = status;
-            o.timeCreated = timeCreated;
-            o.timeStatusBegin = timeStatusBegin;
-            o.timeStatusEnd = timeStatusEnd;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetResourceActionResult();
+            _resultValue.actions = actions;
+            _resultValue.categoryId = categoryId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentName = compartmentName;
+            _resultValue.estimatedCostSaving = estimatedCostSaving;
+            _resultValue.extendedMetadata = extendedMetadata;
+            _resultValue.id = id;
+            _resultValue.metadata = metadata;
+            _resultValue.name = name;
+            _resultValue.recommendationId = recommendationId;
+            _resultValue.resourceActionId = resourceActionId;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeStatusBegin = timeStatusBegin;
+            _resultValue.timeStatusEnd = timeStatusEnd;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

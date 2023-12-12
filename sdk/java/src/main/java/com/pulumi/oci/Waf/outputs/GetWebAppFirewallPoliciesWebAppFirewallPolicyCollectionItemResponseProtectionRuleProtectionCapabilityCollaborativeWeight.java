@@ -66,10 +66,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight();
-            o.key = key;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeight();
+            _resultValue.key = key;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

@@ -105,12 +105,12 @@ public final class GetJobJobConfigurationDetail {
             return this;
         }
         public GetJobJobConfigurationDetail build() {
-            final var o = new GetJobJobConfigurationDetail();
-            o.commandLineArguments = commandLineArguments;
-            o.environmentVariables = environmentVariables;
-            o.jobType = jobType;
-            o.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
-            return o;
+            final var _resultValue = new GetJobJobConfigurationDetail();
+            _resultValue.commandLineArguments = commandLineArguments;
+            _resultValue.environmentVariables = environmentVariables;
+            _resultValue.jobType = jobType;
+            _resultValue.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            return _resultValue;
         }
     }
 }

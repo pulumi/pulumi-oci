@@ -42,9 +42,9 @@ public final class GetMeshesMeshCollection {
             return items(List.of(items));
         }
         public GetMeshesMeshCollection build() {
-            final var o = new GetMeshesMeshCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMeshesMeshCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

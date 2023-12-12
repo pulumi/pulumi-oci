@@ -128,14 +128,14 @@ public final class GetComputeCapacityReservationInstanceShapesResult {
             return this;
         }
         public GetComputeCapacityReservationInstanceShapesResult build() {
-            final var o = new GetComputeCapacityReservationInstanceShapesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.computeCapacityReservationInstanceShapes = computeCapacityReservationInstanceShapes;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetComputeCapacityReservationInstanceShapesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeCapacityReservationInstanceShapes = computeCapacityReservationInstanceShapes;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

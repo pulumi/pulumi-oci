@@ -108,13 +108,13 @@ public final class GetReplicationSourcesResult {
             return replicationSources(List.of(replicationSources));
         }
         public GetReplicationSourcesResult build() {
-            final var o = new GetReplicationSourcesResult();
-            o.bucket = bucket;
-            o.filters = filters;
-            o.id = id;
-            o.namespace = namespace;
-            o.replicationSources = replicationSources;
-            return o;
+            final var _resultValue = new GetReplicationSourcesResult();
+            _resultValue.bucket = bucket;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.replicationSources = replicationSources;
+            return _resultValue;
         }
     }
 }

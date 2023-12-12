@@ -103,12 +103,12 @@ public final class GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling {
             return this;
         }
         public GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling build() {
-            final var o = new GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling();
-            o.lastConfiguredLogFilename = lastConfiguredLogFilename;
-            o.lastConfiguredLogOffset = lastConfiguredLogOffset;
-            o.policy = policy;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling();
+            _resultValue.lastConfiguredLogFilename = lastConfiguredLogFilename;
+            _resultValue.lastConfiguredLogOffset = lastConfiguredLogOffset;
+            _resultValue.policy = policy;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

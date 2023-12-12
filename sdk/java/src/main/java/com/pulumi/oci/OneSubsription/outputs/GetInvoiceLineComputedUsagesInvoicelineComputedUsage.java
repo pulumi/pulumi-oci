@@ -189,16 +189,16 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
             return this;
         }
         public GetInvoiceLineComputedUsagesInvoicelineComputedUsage build() {
-            final var o = new GetInvoiceLineComputedUsagesInvoicelineComputedUsage();
-            o.cost = cost;
-            o.costRounded = costRounded;
-            o.netUnitPrice = netUnitPrice;
-            o.parentProducts = parentProducts;
-            o.products = products;
-            o.quantity = quantity;
-            o.timeMeteredOn = timeMeteredOn;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetInvoiceLineComputedUsagesInvoicelineComputedUsage();
+            _resultValue.cost = cost;
+            _resultValue.costRounded = costRounded;
+            _resultValue.netUnitPrice = netUnitPrice;
+            _resultValue.parentProducts = parentProducts;
+            _resultValue.products = products;
+            _resultValue.quantity = quantity;
+            _resultValue.timeMeteredOn = timeMeteredOn;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -179,16 +179,16 @@ public final class GetDomainsMyGroupsMyGroupMember {
             return this;
         }
         public GetDomainsMyGroupsMyGroupMember build() {
-            final var o = new GetDomainsMyGroupsMyGroupMember();
-            o.dateAdded = dateAdded;
-            o.display = display;
-            o.membershipOcid = membershipOcid;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyGroupsMyGroupMember();
+            _resultValue.dateAdded = dateAdded;
+            _resultValue.display = display;
+            _resultValue.membershipOcid = membershipOcid;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

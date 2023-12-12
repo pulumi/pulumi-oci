@@ -85,11 +85,11 @@ public final class GetNamespacesNamespaceCollectionItem {
             return this;
         }
         public GetNamespacesNamespaceCollectionItem build() {
-            final var o = new GetNamespacesNamespaceCollectionItem();
-            o.compartmentId = compartmentId;
-            o.isOnboarded = isOnboarded;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetNamespacesNamespaceCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.isOnboarded = isOnboarded;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetPbfListingTriggersFilter {
             return values(List.of(values));
         }
         public GetPbfListingTriggersFilter build() {
-            final var o = new GetPbfListingTriggersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPbfListingTriggersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

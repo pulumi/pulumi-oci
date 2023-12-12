@@ -108,13 +108,13 @@ public final class GetAutonomousExadataInfrastructureShapesResult {
             return this;
         }
         public GetAutonomousExadataInfrastructureShapesResult build() {
-            final var o = new GetAutonomousExadataInfrastructureShapesResult();
-            o.autonomousExadataInfrastructureShapes = autonomousExadataInfrastructureShapes;
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAutonomousExadataInfrastructureShapesResult();
+            _resultValue.autonomousExadataInfrastructureShapes = autonomousExadataInfrastructureShapes;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

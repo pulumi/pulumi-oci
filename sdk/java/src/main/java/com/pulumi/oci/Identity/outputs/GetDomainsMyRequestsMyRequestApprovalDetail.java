@@ -161,15 +161,15 @@ public final class GetDomainsMyRequestsMyRequestApprovalDetail {
             return this;
         }
         public GetDomainsMyRequestsMyRequestApprovalDetail build() {
-            final var o = new GetDomainsMyRequestsMyRequestApprovalDetail();
-            o.approvalType = approvalType;
-            o.approverDisplayName = approverDisplayName;
-            o.approverId = approverId;
-            o.justification = justification;
-            o.order = order;
-            o.status = status;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDomainsMyRequestsMyRequestApprovalDetail();
+            _resultValue.approvalType = approvalType;
+            _resultValue.approverDisplayName = approverDisplayName;
+            _resultValue.approverId = approverId;
+            _resultValue.justification = justification;
+            _resultValue.order = order;
+            _resultValue.status = status;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

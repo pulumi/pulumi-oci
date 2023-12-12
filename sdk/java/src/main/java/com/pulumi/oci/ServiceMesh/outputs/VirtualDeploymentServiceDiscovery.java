@@ -67,10 +67,10 @@ public final class VirtualDeploymentServiceDiscovery {
             return this;
         }
         public VirtualDeploymentServiceDiscovery build() {
-            final var o = new VirtualDeploymentServiceDiscovery();
-            o.hostname = hostname;
-            o.type = type;
-            return o;
+            final var _resultValue = new VirtualDeploymentServiceDiscovery();
+            _resultValue.hostname = hostname;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

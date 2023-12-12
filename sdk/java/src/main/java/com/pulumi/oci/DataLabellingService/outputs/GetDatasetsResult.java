@@ -163,15 +163,15 @@ public final class GetDatasetsResult {
             return this;
         }
         public GetDatasetsResult build() {
-            final var o = new GetDatasetsResult();
-            o.annotationFormat = annotationFormat;
-            o.compartmentId = compartmentId;
-            o.datasetCollections = datasetCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDatasetsResult();
+            _resultValue.annotationFormat = annotationFormat;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.datasetCollections = datasetCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

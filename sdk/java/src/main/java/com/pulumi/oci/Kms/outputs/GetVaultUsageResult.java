@@ -134,14 +134,14 @@ public final class GetVaultUsageResult {
             return this;
         }
         public GetVaultUsageResult build() {
-            final var o = new GetVaultUsageResult();
-            o.id = id;
-            o.keyCount = keyCount;
-            o.keyVersionCount = keyVersionCount;
-            o.softwareKeyCount = softwareKeyCount;
-            o.softwareKeyVersionCount = softwareKeyVersionCount;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetVaultUsageResult();
+            _resultValue.id = id;
+            _resultValue.keyCount = keyCount;
+            _resultValue.keyVersionCount = keyVersionCount;
+            _resultValue.softwareKeyCount = softwareKeyCount;
+            _resultValue.softwareKeyVersionCount = softwareKeyVersionCount;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

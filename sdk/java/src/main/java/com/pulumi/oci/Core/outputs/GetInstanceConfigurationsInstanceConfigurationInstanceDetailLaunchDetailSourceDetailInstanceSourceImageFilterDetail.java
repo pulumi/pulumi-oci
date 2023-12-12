@@ -105,12 +105,12 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail();
-            o.compartmentId = compartmentId;
-            o.definedTagsFilter = definedTagsFilter;
-            o.operatingSystem = operatingSystem;
-            o.operatingSystemVersion = operatingSystemVersion;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTagsFilter = definedTagsFilter;
+            _resultValue.operatingSystem = operatingSystem;
+            _resultValue.operatingSystemVersion = operatingSystemVersion;
+            return _resultValue;
         }
     }
 }

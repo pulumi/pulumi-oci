@@ -84,11 +84,11 @@ public final class GetListingsListingDocumentationLink {
             return this;
         }
         public GetListingsListingDocumentationLink build() {
-            final var o = new GetListingsListingDocumentationLink();
-            o.documentCategory = documentCategory;
-            o.name = name;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetListingsListingDocumentationLink();
+            _resultValue.documentCategory = documentCategory;
+            _resultValue.name = name;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

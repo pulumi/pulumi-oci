@@ -50,9 +50,9 @@ public final class GetApplianceImagesApplianceImageCollection {
             return items(List.of(items));
         }
         public GetApplianceImagesApplianceImageCollection build() {
-            final var o = new GetApplianceImagesApplianceImageCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetApplianceImagesApplianceImageCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

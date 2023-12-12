@@ -46,9 +46,9 @@ public final class GetJobOutputItem {
             return this;
         }
         public GetJobOutputItem build() {
-            final var o = new GetJobOutputItem();
-            o.message = message;
-            return o;
+            final var _resultValue = new GetJobOutputItem();
+            _resultValue.message = message;
+            return _resultValue;
         }
     }
 }

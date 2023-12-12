@@ -180,16 +180,16 @@ public final class GetSubscribedServicePaymentTerm {
             return this;
         }
         public GetSubscribedServicePaymentTerm build() {
-            final var o = new GetSubscribedServicePaymentTerm();
-            o.createdBy = createdBy;
-            o.description = description;
-            o.isActive = isActive;
-            o.name = name;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.updatedBy = updatedBy;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetSubscribedServicePaymentTerm();
+            _resultValue.createdBy = createdBy;
+            _resultValue.description = description;
+            _resultValue.isActive = isActive;
+            _resultValue.name = name;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.updatedBy = updatedBy;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

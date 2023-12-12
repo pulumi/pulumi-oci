@@ -168,15 +168,15 @@ public final class GetSecurityAssessmentComparisonTargetUserAccountCurrent {
             return this;
         }
         public GetSecurityAssessmentComparisonTargetUserAccountCurrent build() {
-            final var o = new GetSecurityAssessmentComparisonTargetUserAccountCurrent();
-            o.details = details;
-            o.key = key;
-            o.references = references;
-            o.remarks = remarks;
-            o.severity = severity;
-            o.summary = summary;
-            o.title = title;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTargetUserAccountCurrent();
+            _resultValue.details = details;
+            _resultValue.key = key;
+            _resultValue.references = references;
+            _resultValue.remarks = remarks;
+            _resultValue.severity = severity;
+            _resultValue.summary = summary;
+            _resultValue.title = title;
+            return _resultValue;
         }
     }
 }

@@ -108,13 +108,13 @@ public final class GetReplicationPoliciesResult {
             return replicationPolicies(List.of(replicationPolicies));
         }
         public GetReplicationPoliciesResult build() {
-            final var o = new GetReplicationPoliciesResult();
-            o.bucket = bucket;
-            o.filters = filters;
-            o.id = id;
-            o.namespace = namespace;
-            o.replicationPolicies = replicationPolicies;
-            return o;
+            final var _resultValue = new GetReplicationPoliciesResult();
+            _resultValue.bucket = bucket;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.replicationPolicies = replicationPolicies;
+            return _resultValue;
         }
     }
 }

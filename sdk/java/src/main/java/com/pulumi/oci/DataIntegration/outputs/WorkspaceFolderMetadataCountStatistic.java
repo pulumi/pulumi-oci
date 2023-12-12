@@ -51,9 +51,9 @@ public final class WorkspaceFolderMetadataCountStatistic {
             return objectTypeCountLists(List.of(objectTypeCountLists));
         }
         public WorkspaceFolderMetadataCountStatistic build() {
-            final var o = new WorkspaceFolderMetadataCountStatistic();
-            o.objectTypeCountLists = objectTypeCountLists;
-            return o;
+            final var _resultValue = new WorkspaceFolderMetadataCountStatistic();
+            _resultValue.objectTypeCountLists = objectTypeCountLists;
+            return _resultValue;
         }
     }
 }

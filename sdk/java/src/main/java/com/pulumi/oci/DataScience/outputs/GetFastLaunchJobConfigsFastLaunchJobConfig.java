@@ -142,14 +142,14 @@ public final class GetFastLaunchJobConfigsFastLaunchJobConfig {
             return this;
         }
         public GetFastLaunchJobConfigsFastLaunchJobConfig build() {
-            final var o = new GetFastLaunchJobConfigsFastLaunchJobConfig();
-            o.coreCount = coreCount;
-            o.managedEgressSupport = managedEgressSupport;
-            o.memoryInGbs = memoryInGbs;
-            o.name = name;
-            o.shapeName = shapeName;
-            o.shapeSeries = shapeSeries;
-            return o;
+            final var _resultValue = new GetFastLaunchJobConfigsFastLaunchJobConfig();
+            _resultValue.coreCount = coreCount;
+            _resultValue.managedEgressSupport = managedEgressSupport;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.name = name;
+            _resultValue.shapeName = shapeName;
+            _resultValue.shapeSeries = shapeSeries;
+            return _resultValue;
         }
     }
 }

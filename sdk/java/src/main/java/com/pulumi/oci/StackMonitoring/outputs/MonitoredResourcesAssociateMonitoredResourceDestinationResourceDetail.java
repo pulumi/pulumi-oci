@@ -86,11 +86,11 @@ public final class MonitoredResourcesAssociateMonitoredResourceDestinationResour
             return this;
         }
         public MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail build() {
-            final var o = new MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail();
-            o.compartmentId = compartmentId;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

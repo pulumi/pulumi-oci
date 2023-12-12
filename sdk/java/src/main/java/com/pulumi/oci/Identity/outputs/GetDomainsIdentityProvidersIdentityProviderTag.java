@@ -65,10 +65,10 @@ public final class GetDomainsIdentityProvidersIdentityProviderTag {
             return this;
         }
         public GetDomainsIdentityProvidersIdentityProviderTag build() {
-            final var o = new GetDomainsIdentityProvidersIdentityProviderTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsIdentityProvidersIdentityProviderTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

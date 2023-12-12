@@ -65,10 +65,10 @@ public final class GetDomainsAppRolesAppRoleTag {
             return this;
         }
         public GetDomainsAppRolesAppRoleTag build() {
-            final var o = new GetDomainsAppRolesAppRoleTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppRolesAppRoleTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

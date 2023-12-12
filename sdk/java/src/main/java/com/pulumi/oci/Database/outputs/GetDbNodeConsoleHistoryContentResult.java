@@ -68,11 +68,11 @@ public final class GetDbNodeConsoleHistoryContentResult {
             return this;
         }
         public GetDbNodeConsoleHistoryContentResult build() {
-            final var o = new GetDbNodeConsoleHistoryContentResult();
-            o.consoleHistoryId = consoleHistoryId;
-            o.dbNodeId = dbNodeId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDbNodeConsoleHistoryContentResult();
+            _resultValue.consoleHistoryId = consoleHistoryId;
+            _resultValue.dbNodeId = dbNodeId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
             return items(List.of(items));
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameter();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

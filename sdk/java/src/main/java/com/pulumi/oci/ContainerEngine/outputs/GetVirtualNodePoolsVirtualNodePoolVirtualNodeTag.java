@@ -67,10 +67,10 @@ public final class GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag {
             return this;
         }
         public GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag build() {
-            final var o = new GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            return o;
+            final var _resultValue = new GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            return _resultValue;
         }
     }
 }

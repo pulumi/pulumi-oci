@@ -42,9 +42,9 @@ public final class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectio
             return items(List.of(items));
         }
         public GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection build() {
-            final var o = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetIngressGatewayRouteTablesIngressGatewayRouteTableCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

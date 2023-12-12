@@ -66,10 +66,10 @@ public final class GetDomainsNotificationSettingEventSetting {
             return this;
         }
         public GetDomainsNotificationSettingEventSetting build() {
-            final var o = new GetDomainsNotificationSettingEventSetting();
-            o.enabled = enabled;
-            o.eventId = eventId;
-            return o;
+            final var _resultValue = new GetDomainsNotificationSettingEventSetting();
+            _resultValue.enabled = enabled;
+            _resultValue.eventId = eventId;
+            return _resultValue;
         }
     }
 }

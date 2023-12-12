@@ -136,14 +136,14 @@ public final class GetVantagePointsResult {
             return publicVantagePointCollections(List.of(publicVantagePointCollections));
         }
         public GetVantagePointsResult build() {
-            final var o = new GetVantagePointsResult();
-            o.apmDomainId = apmDomainId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.publicVantagePointCollections = publicVantagePointCollections;
-            return o;
+            final var _resultValue = new GetVantagePointsResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.publicVantagePointCollections = publicVantagePointCollections;
+            return _resultValue;
         }
     }
 }

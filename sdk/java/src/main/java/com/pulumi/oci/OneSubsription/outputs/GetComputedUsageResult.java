@@ -549,36 +549,36 @@ public final class GetComputedUsageResult {
             return this;
         }
         public GetComputedUsageResult build() {
-            final var o = new GetComputedUsageResult();
-            o.commitmentServiceId = commitmentServiceId;
-            o.compartmentId = compartmentId;
-            o.computeSource = computeSource;
-            o.computedUsageId = computedUsageId;
-            o.cost = cost;
-            o.costRounded = costRounded;
-            o.currencyCode = currencyCode;
-            o.dataCenter = dataCenter;
-            o.fields = fields;
-            o.id = id;
-            o.isInvoiced = isInvoiced;
-            o.mqsMessageId = mqsMessageId;
-            o.netUnitPrice = netUnitPrice;
-            o.originalUsageNumber = originalUsageNumber;
-            o.parentProducts = parentProducts;
-            o.parentSubscribedServiceId = parentSubscribedServiceId;
-            o.planNumber = planNumber;
-            o.products = products;
-            o.quantity = quantity;
-            o.rateCardId = rateCardId;
-            o.rateCardTierdId = rateCardTierdId;
-            o.timeCreated = timeCreated;
-            o.timeMeteredOn = timeMeteredOn;
-            o.timeOfArrival = timeOfArrival;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            o.unitOfMeasure = unitOfMeasure;
-            o.usageNumber = usageNumber;
-            return o;
+            final var _resultValue = new GetComputedUsageResult();
+            _resultValue.commitmentServiceId = commitmentServiceId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeSource = computeSource;
+            _resultValue.computedUsageId = computedUsageId;
+            _resultValue.cost = cost;
+            _resultValue.costRounded = costRounded;
+            _resultValue.currencyCode = currencyCode;
+            _resultValue.dataCenter = dataCenter;
+            _resultValue.fields = fields;
+            _resultValue.id = id;
+            _resultValue.isInvoiced = isInvoiced;
+            _resultValue.mqsMessageId = mqsMessageId;
+            _resultValue.netUnitPrice = netUnitPrice;
+            _resultValue.originalUsageNumber = originalUsageNumber;
+            _resultValue.parentProducts = parentProducts;
+            _resultValue.parentSubscribedServiceId = parentSubscribedServiceId;
+            _resultValue.planNumber = planNumber;
+            _resultValue.products = products;
+            _resultValue.quantity = quantity;
+            _resultValue.rateCardId = rateCardId;
+            _resultValue.rateCardTierdId = rateCardTierdId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeMeteredOn = timeMeteredOn;
+            _resultValue.timeOfArrival = timeOfArrival;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            _resultValue.unitOfMeasure = unitOfMeasure;
+            _resultValue.usageNumber = usageNumber;
+            return _resultValue;
         }
     }
 }

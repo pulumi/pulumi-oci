@@ -81,11 +81,11 @@ public final class GetConfigurationResult {
             return this;
         }
         public GetConfigurationResult build() {
-            final var o = new GetConfigurationResult();
-            o.id = id;
-            o.items = items;
-            o.tenantId = tenantId;
-            return o;
+            final var _resultValue = new GetConfigurationResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.tenantId = tenantId;
+            return _resultValue;
         }
     }
 }

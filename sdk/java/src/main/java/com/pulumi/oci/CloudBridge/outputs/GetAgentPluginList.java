@@ -200,17 +200,17 @@ public final class GetAgentPluginList {
             return this;
         }
         public GetAgentPluginList build() {
-            final var o = new GetAgentPluginList();
-            o.agentId = agentId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.pluginVersion = pluginVersion;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAgentPluginList();
+            _resultValue.agentId = agentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.pluginVersion = pluginVersion;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

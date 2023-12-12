@@ -103,12 +103,12 @@ public final class GetDomainsIdentitySettingsIdentitySettingMyProfile {
             return this;
         }
         public GetDomainsIdentitySettingsIdentitySettingMyProfile build() {
-            final var o = new GetDomainsIdentitySettingsIdentitySettingMyProfile();
-            o.allowEndUsersToChangeTheirPassword = allowEndUsersToChangeTheirPassword;
-            o.allowEndUsersToLinkTheirSupportAccount = allowEndUsersToLinkTheirSupportAccount;
-            o.allowEndUsersToManageTheirCapabilities = allowEndUsersToManageTheirCapabilities;
-            o.allowEndUsersToUpdateTheirSecuritySettings = allowEndUsersToUpdateTheirSecuritySettings;
-            return o;
+            final var _resultValue = new GetDomainsIdentitySettingsIdentitySettingMyProfile();
+            _resultValue.allowEndUsersToChangeTheirPassword = allowEndUsersToChangeTheirPassword;
+            _resultValue.allowEndUsersToLinkTheirSupportAccount = allowEndUsersToLinkTheirSupportAccount;
+            _resultValue.allowEndUsersToManageTheirCapabilities = allowEndUsersToManageTheirCapabilities;
+            _resultValue.allowEndUsersToUpdateTheirSecuritySettings = allowEndUsersToUpdateTheirSecuritySettings;
+            return _resultValue;
         }
     }
 }

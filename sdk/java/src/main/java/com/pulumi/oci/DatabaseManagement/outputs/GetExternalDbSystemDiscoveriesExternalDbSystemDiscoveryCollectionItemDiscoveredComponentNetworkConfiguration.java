@@ -85,11 +85,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration();
-            o.networkNumber = networkNumber;
-            o.networkType = networkType;
-            o.subnet = subnet;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration();
+            _resultValue.networkNumber = networkNumber;
+            _resultValue.networkType = networkType;
+            _resultValue.subnet = subnet;
+            return _resultValue;
         }
     }
 }

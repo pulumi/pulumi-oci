@@ -65,10 +65,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulti
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp();
-            o.multicloudPlatformUrl = multicloudPlatformUrl;
-            o.multicloudServiceType = multicloudServiceType;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp();
+            _resultValue.multicloudPlatformUrl = multicloudPlatformUrl;
+            _resultValue.multicloudServiceType = multicloudServiceType;
+            return _resultValue;
         }
     }
 }

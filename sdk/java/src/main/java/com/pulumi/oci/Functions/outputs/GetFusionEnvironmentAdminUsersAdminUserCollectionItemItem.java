@@ -103,12 +103,12 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem {
             return this;
         }
         public GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem build() {
-            final var o = new GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem();
-            o.emailAddress = emailAddress;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentAdminUsersAdminUserCollectionItemItem();
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

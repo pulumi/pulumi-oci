@@ -225,18 +225,18 @@ public final class GetHttpRedirectsHttpRedirect {
             return this;
         }
         public GetHttpRedirectsHttpRedirect build() {
-            final var o = new GetHttpRedirectsHttpRedirect();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.domain = domain;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.responseCode = responseCode;
-            o.state = state;
-            o.targets = targets;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetHttpRedirectsHttpRedirect();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.domain = domain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.responseCode = responseCode;
+            _resultValue.state = state;
+            _resultValue.targets = targets;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

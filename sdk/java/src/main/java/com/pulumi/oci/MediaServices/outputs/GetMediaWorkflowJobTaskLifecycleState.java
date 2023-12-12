@@ -84,11 +84,11 @@ public final class GetMediaWorkflowJobTaskLifecycleState {
             return this;
         }
         public GetMediaWorkflowJobTaskLifecycleState build() {
-            final var o = new GetMediaWorkflowJobTaskLifecycleState();
-            o.key = key;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMediaWorkflowJobTaskLifecycleState();
+            _resultValue.key = key;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

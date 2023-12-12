@@ -144,14 +144,14 @@ public final class BucketRetentionRule {
             return this;
         }
         public BucketRetentionRule build() {
-            final var o = new BucketRetentionRule();
-            o.displayName = displayName;
-            o.duration = duration;
-            o.retentionRuleId = retentionRuleId;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            o.timeRuleLocked = timeRuleLocked;
-            return o;
+            final var _resultValue = new BucketRetentionRule();
+            _resultValue.displayName = displayName;
+            _resultValue.duration = duration;
+            _resultValue.retentionRuleId = retentionRuleId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            _resultValue.timeRuleLocked = timeRuleLocked;
+            return _resultValue;
         }
     }
 }

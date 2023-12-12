@@ -84,11 +84,11 @@ public final class GetAvailabilityDomainsAvailabilityDomain {
             return this;
         }
         public GetAvailabilityDomainsAvailabilityDomain build() {
-            final var o = new GetAvailabilityDomainsAvailabilityDomain();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAvailabilityDomainsAvailabilityDomain();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

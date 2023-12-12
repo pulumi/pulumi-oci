@@ -75,11 +75,11 @@ public final class GetSupportedHostShapesFilter {
             return values(List.of(values));
         }
         public GetSupportedHostShapesFilter build() {
-            final var o = new GetSupportedHostShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSupportedHostShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration();
-            o.networkNumber = networkNumber;
-            o.scanName = scanName;
-            o.scanPort = scanPort;
-            o.scanProtocol = scanProtocol;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration();
+            _resultValue.networkNumber = networkNumber;
+            _resultValue.scanName = scanName;
+            _resultValue.scanPort = scanPort;
+            _resultValue.scanProtocol = scanProtocol;
+            return _resultValue;
         }
     }
 }

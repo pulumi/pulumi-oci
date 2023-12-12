@@ -277,21 +277,21 @@ public final class GetRemotePeeringConnectionsRemotePeeringConnection {
             return this;
         }
         public GetRemotePeeringConnectionsRemotePeeringConnection build() {
-            final var o = new GetRemotePeeringConnectionsRemotePeeringConnection();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.drgId = drgId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isCrossTenancyPeering = isCrossTenancyPeering;
-            o.peerId = peerId;
-            o.peerRegionName = peerRegionName;
-            o.peerTenancyId = peerTenancyId;
-            o.peeringStatus = peeringStatus;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetRemotePeeringConnectionsRemotePeeringConnection();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.drgId = drgId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isCrossTenancyPeering = isCrossTenancyPeering;
+            _resultValue.peerId = peerId;
+            _resultValue.peerRegionName = peerRegionName;
+            _resultValue.peerTenancyId = peerTenancyId;
+            _resultValue.peeringStatus = peeringStatus;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -235,20 +235,20 @@ public final class GetContainerImagesResult {
             return this;
         }
         public GetContainerImagesResult build() {
-            final var o = new GetContainerImagesResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.containerImageCollections = containerImageCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.imageId = imageId;
-            o.isVersioned = isVersioned;
-            o.repositoryId = repositoryId;
-            o.repositoryName = repositoryName;
-            o.state = state;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetContainerImagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.containerImageCollections = containerImageCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.isVersioned = isVersioned;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryName = repositoryName;
+            _resultValue.state = state;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -293,22 +293,22 @@ public final class GetOutboundConnectorResult {
             return this;
         }
         public GetOutboundConnectorResult build() {
-            final var o = new GetOutboundConnectorResult();
-            o.availabilityDomain = availabilityDomain;
-            o.bindDistinguishedName = bindDistinguishedName;
-            o.compartmentId = compartmentId;
-            o.connectorType = connectorType;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.endpoints = endpoints;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.outboundConnectorId = outboundConnectorId;
-            o.passwordSecretId = passwordSecretId;
-            o.passwordSecretVersion = passwordSecretVersion;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetOutboundConnectorResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.bindDistinguishedName = bindDistinguishedName;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectorType = connectorType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoints = endpoints;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.outboundConnectorId = outboundConnectorId;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.passwordSecretVersion = passwordSecretVersion;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

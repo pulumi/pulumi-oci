@@ -444,30 +444,30 @@ public final class GetMetricExtensionResult {
             return this;
         }
         public GetMetricExtensionResult build() {
-            final var o = new GetMetricExtensionResult();
-            o.collectionMethod = collectionMethod;
-            o.collectionRecurrences = collectionRecurrences;
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.description = description;
-            o.displayName = displayName;
-            o.enabledOnResources = enabledOnResources;
-            o.enabledOnResourcesCount = enabledOnResourcesCount;
-            o.id = id;
-            o.lastUpdatedBy = lastUpdatedBy;
-            o.metricExtensionId = metricExtensionId;
-            o.metricLists = metricLists;
-            o.name = name;
-            o.publishTrigger = publishTrigger;
-            o.queryProperties = queryProperties;
-            o.resourceType = resourceType;
-            o.resourceUri = resourceUri;
-            o.state = state;
-            o.status = status;
-            o.tenantId = tenantId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMetricExtensionResult();
+            _resultValue.collectionMethod = collectionMethod;
+            _resultValue.collectionRecurrences = collectionRecurrences;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.enabledOnResources = enabledOnResources;
+            _resultValue.enabledOnResourcesCount = enabledOnResourcesCount;
+            _resultValue.id = id;
+            _resultValue.lastUpdatedBy = lastUpdatedBy;
+            _resultValue.metricExtensionId = metricExtensionId;
+            _resultValue.metricLists = metricLists;
+            _resultValue.name = name;
+            _resultValue.publishTrigger = publishTrigger;
+            _resultValue.queryProperties = queryProperties;
+            _resultValue.resourceType = resourceType;
+            _resultValue.resourceUri = resourceUri;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.tenantId = tenantId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

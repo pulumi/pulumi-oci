@@ -46,9 +46,9 @@ public final class GetDomainsSmtpCredentialsSmtpCredentialUrnietfparamsscimschem
             return this;
         }
         public GetDomainsSmtpCredentialsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new GetDomainsSmtpCredentialsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new GetDomainsSmtpCredentialsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

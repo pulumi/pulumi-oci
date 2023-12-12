@@ -42,9 +42,9 @@ public final class GetDataMaskRulesDataMaskRuleCollection {
             return items(List.of(items));
         }
         public GetDataMaskRulesDataMaskRuleCollection build() {
-            final var o = new GetDataMaskRulesDataMaskRuleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDataMaskRulesDataMaskRuleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

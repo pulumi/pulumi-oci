@@ -123,13 +123,13 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount();
-            o.active = active;
-            o.appId = appId;
-            o.name = name;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount();
+            _resultValue.active = active;
+            _resultValue.appId = appId;
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

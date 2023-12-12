@@ -267,20 +267,20 @@ public final class GetMysqlDbSystemChannel {
             return this;
         }
         public GetMysqlDbSystemChannel build() {
-            final var o = new GetMysqlDbSystemChannel();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.sources = sources;
-            o.state = state;
-            o.targets = targets;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemChannel();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.sources = sources;
+            _resultValue.state = state;
+            _resultValue.targets = targets;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

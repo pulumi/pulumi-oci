@@ -283,21 +283,21 @@ public final class GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigProtectionSetting build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigProtectionSetting();
-            o.allowedHttpMethods = allowedHttpMethods;
-            o.blockAction = blockAction;
-            o.blockErrorPageCode = blockErrorPageCode;
-            o.blockErrorPageDescription = blockErrorPageDescription;
-            o.blockErrorPageMessage = blockErrorPageMessage;
-            o.blockResponseCode = blockResponseCode;
-            o.isResponseInspected = isResponseInspected;
-            o.maxArgumentCount = maxArgumentCount;
-            o.maxNameLengthPerArgument = maxNameLengthPerArgument;
-            o.maxResponseSizeInKiB = maxResponseSizeInKiB;
-            o.maxTotalNameLengthOfArguments = maxTotalNameLengthOfArguments;
-            o.mediaTypes = mediaTypes;
-            o.recommendationsPeriodInDays = recommendationsPeriodInDays;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigProtectionSetting();
+            _resultValue.allowedHttpMethods = allowedHttpMethods;
+            _resultValue.blockAction = blockAction;
+            _resultValue.blockErrorPageCode = blockErrorPageCode;
+            _resultValue.blockErrorPageDescription = blockErrorPageDescription;
+            _resultValue.blockErrorPageMessage = blockErrorPageMessage;
+            _resultValue.blockResponseCode = blockResponseCode;
+            _resultValue.isResponseInspected = isResponseInspected;
+            _resultValue.maxArgumentCount = maxArgumentCount;
+            _resultValue.maxNameLengthPerArgument = maxNameLengthPerArgument;
+            _resultValue.maxResponseSizeInKiB = maxResponseSizeInKiB;
+            _resultValue.maxTotalNameLengthOfArguments = maxTotalNameLengthOfArguments;
+            _resultValue.mediaTypes = mediaTypes;
+            _resultValue.recommendationsPeriodInDays = recommendationsPeriodInDays;
+            return _resultValue;
         }
     }
 }

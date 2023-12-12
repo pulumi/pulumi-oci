@@ -97,12 +97,12 @@ public final class GetExternalAsmUsersResult {
             return this;
         }
         public GetExternalAsmUsersResult build() {
-            final var o = new GetExternalAsmUsersResult();
-            o.externalAsmId = externalAsmId;
-            o.externalAsmUserCollections = externalAsmUserCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalAsmUsersResult();
+            _resultValue.externalAsmId = externalAsmId;
+            _resultValue.externalAsmUserCollections = externalAsmUserCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

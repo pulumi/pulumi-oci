@@ -128,13 +128,13 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
             return urls(List.of(urls));
         }
         public GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem build() {
-            final var o = new GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem();
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.totalUrls = totalUrls;
-            o.urls = urls;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem();
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.totalUrls = totalUrls;
+            _resultValue.urls = urls;
+            return _resultValue;
         }
     }
 }

@@ -102,12 +102,12 @@ public final class GetSystemMediaWorkflowResult {
             return this;
         }
         public GetSystemMediaWorkflowResult build() {
-            final var o = new GetSystemMediaWorkflowResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.items = items;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetSystemMediaWorkflowResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

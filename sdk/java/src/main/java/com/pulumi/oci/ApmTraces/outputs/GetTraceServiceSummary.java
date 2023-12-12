@@ -84,11 +84,11 @@ public final class GetTraceServiceSummary {
             return this;
         }
         public GetTraceServiceSummary build() {
-            final var o = new GetTraceServiceSummary();
-            o.errorSpans = errorSpans;
-            o.spanServiceName = spanServiceName;
-            o.totalSpans = totalSpans;
-            return o;
+            final var _resultValue = new GetTraceServiceSummary();
+            _resultValue.errorSpans = errorSpans;
+            _resultValue.spanServiceName = spanServiceName;
+            _resultValue.totalSpans = totalSpans;
+            return _resultValue;
         }
     }
 }

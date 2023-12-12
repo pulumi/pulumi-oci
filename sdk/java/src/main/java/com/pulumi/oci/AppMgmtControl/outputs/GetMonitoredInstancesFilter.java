@@ -67,11 +67,11 @@ public final class GetMonitoredInstancesFilter {
             return values(List.of(values));
         }
         public GetMonitoredInstancesFilter build() {
-            final var o = new GetMonitoredInstancesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetMonitoredInstancesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

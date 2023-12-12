@@ -104,12 +104,12 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlementQuota {
             return this;
         }
         public GetUsagePlansUsagePlanCollectionItemEntitlementQuota build() {
-            final var o = new GetUsagePlansUsagePlanCollectionItemEntitlementQuota();
-            o.operationOnBreach = operationOnBreach;
-            o.resetPolicy = resetPolicy;
-            o.unit = unit;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetUsagePlansUsagePlanCollectionItemEntitlementQuota();
+            _resultValue.operationOnBreach = operationOnBreach;
+            _resultValue.resetPolicy = resetPolicy;
+            _resultValue.unit = unit;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

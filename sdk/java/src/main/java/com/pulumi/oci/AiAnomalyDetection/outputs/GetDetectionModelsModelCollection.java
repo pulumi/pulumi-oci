@@ -42,9 +42,9 @@ public final class GetDetectionModelsModelCollection {
             return items(List.of(items));
         }
         public GetDetectionModelsModelCollection build() {
-            final var o = new GetDetectionModelsModelCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDetectionModelsModelCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

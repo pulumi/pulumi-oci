@@ -65,10 +65,10 @@ public final class GetDomainsMyDevicesMyDeviceAdditionalAttribute {
             return this;
         }
         public GetDomainsMyDevicesMyDeviceAdditionalAttribute build() {
-            final var o = new GetDomainsMyDevicesMyDeviceAdditionalAttribute();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyDevicesMyDeviceAdditionalAttribute();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetSqlEndpointsSqlEndpointCollection {
             return items(List.of(items));
         }
         public GetSqlEndpointsSqlEndpointCollection build() {
-            final var o = new GetSqlEndpointsSqlEndpointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSqlEndpointsSqlEndpointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

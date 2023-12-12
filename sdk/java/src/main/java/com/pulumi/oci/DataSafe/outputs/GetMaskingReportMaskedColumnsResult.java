@@ -227,18 +227,18 @@ public final class GetMaskingReportMaskedColumnsResult {
             return this;
         }
         public GetMaskingReportMaskedColumnsResult build() {
-            final var o = new GetMaskingReportMaskedColumnsResult();
-            o.columnNames = columnNames;
-            o.filters = filters;
-            o.id = id;
-            o.maskedColumnCollections = maskedColumnCollections;
-            o.maskingColumnGroups = maskingColumnGroups;
-            o.maskingReportId = maskingReportId;
-            o.objectTypes = objectTypes;
-            o.objects = objects;
-            o.schemaNames = schemaNames;
-            o.sensitiveTypeId = sensitiveTypeId;
-            return o;
+            final var _resultValue = new GetMaskingReportMaskedColumnsResult();
+            _resultValue.columnNames = columnNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.maskedColumnCollections = maskedColumnCollections;
+            _resultValue.maskingColumnGroups = maskingColumnGroups;
+            _resultValue.maskingReportId = maskingReportId;
+            _resultValue.objectTypes = objectTypes;
+            _resultValue.objects = objects;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            return _resultValue;
         }
     }
 }

@@ -81,11 +81,11 @@ public final class GetExternalAsmConfigurationResult {
             return initParameters(List.of(initParameters));
         }
         public GetExternalAsmConfigurationResult build() {
-            final var o = new GetExternalAsmConfigurationResult();
-            o.externalAsmId = externalAsmId;
-            o.id = id;
-            o.initParameters = initParameters;
-            return o;
+            final var _resultValue = new GetExternalAsmConfigurationResult();
+            _resultValue.externalAsmId = externalAsmId;
+            _resultValue.id = id;
+            _resultValue.initParameters = initParameters;
+            return _resultValue;
         }
     }
 }

@@ -166,15 +166,15 @@ public final class GetObjectLifecyclePolicyRule {
             return this;
         }
         public GetObjectLifecyclePolicyRule build() {
-            final var o = new GetObjectLifecyclePolicyRule();
-            o.action = action;
-            o.isEnabled = isEnabled;
-            o.name = name;
-            o.objectNameFilters = objectNameFilters;
-            o.target = target;
-            o.timeAmount = timeAmount;
-            o.timeUnit = timeUnit;
-            return o;
+            final var _resultValue = new GetObjectLifecyclePolicyRule();
+            _resultValue.action = action;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.name = name;
+            _resultValue.objectNameFilters = objectNameFilters;
+            _resultValue.target = target;
+            _resultValue.timeAmount = timeAmount;
+            _resultValue.timeUnit = timeUnit;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class GetLimitValuesLimitValue {
             return this;
         }
         public GetLimitValuesLimitValue build() {
-            final var o = new GetLimitValuesLimitValue();
-            o.availabilityDomain = availabilityDomain;
-            o.name = name;
-            o.scopeType = scopeType;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetLimitValuesLimitValue();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.name = name;
+            _resultValue.scopeType = scopeType;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

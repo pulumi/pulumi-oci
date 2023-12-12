@@ -42,9 +42,9 @@ public final class GetExternalDbHomesExternalDbHomeCollection {
             return items(List.of(items));
         }
         public GetExternalDbHomesExternalDbHomeCollection build() {
-            final var o = new GetExternalDbHomesExternalDbHomeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalDbHomesExternalDbHomeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

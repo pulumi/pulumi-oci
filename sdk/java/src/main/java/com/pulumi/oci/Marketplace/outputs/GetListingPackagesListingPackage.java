@@ -192,16 +192,16 @@ public final class GetListingPackagesListingPackage {
             return this;
         }
         public GetListingPackagesListingPackage build() {
-            final var o = new GetListingPackagesListingPackage();
-            o.listingId = listingId;
-            o.operatingSystems = operatingSystems;
-            o.packageType = packageType;
-            o.packageVersion = packageVersion;
-            o.pricings = pricings;
-            o.regions = regions;
-            o.resourceId = resourceId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetListingPackagesListingPackage();
+            _resultValue.listingId = listingId;
+            _resultValue.operatingSystems = operatingSystems;
+            _resultValue.packageType = packageType;
+            _resultValue.packageVersion = packageVersion;
+            _resultValue.pricings = pricings;
+            _resultValue.regions = regions;
+            _resultValue.resourceId = resourceId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

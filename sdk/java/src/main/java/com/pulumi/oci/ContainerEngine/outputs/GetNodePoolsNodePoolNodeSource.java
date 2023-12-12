@@ -84,11 +84,11 @@ public final class GetNodePoolsNodePoolNodeSource {
             return this;
         }
         public GetNodePoolsNodePoolNodeSource build() {
-            final var o = new GetNodePoolsNodePoolNodeSource();
-            o.imageId = imageId;
-            o.sourceName = sourceName;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new GetNodePoolsNodePoolNodeSource();
+            _resultValue.imageId = imageId;
+            _resultValue.sourceName = sourceName;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

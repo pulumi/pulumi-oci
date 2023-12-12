@@ -50,9 +50,9 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
             return items(List.of(items));
         }
         public GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem build() {
-            final var o = new GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItem();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

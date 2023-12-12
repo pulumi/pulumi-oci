@@ -111,12 +111,12 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAdd
             return reservedIps(List.of(reservedIps));
         }
         public GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress build() {
-            final var o = new GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress();
-            o.ipAddress = ipAddress;
-            o.ipVersion = ipVersion;
-            o.isPublic = isPublic;
-            o.reservedIps = reservedIps;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddress();
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.ipVersion = ipVersion;
+            _resultValue.isPublic = isPublic;
+            _resultValue.reservedIps = reservedIps;
+            return _resultValue;
         }
     }
 }

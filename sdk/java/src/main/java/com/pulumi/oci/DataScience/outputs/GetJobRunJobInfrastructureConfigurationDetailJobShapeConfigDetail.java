@@ -65,10 +65,10 @@ public final class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDe
             return this;
         }
         public GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail build() {
-            final var o = new GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

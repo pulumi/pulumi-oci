@@ -141,14 +141,14 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSo
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem build() {
-            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem();
-            o.branch = branch;
-            o.connectionId = connectionId;
-            o.connectionType = connectionType;
-            o.name = name;
-            o.repositoryId = repositoryId;
-            o.repositoryUrl = repositoryUrl;
-            return o;
+            final var _resultValue = new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildSourceCollectionItem();
+            _resultValue.branch = branch;
+            _resultValue.connectionId = connectionId;
+            _resultValue.connectionType = connectionType;
+            _resultValue.name = name;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryUrl = repositoryUrl;
+            return _resultValue;
         }
     }
 }

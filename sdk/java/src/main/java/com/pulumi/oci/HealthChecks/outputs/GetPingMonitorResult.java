@@ -334,24 +334,24 @@ public final class GetPingMonitorResult {
             return vantagePointNames(List.of(vantagePointNames));
         }
         public GetPingMonitorResult build() {
-            final var o = new GetPingMonitorResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.homeRegion = homeRegion;
-            o.id = id;
-            o.intervalInSeconds = intervalInSeconds;
-            o.isEnabled = isEnabled;
-            o.monitorId = monitorId;
-            o.port = port;
-            o.protocol = protocol;
-            o.resultsUrl = resultsUrl;
-            o.targets = targets;
-            o.timeCreated = timeCreated;
-            o.timeoutInSeconds = timeoutInSeconds;
-            o.vantagePointNames = vantagePointNames;
-            return o;
+            final var _resultValue = new GetPingMonitorResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.homeRegion = homeRegion;
+            _resultValue.id = id;
+            _resultValue.intervalInSeconds = intervalInSeconds;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.monitorId = monitorId;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.resultsUrl = resultsUrl;
+            _resultValue.targets = targets;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeoutInSeconds = timeoutInSeconds;
+            _resultValue.vantagePointNames = vantagePointNames;
+            return _resultValue;
         }
     }
 }

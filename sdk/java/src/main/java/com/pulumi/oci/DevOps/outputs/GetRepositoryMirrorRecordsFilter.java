@@ -67,11 +67,11 @@ public final class GetRepositoryMirrorRecordsFilter {
             return values(List.of(values));
         }
         public GetRepositoryMirrorRecordsFilter build() {
-            final var o = new GetRepositoryMirrorRecordsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRepositoryMirrorRecordsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

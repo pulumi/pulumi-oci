@@ -89,11 +89,11 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule {
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule();
-            o.action = action;
-            o.exclusions = exclusions;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule();
+            _resultValue.action = action;
+            _resultValue.exclusions = exclusions;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

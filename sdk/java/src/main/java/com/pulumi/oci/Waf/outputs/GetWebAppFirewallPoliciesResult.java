@@ -147,14 +147,14 @@ public final class GetWebAppFirewallPoliciesResult {
             return webAppFirewallPolicyCollections(List.of(webAppFirewallPolicyCollections));
         }
         public GetWebAppFirewallPoliciesResult build() {
-            final var o = new GetWebAppFirewallPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.states = states;
-            o.webAppFirewallPolicyCollections = webAppFirewallPolicyCollections;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            _resultValue.webAppFirewallPolicyCollections = webAppFirewallPolicyCollections;
+            return _resultValue;
         }
     }
 }

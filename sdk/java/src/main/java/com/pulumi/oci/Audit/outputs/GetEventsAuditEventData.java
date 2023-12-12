@@ -312,22 +312,22 @@ public final class GetEventsAuditEventData {
             return stateChanges(List.of(stateChanges));
         }
         public GetEventsAuditEventData build() {
-            final var o = new GetEventsAuditEventData();
-            o.additionalDetails = additionalDetails;
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.compartmentName = compartmentName;
-            o.definedTags = definedTags;
-            o.eventGroupingId = eventGroupingId;
-            o.eventName = eventName;
-            o.freeformTags = freeformTags;
-            o.identities = identities;
-            o.requests = requests;
-            o.resourceId = resourceId;
-            o.resourceName = resourceName;
-            o.responses = responses;
-            o.stateChanges = stateChanges;
-            return o;
+            final var _resultValue = new GetEventsAuditEventData();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentName = compartmentName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.eventGroupingId = eventGroupingId;
+            _resultValue.eventName = eventName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.identities = identities;
+            _resultValue.requests = requests;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceName = resourceName;
+            _resultValue.responses = responses;
+            _resultValue.stateChanges = stateChanges;
+            return _resultValue;
         }
     }
 }

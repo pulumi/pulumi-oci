@@ -129,13 +129,13 @@ public final class ComputeCapacityReportShapeAvailability {
             return this;
         }
         public ComputeCapacityReportShapeAvailability build() {
-            final var o = new ComputeCapacityReportShapeAvailability();
-            o.availabilityStatus = availabilityStatus;
-            o.availableCount = availableCount;
-            o.faultDomain = faultDomain;
-            o.instanceShape = instanceShape;
-            o.instanceShapeConfig = instanceShapeConfig;
-            return o;
+            final var _resultValue = new ComputeCapacityReportShapeAvailability();
+            _resultValue.availabilityStatus = availabilityStatus;
+            _resultValue.availableCount = availableCount;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.instanceShape = instanceShape;
+            _resultValue.instanceShapeConfig = instanceShapeConfig;
+            return _resultValue;
         }
     }
 }

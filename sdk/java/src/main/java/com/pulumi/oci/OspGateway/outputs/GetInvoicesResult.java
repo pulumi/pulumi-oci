@@ -211,21 +211,21 @@ public final class GetInvoicesResult {
             return types(List.of(types));
         }
         public GetInvoicesResult build() {
-            final var o = new GetInvoicesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.invoiceCollections = invoiceCollections;
-            o.invoiceId = invoiceId;
-            o.ospHomeRegion = ospHomeRegion;
-            o.searchText = searchText;
-            o.statuses = statuses;
-            o.timeInvoiceEnd = timeInvoiceEnd;
-            o.timeInvoiceStart = timeInvoiceStart;
-            o.timePaymentEnd = timePaymentEnd;
-            o.timePaymentStart = timePaymentStart;
-            o.types = types;
-            return o;
+            final var _resultValue = new GetInvoicesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.invoiceCollections = invoiceCollections;
+            _resultValue.invoiceId = invoiceId;
+            _resultValue.ospHomeRegion = ospHomeRegion;
+            _resultValue.searchText = searchText;
+            _resultValue.statuses = statuses;
+            _resultValue.timeInvoiceEnd = timeInvoiceEnd;
+            _resultValue.timeInvoiceStart = timeInvoiceStart;
+            _resultValue.timePaymentEnd = timePaymentEnd;
+            _resultValue.timePaymentStart = timePaymentStart;
+            _resultValue.types = types;
+            return _resultValue;
         }
     }
 }

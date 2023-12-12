@@ -65,10 +65,10 @@ public final class GetDomainsAppsAppAsOpcService {
             return this;
         }
         public GetDomainsAppsAppAsOpcService build() {
-            final var o = new GetDomainsAppsAppAsOpcService();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppAsOpcService();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

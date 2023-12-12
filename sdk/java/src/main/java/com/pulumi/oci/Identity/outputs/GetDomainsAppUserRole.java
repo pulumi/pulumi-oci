@@ -103,12 +103,12 @@ public final class GetDomainsAppUserRole {
             return this;
         }
         public GetDomainsAppUserRole build() {
-            final var o = new GetDomainsAppUserRole();
-            o.description = description;
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppUserRole();
+            _resultValue.description = description;
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

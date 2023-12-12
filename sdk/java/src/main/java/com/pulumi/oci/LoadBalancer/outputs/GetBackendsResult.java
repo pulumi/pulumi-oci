@@ -108,13 +108,13 @@ public final class GetBackendsResult {
             return this;
         }
         public GetBackendsResult build() {
-            final var o = new GetBackendsResult();
-            o.backends = backends;
-            o.backendsetName = backendsetName;
-            o.filters = filters;
-            o.id = id;
-            o.loadBalancerId = loadBalancerId;
-            return o;
+            final var _resultValue = new GetBackendsResult();
+            _resultValue.backends = backends;
+            _resultValue.backendsetName = backendsetName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.loadBalancerId = loadBalancerId;
+            return _resultValue;
         }
     }
 }

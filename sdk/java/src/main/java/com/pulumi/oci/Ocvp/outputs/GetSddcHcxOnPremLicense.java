@@ -84,11 +84,11 @@ public final class GetSddcHcxOnPremLicense {
             return this;
         }
         public GetSddcHcxOnPremLicense build() {
-            final var o = new GetSddcHcxOnPremLicense();
-            o.activationKey = activationKey;
-            o.status = status;
-            o.systemName = systemName;
-            return o;
+            final var _resultValue = new GetSddcHcxOnPremLicense();
+            _resultValue.activationKey = activationKey;
+            _resultValue.status = status;
+            _resultValue.systemName = systemName;
+            return _resultValue;
         }
     }
 }

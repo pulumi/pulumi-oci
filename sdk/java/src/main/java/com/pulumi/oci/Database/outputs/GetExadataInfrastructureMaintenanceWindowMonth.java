@@ -46,9 +46,9 @@ public final class GetExadataInfrastructureMaintenanceWindowMonth {
             return this;
         }
         public GetExadataInfrastructureMaintenanceWindowMonth build() {
-            final var o = new GetExadataInfrastructureMaintenanceWindowMonth();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetExadataInfrastructureMaintenanceWindowMonth();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

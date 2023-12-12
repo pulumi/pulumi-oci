@@ -230,18 +230,18 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
             return this;
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail build() {
-            final var o = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail();
-            o.condition = condition;
-            o.configurations = configurations;
-            o.dataSourceId = dataSourceId;
-            o.description = description;
-            o.entitiesMappings = entitiesMappings;
-            o.isConfigurationAllowed = isConfigurationAllowed;
-            o.isEnabled = isEnabled;
-            o.labels = labels;
-            o.recommendation = recommendation;
-            o.riskLevel = riskLevel;
-            return o;
+            final var _resultValue = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail();
+            _resultValue.condition = condition;
+            _resultValue.configurations = configurations;
+            _resultValue.dataSourceId = dataSourceId;
+            _resultValue.description = description;
+            _resultValue.entitiesMappings = entitiesMappings;
+            _resultValue.isConfigurationAllowed = isConfigurationAllowed;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.labels = labels;
+            _resultValue.recommendation = recommendation;
+            _resultValue.riskLevel = riskLevel;
+            return _resultValue;
         }
     }
 }

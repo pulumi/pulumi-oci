@@ -42,9 +42,9 @@ public final class GetDataSourcesDataSourceCollection {
             return items(List.of(items));
         }
         public GetDataSourcesDataSourceCollection build() {
-            final var o = new GetDataSourcesDataSourceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDataSourcesDataSourceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

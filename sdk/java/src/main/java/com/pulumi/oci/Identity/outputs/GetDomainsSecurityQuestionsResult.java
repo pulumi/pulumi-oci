@@ -260,25 +260,25 @@ public final class GetDomainsSecurityQuestionsResult {
             return this;
         }
         public GetDomainsSecurityQuestionsResult build() {
-            final var o = new GetDomainsSecurityQuestionsResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.securityQuestionCount = securityQuestionCount;
-            o.securityQuestionFilter = securityQuestionFilter;
-            o.securityQuestions = securityQuestions;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDomainsSecurityQuestionsResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.securityQuestionCount = securityQuestionCount;
+            _resultValue.securityQuestionFilter = securityQuestionFilter;
+            _resultValue.securityQuestions = securityQuestions;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

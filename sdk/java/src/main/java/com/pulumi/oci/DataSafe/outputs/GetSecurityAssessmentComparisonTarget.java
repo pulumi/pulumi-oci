@@ -227,17 +227,17 @@ public final class GetSecurityAssessmentComparisonTarget {
             return userAccounts(List.of(userAccounts));
         }
         public GetSecurityAssessmentComparisonTarget build() {
-            final var o = new GetSecurityAssessmentComparisonTarget();
-            o.auditings = auditings;
-            o.authorizationControls = authorizationControls;
-            o.baselineTargetId = baselineTargetId;
-            o.currentTargetId = currentTargetId;
-            o.dataEncryptions = dataEncryptions;
-            o.dbConfigurations = dbConfigurations;
-            o.fineGrainedAccessControls = fineGrainedAccessControls;
-            o.privilegesAndRoles = privilegesAndRoles;
-            o.userAccounts = userAccounts;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTarget();
+            _resultValue.auditings = auditings;
+            _resultValue.authorizationControls = authorizationControls;
+            _resultValue.baselineTargetId = baselineTargetId;
+            _resultValue.currentTargetId = currentTargetId;
+            _resultValue.dataEncryptions = dataEncryptions;
+            _resultValue.dbConfigurations = dbConfigurations;
+            _resultValue.fineGrainedAccessControls = fineGrainedAccessControls;
+            _resultValue.privilegesAndRoles = privilegesAndRoles;
+            _resultValue.userAccounts = userAccounts;
+            return _resultValue;
         }
     }
 }

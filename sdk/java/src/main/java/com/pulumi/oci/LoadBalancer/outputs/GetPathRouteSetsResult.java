@@ -97,12 +97,12 @@ public final class GetPathRouteSetsResult {
             return pathRouteSets(List.of(pathRouteSets));
         }
         public GetPathRouteSetsResult build() {
-            final var o = new GetPathRouteSetsResult();
-            o.filters = filters;
-            o.id = id;
-            o.loadBalancerId = loadBalancerId;
-            o.pathRouteSets = pathRouteSets;
-            return o;
+            final var _resultValue = new GetPathRouteSetsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.pathRouteSets = pathRouteSets;
+            return _resultValue;
         }
     }
 }

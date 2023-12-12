@@ -70,10 +70,10 @@ public final class GetAutonomousContainerDatabasePeerAutonomousContainerDatabase
             return this;
         }
         public GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig build() {
-            final var o = new GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig();
-            o.backupDestinationDetails = backupDestinationDetails;
-            o.recoveryWindowInDays = recoveryWindowInDays;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig();
+            _resultValue.backupDestinationDetails = backupDestinationDetails;
+            _resultValue.recoveryWindowInDays = recoveryWindowInDays;
+            return _resultValue;
         }
     }
 }

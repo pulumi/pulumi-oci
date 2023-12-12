@@ -84,11 +84,11 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegeItem {
             return this;
         }
         public GetManagedDatabaseUserConsumerGroupPrivilegeItem build() {
-            final var o = new GetManagedDatabaseUserConsumerGroupPrivilegeItem();
-            o.grantOption = grantOption;
-            o.initialGroup = initialGroup;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserConsumerGroupPrivilegeItem();
+            _resultValue.grantOption = grantOption;
+            _resultValue.initialGroup = initialGroup;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

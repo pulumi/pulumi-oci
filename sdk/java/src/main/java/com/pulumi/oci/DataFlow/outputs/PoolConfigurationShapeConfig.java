@@ -67,10 +67,10 @@ public final class PoolConfigurationShapeConfig {
             return this;
         }
         public PoolConfigurationShapeConfig build() {
-            final var o = new PoolConfigurationShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new PoolConfigurationShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

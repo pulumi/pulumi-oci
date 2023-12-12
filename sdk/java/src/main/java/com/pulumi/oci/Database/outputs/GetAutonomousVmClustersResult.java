@@ -163,15 +163,15 @@ public final class GetAutonomousVmClustersResult {
             return this;
         }
         public GetAutonomousVmClustersResult build() {
-            final var o = new GetAutonomousVmClustersResult();
-            o.autonomousVmClusters = autonomousVmClusters;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAutonomousVmClustersResult();
+            _resultValue.autonomousVmClusters = autonomousVmClusters;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

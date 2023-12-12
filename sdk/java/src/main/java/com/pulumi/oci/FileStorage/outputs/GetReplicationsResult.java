@@ -174,16 +174,16 @@ public final class GetReplicationsResult {
             return this;
         }
         public GetReplicationsResult build() {
-            final var o = new GetReplicationsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.fileSystemId = fileSystemId;
-            o.filters = filters;
-            o.id = id;
-            o.replications = replications;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetReplicationsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.fileSystemId = fileSystemId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.replications = replications;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

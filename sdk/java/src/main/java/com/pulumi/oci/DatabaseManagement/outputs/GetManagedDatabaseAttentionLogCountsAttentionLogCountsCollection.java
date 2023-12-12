@@ -50,9 +50,9 @@ public final class GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollect
             return items(List.of(items));
         }
         public GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection build() {
-            final var o = new GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAttentionLogCountsAttentionLogCountsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

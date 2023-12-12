@@ -84,11 +84,11 @@ public final class GetSecurityAssessmentComparisonTargetAuthorizationControlBase
             return this;
         }
         public GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference build() {
-            final var o = new GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference();
-            o.cis = cis;
-            o.gdpr = gdpr;
-            o.stig = stig;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference();
+            _resultValue.cis = cis;
+            _resultValue.gdpr = gdpr;
+            _resultValue.stig = stig;
+            return _resultValue;
         }
     }
 }

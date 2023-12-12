@@ -42,9 +42,9 @@ public final class GetExternalExadataStorageServersExternalExadataStorageServerC
             return items(List.of(items));
         }
         public GetExternalExadataStorageServersExternalExadataStorageServerCollection build() {
-            final var o = new GetExternalExadataStorageServersExternalExadataStorageServerCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServersExternalExadataStorageServerCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

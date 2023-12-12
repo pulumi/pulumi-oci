@@ -67,11 +67,11 @@ public final class GetManagedDatabaseAddmTasksFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseAddmTasksFilter build() {
-            final var o = new GetManagedDatabaseAddmTasksFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAddmTasksFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

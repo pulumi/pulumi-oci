@@ -94,12 +94,12 @@ public final class GetContainerInstanceShapeResult {
             return items(List.of(items));
         }
         public GetContainerInstanceShapeResult build() {
-            final var o = new GetContainerInstanceShapeResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapeResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

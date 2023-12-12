@@ -65,10 +65,10 @@ public final class GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica {
             return this;
         }
         public GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica build() {
-            final var o = new GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica();
-            o.membershipState = membershipState;
-            o.volumeReplicaId = volumeReplicaId;
-            return o;
+            final var _resultValue = new GetVolumeGroupReplicasVolumeGroupReplicaMemberReplica();
+            _resultValue.membershipState = membershipState;
+            _resultValue.volumeReplicaId = volumeReplicaId;
+            return _resultValue;
         }
     }
 }

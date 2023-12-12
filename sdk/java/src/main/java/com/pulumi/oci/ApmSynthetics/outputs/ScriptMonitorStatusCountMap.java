@@ -105,12 +105,12 @@ public final class ScriptMonitorStatusCountMap {
             return this;
         }
         public ScriptMonitorStatusCountMap build() {
-            final var o = new ScriptMonitorStatusCountMap();
-            o.disabled = disabled;
-            o.enabled = enabled;
-            o.invalid = invalid;
-            o.total = total;
-            return o;
+            final var _resultValue = new ScriptMonitorStatusCountMap();
+            _resultValue.disabled = disabled;
+            _resultValue.enabled = enabled;
+            _resultValue.invalid = invalid;
+            _resultValue.total = total;
+            return _resultValue;
         }
     }
 }

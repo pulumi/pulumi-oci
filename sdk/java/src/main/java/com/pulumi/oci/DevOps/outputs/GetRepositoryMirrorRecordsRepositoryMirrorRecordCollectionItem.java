@@ -127,14 +127,14 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
             return this;
         }
         public GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem build() {
-            final var o = new GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem();
-            o.freeformTags = freeformTags;
-            o.mirrorStatus = mirrorStatus;
-            o.timeCompleted = timeCompleted;
-            o.timeEnqueued = timeEnqueued;
-            o.timeStarted = timeStarted;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem();
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.mirrorStatus = mirrorStatus;
+            _resultValue.timeCompleted = timeCompleted;
+            _resultValue.timeEnqueued = timeEnqueued;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

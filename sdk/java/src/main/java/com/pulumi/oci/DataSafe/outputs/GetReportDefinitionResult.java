@@ -575,36 +575,36 @@ public final class GetReportDefinitionResult {
             return this;
         }
         public GetReportDefinitionResult build() {
-            final var o = new GetReportDefinitionResult();
-            o.category = category;
-            o.columnFilters = columnFilters;
-            o.columnInfos = columnInfos;
-            o.columnSortings = columnSortings;
-            o.compartmentId = compartmentId;
-            o.complianceStandards = complianceStandards;
-            o.dataSource = dataSource;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.displayOrder = displayOrder;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isSeeded = isSeeded;
-            o.parentId = parentId;
-            o.recordTimeSpan = recordTimeSpan;
-            o.reportDefinitionId = reportDefinitionId;
-            o.schedule = schedule;
-            o.scheduledReportCompartmentId = scheduledReportCompartmentId;
-            o.scheduledReportMimeType = scheduledReportMimeType;
-            o.scheduledReportName = scheduledReportName;
-            o.scheduledReportRowLimit = scheduledReportRowLimit;
-            o.scimFilter = scimFilter;
-            o.state = state;
-            o.summaries = summaries;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetReportDefinitionResult();
+            _resultValue.category = category;
+            _resultValue.columnFilters = columnFilters;
+            _resultValue.columnInfos = columnInfos;
+            _resultValue.columnSortings = columnSortings;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.complianceStandards = complianceStandards;
+            _resultValue.dataSource = dataSource;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.displayOrder = displayOrder;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isSeeded = isSeeded;
+            _resultValue.parentId = parentId;
+            _resultValue.recordTimeSpan = recordTimeSpan;
+            _resultValue.reportDefinitionId = reportDefinitionId;
+            _resultValue.schedule = schedule;
+            _resultValue.scheduledReportCompartmentId = scheduledReportCompartmentId;
+            _resultValue.scheduledReportMimeType = scheduledReportMimeType;
+            _resultValue.scheduledReportName = scheduledReportName;
+            _resultValue.scheduledReportRowLimit = scheduledReportRowLimit;
+            _resultValue.scimFilter = scimFilter;
+            _resultValue.state = state;
+            _resultValue.summaries = summaries;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

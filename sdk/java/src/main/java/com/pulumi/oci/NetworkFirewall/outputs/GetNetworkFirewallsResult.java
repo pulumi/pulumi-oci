@@ -182,16 +182,16 @@ public final class GetNetworkFirewallsResult {
             return this;
         }
         public GetNetworkFirewallsResult build() {
-            final var o = new GetNetworkFirewallsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.networkFirewallCollections = networkFirewallCollections;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetNetworkFirewallsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkFirewallCollections = networkFirewallCollections;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

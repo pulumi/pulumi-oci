@@ -69,10 +69,10 @@ public final class GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption
             return this;
         }
         public GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption build() {
-            final var o = new GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption();
-            o.allowedValues = allowedValues;
-            o.isDefaultEnabled = isDefaultEnabled;
-            return o;
+            final var _resultValue = new GetShapesShapePlatformConfigOptionTrustedPlatformModuleOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.isDefaultEnabled = isDefaultEnabled;
+            return _resultValue;
         }
     }
 }

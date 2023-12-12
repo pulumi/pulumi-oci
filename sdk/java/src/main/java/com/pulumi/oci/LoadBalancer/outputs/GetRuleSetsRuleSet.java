@@ -111,13 +111,13 @@ public final class GetRuleSetsRuleSet {
             return this;
         }
         public GetRuleSetsRuleSet build() {
-            final var o = new GetRuleSetsRuleSet();
-            o.id = id;
-            o.items = items;
-            o.loadBalancerId = loadBalancerId;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetRuleSetsRuleSet();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

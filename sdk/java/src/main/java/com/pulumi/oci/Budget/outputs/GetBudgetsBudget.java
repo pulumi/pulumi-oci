@@ -486,31 +486,31 @@ public final class GetBudgetsBudget {
             return this;
         }
         public GetBudgetsBudget build() {
-            final var o = new GetBudgetsBudget();
-            o.actualSpend = actualSpend;
-            o.alertRuleCount = alertRuleCount;
-            o.amount = amount;
-            o.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.endDate = endDate;
-            o.forecastedSpend = forecastedSpend;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.processingPeriodType = processingPeriodType;
-            o.resetPeriod = resetPeriod;
-            o.startDate = startDate;
-            o.state = state;
-            o.targetCompartmentId = targetCompartmentId;
-            o.targetType = targetType;
-            o.targets = targets;
-            o.timeCreated = timeCreated;
-            o.timeSpendComputed = timeSpendComputed;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetBudgetsBudget();
+            _resultValue.actualSpend = actualSpend;
+            _resultValue.alertRuleCount = alertRuleCount;
+            _resultValue.amount = amount;
+            _resultValue.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.endDate = endDate;
+            _resultValue.forecastedSpend = forecastedSpend;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.processingPeriodType = processingPeriodType;
+            _resultValue.resetPeriod = resetPeriod;
+            _resultValue.startDate = startDate;
+            _resultValue.state = state;
+            _resultValue.targetCompartmentId = targetCompartmentId;
+            _resultValue.targetType = targetType;
+            _resultValue.targets = targets;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeSpendComputed = timeSpendComputed;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

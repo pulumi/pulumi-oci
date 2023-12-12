@@ -84,11 +84,11 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeRespo
             return this;
         }
         public GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration build() {
-            final var o = new GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration();
-            o.configKey = configKey;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfiguration();
+            _resultValue.configKey = configKey;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

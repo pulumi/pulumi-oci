@@ -86,11 +86,11 @@ public final class WorkspaceImportRequestImportConflictResolution {
             return this;
         }
         public WorkspaceImportRequestImportConflictResolution build() {
-            final var o = new WorkspaceImportRequestImportConflictResolution();
-            o.duplicatePrefix = duplicatePrefix;
-            o.duplicateSuffix = duplicateSuffix;
-            o.importConflictResolutionType = importConflictResolutionType;
-            return o;
+            final var _resultValue = new WorkspaceImportRequestImportConflictResolution();
+            _resultValue.duplicatePrefix = duplicatePrefix;
+            _resultValue.duplicateSuffix = duplicateSuffix;
+            _resultValue.importConflictResolutionType = importConflictResolutionType;
+            return _resultValue;
         }
     }
 }

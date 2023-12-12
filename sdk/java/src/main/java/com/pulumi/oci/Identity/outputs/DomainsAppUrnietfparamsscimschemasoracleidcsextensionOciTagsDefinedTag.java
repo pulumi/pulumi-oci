@@ -152,11 +152,11 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsD
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

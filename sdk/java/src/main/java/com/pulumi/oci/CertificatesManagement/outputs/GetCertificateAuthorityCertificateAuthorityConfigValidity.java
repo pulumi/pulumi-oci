@@ -65,10 +65,10 @@ public final class GetCertificateAuthorityCertificateAuthorityConfigValidity {
             return this;
         }
         public GetCertificateAuthorityCertificateAuthorityConfigValidity build() {
-            final var o = new GetCertificateAuthorityCertificateAuthorityConfigValidity();
-            o.timeOfValidityNotAfter = timeOfValidityNotAfter;
-            o.timeOfValidityNotBefore = timeOfValidityNotBefore;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityCertificateAuthorityConfigValidity();
+            _resultValue.timeOfValidityNotAfter = timeOfValidityNotAfter;
+            _resultValue.timeOfValidityNotBefore = timeOfValidityNotBefore;
+            return _resultValue;
         }
     }
 }

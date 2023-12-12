@@ -131,14 +131,14 @@ public final class GetNetworkFirewallPolicyUrlListResult {
             return urls(List.of(urls));
         }
         public GetNetworkFirewallPolicyUrlListResult build() {
-            final var o = new GetNetworkFirewallPolicyUrlListResult();
-            o.id = id;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.totalUrls = totalUrls;
-            o.urls = urls;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyUrlListResult();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.totalUrls = totalUrls;
+            _resultValue.urls = urls;
+            return _resultValue;
         }
     }
 }

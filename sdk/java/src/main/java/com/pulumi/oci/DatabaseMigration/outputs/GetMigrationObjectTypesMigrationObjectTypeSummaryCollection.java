@@ -50,9 +50,9 @@ public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollection {
             return items(List.of(items));
         }
         public GetMigrationObjectTypesMigrationObjectTypeSummaryCollection build() {
-            final var o = new GetMigrationObjectTypesMigrationObjectTypeSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMigrationObjectTypesMigrationObjectTypeSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

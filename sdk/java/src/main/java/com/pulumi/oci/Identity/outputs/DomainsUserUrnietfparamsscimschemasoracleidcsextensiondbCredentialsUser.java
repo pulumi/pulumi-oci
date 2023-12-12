@@ -114,10 +114,10 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser();
-            o.dbLoginAttempts = dbLoginAttempts;
-            o.dbUserName = dbUserName;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser();
+            _resultValue.dbLoginAttempts = dbLoginAttempts;
+            _resultValue.dbUserName = dbUserName;
+            return _resultValue;
         }
     }
 }

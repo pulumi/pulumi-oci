@@ -46,9 +46,9 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotMaintenance {
             return this;
         }
         public GetMysqlBackupsBackupDbSystemSnapshotMaintenance build() {
-            final var o = new GetMysqlBackupsBackupDbSystemSnapshotMaintenance();
-            o.windowStartTime = windowStartTime;
-            return o;
+            final var _resultValue = new GetMysqlBackupsBackupDbSystemSnapshotMaintenance();
+            _resultValue.windowStartTime = windowStartTime;
+            return _resultValue;
         }
     }
 }

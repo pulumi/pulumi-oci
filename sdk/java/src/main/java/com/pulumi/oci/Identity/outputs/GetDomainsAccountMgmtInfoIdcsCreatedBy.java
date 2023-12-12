@@ -122,13 +122,13 @@ public final class GetDomainsAccountMgmtInfoIdcsCreatedBy {
             return this;
         }
         public GetDomainsAccountMgmtInfoIdcsCreatedBy build() {
-            final var o = new GetDomainsAccountMgmtInfoIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAccountMgmtInfoIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

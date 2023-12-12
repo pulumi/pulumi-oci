@@ -144,14 +144,14 @@ public final class GetIpv6sResult {
             return this;
         }
         public GetIpv6sResult build() {
-            final var o = new GetIpv6sResult();
-            o.filters = filters;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.ipv6s = ipv6s;
-            o.subnetId = subnetId;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetIpv6sResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.ipv6s = ipv6s;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

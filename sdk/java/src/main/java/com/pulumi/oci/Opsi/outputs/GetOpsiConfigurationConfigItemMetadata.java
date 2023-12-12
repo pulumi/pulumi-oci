@@ -150,14 +150,14 @@ public final class GetOpsiConfigurationConfigItemMetadata {
             return valueInputDetails(List.of(valueInputDetails));
         }
         public GetOpsiConfigurationConfigItemMetadata build() {
-            final var o = new GetOpsiConfigurationConfigItemMetadata();
-            o.configItemType = configItemType;
-            o.dataType = dataType;
-            o.description = description;
-            o.displayName = displayName;
-            o.unitDetails = unitDetails;
-            o.valueInputDetails = valueInputDetails;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationConfigItemMetadata();
+            _resultValue.configItemType = configItemType;
+            _resultValue.dataType = dataType;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.unitDetails = unitDetails;
+            _resultValue.valueInputDetails = valueInputDetails;
+            return _resultValue;
         }
     }
 }

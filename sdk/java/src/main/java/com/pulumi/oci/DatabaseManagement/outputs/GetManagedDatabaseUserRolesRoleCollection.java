@@ -50,9 +50,9 @@ public final class GetManagedDatabaseUserRolesRoleCollection {
             return items(List.of(items));
         }
         public GetManagedDatabaseUserRolesRoleCollection build() {
-            final var o = new GetManagedDatabaseUserRolesRoleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserRolesRoleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

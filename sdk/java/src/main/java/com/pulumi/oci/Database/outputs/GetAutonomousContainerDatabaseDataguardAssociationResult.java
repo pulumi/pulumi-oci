@@ -442,32 +442,32 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
             return this;
         }
         public GetAutonomousContainerDatabaseDataguardAssociationResult build() {
-            final var o = new GetAutonomousContainerDatabaseDataguardAssociationResult();
-            o.applyLag = applyLag;
-            o.applyRate = applyRate;
-            o.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
-            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-            o.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
-            o.id = id;
-            o.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
-            o.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
-            o.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
-            o.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
-            o.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
-            o.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
-            o.peerLifecycleState = peerLifecycleState;
-            o.peerRole = peerRole;
-            o.protectionMode = protectionMode;
-            o.role = role;
-            o.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastRoleChanged = timeLastRoleChanged;
-            o.timeLastSynced = timeLastSynced;
-            o.transportLag = transportLag;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseDataguardAssociationResult();
+            _resultValue.applyLag = applyLag;
+            _resultValue.applyRate = applyRate;
+            _resultValue.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
+            _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            _resultValue.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
+            _resultValue.id = id;
+            _resultValue.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
+            _resultValue.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
+            _resultValue.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
+            _resultValue.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
+            _resultValue.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
+            _resultValue.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+            _resultValue.peerLifecycleState = peerLifecycleState;
+            _resultValue.peerRole = peerRole;
+            _resultValue.protectionMode = protectionMode;
+            _resultValue.role = role;
+            _resultValue.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastRoleChanged = timeLastRoleChanged;
+            _resultValue.timeLastSynced = timeLastSynced;
+            _resultValue.transportLag = transportLag;
+            return _resultValue;
         }
     }
 }

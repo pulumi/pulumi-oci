@@ -84,11 +84,11 @@ public final class GetJavaReleaseLicenseDetail {
             return this;
         }
         public GetJavaReleaseLicenseDetail build() {
-            final var o = new GetJavaReleaseLicenseDetail();
-            o.displayName = displayName;
-            o.licenseType = licenseType;
-            o.licenseUrl = licenseUrl;
-            return o;
+            final var _resultValue = new GetJavaReleaseLicenseDetail();
+            _resultValue.displayName = displayName;
+            _resultValue.licenseType = licenseType;
+            _resultValue.licenseUrl = licenseUrl;
+            return _resultValue;
         }
     }
 }

@@ -73,10 +73,10 @@ public final class GetSubscriptionRewardsRewardCollectionItem {
             return summaries(List.of(summaries));
         }
         public GetSubscriptionRewardsRewardCollectionItem build() {
-            final var o = new GetSubscriptionRewardsRewardCollectionItem();
-            o.items = items;
-            o.summaries = summaries;
-            return o;
+            final var _resultValue = new GetSubscriptionRewardsRewardCollectionItem();
+            _resultValue.items = items;
+            _resultValue.summaries = summaries;
+            return _resultValue;
         }
     }
 }

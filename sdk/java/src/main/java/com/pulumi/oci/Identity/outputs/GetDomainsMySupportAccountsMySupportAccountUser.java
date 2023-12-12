@@ -122,13 +122,13 @@ public final class GetDomainsMySupportAccountsMySupportAccountUser {
             return this;
         }
         public GetDomainsMySupportAccountsMySupportAccountUser build() {
-            final var o = new GetDomainsMySupportAccountsMySupportAccountUser();
-            o.display = display;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMySupportAccountsMySupportAccountUser();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

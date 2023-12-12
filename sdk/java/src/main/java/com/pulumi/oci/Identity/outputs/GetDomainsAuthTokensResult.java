@@ -241,24 +241,24 @@ public final class GetDomainsAuthTokensResult {
             return this;
         }
         public GetDomainsAuthTokensResult build() {
-            final var o = new GetDomainsAuthTokensResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authTokenCount = authTokenCount;
-            o.authTokenFilter = authTokenFilter;
-            o.authTokens = authTokens;
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsAuthTokensResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authTokenCount = authTokenCount;
+            _resultValue.authTokenFilter = authTokenFilter;
+            _resultValue.authTokens = authTokens;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

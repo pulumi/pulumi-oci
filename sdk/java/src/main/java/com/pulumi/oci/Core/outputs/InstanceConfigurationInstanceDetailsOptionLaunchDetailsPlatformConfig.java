@@ -248,19 +248,19 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatfo
             return this;
         }
         public InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig build() {
-            final var o = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig();
-            o.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
-            o.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
-            o.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
-            o.isMeasuredBootEnabled = isMeasuredBootEnabled;
-            o.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
-            o.isSecureBootEnabled = isSecureBootEnabled;
-            o.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
-            o.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
-            o.numaNodesPerSocket = numaNodesPerSocket;
-            o.percentageOfCoresEnabled = percentageOfCoresEnabled;
-            o.type = type;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig();
+            _resultValue.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+            _resultValue.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
+            _resultValue.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
+            _resultValue.isMeasuredBootEnabled = isMeasuredBootEnabled;
+            _resultValue.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
+            _resultValue.isSecureBootEnabled = isSecureBootEnabled;
+            _resultValue.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
+            _resultValue.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
+            _resultValue.numaNodesPerSocket = numaNodesPerSocket;
+            _resultValue.percentageOfCoresEnabled = percentageOfCoresEnabled;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -144,14 +144,14 @@ public final class GetStreamPoolsResult {
             return streamPools(List.of(streamPools));
         }
         public GetStreamPoolsResult build() {
-            final var o = new GetStreamPoolsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            o.streamPools = streamPools;
-            return o;
+            final var _resultValue = new GetStreamPoolsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.streamPools = streamPools;
+            return _resultValue;
         }
     }
 }

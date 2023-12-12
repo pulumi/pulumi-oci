@@ -84,11 +84,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

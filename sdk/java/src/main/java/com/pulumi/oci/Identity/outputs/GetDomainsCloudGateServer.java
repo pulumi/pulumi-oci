@@ -124,13 +124,13 @@ public final class GetDomainsCloudGateServer {
             return this;
         }
         public GetDomainsCloudGateServer build() {
-            final var o = new GetDomainsCloudGateServer();
-            o.hostName = hostName;
-            o.nginxSettings = nginxSettings;
-            o.port = port;
-            o.serverId = serverId;
-            o.ssl = ssl;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateServer();
+            _resultValue.hostName = hostName;
+            _resultValue.nginxSettings = nginxSettings;
+            _resultValue.port = port;
+            _resultValue.serverId = serverId;
+            _resultValue.ssl = ssl;
+            return _resultValue;
         }
     }
 }

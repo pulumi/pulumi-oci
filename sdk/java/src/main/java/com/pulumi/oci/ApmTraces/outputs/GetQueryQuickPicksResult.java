@@ -97,12 +97,12 @@ public final class GetQueryQuickPicksResult {
             return quickPicks(List.of(quickPicks));
         }
         public GetQueryQuickPicksResult build() {
-            final var o = new GetQueryQuickPicksResult();
-            o.apmDomainId = apmDomainId;
-            o.filters = filters;
-            o.id = id;
-            o.quickPicks = quickPicks;
-            return o;
+            final var _resultValue = new GetQueryQuickPicksResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.quickPicks = quickPicks;
+            return _resultValue;
         }
     }
 }

@@ -122,13 +122,13 @@ public final class GetDetectionDataAssetDataSourceDetailVersionSpecificDetail {
             return this;
         }
         public GetDetectionDataAssetDataSourceDetailVersionSpecificDetail build() {
-            final var o = new GetDetectionDataAssetDataSourceDetailVersionSpecificDetail();
-            o.bucket = bucket;
-            o.databaseName = databaseName;
-            o.influxVersion = influxVersion;
-            o.organizationName = organizationName;
-            o.retentionPolicyName = retentionPolicyName;
-            return o;
+            final var _resultValue = new GetDetectionDataAssetDataSourceDetailVersionSpecificDetail();
+            _resultValue.bucket = bucket;
+            _resultValue.databaseName = databaseName;
+            _resultValue.influxVersion = influxVersion;
+            _resultValue.organizationName = organizationName;
+            _resultValue.retentionPolicyName = retentionPolicyName;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetAwrHubsAwrHubSummaryCollection {
             return items(List.of(items));
         }
         public GetAwrHubsAwrHubSummaryCollection build() {
-            final var o = new GetAwrHubsAwrHubSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAwrHubsAwrHubSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

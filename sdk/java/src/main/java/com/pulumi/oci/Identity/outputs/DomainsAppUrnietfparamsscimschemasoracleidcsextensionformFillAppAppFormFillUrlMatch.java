@@ -107,10 +107,10 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFill
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch();
-            o.formUrl = formUrl;
-            o.formUrlMatchType = formUrlMatchType;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch();
+            _resultValue.formUrl = formUrl;
+            _resultValue.formUrlMatchType = formUrlMatchType;
+            return _resultValue;
         }
     }
 }

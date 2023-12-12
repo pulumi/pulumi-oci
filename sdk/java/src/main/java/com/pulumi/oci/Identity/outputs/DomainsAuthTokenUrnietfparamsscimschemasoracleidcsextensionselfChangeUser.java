@@ -70,9 +70,9 @@ public final class DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionse
             return this;
         }
         public DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new DomainsAuthTokenUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

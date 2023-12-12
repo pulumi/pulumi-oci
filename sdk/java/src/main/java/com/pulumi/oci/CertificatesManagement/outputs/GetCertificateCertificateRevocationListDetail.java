@@ -73,10 +73,10 @@ public final class GetCertificateCertificateRevocationListDetail {
             return objectStorageConfigs(List.of(objectStorageConfigs));
         }
         public GetCertificateCertificateRevocationListDetail build() {
-            final var o = new GetCertificateCertificateRevocationListDetail();
-            o.customFormattedUrls = customFormattedUrls;
-            o.objectStorageConfigs = objectStorageConfigs;
-            return o;
+            final var _resultValue = new GetCertificateCertificateRevocationListDetail();
+            _resultValue.customFormattedUrls = customFormattedUrls;
+            _resultValue.objectStorageConfigs = objectStorageConfigs;
+            return _resultValue;
         }
     }
 }

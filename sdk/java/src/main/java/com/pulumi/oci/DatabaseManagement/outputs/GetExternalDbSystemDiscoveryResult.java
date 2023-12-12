@@ -267,21 +267,21 @@ public final class GetExternalDbSystemDiscoveryResult {
             return this;
         }
         public GetExternalDbSystemDiscoveryResult build() {
-            final var o = new GetExternalDbSystemDiscoveryResult();
-            o.agentId = agentId;
-            o.compartmentId = compartmentId;
-            o.discoveredComponents = discoveredComponents;
-            o.displayName = displayName;
-            o.externalDbSystemDiscoveryId = externalDbSystemDiscoveryId;
-            o.gridHome = gridHome;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.patchOperations = patchOperations;
-            o.resourceId = resourceId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryResult();
+            _resultValue.agentId = agentId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.discoveredComponents = discoveredComponents;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDbSystemDiscoveryId = externalDbSystemDiscoveryId;
+            _resultValue.gridHome = gridHome;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.patchOperations = patchOperations;
+            _resultValue.resourceId = resourceId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

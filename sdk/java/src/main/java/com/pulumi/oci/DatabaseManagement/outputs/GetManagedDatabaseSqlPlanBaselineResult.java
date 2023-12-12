@@ -361,26 +361,26 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineResult build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselineResult();
-            o.accepted = accepted;
-            o.action = action;
-            o.adaptive = adaptive;
-            o.autoPurge = autoPurge;
-            o.enabled = enabled;
-            o.executionPlan = executionPlan;
-            o.fixed = fixed;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.module = module;
-            o.origin = origin;
-            o.planName = planName;
-            o.reproduced = reproduced;
-            o.sqlHandle = sqlHandle;
-            o.sqlText = sqlText;
-            o.timeCreated = timeCreated;
-            o.timeLastExecuted = timeLastExecuted;
-            o.timeLastModified = timeLastModified;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselineResult();
+            _resultValue.accepted = accepted;
+            _resultValue.action = action;
+            _resultValue.adaptive = adaptive;
+            _resultValue.autoPurge = autoPurge;
+            _resultValue.enabled = enabled;
+            _resultValue.executionPlan = executionPlan;
+            _resultValue.fixed = fixed;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.module = module;
+            _resultValue.origin = origin;
+            _resultValue.planName = planName;
+            _resultValue.reproduced = reproduced;
+            _resultValue.sqlHandle = sqlHandle;
+            _resultValue.sqlText = sqlText;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastExecuted = timeLastExecuted;
+            _resultValue.timeLastModified = timeLastModified;
+            return _resultValue;
         }
     }
 }

@@ -248,20 +248,20 @@ public final class GetProfilesResult {
             return this;
         }
         public GetProfilesResult build() {
-            final var o = new GetProfilesResult();
-            o.archType = archType;
-            o.compartmentId = compartmentId;
-            o.displayNameContains = displayNameContains;
-            o.displayNames = displayNames;
-            o.filters = filters;
-            o.id = id;
-            o.osFamily = osFamily;
-            o.profileCollections = profileCollections;
-            o.profileId = profileId;
-            o.profileTypes = profileTypes;
-            o.state = state;
-            o.vendorName = vendorName;
-            return o;
+            final var _resultValue = new GetProfilesResult();
+            _resultValue.archType = archType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.displayNames = displayNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.osFamily = osFamily;
+            _resultValue.profileCollections = profileCollections;
+            _resultValue.profileId = profileId;
+            _resultValue.profileTypes = profileTypes;
+            _resultValue.state = state;
+            _resultValue.vendorName = vendorName;
+            return _resultValue;
         }
     }
 }

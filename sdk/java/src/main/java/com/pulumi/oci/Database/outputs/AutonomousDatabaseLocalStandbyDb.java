@@ -125,13 +125,13 @@ public final class AutonomousDatabaseLocalStandbyDb {
             return this;
         }
         public AutonomousDatabaseLocalStandbyDb build() {
-            final var o = new AutonomousDatabaseLocalStandbyDb();
-            o.lagTimeInSeconds = lagTimeInSeconds;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
-            o.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
-            return o;
+            final var _resultValue = new AutonomousDatabaseLocalStandbyDb();
+            _resultValue.lagTimeInSeconds = lagTimeInSeconds;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+            _resultValue.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            return _resultValue;
         }
     }
 }

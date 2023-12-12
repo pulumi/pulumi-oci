@@ -65,10 +65,10 @@ public final class GetApiValidationResult {
             return this;
         }
         public GetApiValidationResult build() {
-            final var o = new GetApiValidationResult();
-            o.name = name;
-            o.result = result;
-            return o;
+            final var _resultValue = new GetApiValidationResult();
+            _resultValue.name = name;
+            _resultValue.result = result;
+            return _resultValue;
         }
     }
 }

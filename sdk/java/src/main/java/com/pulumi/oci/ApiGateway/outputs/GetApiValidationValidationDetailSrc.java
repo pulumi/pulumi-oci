@@ -42,9 +42,9 @@ public final class GetApiValidationValidationDetailSrc {
             return items(List.of(items));
         }
         public GetApiValidationValidationDetailSrc build() {
-            final var o = new GetApiValidationValidationDetailSrc();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetApiValidationValidationDetailSrc();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

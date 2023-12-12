@@ -146,14 +146,14 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting();
-            o.allowedHttpMethods = allowedHttpMethods;
-            o.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
-            o.maxHttpRequestHeaders = maxHttpRequestHeaders;
-            o.maxNumberOfArguments = maxNumberOfArguments;
-            o.maxSingleArgumentLength = maxSingleArgumentLength;
-            o.maxTotalArgumentLength = maxTotalArgumentLength;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySetting();
+            _resultValue.allowedHttpMethods = allowedHttpMethods;
+            _resultValue.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
+            _resultValue.maxHttpRequestHeaders = maxHttpRequestHeaders;
+            _resultValue.maxNumberOfArguments = maxNumberOfArguments;
+            _resultValue.maxSingleArgumentLength = maxSingleArgumentLength;
+            _resultValue.maxTotalArgumentLength = maxTotalArgumentLength;
+            return _resultValue;
         }
     }
 }

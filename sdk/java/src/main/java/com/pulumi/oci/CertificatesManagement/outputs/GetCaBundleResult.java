@@ -222,19 +222,19 @@ public final class GetCaBundleResult {
             return this;
         }
         public GetCaBundleResult build() {
-            final var o = new GetCaBundleResult();
-            o.caBundleId = caBundleId;
-            o.caBundlePem = caBundlePem;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetCaBundleResult();
+            _resultValue.caBundleId = caBundleId;
+            _resultValue.caBundlePem = caBundlePem;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

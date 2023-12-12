@@ -132,13 +132,13 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction();
-            o.bodies = bodies;
-            o.code = code;
-            o.headers = headers;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction();
+            _resultValue.bodies = bodies;
+            _resultValue.code = code;
+            _resultValue.headers = headers;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

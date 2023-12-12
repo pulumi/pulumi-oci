@@ -104,12 +104,12 @@ public final class GetVantagePointsHealthChecksVantagePointRouting {
             return this;
         }
         public GetVantagePointsHealthChecksVantagePointRouting build() {
-            final var o = new GetVantagePointsHealthChecksVantagePointRouting();
-            o.asLabel = asLabel;
-            o.asn = asn;
-            o.prefix = prefix;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetVantagePointsHealthChecksVantagePointRouting();
+            _resultValue.asLabel = asLabel;
+            _resultValue.asn = asn;
+            _resultValue.prefix = prefix;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

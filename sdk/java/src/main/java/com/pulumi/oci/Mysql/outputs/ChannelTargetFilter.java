@@ -69,10 +69,10 @@ public final class ChannelTargetFilter {
             return this;
         }
         public ChannelTargetFilter build() {
-            final var o = new ChannelTargetFilter();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new ChannelTargetFilter();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

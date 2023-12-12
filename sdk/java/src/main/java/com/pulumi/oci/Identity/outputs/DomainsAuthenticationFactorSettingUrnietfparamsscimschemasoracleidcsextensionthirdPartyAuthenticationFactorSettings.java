@@ -70,9 +70,9 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
             return this;
         }
         public DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings build() {
-            final var o = new DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings();
-            o.duoSecuritySettings = duoSecuritySettings;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings();
+            _resultValue.duoSecuritySettings = duoSecuritySettings;
+            return _resultValue;
         }
     }
 }

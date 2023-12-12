@@ -105,10 +105,10 @@ public final class DomainsIdentityProviderTag {
             return this;
         }
         public DomainsIdentityProviderTag build() {
-            final var o = new DomainsIdentityProviderTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsIdentityProviderTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

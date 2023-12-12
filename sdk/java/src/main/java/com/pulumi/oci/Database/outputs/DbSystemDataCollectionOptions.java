@@ -86,11 +86,11 @@ public final class DbSystemDataCollectionOptions {
             return this;
         }
         public DbSystemDataCollectionOptions build() {
-            final var o = new DbSystemDataCollectionOptions();
-            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            return o;
+            final var _resultValue = new DbSystemDataCollectionOptions();
+            _resultValue.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            _resultValue.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            _resultValue.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return _resultValue;
         }
     }
 }

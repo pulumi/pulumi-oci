@@ -42,9 +42,9 @@ public final class GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSumm
             return items(List.of(items));
         }
         public GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection build() {
-            final var o = new GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyApplicationGroupsApplicationGroupSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

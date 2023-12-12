@@ -42,9 +42,9 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
             return items(List.of(items));
         }
         public GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection build() {
-            final var o = new GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

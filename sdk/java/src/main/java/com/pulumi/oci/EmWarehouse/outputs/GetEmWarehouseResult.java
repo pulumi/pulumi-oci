@@ -344,25 +344,25 @@ public final class GetEmWarehouseResult {
             return this;
         }
         public GetEmWarehouseResult build() {
-            final var o = new GetEmWarehouseResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.emBridgeId = emBridgeId;
-            o.emWarehouseId = emWarehouseId;
-            o.emWarehouseType = emWarehouseType;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.latestEtlRunMessage = latestEtlRunMessage;
-            o.latestEtlRunStatus = latestEtlRunStatus;
-            o.latestEtlRunTime = latestEtlRunTime;
-            o.lifecycleDetails = lifecycleDetails;
-            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetEmWarehouseResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.emBridgeId = emBridgeId;
+            _resultValue.emWarehouseId = emWarehouseId;
+            _resultValue.emWarehouseType = emWarehouseType;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.latestEtlRunMessage = latestEtlRunMessage;
+            _resultValue.latestEtlRunStatus = latestEtlRunStatus;
+            _resultValue.latestEtlRunTime = latestEtlRunTime;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

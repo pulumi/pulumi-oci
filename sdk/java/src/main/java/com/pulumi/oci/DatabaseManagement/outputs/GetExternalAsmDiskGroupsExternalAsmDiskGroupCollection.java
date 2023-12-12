@@ -50,9 +50,9 @@ public final class GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection {
             return items(List.of(items));
         }
         public GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection build() {
-            final var o = new GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalAsmDiskGroupsExternalAsmDiskGroupCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -71,10 +71,10 @@ public final class NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange {
             return this;
         }
         public NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange build() {
-            final var o = new NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

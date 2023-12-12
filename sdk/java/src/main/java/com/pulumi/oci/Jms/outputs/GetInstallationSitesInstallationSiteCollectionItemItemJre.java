@@ -103,12 +103,12 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemJre {
             return this;
         }
         public GetInstallationSitesInstallationSiteCollectionItemItemJre build() {
-            final var o = new GetInstallationSitesInstallationSiteCollectionItemItemJre();
-            o.distribution = distribution;
-            o.jreKey = jreKey;
-            o.vendor = vendor;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetInstallationSitesInstallationSiteCollectionItemItemJre();
+            _resultValue.distribution = distribution;
+            _resultValue.jreKey = jreKey;
+            _resultValue.vendor = vendor;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

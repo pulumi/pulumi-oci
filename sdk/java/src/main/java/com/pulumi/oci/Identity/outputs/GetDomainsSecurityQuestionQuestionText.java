@@ -85,11 +85,11 @@ public final class GetDomainsSecurityQuestionQuestionText {
             return this;
         }
         public GetDomainsSecurityQuestionQuestionText build() {
-            final var o = new GetDomainsSecurityQuestionQuestionText();
-            o.default_ = default_;
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSecurityQuestionQuestionText();
+            _resultValue.default_ = default_;
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

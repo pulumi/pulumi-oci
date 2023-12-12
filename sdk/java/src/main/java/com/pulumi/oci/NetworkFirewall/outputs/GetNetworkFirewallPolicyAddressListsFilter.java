@@ -75,11 +75,11 @@ public final class GetNetworkFirewallPolicyAddressListsFilter {
             return values(List.of(values));
         }
         public GetNetworkFirewallPolicyAddressListsFilter build() {
-            final var o = new GetNetworkFirewallPolicyAddressListsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyAddressListsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

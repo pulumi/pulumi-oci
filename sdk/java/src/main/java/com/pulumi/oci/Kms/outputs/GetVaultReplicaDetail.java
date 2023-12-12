@@ -46,9 +46,9 @@ public final class GetVaultReplicaDetail {
             return this;
         }
         public GetVaultReplicaDetail build() {
-            final var o = new GetVaultReplicaDetail();
-            o.replicationId = replicationId;
-            return o;
+            final var _resultValue = new GetVaultReplicaDetail();
+            _resultValue.replicationId = replicationId;
+            return _resultValue;
         }
     }
 }

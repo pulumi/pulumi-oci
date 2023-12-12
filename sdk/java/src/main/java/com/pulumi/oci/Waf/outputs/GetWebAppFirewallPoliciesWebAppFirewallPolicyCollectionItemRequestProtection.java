@@ -90,11 +90,11 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
             return rules(List.of(rules));
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection();
-            o.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
-            o.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
-            o.rules = rules;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtection();
+            _resultValue.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
+            _resultValue.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

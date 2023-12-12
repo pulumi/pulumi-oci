@@ -233,18 +233,18 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackend {
             return this;
         }
         public DeploymentSpecificationRouteBackendRoutingBackendBackend build() {
-            final var o = new DeploymentSpecificationRouteBackendRoutingBackendBackend();
-            o.body = body;
-            o.connectTimeoutInSeconds = connectTimeoutInSeconds;
-            o.functionId = functionId;
-            o.headers = headers;
-            o.isSslVerifyDisabled = isSslVerifyDisabled;
-            o.readTimeoutInSeconds = readTimeoutInSeconds;
-            o.sendTimeoutInSeconds = sendTimeoutInSeconds;
-            o.status = status;
-            o.type = type;
-            o.url = url;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteBackendRoutingBackendBackend();
+            _resultValue.body = body;
+            _resultValue.connectTimeoutInSeconds = connectTimeoutInSeconds;
+            _resultValue.functionId = functionId;
+            _resultValue.headers = headers;
+            _resultValue.isSslVerifyDisabled = isSslVerifyDisabled;
+            _resultValue.readTimeoutInSeconds = readTimeoutInSeconds;
+            _resultValue.sendTimeoutInSeconds = sendTimeoutInSeconds;
+            _resultValue.status = status;
+            _resultValue.type = type;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

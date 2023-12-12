@@ -90,11 +90,11 @@ public final class GetInstancePoolPlacementConfigurationPrimaryVnicSubnet {
             return this;
         }
         public GetInstancePoolPlacementConfigurationPrimaryVnicSubnet build() {
-            final var o = new GetInstancePoolPlacementConfigurationPrimaryVnicSubnet();
-            o.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
-            o.isAssignIpv6ip = isAssignIpv6ip;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetInstancePoolPlacementConfigurationPrimaryVnicSubnet();
+            _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            _resultValue.isAssignIpv6ip = isAssignIpv6ip;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

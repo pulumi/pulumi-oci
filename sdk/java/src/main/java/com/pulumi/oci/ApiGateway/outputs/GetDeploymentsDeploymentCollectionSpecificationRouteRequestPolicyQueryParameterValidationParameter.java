@@ -66,10 +66,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter();
-            o.name = name;
-            o.required = required;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameter();
+            _resultValue.name = name;
+            _resultValue.required = required;
+            return _resultValue;
         }
     }
 }

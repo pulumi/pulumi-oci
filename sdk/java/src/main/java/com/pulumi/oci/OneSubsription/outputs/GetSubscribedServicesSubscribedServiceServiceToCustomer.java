@@ -199,17 +199,17 @@ public final class GetSubscribedServicesSubscribedServiceServiceToCustomer {
             return this;
         }
         public GetSubscribedServicesSubscribedServiceServiceToCustomer build() {
-            final var o = new GetSubscribedServicesSubscribedServiceServiceToCustomer();
-            o.customerChainType = customerChainType;
-            o.isChainCustomer = isChainCustomer;
-            o.isPublicSector = isPublicSector;
-            o.name = name;
-            o.namePhonetic = namePhonetic;
-            o.tcaCustAccountNumber = tcaCustAccountNumber;
-            o.tcaCustomerAccountId = tcaCustomerAccountId;
-            o.tcaPartyId = tcaPartyId;
-            o.tcaPartyNumber = tcaPartyNumber;
-            return o;
+            final var _resultValue = new GetSubscribedServicesSubscribedServiceServiceToCustomer();
+            _resultValue.customerChainType = customerChainType;
+            _resultValue.isChainCustomer = isChainCustomer;
+            _resultValue.isPublicSector = isPublicSector;
+            _resultValue.name = name;
+            _resultValue.namePhonetic = namePhonetic;
+            _resultValue.tcaCustAccountNumber = tcaCustAccountNumber;
+            _resultValue.tcaCustomerAccountId = tcaCustomerAccountId;
+            _resultValue.tcaPartyId = tcaPartyId;
+            _resultValue.tcaPartyNumber = tcaPartyNumber;
+            return _resultValue;
         }
     }
 }

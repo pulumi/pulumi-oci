@@ -85,11 +85,11 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
             return this;
         }
         public GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy build() {
-            final var o = new GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy();
-            o.automaticBackupRetention = automaticBackupRetention;
-            o.finalBackup = finalBackup;
-            o.isDeleteProtected = isDeleteProtected;
-            return o;
+            final var _resultValue = new GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy();
+            _resultValue.automaticBackupRetention = automaticBackupRetention;
+            _resultValue.finalBackup = finalBackup;
+            _resultValue.isDeleteProtected = isDeleteProtected;
+            return _resultValue;
         }
     }
 }

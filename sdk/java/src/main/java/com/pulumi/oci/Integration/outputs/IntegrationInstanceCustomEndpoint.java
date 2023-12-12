@@ -106,12 +106,12 @@ public final class IntegrationInstanceCustomEndpoint {
             return this;
         }
         public IntegrationInstanceCustomEndpoint build() {
-            final var o = new IntegrationInstanceCustomEndpoint();
-            o.alias = alias;
-            o.certificateSecretId = certificateSecretId;
-            o.certificateSecretVersion = certificateSecretVersion;
-            o.hostname = hostname;
-            return o;
+            final var _resultValue = new IntegrationInstanceCustomEndpoint();
+            _resultValue.alias = alias;
+            _resultValue.certificateSecretId = certificateSecretId;
+            _resultValue.certificateSecretVersion = certificateSecretVersion;
+            _resultValue.hostname = hostname;
+            return _resultValue;
         }
     }
 }

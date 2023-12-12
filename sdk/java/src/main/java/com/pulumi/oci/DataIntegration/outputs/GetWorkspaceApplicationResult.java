@@ -560,35 +560,35 @@ public final class GetWorkspaceApplicationResult {
             return this;
         }
         public GetWorkspaceApplicationResult build() {
-            final var o = new GetWorkspaceApplicationResult();
-            o.applicationKey = applicationKey;
-            o.applicationVersion = applicationVersion;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.dependentObjectMetadatas = dependentObjectMetadatas;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.identifier = identifier;
-            o.key = key;
-            o.keyMap = keyMap;
-            o.metadatas = metadatas;
-            o.modelType = modelType;
-            o.modelVersion = modelVersion;
-            o.name = name;
-            o.objectStatus = objectStatus;
-            o.objectVersion = objectVersion;
-            o.parentReves = parentReves;
-            o.publishedObjectMetadatas = publishedObjectMetadatas;
-            o.registryMetadatas = registryMetadatas;
-            o.sourceApplicationInfos = sourceApplicationInfos;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timePatched = timePatched;
-            o.timeUpdated = timeUpdated;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceApplicationResult();
+            _resultValue.applicationKey = applicationKey;
+            _resultValue.applicationVersion = applicationVersion;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.dependentObjectMetadatas = dependentObjectMetadatas;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.keyMap = keyMap;
+            _resultValue.metadatas = metadatas;
+            _resultValue.modelType = modelType;
+            _resultValue.modelVersion = modelVersion;
+            _resultValue.name = name;
+            _resultValue.objectStatus = objectStatus;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.parentReves = parentReves;
+            _resultValue.publishedObjectMetadatas = publishedObjectMetadatas;
+            _resultValue.registryMetadatas = registryMetadatas;
+            _resultValue.sourceApplicationInfos = sourceApplicationInfos;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timePatched = timePatched;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

@@ -108,12 +108,12 @@ public final class GetSystemMediaWorkflowItem {
             return tasks(List.of(tasks));
         }
         public GetSystemMediaWorkflowItem build() {
-            final var o = new GetSystemMediaWorkflowItem();
-            o.description = description;
-            o.name = name;
-            o.parameters = parameters;
-            o.tasks = tasks;
-            return o;
+            final var _resultValue = new GetSystemMediaWorkflowItem();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.parameters = parameters;
+            _resultValue.tasks = tasks;
+            return _resultValue;
         }
     }
 }

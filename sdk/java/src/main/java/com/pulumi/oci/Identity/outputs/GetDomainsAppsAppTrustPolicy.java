@@ -65,10 +65,10 @@ public final class GetDomainsAppsAppTrustPolicy {
             return this;
         }
         public GetDomainsAppsAppTrustPolicy build() {
-            final var o = new GetDomainsAppsAppTrustPolicy();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppTrustPolicy();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

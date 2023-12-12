@@ -73,10 +73,10 @@ public final class GetInstanceMeasuredBootReportMeasurement {
             return policies(List.of(policies));
         }
         public GetInstanceMeasuredBootReportMeasurement build() {
-            final var o = new GetInstanceMeasuredBootReportMeasurement();
-            o.actuals = actuals;
-            o.policies = policies;
-            return o;
+            final var _resultValue = new GetInstanceMeasuredBootReportMeasurement();
+            _resultValue.actuals = actuals;
+            _resultValue.policies = policies;
+            return _resultValue;
         }
     }
 }

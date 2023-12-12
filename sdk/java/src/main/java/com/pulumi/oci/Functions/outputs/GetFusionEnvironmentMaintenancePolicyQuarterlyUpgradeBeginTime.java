@@ -65,10 +65,10 @@ public final class GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTim
             return this;
         }
         public GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime build() {
-            final var o = new GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime();
-            o.beginTimesValue = beginTimesValue;
-            o.overrideType = overrideType;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTime();
+            _resultValue.beginTimesValue = beginTimesValue;
+            _resultValue.overrideType = overrideType;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetDbNodeConsoleHistoriesConsoleHistoryCollection {
             return items(List.of(items));
         }
         public GetDbNodeConsoleHistoriesConsoleHistoryCollection build() {
-            final var o = new GetDbNodeConsoleHistoriesConsoleHistoryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDbNodeConsoleHistoriesConsoleHistoryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

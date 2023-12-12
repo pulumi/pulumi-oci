@@ -110,12 +110,12 @@ public final class GetWaasPolicyPolicyConfigLoadBalancingMethod {
             return this;
         }
         public GetWaasPolicyPolicyConfigLoadBalancingMethod build() {
-            final var o = new GetWaasPolicyPolicyConfigLoadBalancingMethod();
-            o.domain = domain;
-            o.expirationTimeInSeconds = expirationTimeInSeconds;
-            o.method = method;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetWaasPolicyPolicyConfigLoadBalancingMethod();
+            _resultValue.domain = domain;
+            _resultValue.expirationTimeInSeconds = expirationTimeInSeconds;
+            _resultValue.method = method;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

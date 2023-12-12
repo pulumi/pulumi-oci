@@ -354,25 +354,25 @@ public final class GetMigrationPlanAvailableShapesAvailableShapesCollectionItem 
             return this;
         }
         public GetMigrationPlanAvailableShapesAvailableShapesCollectionItem build() {
-            final var o = new GetMigrationPlanAvailableShapesAvailableShapesCollectionItem();
-            o.availabilityDomain = availabilityDomain;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.gpuDescription = gpuDescription;
-            o.gpus = gpus;
-            o.localDiskDescription = localDiskDescription;
-            o.localDisks = localDisks;
-            o.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
-            o.maxVnicAttachments = maxVnicAttachments;
-            o.memoryInGbs = memoryInGbs;
-            o.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
-            o.networkingBandwidthInGbps = networkingBandwidthInGbps;
-            o.ocpus = ocpus;
-            o.paginationToken = paginationToken;
-            o.processorDescription = processorDescription;
-            o.shape = shape;
-            o.systemTags = systemTags;
-            return o;
+            final var _resultValue = new GetMigrationPlanAvailableShapesAvailableShapesCollectionItem();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.gpuDescription = gpuDescription;
+            _resultValue.gpus = gpus;
+            _resultValue.localDiskDescription = localDiskDescription;
+            _resultValue.localDisks = localDisks;
+            _resultValue.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            _resultValue.maxVnicAttachments = maxVnicAttachments;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
+            _resultValue.networkingBandwidthInGbps = networkingBandwidthInGbps;
+            _resultValue.ocpus = ocpus;
+            _resultValue.paginationToken = paginationToken;
+            _resultValue.processorDescription = processorDescription;
+            _resultValue.shape = shape;
+            _resultValue.systemTags = systemTags;
+            return _resultValue;
         }
     }
 }

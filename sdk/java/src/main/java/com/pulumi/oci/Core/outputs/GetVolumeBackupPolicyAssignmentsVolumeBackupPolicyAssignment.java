@@ -103,12 +103,12 @@ public final class GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment 
             return this;
         }
         public GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment build() {
-            final var o = new GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment();
-            o.assetId = assetId;
-            o.id = id;
-            o.policyId = policyId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment();
+            _resultValue.assetId = assetId;
+            _resultValue.id = id;
+            _resultValue.policyId = policyId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

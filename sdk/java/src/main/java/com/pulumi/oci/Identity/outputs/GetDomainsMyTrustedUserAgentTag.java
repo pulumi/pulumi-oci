@@ -65,10 +65,10 @@ public final class GetDomainsMyTrustedUserAgentTag {
             return this;
         }
         public GetDomainsMyTrustedUserAgentTag build() {
-            final var o = new GetDomainsMyTrustedUserAgentTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyTrustedUserAgentTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

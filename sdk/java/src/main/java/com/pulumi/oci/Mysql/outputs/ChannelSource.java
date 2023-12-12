@@ -184,16 +184,16 @@ public final class ChannelSource {
             return this;
         }
         public ChannelSource build() {
-            final var o = new ChannelSource();
-            o.anonymousTransactionsHandling = anonymousTransactionsHandling;
-            o.hostname = hostname;
-            o.password = password;
-            o.port = port;
-            o.sourceType = sourceType;
-            o.sslCaCertificate = sslCaCertificate;
-            o.sslMode = sslMode;
-            o.username = username;
-            return o;
+            final var _resultValue = new ChannelSource();
+            _resultValue.anonymousTransactionsHandling = anonymousTransactionsHandling;
+            _resultValue.hostname = hostname;
+            _resultValue.password = password;
+            _resultValue.port = port;
+            _resultValue.sourceType = sourceType;
+            _resultValue.sslCaCertificate = sslCaCertificate;
+            _resultValue.sslMode = sslMode;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

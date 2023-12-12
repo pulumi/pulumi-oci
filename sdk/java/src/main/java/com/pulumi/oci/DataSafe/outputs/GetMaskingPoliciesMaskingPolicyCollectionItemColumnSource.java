@@ -84,11 +84,11 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource {
             return this;
         }
         public GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource build() {
-            final var o = new GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource();
-            o.columnSource = columnSource;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource();
+            _resultValue.columnSource = columnSource;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

@@ -116,14 +116,14 @@ public final class GetAwrHubAwrSnapshotResult {
             return this;
         }
         public GetAwrHubAwrSnapshotResult build() {
-            final var o = new GetAwrHubAwrSnapshotResult();
-            o.awrHubId = awrHubId;
-            o.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
-            o.id = id;
-            o.items = items;
-            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-            return o;
+            final var _resultValue = new GetAwrHubAwrSnapshotResult();
+            _resultValue.awrHubId = awrHubId;
+            _resultValue.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            _resultValue.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return _resultValue;
         }
     }
 }

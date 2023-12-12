@@ -65,10 +65,10 @@ public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigura
             return this;
         }
         public GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat build() {
-            final var o = new GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat();
-            o.name = name;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat();
+            _resultValue.name = name;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

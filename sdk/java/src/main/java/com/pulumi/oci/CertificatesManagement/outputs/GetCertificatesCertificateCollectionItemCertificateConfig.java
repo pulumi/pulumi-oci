@@ -222,18 +222,18 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfig {
             return this;
         }
         public GetCertificatesCertificateCollectionItemCertificateConfig build() {
-            final var o = new GetCertificatesCertificateCollectionItemCertificateConfig();
-            o.certificateProfileType = certificateProfileType;
-            o.configType = configType;
-            o.csrPem = csrPem;
-            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-            o.keyAlgorithm = keyAlgorithm;
-            o.signatureAlgorithm = signatureAlgorithm;
-            o.subjectAlternativeNames = subjectAlternativeNames;
-            o.subjects = subjects;
-            o.validities = validities;
-            o.versionName = versionName;
-            return o;
+            final var _resultValue = new GetCertificatesCertificateCollectionItemCertificateConfig();
+            _resultValue.certificateProfileType = certificateProfileType;
+            _resultValue.configType = configType;
+            _resultValue.csrPem = csrPem;
+            _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            _resultValue.keyAlgorithm = keyAlgorithm;
+            _resultValue.signatureAlgorithm = signatureAlgorithm;
+            _resultValue.subjectAlternativeNames = subjectAlternativeNames;
+            _resultValue.subjects = subjects;
+            _resultValue.validities = validities;
+            _resultValue.versionName = versionName;
+            return _resultValue;
         }
     }
 }

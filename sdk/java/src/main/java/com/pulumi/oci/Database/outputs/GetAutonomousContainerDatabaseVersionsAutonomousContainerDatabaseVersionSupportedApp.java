@@ -104,12 +104,12 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
             return this;
         }
         public GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp build() {
-            final var o = new GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp();
-            o.endOfSupport = endOfSupport;
-            o.isCertified = isCertified;
-            o.releaseDate = releaseDate;
-            o.supportedAppName = supportedAppName;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp();
+            _resultValue.endOfSupport = endOfSupport;
+            _resultValue.isCertified = isCertified;
+            _resultValue.releaseDate = releaseDate;
+            _resultValue.supportedAppName = supportedAppName;
+            return _resultValue;
         }
     }
 }

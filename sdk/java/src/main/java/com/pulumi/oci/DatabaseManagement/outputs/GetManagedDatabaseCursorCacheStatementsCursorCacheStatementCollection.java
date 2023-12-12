@@ -50,9 +50,9 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
             return items(List.of(items));
         }
         public GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection build() {
-            final var o = new GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

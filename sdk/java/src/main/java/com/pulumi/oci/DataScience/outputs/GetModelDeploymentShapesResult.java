@@ -97,12 +97,12 @@ public final class GetModelDeploymentShapesResult {
             return modelDeploymentShapes(List.of(modelDeploymentShapes));
         }
         public GetModelDeploymentShapesResult build() {
-            final var o = new GetModelDeploymentShapesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.modelDeploymentShapes = modelDeploymentShapes;
-            return o;
+            final var _resultValue = new GetModelDeploymentShapesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.modelDeploymentShapes = modelDeploymentShapes;
+            return _resultValue;
         }
     }
 }

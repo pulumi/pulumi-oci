@@ -120,14 +120,14 @@ public final class GetResourceQuotasResult {
             return this;
         }
         public GetResourceQuotasResult build() {
-            final var o = new GetResourceQuotasResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.resourceQuotumCollections = resourceQuotumCollections;
-            o.serviceEntitlement = serviceEntitlement;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new GetResourceQuotasResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.resourceQuotumCollections = resourceQuotumCollections;
+            _resultValue.serviceEntitlement = serviceEntitlement;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

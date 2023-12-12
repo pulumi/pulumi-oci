@@ -42,9 +42,9 @@ public final class GetStreamCdnConfigsStreamCdnConfigCollection {
             return items(List.of(items));
         }
         public GetStreamCdnConfigsStreamCdnConfigCollection build() {
-            final var o = new GetStreamCdnConfigsStreamCdnConfigCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetStreamCdnConfigsStreamCdnConfigCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

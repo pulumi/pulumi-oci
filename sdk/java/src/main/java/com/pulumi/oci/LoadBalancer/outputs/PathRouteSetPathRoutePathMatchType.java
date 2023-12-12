@@ -64,9 +64,9 @@ public final class PathRouteSetPathRoutePathMatchType {
             return this;
         }
         public PathRouteSetPathRoutePathMatchType build() {
-            final var o = new PathRouteSetPathRoutePathMatchType();
-            o.matchType = matchType;
-            return o;
+            final var _resultValue = new PathRouteSetPathRoutePathMatchType();
+            _resultValue.matchType = matchType;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetResolversFilter {
             return values(List.of(values));
         }
         public GetResolversFilter build() {
-            final var o = new GetResolversFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetResolversFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetShapesShapeCollectionItem {
             return this;
         }
         public GetShapesShapeCollectionItem build() {
-            final var o = new GetShapesShapeCollectionItem();
-            o.id = id;
-            o.memorySizeInGbs = memorySizeInGbs;
-            o.ocpuCount = ocpuCount;
-            o.shape = shape;
-            return o;
+            final var _resultValue = new GetShapesShapeCollectionItem();
+            _resultValue.id = id;
+            _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.ocpuCount = ocpuCount;
+            _resultValue.shape = shape;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetUsagePlansUsagePlanCollection {
             return items(List.of(items));
         }
         public GetUsagePlansUsagePlanCollection build() {
-            final var o = new GetUsagePlansUsagePlanCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetUsagePlansUsagePlanCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

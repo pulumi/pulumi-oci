@@ -42,9 +42,9 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
             return items(List.of(items));
         }
         public GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection build() {
-            final var o = new GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

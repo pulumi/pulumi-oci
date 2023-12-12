@@ -391,27 +391,27 @@ public final class GetHttpMonitorResult {
             return vantagePointNames(List.of(vantagePointNames));
         }
         public GetHttpMonitorResult build() {
-            final var o = new GetHttpMonitorResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.headers = headers;
-            o.homeRegion = homeRegion;
-            o.id = id;
-            o.intervalInSeconds = intervalInSeconds;
-            o.isEnabled = isEnabled;
-            o.method = method;
-            o.monitorId = monitorId;
-            o.path = path;
-            o.port = port;
-            o.protocol = protocol;
-            o.resultsUrl = resultsUrl;
-            o.targets = targets;
-            o.timeCreated = timeCreated;
-            o.timeoutInSeconds = timeoutInSeconds;
-            o.vantagePointNames = vantagePointNames;
-            return o;
+            final var _resultValue = new GetHttpMonitorResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.headers = headers;
+            _resultValue.homeRegion = homeRegion;
+            _resultValue.id = id;
+            _resultValue.intervalInSeconds = intervalInSeconds;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.method = method;
+            _resultValue.monitorId = monitorId;
+            _resultValue.path = path;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.resultsUrl = resultsUrl;
+            _resultValue.targets = targets;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeoutInSeconds = timeoutInSeconds;
+            _resultValue.vantagePointNames = vantagePointNames;
+            return _resultValue;
         }
     }
 }

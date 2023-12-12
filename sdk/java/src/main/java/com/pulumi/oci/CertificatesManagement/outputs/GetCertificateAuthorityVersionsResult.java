@@ -125,13 +125,13 @@ public final class GetCertificateAuthorityVersionsResult {
             return this;
         }
         public GetCertificateAuthorityVersionsResult build() {
-            final var o = new GetCertificateAuthorityVersionsResult();
-            o.certificateAuthorityId = certificateAuthorityId;
-            o.certificateAuthorityVersionCollections = certificateAuthorityVersionCollections;
-            o.filters = filters;
-            o.id = id;
-            o.versionNumber = versionNumber;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityVersionsResult();
+            _resultValue.certificateAuthorityId = certificateAuthorityId;
+            _resultValue.certificateAuthorityVersionCollections = certificateAuthorityVersionCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.versionNumber = versionNumber;
+            return _resultValue;
         }
     }
 }

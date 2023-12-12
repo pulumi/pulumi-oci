@@ -109,13 +109,13 @@ public final class GetRepositoryAuthorsResult {
             return this;
         }
         public GetRepositoryAuthorsResult build() {
-            final var o = new GetRepositoryAuthorsResult();
-            o.filters = filters;
-            o.id = id;
-            o.refName = refName;
-            o.repositoryAuthorCollections = repositoryAuthorCollections;
-            o.repositoryId = repositoryId;
-            return o;
+            final var _resultValue = new GetRepositoryAuthorsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.refName = refName;
+            _resultValue.repositoryAuthorCollections = repositoryAuthorCollections;
+            _resultValue.repositoryId = repositoryId;
+            return _resultValue;
         }
     }
 }

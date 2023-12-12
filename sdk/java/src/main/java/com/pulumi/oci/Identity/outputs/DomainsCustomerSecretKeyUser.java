@@ -230,13 +230,13 @@ public final class DomainsCustomerSecretKeyUser {
             return this;
         }
         public DomainsCustomerSecretKeyUser build() {
-            final var o = new DomainsCustomerSecretKeyUser();
-            o.display = display;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsCustomerSecretKeyUser();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

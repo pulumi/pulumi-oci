@@ -91,11 +91,11 @@ public final class PolicyWafConfigCustomProtectionRule {
             return this;
         }
         public PolicyWafConfigCustomProtectionRule build() {
-            final var o = new PolicyWafConfigCustomProtectionRule();
-            o.action = action;
-            o.exclusions = exclusions;
-            o.id = id;
-            return o;
+            final var _resultValue = new PolicyWafConfigCustomProtectionRule();
+            _resultValue.action = action;
+            _resultValue.exclusions = exclusions;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

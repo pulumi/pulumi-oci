@@ -46,9 +46,9 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
             return this;
         }
         public GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem build() {
-            final var o = new GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem();
-            o.timeAvailableForRefresh = timeAvailableForRefresh;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollectionItem();
+            _resultValue.timeAvailableForRefresh = timeAvailableForRefresh;
+            return _resultValue;
         }
     }
 }

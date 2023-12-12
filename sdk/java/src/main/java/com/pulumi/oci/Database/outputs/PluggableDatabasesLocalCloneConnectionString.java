@@ -88,11 +88,11 @@ public final class PluggableDatabasesLocalCloneConnectionString {
             return this;
         }
         public PluggableDatabasesLocalCloneConnectionString build() {
-            final var o = new PluggableDatabasesLocalCloneConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.pdbDefault = pdbDefault;
-            o.pdbIpDefault = pdbIpDefault;
-            return o;
+            final var _resultValue = new PluggableDatabasesLocalCloneConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.pdbDefault = pdbDefault;
+            _resultValue.pdbIpDefault = pdbIpDefault;
+            return _resultValue;
         }
     }
 }

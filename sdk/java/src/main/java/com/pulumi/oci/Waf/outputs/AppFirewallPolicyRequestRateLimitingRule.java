@@ -150,14 +150,14 @@ public final class AppFirewallPolicyRequestRateLimitingRule {
             return this;
         }
         public AppFirewallPolicyRequestRateLimitingRule build() {
-            final var o = new AppFirewallPolicyRequestRateLimitingRule();
-            o.actionName = actionName;
-            o.condition = condition;
-            o.conditionLanguage = conditionLanguage;
-            o.configurations = configurations;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new AppFirewallPolicyRequestRateLimitingRule();
+            _resultValue.actionName = actionName;
+            _resultValue.condition = condition;
+            _resultValue.conditionLanguage = conditionLanguage;
+            _resultValue.configurations = configurations;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

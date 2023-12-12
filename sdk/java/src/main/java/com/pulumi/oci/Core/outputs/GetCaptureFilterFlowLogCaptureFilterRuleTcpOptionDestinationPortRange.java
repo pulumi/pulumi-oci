@@ -65,10 +65,10 @@ public final class GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionDestinationP
             return this;
         }
         public GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionDestinationPortRange build() {
-            final var o = new GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionDestinationPortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetCaptureFilterFlowLogCaptureFilterRuleTcpOptionDestinationPortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

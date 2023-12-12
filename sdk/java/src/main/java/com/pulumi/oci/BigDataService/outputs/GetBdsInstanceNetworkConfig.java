@@ -66,10 +66,10 @@ public final class GetBdsInstanceNetworkConfig {
             return this;
         }
         public GetBdsInstanceNetworkConfig build() {
-            final var o = new GetBdsInstanceNetworkConfig();
-            o.cidrBlock = cidrBlock;
-            o.isNatGatewayRequired = isNatGatewayRequired;
-            return o;
+            final var _resultValue = new GetBdsInstanceNetworkConfig();
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.isNatGatewayRequired = isNatGatewayRequired;
+            return _resultValue;
         }
     }
 }

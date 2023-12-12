@@ -65,10 +65,10 @@ public final class GetPipelinesPipelineStepDetailStepInfrastructureConfiguration
             return this;
         }
         public GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetail build() {
-            final var o = new GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetail();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetail();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

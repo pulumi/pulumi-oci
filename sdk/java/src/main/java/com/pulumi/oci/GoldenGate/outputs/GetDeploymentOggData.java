@@ -182,17 +182,17 @@ public final class GetDeploymentOggData {
             return this;
         }
         public GetDeploymentOggData build() {
-            final var o = new GetDeploymentOggData();
-            o.adminPassword = adminPassword;
-            o.adminUsername = adminUsername;
-            o.certificate = certificate;
-            o.credentialStore = credentialStore;
-            o.deploymentName = deploymentName;
-            o.identityDomainId = identityDomainId;
-            o.key = key;
-            o.oggVersion = oggVersion;
-            o.passwordSecretId = passwordSecretId;
-            return o;
+            final var _resultValue = new GetDeploymentOggData();
+            _resultValue.adminPassword = adminPassword;
+            _resultValue.adminUsername = adminUsername;
+            _resultValue.certificate = certificate;
+            _resultValue.credentialStore = credentialStore;
+            _resultValue.deploymentName = deploymentName;
+            _resultValue.identityDomainId = identityDomainId;
+            _resultValue.key = key;
+            _resultValue.oggVersion = oggVersion;
+            _resultValue.passwordSecretId = passwordSecretId;
+            return _resultValue;
         }
     }
 }

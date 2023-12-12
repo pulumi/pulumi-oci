@@ -327,23 +327,23 @@ public final class GetIngressGatewaysIngressGatewayCollectionItem {
             return this;
         }
         public GetIngressGatewaysIngressGatewayCollectionItem build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollectionItem();
-            o.accessLoggings = accessLoggings;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.hosts = hosts;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.meshId = meshId;
-            o.mtls = mtls;
-            o.name = name;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollectionItem();
+            _resultValue.accessLoggings = accessLoggings;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hosts = hosts;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.meshId = meshId;
+            _resultValue.mtls = mtls;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

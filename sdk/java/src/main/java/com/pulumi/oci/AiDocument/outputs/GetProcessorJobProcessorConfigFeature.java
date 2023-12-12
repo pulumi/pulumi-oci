@@ -124,13 +124,13 @@ public final class GetProcessorJobProcessorConfigFeature {
             return this;
         }
         public GetProcessorJobProcessorConfigFeature build() {
-            final var o = new GetProcessorJobProcessorConfigFeature();
-            o.featureType = featureType;
-            o.generateSearchablePdf = generateSearchablePdf;
-            o.maxResults = maxResults;
-            o.modelId = modelId;
-            o.tenancyId = tenancyId;
-            return o;
+            final var _resultValue = new GetProcessorJobProcessorConfigFeature();
+            _resultValue.featureType = featureType;
+            _resultValue.generateSearchablePdf = generateSearchablePdf;
+            _resultValue.maxResults = maxResults;
+            _resultValue.modelId = modelId;
+            _resultValue.tenancyId = tenancyId;
+            return _resultValue;
         }
     }
 }

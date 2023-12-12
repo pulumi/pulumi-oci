@@ -65,10 +65,10 @@ public final class GetDomainsMyAppsMyAppUserWalletArtifact {
             return this;
         }
         public GetDomainsMyAppsMyAppUserWalletArtifact build() {
-            final var o = new GetDomainsMyAppsMyAppUserWalletArtifact();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyAppsMyAppUserWalletArtifact();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

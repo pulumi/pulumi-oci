@@ -42,9 +42,9 @@ public final class GetContainerInstancesContainerInstanceCollection {
             return items(List.of(items));
         }
         public GetContainerInstancesContainerInstanceCollection build() {
-            final var o = new GetContainerInstancesContainerInstanceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetContainerInstancesContainerInstanceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

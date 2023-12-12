@@ -221,18 +221,18 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallenge {
             return this;
         }
         public GetWaasPolicyWafConfigHumanInteractionChallenge build() {
-            final var o = new GetWaasPolicyWafConfigHumanInteractionChallenge();
-            o.action = action;
-            o.actionExpirationInSeconds = actionExpirationInSeconds;
-            o.challengeSettings = challengeSettings;
-            o.failureThreshold = failureThreshold;
-            o.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
-            o.interactionThreshold = interactionThreshold;
-            o.isEnabled = isEnabled;
-            o.isNatEnabled = isNatEnabled;
-            o.recordingPeriodInSeconds = recordingPeriodInSeconds;
-            o.setHttpHeader = setHttpHeader;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigHumanInteractionChallenge();
+            _resultValue.action = action;
+            _resultValue.actionExpirationInSeconds = actionExpirationInSeconds;
+            _resultValue.challengeSettings = challengeSettings;
+            _resultValue.failureThreshold = failureThreshold;
+            _resultValue.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
+            _resultValue.interactionThreshold = interactionThreshold;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isNatEnabled = isNatEnabled;
+            _resultValue.recordingPeriodInSeconds = recordingPeriodInSeconds;
+            _resultValue.setHttpHeader = setHttpHeader;
+            return _resultValue;
         }
     }
 }

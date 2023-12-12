@@ -161,15 +161,15 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail();
-            o.device = device;
-            o.displayName = displayName;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.isReadOnly = isReadOnly;
-            o.isShareable = isShareable;
-            o.type = type;
-            o.useChap = useChap;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail();
+            _resultValue.device = device;
+            _resultValue.displayName = displayName;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.isReadOnly = isReadOnly;
+            _resultValue.isShareable = isShareable;
+            _resultValue.type = type;
+            _resultValue.useChap = useChap;
+            return _resultValue;
         }
     }
 }

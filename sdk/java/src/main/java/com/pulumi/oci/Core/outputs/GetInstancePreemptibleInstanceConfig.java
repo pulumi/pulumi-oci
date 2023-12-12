@@ -50,9 +50,9 @@ public final class GetInstancePreemptibleInstanceConfig {
             return preemptionActions(List.of(preemptionActions));
         }
         public GetInstancePreemptibleInstanceConfig build() {
-            final var o = new GetInstancePreemptibleInstanceConfig();
-            o.preemptionActions = preemptionActions;
-            return o;
+            final var _resultValue = new GetInstancePreemptibleInstanceConfig();
+            _resultValue.preemptionActions = preemptionActions;
+            return _resultValue;
         }
     }
 }

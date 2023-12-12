@@ -89,11 +89,11 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServ
             return this;
         }
         public GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail build() {
-            final var o = new GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail();
-            o.dbServerPatchingDetails = dbServerPatchingDetails;
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetail();
+            _resultValue.dbServerPatchingDetails = dbServerPatchingDetails;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

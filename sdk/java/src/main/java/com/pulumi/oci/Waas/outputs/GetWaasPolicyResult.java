@@ -326,23 +326,23 @@ public final class GetWaasPolicyResult {
             return wafConfigs(List.of(wafConfigs));
         }
         public GetWaasPolicyResult build() {
-            final var o = new GetWaasPolicyResult();
-            o.additionalDomains = additionalDomains;
-            o.cname = cname;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.domain = domain;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.originGroups = originGroups;
-            o.origins = origins;
-            o.policyConfigs = policyConfigs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.waasPolicyId = waasPolicyId;
-            o.wafConfigs = wafConfigs;
-            return o;
+            final var _resultValue = new GetWaasPolicyResult();
+            _resultValue.additionalDomains = additionalDomains;
+            _resultValue.cname = cname;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.domain = domain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.originGroups = originGroups;
+            _resultValue.origins = origins;
+            _resultValue.policyConfigs = policyConfigs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.waasPolicyId = waasPolicyId;
+            _resultValue.wafConfigs = wafConfigs;
+            return _resultValue;
         }
     }
 }

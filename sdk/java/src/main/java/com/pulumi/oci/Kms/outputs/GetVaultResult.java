@@ -415,28 +415,28 @@ public final class GetVaultResult {
             return this;
         }
         public GetVaultResult build() {
-            final var o = new GetVaultResult();
-            o.compartmentId = compartmentId;
-            o.cryptoEndpoint = cryptoEndpoint;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.externalKeyManagerMetadataSummaries = externalKeyManagerMetadataSummaries;
-            o.externalKeyManagerMetadatas = externalKeyManagerMetadatas;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isPrimary = isPrimary;
-            o.managementEndpoint = managementEndpoint;
-            o.replicaDetails = replicaDetails;
-            o.restoreFromFiles = restoreFromFiles;
-            o.restoreFromObjectStores = restoreFromObjectStores;
-            o.restoreTrigger = restoreTrigger;
-            o.restoredFromVaultId = restoredFromVaultId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeOfDeletion = timeOfDeletion;
-            o.vaultId = vaultId;
-            o.vaultType = vaultType;
-            return o;
+            final var _resultValue = new GetVaultResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.cryptoEndpoint = cryptoEndpoint;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.externalKeyManagerMetadataSummaries = externalKeyManagerMetadataSummaries;
+            _resultValue.externalKeyManagerMetadatas = externalKeyManagerMetadatas;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isPrimary = isPrimary;
+            _resultValue.managementEndpoint = managementEndpoint;
+            _resultValue.replicaDetails = replicaDetails;
+            _resultValue.restoreFromFiles = restoreFromFiles;
+            _resultValue.restoreFromObjectStores = restoreFromObjectStores;
+            _resultValue.restoreTrigger = restoreTrigger;
+            _resultValue.restoredFromVaultId = restoredFromVaultId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.vaultId = vaultId;
+            _resultValue.vaultType = vaultType;
+            return _resultValue;
         }
     }
 }

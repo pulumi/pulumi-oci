@@ -68,10 +68,10 @@ public final class ModelDeploymentCategoryLogDetails {
             return this;
         }
         public ModelDeploymentCategoryLogDetails build() {
-            final var o = new ModelDeploymentCategoryLogDetails();
-            o.access = access;
-            o.predict = predict;
-            return o;
+            final var _resultValue = new ModelDeploymentCategoryLogDetails();
+            _resultValue.access = access;
+            _resultValue.predict = predict;
+            return _resultValue;
         }
     }
 }

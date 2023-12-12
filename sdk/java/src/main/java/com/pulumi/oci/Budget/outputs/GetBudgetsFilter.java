@@ -67,11 +67,11 @@ public final class GetBudgetsFilter {
             return values(List.of(values));
         }
         public GetBudgetsFilter build() {
-            final var o = new GetBudgetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetBudgetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

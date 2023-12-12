@@ -84,11 +84,11 @@ public final class GetDomainsBrandingSettingImage {
             return this;
         }
         public GetDomainsBrandingSettingImage build() {
-            final var o = new GetDomainsBrandingSettingImage();
-            o.display = display;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsBrandingSettingImage();
+            _resultValue.display = display;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

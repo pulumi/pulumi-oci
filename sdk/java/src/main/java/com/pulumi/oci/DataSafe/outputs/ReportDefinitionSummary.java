@@ -151,14 +151,14 @@ public final class ReportDefinitionSummary {
             return this;
         }
         public ReportDefinitionSummary build() {
-            final var o = new ReportDefinitionSummary();
-            o.countOf = countOf;
-            o.displayOrder = displayOrder;
-            o.groupByFieldName = groupByFieldName;
-            o.isHidden = isHidden;
-            o.name = name;
-            o.scimFilter = scimFilter;
-            return o;
+            final var _resultValue = new ReportDefinitionSummary();
+            _resultValue.countOf = countOf;
+            _resultValue.displayOrder = displayOrder;
+            _resultValue.groupByFieldName = groupByFieldName;
+            _resultValue.isHidden = isHidden;
+            _resultValue.name = name;
+            _resultValue.scimFilter = scimFilter;
+            return _resultValue;
         }
     }
 }

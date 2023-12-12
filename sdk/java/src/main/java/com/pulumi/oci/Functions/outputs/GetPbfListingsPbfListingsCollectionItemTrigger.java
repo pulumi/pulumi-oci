@@ -46,9 +46,9 @@ public final class GetPbfListingsPbfListingsCollectionItemTrigger {
             return this;
         }
         public GetPbfListingsPbfListingsCollectionItemTrigger build() {
-            final var o = new GetPbfListingsPbfListingsCollectionItemTrigger();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPbfListingsPbfListingsCollectionItemTrigger();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

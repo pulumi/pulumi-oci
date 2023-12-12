@@ -67,10 +67,10 @@ public final class CaptureFilterVtapCaptureFilterRuleIcmpOptions {
             return this;
         }
         public CaptureFilterVtapCaptureFilterRuleIcmpOptions build() {
-            final var o = new CaptureFilterVtapCaptureFilterRuleIcmpOptions();
-            o.code = code;
-            o.type = type;
-            return o;
+            final var _resultValue = new CaptureFilterVtapCaptureFilterRuleIcmpOptions();
+            _resultValue.code = code;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

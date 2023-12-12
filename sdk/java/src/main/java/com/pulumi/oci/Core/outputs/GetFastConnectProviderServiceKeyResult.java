@@ -125,14 +125,14 @@ public final class GetFastConnectProviderServiceKeyResult {
             return this;
         }
         public GetFastConnectProviderServiceKeyResult build() {
-            final var o = new GetFastConnectProviderServiceKeyResult();
-            o.bandwidthShapeName = bandwidthShapeName;
-            o.id = id;
-            o.name = name;
-            o.peeringLocation = peeringLocation;
-            o.providerServiceId = providerServiceId;
-            o.providerServiceKeyName = providerServiceKeyName;
-            return o;
+            final var _resultValue = new GetFastConnectProviderServiceKeyResult();
+            _resultValue.bandwidthShapeName = bandwidthShapeName;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.peeringLocation = peeringLocation;
+            _resultValue.providerServiceId = providerServiceId;
+            _resultValue.providerServiceKeyName = providerServiceKeyName;
+            return _resultValue;
         }
     }
 }

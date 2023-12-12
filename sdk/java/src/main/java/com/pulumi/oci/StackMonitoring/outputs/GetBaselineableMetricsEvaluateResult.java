@@ -123,13 +123,13 @@ public final class GetBaselineableMetricsEvaluateResult {
             return this;
         }
         public GetBaselineableMetricsEvaluateResult build() {
-            final var o = new GetBaselineableMetricsEvaluateResult();
-            o.baselineableMetricId = baselineableMetricId;
-            o.dataPoints = dataPoints;
-            o.id = id;
-            o.items = items;
-            o.resourceId = resourceId;
-            return o;
+            final var _resultValue = new GetBaselineableMetricsEvaluateResult();
+            _resultValue.baselineableMetricId = baselineableMetricId;
+            _resultValue.dataPoints = dataPoints;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.resourceId = resourceId;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetManagementStationsManagementStationCollection {
             return items(List.of(items));
         }
         public GetManagementStationsManagementStationCollection build() {
-            final var o = new GetManagementStationsManagementStationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagementStationsManagementStationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

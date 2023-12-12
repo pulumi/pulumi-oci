@@ -66,10 +66,10 @@ public final class GetMetricDataMetricDataAggregatedDatapoint {
             return this;
         }
         public GetMetricDataMetricDataAggregatedDatapoint build() {
-            final var o = new GetMetricDataMetricDataAggregatedDatapoint();
-            o.timestamp = timestamp;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetMetricDataMetricDataAggregatedDatapoint();
+            _resultValue.timestamp = timestamp;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

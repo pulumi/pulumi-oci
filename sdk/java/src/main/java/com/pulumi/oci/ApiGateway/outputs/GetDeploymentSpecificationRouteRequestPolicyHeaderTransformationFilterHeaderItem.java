@@ -46,9 +46,9 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderTransformat
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeaderItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

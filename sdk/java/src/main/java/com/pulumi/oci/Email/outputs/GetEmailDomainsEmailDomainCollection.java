@@ -42,9 +42,9 @@ public final class GetEmailDomainsEmailDomainCollection {
             return items(List.of(items));
         }
         public GetEmailDomainsEmailDomainCollection build() {
-            final var o = new GetEmailDomainsEmailDomainCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetEmailDomainsEmailDomainCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

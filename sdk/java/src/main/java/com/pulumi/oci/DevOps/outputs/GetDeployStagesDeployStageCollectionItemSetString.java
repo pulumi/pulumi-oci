@@ -50,9 +50,9 @@ public final class GetDeployStagesDeployStageCollectionItemSetString {
             return items(List.of(items));
         }
         public GetDeployStagesDeployStageCollectionItemSetString build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemSetString();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemSetString();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -73,10 +73,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
             return selectionSources(List.of(selectionSources));
         }
         public GetApiDeploymentSpecificationRequestPolicyDynamicAuthentication build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthentication();
-            o.authenticationServers = authenticationServers;
-            o.selectionSources = selectionSources;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthentication();
+            _resultValue.authenticationServers = authenticationServers;
+            _resultValue.selectionSources = selectionSources;
+            return _resultValue;
         }
     }
 }

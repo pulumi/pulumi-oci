@@ -84,11 +84,11 @@ public final class GetContainerImagesContainerImageCollectionItemLayer {
             return this;
         }
         public GetContainerImagesContainerImageCollectionItemLayer build() {
-            final var o = new GetContainerImagesContainerImageCollectionItemLayer();
-            o.digest = digest;
-            o.sizeInBytes = sizeInBytes;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetContainerImagesContainerImageCollectionItemLayer();
+            _resultValue.digest = digest;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

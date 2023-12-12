@@ -170,17 +170,17 @@ public final class GetSecurityAssessmentFindingsResult {
             return this;
         }
         public GetSecurityAssessmentFindingsResult build() {
-            final var o = new GetSecurityAssessmentFindingsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.findingKey = findingKey;
-            o.findings = findings;
-            o.id = id;
-            o.references = references;
-            o.securityAssessmentId = securityAssessmentId;
-            o.severity = severity;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentFindingsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.findingKey = findingKey;
+            _resultValue.findings = findings;
+            _resultValue.id = id;
+            _resultValue.references = references;
+            _resultValue.securityAssessmentId = securityAssessmentId;
+            _resultValue.severity = severity;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class BuildPipelineBuildPipelineParametersItem {
             return this;
         }
         public BuildPipelineBuildPipelineParametersItem build() {
-            final var o = new BuildPipelineBuildPipelineParametersItem();
-            o.defaultValue = defaultValue;
-            o.description = description;
-            o.name = name;
-            return o;
+            final var _resultValue = new BuildPipelineBuildPipelineParametersItem();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.description = description;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

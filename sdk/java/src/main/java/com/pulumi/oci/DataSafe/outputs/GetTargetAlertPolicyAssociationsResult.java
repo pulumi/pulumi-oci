@@ -211,20 +211,20 @@ public final class GetTargetAlertPolicyAssociationsResult {
             return this;
         }
         public GetTargetAlertPolicyAssociationsResult build() {
-            final var o = new GetTargetAlertPolicyAssociationsResult();
-            o.accessLevel = accessLevel;
-            o.alertPolicyId = alertPolicyId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.targetAlertPolicyAssociationCollections = targetAlertPolicyAssociationCollections;
-            o.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
-            o.targetId = targetId;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetTargetAlertPolicyAssociationsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.alertPolicyId = alertPolicyId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.targetAlertPolicyAssociationCollections = targetAlertPolicyAssociationCollections;
+            _resultValue.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

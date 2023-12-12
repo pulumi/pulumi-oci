@@ -152,14 +152,14 @@ public final class MonitoredResourcesSearchAssociationItem {
             return this;
         }
         public MonitoredResourcesSearchAssociationItem build() {
-            final var o = new MonitoredResourcesSearchAssociationItem();
-            o.associationType = associationType;
-            o.destinationResourceDetails = destinationResourceDetails;
-            o.destinationResourceId = destinationResourceId;
-            o.sourceResourceDetails = sourceResourceDetails;
-            o.sourceResourceId = sourceResourceId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new MonitoredResourcesSearchAssociationItem();
+            _resultValue.associationType = associationType;
+            _resultValue.destinationResourceDetails = destinationResourceDetails;
+            _resultValue.destinationResourceId = destinationResourceId;
+            _resultValue.sourceResourceDetails = sourceResourceDetails;
+            _resultValue.sourceResourceId = sourceResourceId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

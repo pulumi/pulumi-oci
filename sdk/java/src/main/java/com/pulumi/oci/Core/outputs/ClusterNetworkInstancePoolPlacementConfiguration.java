@@ -136,13 +136,13 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
             return secondaryVnicSubnets(List.of(secondaryVnicSubnets));
         }
         public ClusterNetworkInstancePoolPlacementConfiguration build() {
-            final var o = new ClusterNetworkInstancePoolPlacementConfiguration();
-            o.availabilityDomain = availabilityDomain;
-            o.faultDomains = faultDomains;
-            o.primarySubnetId = primarySubnetId;
-            o.primaryVnicSubnets = primaryVnicSubnets;
-            o.secondaryVnicSubnets = secondaryVnicSubnets;
-            return o;
+            final var _resultValue = new ClusterNetworkInstancePoolPlacementConfiguration();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.faultDomains = faultDomains;
+            _resultValue.primarySubnetId = primarySubnetId;
+            _resultValue.primaryVnicSubnets = primaryVnicSubnets;
+            _resultValue.secondaryVnicSubnets = secondaryVnicSubnets;
+            return _resultValue;
         }
     }
 }

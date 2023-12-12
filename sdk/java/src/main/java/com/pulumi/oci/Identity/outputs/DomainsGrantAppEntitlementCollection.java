@@ -107,10 +107,10 @@ public final class DomainsGrantAppEntitlementCollection {
             return this;
         }
         public DomainsGrantAppEntitlementCollection build() {
-            final var o = new DomainsGrantAppEntitlementCollection();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsGrantAppEntitlementCollection();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

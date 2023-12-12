@@ -164,16 +164,16 @@ public final class GetTargetDatabasesTablesResult {
             return this;
         }
         public GetTargetDatabasesTablesResult build() {
-            final var o = new GetTargetDatabasesTablesResult();
-            o.filters = filters;
-            o.id = id;
-            o.schemaNameContains = schemaNameContains;
-            o.schemaNames = schemaNames;
-            o.tableNameContains = tableNameContains;
-            o.tableNames = tableNames;
-            o.tables = tables;
-            o.targetDatabaseId = targetDatabaseId;
-            return o;
+            final var _resultValue = new GetTargetDatabasesTablesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.schemaNameContains = schemaNameContains;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.tableNameContains = tableNameContains;
+            _resultValue.tableNames = tableNames;
+            _resultValue.tables = tables;
+            _resultValue.targetDatabaseId = targetDatabaseId;
+            return _resultValue;
         }
     }
 }

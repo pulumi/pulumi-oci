@@ -65,10 +65,10 @@ public final class GetDomainsGrantsGrantTag {
             return this;
         }
         public GetDomainsGrantsGrantTag build() {
-            final var o = new GetDomainsGrantsGrantTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsGrantsGrantTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -111,14 +111,14 @@ public final class ExadataInfrastructureStorageMaintenanceWindow {
             return weeksOfMonths(List.of(weeksOfMonths));
         }
         public ExadataInfrastructureStorageMaintenanceWindow build() {
-            final var o = new ExadataInfrastructureStorageMaintenanceWindow();
-            o.daysOfWeeks = daysOfWeeks;
-            o.hoursOfDays = hoursOfDays;
-            o.leadTimeInWeeks = leadTimeInWeeks;
-            o.months = months;
-            o.preference = preference;
-            o.weeksOfMonths = weeksOfMonths;
-            return o;
+            final var _resultValue = new ExadataInfrastructureStorageMaintenanceWindow();
+            _resultValue.daysOfWeeks = daysOfWeeks;
+            _resultValue.hoursOfDays = hoursOfDays;
+            _resultValue.leadTimeInWeeks = leadTimeInWeeks;
+            _resultValue.months = months;
+            _resultValue.preference = preference;
+            _resultValue.weeksOfMonths = weeksOfMonths;
+            return _resultValue;
         }
     }
 }

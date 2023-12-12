@@ -67,11 +67,11 @@ public final class GetSecurityRecipesFilter {
             return values(List.of(values));
         }
         public GetSecurityRecipesFilter build() {
-            final var o = new GetSecurityRecipesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSecurityRecipesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

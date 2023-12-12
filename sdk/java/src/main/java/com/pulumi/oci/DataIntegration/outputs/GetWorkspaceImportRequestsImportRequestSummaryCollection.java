@@ -42,9 +42,9 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollection {
             return items(List.of(items));
         }
         public GetWorkspaceImportRequestsImportRequestSummaryCollection build() {
-            final var o = new GetWorkspaceImportRequestsImportRequestSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetWorkspaceImportRequestsImportRequestSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -403,27 +403,27 @@ public final class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection
             return this;
         }
         public GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem build() {
-            final var o = new GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem();
-            o.compartmentId = compartmentId;
-            o.createdBies = createdBies;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isDefault = isDefault;
-            o.javaVersion = javaVersion;
-            o.lastUpdatedBies = lastUpdatedBies;
-            o.licenseTypes = licenseTypes;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeExpires = timeExpires;
-            o.timeLastUsed = timeLastUsed;
-            o.timeUpdated = timeUpdated;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBies = createdBies;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isDefault = isDefault;
+            _resultValue.javaVersion = javaVersion;
+            _resultValue.lastUpdatedBies = lastUpdatedBies;
+            _resultValue.licenseTypes = licenseTypes;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpires = timeExpires;
+            _resultValue.timeLastUsed = timeLastUsed;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -343,24 +343,24 @@ public final class GetRemediationRecipeResult {
             return verifyConfigurations(List.of(verifyConfigurations));
         }
         public GetRemediationRecipeResult build() {
-            final var o = new GetRemediationRecipeResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.detectConfigurations = detectConfigurations;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isRunTriggeredOnKbChange = isRunTriggeredOnKbChange;
-            o.knowledgeBaseId = knowledgeBaseId;
-            o.networkConfigurations = networkConfigurations;
-            o.remediationRecipeId = remediationRecipeId;
-            o.scmConfigurations = scmConfigurations;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.verifyConfigurations = verifyConfigurations;
-            return o;
+            final var _resultValue = new GetRemediationRecipeResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.detectConfigurations = detectConfigurations;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isRunTriggeredOnKbChange = isRunTriggeredOnKbChange;
+            _resultValue.knowledgeBaseId = knowledgeBaseId;
+            _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.remediationRecipeId = remediationRecipeId;
+            _resultValue.scmConfigurations = scmConfigurations;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.verifyConfigurations = verifyConfigurations;
+            return _resultValue;
         }
     }
 }

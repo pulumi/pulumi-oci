@@ -46,9 +46,9 @@ public final class GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet {
             return this;
         }
         public GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet build() {
-            final var o = new GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousCharacterSetsAutonomousDatabaseCharacterSet();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

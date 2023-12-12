@@ -166,15 +166,15 @@ public final class GetFirewallsResult {
             return this;
         }
         public GetFirewallsResult build() {
-            final var o = new GetFirewallsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.states = states;
-            o.webAppFirewallCollections = webAppFirewallCollections;
-            o.webAppFirewallPolicyId = webAppFirewallPolicyId;
-            return o;
+            final var _resultValue = new GetFirewallsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            _resultValue.webAppFirewallCollections = webAppFirewallCollections;
+            _resultValue.webAppFirewallPolicyId = webAppFirewallPolicyId;
+            return _resultValue;
         }
     }
 }

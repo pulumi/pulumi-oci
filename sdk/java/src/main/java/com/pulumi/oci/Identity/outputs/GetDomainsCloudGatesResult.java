@@ -241,24 +241,24 @@ public final class GetDomainsCloudGatesResult {
             return this;
         }
         public GetDomainsCloudGatesResult build() {
-            final var o = new GetDomainsCloudGatesResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.cloudGateCount = cloudGateCount;
-            o.cloudGateFilter = cloudGateFilter;
-            o.cloudGates = cloudGates;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsCloudGatesResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.cloudGateCount = cloudGateCount;
+            _resultValue.cloudGateFilter = cloudGateFilter;
+            _resultValue.cloudGates = cloudGates;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

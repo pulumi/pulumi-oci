@@ -109,13 +109,13 @@ public final class GetNetworkFirewallPolicyUrlListsResult {
             return urlListSummaryCollections(List.of(urlListSummaryCollections));
         }
         public GetNetworkFirewallPolicyUrlListsResult build() {
-            final var o = new GetNetworkFirewallPolicyUrlListsResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.urlListSummaryCollections = urlListSummaryCollections;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyUrlListsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.urlListSummaryCollections = urlListSummaryCollections;
+            return _resultValue;
         }
     }
 }

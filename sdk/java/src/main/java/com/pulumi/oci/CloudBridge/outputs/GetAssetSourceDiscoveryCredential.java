@@ -65,10 +65,10 @@ public final class GetAssetSourceDiscoveryCredential {
             return this;
         }
         public GetAssetSourceDiscoveryCredential build() {
-            final var o = new GetAssetSourceDiscoveryCredential();
-            o.secretId = secretId;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetAssetSourceDiscoveryCredential();
+            _resultValue.secretId = secretId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

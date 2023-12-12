@@ -340,24 +340,24 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
             return this;
         }
         public GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider build() {
-            final var o = new GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider();
-            o.accessTokenUrl = accessTokenUrl;
-            o.accountLinkingEnabled = accountLinkingEnabled;
-            o.adminScopes = adminScopes;
-            o.authzUrl = authzUrl;
-            o.clientCredentialInPayload = clientCredentialInPayload;
-            o.clockSkewInSeconds = clockSkewInSeconds;
-            o.consumerKey = consumerKey;
-            o.consumerSecret = consumerSecret;
-            o.discoveryUrl = discoveryUrl;
-            o.idAttribute = idAttribute;
-            o.profileUrl = profileUrl;
-            o.redirectUrl = redirectUrl;
-            o.registrationEnabled = registrationEnabled;
-            o.scopes = scopes;
-            o.serviceProviderName = serviceProviderName;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider();
+            _resultValue.accessTokenUrl = accessTokenUrl;
+            _resultValue.accountLinkingEnabled = accountLinkingEnabled;
+            _resultValue.adminScopes = adminScopes;
+            _resultValue.authzUrl = authzUrl;
+            _resultValue.clientCredentialInPayload = clientCredentialInPayload;
+            _resultValue.clockSkewInSeconds = clockSkewInSeconds;
+            _resultValue.consumerKey = consumerKey;
+            _resultValue.consumerSecret = consumerSecret;
+            _resultValue.discoveryUrl = discoveryUrl;
+            _resultValue.idAttribute = idAttribute;
+            _resultValue.profileUrl = profileUrl;
+            _resultValue.redirectUrl = redirectUrl;
+            _resultValue.registrationEnabled = registrationEnabled;
+            _resultValue.scopes = scopes;
+            _resultValue.serviceProviderName = serviceProviderName;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

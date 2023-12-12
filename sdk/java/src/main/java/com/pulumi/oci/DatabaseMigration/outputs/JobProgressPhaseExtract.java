@@ -67,10 +67,10 @@ public final class JobProgressPhaseExtract {
             return this;
         }
         public JobProgressPhaseExtract build() {
-            final var o = new JobProgressPhaseExtract();
-            o.message = message;
-            o.type = type;
-            return o;
+            final var _resultValue = new JobProgressPhaseExtract();
+            _resultValue.message = message;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

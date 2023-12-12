@@ -107,12 +107,12 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
             return this;
         }
         public GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem build() {
-            final var o = new GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem();
-            o.applicationDependencyNodeIds = applicationDependencyNodeIds;
-            o.gav = gav;
-            o.nodeId = nodeId;
-            o.recommendedGav = recommendedGav;
-            return o;
+            final var _resultValue = new GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem();
+            _resultValue.applicationDependencyNodeIds = applicationDependencyNodeIds;
+            _resultValue.gav = gav;
+            _resultValue.nodeId = nodeId;
+            _resultValue.recommendedGav = recommendedGav;
+            return _resultValue;
         }
     }
 }

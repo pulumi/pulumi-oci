@@ -314,22 +314,22 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
             return this;
         }
         public GetJavaReleasesJavaReleaseCollectionItem build() {
-            final var o = new GetJavaReleasesJavaReleaseCollectionItem();
-            o.artifactContentTypes = artifactContentTypes;
-            o.artifacts = artifacts;
-            o.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
-            o.familyDetails = familyDetails;
-            o.familyVersion = familyVersion;
-            o.licenseDetails = licenseDetails;
-            o.licenseType = licenseType;
-            o.mosPatches = mosPatches;
-            o.parentReleaseVersion = parentReleaseVersion;
-            o.releaseDate = releaseDate;
-            o.releaseNotesUrl = releaseNotesUrl;
-            o.releaseType = releaseType;
-            o.releaseVersion = releaseVersion;
-            o.securityStatus = securityStatus;
-            return o;
+            final var _resultValue = new GetJavaReleasesJavaReleaseCollectionItem();
+            _resultValue.artifactContentTypes = artifactContentTypes;
+            _resultValue.artifacts = artifacts;
+            _resultValue.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
+            _resultValue.familyDetails = familyDetails;
+            _resultValue.familyVersion = familyVersion;
+            _resultValue.licenseDetails = licenseDetails;
+            _resultValue.licenseType = licenseType;
+            _resultValue.mosPatches = mosPatches;
+            _resultValue.parentReleaseVersion = parentReleaseVersion;
+            _resultValue.releaseDate = releaseDate;
+            _resultValue.releaseNotesUrl = releaseNotesUrl;
+            _resultValue.releaseType = releaseType;
+            _resultValue.releaseVersion = releaseVersion;
+            _resultValue.securityStatus = securityStatus;
+            return _resultValue;
         }
     }
 }

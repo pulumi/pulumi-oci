@@ -50,9 +50,9 @@ public final class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollecti
             return items(List.of(items));
         }
         public GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection build() {
-            final var o = new GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

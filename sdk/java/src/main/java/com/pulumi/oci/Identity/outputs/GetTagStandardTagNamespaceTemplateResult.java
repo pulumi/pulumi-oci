@@ -138,14 +138,14 @@ public final class GetTagStandardTagNamespaceTemplateResult {
             return tagDefinitionTemplates(List.of(tagDefinitionTemplates));
         }
         public GetTagStandardTagNamespaceTemplateResult build() {
-            final var o = new GetTagStandardTagNamespaceTemplateResult();
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.id = id;
-            o.standardTagNamespaceName = standardTagNamespaceName;
-            o.status = status;
-            o.tagDefinitionTemplates = tagDefinitionTemplates;
-            return o;
+            final var _resultValue = new GetTagStandardTagNamespaceTemplateResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.standardTagNamespaceName = standardTagNamespaceName;
+            _resultValue.status = status;
+            _resultValue.tagDefinitionTemplates = tagDefinitionTemplates;
+            return _resultValue;
         }
     }
 }

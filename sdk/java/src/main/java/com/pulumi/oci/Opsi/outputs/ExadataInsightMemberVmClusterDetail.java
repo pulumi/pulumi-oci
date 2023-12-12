@@ -129,13 +129,13 @@ public final class ExadataInsightMemberVmClusterDetail {
             return this;
         }
         public ExadataInsightMemberVmClusterDetail build() {
-            final var o = new ExadataInsightMemberVmClusterDetail();
-            o.compartmentId = compartmentId;
-            o.dbmPrivateEndpointId = dbmPrivateEndpointId;
-            o.memberDatabaseDetails = memberDatabaseDetails;
-            o.opsiPrivateEndpointId = opsiPrivateEndpointId;
-            o.vmclusterId = vmclusterId;
-            return o;
+            final var _resultValue = new ExadataInsightMemberVmClusterDetail();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbmPrivateEndpointId = dbmPrivateEndpointId;
+            _resultValue.memberDatabaseDetails = memberDatabaseDetails;
+            _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            _resultValue.vmclusterId = vmclusterId;
+            return _resultValue;
         }
     }
 }

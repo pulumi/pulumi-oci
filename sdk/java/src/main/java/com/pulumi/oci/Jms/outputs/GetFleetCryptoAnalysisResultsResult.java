@@ -166,16 +166,16 @@ public final class GetFleetCryptoAnalysisResultsResult {
             return this;
         }
         public GetFleetCryptoAnalysisResultsResult build() {
-            final var o = new GetFleetCryptoAnalysisResultsResult();
-            o.aggregationMode = aggregationMode;
-            o.cryptoAnalysisResultCollections = cryptoAnalysisResultCollections;
-            o.filters = filters;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetFleetCryptoAnalysisResultsResult();
+            _resultValue.aggregationMode = aggregationMode;
+            _resultValue.cryptoAnalysisResultCollections = cryptoAnalysisResultCollections;
+            _resultValue.filters = filters;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

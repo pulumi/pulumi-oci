@@ -122,13 +122,13 @@ public final class GetTunnelSecurityAssociationsTunnelSecurityAssociation {
             return this;
         }
         public GetTunnelSecurityAssociationsTunnelSecurityAssociation build() {
-            final var o = new GetTunnelSecurityAssociationsTunnelSecurityAssociation();
-            o.cpeSubnet = cpeSubnet;
-            o.oracleSubnet = oracleSubnet;
-            o.time = time;
-            o.tunnelSaErrorInfo = tunnelSaErrorInfo;
-            o.tunnelSaStatus = tunnelSaStatus;
-            return o;
+            final var _resultValue = new GetTunnelSecurityAssociationsTunnelSecurityAssociation();
+            _resultValue.cpeSubnet = cpeSubnet;
+            _resultValue.oracleSubnet = oracleSubnet;
+            _resultValue.time = time;
+            _resultValue.tunnelSaErrorInfo = tunnelSaErrorInfo;
+            _resultValue.tunnelSaStatus = tunnelSaStatus;
+            return _resultValue;
         }
     }
 }

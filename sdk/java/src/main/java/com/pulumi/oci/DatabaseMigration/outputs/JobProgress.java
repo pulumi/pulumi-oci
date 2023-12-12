@@ -91,11 +91,11 @@ public final class JobProgress {
             return phases(List.of(phases));
         }
         public JobProgress build() {
-            final var o = new JobProgress();
-            o.currentPhase = currentPhase;
-            o.currentStatus = currentStatus;
-            o.phases = phases;
-            return o;
+            final var _resultValue = new JobProgress();
+            _resultValue.currentPhase = currentPhase;
+            _resultValue.currentStatus = currentStatus;
+            _resultValue.phases = phases;
+            return _resultValue;
         }
     }
 }

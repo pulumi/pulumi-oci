@@ -85,11 +85,11 @@ public final class GetVolumeAttachmentsVolumeAttachmentMultipathDevice {
             return this;
         }
         public GetVolumeAttachmentsVolumeAttachmentMultipathDevice build() {
-            final var o = new GetVolumeAttachmentsVolumeAttachmentMultipathDevice();
-            o.ipv4 = ipv4;
-            o.iqn = iqn;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetVolumeAttachmentsVolumeAttachmentMultipathDevice();
+            _resultValue.ipv4 = ipv4;
+            _resultValue.iqn = iqn;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

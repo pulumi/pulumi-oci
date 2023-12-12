@@ -179,15 +179,15 @@ public final class GetNetworkLoadBalancerHealthResult {
             return warningStateBackendSetNames(List.of(warningStateBackendSetNames));
         }
         public GetNetworkLoadBalancerHealthResult build() {
-            final var o = new GetNetworkLoadBalancerHealthResult();
-            o.criticalStateBackendSetNames = criticalStateBackendSetNames;
-            o.id = id;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.status = status;
-            o.totalBackendSetCount = totalBackendSetCount;
-            o.unknownStateBackendSetNames = unknownStateBackendSetNames;
-            o.warningStateBackendSetNames = warningStateBackendSetNames;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancerHealthResult();
+            _resultValue.criticalStateBackendSetNames = criticalStateBackendSetNames;
+            _resultValue.id = id;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.status = status;
+            _resultValue.totalBackendSetCount = totalBackendSetCount;
+            _resultValue.unknownStateBackendSetNames = unknownStateBackendSetNames;
+            _resultValue.warningStateBackendSetNames = warningStateBackendSetNames;
+            return _resultValue;
         }
     }
 }

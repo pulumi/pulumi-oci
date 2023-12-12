@@ -165,14 +165,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicy 
             return usagePlans(List.of(usagePlans));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicy build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicy();
-            o.authentications = authentications;
-            o.cors = cors;
-            o.dynamicAuthentications = dynamicAuthentications;
-            o.mutualTls = mutualTls;
-            o.rateLimitings = rateLimitings;
-            o.usagePlans = usagePlans;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicy();
+            _resultValue.authentications = authentications;
+            _resultValue.cors = cors;
+            _resultValue.dynamicAuthentications = dynamicAuthentications;
+            _resultValue.mutualTls = mutualTls;
+            _resultValue.rateLimitings = rateLimitings;
+            _resultValue.usagePlans = usagePlans;
+            return _resultValue;
         }
     }
 }

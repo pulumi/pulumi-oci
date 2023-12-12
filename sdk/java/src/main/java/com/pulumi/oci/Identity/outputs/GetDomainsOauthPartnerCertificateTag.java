@@ -65,10 +65,10 @@ public final class GetDomainsOauthPartnerCertificateTag {
             return this;
         }
         public GetDomainsOauthPartnerCertificateTag build() {
-            final var o = new GetDomainsOauthPartnerCertificateTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsOauthPartnerCertificateTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

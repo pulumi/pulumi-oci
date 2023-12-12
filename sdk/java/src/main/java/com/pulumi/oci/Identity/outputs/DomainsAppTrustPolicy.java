@@ -109,10 +109,10 @@ public final class DomainsAppTrustPolicy {
             return this;
         }
         public DomainsAppTrustPolicy build() {
-            final var o = new DomainsAppTrustPolicy();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppTrustPolicy();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

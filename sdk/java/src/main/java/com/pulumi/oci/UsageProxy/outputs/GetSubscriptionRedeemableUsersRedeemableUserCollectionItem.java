@@ -100,12 +100,12 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItem {
             return this;
         }
         public GetSubscriptionRedeemableUsersRedeemableUserCollectionItem build() {
-            final var o = new GetSubscriptionRedeemableUsersRedeemableUserCollectionItem();
-            o.items = items;
-            o.subscriptionId = subscriptionId;
-            o.tenancyId = tenancyId;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetSubscriptionRedeemableUsersRedeemableUserCollectionItem();
+            _resultValue.items = items;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

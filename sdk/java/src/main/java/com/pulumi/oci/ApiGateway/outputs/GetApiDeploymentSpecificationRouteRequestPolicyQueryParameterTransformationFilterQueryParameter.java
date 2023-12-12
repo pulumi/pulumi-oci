@@ -70,10 +70,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter();
-            o.items = items;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationFilterQueryParameter();
+            _resultValue.items = items;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

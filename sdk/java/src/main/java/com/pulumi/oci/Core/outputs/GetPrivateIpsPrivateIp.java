@@ -296,22 +296,22 @@ public final class GetPrivateIpsPrivateIp {
             return this;
         }
         public GetPrivateIpsPrivateIp build() {
-            final var o = new GetPrivateIpsPrivateIp();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.isPrimary = isPrimary;
-            o.isReserved = isReserved;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.vlanId = vlanId;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetPrivateIpsPrivateIp();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isPrimary = isPrimary;
+            _resultValue.isReserved = isReserved;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vlanId = vlanId;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

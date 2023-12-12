@@ -104,12 +104,12 @@ public final class GetMediaWorkflowTaskDeclarationItem {
             return this;
         }
         public GetMediaWorkflowTaskDeclarationItem build() {
-            final var o = new GetMediaWorkflowTaskDeclarationItem();
-            o.name = name;
-            o.parametersSchema = parametersSchema;
-            o.parametersSchemaAllowingReferences = parametersSchemaAllowingReferences;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetMediaWorkflowTaskDeclarationItem();
+            _resultValue.name = name;
+            _resultValue.parametersSchema = parametersSchema;
+            _resultValue.parametersSchemaAllowingReferences = parametersSchemaAllowingReferences;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

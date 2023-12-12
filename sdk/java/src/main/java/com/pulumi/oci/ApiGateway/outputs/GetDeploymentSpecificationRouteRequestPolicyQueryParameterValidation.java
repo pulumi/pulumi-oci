@@ -62,10 +62,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyQueryParameterVal
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation();
-            o.parameters = parameters;
-            o.validationMode = validationMode;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidation();
+            _resultValue.parameters = parameters;
+            _resultValue.validationMode = validationMode;
+            return _resultValue;
         }
     }
 }

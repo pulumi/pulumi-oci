@@ -46,9 +46,9 @@ public final class GetListingSupportedOperatingSystem {
             return this;
         }
         public GetListingSupportedOperatingSystem build() {
-            final var o = new GetListingSupportedOperatingSystem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingSupportedOperatingSystem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

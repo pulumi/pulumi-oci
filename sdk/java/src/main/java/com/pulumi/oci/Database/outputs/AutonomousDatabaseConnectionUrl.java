@@ -181,16 +181,16 @@ public final class AutonomousDatabaseConnectionUrl {
             return this;
         }
         public AutonomousDatabaseConnectionUrl build() {
-            final var o = new AutonomousDatabaseConnectionUrl();
-            o.apexUrl = apexUrl;
-            o.databaseTransformsUrl = databaseTransformsUrl;
-            o.graphStudioUrl = graphStudioUrl;
-            o.machineLearningNotebookUrl = machineLearningNotebookUrl;
-            o.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
-            o.mongoDbUrl = mongoDbUrl;
-            o.ordsUrl = ordsUrl;
-            o.sqlDevWebUrl = sqlDevWebUrl;
-            return o;
+            final var _resultValue = new AutonomousDatabaseConnectionUrl();
+            _resultValue.apexUrl = apexUrl;
+            _resultValue.databaseTransformsUrl = databaseTransformsUrl;
+            _resultValue.graphStudioUrl = graphStudioUrl;
+            _resultValue.machineLearningNotebookUrl = machineLearningNotebookUrl;
+            _resultValue.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
+            _resultValue.mongoDbUrl = mongoDbUrl;
+            _resultValue.ordsUrl = ordsUrl;
+            _resultValue.sqlDevWebUrl = sqlDevWebUrl;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
             return thresholds(List.of(thresholds));
         }
         public GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric build() {
-            final var o = new GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric();
-            o.metricType = metricType;
-            o.thresholds = thresholds;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric();
+            _resultValue.metricType = metricType;
+            _resultValue.thresholds = thresholds;
+            return _resultValue;
         }
     }
 }

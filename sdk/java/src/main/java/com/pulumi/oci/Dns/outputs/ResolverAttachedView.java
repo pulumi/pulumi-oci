@@ -46,9 +46,9 @@ public final class ResolverAttachedView {
             return this;
         }
         public ResolverAttachedView build() {
-            final var o = new ResolverAttachedView();
-            o.viewId = viewId;
-            return o;
+            final var _resultValue = new ResolverAttachedView();
+            _resultValue.viewId = viewId;
+            return _resultValue;
         }
     }
 }

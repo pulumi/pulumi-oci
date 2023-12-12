@@ -144,14 +144,14 @@ public final class GetHttpMonitorsResult {
             return this;
         }
         public GetHttpMonitorsResult build() {
-            final var o = new GetHttpMonitorsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.homeRegion = homeRegion;
-            o.httpMonitors = httpMonitors;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetHttpMonitorsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.homeRegion = homeRegion;
+            _resultValue.httpMonitors = httpMonitors;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

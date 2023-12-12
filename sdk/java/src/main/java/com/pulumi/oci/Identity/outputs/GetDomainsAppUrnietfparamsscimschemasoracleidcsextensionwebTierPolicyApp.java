@@ -85,11 +85,11 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTi
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp();
-            o.resourceRef = resourceRef;
-            o.webTierPolicyAzControl = webTierPolicyAzControl;
-            o.webTierPolicyJson = webTierPolicyJson;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp();
+            _resultValue.resourceRef = resourceRef;
+            _resultValue.webTierPolicyAzControl = webTierPolicyAzControl;
+            _resultValue.webTierPolicyJson = webTierPolicyJson;
+            return _resultValue;
         }
     }
 }

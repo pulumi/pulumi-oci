@@ -111,12 +111,12 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
             return this;
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetails build() {
-            final var o = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetails();
-            o.clientId = clientId;
-            o.clientSecretId = clientSecretId;
-            o.clientSecretVersionNumber = clientSecretVersionNumber;
-            o.type = type;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetails();
+            _resultValue.clientId = clientId;
+            _resultValue.clientSecretId = clientSecretId;
+            _resultValue.clientSecretVersionNumber = clientSecretVersionNumber;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDomainsNetworkPerimeterTag {
             return this;
         }
         public GetDomainsNetworkPerimeterTag build() {
-            final var o = new GetDomainsNetworkPerimeterTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsNetworkPerimeterTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

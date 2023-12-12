@@ -495,32 +495,32 @@ public final class GetOdaInstanceResult {
             return this;
         }
         public GetOdaInstanceResult build() {
-            final var o = new GetOdaInstanceResult();
-            o.attachmentIds = attachmentIds;
-            o.attachmentTypes = attachmentTypes;
-            o.compartmentId = compartmentId;
-            o.connectorUrl = connectorUrl;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.identityAppConsoleUrl = identityAppConsoleUrl;
-            o.identityAppGuid = identityAppGuid;
-            o.identityDomain = identityDomain;
-            o.importedPackageIds = importedPackageIds;
-            o.importedPackageNames = importedPackageNames;
-            o.isRoleBasedAccess = isRoleBasedAccess;
-            o.lifecycleSubState = lifecycleSubState;
-            o.odaInstanceId = odaInstanceId;
-            o.restrictedOperations = restrictedOperations;
-            o.shapeName = shapeName;
-            o.state = state;
-            o.stateMessage = stateMessage;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.webAppUrl = webAppUrl;
-            return o;
+            final var _resultValue = new GetOdaInstanceResult();
+            _resultValue.attachmentIds = attachmentIds;
+            _resultValue.attachmentTypes = attachmentTypes;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectorUrl = connectorUrl;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.identityAppConsoleUrl = identityAppConsoleUrl;
+            _resultValue.identityAppGuid = identityAppGuid;
+            _resultValue.identityDomain = identityDomain;
+            _resultValue.importedPackageIds = importedPackageIds;
+            _resultValue.importedPackageNames = importedPackageNames;
+            _resultValue.isRoleBasedAccess = isRoleBasedAccess;
+            _resultValue.lifecycleSubState = lifecycleSubState;
+            _resultValue.odaInstanceId = odaInstanceId;
+            _resultValue.restrictedOperations = restrictedOperations;
+            _resultValue.shapeName = shapeName;
+            _resultValue.state = state;
+            _resultValue.stateMessage = stateMessage;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.webAppUrl = webAppUrl;
+            return _resultValue;
         }
     }
 }

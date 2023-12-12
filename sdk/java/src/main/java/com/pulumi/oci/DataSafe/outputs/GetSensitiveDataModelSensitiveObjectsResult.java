@@ -163,15 +163,15 @@ public final class GetSensitiveDataModelSensitiveObjectsResult {
             return sensitiveObjectCollections(List.of(sensitiveObjectCollections));
         }
         public GetSensitiveDataModelSensitiveObjectsResult build() {
-            final var o = new GetSensitiveDataModelSensitiveObjectsResult();
-            o.filters = filters;
-            o.id = id;
-            o.objectTypes = objectTypes;
-            o.objects = objects;
-            o.schemaNames = schemaNames;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.sensitiveObjectCollections = sensitiveObjectCollections;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelSensitiveObjectsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.objectTypes = objectTypes;
+            _resultValue.objects = objects;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.sensitiveObjectCollections = sensitiveObjectCollections;
+            return _resultValue;
         }
     }
 }

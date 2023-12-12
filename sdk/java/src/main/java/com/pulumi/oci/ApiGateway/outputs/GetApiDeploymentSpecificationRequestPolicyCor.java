@@ -156,14 +156,14 @@ public final class GetApiDeploymentSpecificationRequestPolicyCor {
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyCor build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyCor();
-            o.allowedHeaders = allowedHeaders;
-            o.allowedMethods = allowedMethods;
-            o.allowedOrigins = allowedOrigins;
-            o.exposedHeaders = exposedHeaders;
-            o.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
-            o.maxAgeInSeconds = maxAgeInSeconds;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyCor();
+            _resultValue.allowedHeaders = allowedHeaders;
+            _resultValue.allowedMethods = allowedMethods;
+            _resultValue.allowedOrigins = allowedOrigins;
+            _resultValue.exposedHeaders = exposedHeaders;
+            _resultValue.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
+            _resultValue.maxAgeInSeconds = maxAgeInSeconds;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact build() {
-            final var o = new GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact();
-            o.email = email;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact();
+            _resultValue.email = email;
+            return _resultValue;
         }
     }
 }

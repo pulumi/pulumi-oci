@@ -172,18 +172,18 @@ public final class GetComputedUsagesResult {
             return this;
         }
         public GetComputedUsagesResult build() {
-            final var o = new GetComputedUsagesResult();
-            o.compartmentId = compartmentId;
-            o.computedProduct = computedProduct;
-            o.computedUsages = computedUsages;
-            o.filters = filters;
-            o.id = id;
-            o.parentProduct = parentProduct;
-            o.subscriptionId = subscriptionId;
-            o.timeFrom = timeFrom;
-            o.timeTo = timeTo;
-            o.xOneOriginRegion = xOneOriginRegion;
-            return o;
+            final var _resultValue = new GetComputedUsagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computedProduct = computedProduct;
+            _resultValue.computedUsages = computedUsages;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.parentProduct = parentProduct;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.timeFrom = timeFrom;
+            _resultValue.timeTo = timeTo;
+            _resultValue.xOneOriginRegion = xOneOriginRegion;
+            return _resultValue;
         }
     }
 }

@@ -226,18 +226,18 @@ public final class GetCommitmentAggregatedsComputedUsageAggregated {
             return this;
         }
         public GetCommitmentAggregatedsComputedUsageAggregated build() {
-            final var o = new GetCommitmentAggregatedsComputedUsageAggregated();
-            o.aggregatedComputedUsages = aggregatedComputedUsages;
-            o.currencyCode = currencyCode;
-            o.parentProducts = parentProducts;
-            o.parentSubscribedServiceId = parentSubscribedServiceId;
-            o.planNumber = planNumber;
-            o.pricingModel = pricingModel;
-            o.rateCardId = rateCardId;
-            o.subscriptionId = subscriptionId;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetCommitmentAggregatedsComputedUsageAggregated();
+            _resultValue.aggregatedComputedUsages = aggregatedComputedUsages;
+            _resultValue.currencyCode = currencyCode;
+            _resultValue.parentProducts = parentProducts;
+            _resultValue.parentSubscribedServiceId = parentSubscribedServiceId;
+            _resultValue.planNumber = planNumber;
+            _resultValue.pricingModel = pricingModel;
+            _resultValue.rateCardId = rateCardId;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

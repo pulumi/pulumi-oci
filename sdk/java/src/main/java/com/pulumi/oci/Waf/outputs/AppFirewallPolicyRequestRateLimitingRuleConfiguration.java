@@ -86,11 +86,11 @@ public final class AppFirewallPolicyRequestRateLimitingRuleConfiguration {
             return this;
         }
         public AppFirewallPolicyRequestRateLimitingRuleConfiguration build() {
-            final var o = new AppFirewallPolicyRequestRateLimitingRuleConfiguration();
-            o.actionDurationInSeconds = actionDurationInSeconds;
-            o.periodInSeconds = periodInSeconds;
-            o.requestsLimit = requestsLimit;
-            return o;
+            final var _resultValue = new AppFirewallPolicyRequestRateLimitingRuleConfiguration();
+            _resultValue.actionDurationInSeconds = actionDurationInSeconds;
+            _resultValue.periodInSeconds = periodInSeconds;
+            _resultValue.requestsLimit = requestsLimit;
+            return _resultValue;
         }
     }
 }

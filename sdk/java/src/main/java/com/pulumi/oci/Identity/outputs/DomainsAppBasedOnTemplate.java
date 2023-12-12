@@ -191,12 +191,12 @@ public final class DomainsAppBasedOnTemplate {
             return this;
         }
         public DomainsAppBasedOnTemplate build() {
-            final var o = new DomainsAppBasedOnTemplate();
-            o.lastModified = lastModified;
-            o.ref = ref;
-            o.value = value;
-            o.wellKnownId = wellKnownId;
-            return o;
+            final var _resultValue = new DomainsAppBasedOnTemplate();
+            _resultValue.lastModified = lastModified;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            _resultValue.wellKnownId = wellKnownId;
+            return _resultValue;
         }
     }
 }

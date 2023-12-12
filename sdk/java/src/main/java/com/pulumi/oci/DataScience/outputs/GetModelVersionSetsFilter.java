@@ -75,11 +75,11 @@ public final class GetModelVersionSetsFilter {
             return values(List.of(values));
         }
         public GetModelVersionSetsFilter build() {
-            final var o = new GetModelVersionSetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetModelVersionSetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

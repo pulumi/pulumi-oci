@@ -153,11 +153,11 @@ public final class DomainsSelfRegistrationProfileDisplayName {
             return this;
         }
         public DomainsSelfRegistrationProfileDisplayName build() {
-            final var o = new DomainsSelfRegistrationProfileDisplayName();
-            o.default_ = default_;
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSelfRegistrationProfileDisplayName();
+            _resultValue.default_ = default_;
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

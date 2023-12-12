@@ -57,10 +57,10 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption {
             return sourcePortRanges(List.of(sourcePortRanges));
         }
         public GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption build() {
-            final var o = new GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption();
-            o.destinationPortRanges = destinationPortRanges;
-            o.sourcePortRanges = sourcePortRanges;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption();
+            _resultValue.destinationPortRanges = destinationPortRanges;
+            _resultValue.sourcePortRanges = sourcePortRanges;
+            return _resultValue;
         }
     }
 }

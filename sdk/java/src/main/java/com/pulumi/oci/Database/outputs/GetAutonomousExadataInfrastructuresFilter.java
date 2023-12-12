@@ -75,11 +75,11 @@ public final class GetAutonomousExadataInfrastructuresFilter {
             return values(List.of(values));
         }
         public GetAutonomousExadataInfrastructuresFilter build() {
-            final var o = new GetAutonomousExadataInfrastructuresFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAutonomousExadataInfrastructuresFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

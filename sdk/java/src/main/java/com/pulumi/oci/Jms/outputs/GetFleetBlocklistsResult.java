@@ -144,14 +144,14 @@ public final class GetFleetBlocklistsResult {
             return this;
         }
         public GetFleetBlocklistsResult build() {
-            final var o = new GetFleetBlocklistsResult();
-            o.filters = filters;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.items = items;
-            o.managedInstanceId = managedInstanceId;
-            o.operation = operation;
-            return o;
+            final var _resultValue = new GetFleetBlocklistsResult();
+            _resultValue.filters = filters;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.operation = operation;
+            return _resultValue;
         }
     }
 }

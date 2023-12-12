@@ -346,25 +346,25 @@ public final class GetPublicationResult {
             return this;
         }
         public GetPublicationResult build() {
-            final var o = new GetPublicationResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.icons = icons;
-            o.id = id;
-            o.isAgreementAcknowledged = isAgreementAcknowledged;
-            o.listingType = listingType;
-            o.longDescription = longDescription;
-            o.name = name;
-            o.packageDetails = packageDetails;
-            o.packageType = packageType;
-            o.publicationId = publicationId;
-            o.shortDescription = shortDescription;
-            o.state = state;
-            o.supportContacts = supportContacts;
-            o.supportedOperatingSystems = supportedOperatingSystems;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetPublicationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.icons = icons;
+            _resultValue.id = id;
+            _resultValue.isAgreementAcknowledged = isAgreementAcknowledged;
+            _resultValue.listingType = listingType;
+            _resultValue.longDescription = longDescription;
+            _resultValue.name = name;
+            _resultValue.packageDetails = packageDetails;
+            _resultValue.packageType = packageType;
+            _resultValue.publicationId = publicationId;
+            _resultValue.shortDescription = shortDescription;
+            _resultValue.state = state;
+            _resultValue.supportContacts = supportContacts;
+            _resultValue.supportedOperatingSystems = supportedOperatingSystems;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

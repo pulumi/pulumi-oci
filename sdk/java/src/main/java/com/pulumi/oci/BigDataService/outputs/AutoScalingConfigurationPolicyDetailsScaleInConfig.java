@@ -87,11 +87,11 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfig {
             return this;
         }
         public AutoScalingConfigurationPolicyDetailsScaleInConfig build() {
-            final var o = new AutoScalingConfigurationPolicyDetailsScaleInConfig();
-            o.metric = metric;
-            o.minNodeCount = minNodeCount;
-            o.stepSize = stepSize;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyDetailsScaleInConfig();
+            _resultValue.metric = metric;
+            _resultValue.minNodeCount = minNodeCount;
+            _resultValue.stepSize = stepSize;
+            return _resultValue;
         }
     }
 }

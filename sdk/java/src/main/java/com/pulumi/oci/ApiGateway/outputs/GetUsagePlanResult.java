@@ -235,19 +235,19 @@ public final class GetUsagePlanResult {
             return this;
         }
         public GetUsagePlanResult build() {
-            final var o = new GetUsagePlanResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.entitlements = entitlements;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.usagePlanId = usagePlanId;
-            return o;
+            final var _resultValue = new GetUsagePlanResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.entitlements = entitlements;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.usagePlanId = usagePlanId;
+            return _resultValue;
         }
     }
 }

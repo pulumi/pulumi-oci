@@ -67,10 +67,10 @@ public final class GetNetworkFirewallPolicyUrlListUrl {
             return this;
         }
         public GetNetworkFirewallPolicyUrlListUrl build() {
-            final var o = new GetNetworkFirewallPolicyUrlListUrl();
-            o.pattern = pattern;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyUrlListUrl();
+            _resultValue.pattern = pattern;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -81,11 +81,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemRule {
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItemRule build() {
-            final var o = new GetFusionEnvironmentsFusionEnvironmentCollectionItemRule();
-            o.action = action;
-            o.conditions = conditions;
-            o.description = description;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentsFusionEnvironmentCollectionItemRule();
+            _resultValue.action = action;
+            _resultValue.conditions = conditions;
+            _resultValue.description = description;
+            return _resultValue;
         }
     }
 }

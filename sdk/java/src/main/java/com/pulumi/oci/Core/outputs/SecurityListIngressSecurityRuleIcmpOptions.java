@@ -67,10 +67,10 @@ public final class SecurityListIngressSecurityRuleIcmpOptions {
             return this;
         }
         public SecurityListIngressSecurityRuleIcmpOptions build() {
-            final var o = new SecurityListIngressSecurityRuleIcmpOptions();
-            o.code = code;
-            o.type = type;
-            return o;
+            final var _resultValue = new SecurityListIngressSecurityRuleIcmpOptions();
+            _resultValue.code = code;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

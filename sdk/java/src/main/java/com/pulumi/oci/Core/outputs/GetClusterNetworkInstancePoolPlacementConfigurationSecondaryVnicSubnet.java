@@ -109,12 +109,12 @@ public final class GetClusterNetworkInstancePoolPlacementConfigurationSecondaryV
             return this;
         }
         public GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet build() {
-            final var o = new GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet();
-            o.displayName = displayName;
-            o.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
-            o.isAssignIpv6ip = isAssignIpv6ip;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet();
+            _resultValue.displayName = displayName;
+            _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            _resultValue.isAssignIpv6ip = isAssignIpv6ip;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

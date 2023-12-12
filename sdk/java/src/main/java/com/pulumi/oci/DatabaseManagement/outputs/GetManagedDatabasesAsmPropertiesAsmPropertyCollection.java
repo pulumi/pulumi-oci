@@ -50,9 +50,9 @@ public final class GetManagedDatabasesAsmPropertiesAsmPropertyCollection {
             return items(List.of(items));
         }
         public GetManagedDatabasesAsmPropertiesAsmPropertyCollection build() {
-            final var o = new GetManagedDatabasesAsmPropertiesAsmPropertyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabasesAsmPropertiesAsmPropertyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

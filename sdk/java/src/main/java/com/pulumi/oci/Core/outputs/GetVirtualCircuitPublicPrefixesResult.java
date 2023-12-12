@@ -117,13 +117,13 @@ public final class GetVirtualCircuitPublicPrefixesResult {
             return virtualCircuitPublicPrefixes(List.of(virtualCircuitPublicPrefixes));
         }
         public GetVirtualCircuitPublicPrefixesResult build() {
-            final var o = new GetVirtualCircuitPublicPrefixesResult();
-            o.filters = filters;
-            o.id = id;
-            o.verificationState = verificationState;
-            o.virtualCircuitId = virtualCircuitId;
-            o.virtualCircuitPublicPrefixes = virtualCircuitPublicPrefixes;
-            return o;
+            final var _resultValue = new GetVirtualCircuitPublicPrefixesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.verificationState = verificationState;
+            _resultValue.virtualCircuitId = virtualCircuitId;
+            _resultValue.virtualCircuitPublicPrefixes = virtualCircuitPublicPrefixes;
+            return _resultValue;
         }
     }
 }

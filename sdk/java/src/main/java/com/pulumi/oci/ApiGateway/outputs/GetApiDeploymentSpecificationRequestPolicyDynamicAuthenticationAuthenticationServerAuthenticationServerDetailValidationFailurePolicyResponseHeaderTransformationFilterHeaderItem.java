@@ -46,9 +46,9 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

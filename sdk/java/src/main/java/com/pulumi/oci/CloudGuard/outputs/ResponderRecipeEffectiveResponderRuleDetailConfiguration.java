@@ -86,11 +86,11 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfiguration {
             return this;
         }
         public ResponderRecipeEffectiveResponderRuleDetailConfiguration build() {
-            final var o = new ResponderRecipeEffectiveResponderRuleDetailConfiguration();
-            o.configKey = configKey;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new ResponderRecipeEffectiveResponderRuleDetailConfiguration();
+            _resultValue.configKey = configKey;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

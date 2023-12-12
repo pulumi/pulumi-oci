@@ -223,19 +223,19 @@ public final class GetDrgAttachmentsResult {
             return this;
         }
         public GetDrgAttachmentsResult build() {
-            final var o = new GetDrgAttachmentsResult();
-            o.attachmentType = attachmentType;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.drgAttachments = drgAttachments;
-            o.drgId = drgId;
-            o.drgRouteTableId = drgRouteTableId;
-            o.filters = filters;
-            o.id = id;
-            o.networkId = networkId;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetDrgAttachmentsResult();
+            _resultValue.attachmentType = attachmentType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.drgAttachments = drgAttachments;
+            _resultValue.drgId = drgId;
+            _resultValue.drgRouteTableId = drgRouteTableId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkId = networkId;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

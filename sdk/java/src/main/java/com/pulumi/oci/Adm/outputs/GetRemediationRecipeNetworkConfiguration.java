@@ -69,10 +69,10 @@ public final class GetRemediationRecipeNetworkConfiguration {
             return this;
         }
         public GetRemediationRecipeNetworkConfiguration build() {
-            final var o = new GetRemediationRecipeNetworkConfiguration();
-            o.nsgIds = nsgIds;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetRemediationRecipeNetworkConfiguration();
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

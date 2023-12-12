@@ -137,14 +137,14 @@ public final class GetInstanceDevicesResult {
             return this;
         }
         public GetInstanceDevicesResult build() {
-            final var o = new GetInstanceDevicesResult();
-            o.devices = devices;
-            o.filters = filters;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.isAvailable = isAvailable;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetInstanceDevicesResult();
+            _resultValue.devices = devices;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.isAvailable = isAvailable;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -108,12 +108,12 @@ public final class GetModelModelDetail {
             return this;
         }
         public GetModelModelDetail build() {
-            final var o = new GetModelModelDetail();
-            o.classificationModes = classificationModes;
-            o.languageCode = languageCode;
-            o.modelType = modelType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetModelModelDetail();
+            _resultValue.classificationModes = classificationModes;
+            _resultValue.languageCode = languageCode;
+            _resultValue.modelType = modelType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

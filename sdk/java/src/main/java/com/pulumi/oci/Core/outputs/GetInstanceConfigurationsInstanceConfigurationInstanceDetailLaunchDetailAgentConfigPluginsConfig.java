@@ -65,10 +65,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

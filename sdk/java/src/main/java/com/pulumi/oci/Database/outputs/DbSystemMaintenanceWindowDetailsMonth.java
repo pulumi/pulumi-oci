@@ -48,9 +48,9 @@ public final class DbSystemMaintenanceWindowDetailsMonth {
             return this;
         }
         public DbSystemMaintenanceWindowDetailsMonth build() {
-            final var o = new DbSystemMaintenanceWindowDetailsMonth();
-            o.name = name;
-            return o;
+            final var _resultValue = new DbSystemMaintenanceWindowDetailsMonth();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

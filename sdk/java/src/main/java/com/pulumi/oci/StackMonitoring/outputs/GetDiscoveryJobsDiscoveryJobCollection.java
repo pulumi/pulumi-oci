@@ -50,9 +50,9 @@ public final class GetDiscoveryJobsDiscoveryJobCollection {
             return items(List.of(items));
         }
         public GetDiscoveryJobsDiscoveryJobCollection build() {
-            final var o = new GetDiscoveryJobsDiscoveryJobCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDiscoveryJobsDiscoveryJobCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

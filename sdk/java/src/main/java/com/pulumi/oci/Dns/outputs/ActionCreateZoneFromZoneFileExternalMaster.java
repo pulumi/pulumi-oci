@@ -87,11 +87,11 @@ public final class ActionCreateZoneFromZoneFileExternalMaster {
             return this;
         }
         public ActionCreateZoneFromZoneFileExternalMaster build() {
-            final var o = new ActionCreateZoneFromZoneFileExternalMaster();
-            o.address = address;
-            o.port = port;
-            o.tsigKeyId = tsigKeyId;
-            return o;
+            final var _resultValue = new ActionCreateZoneFromZoneFileExternalMaster();
+            _resultValue.address = address;
+            _resultValue.port = port;
+            _resultValue.tsigKeyId = tsigKeyId;
+            return _resultValue;
         }
     }
 }

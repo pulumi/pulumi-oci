@@ -134,13 +134,13 @@ public final class SteeringPolicyRule {
             return this;
         }
         public SteeringPolicyRule build() {
-            final var o = new SteeringPolicyRule();
-            o.cases = cases;
-            o.defaultAnswerDatas = defaultAnswerDatas;
-            o.defaultCount = defaultCount;
-            o.description = description;
-            o.ruleType = ruleType;
-            return o;
+            final var _resultValue = new SteeringPolicyRule();
+            _resultValue.cases = cases;
+            _resultValue.defaultAnswerDatas = defaultAnswerDatas;
+            _resultValue.defaultCount = defaultCount;
+            _resultValue.description = description;
+            _resultValue.ruleType = ruleType;
+            return _resultValue;
         }
     }
 }

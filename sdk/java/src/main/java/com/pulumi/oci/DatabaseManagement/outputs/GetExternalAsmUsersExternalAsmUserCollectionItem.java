@@ -88,11 +88,11 @@ public final class GetExternalAsmUsersExternalAsmUserCollectionItem {
             return privileges(List.of(privileges));
         }
         public GetExternalAsmUsersExternalAsmUserCollectionItem build() {
-            final var o = new GetExternalAsmUsersExternalAsmUserCollectionItem();
-            o.asmId = asmId;
-            o.name = name;
-            o.privileges = privileges;
-            return o;
+            final var _resultValue = new GetExternalAsmUsersExternalAsmUserCollectionItem();
+            _resultValue.asmId = asmId;
+            _resultValue.name = name;
+            _resultValue.privileges = privileges;
+            return _resultValue;
         }
     }
 }

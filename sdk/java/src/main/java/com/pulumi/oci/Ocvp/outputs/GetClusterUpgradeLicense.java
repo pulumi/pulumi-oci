@@ -65,10 +65,10 @@ public final class GetClusterUpgradeLicense {
             return this;
         }
         public GetClusterUpgradeLicense build() {
-            final var o = new GetClusterUpgradeLicense();
-            o.licenseKey = licenseKey;
-            o.licenseType = licenseType;
-            return o;
+            final var _resultValue = new GetClusterUpgradeLicense();
+            _resultValue.licenseKey = licenseKey;
+            _resultValue.licenseType = licenseType;
+            return _resultValue;
         }
     }
 }

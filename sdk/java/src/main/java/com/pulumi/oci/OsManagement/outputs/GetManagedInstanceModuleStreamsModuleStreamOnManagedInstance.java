@@ -146,14 +146,14 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
             return this;
         }
         public GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance build() {
-            final var o = new GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance();
-            o.moduleName = moduleName;
-            o.profiles = profiles;
-            o.softwareSourceId = softwareSourceId;
-            o.status = status;
-            o.streamName = streamName;
-            o.timeModified = timeModified;
-            return o;
+            final var _resultValue = new GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance();
+            _resultValue.moduleName = moduleName;
+            _resultValue.profiles = profiles;
+            _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.status = status;
+            _resultValue.streamName = streamName;
+            _resultValue.timeModified = timeModified;
+            return _resultValue;
         }
     }
 }

@@ -525,34 +525,34 @@ public final class GetSoftwareSourceResult {
             return vendorSoftwareSources(List.of(vendorSoftwareSources));
         }
         public GetSoftwareSourceResult build() {
-            final var o = new GetSoftwareSourceResult();
-            o.archType = archType;
-            o.availability = availability;
-            o.checksumType = checksumType;
-            o.compartmentId = compartmentId;
-            o.customSoftwareSourceFilters = customSoftwareSourceFilters;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.gpgKeyFingerprint = gpgKeyFingerprint;
-            o.gpgKeyId = gpgKeyId;
-            o.gpgKeyUrl = gpgKeyUrl;
-            o.id = id;
-            o.isAutomaticallyUpdated = isAutomaticallyUpdated;
-            o.osFamily = osFamily;
-            o.packageCount = packageCount;
-            o.repoId = repoId;
-            o.softwareSourceId = softwareSourceId;
-            o.softwareSourceType = softwareSourceType;
-            o.softwareSourceVersion = softwareSourceVersion;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.url = url;
-            o.vendorName = vendorName;
-            o.vendorSoftwareSources = vendorSoftwareSources;
-            return o;
+            final var _resultValue = new GetSoftwareSourceResult();
+            _resultValue.archType = archType;
+            _resultValue.availability = availability;
+            _resultValue.checksumType = checksumType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.customSoftwareSourceFilters = customSoftwareSourceFilters;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.gpgKeyFingerprint = gpgKeyFingerprint;
+            _resultValue.gpgKeyId = gpgKeyId;
+            _resultValue.gpgKeyUrl = gpgKeyUrl;
+            _resultValue.id = id;
+            _resultValue.isAutomaticallyUpdated = isAutomaticallyUpdated;
+            _resultValue.osFamily = osFamily;
+            _resultValue.packageCount = packageCount;
+            _resultValue.repoId = repoId;
+            _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.softwareSourceType = softwareSourceType;
+            _resultValue.softwareSourceVersion = softwareSourceVersion;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.url = url;
+            _resultValue.vendorName = vendorName;
+            _resultValue.vendorSoftwareSources = vendorSoftwareSources;
+            return _resultValue;
         }
     }
 }

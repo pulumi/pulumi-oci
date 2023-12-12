@@ -125,13 +125,13 @@ public final class SecretSecretRule {
             return this;
         }
         public SecretSecretRule build() {
-            final var o = new SecretSecretRule();
-            o.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
-            o.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
-            o.ruleType = ruleType;
-            o.secretVersionExpiryInterval = secretVersionExpiryInterval;
-            o.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
-            return o;
+            final var _resultValue = new SecretSecretRule();
+            _resultValue.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
+            _resultValue.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
+            _resultValue.ruleType = ruleType;
+            _resultValue.secretVersionExpiryInterval = secretVersionExpiryInterval;
+            _resultValue.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
+            return _resultValue;
         }
     }
 }

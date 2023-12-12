@@ -81,12 +81,12 @@ public final class GetRepositoryArchiveContentResult {
             return this;
         }
         public GetRepositoryArchiveContentResult build() {
-            final var o = new GetRepositoryArchiveContentResult();
-            o.format = format;
-            o.id = id;
-            o.refName = refName;
-            o.repositoryId = repositoryId;
-            return o;
+            final var _resultValue = new GetRepositoryArchiveContentResult();
+            _resultValue.format = format;
+            _resultValue.id = id;
+            _resultValue.refName = refName;
+            _resultValue.repositoryId = repositoryId;
+            return _resultValue;
         }
     }
 }

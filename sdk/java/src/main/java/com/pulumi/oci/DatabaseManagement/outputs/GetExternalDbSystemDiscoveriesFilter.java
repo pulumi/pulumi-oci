@@ -67,11 +67,11 @@ public final class GetExternalDbSystemDiscoveriesFilter {
             return values(List.of(values));
         }
         public GetExternalDbSystemDiscoveriesFilter build() {
-            final var o = new GetExternalDbSystemDiscoveriesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -102,12 +102,12 @@ public final class GetApplianceImageResult {
             return items(List.of(items));
         }
         public GetApplianceImageResult build() {
-            final var o = new GetApplianceImageResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetApplianceImageResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

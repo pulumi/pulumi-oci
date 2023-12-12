@@ -42,9 +42,9 @@ public final class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResu
             return items(List.of(items));
         }
         public GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection build() {
-            final var o = new GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

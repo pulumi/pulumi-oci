@@ -368,26 +368,26 @@ public final class GetNetworkLoadBalancerResult {
             return this;
         }
         public GetNetworkLoadBalancerResult build() {
-            final var o = new GetNetworkLoadBalancerResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipAddresses = ipAddresses;
-            o.isPreserveSourceDestination = isPreserveSourceDestination;
-            o.isPrivate = isPrivate;
-            o.lifecycleDetails = lifecycleDetails;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.networkSecurityGroupIds = networkSecurityGroupIds;
-            o.nlbIpVersion = nlbIpVersion;
-            o.reservedIps = reservedIps;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancerResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipAddresses = ipAddresses;
+            _resultValue.isPreserveSourceDestination = isPreserveSourceDestination;
+            _resultValue.isPrivate = isPrivate;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.nlbIpVersion = nlbIpVersion;
+            _resultValue.reservedIps = reservedIps;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

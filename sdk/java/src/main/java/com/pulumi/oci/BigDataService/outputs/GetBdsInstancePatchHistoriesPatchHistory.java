@@ -103,12 +103,12 @@ public final class GetBdsInstancePatchHistoriesPatchHistory {
             return this;
         }
         public GetBdsInstancePatchHistoriesPatchHistory build() {
-            final var o = new GetBdsInstancePatchHistoriesPatchHistory();
-            o.patchType = patchType;
-            o.state = state;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetBdsInstancePatchHistoriesPatchHistory();
+            _resultValue.patchType = patchType;
+            _resultValue.state = state;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

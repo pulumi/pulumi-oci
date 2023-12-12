@@ -147,17 +147,17 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail build() {
-            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail();
-            o.actionType = actionType;
-            o.policyType = policyType;
-            o.scaleDownConfigs = scaleDownConfigs;
-            o.scaleInConfigs = scaleInConfigs;
-            o.scaleOutConfigs = scaleOutConfigs;
-            o.scaleUpConfigs = scaleUpConfigs;
-            o.scheduleDetails = scheduleDetails;
-            o.timezone = timezone;
-            o.triggerType = triggerType;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetail();
+            _resultValue.actionType = actionType;
+            _resultValue.policyType = policyType;
+            _resultValue.scaleDownConfigs = scaleDownConfigs;
+            _resultValue.scaleInConfigs = scaleInConfigs;
+            _resultValue.scaleOutConfigs = scaleOutConfigs;
+            _resultValue.scaleUpConfigs = scaleUpConfigs;
+            _resultValue.scheduleDetails = scheduleDetails;
+            _resultValue.timezone = timezone;
+            _resultValue.triggerType = triggerType;
+            return _resultValue;
         }
     }
 }

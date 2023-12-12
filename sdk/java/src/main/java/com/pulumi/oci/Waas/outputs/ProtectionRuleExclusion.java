@@ -77,10 +77,10 @@ public final class ProtectionRuleExclusion {
             return this;
         }
         public ProtectionRuleExclusion build() {
-            final var o = new ProtectionRuleExclusion();
-            o.exclusions = exclusions;
-            o.target = target;
-            return o;
+            final var _resultValue = new ProtectionRuleExclusion();
+            _resultValue.exclusions = exclusions;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

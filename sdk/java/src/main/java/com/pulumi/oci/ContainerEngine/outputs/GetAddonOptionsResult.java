@@ -109,13 +109,13 @@ public final class GetAddonOptionsResult {
             return this;
         }
         public GetAddonOptionsResult build() {
-            final var o = new GetAddonOptionsResult();
-            o.addonName = addonName;
-            o.addonOptions = addonOptions;
-            o.filters = filters;
-            o.id = id;
-            o.kubernetesVersion = kubernetesVersion;
-            return o;
+            final var _resultValue = new GetAddonOptionsResult();
+            _resultValue.addonName = addonName;
+            _resultValue.addonOptions = addonOptions;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.kubernetesVersion = kubernetesVersion;
+            return _resultValue;
         }
     }
 }

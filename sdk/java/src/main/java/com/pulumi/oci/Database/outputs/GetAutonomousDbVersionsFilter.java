@@ -67,11 +67,11 @@ public final class GetAutonomousDbVersionsFilter {
             return values(List.of(values));
         }
         public GetAutonomousDbVersionsFilter build() {
-            final var o = new GetAutonomousDbVersionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAutonomousDbVersionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

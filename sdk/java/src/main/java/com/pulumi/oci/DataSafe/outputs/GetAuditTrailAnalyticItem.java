@@ -70,10 +70,10 @@ public final class GetAuditTrailAnalyticItem {
             return dimensions(List.of(dimensions));
         }
         public GetAuditTrailAnalyticItem build() {
-            final var o = new GetAuditTrailAnalyticItem();
-            o.count = count;
-            o.dimensions = dimensions;
-            return o;
+            final var _resultValue = new GetAuditTrailAnalyticItem();
+            _resultValue.count = count;
+            _resultValue.dimensions = dimensions;
+            return _resultValue;
         }
     }
 }

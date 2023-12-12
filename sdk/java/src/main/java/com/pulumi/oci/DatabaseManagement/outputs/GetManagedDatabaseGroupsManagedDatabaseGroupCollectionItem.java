@@ -184,16 +184,16 @@ public final class GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem {
             return this;
         }
         public GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem build() {
-            final var o = new GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem();
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.id = id;
-            o.managedDatabases = managedDatabases;
-            o.name = name;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetManagedDatabaseGroupsManagedDatabaseGroupCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.managedDatabases = managedDatabases;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -416,28 +416,28 @@ public final class GetTableResult {
             return this;
         }
         public GetTableResult build() {
-            final var o = new GetTableResult();
-            o.compartmentId = compartmentId;
-            o.ddlStatement = ddlStatement;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAutoReclaimable = isAutoReclaimable;
-            o.isMultiRegion = isMultiRegion;
-            o.lifecycleDetails = lifecycleDetails;
-            o.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
-            o.name = name;
-            o.replicas = replicas;
-            o.schemaState = schemaState;
-            o.schemas = schemas;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.tableLimits = tableLimits;
-            o.tableNameOrId = tableNameOrId;
-            o.timeCreated = timeCreated;
-            o.timeOfExpiration = timeOfExpiration;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetTableResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.ddlStatement = ddlStatement;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAutoReclaimable = isAutoReclaimable;
+            _resultValue.isMultiRegion = isMultiRegion;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
+            _resultValue.name = name;
+            _resultValue.replicas = replicas;
+            _resultValue.schemaState = schemaState;
+            _resultValue.schemas = schemas;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.tableLimits = tableLimits;
+            _resultValue.tableNameOrId = tableNameOrId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfExpiration = timeOfExpiration;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

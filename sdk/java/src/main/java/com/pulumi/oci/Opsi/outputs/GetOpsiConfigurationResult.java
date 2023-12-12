@@ -348,26 +348,26 @@ public final class GetOpsiConfigurationResult {
             return this;
         }
         public GetOpsiConfigurationResult build() {
-            final var o = new GetOpsiConfigurationResult();
-            o.compartmentId = compartmentId;
-            o.configItemCustomStatuses = configItemCustomStatuses;
-            o.configItemFields = configItemFields;
-            o.configItems = configItems;
-            o.configItemsApplicableContexts = configItemsApplicableContexts;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.opsiConfigFields = opsiConfigFields;
-            o.opsiConfigType = opsiConfigType;
-            o.opsiConfigurationId = opsiConfigurationId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configItemCustomStatuses = configItemCustomStatuses;
+            _resultValue.configItemFields = configItemFields;
+            _resultValue.configItems = configItems;
+            _resultValue.configItemsApplicableContexts = configItemsApplicableContexts;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.opsiConfigFields = opsiConfigFields;
+            _resultValue.opsiConfigType = opsiConfigType;
+            _resultValue.opsiConfigurationId = opsiConfigurationId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

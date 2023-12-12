@@ -110,12 +110,12 @@ public final class BlockchainPlatformComponentDetailOsn {
             return this;
         }
         public BlockchainPlatformComponentDetailOsn build() {
-            final var o = new BlockchainPlatformComponentDetailOsn();
-            o.ad = ad;
-            o.ocpuAllocationParams = ocpuAllocationParams;
-            o.osnKey = osnKey;
-            o.state = state;
-            return o;
+            final var _resultValue = new BlockchainPlatformComponentDetailOsn();
+            _resultValue.ad = ad;
+            _resultValue.ocpuAllocationParams = ocpuAllocationParams;
+            _resultValue.osnKey = osnKey;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

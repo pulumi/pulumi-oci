@@ -103,12 +103,12 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryAlert {
             return this;
         }
         public GetExternalExadataStorageServerOpenAlertHistoryAlert build() {
-            final var o = new GetExternalExadataStorageServerOpenAlertHistoryAlert();
-            o.message = message;
-            o.severity = severity;
-            o.timeStartAt = timeStartAt;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServerOpenAlertHistoryAlert();
+            _resultValue.message = message;
+            _resultValue.severity = severity;
+            _resultValue.timeStartAt = timeStartAt;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

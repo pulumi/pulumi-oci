@@ -123,13 +123,13 @@ public final class GetInvoicesInvoiceCollectionItemBillToAddressCountry {
             return this;
         }
         public GetInvoicesInvoiceCollectionItemBillToAddressCountry build() {
-            final var o = new GetInvoicesInvoiceCollectionItemBillToAddressCountry();
-            o.ascii3countryCode = ascii3countryCode;
-            o.countryCode = countryCode;
-            o.countryId = countryId;
-            o.countryName = countryName;
-            o.languageId = languageId;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceCollectionItemBillToAddressCountry();
+            _resultValue.ascii3countryCode = ascii3countryCode;
+            _resultValue.countryCode = countryCode;
+            _resultValue.countryId = countryId;
+            _resultValue.countryName = countryName;
+            _resultValue.languageId = languageId;
+            return _resultValue;
         }
     }
 }

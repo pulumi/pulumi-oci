@@ -80,11 +80,11 @@ public final class MigrationDumpTransferDetails {
             return this;
         }
         public MigrationDumpTransferDetails build() {
-            final var o = new MigrationDumpTransferDetails();
-            o.sharedStorageMountTargetId = sharedStorageMountTargetId;
-            o.source = source;
-            o.target = target;
-            return o;
+            final var _resultValue = new MigrationDumpTransferDetails();
+            _resultValue.sharedStorageMountTargetId = sharedStorageMountTargetId;
+            _resultValue.source = source;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

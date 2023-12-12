@@ -75,11 +75,11 @@ public final class GetAddonOptionsFilter {
             return values(List.of(values));
         }
         public GetAddonOptionsFilter build() {
-            final var o = new GetAddonOptionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAddonOptionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

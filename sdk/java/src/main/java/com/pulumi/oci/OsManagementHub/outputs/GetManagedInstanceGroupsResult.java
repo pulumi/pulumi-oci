@@ -218,19 +218,19 @@ public final class GetManagedInstanceGroupsResult {
             return this;
         }
         public GetManagedInstanceGroupsResult build() {
-            final var o = new GetManagedInstanceGroupsResult();
-            o.archType = archType;
-            o.compartmentId = compartmentId;
-            o.displayNameContains = displayNameContains;
-            o.displayNames = displayNames;
-            o.filters = filters;
-            o.id = id;
-            o.managedInstanceGroupCollections = managedInstanceGroupCollections;
-            o.managedInstanceGroupId = managedInstanceGroupId;
-            o.osFamily = osFamily;
-            o.softwareSourceId = softwareSourceId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupsResult();
+            _resultValue.archType = archType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.displayNames = displayNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedInstanceGroupCollections = managedInstanceGroupCollections;
+            _resultValue.managedInstanceGroupId = managedInstanceGroupId;
+            _resultValue.osFamily = osFamily;
+            _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

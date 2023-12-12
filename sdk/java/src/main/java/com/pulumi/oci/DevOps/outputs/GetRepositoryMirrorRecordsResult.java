@@ -97,12 +97,12 @@ public final class GetRepositoryMirrorRecordsResult {
             return repositoryMirrorRecordCollections(List.of(repositoryMirrorRecordCollections));
         }
         public GetRepositoryMirrorRecordsResult build() {
-            final var o = new GetRepositoryMirrorRecordsResult();
-            o.filters = filters;
-            o.id = id;
-            o.repositoryId = repositoryId;
-            o.repositoryMirrorRecordCollections = repositoryMirrorRecordCollections;
-            return o;
+            final var _resultValue = new GetRepositoryMirrorRecordsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryMirrorRecordCollections = repositoryMirrorRecordCollections;
+            return _resultValue;
         }
     }
 }

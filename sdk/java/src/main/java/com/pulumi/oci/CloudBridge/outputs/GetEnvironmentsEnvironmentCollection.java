@@ -42,9 +42,9 @@ public final class GetEnvironmentsEnvironmentCollection {
             return items(List.of(items));
         }
         public GetEnvironmentsEnvironmentCollection build() {
-            final var o = new GetEnvironmentsEnvironmentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetEnvironmentsEnvironmentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

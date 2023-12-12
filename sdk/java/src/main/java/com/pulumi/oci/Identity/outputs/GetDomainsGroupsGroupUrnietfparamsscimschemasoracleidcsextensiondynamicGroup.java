@@ -65,10 +65,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup build() {
-            final var o = new GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup();
-            o.membershipRule = membershipRule;
-            o.membershipType = membershipType;
-            return o;
+            final var _resultValue = new GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup();
+            _resultValue.membershipRule = membershipRule;
+            _resultValue.membershipType = membershipType;
+            return _resultValue;
         }
     }
 }

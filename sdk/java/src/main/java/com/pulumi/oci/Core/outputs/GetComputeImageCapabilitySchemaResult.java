@@ -243,20 +243,20 @@ public final class GetComputeImageCapabilitySchemaResult {
             return this;
         }
         public GetComputeImageCapabilitySchemaResult build() {
-            final var o = new GetComputeImageCapabilitySchemaResult();
-            o.compartmentId = compartmentId;
-            o.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
-            o.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
-            o.computeImageCapabilitySchemaId = computeImageCapabilitySchemaId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imageId = imageId;
-            o.isMergeEnabled = isMergeEnabled;
-            o.schemaData = schemaData;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetComputeImageCapabilitySchemaResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+            _resultValue.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
+            _resultValue.computeImageCapabilitySchemaId = computeImageCapabilitySchemaId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.isMergeEnabled = isMergeEnabled;
+            _resultValue.schemaData = schemaData;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

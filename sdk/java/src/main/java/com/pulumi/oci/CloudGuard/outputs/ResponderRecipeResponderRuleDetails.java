@@ -111,12 +111,12 @@ public final class ResponderRecipeResponderRuleDetails {
             return this;
         }
         public ResponderRecipeResponderRuleDetails build() {
-            final var o = new ResponderRecipeResponderRuleDetails();
-            o.condition = condition;
-            o.configurations = configurations;
-            o.isEnabled = isEnabled;
-            o.mode = mode;
-            return o;
+            final var _resultValue = new ResponderRecipeResponderRuleDetails();
+            _resultValue.condition = condition;
+            _resultValue.configurations = configurations;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.mode = mode;
+            return _resultValue;
         }
     }
 }

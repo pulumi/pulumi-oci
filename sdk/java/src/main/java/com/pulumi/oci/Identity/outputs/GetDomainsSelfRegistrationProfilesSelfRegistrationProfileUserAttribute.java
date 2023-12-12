@@ -152,13 +152,13 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfileUser
             return this;
         }
         public GetDomainsSelfRegistrationProfilesSelfRegistrationProfileUserAttribute build() {
-            final var o = new GetDomainsSelfRegistrationProfilesSelfRegistrationProfileUserAttribute();
-            o.deletable = deletable;
-            o.fullyQualifiedAttributeName = fullyQualifiedAttributeName;
-            o.metadata = metadata;
-            o.seqNumber = seqNumber;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSelfRegistrationProfilesSelfRegistrationProfileUserAttribute();
+            _resultValue.deletable = deletable;
+            _resultValue.fullyQualifiedAttributeName = fullyQualifiedAttributeName;
+            _resultValue.metadata = metadata;
+            _resultValue.seqNumber = seqNumber;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

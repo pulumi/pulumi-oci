@@ -70,10 +70,10 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetails {
             return this;
         }
         public NotebookSessionNotebookSessionRuntimeConfigDetails build() {
-            final var o = new NotebookSessionNotebookSessionRuntimeConfigDetails();
-            o.customEnvironmentVariables = customEnvironmentVariables;
-            o.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
-            return o;
+            final var _resultValue = new NotebookSessionNotebookSessionRuntimeConfigDetails();
+            _resultValue.customEnvironmentVariables = customEnvironmentVariables;
+            _resultValue.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
+            return _resultValue;
         }
     }
 }

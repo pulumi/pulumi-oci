@@ -144,14 +144,14 @@ public final class GetBdsInstancesResult {
             return this;
         }
         public GetBdsInstancesResult build() {
-            final var o = new GetBdsInstancesResult();
-            o.bdsInstances = bdsInstances;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetBdsInstancesResult();
+            _resultValue.bdsInstances = bdsInstances;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

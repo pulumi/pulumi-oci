@@ -183,16 +183,16 @@ public final class NamespaceScheduledTaskAction {
             return this;
         }
         public NamespaceScheduledTaskAction build() {
-            final var o = new NamespaceScheduledTaskAction();
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.dataType = dataType;
-            o.metricExtraction = metricExtraction;
-            o.purgeCompartmentId = purgeCompartmentId;
-            o.purgeDuration = purgeDuration;
-            o.queryString = queryString;
-            o.savedSearchId = savedSearchId;
-            o.type = type;
-            return o;
+            final var _resultValue = new NamespaceScheduledTaskAction();
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dataType = dataType;
+            _resultValue.metricExtraction = metricExtraction;
+            _resultValue.purgeCompartmentId = purgeCompartmentId;
+            _resultValue.purgeDuration = purgeDuration;
+            _resultValue.queryString = queryString;
+            _resultValue.savedSearchId = savedSearchId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

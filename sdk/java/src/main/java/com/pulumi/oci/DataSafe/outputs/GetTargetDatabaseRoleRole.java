@@ -105,15 +105,15 @@ public final class GetTargetDatabaseRoleRole {
             return this;
         }
         public GetTargetDatabaseRoleRole build() {
-            final var o = new GetTargetDatabaseRoleRole();
-            o.authenticationType = authenticationType;
-            o.isCommon = isCommon;
-            o.isImplicit = isImplicit;
-            o.isInherited = isInherited;
-            o.isOracleMaintained = isOracleMaintained;
-            o.isPasswordRequired = isPasswordRequired;
-            o.roleName = roleName;
-            return o;
+            final var _resultValue = new GetTargetDatabaseRoleRole();
+            _resultValue.authenticationType = authenticationType;
+            _resultValue.isCommon = isCommon;
+            _resultValue.isImplicit = isImplicit;
+            _resultValue.isInherited = isInherited;
+            _resultValue.isOracleMaintained = isOracleMaintained;
+            _resultValue.isPasswordRequired = isPasswordRequired;
+            _resultValue.roleName = roleName;
+            return _resultValue;
         }
     }
 }

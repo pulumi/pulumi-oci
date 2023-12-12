@@ -122,13 +122,13 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
             return this;
         }
         public GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail build() {
-            final var o = new GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail();
-            o.bucket = bucket;
-            o.databaseName = databaseName;
-            o.influxVersion = influxVersion;
-            o.organizationName = organizationName;
-            o.retentionPolicyName = retentionPolicyName;
-            return o;
+            final var _resultValue = new GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail();
+            _resultValue.bucket = bucket;
+            _resultValue.databaseName = databaseName;
+            _resultValue.influxVersion = influxVersion;
+            _resultValue.organizationName = organizationName;
+            _resultValue.retentionPolicyName = retentionPolicyName;
+            return _resultValue;
         }
     }
 }

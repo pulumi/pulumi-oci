@@ -66,10 +66,10 @@ public final class GetJobExecutionsStatusItem {
             return this;
         }
         public GetJobExecutionsStatusItem build() {
-            final var o = new GetJobExecutionsStatusItem();
-            o.count = count;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetJobExecutionsStatusItem();
+            _resultValue.count = count;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

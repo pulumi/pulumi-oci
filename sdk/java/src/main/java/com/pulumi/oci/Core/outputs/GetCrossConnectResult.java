@@ -364,27 +364,27 @@ public final class GetCrossConnectResult {
             return this;
         }
         public GetCrossConnectResult build() {
-            final var o = new GetCrossConnectResult();
-            o.compartmentId = compartmentId;
-            o.crossConnectGroupId = crossConnectGroupId;
-            o.crossConnectId = crossConnectId;
-            o.customerReferenceName = customerReferenceName;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.farCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isActive = isActive;
-            o.locationName = locationName;
-            o.macsecProperties = macsecProperties;
-            o.nearCrossConnectOrCrossConnectGroupId = nearCrossConnectOrCrossConnectGroupId;
-            o.ociLogicalDeviceName = ociLogicalDeviceName;
-            o.ociPhysicalDeviceName = ociPhysicalDeviceName;
-            o.portName = portName;
-            o.portSpeedShapeName = portSpeedShapeName;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetCrossConnectResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.crossConnectGroupId = crossConnectGroupId;
+            _resultValue.crossConnectId = crossConnectId;
+            _resultValue.customerReferenceName = customerReferenceName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.farCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isActive = isActive;
+            _resultValue.locationName = locationName;
+            _resultValue.macsecProperties = macsecProperties;
+            _resultValue.nearCrossConnectOrCrossConnectGroupId = nearCrossConnectOrCrossConnectGroupId;
+            _resultValue.ociLogicalDeviceName = ociLogicalDeviceName;
+            _resultValue.ociPhysicalDeviceName = ociPhysicalDeviceName;
+            _resultValue.portName = portName;
+            _resultValue.portSpeedShapeName = portSpeedShapeName;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

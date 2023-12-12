@@ -97,12 +97,12 @@ public final class GetFastLaunchJobConfigsResult {
             return this;
         }
         public GetFastLaunchJobConfigsResult build() {
-            final var o = new GetFastLaunchJobConfigsResult();
-            o.compartmentId = compartmentId;
-            o.fastLaunchJobConfigs = fastLaunchJobConfigs;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetFastLaunchJobConfigsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.fastLaunchJobConfigs = fastLaunchJobConfigs;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

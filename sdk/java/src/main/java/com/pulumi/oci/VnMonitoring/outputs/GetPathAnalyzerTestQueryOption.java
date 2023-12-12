@@ -46,9 +46,9 @@ public final class GetPathAnalyzerTestQueryOption {
             return this;
         }
         public GetPathAnalyzerTestQueryOption build() {
-            final var o = new GetPathAnalyzerTestQueryOption();
-            o.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
-            return o;
+            final var _resultValue = new GetPathAnalyzerTestQueryOption();
+            _resultValue.isBiDirectionalAnalysis = isBiDirectionalAnalysis;
+            return _resultValue;
         }
     }
 }

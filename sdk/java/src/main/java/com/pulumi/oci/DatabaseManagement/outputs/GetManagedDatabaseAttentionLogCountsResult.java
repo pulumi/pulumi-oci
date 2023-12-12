@@ -184,19 +184,19 @@ public final class GetManagedDatabaseAttentionLogCountsResult {
             return this;
         }
         public GetManagedDatabaseAttentionLogCountsResult build() {
-            final var o = new GetManagedDatabaseAttentionLogCountsResult();
-            o.attentionLogCountsCollections = attentionLogCountsCollections;
-            o.filters = filters;
-            o.groupBy = groupBy;
-            o.id = id;
-            o.isRegularExpression = isRegularExpression;
-            o.logSearchText = logSearchText;
-            o.managedDatabaseId = managedDatabaseId;
-            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-            o.typeFilter = typeFilter;
-            o.urgencyFilter = urgencyFilter;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAttentionLogCountsResult();
+            _resultValue.attentionLogCountsCollections = attentionLogCountsCollections;
+            _resultValue.filters = filters;
+            _resultValue.groupBy = groupBy;
+            _resultValue.id = id;
+            _resultValue.isRegularExpression = isRegularExpression;
+            _resultValue.logSearchText = logSearchText;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            _resultValue.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            _resultValue.typeFilter = typeFilter;
+            _resultValue.urgencyFilter = urgencyFilter;
+            return _resultValue;
         }
     }
 }

@@ -109,12 +109,12 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
             return this;
         }
         public GetCrossConnectGroupsCrossConnectGroupMacsecProperty build() {
-            final var o = new GetCrossConnectGroupsCrossConnectGroupMacsecProperty();
-            o.encryptionCipher = encryptionCipher;
-            o.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
-            o.primaryKeys = primaryKeys;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCrossConnectGroupsCrossConnectGroupMacsecProperty();
+            _resultValue.encryptionCipher = encryptionCipher;
+            _resultValue.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
+            _resultValue.primaryKeys = primaryKeys;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

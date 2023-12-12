@@ -216,22 +216,22 @@ public final class GetDomainsMySmtpCredentialsResult {
             return this;
         }
         public GetDomainsMySmtpCredentialsResult build() {
-            final var o = new GetDomainsMySmtpCredentialsResult();
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.mySmtpCredentialCount = mySmtpCredentialCount;
-            o.mySmtpCredentialFilter = mySmtpCredentialFilter;
-            o.mySmtpCredentials = mySmtpCredentials;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsMySmtpCredentialsResult();
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.mySmtpCredentialCount = mySmtpCredentialCount;
+            _resultValue.mySmtpCredentialFilter = mySmtpCredentialFilter;
+            _resultValue.mySmtpCredentials = mySmtpCredentials;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

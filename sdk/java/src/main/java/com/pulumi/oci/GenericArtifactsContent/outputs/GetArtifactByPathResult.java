@@ -194,23 +194,23 @@ public final class GetArtifactByPathResult {
             return this;
         }
         public GetArtifactByPathResult build() {
-            final var o = new GetArtifactByPathResult();
-            o.artifactId = artifactId;
-            o.artifactPath = artifactPath;
-            o.compartmentId = compartmentId;
-            o.content = content;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.repositoryId = repositoryId;
-            o.sha256 = sha256;
-            o.sizeInBytes = sizeInBytes;
-            o.source = source;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetArtifactByPathResult();
+            _resultValue.artifactId = artifactId;
+            _resultValue.artifactPath = artifactPath;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.content = content;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.sha256 = sha256;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.source = source;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

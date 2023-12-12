@@ -84,11 +84,11 @@ public final class GetDomainsAccountMgmtInfoResourceType {
             return this;
         }
         public GetDomainsAccountMgmtInfoResourceType build() {
-            final var o = new GetDomainsAccountMgmtInfoResourceType();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAccountMgmtInfoResourceType();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

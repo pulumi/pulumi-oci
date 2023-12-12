@@ -163,15 +163,15 @@ public final class GetManagedInstanceGroupsResult {
             return this;
         }
         public GetManagedInstanceGroupsResult build() {
-            final var o = new GetManagedInstanceGroupsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.managedInstanceGroups = managedInstanceGroups;
-            o.osFamily = osFamily;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedInstanceGroups = managedInstanceGroups;
+            _resultValue.osFamily = osFamily;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

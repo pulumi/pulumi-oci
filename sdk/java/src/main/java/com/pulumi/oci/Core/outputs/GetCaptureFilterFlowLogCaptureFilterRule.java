@@ -261,19 +261,19 @@ public final class GetCaptureFilterFlowLogCaptureFilterRule {
             return udpOptions(List.of(udpOptions));
         }
         public GetCaptureFilterFlowLogCaptureFilterRule build() {
-            final var o = new GetCaptureFilterFlowLogCaptureFilterRule();
-            o.destinationCidr = destinationCidr;
-            o.flowLogType = flowLogType;
-            o.icmpOptions = icmpOptions;
-            o.isEnabled = isEnabled;
-            o.priority = priority;
-            o.protocol = protocol;
-            o.ruleAction = ruleAction;
-            o.samplingRate = samplingRate;
-            o.sourceCidr = sourceCidr;
-            o.tcpOptions = tcpOptions;
-            o.udpOptions = udpOptions;
-            return o;
+            final var _resultValue = new GetCaptureFilterFlowLogCaptureFilterRule();
+            _resultValue.destinationCidr = destinationCidr;
+            _resultValue.flowLogType = flowLogType;
+            _resultValue.icmpOptions = icmpOptions;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.priority = priority;
+            _resultValue.protocol = protocol;
+            _resultValue.ruleAction = ruleAction;
+            _resultValue.samplingRate = samplingRate;
+            _resultValue.sourceCidr = sourceCidr;
+            _resultValue.tcpOptions = tcpOptions;
+            _resultValue.udpOptions = udpOptions;
+            return _resultValue;
         }
     }
 }

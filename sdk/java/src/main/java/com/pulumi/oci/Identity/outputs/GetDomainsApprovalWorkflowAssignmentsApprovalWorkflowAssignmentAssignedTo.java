@@ -122,13 +122,13 @@ public final class GetDomainsApprovalWorkflowAssignmentsApprovalWorkflowAssignme
             return this;
         }
         public GetDomainsApprovalWorkflowAssignmentsApprovalWorkflowAssignmentAssignedTo build() {
-            final var o = new GetDomainsApprovalWorkflowAssignmentsApprovalWorkflowAssignmentAssignedTo();
-            o.description = description;
-            o.display = display;
-            o.ocid = ocid;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsApprovalWorkflowAssignmentsApprovalWorkflowAssignmentAssignedTo();
+            _resultValue.description = description;
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

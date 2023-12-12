@@ -66,10 +66,10 @@ public final class GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration build() {
-            final var o = new GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration();
-            o.isOverrideDns = isOverrideDns;
-            o.overrideDnsIp = overrideDnsIp;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration();
+            _resultValue.isOverrideDns = isOverrideDns;
+            _resultValue.overrideDnsIp = overrideDnsIp;
+            return _resultValue;
         }
     }
 }

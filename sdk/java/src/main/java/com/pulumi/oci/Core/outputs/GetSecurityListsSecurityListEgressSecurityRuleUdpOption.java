@@ -81,11 +81,11 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleUdpOption {
             return sourcePortRanges(List.of(sourcePortRanges));
         }
         public GetSecurityListsSecurityListEgressSecurityRuleUdpOption build() {
-            final var o = new GetSecurityListsSecurityListEgressSecurityRuleUdpOption();
-            o.max = max;
-            o.min = min;
-            o.sourcePortRanges = sourcePortRanges;
-            return o;
+            final var _resultValue = new GetSecurityListsSecurityListEgressSecurityRuleUdpOption();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            _resultValue.sourcePortRanges = sourcePortRanges;
+            return _resultValue;
         }
     }
 }

@@ -175,15 +175,15 @@ public final class GetRecoveryServiceSubnetsResult {
             return this;
         }
         public GetRecoveryServiceSubnetsResult build() {
-            final var o = new GetRecoveryServiceSubnetsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.recoveryServiceSubnetCollections = recoveryServiceSubnetCollections;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetRecoveryServiceSubnetsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.recoveryServiceSubnetCollections = recoveryServiceSubnetCollections;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

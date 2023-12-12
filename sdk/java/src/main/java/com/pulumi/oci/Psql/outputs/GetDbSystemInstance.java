@@ -179,16 +179,16 @@ public final class GetDbSystemInstance {
             return this;
         }
         public GetDbSystemInstance build() {
-            final var o = new GetDbSystemInstance();
-            o.availabilityDomain = availabilityDomain;
-            o.description = description;
-            o.displayName = displayName;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDbSystemInstance();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

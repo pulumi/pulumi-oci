@@ -252,20 +252,20 @@ public final class GetDbManagementPrivateEndpointResult {
             return this;
         }
         public GetDbManagementPrivateEndpointResult build() {
-            final var o = new GetDbManagementPrivateEndpointResult();
-            o.compartmentId = compartmentId;
-            o.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
-            o.description = description;
-            o.id = id;
-            o.isCluster = isCluster;
-            o.name = name;
-            o.nsgIds = nsgIds;
-            o.privateIp = privateIp;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetDbManagementPrivateEndpointResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.isCluster = isCluster;
+            _resultValue.name = name;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateIp = privateIp;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

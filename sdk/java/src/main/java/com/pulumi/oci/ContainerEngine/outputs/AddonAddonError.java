@@ -86,11 +86,11 @@ public final class AddonAddonError {
             return this;
         }
         public AddonAddonError build() {
-            final var o = new AddonAddonError();
-            o.code = code;
-            o.message = message;
-            o.status = status;
-            return o;
+            final var _resultValue = new AddonAddonError();
+            _resultValue.code = code;
+            _resultValue.message = message;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

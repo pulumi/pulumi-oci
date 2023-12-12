@@ -65,10 +65,10 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineA
             return this;
         }
         public GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem build() {
-            final var o = new GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem();
-            o.deployStageId = deployStageId;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem();
+            _resultValue.deployStageId = deployStageId;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

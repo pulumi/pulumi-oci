@@ -173,16 +173,16 @@ public final class GetTenancyResult {
             return this;
         }
         public GetTenancyResult build() {
-            final var o = new GetTenancyResult();
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.homeRegionKey = homeRegionKey;
-            o.id = id;
-            o.name = name;
-            o.tenancyId = tenancyId;
-            o.upiIdcsCompatibilityLayerEndpoint = upiIdcsCompatibilityLayerEndpoint;
-            return o;
+            final var _resultValue = new GetTenancyResult();
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.homeRegionKey = homeRegionKey;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.upiIdcsCompatibilityLayerEndpoint = upiIdcsCompatibilityLayerEndpoint;
+            return _resultValue;
         }
     }
 }

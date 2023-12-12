@@ -66,10 +66,10 @@ public final class GetMetricExtensionQueryPropertyOutParamDetail {
             return this;
         }
         public GetMetricExtensionQueryPropertyOutParamDetail build() {
-            final var o = new GetMetricExtensionQueryPropertyOutParamDetail();
-            o.outParamPosition = outParamPosition;
-            o.outParamType = outParamType;
-            return o;
+            final var _resultValue = new GetMetricExtensionQueryPropertyOutParamDetail();
+            _resultValue.outParamPosition = outParamPosition;
+            _resultValue.outParamType = outParamType;
+            return _resultValue;
         }
     }
 }

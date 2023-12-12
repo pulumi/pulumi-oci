@@ -341,23 +341,23 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
             return verifyClaims(List.of(verifyClaims));
         }
         public DeploymentSpecificationRequestPoliciesAuthentication build() {
-            final var o = new DeploymentSpecificationRequestPoliciesAuthentication();
-            o.audiences = audiences;
-            o.cacheKeys = cacheKeys;
-            o.functionId = functionId;
-            o.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
-            o.issuers = issuers;
-            o.maxClockSkewInSeconds = maxClockSkewInSeconds;
-            o.parameters = parameters;
-            o.publicKeys = publicKeys;
-            o.tokenAuthScheme = tokenAuthScheme;
-            o.tokenHeader = tokenHeader;
-            o.tokenQueryParam = tokenQueryParam;
-            o.type = type;
-            o.validationFailurePolicy = validationFailurePolicy;
-            o.validationPolicy = validationPolicy;
-            o.verifyClaims = verifyClaims;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesAuthentication();
+            _resultValue.audiences = audiences;
+            _resultValue.cacheKeys = cacheKeys;
+            _resultValue.functionId = functionId;
+            _resultValue.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
+            _resultValue.issuers = issuers;
+            _resultValue.maxClockSkewInSeconds = maxClockSkewInSeconds;
+            _resultValue.parameters = parameters;
+            _resultValue.publicKeys = publicKeys;
+            _resultValue.tokenAuthScheme = tokenAuthScheme;
+            _resultValue.tokenHeader = tokenHeader;
+            _resultValue.tokenQueryParam = tokenQueryParam;
+            _resultValue.type = type;
+            _resultValue.validationFailurePolicy = validationFailurePolicy;
+            _resultValue.validationPolicy = validationPolicy;
+            _resultValue.verifyClaims = verifyClaims;
+            return _resultValue;
         }
     }
 }

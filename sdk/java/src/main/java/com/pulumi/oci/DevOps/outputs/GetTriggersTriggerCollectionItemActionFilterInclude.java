@@ -100,12 +100,12 @@ public final class GetTriggersTriggerCollectionItemActionFilterInclude {
             return this;
         }
         public GetTriggersTriggerCollectionItemActionFilterInclude build() {
-            final var o = new GetTriggersTriggerCollectionItemActionFilterInclude();
-            o.baseRef = baseRef;
-            o.fileFilters = fileFilters;
-            o.headRef = headRef;
-            o.repositoryName = repositoryName;
-            return o;
+            final var _resultValue = new GetTriggersTriggerCollectionItemActionFilterInclude();
+            _resultValue.baseRef = baseRef;
+            _resultValue.fileFilters = fileFilters;
+            _resultValue.headRef = headRef;
+            _resultValue.repositoryName = repositoryName;
+            return _resultValue;
         }
     }
 }

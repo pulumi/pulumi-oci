@@ -65,10 +65,10 @@ public final class GetDomainsMyCustomerSecretKeysMyCustomerSecretKeyTag {
             return this;
         }
         public GetDomainsMyCustomerSecretKeysMyCustomerSecretKeyTag build() {
-            final var o = new GetDomainsMyCustomerSecretKeysMyCustomerSecretKeyTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyCustomerSecretKeysMyCustomerSecretKeyTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

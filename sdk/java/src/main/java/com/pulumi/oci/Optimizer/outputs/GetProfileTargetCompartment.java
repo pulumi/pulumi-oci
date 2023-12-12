@@ -50,9 +50,9 @@ public final class GetProfileTargetCompartment {
             return items(List.of(items));
         }
         public GetProfileTargetCompartment build() {
-            final var o = new GetProfileTargetCompartment();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProfileTargetCompartment();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

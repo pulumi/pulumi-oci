@@ -66,10 +66,10 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail build() {
-            final var o = new GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail();
-            o.inParamPosition = inParamPosition;
-            o.inParamValue = inParamValue;
-            return o;
+            final var _resultValue = new GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail();
+            _resultValue.inParamPosition = inParamPosition;
+            _resultValue.inParamValue = inParamValue;
+            return _resultValue;
         }
     }
 }

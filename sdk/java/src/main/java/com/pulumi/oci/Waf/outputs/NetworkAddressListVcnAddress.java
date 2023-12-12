@@ -73,10 +73,10 @@ public final class NetworkAddressListVcnAddress {
             return this;
         }
         public NetworkAddressListVcnAddress build() {
-            final var o = new NetworkAddressListVcnAddress();
-            o.addresses = addresses;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new NetworkAddressListVcnAddress();
+            _resultValue.addresses = addresses;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

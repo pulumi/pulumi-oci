@@ -89,11 +89,11 @@ public final class GetLoadBalancerRoutingPolicyRule {
             return this;
         }
         public GetLoadBalancerRoutingPolicyRule build() {
-            final var o = new GetLoadBalancerRoutingPolicyRule();
-            o.actions = actions;
-            o.condition = condition;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetLoadBalancerRoutingPolicyRule();
+            _resultValue.actions = actions;
+            _resultValue.condition = condition;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

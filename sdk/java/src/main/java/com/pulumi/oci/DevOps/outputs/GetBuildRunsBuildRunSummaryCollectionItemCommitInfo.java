@@ -84,11 +84,11 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemCommitInfo {
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemCommitInfo build() {
-            final var o = new GetBuildRunsBuildRunSummaryCollectionItemCommitInfo();
-            o.commitHash = commitHash;
-            o.repositoryBranch = repositoryBranch;
-            o.repositoryUrl = repositoryUrl;
-            return o;
+            final var _resultValue = new GetBuildRunsBuildRunSummaryCollectionItemCommitInfo();
+            _resultValue.commitHash = commitHash;
+            _resultValue.repositoryBranch = repositoryBranch;
+            _resultValue.repositoryUrl = repositoryUrl;
+            return _resultValue;
         }
     }
 }

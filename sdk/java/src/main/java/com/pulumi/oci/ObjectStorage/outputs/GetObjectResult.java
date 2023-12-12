@@ -382,31 +382,31 @@ public final class GetObjectResult {
             return this;
         }
         public GetObjectResult build() {
-            final var o = new GetObjectResult();
-            o.base64EncodeContent = base64EncodeContent;
-            o.bucket = bucket;
-            o.cacheControl = cacheControl;
-            o.content = content;
-            o.contentDisposition = contentDisposition;
-            o.contentEncoding = contentEncoding;
-            o.contentLanguage = contentLanguage;
-            o.contentLength = contentLength;
-            o.contentLengthLimit = contentLengthLimit;
-            o.contentMd5 = contentMd5;
-            o.contentType = contentType;
-            o.httpResponseCacheControl = httpResponseCacheControl;
-            o.httpResponseContentDisposition = httpResponseContentDisposition;
-            o.httpResponseContentEncoding = httpResponseContentEncoding;
-            o.httpResponseContentLanguage = httpResponseContentLanguage;
-            o.httpResponseContentType = httpResponseContentType;
-            o.httpResponseExpires = httpResponseExpires;
-            o.id = id;
-            o.metadata = metadata;
-            o.namespace = namespace;
-            o.object = object;
-            o.storageTier = storageTier;
-            o.versionId = versionId;
-            return o;
+            final var _resultValue = new GetObjectResult();
+            _resultValue.base64EncodeContent = base64EncodeContent;
+            _resultValue.bucket = bucket;
+            _resultValue.cacheControl = cacheControl;
+            _resultValue.content = content;
+            _resultValue.contentDisposition = contentDisposition;
+            _resultValue.contentEncoding = contentEncoding;
+            _resultValue.contentLanguage = contentLanguage;
+            _resultValue.contentLength = contentLength;
+            _resultValue.contentLengthLimit = contentLengthLimit;
+            _resultValue.contentMd5 = contentMd5;
+            _resultValue.contentType = contentType;
+            _resultValue.httpResponseCacheControl = httpResponseCacheControl;
+            _resultValue.httpResponseContentDisposition = httpResponseContentDisposition;
+            _resultValue.httpResponseContentEncoding = httpResponseContentEncoding;
+            _resultValue.httpResponseContentLanguage = httpResponseContentLanguage;
+            _resultValue.httpResponseContentType = httpResponseContentType;
+            _resultValue.httpResponseExpires = httpResponseExpires;
+            _resultValue.id = id;
+            _resultValue.metadata = metadata;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.storageTier = storageTier;
+            _resultValue.versionId = versionId;
+            return _resultValue;
         }
     }
 }

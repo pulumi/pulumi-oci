@@ -116,12 +116,12 @@ public final class DrPlanPlanGroup {
             return this;
         }
         public DrPlanPlanGroup build() {
-            final var o = new DrPlanPlanGroup();
-            o.displayName = displayName;
-            o.id = id;
-            o.steps = steps;
-            o.type = type;
-            return o;
+            final var _resultValue = new DrPlanPlanGroup();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.steps = steps;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

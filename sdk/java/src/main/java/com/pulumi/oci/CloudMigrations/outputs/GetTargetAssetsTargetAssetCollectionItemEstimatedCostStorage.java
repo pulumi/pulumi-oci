@@ -89,11 +89,11 @@ public final class GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage 
             return volumes(List.of(volumes));
         }
         public GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage();
-            o.totalGbPerMonth = totalGbPerMonth;
-            o.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
-            o.volumes = volumes;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemEstimatedCostStorage();
+            _resultValue.totalGbPerMonth = totalGbPerMonth;
+            _resultValue.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
+            _resultValue.volumes = volumes;
+            return _resultValue;
         }
     }
 }

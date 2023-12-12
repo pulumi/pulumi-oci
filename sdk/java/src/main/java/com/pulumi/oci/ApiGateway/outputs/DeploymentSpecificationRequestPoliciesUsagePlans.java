@@ -58,9 +58,9 @@ public final class DeploymentSpecificationRequestPoliciesUsagePlans {
             return tokenLocations(List.of(tokenLocations));
         }
         public DeploymentSpecificationRequestPoliciesUsagePlans build() {
-            final var o = new DeploymentSpecificationRequestPoliciesUsagePlans();
-            o.tokenLocations = tokenLocations;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesUsagePlans();
+            _resultValue.tokenLocations = tokenLocations;
+            return _resultValue;
         }
     }
 }

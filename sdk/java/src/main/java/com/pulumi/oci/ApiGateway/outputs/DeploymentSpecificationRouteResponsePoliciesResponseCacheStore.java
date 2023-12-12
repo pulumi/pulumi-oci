@@ -72,10 +72,10 @@ public final class DeploymentSpecificationRouteResponsePoliciesResponseCacheStor
             return this;
         }
         public DeploymentSpecificationRouteResponsePoliciesResponseCacheStore build() {
-            final var o = new DeploymentSpecificationRouteResponsePoliciesResponseCacheStore();
-            o.timeToLiveInSeconds = timeToLiveInSeconds;
-            o.type = type;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteResponsePoliciesResponseCacheStore();
+            _resultValue.timeToLiveInSeconds = timeToLiveInSeconds;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

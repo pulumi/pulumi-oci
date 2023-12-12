@@ -50,9 +50,9 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionterm
             return termsOfUseConsents(List.of(termsOfUseConsents));
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser();
-            o.termsOfUseConsents = termsOfUseConsents;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser();
+            _resultValue.termsOfUseConsents = termsOfUseConsents;
+            return _resultValue;
         }
     }
 }

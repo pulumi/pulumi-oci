@@ -65,10 +65,10 @@ public final class GetVolumesVolumeSourceDetail {
             return this;
         }
         public GetVolumesVolumeSourceDetail build() {
-            final var o = new GetVolumesVolumeSourceDetail();
-            o.id = id;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetVolumesVolumeSourceDetail();
+            _resultValue.id = id;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -122,13 +122,13 @@ public final class GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemas
             return this;
         }
         public GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting build() {
-            final var o = new GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting();
-            o.apiHostname = apiHostname;
-            o.attestationKey = attestationKey;
-            o.integrationKey = integrationKey;
-            o.secretKey = secretKey;
-            o.userMappingAttribute = userMappingAttribute;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting();
+            _resultValue.apiHostname = apiHostname;
+            _resultValue.attestationKey = attestationKey;
+            _resultValue.integrationKey = integrationKey;
+            _resultValue.secretKey = secretKey;
+            _resultValue.userMappingAttribute = userMappingAttribute;
+            return _resultValue;
         }
     }
 }

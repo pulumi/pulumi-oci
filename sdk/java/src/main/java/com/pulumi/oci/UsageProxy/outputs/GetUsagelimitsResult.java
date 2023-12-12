@@ -150,16 +150,16 @@ public final class GetUsagelimitsResult {
             return usageLimitCollections(List.of(usageLimitCollections));
         }
         public GetUsagelimitsResult build() {
-            final var o = new GetUsagelimitsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.limitType = limitType;
-            o.resourceType = resourceType;
-            o.serviceType = serviceType;
-            o.subscriptionId = subscriptionId;
-            o.usageLimitCollections = usageLimitCollections;
-            return o;
+            final var _resultValue = new GetUsagelimitsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.limitType = limitType;
+            _resultValue.resourceType = resourceType;
+            _resultValue.serviceType = serviceType;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.usageLimitCollections = usageLimitCollections;
+            return _resultValue;
         }
     }
 }

@@ -68,10 +68,10 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemp
             return this;
         }
         public InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionAction build() {
-            final var o = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionAction();
-            o.preserveBootVolume = preserveBootVolume;
-            o.type = type;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionAction();
+            _resultValue.preserveBootVolume = preserveBootVolume;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -105,12 +105,12 @@ public final class GetSecretbundleVersionsResult {
             return this;
         }
         public GetSecretbundleVersionsResult build() {
-            final var o = new GetSecretbundleVersionsResult();
-            o.filters = filters;
-            o.id = id;
-            o.secretBundleVersions = secretBundleVersions;
-            o.secretId = secretId;
-            return o;
+            final var _resultValue = new GetSecretbundleVersionsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.secretBundleVersions = secretBundleVersions;
+            _resultValue.secretId = secretId;
+            return _resultValue;
         }
     }
 }

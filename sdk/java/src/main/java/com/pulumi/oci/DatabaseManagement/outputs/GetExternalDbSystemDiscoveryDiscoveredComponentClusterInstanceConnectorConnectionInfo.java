@@ -93,11 +93,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanc
             return connectionStrings(List.of(connectionStrings));
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo build() {
-            final var o = new GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo();
-            o.componentType = componentType;
-            o.connectionCredentials = connectionCredentials;
-            o.connectionStrings = connectionStrings;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo();
+            _resultValue.componentType = componentType;
+            _resultValue.connectionCredentials = connectionCredentials;
+            _resultValue.connectionStrings = connectionStrings;
+            return _resultValue;
         }
     }
 }

@@ -193,17 +193,17 @@ public final class GetConfigurationsResult {
             return this;
         }
         public GetConfigurationsResult build() {
-            final var o = new GetConfigurationsResult();
-            o.compartmentId = compartmentId;
-            o.configurationCollections = configurationCollections;
-            o.configurationId = configurationId;
-            o.dbVersion = dbVersion;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.shape = shape;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetConfigurationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationCollections = configurationCollections;
+            _resultValue.configurationId = configurationId;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

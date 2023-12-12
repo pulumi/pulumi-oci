@@ -79,12 +79,12 @@ public final class GetNamespaceMetadataResult {
             return this;
         }
         public GetNamespaceMetadataResult build() {
-            final var o = new GetNamespaceMetadataResult();
-            o.defaultS3compartmentId = defaultS3compartmentId;
-            o.defaultSwiftCompartmentId = defaultSwiftCompartmentId;
-            o.id = id;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetNamespaceMetadataResult();
+            _resultValue.defaultS3compartmentId = defaultS3compartmentId;
+            _resultValue.defaultSwiftCompartmentId = defaultSwiftCompartmentId;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

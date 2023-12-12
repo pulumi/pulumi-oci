@@ -121,13 +121,13 @@ public final class DbSystemIormConfigCach {
             return this;
         }
         public DbSystemIormConfigCach build() {
-            final var o = new DbSystemIormConfigCach();
-            o.dbPlans = dbPlans;
-            o.dbSystemId = dbSystemId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.objective = objective;
-            o.state = state;
-            return o;
+            final var _resultValue = new DbSystemIormConfigCach();
+            _resultValue.dbPlans = dbPlans;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.objective = objective;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

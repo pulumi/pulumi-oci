@@ -136,14 +136,14 @@ public final class GetDbCredentialsResult {
             return this;
         }
         public GetDbCredentialsResult build() {
-            final var o = new GetDbCredentialsResult();
-            o.dbCredentials = dbCredentials;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetDbCredentialsResult();
+            _resultValue.dbCredentials = dbCredentials;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

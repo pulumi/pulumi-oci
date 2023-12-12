@@ -350,24 +350,24 @@ public final class DetectorRecipeDetectorRule {
             return this;
         }
         public DetectorRecipeDetectorRule build() {
-            final var o = new DetectorRecipeDetectorRule();
-            o.candidateResponderRules = candidateResponderRules;
-            o.dataSourceId = dataSourceId;
-            o.description = description;
-            o.details = details;
-            o.detector = detector;
-            o.detectorRuleId = detectorRuleId;
-            o.displayName = displayName;
-            o.entitiesMappings = entitiesMappings;
-            o.lifecycleDetails = lifecycleDetails;
-            o.managedListTypes = managedListTypes;
-            o.recommendation = recommendation;
-            o.resourceType = resourceType;
-            o.serviceType = serviceType;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new DetectorRecipeDetectorRule();
+            _resultValue.candidateResponderRules = candidateResponderRules;
+            _resultValue.dataSourceId = dataSourceId;
+            _resultValue.description = description;
+            _resultValue.details = details;
+            _resultValue.detector = detector;
+            _resultValue.detectorRuleId = detectorRuleId;
+            _resultValue.displayName = displayName;
+            _resultValue.entitiesMappings = entitiesMappings;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managedListTypes = managedListTypes;
+            _resultValue.recommendation = recommendation;
+            _resultValue.resourceType = resourceType;
+            _resultValue.serviceType = serviceType;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

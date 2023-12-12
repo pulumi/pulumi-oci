@@ -144,14 +144,14 @@ public final class GetNetworkLoadBalancersResult {
             return this;
         }
         public GetNetworkLoadBalancersResult build() {
-            final var o = new GetNetworkLoadBalancersResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.networkLoadBalancerCollections = networkLoadBalancerCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkLoadBalancerCollections = networkLoadBalancerCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -384,26 +384,26 @@ public final class GetBuildRunResult {
             return this;
         }
         public GetBuildRunResult build() {
-            final var o = new GetBuildRunResult();
-            o.buildOutputs = buildOutputs;
-            o.buildPipelineId = buildPipelineId;
-            o.buildRunArguments = buildRunArguments;
-            o.buildRunId = buildRunId;
-            o.buildRunProgresses = buildRunProgresses;
-            o.buildRunSources = buildRunSources;
-            o.commitInfos = commitInfos;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetBuildRunResult();
+            _resultValue.buildOutputs = buildOutputs;
+            _resultValue.buildPipelineId = buildPipelineId;
+            _resultValue.buildRunArguments = buildRunArguments;
+            _resultValue.buildRunId = buildRunId;
+            _resultValue.buildRunProgresses = buildRunProgresses;
+            _resultValue.buildRunSources = buildRunSources;
+            _resultValue.commitInfos = commitInfos;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

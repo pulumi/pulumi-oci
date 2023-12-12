@@ -158,16 +158,16 @@ public final class GetFusionEnvironmentRefreshActivitiesResult {
             return this;
         }
         public GetFusionEnvironmentRefreshActivitiesResult build() {
-            final var o = new GetFusionEnvironmentRefreshActivitiesResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.refreshActivityCollections = refreshActivityCollections;
-            o.state = state;
-            o.timeExpectedFinishLessThanOrEqualTo = timeExpectedFinishLessThanOrEqualTo;
-            o.timeScheduledStartGreaterThanOrEqualTo = timeScheduledStartGreaterThanOrEqualTo;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentRefreshActivitiesResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.refreshActivityCollections = refreshActivityCollections;
+            _resultValue.state = state;
+            _resultValue.timeExpectedFinishLessThanOrEqualTo = timeExpectedFinishLessThanOrEqualTo;
+            _resultValue.timeScheduledStartGreaterThanOrEqualTo = timeScheduledStartGreaterThanOrEqualTo;
+            return _resultValue;
         }
     }
 }

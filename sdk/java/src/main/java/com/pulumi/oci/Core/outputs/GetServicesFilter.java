@@ -75,11 +75,11 @@ public final class GetServicesFilter {
             return values(List.of(values));
         }
         public GetServicesFilter build() {
-            final var o = new GetServicesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetServicesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

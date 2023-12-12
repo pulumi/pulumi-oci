@@ -85,11 +85,11 @@ public final class GetCloudVmClusterIormConfigCachDbPlan {
             return this;
         }
         public GetCloudVmClusterIormConfigCachDbPlan build() {
-            final var o = new GetCloudVmClusterIormConfigCachDbPlan();
-            o.dbName = dbName;
-            o.flashCacheLimit = flashCacheLimit;
-            o.share = share;
-            return o;
+            final var _resultValue = new GetCloudVmClusterIormConfigCachDbPlan();
+            _resultValue.dbName = dbName;
+            _resultValue.flashCacheLimit = flashCacheLimit;
+            _resultValue.share = share;
+            return _resultValue;
         }
     }
 }

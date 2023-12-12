@@ -75,11 +75,11 @@ public final class GetIdentityProvidersFilter {
             return values(List.of(values));
         }
         public GetIdentityProvidersFilter build() {
-            final var o = new GetIdentityProvidersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetIdentityProvidersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

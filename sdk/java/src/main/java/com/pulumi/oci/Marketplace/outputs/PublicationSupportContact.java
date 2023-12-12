@@ -111,12 +111,12 @@ public final class PublicationSupportContact {
             return this;
         }
         public PublicationSupportContact build() {
-            final var o = new PublicationSupportContact();
-            o.email = email;
-            o.name = name;
-            o.phone = phone;
-            o.subject = subject;
-            return o;
+            final var _resultValue = new PublicationSupportContact();
+            _resultValue.email = email;
+            _resultValue.name = name;
+            _resultValue.phone = phone;
+            _resultValue.subject = subject;
+            return _resultValue;
         }
     }
 }

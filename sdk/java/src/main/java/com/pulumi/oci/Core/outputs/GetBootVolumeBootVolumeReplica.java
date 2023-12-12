@@ -84,11 +84,11 @@ public final class GetBootVolumeBootVolumeReplica {
             return this;
         }
         public GetBootVolumeBootVolumeReplica build() {
-            final var o = new GetBootVolumeBootVolumeReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.bootVolumeReplicaId = bootVolumeReplicaId;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new GetBootVolumeBootVolumeReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.bootVolumeReplicaId = bootVolumeReplicaId;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDrProtectionGroupAssociation {
             return this;
         }
         public GetDrProtectionGroupAssociation build() {
-            final var o = new GetDrProtectionGroupAssociation();
-            o.peerId = peerId;
-            o.peerRegion = peerRegion;
-            o.role = role;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupAssociation();
+            _resultValue.peerId = peerId;
+            _resultValue.peerRegion = peerRegion;
+            _resultValue.role = role;
+            return _resultValue;
         }
     }
 }

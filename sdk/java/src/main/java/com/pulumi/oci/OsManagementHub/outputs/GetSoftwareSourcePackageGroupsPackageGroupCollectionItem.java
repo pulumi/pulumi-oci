@@ -207,17 +207,17 @@ public final class GetSoftwareSourcePackageGroupsPackageGroupCollectionItem {
             return repositories(List.of(repositories));
         }
         public GetSoftwareSourcePackageGroupsPackageGroupCollectionItem build() {
-            final var o = new GetSoftwareSourcePackageGroupsPackageGroupCollectionItem();
-            o.description = description;
-            o.displayOrder = displayOrder;
-            o.groupType = groupType;
-            o.id = id;
-            o.isDefault = isDefault;
-            o.isUserVisible = isUserVisible;
-            o.name = name;
-            o.packages = packages;
-            o.repositories = repositories;
-            return o;
+            final var _resultValue = new GetSoftwareSourcePackageGroupsPackageGroupCollectionItem();
+            _resultValue.description = description;
+            _resultValue.displayOrder = displayOrder;
+            _resultValue.groupType = groupType;
+            _resultValue.id = id;
+            _resultValue.isDefault = isDefault;
+            _resultValue.isUserVisible = isUserVisible;
+            _resultValue.name = name;
+            _resultValue.packages = packages;
+            _resultValue.repositories = repositories;
+            return _resultValue;
         }
     }
 }

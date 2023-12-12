@@ -86,11 +86,11 @@ public final class GatewayCaBundle {
             return this;
         }
         public GatewayCaBundle build() {
-            final var o = new GatewayCaBundle();
-            o.caBundleId = caBundleId;
-            o.certificateAuthorityId = certificateAuthorityId;
-            o.type = type;
-            return o;
+            final var _resultValue = new GatewayCaBundle();
+            _resultValue.caBundleId = caBundleId;
+            _resultValue.certificateAuthorityId = certificateAuthorityId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

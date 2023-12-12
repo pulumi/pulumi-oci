@@ -217,18 +217,18 @@ public final class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollecti
             return this;
         }
         public GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem build() {
-            final var o = new GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem();
-            o.architecture = architecture;
-            o.downloadSourceId = downloadSourceId;
-            o.downloadType = downloadType;
-            o.familyDisplayName = familyDisplayName;
-            o.familyVersion = familyVersion;
-            o.osFamily = osFamily;
-            o.packageType = packageType;
-            o.packageTypeDetail = packageTypeDetail;
-            o.releaseVersion = releaseVersion;
-            o.timeDownloaded = timeDownloaded;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem();
+            _resultValue.architecture = architecture;
+            _resultValue.downloadSourceId = downloadSourceId;
+            _resultValue.downloadType = downloadType;
+            _resultValue.familyDisplayName = familyDisplayName;
+            _resultValue.familyVersion = familyVersion;
+            _resultValue.osFamily = osFamily;
+            _resultValue.packageType = packageType;
+            _resultValue.packageTypeDetail = packageTypeDetail;
+            _resultValue.releaseVersion = releaseVersion;
+            _resultValue.timeDownloaded = timeDownloaded;
+            return _resultValue;
         }
     }
 }

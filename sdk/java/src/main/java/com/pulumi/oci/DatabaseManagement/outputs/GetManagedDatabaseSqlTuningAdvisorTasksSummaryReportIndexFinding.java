@@ -146,14 +146,14 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFind
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding();
-            o.indexColumns = indexColumns;
-            o.indexHashValue = indexHashValue;
-            o.indexName = indexName;
-            o.referenceCount = referenceCount;
-            o.schema = schema;
-            o.tableName = tableName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportIndexFinding();
+            _resultValue.indexColumns = indexColumns;
+            _resultValue.indexHashValue = indexHashValue;
+            _resultValue.indexName = indexName;
+            _resultValue.referenceCount = referenceCount;
+            _resultValue.schema = schema;
+            _resultValue.tableName = tableName;
+            return _resultValue;
         }
     }
 }

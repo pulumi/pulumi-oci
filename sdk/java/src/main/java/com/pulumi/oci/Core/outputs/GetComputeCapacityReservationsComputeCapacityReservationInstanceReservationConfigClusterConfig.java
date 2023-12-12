@@ -69,10 +69,10 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
             return networkBlockIds(List.of(networkBlockIds));
         }
         public GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig build() {
-            final var o = new GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig();
-            o.hpcIslandId = hpcIslandId;
-            o.networkBlockIds = networkBlockIds;
-            return o;
+            final var _resultValue = new GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig();
+            _resultValue.hpcIslandId = hpcIslandId;
+            _resultValue.networkBlockIds = networkBlockIds;
+            return _resultValue;
         }
     }
 }

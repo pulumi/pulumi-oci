@@ -392,28 +392,28 @@ public final class GetDomainsUserAttributesSettingResult {
             return this;
         }
         public GetDomainsUserAttributesSettingResult build() {
-            final var o = new GetDomainsUserAttributesSettingResult();
-            o.attributeSets = attributeSets;
-            o.attributeSettings = attributeSettings;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.metas = metas;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.userAttributesSettingId = userAttributesSettingId;
-            return o;
+            final var _resultValue = new GetDomainsUserAttributesSettingResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributeSettings = attributeSettings;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.metas = metas;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.userAttributesSettingId = userAttributesSettingId;
+            return _resultValue;
         }
     }
 }

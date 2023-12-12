@@ -85,11 +85,11 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfileAfte
             return this;
         }
         public GetDomainsSelfRegistrationProfilesSelfRegistrationProfileAfterSubmitText build() {
-            final var o = new GetDomainsSelfRegistrationProfilesSelfRegistrationProfileAfterSubmitText();
-            o.default_ = default_;
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSelfRegistrationProfilesSelfRegistrationProfileAfterSubmitText();
+            _resultValue.default_ = default_;
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -182,16 +182,16 @@ public final class GetPrivateEndpointsResult {
             return this;
         }
         public GetPrivateEndpointsResult build() {
-            final var o = new GetPrivateEndpointsResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.dataSciencePrivateEndpoints = dataSciencePrivateEndpoints;
-            o.dataScienceResourceType = dataScienceResourceType;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPrivateEndpointsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.dataSciencePrivateEndpoints = dataSciencePrivateEndpoints;
+            _resultValue.dataScienceResourceType = dataScienceResourceType;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

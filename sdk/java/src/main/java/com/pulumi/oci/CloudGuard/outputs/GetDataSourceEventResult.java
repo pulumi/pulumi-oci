@@ -110,12 +110,12 @@ public final class GetDataSourceEventResult {
             return this;
         }
         public GetDataSourceEventResult build() {
-            final var o = new GetDataSourceEventResult();
-            o.dataSourceId = dataSourceId;
-            o.id = id;
-            o.items = items;
-            o.region = region;
-            return o;
+            final var _resultValue = new GetDataSourceEventResult();
+            _resultValue.dataSourceId = dataSourceId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.region = region;
+            return _resultValue;
         }
     }
 }

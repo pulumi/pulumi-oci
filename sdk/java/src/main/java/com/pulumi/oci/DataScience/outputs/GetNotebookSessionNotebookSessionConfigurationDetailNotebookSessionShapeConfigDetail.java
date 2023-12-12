@@ -65,10 +65,10 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetailNotebookS
             return this;
         }
         public GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail build() {
-            final var o = new GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

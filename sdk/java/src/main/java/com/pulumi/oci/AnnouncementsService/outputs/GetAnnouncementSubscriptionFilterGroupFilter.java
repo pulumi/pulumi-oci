@@ -65,10 +65,10 @@ public final class GetAnnouncementSubscriptionFilterGroupFilter {
             return this;
         }
         public GetAnnouncementSubscriptionFilterGroupFilter build() {
-            final var o = new GetAnnouncementSubscriptionFilterGroupFilter();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAnnouncementSubscriptionFilterGroupFilter();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

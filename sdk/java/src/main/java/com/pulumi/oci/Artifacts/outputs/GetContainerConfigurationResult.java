@@ -88,12 +88,12 @@ public final class GetContainerConfigurationResult {
             return this;
         }
         public GetContainerConfigurationResult build() {
-            final var o = new GetContainerConfigurationResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isRepositoryCreatedOnFirstPush = isRepositoryCreatedOnFirstPush;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetContainerConfigurationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isRepositoryCreatedOnFirstPush = isRepositoryCreatedOnFirstPush;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

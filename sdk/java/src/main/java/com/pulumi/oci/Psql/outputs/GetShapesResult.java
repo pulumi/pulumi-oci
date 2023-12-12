@@ -98,12 +98,12 @@ public final class GetShapesResult {
             return shapeCollections(List.of(shapeCollections));
         }
         public GetShapesResult build() {
-            final var o = new GetShapesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.shapeCollections = shapeCollections;
-            return o;
+            final var _resultValue = new GetShapesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.shapeCollections = shapeCollections;
+            return _resultValue;
         }
     }
 }

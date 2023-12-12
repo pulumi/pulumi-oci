@@ -128,13 +128,13 @@ public final class GetListingPackagePricing {
             return this;
         }
         public GetListingPackagePricing build() {
-            final var o = new GetListingPackagePricing();
-            o.currency = currency;
-            o.internationalMarketPrices = internationalMarketPrices;
-            o.payGoStrategy = payGoStrategy;
-            o.rate = rate;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetListingPackagePricing();
+            _resultValue.currency = currency;
+            _resultValue.internationalMarketPrices = internationalMarketPrices;
+            _resultValue.payGoStrategy = payGoStrategy;
+            _resultValue.rate = rate;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

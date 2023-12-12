@@ -128,13 +128,13 @@ public final class GetDetectionModelModelTrainingDetail {
             return this;
         }
         public GetDetectionModelModelTrainingDetail build() {
-            final var o = new GetDetectionModelModelTrainingDetail();
-            o.algorithmHint = algorithmHint;
-            o.dataAssetIds = dataAssetIds;
-            o.targetFap = targetFap;
-            o.trainingFraction = trainingFraction;
-            o.windowSize = windowSize;
-            return o;
+            final var _resultValue = new GetDetectionModelModelTrainingDetail();
+            _resultValue.algorithmHint = algorithmHint;
+            _resultValue.dataAssetIds = dataAssetIds;
+            _resultValue.targetFap = targetFap;
+            _resultValue.trainingFraction = trainingFraction;
+            _resultValue.windowSize = windowSize;
+            return _resultValue;
         }
     }
 }

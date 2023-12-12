@@ -299,23 +299,23 @@ public final class GetPrivateApplicationResult {
             return this;
         }
         public GetPrivateApplicationResult build() {
-            final var o = new GetPrivateApplicationResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.logoFileBase64encoded = logoFileBase64encoded;
-            o.logos = logos;
-            o.longDescription = longDescription;
-            o.packageDetails = packageDetails;
-            o.packageType = packageType;
-            o.privateApplicationId = privateApplicationId;
-            o.shortDescription = shortDescription;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetPrivateApplicationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.logoFileBase64encoded = logoFileBase64encoded;
+            _resultValue.logos = logos;
+            _resultValue.longDescription = longDescription;
+            _resultValue.packageDetails = packageDetails;
+            _resultValue.packageType = packageType;
+            _resultValue.privateApplicationId = privateApplicationId;
+            _resultValue.shortDescription = shortDescription;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

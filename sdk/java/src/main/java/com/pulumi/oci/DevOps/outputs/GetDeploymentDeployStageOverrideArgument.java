@@ -50,9 +50,9 @@ public final class GetDeploymentDeployStageOverrideArgument {
             return items(List.of(items));
         }
         public GetDeploymentDeployStageOverrideArgument build() {
-            final var o = new GetDeploymentDeployStageOverrideArgument();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeploymentDeployStageOverrideArgument();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

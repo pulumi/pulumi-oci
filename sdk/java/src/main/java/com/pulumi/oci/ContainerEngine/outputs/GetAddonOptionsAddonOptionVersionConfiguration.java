@@ -123,13 +123,13 @@ public final class GetAddonOptionsAddonOptionVersionConfiguration {
             return this;
         }
         public GetAddonOptionsAddonOptionVersionConfiguration build() {
-            final var o = new GetAddonOptionsAddonOptionVersionConfiguration();
-            o.description = description;
-            o.displayName = displayName;
-            o.isRequired = isRequired;
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAddonOptionsAddonOptionVersionConfiguration();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.isRequired = isRequired;
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge();
-            o.name = name;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge();
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

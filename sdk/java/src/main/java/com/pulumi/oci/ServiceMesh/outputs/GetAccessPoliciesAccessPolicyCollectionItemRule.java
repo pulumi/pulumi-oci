@@ -93,11 +93,11 @@ public final class GetAccessPoliciesAccessPolicyCollectionItemRule {
             return sources(List.of(sources));
         }
         public GetAccessPoliciesAccessPolicyCollectionItemRule build() {
-            final var o = new GetAccessPoliciesAccessPolicyCollectionItemRule();
-            o.action = action;
-            o.destinations = destinations;
-            o.sources = sources;
-            return o;
+            final var _resultValue = new GetAccessPoliciesAccessPolicyCollectionItemRule();
+            _resultValue.action = action;
+            _resultValue.destinations = destinations;
+            _resultValue.sources = sources;
+            return _resultValue;
         }
     }
 }

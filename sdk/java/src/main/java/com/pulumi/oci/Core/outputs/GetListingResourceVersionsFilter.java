@@ -67,11 +67,11 @@ public final class GetListingResourceVersionsFilter {
             return values(List.of(values));
         }
         public GetListingResourceVersionsFilter build() {
-            final var o = new GetListingResourceVersionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetListingResourceVersionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollection {
             return items(List.of(items));
         }
         public GetInvoicesInvoiceLinesInvoiceLineCollection build() {
-            final var o = new GetInvoicesInvoiceLinesInvoiceLineCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceLinesInvoiceLineCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

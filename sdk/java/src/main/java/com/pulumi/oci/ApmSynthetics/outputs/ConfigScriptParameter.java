@@ -130,13 +130,13 @@ public final class ConfigScriptParameter {
             return this;
         }
         public ConfigScriptParameter build() {
-            final var o = new ConfigScriptParameter();
-            o.isOverwritten = isOverwritten;
-            o.isSecret = isSecret;
-            o.monitorScriptParameters = monitorScriptParameters;
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new ConfigScriptParameter();
+            _resultValue.isOverwritten = isOverwritten;
+            _resultValue.isSecret = isSecret;
+            _resultValue.monitorScriptParameters = monitorScriptParameters;
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

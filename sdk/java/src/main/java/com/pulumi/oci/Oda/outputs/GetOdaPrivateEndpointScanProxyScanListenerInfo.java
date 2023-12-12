@@ -85,11 +85,11 @@ public final class GetOdaPrivateEndpointScanProxyScanListenerInfo {
             return this;
         }
         public GetOdaPrivateEndpointScanProxyScanListenerInfo build() {
-            final var o = new GetOdaPrivateEndpointScanProxyScanListenerInfo();
-            o.scanListenerFqdn = scanListenerFqdn;
-            o.scanListenerIp = scanListenerIp;
-            o.scanListenerPort = scanListenerPort;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointScanProxyScanListenerInfo();
+            _resultValue.scanListenerFqdn = scanListenerFqdn;
+            _resultValue.scanListenerIp = scanListenerIp;
+            _resultValue.scanListenerPort = scanListenerPort;
+            return _resultValue;
         }
     }
 }

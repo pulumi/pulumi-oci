@@ -230,13 +230,13 @@ public final class DomainsMyAuthTokenIdcsCreatedBy {
             return this;
         }
         public DomainsMyAuthTokenIdcsCreatedBy build() {
-            final var o = new DomainsMyAuthTokenIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyAuthTokenIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

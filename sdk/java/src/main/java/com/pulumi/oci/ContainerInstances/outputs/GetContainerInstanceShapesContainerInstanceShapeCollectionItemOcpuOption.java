@@ -65,10 +65,10 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
             return this;
         }
         public GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption build() {
-            final var o = new GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

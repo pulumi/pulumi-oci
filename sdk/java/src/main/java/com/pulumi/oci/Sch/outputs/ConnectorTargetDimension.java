@@ -68,10 +68,10 @@ public final class ConnectorTargetDimension {
             return this;
         }
         public ConnectorTargetDimension build() {
-            final var o = new ConnectorTargetDimension();
-            o.dimensionValue = dimensionValue;
-            o.name = name;
-            return o;
+            final var _resultValue = new ConnectorTargetDimension();
+            _resultValue.dimensionValue = dimensionValue;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

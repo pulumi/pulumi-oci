@@ -88,11 +88,11 @@ public final class VirtualNodePoolPlacementConfiguration {
             return this;
         }
         public VirtualNodePoolPlacementConfiguration build() {
-            final var o = new VirtualNodePoolPlacementConfiguration();
-            o.availabilityDomain = availabilityDomain;
-            o.faultDomains = faultDomains;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new VirtualNodePoolPlacementConfiguration();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.faultDomains = faultDomains;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

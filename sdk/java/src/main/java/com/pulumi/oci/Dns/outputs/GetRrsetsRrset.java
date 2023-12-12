@@ -81,11 +81,11 @@ public final class GetRrsetsRrset {
             return this;
         }
         public GetRrsetsRrset build() {
-            final var o = new GetRrsetsRrset();
-            o.domain = domain;
-            o.items = items;
-            o.rtype = rtype;
-            return o;
+            final var _resultValue = new GetRrsetsRrset();
+            _resultValue.domain = domain;
+            _resultValue.items = items;
+            _resultValue.rtype = rtype;
+            return _resultValue;
         }
     }
 }

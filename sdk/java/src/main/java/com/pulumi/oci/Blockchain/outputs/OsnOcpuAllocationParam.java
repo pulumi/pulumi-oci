@@ -52,9 +52,9 @@ public final class OsnOcpuAllocationParam {
             return this;
         }
         public OsnOcpuAllocationParam build() {
-            final var o = new OsnOcpuAllocationParam();
-            o.ocpuAllocationNumber = ocpuAllocationNumber;
-            return o;
+            final var _resultValue = new OsnOcpuAllocationParam();
+            _resultValue.ocpuAllocationNumber = ocpuAllocationNumber;
+            return _resultValue;
         }
     }
 }

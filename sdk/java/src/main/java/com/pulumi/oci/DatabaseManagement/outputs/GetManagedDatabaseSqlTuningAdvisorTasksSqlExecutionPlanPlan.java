@@ -580,37 +580,37 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan {
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan();
-            o.accessPredicates = accessPredicates;
-            o.attribute = attribute;
-            o.bytes = bytes;
-            o.cardinality = cardinality;
-            o.cost = cost;
-            o.cpuCost = cpuCost;
-            o.filterPredicates = filterPredicates;
-            o.ioCost = ioCost;
-            o.numberOfSearchColumn = numberOfSearchColumn;
-            o.object = object;
-            o.objectNode = objectNode;
-            o.objectOwner = objectOwner;
-            o.objectPosition = objectPosition;
-            o.objectType = objectType;
-            o.operation = operation;
-            o.optimizerMode = optimizerMode;
-            o.options = options;
-            o.other = other;
-            o.otherTag = otherTag;
-            o.parentStepId = parentStepId;
-            o.partitionId = partitionId;
-            o.partitionStart = partitionStart;
-            o.partitionStop = partitionStop;
-            o.planHashValue = planHashValue;
-            o.position = position;
-            o.remarks = remarks;
-            o.stepId = stepId;
-            o.tempSpace = tempSpace;
-            o.time = time;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan();
+            _resultValue.accessPredicates = accessPredicates;
+            _resultValue.attribute = attribute;
+            _resultValue.bytes = bytes;
+            _resultValue.cardinality = cardinality;
+            _resultValue.cost = cost;
+            _resultValue.cpuCost = cpuCost;
+            _resultValue.filterPredicates = filterPredicates;
+            _resultValue.ioCost = ioCost;
+            _resultValue.numberOfSearchColumn = numberOfSearchColumn;
+            _resultValue.object = object;
+            _resultValue.objectNode = objectNode;
+            _resultValue.objectOwner = objectOwner;
+            _resultValue.objectPosition = objectPosition;
+            _resultValue.objectType = objectType;
+            _resultValue.operation = operation;
+            _resultValue.optimizerMode = optimizerMode;
+            _resultValue.options = options;
+            _resultValue.other = other;
+            _resultValue.otherTag = otherTag;
+            _resultValue.parentStepId = parentStepId;
+            _resultValue.partitionId = partitionId;
+            _resultValue.partitionStart = partitionStart;
+            _resultValue.partitionStop = partitionStop;
+            _resultValue.planHashValue = planHashValue;
+            _resultValue.position = position;
+            _resultValue.remarks = remarks;
+            _resultValue.stepId = stepId;
+            _resultValue.tempSpace = tempSpace;
+            _resultValue.time = time;
+            return _resultValue;
         }
     }
 }

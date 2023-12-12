@@ -179,16 +179,16 @@ public final class GetLetterOfAuthorityResult {
             return this;
         }
         public GetLetterOfAuthorityResult build() {
-            final var o = new GetLetterOfAuthorityResult();
-            o.authorizedEntityName = authorizedEntityName;
-            o.circuitType = circuitType;
-            o.crossConnectId = crossConnectId;
-            o.facilityLocation = facilityLocation;
-            o.id = id;
-            o.portName = portName;
-            o.timeExpires = timeExpires;
-            o.timeIssued = timeIssued;
-            return o;
+            final var _resultValue = new GetLetterOfAuthorityResult();
+            _resultValue.authorizedEntityName = authorizedEntityName;
+            _resultValue.circuitType = circuitType;
+            _resultValue.crossConnectId = crossConnectId;
+            _resultValue.facilityLocation = facilityLocation;
+            _resultValue.id = id;
+            _resultValue.portName = portName;
+            _resultValue.timeExpires = timeExpires;
+            _resultValue.timeIssued = timeIssued;
+            return _resultValue;
         }
     }
 }

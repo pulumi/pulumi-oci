@@ -497,32 +497,32 @@ public final class GetUserAssessmentsUserAssessment {
             return this;
         }
         public GetUserAssessmentsUserAssessment build() {
-            final var o = new GetUserAssessmentsUserAssessment();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ignoredAssessmentIds = ignoredAssessmentIds;
-            o.ignoredTargets = ignoredTargets;
-            o.isBaseline = isBaseline;
-            o.isDeviatedFromBaseline = isDeviatedFromBaseline;
-            o.lastComparedBaselineId = lastComparedBaselineId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.schedule = schedule;
-            o.scheduleAssessmentId = scheduleAssessmentId;
-            o.state = state;
-            o.statistics = statistics;
-            o.systemTags = systemTags;
-            o.targetId = targetId;
-            o.targetIds = targetIds;
-            o.timeCreated = timeCreated;
-            o.timeLastAssessed = timeLastAssessed;
-            o.timeUpdated = timeUpdated;
-            o.triggeredBy = triggeredBy;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetUserAssessmentsUserAssessment();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ignoredAssessmentIds = ignoredAssessmentIds;
+            _resultValue.ignoredTargets = ignoredTargets;
+            _resultValue.isBaseline = isBaseline;
+            _resultValue.isDeviatedFromBaseline = isDeviatedFromBaseline;
+            _resultValue.lastComparedBaselineId = lastComparedBaselineId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.schedule = schedule;
+            _resultValue.scheduleAssessmentId = scheduleAssessmentId;
+            _resultValue.state = state;
+            _resultValue.statistics = statistics;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetId = targetId;
+            _resultValue.targetIds = targetIds;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastAssessed = timeLastAssessed;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggeredBy = triggeredBy;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

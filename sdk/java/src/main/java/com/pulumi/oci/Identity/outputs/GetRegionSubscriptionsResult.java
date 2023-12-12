@@ -97,12 +97,12 @@ public final class GetRegionSubscriptionsResult {
             return this;
         }
         public GetRegionSubscriptionsResult build() {
-            final var o = new GetRegionSubscriptionsResult();
-            o.filters = filters;
-            o.id = id;
-            o.regionSubscriptions = regionSubscriptions;
-            o.tenancyId = tenancyId;
-            return o;
+            final var _resultValue = new GetRegionSubscriptionsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.regionSubscriptions = regionSubscriptions;
+            _resultValue.tenancyId = tenancyId;
+            return _resultValue;
         }
     }
 }

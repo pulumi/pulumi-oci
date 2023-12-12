@@ -103,12 +103,12 @@ public final class GetDomainsMyDevicesMyDeviceUser {
             return this;
         }
         public GetDomainsMyDevicesMyDeviceUser build() {
-            final var o = new GetDomainsMyDevicesMyDeviceUser();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyDevicesMyDeviceUser();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

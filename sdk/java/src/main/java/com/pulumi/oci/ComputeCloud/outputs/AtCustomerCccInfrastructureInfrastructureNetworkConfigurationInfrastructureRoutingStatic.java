@@ -67,10 +67,10 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
             return this;
         }
         public AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic build() {
-            final var o = new AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic();
-            o.uplinkHsrpGroup = uplinkHsrpGroup;
-            o.uplinkVlan = uplinkVlan;
-            return o;
+            final var _resultValue = new AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic();
+            _resultValue.uplinkHsrpGroup = uplinkHsrpGroup;
+            _resultValue.uplinkVlan = uplinkVlan;
+            return _resultValue;
         }
     }
 }

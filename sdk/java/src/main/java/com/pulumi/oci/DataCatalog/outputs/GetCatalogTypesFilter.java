@@ -75,11 +75,11 @@ public final class GetCatalogTypesFilter {
             return values(List.of(values));
         }
         public GetCatalogTypesFilter build() {
-            final var o = new GetCatalogTypesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCatalogTypesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

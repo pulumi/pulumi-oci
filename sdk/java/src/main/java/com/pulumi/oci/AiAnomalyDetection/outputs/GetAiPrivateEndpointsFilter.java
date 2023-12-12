@@ -67,11 +67,11 @@ public final class GetAiPrivateEndpointsFilter {
             return values(List.of(values));
         }
         public GetAiPrivateEndpointsFilter build() {
-            final var o = new GetAiPrivateEndpointsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAiPrivateEndpointsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class QueryQueryDefinitionReportQueryGroupByTag {
             return this;
         }
         public QueryQueryDefinitionReportQueryGroupByTag build() {
-            final var o = new QueryQueryDefinitionReportQueryGroupByTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new QueryQueryDefinitionReportQueryGroupByTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

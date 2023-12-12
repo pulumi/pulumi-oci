@@ -86,11 +86,11 @@ public final class AccessPolicyRule {
             return this;
         }
         public AccessPolicyRule build() {
-            final var o = new AccessPolicyRule();
-            o.action = action;
-            o.destination = destination;
-            o.source = source;
-            return o;
+            final var _resultValue = new AccessPolicyRule();
+            _resultValue.action = action;
+            _resultValue.destination = destination;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

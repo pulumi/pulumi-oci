@@ -103,12 +103,12 @@ public final class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollection
             return this;
         }
         public GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem build() {
-            final var o = new GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem();
-            o.id = id;
-            o.patchInfoUrl = patchInfoUrl;
-            o.serviceVersion = serviceVersion;
-            o.timePatchDue = timePatchDue;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItem();
+            _resultValue.id = id;
+            _resultValue.patchInfoUrl = patchInfoUrl;
+            _resultValue.serviceVersion = serviceVersion;
+            _resultValue.timePatchDue = timePatchDue;
+            return _resultValue;
         }
     }
 }

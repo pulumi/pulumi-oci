@@ -92,11 +92,11 @@ public final class MigrationPlanMigrationPlanStat {
             return this;
         }
         public MigrationPlanMigrationPlanStat build() {
-            final var o = new MigrationPlanMigrationPlanStat();
-            o.timeUpdated = timeUpdated;
-            o.totalEstimatedCosts = totalEstimatedCosts;
-            o.vmCount = vmCount;
-            return o;
+            final var _resultValue = new MigrationPlanMigrationPlanStat();
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.totalEstimatedCosts = totalEstimatedCosts;
+            _resultValue.vmCount = vmCount;
+            return _resultValue;
         }
     }
 }

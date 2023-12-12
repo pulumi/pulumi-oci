@@ -185,16 +185,16 @@ public final class GetRunStatementsStatementCollectionItem {
             return this;
         }
         public GetRunStatementsStatementCollectionItem build() {
-            final var o = new GetRunStatementsStatementCollectionItem();
-            o.code = code;
-            o.id = id;
-            o.outputs = outputs;
-            o.progress = progress;
-            o.runId = runId;
-            o.state = state;
-            o.timeCompleted = timeCompleted;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetRunStatementsStatementCollectionItem();
+            _resultValue.code = code;
+            _resultValue.id = id;
+            _resultValue.outputs = outputs;
+            _resultValue.progress = progress;
+            _resultValue.runId = runId;
+            _resultValue.state = state;
+            _resultValue.timeCompleted = timeCompleted;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

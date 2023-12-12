@@ -161,15 +161,15 @@ public final class GetClusterNetworkInstancePoolLoadBalancer {
             return this;
         }
         public GetClusterNetworkInstancePoolLoadBalancer build() {
-            final var o = new GetClusterNetworkInstancePoolLoadBalancer();
-            o.backendSetName = backendSetName;
-            o.id = id;
-            o.instancePoolId = instancePoolId;
-            o.loadBalancerId = loadBalancerId;
-            o.port = port;
-            o.state = state;
-            o.vnicSelection = vnicSelection;
-            return o;
+            final var _resultValue = new GetClusterNetworkInstancePoolLoadBalancer();
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.id = id;
+            _resultValue.instancePoolId = instancePoolId;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.port = port;
+            _resultValue.state = state;
+            _resultValue.vnicSelection = vnicSelection;
+            return _resultValue;
         }
     }
 }

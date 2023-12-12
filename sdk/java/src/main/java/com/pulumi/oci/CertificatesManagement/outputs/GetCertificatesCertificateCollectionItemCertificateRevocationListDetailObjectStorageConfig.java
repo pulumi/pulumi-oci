@@ -84,11 +84,11 @@ public final class GetCertificatesCertificateCollectionItemCertificateRevocation
             return this;
         }
         public GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig build() {
-            final var o = new GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig();
-            o.objectStorageBucketName = objectStorageBucketName;
-            o.objectStorageNamespace = objectStorageNamespace;
-            o.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
-            return o;
+            final var _resultValue = new GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfig();
+            _resultValue.objectStorageBucketName = objectStorageBucketName;
+            _resultValue.objectStorageNamespace = objectStorageNamespace;
+            _resultValue.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
+            return _resultValue;
         }
     }
 }

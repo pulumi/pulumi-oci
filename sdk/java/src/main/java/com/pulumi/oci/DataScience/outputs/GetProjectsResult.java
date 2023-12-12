@@ -163,15 +163,15 @@ public final class GetProjectsResult {
             return this;
         }
         public GetProjectsResult build() {
-            final var o = new GetProjectsResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.projects = projects;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetProjectsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.projects = projects;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

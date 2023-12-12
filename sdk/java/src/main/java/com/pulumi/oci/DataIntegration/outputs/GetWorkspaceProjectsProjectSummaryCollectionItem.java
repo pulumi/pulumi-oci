@@ -290,22 +290,22 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItem {
             return this;
         }
         public GetWorkspaceProjectsProjectSummaryCollectionItem build() {
-            final var o = new GetWorkspaceProjectsProjectSummaryCollectionItem();
-            o.description = description;
-            o.identifier = identifier;
-            o.key = key;
-            o.keyMap = keyMap;
-            o.metadatas = metadatas;
-            o.modelType = modelType;
-            o.modelVersion = modelVersion;
-            o.name = name;
-            o.objectStatus = objectStatus;
-            o.objectVersion = objectVersion;
-            o.parentReves = parentReves;
-            o.projectKey = projectKey;
-            o.registryMetadata = registryMetadata;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceProjectsProjectSummaryCollectionItem();
+            _resultValue.description = description;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.keyMap = keyMap;
+            _resultValue.metadatas = metadatas;
+            _resultValue.modelType = modelType;
+            _resultValue.modelVersion = modelVersion;
+            _resultValue.name = name;
+            _resultValue.objectStatus = objectStatus;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.parentReves = parentReves;
+            _resultValue.projectKey = projectKey;
+            _resultValue.registryMetadata = registryMetadata;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

@@ -319,23 +319,23 @@ public final class GetRemediationRunsRemediationRunCollectionItem {
             return this;
         }
         public GetRemediationRunsRemediationRunCollectionItem build() {
-            final var o = new GetRemediationRunsRemediationRunCollectionItem();
-            o.compartmentId = compartmentId;
-            o.currentStageType = currentStageType;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.remediationRecipeId = remediationRecipeId;
-            o.remediationRunSource = remediationRunSource;
-            o.stages = stages;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetRemediationRunsRemediationRunCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.currentStageType = currentStageType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.remediationRecipeId = remediationRecipeId;
+            _resultValue.remediationRunSource = remediationRunSource;
+            _resultValue.stages = stages;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

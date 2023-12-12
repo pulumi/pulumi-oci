@@ -48,9 +48,9 @@ public final class FusionEnvironmentRefreshActivityRefreshIssueDetailsList {
             return this;
         }
         public FusionEnvironmentRefreshActivityRefreshIssueDetailsList build() {
-            final var o = new FusionEnvironmentRefreshActivityRefreshIssueDetailsList();
-            o.refreshIssues = refreshIssues;
-            return o;
+            final var _resultValue = new FusionEnvironmentRefreshActivityRefreshIssueDetailsList();
+            _resultValue.refreshIssues = refreshIssues;
+            return _resultValue;
         }
     }
 }

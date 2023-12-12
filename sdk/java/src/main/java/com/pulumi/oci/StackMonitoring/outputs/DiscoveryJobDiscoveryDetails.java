@@ -165,15 +165,15 @@ public final class DiscoveryJobDiscoveryDetails {
             return this;
         }
         public DiscoveryJobDiscoveryDetails build() {
-            final var o = new DiscoveryJobDiscoveryDetails();
-            o.agentId = agentId;
-            o.credentials = credentials;
-            o.license = license;
-            o.properties = properties;
-            o.resourceName = resourceName;
-            o.resourceType = resourceType;
-            o.tags = tags;
-            return o;
+            final var _resultValue = new DiscoveryJobDiscoveryDetails();
+            _resultValue.agentId = agentId;
+            _resultValue.credentials = credentials;
+            _resultValue.license = license;
+            _resultValue.properties = properties;
+            _resultValue.resourceName = resourceName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.tags = tags;
+            return _resultValue;
         }
     }
 }

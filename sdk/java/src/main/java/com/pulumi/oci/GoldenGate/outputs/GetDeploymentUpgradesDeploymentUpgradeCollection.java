@@ -42,9 +42,9 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollection {
             return items(List.of(items));
         }
         public GetDeploymentUpgradesDeploymentUpgradeCollection build() {
-            final var o = new GetDeploymentUpgradesDeploymentUpgradeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeploymentUpgradesDeploymentUpgradeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

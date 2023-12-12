@@ -54,9 +54,9 @@ public final class GetPathRouteSetsPathRouteSetPathRoutePathMatchType {
             return this;
         }
         public GetPathRouteSetsPathRouteSetPathRoutePathMatchType build() {
-            final var o = new GetPathRouteSetsPathRouteSetPathRoutePathMatchType();
-            o.matchType = matchType;
-            return o;
+            final var _resultValue = new GetPathRouteSetsPathRouteSetPathRoutePathMatchType();
+            _resultValue.matchType = matchType;
+            return _resultValue;
         }
     }
 }

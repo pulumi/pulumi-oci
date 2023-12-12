@@ -104,12 +104,12 @@ public final class GetDatabaseMaintenanceRunHistoryResult {
             return this;
         }
         public GetDatabaseMaintenanceRunHistoryResult build() {
-            final var o = new GetDatabaseMaintenanceRunHistoryResult();
-            o.dbServersHistoryDetails = dbServersHistoryDetails;
-            o.id = id;
-            o.maintenanceRunDetails = maintenanceRunDetails;
-            o.maintenanceRunHistoryId = maintenanceRunHistoryId;
-            return o;
+            final var _resultValue = new GetDatabaseMaintenanceRunHistoryResult();
+            _resultValue.dbServersHistoryDetails = dbServersHistoryDetails;
+            _resultValue.id = id;
+            _resultValue.maintenanceRunDetails = maintenanceRunDetails;
+            _resultValue.maintenanceRunHistoryId = maintenanceRunHistoryId;
+            return _resultValue;
         }
     }
 }

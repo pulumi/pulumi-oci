@@ -191,16 +191,16 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             return this;
         }
         public GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem build() {
-            final var o = new GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem();
-            o.action = action;
-            o.condition = condition;
-            o.inspection = inspection;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.positions = positions;
-            o.priorityOrder = priorityOrder;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItem();
+            _resultValue.action = action;
+            _resultValue.condition = condition;
+            _resultValue.inspection = inspection;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.positions = positions;
+            _resultValue.priorityOrder = priorityOrder;
+            return _resultValue;
         }
     }
 }

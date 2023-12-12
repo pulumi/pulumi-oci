@@ -172,16 +172,16 @@ public final class GetInstancePoolLoadBalancerAttachmentResult {
             return this;
         }
         public GetInstancePoolLoadBalancerAttachmentResult build() {
-            final var o = new GetInstancePoolLoadBalancerAttachmentResult();
-            o.backendSetName = backendSetName;
-            o.id = id;
-            o.instancePoolId = instancePoolId;
-            o.instancePoolLoadBalancerAttachmentId = instancePoolLoadBalancerAttachmentId;
-            o.loadBalancerId = loadBalancerId;
-            o.port = port;
-            o.state = state;
-            o.vnicSelection = vnicSelection;
-            return o;
+            final var _resultValue = new GetInstancePoolLoadBalancerAttachmentResult();
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.id = id;
+            _resultValue.instancePoolId = instancePoolId;
+            _resultValue.instancePoolLoadBalancerAttachmentId = instancePoolLoadBalancerAttachmentId;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.port = port;
+            _resultValue.state = state;
+            _resultValue.vnicSelection = vnicSelection;
+            return _resultValue;
         }
     }
 }

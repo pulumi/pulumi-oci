@@ -67,11 +67,11 @@ public final class GetDeploymentVersionsFilter {
             return values(List.of(values));
         }
         public GetDeploymentVersionsFilter build() {
-            final var o = new GetDeploymentVersionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentVersionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

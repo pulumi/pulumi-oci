@@ -372,26 +372,26 @@ public final class GetNamespaceScheduledTaskResult {
             return this;
         }
         public GetNamespaceScheduledTaskResult build() {
-            final var o = new GetNamespaceScheduledTaskResult();
-            o.actions = actions;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.kind = kind;
-            o.namespace = namespace;
-            o.numOccurrences = numOccurrences;
-            o.savedSearchId = savedSearchId;
-            o.scheduledTaskId = scheduledTaskId;
-            o.schedules = schedules;
-            o.state = state;
-            o.taskStatus = taskStatus;
-            o.taskType = taskType;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTaskResult();
+            _resultValue.actions = actions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.kind = kind;
+            _resultValue.namespace = namespace;
+            _resultValue.numOccurrences = numOccurrences;
+            _resultValue.savedSearchId = savedSearchId;
+            _resultValue.scheduledTaskId = scheduledTaskId;
+            _resultValue.schedules = schedules;
+            _resultValue.state = state;
+            _resultValue.taskStatus = taskStatus;
+            _resultValue.taskType = taskType;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

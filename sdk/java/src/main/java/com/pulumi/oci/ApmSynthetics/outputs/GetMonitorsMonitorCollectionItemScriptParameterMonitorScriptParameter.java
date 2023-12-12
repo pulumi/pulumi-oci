@@ -65,10 +65,10 @@ public final class GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptP
             return this;
         }
         public GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter build() {
-            final var o = new GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter();
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameter();
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

@@ -511,33 +511,33 @@ public final class GetMonitorResult {
             return vantagePoints(List.of(vantagePoints));
         }
         public GetMonitorResult build() {
-            final var o = new GetMonitorResult();
-            o.apmDomainId = apmDomainId;
-            o.availabilityConfigurations = availabilityConfigurations;
-            o.batchIntervalInSeconds = batchIntervalInSeconds;
-            o.configurations = configurations;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isRunNow = isRunNow;
-            o.isRunOnce = isRunOnce;
-            o.maintenanceWindowSchedules = maintenanceWindowSchedules;
-            o.monitorId = monitorId;
-            o.monitorType = monitorType;
-            o.repeatIntervalInSeconds = repeatIntervalInSeconds;
-            o.schedulingPolicy = schedulingPolicy;
-            o.scriptId = scriptId;
-            o.scriptName = scriptName;
-            o.scriptParameters = scriptParameters;
-            o.status = status;
-            o.target = target;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.timeoutInSeconds = timeoutInSeconds;
-            o.vantagePointCount = vantagePointCount;
-            o.vantagePoints = vantagePoints;
-            return o;
+            final var _resultValue = new GetMonitorResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.availabilityConfigurations = availabilityConfigurations;
+            _resultValue.batchIntervalInSeconds = batchIntervalInSeconds;
+            _resultValue.configurations = configurations;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isRunNow = isRunNow;
+            _resultValue.isRunOnce = isRunOnce;
+            _resultValue.maintenanceWindowSchedules = maintenanceWindowSchedules;
+            _resultValue.monitorId = monitorId;
+            _resultValue.monitorType = monitorType;
+            _resultValue.repeatIntervalInSeconds = repeatIntervalInSeconds;
+            _resultValue.schedulingPolicy = schedulingPolicy;
+            _resultValue.scriptId = scriptId;
+            _resultValue.scriptName = scriptName;
+            _resultValue.scriptParameters = scriptParameters;
+            _resultValue.status = status;
+            _resultValue.target = target;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.timeoutInSeconds = timeoutInSeconds;
+            _resultValue.vantagePointCount = vantagePointCount;
+            _resultValue.vantagePoints = vantagePoints;
+            return _resultValue;
         }
     }
 }

@@ -117,13 +117,13 @@ public final class GetApplianceImagesResult {
             return this;
         }
         public GetApplianceImagesResult build() {
-            final var o = new GetApplianceImagesResult();
-            o.applianceImageCollections = applianceImageCollections;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetApplianceImagesResult();
+            _resultValue.applianceImageCollections = applianceImageCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

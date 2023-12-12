@@ -42,9 +42,9 @@ public final class GetGenericArtifactsGenericArtifactCollection {
             return items(List.of(items));
         }
         public GetGenericArtifactsGenericArtifactCollection build() {
-            final var o = new GetGenericArtifactsGenericArtifactCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetGenericArtifactsGenericArtifactCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

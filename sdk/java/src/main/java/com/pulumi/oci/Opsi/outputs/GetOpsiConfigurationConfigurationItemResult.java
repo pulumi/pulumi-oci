@@ -149,15 +149,15 @@ public final class GetOpsiConfigurationConfigurationItemResult {
             return this;
         }
         public GetOpsiConfigurationConfigurationItemResult build() {
-            final var o = new GetOpsiConfigurationConfigurationItemResult();
-            o.compartmentId = compartmentId;
-            o.configItemFields = configItemFields;
-            o.configItems = configItems;
-            o.configItemsApplicableContexts = configItemsApplicableContexts;
-            o.id = id;
-            o.name = name;
-            o.opsiConfigType = opsiConfigType;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationConfigurationItemResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configItemFields = configItemFields;
+            _resultValue.configItems = configItems;
+            _resultValue.configItemsApplicableContexts = configItemsApplicableContexts;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.opsiConfigType = opsiConfigType;
+            return _resultValue;
         }
     }
 }

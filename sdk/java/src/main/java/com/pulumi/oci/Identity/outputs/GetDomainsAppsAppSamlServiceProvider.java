@@ -65,10 +65,10 @@ public final class GetDomainsAppsAppSamlServiceProvider {
             return this;
         }
         public GetDomainsAppsAppSamlServiceProvider build() {
-            final var o = new GetDomainsAppsAppSamlServiceProvider();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppSamlServiceProvider();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

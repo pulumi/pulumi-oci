@@ -86,11 +86,11 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
             return this;
         }
         public ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance build() {
-            final var o = new ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance();
-            o.adrHomeDirectory = adrHomeDirectory;
-            o.hostName = hostName;
-            o.instanceName = instanceName;
-            return o;
+            final var _resultValue = new ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance();
+            _resultValue.adrHomeDirectory = adrHomeDirectory;
+            _resultValue.hostName = hostName;
+            _resultValue.instanceName = instanceName;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone 
             return this;
         }
         public GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone build() {
-            final var o = new GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone();
-            o.description = description;
-            o.dnsZone = dnsZone;
-            return o;
+            final var _resultValue = new GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone();
+            _resultValue.description = description;
+            _resultValue.dnsZone = dnsZone;
+            return _resultValue;
         }
     }
 }

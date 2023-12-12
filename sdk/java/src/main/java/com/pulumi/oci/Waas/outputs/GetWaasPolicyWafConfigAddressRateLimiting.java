@@ -104,12 +104,12 @@ public final class GetWaasPolicyWafConfigAddressRateLimiting {
             return this;
         }
         public GetWaasPolicyWafConfigAddressRateLimiting build() {
-            final var o = new GetWaasPolicyWafConfigAddressRateLimiting();
-            o.allowedRatePerAddress = allowedRatePerAddress;
-            o.blockResponseCode = blockResponseCode;
-            o.isEnabled = isEnabled;
-            o.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigAddressRateLimiting();
+            _resultValue.allowedRatePerAddress = allowedRatePerAddress;
+            _resultValue.blockResponseCode = blockResponseCode;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
+            return _resultValue;
         }
     }
 }

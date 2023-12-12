@@ -208,18 +208,18 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
             return this;
         }
         public GetOperationsInsightsPrivateEndpointsResult build() {
-            final var o = new GetOperationsInsightsPrivateEndpointsResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isUsedForRacDbs = isUsedForRacDbs;
-            o.operationsInsightsPrivateEndpointCollections = operationsInsightsPrivateEndpointCollections;
-            o.opsiPrivateEndpointId = opsiPrivateEndpointId;
-            o.states = states;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetOperationsInsightsPrivateEndpointsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isUsedForRacDbs = isUsedForRacDbs;
+            _resultValue.operationsInsightsPrivateEndpointCollections = operationsInsightsPrivateEndpointCollections;
+            _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            _resultValue.states = states;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

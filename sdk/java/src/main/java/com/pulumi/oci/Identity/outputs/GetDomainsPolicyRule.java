@@ -104,12 +104,12 @@ public final class GetDomainsPolicyRule {
             return this;
         }
         public GetDomainsPolicyRule build() {
-            final var o = new GetDomainsPolicyRule();
-            o.name = name;
-            o.ref = ref;
-            o.sequence = sequence;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsPolicyRule();
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.sequence = sequence;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemP
             return this;
         }
         public GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange build() {
-            final var o = new GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange();
-            o.maximumPort = maximumPort;
-            o.minimumPort = minimumPort;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyServicesServiceSummaryCollectionItemPortRange();
+            _resultValue.maximumPort = maximumPort;
+            _resultValue.minimumPort = minimumPort;
+            return _resultValue;
         }
     }
 }

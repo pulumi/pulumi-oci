@@ -230,13 +230,13 @@ public final class DomainsMyApiKeyIdcsLastModifiedBy {
             return this;
         }
         public DomainsMyApiKeyIdcsLastModifiedBy build() {
-            final var o = new DomainsMyApiKeyIdcsLastModifiedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyApiKeyIdcsLastModifiedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

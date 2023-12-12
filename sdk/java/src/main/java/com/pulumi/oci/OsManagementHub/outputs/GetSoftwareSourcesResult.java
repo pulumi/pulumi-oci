@@ -290,22 +290,22 @@ public final class GetSoftwareSourcesResult {
             return this;
         }
         public GetSoftwareSourcesResult build() {
-            final var o = new GetSoftwareSourcesResult();
-            o.archTypes = archTypes;
-            o.availabilities = availabilities;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.displayNameNotEqualTos = displayNameNotEqualTos;
-            o.filters = filters;
-            o.id = id;
-            o.osFamilies = osFamilies;
-            o.softwareSourceCollections = softwareSourceCollections;
-            o.softwareSourceId = softwareSourceId;
-            o.softwareSourceTypes = softwareSourceTypes;
-            o.states = states;
-            o.vendorName = vendorName;
-            return o;
+            final var _resultValue = new GetSoftwareSourcesResult();
+            _resultValue.archTypes = archTypes;
+            _resultValue.availabilities = availabilities;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.displayNameNotEqualTos = displayNameNotEqualTos;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.osFamilies = osFamilies;
+            _resultValue.softwareSourceCollections = softwareSourceCollections;
+            _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.softwareSourceTypes = softwareSourceTypes;
+            _resultValue.states = states;
+            _resultValue.vendorName = vendorName;
+            return _resultValue;
         }
     }
 }

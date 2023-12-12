@@ -84,11 +84,11 @@ public final class GetProblemEntityItemEntityDetail {
             return this;
         }
         public GetProblemEntityItemEntityDetail build() {
-            final var o = new GetProblemEntityItemEntityDetail();
-            o.displayName = displayName;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetProblemEntityItemEntityDetail();
+            _resultValue.displayName = displayName;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

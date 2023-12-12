@@ -108,12 +108,12 @@ public final class GetShapesShape {
             return this;
         }
         public GetShapesShape build() {
-            final var o = new GetShapesShape();
-            o.cpuCoreCount = cpuCoreCount;
-            o.isSupportedFors = isSupportedFors;
-            o.memorySizeInGbs = memorySizeInGbs;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetShapesShape();
+            _resultValue.cpuCoreCount = cpuCoreCount;
+            _resultValue.isSupportedFors = isSupportedFors;
+            _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

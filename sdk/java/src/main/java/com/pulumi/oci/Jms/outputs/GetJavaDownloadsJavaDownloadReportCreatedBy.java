@@ -84,11 +84,11 @@ public final class GetJavaDownloadsJavaDownloadReportCreatedBy {
             return this;
         }
         public GetJavaDownloadsJavaDownloadReportCreatedBy build() {
-            final var o = new GetJavaDownloadsJavaDownloadReportCreatedBy();
-            o.displayName = displayName;
-            o.email = email;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadReportCreatedBy();
+            _resultValue.displayName = displayName;
+            _resultValue.email = email;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

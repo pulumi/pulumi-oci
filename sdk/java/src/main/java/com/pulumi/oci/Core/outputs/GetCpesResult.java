@@ -105,12 +105,12 @@ public final class GetCpesResult {
             return this;
         }
         public GetCpesResult build() {
-            final var o = new GetCpesResult();
-            o.compartmentId = compartmentId;
-            o.cpes = cpes;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCpesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.cpes = cpes;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -97,12 +97,12 @@ public final class GetIpsecConnectionTunnelsResult {
             return this;
         }
         public GetIpsecConnectionTunnelsResult build() {
-            final var o = new GetIpsecConnectionTunnelsResult();
-            o.filters = filters;
-            o.id = id;
-            o.ipSecConnectionTunnels = ipSecConnectionTunnels;
-            o.ipsecId = ipsecId;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ipSecConnectionTunnels = ipSecConnectionTunnels;
+            _resultValue.ipsecId = ipsecId;
+            return _resultValue;
         }
     }
 }

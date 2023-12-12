@@ -124,13 +124,13 @@ public final class ProductLicenseImage {
             return this;
         }
         public ProductLicenseImage build() {
-            final var o = new ProductLicenseImage();
-            o.id = id;
-            o.listingId = listingId;
-            o.listingName = listingName;
-            o.packageVersion = packageVersion;
-            o.publisher = publisher;
-            return o;
+            final var _resultValue = new ProductLicenseImage();
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            _resultValue.listingName = listingName;
+            _resultValue.packageVersion = packageVersion;
+            _resultValue.publisher = publisher;
+            return _resultValue;
         }
     }
 }

@@ -101,14 +101,14 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
             return this;
         }
         public GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail build() {
-            final var o = new GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail();
-            o.dbrsPolicyId = dbrsPolicyId;
-            o.id = id;
-            o.internetProxy = internetProxy;
-            o.type = type;
-            o.vpcPassword = vpcPassword;
-            o.vpcUser = vpcUser;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail();
+            _resultValue.dbrsPolicyId = dbrsPolicyId;
+            _resultValue.id = id;
+            _resultValue.internetProxy = internetProxy;
+            _resultValue.type = type;
+            _resultValue.vpcPassword = vpcPassword;
+            _resultValue.vpcUser = vpcUser;
+            return _resultValue;
         }
     }
 }

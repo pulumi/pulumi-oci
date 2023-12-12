@@ -342,16 +342,16 @@ public final class DomainsUserAddress {
             return this;
         }
         public DomainsUserAddress build() {
-            final var o = new DomainsUserAddress();
-            o.country = country;
-            o.formatted = formatted;
-            o.locality = locality;
-            o.postalCode = postalCode;
-            o.primary = primary;
-            o.region = region;
-            o.streetAddress = streetAddress;
-            o.type = type;
-            return o;
+            final var _resultValue = new DomainsUserAddress();
+            _resultValue.country = country;
+            _resultValue.formatted = formatted;
+            _resultValue.locality = locality;
+            _resultValue.postalCode = postalCode;
+            _resultValue.primary = primary;
+            _resultValue.region = region;
+            _resultValue.streetAddress = streetAddress;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

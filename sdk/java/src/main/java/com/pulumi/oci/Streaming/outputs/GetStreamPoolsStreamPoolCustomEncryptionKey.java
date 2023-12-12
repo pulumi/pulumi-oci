@@ -65,10 +65,10 @@ public final class GetStreamPoolsStreamPoolCustomEncryptionKey {
             return this;
         }
         public GetStreamPoolsStreamPoolCustomEncryptionKey build() {
-            final var o = new GetStreamPoolsStreamPoolCustomEncryptionKey();
-            o.keyState = keyState;
-            o.kmsKeyId = kmsKeyId;
-            return o;
+            final var _resultValue = new GetStreamPoolsStreamPoolCustomEncryptionKey();
+            _resultValue.keyState = keyState;
+            _resultValue.kmsKeyId = kmsKeyId;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetMonitoredResourceCredentialProperty {
             return this;
         }
         public GetMonitoredResourceCredentialProperty build() {
-            final var o = new GetMonitoredResourceCredentialProperty();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetMonitoredResourceCredentialProperty();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

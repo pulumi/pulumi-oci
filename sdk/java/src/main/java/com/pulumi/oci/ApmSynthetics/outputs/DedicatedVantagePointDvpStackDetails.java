@@ -103,12 +103,12 @@ public final class DedicatedVantagePointDvpStackDetails {
             return this;
         }
         public DedicatedVantagePointDvpStackDetails build() {
-            final var o = new DedicatedVantagePointDvpStackDetails();
-            o.dvpStackId = dvpStackId;
-            o.dvpStackType = dvpStackType;
-            o.dvpStreamId = dvpStreamId;
-            o.dvpVersion = dvpVersion;
-            return o;
+            final var _resultValue = new DedicatedVantagePointDvpStackDetails();
+            _resultValue.dvpStackId = dvpStackId;
+            _resultValue.dvpStackType = dvpStackType;
+            _resultValue.dvpStreamId = dvpStreamId;
+            _resultValue.dvpVersion = dvpVersion;
+            return _resultValue;
         }
     }
 }

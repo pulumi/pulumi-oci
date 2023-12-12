@@ -60,11 +60,11 @@ public final class GetDataGuardAssociationsDataGuardAssociationDataCollectionOpt
             return this;
         }
         public GetDataGuardAssociationsDataGuardAssociationDataCollectionOption build() {
-            final var o = new GetDataGuardAssociationsDataGuardAssociationDataCollectionOption();
-            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            return o;
+            final var _resultValue = new GetDataGuardAssociationsDataGuardAssociationDataCollectionOption();
+            _resultValue.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            _resultValue.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            _resultValue.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return _resultValue;
         }
     }
 }

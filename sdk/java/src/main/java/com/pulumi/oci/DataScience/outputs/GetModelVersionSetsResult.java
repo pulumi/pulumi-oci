@@ -182,16 +182,16 @@ public final class GetModelVersionSetsResult {
             return this;
         }
         public GetModelVersionSetsResult build() {
-            final var o = new GetModelVersionSetsResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.filters = filters;
-            o.id = id;
-            o.modelVersionSets = modelVersionSets;
-            o.name = name;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetModelVersionSetsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.modelVersionSets = modelVersionSets;
+            _resultValue.name = name;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

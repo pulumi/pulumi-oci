@@ -145,14 +145,14 @@ public final class GetJavaFamiliesResult {
             return javaFamilyCollections(List.of(javaFamilyCollections));
         }
         public GetJavaFamiliesResult build() {
-            final var o = new GetJavaFamiliesResult();
-            o.displayName = displayName;
-            o.familyVersion = familyVersion;
-            o.filters = filters;
-            o.id = id;
-            o.isSupportedVersion = isSupportedVersion;
-            o.javaFamilyCollections = javaFamilyCollections;
-            return o;
+            final var _resultValue = new GetJavaFamiliesResult();
+            _resultValue.displayName = displayName;
+            _resultValue.familyVersion = familyVersion;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isSupportedVersion = isSupportedVersion;
+            _resultValue.javaFamilyCollections = javaFamilyCollections;
+            return _resultValue;
         }
     }
 }

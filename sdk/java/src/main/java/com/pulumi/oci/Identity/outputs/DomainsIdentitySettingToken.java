@@ -104,10 +104,10 @@ public final class DomainsIdentitySettingToken {
             return this;
         }
         public DomainsIdentitySettingToken build() {
-            final var o = new DomainsIdentitySettingToken();
-            o.expiresAfter = expiresAfter;
-            o.type = type;
-            return o;
+            final var _resultValue = new DomainsIdentitySettingToken();
+            _resultValue.expiresAfter = expiresAfter;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

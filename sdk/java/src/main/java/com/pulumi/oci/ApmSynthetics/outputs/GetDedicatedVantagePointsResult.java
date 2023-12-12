@@ -155,15 +155,15 @@ public final class GetDedicatedVantagePointsResult {
             return this;
         }
         public GetDedicatedVantagePointsResult build() {
-            final var o = new GetDedicatedVantagePointsResult();
-            o.apmDomainId = apmDomainId;
-            o.dedicatedVantagePointCollections = dedicatedVantagePointCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetDedicatedVantagePointsResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.dedicatedVantagePointCollections = dedicatedVantagePointCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

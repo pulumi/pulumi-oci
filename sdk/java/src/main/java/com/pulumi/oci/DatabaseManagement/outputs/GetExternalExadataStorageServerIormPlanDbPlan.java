@@ -50,9 +50,9 @@ public final class GetExternalExadataStorageServerIormPlanDbPlan {
             return items(List.of(items));
         }
         public GetExternalExadataStorageServerIormPlanDbPlan build() {
-            final var o = new GetExternalExadataStorageServerIormPlanDbPlan();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServerIormPlanDbPlan();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -242,13 +242,13 @@ public final class DomainsCloudGateServer {
             return this;
         }
         public DomainsCloudGateServer build() {
-            final var o = new DomainsCloudGateServer();
-            o.hostName = hostName;
-            o.nginxSettings = nginxSettings;
-            o.port = port;
-            o.serverId = serverId;
-            o.ssl = ssl;
-            return o;
+            final var _resultValue = new DomainsCloudGateServer();
+            _resultValue.hostName = hostName;
+            _resultValue.nginxSettings = nginxSettings;
+            _resultValue.port = port;
+            _resultValue.serverId = serverId;
+            _resultValue.ssl = ssl;
+            return _resultValue;
         }
     }
 }

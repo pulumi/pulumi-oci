@@ -90,11 +90,11 @@ public final class ConnectionVaultDetails {
             return this;
         }
         public ConnectionVaultDetails build() {
-            final var o = new ConnectionVaultDetails();
-            o.compartmentId = compartmentId;
-            o.keyId = keyId;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new ConnectionVaultDetails();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.keyId = keyId;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDomainsRulePolicyType {
             return this;
         }
         public GetDomainsRulePolicyType build() {
-            final var o = new GetDomainsRulePolicyType();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsRulePolicyType();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

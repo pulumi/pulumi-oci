@@ -48,9 +48,9 @@ public final class ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6add
             return this;
         }
         public ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail build() {
-            final var o = new ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail();
-            o.ipv6subnetCidr = ipv6subnetCidr;
-            return o;
+            final var _resultValue = new ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetail();
+            _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            return _resultValue;
         }
     }
 }

@@ -107,12 +107,12 @@ public final class GetModelTestStrategyValidationDatasetLocationDetail {
             return objectNames(List.of(objectNames));
         }
         public GetModelTestStrategyValidationDatasetLocationDetail build() {
-            final var o = new GetModelTestStrategyValidationDatasetLocationDetail();
-            o.bucket = bucket;
-            o.locationType = locationType;
-            o.namespace = namespace;
-            o.objectNames = objectNames;
-            return o;
+            final var _resultValue = new GetModelTestStrategyValidationDatasetLocationDetail();
+            _resultValue.bucket = bucket;
+            _resultValue.locationType = locationType;
+            _resultValue.namespace = namespace;
+            _resultValue.objectNames = objectNames;
+            return _resultValue;
         }
     }
 }

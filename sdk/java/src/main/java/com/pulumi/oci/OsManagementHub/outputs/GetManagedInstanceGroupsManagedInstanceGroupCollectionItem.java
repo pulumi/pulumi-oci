@@ -383,26 +383,26 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollectionItem {
             return this;
         }
         public GetManagedInstanceGroupsManagedInstanceGroupCollectionItem build() {
-            final var o = new GetManagedInstanceGroupsManagedInstanceGroupCollectionItem();
-            o.archType = archType;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.managedInstanceCount = managedInstanceCount;
-            o.managedInstanceIds = managedInstanceIds;
-            o.osFamily = osFamily;
-            o.pendingJobCount = pendingJobCount;
-            o.softwareSourceIds = softwareSourceIds;
-            o.softwareSources = softwareSources;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            o.vendorName = vendorName;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupsManagedInstanceGroupCollectionItem();
+            _resultValue.archType = archType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.managedInstanceCount = managedInstanceCount;
+            _resultValue.managedInstanceIds = managedInstanceIds;
+            _resultValue.osFamily = osFamily;
+            _resultValue.pendingJobCount = pendingJobCount;
+            _resultValue.softwareSourceIds = softwareSourceIds;
+            _resultValue.softwareSources = softwareSources;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            _resultValue.vendorName = vendorName;
+            return _resultValue;
         }
     }
 }

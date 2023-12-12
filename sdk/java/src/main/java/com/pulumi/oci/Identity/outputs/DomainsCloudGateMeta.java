@@ -224,13 +224,13 @@ public final class DomainsCloudGateMeta {
             return this;
         }
         public DomainsCloudGateMeta build() {
-            final var o = new DomainsCloudGateMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new DomainsCloudGateMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

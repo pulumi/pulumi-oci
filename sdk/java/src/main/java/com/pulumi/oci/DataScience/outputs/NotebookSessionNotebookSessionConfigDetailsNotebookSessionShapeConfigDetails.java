@@ -67,10 +67,10 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
             return this;
         }
         public NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails build() {
-            final var o = new NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

@@ -306,22 +306,22 @@ public final class GetPrivateEndpointsPrivateEndpointCollectionItem {
             return this;
         }
         public GetPrivateEndpointsPrivateEndpointCollectionItem build() {
-            final var o = new GetPrivateEndpointsPrivateEndpointCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.dnsZones = dnsZones;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isUsedWithConfigurationSourceProvider = isUsedWithConfigurationSourceProvider;
-            o.nsgIdLists = nsgIdLists;
-            o.sourceIps = sourceIps;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetPrivateEndpointsPrivateEndpointCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.dnsZones = dnsZones;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isUsedWithConfigurationSourceProvider = isUsedWithConfigurationSourceProvider;
+            _resultValue.nsgIdLists = nsgIdLists;
+            _resultValue.sourceIps = sourceIps;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

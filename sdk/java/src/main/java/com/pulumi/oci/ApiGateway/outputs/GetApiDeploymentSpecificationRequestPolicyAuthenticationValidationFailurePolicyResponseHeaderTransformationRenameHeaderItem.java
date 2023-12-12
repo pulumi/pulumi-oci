@@ -65,10 +65,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItem build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItem();
-            o.from = from;
-            o.to = to;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationRenameHeaderItem();
+            _resultValue.from = from;
+            _resultValue.to = to;
+            return _resultValue;
         }
     }
 }

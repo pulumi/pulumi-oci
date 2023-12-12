@@ -65,10 +65,10 @@ public final class GetWebAppFirewallPolicyActionBody {
             return this;
         }
         public GetWebAppFirewallPolicyActionBody build() {
-            final var o = new GetWebAppFirewallPolicyActionBody();
-            o.text = text;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPolicyActionBody();
+            _resultValue.text = text;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

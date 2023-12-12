@@ -332,24 +332,24 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
             return this;
         }
         public GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation build() {
-            final var o = new GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation();
-            o.applyLag = applyLag;
-            o.applyRate = applyRate;
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.id = id;
-            o.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.peerAutonomousDatabaseId = peerAutonomousDatabaseId;
-            o.peerAutonomousDatabaseLifeCycleState = peerAutonomousDatabaseLifeCycleState;
-            o.peerRole = peerRole;
-            o.protectionMode = protectionMode;
-            o.role = role;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastRoleChanged = timeLastRoleChanged;
-            o.timeLastSynced = timeLastSynced;
-            o.transportLag = transportLag;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation();
+            _resultValue.applyLag = applyLag;
+            _resultValue.applyRate = applyRate;
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.id = id;
+            _resultValue.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.peerAutonomousDatabaseId = peerAutonomousDatabaseId;
+            _resultValue.peerAutonomousDatabaseLifeCycleState = peerAutonomousDatabaseLifeCycleState;
+            _resultValue.peerRole = peerRole;
+            _resultValue.protectionMode = protectionMode;
+            _resultValue.role = role;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastRoleChanged = timeLastRoleChanged;
+            _resultValue.timeLastSynced = timeLastSynced;
+            _resultValue.transportLag = transportLag;
+            return _resultValue;
         }
     }
 }

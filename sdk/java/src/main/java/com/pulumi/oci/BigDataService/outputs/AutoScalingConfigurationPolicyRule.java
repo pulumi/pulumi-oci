@@ -66,10 +66,10 @@ public final class AutoScalingConfigurationPolicyRule {
             return this;
         }
         public AutoScalingConfigurationPolicyRule build() {
-            final var o = new AutoScalingConfigurationPolicyRule();
-            o.action = action;
-            o.metric = metric;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyRule();
+            _resultValue.action = action;
+            _resultValue.metric = metric;
+            return _resultValue;
         }
     }
 }

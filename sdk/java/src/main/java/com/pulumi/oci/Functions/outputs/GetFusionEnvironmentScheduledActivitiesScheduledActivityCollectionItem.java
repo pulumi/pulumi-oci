@@ -304,23 +304,23 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
             return this;
         }
         public GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem build() {
-            final var o = new GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem();
-            o.actions = actions;
-            o.delayInHours = delayInHours;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.runCycle = runCycle;
-            o.serviceAvailability = serviceAvailability;
-            o.state = state;
-            o.timeAccepted = timeAccepted;
-            o.timeExpectedFinish = timeExpectedFinish;
-            o.timeFinished = timeFinished;
-            o.timeScheduledStart = timeScheduledStart;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem();
+            _resultValue.actions = actions;
+            _resultValue.delayInHours = delayInHours;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.runCycle = runCycle;
+            _resultValue.serviceAvailability = serviceAvailability;
+            _resultValue.state = state;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeExpectedFinish = timeExpectedFinish;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeScheduledStart = timeScheduledStart;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

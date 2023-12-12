@@ -206,17 +206,17 @@ public final class GetSecurityAssessmentFindingsFinding {
             return this;
         }
         public GetSecurityAssessmentFindingsFinding build() {
-            final var o = new GetSecurityAssessmentFindingsFinding();
-            o.assessmentId = assessmentId;
-            o.details = details;
-            o.key = key;
-            o.references = references;
-            o.remarks = remarks;
-            o.severity = severity;
-            o.summary = summary;
-            o.targetId = targetId;
-            o.title = title;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentFindingsFinding();
+            _resultValue.assessmentId = assessmentId;
+            _resultValue.details = details;
+            _resultValue.key = key;
+            _resultValue.references = references;
+            _resultValue.remarks = remarks;
+            _resultValue.severity = severity;
+            _resultValue.summary = summary;
+            _resultValue.targetId = targetId;
+            _resultValue.title = title;
+            return _resultValue;
         }
     }
 }

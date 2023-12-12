@@ -141,14 +141,14 @@ public final class GetShapesShapeMemoryOption {
             return this;
         }
         public GetShapesShapeMemoryOption build() {
-            final var o = new GetShapesShapeMemoryOption();
-            o.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
-            o.maxInGbs = maxInGbs;
-            o.maxPerNumaNodeInGbs = maxPerNumaNodeInGbs;
-            o.maxPerOcpuInGbs = maxPerOcpuInGbs;
-            o.minInGbs = minInGbs;
-            o.minPerOcpuInGbs = minPerOcpuInGbs;
-            return o;
+            final var _resultValue = new GetShapesShapeMemoryOption();
+            _resultValue.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
+            _resultValue.maxInGbs = maxInGbs;
+            _resultValue.maxPerNumaNodeInGbs = maxPerNumaNodeInGbs;
+            _resultValue.maxPerOcpuInGbs = maxPerOcpuInGbs;
+            _resultValue.minInGbs = minInGbs;
+            _resultValue.minPerOcpuInGbs = minPerOcpuInGbs;
+            return _resultValue;
         }
     }
 }

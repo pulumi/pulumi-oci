@@ -166,15 +166,15 @@ public final class GetMediaWorkflowTask {
             return this;
         }
         public GetMediaWorkflowTask build() {
-            final var o = new GetMediaWorkflowTask();
-            o.enableParameterReference = enableParameterReference;
-            o.enableWhenReferencedParameterEquals = enableWhenReferencedParameterEquals;
-            o.key = key;
-            o.parameters = parameters;
-            o.prerequisites = prerequisites;
-            o.type = type;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetMediaWorkflowTask();
+            _resultValue.enableParameterReference = enableParameterReference;
+            _resultValue.enableWhenReferencedParameterEquals = enableWhenReferencedParameterEquals;
+            _resultValue.key = key;
+            _resultValue.parameters = parameters;
+            _resultValue.prerequisites = prerequisites;
+            _resultValue.type = type;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

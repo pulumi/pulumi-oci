@@ -97,12 +97,12 @@ public final class GetVirtualCircuitBandwidthShapesResult {
             return virtualCircuitBandwidthShapes(List.of(virtualCircuitBandwidthShapes));
         }
         public GetVirtualCircuitBandwidthShapesResult build() {
-            final var o = new GetVirtualCircuitBandwidthShapesResult();
-            o.filters = filters;
-            o.id = id;
-            o.providerServiceId = providerServiceId;
-            o.virtualCircuitBandwidthShapes = virtualCircuitBandwidthShapes;
-            return o;
+            final var _resultValue = new GetVirtualCircuitBandwidthShapesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.providerServiceId = providerServiceId;
+            _resultValue.virtualCircuitBandwidthShapes = virtualCircuitBandwidthShapes;
+            return _resultValue;
         }
     }
 }

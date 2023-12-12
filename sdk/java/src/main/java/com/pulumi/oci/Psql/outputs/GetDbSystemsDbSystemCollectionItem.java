@@ -537,34 +537,34 @@ public final class GetDbSystemsDbSystemCollectionItem {
             return this;
         }
         public GetDbSystemsDbSystemCollectionItem build() {
-            final var o = new GetDbSystemsDbSystemCollectionItem();
-            o.adminUsername = adminUsername;
-            o.compartmentId = compartmentId;
-            o.configId = configId;
-            o.credentials = credentials;
-            o.dbVersion = dbVersion;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.instanceCount = instanceCount;
-            o.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
-            o.instanceOcpuCount = instanceOcpuCount;
-            o.instances = instances;
-            o.instancesDetails = instancesDetails;
-            o.lifecycleDetails = lifecycleDetails;
-            o.managementPolicies = managementPolicies;
-            o.networkDetails = networkDetails;
-            o.shape = shape;
-            o.sources = sources;
-            o.state = state;
-            o.storageDetails = storageDetails;
-            o.systemTags = systemTags;
-            o.systemType = systemType;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItem();
+            _resultValue.adminUsername = adminUsername;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configId = configId;
+            _resultValue.credentials = credentials;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.instanceCount = instanceCount;
+            _resultValue.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
+            _resultValue.instanceOcpuCount = instanceOcpuCount;
+            _resultValue.instances = instances;
+            _resultValue.instancesDetails = instancesDetails;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managementPolicies = managementPolicies;
+            _resultValue.networkDetails = networkDetails;
+            _resultValue.shape = shape;
+            _resultValue.sources = sources;
+            _resultValue.state = state;
+            _resultValue.storageDetails = storageDetails;
+            _resultValue.systemTags = systemTags;
+            _resultValue.systemType = systemType;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

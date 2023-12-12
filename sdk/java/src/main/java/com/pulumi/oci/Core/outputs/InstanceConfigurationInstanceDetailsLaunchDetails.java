@@ -601,32 +601,32 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
             return this;
         }
         public InstanceConfigurationInstanceDetailsLaunchDetails build() {
-            final var o = new InstanceConfigurationInstanceDetailsLaunchDetails();
-            o.agentConfig = agentConfig;
-            o.availabilityConfig = availabilityConfig;
-            o.availabilityDomain = availabilityDomain;
-            o.capacityReservationId = capacityReservationId;
-            o.compartmentId = compartmentId;
-            o.createVnicDetails = createVnicDetails;
-            o.dedicatedVmHostId = dedicatedVmHostId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.extendedMetadata = extendedMetadata;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.instanceOptions = instanceOptions;
-            o.ipxeScript = ipxeScript;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.launchMode = launchMode;
-            o.launchOptions = launchOptions;
-            o.metadata = metadata;
-            o.platformConfig = platformConfig;
-            o.preemptibleInstanceConfig = preemptibleInstanceConfig;
-            o.preferredMaintenanceAction = preferredMaintenanceAction;
-            o.shape = shape;
-            o.shapeConfig = shapeConfig;
-            o.sourceDetails = sourceDetails;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsLaunchDetails();
+            _resultValue.agentConfig = agentConfig;
+            _resultValue.availabilityConfig = availabilityConfig;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createVnicDetails = createVnicDetails;
+            _resultValue.dedicatedVmHostId = dedicatedVmHostId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.extendedMetadata = extendedMetadata;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.instanceOptions = instanceOptions;
+            _resultValue.ipxeScript = ipxeScript;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.launchMode = launchMode;
+            _resultValue.launchOptions = launchOptions;
+            _resultValue.metadata = metadata;
+            _resultValue.platformConfig = platformConfig;
+            _resultValue.preemptibleInstanceConfig = preemptibleInstanceConfig;
+            _resultValue.preferredMaintenanceAction = preferredMaintenanceAction;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfig = shapeConfig;
+            _resultValue.sourceDetails = sourceDetails;
+            return _resultValue;
         }
     }
 }

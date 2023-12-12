@@ -487,31 +487,31 @@ public final class GetDomainsAccountRecoverySettingsAccountRecoverySetting {
             return this;
         }
         public GetDomainsAccountRecoverySettingsAccountRecoverySetting build() {
-            final var o = new GetDomainsAccountRecoverySettingsAccountRecoverySetting();
-            o.accountRecoverySettingId = accountRecoverySettingId;
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.externalId = externalId;
-            o.factors = factors;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.lockoutDuration = lockoutDuration;
-            o.maxIncorrectAttempts = maxIncorrectAttempts;
-            o.metas = metas;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            return o;
+            final var _resultValue = new GetDomainsAccountRecoverySettingsAccountRecoverySetting();
+            _resultValue.accountRecoverySettingId = accountRecoverySettingId;
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.externalId = externalId;
+            _resultValue.factors = factors;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.lockoutDuration = lockoutDuration;
+            _resultValue.maxIncorrectAttempts = maxIncorrectAttempts;
+            _resultValue.metas = metas;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetFusionEnvironmentFamilyFamilyMaintenancePolicy {
             return this;
         }
         public GetFusionEnvironmentFamilyFamilyMaintenancePolicy build() {
-            final var o = new GetFusionEnvironmentFamilyFamilyMaintenancePolicy();
-            o.concurrentMaintenance = concurrentMaintenance;
-            o.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
-            o.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamilyFamilyMaintenancePolicy();
+            _resultValue.concurrentMaintenance = concurrentMaintenance;
+            _resultValue.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            _resultValue.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
+            return _resultValue;
         }
     }
 }

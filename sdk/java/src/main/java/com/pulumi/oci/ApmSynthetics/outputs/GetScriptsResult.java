@@ -136,14 +136,14 @@ public final class GetScriptsResult {
             return scriptCollections(List.of(scriptCollections));
         }
         public GetScriptsResult build() {
-            final var o = new GetScriptsResult();
-            o.apmDomainId = apmDomainId;
-            o.contentType = contentType;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.scriptCollections = scriptCollections;
-            return o;
+            final var _resultValue = new GetScriptsResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.contentType = contentType;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.scriptCollections = scriptCollections;
+            return _resultValue;
         }
     }
 }

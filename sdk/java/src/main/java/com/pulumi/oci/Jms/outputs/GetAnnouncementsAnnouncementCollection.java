@@ -50,9 +50,9 @@ public final class GetAnnouncementsAnnouncementCollection {
             return items(List.of(items));
         }
         public GetAnnouncementsAnnouncementCollection build() {
-            final var o = new GetAnnouncementsAnnouncementCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAnnouncementsAnnouncementCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

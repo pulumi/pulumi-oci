@@ -189,12 +189,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser();
-            o.principalName = principalName;
-            o.realmName = realmName;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser();
+            _resultValue.principalName = principalName;
+            _resultValue.realmName = realmName;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

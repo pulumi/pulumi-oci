@@ -42,9 +42,9 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
             return items(List.of(items));
         }
         public GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection build() {
-            final var o = new GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentRefreshActivitiesRefreshActivityCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

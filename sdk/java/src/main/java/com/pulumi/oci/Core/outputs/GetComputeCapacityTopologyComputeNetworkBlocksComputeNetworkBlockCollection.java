@@ -50,9 +50,9 @@ public final class GetComputeCapacityTopologyComputeNetworkBlocksComputeNetworkB
             return items(List.of(items));
         }
         public GetComputeCapacityTopologyComputeNetworkBlocksComputeNetworkBlockCollection build() {
-            final var o = new GetComputeCapacityTopologyComputeNetworkBlocksComputeNetworkBlockCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologyComputeNetworkBlocksComputeNetworkBlockCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

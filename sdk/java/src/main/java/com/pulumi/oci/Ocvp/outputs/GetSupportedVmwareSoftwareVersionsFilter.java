@@ -67,11 +67,11 @@ public final class GetSupportedVmwareSoftwareVersionsFilter {
             return values(List.of(values));
         }
         public GetSupportedVmwareSoftwareVersionsFilter build() {
-            final var o = new GetSupportedVmwareSoftwareVersionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSupportedVmwareSoftwareVersionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

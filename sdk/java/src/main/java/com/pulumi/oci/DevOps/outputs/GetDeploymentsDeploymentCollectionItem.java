@@ -465,30 +465,30 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return this;
         }
         public GetDeploymentsDeploymentCollectionItem build() {
-            final var o = new GetDeploymentsDeploymentCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.deployArtifactOverrideArguments = deployArtifactOverrideArguments;
-            o.deployPipelineArtifacts = deployPipelineArtifacts;
-            o.deployPipelineEnvironments = deployPipelineEnvironments;
-            o.deployPipelineId = deployPipelineId;
-            o.deployStageId = deployStageId;
-            o.deployStageOverrideArguments = deployStageOverrideArguments;
-            o.deploymentArguments = deploymentArguments;
-            o.deploymentExecutionProgresses = deploymentExecutionProgresses;
-            o.deploymentType = deploymentType;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.previousDeploymentId = previousDeploymentId;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.triggerNewDevopsDeployment = triggerNewDevopsDeployment;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deployArtifactOverrideArguments = deployArtifactOverrideArguments;
+            _resultValue.deployPipelineArtifacts = deployPipelineArtifacts;
+            _resultValue.deployPipelineEnvironments = deployPipelineEnvironments;
+            _resultValue.deployPipelineId = deployPipelineId;
+            _resultValue.deployStageId = deployStageId;
+            _resultValue.deployStageOverrideArguments = deployStageOverrideArguments;
+            _resultValue.deploymentArguments = deploymentArguments;
+            _resultValue.deploymentExecutionProgresses = deploymentExecutionProgresses;
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.previousDeploymentId = previousDeploymentId;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggerNewDevopsDeployment = triggerNewDevopsDeployment;
+            return _resultValue;
         }
     }
 }

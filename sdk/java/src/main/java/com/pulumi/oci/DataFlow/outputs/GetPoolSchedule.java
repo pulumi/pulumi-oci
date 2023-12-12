@@ -85,11 +85,11 @@ public final class GetPoolSchedule {
             return this;
         }
         public GetPoolSchedule build() {
-            final var o = new GetPoolSchedule();
-            o.dayOfWeek = dayOfWeek;
-            o.startTime = startTime;
-            o.stopTime = stopTime;
-            return o;
+            final var _resultValue = new GetPoolSchedule();
+            _resultValue.dayOfWeek = dayOfWeek;
+            _resultValue.startTime = startTime;
+            _resultValue.stopTime = stopTime;
+            return _resultValue;
         }
     }
 }

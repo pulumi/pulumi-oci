@@ -65,10 +65,10 @@ public final class GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel {
             return this;
         }
         public GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel build() {
-            final var o = new GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

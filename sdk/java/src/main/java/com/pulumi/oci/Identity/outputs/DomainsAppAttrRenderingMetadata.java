@@ -600,23 +600,23 @@ public final class DomainsAppAttrRenderingMetadata {
             return this;
         }
         public DomainsAppAttrRenderingMetadata build() {
-            final var o = new DomainsAppAttrRenderingMetadata();
-            o.datatype = datatype;
-            o.helptext = helptext;
-            o.label = label;
-            o.maxLength = maxLength;
-            o.maxSize = maxSize;
-            o.minLength = minLength;
-            o.minSize = minSize;
-            o.name = name;
-            o.order = order;
-            o.readOnly = readOnly;
-            o.regexp = regexp;
-            o.required = required;
-            o.section = section;
-            o.visible = visible;
-            o.widget = widget;
-            return o;
+            final var _resultValue = new DomainsAppAttrRenderingMetadata();
+            _resultValue.datatype = datatype;
+            _resultValue.helptext = helptext;
+            _resultValue.label = label;
+            _resultValue.maxLength = maxLength;
+            _resultValue.maxSize = maxSize;
+            _resultValue.minLength = minLength;
+            _resultValue.minSize = minSize;
+            _resultValue.name = name;
+            _resultValue.order = order;
+            _resultValue.readOnly = readOnly;
+            _resultValue.regexp = regexp;
+            _resultValue.required = required;
+            _resultValue.section = section;
+            _resultValue.visible = visible;
+            _resultValue.widget = widget;
+            return _resultValue;
         }
     }
 }

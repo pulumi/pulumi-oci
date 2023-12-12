@@ -65,10 +65,10 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfileTag 
             return this;
         }
         public GetDomainsSelfRegistrationProfilesSelfRegistrationProfileTag build() {
-            final var o = new GetDomainsSelfRegistrationProfilesSelfRegistrationProfileTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSelfRegistrationProfilesSelfRegistrationProfileTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

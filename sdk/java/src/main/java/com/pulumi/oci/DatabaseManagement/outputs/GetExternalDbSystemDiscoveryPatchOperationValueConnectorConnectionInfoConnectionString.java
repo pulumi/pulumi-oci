@@ -127,13 +127,13 @@ public final class GetExternalDbSystemDiscoveryPatchOperationValueConnectorConne
             return this;
         }
         public GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString build() {
-            final var o = new GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString();
-            o.hostName = hostName;
-            o.hosts = hosts;
-            o.port = port;
-            o.protocol = protocol;
-            o.service = service;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString();
+            _resultValue.hostName = hostName;
+            _resultValue.hosts = hosts;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.service = service;
+            return _resultValue;
         }
     }
 }

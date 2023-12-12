@@ -163,15 +163,15 @@ public final class GetDeploymentUpgradesResult {
             return this;
         }
         public GetDeploymentUpgradesResult build() {
-            final var o = new GetDeploymentUpgradesResult();
-            o.compartmentId = compartmentId;
-            o.deploymentId = deploymentId;
-            o.deploymentUpgradeCollections = deploymentUpgradeCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDeploymentUpgradesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.deploymentUpgradeCollections = deploymentUpgradeCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -68,10 +68,10 @@ public final class MigrationDataTransferMediumDetailsDatabaseLinkDetails {
             return this;
         }
         public MigrationDataTransferMediumDetailsDatabaseLinkDetails build() {
-            final var o = new MigrationDataTransferMediumDetailsDatabaseLinkDetails();
-            o.name = name;
-            o.walletBucket = walletBucket;
-            return o;
+            final var _resultValue = new MigrationDataTransferMediumDetailsDatabaseLinkDetails();
+            _resultValue.name = name;
+            _resultValue.walletBucket = walletBucket;
+            return _resultValue;
         }
     }
 }

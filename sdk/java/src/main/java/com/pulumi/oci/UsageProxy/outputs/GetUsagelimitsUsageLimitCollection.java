@@ -50,9 +50,9 @@ public final class GetUsagelimitsUsageLimitCollection {
             return items(List.of(items));
         }
         public GetUsagelimitsUsageLimitCollection build() {
-            final var o = new GetUsagelimitsUsageLimitCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetUsagelimitsUsageLimitCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

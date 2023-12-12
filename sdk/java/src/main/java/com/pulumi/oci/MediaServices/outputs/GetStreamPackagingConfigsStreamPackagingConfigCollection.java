@@ -42,9 +42,9 @@ public final class GetStreamPackagingConfigsStreamPackagingConfigCollection {
             return items(List.of(items));
         }
         public GetStreamPackagingConfigsStreamPackagingConfigCollection build() {
-            final var o = new GetStreamPackagingConfigsStreamPackagingConfigCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetStreamPackagingConfigsStreamPackagingConfigCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

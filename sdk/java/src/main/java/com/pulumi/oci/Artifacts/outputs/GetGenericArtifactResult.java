@@ -268,21 +268,21 @@ public final class GetGenericArtifactResult {
             return this;
         }
         public GetGenericArtifactResult build() {
-            final var o = new GetGenericArtifactResult();
-            o.artifactId = artifactId;
-            o.artifactPath = artifactPath;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.repositoryId = repositoryId;
-            o.sha256 = sha256;
-            o.sizeInBytes = sizeInBytes;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetGenericArtifactResult();
+            _resultValue.artifactId = artifactId;
+            _resultValue.artifactPath = artifactPath;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.sha256 = sha256;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

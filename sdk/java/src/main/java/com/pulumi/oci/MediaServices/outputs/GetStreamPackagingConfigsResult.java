@@ -155,15 +155,15 @@ public final class GetStreamPackagingConfigsResult {
             return this;
         }
         public GetStreamPackagingConfigsResult build() {
-            final var o = new GetStreamPackagingConfigsResult();
-            o.displayName = displayName;
-            o.distributionChannelId = distributionChannelId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.streamPackagingConfigCollections = streamPackagingConfigCollections;
-            o.streamPackagingConfigId = streamPackagingConfigId;
-            return o;
+            final var _resultValue = new GetStreamPackagingConfigsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.distributionChannelId = distributionChannelId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.streamPackagingConfigCollections = streamPackagingConfigCollections;
+            _resultValue.streamPackagingConfigId = streamPackagingConfigId;
+            return _resultValue;
         }
     }
 }

@@ -95,11 +95,11 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
             return verifyClaims(List.of(verifyClaims));
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy();
-            o.audiences = audiences;
-            o.issuers = issuers;
-            o.verifyClaims = verifyClaims;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy();
+            _resultValue.audiences = audiences;
+            _resultValue.issuers = issuers;
+            _resultValue.verifyClaims = verifyClaims;
+            return _resultValue;
         }
     }
 }

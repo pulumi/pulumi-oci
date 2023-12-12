@@ -42,9 +42,9 @@ public final class GetAccessRequestsAccessRequestCollection {
             return items(List.of(items));
         }
         public GetAccessRequestsAccessRequestCollection build() {
-            final var o = new GetAccessRequestsAccessRequestCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAccessRequestsAccessRequestCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

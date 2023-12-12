@@ -232,13 +232,13 @@ public final class DomainsAppGrant {
             return this;
         }
         public DomainsAppGrant build() {
-            final var o = new DomainsAppGrant();
-            o.grantMechanism = grantMechanism;
-            o.granteeId = granteeId;
-            o.granteeType = granteeType;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppGrant();
+            _resultValue.grantMechanism = grantMechanism;
+            _resultValue.granteeId = granteeId;
+            _resultValue.granteeType = granteeType;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

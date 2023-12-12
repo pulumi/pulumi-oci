@@ -249,20 +249,20 @@ public final class GetMetastoreResult {
             return this;
         }
         public GetMetastoreResult build() {
-            final var o = new GetMetastoreResult();
-            o.compartmentId = compartmentId;
-            o.defaultExternalTableLocation = defaultExternalTableLocation;
-            o.defaultManagedTableLocation = defaultManagedTableLocation;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.metastoreId = metastoreId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMetastoreResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.defaultExternalTableLocation = defaultExternalTableLocation;
+            _resultValue.defaultManagedTableLocation = defaultManagedTableLocation;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.metastoreId = metastoreId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

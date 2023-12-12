@@ -73,10 +73,10 @@ public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigura
             return importMetadataPaths(List.of(importMetadataPaths));
         }
         public GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration build() {
-            final var o = new GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration();
-            o.importFormats = importFormats;
-            o.importMetadataPaths = importMetadataPaths;
-            return o;
+            final var _resultValue = new GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration();
+            _resultValue.importFormats = importFormats;
+            _resultValue.importMetadataPaths = importMetadataPaths;
+            return _resultValue;
         }
     }
 }

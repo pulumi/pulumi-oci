@@ -67,11 +67,11 @@ public final class GetDetectAnomalyJobsFilter {
             return values(List.of(values));
         }
         public GetDetectAnomalyJobsFilter build() {
-            final var o = new GetDetectAnomalyJobsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

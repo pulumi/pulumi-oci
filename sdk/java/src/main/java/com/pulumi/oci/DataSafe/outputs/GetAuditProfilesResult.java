@@ -254,21 +254,21 @@ public final class GetAuditProfilesResult {
             return this;
         }
         public GetAuditProfilesResult build() {
-            final var o = new GetAuditProfilesResult();
-            o.accessLevel = accessLevel;
-            o.auditCollectedVolumeGreaterThanOrEqualTo = auditCollectedVolumeGreaterThanOrEqualTo;
-            o.auditProfileCollections = auditProfileCollections;
-            o.auditProfileId = auditProfileId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
-            o.isPaidUsageEnabled = isPaidUsageEnabled;
-            o.state = state;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetAuditProfilesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.auditCollectedVolumeGreaterThanOrEqualTo = auditCollectedVolumeGreaterThanOrEqualTo;
+            _resultValue.auditProfileCollections = auditProfileCollections;
+            _resultValue.auditProfileId = auditProfileId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
+            _resultValue.isPaidUsageEnabled = isPaidUsageEnabled;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

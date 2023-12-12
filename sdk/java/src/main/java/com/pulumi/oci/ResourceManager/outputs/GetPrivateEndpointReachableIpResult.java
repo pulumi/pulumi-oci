@@ -87,12 +87,12 @@ public final class GetPrivateEndpointReachableIpResult {
             return this;
         }
         public GetPrivateEndpointReachableIpResult build() {
-            final var o = new GetPrivateEndpointReachableIpResult();
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.privateEndpointId = privateEndpointId;
-            o.privateIp = privateIp;
-            return o;
+            final var _resultValue = new GetPrivateEndpointReachableIpResult();
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.privateEndpointId = privateEndpointId;
+            _resultValue.privateIp = privateIp;
+            return _resultValue;
         }
     }
 }

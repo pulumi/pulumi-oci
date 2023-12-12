@@ -75,11 +75,11 @@ public final class GetInstancesFilter {
             return values(List.of(values));
         }
         public GetInstancesFilter build() {
-            final var o = new GetInstancesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetInstancesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

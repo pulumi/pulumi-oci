@@ -67,11 +67,11 @@ public final class GetManagedInstanceModuleStreamsFilter {
             return values(List.of(values));
         }
         public GetManagedInstanceModuleStreamsFilter build() {
-            final var o = new GetManagedInstanceModuleStreamsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedInstanceModuleStreamsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

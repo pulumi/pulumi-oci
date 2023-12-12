@@ -149,17 +149,17 @@ public final class GetRrsetResult {
             return this;
         }
         public GetRrsetResult build() {
-            final var o = new GetRrsetResult();
-            o.compartmentId = compartmentId;
-            o.domain = domain;
-            o.id = id;
-            o.items = items;
-            o.rtype = rtype;
-            o.scope = scope;
-            o.viewId = viewId;
-            o.zoneNameOrId = zoneNameOrId;
-            o.zoneVersion = zoneVersion;
-            return o;
+            final var _resultValue = new GetRrsetResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.domain = domain;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.rtype = rtype;
+            _resultValue.scope = scope;
+            _resultValue.viewId = viewId;
+            _resultValue.zoneNameOrId = zoneNameOrId;
+            _resultValue.zoneVersion = zoneVersion;
+            return _resultValue;
         }
     }
 }

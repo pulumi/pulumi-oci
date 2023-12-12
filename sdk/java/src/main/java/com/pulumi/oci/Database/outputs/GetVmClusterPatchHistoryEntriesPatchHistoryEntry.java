@@ -160,15 +160,15 @@ public final class GetVmClusterPatchHistoryEntriesPatchHistoryEntry {
             return this;
         }
         public GetVmClusterPatchHistoryEntriesPatchHistoryEntry build() {
-            final var o = new GetVmClusterPatchHistoryEntriesPatchHistoryEntry();
-            o.action = action;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.patchId = patchId;
-            o.state = state;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetVmClusterPatchHistoryEntriesPatchHistoryEntry();
+            _resultValue.action = action;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.patchId = patchId;
+            _resultValue.state = state;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

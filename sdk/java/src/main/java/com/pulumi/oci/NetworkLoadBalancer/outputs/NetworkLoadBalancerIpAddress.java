@@ -111,12 +111,12 @@ public final class NetworkLoadBalancerIpAddress {
             return reservedIps(List.of(reservedIps));
         }
         public NetworkLoadBalancerIpAddress build() {
-            final var o = new NetworkLoadBalancerIpAddress();
-            o.ipAddress = ipAddress;
-            o.ipVersion = ipVersion;
-            o.isPublic = isPublic;
-            o.reservedIps = reservedIps;
-            return o;
+            final var _resultValue = new NetworkLoadBalancerIpAddress();
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.ipVersion = ipVersion;
+            _resultValue.isPublic = isPublic;
+            _resultValue.reservedIps = reservedIps;
+            return _resultValue;
         }
     }
 }

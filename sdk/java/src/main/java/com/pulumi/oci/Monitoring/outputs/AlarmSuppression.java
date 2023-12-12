@@ -100,11 +100,11 @@ public final class AlarmSuppression {
             return this;
         }
         public AlarmSuppression build() {
-            final var o = new AlarmSuppression();
-            o.description = description;
-            o.timeSuppressFrom = timeSuppressFrom;
-            o.timeSuppressUntil = timeSuppressUntil;
-            return o;
+            final var _resultValue = new AlarmSuppression();
+            _resultValue.description = description;
+            _resultValue.timeSuppressFrom = timeSuppressFrom;
+            _resultValue.timeSuppressUntil = timeSuppressUntil;
+            return _resultValue;
         }
     }
 }

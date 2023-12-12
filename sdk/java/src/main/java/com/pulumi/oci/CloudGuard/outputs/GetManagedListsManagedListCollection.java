@@ -42,9 +42,9 @@ public final class GetManagedListsManagedListCollection {
             return items(List.of(items));
         }
         public GetManagedListsManagedListCollection build() {
-            final var o = new GetManagedListsManagedListCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedListsManagedListCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

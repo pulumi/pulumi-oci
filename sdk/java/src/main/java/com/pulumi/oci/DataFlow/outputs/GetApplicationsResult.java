@@ -174,16 +174,16 @@ public final class GetApplicationsResult {
             return this;
         }
         public GetApplicationsResult build() {
-            final var o = new GetApplicationsResult();
-            o.applications = applications;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.displayNameStartsWith = displayNameStartsWith;
-            o.filters = filters;
-            o.id = id;
-            o.ownerPrincipalId = ownerPrincipalId;
-            o.sparkVersion = sparkVersion;
-            return o;
+            final var _resultValue = new GetApplicationsResult();
+            _resultValue.applications = applications;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameStartsWith = displayNameStartsWith;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ownerPrincipalId = ownerPrincipalId;
+            _resultValue.sparkVersion = sparkVersion;
+            return _resultValue;
         }
     }
 }

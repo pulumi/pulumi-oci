@@ -224,19 +224,19 @@ public final class GetExsiHostsResult {
             return this;
         }
         public GetExsiHostsResult build() {
-            final var o = new GetExsiHostsResult();
-            o.clusterId = clusterId;
-            o.compartmentId = compartmentId;
-            o.computeInstanceId = computeInstanceId;
-            o.displayName = displayName;
-            o.esxiHostCollections = esxiHostCollections;
-            o.filters = filters;
-            o.id = id;
-            o.isBillingDonorsOnly = isBillingDonorsOnly;
-            o.isSwapBillingOnly = isSwapBillingOnly;
-            o.sddcId = sddcId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetExsiHostsResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeInstanceId = computeInstanceId;
+            _resultValue.displayName = displayName;
+            _resultValue.esxiHostCollections = esxiHostCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isBillingDonorsOnly = isBillingDonorsOnly;
+            _resultValue.isSwapBillingOnly = isSwapBillingOnly;
+            _resultValue.sddcId = sddcId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

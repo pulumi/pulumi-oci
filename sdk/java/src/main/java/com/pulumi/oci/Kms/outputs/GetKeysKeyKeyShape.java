@@ -85,11 +85,11 @@ public final class GetKeysKeyKeyShape {
             return this;
         }
         public GetKeysKeyKeyShape build() {
-            final var o = new GetKeysKeyKeyShape();
-            o.algorithm = algorithm;
-            o.curveId = curveId;
-            o.length = length;
-            return o;
+            final var _resultValue = new GetKeysKeyKeyShape();
+            _resultValue.algorithm = algorithm;
+            _resultValue.curveId = curveId;
+            _resultValue.length = length;
+            return _resultValue;
         }
     }
 }

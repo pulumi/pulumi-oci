@@ -216,22 +216,22 @@ public final class GetDomainsMyCompletedApprovalsResult {
             return this;
         }
         public GetDomainsMyCompletedApprovalsResult build() {
-            final var o = new GetDomainsMyCompletedApprovalsResult();
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.myCompletedApprovalCount = myCompletedApprovalCount;
-            o.myCompletedApprovalFilter = myCompletedApprovalFilter;
-            o.myCompletedApprovals = myCompletedApprovals;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsMyCompletedApprovalsResult();
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.myCompletedApprovalCount = myCompletedApprovalCount;
+            _resultValue.myCompletedApprovalFilter = myCompletedApprovalFilter;
+            _resultValue.myCompletedApprovals = myCompletedApprovals;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

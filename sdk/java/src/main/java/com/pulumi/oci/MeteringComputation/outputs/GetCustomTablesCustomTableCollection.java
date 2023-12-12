@@ -42,9 +42,9 @@ public final class GetCustomTablesCustomTableCollection {
             return items(List.of(items));
         }
         public GetCustomTablesCustomTableCollection build() {
-            final var o = new GetCustomTablesCustomTableCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetCustomTablesCustomTableCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

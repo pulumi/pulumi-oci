@@ -84,11 +84,11 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingForma
             return this;
         }
         public GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat build() {
-            final var o = new GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat();
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormat();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

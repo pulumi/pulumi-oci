@@ -42,9 +42,9 @@ public final class GetMaskingPoliciesMaskingPolicyCollection {
             return items(List.of(items));
         }
         public GetMaskingPoliciesMaskingPolicyCollection build() {
-            final var o = new GetMaskingPoliciesMaskingPolicyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesMaskingPolicyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

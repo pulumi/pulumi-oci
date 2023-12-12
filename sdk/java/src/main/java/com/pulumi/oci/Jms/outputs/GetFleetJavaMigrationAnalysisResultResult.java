@@ -365,26 +365,26 @@ public final class GetFleetJavaMigrationAnalysisResultResult {
             return this;
         }
         public GetFleetJavaMigrationAnalysisResultResult build() {
-            final var o = new GetFleetJavaMigrationAnalysisResultResult();
-            o.applicationExecutionType = applicationExecutionType;
-            o.applicationKey = applicationKey;
-            o.applicationName = applicationName;
-            o.applicationPath = applicationPath;
-            o.bucket = bucket;
-            o.fleetId = fleetId;
-            o.hostName = hostName;
-            o.id = id;
-            o.javaMigrationAnalysisResultId = javaMigrationAnalysisResultId;
-            o.managedInstanceId = managedInstanceId;
-            o.metadata = metadata;
-            o.namespace = namespace;
-            o.objectLists = objectLists;
-            o.objectStorageUploadDirPath = objectStorageUploadDirPath;
-            o.sourceJdkVersion = sourceJdkVersion;
-            o.targetJdkVersion = targetJdkVersion;
-            o.timeCreated = timeCreated;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetFleetJavaMigrationAnalysisResultResult();
+            _resultValue.applicationExecutionType = applicationExecutionType;
+            _resultValue.applicationKey = applicationKey;
+            _resultValue.applicationName = applicationName;
+            _resultValue.applicationPath = applicationPath;
+            _resultValue.bucket = bucket;
+            _resultValue.fleetId = fleetId;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.javaMigrationAnalysisResultId = javaMigrationAnalysisResultId;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.metadata = metadata;
+            _resultValue.namespace = namespace;
+            _resultValue.objectLists = objectLists;
+            _resultValue.objectStorageUploadDirPath = objectStorageUploadDirPath;
+            _resultValue.sourceJdkVersion = sourceJdkVersion;
+            _resultValue.targetJdkVersion = targetJdkVersion;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

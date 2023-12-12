@@ -91,11 +91,11 @@ public final class DeploymentDeployPipelineEnvironmentItem {
             return this;
         }
         public DeploymentDeployPipelineEnvironmentItem build() {
-            final var o = new DeploymentDeployPipelineEnvironmentItem();
-            o.deployEnvironmentId = deployEnvironmentId;
-            o.deployPipelineStages = deployPipelineStages;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new DeploymentDeployPipelineEnvironmentItem();
+            _resultValue.deployEnvironmentId = deployEnvironmentId;
+            _resultValue.deployPipelineStages = deployPipelineStages;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

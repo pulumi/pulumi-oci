@@ -109,12 +109,12 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
             return this;
         }
         public GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant build() {
-            final var o = new GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant();
-            o.appId = appId;
-            o.grantMechanism = grantMechanism;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrant();
+            _resultValue.appId = appId;
+            _resultValue.grantMechanism = grantMechanism;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -89,11 +89,11 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationVerif
             return values(List.of(values));
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim();
-            o.isRequired = isRequired;
-            o.key = key;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim();
+            _resultValue.isRequired = isRequired;
+            _resultValue.key = key;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

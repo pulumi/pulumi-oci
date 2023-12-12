@@ -65,10 +65,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendSe
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource();
-            o.selector = selector;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteBackendSelectionSource();
+            _resultValue.selector = selector;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

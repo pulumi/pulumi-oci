@@ -144,14 +144,14 @@ public final class GetPingMonitorsResult {
             return pingMonitors(List.of(pingMonitors));
         }
         public GetPingMonitorsResult build() {
-            final var o = new GetPingMonitorsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.homeRegion = homeRegion;
-            o.id = id;
-            o.pingMonitors = pingMonitors;
-            return o;
+            final var _resultValue = new GetPingMonitorsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.homeRegion = homeRegion;
+            _resultValue.id = id;
+            _resultValue.pingMonitors = pingMonitors;
+            return _resultValue;
         }
     }
 }

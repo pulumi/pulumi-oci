@@ -519,32 +519,32 @@ public final class GetDomainsMyAppsMyApp {
             return userWalletArtifacts(List.of(userWalletArtifacts));
         }
         public GetDomainsMyAppsMyApp build() {
-            final var o = new GetDomainsMyAppsMyApp();
-            o.accountType = accountType;
-            o.active = active;
-            o.apps = apps;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.favorite = favorite;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.isAccount = isAccount;
-            o.lastAccessed = lastAccessed;
-            o.launchUrl = launchUrl;
-            o.metas = metas;
-            o.name = name;
-            o.ocid = ocid;
-            o.owners = owners;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.uid = uid;
-            o.userWalletArtifacts = userWalletArtifacts;
-            return o;
+            final var _resultValue = new GetDomainsMyAppsMyApp();
+            _resultValue.accountType = accountType;
+            _resultValue.active = active;
+            _resultValue.apps = apps;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.favorite = favorite;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.isAccount = isAccount;
+            _resultValue.lastAccessed = lastAccessed;
+            _resultValue.launchUrl = launchUrl;
+            _resultValue.metas = metas;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.owners = owners;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.uid = uid;
+            _resultValue.userWalletArtifacts = userWalletArtifacts;
+            return _resultValue;
         }
     }
 }

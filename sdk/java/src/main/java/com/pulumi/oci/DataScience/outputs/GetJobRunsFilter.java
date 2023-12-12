@@ -67,11 +67,11 @@ public final class GetJobRunsFilter {
             return values(List.of(values));
         }
         public GetJobRunsFilter build() {
-            final var o = new GetJobRunsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetJobRunsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

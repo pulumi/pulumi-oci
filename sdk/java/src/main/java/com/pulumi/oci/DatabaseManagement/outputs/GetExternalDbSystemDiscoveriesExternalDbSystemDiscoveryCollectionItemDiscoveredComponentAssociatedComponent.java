@@ -84,11 +84,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent();
-            o.associationType = associationType;
-            o.componentId = componentId;
-            o.componentType = componentType;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent();
+            _resultValue.associationType = associationType;
+            _resultValue.componentId = componentId;
+            _resultValue.componentType = componentType;
+            return _resultValue;
         }
     }
 }

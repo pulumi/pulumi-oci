@@ -42,9 +42,9 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollection {
             return items(List.of(items));
         }
         public GetDedicatedVantagePointsDedicatedVantagePointCollection build() {
-            final var o = new GetDedicatedVantagePointsDedicatedVantagePointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDedicatedVantagePointsDedicatedVantagePointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

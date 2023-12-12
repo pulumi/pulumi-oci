@@ -84,11 +84,11 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemIte
             return this;
         }
         public GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem build() {
-            final var o = new GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem();
-            o.emailId = emailId;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            return o;
+            final var _resultValue = new GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItem();
+            _resultValue.emailId = emailId;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
             return this;
         }
         public GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig build() {
-            final var o = new GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig();
-            o.connectorId = connectorId;
-            o.repositoryUrl = repositoryUrl;
-            o.triggerSchedule = triggerSchedule;
-            return o;
+            final var _resultValue = new GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig();
+            _resultValue.connectorId = connectorId;
+            _resultValue.repositoryUrl = repositoryUrl;
+            _resultValue.triggerSchedule = triggerSchedule;
+            return _resultValue;
         }
     }
 }

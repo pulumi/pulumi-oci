@@ -136,14 +136,14 @@ public final class GetLimitDefinitionsResult {
             return this;
         }
         public GetLimitDefinitionsResult build() {
-            final var o = new GetLimitDefinitionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.limitDefinitions = limitDefinitions;
-            o.name = name;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new GetLimitDefinitionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.limitDefinitions = limitDefinitions;
+            _resultValue.name = name;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

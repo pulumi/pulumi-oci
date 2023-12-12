@@ -178,19 +178,19 @@ public final class GetObjectsResult {
             return this;
         }
         public GetObjectsResult build() {
-            final var o = new GetObjectsResult();
-            o.bucket = bucket;
-            o.delimiter = delimiter;
-            o.end = end;
-            o.filters = filters;
-            o.id = id;
-            o.namespace = namespace;
-            o.objects = objects;
-            o.prefix = prefix;
-            o.prefixes = prefixes;
-            o.start = start;
-            o.startAfter = startAfter;
-            return o;
+            final var _resultValue = new GetObjectsResult();
+            _resultValue.bucket = bucket;
+            _resultValue.delimiter = delimiter;
+            _resultValue.end = end;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.objects = objects;
+            _resultValue.prefix = prefix;
+            _resultValue.prefixes = prefixes;
+            _resultValue.start = start;
+            _resultValue.startAfter = startAfter;
+            return _resultValue;
         }
     }
 }

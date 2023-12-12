@@ -175,16 +175,16 @@ public final class GetSoftwareSourceModuleStreamsResult {
             return this;
         }
         public GetSoftwareSourceModuleStreamsResult build() {
-            final var o = new GetSoftwareSourceModuleStreamsResult();
-            o.filters = filters;
-            o.id = id;
-            o.isLatest = isLatest;
-            o.moduleName = moduleName;
-            o.moduleNameContains = moduleNameContains;
-            o.moduleStreamCollections = moduleStreamCollections;
-            o.name = name;
-            o.softwareSourceId = softwareSourceId;
-            return o;
+            final var _resultValue = new GetSoftwareSourceModuleStreamsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isLatest = isLatest;
+            _resultValue.moduleName = moduleName;
+            _resultValue.moduleNameContains = moduleNameContains;
+            _resultValue.moduleStreamCollections = moduleStreamCollections;
+            _resultValue.name = name;
+            _resultValue.softwareSourceId = softwareSourceId;
+            return _resultValue;
         }
     }
 }

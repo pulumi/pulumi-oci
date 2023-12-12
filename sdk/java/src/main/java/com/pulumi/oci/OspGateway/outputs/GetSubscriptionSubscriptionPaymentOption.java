@@ -236,19 +236,19 @@ public final class GetSubscriptionSubscriptionPaymentOption {
             return this;
         }
         public GetSubscriptionSubscriptionPaymentOption build() {
-            final var o = new GetSubscriptionSubscriptionPaymentOption();
-            o.creditCardType = creditCardType;
-            o.emailAddress = emailAddress;
-            o.extBillingAgreementId = extBillingAgreementId;
-            o.firstName = firstName;
-            o.lastDigits = lastDigits;
-            o.lastName = lastName;
-            o.nameOnCard = nameOnCard;
-            o.paymentMethod = paymentMethod;
-            o.timeExpiration = timeExpiration;
-            o.walletInstrumentId = walletInstrumentId;
-            o.walletTransactionId = walletTransactionId;
-            return o;
+            final var _resultValue = new GetSubscriptionSubscriptionPaymentOption();
+            _resultValue.creditCardType = creditCardType;
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.extBillingAgreementId = extBillingAgreementId;
+            _resultValue.firstName = firstName;
+            _resultValue.lastDigits = lastDigits;
+            _resultValue.lastName = lastName;
+            _resultValue.nameOnCard = nameOnCard;
+            _resultValue.paymentMethod = paymentMethod;
+            _resultValue.timeExpiration = timeExpiration;
+            _resultValue.walletInstrumentId = walletInstrumentId;
+            _resultValue.walletTransactionId = walletTransactionId;
+            return _resultValue;
         }
     }
 }

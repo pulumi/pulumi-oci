@@ -287,21 +287,21 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItem {
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItem build() {
-            final var o = new GetExternalDatabasesExternalDatabaseCollectionItem();
-            o.compartmentId = compartmentId;
-            o.databaseSubType = databaseSubType;
-            o.databaseType = databaseType;
-            o.dbManagementConfigs = dbManagementConfigs;
-            o.dbSystemInfos = dbSystemInfos;
-            o.dbUniqueName = dbUniqueName;
-            o.displayName = displayName;
-            o.externalContainerDatabaseId = externalContainerDatabaseId;
-            o.externalDbHomeId = externalDbHomeId;
-            o.id = id;
-            o.instanceDetails = instanceDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetExternalDatabasesExternalDatabaseCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseSubType = databaseSubType;
+            _resultValue.databaseType = databaseType;
+            _resultValue.dbManagementConfigs = dbManagementConfigs;
+            _resultValue.dbSystemInfos = dbSystemInfos;
+            _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.displayName = displayName;
+            _resultValue.externalContainerDatabaseId = externalContainerDatabaseId;
+            _resultValue.externalDbHomeId = externalDbHomeId;
+            _resultValue.id = id;
+            _resultValue.instanceDetails = instanceDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

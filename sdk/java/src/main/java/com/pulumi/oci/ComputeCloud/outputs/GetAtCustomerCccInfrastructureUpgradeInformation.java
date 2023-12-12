@@ -104,12 +104,12 @@ public final class GetAtCustomerCccInfrastructureUpgradeInformation {
             return this;
         }
         public GetAtCustomerCccInfrastructureUpgradeInformation build() {
-            final var o = new GetAtCustomerCccInfrastructureUpgradeInformation();
-            o.currentVersion = currentVersion;
-            o.isActive = isActive;
-            o.scheduledUpgradeDuration = scheduledUpgradeDuration;
-            o.timeOfScheduledUpgrade = timeOfScheduledUpgrade;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructureUpgradeInformation();
+            _resultValue.currentVersion = currentVersion;
+            _resultValue.isActive = isActive;
+            _resultValue.scheduledUpgradeDuration = scheduledUpgradeDuration;
+            _resultValue.timeOfScheduledUpgrade = timeOfScheduledUpgrade;
+            return _resultValue;
         }
     }
 }

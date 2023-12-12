@@ -243,13 +243,13 @@ public final class DomainsSettingCloudGateCorsSettings {
             return this;
         }
         public DomainsSettingCloudGateCorsSettings build() {
-            final var o = new DomainsSettingCloudGateCorsSettings();
-            o.cloudGateCorsAllowNullOrigin = cloudGateCorsAllowNullOrigin;
-            o.cloudGateCorsAllowedOrigins = cloudGateCorsAllowedOrigins;
-            o.cloudGateCorsEnabled = cloudGateCorsEnabled;
-            o.cloudGateCorsExposedHeaders = cloudGateCorsExposedHeaders;
-            o.cloudGateCorsMaxAge = cloudGateCorsMaxAge;
-            return o;
+            final var _resultValue = new DomainsSettingCloudGateCorsSettings();
+            _resultValue.cloudGateCorsAllowNullOrigin = cloudGateCorsAllowNullOrigin;
+            _resultValue.cloudGateCorsAllowedOrigins = cloudGateCorsAllowedOrigins;
+            _resultValue.cloudGateCorsEnabled = cloudGateCorsEnabled;
+            _resultValue.cloudGateCorsExposedHeaders = cloudGateCorsExposedHeaders;
+            _resultValue.cloudGateCorsMaxAge = cloudGateCorsMaxAge;
+            return _resultValue;
         }
     }
 }

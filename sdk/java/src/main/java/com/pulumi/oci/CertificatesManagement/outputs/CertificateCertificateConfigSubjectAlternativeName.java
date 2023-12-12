@@ -65,10 +65,10 @@ public final class CertificateCertificateConfigSubjectAlternativeName {
             return this;
         }
         public CertificateCertificateConfigSubjectAlternativeName build() {
-            final var o = new CertificateCertificateConfigSubjectAlternativeName();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new CertificateCertificateConfigSubjectAlternativeName();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -204,17 +204,17 @@ public final class GetInvoicesInvoiceLinesInvoiceLineCollectionItem {
             return this;
         }
         public GetInvoicesInvoiceLinesInvoiceLineCollectionItem build() {
-            final var o = new GetInvoicesInvoiceLinesInvoiceLineCollectionItem();
-            o.currencies = currencies;
-            o.netUnitPrice = netUnitPrice;
-            o.orderNo = orderNo;
-            o.partNumber = partNumber;
-            o.product = product;
-            o.quantity = quantity;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            o.totalPrice = totalPrice;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceLinesInvoiceLineCollectionItem();
+            _resultValue.currencies = currencies;
+            _resultValue.netUnitPrice = netUnitPrice;
+            _resultValue.orderNo = orderNo;
+            _resultValue.partNumber = partNumber;
+            _resultValue.product = product;
+            _resultValue.quantity = quantity;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            _resultValue.totalPrice = totalPrice;
+            return _resultValue;
         }
     }
 }

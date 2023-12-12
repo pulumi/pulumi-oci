@@ -57,10 +57,10 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAd
             return this;
         }
         public GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential build() {
-            final var o = new GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential();
-            o.password = password;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential();
+            _resultValue.password = password;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

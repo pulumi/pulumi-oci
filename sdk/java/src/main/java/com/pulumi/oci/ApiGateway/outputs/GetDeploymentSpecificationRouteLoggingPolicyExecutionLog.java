@@ -66,10 +66,10 @@ public final class GetDeploymentSpecificationRouteLoggingPolicyExecutionLog {
             return this;
         }
         public GetDeploymentSpecificationRouteLoggingPolicyExecutionLog build() {
-            final var o = new GetDeploymentSpecificationRouteLoggingPolicyExecutionLog();
-            o.isEnabled = isEnabled;
-            o.logLevel = logLevel;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteLoggingPolicyExecutionLog();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.logLevel = logLevel;
+            return _resultValue;
         }
     }
 }

@@ -96,11 +96,11 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
             return statementCounts(List.of(statementCounts));
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic();
-            o.findingBenefits = findingBenefits;
-            o.findingCounts = findingCounts;
-            o.statementCounts = statementCounts;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic();
+            _resultValue.findingBenefits = findingBenefits;
+            _resultValue.findingCounts = findingCounts;
+            _resultValue.statementCounts = statementCounts;
+            return _resultValue;
         }
     }
 }

@@ -265,16 +265,16 @@ public final class ListenerSslConfiguration {
             return this;
         }
         public ListenerSslConfiguration build() {
-            final var o = new ListenerSslConfiguration();
-            o.certificateIds = certificateIds;
-            o.certificateName = certificateName;
-            o.cipherSuiteName = cipherSuiteName;
-            o.protocols = protocols;
-            o.serverOrderPreference = serverOrderPreference;
-            o.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
-            o.verifyDepth = verifyDepth;
-            o.verifyPeerCertificate = verifyPeerCertificate;
-            return o;
+            final var _resultValue = new ListenerSslConfiguration();
+            _resultValue.certificateIds = certificateIds;
+            _resultValue.certificateName = certificateName;
+            _resultValue.cipherSuiteName = cipherSuiteName;
+            _resultValue.protocols = protocols;
+            _resultValue.serverOrderPreference = serverOrderPreference;
+            _resultValue.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
+            _resultValue.verifyDepth = verifyDepth;
+            _resultValue.verifyPeerCertificate = verifyPeerCertificate;
+            return _resultValue;
         }
     }
 }

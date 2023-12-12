@@ -85,11 +85,11 @@ public final class GetDomainsAppsAppAllowedTag {
             return this;
         }
         public GetDomainsAppsAppAllowedTag build() {
-            final var o = new GetDomainsAppsAppAllowedTag();
-            o.key = key;
-            o.readOnly = readOnly;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppAllowedTag();
+            _resultValue.key = key;
+            _resultValue.readOnly = readOnly;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

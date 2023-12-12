@@ -42,9 +42,9 @@ public final class GetLifecycleStagesLifecycleStageCollection {
             return items(List.of(items));
         }
         public GetLifecycleStagesLifecycleStageCollection build() {
-            final var o = new GetLifecycleStagesLifecycleStageCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetLifecycleStagesLifecycleStageCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

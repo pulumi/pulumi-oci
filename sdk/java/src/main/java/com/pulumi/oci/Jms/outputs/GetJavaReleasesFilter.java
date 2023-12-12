@@ -67,11 +67,11 @@ public final class GetJavaReleasesFilter {
             return values(List.of(values));
         }
         public GetJavaReleasesFilter build() {
-            final var o = new GetJavaReleasesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetJavaReleasesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

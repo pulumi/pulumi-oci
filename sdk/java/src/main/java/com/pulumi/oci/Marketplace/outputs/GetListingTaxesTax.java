@@ -103,12 +103,12 @@ public final class GetListingTaxesTax {
             return this;
         }
         public GetListingTaxesTax build() {
-            final var o = new GetListingTaxesTax();
-            o.code = code;
-            o.country = country;
-            o.name = name;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetListingTaxesTax();
+            _resultValue.code = code;
+            _resultValue.country = country;
+            _resultValue.name = name;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

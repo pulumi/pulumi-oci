@@ -316,23 +316,23 @@ public final class GetAlertRulesAlertRule {
             return this;
         }
         public GetAlertRulesAlertRule build() {
-            final var o = new GetAlertRulesAlertRule();
-            o.budgetId = budgetId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.message = message;
-            o.recipients = recipients;
-            o.state = state;
-            o.threshold = threshold;
-            o.thresholdType = thresholdType;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAlertRulesAlertRule();
+            _resultValue.budgetId = budgetId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.message = message;
+            _resultValue.recipients = recipients;
+            _resultValue.state = state;
+            _resultValue.threshold = threshold;
+            _resultValue.thresholdType = thresholdType;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

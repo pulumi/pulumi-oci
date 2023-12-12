@@ -163,15 +163,15 @@ public final class GetIdentityProvidersResult {
             return this;
         }
         public GetIdentityProvidersResult build() {
-            final var o = new GetIdentityProvidersResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.identityProviders = identityProviders;
-            o.name = name;
-            o.protocol = protocol;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetIdentityProvidersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.identityProviders = identityProviders;
+            _resultValue.name = name;
+            _resultValue.protocol = protocol;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

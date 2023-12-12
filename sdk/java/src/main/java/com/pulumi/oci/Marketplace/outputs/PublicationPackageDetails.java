@@ -130,13 +130,13 @@ public final class PublicationPackageDetails {
             return this;
         }
         public PublicationPackageDetails build() {
-            final var o = new PublicationPackageDetails();
-            o.eulas = eulas;
-            o.imageId = imageId;
-            o.operatingSystem = operatingSystem;
-            o.packageType = packageType;
-            o.packageVersion = packageVersion;
-            return o;
+            final var _resultValue = new PublicationPackageDetails();
+            _resultValue.eulas = eulas;
+            _resultValue.imageId = imageId;
+            _resultValue.operatingSystem = operatingSystem;
+            _resultValue.packageType = packageType;
+            _resultValue.packageVersion = packageVersion;
+            return _resultValue;
         }
     }
 }

@@ -89,11 +89,11 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
             return properties(List.of(properties));
         }
         public GetDiscoveryJobDiscoveryDetailCredentialItem build() {
-            final var o = new GetDiscoveryJobDiscoveryDetailCredentialItem();
-            o.credentialName = credentialName;
-            o.credentialType = credentialType;
-            o.properties = properties;
-            return o;
+            final var _resultValue = new GetDiscoveryJobDiscoveryDetailCredentialItem();
+            _resultValue.credentialName = credentialName;
+            _resultValue.credentialType = credentialType;
+            _resultValue.properties = properties;
+            return _resultValue;
         }
     }
 }

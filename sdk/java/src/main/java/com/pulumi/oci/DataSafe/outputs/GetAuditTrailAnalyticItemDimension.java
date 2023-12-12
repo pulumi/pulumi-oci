@@ -103,12 +103,12 @@ public final class GetAuditTrailAnalyticItemDimension {
             return this;
         }
         public GetAuditTrailAnalyticItemDimension build() {
-            final var o = new GetAuditTrailAnalyticItemDimension();
-            o.location = location;
-            o.state = state;
-            o.status = status;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetAuditTrailAnalyticItemDimension();
+            _resultValue.location = location;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

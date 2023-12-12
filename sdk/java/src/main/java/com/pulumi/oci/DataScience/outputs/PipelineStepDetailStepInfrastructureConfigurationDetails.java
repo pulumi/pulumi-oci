@@ -88,11 +88,11 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetails {
             return this;
         }
         public PipelineStepDetailStepInfrastructureConfigurationDetails build() {
-            final var o = new PipelineStepDetailStepInfrastructureConfigurationDetails();
-            o.blockStorageSizeInGbs = blockStorageSizeInGbs;
-            o.shapeConfigDetails = shapeConfigDetails;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new PipelineStepDetailStepInfrastructureConfigurationDetails();
+            _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.shapeConfigDetails = shapeConfigDetails;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

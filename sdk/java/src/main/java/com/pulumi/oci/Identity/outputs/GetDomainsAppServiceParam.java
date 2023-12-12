@@ -65,10 +65,10 @@ public final class GetDomainsAppServiceParam {
             return this;
         }
         public GetDomainsAppServiceParam build() {
-            final var o = new GetDomainsAppServiceParam();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppServiceParam();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

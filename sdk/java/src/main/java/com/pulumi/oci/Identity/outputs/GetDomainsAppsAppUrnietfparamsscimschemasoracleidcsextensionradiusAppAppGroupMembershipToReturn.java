@@ -84,11 +84,11 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionr
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

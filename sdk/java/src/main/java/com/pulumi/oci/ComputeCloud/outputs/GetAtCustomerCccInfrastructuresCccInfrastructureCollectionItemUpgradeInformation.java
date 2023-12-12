@@ -104,12 +104,12 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
             return this;
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation build() {
-            final var o = new GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation();
-            o.currentVersion = currentVersion;
-            o.isActive = isActive;
-            o.scheduledUpgradeDuration = scheduledUpgradeDuration;
-            o.timeOfScheduledUpgrade = timeOfScheduledUpgrade;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation();
+            _resultValue.currentVersion = currentVersion;
+            _resultValue.isActive = isActive;
+            _resultValue.scheduledUpgradeDuration = scheduledUpgradeDuration;
+            _resultValue.timeOfScheduledUpgrade = timeOfScheduledUpgrade;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class VirtualNodePoolTaint {
             return this;
         }
         public VirtualNodePoolTaint build() {
-            final var o = new VirtualNodePoolTaint();
-            o.effect = effect;
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new VirtualNodePoolTaint();
+            _resultValue.effect = effect;
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

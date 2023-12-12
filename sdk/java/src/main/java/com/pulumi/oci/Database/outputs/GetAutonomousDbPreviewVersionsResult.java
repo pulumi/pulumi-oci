@@ -97,12 +97,12 @@ public final class GetAutonomousDbPreviewVersionsResult {
             return this;
         }
         public GetAutonomousDbPreviewVersionsResult build() {
-            final var o = new GetAutonomousDbPreviewVersionsResult();
-            o.autonomousDbPreviewVersions = autonomousDbPreviewVersions;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAutonomousDbPreviewVersionsResult();
+            _resultValue.autonomousDbPreviewVersions = autonomousDbPreviewVersions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

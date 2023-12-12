@@ -138,13 +138,13 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             return urls(List.of(urls));
         }
         public GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition build() {
-            final var o = new GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition();
-            o.applications = applications;
-            o.destinationAddresses = destinationAddresses;
-            o.services = services;
-            o.sourceAddresses = sourceAddresses;
-            o.urls = urls;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollectionItemCondition();
+            _resultValue.applications = applications;
+            _resultValue.destinationAddresses = destinationAddresses;
+            _resultValue.services = services;
+            _resultValue.sourceAddresses = sourceAddresses;
+            _resultValue.urls = urls;
+            return _resultValue;
         }
     }
 }

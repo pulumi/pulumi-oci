@@ -109,13 +109,13 @@ public final class GetListingTaxesResult {
             return taxes(List.of(taxes));
         }
         public GetListingTaxesResult build() {
-            final var o = new GetListingTaxesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.listingId = listingId;
-            o.taxes = taxes;
-            return o;
+            final var _resultValue = new GetListingTaxesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            _resultValue.taxes = taxes;
+            return _resultValue;
         }
     }
 }

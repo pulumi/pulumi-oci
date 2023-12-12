@@ -84,11 +84,11 @@ public final class GetSubscriptionsSubscriptionCurrency {
             return this;
         }
         public GetSubscriptionsSubscriptionCurrency build() {
-            final var o = new GetSubscriptionsSubscriptionCurrency();
-            o.isoCode = isoCode;
-            o.name = name;
-            o.stdPrecision = stdPrecision;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionCurrency();
+            _resultValue.isoCode = isoCode;
+            _resultValue.name = name;
+            _resultValue.stdPrecision = stdPrecision;
+            return _resultValue;
         }
     }
 }

@@ -341,15 +341,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
             return syncedFromApps(List.of(syncedFromApps));
         }
         public DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup build() {
-            final var o = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup();
-            o.appRoles = appRoles;
-            o.creationMechanism = creationMechanism;
-            o.description = description;
-            o.grants = grants;
-            o.owners = owners;
-            o.passwordPolicies = passwordPolicies;
-            o.syncedFromApps = syncedFromApps;
-            return o;
+            final var _resultValue = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup();
+            _resultValue.appRoles = appRoles;
+            _resultValue.creationMechanism = creationMechanism;
+            _resultValue.description = description;
+            _resultValue.grants = grants;
+            _resultValue.owners = owners;
+            _resultValue.passwordPolicies = passwordPolicies;
+            _resultValue.syncedFromApps = syncedFromApps;
+            return _resultValue;
         }
     }
 }

@@ -126,13 +126,13 @@ public final class ProcessorJobProcessorConfigFeature {
             return this;
         }
         public ProcessorJobProcessorConfigFeature build() {
-            final var o = new ProcessorJobProcessorConfigFeature();
-            o.featureType = featureType;
-            o.generateSearchablePdf = generateSearchablePdf;
-            o.maxResults = maxResults;
-            o.modelId = modelId;
-            o.tenancyId = tenancyId;
-            return o;
+            final var _resultValue = new ProcessorJobProcessorConfigFeature();
+            _resultValue.featureType = featureType;
+            _resultValue.generateSearchablePdf = generateSearchablePdf;
+            _resultValue.maxResults = maxResults;
+            _resultValue.modelId = modelId;
+            _resultValue.tenancyId = tenancyId;
+            return _resultValue;
         }
     }
 }

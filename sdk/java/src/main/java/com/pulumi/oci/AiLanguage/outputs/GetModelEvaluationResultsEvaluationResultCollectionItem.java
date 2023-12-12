@@ -215,17 +215,17 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
             return trueLabels(List.of(trueLabels));
         }
         public GetModelEvaluationResultsEvaluationResultCollectionItem build() {
-            final var o = new GetModelEvaluationResultsEvaluationResultCollectionItem();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.location = location;
-            o.modelType = modelType;
-            o.predictedEntities = predictedEntities;
-            o.predictedLabels = predictedLabels;
-            o.record = record;
-            o.trueEntities = trueEntities;
-            o.trueLabels = trueLabels;
-            return o;
+            final var _resultValue = new GetModelEvaluationResultsEvaluationResultCollectionItem();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.location = location;
+            _resultValue.modelType = modelType;
+            _resultValue.predictedEntities = predictedEntities;
+            _resultValue.predictedLabels = predictedLabels;
+            _resultValue.record = record;
+            _resultValue.trueEntities = trueEntities;
+            _resultValue.trueLabels = trueLabels;
+            return _resultValue;
         }
     }
 }

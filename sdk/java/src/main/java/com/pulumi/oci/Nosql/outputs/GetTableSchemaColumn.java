@@ -142,14 +142,14 @@ public final class GetTableSchemaColumn {
             return this;
         }
         public GetTableSchemaColumn build() {
-            final var o = new GetTableSchemaColumn();
-            o.defaultValue = defaultValue;
-            o.isAsUuid = isAsUuid;
-            o.isGenerated = isGenerated;
-            o.isNullable = isNullable;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetTableSchemaColumn();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.isAsUuid = isAsUuid;
+            _resultValue.isGenerated = isGenerated;
+            _resultValue.isNullable = isNullable;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

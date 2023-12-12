@@ -163,15 +163,15 @@ public final class GetVirtualDeploymentsResult {
             return this;
         }
         public GetVirtualDeploymentsResult build() {
-            final var o = new GetVirtualDeploymentsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            o.virtualDeploymentCollections = virtualDeploymentCollections;
-            o.virtualServiceId = virtualServiceId;
-            return o;
+            final var _resultValue = new GetVirtualDeploymentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.virtualDeploymentCollections = virtualDeploymentCollections;
+            _resultValue.virtualServiceId = virtualServiceId;
+            return _resultValue;
         }
     }
 }

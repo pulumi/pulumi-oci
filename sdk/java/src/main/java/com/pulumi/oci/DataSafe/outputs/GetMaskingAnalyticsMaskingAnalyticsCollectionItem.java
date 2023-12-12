@@ -89,11 +89,11 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
             return this;
         }
         public GetMaskingAnalyticsMaskingAnalyticsCollectionItem build() {
-            final var o = new GetMaskingAnalyticsMaskingAnalyticsCollectionItem();
-            o.count = count;
-            o.dimensions = dimensions;
-            o.metricName = metricName;
-            return o;
+            final var _resultValue = new GetMaskingAnalyticsMaskingAnalyticsCollectionItem();
+            _resultValue.count = count;
+            _resultValue.dimensions = dimensions;
+            _resultValue.metricName = metricName;
+            return _resultValue;
         }
     }
 }

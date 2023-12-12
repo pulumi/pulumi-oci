@@ -180,16 +180,16 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo 
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo();
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            o.owner = owner;
-            o.runningTime = runningTime;
-            o.status = status;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportTaskInfo();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.owner = owner;
+            _resultValue.runningTime = runningTime;
+            _resultValue.status = status;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

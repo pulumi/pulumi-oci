@@ -67,11 +67,11 @@ public final class GetDetectionDataAssetsFilter {
             return values(List.of(values));
         }
         public GetDetectionDataAssetsFilter build() {
-            final var o = new GetDetectionDataAssetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDetectionDataAssetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

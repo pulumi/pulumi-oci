@@ -100,12 +100,12 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseResult {
             return items(List.of(items));
         }
         public GetDbManagementPrivateEndpointAssociatedDatabaseResult build() {
-            final var o = new GetDbManagementPrivateEndpointAssociatedDatabaseResult();
-            o.compartmentId = compartmentId;
-            o.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDbManagementPrivateEndpointAssociatedDatabaseResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

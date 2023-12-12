@@ -75,11 +75,11 @@ public final class GetJobShapesFilter {
             return values(List.of(values));
         }
         public GetJobShapesFilter build() {
-            final var o = new GetJobShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetJobShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

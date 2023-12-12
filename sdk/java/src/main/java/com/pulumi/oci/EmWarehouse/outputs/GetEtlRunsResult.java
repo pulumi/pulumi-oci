@@ -136,14 +136,14 @@ public final class GetEtlRunsResult {
             return this;
         }
         public GetEtlRunsResult build() {
-            final var o = new GetEtlRunsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.emWarehouseId = emWarehouseId;
-            o.etlRunCollections = etlRunCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetEtlRunsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.emWarehouseId = emWarehouseId;
+            _resultValue.etlRunCollections = etlRunCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

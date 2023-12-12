@@ -75,11 +75,11 @@ public final class GetListingTaxesFilter {
             return values(List.of(values));
         }
         public GetListingTaxesFilter build() {
-            final var o = new GetListingTaxesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetListingTaxesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

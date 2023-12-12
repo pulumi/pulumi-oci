@@ -85,11 +85,11 @@ public final class GetScriptsScriptCollectionItemParameterScriptParameter {
             return this;
         }
         public GetScriptsScriptCollectionItemParameterScriptParameter build() {
-            final var o = new GetScriptsScriptCollectionItemParameterScriptParameter();
-            o.isSecret = isSecret;
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new GetScriptsScriptCollectionItemParameterScriptParameter();
+            _resultValue.isSecret = isSecret;
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

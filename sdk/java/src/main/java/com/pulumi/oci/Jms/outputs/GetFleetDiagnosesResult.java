@@ -97,12 +97,12 @@ public final class GetFleetDiagnosesResult {
             return this;
         }
         public GetFleetDiagnosesResult build() {
-            final var o = new GetFleetDiagnosesResult();
-            o.filters = filters;
-            o.fleetDiagnosisCollections = fleetDiagnosisCollections;
-            o.fleetId = fleetId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetFleetDiagnosesResult();
+            _resultValue.filters = filters;
+            _resultValue.fleetDiagnosisCollections = fleetDiagnosisCollections;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

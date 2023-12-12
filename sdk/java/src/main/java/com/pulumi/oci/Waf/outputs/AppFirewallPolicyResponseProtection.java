@@ -51,9 +51,9 @@ public final class AppFirewallPolicyResponseProtection {
             return rules(List.of(rules));
         }
         public AppFirewallPolicyResponseProtection build() {
-            final var o = new AppFirewallPolicyResponseProtection();
-            o.rules = rules;
-            return o;
+            final var _resultValue = new AppFirewallPolicyResponseProtection();
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

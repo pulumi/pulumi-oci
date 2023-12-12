@@ -50,9 +50,9 @@ public final class GetAddressRuleTax {
             return fields(List.of(fields));
         }
         public GetAddressRuleTax build() {
-            final var o = new GetAddressRuleTax();
-            o.fields = fields;
-            return o;
+            final var _resultValue = new GetAddressRuleTax();
+            _resultValue.fields = fields;
+            return _resultValue;
         }
     }
 }

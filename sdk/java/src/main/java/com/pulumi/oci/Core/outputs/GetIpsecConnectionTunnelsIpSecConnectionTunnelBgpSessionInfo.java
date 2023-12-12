@@ -202,17 +202,17 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
             return this;
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo build() {
-            final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo();
-            o.bgpIpv6State = bgpIpv6State;
-            o.bgpIpv6state = bgpIpv6state;
-            o.bgpState = bgpState;
-            o.customerBgpAsn = customerBgpAsn;
-            o.customerInterfaceIp = customerInterfaceIp;
-            o.customerInterfaceIpv6 = customerInterfaceIpv6;
-            o.oracleBgpAsn = oracleBgpAsn;
-            o.oracleInterfaceIp = oracleInterfaceIp;
-            o.oracleInterfaceIpv6 = oracleInterfaceIpv6;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo();
+            _resultValue.bgpIpv6State = bgpIpv6State;
+            _resultValue.bgpIpv6state = bgpIpv6state;
+            _resultValue.bgpState = bgpState;
+            _resultValue.customerBgpAsn = customerBgpAsn;
+            _resultValue.customerInterfaceIp = customerInterfaceIp;
+            _resultValue.customerInterfaceIpv6 = customerInterfaceIpv6;
+            _resultValue.oracleBgpAsn = oracleBgpAsn;
+            _resultValue.oracleInterfaceIp = oracleInterfaceIp;
+            _resultValue.oracleInterfaceIpv6 = oracleInterfaceIpv6;
+            return _resultValue;
         }
     }
 }

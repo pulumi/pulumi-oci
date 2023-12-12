@@ -99,12 +99,12 @@ public final class AutoScalingConfigurationPolicyRule {
             return this;
         }
         public AutoScalingConfigurationPolicyRule build() {
-            final var o = new AutoScalingConfigurationPolicyRule();
-            o.action = action;
-            o.displayName = displayName;
-            o.id = id;
-            o.metric = metric;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyRule();
+            _resultValue.action = action;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.metric = metric;
+            return _resultValue;
         }
     }
 }

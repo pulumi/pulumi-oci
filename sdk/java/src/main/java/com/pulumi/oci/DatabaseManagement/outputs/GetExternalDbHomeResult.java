@@ -249,20 +249,20 @@ public final class GetExternalDbHomeResult {
             return this;
         }
         public GetExternalDbHomeResult build() {
-            final var o = new GetExternalDbHomeResult();
-            o.additionalDetails = additionalDetails;
-            o.compartmentId = compartmentId;
-            o.componentName = componentName;
-            o.displayName = displayName;
-            o.externalDbHomeId = externalDbHomeId;
-            o.externalDbSystemId = externalDbSystemId;
-            o.homeDirectory = homeDirectory;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetExternalDbHomeResult();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.componentName = componentName;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDbHomeId = externalDbHomeId;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.homeDirectory = homeDirectory;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetOdaInstancesOdaInstanceRestrictedOperation {
             return this;
         }
         public GetOdaInstancesOdaInstanceRestrictedOperation build() {
-            final var o = new GetOdaInstancesOdaInstanceRestrictedOperation();
-            o.operationName = operationName;
-            o.restrictingService = restrictingService;
-            return o;
+            final var _resultValue = new GetOdaInstancesOdaInstanceRestrictedOperation();
+            _resultValue.operationName = operationName;
+            _resultValue.restrictingService = restrictingService;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class UsageForecast {
             return this;
         }
         public UsageForecast build() {
-            final var o = new UsageForecast();
-            o.forecastType = forecastType;
-            o.timeForecastEnded = timeForecastEnded;
-            o.timeForecastStarted = timeForecastStarted;
-            return o;
+            final var _resultValue = new UsageForecast();
+            _resultValue.forecastType = forecastType;
+            _resultValue.timeForecastEnded = timeForecastEnded;
+            _resultValue.timeForecastStarted = timeForecastStarted;
+            return _resultValue;
         }
     }
 }

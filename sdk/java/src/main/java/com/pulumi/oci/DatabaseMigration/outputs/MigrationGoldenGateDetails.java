@@ -68,10 +68,10 @@ public final class MigrationGoldenGateDetails {
             return this;
         }
         public MigrationGoldenGateDetails build() {
-            final var o = new MigrationGoldenGateDetails();
-            o.hub = hub;
-            o.settings = settings;
-            return o;
+            final var _resultValue = new MigrationGoldenGateDetails();
+            _resultValue.hub = hub;
+            _resultValue.settings = settings;
+            return _resultValue;
         }
     }
 }

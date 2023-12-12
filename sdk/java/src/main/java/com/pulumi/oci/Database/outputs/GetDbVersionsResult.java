@@ -162,17 +162,17 @@ public final class GetDbVersionsResult {
             return this;
         }
         public GetDbVersionsResult build() {
-            final var o = new GetDbVersionsResult();
-            o.compartmentId = compartmentId;
-            o.dbSystemId = dbSystemId;
-            o.dbSystemShape = dbSystemShape;
-            o.dbVersions = dbVersions;
-            o.filters = filters;
-            o.id = id;
-            o.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
-            o.isUpgradeSupported = isUpgradeSupported;
-            o.storageManagement = storageManagement;
-            return o;
+            final var _resultValue = new GetDbVersionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.dbSystemShape = dbSystemShape;
+            _resultValue.dbVersions = dbVersions;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
+            _resultValue.isUpgradeSupported = isUpgradeSupported;
+            _resultValue.storageManagement = storageManagement;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetRunStatementOutputData {
             return this;
         }
         public GetRunStatementOutputData build() {
-            final var o = new GetRunStatementOutputData();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetRunStatementOutputData();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

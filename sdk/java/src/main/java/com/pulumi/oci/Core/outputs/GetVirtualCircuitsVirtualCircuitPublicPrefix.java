@@ -38,9 +38,9 @@ public final class GetVirtualCircuitsVirtualCircuitPublicPrefix {
             return this;
         }
         public GetVirtualCircuitsVirtualCircuitPublicPrefix build() {
-            final var o = new GetVirtualCircuitsVirtualCircuitPublicPrefix();
-            o.cidrBlock = cidrBlock;
-            return o;
+            final var _resultValue = new GetVirtualCircuitsVirtualCircuitPublicPrefix();
+            _resultValue.cidrBlock = cidrBlock;
+            return _resultValue;
         }
     }
 }

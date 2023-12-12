@@ -67,10 +67,10 @@ public final class BackupDbSystemDetail {
             return this;
         }
         public BackupDbSystemDetail build() {
-            final var o = new BackupDbSystemDetail();
-            o.dbVersion = dbVersion;
-            o.systemType = systemType;
-            return o;
+            final var _resultValue = new BackupDbSystemDetail();
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.systemType = systemType;
+            return _resultValue;
         }
     }
 }

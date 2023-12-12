@@ -85,11 +85,11 @@ public final class GetExternalClusterVipConfiguration {
             return this;
         }
         public GetExternalClusterVipConfiguration build() {
-            final var o = new GetExternalClusterVipConfiguration();
-            o.address = address;
-            o.networkNumber = networkNumber;
-            o.nodeName = nodeName;
-            return o;
+            final var _resultValue = new GetExternalClusterVipConfiguration();
+            _resultValue.address = address;
+            _resultValue.networkNumber = networkNumber;
+            _resultValue.nodeName = nodeName;
+            return _resultValue;
         }
     }
 }

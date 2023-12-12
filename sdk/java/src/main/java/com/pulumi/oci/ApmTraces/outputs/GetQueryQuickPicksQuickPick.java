@@ -65,10 +65,10 @@ public final class GetQueryQuickPicksQuickPick {
             return this;
         }
         public GetQueryQuickPicksQuickPick build() {
-            final var o = new GetQueryQuickPicksQuickPick();
-            o.quickPickName = quickPickName;
-            o.quickPickQuery = quickPickQuery;
-            return o;
+            final var _resultValue = new GetQueryQuickPicksQuickPick();
+            _resultValue.quickPickName = quickPickName;
+            _resultValue.quickPickQuery = quickPickQuery;
+            return _resultValue;
         }
     }
 }

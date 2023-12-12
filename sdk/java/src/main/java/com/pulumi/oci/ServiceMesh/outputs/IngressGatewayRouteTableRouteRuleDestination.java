@@ -87,11 +87,11 @@ public final class IngressGatewayRouteTableRouteRuleDestination {
             return this;
         }
         public IngressGatewayRouteTableRouteRuleDestination build() {
-            final var o = new IngressGatewayRouteTableRouteRuleDestination();
-            o.port = port;
-            o.virtualServiceId = virtualServiceId;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new IngressGatewayRouteTableRouteRuleDestination();
+            _resultValue.port = port;
+            _resultValue.virtualServiceId = virtualServiceId;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

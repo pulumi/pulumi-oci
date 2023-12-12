@@ -42,9 +42,9 @@ public final class GetReportDefinitionsReportDefinitionCollection {
             return items(List.of(items));
         }
         public GetReportDefinitionsReportDefinitionCollection build() {
-            final var o = new GetReportDefinitionsReportDefinitionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetReportDefinitionsReportDefinitionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

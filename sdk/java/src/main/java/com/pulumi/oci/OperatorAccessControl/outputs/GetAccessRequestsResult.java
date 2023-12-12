@@ -185,17 +185,17 @@ public final class GetAccessRequestsResult {
             return this;
         }
         public GetAccessRequestsResult build() {
-            final var o = new GetAccessRequestsResult();
-            o.accessRequestCollections = accessRequestCollections;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.resourceName = resourceName;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetAccessRequestsResult();
+            _resultValue.accessRequestCollections = accessRequestCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.resourceName = resourceName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

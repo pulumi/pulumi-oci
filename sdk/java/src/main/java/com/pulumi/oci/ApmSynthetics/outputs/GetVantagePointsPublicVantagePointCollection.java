@@ -50,9 +50,9 @@ public final class GetVantagePointsPublicVantagePointCollection {
             return items(List.of(items));
         }
         public GetVantagePointsPublicVantagePointCollection build() {
-            final var o = new GetVantagePointsPublicVantagePointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetVantagePointsPublicVantagePointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

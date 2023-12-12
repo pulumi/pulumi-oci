@@ -90,11 +90,11 @@ public final class GetModelMetricOverallMetricsReport {
             return this;
         }
         public GetModelMetricOverallMetricsReport build() {
-            final var o = new GetModelMetricOverallMetricsReport();
-            o.confidenceEntries = confidenceEntries;
-            o.documentCount = documentCount;
-            o.meanAveragePrecision = meanAveragePrecision;
-            return o;
+            final var _resultValue = new GetModelMetricOverallMetricsReport();
+            _resultValue.confidenceEntries = confidenceEntries;
+            _resultValue.documentCount = documentCount;
+            _resultValue.meanAveragePrecision = meanAveragePrecision;
+            return _resultValue;
         }
     }
 }

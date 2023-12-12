@@ -83,10 +83,10 @@ public final class MysqlDbSystemCurrentPlacement {
             return this;
         }
         public MysqlDbSystemCurrentPlacement build() {
-            final var o = new MysqlDbSystemCurrentPlacement();
-            o.availabilityDomain = availabilityDomain;
-            o.faultDomain = faultDomain;
-            return o;
+            final var _resultValue = new MysqlDbSystemCurrentPlacement();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.faultDomain = faultDomain;
+            return _resultValue;
         }
     }
 }

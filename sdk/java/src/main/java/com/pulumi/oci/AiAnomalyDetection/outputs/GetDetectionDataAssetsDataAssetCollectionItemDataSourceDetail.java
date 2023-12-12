@@ -412,28 +412,28 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
             return this;
         }
         public GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail build() {
-            final var o = new GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail();
-            o.atpPasswordSecretId = atpPasswordSecretId;
-            o.atpUserName = atpUserName;
-            o.bucket = bucket;
-            o.cwalletFileSecretId = cwalletFileSecretId;
-            o.dataSourceType = dataSourceType;
-            o.databaseName = databaseName;
-            o.ewalletFileSecretId = ewalletFileSecretId;
-            o.keyStoreFileSecretId = keyStoreFileSecretId;
-            o.measurementName = measurementName;
-            o.namespace = namespace;
-            o.object = object;
-            o.ojdbcFileSecretId = ojdbcFileSecretId;
-            o.passwordSecretId = passwordSecretId;
-            o.tableName = tableName;
-            o.tnsnamesFileSecretId = tnsnamesFileSecretId;
-            o.truststoreFileSecretId = truststoreFileSecretId;
-            o.url = url;
-            o.userName = userName;
-            o.versionSpecificDetails = versionSpecificDetails;
-            o.walletPasswordSecretId = walletPasswordSecretId;
-            return o;
+            final var _resultValue = new GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail();
+            _resultValue.atpPasswordSecretId = atpPasswordSecretId;
+            _resultValue.atpUserName = atpUserName;
+            _resultValue.bucket = bucket;
+            _resultValue.cwalletFileSecretId = cwalletFileSecretId;
+            _resultValue.dataSourceType = dataSourceType;
+            _resultValue.databaseName = databaseName;
+            _resultValue.ewalletFileSecretId = ewalletFileSecretId;
+            _resultValue.keyStoreFileSecretId = keyStoreFileSecretId;
+            _resultValue.measurementName = measurementName;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.ojdbcFileSecretId = ojdbcFileSecretId;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.tableName = tableName;
+            _resultValue.tnsnamesFileSecretId = tnsnamesFileSecretId;
+            _resultValue.truststoreFileSecretId = truststoreFileSecretId;
+            _resultValue.url = url;
+            _resultValue.userName = userName;
+            _resultValue.versionSpecificDetails = versionSpecificDetails;
+            _resultValue.walletPasswordSecretId = walletPasswordSecretId;
+            return _resultValue;
         }
     }
 }

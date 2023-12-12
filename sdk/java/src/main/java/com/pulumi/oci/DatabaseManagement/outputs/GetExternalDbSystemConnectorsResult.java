@@ -144,14 +144,14 @@ public final class GetExternalDbSystemConnectorsResult {
             return this;
         }
         public GetExternalDbSystemConnectorsResult build() {
-            final var o = new GetExternalDbSystemConnectorsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalDbSystemConnectorCollections = externalDbSystemConnectorCollections;
-            o.externalDbSystemId = externalDbSystemId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalDbSystemConnectorsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDbSystemConnectorCollections = externalDbSystemConnectorCollections;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

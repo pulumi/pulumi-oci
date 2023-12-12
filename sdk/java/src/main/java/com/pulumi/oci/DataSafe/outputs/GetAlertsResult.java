@@ -154,16 +154,16 @@ public final class GetAlertsResult {
             return this;
         }
         public GetAlertsResult build() {
-            final var o = new GetAlertsResult();
-            o.accessLevel = accessLevel;
-            o.alertCollections = alertCollections;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.scimQuery = scimQuery;
-            return o;
+            final var _resultValue = new GetAlertsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.alertCollections = alertCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.scimQuery = scimQuery;
+            return _resultValue;
         }
     }
 }

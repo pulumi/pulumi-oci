@@ -67,10 +67,10 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput build() {
-            final var o = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput();
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput();
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            return _resultValue;
         }
     }
 }

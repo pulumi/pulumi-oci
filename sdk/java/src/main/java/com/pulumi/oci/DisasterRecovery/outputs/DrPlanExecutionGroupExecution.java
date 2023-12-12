@@ -206,17 +206,17 @@ public final class DrPlanExecutionGroupExecution {
             return this;
         }
         public DrPlanExecutionGroupExecution build() {
-            final var o = new DrPlanExecutionGroupExecution();
-            o.displayName = displayName;
-            o.executionDurationInSec = executionDurationInSec;
-            o.groupId = groupId;
-            o.status = status;
-            o.statusDetails = statusDetails;
-            o.stepExecutions = stepExecutions;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            return o;
+            final var _resultValue = new DrPlanExecutionGroupExecution();
+            _resultValue.displayName = displayName;
+            _resultValue.executionDurationInSec = executionDurationInSec;
+            _resultValue.groupId = groupId;
+            _resultValue.status = status;
+            _resultValue.statusDetails = statusDetails;
+            _resultValue.stepExecutions = stepExecutions;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

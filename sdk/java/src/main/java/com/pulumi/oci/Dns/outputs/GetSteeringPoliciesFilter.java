@@ -75,11 +75,11 @@ public final class GetSteeringPoliciesFilter {
             return values(List.of(values));
         }
         public GetSteeringPoliciesFilter build() {
-            final var o = new GetSteeringPoliciesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSteeringPoliciesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

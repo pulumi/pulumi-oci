@@ -447,33 +447,33 @@ public final class GetPluggableDatabaseResult {
             return this;
         }
         public GetPluggableDatabaseResult build() {
-            final var o = new GetPluggableDatabaseResult();
-            o.compartmentId = compartmentId;
-            o.connectionStrings = connectionStrings;
-            o.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
-            o.containerDatabaseId = containerDatabaseId;
-            o.convertToRegularTrigger = convertToRegularTrigger;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isRestricted = isRestricted;
-            o.lifecycleDetails = lifecycleDetails;
-            o.openMode = openMode;
-            o.pdbAdminPassword = pdbAdminPassword;
-            o.pdbCreationTypeDetails = pdbCreationTypeDetails;
-            o.pdbName = pdbName;
-            o.pdbNodeLevelDetails = pdbNodeLevelDetails;
-            o.pluggableDatabaseId = pluggableDatabaseId;
-            o.pluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
-            o.refreshTrigger = refreshTrigger;
-            o.refreshableCloneConfigs = refreshableCloneConfigs;
-            o.rotateKeyTrigger = rotateKeyTrigger;
-            o.shouldCreatePdbBackup = shouldCreatePdbBackup;
-            o.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
-            o.state = state;
-            o.tdeWalletPassword = tdeWalletPassword;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetPluggableDatabaseResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionStrings = connectionStrings;
+            _resultValue.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
+            _resultValue.containerDatabaseId = containerDatabaseId;
+            _resultValue.convertToRegularTrigger = convertToRegularTrigger;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isRestricted = isRestricted;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.openMode = openMode;
+            _resultValue.pdbAdminPassword = pdbAdminPassword;
+            _resultValue.pdbCreationTypeDetails = pdbCreationTypeDetails;
+            _resultValue.pdbName = pdbName;
+            _resultValue.pdbNodeLevelDetails = pdbNodeLevelDetails;
+            _resultValue.pluggableDatabaseId = pluggableDatabaseId;
+            _resultValue.pluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
+            _resultValue.refreshTrigger = refreshTrigger;
+            _resultValue.refreshableCloneConfigs = refreshableCloneConfigs;
+            _resultValue.rotateKeyTrigger = rotateKeyTrigger;
+            _resultValue.shouldCreatePdbBackup = shouldCreatePdbBackup;
+            _resultValue.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
+            _resultValue.state = state;
+            _resultValue.tdeWalletPassword = tdeWalletPassword;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigura
             return this;
         }
         public GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue build() {
-            final var o = new GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue();
-            o.listType = listType;
-            o.managedListType = managedListType;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue();
+            _resultValue.listType = listType;
+            _resultValue.managedListType = managedListType;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

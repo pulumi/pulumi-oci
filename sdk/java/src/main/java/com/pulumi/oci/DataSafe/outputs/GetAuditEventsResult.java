@@ -140,15 +140,15 @@ public final class GetAuditEventsResult {
             return this;
         }
         public GetAuditEventsResult build() {
-            final var o = new GetAuditEventsResult();
-            o.accessLevel = accessLevel;
-            o.auditEventCollections = auditEventCollections;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.scimQuery = scimQuery;
-            return o;
+            final var _resultValue = new GetAuditEventsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.auditEventCollections = auditEventCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.scimQuery = scimQuery;
+            return _resultValue;
         }
     }
 }

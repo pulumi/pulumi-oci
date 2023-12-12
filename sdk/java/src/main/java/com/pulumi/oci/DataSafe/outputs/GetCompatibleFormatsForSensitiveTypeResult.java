@@ -106,13 +106,13 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
             return this;
         }
         public GetCompatibleFormatsForSensitiveTypeResult build() {
-            final var o = new GetCompatibleFormatsForSensitiveTypeResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.formatsForSensitiveTypes = formatsForSensitiveTypes;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCompatibleFormatsForSensitiveTypeResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.formatsForSensitiveTypes = formatsForSensitiveTypes;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

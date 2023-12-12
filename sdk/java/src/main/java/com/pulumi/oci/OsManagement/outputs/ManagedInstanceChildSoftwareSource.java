@@ -67,10 +67,10 @@ public final class ManagedInstanceChildSoftwareSource {
             return this;
         }
         public ManagedInstanceChildSoftwareSource build() {
-            final var o = new ManagedInstanceChildSoftwareSource();
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new ManagedInstanceChildSoftwareSource();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetIndexesIndexCollectionKey {
             return this;
         }
         public GetIndexesIndexCollectionKey build() {
-            final var o = new GetIndexesIndexCollectionKey();
-            o.columnName = columnName;
-            o.jsonFieldType = jsonFieldType;
-            o.jsonPath = jsonPath;
-            return o;
+            final var _resultValue = new GetIndexesIndexCollectionKey();
+            _resultValue.columnName = columnName;
+            _resultValue.jsonFieldType = jsonFieldType;
+            _resultValue.jsonPath = jsonPath;
+            return _resultValue;
         }
     }
 }

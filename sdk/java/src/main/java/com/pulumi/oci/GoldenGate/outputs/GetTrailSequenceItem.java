@@ -104,12 +104,12 @@ public final class GetTrailSequenceItem {
             return this;
         }
         public GetTrailSequenceItem build() {
-            final var o = new GetTrailSequenceItem();
-            o.displayName = displayName;
-            o.sequenceId = sequenceId;
-            o.sizeInBytes = sizeInBytes;
-            o.timeLastUpdated = timeLastUpdated;
-            return o;
+            final var _resultValue = new GetTrailSequenceItem();
+            _resultValue.displayName = displayName;
+            _resultValue.sequenceId = sequenceId;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.timeLastUpdated = timeLastUpdated;
+            return _resultValue;
         }
     }
 }

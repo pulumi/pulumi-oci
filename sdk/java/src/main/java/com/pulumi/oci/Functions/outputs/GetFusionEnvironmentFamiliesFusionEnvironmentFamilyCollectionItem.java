@@ -277,21 +277,21 @@ public final class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection
             return this;
         }
         public GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem build() {
-            final var o = new GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.familyMaintenancePolicies = familyMaintenancePolicies;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isSubscriptionUpdateNeeded = isSubscriptionUpdateNeeded;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.subscriptionIds = subscriptionIds;
-            o.systemName = systemName;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.familyMaintenancePolicies = familyMaintenancePolicies;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isSubscriptionUpdateNeeded = isSubscriptionUpdateNeeded;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.subscriptionIds = subscriptionIds;
+            _resultValue.systemName = systemName;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

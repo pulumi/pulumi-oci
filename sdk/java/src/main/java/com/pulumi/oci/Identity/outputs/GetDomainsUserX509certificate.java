@@ -104,12 +104,12 @@ public final class GetDomainsUserX509certificate {
             return this;
         }
         public GetDomainsUserX509certificate build() {
-            final var o = new GetDomainsUserX509certificate();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserX509certificate();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class BucketRetentionRuleDuration {
             return this;
         }
         public BucketRetentionRuleDuration build() {
-            final var o = new BucketRetentionRuleDuration();
-            o.timeAmount = timeAmount;
-            o.timeUnit = timeUnit;
-            return o;
+            final var _resultValue = new BucketRetentionRuleDuration();
+            _resultValue.timeAmount = timeAmount;
+            _resultValue.timeUnit = timeUnit;
+            return _resultValue;
         }
     }
 }

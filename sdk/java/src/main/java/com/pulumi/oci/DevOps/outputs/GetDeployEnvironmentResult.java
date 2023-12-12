@@ -372,26 +372,26 @@ public final class GetDeployEnvironmentResult {
             return this;
         }
         public GetDeployEnvironmentResult build() {
-            final var o = new GetDeployEnvironmentResult();
-            o.clusterId = clusterId;
-            o.compartmentId = compartmentId;
-            o.computeInstanceGroupSelectors = computeInstanceGroupSelectors;
-            o.definedTags = definedTags;
-            o.deployEnvironmentId = deployEnvironmentId;
-            o.deployEnvironmentType = deployEnvironmentType;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.functionId = functionId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.networkChannels = networkChannels;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeInstanceGroupSelectors = computeInstanceGroupSelectors;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deployEnvironmentId = deployEnvironmentId;
+            _resultValue.deployEnvironmentType = deployEnvironmentType;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.functionId = functionId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.networkChannels = networkChannels;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

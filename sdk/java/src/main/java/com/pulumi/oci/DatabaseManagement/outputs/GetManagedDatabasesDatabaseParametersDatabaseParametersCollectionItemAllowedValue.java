@@ -86,11 +86,11 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
             return this;
         }
         public GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValue build() {
-            final var o = new GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValue();
-            o.isDefault = isDefault;
-            o.ordinal = ordinal;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemAllowedValue();
+            _resultValue.isDefault = isDefault;
+            _resultValue.ordinal = ordinal;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

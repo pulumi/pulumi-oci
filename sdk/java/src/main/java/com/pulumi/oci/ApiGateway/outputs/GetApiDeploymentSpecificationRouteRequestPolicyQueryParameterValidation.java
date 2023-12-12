@@ -62,10 +62,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation();
-            o.parameters = parameters;
-            o.validationMode = validationMode;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidation();
+            _resultValue.parameters = parameters;
+            _resultValue.validationMode = validationMode;
+            return _resultValue;
         }
     }
 }

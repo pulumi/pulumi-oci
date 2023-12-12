@@ -67,10 +67,10 @@ public final class JobRunLogDetail {
             return this;
         }
         public JobRunLogDetail build() {
-            final var o = new JobRunLogDetail();
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new JobRunLogDetail();
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

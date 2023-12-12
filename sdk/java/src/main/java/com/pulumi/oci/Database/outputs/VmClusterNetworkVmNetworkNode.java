@@ -143,14 +143,14 @@ public final class VmClusterNetworkVmNetworkNode {
             return this;
         }
         public VmClusterNetworkVmNetworkNode build() {
-            final var o = new VmClusterNetworkVmNetworkNode();
-            o.dbServerId = dbServerId;
-            o.hostname = hostname;
-            o.ip = ip;
-            o.state = state;
-            o.vip = vip;
-            o.vipHostname = vipHostname;
-            return o;
+            final var _resultValue = new VmClusterNetworkVmNetworkNode();
+            _resultValue.dbServerId = dbServerId;
+            _resultValue.hostname = hostname;
+            _resultValue.ip = ip;
+            _resultValue.state = state;
+            _resultValue.vip = vip;
+            _resultValue.vipHostname = vipHostname;
+            return _resultValue;
         }
     }
 }

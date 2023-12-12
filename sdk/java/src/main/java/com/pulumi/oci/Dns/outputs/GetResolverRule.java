@@ -132,13 +132,13 @@ public final class GetResolverRule {
             return this;
         }
         public GetResolverRule build() {
-            final var o = new GetResolverRule();
-            o.action = action;
-            o.clientAddressConditions = clientAddressConditions;
-            o.destinationAddresses = destinationAddresses;
-            o.qnameCoverConditions = qnameCoverConditions;
-            o.sourceEndpointName = sourceEndpointName;
-            return o;
+            final var _resultValue = new GetResolverRule();
+            _resultValue.action = action;
+            _resultValue.clientAddressConditions = clientAddressConditions;
+            _resultValue.destinationAddresses = destinationAddresses;
+            _resultValue.qnameCoverConditions = qnameCoverConditions;
+            _resultValue.sourceEndpointName = sourceEndpointName;
+            return _resultValue;
         }
     }
 }

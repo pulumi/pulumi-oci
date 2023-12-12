@@ -88,11 +88,11 @@ public final class GetStreamPoolsStreamPoolPrivateEndpointSetting {
             return this;
         }
         public GetStreamPoolsStreamPoolPrivateEndpointSetting build() {
-            final var o = new GetStreamPoolsStreamPoolPrivateEndpointSetting();
-            o.nsgIds = nsgIds;
-            o.privateEndpointIp = privateEndpointIp;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetStreamPoolsStreamPoolPrivateEndpointSetting();
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

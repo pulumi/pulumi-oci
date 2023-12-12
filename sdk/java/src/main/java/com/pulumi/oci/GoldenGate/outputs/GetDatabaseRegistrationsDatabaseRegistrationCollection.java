@@ -42,9 +42,9 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollection {
             return items(List.of(items));
         }
         public GetDatabaseRegistrationsDatabaseRegistrationCollection build() {
-            final var o = new GetDatabaseRegistrationsDatabaseRegistrationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDatabaseRegistrationsDatabaseRegistrationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

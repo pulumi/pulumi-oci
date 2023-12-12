@@ -193,17 +193,17 @@ public final class GetBdsInstanceMetastoreConfigsResult {
             return this;
         }
         public GetBdsInstanceMetastoreConfigsResult build() {
-            final var o = new GetBdsInstanceMetastoreConfigsResult();
-            o.bdsApiKeyId = bdsApiKeyId;
-            o.bdsInstanceId = bdsInstanceId;
-            o.bdsMetastoreConfigurations = bdsMetastoreConfigurations;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.metastoreId = metastoreId;
-            o.metastoreType = metastoreType;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetBdsInstanceMetastoreConfigsResult();
+            _resultValue.bdsApiKeyId = bdsApiKeyId;
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.bdsMetastoreConfigurations = bdsMetastoreConfigurations;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.metastoreId = metastoreId;
+            _resultValue.metastoreType = metastoreType;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

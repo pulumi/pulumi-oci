@@ -287,22 +287,22 @@ public final class GetAgentResult {
             return this;
         }
         public GetAgentResult build() {
-            final var o = new GetAgentResult();
-            o.agentId = agentId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.publicKey = publicKey;
-            o.state = state;
-            o.streamId = streamId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAgentResult();
+            _resultValue.agentId = agentId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.publicKey = publicKey;
+            _resultValue.state = state;
+            _resultValue.streamId = streamId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

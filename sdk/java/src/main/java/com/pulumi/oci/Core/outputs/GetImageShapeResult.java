@@ -142,14 +142,14 @@ public final class GetImageShapeResult {
             return this;
         }
         public GetImageShapeResult build() {
-            final var o = new GetImageShapeResult();
-            o.id = id;
-            o.imageId = imageId;
-            o.memoryConstraints = memoryConstraints;
-            o.ocpuConstraints = ocpuConstraints;
-            o.shape = shape;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new GetImageShapeResult();
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.memoryConstraints = memoryConstraints;
+            _resultValue.ocpuConstraints = ocpuConstraints;
+            _resultValue.shape = shape;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

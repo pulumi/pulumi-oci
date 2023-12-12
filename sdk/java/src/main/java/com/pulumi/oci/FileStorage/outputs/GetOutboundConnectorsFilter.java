@@ -67,11 +67,11 @@ public final class GetOutboundConnectorsFilter {
             return values(List.of(values));
         }
         public GetOutboundConnectorsFilter build() {
-            final var o = new GetOutboundConnectorsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetOutboundConnectorsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

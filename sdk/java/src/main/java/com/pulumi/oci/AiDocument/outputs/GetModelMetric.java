@@ -116,12 +116,12 @@ public final class GetModelMetric {
             return overallMetricsReports(List.of(overallMetricsReports));
         }
         public GetModelMetric build() {
-            final var o = new GetModelMetric();
-            o.datasetSummaries = datasetSummaries;
-            o.labelMetricsReports = labelMetricsReports;
-            o.modelType = modelType;
-            o.overallMetricsReports = overallMetricsReports;
-            return o;
+            final var _resultValue = new GetModelMetric();
+            _resultValue.datasetSummaries = datasetSummaries;
+            _resultValue.labelMetricsReports = labelMetricsReports;
+            _resultValue.modelType = modelType;
+            _resultValue.overallMetricsReports = overallMetricsReports;
+            return _resultValue;
         }
     }
 }

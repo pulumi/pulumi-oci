@@ -236,13 +236,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup();
-            o.display = display;
-            o.idcsAppRoleId = idcsAppRoleId;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup();
+            _resultValue.display = display;
+            _resultValue.idcsAppRoleId = idcsAppRoleId;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

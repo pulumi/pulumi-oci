@@ -125,13 +125,13 @@ public final class GetInstanceConsoleConnectionsResult {
             return this;
         }
         public GetInstanceConsoleConnectionsResult build() {
-            final var o = new GetInstanceConsoleConnectionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.instanceConsoleConnections = instanceConsoleConnections;
-            o.instanceId = instanceId;
-            return o;
+            final var _resultValue = new GetInstanceConsoleConnectionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceConsoleConnections = instanceConsoleConnections;
+            _resultValue.instanceId = instanceId;
+            return _resultValue;
         }
     }
 }

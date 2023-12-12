@@ -96,11 +96,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             return secondaryVnics(List.of(secondaryVnics));
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOption build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOption();
-            o.blockVolumes = blockVolumes;
-            o.launchDetails = launchDetails;
-            o.secondaryVnics = secondaryVnics;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOption();
+            _resultValue.blockVolumes = blockVolumes;
+            _resultValue.launchDetails = launchDetails;
+            _resultValue.secondaryVnics = secondaryVnics;
+            return _resultValue;
         }
     }
 }

@@ -136,14 +136,14 @@ public final class GetDedicatedVmHostInstancesResult {
             return this;
         }
         public GetDedicatedVmHostInstancesResult build() {
-            final var o = new GetDedicatedVmHostInstancesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.dedicatedVmHostId = dedicatedVmHostId;
-            o.dedicatedVmHostInstances = dedicatedVmHostInstances;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDedicatedVmHostInstancesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dedicatedVmHostId = dedicatedVmHostId;
+            _resultValue.dedicatedVmHostInstances = dedicatedVmHostInstances;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -109,12 +109,12 @@ public final class BackupDestinationMountTypeDetails {
             return nfsServers(List.of(nfsServers));
         }
         public BackupDestinationMountTypeDetails build() {
-            final var o = new BackupDestinationMountTypeDetails();
-            o.localMountPointPath = localMountPointPath;
-            o.mountType = mountType;
-            o.nfsServerExport = nfsServerExport;
-            o.nfsServers = nfsServers;
-            return o;
+            final var _resultValue = new BackupDestinationMountTypeDetails();
+            _resultValue.localMountPointPath = localMountPointPath;
+            _resultValue.mountType = mountType;
+            _resultValue.nfsServerExport = nfsServerExport;
+            _resultValue.nfsServers = nfsServers;
+            return _resultValue;
         }
     }
 }

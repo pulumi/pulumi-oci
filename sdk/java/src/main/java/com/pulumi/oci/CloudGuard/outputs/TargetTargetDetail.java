@@ -110,12 +110,12 @@ public final class TargetTargetDetail {
             return targetSecurityZoneRecipes(List.of(targetSecurityZoneRecipes));
         }
         public TargetTargetDetail build() {
-            final var o = new TargetTargetDetail();
-            o.securityZoneDisplayName = securityZoneDisplayName;
-            o.securityZoneId = securityZoneId;
-            o.targetResourceType = targetResourceType;
-            o.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
-            return o;
+            final var _resultValue = new TargetTargetDetail();
+            _resultValue.securityZoneDisplayName = securityZoneDisplayName;
+            _resultValue.securityZoneId = securityZoneId;
+            _resultValue.targetResourceType = targetResourceType;
+            _resultValue.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
+            return _resultValue;
         }
     }
 }

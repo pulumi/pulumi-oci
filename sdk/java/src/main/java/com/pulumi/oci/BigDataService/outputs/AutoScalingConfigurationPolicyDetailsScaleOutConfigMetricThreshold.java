@@ -87,11 +87,11 @@ public final class AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThre
             return this;
         }
         public AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold build() {
-            final var o = new AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold();
-            o.durationInMinutes = durationInMinutes;
-            o.operator = operator;
-            o.value = value;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyDetailsScaleOutConfigMetricThreshold();
+            _resultValue.durationInMinutes = durationInMinutes;
+            _resultValue.operator = operator;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

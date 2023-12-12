@@ -67,11 +67,11 @@ public final class GetLicenseRecordsFilter {
             return values(List.of(values));
         }
         public GetLicenseRecordsFilter build() {
-            final var o = new GetLicenseRecordsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetLicenseRecordsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

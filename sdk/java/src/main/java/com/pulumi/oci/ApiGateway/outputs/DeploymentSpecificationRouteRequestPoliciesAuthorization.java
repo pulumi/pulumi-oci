@@ -77,10 +77,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesAuthorization {
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesAuthorization build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesAuthorization();
-            o.allowedScopes = allowedScopes;
-            o.type = type;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesAuthorization();
+            _resultValue.allowedScopes = allowedScopes;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

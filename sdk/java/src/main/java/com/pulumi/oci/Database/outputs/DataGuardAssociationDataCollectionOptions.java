@@ -86,11 +86,11 @@ public final class DataGuardAssociationDataCollectionOptions {
             return this;
         }
         public DataGuardAssociationDataCollectionOptions build() {
-            final var o = new DataGuardAssociationDataCollectionOptions();
-            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            return o;
+            final var _resultValue = new DataGuardAssociationDataCollectionOptions();
+            _resultValue.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            _resultValue.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            _resultValue.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return _resultValue;
         }
     }
 }

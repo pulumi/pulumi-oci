@@ -222,19 +222,19 @@ public final class GetAcceptedAgreementResult {
             return this;
         }
         public GetAcceptedAgreementResult build() {
-            final var o = new GetAcceptedAgreementResult();
-            o.acceptedAgreementId = acceptedAgreementId;
-            o.agreementId = agreementId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.listingId = listingId;
-            o.packageVersion = packageVersion;
-            o.signature = signature;
-            o.timeAccepted = timeAccepted;
-            return o;
+            final var _resultValue = new GetAcceptedAgreementResult();
+            _resultValue.acceptedAgreementId = acceptedAgreementId;
+            _resultValue.agreementId = agreementId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            _resultValue.packageVersion = packageVersion;
+            _resultValue.signature = signature;
+            _resultValue.timeAccepted = timeAccepted;
+            return _resultValue;
         }
     }
 }

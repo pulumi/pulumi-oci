@@ -230,21 +230,21 @@ public final class GetAlertPoliciesResult {
             return this;
         }
         public GetAlertPoliciesResult build() {
-            final var o = new GetAlertPoliciesResult();
-            o.accessLevel = accessLevel;
-            o.alertPolicyCollections = alertPolicyCollections;
-            o.alertPolicyId = alertPolicyId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isUserDefined = isUserDefined;
-            o.state = state;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetAlertPoliciesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.alertPolicyCollections = alertPolicyCollections;
+            _resultValue.alertPolicyId = alertPolicyId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isUserDefined = isUserDefined;
+            _resultValue.state = state;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

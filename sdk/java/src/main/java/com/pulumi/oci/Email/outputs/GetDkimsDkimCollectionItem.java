@@ -314,23 +314,23 @@ public final class GetDkimsDkimCollectionItem {
             return this;
         }
         public GetDkimsDkimCollectionItem build() {
-            final var o = new GetDkimsDkimCollectionItem();
-            o.cnameRecordValue = cnameRecordValue;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.dnsSubdomainName = dnsSubdomainName;
-            o.emailDomainId = emailDomainId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.txtRecordValue = txtRecordValue;
-            return o;
+            final var _resultValue = new GetDkimsDkimCollectionItem();
+            _resultValue.cnameRecordValue = cnameRecordValue;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.dnsSubdomainName = dnsSubdomainName;
+            _resultValue.emailDomainId = emailDomainId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.txtRecordValue = txtRecordValue;
+            return _resultValue;
         }
     }
 }

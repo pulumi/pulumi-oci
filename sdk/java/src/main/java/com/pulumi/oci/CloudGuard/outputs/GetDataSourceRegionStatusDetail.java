@@ -65,10 +65,10 @@ public final class GetDataSourceRegionStatusDetail {
             return this;
         }
         public GetDataSourceRegionStatusDetail build() {
-            final var o = new GetDataSourceRegionStatusDetail();
-            o.region = region;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetDataSourceRegionStatusDetail();
+            _resultValue.region = region;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

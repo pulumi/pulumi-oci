@@ -68,11 +68,11 @@ public final class GetVolumeBackupsVolumeBackupSourceDetail {
             return this;
         }
         public GetVolumeBackupsVolumeBackupSourceDetail build() {
-            final var o = new GetVolumeBackupsVolumeBackupSourceDetail();
-            o.kmsKeyId = kmsKeyId;
-            o.region = region;
-            o.volumeBackupId = volumeBackupId;
-            return o;
+            final var _resultValue = new GetVolumeBackupsVolumeBackupSourceDetail();
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.region = region;
+            _resultValue.volumeBackupId = volumeBackupId;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
             return this;
         }
         public GetAnnouncementsAnnouncementCollectionItem build() {
-            final var o = new GetAnnouncementsAnnouncementCollectionItem();
-            o.key = key;
-            o.summary = summary;
-            o.timeReleased = timeReleased;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetAnnouncementsAnnouncementCollectionItem();
+            _resultValue.key = key;
+            _resultValue.summary = summary;
+            _resultValue.timeReleased = timeReleased;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

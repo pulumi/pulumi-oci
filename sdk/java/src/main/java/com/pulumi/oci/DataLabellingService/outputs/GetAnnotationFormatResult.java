@@ -81,11 +81,11 @@ public final class GetAnnotationFormatResult {
             return items(List.of(items));
         }
         public GetAnnotationFormatResult build() {
-            final var o = new GetAnnotationFormatResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAnnotationFormatResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

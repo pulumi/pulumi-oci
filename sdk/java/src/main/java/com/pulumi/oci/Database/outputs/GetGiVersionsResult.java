@@ -109,13 +109,13 @@ public final class GetGiVersionsResult {
             return this;
         }
         public GetGiVersionsResult build() {
-            final var o = new GetGiVersionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.giVersions = giVersions;
-            o.id = id;
-            o.shape = shape;
-            return o;
+            final var _resultValue = new GetGiVersionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.giVersions = giVersions;
+            _resultValue.id = id;
+            _resultValue.shape = shape;
+            return _resultValue;
         }
     }
 }

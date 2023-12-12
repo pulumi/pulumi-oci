@@ -148,14 +148,14 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySe
             return this;
         }
         public AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings build() {
-            final var o = new AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings();
-            o.allowedHttpMethods = allowedHttpMethods;
-            o.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
-            o.maxHttpRequestHeaders = maxHttpRequestHeaders;
-            o.maxNumberOfArguments = maxNumberOfArguments;
-            o.maxSingleArgumentLength = maxSingleArgumentLength;
-            o.maxTotalArgumentLength = maxTotalArgumentLength;
-            return o;
+            final var _resultValue = new AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings();
+            _resultValue.allowedHttpMethods = allowedHttpMethods;
+            _resultValue.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
+            _resultValue.maxHttpRequestHeaders = maxHttpRequestHeaders;
+            _resultValue.maxNumberOfArguments = maxNumberOfArguments;
+            _resultValue.maxSingleArgumentLength = maxSingleArgumentLength;
+            _resultValue.maxTotalArgumentLength = maxTotalArgumentLength;
+            return _resultValue;
         }
     }
 }

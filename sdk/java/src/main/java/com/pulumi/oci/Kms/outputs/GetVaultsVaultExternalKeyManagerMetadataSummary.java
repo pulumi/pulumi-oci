@@ -108,12 +108,12 @@ public final class GetVaultsVaultExternalKeyManagerMetadataSummary {
             return this;
         }
         public GetVaultsVaultExternalKeyManagerMetadataSummary build() {
-            final var o = new GetVaultsVaultExternalKeyManagerMetadataSummary();
-            o.externalVaultEndpointUrl = externalVaultEndpointUrl;
-            o.oauthMetadataSummaries = oauthMetadataSummaries;
-            o.privateEndpointId = privateEndpointId;
-            o.vendor = vendor;
-            return o;
+            final var _resultValue = new GetVaultsVaultExternalKeyManagerMetadataSummary();
+            _resultValue.externalVaultEndpointUrl = externalVaultEndpointUrl;
+            _resultValue.oauthMetadataSummaries = oauthMetadataSummaries;
+            _resultValue.privateEndpointId = privateEndpointId;
+            _resultValue.vendor = vendor;
+            return _resultValue;
         }
     }
 }

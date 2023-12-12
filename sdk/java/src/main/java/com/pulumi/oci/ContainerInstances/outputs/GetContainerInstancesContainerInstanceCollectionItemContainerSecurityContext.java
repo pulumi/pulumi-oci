@@ -84,13 +84,13 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext build() {
-            final var o = new GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext();
-            o.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
-            o.isRootFileSystemReadonly = isRootFileSystemReadonly;
-            o.runAsGroup = runAsGroup;
-            o.runAsUser = runAsUser;
-            o.securityContextType = securityContextType;
-            return o;
+            final var _resultValue = new GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext();
+            _resultValue.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
+            _resultValue.isRootFileSystemReadonly = isRootFileSystemReadonly;
+            _resultValue.runAsGroup = runAsGroup;
+            _resultValue.runAsUser = runAsUser;
+            _resultValue.securityContextType = securityContextType;
+            return _resultValue;
         }
     }
 }

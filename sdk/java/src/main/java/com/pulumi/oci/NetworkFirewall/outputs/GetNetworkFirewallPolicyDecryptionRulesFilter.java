@@ -75,11 +75,11 @@ public final class GetNetworkFirewallPolicyDecryptionRulesFilter {
             return values(List.of(values));
         }
         public GetNetworkFirewallPolicyDecryptionRulesFilter build() {
-            final var o = new GetNetworkFirewallPolicyDecryptionRulesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyDecryptionRulesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class GetPipelineRunStepOverrideDetailStepConfigurationDetail {
             return this;
         }
         public GetPipelineRunStepOverrideDetailStepConfigurationDetail build() {
-            final var o = new GetPipelineRunStepOverrideDetailStepConfigurationDetail();
-            o.commandLineArguments = commandLineArguments;
-            o.environmentVariables = environmentVariables;
-            o.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
-            return o;
+            final var _resultValue = new GetPipelineRunStepOverrideDetailStepConfigurationDetail();
+            _resultValue.commandLineArguments = commandLineArguments;
+            _resultValue.environmentVariables = environmentVariables;
+            _resultValue.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            return _resultValue;
         }
     }
 }

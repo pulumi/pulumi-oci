@@ -65,10 +65,10 @@ public final class GetMysqlDbSystemChannelSourceSslCaCertificate {
             return this;
         }
         public GetMysqlDbSystemChannelSourceSslCaCertificate build() {
-            final var o = new GetMysqlDbSystemChannelSourceSslCaCertificate();
-            o.certificateType = certificateType;
-            o.contents = contents;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemChannelSourceSslCaCertificate();
+            _resultValue.certificateType = certificateType;
+            _resultValue.contents = contents;
+            return _resultValue;
         }
     }
 }

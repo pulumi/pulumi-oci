@@ -435,28 +435,28 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
             return users(List.of(users));
         }
         public GetDomainsMySupportAccountsMySupportAccount build() {
-            final var o = new GetDomainsMySupportAccountsMySupportAccount();
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.metas = metas;
-            o.mySupportAccountProvider = mySupportAccountProvider;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.token = token;
-            o.userId = userId;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetDomainsMySupportAccountsMySupportAccount();
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.metas = metas;
+            _resultValue.mySupportAccountProvider = mySupportAccountProvider;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.token = token;
+            _resultValue.userId = userId;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

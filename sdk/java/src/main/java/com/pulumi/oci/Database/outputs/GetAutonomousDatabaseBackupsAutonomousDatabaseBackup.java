@@ -464,31 +464,31 @@ public final class GetAutonomousDatabaseBackupsAutonomousDatabaseBackup {
             return this;
         }
         public GetAutonomousDatabaseBackupsAutonomousDatabaseBackup build() {
-            final var o = new GetAutonomousDatabaseBackupsAutonomousDatabaseBackup();
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.backupDestinationDetails = backupDestinationDetails;
-            o.compartmentId = compartmentId;
-            o.databaseSizeInTbs = databaseSizeInTbs;
-            o.dbVersion = dbVersion;
-            o.displayName = displayName;
-            o.id = id;
-            o.isAutomatic = isAutomatic;
-            o.isLongTermBackup = isLongTermBackup;
-            o.isRestorable = isRestorable;
-            o.keyStoreId = keyStoreId;
-            o.keyStoreWalletName = keyStoreWalletName;
-            o.kmsKeyId = kmsKeyId;
-            o.kmsKeyVersionId = kmsKeyVersionId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.retentionPeriodInDays = retentionPeriodInDays;
-            o.sizeInTbs = sizeInTbs;
-            o.state = state;
-            o.timeAvailableTill = timeAvailableTill;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseBackupsAutonomousDatabaseBackup();
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.backupDestinationDetails = backupDestinationDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseSizeInTbs = databaseSizeInTbs;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isAutomatic = isAutomatic;
+            _resultValue.isLongTermBackup = isLongTermBackup;
+            _resultValue.isRestorable = isRestorable;
+            _resultValue.keyStoreId = keyStoreId;
+            _resultValue.keyStoreWalletName = keyStoreWalletName;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.retentionPeriodInDays = retentionPeriodInDays;
+            _resultValue.sizeInTbs = sizeInTbs;
+            _resultValue.state = state;
+            _resultValue.timeAvailableTill = timeAvailableTill;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

@@ -120,14 +120,14 @@ public final class GetOrganizationSubscriptionsResult {
             return this;
         }
         public GetOrganizationSubscriptionsResult build() {
-            final var o = new GetOrganizationSubscriptionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.subscriptionIds = subscriptionIds;
-            o.subscriptions = subscriptions;
-            o.xOneOriginRegion = xOneOriginRegion;
-            return o;
+            final var _resultValue = new GetOrganizationSubscriptionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.subscriptionIds = subscriptionIds;
+            _resultValue.subscriptions = subscriptions;
+            _resultValue.xOneOriginRegion = xOneOriginRegion;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetLibraryMaskingFormatsLibraryMaskingFormatCollection {
             return items(List.of(items));
         }
         public GetLibraryMaskingFormatsLibraryMaskingFormatCollection build() {
-            final var o = new GetLibraryMaskingFormatsLibraryMaskingFormatCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetLibraryMaskingFormatsLibraryMaskingFormatCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

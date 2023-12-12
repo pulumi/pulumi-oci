@@ -122,13 +122,13 @@ public final class GetPublicationPackagesPublicationPackage {
             return this;
         }
         public GetPublicationPackagesPublicationPackage build() {
-            final var o = new GetPublicationPackagesPublicationPackage();
-            o.listingId = listingId;
-            o.packageType = packageType;
-            o.packageVersion = packageVersion;
-            o.resourceId = resourceId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetPublicationPackagesPublicationPackage();
+            _resultValue.listingId = listingId;
+            _resultValue.packageType = packageType;
+            _resultValue.packageVersion = packageVersion;
+            _resultValue.resourceId = resourceId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

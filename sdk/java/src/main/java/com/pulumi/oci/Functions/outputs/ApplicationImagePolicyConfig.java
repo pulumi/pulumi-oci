@@ -71,10 +71,10 @@ public final class ApplicationImagePolicyConfig {
             return keyDetails(List.of(keyDetails));
         }
         public ApplicationImagePolicyConfig build() {
-            final var o = new ApplicationImagePolicyConfig();
-            o.isPolicyEnabled = isPolicyEnabled;
-            o.keyDetails = keyDetails;
-            return o;
+            final var _resultValue = new ApplicationImagePolicyConfig();
+            _resultValue.isPolicyEnabled = isPolicyEnabled;
+            _resultValue.keyDetails = keyDetails;
+            return _resultValue;
         }
     }
 }

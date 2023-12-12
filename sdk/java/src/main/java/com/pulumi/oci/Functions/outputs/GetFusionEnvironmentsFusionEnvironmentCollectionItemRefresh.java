@@ -84,11 +84,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh {
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh build() {
-            final var o = new GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh();
-            o.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
-            o.timeFinished = timeFinished;
-            o.timeOfRestorationPoint = timeOfRestorationPoint;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh();
+            _resultValue.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeOfRestorationPoint = timeOfRestorationPoint;
+            return _resultValue;
         }
     }
 }

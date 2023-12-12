@@ -205,16 +205,16 @@ public final class SecurityListEgressSecurityRule {
             return this;
         }
         public SecurityListEgressSecurityRule build() {
-            final var o = new SecurityListEgressSecurityRule();
-            o.description = description;
-            o.destination = destination;
-            o.destinationType = destinationType;
-            o.icmpOptions = icmpOptions;
-            o.protocol = protocol;
-            o.stateless = stateless;
-            o.tcpOptions = tcpOptions;
-            o.udpOptions = udpOptions;
-            return o;
+            final var _resultValue = new SecurityListEgressSecurityRule();
+            _resultValue.description = description;
+            _resultValue.destination = destination;
+            _resultValue.destinationType = destinationType;
+            _resultValue.icmpOptions = icmpOptions;
+            _resultValue.protocol = protocol;
+            _resultValue.stateless = stateless;
+            _resultValue.tcpOptions = tcpOptions;
+            _resultValue.udpOptions = udpOptions;
+            return _resultValue;
         }
     }
 }

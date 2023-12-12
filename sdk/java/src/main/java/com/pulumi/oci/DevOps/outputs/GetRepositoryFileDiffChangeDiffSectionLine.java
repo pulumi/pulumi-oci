@@ -104,12 +104,12 @@ public final class GetRepositoryFileDiffChangeDiffSectionLine {
             return this;
         }
         public GetRepositoryFileDiffChangeDiffSectionLine build() {
-            final var o = new GetRepositoryFileDiffChangeDiffSectionLine();
-            o.baseLine = baseLine;
-            o.conflictMarker = conflictMarker;
-            o.lineContent = lineContent;
-            o.targetLine = targetLine;
-            return o;
+            final var _resultValue = new GetRepositoryFileDiffChangeDiffSectionLine();
+            _resultValue.baseLine = baseLine;
+            _resultValue.conflictMarker = conflictMarker;
+            _resultValue.lineContent = lineContent;
+            _resultValue.targetLine = targetLine;
+            return _resultValue;
         }
     }
 }

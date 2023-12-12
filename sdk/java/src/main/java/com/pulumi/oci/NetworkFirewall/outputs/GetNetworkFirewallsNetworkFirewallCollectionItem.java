@@ -337,24 +337,24 @@ public final class GetNetworkFirewallsNetworkFirewallCollectionItem {
             return this;
         }
         public GetNetworkFirewallsNetworkFirewallCollectionItem build() {
-            final var o = new GetNetworkFirewallsNetworkFirewallCollectionItem();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipv4address = ipv4address;
-            o.ipv6address = ipv6address;
-            o.lifecycleDetails = lifecycleDetails;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.networkSecurityGroupIds = networkSecurityGroupIds;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetNetworkFirewallsNetworkFirewallCollectionItem();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipv4address = ipv4address;
+            _resultValue.ipv6address = ipv6address;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

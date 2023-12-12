@@ -65,10 +65,10 @@ public final class GetDomainsIdentityProviderJitUserProvAttribute {
             return this;
         }
         public GetDomainsIdentityProviderJitUserProvAttribute build() {
-            final var o = new GetDomainsIdentityProviderJitUserProvAttribute();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsIdentityProviderJitUserProvAttribute();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

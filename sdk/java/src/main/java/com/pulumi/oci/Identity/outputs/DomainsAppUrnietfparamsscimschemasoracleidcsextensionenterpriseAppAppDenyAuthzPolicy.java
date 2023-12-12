@@ -109,10 +109,10 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpri
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicy();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric build() {
-            final var o = new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric();
-            o.kind = kind;
-            return o;
+            final var _resultValue = new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric();
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

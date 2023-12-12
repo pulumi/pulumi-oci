@@ -69,11 +69,11 @@ public final class GetUserAssessmentComparisonSummary {
             return this;
         }
         public GetUserAssessmentComparisonSummary build() {
-            final var o = new GetUserAssessmentComparisonSummary();
-            o.baselines = baselines;
-            o.currents = currents;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetUserAssessmentComparisonSummary();
+            _resultValue.baselines = baselines;
+            _resultValue.currents = currents;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

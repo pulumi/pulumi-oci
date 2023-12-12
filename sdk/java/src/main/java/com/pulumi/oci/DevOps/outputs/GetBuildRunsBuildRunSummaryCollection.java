@@ -50,9 +50,9 @@ public final class GetBuildRunsBuildRunSummaryCollection {
             return items(List.of(items));
         }
         public GetBuildRunsBuildRunSummaryCollection build() {
-            final var o = new GetBuildRunsBuildRunSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBuildRunsBuildRunSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -144,14 +144,14 @@ public final class GetDatabaseRegistrationsResult {
             return this;
         }
         public GetDatabaseRegistrationsResult build() {
-            final var o = new GetDatabaseRegistrationsResult();
-            o.compartmentId = compartmentId;
-            o.databaseRegistrationCollections = databaseRegistrationCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDatabaseRegistrationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseRegistrationCollections = databaseRegistrationCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

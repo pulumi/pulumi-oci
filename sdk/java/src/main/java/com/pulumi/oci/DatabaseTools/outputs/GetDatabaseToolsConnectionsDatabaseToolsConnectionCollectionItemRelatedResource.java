@@ -65,10 +65,10 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
             return this;
         }
         public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource build() {
-            final var o = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource();
-            o.entityType = entityType;
-            o.identifier = identifier;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource();
+            _resultValue.entityType = entityType;
+            _resultValue.identifier = identifier;
+            return _resultValue;
         }
     }
 }

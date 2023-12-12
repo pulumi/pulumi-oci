@@ -103,12 +103,12 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseItem {
             return this;
         }
         public GetDbManagementPrivateEndpointAssociatedDatabaseItem build() {
-            final var o = new GetDbManagementPrivateEndpointAssociatedDatabaseItem();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.name = name;
-            o.timeRegistered = timeRegistered;
-            return o;
+            final var _resultValue = new GetDbManagementPrivateEndpointAssociatedDatabaseItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.timeRegistered = timeRegistered;
+            return _resultValue;
         }
     }
 }

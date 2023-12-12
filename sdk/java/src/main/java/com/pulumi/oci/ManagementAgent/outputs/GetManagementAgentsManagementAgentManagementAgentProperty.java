@@ -88,11 +88,11 @@ public final class GetManagementAgentsManagementAgentManagementAgentProperty {
             return values(List.of(values));
         }
         public GetManagementAgentsManagementAgentManagementAgentProperty build() {
-            final var o = new GetManagementAgentsManagementAgentManagementAgentProperty();
-            o.name = name;
-            o.units = units;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagementAgentsManagementAgentManagementAgentProperty();
+            _resultValue.name = name;
+            _resultValue.units = units;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -338,24 +338,24 @@ public final class GetTraceSpanSummary {
             return this;
         }
         public GetTraceSpanSummary build() {
-            final var o = new GetTraceSpanSummary();
-            o.errorSpanCount = errorSpanCount;
-            o.isFault = isFault;
-            o.key = key;
-            o.rootSpanDurationInMs = rootSpanDurationInMs;
-            o.rootSpanOperationName = rootSpanOperationName;
-            o.rootSpanServiceName = rootSpanServiceName;
-            o.serviceSummaries = serviceSummaries;
-            o.spanCount = spanCount;
-            o.timeEarliestSpanStarted = timeEarliestSpanStarted;
-            o.timeLatestSpanEnded = timeLatestSpanEnded;
-            o.timeRootSpanEnded = timeRootSpanEnded;
-            o.timeRootSpanStarted = timeRootSpanStarted;
-            o.traceDurationInMs = traceDurationInMs;
-            o.traceErrorCode = traceErrorCode;
-            o.traceErrorType = traceErrorType;
-            o.traceStatus = traceStatus;
-            return o;
+            final var _resultValue = new GetTraceSpanSummary();
+            _resultValue.errorSpanCount = errorSpanCount;
+            _resultValue.isFault = isFault;
+            _resultValue.key = key;
+            _resultValue.rootSpanDurationInMs = rootSpanDurationInMs;
+            _resultValue.rootSpanOperationName = rootSpanOperationName;
+            _resultValue.rootSpanServiceName = rootSpanServiceName;
+            _resultValue.serviceSummaries = serviceSummaries;
+            _resultValue.spanCount = spanCount;
+            _resultValue.timeEarliestSpanStarted = timeEarliestSpanStarted;
+            _resultValue.timeLatestSpanEnded = timeLatestSpanEnded;
+            _resultValue.timeRootSpanEnded = timeRootSpanEnded;
+            _resultValue.timeRootSpanStarted = timeRootSpanStarted;
+            _resultValue.traceDurationInMs = traceDurationInMs;
+            _resultValue.traceErrorCode = traceErrorCode;
+            _resultValue.traceErrorType = traceErrorType;
+            _resultValue.traceStatus = traceStatus;
+            return _resultValue;
         }
     }
 }

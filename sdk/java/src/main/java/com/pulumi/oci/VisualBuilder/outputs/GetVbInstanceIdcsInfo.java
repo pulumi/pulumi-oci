@@ -122,13 +122,13 @@ public final class GetVbInstanceIdcsInfo {
             return this;
         }
         public GetVbInstanceIdcsInfo build() {
-            final var o = new GetVbInstanceIdcsInfo();
-            o.idcsAppDisplayName = idcsAppDisplayName;
-            o.idcsAppId = idcsAppId;
-            o.idcsAppLocationUrl = idcsAppLocationUrl;
-            o.idcsAppName = idcsAppName;
-            o.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
-            return o;
+            final var _resultValue = new GetVbInstanceIdcsInfo();
+            _resultValue.idcsAppDisplayName = idcsAppDisplayName;
+            _resultValue.idcsAppId = idcsAppId;
+            _resultValue.idcsAppLocationUrl = idcsAppLocationUrl;
+            _resultValue.idcsAppName = idcsAppName;
+            _resultValue.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
+            return _resultValue;
         }
     }
 }

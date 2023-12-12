@@ -106,12 +106,12 @@ public final class GetAutonomousDatabaseDbToolsDetail {
             return this;
         }
         public GetAutonomousDatabaseDbToolsDetail build() {
-            final var o = new GetAutonomousDatabaseDbToolsDetail();
-            o.computeCount = computeCount;
-            o.isEnabled = isEnabled;
-            o.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseDbToolsDetail();
+            _resultValue.computeCount = computeCount;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

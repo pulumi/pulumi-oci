@@ -84,11 +84,11 @@ public final class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectio
             return this;
         }
         public GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem build() {
-            final var o = new GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem();
-            o.object = object;
-            o.objectType = objectType;
-            o.schemaName = schemaName;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItem();
+            _resultValue.object = object;
+            _resultValue.objectType = objectType;
+            _resultValue.schemaName = schemaName;
+            return _resultValue;
         }
     }
 }

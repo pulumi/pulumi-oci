@@ -71,12 +71,12 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             return this;
         }
         public GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride build() {
-            final var o = new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride();
-            o.matchType = matchType;
-            o.matchValue = matchValue;
-            o.propertyName = propertyName;
-            o.propertyValue = propertyValue;
-            return o;
+            final var _resultValue = new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOverride();
+            _resultValue.matchType = matchType;
+            _resultValue.matchValue = matchValue;
+            _resultValue.propertyName = propertyName;
+            _resultValue.propertyValue = propertyValue;
+            return _resultValue;
         }
     }
 }

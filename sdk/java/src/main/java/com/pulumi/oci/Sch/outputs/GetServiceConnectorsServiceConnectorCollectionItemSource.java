@@ -135,13 +135,13 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemSource build() {
-            final var o = new GetServiceConnectorsServiceConnectorCollectionItemSource();
-            o.cursors = cursors;
-            o.kind = kind;
-            o.logSources = logSources;
-            o.monitoringSources = monitoringSources;
-            o.streamId = streamId;
-            return o;
+            final var _resultValue = new GetServiceConnectorsServiceConnectorCollectionItemSource();
+            _resultValue.cursors = cursors;
+            _resultValue.kind = kind;
+            _resultValue.logSources = logSources;
+            _resultValue.monitoringSources = monitoringSources;
+            _resultValue.streamId = streamId;
+            return _resultValue;
         }
     }
 }

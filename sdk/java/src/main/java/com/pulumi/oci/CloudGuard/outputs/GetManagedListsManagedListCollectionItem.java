@@ -338,24 +338,24 @@ public final class GetManagedListsManagedListCollectionItem {
             return this;
         }
         public GetManagedListsManagedListCollectionItem build() {
-            final var o = new GetManagedListsManagedListCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.feedProvider = feedProvider;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEditable = isEditable;
-            o.lifecyleDetails = lifecyleDetails;
-            o.listItems = listItems;
-            o.listType = listType;
-            o.sourceManagedListId = sourceManagedListId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetManagedListsManagedListCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.feedProvider = feedProvider;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEditable = isEditable;
+            _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.listItems = listItems;
+            _resultValue.listType = listType;
+            _resultValue.sourceManagedListId = sourceManagedListId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

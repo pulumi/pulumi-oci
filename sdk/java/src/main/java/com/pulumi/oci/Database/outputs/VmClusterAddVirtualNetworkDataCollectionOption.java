@@ -86,11 +86,11 @@ public final class VmClusterAddVirtualNetworkDataCollectionOption {
             return this;
         }
         public VmClusterAddVirtualNetworkDataCollectionOption build() {
-            final var o = new VmClusterAddVirtualNetworkDataCollectionOption();
-            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            return o;
+            final var _resultValue = new VmClusterAddVirtualNetworkDataCollectionOption();
+            _resultValue.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            _resultValue.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            _resultValue.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return _resultValue;
         }
     }
 }

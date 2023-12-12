@@ -85,11 +85,11 @@ public final class GetListingPackagesListingPackagePricingInternationalMarketPri
             return this;
         }
         public GetListingPackagesListingPackagePricingInternationalMarketPrice build() {
-            final var o = new GetListingPackagesListingPackagePricingInternationalMarketPrice();
-            o.currencyCode = currencyCode;
-            o.currencySymbol = currencySymbol;
-            o.rate = rate;
-            return o;
+            final var _resultValue = new GetListingPackagesListingPackagePricingInternationalMarketPrice();
+            _resultValue.currencyCode = currencyCode;
+            _resultValue.currencySymbol = currencySymbol;
+            _resultValue.rate = rate;
+            return _resultValue;
         }
     }
 }

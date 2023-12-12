@@ -65,10 +65,10 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetailAccess {
             return this;
         }
         public GetModelDeploymentsModelDeploymentCategoryLogDetailAccess build() {
-            final var o = new GetModelDeploymentsModelDeploymentCategoryLogDetailAccess();
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new GetModelDeploymentsModelDeploymentCategoryLogDetailAccess();
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

@@ -128,14 +128,14 @@ public final class GetManagedDatabaseUserRolesResult {
             return this;
         }
         public GetManagedDatabaseUserRolesResult build() {
-            final var o = new GetManagedDatabaseUserRolesResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.roleCollections = roleCollections;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserRolesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.roleCollections = roleCollections;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig {
             return this;
         }
         public GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig build() {
-            final var o = new GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

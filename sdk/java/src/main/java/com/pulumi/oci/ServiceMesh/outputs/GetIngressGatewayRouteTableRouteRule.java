@@ -208,17 +208,17 @@ public final class GetIngressGatewayRouteTableRouteRule {
             return this;
         }
         public GetIngressGatewayRouteTableRouteRule build() {
-            final var o = new GetIngressGatewayRouteTableRouteRule();
-            o.destinations = destinations;
-            o.ingressGatewayHosts = ingressGatewayHosts;
-            o.isGrpc = isGrpc;
-            o.isHostRewriteEnabled = isHostRewriteEnabled;
-            o.isPathRewriteEnabled = isPathRewriteEnabled;
-            o.path = path;
-            o.pathType = pathType;
-            o.requestTimeoutInMs = requestTimeoutInMs;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetIngressGatewayRouteTableRouteRule();
+            _resultValue.destinations = destinations;
+            _resultValue.ingressGatewayHosts = ingressGatewayHosts;
+            _resultValue.isGrpc = isGrpc;
+            _resultValue.isHostRewriteEnabled = isHostRewriteEnabled;
+            _resultValue.isPathRewriteEnabled = isPathRewriteEnabled;
+            _resultValue.path = path;
+            _resultValue.pathType = pathType;
+            _resultValue.requestTimeoutInMs = requestTimeoutInMs;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -453,29 +453,29 @@ public final class GetTargetAssetsTargetAssetCollectionItem {
             return userSpecs(List.of(userSpecs));
         }
         public GetTargetAssetsTargetAssetCollectionItem build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItem();
-            o.blockVolumesPerformance = blockVolumesPerformance;
-            o.compartmentId = compartmentId;
-            o.compatibilityMessages = compatibilityMessages;
-            o.createdResourceId = createdResourceId;
-            o.displayName = displayName;
-            o.estimatedCosts = estimatedCosts;
-            o.id = id;
-            o.isExcludedFromExecution = isExcludedFromExecution;
-            o.lifecycleDetails = lifecycleDetails;
-            o.migrationAssets = migrationAssets;
-            o.migrationPlanId = migrationPlanId;
-            o.msLicense = msLicense;
-            o.preferredShapeType = preferredShapeType;
-            o.recommendedSpecs = recommendedSpecs;
-            o.state = state;
-            o.testSpecs = testSpecs;
-            o.timeAssessed = timeAssessed;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            o.userSpecs = userSpecs;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItem();
+            _resultValue.blockVolumesPerformance = blockVolumesPerformance;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compatibilityMessages = compatibilityMessages;
+            _resultValue.createdResourceId = createdResourceId;
+            _resultValue.displayName = displayName;
+            _resultValue.estimatedCosts = estimatedCosts;
+            _resultValue.id = id;
+            _resultValue.isExcludedFromExecution = isExcludedFromExecution;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.migrationAssets = migrationAssets;
+            _resultValue.migrationPlanId = migrationPlanId;
+            _resultValue.msLicense = msLicense;
+            _resultValue.preferredShapeType = preferredShapeType;
+            _resultValue.recommendedSpecs = recommendedSpecs;
+            _resultValue.state = state;
+            _resultValue.testSpecs = testSpecs;
+            _resultValue.timeAssessed = timeAssessed;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            _resultValue.userSpecs = userSpecs;
+            return _resultValue;
         }
     }
 }

@@ -107,12 +107,12 @@ public final class JobRunJobConfigurationOverrideDetails {
             return this;
         }
         public JobRunJobConfigurationOverrideDetails build() {
-            final var o = new JobRunJobConfigurationOverrideDetails();
-            o.commandLineArguments = commandLineArguments;
-            o.environmentVariables = environmentVariables;
-            o.jobType = jobType;
-            o.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
-            return o;
+            final var _resultValue = new JobRunJobConfigurationOverrideDetails();
+            _resultValue.commandLineArguments = commandLineArguments;
+            _resultValue.environmentVariables = environmentVariables;
+            _resultValue.jobType = jobType;
+            _resultValue.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            return _resultValue;
         }
     }
 }

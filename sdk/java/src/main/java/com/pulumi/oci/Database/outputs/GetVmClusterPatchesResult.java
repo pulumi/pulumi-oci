@@ -97,12 +97,12 @@ public final class GetVmClusterPatchesResult {
             return this;
         }
         public GetVmClusterPatchesResult build() {
-            final var o = new GetVmClusterPatchesResult();
-            o.filters = filters;
-            o.id = id;
-            o.patches = patches;
-            o.vmClusterId = vmClusterId;
-            return o;
+            final var _resultValue = new GetVmClusterPatchesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.patches = patches;
+            _resultValue.vmClusterId = vmClusterId;
+            return _resultValue;
         }
     }
 }

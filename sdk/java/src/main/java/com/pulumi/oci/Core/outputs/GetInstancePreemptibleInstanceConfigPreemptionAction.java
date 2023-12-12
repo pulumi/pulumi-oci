@@ -66,10 +66,10 @@ public final class GetInstancePreemptibleInstanceConfigPreemptionAction {
             return this;
         }
         public GetInstancePreemptibleInstanceConfigPreemptionAction build() {
-            final var o = new GetInstancePreemptibleInstanceConfigPreemptionAction();
-            o.preserveBootVolume = preserveBootVolume;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetInstancePreemptibleInstanceConfigPreemptionAction();
+            _resultValue.preserveBootVolume = preserveBootVolume;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

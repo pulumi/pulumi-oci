@@ -468,30 +468,30 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
             return userPasswords(List.of(userPasswords));
         }
         public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem build() {
-            final var o = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem();
-            o.advancedProperties = advancedProperties;
-            o.compartmentId = compartmentId;
-            o.connectionString = connectionString;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.keyStores = keyStores;
-            o.lifecycleDetails = lifecycleDetails;
-            o.locks = locks;
-            o.privateEndpointId = privateEndpointId;
-            o.proxyClients = proxyClients;
-            o.relatedResources = relatedResources;
-            o.runtimeSupport = runtimeSupport;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            o.url = url;
-            o.userName = userName;
-            o.userPasswords = userPasswords;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem();
+            _resultValue.advancedProperties = advancedProperties;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionString = connectionString;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.keyStores = keyStores;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
+            _resultValue.privateEndpointId = privateEndpointId;
+            _resultValue.proxyClients = proxyClients;
+            _resultValue.relatedResources = relatedResources;
+            _resultValue.runtimeSupport = runtimeSupport;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            _resultValue.url = url;
+            _resultValue.userName = userName;
+            _resultValue.userPasswords = userPasswords;
+            return _resultValue;
         }
     }
 }

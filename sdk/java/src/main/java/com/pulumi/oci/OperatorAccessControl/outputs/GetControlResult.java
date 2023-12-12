@@ -437,29 +437,29 @@ public final class GetControlResult {
             return this;
         }
         public GetControlResult build() {
-            final var o = new GetControlResult();
-            o.approvalRequiredOpActionLists = approvalRequiredOpActionLists;
-            o.approverGroupsLists = approverGroupsLists;
-            o.approversLists = approversLists;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.emailIdLists = emailIdLists;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isDefaultOperatorControl = isDefaultOperatorControl;
-            o.isFullyPreApproved = isFullyPreApproved;
-            o.lastModifiedInfo = lastModifiedInfo;
-            o.operatorControlId = operatorControlId;
-            o.operatorControlName = operatorControlName;
-            o.preApprovedOpActionLists = preApprovedOpActionLists;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.systemMessage = systemMessage;
-            o.timeOfCreation = timeOfCreation;
-            o.timeOfDeletion = timeOfDeletion;
-            o.timeOfModification = timeOfModification;
-            return o;
+            final var _resultValue = new GetControlResult();
+            _resultValue.approvalRequiredOpActionLists = approvalRequiredOpActionLists;
+            _resultValue.approverGroupsLists = approverGroupsLists;
+            _resultValue.approversLists = approversLists;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.emailIdLists = emailIdLists;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isDefaultOperatorControl = isDefaultOperatorControl;
+            _resultValue.isFullyPreApproved = isFullyPreApproved;
+            _resultValue.lastModifiedInfo = lastModifiedInfo;
+            _resultValue.operatorControlId = operatorControlId;
+            _resultValue.operatorControlName = operatorControlName;
+            _resultValue.preApprovedOpActionLists = preApprovedOpActionLists;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.systemMessage = systemMessage;
+            _resultValue.timeOfCreation = timeOfCreation;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.timeOfModification = timeOfModification;
+            return _resultValue;
         }
     }
 }

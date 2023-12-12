@@ -146,14 +146,14 @@ public final class GetAuditEventAnalyticItem {
             return this;
         }
         public GetAuditEventAnalyticItem build() {
-            final var o = new GetAuditEventAnalyticItem();
-            o.count = count;
-            o.dimensions = dimensions;
-            o.displayName = displayName;
-            o.metricName = metricName;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetAuditEventAnalyticItem();
+            _resultValue.count = count;
+            _resultValue.dimensions = dimensions;
+            _resultValue.displayName = displayName;
+            _resultValue.metricName = metricName;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

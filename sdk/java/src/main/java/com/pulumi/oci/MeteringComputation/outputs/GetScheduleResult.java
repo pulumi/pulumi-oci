@@ -353,25 +353,25 @@ public final class GetScheduleResult {
             return this;
         }
         public GetScheduleResult build() {
-            final var o = new GetScheduleResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.name = name;
-            o.outputFileFormat = outputFileFormat;
-            o.queryProperties = queryProperties;
-            o.resultLocations = resultLocations;
-            o.savedReportId = savedReportId;
-            o.scheduleId = scheduleId;
-            o.scheduleRecurrences = scheduleRecurrences;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeNextRun = timeNextRun;
-            o.timeScheduled = timeScheduled;
-            return o;
+            final var _resultValue = new GetScheduleResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.outputFileFormat = outputFileFormat;
+            _resultValue.queryProperties = queryProperties;
+            _resultValue.resultLocations = resultLocations;
+            _resultValue.savedReportId = savedReportId;
+            _resultValue.scheduleId = scheduleId;
+            _resultValue.scheduleRecurrences = scheduleRecurrences;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeNextRun = timeNextRun;
+            _resultValue.timeScheduled = timeScheduled;
+            return _resultValue;
         }
     }
 }

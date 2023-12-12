@@ -147,15 +147,15 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordsResult {
             return this;
         }
         public GetJavaDownloadsJavaLicenseAcceptanceRecordsResult build() {
-            final var o = new GetJavaDownloadsJavaLicenseAcceptanceRecordsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.javaLicenseAcceptanceRecordCollections = javaLicenseAcceptanceRecordCollections;
-            o.licenseType = licenseType;
-            o.searchByUser = searchByUser;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaLicenseAcceptanceRecordsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.javaLicenseAcceptanceRecordCollections = javaLicenseAcceptanceRecordCollections;
+            _resultValue.licenseType = licenseType;
+            _resultValue.searchByUser = searchByUser;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

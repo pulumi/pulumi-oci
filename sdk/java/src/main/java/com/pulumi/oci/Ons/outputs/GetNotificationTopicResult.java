@@ -249,20 +249,20 @@ public final class GetNotificationTopicResult {
             return this;
         }
         public GetNotificationTopicResult build() {
-            final var o = new GetNotificationTopicResult();
-            o.apiEndpoint = apiEndpoint;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.etag = etag;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.name = name;
-            o.shortTopicId = shortTopicId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.topicId = topicId;
-            return o;
+            final var _resultValue = new GetNotificationTopicResult();
+            _resultValue.apiEndpoint = apiEndpoint;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.etag = etag;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.shortTopicId = shortTopicId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.topicId = topicId;
+            return _resultValue;
         }
     }
 }

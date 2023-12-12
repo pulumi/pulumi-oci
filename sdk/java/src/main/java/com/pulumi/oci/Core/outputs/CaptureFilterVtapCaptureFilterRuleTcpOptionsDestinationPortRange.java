@@ -71,10 +71,10 @@ public final class CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRa
             return this;
         }
         public CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange build() {
-            final var o = new CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

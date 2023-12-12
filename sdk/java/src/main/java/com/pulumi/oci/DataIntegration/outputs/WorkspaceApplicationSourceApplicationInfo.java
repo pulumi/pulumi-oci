@@ -130,13 +130,13 @@ public final class WorkspaceApplicationSourceApplicationInfo {
             return this;
         }
         public WorkspaceApplicationSourceApplicationInfo build() {
-            final var o = new WorkspaceApplicationSourceApplicationInfo();
-            o.applicationKey = applicationKey;
-            o.applicationVersion = applicationVersion;
-            o.copyType = copyType;
-            o.lastPatchKey = lastPatchKey;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new WorkspaceApplicationSourceApplicationInfo();
+            _resultValue.applicationKey = applicationKey;
+            _resultValue.applicationVersion = applicationVersion;
+            _resultValue.copyType = copyType;
+            _resultValue.lastPatchKey = lastPatchKey;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

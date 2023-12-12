@@ -149,14 +149,14 @@ public final class GetOpsiConfigurationConfigItem {
             return this;
         }
         public GetOpsiConfigurationConfigItem build() {
-            final var o = new GetOpsiConfigurationConfigItem();
-            o.applicableContexts = applicableContexts;
-            o.configItemType = configItemType;
-            o.defaultValue = defaultValue;
-            o.metadatas = metadatas;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationConfigItem();
+            _resultValue.applicableContexts = applicableContexts;
+            _resultValue.configItemType = configItemType;
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.metadatas = metadatas;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

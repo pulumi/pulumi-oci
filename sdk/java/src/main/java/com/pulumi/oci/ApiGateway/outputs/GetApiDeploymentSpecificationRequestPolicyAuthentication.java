@@ -334,23 +334,23 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthentication {
             return verifyClaims(List.of(verifyClaims));
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthentication build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyAuthentication();
-            o.audiences = audiences;
-            o.cacheKeys = cacheKeys;
-            o.functionId = functionId;
-            o.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
-            o.issuers = issuers;
-            o.maxClockSkewInSeconds = maxClockSkewInSeconds;
-            o.parameters = parameters;
-            o.publicKeys = publicKeys;
-            o.tokenAuthScheme = tokenAuthScheme;
-            o.tokenHeader = tokenHeader;
-            o.tokenQueryParam = tokenQueryParam;
-            o.type = type;
-            o.validationFailurePolicies = validationFailurePolicies;
-            o.validationPolicies = validationPolicies;
-            o.verifyClaims = verifyClaims;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyAuthentication();
+            _resultValue.audiences = audiences;
+            _resultValue.cacheKeys = cacheKeys;
+            _resultValue.functionId = functionId;
+            _resultValue.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
+            _resultValue.issuers = issuers;
+            _resultValue.maxClockSkewInSeconds = maxClockSkewInSeconds;
+            _resultValue.parameters = parameters;
+            _resultValue.publicKeys = publicKeys;
+            _resultValue.tokenAuthScheme = tokenAuthScheme;
+            _resultValue.tokenHeader = tokenHeader;
+            _resultValue.tokenQueryParam = tokenQueryParam;
+            _resultValue.type = type;
+            _resultValue.validationFailurePolicies = validationFailurePolicies;
+            _resultValue.validationPolicies = validationPolicies;
+            _resultValue.verifyClaims = verifyClaims;
+            return _resultValue;
         }
     }
 }

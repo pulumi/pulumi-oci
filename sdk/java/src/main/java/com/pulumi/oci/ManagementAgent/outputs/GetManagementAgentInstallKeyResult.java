@@ -287,22 +287,22 @@ public final class GetManagementAgentInstallKeyResult {
             return this;
         }
         public GetManagementAgentInstallKeyResult build() {
-            final var o = new GetManagementAgentInstallKeyResult();
-            o.allowedKeyInstallCount = allowedKeyInstallCount;
-            o.compartmentId = compartmentId;
-            o.createdByPrincipalId = createdByPrincipalId;
-            o.currentKeyInstallCount = currentKeyInstallCount;
-            o.displayName = displayName;
-            o.id = id;
-            o.isUnlimited = isUnlimited;
-            o.key = key;
-            o.lifecycleDetails = lifecycleDetails;
-            o.managementAgentInstallKeyId = managementAgentInstallKeyId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeExpires = timeExpires;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetManagementAgentInstallKeyResult();
+            _resultValue.allowedKeyInstallCount = allowedKeyInstallCount;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdByPrincipalId = createdByPrincipalId;
+            _resultValue.currentKeyInstallCount = currentKeyInstallCount;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isUnlimited = isUnlimited;
+            _resultValue.key = key;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managementAgentInstallKeyId = managementAgentInstallKeyId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpires = timeExpires;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

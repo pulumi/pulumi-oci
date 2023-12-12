@@ -136,14 +136,14 @@ public final class GetNotificationTopicsResult {
             return this;
         }
         public GetNotificationTopicsResult build() {
-            final var o = new GetNotificationTopicsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.notificationTopics = notificationTopics;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetNotificationTopicsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.notificationTopics = notificationTopics;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

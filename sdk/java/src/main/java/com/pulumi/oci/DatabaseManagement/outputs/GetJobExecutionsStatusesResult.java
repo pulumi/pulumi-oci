@@ -145,17 +145,17 @@ public final class GetJobExecutionsStatusesResult {
             return this;
         }
         public GetJobExecutionsStatusesResult build() {
-            final var o = new GetJobExecutionsStatusesResult();
-            o.compartmentId = compartmentId;
-            o.endTime = endTime;
-            o.filters = filters;
-            o.id = id;
-            o.jobExecutionsStatusSummaryCollections = jobExecutionsStatusSummaryCollections;
-            o.managedDatabaseGroupId = managedDatabaseGroupId;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.startTime = startTime;
-            return o;
+            final var _resultValue = new GetJobExecutionsStatusesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.endTime = endTime;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.jobExecutionsStatusSummaryCollections = jobExecutionsStatusSummaryCollections;
+            _resultValue.managedDatabaseGroupId = managedDatabaseGroupId;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.startTime = startTime;
+            return _resultValue;
         }
     }
 }

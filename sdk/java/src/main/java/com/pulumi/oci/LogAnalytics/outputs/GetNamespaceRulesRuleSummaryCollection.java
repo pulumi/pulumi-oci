@@ -50,9 +50,9 @@ public final class GetNamespaceRulesRuleSummaryCollection {
             return items(List.of(items));
         }
         public GetNamespaceRulesRuleSummaryCollection build() {
-            final var o = new GetNamespaceRulesRuleSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNamespaceRulesRuleSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

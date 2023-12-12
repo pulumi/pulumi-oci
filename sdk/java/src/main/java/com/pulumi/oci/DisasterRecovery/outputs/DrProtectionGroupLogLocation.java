@@ -86,11 +86,11 @@ public final class DrProtectionGroupLogLocation {
             return this;
         }
         public DrProtectionGroupLogLocation build() {
-            final var o = new DrProtectionGroupLogLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new DrProtectionGroupLogLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

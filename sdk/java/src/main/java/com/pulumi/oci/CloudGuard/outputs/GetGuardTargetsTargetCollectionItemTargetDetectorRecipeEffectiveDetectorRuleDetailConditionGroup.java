@@ -65,10 +65,10 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
             return this;
         }
         public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup build() {
-            final var o = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup();
-            o.compartmentId = compartmentId;
-            o.condition = condition;
-            return o;
+            final var _resultValue = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.condition = condition;
+            return _resultValue;
         }
     }
 }

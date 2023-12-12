@@ -319,23 +319,23 @@ public final class GetDataSourceResult {
             return this;
         }
         public GetDataSourceResult build() {
-            final var o = new GetDataSourceResult();
-            o.compartmentId = compartmentId;
-            o.dataSourceDetails = dataSourceDetails;
-            o.dataSourceDetectorMappingInfos = dataSourceDetectorMappingInfos;
-            o.dataSourceFeedProvider = dataSourceFeedProvider;
-            o.dataSourceId = dataSourceId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.regionStatusDetails = regionStatusDetails;
-            o.state = state;
-            o.status = status;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDataSourceResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataSourceDetails = dataSourceDetails;
+            _resultValue.dataSourceDetectorMappingInfos = dataSourceDetectorMappingInfos;
+            _resultValue.dataSourceFeedProvider = dataSourceFeedProvider;
+            _resultValue.dataSourceId = dataSourceId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.regionStatusDetails = regionStatusDetails;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

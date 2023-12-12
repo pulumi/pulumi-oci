@@ -131,13 +131,13 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTa
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter();
-            o.allowedTimeLimit = allowedTimeLimit;
-            o.alternatePlanBaselines = alternatePlanBaselines;
-            o.alternatePlanLimit = alternatePlanLimit;
-            o.alternatePlanSources = alternatePlanSources;
-            o.arePlansAutoAccepted = arePlansAutoAccepted;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter();
+            _resultValue.allowedTimeLimit = allowedTimeLimit;
+            _resultValue.alternatePlanBaselines = alternatePlanBaselines;
+            _resultValue.alternatePlanLimit = alternatePlanLimit;
+            _resultValue.alternatePlanSources = alternatePlanSources;
+            _resultValue.arePlansAutoAccepted = arePlansAutoAccepted;
+            return _resultValue;
         }
     }
 }

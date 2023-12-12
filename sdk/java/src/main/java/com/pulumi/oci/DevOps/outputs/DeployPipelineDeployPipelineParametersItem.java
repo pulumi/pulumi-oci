@@ -86,11 +86,11 @@ public final class DeployPipelineDeployPipelineParametersItem {
             return this;
         }
         public DeployPipelineDeployPipelineParametersItem build() {
-            final var o = new DeployPipelineDeployPipelineParametersItem();
-            o.defaultValue = defaultValue;
-            o.description = description;
-            o.name = name;
-            return o;
+            final var _resultValue = new DeployPipelineDeployPipelineParametersItem();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.description = description;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

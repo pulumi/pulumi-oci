@@ -201,17 +201,17 @@ public final class GetCpesCpe {
             return this;
         }
         public GetCpesCpe build() {
-            final var o = new GetCpesCpe();
-            o.compartmentId = compartmentId;
-            o.cpeDeviceShapeId = cpeDeviceShapeId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.isPrivate = isPrivate;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetCpesCpe();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.cpeDeviceShapeId = cpeDeviceShapeId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isPrivate = isPrivate;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

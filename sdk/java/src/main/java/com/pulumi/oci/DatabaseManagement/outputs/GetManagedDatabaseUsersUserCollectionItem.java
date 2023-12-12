@@ -483,32 +483,32 @@ public final class GetManagedDatabaseUsersUserCollectionItem {
             return this;
         }
         public GetManagedDatabaseUsersUserCollectionItem build() {
-            final var o = new GetManagedDatabaseUsersUserCollectionItem();
-            o.allShared = allShared;
-            o.authentication = authentication;
-            o.common = common;
-            o.consumerGroup = consumerGroup;
-            o.defaultCollation = defaultCollation;
-            o.defaultTablespace = defaultTablespace;
-            o.editionsEnabled = editionsEnabled;
-            o.externalName = externalName;
-            o.externalShared = externalShared;
-            o.implicit = implicit;
-            o.inherited = inherited;
-            o.localTempTablespace = localTempTablespace;
-            o.name = name;
-            o.oracleMaintained = oracleMaintained;
-            o.passwordVersions = passwordVersions;
-            o.profile = profile;
-            o.proxyConnect = proxyConnect;
-            o.status = status;
-            o.tempTablespace = tempTablespace;
-            o.timeCreated = timeCreated;
-            o.timeExpiring = timeExpiring;
-            o.timeLastLogin = timeLastLogin;
-            o.timeLocked = timeLocked;
-            o.timePasswordChanged = timePasswordChanged;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUsersUserCollectionItem();
+            _resultValue.allShared = allShared;
+            _resultValue.authentication = authentication;
+            _resultValue.common = common;
+            _resultValue.consumerGroup = consumerGroup;
+            _resultValue.defaultCollation = defaultCollation;
+            _resultValue.defaultTablespace = defaultTablespace;
+            _resultValue.editionsEnabled = editionsEnabled;
+            _resultValue.externalName = externalName;
+            _resultValue.externalShared = externalShared;
+            _resultValue.implicit = implicit;
+            _resultValue.inherited = inherited;
+            _resultValue.localTempTablespace = localTempTablespace;
+            _resultValue.name = name;
+            _resultValue.oracleMaintained = oracleMaintained;
+            _resultValue.passwordVersions = passwordVersions;
+            _resultValue.profile = profile;
+            _resultValue.proxyConnect = proxyConnect;
+            _resultValue.status = status;
+            _resultValue.tempTablespace = tempTablespace;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpiring = timeExpiring;
+            _resultValue.timeLastLogin = timeLastLogin;
+            _resultValue.timeLocked = timeLocked;
+            _resultValue.timePasswordChanged = timePasswordChanged;
+            return _resultValue;
         }
     }
 }

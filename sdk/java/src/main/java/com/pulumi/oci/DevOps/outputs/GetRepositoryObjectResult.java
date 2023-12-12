@@ -158,16 +158,16 @@ public final class GetRepositoryObjectResult {
             return this;
         }
         public GetRepositoryObjectResult build() {
-            final var o = new GetRepositoryObjectResult();
-            o.filePath = filePath;
-            o.id = id;
-            o.isBinary = isBinary;
-            o.refName = refName;
-            o.repositoryId = repositoryId;
-            o.sha = sha;
-            o.sizeInBytes = sizeInBytes;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRepositoryObjectResult();
+            _resultValue.filePath = filePath;
+            _resultValue.id = id;
+            _resultValue.isBinary = isBinary;
+            _resultValue.refName = refName;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.sha = sha;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

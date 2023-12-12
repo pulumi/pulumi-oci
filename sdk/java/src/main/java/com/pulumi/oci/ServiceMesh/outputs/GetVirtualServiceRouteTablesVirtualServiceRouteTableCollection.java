@@ -42,9 +42,9 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
             return items(List.of(items));
         }
         public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection build() {
-            final var o = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -131,13 +131,13 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUs
             return passwordVerifiers(List.of(passwordVerifiers));
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser();
-            o.dbGlobalRoles = dbGlobalRoles;
-            o.domainLevelSchema = domainLevelSchema;
-            o.instanceLevelSchema = instanceLevelSchema;
-            o.isDbUser = isDbUser;
-            o.passwordVerifiers = passwordVerifiers;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser();
+            _resultValue.dbGlobalRoles = dbGlobalRoles;
+            _resultValue.domainLevelSchema = domainLevelSchema;
+            _resultValue.instanceLevelSchema = instanceLevelSchema;
+            _resultValue.isDbUser = isDbUser;
+            _resultValue.passwordVerifiers = passwordVerifiers;
+            return _resultValue;
         }
     }
 }

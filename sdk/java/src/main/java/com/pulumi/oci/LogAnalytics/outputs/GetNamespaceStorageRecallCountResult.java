@@ -153,15 +153,15 @@ public final class GetNamespaceStorageRecallCountResult {
             return this;
         }
         public GetNamespaceStorageRecallCountResult build() {
-            final var o = new GetNamespaceStorageRecallCountResult();
-            o.id = id;
-            o.namespace = namespace;
-            o.recallCount = recallCount;
-            o.recallFailed = recallFailed;
-            o.recallLimit = recallLimit;
-            o.recallPending = recallPending;
-            o.recallSucceeded = recallSucceeded;
-            return o;
+            final var _resultValue = new GetNamespaceStorageRecallCountResult();
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.recallCount = recallCount;
+            _resultValue.recallFailed = recallFailed;
+            _resultValue.recallLimit = recallLimit;
+            _resultValue.recallPending = recallPending;
+            _resultValue.recallSucceeded = recallSucceeded;
+            return _resultValue;
         }
     }
 }

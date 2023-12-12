@@ -253,26 +253,26 @@ public final class GetUserAssessmentUserAnalyticsResult {
             return this;
         }
         public GetUserAssessmentUserAnalyticsResult build() {
-            final var o = new GetUserAssessmentUserAnalyticsResult();
-            o.accessLevel = accessLevel;
-            o.accountStatus = accountStatus;
-            o.authenticationType = authenticationType;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.targetId = targetId;
-            o.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
-            o.timeLastLoginLessThan = timeLastLoginLessThan;
-            o.timePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
-            o.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
-            o.timeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;
-            o.timeUserCreatedLessThan = timeUserCreatedLessThan;
-            o.userAggregations = userAggregations;
-            o.userAssessmentId = userAssessmentId;
-            o.userCategory = userCategory;
-            o.userKey = userKey;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetUserAssessmentUserAnalyticsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.accountStatus = accountStatus;
+            _resultValue.authenticationType = authenticationType;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.targetId = targetId;
+            _resultValue.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
+            _resultValue.timeLastLoginLessThan = timeLastLoginLessThan;
+            _resultValue.timePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
+            _resultValue.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
+            _resultValue.timeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;
+            _resultValue.timeUserCreatedLessThan = timeUserCreatedLessThan;
+            _resultValue.userAggregations = userAggregations;
+            _resultValue.userAssessmentId = userAssessmentId;
+            _resultValue.userCategory = userCategory;
+            _resultValue.userKey = userKey;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

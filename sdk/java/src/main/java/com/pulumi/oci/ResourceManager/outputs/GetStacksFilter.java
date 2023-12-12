@@ -67,11 +67,11 @@ public final class GetStacksFilter {
             return values(List.of(values));
         }
         public GetStacksFilter build() {
-            final var o = new GetStacksFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetStacksFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

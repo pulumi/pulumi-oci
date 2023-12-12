@@ -42,9 +42,9 @@ public final class GetMaskingReportsMaskingReportCollection {
             return items(List.of(items));
         }
         public GetMaskingReportsMaskingReportCollection build() {
-            final var o = new GetMaskingReportsMaskingReportCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMaskingReportsMaskingReportCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

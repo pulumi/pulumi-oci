@@ -205,18 +205,18 @@ public final class GetReportsResult {
             return this;
         }
         public GetReportsResult build() {
-            final var o = new GetReportsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.reportCollections = reportCollections;
-            o.reportDefinitionId = reportDefinitionId;
-            o.state = state;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetReportsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.reportCollections = reportCollections;
+            _resultValue.reportDefinitionId = reportDefinitionId;
+            _resultValue.state = state;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

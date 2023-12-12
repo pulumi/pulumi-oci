@@ -65,10 +65,10 @@ public final class GetRemediationRunStagesRemediationRunStageCollectionItemPullR
             return this;
         }
         public GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty build() {
-            final var o = new GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty();
-            o.pullRequestIdentifier = pullRequestIdentifier;
-            o.pullRequestUrl = pullRequestUrl;
-            return o;
+            final var _resultValue = new GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty();
+            _resultValue.pullRequestIdentifier = pullRequestIdentifier;
+            _resultValue.pullRequestUrl = pullRequestUrl;
+            return _resultValue;
         }
     }
 }

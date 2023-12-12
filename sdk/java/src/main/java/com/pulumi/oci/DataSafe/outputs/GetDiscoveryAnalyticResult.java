@@ -144,15 +144,15 @@ public final class GetDiscoveryAnalyticResult {
             return this;
         }
         public GetDiscoveryAnalyticResult build() {
-            final var o = new GetDiscoveryAnalyticResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.groupBy = groupBy;
-            o.id = id;
-            o.items = items;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetDiscoveryAnalyticResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.groupBy = groupBy;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

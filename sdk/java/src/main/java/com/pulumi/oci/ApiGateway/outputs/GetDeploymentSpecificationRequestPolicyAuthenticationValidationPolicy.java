@@ -198,16 +198,16 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy();
-            o.additionalValidationPolicies = additionalValidationPolicies;
-            o.clientDetails = clientDetails;
-            o.isSslVerifyDisabled = isSslVerifyDisabled;
-            o.keys = keys;
-            o.maxCacheDurationInHours = maxCacheDurationInHours;
-            o.sourceUriDetails = sourceUriDetails;
-            o.type = type;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy();
+            _resultValue.additionalValidationPolicies = additionalValidationPolicies;
+            _resultValue.clientDetails = clientDetails;
+            _resultValue.isSslVerifyDisabled = isSslVerifyDisabled;
+            _resultValue.keys = keys;
+            _resultValue.maxCacheDurationInHours = maxCacheDurationInHours;
+            _resultValue.sourceUriDetails = sourceUriDetails;
+            _resultValue.type = type;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

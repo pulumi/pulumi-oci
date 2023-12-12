@@ -163,15 +163,15 @@ public final class GetClustersResult {
             return this;
         }
         public GetClustersResult build() {
-            final var o = new GetClustersResult();
-            o.clusterCollections = clusterCollections;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.sddcId = sddcId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetClustersResult();
+            _resultValue.clusterCollections = clusterCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.sddcId = sddcId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

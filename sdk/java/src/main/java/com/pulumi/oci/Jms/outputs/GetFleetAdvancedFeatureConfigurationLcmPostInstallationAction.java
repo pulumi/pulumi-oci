@@ -158,14 +158,14 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction();
-            o.addLoggingHandler = addLoggingHandler;
-            o.disabledTlsVersions = disabledTlsVersions;
-            o.globalLoggingLevel = globalLoggingLevel;
-            o.minimumKeySizeSettings = minimumKeySizeSettings;
-            o.proxies = proxies;
-            o.shouldReplaceCertificatesOperatingSystem = shouldReplaceCertificatesOperatingSystem;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction();
+            _resultValue.addLoggingHandler = addLoggingHandler;
+            _resultValue.disabledTlsVersions = disabledTlsVersions;
+            _resultValue.globalLoggingLevel = globalLoggingLevel;
+            _resultValue.minimumKeySizeSettings = minimumKeySizeSettings;
+            _resultValue.proxies = proxies;
+            _resultValue.shouldReplaceCertificatesOperatingSystem = shouldReplaceCertificatesOperatingSystem;
+            return _resultValue;
         }
     }
 }

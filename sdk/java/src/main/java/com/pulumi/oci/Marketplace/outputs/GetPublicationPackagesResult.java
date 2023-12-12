@@ -128,14 +128,14 @@ public final class GetPublicationPackagesResult {
             return publicationPackages(List.of(publicationPackages));
         }
         public GetPublicationPackagesResult build() {
-            final var o = new GetPublicationPackagesResult();
-            o.filters = filters;
-            o.id = id;
-            o.packageType = packageType;
-            o.packageVersion = packageVersion;
-            o.publicationId = publicationId;
-            o.publicationPackages = publicationPackages;
-            return o;
+            final var _resultValue = new GetPublicationPackagesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.packageType = packageType;
+            _resultValue.packageVersion = packageVersion;
+            _resultValue.publicationId = publicationId;
+            _resultValue.publicationPackages = publicationPackages;
+            return _resultValue;
         }
     }
 }

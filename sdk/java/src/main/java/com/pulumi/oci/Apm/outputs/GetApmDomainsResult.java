@@ -144,14 +144,14 @@ public final class GetApmDomainsResult {
             return this;
         }
         public GetApmDomainsResult build() {
-            final var o = new GetApmDomainsResult();
-            o.apmDomains = apmDomains;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetApmDomainsResult();
+            _resultValue.apmDomains = apmDomains;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

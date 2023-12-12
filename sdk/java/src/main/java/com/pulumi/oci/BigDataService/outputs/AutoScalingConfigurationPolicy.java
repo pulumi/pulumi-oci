@@ -70,10 +70,10 @@ public final class AutoScalingConfigurationPolicy {
             return rules(List.of(rules));
         }
         public AutoScalingConfigurationPolicy build() {
-            final var o = new AutoScalingConfigurationPolicy();
-            o.policyType = policyType;
-            o.rules = rules;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicy();
+            _resultValue.policyType = policyType;
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

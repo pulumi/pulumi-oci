@@ -215,18 +215,18 @@ public final class GetLifecycleEnvironmentsResult {
             return this;
         }
         public GetLifecycleEnvironmentsResult build() {
-            final var o = new GetLifecycleEnvironmentsResult();
-            o.archType = archType;
-            o.compartmentId = compartmentId;
-            o.displayNameContains = displayNameContains;
-            o.displayNames = displayNames;
-            o.filters = filters;
-            o.id = id;
-            o.lifecycleEnvironmentCollections = lifecycleEnvironmentCollections;
-            o.lifecycleEnvironmentId = lifecycleEnvironmentId;
-            o.osFamily = osFamily;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetLifecycleEnvironmentsResult();
+            _resultValue.archType = archType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.displayNames = displayNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.lifecycleEnvironmentCollections = lifecycleEnvironmentCollections;
+            _resultValue.lifecycleEnvironmentId = lifecycleEnvironmentId;
+            _resultValue.osFamily = osFamily;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

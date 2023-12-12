@@ -307,23 +307,23 @@ public final class GetInstVbsInstancesVbsInstanceSummaryCollectionItem {
             return this;
         }
         public GetInstVbsInstancesVbsInstanceSummaryCollectionItem build() {
-            final var o = new GetInstVbsInstancesVbsInstanceSummaryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.idcsAccessToken = idcsAccessToken;
-            o.isResourceUsageAgreementGranted = isResourceUsageAgreementGranted;
-            o.lifecyleDetails = lifecyleDetails;
-            o.name = name;
-            o.resourceCompartmentId = resourceCompartmentId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.vbsAccessUrl = vbsAccessUrl;
-            return o;
+            final var _resultValue = new GetInstVbsInstancesVbsInstanceSummaryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.idcsAccessToken = idcsAccessToken;
+            _resultValue.isResourceUsageAgreementGranted = isResourceUsageAgreementGranted;
+            _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.name = name;
+            _resultValue.resourceCompartmentId = resourceCompartmentId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.vbsAccessUrl = vbsAccessUrl;
+            return _resultValue;
         }
     }
 }

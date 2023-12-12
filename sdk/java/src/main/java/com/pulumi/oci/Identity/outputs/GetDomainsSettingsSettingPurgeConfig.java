@@ -66,10 +66,10 @@ public final class GetDomainsSettingsSettingPurgeConfig {
             return this;
         }
         public GetDomainsSettingsSettingPurgeConfig build() {
-            final var o = new GetDomainsSettingsSettingPurgeConfig();
-            o.resourceName = resourceName;
-            o.retentionPeriod = retentionPeriod;
-            return o;
+            final var _resultValue = new GetDomainsSettingsSettingPurgeConfig();
+            _resultValue.resourceName = resourceName;
+            _resultValue.retentionPeriod = retentionPeriod;
+            return _resultValue;
         }
     }
 }

@@ -116,13 +116,13 @@ public final class GetClusterOptionResult {
             return kubernetesVersions(List.of(kubernetesVersions));
         }
         public GetClusterOptionResult build() {
-            final var o = new GetClusterOptionResult();
-            o.clusterOptionId = clusterOptionId;
-            o.clusterPodNetworkOptions = clusterPodNetworkOptions;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.kubernetesVersions = kubernetesVersions;
-            return o;
+            final var _resultValue = new GetClusterOptionResult();
+            _resultValue.clusterOptionId = clusterOptionId;
+            _resultValue.clusterPodNetworkOptions = clusterPodNetworkOptions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.kubernetesVersions = kubernetesVersions;
+            return _resultValue;
         }
     }
 }

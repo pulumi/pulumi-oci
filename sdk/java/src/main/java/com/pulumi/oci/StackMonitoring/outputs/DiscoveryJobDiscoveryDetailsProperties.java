@@ -49,9 +49,9 @@ public final class DiscoveryJobDiscoveryDetailsProperties {
             return this;
         }
         public DiscoveryJobDiscoveryDetailsProperties build() {
-            final var o = new DiscoveryJobDiscoveryDetailsProperties();
-            o.propertiesMap = propertiesMap;
-            return o;
+            final var _resultValue = new DiscoveryJobDiscoveryDetailsProperties();
+            _resultValue.propertiesMap = propertiesMap;
+            return _resultValue;
         }
     }
 }

@@ -88,11 +88,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
             return this;
         }
         public ModelDeploymentModelDeploymentConfigurationDetails build() {
-            final var o = new ModelDeploymentModelDeploymentConfigurationDetails();
-            o.deploymentType = deploymentType;
-            o.environmentConfigurationDetails = environmentConfigurationDetails;
-            o.modelConfigurationDetails = modelConfigurationDetails;
-            return o;
+            final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetails();
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.environmentConfigurationDetails = environmentConfigurationDetails;
+            _resultValue.modelConfigurationDetails = modelConfigurationDetails;
+            return _resultValue;
         }
     }
 }

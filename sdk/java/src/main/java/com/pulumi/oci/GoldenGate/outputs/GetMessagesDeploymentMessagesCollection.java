@@ -50,9 +50,9 @@ public final class GetMessagesDeploymentMessagesCollection {
             return items(List.of(items));
         }
         public GetMessagesDeploymentMessagesCollection build() {
-            final var o = new GetMessagesDeploymentMessagesCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMessagesDeploymentMessagesCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetDomainsUsersUserIm {
             return this;
         }
         public GetDomainsUsersUserIm build() {
-            final var o = new GetDomainsUsersUserIm();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserIm();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

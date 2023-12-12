@@ -67,10 +67,10 @@ public final class InvokeRunExecutorShapeConfig {
             return this;
         }
         public InvokeRunExecutorShapeConfig build() {
-            final var o = new InvokeRunExecutorShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new InvokeRunExecutorShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

@@ -125,13 +125,13 @@ public final class ExadataInfrastructureContact {
             return this;
         }
         public ExadataInfrastructureContact build() {
-            final var o = new ExadataInfrastructureContact();
-            o.email = email;
-            o.isContactMosValidated = isContactMosValidated;
-            o.isPrimary = isPrimary;
-            o.name = name;
-            o.phoneNumber = phoneNumber;
-            return o;
+            final var _resultValue = new ExadataInfrastructureContact();
+            _resultValue.email = email;
+            _resultValue.isContactMosValidated = isContactMosValidated;
+            _resultValue.isPrimary = isPrimary;
+            _resultValue.name = name;
+            _resultValue.phoneNumber = phoneNumber;
+            return _resultValue;
         }
     }
 }

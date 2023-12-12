@@ -170,15 +170,15 @@ public final class GetMysqlDbSystemsDbSystemChannelSource {
             return this;
         }
         public GetMysqlDbSystemsDbSystemChannelSource build() {
-            final var o = new GetMysqlDbSystemsDbSystemChannelSource();
-            o.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
-            o.hostname = hostname;
-            o.port = port;
-            o.sourceType = sourceType;
-            o.sslCaCertificates = sslCaCertificates;
-            o.sslMode = sslMode;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemsDbSystemChannelSource();
+            _resultValue.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
+            _resultValue.hostname = hostname;
+            _resultValue.port = port;
+            _resultValue.sourceType = sourceType;
+            _resultValue.sslCaCertificates = sslCaCertificates;
+            _resultValue.sslMode = sslMode;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

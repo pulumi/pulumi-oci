@@ -50,9 +50,9 @@ public final class GetSubscriptionProductsProductCollection {
             return items(List.of(items));
         }
         public GetSubscriptionProductsProductCollection build() {
-            final var o = new GetSubscriptionProductsProductCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSubscriptionProductsProductCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

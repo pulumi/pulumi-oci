@@ -154,14 +154,14 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffect
             return this;
         }
         public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail build() {
-            final var o = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail();
-            o.conditionGroups = conditionGroups;
-            o.configurations = configurations;
-            o.isConfigurationAllowed = isConfigurationAllowed;
-            o.isEnabled = isEnabled;
-            o.labels = labels;
-            o.riskLevel = riskLevel;
-            return o;
+            final var _resultValue = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetail();
+            _resultValue.conditionGroups = conditionGroups;
+            _resultValue.configurations = configurations;
+            _resultValue.isConfigurationAllowed = isConfigurationAllowed;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.labels = labels;
+            _resultValue.riskLevel = riskLevel;
+            return _resultValue;
         }
     }
 }

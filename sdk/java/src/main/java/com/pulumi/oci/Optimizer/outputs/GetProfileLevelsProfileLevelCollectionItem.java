@@ -169,15 +169,15 @@ public final class GetProfileLevelsProfileLevelCollectionItem {
             return validIntervals(List.of(validIntervals));
         }
         public GetProfileLevelsProfileLevelCollectionItem build() {
-            final var o = new GetProfileLevelsProfileLevelCollectionItem();
-            o.defaultInterval = defaultInterval;
-            o.metrics = metrics;
-            o.name = name;
-            o.recommendationName = recommendationName;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.validIntervals = validIntervals;
-            return o;
+            final var _resultValue = new GetProfileLevelsProfileLevelCollectionItem();
+            _resultValue.defaultInterval = defaultInterval;
+            _resultValue.metrics = metrics;
+            _resultValue.name = name;
+            _resultValue.recommendationName = recommendationName;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.validIntervals = validIntervals;
+            return _resultValue;
         }
     }
 }

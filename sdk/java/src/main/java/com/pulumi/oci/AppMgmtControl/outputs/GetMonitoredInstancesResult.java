@@ -125,13 +125,13 @@ public final class GetMonitoredInstancesResult {
             return monitoredInstanceCollections(List.of(monitoredInstanceCollections));
         }
         public GetMonitoredInstancesResult build() {
-            final var o = new GetMonitoredInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.monitoredInstanceCollections = monitoredInstanceCollections;
-            return o;
+            final var _resultValue = new GetMonitoredInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.monitoredInstanceCollections = monitoredInstanceCollections;
+            return _resultValue;
         }
     }
 }

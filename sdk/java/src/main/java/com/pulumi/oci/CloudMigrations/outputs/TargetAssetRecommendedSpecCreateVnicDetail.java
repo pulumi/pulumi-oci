@@ -293,19 +293,19 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
             return this;
         }
         public TargetAssetRecommendedSpecCreateVnicDetail build() {
-            final var o = new TargetAssetRecommendedSpecCreateVnicDetail();
-            o.assignPrivateDnsRecord = assignPrivateDnsRecord;
-            o.assignPublicIp = assignPublicIp;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.nsgIds = nsgIds;
-            o.privateIp = privateIp;
-            o.skipSourceDestCheck = skipSourceDestCheck;
-            o.subnetId = subnetId;
-            o.vlanId = vlanId;
-            return o;
+            final var _resultValue = new TargetAssetRecommendedSpecCreateVnicDetail();
+            _resultValue.assignPrivateDnsRecord = assignPrivateDnsRecord;
+            _resultValue.assignPublicIp = assignPublicIp;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateIp = privateIp;
+            _resultValue.skipSourceDestCheck = skipSourceDestCheck;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vlanId = vlanId;
+            return _resultValue;
         }
     }
 }

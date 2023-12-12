@@ -67,11 +67,11 @@ public final class GetInstanceConsoleConnectionsFilter {
             return values(List.of(values));
         }
         public GetInstanceConsoleConnectionsFilter build() {
-            final var o = new GetInstanceConsoleConnectionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetInstanceConsoleConnectionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

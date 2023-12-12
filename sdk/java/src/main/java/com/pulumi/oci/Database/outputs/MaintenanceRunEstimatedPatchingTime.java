@@ -105,12 +105,12 @@ public final class MaintenanceRunEstimatedPatchingTime {
             return this;
         }
         public MaintenanceRunEstimatedPatchingTime build() {
-            final var o = new MaintenanceRunEstimatedPatchingTime();
-            o.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
-            o.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
-            o.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
-            o.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
-            return o;
+            final var _resultValue = new MaintenanceRunEstimatedPatchingTime();
+            _resultValue.estimatedDbServerPatchingTime = estimatedDbServerPatchingTime;
+            _resultValue.estimatedNetworkSwitchesPatchingTime = estimatedNetworkSwitchesPatchingTime;
+            _resultValue.estimatedStorageServerPatchingTime = estimatedStorageServerPatchingTime;
+            _resultValue.totalEstimatedPatchingTime = totalEstimatedPatchingTime;
+            return _resultValue;
         }
     }
 }

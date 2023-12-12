@@ -280,21 +280,21 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail 
             return this;
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail build() {
-            final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail();
-            o.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
-            o.customEncryptionAlgorithm = customEncryptionAlgorithm;
-            o.dhGroup = dhGroup;
-            o.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
-            o.isEspEstablished = isEspEstablished;
-            o.isPfsEnabled = isPfsEnabled;
-            o.lifetime = lifetime;
-            o.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
-            o.negotiatedDhGroup = negotiatedDhGroup;
-            o.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
-            o.remainingLifetime = remainingLifetime;
-            o.remainingLifetimeInt = remainingLifetimeInt;
-            o.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail();
+            _resultValue.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
+            _resultValue.customEncryptionAlgorithm = customEncryptionAlgorithm;
+            _resultValue.dhGroup = dhGroup;
+            _resultValue.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
+            _resultValue.isEspEstablished = isEspEstablished;
+            _resultValue.isPfsEnabled = isPfsEnabled;
+            _resultValue.lifetime = lifetime;
+            _resultValue.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
+            _resultValue.negotiatedDhGroup = negotiatedDhGroup;
+            _resultValue.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
+            _resultValue.remainingLifetime = remainingLifetime;
+            _resultValue.remainingLifetimeInt = remainingLifetimeInt;
+            _resultValue.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
+            return _resultValue;
         }
     }
 }

@@ -184,19 +184,19 @@ public final class GetManagedDatabaseAlertLogCountsResult {
             return this;
         }
         public GetManagedDatabaseAlertLogCountsResult build() {
-            final var o = new GetManagedDatabaseAlertLogCountsResult();
-            o.alertLogCountsCollections = alertLogCountsCollections;
-            o.filters = filters;
-            o.groupBy = groupBy;
-            o.id = id;
-            o.isRegularExpression = isRegularExpression;
-            o.levelFilter = levelFilter;
-            o.logSearchText = logSearchText;
-            o.managedDatabaseId = managedDatabaseId;
-            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-            o.typeFilter = typeFilter;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAlertLogCountsResult();
+            _resultValue.alertLogCountsCollections = alertLogCountsCollections;
+            _resultValue.filters = filters;
+            _resultValue.groupBy = groupBy;
+            _resultValue.id = id;
+            _resultValue.isRegularExpression = isRegularExpression;
+            _resultValue.levelFilter = levelFilter;
+            _resultValue.logSearchText = logSearchText;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            _resultValue.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            _resultValue.typeFilter = typeFilter;
+            return _resultValue;
         }
     }
 }

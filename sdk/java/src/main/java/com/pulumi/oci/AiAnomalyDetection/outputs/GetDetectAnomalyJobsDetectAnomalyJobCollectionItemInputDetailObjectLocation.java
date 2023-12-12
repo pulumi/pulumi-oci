@@ -84,11 +84,11 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail
             return this;
         }
         public GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation build() {
-            final var o = new GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

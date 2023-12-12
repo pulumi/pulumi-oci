@@ -65,10 +65,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTag build() {
-            final var o = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

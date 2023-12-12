@@ -84,11 +84,11 @@ public final class GetExternalNonContainerDatabaseDatabaseManagementConfig {
             return this;
         }
         public GetExternalNonContainerDatabaseDatabaseManagementConfig build() {
-            final var o = new GetExternalNonContainerDatabaseDatabaseManagementConfig();
-            o.databaseManagementConnectionId = databaseManagementConnectionId;
-            o.databaseManagementStatus = databaseManagementStatus;
-            o.licenseModel = licenseModel;
-            return o;
+            final var _resultValue = new GetExternalNonContainerDatabaseDatabaseManagementConfig();
+            _resultValue.databaseManagementConnectionId = databaseManagementConnectionId;
+            _resultValue.databaseManagementStatus = databaseManagementStatus;
+            _resultValue.licenseModel = licenseModel;
+            return _resultValue;
         }
     }
 }

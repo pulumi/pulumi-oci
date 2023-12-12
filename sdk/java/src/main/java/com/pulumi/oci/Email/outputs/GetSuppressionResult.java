@@ -209,18 +209,18 @@ public final class GetSuppressionResult {
             return this;
         }
         public GetSuppressionResult build() {
-            final var o = new GetSuppressionResult();
-            o.compartmentId = compartmentId;
-            o.emailAddress = emailAddress;
-            o.errorDetail = errorDetail;
-            o.errorSource = errorSource;
-            o.id = id;
-            o.messageId = messageId;
-            o.reason = reason;
-            o.suppressionId = suppressionId;
-            o.timeCreated = timeCreated;
-            o.timeLastSuppressed = timeLastSuppressed;
-            return o;
+            final var _resultValue = new GetSuppressionResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.errorDetail = errorDetail;
+            _resultValue.errorSource = errorSource;
+            _resultValue.id = id;
+            _resultValue.messageId = messageId;
+            _resultValue.reason = reason;
+            _resultValue.suppressionId = suppressionId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastSuppressed = timeLastSuppressed;
+            return _resultValue;
         }
     }
 }

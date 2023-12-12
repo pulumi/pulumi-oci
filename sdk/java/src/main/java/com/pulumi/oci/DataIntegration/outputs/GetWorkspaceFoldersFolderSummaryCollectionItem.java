@@ -309,23 +309,23 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItem {
             return this;
         }
         public GetWorkspaceFoldersFolderSummaryCollectionItem build() {
-            final var o = new GetWorkspaceFoldersFolderSummaryCollectionItem();
-            o.categoryName = categoryName;
-            o.description = description;
-            o.folderKey = folderKey;
-            o.identifier = identifier;
-            o.key = key;
-            o.keyMap = keyMap;
-            o.metadatas = metadatas;
-            o.modelType = modelType;
-            o.modelVersion = modelVersion;
-            o.name = name;
-            o.objectStatus = objectStatus;
-            o.objectVersion = objectVersion;
-            o.parentReves = parentReves;
-            o.registryMetadata = registryMetadata;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceFoldersFolderSummaryCollectionItem();
+            _resultValue.categoryName = categoryName;
+            _resultValue.description = description;
+            _resultValue.folderKey = folderKey;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.keyMap = keyMap;
+            _resultValue.metadatas = metadatas;
+            _resultValue.modelType = modelType;
+            _resultValue.modelVersion = modelVersion;
+            _resultValue.name = name;
+            _resultValue.objectStatus = objectStatus;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.parentReves = parentReves;
+            _resultValue.registryMetadata = registryMetadata;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

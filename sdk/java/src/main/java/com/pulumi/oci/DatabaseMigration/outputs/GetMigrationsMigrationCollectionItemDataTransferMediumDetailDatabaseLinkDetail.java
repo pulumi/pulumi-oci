@@ -70,10 +70,10 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetailD
             return walletBuckets(List.of(walletBuckets));
         }
         public GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail build() {
-            final var o = new GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail();
-            o.name = name;
-            o.walletBuckets = walletBuckets;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetail();
+            _resultValue.name = name;
+            _resultValue.walletBuckets = walletBuckets;
+            return _resultValue;
         }
     }
 }

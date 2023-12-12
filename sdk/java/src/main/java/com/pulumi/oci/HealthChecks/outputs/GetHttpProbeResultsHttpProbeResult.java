@@ -505,32 +505,32 @@ public final class GetHttpProbeResultsHttpProbeResult {
             return this;
         }
         public GetHttpProbeResultsHttpProbeResult build() {
-            final var o = new GetHttpProbeResultsHttpProbeResult();
-            o.connectEnd = connectEnd;
-            o.connectStart = connectStart;
-            o.connections = connections;
-            o.dns = dns;
-            o.domainLookupEnd = domainLookupEnd;
-            o.domainLookupStart = domainLookupStart;
-            o.duration = duration;
-            o.encodedBodySize = encodedBodySize;
-            o.errorCategory = errorCategory;
-            o.errorMessage = errorMessage;
-            o.fetchStart = fetchStart;
-            o.isHealthy = isHealthy;
-            o.isTimedOut = isTimedOut;
-            o.key = key;
-            o.probeConfigurationId = probeConfigurationId;
-            o.protocol = protocol;
-            o.requestStart = requestStart;
-            o.responseEnd = responseEnd;
-            o.responseStart = responseStart;
-            o.secureConnectionStart = secureConnectionStart;
-            o.startTime = startTime;
-            o.statusCode = statusCode;
-            o.target = target;
-            o.vantagePointName = vantagePointName;
-            return o;
+            final var _resultValue = new GetHttpProbeResultsHttpProbeResult();
+            _resultValue.connectEnd = connectEnd;
+            _resultValue.connectStart = connectStart;
+            _resultValue.connections = connections;
+            _resultValue.dns = dns;
+            _resultValue.domainLookupEnd = domainLookupEnd;
+            _resultValue.domainLookupStart = domainLookupStart;
+            _resultValue.duration = duration;
+            _resultValue.encodedBodySize = encodedBodySize;
+            _resultValue.errorCategory = errorCategory;
+            _resultValue.errorMessage = errorMessage;
+            _resultValue.fetchStart = fetchStart;
+            _resultValue.isHealthy = isHealthy;
+            _resultValue.isTimedOut = isTimedOut;
+            _resultValue.key = key;
+            _resultValue.probeConfigurationId = probeConfigurationId;
+            _resultValue.protocol = protocol;
+            _resultValue.requestStart = requestStart;
+            _resultValue.responseEnd = responseEnd;
+            _resultValue.responseStart = responseStart;
+            _resultValue.secureConnectionStart = secureConnectionStart;
+            _resultValue.startTime = startTime;
+            _resultValue.statusCode = statusCode;
+            _resultValue.target = target;
+            _resultValue.vantagePointName = vantagePointName;
+            return _resultValue;
         }
     }
 }

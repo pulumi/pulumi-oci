@@ -295,22 +295,22 @@ public final class GetNetworkAddressListResult {
             return vcnAddresses(List.of(vcnAddresses));
         }
         public GetNetworkAddressListResult build() {
-            final var o = new GetNetworkAddressListResult();
-            o.addresses = addresses;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.networkAddressListId = networkAddressListId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            o.vcnAddresses = vcnAddresses;
-            return o;
+            final var _resultValue = new GetNetworkAddressListResult();
+            _resultValue.addresses = addresses;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.networkAddressListId = networkAddressListId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            _resultValue.vcnAddresses = vcnAddresses;
+            return _resultValue;
         }
     }
 }

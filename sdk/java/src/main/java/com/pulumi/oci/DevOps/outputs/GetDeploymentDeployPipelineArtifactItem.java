@@ -89,11 +89,11 @@ public final class GetDeploymentDeployPipelineArtifactItem {
             return this;
         }
         public GetDeploymentDeployPipelineArtifactItem build() {
-            final var o = new GetDeploymentDeployPipelineArtifactItem();
-            o.deployArtifactId = deployArtifactId;
-            o.deployPipelineStages = deployPipelineStages;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new GetDeploymentDeployPipelineArtifactItem();
+            _resultValue.deployArtifactId = deployArtifactId;
+            _resultValue.deployPipelineStages = deployPipelineStages;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

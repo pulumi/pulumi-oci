@@ -75,11 +75,11 @@ public final class GetSslCipherSuitesFilter {
             return values(List.of(values));
         }
         public GetSslCipherSuitesFilter build() {
-            final var o = new GetSslCipherSuitesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSslCipherSuitesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

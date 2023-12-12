@@ -266,20 +266,20 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAccept
             return this;
         }
         public GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem build() {
-            final var o = new GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem();
-            o.compartmentId = compartmentId;
-            o.createdBies = createdBies;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lastUpdatedBies = lastUpdatedBies;
-            o.licenseAcceptanceStatus = licenseAcceptanceStatus;
-            o.licenseType = licenseType;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeAccepted = timeAccepted;
-            o.timeLastUpdated = timeLastUpdated;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBies = createdBies;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lastUpdatedBies = lastUpdatedBies;
+            _resultValue.licenseAcceptanceStatus = licenseAcceptanceStatus;
+            _resultValue.licenseType = licenseType;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeLastUpdated = timeLastUpdated;
+            return _resultValue;
         }
     }
 }

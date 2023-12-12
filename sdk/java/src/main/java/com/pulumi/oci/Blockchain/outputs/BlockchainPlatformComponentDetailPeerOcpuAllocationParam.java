@@ -48,9 +48,9 @@ public final class BlockchainPlatformComponentDetailPeerOcpuAllocationParam {
             return this;
         }
         public BlockchainPlatformComponentDetailPeerOcpuAllocationParam build() {
-            final var o = new BlockchainPlatformComponentDetailPeerOcpuAllocationParam();
-            o.ocpuAllocationNumber = ocpuAllocationNumber;
-            return o;
+            final var _resultValue = new BlockchainPlatformComponentDetailPeerOcpuAllocationParam();
+            _resultValue.ocpuAllocationNumber = ocpuAllocationNumber;
+            return _resultValue;
         }
     }
 }

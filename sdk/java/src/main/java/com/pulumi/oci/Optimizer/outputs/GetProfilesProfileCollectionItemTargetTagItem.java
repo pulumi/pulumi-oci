@@ -107,12 +107,12 @@ public final class GetProfilesProfileCollectionItemTargetTagItem {
             return tagValues(List.of(tagValues));
         }
         public GetProfilesProfileCollectionItemTargetTagItem build() {
-            final var o = new GetProfilesProfileCollectionItemTargetTagItem();
-            o.tagDefinitionName = tagDefinitionName;
-            o.tagNamespaceName = tagNamespaceName;
-            o.tagValueType = tagValueType;
-            o.tagValues = tagValues;
-            return o;
+            final var _resultValue = new GetProfilesProfileCollectionItemTargetTagItem();
+            _resultValue.tagDefinitionName = tagDefinitionName;
+            _resultValue.tagNamespaceName = tagNamespaceName;
+            _resultValue.tagValueType = tagValueType;
+            _resultValue.tagValues = tagValues;
+            return _resultValue;
         }
     }
 }

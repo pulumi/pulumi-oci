@@ -46,9 +46,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale();
-            o.message = message;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationRationale();
+            _resultValue.message = message;
+            return _resultValue;
         }
     }
 }

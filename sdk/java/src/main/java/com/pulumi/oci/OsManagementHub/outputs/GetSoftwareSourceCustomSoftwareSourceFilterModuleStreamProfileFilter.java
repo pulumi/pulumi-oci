@@ -103,12 +103,12 @@ public final class GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfil
             return this;
         }
         public GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter build() {
-            final var o = new GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter();
-            o.filterType = filterType;
-            o.moduleName = moduleName;
-            o.profileName = profileName;
-            o.streamName = streamName;
-            return o;
+            final var _resultValue = new GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter();
+            _resultValue.filterType = filterType;
+            _resultValue.moduleName = moduleName;
+            _resultValue.profileName = profileName;
+            _resultValue.streamName = streamName;
+            return _resultValue;
         }
     }
 }

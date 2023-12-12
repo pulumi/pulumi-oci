@@ -122,13 +122,13 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup();
-            o.display = display;
-            o.idcsAppRoleId = idcsAppRoleId;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup();
+            _resultValue.display = display;
+            _resultValue.idcsAppRoleId = idcsAppRoleId;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

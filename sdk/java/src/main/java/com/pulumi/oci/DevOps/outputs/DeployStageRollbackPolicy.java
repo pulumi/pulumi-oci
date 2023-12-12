@@ -48,9 +48,9 @@ public final class DeployStageRollbackPolicy {
             return this;
         }
         public DeployStageRollbackPolicy build() {
-            final var o = new DeployStageRollbackPolicy();
-            o.policyType = policyType;
-            return o;
+            final var _resultValue = new DeployStageRollbackPolicy();
+            _resultValue.policyType = policyType;
+            return _resultValue;
         }
     }
 }

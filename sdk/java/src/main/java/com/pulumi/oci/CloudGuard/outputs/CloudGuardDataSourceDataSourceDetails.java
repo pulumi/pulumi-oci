@@ -226,18 +226,18 @@ public final class CloudGuardDataSourceDataSourceDetails {
             return this;
         }
         public CloudGuardDataSourceDataSourceDetails build() {
-            final var o = new CloudGuardDataSourceDataSourceDetails();
-            o.additionalEntitiesCount = additionalEntitiesCount;
-            o.dataSourceFeedProvider = dataSourceFeedProvider;
-            o.intervalInMinutes = intervalInMinutes;
-            o.loggingQueryDetails = loggingQueryDetails;
-            o.loggingQueryType = loggingQueryType;
-            o.operator = operator;
-            o.query = query;
-            o.queryStartTime = queryStartTime;
-            o.regions = regions;
-            o.threshold = threshold;
-            return o;
+            final var _resultValue = new CloudGuardDataSourceDataSourceDetails();
+            _resultValue.additionalEntitiesCount = additionalEntitiesCount;
+            _resultValue.dataSourceFeedProvider = dataSourceFeedProvider;
+            _resultValue.intervalInMinutes = intervalInMinutes;
+            _resultValue.loggingQueryDetails = loggingQueryDetails;
+            _resultValue.loggingQueryType = loggingQueryType;
+            _resultValue.operator = operator;
+            _resultValue.query = query;
+            _resultValue.queryStartTime = queryStartTime;
+            _resultValue.regions = regions;
+            _resultValue.threshold = threshold;
+            return _resultValue;
         }
     }
 }

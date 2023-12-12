@@ -70,10 +70,10 @@ public final class GetManagementAgentPluginCountItem {
             return dimensions(List.of(dimensions));
         }
         public GetManagementAgentPluginCountItem build() {
-            final var o = new GetManagementAgentPluginCountItem();
-            o.count = count;
-            o.dimensions = dimensions;
-            return o;
+            final var _resultValue = new GetManagementAgentPluginCountItem();
+            _resultValue.count = count;
+            _resultValue.dimensions = dimensions;
+            return _resultValue;
         }
     }
 }

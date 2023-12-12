@@ -67,11 +67,11 @@ public final class GetVirtualCircuitPublicPrefixesFilter {
             return values(List.of(values));
         }
         public GetVirtualCircuitPublicPrefixesFilter build() {
-            final var o = new GetVirtualCircuitPublicPrefixesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVirtualCircuitPublicPrefixesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

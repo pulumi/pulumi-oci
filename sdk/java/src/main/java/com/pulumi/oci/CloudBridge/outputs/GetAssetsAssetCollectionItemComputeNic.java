@@ -145,14 +145,14 @@ public final class GetAssetsAssetCollectionItemComputeNic {
             return this;
         }
         public GetAssetsAssetCollectionItemComputeNic build() {
-            final var o = new GetAssetsAssetCollectionItemComputeNic();
-            o.ipAddresses = ipAddresses;
-            o.label = label;
-            o.macAddress = macAddress;
-            o.macAddressType = macAddressType;
-            o.networkName = networkName;
-            o.switchName = switchName;
-            return o;
+            final var _resultValue = new GetAssetsAssetCollectionItemComputeNic();
+            _resultValue.ipAddresses = ipAddresses;
+            _resultValue.label = label;
+            _resultValue.macAddress = macAddress;
+            _resultValue.macAddressType = macAddressType;
+            _resultValue.networkName = networkName;
+            _resultValue.switchName = switchName;
+            return _resultValue;
         }
     }
 }

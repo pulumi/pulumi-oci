@@ -230,19 +230,19 @@ public final class GetIpv6sIpv6 {
             return this;
         }
         public GetIpv6sIpv6 build() {
-            final var o = new GetIpv6sIpv6();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.ipv6subnetCidr = ipv6subnetCidr;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetIpv6sIpv6();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

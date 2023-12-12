@@ -91,11 +91,11 @@ public final class FusionEnvironmentMaintenancePolicy {
             return quarterlyUpgradeBeginTimes(List.of(quarterlyUpgradeBeginTimes));
         }
         public FusionEnvironmentMaintenancePolicy build() {
-            final var o = new FusionEnvironmentMaintenancePolicy();
-            o.environmentMaintenanceOverride = environmentMaintenanceOverride;
-            o.monthlyPatchingOverride = monthlyPatchingOverride;
-            o.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
-            return o;
+            final var _resultValue = new FusionEnvironmentMaintenancePolicy();
+            _resultValue.environmentMaintenanceOverride = environmentMaintenanceOverride;
+            _resultValue.monthlyPatchingOverride = monthlyPatchingOverride;
+            _resultValue.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
+            return _resultValue;
         }
     }
 }

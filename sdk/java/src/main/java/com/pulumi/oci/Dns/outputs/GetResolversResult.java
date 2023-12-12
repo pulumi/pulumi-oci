@@ -155,15 +155,15 @@ public final class GetResolversResult {
             return this;
         }
         public GetResolversResult build() {
-            final var o = new GetResolversResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.resolvers = resolvers;
-            o.scope = scope;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetResolversResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.resolvers = resolvers;
+            _resultValue.scope = scope;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

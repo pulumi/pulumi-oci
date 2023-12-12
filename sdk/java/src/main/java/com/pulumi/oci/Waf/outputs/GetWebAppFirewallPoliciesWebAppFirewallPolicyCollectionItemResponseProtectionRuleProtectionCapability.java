@@ -151,14 +151,14 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability();
-            o.actionName = actionName;
-            o.collaborativeActionThreshold = collaborativeActionThreshold;
-            o.collaborativeWeights = collaborativeWeights;
-            o.exclusions = exclusions;
-            o.key = key;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapability();
+            _resultValue.actionName = actionName;
+            _resultValue.collaborativeActionThreshold = collaborativeActionThreshold;
+            _resultValue.collaborativeWeights = collaborativeWeights;
+            _resultValue.exclusions = exclusions;
+            _resultValue.key = key;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

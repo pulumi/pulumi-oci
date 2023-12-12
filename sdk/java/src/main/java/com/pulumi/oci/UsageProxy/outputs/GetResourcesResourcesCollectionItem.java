@@ -245,19 +245,19 @@ public final class GetResourcesResourcesCollectionItem {
             return this;
         }
         public GetResourcesResourcesCollectionItem build() {
-            final var o = new GetResourcesResourcesCollectionItem();
-            o.childResources = childResources;
-            o.dailyUnitDisplayName = dailyUnitDisplayName;
-            o.description = description;
-            o.hourlyUnitDisplayName = hourlyUnitDisplayName;
-            o.instanceType = instanceType;
-            o.isPurchased = isPurchased;
-            o.name = name;
-            o.rawUnitDisplayName = rawUnitDisplayName;
-            o.servicename = servicename;
-            o.skuses = skuses;
-            o.usageDataType = usageDataType;
-            return o;
+            final var _resultValue = new GetResourcesResourcesCollectionItem();
+            _resultValue.childResources = childResources;
+            _resultValue.dailyUnitDisplayName = dailyUnitDisplayName;
+            _resultValue.description = description;
+            _resultValue.hourlyUnitDisplayName = hourlyUnitDisplayName;
+            _resultValue.instanceType = instanceType;
+            _resultValue.isPurchased = isPurchased;
+            _resultValue.name = name;
+            _resultValue.rawUnitDisplayName = rawUnitDisplayName;
+            _resultValue.servicename = servicename;
+            _resultValue.skuses = skuses;
+            _resultValue.usageDataType = usageDataType;
+            return _resultValue;
         }
     }
 }

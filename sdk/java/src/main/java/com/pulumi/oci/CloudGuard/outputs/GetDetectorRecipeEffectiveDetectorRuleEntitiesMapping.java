@@ -84,11 +84,11 @@ public final class GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
             return this;
         }
         public GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping build() {
-            final var o = new GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping();
-            o.displayName = displayName;
-            o.entityType = entityType;
-            o.queryField = queryField;
-            return o;
+            final var _resultValue = new GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping();
+            _resultValue.displayName = displayName;
+            _resultValue.entityType = entityType;
+            _resultValue.queryField = queryField;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetCrossConnectLocationsFilter {
             return values(List.of(values));
         }
         public GetCrossConnectLocationsFilter build() {
-            final var o = new GetCrossConnectLocationsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCrossConnectLocationsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -84,10 +84,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidations 
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesHeaderValidations build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesHeaderValidations();
-            o.headers = headers;
-            o.validationMode = validationMode;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesHeaderValidations();
+            _resultValue.headers = headers;
+            _resultValue.validationMode = validationMode;
+            return _resultValue;
         }
     }
 }

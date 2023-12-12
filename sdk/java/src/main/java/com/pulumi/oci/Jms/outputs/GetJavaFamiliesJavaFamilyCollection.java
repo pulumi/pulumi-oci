@@ -42,9 +42,9 @@ public final class GetJavaFamiliesJavaFamilyCollection {
             return items(List.of(items));
         }
         public GetJavaFamiliesJavaFamilyCollection build() {
-            final var o = new GetJavaFamiliesJavaFamilyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetJavaFamiliesJavaFamilyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

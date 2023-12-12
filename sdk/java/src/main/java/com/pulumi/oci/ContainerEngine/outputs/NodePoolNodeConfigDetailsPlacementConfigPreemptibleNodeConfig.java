@@ -46,9 +46,9 @@ public final class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig
             return this;
         }
         public NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig build() {
-            final var o = new NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig();
-            o.preemptionAction = preemptionAction;
-            return o;
+            final var _resultValue = new NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig();
+            _resultValue.preemptionAction = preemptionAction;
+            return _resultValue;
         }
     }
 }

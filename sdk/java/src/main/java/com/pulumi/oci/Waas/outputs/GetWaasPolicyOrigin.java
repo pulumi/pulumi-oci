@@ -122,13 +122,13 @@ public final class GetWaasPolicyOrigin {
             return this;
         }
         public GetWaasPolicyOrigin build() {
-            final var o = new GetWaasPolicyOrigin();
-            o.customHeaders = customHeaders;
-            o.httpPort = httpPort;
-            o.httpsPort = httpsPort;
-            o.label = label;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetWaasPolicyOrigin();
+            _resultValue.customHeaders = customHeaders;
+            _resultValue.httpPort = httpPort;
+            _resultValue.httpsPort = httpsPort;
+            _resultValue.label = label;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

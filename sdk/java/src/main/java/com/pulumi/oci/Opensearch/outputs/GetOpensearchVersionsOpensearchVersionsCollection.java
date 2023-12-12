@@ -50,9 +50,9 @@ public final class GetOpensearchVersionsOpensearchVersionsCollection {
             return items(List.of(items));
         }
         public GetOpensearchVersionsOpensearchVersionsCollection build() {
-            final var o = new GetOpensearchVersionsOpensearchVersionsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOpensearchVersionsOpensearchVersionsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceMonit
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace build() {
-            final var o = new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace();
-            o.metrics = metrics;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace();
+            _resultValue.metrics = metrics;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

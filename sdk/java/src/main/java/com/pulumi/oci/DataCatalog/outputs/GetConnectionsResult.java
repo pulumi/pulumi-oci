@@ -314,24 +314,24 @@ public final class GetConnectionsResult {
             return this;
         }
         public GetConnectionsResult build() {
-            final var o = new GetConnectionsResult();
-            o.catalogId = catalogId;
-            o.connectionCollections = connectionCollections;
-            o.createdById = createdById;
-            o.dataAssetKey = dataAssetKey;
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.externalKey = externalKey;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.isDefault = isDefault;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeStatusUpdated = timeStatusUpdated;
-            o.timeUpdated = timeUpdated;
-            o.updatedById = updatedById;
-            return o;
+            final var _resultValue = new GetConnectionsResult();
+            _resultValue.catalogId = catalogId;
+            _resultValue.connectionCollections = connectionCollections;
+            _resultValue.createdById = createdById;
+            _resultValue.dataAssetKey = dataAssetKey;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.externalKey = externalKey;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isDefault = isDefault;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeStatusUpdated = timeStatusUpdated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.updatedById = updatedById;
+            return _resultValue;
         }
     }
 }

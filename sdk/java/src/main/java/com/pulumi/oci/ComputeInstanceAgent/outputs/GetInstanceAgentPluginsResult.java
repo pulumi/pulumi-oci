@@ -147,15 +147,15 @@ public final class GetInstanceAgentPluginsResult {
             return this;
         }
         public GetInstanceAgentPluginsResult build() {
-            final var o = new GetInstanceAgentPluginsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.instanceAgentPlugins = instanceAgentPlugins;
-            o.instanceagentId = instanceagentId;
-            o.name = name;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetInstanceAgentPluginsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceAgentPlugins = instanceAgentPlugins;
+            _resultValue.instanceagentId = instanceagentId;
+            _resultValue.name = name;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

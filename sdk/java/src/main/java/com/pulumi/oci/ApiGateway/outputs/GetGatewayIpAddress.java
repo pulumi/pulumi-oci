@@ -46,9 +46,9 @@ public final class GetGatewayIpAddress {
             return this;
         }
         public GetGatewayIpAddress build() {
-            final var o = new GetGatewayIpAddress();
-            o.ipAddress = ipAddress;
-            return o;
+            final var _resultValue = new GetGatewayIpAddress();
+            _resultValue.ipAddress = ipAddress;
+            return _resultValue;
         }
     }
 }

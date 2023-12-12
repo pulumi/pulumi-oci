@@ -46,9 +46,9 @@ public final class GetClustersClusterImagePolicyConfigKeyDetail {
             return this;
         }
         public GetClustersClusterImagePolicyConfigKeyDetail build() {
-            final var o = new GetClustersClusterImagePolicyConfigKeyDetail();
-            o.kmsKeyId = kmsKeyId;
-            return o;
+            final var _resultValue = new GetClustersClusterImagePolicyConfigKeyDetail();
+            _resultValue.kmsKeyId = kmsKeyId;
+            return _resultValue;
         }
     }
 }

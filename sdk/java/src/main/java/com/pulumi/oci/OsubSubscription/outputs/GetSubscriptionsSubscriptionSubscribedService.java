@@ -455,30 +455,30 @@ public final class GetSubscriptionsSubscriptionSubscribedService {
             return this;
         }
         public GetSubscriptionsSubscriptionSubscribedService build() {
-            final var o = new GetSubscriptionsSubscriptionSubscribedService();
-            o.bookingOptyNumber = bookingOptyNumber;
-            o.commitmentServices = commitmentServices;
-            o.csi = csi;
-            o.dataCenterRegion = dataCenterRegion;
-            o.fundedAllocationValue = fundedAllocationValue;
-            o.id = id;
-            o.isIntentToPay = isIntentToPay;
-            o.netUnitPrice = netUnitPrice;
-            o.operationType = operationType;
-            o.orderNumber = orderNumber;
-            o.partnerTransactionType = partnerTransactionType;
-            o.pricingModel = pricingModel;
-            o.products = products;
-            o.programType = programType;
-            o.promoType = promoType;
-            o.quantity = quantity;
-            o.status = status;
-            o.termValue = termValue;
-            o.termValueUom = termValueUom;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            o.totalValue = totalValue;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionSubscribedService();
+            _resultValue.bookingOptyNumber = bookingOptyNumber;
+            _resultValue.commitmentServices = commitmentServices;
+            _resultValue.csi = csi;
+            _resultValue.dataCenterRegion = dataCenterRegion;
+            _resultValue.fundedAllocationValue = fundedAllocationValue;
+            _resultValue.id = id;
+            _resultValue.isIntentToPay = isIntentToPay;
+            _resultValue.netUnitPrice = netUnitPrice;
+            _resultValue.operationType = operationType;
+            _resultValue.orderNumber = orderNumber;
+            _resultValue.partnerTransactionType = partnerTransactionType;
+            _resultValue.pricingModel = pricingModel;
+            _resultValue.products = products;
+            _resultValue.programType = programType;
+            _resultValue.promoType = promoType;
+            _resultValue.quantity = quantity;
+            _resultValue.status = status;
+            _resultValue.termValue = termValue;
+            _resultValue.termValueUom = termValueUom;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            _resultValue.totalValue = totalValue;
+            return _resultValue;
         }
     }
 }

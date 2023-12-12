@@ -42,9 +42,9 @@ public final class GetMonitoredInstancesMonitoredInstanceCollection {
             return items(List.of(items));
         }
         public GetMonitoredInstancesMonitoredInstanceCollection build() {
-            final var o = new GetMonitoredInstancesMonitoredInstanceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMonitoredInstancesMonitoredInstanceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

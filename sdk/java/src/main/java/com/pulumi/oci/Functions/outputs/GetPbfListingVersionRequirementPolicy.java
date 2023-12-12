@@ -65,10 +65,10 @@ public final class GetPbfListingVersionRequirementPolicy {
             return this;
         }
         public GetPbfListingVersionRequirementPolicy build() {
-            final var o = new GetPbfListingVersionRequirementPolicy();
-            o.description = description;
-            o.policy = policy;
-            return o;
+            final var _resultValue = new GetPbfListingVersionRequirementPolicy();
+            _resultValue.description = description;
+            _resultValue.policy = policy;
+            return _resultValue;
         }
     }
 }

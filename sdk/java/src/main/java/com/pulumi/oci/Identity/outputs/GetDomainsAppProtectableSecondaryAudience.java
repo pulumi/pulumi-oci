@@ -66,10 +66,10 @@ public final class GetDomainsAppProtectableSecondaryAudience {
             return this;
         }
         public GetDomainsAppProtectableSecondaryAudience build() {
-            final var o = new GetDomainsAppProtectableSecondaryAudience();
-            o.readOnly = readOnly;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppProtectableSecondaryAudience();
+            _resultValue.readOnly = readOnly;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

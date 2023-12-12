@@ -155,15 +155,15 @@ public final class GetEnvironmentsResult {
             return this;
         }
         public GetEnvironmentsResult build() {
-            final var o = new GetEnvironmentsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.environmentCollections = environmentCollections;
-            o.environmentId = environmentId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetEnvironmentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.environmentCollections = environmentCollections;
+            _resultValue.environmentId = environmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

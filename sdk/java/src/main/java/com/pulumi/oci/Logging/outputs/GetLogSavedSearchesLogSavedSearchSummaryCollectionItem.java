@@ -219,18 +219,18 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollectionItem {
             return this;
         }
         public GetLogSavedSearchesLogSavedSearchSummaryCollectionItem build() {
-            final var o = new GetLogSavedSearchesLogSavedSearchSummaryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.name = name;
-            o.query = query;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastModified = timeLastModified;
-            return o;
+            final var _resultValue = new GetLogSavedSearchesLogSavedSearchSummaryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.query = query;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastModified = timeLastModified;
+            return _resultValue;
         }
     }
 }

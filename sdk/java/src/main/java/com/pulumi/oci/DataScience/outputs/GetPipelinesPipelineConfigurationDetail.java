@@ -105,12 +105,12 @@ public final class GetPipelinesPipelineConfigurationDetail {
             return this;
         }
         public GetPipelinesPipelineConfigurationDetail build() {
-            final var o = new GetPipelinesPipelineConfigurationDetail();
-            o.commandLineArguments = commandLineArguments;
-            o.environmentVariables = environmentVariables;
-            o.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetPipelinesPipelineConfigurationDetail();
+            _resultValue.commandLineArguments = commandLineArguments;
+            _resultValue.environmentVariables = environmentVariables;
+            _resultValue.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

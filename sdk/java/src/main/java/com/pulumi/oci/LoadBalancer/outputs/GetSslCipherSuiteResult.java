@@ -102,13 +102,13 @@ public final class GetSslCipherSuiteResult {
             return this;
         }
         public GetSslCipherSuiteResult build() {
-            final var o = new GetSslCipherSuiteResult();
-            o.ciphers = ciphers;
-            o.id = id;
-            o.loadBalancerId = loadBalancerId;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSslCipherSuiteResult();
+            _resultValue.ciphers = ciphers;
+            _resultValue.id = id;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

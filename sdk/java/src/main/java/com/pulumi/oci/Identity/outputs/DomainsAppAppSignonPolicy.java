@@ -109,10 +109,10 @@ public final class DomainsAppAppSignonPolicy {
             return this;
         }
         public DomainsAppAppSignonPolicy build() {
-            final var o = new DomainsAppAppSignonPolicy();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppAppSignonPolicy();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

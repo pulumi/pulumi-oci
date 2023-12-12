@@ -114,14 +114,14 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetails
             return this;
         }
         public GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 build() {
-            final var o = new GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2();
-            o.accessKeyId = accessKeyId;
-            o.name = name;
-            o.objectStorageBuckets = objectStorageBuckets;
-            o.region = region;
-            o.secretAccessKey = secretAccessKey;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2();
+            _resultValue.accessKeyId = accessKeyId;
+            _resultValue.name = name;
+            _resultValue.objectStorageBuckets = objectStorageBuckets;
+            _resultValue.region = region;
+            _resultValue.secretAccessKey = secretAccessKey;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

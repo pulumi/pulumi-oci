@@ -42,9 +42,9 @@ public final class GetModelsModelCollection {
             return items(List.of(items));
         }
         public GetModelsModelCollection build() {
-            final var o = new GetModelsModelCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetModelsModelCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

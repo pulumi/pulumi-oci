@@ -230,13 +230,13 @@ public final class DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
             return this;
         }
         public DomainsMyOauth2clientCredentialIdcsLastModifiedBy build() {
-            final var o = new DomainsMyOauth2clientCredentialIdcsLastModifiedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyOauth2clientCredentialIdcsLastModifiedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

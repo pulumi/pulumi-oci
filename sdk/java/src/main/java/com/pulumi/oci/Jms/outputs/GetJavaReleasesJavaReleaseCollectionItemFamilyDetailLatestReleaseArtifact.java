@@ -274,21 +274,21 @@ public final class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestRel
             return this;
         }
         public GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact build() {
-            final var o = new GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact();
-            o.approximateFileSizeInBytes = approximateFileSizeInBytes;
-            o.architecture = architecture;
-            o.artifactContentType = artifactContentType;
-            o.artifactDescription = artifactDescription;
-            o.artifactFileName = artifactFileName;
-            o.artifactId = artifactId;
-            o.downloadUrl = downloadUrl;
-            o.osFamily = osFamily;
-            o.packageType = packageType;
-            o.packageTypeDetail = packageTypeDetail;
-            o.scriptChecksumUrl = scriptChecksumUrl;
-            o.scriptDownloadUrl = scriptDownloadUrl;
-            o.sha256 = sha256;
-            return o;
+            final var _resultValue = new GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact();
+            _resultValue.approximateFileSizeInBytes = approximateFileSizeInBytes;
+            _resultValue.architecture = architecture;
+            _resultValue.artifactContentType = artifactContentType;
+            _resultValue.artifactDescription = artifactDescription;
+            _resultValue.artifactFileName = artifactFileName;
+            _resultValue.artifactId = artifactId;
+            _resultValue.downloadUrl = downloadUrl;
+            _resultValue.osFamily = osFamily;
+            _resultValue.packageType = packageType;
+            _resultValue.packageTypeDetail = packageTypeDetail;
+            _resultValue.scriptChecksumUrl = scriptChecksumUrl;
+            _resultValue.scriptDownloadUrl = scriptDownloadUrl;
+            _resultValue.sha256 = sha256;
+            return _resultValue;
         }
     }
 }

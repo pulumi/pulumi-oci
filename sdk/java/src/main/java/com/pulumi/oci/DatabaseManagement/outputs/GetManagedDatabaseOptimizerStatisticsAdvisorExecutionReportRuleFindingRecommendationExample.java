@@ -50,9 +50,9 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
             return lines(List.of(lines));
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample();
-            o.lines = lines;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExample();
+            _resultValue.lines = lines;
+            return _resultValue;
         }
     }
 }

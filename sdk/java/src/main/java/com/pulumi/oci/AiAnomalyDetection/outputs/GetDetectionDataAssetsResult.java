@@ -163,15 +163,15 @@ public final class GetDetectionDataAssetsResult {
             return this;
         }
         public GetDetectionDataAssetsResult build() {
-            final var o = new GetDetectionDataAssetsResult();
-            o.compartmentId = compartmentId;
-            o.dataAssetCollections = dataAssetCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDetectionDataAssetsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataAssetCollections = dataAssetCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

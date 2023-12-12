@@ -242,19 +242,19 @@ public final class GetManagementAgentImagesManagementAgentImage {
             return this;
         }
         public GetManagementAgentImagesManagementAgentImage build() {
-            final var o = new GetManagementAgentImagesManagementAgentImage();
-            o.checksum = checksum;
-            o.id = id;
-            o.imageObjectStorageDetails = imageObjectStorageDetails;
-            o.objectUrl = objectUrl;
-            o.packageArchitectureType = packageArchitectureType;
-            o.packageType = packageType;
-            o.platformName = platformName;
-            o.platformType = platformType;
-            o.size = size;
-            o.state = state;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetManagementAgentImagesManagementAgentImage();
+            _resultValue.checksum = checksum;
+            _resultValue.id = id;
+            _resultValue.imageObjectStorageDetails = imageObjectStorageDetails;
+            _resultValue.objectUrl = objectUrl;
+            _resultValue.packageArchitectureType = packageArchitectureType;
+            _resultValue.packageType = packageType;
+            _resultValue.platformName = platformName;
+            _resultValue.platformType = platformType;
+            _resultValue.size = size;
+            _resultValue.state = state;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

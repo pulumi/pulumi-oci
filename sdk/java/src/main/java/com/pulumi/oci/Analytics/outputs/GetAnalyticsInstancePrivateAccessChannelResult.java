@@ -246,20 +246,20 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
             return this;
         }
         public GetAnalyticsInstancePrivateAccessChannelResult build() {
-            final var o = new GetAnalyticsInstancePrivateAccessChannelResult();
-            o.analyticsInstanceId = analyticsInstanceId;
-            o.displayName = displayName;
-            o.egressSourceIpAddresses = egressSourceIpAddresses;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.key = key;
-            o.networkSecurityGroupIds = networkSecurityGroupIds;
-            o.privateAccessChannelKey = privateAccessChannelKey;
-            o.privateSourceDnsZones = privateSourceDnsZones;
-            o.privateSourceScanHosts = privateSourceScanHosts;
-            o.subnetId = subnetId;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetAnalyticsInstancePrivateAccessChannelResult();
+            _resultValue.analyticsInstanceId = analyticsInstanceId;
+            _resultValue.displayName = displayName;
+            _resultValue.egressSourceIpAddresses = egressSourceIpAddresses;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.key = key;
+            _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.privateAccessChannelKey = privateAccessChannelKey;
+            _resultValue.privateSourceDnsZones = privateSourceDnsZones;
+            _resultValue.privateSourceScanHosts = privateSourceScanHosts;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

@@ -117,12 +117,12 @@ public final class TriggerActionFilter {
             return this;
         }
         public TriggerActionFilter build() {
-            final var o = new TriggerActionFilter();
-            o.events = events;
-            o.exclude = exclude;
-            o.include = include;
-            o.triggerSource = triggerSource;
-            return o;
+            final var _resultValue = new TriggerActionFilter();
+            _resultValue.events = events;
+            _resultValue.exclude = exclude;
+            _resultValue.include = include;
+            _resultValue.triggerSource = triggerSource;
+            return _resultValue;
         }
     }
 }

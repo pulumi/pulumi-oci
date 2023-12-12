@@ -51,9 +51,9 @@ public final class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStag
             return items(List.of(items));
         }
         public DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage build() {
-            final var o = new DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

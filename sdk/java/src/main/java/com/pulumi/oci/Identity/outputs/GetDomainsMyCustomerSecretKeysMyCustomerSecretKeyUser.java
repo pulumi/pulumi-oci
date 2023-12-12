@@ -122,13 +122,13 @@ public final class GetDomainsMyCustomerSecretKeysMyCustomerSecretKeyUser {
             return this;
         }
         public GetDomainsMyCustomerSecretKeysMyCustomerSecretKeyUser build() {
-            final var o = new GetDomainsMyCustomerSecretKeysMyCustomerSecretKeyUser();
-            o.display = display;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyCustomerSecretKeysMyCustomerSecretKeyUser();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

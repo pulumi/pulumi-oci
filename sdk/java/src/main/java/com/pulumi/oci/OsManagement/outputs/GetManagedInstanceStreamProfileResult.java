@@ -177,17 +177,17 @@ public final class GetManagedInstanceStreamProfileResult {
             return this;
         }
         public GetManagedInstanceStreamProfileResult build() {
-            final var o = new GetManagedInstanceStreamProfileResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.moduleName = moduleName;
-            o.moduleStreamProfileOnManagedInstances = moduleStreamProfileOnManagedInstances;
-            o.profileName = profileName;
-            o.profileStatus = profileStatus;
-            o.streamName = streamName;
-            return o;
+            final var _resultValue = new GetManagedInstanceStreamProfileResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.moduleName = moduleName;
+            _resultValue.moduleStreamProfileOnManagedInstances = moduleStreamProfileOnManagedInstances;
+            _resultValue.profileName = profileName;
+            _resultValue.profileStatus = profileStatus;
+            _resultValue.streamName = streamName;
+            return _resultValue;
         }
     }
 }

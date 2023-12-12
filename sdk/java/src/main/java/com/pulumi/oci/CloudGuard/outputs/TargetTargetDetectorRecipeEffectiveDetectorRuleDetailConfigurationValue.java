@@ -86,11 +86,11 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
             return this;
         }
         public TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue build() {
-            final var o = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue();
-            o.listType = listType;
-            o.managedListType = managedListType;
-            o.value = value;
-            return o;
+            final var _resultValue = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue();
+            _resultValue.listType = listType;
+            _resultValue.managedListType = managedListType;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

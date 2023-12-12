@@ -67,11 +67,11 @@ public final class GetOpensearchClustersFilter {
             return values(List.of(values));
         }
         public GetOpensearchClustersFilter build() {
-            final var o = new GetOpensearchClustersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetOpensearchClustersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

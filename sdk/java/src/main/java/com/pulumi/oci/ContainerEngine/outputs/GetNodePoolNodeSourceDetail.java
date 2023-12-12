@@ -84,11 +84,11 @@ public final class GetNodePoolNodeSourceDetail {
             return this;
         }
         public GetNodePoolNodeSourceDetail build() {
-            final var o = new GetNodePoolNodeSourceDetail();
-            o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
-            o.imageId = imageId;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new GetNodePoolNodeSourceDetail();
+            _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            _resultValue.imageId = imageId;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

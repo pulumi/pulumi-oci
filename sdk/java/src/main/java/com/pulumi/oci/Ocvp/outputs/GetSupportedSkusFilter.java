@@ -75,11 +75,11 @@ public final class GetSupportedSkusFilter {
             return values(List.of(values));
         }
         public GetSupportedSkusFilter build() {
-            final var o = new GetSupportedSkusFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSupportedSkusFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

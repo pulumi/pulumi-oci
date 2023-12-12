@@ -46,9 +46,9 @@ public final class GetConnectionsConnectionCollectionItemIngressIp {
             return this;
         }
         public GetConnectionsConnectionCollectionItemIngressIp build() {
-            final var o = new GetConnectionsConnectionCollectionItemIngressIp();
-            o.ingressIp = ingressIp;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItemIngressIp();
+            _resultValue.ingressIp = ingressIp;
+            return _resultValue;
         }
     }
 }

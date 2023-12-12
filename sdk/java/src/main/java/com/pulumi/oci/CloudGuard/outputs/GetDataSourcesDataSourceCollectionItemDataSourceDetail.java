@@ -230,18 +230,18 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetail {
             return this;
         }
         public GetDataSourcesDataSourceCollectionItemDataSourceDetail build() {
-            final var o = new GetDataSourcesDataSourceCollectionItemDataSourceDetail();
-            o.additionalEntitiesCount = additionalEntitiesCount;
-            o.dataSourceFeedProvider = dataSourceFeedProvider;
-            o.intervalInMinutes = intervalInMinutes;
-            o.loggingQueryDetails = loggingQueryDetails;
-            o.loggingQueryType = loggingQueryType;
-            o.operator = operator;
-            o.query = query;
-            o.queryStartTimes = queryStartTimes;
-            o.regions = regions;
-            o.threshold = threshold;
-            return o;
+            final var _resultValue = new GetDataSourcesDataSourceCollectionItemDataSourceDetail();
+            _resultValue.additionalEntitiesCount = additionalEntitiesCount;
+            _resultValue.dataSourceFeedProvider = dataSourceFeedProvider;
+            _resultValue.intervalInMinutes = intervalInMinutes;
+            _resultValue.loggingQueryDetails = loggingQueryDetails;
+            _resultValue.loggingQueryType = loggingQueryType;
+            _resultValue.operator = operator;
+            _resultValue.query = query;
+            _resultValue.queryStartTimes = queryStartTimes;
+            _resultValue.regions = regions;
+            _resultValue.threshold = threshold;
+            return _resultValue;
         }
     }
 }

@@ -193,17 +193,17 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
             return this;
         }
         public GetServiceEnvironmentsServiceEnvironmentCollectionItem build() {
-            final var o = new GetServiceEnvironmentsServiceEnvironmentCollectionItem();
-            o.compartmentId = compartmentId;
-            o.consoleUrl = consoleUrl;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.serviceDefinitions = serviceDefinitions;
-            o.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
-            o.status = status;
-            o.subscriptionId = subscriptionId;
-            return o;
+            final var _resultValue = new GetServiceEnvironmentsServiceEnvironmentCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.consoleUrl = consoleUrl;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.serviceDefinitions = serviceDefinitions;
+            _resultValue.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
+            _resultValue.status = status;
+            _resultValue.subscriptionId = subscriptionId;
+            return _resultValue;
         }
     }
 }

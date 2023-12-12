@@ -67,11 +67,11 @@ public final class GetPingProbeResultsFilter {
             return values(List.of(values));
         }
         public GetPingProbeResultsFilter build() {
-            final var o = new GetPingProbeResultsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPingProbeResultsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

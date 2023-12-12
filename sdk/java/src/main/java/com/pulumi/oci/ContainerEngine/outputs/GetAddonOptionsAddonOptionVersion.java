@@ -131,13 +131,13 @@ public final class GetAddonOptionsAddonOptionVersion {
             return this;
         }
         public GetAddonOptionsAddonOptionVersion build() {
-            final var o = new GetAddonOptionsAddonOptionVersion();
-            o.configurations = configurations;
-            o.description = description;
-            o.kubernetesVersionFilters = kubernetesVersionFilters;
-            o.status = status;
-            o.versionNumber = versionNumber;
-            return o;
+            final var _resultValue = new GetAddonOptionsAddonOptionVersion();
+            _resultValue.configurations = configurations;
+            _resultValue.description = description;
+            _resultValue.kubernetesVersionFilters = kubernetesVersionFilters;
+            _resultValue.status = status;
+            _resultValue.versionNumber = versionNumber;
+            return _resultValue;
         }
     }
 }

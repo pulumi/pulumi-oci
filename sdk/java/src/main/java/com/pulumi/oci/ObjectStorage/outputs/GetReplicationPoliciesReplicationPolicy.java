@@ -240,19 +240,19 @@ public final class GetReplicationPoliciesReplicationPolicy {
             return this;
         }
         public GetReplicationPoliciesReplicationPolicy build() {
-            final var o = new GetReplicationPoliciesReplicationPolicy();
-            o.bucket = bucket;
-            o.deleteObjectInDestinationBucket = deleteObjectInDestinationBucket;
-            o.destinationBucketName = destinationBucketName;
-            o.destinationRegionName = destinationRegionName;
-            o.id = id;
-            o.name = name;
-            o.namespace = namespace;
-            o.status = status;
-            o.statusMessage = statusMessage;
-            o.timeCreated = timeCreated;
-            o.timeLastSync = timeLastSync;
-            return o;
+            final var _resultValue = new GetReplicationPoliciesReplicationPolicy();
+            _resultValue.bucket = bucket;
+            _resultValue.deleteObjectInDestinationBucket = deleteObjectInDestinationBucket;
+            _resultValue.destinationBucketName = destinationBucketName;
+            _resultValue.destinationRegionName = destinationRegionName;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.status = status;
+            _resultValue.statusMessage = statusMessage;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastSync = timeLastSync;
+            return _resultValue;
         }
     }
 }

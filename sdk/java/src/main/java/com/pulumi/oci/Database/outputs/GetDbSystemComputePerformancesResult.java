@@ -98,12 +98,12 @@ public final class GetDbSystemComputePerformancesResult {
             return this;
         }
         public GetDbSystemComputePerformancesResult build() {
-            final var o = new GetDbSystemComputePerformancesResult();
-            o.dbSystemComputePerformances = dbSystemComputePerformances;
-            o.dbSystemShape = dbSystemShape;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDbSystemComputePerformancesResult();
+            _resultValue.dbSystemComputePerformances = dbSystemComputePerformances;
+            _resultValue.dbSystemShape = dbSystemShape;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

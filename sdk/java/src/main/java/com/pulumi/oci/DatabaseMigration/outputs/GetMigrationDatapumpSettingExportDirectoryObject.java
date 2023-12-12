@@ -65,10 +65,10 @@ public final class GetMigrationDatapumpSettingExportDirectoryObject {
             return this;
         }
         public GetMigrationDatapumpSettingExportDirectoryObject build() {
-            final var o = new GetMigrationDatapumpSettingExportDirectoryObject();
-            o.name = name;
-            o.path = path;
-            return o;
+            final var _resultValue = new GetMigrationDatapumpSettingExportDirectoryObject();
+            _resultValue.name = name;
+            _resultValue.path = path;
+            return _resultValue;
         }
     }
 }

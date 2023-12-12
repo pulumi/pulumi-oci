@@ -78,11 +78,11 @@ public final class BootVolumeBackupSourceDetails {
             return this;
         }
         public BootVolumeBackupSourceDetails build() {
-            final var o = new BootVolumeBackupSourceDetails();
-            o.bootVolumeBackupId = bootVolumeBackupId;
-            o.kmsKeyId = kmsKeyId;
-            o.region = region;
-            return o;
+            final var _resultValue = new BootVolumeBackupSourceDetails();
+            _resultValue.bootVolumeBackupId = bootVolumeBackupId;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.region = region;
+            return _resultValue;
         }
     }
 }

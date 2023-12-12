@@ -111,10 +111,10 @@ public final class DomainsMyAuthTokenTag {
             return this;
         }
         public DomainsMyAuthTokenTag build() {
-            final var o = new DomainsMyAuthTokenTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyAuthTokenTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -142,11 +142,11 @@ public final class DomainsIdentityProviderJitUserProvGroupMapping {
             return this;
         }
         public DomainsIdentityProviderJitUserProvGroupMapping build() {
-            final var o = new DomainsIdentityProviderJitUserProvGroupMapping();
-            o.idpGroup = idpGroup;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsIdentityProviderJitUserProvGroupMapping();
+            _resultValue.idpGroup = idpGroup;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

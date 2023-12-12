@@ -65,10 +65,10 @@ public final class GetDomainsAppIdpPolicy {
             return this;
         }
         public GetDomainsAppIdpPolicy build() {
-            final var o = new GetDomainsAppIdpPolicy();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppIdpPolicy();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

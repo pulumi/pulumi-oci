@@ -68,10 +68,10 @@ public final class DatasetDatasetFormatDetails {
             return this;
         }
         public DatasetDatasetFormatDetails build() {
-            final var o = new DatasetDatasetFormatDetails();
-            o.formatType = formatType;
-            o.textFileTypeMetadata = textFileTypeMetadata;
-            return o;
+            final var _resultValue = new DatasetDatasetFormatDetails();
+            _resultValue.formatType = formatType;
+            _resultValue.textFileTypeMetadata = textFileTypeMetadata;
+            return _resultValue;
         }
     }
 }

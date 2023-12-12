@@ -65,10 +65,10 @@ public final class GetDomainsSecurityQuestionsSecurityQuestionTag {
             return this;
         }
         public GetDomainsSecurityQuestionsSecurityQuestionTag build() {
-            final var o = new GetDomainsSecurityQuestionsSecurityQuestionTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSecurityQuestionsSecurityQuestionTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

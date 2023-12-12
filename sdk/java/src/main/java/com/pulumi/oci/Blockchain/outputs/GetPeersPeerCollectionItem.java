@@ -180,16 +180,16 @@ public final class GetPeersPeerCollectionItem {
             return this;
         }
         public GetPeersPeerCollectionItem build() {
-            final var o = new GetPeersPeerCollectionItem();
-            o.ad = ad;
-            o.alias = alias;
-            o.blockchainPlatformId = blockchainPlatformId;
-            o.host = host;
-            o.ocpuAllocationParam = ocpuAllocationParam;
-            o.peerKey = peerKey;
-            o.role = role;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPeersPeerCollectionItem();
+            _resultValue.ad = ad;
+            _resultValue.alias = alias;
+            _resultValue.blockchainPlatformId = blockchainPlatformId;
+            _resultValue.host = host;
+            _resultValue.ocpuAllocationParam = ocpuAllocationParam;
+            _resultValue.peerKey = peerKey;
+            _resultValue.role = role;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

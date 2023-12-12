@@ -65,10 +65,10 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransfo
             return this;
         }
         public GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem build() {
-            final var o = new GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem();
-            o.from = from;
-            o.to = to;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem();
+            _resultValue.from = from;
+            _resultValue.to = to;
+            return _resultValue;
         }
     }
 }

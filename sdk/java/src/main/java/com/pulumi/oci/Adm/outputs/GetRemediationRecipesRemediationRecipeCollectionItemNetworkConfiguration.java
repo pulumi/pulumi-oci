@@ -69,10 +69,10 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemNetworkCo
             return this;
         }
         public GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration build() {
-            final var o = new GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration();
-            o.nsgIds = nsgIds;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration();
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

@@ -323,24 +323,24 @@ public final class GetManagementAgentsResult {
             return versions(List.of(versions));
         }
         public GetManagementAgentsResult build() {
-            final var o = new GetManagementAgentsResult();
-            o.accessLevel = accessLevel;
-            o.availabilityStatus = availabilityStatus;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.gatewayIds = gatewayIds;
-            o.hostId = hostId;
-            o.id = id;
-            o.installType = installType;
-            o.isCustomerDeployed = isCustomerDeployed;
-            o.managementAgents = managementAgents;
-            o.platformTypes = platformTypes;
-            o.pluginNames = pluginNames;
-            o.state = state;
-            o.versions = versions;
-            return o;
+            final var _resultValue = new GetManagementAgentsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.availabilityStatus = availabilityStatus;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.gatewayIds = gatewayIds;
+            _resultValue.hostId = hostId;
+            _resultValue.id = id;
+            _resultValue.installType = installType;
+            _resultValue.isCustomerDeployed = isCustomerDeployed;
+            _resultValue.managementAgents = managementAgents;
+            _resultValue.platformTypes = platformTypes;
+            _resultValue.pluginNames = pluginNames;
+            _resultValue.state = state;
+            _resultValue.versions = versions;
+            return _resultValue;
         }
     }
 }

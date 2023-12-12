@@ -84,11 +84,11 @@ public final class GetTargetAssetCompatibilityMessage {
             return this;
         }
         public GetTargetAssetCompatibilityMessage build() {
-            final var o = new GetTargetAssetCompatibilityMessage();
-            o.message = message;
-            o.name = name;
-            o.severity = severity;
-            return o;
+            final var _resultValue = new GetTargetAssetCompatibilityMessage();
+            _resultValue.message = message;
+            _resultValue.name = name;
+            _resultValue.severity = severity;
+            return _resultValue;
         }
     }
 }

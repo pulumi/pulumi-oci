@@ -50,9 +50,9 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineE
             return items(List.of(items));
         }
         public GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironment build() {
-            final var o = new GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironment();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironment();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

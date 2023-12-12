@@ -103,12 +103,12 @@ public final class GetDomainsRulesRuleConditionGroup {
             return this;
         }
         public GetDomainsRulesRuleConditionGroup build() {
-            final var o = new GetDomainsRulesRuleConditionGroup();
-            o.name = name;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsRulesRuleConditionGroup();
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

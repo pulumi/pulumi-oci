@@ -346,24 +346,24 @@ public final class MonitoredResourcesSearchItem {
             return this;
         }
         public MonitoredResourcesSearchItem build() {
-            final var o = new MonitoredResourcesSearchItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.externalId = externalId;
-            o.freeformTags = freeformTags;
-            o.hostName = hostName;
-            o.id = id;
-            o.license = license;
-            o.managementAgentId = managementAgentId;
-            o.name = name;
-            o.properties = properties;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            return o;
+            final var _resultValue = new MonitoredResourcesSearchItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.externalId = externalId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.license = license;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.name = name;
+            _resultValue.properties = properties;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

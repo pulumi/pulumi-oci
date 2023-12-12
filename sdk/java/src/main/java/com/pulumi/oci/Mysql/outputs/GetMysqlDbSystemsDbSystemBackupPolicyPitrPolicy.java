@@ -46,9 +46,9 @@ public final class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy {
             return this;
         }
         public GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy build() {
-            final var o = new GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicy();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

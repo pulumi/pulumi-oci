@@ -65,10 +65,10 @@ public final class GetAddressRuleContactFieldFormat {
             return this;
         }
         public GetAddressRuleContactFieldFormat build() {
-            final var o = new GetAddressRuleContactFieldFormat();
-            o.example = example;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAddressRuleContactFieldFormat();
+            _resultValue.example = example;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

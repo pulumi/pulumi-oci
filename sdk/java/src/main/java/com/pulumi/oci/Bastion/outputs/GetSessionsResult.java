@@ -147,15 +147,15 @@ public final class GetSessionsResult {
             return sessions(List.of(sessions));
         }
         public GetSessionsResult build() {
-            final var o = new GetSessionsResult();
-            o.bastionId = bastionId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.sessionId = sessionId;
-            o.sessionLifecycleState = sessionLifecycleState;
-            o.sessions = sessions;
-            return o;
+            final var _resultValue = new GetSessionsResult();
+            _resultValue.bastionId = bastionId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.sessionId = sessionId;
+            _resultValue.sessionLifecycleState = sessionLifecycleState;
+            _resultValue.sessions = sessions;
+            return _resultValue;
         }
     }
 }

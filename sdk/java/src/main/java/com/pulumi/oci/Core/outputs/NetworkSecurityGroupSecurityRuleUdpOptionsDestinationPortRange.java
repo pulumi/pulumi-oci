@@ -71,10 +71,10 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRang
             return this;
         }
         public NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange build() {
-            final var o = new NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class GetFleetDiagnosesFleetDiagnosisCollectionItem {
             return this;
         }
         public GetFleetDiagnosesFleetDiagnosisCollectionItem build() {
-            final var o = new GetFleetDiagnosesFleetDiagnosisCollectionItem();
-            o.resourceDiagnosis = resourceDiagnosis;
-            o.resourceId = resourceId;
-            o.resourceState = resourceState;
-            o.resourceType = resourceType;
-            return o;
+            final var _resultValue = new GetFleetDiagnosesFleetDiagnosisCollectionItem();
+            _resultValue.resourceDiagnosis = resourceDiagnosis;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceState = resourceState;
+            _resultValue.resourceType = resourceType;
+            return _resultValue;
         }
     }
 }

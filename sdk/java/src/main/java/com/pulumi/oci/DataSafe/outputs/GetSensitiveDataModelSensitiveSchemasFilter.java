@@ -67,11 +67,11 @@ public final class GetSensitiveDataModelSensitiveSchemasFilter {
             return values(List.of(values));
         }
         public GetSensitiveDataModelSensitiveSchemasFilter build() {
-            final var o = new GetSensitiveDataModelSensitiveSchemasFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelSensitiveSchemasFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

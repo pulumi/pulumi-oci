@@ -150,11 +150,11 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential();
-            o.accessToken = accessToken;
-            o.accessTokenExpiry = accessTokenExpiry;
-            o.refreshToken = refreshToken;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential();
+            _resultValue.accessToken = accessToken;
+            _resultValue.accessTokenExpiry = accessTokenExpiry;
+            _resultValue.refreshToken = refreshToken;
+            return _resultValue;
         }
     }
 }

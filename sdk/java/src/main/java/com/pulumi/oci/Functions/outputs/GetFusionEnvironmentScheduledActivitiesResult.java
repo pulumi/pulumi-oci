@@ -185,17 +185,17 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
             return this;
         }
         public GetFusionEnvironmentScheduledActivitiesResult build() {
-            final var o = new GetFusionEnvironmentScheduledActivitiesResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.runCycle = runCycle;
-            o.scheduledActivityCollections = scheduledActivityCollections;
-            o.state = state;
-            o.timeExpectedFinishLessThanOrEqualTo = timeExpectedFinishLessThanOrEqualTo;
-            o.timeScheduledStartGreaterThanOrEqualTo = timeScheduledStartGreaterThanOrEqualTo;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentScheduledActivitiesResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.runCycle = runCycle;
+            _resultValue.scheduledActivityCollections = scheduledActivityCollections;
+            _resultValue.state = state;
+            _resultValue.timeExpectedFinishLessThanOrEqualTo = timeExpectedFinishLessThanOrEqualTo;
+            _resultValue.timeScheduledStartGreaterThanOrEqualTo = timeScheduledStartGreaterThanOrEqualTo;
+            return _resultValue;
         }
     }
 }

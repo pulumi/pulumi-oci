@@ -84,11 +84,11 @@ public final class GetDomainsMyTrustedUserAgentTrustedFactor {
             return this;
         }
         public GetDomainsMyTrustedUserAgentTrustedFactor build() {
-            final var o = new GetDomainsMyTrustedUserAgentTrustedFactor();
-            o.category = category;
-            o.creationTime = creationTime;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDomainsMyTrustedUserAgentTrustedFactor();
+            _resultValue.category = category;
+            _resultValue.creationTime = creationTime;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

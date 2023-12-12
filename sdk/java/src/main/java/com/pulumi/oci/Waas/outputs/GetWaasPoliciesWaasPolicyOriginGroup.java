@@ -54,10 +54,10 @@ public final class GetWaasPoliciesWaasPolicyOriginGroup {
             return originGroups(List.of(originGroups));
         }
         public GetWaasPoliciesWaasPolicyOriginGroup build() {
-            final var o = new GetWaasPoliciesWaasPolicyOriginGroup();
-            o.label = label;
-            o.originGroups = originGroups;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyOriginGroup();
+            _resultValue.label = label;
+            _resultValue.originGroups = originGroups;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class IndexKey {
             return this;
         }
         public IndexKey build() {
-            final var o = new IndexKey();
-            o.columnName = columnName;
-            o.jsonFieldType = jsonFieldType;
-            o.jsonPath = jsonPath;
-            return o;
+            final var _resultValue = new IndexKey();
+            _resultValue.columnName = columnName;
+            _resultValue.jsonFieldType = jsonFieldType;
+            _resultValue.jsonPath = jsonPath;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDeployStagesDeployStageCollectionItemSetStringItem {
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemSetStringItem build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemSetStringItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemSetStringItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

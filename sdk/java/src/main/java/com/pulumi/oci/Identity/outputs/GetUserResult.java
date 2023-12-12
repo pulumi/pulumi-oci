@@ -375,26 +375,26 @@ public final class GetUserResult {
             return this;
         }
         public GetUserResult build() {
-            final var o = new GetUserResult();
-            o.capabilities = capabilities;
-            o.compartmentId = compartmentId;
-            o.dbUserName = dbUserName;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.email = email;
-            o.emailVerified = emailVerified;
-            o.externalIdentifier = externalIdentifier;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.identityProviderId = identityProviderId;
-            o.inactiveState = inactiveState;
-            o.lastSuccessfulLoginTime = lastSuccessfulLoginTime;
-            o.name = name;
-            o.previousSuccessfulLoginTime = previousSuccessfulLoginTime;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetUserResult();
+            _resultValue.capabilities = capabilities;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbUserName = dbUserName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.email = email;
+            _resultValue.emailVerified = emailVerified;
+            _resultValue.externalIdentifier = externalIdentifier;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.identityProviderId = identityProviderId;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.lastSuccessfulLoginTime = lastSuccessfulLoginTime;
+            _resultValue.name = name;
+            _resultValue.previousSuccessfulLoginTime = previousSuccessfulLoginTime;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDomainsMyDevicesMyDevicePushNotificationTarget {
             return this;
         }
         public GetDomainsMyDevicesMyDevicePushNotificationTarget build() {
-            final var o = new GetDomainsMyDevicesMyDevicePushNotificationTarget();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyDevicesMyDevicePushNotificationTarget();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

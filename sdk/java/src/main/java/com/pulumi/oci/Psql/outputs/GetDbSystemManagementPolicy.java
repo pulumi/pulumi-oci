@@ -70,10 +70,10 @@ public final class GetDbSystemManagementPolicy {
             return this;
         }
         public GetDbSystemManagementPolicy build() {
-            final var o = new GetDbSystemManagementPolicy();
-            o.backupPolicies = backupPolicies;
-            o.maintenanceWindowStart = maintenanceWindowStart;
-            return o;
+            final var _resultValue = new GetDbSystemManagementPolicy();
+            _resultValue.backupPolicies = backupPolicies;
+            _resultValue.maintenanceWindowStart = maintenanceWindowStart;
+            return _resultValue;
         }
     }
 }

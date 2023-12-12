@@ -105,10 +105,10 @@ public final class DomainsPasswordPolicyTag {
             return this;
         }
         public DomainsPasswordPolicyTag build() {
-            final var o = new DomainsPasswordPolicyTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsPasswordPolicyTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

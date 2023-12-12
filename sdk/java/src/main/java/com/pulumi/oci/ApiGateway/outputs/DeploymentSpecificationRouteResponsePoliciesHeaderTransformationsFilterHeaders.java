@@ -76,10 +76,10 @@ public final class DeploymentSpecificationRouteResponsePoliciesHeaderTransformat
             return this;
         }
         public DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeaders build() {
-            final var o = new DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeaders();
-            o.items = items;
-            o.type = type;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeaders();
+            _resultValue.items = items;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

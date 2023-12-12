@@ -103,12 +103,12 @@ public final class GetChannelSourceAnonymousTransactionsHandling {
             return this;
         }
         public GetChannelSourceAnonymousTransactionsHandling build() {
-            final var o = new GetChannelSourceAnonymousTransactionsHandling();
-            o.lastConfiguredLogFilename = lastConfiguredLogFilename;
-            o.lastConfiguredLogOffset = lastConfiguredLogOffset;
-            o.policy = policy;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new GetChannelSourceAnonymousTransactionsHandling();
+            _resultValue.lastConfiguredLogFilename = lastConfiguredLogFilename;
+            _resultValue.lastConfiguredLogOffset = lastConfiguredLogOffset;
+            _resultValue.policy = policy;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

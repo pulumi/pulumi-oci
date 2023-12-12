@@ -97,12 +97,12 @@ public final class GetLoadBalancerRoutingPoliciesResult {
             return routingPolicies(List.of(routingPolicies));
         }
         public GetLoadBalancerRoutingPoliciesResult build() {
-            final var o = new GetLoadBalancerRoutingPoliciesResult();
-            o.filters = filters;
-            o.id = id;
-            o.loadBalancerId = loadBalancerId;
-            o.routingPolicies = routingPolicies;
-            return o;
+            final var _resultValue = new GetLoadBalancerRoutingPoliciesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.routingPolicies = routingPolicies;
+            return _resultValue;
         }
     }
 }

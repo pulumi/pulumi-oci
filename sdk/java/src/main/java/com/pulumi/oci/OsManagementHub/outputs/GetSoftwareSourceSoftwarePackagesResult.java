@@ -148,15 +148,15 @@ public final class GetSoftwareSourceSoftwarePackagesResult {
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesResult build() {
-            final var o = new GetSoftwareSourceSoftwarePackagesResult();
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.filters = filters;
-            o.id = id;
-            o.isLatest = isLatest;
-            o.softwarePackageCollections = softwarePackageCollections;
-            o.softwareSourceId = softwareSourceId;
-            return o;
+            final var _resultValue = new GetSoftwareSourceSoftwarePackagesResult();
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isLatest = isLatest;
+            _resultValue.softwarePackageCollections = softwarePackageCollections;
+            _resultValue.softwareSourceId = softwareSourceId;
+            return _resultValue;
         }
     }
 }

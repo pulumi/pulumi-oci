@@ -42,9 +42,9 @@ public final class GetExternalDbNodesExternalDbNodeCollection {
             return items(List.of(items));
         }
         public GetExternalDbNodesExternalDbNodeCollection build() {
-            final var o = new GetExternalDbNodesExternalDbNodeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalDbNodesExternalDbNodeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

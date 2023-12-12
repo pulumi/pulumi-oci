@@ -84,11 +84,11 @@ public final class GetDomainsMyRequestsMyRequestRequestor {
             return this;
         }
         public GetDomainsMyRequestsMyRequestRequestor build() {
-            final var o = new GetDomainsMyRequestsMyRequestRequestor();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyRequestsMyRequestRequestor();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

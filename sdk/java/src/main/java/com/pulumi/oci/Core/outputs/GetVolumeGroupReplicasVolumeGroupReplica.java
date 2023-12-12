@@ -262,20 +262,20 @@ public final class GetVolumeGroupReplicasVolumeGroupReplica {
             return this;
         }
         public GetVolumeGroupReplicasVolumeGroupReplica build() {
-            final var o = new GetVolumeGroupReplicasVolumeGroupReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.memberReplicas = memberReplicas;
-            o.sizeInGbs = sizeInGbs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastSynced = timeLastSynced;
-            o.volumeGroupId = volumeGroupId;
-            return o;
+            final var _resultValue = new GetVolumeGroupReplicasVolumeGroupReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.memberReplicas = memberReplicas;
+            _resultValue.sizeInGbs = sizeInGbs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastSynced = timeLastSynced;
+            _resultValue.volumeGroupId = volumeGroupId;
+            return _resultValue;
         }
     }
 }

@@ -464,31 +464,31 @@ public final class GetRepositoriesRepositoryCollectionItem {
             return triggerBuildEvents(List.of(triggerBuildEvents));
         }
         public GetRepositoriesRepositoryCollectionItem build() {
-            final var o = new GetRepositoriesRepositoryCollectionItem();
-            o.branchCount = branchCount;
-            o.commitCount = commitCount;
-            o.compartmentId = compartmentId;
-            o.defaultBranch = defaultBranch;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.httpUrl = httpUrl;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.mirrorRepositoryConfig = mirrorRepositoryConfig;
-            o.name = name;
-            o.namespace = namespace;
-            o.projectId = projectId;
-            o.projectName = projectName;
-            o.repositoryType = repositoryType;
-            o.sizeInBytes = sizeInBytes;
-            o.sshUrl = sshUrl;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.triggerBuildEvents = triggerBuildEvents;
-            return o;
+            final var _resultValue = new GetRepositoriesRepositoryCollectionItem();
+            _resultValue.branchCount = branchCount;
+            _resultValue.commitCount = commitCount;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.defaultBranch = defaultBranch;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.httpUrl = httpUrl;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.mirrorRepositoryConfig = mirrorRepositoryConfig;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.projectId = projectId;
+            _resultValue.projectName = projectName;
+            _resultValue.repositoryType = repositoryType;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.sshUrl = sshUrl;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggerBuildEvents = triggerBuildEvents;
+            return _resultValue;
         }
     }
 }

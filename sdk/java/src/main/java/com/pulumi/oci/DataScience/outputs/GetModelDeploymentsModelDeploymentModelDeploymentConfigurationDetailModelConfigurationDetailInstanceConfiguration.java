@@ -70,10 +70,10 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             return modelDeploymentInstanceShapeConfigDetails(List.of(modelDeploymentInstanceShapeConfigDetails));
         }
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration build() {
-            final var o = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration();
-            o.instanceShapeName = instanceShapeName;
-            o.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
-            return o;
+            final var _resultValue = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration();
+            _resultValue.instanceShapeName = instanceShapeName;
+            _resultValue.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            return _resultValue;
         }
     }
 }

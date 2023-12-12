@@ -67,11 +67,11 @@ public final class GetIpsecConnectionTunnelRoutesFilter {
             return values(List.of(values));
         }
         public GetIpsecConnectionTunnelRoutesFilter build() {
-            final var o = new GetIpsecConnectionTunnelRoutesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelRoutesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

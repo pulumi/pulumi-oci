@@ -111,12 +111,12 @@ public final class GetDatabaseToolsConnectionProxyClient {
             return userPasswords(List.of(userPasswords));
         }
         public GetDatabaseToolsConnectionProxyClient build() {
-            final var o = new GetDatabaseToolsConnectionProxyClient();
-            o.proxyAuthenticationType = proxyAuthenticationType;
-            o.roles = roles;
-            o.userName = userName;
-            o.userPasswords = userPasswords;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionProxyClient();
+            _resultValue.proxyAuthenticationType = proxyAuthenticationType;
+            _resultValue.roles = roles;
+            _resultValue.userName = userName;
+            _resultValue.userPasswords = userPasswords;
+            return _resultValue;
         }
     }
 }

@@ -181,16 +181,16 @@ public final class GetChannelsChannelSource {
             return this;
         }
         public GetChannelsChannelSource build() {
-            final var o = new GetChannelsChannelSource();
-            o.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
-            o.hostname = hostname;
-            o.password = password;
-            o.port = port;
-            o.sourceType = sourceType;
-            o.sslCaCertificates = sslCaCertificates;
-            o.sslMode = sslMode;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetChannelsChannelSource();
+            _resultValue.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
+            _resultValue.hostname = hostname;
+            _resultValue.password = password;
+            _resultValue.port = port;
+            _resultValue.sourceType = sourceType;
+            _resultValue.sslCaCertificates = sslCaCertificates;
+            _resultValue.sslMode = sslMode;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

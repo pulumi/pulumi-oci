@@ -153,14 +153,14 @@ public final class TargetAssetTestSpecSourceDetail {
             return this;
         }
         public TargetAssetTestSpecSourceDetail build() {
-            final var o = new TargetAssetTestSpecSourceDetail();
-            o.bootVolumeId = bootVolumeId;
-            o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
-            o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
-            o.imageId = imageId;
-            o.kmsKeyId = kmsKeyId;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new TargetAssetTestSpecSourceDetail();
+            _resultValue.bootVolumeId = bootVolumeId;
+            _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            _resultValue.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
+            _resultValue.imageId = imageId;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

@@ -134,14 +134,14 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
             return this;
         }
         public GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem build() {
-            final var o = new GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem();
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.isResumeDataMasking = isResumeDataMasking;
-            o.state = state;
-            o.timeMaskingFinish = timeMaskingFinish;
-            o.timeMaskingStart = timeMaskingStart;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem();
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.isResumeDataMasking = isResumeDataMasking;
+            _resultValue.state = state;
+            _resultValue.timeMaskingFinish = timeMaskingFinish;
+            _resultValue.timeMaskingStart = timeMaskingStart;
+            return _resultValue;
         }
     }
 }

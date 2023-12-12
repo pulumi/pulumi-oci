@@ -230,19 +230,19 @@ public final class GetLogSavedSearchResult {
             return this;
         }
         public GetLogSavedSearchResult build() {
-            final var o = new GetLogSavedSearchResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.logSavedSearchId = logSavedSearchId;
-            o.name = name;
-            o.query = query;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastModified = timeLastModified;
-            return o;
+            final var _resultValue = new GetLogSavedSearchResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.logSavedSearchId = logSavedSearchId;
+            _resultValue.name = name;
+            _resultValue.query = query;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastModified = timeLastModified;
+            return _resultValue;
         }
     }
 }

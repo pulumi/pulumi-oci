@@ -42,9 +42,9 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
             return items(List.of(items));
         }
         public GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection build() {
-            final var o = new GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

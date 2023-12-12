@@ -65,10 +65,10 @@ public final class GetConnectionsConnectionCollectionItemAdditionalAttribute {
             return this;
         }
         public GetConnectionsConnectionCollectionItemAdditionalAttribute build() {
-            final var o = new GetConnectionsConnectionCollectionItemAdditionalAttribute();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItemAdditionalAttribute();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

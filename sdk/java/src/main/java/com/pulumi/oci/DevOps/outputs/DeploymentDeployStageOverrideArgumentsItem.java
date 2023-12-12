@@ -88,11 +88,11 @@ public final class DeploymentDeployStageOverrideArgumentsItem {
             return this;
         }
         public DeploymentDeployStageOverrideArgumentsItem build() {
-            final var o = new DeploymentDeployStageOverrideArgumentsItem();
-            o.deployStageId = deployStageId;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new DeploymentDeployStageOverrideArgumentsItem();
+            _resultValue.deployStageId = deployStageId;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

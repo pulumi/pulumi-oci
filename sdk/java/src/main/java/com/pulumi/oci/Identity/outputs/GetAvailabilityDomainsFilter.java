@@ -75,11 +75,11 @@ public final class GetAvailabilityDomainsFilter {
             return values(List.of(values));
         }
         public GetAvailabilityDomainsFilter build() {
-            final var o = new GetAvailabilityDomainsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAvailabilityDomainsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

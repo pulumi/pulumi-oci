@@ -160,15 +160,15 @@ public final class GetSubscribedServiceBillToAddressLocation {
             return this;
         }
         public GetSubscribedServiceBillToAddressLocation build() {
-            final var o = new GetSubscribedServiceBillToAddressLocation();
-            o.address1 = address1;
-            o.address2 = address2;
-            o.city = city;
-            o.country = country;
-            o.postalCode = postalCode;
-            o.region = region;
-            o.tcaLocationId = tcaLocationId;
-            return o;
+            final var _resultValue = new GetSubscribedServiceBillToAddressLocation();
+            _resultValue.address1 = address1;
+            _resultValue.address2 = address2;
+            _resultValue.city = city;
+            _resultValue.country = country;
+            _resultValue.postalCode = postalCode;
+            _resultValue.region = region;
+            _resultValue.tcaLocationId = tcaLocationId;
+            return _resultValue;
         }
     }
 }

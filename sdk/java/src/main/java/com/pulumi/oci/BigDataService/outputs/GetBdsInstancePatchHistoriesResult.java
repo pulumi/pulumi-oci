@@ -147,15 +147,15 @@ public final class GetBdsInstancePatchHistoriesResult {
             return this;
         }
         public GetBdsInstancePatchHistoriesResult build() {
-            final var o = new GetBdsInstancePatchHistoriesResult();
-            o.bdsInstanceId = bdsInstanceId;
-            o.filters = filters;
-            o.id = id;
-            o.patchHistories = patchHistories;
-            o.patchType = patchType;
-            o.patchVersion = patchVersion;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetBdsInstancePatchHistoriesResult();
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.patchHistories = patchHistories;
+            _resultValue.patchType = patchType;
+            _resultValue.patchVersion = patchVersion;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

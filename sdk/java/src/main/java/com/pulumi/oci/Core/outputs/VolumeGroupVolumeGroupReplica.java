@@ -92,11 +92,11 @@ public final class VolumeGroupVolumeGroupReplica {
             return this;
         }
         public VolumeGroupVolumeGroupReplica build() {
-            final var o = new VolumeGroupVolumeGroupReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.displayName = displayName;
-            o.volumeGroupReplicaId = volumeGroupReplicaId;
-            return o;
+            final var _resultValue = new VolumeGroupVolumeGroupReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.displayName = displayName;
+            _resultValue.volumeGroupReplicaId = volumeGroupReplicaId;
+            return _resultValue;
         }
     }
 }

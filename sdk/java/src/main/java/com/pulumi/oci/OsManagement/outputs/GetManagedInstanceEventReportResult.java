@@ -104,14 +104,14 @@ public final class GetManagedInstanceEventReportResult {
             return this;
         }
         public GetManagedInstanceEventReportResult build() {
-            final var o = new GetManagedInstanceEventReportResult();
-            o.compartmentId = compartmentId;
-            o.counts = counts;
-            o.id = id;
-            o.latestTimestampGreaterThanOrEqualTo = latestTimestampGreaterThanOrEqualTo;
-            o.latestTimestampLessThan = latestTimestampLessThan;
-            o.managedInstanceId = managedInstanceId;
-            return o;
+            final var _resultValue = new GetManagedInstanceEventReportResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.counts = counts;
+            _resultValue.id = id;
+            _resultValue.latestTimestampGreaterThanOrEqualTo = latestTimestampGreaterThanOrEqualTo;
+            _resultValue.latestTimestampLessThan = latestTimestampLessThan;
+            _resultValue.managedInstanceId = managedInstanceId;
+            return _resultValue;
         }
     }
 }

@@ -91,11 +91,11 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
             return values(List.of(values));
         }
         public DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim build() {
-            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim();
-            o.isRequired = isRequired;
-            o.key = key;
-            o.values = values;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim();
+            _resultValue.isRequired = isRequired;
+            _resultValue.key = key;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -123,13 +123,13 @@ public final class GetSecretSecretRule {
             return this;
         }
         public GetSecretSecretRule build() {
-            final var o = new GetSecretSecretRule();
-            o.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
-            o.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
-            o.ruleType = ruleType;
-            o.secretVersionExpiryInterval = secretVersionExpiryInterval;
-            o.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
-            return o;
+            final var _resultValue = new GetSecretSecretRule();
+            _resultValue.isEnforcedOnDeletedSecretVersions = isEnforcedOnDeletedSecretVersions;
+            _resultValue.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
+            _resultValue.ruleType = ruleType;
+            _resultValue.secretVersionExpiryInterval = secretVersionExpiryInterval;
+            _resultValue.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
+            return _resultValue;
         }
     }
 }

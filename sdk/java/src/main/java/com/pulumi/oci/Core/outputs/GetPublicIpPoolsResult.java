@@ -136,14 +136,14 @@ public final class GetPublicIpPoolsResult {
             return publicIpPoolCollections(List.of(publicIpPoolCollections));
         }
         public GetPublicIpPoolsResult build() {
-            final var o = new GetPublicIpPoolsResult();
-            o.byoipRangeId = byoipRangeId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.publicIpPoolCollections = publicIpPoolCollections;
-            return o;
+            final var _resultValue = new GetPublicIpPoolsResult();
+            _resultValue.byoipRangeId = byoipRangeId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.publicIpPoolCollections = publicIpPoolCollections;
+            return _resultValue;
         }
     }
 }

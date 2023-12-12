@@ -127,14 +127,14 @@ public final class GetEventsResult {
             return this;
         }
         public GetEventsResult build() {
-            final var o = new GetEventsResult();
-            o.auditEvents = auditEvents;
-            o.compartmentId = compartmentId;
-            o.endTime = endTime;
-            o.filters = filters;
-            o.id = id;
-            o.startTime = startTime;
-            return o;
+            final var _resultValue = new GetEventsResult();
+            _resultValue.auditEvents = auditEvents;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.endTime = endTime;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.startTime = startTime;
+            return _resultValue;
         }
     }
 }

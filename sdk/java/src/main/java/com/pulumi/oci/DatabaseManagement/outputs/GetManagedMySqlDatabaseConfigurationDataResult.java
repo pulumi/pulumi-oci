@@ -97,12 +97,12 @@ public final class GetManagedMySqlDatabaseConfigurationDataResult {
             return mySqlConfigurationDataCollections(List.of(mySqlConfigurationDataCollections));
         }
         public GetManagedMySqlDatabaseConfigurationDataResult build() {
-            final var o = new GetManagedMySqlDatabaseConfigurationDataResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedMySqlDatabaseId = managedMySqlDatabaseId;
-            o.mySqlConfigurationDataCollections = mySqlConfigurationDataCollections;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabaseConfigurationDataResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedMySqlDatabaseId = managedMySqlDatabaseId;
+            _resultValue.mySqlConfigurationDataCollections = mySqlConfigurationDataCollections;
+            return _resultValue;
         }
     }
 }

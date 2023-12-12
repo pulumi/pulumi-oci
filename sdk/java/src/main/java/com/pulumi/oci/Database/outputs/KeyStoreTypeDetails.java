@@ -132,13 +132,13 @@ public final class KeyStoreTypeDetails {
             return this;
         }
         public KeyStoreTypeDetails build() {
-            final var o = new KeyStoreTypeDetails();
-            o.adminUsername = adminUsername;
-            o.connectionIps = connectionIps;
-            o.secretId = secretId;
-            o.type = type;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new KeyStoreTypeDetails();
+            _resultValue.adminUsername = adminUsername;
+            _resultValue.connectionIps = connectionIps;
+            _resultValue.secretId = secretId;
+            _resultValue.type = type;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

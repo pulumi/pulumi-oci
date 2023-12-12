@@ -251,20 +251,20 @@ public final class GetDomainsResult {
             return this;
         }
         public GetDomainsResult build() {
-            final var o = new GetDomainsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.domains = domains;
-            o.filters = filters;
-            o.homeRegionUrl = homeRegionUrl;
-            o.id = id;
-            o.isHiddenOnLogin = isHiddenOnLogin;
-            o.licenseType = licenseType;
-            o.name = name;
-            o.state = state;
-            o.type = type;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetDomainsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.domains = domains;
+            _resultValue.filters = filters;
+            _resultValue.homeRegionUrl = homeRegionUrl;
+            _resultValue.id = id;
+            _resultValue.isHiddenOnLogin = isHiddenOnLogin;
+            _resultValue.licenseType = licenseType;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.type = type;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

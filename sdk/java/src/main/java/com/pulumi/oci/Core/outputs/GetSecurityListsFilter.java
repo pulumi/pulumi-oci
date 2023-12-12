@@ -67,11 +67,11 @@ public final class GetSecurityListsFilter {
             return values(List.of(values));
         }
         public GetSecurityListsFilter build() {
-            final var o = new GetSecurityListsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSecurityListsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

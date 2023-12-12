@@ -54,10 +54,10 @@ public final class GetConnectionsConnectionCollection {
             return items(List.of(items));
         }
         public GetConnectionsConnectionCollection build() {
-            final var o = new GetConnectionsConnectionCollection();
-            o.count = count;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollection();
+            _resultValue.count = count;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

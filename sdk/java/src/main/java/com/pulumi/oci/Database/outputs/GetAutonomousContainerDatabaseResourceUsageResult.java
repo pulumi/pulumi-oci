@@ -277,21 +277,21 @@ public final class GetAutonomousContainerDatabaseResourceUsageResult {
             return this;
         }
         public GetAutonomousContainerDatabaseResourceUsageResult build() {
-            final var o = new GetAutonomousContainerDatabaseResourceUsageResult();
-            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-            o.autonomousContainerDatabaseVmUsages = autonomousContainerDatabaseVmUsages;
-            o.availableCpus = availableCpus;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
-            o.provisionableCpuses = provisionableCpuses;
-            o.provisionedCpus = provisionedCpus;
-            o.reclaimableCpus = reclaimableCpus;
-            o.reservedCpus = reservedCpus;
-            o.usedCpus = usedCpus;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseResourceUsageResult();
+            _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            _resultValue.autonomousContainerDatabaseVmUsages = autonomousContainerDatabaseVmUsages;
+            _resultValue.availableCpus = availableCpus;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
+            _resultValue.provisionableCpuses = provisionableCpuses;
+            _resultValue.provisionedCpus = provisionedCpus;
+            _resultValue.reclaimableCpus = reclaimableCpus;
+            _resultValue.reservedCpus = reservedCpus;
+            _resultValue.usedCpus = usedCpus;
+            return _resultValue;
         }
     }
 }

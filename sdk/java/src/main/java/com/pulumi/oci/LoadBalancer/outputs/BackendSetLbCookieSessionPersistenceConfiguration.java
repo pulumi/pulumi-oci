@@ -212,15 +212,15 @@ public final class BackendSetLbCookieSessionPersistenceConfiguration {
             return this;
         }
         public BackendSetLbCookieSessionPersistenceConfiguration build() {
-            final var o = new BackendSetLbCookieSessionPersistenceConfiguration();
-            o.cookieName = cookieName;
-            o.disableFallback = disableFallback;
-            o.domain = domain;
-            o.isHttpOnly = isHttpOnly;
-            o.isSecure = isSecure;
-            o.maxAgeInSeconds = maxAgeInSeconds;
-            o.path = path;
-            return o;
+            final var _resultValue = new BackendSetLbCookieSessionPersistenceConfiguration();
+            _resultValue.cookieName = cookieName;
+            _resultValue.disableFallback = disableFallback;
+            _resultValue.domain = domain;
+            _resultValue.isHttpOnly = isHttpOnly;
+            _resultValue.isSecure = isSecure;
+            _resultValue.maxAgeInSeconds = maxAgeInSeconds;
+            _resultValue.path = path;
+            return _resultValue;
         }
     }
 }

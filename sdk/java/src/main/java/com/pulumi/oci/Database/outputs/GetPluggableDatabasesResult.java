@@ -155,15 +155,15 @@ public final class GetPluggableDatabasesResult {
             return this;
         }
         public GetPluggableDatabasesResult build() {
-            final var o = new GetPluggableDatabasesResult();
-            o.compartmentId = compartmentId;
-            o.databaseId = databaseId;
-            o.filters = filters;
-            o.id = id;
-            o.pdbName = pdbName;
-            o.pluggableDatabases = pluggableDatabases;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPluggableDatabasesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseId = databaseId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.pdbName = pdbName;
+            _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

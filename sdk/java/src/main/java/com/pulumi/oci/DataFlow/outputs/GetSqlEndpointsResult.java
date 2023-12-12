@@ -155,15 +155,15 @@ public final class GetSqlEndpointsResult {
             return this;
         }
         public GetSqlEndpointsResult build() {
-            final var o = new GetSqlEndpointsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.sqlEndpointCollections = sqlEndpointCollections;
-            o.sqlEndpointId = sqlEndpointId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSqlEndpointsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.sqlEndpointCollections = sqlEndpointCollections;
+            _resultValue.sqlEndpointId = sqlEndpointId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

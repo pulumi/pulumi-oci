@@ -65,10 +65,10 @@ public final class BootVolumeSourceDetails {
             return this;
         }
         public BootVolumeSourceDetails build() {
-            final var o = new BootVolumeSourceDetails();
-            o.id = id;
-            o.type = type;
-            return o;
+            final var _resultValue = new BootVolumeSourceDetails();
+            _resultValue.id = id;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

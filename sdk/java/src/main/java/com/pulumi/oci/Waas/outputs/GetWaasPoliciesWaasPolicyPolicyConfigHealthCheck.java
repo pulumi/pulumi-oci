@@ -258,19 +258,19 @@ public final class GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck {
             return this;
         }
         public GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck build() {
-            final var o = new GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck();
-            o.expectedResponseCodeGroups = expectedResponseCodeGroups;
-            o.expectedResponseText = expectedResponseText;
-            o.headers = headers;
-            o.healthyThreshold = healthyThreshold;
-            o.intervalInSeconds = intervalInSeconds;
-            o.isEnabled = isEnabled;
-            o.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
-            o.method = method;
-            o.path = path;
-            o.timeoutInSeconds = timeoutInSeconds;
-            o.unhealthyThreshold = unhealthyThreshold;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck();
+            _resultValue.expectedResponseCodeGroups = expectedResponseCodeGroups;
+            _resultValue.expectedResponseText = expectedResponseText;
+            _resultValue.headers = headers;
+            _resultValue.healthyThreshold = healthyThreshold;
+            _resultValue.intervalInSeconds = intervalInSeconds;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isResponseTextCheckEnabled = isResponseTextCheckEnabled;
+            _resultValue.method = method;
+            _resultValue.path = path;
+            _resultValue.timeoutInSeconds = timeoutInSeconds;
+            _resultValue.unhealthyThreshold = unhealthyThreshold;
+            return _resultValue;
         }
     }
 }

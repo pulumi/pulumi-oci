@@ -61,11 +61,11 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold build() {
-            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold();
-            o.durationInMinutes = durationInMinutes;
-            o.operator = operator;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold();
+            _resultValue.durationInMinutes = durationInMinutes;
+            _resultValue.operator = operator;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

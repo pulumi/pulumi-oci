@@ -108,12 +108,12 @@ public final class GetBuildRunBuildRunSource {
             return triggerInfos(List.of(triggerInfos));
         }
         public GetBuildRunBuildRunSource build() {
-            final var o = new GetBuildRunBuildRunSource();
-            o.repositoryId = repositoryId;
-            o.sourceType = sourceType;
-            o.triggerId = triggerId;
-            o.triggerInfos = triggerInfos;
-            return o;
+            final var _resultValue = new GetBuildRunBuildRunSource();
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.sourceType = sourceType;
+            _resultValue.triggerId = triggerId;
+            _resultValue.triggerInfos = triggerInfos;
+            return _resultValue;
         }
     }
 }

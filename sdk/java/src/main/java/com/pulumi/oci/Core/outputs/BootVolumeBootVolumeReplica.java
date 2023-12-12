@@ -86,11 +86,11 @@ public final class BootVolumeBootVolumeReplica {
             return this;
         }
         public BootVolumeBootVolumeReplica build() {
-            final var o = new BootVolumeBootVolumeReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.bootVolumeReplicaId = bootVolumeReplicaId;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new BootVolumeBootVolumeReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.bootVolumeReplicaId = bootVolumeReplicaId;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

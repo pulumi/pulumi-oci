@@ -93,11 +93,11 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionO
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionOciTag build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionOciTag();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.tagSlug = tagSlug;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionOciTag();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.tagSlug = tagSlug;
+            return _resultValue;
         }
     }
 }

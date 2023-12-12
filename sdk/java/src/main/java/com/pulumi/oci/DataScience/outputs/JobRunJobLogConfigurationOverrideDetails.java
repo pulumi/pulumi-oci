@@ -106,12 +106,12 @@ public final class JobRunJobLogConfigurationOverrideDetails {
             return this;
         }
         public JobRunJobLogConfigurationOverrideDetails build() {
-            final var o = new JobRunJobLogConfigurationOverrideDetails();
-            o.enableAutoLogCreation = enableAutoLogCreation;
-            o.enableLogging = enableLogging;
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new JobRunJobLogConfigurationOverrideDetails();
+            _resultValue.enableAutoLogCreation = enableAutoLogCreation;
+            _resultValue.enableLogging = enableLogging;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

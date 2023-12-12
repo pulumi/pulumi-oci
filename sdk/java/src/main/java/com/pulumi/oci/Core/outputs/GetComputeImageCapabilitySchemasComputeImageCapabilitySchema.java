@@ -219,18 +219,18 @@ public final class GetComputeImageCapabilitySchemasComputeImageCapabilitySchema 
             return this;
         }
         public GetComputeImageCapabilitySchemasComputeImageCapabilitySchema build() {
-            final var o = new GetComputeImageCapabilitySchemasComputeImageCapabilitySchema();
-            o.compartmentId = compartmentId;
-            o.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
-            o.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imageId = imageId;
-            o.schemaData = schemaData;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetComputeImageCapabilitySchemasComputeImageCapabilitySchema();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeGlobalImageCapabilitySchemaId = computeGlobalImageCapabilitySchemaId;
+            _resultValue.computeGlobalImageCapabilitySchemaVersionName = computeGlobalImageCapabilitySchemaVersionName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.schemaData = schemaData;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

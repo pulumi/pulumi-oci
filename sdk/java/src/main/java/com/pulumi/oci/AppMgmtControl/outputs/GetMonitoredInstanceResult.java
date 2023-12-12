@@ -228,19 +228,19 @@ public final class GetMonitoredInstanceResult {
             return this;
         }
         public GetMonitoredInstanceResult build() {
-            final var o = new GetMonitoredInstanceResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.managementAgentId = managementAgentId;
-            o.monitoredInstanceId = monitoredInstanceId;
-            o.monitoringState = monitoringState;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMonitoredInstanceResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.monitoredInstanceId = monitoredInstanceId;
+            _resultValue.monitoringState = monitoringState;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

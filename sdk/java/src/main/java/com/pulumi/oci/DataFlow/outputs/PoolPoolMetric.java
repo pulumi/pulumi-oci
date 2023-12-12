@@ -148,14 +148,14 @@ public final class PoolPoolMetric {
             return this;
         }
         public PoolPoolMetric build() {
-            final var o = new PoolPoolMetric();
-            o.activeRunsCount = activeRunsCount;
-            o.activelyUsedNodeCounts = activelyUsedNodeCounts;
-            o.timeLastMetricsUpdated = timeLastMetricsUpdated;
-            o.timeLastStarted = timeLastStarted;
-            o.timeLastStopped = timeLastStopped;
-            o.timeLastUsed = timeLastUsed;
-            return o;
+            final var _resultValue = new PoolPoolMetric();
+            _resultValue.activeRunsCount = activeRunsCount;
+            _resultValue.activelyUsedNodeCounts = activelyUsedNodeCounts;
+            _resultValue.timeLastMetricsUpdated = timeLastMetricsUpdated;
+            _resultValue.timeLastStarted = timeLastStarted;
+            _resultValue.timeLastStopped = timeLastStopped;
+            _resultValue.timeLastUsed = timeLastUsed;
+            return _resultValue;
         }
     }
 }

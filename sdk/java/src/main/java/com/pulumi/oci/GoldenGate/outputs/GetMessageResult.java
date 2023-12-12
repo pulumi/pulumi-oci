@@ -81,11 +81,11 @@ public final class GetMessageResult {
             return items(List.of(items));
         }
         public GetMessageResult build() {
-            final var o = new GetMessageResult();
-            o.deploymentId = deploymentId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMessageResult();
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

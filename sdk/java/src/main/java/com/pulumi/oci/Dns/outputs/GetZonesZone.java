@@ -392,26 +392,26 @@ public final class GetZonesZone {
             return this;
         }
         public GetZonesZone build() {
-            final var o = new GetZonesZone();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.externalDownstreams = externalDownstreams;
-            o.externalMasters = externalMasters;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isProtected = isProtected;
-            o.name = name;
-            o.nameservers = nameservers;
-            o.scope = scope;
-            o.self = self;
-            o.serial = serial;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.version = version;
-            o.viewId = viewId;
-            o.zoneTransferServers = zoneTransferServers;
-            o.zoneType = zoneType;
-            return o;
+            final var _resultValue = new GetZonesZone();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.externalDownstreams = externalDownstreams;
+            _resultValue.externalMasters = externalMasters;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isProtected = isProtected;
+            _resultValue.name = name;
+            _resultValue.nameservers = nameservers;
+            _resultValue.scope = scope;
+            _resultValue.self = self;
+            _resultValue.serial = serial;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.version = version;
+            _resultValue.viewId = viewId;
+            _resultValue.zoneTransferServers = zoneTransferServers;
+            _resultValue.zoneType = zoneType;
+            return _resultValue;
         }
     }
 }

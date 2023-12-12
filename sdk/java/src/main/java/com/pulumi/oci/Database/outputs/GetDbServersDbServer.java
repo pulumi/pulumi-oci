@@ -446,29 +446,29 @@ public final class GetDbServersDbServer {
             return vmClusterIds(List.of(vmClusterIds));
         }
         public GetDbServersDbServer build() {
-            final var o = new GetDbServersDbServer();
-            o.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
-            o.autonomousVmClusterIds = autonomousVmClusterIds;
-            o.compartmentId = compartmentId;
-            o.cpuCoreCount = cpuCoreCount;
-            o.dbNodeIds = dbNodeIds;
-            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-            o.dbServerPatchingDetails = dbServerPatchingDetails;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maxCpuCount = maxCpuCount;
-            o.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
-            o.maxMemoryInGbs = maxMemoryInGbs;
-            o.memorySizeInGbs = memorySizeInGbs;
-            o.shape = shape;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vmClusterIds = vmClusterIds;
-            return o;
+            final var _resultValue = new GetDbServersDbServer();
+            _resultValue.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
+            _resultValue.autonomousVmClusterIds = autonomousVmClusterIds;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.cpuCoreCount = cpuCoreCount;
+            _resultValue.dbNodeIds = dbNodeIds;
+            _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            _resultValue.dbServerPatchingDetails = dbServerPatchingDetails;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maxCpuCount = maxCpuCount;
+            _resultValue.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
+            _resultValue.maxMemoryInGbs = maxMemoryInGbs;
+            _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vmClusterIds = vmClusterIds;
+            return _resultValue;
         }
     }
 }

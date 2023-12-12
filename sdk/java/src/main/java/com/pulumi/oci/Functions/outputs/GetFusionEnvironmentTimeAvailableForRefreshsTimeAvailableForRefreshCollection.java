@@ -50,9 +50,9 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForR
             return items(List.of(items));
         }
         public GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection build() {
-            final var o = new GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -81,11 +81,11 @@ public final class GetListenerRulesListenerRule {
             return this;
         }
         public GetListenerRulesListenerRule build() {
-            final var o = new GetListenerRulesListenerRule();
-            o.name = name;
-            o.rules = rules;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetListenerRulesListenerRule();
+            _resultValue.name = name;
+            _resultValue.rules = rules;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

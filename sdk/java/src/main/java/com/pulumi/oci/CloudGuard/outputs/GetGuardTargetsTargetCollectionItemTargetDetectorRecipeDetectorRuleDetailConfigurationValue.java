@@ -84,11 +84,11 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
             return this;
         }
         public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue build() {
-            final var o = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue();
-            o.listType = listType;
-            o.managedListType = managedListType;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue();
+            _resultValue.listType = listType;
+            _resultValue.managedListType = managedListType;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

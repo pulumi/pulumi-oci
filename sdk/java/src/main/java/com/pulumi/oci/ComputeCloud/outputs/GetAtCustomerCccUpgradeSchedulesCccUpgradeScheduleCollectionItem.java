@@ -284,21 +284,21 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionI
             return this;
         }
         public GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem build() {
-            final var o = new GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.events = events;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.infrastructureIds = infrastructureIds;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.events = events;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.infrastructureIds = infrastructureIds;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

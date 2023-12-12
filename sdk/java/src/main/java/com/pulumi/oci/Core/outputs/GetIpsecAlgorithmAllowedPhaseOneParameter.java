@@ -94,11 +94,11 @@ public final class GetIpsecAlgorithmAllowedPhaseOneParameter {
             return encryptionAlgorithms(List.of(encryptionAlgorithms));
         }
         public GetIpsecAlgorithmAllowedPhaseOneParameter build() {
-            final var o = new GetIpsecAlgorithmAllowedPhaseOneParameter();
-            o.authenticationAlgorithms = authenticationAlgorithms;
-            o.dhGroups = dhGroups;
-            o.encryptionAlgorithms = encryptionAlgorithms;
-            return o;
+            final var _resultValue = new GetIpsecAlgorithmAllowedPhaseOneParameter();
+            _resultValue.authenticationAlgorithms = authenticationAlgorithms;
+            _resultValue.dhGroups = dhGroups;
+            _resultValue.encryptionAlgorithms = encryptionAlgorithms;
+            return _resultValue;
         }
     }
 }

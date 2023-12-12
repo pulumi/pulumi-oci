@@ -139,13 +139,13 @@ public final class GetIpsecAlgorithmResult {
             return this;
         }
         public GetIpsecAlgorithmResult build() {
-            final var o = new GetIpsecAlgorithmResult();
-            o.allowedPhaseOneParameters = allowedPhaseOneParameters;
-            o.allowedPhaseTwoParameters = allowedPhaseTwoParameters;
-            o.defaultPhaseOneParameters = defaultPhaseOneParameters;
-            o.defaultPhaseTwoParameters = defaultPhaseTwoParameters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetIpsecAlgorithmResult();
+            _resultValue.allowedPhaseOneParameters = allowedPhaseOneParameters;
+            _resultValue.allowedPhaseTwoParameters = allowedPhaseTwoParameters;
+            _resultValue.defaultPhaseOneParameters = defaultPhaseOneParameters;
+            _resultValue.defaultPhaseTwoParameters = defaultPhaseTwoParameters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

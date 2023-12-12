@@ -105,12 +105,12 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked();
-            o.expired = expired;
-            o.lockDate = lockDate;
-            o.on = on;
-            o.reason = reason;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked();
+            _resultValue.expired = expired;
+            _resultValue.lockDate = lockDate;
+            _resultValue.on = on;
+            _resultValue.reason = reason;
+            return _resultValue;
         }
     }
 }

@@ -105,12 +105,12 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentials {
             return this;
         }
         public ManagedDatabasesChangeDatabaseParameterCredentials build() {
-            final var o = new ManagedDatabasesChangeDatabaseParameterCredentials();
-            o.password = password;
-            o.role = role;
-            o.secretId = secretId;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new ManagedDatabasesChangeDatabaseParameterCredentials();
+            _resultValue.password = password;
+            _resultValue.role = role;
+            _resultValue.secretId = secretId;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

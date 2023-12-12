@@ -125,13 +125,13 @@ public final class GetExternalDbSystemDiscoveriesResult {
             return this;
         }
         public GetExternalDbSystemDiscoveriesResult build() {
-            final var o = new GetExternalDbSystemDiscoveriesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalDbSystemDiscoveryCollections = externalDbSystemDiscoveryCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDbSystemDiscoveryCollections = externalDbSystemDiscoveryCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

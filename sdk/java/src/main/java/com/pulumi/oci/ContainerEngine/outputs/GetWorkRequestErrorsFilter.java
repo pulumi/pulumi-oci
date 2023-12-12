@@ -67,11 +67,11 @@ public final class GetWorkRequestErrorsFilter {
             return values(List.of(values));
         }
         public GetWorkRequestErrorsFilter build() {
-            final var o = new GetWorkRequestErrorsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetWorkRequestErrorsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

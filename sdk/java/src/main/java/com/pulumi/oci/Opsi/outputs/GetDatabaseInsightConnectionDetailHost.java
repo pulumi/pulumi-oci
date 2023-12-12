@@ -66,10 +66,10 @@ public final class GetDatabaseInsightConnectionDetailHost {
             return this;
         }
         public GetDatabaseInsightConnectionDetailHost build() {
-            final var o = new GetDatabaseInsightConnectionDetailHost();
-            o.hostIp = hostIp;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetDatabaseInsightConnectionDetailHost();
+            _resultValue.hostIp = hostIp;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

@@ -68,10 +68,10 @@ public final class DeploymentSpecificationLoggingPoliciesExecutionLog {
             return this;
         }
         public DeploymentSpecificationLoggingPoliciesExecutionLog build() {
-            final var o = new DeploymentSpecificationLoggingPoliciesExecutionLog();
-            o.isEnabled = isEnabled;
-            o.logLevel = logLevel;
-            return o;
+            final var _resultValue = new DeploymentSpecificationLoggingPoliciesExecutionLog();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.logLevel = logLevel;
+            return _resultValue;
         }
     }
 }

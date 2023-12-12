@@ -87,11 +87,11 @@ public final class DbSystemSource {
             return this;
         }
         public DbSystemSource build() {
-            final var o = new DbSystemSource();
-            o.backupId = backupId;
-            o.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new DbSystemSource();
+            _resultValue.backupId = backupId;
+            _resultValue.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

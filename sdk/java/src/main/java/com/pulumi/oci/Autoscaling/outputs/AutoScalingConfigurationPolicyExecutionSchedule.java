@@ -100,11 +100,11 @@ public final class AutoScalingConfigurationPolicyExecutionSchedule {
             return this;
         }
         public AutoScalingConfigurationPolicyExecutionSchedule build() {
-            final var o = new AutoScalingConfigurationPolicyExecutionSchedule();
-            o.expression = expression;
-            o.timezone = timezone;
-            o.type = type;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyExecutionSchedule();
+            _resultValue.expression = expression;
+            _resultValue.timezone = timezone;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

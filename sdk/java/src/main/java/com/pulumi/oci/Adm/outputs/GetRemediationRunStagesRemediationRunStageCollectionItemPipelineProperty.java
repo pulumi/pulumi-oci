@@ -65,10 +65,10 @@ public final class GetRemediationRunStagesRemediationRunStageCollectionItemPipel
             return this;
         }
         public GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty build() {
-            final var o = new GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty();
-            o.pipelineIdentifier = pipelineIdentifier;
-            o.pipelineUrl = pipelineUrl;
-            return o;
+            final var _resultValue = new GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty();
+            _resultValue.pipelineIdentifier = pipelineIdentifier;
+            _resultValue.pipelineUrl = pipelineUrl;
+            return _resultValue;
         }
     }
 }

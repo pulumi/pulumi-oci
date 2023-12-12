@@ -60,9 +60,9 @@ public final class MysqlConfigurationInitVariables {
             return this;
         }
         public MysqlConfigurationInitVariables build() {
-            final var o = new MysqlConfigurationInitVariables();
-            o.lowerCaseTableNames = lowerCaseTableNames;
-            return o;
+            final var _resultValue = new MysqlConfigurationInitVariables();
+            _resultValue.lowerCaseTableNames = lowerCaseTableNames;
+            return _resultValue;
         }
     }
 }

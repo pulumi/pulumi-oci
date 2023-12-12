@@ -144,14 +144,14 @@ public final class GetSecurityRecipesResult {
             return this;
         }
         public GetSecurityRecipesResult build() {
-            final var o = new GetSecurityRecipesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.securityRecipeCollections = securityRecipeCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSecurityRecipesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.securityRecipeCollections = securityRecipeCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

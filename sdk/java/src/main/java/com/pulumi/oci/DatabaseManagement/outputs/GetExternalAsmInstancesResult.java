@@ -144,14 +144,14 @@ public final class GetExternalAsmInstancesResult {
             return this;
         }
         public GetExternalAsmInstancesResult build() {
-            final var o = new GetExternalAsmInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalAsmId = externalAsmId;
-            o.externalAsmInstanceCollections = externalAsmInstanceCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalAsmInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalAsmId = externalAsmId;
+            _resultValue.externalAsmInstanceCollections = externalAsmInstanceCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

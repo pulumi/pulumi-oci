@@ -42,9 +42,9 @@ public final class GetRemediationRunsRemediationRunCollection {
             return items(List.of(items));
         }
         public GetRemediationRunsRemediationRunCollection build() {
-            final var o = new GetRemediationRunsRemediationRunCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRemediationRunsRemediationRunCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

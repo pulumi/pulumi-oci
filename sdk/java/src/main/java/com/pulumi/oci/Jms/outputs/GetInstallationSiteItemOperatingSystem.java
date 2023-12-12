@@ -123,13 +123,13 @@ public final class GetInstallationSiteItemOperatingSystem {
             return this;
         }
         public GetInstallationSiteItemOperatingSystem build() {
-            final var o = new GetInstallationSiteItemOperatingSystem();
-            o.architecture = architecture;
-            o.family = family;
-            o.managedInstanceCount = managedInstanceCount;
-            o.name = name;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetInstallationSiteItemOperatingSystem();
+            _resultValue.architecture = architecture;
+            _resultValue.family = family;
+            _resultValue.managedInstanceCount = managedInstanceCount;
+            _resultValue.name = name;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -200,20 +200,20 @@ public final class GetResolversResolverEndpoint {
             return this;
         }
         public GetResolversResolverEndpoint build() {
-            final var o = new GetResolversResolverEndpoint();
-            o.compartmentId = compartmentId;
-            o.endpointType = endpointType;
-            o.forwardingAddress = forwardingAddress;
-            o.isForwarding = isForwarding;
-            o.isListening = isListening;
-            o.listeningAddress = listeningAddress;
-            o.name = name;
-            o.self = self;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetResolversResolverEndpoint();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.endpointType = endpointType;
+            _resultValue.forwardingAddress = forwardingAddress;
+            _resultValue.isForwarding = isForwarding;
+            _resultValue.isListening = isListening;
+            _resultValue.listeningAddress = listeningAddress;
+            _resultValue.name = name;
+            _resultValue.self = self;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -306,23 +306,23 @@ public final class GetEnterpriseManagerBridgeResult {
             return this;
         }
         public GetEnterpriseManagerBridgeResult build() {
-            final var o = new GetEnterpriseManagerBridgeResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.objectStorageBucketName = objectStorageBucketName;
-            o.objectStorageBucketStatusDetails = objectStorageBucketStatusDetails;
-            o.objectStorageNamespaceName = objectStorageNamespaceName;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetEnterpriseManagerBridgeResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.objectStorageBucketName = objectStorageBucketName;
+            _resultValue.objectStorageBucketStatusDetails = objectStorageBucketStatusDetails;
+            _resultValue.objectStorageNamespaceName = objectStorageNamespaceName;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

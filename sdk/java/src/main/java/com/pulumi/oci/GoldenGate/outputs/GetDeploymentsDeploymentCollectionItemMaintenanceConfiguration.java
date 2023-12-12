@@ -123,13 +123,13 @@ public final class GetDeploymentsDeploymentCollectionItemMaintenanceConfiguratio
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration build() {
-            final var o = new GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration();
-            o.bundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
-            o.interimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;
-            o.isInterimReleaseAutoUpgradeEnabled = isInterimReleaseAutoUpgradeEnabled;
-            o.majorReleaseUpgradePeriodInDays = majorReleaseUpgradePeriodInDays;
-            o.securityPatchUpgradePeriodInDays = securityPatchUpgradePeriodInDays;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration();
+            _resultValue.bundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
+            _resultValue.interimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;
+            _resultValue.isInterimReleaseAutoUpgradeEnabled = isInterimReleaseAutoUpgradeEnabled;
+            _resultValue.majorReleaseUpgradePeriodInDays = majorReleaseUpgradePeriodInDays;
+            _resultValue.securityPatchUpgradePeriodInDays = securityPatchUpgradePeriodInDays;
+            return _resultValue;
         }
     }
 }

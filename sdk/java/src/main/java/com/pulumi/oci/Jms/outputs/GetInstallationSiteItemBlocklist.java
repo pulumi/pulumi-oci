@@ -65,10 +65,10 @@ public final class GetInstallationSiteItemBlocklist {
             return this;
         }
         public GetInstallationSiteItemBlocklist build() {
-            final var o = new GetInstallationSiteItemBlocklist();
-            o.operation = operation;
-            o.reason = reason;
-            return o;
+            final var _resultValue = new GetInstallationSiteItemBlocklist();
+            _resultValue.operation = operation;
+            _resultValue.reason = reason;
+            return _resultValue;
         }
     }
 }

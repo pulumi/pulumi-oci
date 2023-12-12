@@ -70,9 +70,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfCha
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

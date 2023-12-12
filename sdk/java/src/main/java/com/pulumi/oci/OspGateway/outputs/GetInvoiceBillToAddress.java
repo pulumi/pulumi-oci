@@ -298,22 +298,22 @@ public final class GetInvoiceBillToAddress {
             return this;
         }
         public GetInvoiceBillToAddress build() {
-            final var o = new GetInvoiceBillToAddress();
-            o.addressLine1 = addressLine1;
-            o.addressLine2 = addressLine2;
-            o.addressLine3 = addressLine3;
-            o.addressLine4 = addressLine4;
-            o.city = city;
-            o.companyName = companyName;
-            o.contactName = contactName;
-            o.countries = countries;
-            o.county = county;
-            o.postalCode = postalCode;
-            o.province = province;
-            o.state = state;
-            o.streetName = streetName;
-            o.streetNumber = streetNumber;
-            return o;
+            final var _resultValue = new GetInvoiceBillToAddress();
+            _resultValue.addressLine1 = addressLine1;
+            _resultValue.addressLine2 = addressLine2;
+            _resultValue.addressLine3 = addressLine3;
+            _resultValue.addressLine4 = addressLine4;
+            _resultValue.city = city;
+            _resultValue.companyName = companyName;
+            _resultValue.contactName = contactName;
+            _resultValue.countries = countries;
+            _resultValue.county = county;
+            _resultValue.postalCode = postalCode;
+            _resultValue.province = province;
+            _resultValue.state = state;
+            _resultValue.streetName = streetName;
+            _resultValue.streetNumber = streetNumber;
+            return _resultValue;
         }
     }
 }

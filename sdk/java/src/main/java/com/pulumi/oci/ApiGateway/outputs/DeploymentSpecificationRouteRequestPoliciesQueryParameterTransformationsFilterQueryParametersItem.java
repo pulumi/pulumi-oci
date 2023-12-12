@@ -46,9 +46,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

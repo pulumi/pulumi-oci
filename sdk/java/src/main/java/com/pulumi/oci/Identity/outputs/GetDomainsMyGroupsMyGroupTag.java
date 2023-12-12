@@ -65,10 +65,10 @@ public final class GetDomainsMyGroupsMyGroupTag {
             return this;
         }
         public GetDomainsMyGroupsMyGroupTag build() {
-            final var o = new GetDomainsMyGroupsMyGroupTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyGroupsMyGroupTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

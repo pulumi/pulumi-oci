@@ -466,31 +466,31 @@ public final class GetProtectedDatabaseResult {
             return this;
         }
         public GetProtectedDatabaseResult build() {
-            final var o = new GetProtectedDatabaseResult();
-            o.compartmentId = compartmentId;
-            o.databaseId = databaseId;
-            o.databaseSize = databaseSize;
-            o.dbUniqueName = dbUniqueName;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.health = health;
-            o.healthDetails = healthDetails;
-            o.id = id;
-            o.isReadOnlyResource = isReadOnlyResource;
-            o.isRedoLogsShipped = isRedoLogsShipped;
-            o.lifecycleDetails = lifecycleDetails;
-            o.metrics = metrics;
-            o.password = password;
-            o.protectedDatabaseId = protectedDatabaseId;
-            o.protectionPolicyId = protectionPolicyId;
-            o.recoveryServiceSubnets = recoveryServiceSubnets;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.vpcUserName = vpcUserName;
-            return o;
+            final var _resultValue = new GetProtectedDatabaseResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseId = databaseId;
+            _resultValue.databaseSize = databaseSize;
+            _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.health = health;
+            _resultValue.healthDetails = healthDetails;
+            _resultValue.id = id;
+            _resultValue.isReadOnlyResource = isReadOnlyResource;
+            _resultValue.isRedoLogsShipped = isRedoLogsShipped;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.metrics = metrics;
+            _resultValue.password = password;
+            _resultValue.protectedDatabaseId = protectedDatabaseId;
+            _resultValue.protectionPolicyId = protectionPolicyId;
+            _resultValue.recoveryServiceSubnets = recoveryServiceSubnets;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.vpcUserName = vpcUserName;
+            return _resultValue;
         }
     }
 }

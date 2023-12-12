@@ -50,9 +50,9 @@ public final class GetRecommendationsRecommendationCollection {
             return items(List.of(items));
         }
         public GetRecommendationsRecommendationCollection build() {
-            final var o = new GetRecommendationsRecommendationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRecommendationsRecommendationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

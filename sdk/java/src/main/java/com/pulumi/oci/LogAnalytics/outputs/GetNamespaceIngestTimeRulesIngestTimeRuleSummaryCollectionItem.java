@@ -277,21 +277,21 @@ public final class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionIte
             return this;
         }
         public GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem build() {
-            final var o = new GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.conditionKind = conditionKind;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.fieldName = fieldName;
-            o.fieldValue = fieldValue;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.conditionKind = conditionKind;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.fieldName = fieldName;
+            _resultValue.fieldValue = fieldValue;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

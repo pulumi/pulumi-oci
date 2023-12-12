@@ -116,13 +116,13 @@ public final class GetCommitmentsResult {
             return this;
         }
         public GetCommitmentsResult build() {
-            final var o = new GetCommitmentsResult();
-            o.commitments = commitments;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.subscribedServiceId = subscribedServiceId;
-            return o;
+            final var _resultValue = new GetCommitmentsResult();
+            _resultValue.commitments = commitments;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.subscribedServiceId = subscribedServiceId;
+            return _resultValue;
         }
     }
 }

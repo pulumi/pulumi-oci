@@ -122,13 +122,13 @@ public final class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput {
             return this;
         }
         public GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput build() {
-            final var o = new GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput();
-            o.assetType = assetType;
-            o.bucket = bucket;
-            o.id = id;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput();
+            _resultValue.assetType = assetType;
+            _resultValue.bucket = bucket;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

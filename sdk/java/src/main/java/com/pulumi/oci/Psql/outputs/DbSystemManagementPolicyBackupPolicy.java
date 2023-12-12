@@ -132,13 +132,13 @@ public final class DbSystemManagementPolicyBackupPolicy {
             return this;
         }
         public DbSystemManagementPolicyBackupPolicy build() {
-            final var o = new DbSystemManagementPolicyBackupPolicy();
-            o.backupStart = backupStart;
-            o.daysOfTheMonths = daysOfTheMonths;
-            o.daysOfTheWeeks = daysOfTheWeeks;
-            o.kind = kind;
-            o.retentionDays = retentionDays;
-            return o;
+            final var _resultValue = new DbSystemManagementPolicyBackupPolicy();
+            _resultValue.backupStart = backupStart;
+            _resultValue.daysOfTheMonths = daysOfTheMonths;
+            _resultValue.daysOfTheWeeks = daysOfTheWeeks;
+            _resultValue.kind = kind;
+            _resultValue.retentionDays = retentionDays;
+            return _resultValue;
         }
     }
 }

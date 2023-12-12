@@ -130,13 +130,13 @@ public final class GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion {
             return this;
         }
         public GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion build() {
-            final var o = new GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion();
-            o.dbWorkload = dbWorkload;
-            o.details = details;
-            o.timePreviewBegin = timePreviewBegin;
-            o.timePreviewEnd = timePreviewEnd;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion();
+            _resultValue.dbWorkload = dbWorkload;
+            _resultValue.details = details;
+            _resultValue.timePreviewBegin = timePreviewBegin;
+            _resultValue.timePreviewEnd = timePreviewEnd;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

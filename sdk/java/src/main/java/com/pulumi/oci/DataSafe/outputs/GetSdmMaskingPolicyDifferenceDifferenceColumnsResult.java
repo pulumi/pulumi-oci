@@ -221,18 +221,18 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
             return this;
         }
         public GetSdmMaskingPolicyDifferenceDifferenceColumnsResult build() {
-            final var o = new GetSdmMaskingPolicyDifferenceDifferenceColumnsResult();
-            o.columnNames = columnNames;
-            o.differenceType = differenceType;
-            o.filters = filters;
-            o.id = id;
-            o.objects = objects;
-            o.plannedAction = plannedAction;
-            o.schemaNames = schemaNames;
-            o.sdmMaskingPolicyDifferenceColumnCollections = sdmMaskingPolicyDifferenceColumnCollections;
-            o.sdmMaskingPolicyDifferenceId = sdmMaskingPolicyDifferenceId;
-            o.syncStatus = syncStatus;
-            return o;
+            final var _resultValue = new GetSdmMaskingPolicyDifferenceDifferenceColumnsResult();
+            _resultValue.columnNames = columnNames;
+            _resultValue.differenceType = differenceType;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.objects = objects;
+            _resultValue.plannedAction = plannedAction;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.sdmMaskingPolicyDifferenceColumnCollections = sdmMaskingPolicyDifferenceColumnCollections;
+            _resultValue.sdmMaskingPolicyDifferenceId = sdmMaskingPolicyDifferenceId;
+            _resultValue.syncStatus = syncStatus;
+            return _resultValue;
         }
     }
 }

@@ -81,11 +81,11 @@ public final class GetNamespaceStorageEncryptionKeyInfoResult {
             return this;
         }
         public GetNamespaceStorageEncryptionKeyInfoResult build() {
-            final var o = new GetNamespaceStorageEncryptionKeyInfoResult();
-            o.id = id;
-            o.items = items;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetNamespaceStorageEncryptionKeyInfoResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

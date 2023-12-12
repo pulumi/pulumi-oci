@@ -42,9 +42,9 @@ public final class NamespaceScheduledTaskSchedules {
             return schedules(List.of(schedules));
         }
         public NamespaceScheduledTaskSchedules build() {
-            final var o = new NamespaceScheduledTaskSchedules();
-            o.schedules = schedules;
-            return o;
+            final var _resultValue = new NamespaceScheduledTaskSchedules();
+            _resultValue.schedules = schedules;
+            return _resultValue;
         }
     }
 }

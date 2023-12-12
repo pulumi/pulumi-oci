@@ -75,11 +75,11 @@ public final class GetBackendSetsFilter {
             return values(List.of(values));
         }
         public GetBackendSetsFilter build() {
-            final var o = new GetBackendSetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetBackendSetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

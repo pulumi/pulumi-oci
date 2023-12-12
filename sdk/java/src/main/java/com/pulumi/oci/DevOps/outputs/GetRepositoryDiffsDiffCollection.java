@@ -42,9 +42,9 @@ public final class GetRepositoryDiffsDiffCollection {
             return items(List.of(items));
         }
         public GetRepositoryDiffsDiffCollection build() {
-            final var o = new GetRepositoryDiffsDiffCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRepositoryDiffsDiffCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

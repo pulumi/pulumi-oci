@@ -70,9 +70,9 @@ public final class DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextens
             return this;
         }
         public DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

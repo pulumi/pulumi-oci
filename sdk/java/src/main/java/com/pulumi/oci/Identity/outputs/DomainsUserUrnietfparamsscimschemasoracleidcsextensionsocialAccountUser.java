@@ -73,9 +73,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
             return socialAccounts(List.of(socialAccounts));
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser();
-            o.socialAccounts = socialAccounts;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser();
+            _resultValue.socialAccounts = socialAccounts;
+            return _resultValue;
         }
     }
 }

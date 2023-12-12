@@ -377,26 +377,26 @@ public final class GetFileSystemsFileSystem {
             return this;
         }
         public GetFileSystemsFileSystem build() {
-            final var o = new GetFileSystemsFileSystem();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isCloneParent = isCloneParent;
-            o.isHydrated = isHydrated;
-            o.isTargetable = isTargetable;
-            o.kmsKeyId = kmsKeyId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.meteredBytes = meteredBytes;
-            o.replicationTargetId = replicationTargetId;
-            o.sourceDetails = sourceDetails;
-            o.sourceSnapshotId = sourceSnapshotId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetFileSystemsFileSystem();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isCloneParent = isCloneParent;
+            _resultValue.isHydrated = isHydrated;
+            _resultValue.isTargetable = isTargetable;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.meteredBytes = meteredBytes;
+            _resultValue.replicationTargetId = replicationTargetId;
+            _resultValue.sourceDetails = sourceDetails;
+            _resultValue.sourceSnapshotId = sourceSnapshotId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

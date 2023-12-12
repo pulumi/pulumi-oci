@@ -103,12 +103,12 @@ public final class GetIpsecStatusTunnel {
             return this;
         }
         public GetIpsecStatusTunnel build() {
-            final var o = new GetIpsecStatusTunnel();
-            o.ipAddress = ipAddress;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeStateModified = timeStateModified;
-            return o;
+            final var _resultValue = new GetIpsecStatusTunnel();
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeStateModified = timeStateModified;
+            return _resultValue;
         }
     }
 }

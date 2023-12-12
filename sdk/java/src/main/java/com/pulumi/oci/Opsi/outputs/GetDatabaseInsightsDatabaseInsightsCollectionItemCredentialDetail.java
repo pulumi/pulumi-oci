@@ -141,14 +141,14 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDe
             return this;
         }
         public GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail build() {
-            final var o = new GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail();
-            o.credentialSourceName = credentialSourceName;
-            o.credentialType = credentialType;
-            o.passwordSecretId = passwordSecretId;
-            o.role = role;
-            o.userName = userName;
-            o.walletSecretId = walletSecretId;
-            return o;
+            final var _resultValue = new GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail();
+            _resultValue.credentialSourceName = credentialSourceName;
+            _resultValue.credentialType = credentialType;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.role = role;
+            _resultValue.userName = userName;
+            _resultValue.walletSecretId = walletSecretId;
+            return _resultValue;
         }
     }
 }

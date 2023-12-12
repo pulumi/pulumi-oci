@@ -42,9 +42,9 @@ public final class GetMediaAssetsMediaAssetCollection {
             return items(List.of(items));
         }
         public GetMediaAssetsMediaAssetCollection build() {
-            final var o = new GetMediaAssetsMediaAssetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMediaAssetsMediaAssetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

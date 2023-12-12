@@ -114,13 +114,13 @@ public final class GetMysqlDbSystemSource {
             return this;
         }
         public GetMysqlDbSystemSource build() {
-            final var o = new GetMysqlDbSystemSource();
-            o.backupId = backupId;
-            o.dbSystemId = dbSystemId;
-            o.recoveryPoint = recoveryPoint;
-            o.sourceType = sourceType;
-            o.sourceUrl = sourceUrl;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemSource();
+            _resultValue.backupId = backupId;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.recoveryPoint = recoveryPoint;
+            _resultValue.sourceType = sourceType;
+            _resultValue.sourceUrl = sourceUrl;
+            return _resultValue;
         }
     }
 }

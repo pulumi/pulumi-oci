@@ -73,10 +73,10 @@ public final class GetMigrationGoldenGateDetail {
             return settings(List.of(settings));
         }
         public GetMigrationGoldenGateDetail build() {
-            final var o = new GetMigrationGoldenGateDetail();
-            o.hubs = hubs;
-            o.settings = settings;
-            return o;
+            final var _resultValue = new GetMigrationGoldenGateDetail();
+            _resultValue.hubs = hubs;
+            _resultValue.settings = settings;
+            return _resultValue;
         }
     }
 }

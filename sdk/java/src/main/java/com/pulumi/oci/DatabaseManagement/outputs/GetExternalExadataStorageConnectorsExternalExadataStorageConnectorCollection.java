@@ -42,9 +42,9 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
             return items(List.of(items));
         }
         public GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection build() {
-            final var o = new GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

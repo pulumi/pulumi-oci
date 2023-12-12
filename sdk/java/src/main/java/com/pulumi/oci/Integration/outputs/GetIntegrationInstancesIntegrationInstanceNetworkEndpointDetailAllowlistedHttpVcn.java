@@ -69,10 +69,10 @@ public final class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDeta
             return this;
         }
         public GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn build() {
-            final var o = new GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn();
-            o.allowlistedIps = allowlistedIps;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn();
+            _resultValue.allowlistedIps = allowlistedIps;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

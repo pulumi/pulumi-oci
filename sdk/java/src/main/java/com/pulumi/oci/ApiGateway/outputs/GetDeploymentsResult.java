@@ -163,15 +163,15 @@ public final class GetDeploymentsResult {
             return this;
         }
         public GetDeploymentsResult build() {
-            final var o = new GetDeploymentsResult();
-            o.compartmentId = compartmentId;
-            o.deploymentCollections = deploymentCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.gatewayId = gatewayId;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDeploymentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deploymentCollections = deploymentCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.gatewayId = gatewayId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

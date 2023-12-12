@@ -161,15 +161,15 @@ public final class GetProtectedDatabaseMetric {
             return this;
         }
         public GetProtectedDatabaseMetric build() {
-            final var o = new GetProtectedDatabaseMetric();
-            o.backupSpaceEstimateInGbs = backupSpaceEstimateInGbs;
-            o.backupSpaceUsedInGbs = backupSpaceUsedInGbs;
-            o.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
-            o.dbSizeInGbs = dbSizeInGbs;
-            o.isRedoLogsEnabled = isRedoLogsEnabled;
-            o.retentionPeriodInDays = retentionPeriodInDays;
-            o.unprotectedWindowInSeconds = unprotectedWindowInSeconds;
-            return o;
+            final var _resultValue = new GetProtectedDatabaseMetric();
+            _resultValue.backupSpaceEstimateInGbs = backupSpaceEstimateInGbs;
+            _resultValue.backupSpaceUsedInGbs = backupSpaceUsedInGbs;
+            _resultValue.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
+            _resultValue.dbSizeInGbs = dbSizeInGbs;
+            _resultValue.isRedoLogsEnabled = isRedoLogsEnabled;
+            _resultValue.retentionPeriodInDays = retentionPeriodInDays;
+            _resultValue.unprotectedWindowInSeconds = unprotectedWindowInSeconds;
+            return _resultValue;
         }
     }
 }

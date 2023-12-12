@@ -163,15 +163,15 @@ public final class GetSddcsResult {
             return this;
         }
         public GetSddcsResult build() {
-            final var o = new GetSddcsResult();
-            o.compartmentId = compartmentId;
-            o.computeAvailabilityDomain = computeAvailabilityDomain;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.sddcCollections = sddcCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSddcsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.sddcCollections = sddcCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

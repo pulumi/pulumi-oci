@@ -103,12 +103,12 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail();
-            o.clientId = clientId;
-            o.clientSecretId = clientSecretId;
-            o.clientSecretVersionNumber = clientSecretVersionNumber;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicyClientDetail();
+            _resultValue.clientId = clientId;
+            _resultValue.clientSecretId = clientSecretId;
+            _resultValue.clientSecretVersionNumber = clientSecretVersionNumber;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

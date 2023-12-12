@@ -42,9 +42,9 @@ public final class GetTriggersTriggerCollection {
             return items(List.of(items));
         }
         public GetTriggersTriggerCollection build() {
-            final var o = new GetTriggersTriggerCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetTriggersTriggerCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

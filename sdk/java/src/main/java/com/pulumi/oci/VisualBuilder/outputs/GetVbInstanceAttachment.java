@@ -125,13 +125,13 @@ public final class GetVbInstanceAttachment {
             return this;
         }
         public GetVbInstanceAttachment build() {
-            final var o = new GetVbInstanceAttachment();
-            o.isImplicit = isImplicit;
-            o.targetId = targetId;
-            o.targetInstanceUrl = targetInstanceUrl;
-            o.targetRole = targetRole;
-            o.targetServiceType = targetServiceType;
-            return o;
+            final var _resultValue = new GetVbInstanceAttachment();
+            _resultValue.isImplicit = isImplicit;
+            _resultValue.targetId = targetId;
+            _resultValue.targetInstanceUrl = targetInstanceUrl;
+            _resultValue.targetRole = targetRole;
+            _resultValue.targetServiceType = targetServiceType;
+            return _resultValue;
         }
     }
 }

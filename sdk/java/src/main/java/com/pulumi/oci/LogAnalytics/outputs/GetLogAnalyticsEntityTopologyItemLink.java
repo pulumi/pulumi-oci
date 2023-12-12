@@ -50,9 +50,9 @@ public final class GetLogAnalyticsEntityTopologyItemLink {
             return items(List.of(items));
         }
         public GetLogAnalyticsEntityTopologyItemLink build() {
-            final var o = new GetLogAnalyticsEntityTopologyItemLink();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntityTopologyItemLink();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

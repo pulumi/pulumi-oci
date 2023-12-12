@@ -314,24 +314,24 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
             return this;
         }
         public GetJavaDownloadsJavaDownloadReportResult build() {
-            final var o = new GetJavaDownloadsJavaDownloadReportResult();
-            o.checksumType = checksumType;
-            o.checksumValue = checksumValue;
-            o.compartmentId = compartmentId;
-            o.createdBies = createdBies;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.fileSizeInBytes = fileSizeInBytes;
-            o.format = format;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.javaDownloadReportId = javaDownloadReportId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadReportResult();
+            _resultValue.checksumType = checksumType;
+            _resultValue.checksumValue = checksumValue;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBies = createdBies;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.fileSizeInBytes = fileSizeInBytes;
+            _resultValue.format = format;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.javaDownloadReportId = javaDownloadReportId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

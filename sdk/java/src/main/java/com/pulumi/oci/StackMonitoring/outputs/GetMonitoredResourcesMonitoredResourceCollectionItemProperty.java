@@ -65,10 +65,10 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemProperty 
             return this;
         }
         public GetMonitoredResourcesMonitoredResourceCollectionItemProperty build() {
-            final var o = new GetMonitoredResourcesMonitoredResourceCollectionItemProperty();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetMonitoredResourcesMonitoredResourceCollectionItemProperty();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

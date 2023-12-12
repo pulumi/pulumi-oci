@@ -51,9 +51,9 @@ public final class DeploymentDeployArtifactOverrideArguments {
             return items(List.of(items));
         }
         public DeploymentDeployArtifactOverrideArguments build() {
-            final var o = new DeploymentDeployArtifactOverrideArguments();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeploymentDeployArtifactOverrideArguments();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

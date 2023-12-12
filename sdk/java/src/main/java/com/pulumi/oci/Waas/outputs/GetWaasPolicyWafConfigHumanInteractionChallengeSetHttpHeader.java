@@ -65,10 +65,10 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader 
             return this;
         }
         public GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader build() {
-            final var o = new GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

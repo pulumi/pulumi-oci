@@ -163,15 +163,15 @@ public final class ManagementAgentPluginList {
             return this;
         }
         public ManagementAgentPluginList build() {
-            final var o = new ManagementAgentPluginList();
-            o.isEnabled = isEnabled;
-            o.pluginDisplayName = pluginDisplayName;
-            o.pluginId = pluginId;
-            o.pluginName = pluginName;
-            o.pluginStatus = pluginStatus;
-            o.pluginStatusMessage = pluginStatusMessage;
-            o.pluginVersion = pluginVersion;
-            return o;
+            final var _resultValue = new ManagementAgentPluginList();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.pluginDisplayName = pluginDisplayName;
+            _resultValue.pluginId = pluginId;
+            _resultValue.pluginName = pluginName;
+            _resultValue.pluginStatus = pluginStatus;
+            _resultValue.pluginStatusMessage = pluginStatusMessage;
+            _resultValue.pluginVersion = pluginVersion;
+            return _resultValue;
         }
     }
 }

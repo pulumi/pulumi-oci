@@ -48,9 +48,9 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
             return this;
         }
         public DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem build() {
-            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

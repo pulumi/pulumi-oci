@@ -269,21 +269,21 @@ public final class GetDedicatedVantagePointResult {
             return this;
         }
         public GetDedicatedVantagePointResult build() {
-            final var o = new GetDedicatedVantagePointResult();
-            o.apmDomainId = apmDomainId;
-            o.dedicatedVantagePointId = dedicatedVantagePointId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.dvpStackDetails = dvpStackDetails;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.monitorStatusCountMaps = monitorStatusCountMaps;
-            o.name = name;
-            o.region = region;
-            o.status = status;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDedicatedVantagePointResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.dedicatedVantagePointId = dedicatedVantagePointId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.dvpStackDetails = dvpStackDetails;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.monitorStatusCountMaps = monitorStatusCountMaps;
+            _resultValue.name = name;
+            _resultValue.region = region;
+            _resultValue.status = status;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

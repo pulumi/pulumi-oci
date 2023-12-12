@@ -105,12 +105,12 @@ public final class GetVaultsResult {
             return vaults(List.of(vaults));
         }
         public GetVaultsResult build() {
-            final var o = new GetVaultsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.vaults = vaults;
-            return o;
+            final var _resultValue = new GetVaultsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.vaults = vaults;
+            return _resultValue;
         }
     }
 }

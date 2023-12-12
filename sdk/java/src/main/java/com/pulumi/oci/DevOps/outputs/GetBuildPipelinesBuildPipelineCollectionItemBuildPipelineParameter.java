@@ -50,9 +50,9 @@ public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelinePara
             return items(List.of(items));
         }
         public GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter build() {
-            final var o = new GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameter();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

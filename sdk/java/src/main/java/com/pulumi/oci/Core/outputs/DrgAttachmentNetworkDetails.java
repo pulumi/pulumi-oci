@@ -196,16 +196,16 @@ public final class DrgAttachmentNetworkDetails {
             return this;
         }
         public DrgAttachmentNetworkDetails build() {
-            final var o = new DrgAttachmentNetworkDetails();
-            o.id = id;
-            o.ids = ids;
-            o.ipsecConnectionId = ipsecConnectionId;
-            o.routeTableId = routeTableId;
-            o.transportAttachmentId = transportAttachmentId;
-            o.transportOnlyMode = transportOnlyMode;
-            o.type = type;
-            o.vcnRouteType = vcnRouteType;
-            return o;
+            final var _resultValue = new DrgAttachmentNetworkDetails();
+            _resultValue.id = id;
+            _resultValue.ids = ids;
+            _resultValue.ipsecConnectionId = ipsecConnectionId;
+            _resultValue.routeTableId = routeTableId;
+            _resultValue.transportAttachmentId = transportAttachmentId;
+            _resultValue.transportOnlyMode = transportOnlyMode;
+            _resultValue.type = type;
+            _resultValue.vcnRouteType = vcnRouteType;
+            return _resultValue;
         }
     }
 }

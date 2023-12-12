@@ -125,13 +125,13 @@ public final class GetInventoriesResult {
             return this;
         }
         public GetInventoriesResult build() {
-            final var o = new GetInventoriesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.inventoryCollections = inventoryCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetInventoriesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.inventoryCollections = inventoryCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

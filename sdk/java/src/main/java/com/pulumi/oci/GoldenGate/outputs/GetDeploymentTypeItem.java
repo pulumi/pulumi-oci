@@ -151,14 +151,14 @@ public final class GetDeploymentTypeItem {
             return targetTechnologies(List.of(targetTechnologies));
         }
         public GetDeploymentTypeItem build() {
-            final var o = new GetDeploymentTypeItem();
-            o.category = category;
-            o.connectionTypes = connectionTypes;
-            o.deploymentType = deploymentType;
-            o.displayName = displayName;
-            o.sourceTechnologies = sourceTechnologies;
-            o.targetTechnologies = targetTechnologies;
-            return o;
+            final var _resultValue = new GetDeploymentTypeItem();
+            _resultValue.category = category;
+            _resultValue.connectionTypes = connectionTypes;
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.displayName = displayName;
+            _resultValue.sourceTechnologies = sourceTechnologies;
+            _resultValue.targetTechnologies = targetTechnologies;
+            return _resultValue;
         }
     }
 }

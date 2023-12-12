@@ -65,10 +65,10 @@ public final class GetMetricExtensionQueryPropertySqlDetail {
             return this;
         }
         public GetMetricExtensionQueryPropertySqlDetail build() {
-            final var o = new GetMetricExtensionQueryPropertySqlDetail();
-            o.content = content;
-            o.scriptFileName = scriptFileName;
-            return o;
+            final var _resultValue = new GetMetricExtensionQueryPropertySqlDetail();
+            _resultValue.content = content;
+            _resultValue.scriptFileName = scriptFileName;
+            return _resultValue;
         }
     }
 }

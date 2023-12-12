@@ -226,19 +226,19 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
             return this;
         }
         public GetRepositoryCommitsRepositoryCommitCollectionItem build() {
-            final var o = new GetRepositoryCommitsRepositoryCommitCollectionItem();
-            o.authorEmail = authorEmail;
-            o.authorName = authorName;
-            o.commitId = commitId;
-            o.commitMessage = commitMessage;
-            o.committerEmail = committerEmail;
-            o.committerName = committerName;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.parentCommitIds = parentCommitIds;
-            o.timeCreated = timeCreated;
-            o.treeId = treeId;
-            return o;
+            final var _resultValue = new GetRepositoryCommitsRepositoryCommitCollectionItem();
+            _resultValue.authorEmail = authorEmail;
+            _resultValue.authorName = authorName;
+            _resultValue.commitId = commitId;
+            _resultValue.commitMessage = commitMessage;
+            _resultValue.committerEmail = committerEmail;
+            _resultValue.committerName = committerName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.parentCommitIds = parentCommitIds;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.treeId = treeId;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetApiDeploymentSpecificationRouteBackendHeader {
             return this;
         }
         public GetApiDeploymentSpecificationRouteBackendHeader build() {
-            final var o = new GetApiDeploymentSpecificationRouteBackendHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteBackendHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

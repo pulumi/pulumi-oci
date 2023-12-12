@@ -42,9 +42,9 @@ public final class GetListenersListenerCollection {
             return items(List.of(items));
         }
         public GetListenersListenerCollection build() {
-            final var o = new GetListenersListenerCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetListenersListenerCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

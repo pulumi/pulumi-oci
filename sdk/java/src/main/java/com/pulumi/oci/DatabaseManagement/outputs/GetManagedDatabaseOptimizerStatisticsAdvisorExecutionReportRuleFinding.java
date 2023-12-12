@@ -93,11 +93,11 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
             return recommendations(List.of(recommendations));
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding();
-            o.details = details;
-            o.message = message;
-            o.recommendations = recommendations;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding();
+            _resultValue.details = details;
+            _resultValue.message = message;
+            _resultValue.recommendations = recommendations;
+            return _resultValue;
         }
     }
 }

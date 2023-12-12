@@ -550,36 +550,36 @@ public final class GetManagementAgentResult {
             return this;
         }
         public GetManagementAgentResult build() {
-            final var o = new GetManagementAgentResult();
-            o.availabilityStatus = availabilityStatus;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.deployPluginsIds = deployPluginsIds;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.host = host;
-            o.hostId = hostId;
-            o.id = id;
-            o.installKeyId = installKeyId;
-            o.installPath = installPath;
-            o.installType = installType;
-            o.isAgentAutoUpgradable = isAgentAutoUpgradable;
-            o.isCustomerDeployed = isCustomerDeployed;
-            o.lifecycleDetails = lifecycleDetails;
-            o.managedAgentId = managedAgentId;
-            o.managementAgentId = managementAgentId;
-            o.managementAgentProperties = managementAgentProperties;
-            o.platformName = platformName;
-            o.platformType = platformType;
-            o.platformVersion = platformVersion;
-            o.pluginLists = pluginLists;
-            o.resourceArtifactVersion = resourceArtifactVersion;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastHeartbeat = timeLastHeartbeat;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetManagementAgentResult();
+            _resultValue.availabilityStatus = availabilityStatus;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deployPluginsIds = deployPluginsIds;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.host = host;
+            _resultValue.hostId = hostId;
+            _resultValue.id = id;
+            _resultValue.installKeyId = installKeyId;
+            _resultValue.installPath = installPath;
+            _resultValue.installType = installType;
+            _resultValue.isAgentAutoUpgradable = isAgentAutoUpgradable;
+            _resultValue.isCustomerDeployed = isCustomerDeployed;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managedAgentId = managedAgentId;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.managementAgentProperties = managementAgentProperties;
+            _resultValue.platformName = platformName;
+            _resultValue.platformType = platformType;
+            _resultValue.platformVersion = platformVersion;
+            _resultValue.pluginLists = pluginLists;
+            _resultValue.resourceArtifactVersion = resourceArtifactVersion;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastHeartbeat = timeLastHeartbeat;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -155,15 +155,15 @@ public final class GetSnapshotsResult {
             return this;
         }
         public GetSnapshotsResult build() {
-            final var o = new GetSnapshotsResult();
-            o.compartmentId = compartmentId;
-            o.fileSystemId = fileSystemId;
-            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
-            o.filters = filters;
-            o.id = id;
-            o.snapshots = snapshots;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSnapshotsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.fileSystemId = fileSystemId;
+            _resultValue.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.snapshots = snapshots;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

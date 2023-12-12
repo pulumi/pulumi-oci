@@ -50,9 +50,9 @@ public final class GetMaskingPolicyMaskingObjectsMaskingObjectCollection {
             return items(List.of(items));
         }
         public GetMaskingPolicyMaskingObjectsMaskingObjectCollection build() {
-            final var o = new GetMaskingPolicyMaskingObjectsMaskingObjectCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMaskingPolicyMaskingObjectsMaskingObjectCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

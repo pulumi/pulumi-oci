@@ -65,10 +65,10 @@ public final class GetRemediationRunStagePullRequestProperty {
             return this;
         }
         public GetRemediationRunStagePullRequestProperty build() {
-            final var o = new GetRemediationRunStagePullRequestProperty();
-            o.pullRequestIdentifier = pullRequestIdentifier;
-            o.pullRequestUrl = pullRequestUrl;
-            return o;
+            final var _resultValue = new GetRemediationRunStagePullRequestProperty();
+            _resultValue.pullRequestIdentifier = pullRequestIdentifier;
+            _resultValue.pullRequestUrl = pullRequestUrl;
+            return _resultValue;
         }
     }
 }

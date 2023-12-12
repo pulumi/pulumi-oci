@@ -42,9 +42,9 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollection {
             return items(List.of(items));
         }
         public GetLogSavedSearchesLogSavedSearchSummaryCollection build() {
-            final var o = new GetLogSavedSearchesLogSavedSearchSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetLogSavedSearchesLogSavedSearchSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

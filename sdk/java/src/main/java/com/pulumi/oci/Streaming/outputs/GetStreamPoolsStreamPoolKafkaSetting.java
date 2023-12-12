@@ -105,12 +105,12 @@ public final class GetStreamPoolsStreamPoolKafkaSetting {
             return this;
         }
         public GetStreamPoolsStreamPoolKafkaSetting build() {
-            final var o = new GetStreamPoolsStreamPoolKafkaSetting();
-            o.autoCreateTopicsEnable = autoCreateTopicsEnable;
-            o.bootstrapServers = bootstrapServers;
-            o.logRetentionHours = logRetentionHours;
-            o.numPartitions = numPartitions;
-            return o;
+            final var _resultValue = new GetStreamPoolsStreamPoolKafkaSetting();
+            _resultValue.autoCreateTopicsEnable = autoCreateTopicsEnable;
+            _resultValue.bootstrapServers = bootstrapServers;
+            _resultValue.logRetentionHours = logRetentionHours;
+            _resultValue.numPartitions = numPartitions;
+            return _resultValue;
         }
     }
 }

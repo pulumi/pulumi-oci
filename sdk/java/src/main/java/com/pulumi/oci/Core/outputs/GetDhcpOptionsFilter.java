@@ -67,11 +67,11 @@ public final class GetDhcpOptionsFilter {
             return values(List.of(values));
         }
         public GetDhcpOptionsFilter build() {
-            final var o = new GetDhcpOptionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDhcpOptionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

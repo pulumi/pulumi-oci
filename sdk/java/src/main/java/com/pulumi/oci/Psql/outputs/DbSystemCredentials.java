@@ -66,10 +66,10 @@ public final class DbSystemCredentials {
             return this;
         }
         public DbSystemCredentials build() {
-            final var o = new DbSystemCredentials();
-            o.passwordDetails = passwordDetails;
-            o.username = username;
-            return o;
+            final var _resultValue = new DbSystemCredentials();
+            _resultValue.passwordDetails = passwordDetails;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

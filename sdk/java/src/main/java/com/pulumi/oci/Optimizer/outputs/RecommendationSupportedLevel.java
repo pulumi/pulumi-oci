@@ -51,9 +51,9 @@ public final class RecommendationSupportedLevel {
             return items(List.of(items));
         }
         public RecommendationSupportedLevel build() {
-            final var o = new RecommendationSupportedLevel();
-            o.items = items;
-            return o;
+            final var _resultValue = new RecommendationSupportedLevel();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

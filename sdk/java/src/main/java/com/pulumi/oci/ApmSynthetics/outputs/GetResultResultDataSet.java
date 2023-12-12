@@ -103,12 +103,12 @@ public final class GetResultResultDataSet {
             return this;
         }
         public GetResultResultDataSet build() {
-            final var o = new GetResultResultDataSet();
-            o.byteContent = byteContent;
-            o.name = name;
-            o.stringContent = stringContent;
-            o.timestamp = timestamp;
-            return o;
+            final var _resultValue = new GetResultResultDataSet();
+            _resultValue.byteContent = byteContent;
+            _resultValue.name = name;
+            _resultValue.stringContent = stringContent;
+            _resultValue.timestamp = timestamp;
+            return _resultValue;
         }
     }
 }

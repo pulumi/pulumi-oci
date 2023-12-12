@@ -93,11 +93,11 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSetting {
             return replicats(List.of(replicats));
         }
         public GetMigrationsMigrationCollectionItemGoldenGateDetailSetting build() {
-            final var o = new GetMigrationsMigrationCollectionItemGoldenGateDetailSetting();
-            o.acceptableLag = acceptableLag;
-            o.extracts = extracts;
-            o.replicats = replicats;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemGoldenGateDetailSetting();
+            _resultValue.acceptableLag = acceptableLag;
+            _resultValue.extracts = extracts;
+            _resultValue.replicats = replicats;
+            return _resultValue;
         }
     }
 }

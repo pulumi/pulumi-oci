@@ -46,9 +46,9 @@ public final class GetFleetAdvancedFeatureConfigurationJfrRecording {
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationJfrRecording build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationJfrRecording();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationJfrRecording();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

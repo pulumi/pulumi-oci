@@ -75,11 +75,11 @@ public final class GetExternalAsmDiskGroupsFilter {
             return values(List.of(values));
         }
         public GetExternalAsmDiskGroupsFilter build() {
-            final var o = new GetExternalAsmDiskGroupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalAsmDiskGroupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetServiceEnvironmentServiceEnvironmentEndpoint {
             return this;
         }
         public GetServiceEnvironmentServiceEnvironmentEndpoint build() {
-            final var o = new GetServiceEnvironmentServiceEnvironmentEndpoint();
-            o.description = description;
-            o.environmentType = environmentType;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetServiceEnvironmentServiceEnvironmentEndpoint();
+            _resultValue.description = description;
+            _resultValue.environmentType = environmentType;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

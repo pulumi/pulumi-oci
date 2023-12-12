@@ -226,19 +226,19 @@ public final class GetLifecycleStagesResult {
             return this;
         }
         public GetLifecycleStagesResult build() {
-            final var o = new GetLifecycleStagesResult();
-            o.archType = archType;
-            o.compartmentId = compartmentId;
-            o.displayNameContains = displayNameContains;
-            o.displayNames = displayNames;
-            o.filters = filters;
-            o.id = id;
-            o.lifecycleStageCollections = lifecycleStageCollections;
-            o.lifecycleStageId = lifecycleStageId;
-            o.osFamily = osFamily;
-            o.softwareSourceId = softwareSourceId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetLifecycleStagesResult();
+            _resultValue.archType = archType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.displayNames = displayNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.lifecycleStageCollections = lifecycleStageCollections;
+            _resultValue.lifecycleStageId = lifecycleStageId;
+            _resultValue.osFamily = osFamily;
+            _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -149,11 +149,11 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierP
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp();
-            o.resourceRef = resourceRef;
-            o.webTierPolicyAzControl = webTierPolicyAzControl;
-            o.webTierPolicyJson = webTierPolicyJson;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp();
+            _resultValue.resourceRef = resourceRef;
+            _resultValue.webTierPolicyAzControl = webTierPolicyAzControl;
+            _resultValue.webTierPolicyJson = webTierPolicyJson;
+            return _resultValue;
         }
     }
 }

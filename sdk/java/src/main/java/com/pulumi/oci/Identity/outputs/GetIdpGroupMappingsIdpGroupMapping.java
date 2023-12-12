@@ -179,16 +179,16 @@ public final class GetIdpGroupMappingsIdpGroupMapping {
             return this;
         }
         public GetIdpGroupMappingsIdpGroupMapping build() {
-            final var o = new GetIdpGroupMappingsIdpGroupMapping();
-            o.compartmentId = compartmentId;
-            o.groupId = groupId;
-            o.id = id;
-            o.identityProviderId = identityProviderId;
-            o.idpGroupName = idpGroupName;
-            o.inactiveState = inactiveState;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetIdpGroupMappingsIdpGroupMapping();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.identityProviderId = identityProviderId;
+            _resultValue.idpGroupName = idpGroupName;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

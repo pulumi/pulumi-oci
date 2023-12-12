@@ -333,25 +333,25 @@ public final class GetExternalExadataStorageConnectorResult {
             return this;
         }
         public GetExternalExadataStorageConnectorResult build() {
-            final var o = new GetExternalExadataStorageConnectorResult();
-            o.additionalDetails = additionalDetails;
-            o.agentId = agentId;
-            o.connectionUri = connectionUri;
-            o.connectorName = connectorName;
-            o.credentialInfos = credentialInfos;
-            o.displayName = displayName;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.externalExadataStorageConnectorId = externalExadataStorageConnectorId;
-            o.id = id;
-            o.internalId = internalId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.status = status;
-            o.storageServerId = storageServerId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageConnectorResult();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.agentId = agentId;
+            _resultValue.connectionUri = connectionUri;
+            _resultValue.connectorName = connectorName;
+            _resultValue.credentialInfos = credentialInfos;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.externalExadataStorageConnectorId = externalExadataStorageConnectorId;
+            _resultValue.id = id;
+            _resultValue.internalId = internalId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.storageServerId = storageServerId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -89,11 +89,11 @@ public final class GetVantagePointItem {
             return this;
         }
         public GetVantagePointItem build() {
-            final var o = new GetVantagePointItem();
-            o.displayName = displayName;
-            o.geos = geos;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetVantagePointItem();
+            _resultValue.displayName = displayName;
+            _resultValue.geos = geos;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

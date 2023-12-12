@@ -163,15 +163,15 @@ public final class GetVirtualServicesResult {
             return virtualServiceCollections(List.of(virtualServiceCollections));
         }
         public GetVirtualServicesResult build() {
-            final var o = new GetVirtualServicesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.meshId = meshId;
-            o.name = name;
-            o.state = state;
-            o.virtualServiceCollections = virtualServiceCollections;
-            return o;
+            final var _resultValue = new GetVirtualServicesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.meshId = meshId;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.virtualServiceCollections = virtualServiceCollections;
+            return _resultValue;
         }
     }
 }

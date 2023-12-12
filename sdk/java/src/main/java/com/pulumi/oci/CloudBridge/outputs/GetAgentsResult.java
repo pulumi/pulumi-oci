@@ -182,16 +182,16 @@ public final class GetAgentsResult {
             return this;
         }
         public GetAgentsResult build() {
-            final var o = new GetAgentsResult();
-            o.agentCollections = agentCollections;
-            o.agentId = agentId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.environmentId = environmentId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAgentsResult();
+            _resultValue.agentCollections = agentCollections;
+            _resultValue.agentId = agentId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.environmentId = environmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

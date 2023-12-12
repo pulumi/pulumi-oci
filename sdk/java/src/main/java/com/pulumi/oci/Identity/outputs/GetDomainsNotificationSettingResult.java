@@ -532,35 +532,35 @@ public final class GetDomainsNotificationSettingResult {
             return testRecipients(List.of(testRecipients));
         }
         public GetDomainsNotificationSettingResult build() {
-            final var o = new GetDomainsNotificationSettingResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.eventSettings = eventSettings;
-            o.externalId = externalId;
-            o.fromEmailAddresses = fromEmailAddresses;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.metas = metas;
-            o.notificationEnabled = notificationEnabled;
-            o.notificationSettingId = notificationSettingId;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail = sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail;
-            o.sendNotificationsToSecondaryEmail = sendNotificationsToSecondaryEmail;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.testModeEnabled = testModeEnabled;
-            o.testRecipients = testRecipients;
-            return o;
+            final var _resultValue = new GetDomainsNotificationSettingResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.eventSettings = eventSettings;
+            _resultValue.externalId = externalId;
+            _resultValue.fromEmailAddresses = fromEmailAddresses;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.metas = metas;
+            _resultValue.notificationEnabled = notificationEnabled;
+            _resultValue.notificationSettingId = notificationSettingId;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail = sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail;
+            _resultValue.sendNotificationsToSecondaryEmail = sendNotificationsToSecondaryEmail;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.testModeEnabled = testModeEnabled;
+            _resultValue.testRecipients = testRecipients;
+            return _resultValue;
         }
     }
 }

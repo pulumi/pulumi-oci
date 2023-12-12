@@ -134,11 +134,11 @@ public final class DomainsSettingImage {
             return this;
         }
         public DomainsSettingImage build() {
-            final var o = new DomainsSettingImage();
-            o.display = display;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSettingImage();
+            _resultValue.display = display;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

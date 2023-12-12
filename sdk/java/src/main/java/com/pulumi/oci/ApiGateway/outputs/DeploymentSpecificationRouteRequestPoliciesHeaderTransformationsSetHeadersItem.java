@@ -90,11 +90,11 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderTransformati
             return values(List.of(values));
         }
         public DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItem build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItem();
-            o.ifExists = ifExists;
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItem();
+            _resultValue.ifExists = ifExists;
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

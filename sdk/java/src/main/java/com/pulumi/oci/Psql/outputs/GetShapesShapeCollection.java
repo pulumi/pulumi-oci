@@ -50,9 +50,9 @@ public final class GetShapesShapeCollection {
             return items(List.of(items));
         }
         public GetShapesShapeCollection build() {
-            final var o = new GetShapesShapeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetShapesShapeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -150,14 +150,14 @@ public final class GetComputeCapacityReservationInstanceReservationConfig {
             return this;
         }
         public GetComputeCapacityReservationInstanceReservationConfig build() {
-            final var o = new GetComputeCapacityReservationInstanceReservationConfig();
-            o.clusterConfigs = clusterConfigs;
-            o.faultDomain = faultDomain;
-            o.instanceShape = instanceShape;
-            o.instanceShapeConfigs = instanceShapeConfigs;
-            o.reservedCount = reservedCount;
-            o.usedCount = usedCount;
-            return o;
+            final var _resultValue = new GetComputeCapacityReservationInstanceReservationConfig();
+            _resultValue.clusterConfigs = clusterConfigs;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.instanceShape = instanceShape;
+            _resultValue.instanceShapeConfigs = instanceShapeConfigs;
+            _resultValue.reservedCount = reservedCount;
+            _resultValue.usedCount = usedCount;
+            return _resultValue;
         }
     }
 }

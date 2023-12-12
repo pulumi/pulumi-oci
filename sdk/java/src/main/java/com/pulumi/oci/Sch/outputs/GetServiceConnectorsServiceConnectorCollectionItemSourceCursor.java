@@ -46,9 +46,9 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSourceCurso
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemSourceCursor build() {
-            final var o = new GetServiceConnectorsServiceConnectorCollectionItemSourceCursor();
-            o.kind = kind;
-            return o;
+            final var _resultValue = new GetServiceConnectorsServiceConnectorCollectionItemSourceCursor();
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

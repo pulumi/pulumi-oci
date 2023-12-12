@@ -116,13 +116,13 @@ public final class GetKeyVersionsResult {
             return this;
         }
         public GetKeyVersionsResult build() {
-            final var o = new GetKeyVersionsResult();
-            o.filters = filters;
-            o.id = id;
-            o.keyId = keyId;
-            o.keyVersions = keyVersions;
-            o.managementEndpoint = managementEndpoint;
-            return o;
+            final var _resultValue = new GetKeyVersionsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.keyId = keyId;
+            _resultValue.keyVersions = keyVersions;
+            _resultValue.managementEndpoint = managementEndpoint;
+            return _resultValue;
         }
     }
 }

@@ -141,14 +141,14 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount();
-            o.alternatePlan = alternatePlan;
-            o.implementedSqlProfile = implementedSqlProfile;
-            o.index = index;
-            o.recommendedSqlProfile = recommendedSqlProfile;
-            o.restructure = restructure;
-            o.statistics = statistics;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingCount();
+            _resultValue.alternatePlan = alternatePlan;
+            _resultValue.implementedSqlProfile = implementedSqlProfile;
+            _resultValue.index = index;
+            _resultValue.recommendedSqlProfile = recommendedSqlProfile;
+            _resultValue.restructure = restructure;
+            _resultValue.statistics = statistics;
+            return _resultValue;
         }
     }
 }

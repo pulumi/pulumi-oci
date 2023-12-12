@@ -42,9 +42,9 @@ public final class GetResourceActionsResourceActionCollection {
             return items(List.of(items));
         }
         public GetResourceActionsResourceActionCollection build() {
-            final var o = new GetResourceActionsResourceActionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetResourceActionsResourceActionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

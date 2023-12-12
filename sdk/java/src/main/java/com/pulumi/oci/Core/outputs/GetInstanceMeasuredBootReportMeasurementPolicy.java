@@ -84,11 +84,11 @@ public final class GetInstanceMeasuredBootReportMeasurementPolicy {
             return this;
         }
         public GetInstanceMeasuredBootReportMeasurementPolicy build() {
-            final var o = new GetInstanceMeasuredBootReportMeasurementPolicy();
-            o.hashAlgorithm = hashAlgorithm;
-            o.pcrIndex = pcrIndex;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetInstanceMeasuredBootReportMeasurementPolicy();
+            _resultValue.hashAlgorithm = hashAlgorithm;
+            _resultValue.pcrIndex = pcrIndex;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

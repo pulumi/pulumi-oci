@@ -42,9 +42,9 @@ public final class GetInventoriesInventoryCollection {
             return items(List.of(items));
         }
         public GetInventoriesInventoryCollection build() {
-            final var o = new GetInventoriesInventoryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetInventoriesInventoryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

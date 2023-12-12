@@ -76,10 +76,10 @@ public final class DataMaskRuleTargetSelected {
             return values(List.of(values));
         }
         public DataMaskRuleTargetSelected build() {
-            final var o = new DataMaskRuleTargetSelected();
-            o.kind = kind;
-            o.values = values;
-            return o;
+            final var _resultValue = new DataMaskRuleTargetSelected();
+            _resultValue.kind = kind;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

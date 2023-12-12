@@ -352,25 +352,25 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
             return this;
         }
         public GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem build() {
-            final var o = new GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem();
-            o.defaultValue = defaultValue;
-            o.description = description;
-            o.hostSet = hostSet;
-            o.isConfigurable = isConfigurable;
-            o.isDynamic = isDynamic;
-            o.isInit = isInit;
-            o.maxValue = maxValue;
-            o.minValue = minValue;
-            o.name = name;
-            o.path = path;
-            o.possibleValues = possibleValues;
-            o.source = source;
-            o.supportedVersions = supportedVersions;
-            o.timeSet = timeSet;
-            o.type = type;
-            o.userSet = userSet;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollectionItem();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.description = description;
+            _resultValue.hostSet = hostSet;
+            _resultValue.isConfigurable = isConfigurable;
+            _resultValue.isDynamic = isDynamic;
+            _resultValue.isInit = isInit;
+            _resultValue.maxValue = maxValue;
+            _resultValue.minValue = minValue;
+            _resultValue.name = name;
+            _resultValue.path = path;
+            _resultValue.possibleValues = possibleValues;
+            _resultValue.source = source;
+            _resultValue.supportedVersions = supportedVersions;
+            _resultValue.timeSet = timeSet;
+            _resultValue.type = type;
+            _resultValue.userSet = userSet;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

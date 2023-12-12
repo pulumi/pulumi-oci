@@ -110,12 +110,12 @@ public final class CloudVmClusterIormConfigCach {
             return this;
         }
         public CloudVmClusterIormConfigCach build() {
-            final var o = new CloudVmClusterIormConfigCach();
-            o.dbPlans = dbPlans;
-            o.lifecycleDetails = lifecycleDetails;
-            o.objective = objective;
-            o.state = state;
-            return o;
+            final var _resultValue = new CloudVmClusterIormConfigCach();
+            _resultValue.dbPlans = dbPlans;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.objective = objective;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

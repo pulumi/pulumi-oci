@@ -97,12 +97,12 @@ public final class GetCertificatesResult {
             return this;
         }
         public GetCertificatesResult build() {
-            final var o = new GetCertificatesResult();
-            o.certificates = certificates;
-            o.filters = filters;
-            o.id = id;
-            o.loadBalancerId = loadBalancerId;
-            return o;
+            final var _resultValue = new GetCertificatesResult();
+            _resultValue.certificates = certificates;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.loadBalancerId = loadBalancerId;
+            return _resultValue;
         }
     }
 }

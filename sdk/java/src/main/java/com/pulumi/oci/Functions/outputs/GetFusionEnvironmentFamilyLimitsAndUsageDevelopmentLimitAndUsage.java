@@ -57,10 +57,10 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUs
             return this;
         }
         public GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage build() {
-            final var o = new GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage();
-            o.limit = limit;
-            o.usage = usage;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage();
+            _resultValue.limit = limit;
+            _resultValue.usage = usage;
+            return _resultValue;
         }
     }
 }

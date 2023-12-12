@@ -160,16 +160,16 @@ public final class GetFusionEnvironmentAdminUserResult {
             return this;
         }
         public GetFusionEnvironmentAdminUserResult build() {
-            final var o = new GetFusionEnvironmentAdminUserResult();
-            o.emailAddress = emailAddress;
-            o.firstName = firstName;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.items = items;
-            o.lastName = lastName;
-            o.password = password;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentAdminUserResult();
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.firstName = firstName;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.lastName = lastName;
+            _resultValue.password = password;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

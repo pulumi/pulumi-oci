@@ -84,11 +84,11 @@ public final class GetModelsModelCollectionItemMetricDatasetSummary {
             return this;
         }
         public GetModelsModelCollectionItemMetricDatasetSummary build() {
-            final var o = new GetModelsModelCollectionItemMetricDatasetSummary();
-            o.testSampleCount = testSampleCount;
-            o.trainingSampleCount = trainingSampleCount;
-            o.validationSampleCount = validationSampleCount;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemMetricDatasetSummary();
+            _resultValue.testSampleCount = testSampleCount;
+            _resultValue.trainingSampleCount = trainingSampleCount;
+            _resultValue.validationSampleCount = validationSampleCount;
+            return _resultValue;
         }
     }
 }

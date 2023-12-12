@@ -65,10 +65,10 @@ public final class GetRemediationRunStagePipelineProperty {
             return this;
         }
         public GetRemediationRunStagePipelineProperty build() {
-            final var o = new GetRemediationRunStagePipelineProperty();
-            o.pipelineIdentifier = pipelineIdentifier;
-            o.pipelineUrl = pipelineUrl;
-            return o;
+            final var _resultValue = new GetRemediationRunStagePipelineProperty();
+            _resultValue.pipelineIdentifier = pipelineIdentifier;
+            _resultValue.pipelineUrl = pipelineUrl;
+            return _resultValue;
         }
     }
 }

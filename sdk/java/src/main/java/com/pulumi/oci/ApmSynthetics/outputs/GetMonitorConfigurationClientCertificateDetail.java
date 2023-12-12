@@ -73,10 +73,10 @@ public final class GetMonitorConfigurationClientCertificateDetail {
             return privateKeys(List.of(privateKeys));
         }
         public GetMonitorConfigurationClientCertificateDetail build() {
-            final var o = new GetMonitorConfigurationClientCertificateDetail();
-            o.clientCertificates = clientCertificates;
-            o.privateKeys = privateKeys;
-            return o;
+            final var _resultValue = new GetMonitorConfigurationClientCertificateDetail();
+            _resultValue.clientCertificates = clientCertificates;
+            _resultValue.privateKeys = privateKeys;
+            return _resultValue;
         }
     }
 }

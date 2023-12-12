@@ -66,10 +66,10 @@ public final class GetDataSourceDataSourceDetailLoggingQueryDetail {
             return this;
         }
         public GetDataSourceDataSourceDetailLoggingQueryDetail build() {
-            final var o = new GetDataSourceDataSourceDetailLoggingQueryDetail();
-            o.keyEntitiesCount = keyEntitiesCount;
-            o.loggingQueryType = loggingQueryType;
-            return o;
+            final var _resultValue = new GetDataSourceDataSourceDetailLoggingQueryDetail();
+            _resultValue.keyEntitiesCount = keyEntitiesCount;
+            _resultValue.loggingQueryType = loggingQueryType;
+            return _resultValue;
         }
     }
 }

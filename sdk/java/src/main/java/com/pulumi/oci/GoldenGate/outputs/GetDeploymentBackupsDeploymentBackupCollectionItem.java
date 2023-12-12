@@ -411,28 +411,28 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
             return this;
         }
         public GetDeploymentBackupsDeploymentBackupCollectionItem build() {
-            final var o = new GetDeploymentBackupsDeploymentBackupCollectionItem();
-            o.backupType = backupType;
-            o.bucket = bucket;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.deploymentId = deploymentId;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAutomatic = isAutomatic;
-            o.lifecycleDetails = lifecycleDetails;
-            o.namespace = namespace;
-            o.object = object;
-            o.oggVersion = oggVersion;
-            o.sizeInBytes = sizeInBytes;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeBackupFinished = timeBackupFinished;
-            o.timeCreated = timeCreated;
-            o.timeOfBackup = timeOfBackup;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDeploymentBackupsDeploymentBackupCollectionItem();
+            _resultValue.backupType = backupType;
+            _resultValue.bucket = bucket;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAutomatic = isAutomatic;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.oggVersion = oggVersion;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeBackupFinished = timeBackupFinished;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfBackup = timeOfBackup;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

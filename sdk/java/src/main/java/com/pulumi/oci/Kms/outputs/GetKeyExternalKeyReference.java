@@ -46,9 +46,9 @@ public final class GetKeyExternalKeyReference {
             return this;
         }
         public GetKeyExternalKeyReference build() {
-            final var o = new GetKeyExternalKeyReference();
-            o.externalKeyId = externalKeyId;
-            return o;
+            final var _resultValue = new GetKeyExternalKeyReference();
+            _resultValue.externalKeyId = externalKeyId;
+            return _resultValue;
         }
     }
 }

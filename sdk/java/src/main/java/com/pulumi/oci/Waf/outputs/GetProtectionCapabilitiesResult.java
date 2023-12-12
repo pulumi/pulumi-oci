@@ -196,17 +196,17 @@ public final class GetProtectionCapabilitiesResult {
             return this;
         }
         public GetProtectionCapabilitiesResult build() {
-            final var o = new GetProtectionCapabilitiesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.groupTags = groupTags;
-            o.id = id;
-            o.isLatestVersions = isLatestVersions;
-            o.key = key;
-            o.protectionCapabilityCollections = protectionCapabilityCollections;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetProtectionCapabilitiesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.groupTags = groupTags;
+            _resultValue.id = id;
+            _resultValue.isLatestVersions = isLatestVersions;
+            _resultValue.key = key;
+            _resultValue.protectionCapabilityCollections = protectionCapabilityCollections;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -203,17 +203,17 @@ public final class GetTagDefaultsTagDefault {
             return this;
         }
         public GetTagDefaultsTagDefault build() {
-            final var o = new GetTagDefaultsTagDefault();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isRequired = isRequired;
-            o.state = state;
-            o.tagDefinitionId = tagDefinitionId;
-            o.tagDefinitionName = tagDefinitionName;
-            o.tagNamespaceId = tagNamespaceId;
-            o.timeCreated = timeCreated;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetTagDefaultsTagDefault();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isRequired = isRequired;
+            _resultValue.state = state;
+            _resultValue.tagDefinitionId = tagDefinitionId;
+            _resultValue.tagDefinitionName = tagDefinitionName;
+            _resultValue.tagNamespaceId = tagNamespaceId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -73,10 +73,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
             return schemas(List.of(schemas));
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail();
-            o.operations = operations;
-            o.schemas = schemas;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail();
+            _resultValue.operations = operations;
+            _resultValue.schemas = schemas;
+            return _resultValue;
         }
     }
 }

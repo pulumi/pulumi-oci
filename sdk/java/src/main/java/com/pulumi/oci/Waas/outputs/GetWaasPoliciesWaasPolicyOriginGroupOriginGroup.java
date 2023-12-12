@@ -58,10 +58,10 @@ public final class GetWaasPoliciesWaasPolicyOriginGroupOriginGroup {
             return this;
         }
         public GetWaasPoliciesWaasPolicyOriginGroupOriginGroup build() {
-            final var o = new GetWaasPoliciesWaasPolicyOriginGroupOriginGroup();
-            o.origin = origin;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyOriginGroupOriginGroup();
+            _resultValue.origin = origin;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

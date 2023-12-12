@@ -70,10 +70,10 @@ public final class GetResourceQuotasResourceQuotumCollection {
             return items(List.of(items));
         }
         public GetResourceQuotasResourceQuotumCollection build() {
-            final var o = new GetResourceQuotasResourceQuotumCollection();
-            o.isAllowed = isAllowed;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetResourceQuotasResourceQuotumCollection();
+            _resultValue.isAllowed = isAllowed;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

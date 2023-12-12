@@ -42,9 +42,9 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollection 
             return items(List.of(items));
         }
         public GetExternalClusterInstancesExternalClusterInstanceCollection build() {
-            final var o = new GetExternalClusterInstancesExternalClusterInstanceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalClusterInstancesExternalClusterInstanceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

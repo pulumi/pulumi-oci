@@ -219,20 +219,20 @@ public final class GetListUserGrantsResult {
             return this;
         }
         public GetListUserGrantsResult build() {
-            final var o = new GetListUserGrantsResult();
-            o.depthLevel = depthLevel;
-            o.depthLevelGreaterThanOrEqualTo = depthLevelGreaterThanOrEqualTo;
-            o.depthLevelLessThan = depthLevelLessThan;
-            o.filters = filters;
-            o.grantKey = grantKey;
-            o.grantName = grantName;
-            o.grants = grants;
-            o.id = id;
-            o.privilegeCategory = privilegeCategory;
-            o.privilegeType = privilegeType;
-            o.userAssessmentId = userAssessmentId;
-            o.userKey = userKey;
-            return o;
+            final var _resultValue = new GetListUserGrantsResult();
+            _resultValue.depthLevel = depthLevel;
+            _resultValue.depthLevelGreaterThanOrEqualTo = depthLevelGreaterThanOrEqualTo;
+            _resultValue.depthLevelLessThan = depthLevelLessThan;
+            _resultValue.filters = filters;
+            _resultValue.grantKey = grantKey;
+            _resultValue.grantName = grantName;
+            _resultValue.grants = grants;
+            _resultValue.id = id;
+            _resultValue.privilegeCategory = privilegeCategory;
+            _resultValue.privilegeType = privilegeType;
+            _resultValue.userAssessmentId = userAssessmentId;
+            _resultValue.userKey = userKey;
+            return _resultValue;
         }
     }
 }

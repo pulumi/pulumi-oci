@@ -176,16 +176,16 @@ public final class GetActionResult {
             return this;
         }
         public GetActionResult build() {
-            final var o = new GetActionResult();
-            o.component = component;
-            o.customerDisplayName = customerDisplayName;
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            o.operatorActionId = operatorActionId;
-            o.properties = properties;
-            o.resourceType = resourceType;
-            return o;
+            final var _resultValue = new GetActionResult();
+            _resultValue.component = component;
+            _resultValue.customerDisplayName = customerDisplayName;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.operatorActionId = operatorActionId;
+            _resultValue.properties = properties;
+            _resultValue.resourceType = resourceType;
+            return _resultValue;
         }
     }
 }

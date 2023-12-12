@@ -84,11 +84,11 @@ public final class GetAlertPolicyRulesAlertPolicyRuleCollectionItem {
             return this;
         }
         public GetAlertPolicyRulesAlertPolicyRuleCollectionItem build() {
-            final var o = new GetAlertPolicyRulesAlertPolicyRuleCollectionItem();
-            o.description = description;
-            o.expression = expression;
-            o.key = key;
-            return o;
+            final var _resultValue = new GetAlertPolicyRulesAlertPolicyRuleCollectionItem();
+            _resultValue.description = description;
+            _resultValue.expression = expression;
+            _resultValue.key = key;
+            return _resultValue;
         }
     }
 }

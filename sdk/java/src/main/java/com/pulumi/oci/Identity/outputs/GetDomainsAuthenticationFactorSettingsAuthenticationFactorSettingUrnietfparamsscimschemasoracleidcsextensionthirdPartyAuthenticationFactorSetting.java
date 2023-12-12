@@ -50,9 +50,9 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
             return duoSecuritySettings(List.of(duoSecuritySettings));
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting build() {
-            final var o = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting();
-            o.duoSecuritySettings = duoSecuritySettings;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSetting();
+            _resultValue.duoSecuritySettings = duoSecuritySettings;
+            return _resultValue;
         }
     }
 }

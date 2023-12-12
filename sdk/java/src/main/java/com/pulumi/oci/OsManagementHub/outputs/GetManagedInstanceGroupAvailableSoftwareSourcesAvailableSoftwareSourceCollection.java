@@ -50,9 +50,9 @@ public final class GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftw
             return items(List.of(items));
         }
         public GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection build() {
-            final var o = new GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailableSoftwareSourcesAvailableSoftwareSourceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

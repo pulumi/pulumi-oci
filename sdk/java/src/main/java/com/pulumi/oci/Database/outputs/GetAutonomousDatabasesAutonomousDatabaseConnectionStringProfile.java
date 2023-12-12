@@ -199,17 +199,17 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfi
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile build() {
-            final var o = new GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile();
-            o.consumerGroup = consumerGroup;
-            o.displayName = displayName;
-            o.hostFormat = hostFormat;
-            o.isRegional = isRegional;
-            o.protocol = protocol;
-            o.sessionMode = sessionMode;
-            o.syntaxFormat = syntaxFormat;
-            o.tlsAuthentication = tlsAuthentication;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile();
+            _resultValue.consumerGroup = consumerGroup;
+            _resultValue.displayName = displayName;
+            _resultValue.hostFormat = hostFormat;
+            _resultValue.isRegional = isRegional;
+            _resultValue.protocol = protocol;
+            _resultValue.sessionMode = sessionMode;
+            _resultValue.syntaxFormat = syntaxFormat;
+            _resultValue.tlsAuthentication = tlsAuthentication;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

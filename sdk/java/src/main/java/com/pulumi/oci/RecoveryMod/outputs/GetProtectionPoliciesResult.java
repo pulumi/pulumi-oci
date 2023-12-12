@@ -178,16 +178,16 @@ public final class GetProtectionPoliciesResult {
             return this;
         }
         public GetProtectionPoliciesResult build() {
-            final var o = new GetProtectionPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.owner = owner;
-            o.protectionPolicyCollections = protectionPolicyCollections;
-            o.protectionPolicyId = protectionPolicyId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetProtectionPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.owner = owner;
+            _resultValue.protectionPolicyCollections = protectionPolicyCollections;
+            _resultValue.protectionPolicyId = protectionPolicyId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

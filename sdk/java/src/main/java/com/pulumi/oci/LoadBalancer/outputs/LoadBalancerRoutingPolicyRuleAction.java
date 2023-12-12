@@ -71,10 +71,10 @@ public final class LoadBalancerRoutingPolicyRuleAction {
             return this;
         }
         public LoadBalancerRoutingPolicyRuleAction build() {
-            final var o = new LoadBalancerRoutingPolicyRuleAction();
-            o.backendSetName = backendSetName;
-            o.name = name;
-            return o;
+            final var _resultValue = new LoadBalancerRoutingPolicyRuleAction();
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

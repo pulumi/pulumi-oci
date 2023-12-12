@@ -125,13 +125,13 @@ public final class GetFusionEnvironmentDataMaskingActivitiesResult {
             return this;
         }
         public GetFusionEnvironmentDataMaskingActivitiesResult build() {
-            final var o = new GetFusionEnvironmentDataMaskingActivitiesResult();
-            o.dataMaskingActivityCollections = dataMaskingActivityCollections;
-            o.filters = filters;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentDataMaskingActivitiesResult();
+            _resultValue.dataMaskingActivityCollections = dataMaskingActivityCollections;
+            _resultValue.filters = filters;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

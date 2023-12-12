@@ -84,11 +84,11 @@ public final class GetBdsInstanceWorkerNodeShapeConfig {
             return this;
         }
         public GetBdsInstanceWorkerNodeShapeConfig build() {
-            final var o = new GetBdsInstanceWorkerNodeShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetBdsInstanceWorkerNodeShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetCategoriesCategoryCollection {
             return items(List.of(items));
         }
         public GetCategoriesCategoryCollection build() {
-            final var o = new GetCategoriesCategoryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetCategoriesCategoryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

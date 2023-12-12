@@ -109,13 +109,13 @@ public final class GetNetworkFirewallPolicyDecryptionProfilesResult {
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionProfilesResult build() {
-            final var o = new GetNetworkFirewallPolicyDecryptionProfilesResult();
-            o.decryptionProfileSummaryCollections = decryptionProfileSummaryCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyDecryptionProfilesResult();
+            _resultValue.decryptionProfileSummaryCollections = decryptionProfileSummaryCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            return _resultValue;
         }
     }
 }

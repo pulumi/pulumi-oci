@@ -65,10 +65,10 @@ public final class GetClusterVsphereUpgradeObject {
             return this;
         }
         public GetClusterVsphereUpgradeObject build() {
-            final var o = new GetClusterVsphereUpgradeObject();
-            o.downloadLink = downloadLink;
-            o.linkDescription = linkDescription;
-            return o;
+            final var _resultValue = new GetClusterVsphereUpgradeObject();
+            _resultValue.downloadLink = downloadLink;
+            _resultValue.linkDescription = linkDescription;
+            return _resultValue;
         }
     }
 }

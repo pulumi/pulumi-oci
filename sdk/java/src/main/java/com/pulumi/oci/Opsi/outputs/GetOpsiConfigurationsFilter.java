@@ -75,11 +75,11 @@ public final class GetOpsiConfigurationsFilter {
             return values(List.of(values));
         }
         public GetOpsiConfigurationsFilter build() {
-            final var o = new GetOpsiConfigurationsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

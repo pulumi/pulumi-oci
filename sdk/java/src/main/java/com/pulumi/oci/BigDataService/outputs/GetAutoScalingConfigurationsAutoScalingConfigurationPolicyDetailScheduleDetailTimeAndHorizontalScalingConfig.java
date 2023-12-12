@@ -50,10 +50,10 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig build() {
-            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig();
-            o.targetNodeCount = targetNodeCount;
-            o.timeRecurrence = timeRecurrence;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndHorizontalScalingConfig();
+            _resultValue.targetNodeCount = targetNodeCount;
+            _resultValue.timeRecurrence = timeRecurrence;
+            return _resultValue;
         }
     }
 }

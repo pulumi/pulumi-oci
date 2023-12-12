@@ -125,13 +125,13 @@ public final class ConnectorTask {
             return this;
         }
         public ConnectorTask build() {
-            final var o = new ConnectorTask();
-            o.batchSizeInKbs = batchSizeInKbs;
-            o.batchTimeInSec = batchTimeInSec;
-            o.condition = condition;
-            o.functionId = functionId;
-            o.kind = kind;
-            return o;
+            final var _resultValue = new ConnectorTask();
+            _resultValue.batchSizeInKbs = batchSizeInKbs;
+            _resultValue.batchTimeInSec = batchTimeInSec;
+            _resultValue.condition = condition;
+            _resultValue.functionId = functionId;
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

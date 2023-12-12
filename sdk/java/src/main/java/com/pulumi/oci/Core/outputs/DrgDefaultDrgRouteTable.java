@@ -105,12 +105,12 @@ public final class DrgDefaultDrgRouteTable {
             return this;
         }
         public DrgDefaultDrgRouteTable build() {
-            final var o = new DrgDefaultDrgRouteTable();
-            o.ipsecTunnel = ipsecTunnel;
-            o.remotePeeringConnection = remotePeeringConnection;
-            o.vcn = vcn;
-            o.virtualCircuit = virtualCircuit;
-            return o;
+            final var _resultValue = new DrgDefaultDrgRouteTable();
+            _resultValue.ipsecTunnel = ipsecTunnel;
+            _resultValue.remotePeeringConnection = remotePeeringConnection;
+            _resultValue.vcn = vcn;
+            _resultValue.virtualCircuit = virtualCircuit;
+            return _resultValue;
         }
     }
 }

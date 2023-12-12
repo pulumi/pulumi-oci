@@ -433,29 +433,29 @@ public final class GetTraceResult {
             return this;
         }
         public GetTraceResult build() {
-            final var o = new GetTraceResult();
-            o.apmDomainId = apmDomainId;
-            o.errorSpanCount = errorSpanCount;
-            o.id = id;
-            o.isFault = isFault;
-            o.key = key;
-            o.rootSpanDurationInMs = rootSpanDurationInMs;
-            o.rootSpanOperationName = rootSpanOperationName;
-            o.rootSpanServiceName = rootSpanServiceName;
-            o.serviceSummaries = serviceSummaries;
-            o.spanCount = spanCount;
-            o.spanSummaries = spanSummaries;
-            o.spans = spans;
-            o.timeEarliestSpanStarted = timeEarliestSpanStarted;
-            o.timeLatestSpanEnded = timeLatestSpanEnded;
-            o.timeRootSpanEnded = timeRootSpanEnded;
-            o.timeRootSpanStarted = timeRootSpanStarted;
-            o.traceDurationInMs = traceDurationInMs;
-            o.traceErrorCode = traceErrorCode;
-            o.traceErrorType = traceErrorType;
-            o.traceKey = traceKey;
-            o.traceStatus = traceStatus;
-            return o;
+            final var _resultValue = new GetTraceResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.errorSpanCount = errorSpanCount;
+            _resultValue.id = id;
+            _resultValue.isFault = isFault;
+            _resultValue.key = key;
+            _resultValue.rootSpanDurationInMs = rootSpanDurationInMs;
+            _resultValue.rootSpanOperationName = rootSpanOperationName;
+            _resultValue.rootSpanServiceName = rootSpanServiceName;
+            _resultValue.serviceSummaries = serviceSummaries;
+            _resultValue.spanCount = spanCount;
+            _resultValue.spanSummaries = spanSummaries;
+            _resultValue.spans = spans;
+            _resultValue.timeEarliestSpanStarted = timeEarliestSpanStarted;
+            _resultValue.timeLatestSpanEnded = timeLatestSpanEnded;
+            _resultValue.timeRootSpanEnded = timeRootSpanEnded;
+            _resultValue.timeRootSpanStarted = timeRootSpanStarted;
+            _resultValue.traceDurationInMs = traceDurationInMs;
+            _resultValue.traceErrorCode = traceErrorCode;
+            _resultValue.traceErrorType = traceErrorType;
+            _resultValue.traceKey = traceKey;
+            _resultValue.traceStatus = traceStatus;
+            return _resultValue;
         }
     }
 }

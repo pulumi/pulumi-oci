@@ -50,9 +50,9 @@ public final class GetDiscoveryJobDiscoveryDetailCredential {
             return items(List.of(items));
         }
         public GetDiscoveryJobDiscoveryDetailCredential build() {
-            final var o = new GetDiscoveryJobDiscoveryDetailCredential();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDiscoveryJobDiscoveryDetailCredential();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -142,14 +142,14 @@ public final class GetTableReplica {
             return this;
         }
         public GetTableReplica build() {
-            final var o = new GetTableReplica();
-            o.capacityMode = capacityMode;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maxWriteUnits = maxWriteUnits;
-            o.region = region;
-            o.state = state;
-            o.tableId = tableId;
-            return o;
+            final var _resultValue = new GetTableReplica();
+            _resultValue.capacityMode = capacityMode;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maxWriteUnits = maxWriteUnits;
+            _resultValue.region = region;
+            _resultValue.state = state;
+            _resultValue.tableId = tableId;
+            return _resultValue;
         }
     }
 }

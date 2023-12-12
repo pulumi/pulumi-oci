@@ -67,11 +67,11 @@ public final class GetVirtualCircuitAssociatedTunnelsFilter {
             return values(List.of(values));
         }
         public GetVirtualCircuitAssociatedTunnelsFilter build() {
-            final var o = new GetVirtualCircuitAssociatedTunnelsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVirtualCircuitAssociatedTunnelsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

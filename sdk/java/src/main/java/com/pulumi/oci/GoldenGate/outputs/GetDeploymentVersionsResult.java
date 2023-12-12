@@ -128,14 +128,14 @@ public final class GetDeploymentVersionsResult {
             return this;
         }
         public GetDeploymentVersionsResult build() {
-            final var o = new GetDeploymentVersionsResult();
-            o.compartmentId = compartmentId;
-            o.deploymentId = deploymentId;
-            o.deploymentType = deploymentType;
-            o.deploymentVersionCollections = deploymentVersionCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDeploymentVersionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.deploymentVersionCollections = deploymentVersionCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

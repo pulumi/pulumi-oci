@@ -76,10 +76,10 @@ public final class ListenerConnectionConfiguration {
             return this;
         }
         public ListenerConnectionConfiguration build() {
-            final var o = new ListenerConnectionConfiguration();
-            o.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
-            o.idleTimeoutInSeconds = idleTimeoutInSeconds;
-            return o;
+            final var _resultValue = new ListenerConnectionConfiguration();
+            _resultValue.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
+            _resultValue.idleTimeoutInSeconds = idleTimeoutInSeconds;
+            return _resultValue;
         }
     }
 }

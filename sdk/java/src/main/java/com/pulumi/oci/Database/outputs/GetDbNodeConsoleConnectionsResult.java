@@ -105,12 +105,12 @@ public final class GetDbNodeConsoleConnectionsResult {
             return this;
         }
         public GetDbNodeConsoleConnectionsResult build() {
-            final var o = new GetDbNodeConsoleConnectionsResult();
-            o.consoleConnections = consoleConnections;
-            o.dbNodeId = dbNodeId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDbNodeConsoleConnectionsResult();
+            _resultValue.consoleConnections = consoleConnections;
+            _resultValue.dbNodeId = dbNodeId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

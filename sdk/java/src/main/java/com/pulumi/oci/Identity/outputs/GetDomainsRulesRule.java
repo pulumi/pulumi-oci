@@ -598,36 +598,36 @@ public final class GetDomainsRulesRule {
             return this;
         }
         public GetDomainsRulesRule build() {
-            final var o = new GetDomainsRulesRule();
-            o.active = active;
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.condition = condition;
-            o.conditionGroups = conditionGroups;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.domainOcid = domainOcid;
-            o.externalId = externalId;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.locked = locked;
-            o.metas = metas;
-            o.name = name;
-            o.ocid = ocid;
-            o.policyTypes = policyTypes;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.returns = returns;
-            o.ruleGroovy = ruleGroovy;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            return o;
+            final var _resultValue = new GetDomainsRulesRule();
+            _resultValue.active = active;
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.condition = condition;
+            _resultValue.conditionGroups = conditionGroups;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.externalId = externalId;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.locked = locked;
+            _resultValue.metas = metas;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.policyTypes = policyTypes;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.returns = returns;
+            _resultValue.ruleGroovy = ruleGroovy;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            return _resultValue;
         }
     }
 }

@@ -211,19 +211,19 @@ public final class GetConfigsResult {
             return this;
         }
         public GetConfigsResult build() {
-            final var o = new GetConfigsResult();
-            o.apmDomainId = apmDomainId;
-            o.configCollections = configCollections;
-            o.configType = configType;
-            o.definedTagEquals = definedTagEquals;
-            o.definedTagExists = definedTagExists;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.freeformTagEquals = freeformTagEquals;
-            o.freeformTagExists = freeformTagExists;
-            o.id = id;
-            o.optionsGroup = optionsGroup;
-            return o;
+            final var _resultValue = new GetConfigsResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.configCollections = configCollections;
+            _resultValue.configType = configType;
+            _resultValue.definedTagEquals = definedTagEquals;
+            _resultValue.definedTagExists = definedTagExists;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.freeformTagEquals = freeformTagEquals;
+            _resultValue.freeformTagExists = freeformTagExists;
+            _resultValue.id = id;
+            _resultValue.optionsGroup = optionsGroup;
+            return _resultValue;
         }
     }
 }

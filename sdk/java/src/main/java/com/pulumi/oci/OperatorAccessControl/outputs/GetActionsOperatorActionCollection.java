@@ -42,9 +42,9 @@ public final class GetActionsOperatorActionCollection {
             return items(List.of(items));
         }
         public GetActionsOperatorActionCollection build() {
-            final var o = new GetActionsOperatorActionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetActionsOperatorActionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

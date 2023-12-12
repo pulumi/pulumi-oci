@@ -65,10 +65,10 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabaseS
             return this;
         }
         public GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig build() {
-            final var o = new GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig();
-            o.stackMonitoringConnectorId = stackMonitoringConnectorId;
-            o.stackMonitoringStatus = stackMonitoringStatus;
-            return o;
+            final var _resultValue = new GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig();
+            _resultValue.stackMonitoringConnectorId = stackMonitoringConnectorId;
+            _resultValue.stackMonitoringStatus = stackMonitoringStatus;
+            return _resultValue;
         }
     }
 }

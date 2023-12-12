@@ -42,9 +42,9 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
             return items(List.of(items));
         }
         public GetPrivateApplicationPackagesPrivateApplicationPackageCollection build() {
-            final var o = new GetPrivateApplicationPackagesPrivateApplicationPackageCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetPrivateApplicationPackagesPrivateApplicationPackageCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

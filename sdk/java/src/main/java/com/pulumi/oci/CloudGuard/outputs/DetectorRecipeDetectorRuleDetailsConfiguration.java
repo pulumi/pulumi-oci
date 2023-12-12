@@ -129,13 +129,13 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
             return values(List.of(values));
         }
         public DetectorRecipeDetectorRuleDetailsConfiguration build() {
-            final var o = new DetectorRecipeDetectorRuleDetailsConfiguration();
-            o.configKey = configKey;
-            o.dataType = dataType;
-            o.name = name;
-            o.value = value;
-            o.values = values;
-            return o;
+            final var _resultValue = new DetectorRecipeDetectorRuleDetailsConfiguration();
+            _resultValue.configKey = configKey;
+            _resultValue.dataType = dataType;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

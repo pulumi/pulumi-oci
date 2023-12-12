@@ -51,9 +51,9 @@ public final class AppFirewallPolicyResponseAccessControl {
             return rules(List.of(rules));
         }
         public AppFirewallPolicyResponseAccessControl build() {
-            final var o = new AppFirewallPolicyResponseAccessControl();
-            o.rules = rules;
-            return o;
+            final var _resultValue = new AppFirewallPolicyResponseAccessControl();
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

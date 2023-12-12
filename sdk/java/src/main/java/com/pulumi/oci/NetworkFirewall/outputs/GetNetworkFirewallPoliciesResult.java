@@ -144,14 +144,14 @@ public final class GetNetworkFirewallPoliciesResult {
             return this;
         }
         public GetNetworkFirewallPoliciesResult build() {
-            final var o = new GetNetworkFirewallPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.networkFirewallPolicySummaryCollections = networkFirewallPolicySummaryCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkFirewallPolicySummaryCollections = networkFirewallPolicySummaryCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

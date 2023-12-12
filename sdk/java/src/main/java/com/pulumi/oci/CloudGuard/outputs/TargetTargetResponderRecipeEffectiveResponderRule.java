@@ -282,20 +282,20 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
             return this;
         }
         public TargetTargetResponderRecipeEffectiveResponderRule build() {
-            final var o = new TargetTargetResponderRecipeEffectiveResponderRule();
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.details = details;
-            o.displayName = displayName;
-            o.lifecycleDetails = lifecycleDetails;
-            o.policies = policies;
-            o.responderRuleId = responderRuleId;
-            o.state = state;
-            o.supportedModes = supportedModes;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            return o;
+            final var _resultValue = new TargetTargetResponderRecipeEffectiveResponderRule();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.details = details;
+            _resultValue.displayName = displayName;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.policies = policies;
+            _resultValue.responderRuleId = responderRuleId;
+            _resultValue.state = state;
+            _resultValue.supportedModes = supportedModes;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetMigrationsMigrationCollectionItemAdvisorSetting {
             return this;
         }
         public GetMigrationsMigrationCollectionItemAdvisorSetting build() {
-            final var o = new GetMigrationsMigrationCollectionItemAdvisorSetting();
-            o.isIgnoreErrors = isIgnoreErrors;
-            o.isSkipAdvisor = isSkipAdvisor;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemAdvisorSetting();
+            _resultValue.isIgnoreErrors = isIgnoreErrors;
+            _resultValue.isSkipAdvisor = isSkipAdvisor;
+            return _resultValue;
         }
     }
 }

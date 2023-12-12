@@ -65,10 +65,10 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetailQuerySt
             return this;
         }
         public GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime build() {
-            final var o = new GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime();
-            o.queryStartTime = queryStartTime;
-            o.startPolicyType = startPolicyType;
-            return o;
+            final var _resultValue = new GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime();
+            _resultValue.queryStartTime = queryStartTime;
+            _resultValue.startPolicyType = startPolicyType;
+            return _resultValue;
         }
     }
 }

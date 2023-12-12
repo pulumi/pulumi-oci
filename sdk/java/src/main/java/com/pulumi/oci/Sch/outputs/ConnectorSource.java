@@ -134,13 +134,13 @@ public final class ConnectorSource {
             return this;
         }
         public ConnectorSource build() {
-            final var o = new ConnectorSource();
-            o.cursor = cursor;
-            o.kind = kind;
-            o.logSources = logSources;
-            o.monitoringSources = monitoringSources;
-            o.streamId = streamId;
-            return o;
+            final var _resultValue = new ConnectorSource();
+            _resultValue.cursor = cursor;
+            _resultValue.kind = kind;
+            _resultValue.logSources = logSources;
+            _resultValue.monitoringSources = monitoringSources;
+            _resultValue.streamId = streamId;
+            return _resultValue;
         }
     }
 }

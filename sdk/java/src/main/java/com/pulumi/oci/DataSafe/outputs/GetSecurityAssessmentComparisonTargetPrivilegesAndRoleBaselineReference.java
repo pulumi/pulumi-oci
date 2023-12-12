@@ -84,11 +84,11 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselin
             return this;
         }
         public GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference build() {
-            final var o = new GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference();
-            o.cis = cis;
-            o.gdpr = gdpr;
-            o.stig = stig;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference();
+            _resultValue.cis = cis;
+            _resultValue.gdpr = gdpr;
+            _resultValue.stig = stig;
+            return _resultValue;
         }
     }
 }

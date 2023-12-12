@@ -164,15 +164,15 @@ public final class RrsetItem {
             return this;
         }
         public RrsetItem build() {
-            final var o = new RrsetItem();
-            o.domain = domain;
-            o.isProtected = isProtected;
-            o.rdata = rdata;
-            o.recordHash = recordHash;
-            o.rrsetVersion = rrsetVersion;
-            o.rtype = rtype;
-            o.ttl = ttl;
-            return o;
+            final var _resultValue = new RrsetItem();
+            _resultValue.domain = domain;
+            _resultValue.isProtected = isProtected;
+            _resultValue.rdata = rdata;
+            _resultValue.recordHash = recordHash;
+            _resultValue.rrsetVersion = rrsetVersion;
+            _resultValue.rtype = rtype;
+            _resultValue.ttl = ttl;
+            return _resultValue;
         }
     }
 }

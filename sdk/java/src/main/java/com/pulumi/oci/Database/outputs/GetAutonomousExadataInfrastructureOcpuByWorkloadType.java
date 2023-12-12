@@ -65,10 +65,10 @@ public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
             return this;
         }
         public GetAutonomousExadataInfrastructureOcpuByWorkloadType build() {
-            final var o = new GetAutonomousExadataInfrastructureOcpuByWorkloadType();
-            o.adw = adw;
-            o.atp = atp;
-            return o;
+            final var _resultValue = new GetAutonomousExadataInfrastructureOcpuByWorkloadType();
+            _resultValue.adw = adw;
+            _resultValue.atp = atp;
+            return _resultValue;
         }
     }
 }

@@ -292,21 +292,21 @@ public final class GetListenerRulesListenerRuleRule {
             return this;
         }
         public GetListenerRulesListenerRuleRule build() {
-            final var o = new GetListenerRulesListenerRuleRule();
-            o.action = action;
-            o.allowedMethods = allowedMethods;
-            o.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
-            o.conditions = conditions;
-            o.description = description;
-            o.header = header;
-            o.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
-            o.prefix = prefix;
-            o.redirectUris = redirectUris;
-            o.responseCode = responseCode;
-            o.statusCode = statusCode;
-            o.suffix = suffix;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetListenerRulesListenerRuleRule();
+            _resultValue.action = action;
+            _resultValue.allowedMethods = allowedMethods;
+            _resultValue.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
+            _resultValue.conditions = conditions;
+            _resultValue.description = description;
+            _resultValue.header = header;
+            _resultValue.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
+            _resultValue.prefix = prefix;
+            _resultValue.redirectUris = redirectUris;
+            _resultValue.responseCode = responseCode;
+            _resultValue.statusCode = statusCode;
+            _resultValue.suffix = suffix;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

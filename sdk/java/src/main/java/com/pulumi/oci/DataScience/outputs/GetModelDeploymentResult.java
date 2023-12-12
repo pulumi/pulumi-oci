@@ -315,23 +315,23 @@ public final class GetModelDeploymentResult {
             return this;
         }
         public GetModelDeploymentResult build() {
-            final var o = new GetModelDeploymentResult();
-            o.categoryLogDetails = categoryLogDetails;
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
-            o.modelDeploymentId = modelDeploymentId;
-            o.modelDeploymentUrl = modelDeploymentUrl;
-            o.projectId = projectId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetModelDeploymentResult();
+            _resultValue.categoryLogDetails = categoryLogDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
+            _resultValue.modelDeploymentId = modelDeploymentId;
+            _resultValue.modelDeploymentUrl = modelDeploymentUrl;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

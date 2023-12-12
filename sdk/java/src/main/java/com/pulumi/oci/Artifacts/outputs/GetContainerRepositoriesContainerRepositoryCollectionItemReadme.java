@@ -65,10 +65,10 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItemRead
             return this;
         }
         public GetContainerRepositoriesContainerRepositoryCollectionItemReadme build() {
-            final var o = new GetContainerRepositoriesContainerRepositoryCollectionItemReadme();
-            o.content = content;
-            o.format = format;
-            return o;
+            final var _resultValue = new GetContainerRepositoriesContainerRepositoryCollectionItemReadme();
+            _resultValue.content = content;
+            _resultValue.format = format;
+            return _resultValue;
         }
     }
 }

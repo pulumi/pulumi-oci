@@ -144,14 +144,14 @@ public final class GetOneoffPatchesResult {
             return this;
         }
         public GetOneoffPatchesResult build() {
-            final var o = new GetOneoffPatchesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.oneoffPatches = oneoffPatches;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOneoffPatchesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.oneoffPatches = oneoffPatches;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

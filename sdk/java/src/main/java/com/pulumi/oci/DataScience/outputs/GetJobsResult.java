@@ -182,16 +182,16 @@ public final class GetJobsResult {
             return this;
         }
         public GetJobsResult build() {
-            final var o = new GetJobsResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.jobs = jobs;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetJobsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.jobs = jobs;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

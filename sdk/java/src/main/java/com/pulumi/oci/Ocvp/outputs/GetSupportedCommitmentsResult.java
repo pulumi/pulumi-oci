@@ -109,13 +109,13 @@ public final class GetSupportedCommitmentsResult {
             return items(List.of(items));
         }
         public GetSupportedCommitmentsResult build() {
-            final var o = new GetSupportedCommitmentsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.hostShapeName = hostShapeName;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSupportedCommitmentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.hostShapeName = hostShapeName;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

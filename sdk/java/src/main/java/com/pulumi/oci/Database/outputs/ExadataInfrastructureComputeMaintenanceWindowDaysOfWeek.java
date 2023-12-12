@@ -48,9 +48,9 @@ public final class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek {
             return this;
         }
         public ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek build() {
-            final var o = new ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek();
-            o.name = name;
-            return o;
+            final var _resultValue = new ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

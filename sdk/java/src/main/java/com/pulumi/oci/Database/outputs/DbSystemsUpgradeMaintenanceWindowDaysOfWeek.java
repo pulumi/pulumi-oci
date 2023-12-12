@@ -48,9 +48,9 @@ public final class DbSystemsUpgradeMaintenanceWindowDaysOfWeek {
             return this;
         }
         public DbSystemsUpgradeMaintenanceWindowDaysOfWeek build() {
-            final var o = new DbSystemsUpgradeMaintenanceWindowDaysOfWeek();
-            o.name = name;
-            return o;
+            final var _resultValue = new DbSystemsUpgradeMaintenanceWindowDaysOfWeek();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

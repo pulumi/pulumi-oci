@@ -116,13 +116,13 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesResult {
             return this;
         }
         public GetDbManagementPrivateEndpointAssociatedDatabasesResult build() {
-            final var o = new GetDbManagementPrivateEndpointAssociatedDatabasesResult();
-            o.associatedDatabaseCollections = associatedDatabaseCollections;
-            o.compartmentId = compartmentId;
-            o.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDbManagementPrivateEndpointAssociatedDatabasesResult();
+            _resultValue.associatedDatabaseCollections = associatedDatabaseCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbManagementPrivateEndpointId = dbManagementPrivateEndpointId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

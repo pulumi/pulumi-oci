@@ -155,15 +155,15 @@ public final class GetNamespaceScheduledTasksResult {
             return this;
         }
         public GetNamespaceScheduledTasksResult build() {
-            final var o = new GetNamespaceScheduledTasksResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.namespace = namespace;
-            o.scheduledTaskCollections = scheduledTaskCollections;
-            o.taskType = taskType;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTasksResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.scheduledTaskCollections = scheduledTaskCollections;
+            _resultValue.taskType = taskType;
+            return _resultValue;
         }
     }
 }

@@ -201,17 +201,17 @@ public final class GetTagNamespacesTagNamespace {
             return this;
         }
         public GetTagNamespacesTagNamespace build() {
-            final var o = new GetTagNamespacesTagNamespace();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isRetired = isRetired;
-            o.name = name;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetTagNamespacesTagNamespace();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isRetired = isRetired;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

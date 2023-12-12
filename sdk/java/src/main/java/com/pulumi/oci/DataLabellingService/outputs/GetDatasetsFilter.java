@@ -75,11 +75,11 @@ public final class GetDatasetsFilter {
             return values(List.of(values));
         }
         public GetDatasetsFilter build() {
-            final var o = new GetDatasetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDatasetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

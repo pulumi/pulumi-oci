@@ -42,9 +42,9 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
             return items(List.of(items));
         }
         public GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection build() {
-            final var o = new GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalExadataInfrastructuresExternalExadataInfrastructureCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

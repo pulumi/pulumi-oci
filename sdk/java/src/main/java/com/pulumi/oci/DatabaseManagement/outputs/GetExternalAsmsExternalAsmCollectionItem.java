@@ -350,25 +350,25 @@ public final class GetExternalAsmsExternalAsmCollectionItem {
             return this;
         }
         public GetExternalAsmsExternalAsmCollectionItem build() {
-            final var o = new GetExternalAsmsExternalAsmCollectionItem();
-            o.additionalDetails = additionalDetails;
-            o.compartmentId = compartmentId;
-            o.componentName = componentName;
-            o.displayName = displayName;
-            o.externalAsmId = externalAsmId;
-            o.externalConnectorId = externalConnectorId;
-            o.externalDbSystemId = externalDbSystemId;
-            o.gridHome = gridHome;
-            o.id = id;
-            o.isCluster = isCluster;
-            o.isFlexEnabled = isFlexEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.servicedDatabases = servicedDatabases;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetExternalAsmsExternalAsmCollectionItem();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.componentName = componentName;
+            _resultValue.displayName = displayName;
+            _resultValue.externalAsmId = externalAsmId;
+            _resultValue.externalConnectorId = externalConnectorId;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.gridHome = gridHome;
+            _resultValue.id = id;
+            _resultValue.isCluster = isCluster;
+            _resultValue.isFlexEnabled = isFlexEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.servicedDatabases = servicedDatabases;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

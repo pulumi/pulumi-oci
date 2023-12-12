@@ -67,11 +67,11 @@ public final class GetScheduledRunsFilter {
             return values(List.of(values));
         }
         public GetScheduledRunsFilter build() {
-            final var o = new GetScheduledRunsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetScheduledRunsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

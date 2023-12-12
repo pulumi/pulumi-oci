@@ -67,11 +67,11 @@ public final class GetPeersFilter {
             return values(List.of(values));
         }
         public GetPeersFilter build() {
-            final var o = new GetPeersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPeersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

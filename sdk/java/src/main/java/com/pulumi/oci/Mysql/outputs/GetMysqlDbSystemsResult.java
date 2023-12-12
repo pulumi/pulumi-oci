@@ -235,19 +235,19 @@ public final class GetMysqlDbSystemsResult {
             return this;
         }
         public GetMysqlDbSystemsResult build() {
-            final var o = new GetMysqlDbSystemsResult();
-            o.compartmentId = compartmentId;
-            o.configurationId = configurationId;
-            o.databaseManagements = databaseManagements;
-            o.dbSystemId = dbSystemId;
-            o.dbSystems = dbSystems;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
-            o.isUpToDate = isUpToDate;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationId = configurationId;
+            _resultValue.databaseManagements = databaseManagements;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.dbSystems = dbSystems;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            _resultValue.isUpToDate = isUpToDate;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

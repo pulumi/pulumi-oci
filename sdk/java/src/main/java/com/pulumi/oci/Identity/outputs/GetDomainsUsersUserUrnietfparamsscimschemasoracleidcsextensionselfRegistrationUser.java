@@ -90,11 +90,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser();
-            o.consentGranted = consentGranted;
-            o.selfRegistrationProfiles = selfRegistrationProfiles;
-            o.userToken = userToken;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser();
+            _resultValue.consentGranted = consentGranted;
+            _resultValue.selfRegistrationProfiles = selfRegistrationProfiles;
+            _resultValue.userToken = userToken;
+            return _resultValue;
         }
     }
 }

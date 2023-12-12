@@ -156,14 +156,14 @@ public final class GetDeploymentSpecificationRouteRequestPolicyCor {
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyCor build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyCor();
-            o.allowedHeaders = allowedHeaders;
-            o.allowedMethods = allowedMethods;
-            o.allowedOrigins = allowedOrigins;
-            o.exposedHeaders = exposedHeaders;
-            o.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
-            o.maxAgeInSeconds = maxAgeInSeconds;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyCor();
+            _resultValue.allowedHeaders = allowedHeaders;
+            _resultValue.allowedMethods = allowedMethods;
+            _resultValue.allowedOrigins = allowedOrigins;
+            _resultValue.exposedHeaders = exposedHeaders;
+            _resultValue.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
+            _resultValue.maxAgeInSeconds = maxAgeInSeconds;
+            return _resultValue;
         }
     }
 }

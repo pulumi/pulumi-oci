@@ -50,9 +50,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
             return items(List.of(items));
         }
         public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParameters build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParameters();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParameters();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

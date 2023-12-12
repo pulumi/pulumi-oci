@@ -370,26 +370,26 @@ public final class GetMountTargetsMountTarget {
             return this;
         }
         public GetMountTargetsMountTarget build() {
-            final var o = new GetMountTargetsMountTarget();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.exportSetId = exportSetId;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.id = id;
-            o.idmapType = idmapType;
-            o.ipAddress = ipAddress;
-            o.kerberos = kerberos;
-            o.ldapIdmaps = ldapIdmaps;
-            o.lifecycleDetails = lifecycleDetails;
-            o.nsgIds = nsgIds;
-            o.privateIpIds = privateIpIds;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetMountTargetsMountTarget();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.exportSetId = exportSetId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.id = id;
+            _resultValue.idmapType = idmapType;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.kerberos = kerberos;
+            _resultValue.ldapIdmaps = ldapIdmaps;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateIpIds = privateIpIds;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOpt
             return this;
         }
         public GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption build() {
-            final var o = new GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption();
-            o.code = code;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleIcmpOption();
+            _resultValue.code = code;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

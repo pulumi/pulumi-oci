@@ -65,10 +65,10 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGg
             return this;
         }
         public GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment build() {
-            final var o = new GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment();
-            o.deploymentId = deploymentId;
-            o.ggsAdminCredentialsSecretId = ggsAdminCredentialsSecretId;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeployment();
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.ggsAdminCredentialsSecretId = ggsAdminCredentialsSecretId;
+            return _resultValue;
         }
     }
 }

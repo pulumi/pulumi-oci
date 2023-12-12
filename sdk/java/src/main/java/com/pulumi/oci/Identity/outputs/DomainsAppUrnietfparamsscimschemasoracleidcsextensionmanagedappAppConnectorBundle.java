@@ -234,13 +234,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle();
-            o.display = display;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            o.wellKnownId = wellKnownId;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            _resultValue.wellKnownId = wellKnownId;
+            return _resultValue;
         }
     }
 }

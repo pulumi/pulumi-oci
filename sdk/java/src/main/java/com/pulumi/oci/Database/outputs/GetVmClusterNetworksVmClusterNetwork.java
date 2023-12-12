@@ -356,25 +356,25 @@ public final class GetVmClusterNetworksVmClusterNetwork {
             return vmNetworks(List.of(vmNetworks));
         }
         public GetVmClusterNetworksVmClusterNetwork build() {
-            final var o = new GetVmClusterNetworksVmClusterNetwork();
-            o.action = action;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.dns = dns;
-            o.drScans = drScans;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.ntps = ntps;
-            o.scans = scans;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.validateVmClusterNetwork = validateVmClusterNetwork;
-            o.vmClusterId = vmClusterId;
-            o.vmNetworks = vmNetworks;
-            return o;
+            final var _resultValue = new GetVmClusterNetworksVmClusterNetwork();
+            _resultValue.action = action;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.dns = dns;
+            _resultValue.drScans = drScans;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.ntps = ntps;
+            _resultValue.scans = scans;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.validateVmClusterNetwork = validateVmClusterNetwork;
+            _resultValue.vmClusterId = vmClusterId;
+            _resultValue.vmNetworks = vmNetworks;
+            return _resultValue;
         }
     }
 }

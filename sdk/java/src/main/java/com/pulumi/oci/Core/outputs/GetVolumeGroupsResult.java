@@ -163,15 +163,15 @@ public final class GetVolumeGroupsResult {
             return volumeGroups(List.of(volumeGroups));
         }
         public GetVolumeGroupsResult build() {
-            final var o = new GetVolumeGroupsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.volumeGroups = volumeGroups;
-            return o;
+            final var _resultValue = new GetVolumeGroupsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.volumeGroups = volumeGroups;
+            return _resultValue;
         }
     }
 }

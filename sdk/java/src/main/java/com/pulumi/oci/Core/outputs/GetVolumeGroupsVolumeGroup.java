@@ -341,25 +341,25 @@ public final class GetVolumeGroupsVolumeGroup {
             return volumeIds(List.of(volumeIds));
         }
         public GetVolumeGroupsVolumeGroup build() {
-            final var o = new GetVolumeGroupsVolumeGroup();
-            o.availabilityDomain = availabilityDomain;
-            o.backupPolicyId = backupPolicyId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isHydrated = isHydrated;
-            o.preserveVolumeReplica = preserveVolumeReplica;
-            o.sizeInGbs = sizeInGbs;
-            o.sizeInMbs = sizeInMbs;
-            o.sourceDetails = sourceDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.volumeGroupReplicas = volumeGroupReplicas;
-            o.volumeGroupReplicasDeletion = volumeGroupReplicasDeletion;
-            o.volumeIds = volumeIds;
-            return o;
+            final var _resultValue = new GetVolumeGroupsVolumeGroup();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.backupPolicyId = backupPolicyId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isHydrated = isHydrated;
+            _resultValue.preserveVolumeReplica = preserveVolumeReplica;
+            _resultValue.sizeInGbs = sizeInGbs;
+            _resultValue.sizeInMbs = sizeInMbs;
+            _resultValue.sourceDetails = sourceDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.volumeGroupReplicas = volumeGroupReplicas;
+            _resultValue.volumeGroupReplicasDeletion = volumeGroupReplicasDeletion;
+            _resultValue.volumeIds = volumeIds;
+            return _resultValue;
         }
     }
 }

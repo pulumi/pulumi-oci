@@ -86,11 +86,11 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollectionItem {
             return this;
         }
         public GetRepositoryAuthorsRepositoryAuthorCollectionItem build() {
-            final var o = new GetRepositoryAuthorsRepositoryAuthorCollectionItem();
-            o.authorName = authorName;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            return o;
+            final var _resultValue = new GetRepositoryAuthorsRepositoryAuthorCollectionItem();
+            _resultValue.authorName = authorName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            return _resultValue;
         }
     }
 }

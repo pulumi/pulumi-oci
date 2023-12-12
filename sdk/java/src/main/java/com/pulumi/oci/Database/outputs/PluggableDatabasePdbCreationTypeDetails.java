@@ -144,14 +144,14 @@ public final class PluggableDatabasePdbCreationTypeDetails {
             return this;
         }
         public PluggableDatabasePdbCreationTypeDetails build() {
-            final var o = new PluggableDatabasePdbCreationTypeDetails();
-            o.creationType = creationType;
-            o.dblinkUserPassword = dblinkUserPassword;
-            o.dblinkUsername = dblinkUsername;
-            o.refreshableCloneDetails = refreshableCloneDetails;
-            o.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
-            o.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
-            return o;
+            final var _resultValue = new PluggableDatabasePdbCreationTypeDetails();
+            _resultValue.creationType = creationType;
+            _resultValue.dblinkUserPassword = dblinkUserPassword;
+            _resultValue.dblinkUsername = dblinkUsername;
+            _resultValue.refreshableCloneDetails = refreshableCloneDetails;
+            _resultValue.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
+            _resultValue.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
+            return _resultValue;
         }
     }
 }

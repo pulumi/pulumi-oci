@@ -73,10 +73,10 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetail {
             return predicts(List.of(predicts));
         }
         public GetModelDeploymentsModelDeploymentCategoryLogDetail build() {
-            final var o = new GetModelDeploymentsModelDeploymentCategoryLogDetail();
-            o.accesses = accesses;
-            o.predicts = predicts;
-            return o;
+            final var _resultValue = new GetModelDeploymentsModelDeploymentCategoryLogDetail();
+            _resultValue.accesses = accesses;
+            _resultValue.predicts = predicts;
+            return _resultValue;
         }
     }
 }

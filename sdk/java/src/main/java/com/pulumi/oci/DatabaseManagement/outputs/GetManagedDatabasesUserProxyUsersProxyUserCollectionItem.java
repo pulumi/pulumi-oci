@@ -84,11 +84,11 @@ public final class GetManagedDatabasesUserProxyUsersProxyUserCollectionItem {
             return this;
         }
         public GetManagedDatabasesUserProxyUsersProxyUserCollectionItem build() {
-            final var o = new GetManagedDatabasesUserProxyUsersProxyUserCollectionItem();
-            o.authentication = authentication;
-            o.flags = flags;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabasesUserProxyUsersProxyUserCollectionItem();
+            _resultValue.authentication = authentication;
+            _resultValue.flags = flags;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

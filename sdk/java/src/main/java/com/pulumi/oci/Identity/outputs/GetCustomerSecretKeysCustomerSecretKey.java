@@ -171,16 +171,16 @@ public final class GetCustomerSecretKeysCustomerSecretKey {
             return this;
         }
         public GetCustomerSecretKeysCustomerSecretKey build() {
-            final var o = new GetCustomerSecretKeysCustomerSecretKey();
-            o.displayName = displayName;
-            o.id = id;
-            o.inactiveState = inactiveState;
-            o.key = key;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeExpires = timeExpires;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetCustomerSecretKeysCustomerSecretKey();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.key = key;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpires = timeExpires;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

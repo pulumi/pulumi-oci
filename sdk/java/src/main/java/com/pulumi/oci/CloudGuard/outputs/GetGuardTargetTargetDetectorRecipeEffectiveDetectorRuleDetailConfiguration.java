@@ -127,13 +127,13 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
             return values(List.of(values));
         }
         public GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration build() {
-            final var o = new GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration();
-            o.configKey = configKey;
-            o.dataType = dataType;
-            o.name = name;
-            o.value = value;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration();
+            _resultValue.configKey = configKey;
+            _resultValue.dataType = dataType;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemAccessLogging {
             return this;
         }
         public GetIngressGatewaysIngressGatewayCollectionItemAccessLogging build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollectionItemAccessLogging();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollectionItemAccessLogging();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

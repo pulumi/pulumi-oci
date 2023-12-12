@@ -84,11 +84,11 @@ public final class GetResourceActionsResourceActionCollectionItemAction {
             return this;
         }
         public GetResourceActionsResourceActionCollectionItemAction build() {
-            final var o = new GetResourceActionsResourceActionCollectionItemAction();
-            o.description = description;
-            o.type = type;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetResourceActionsResourceActionCollectionItemAction();
+            _resultValue.description = description;
+            _resultValue.type = type;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

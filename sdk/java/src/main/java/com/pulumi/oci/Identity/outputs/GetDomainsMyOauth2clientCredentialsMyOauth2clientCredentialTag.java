@@ -65,10 +65,10 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialTa
             return this;
         }
         public GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialTag build() {
-            final var o = new GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

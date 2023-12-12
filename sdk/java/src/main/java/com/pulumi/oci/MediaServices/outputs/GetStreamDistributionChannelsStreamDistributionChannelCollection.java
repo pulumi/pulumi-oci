@@ -42,9 +42,9 @@ public final class GetStreamDistributionChannelsStreamDistributionChannelCollect
             return items(List.of(items));
         }
         public GetStreamDistributionChannelsStreamDistributionChannelCollection build() {
-            final var o = new GetStreamDistributionChannelsStreamDistributionChannelCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetStreamDistributionChannelsStreamDistributionChannelCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

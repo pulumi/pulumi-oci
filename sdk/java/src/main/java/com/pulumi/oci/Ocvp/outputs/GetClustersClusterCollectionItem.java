@@ -535,34 +535,34 @@ public final class GetClustersClusterCollectionItem {
             return this;
         }
         public GetClustersClusterCollectionItem build() {
-            final var o = new GetClustersClusterCollectionItem();
-            o.actualEsxiHostsCount = actualEsxiHostsCount;
-            o.capacityReservationId = capacityReservationId;
-            o.compartmentId = compartmentId;
-            o.computeAvailabilityDomain = computeAvailabilityDomain;
-            o.datastores = datastores;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.esxiHostsCount = esxiHostsCount;
-            o.esxiSoftwareVersion = esxiSoftwareVersion;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.initialCommitment = initialCommitment;
-            o.initialHostOcpuCount = initialHostOcpuCount;
-            o.initialHostShapeName = initialHostShapeName;
-            o.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
-            o.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
-            o.networkConfigurations = networkConfigurations;
-            o.sddcId = sddcId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.upgradeLicenses = upgradeLicenses;
-            o.vmwareSoftwareVersion = vmwareSoftwareVersion;
-            o.vsphereType = vsphereType;
-            o.vsphereUpgradeObjects = vsphereUpgradeObjects;
-            o.workloadNetworkCidr = workloadNetworkCidr;
-            return o;
+            final var _resultValue = new GetClustersClusterCollectionItem();
+            _resultValue.actualEsxiHostsCount = actualEsxiHostsCount;
+            _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
+            _resultValue.datastores = datastores;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.esxiHostsCount = esxiHostsCount;
+            _resultValue.esxiSoftwareVersion = esxiSoftwareVersion;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.initialCommitment = initialCommitment;
+            _resultValue.initialHostOcpuCount = initialHostOcpuCount;
+            _resultValue.initialHostShapeName = initialHostShapeName;
+            _resultValue.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
+            _resultValue.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
+            _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.sddcId = sddcId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.upgradeLicenses = upgradeLicenses;
+            _resultValue.vmwareSoftwareVersion = vmwareSoftwareVersion;
+            _resultValue.vsphereType = vsphereType;
+            _resultValue.vsphereUpgradeObjects = vsphereUpgradeObjects;
+            _resultValue.workloadNetworkCidr = workloadNetworkCidr;
+            return _resultValue;
         }
     }
 }

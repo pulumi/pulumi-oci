@@ -220,18 +220,18 @@ public final class GetInternetGatewaysGateway {
             return this;
         }
         public GetInternetGatewaysGateway build() {
-            final var o = new GetInternetGatewaysGateway();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.enabled = enabled;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.routeTableId = routeTableId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetInternetGatewaysGateway();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.enabled = enabled;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.routeTableId = routeTableId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

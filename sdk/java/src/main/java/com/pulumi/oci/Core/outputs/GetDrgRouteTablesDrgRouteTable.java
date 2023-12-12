@@ -231,19 +231,19 @@ public final class GetDrgRouteTablesDrgRouteTable {
             return this;
         }
         public GetDrgRouteTablesDrgRouteTable build() {
-            final var o = new GetDrgRouteTablesDrgRouteTable();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.drgId = drgId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.importDrgRouteDistributionId = importDrgRouteDistributionId;
-            o.isEcmpEnabled = isEcmpEnabled;
-            o.removeImportTrigger = removeImportTrigger;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDrgRouteTablesDrgRouteTable();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.drgId = drgId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.importDrgRouteDistributionId = importDrgRouteDistributionId;
+            _resultValue.isEcmpEnabled = isEcmpEnabled;
+            _resultValue.removeImportTrigger = removeImportTrigger;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

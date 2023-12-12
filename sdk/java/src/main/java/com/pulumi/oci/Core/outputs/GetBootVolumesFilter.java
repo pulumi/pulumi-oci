@@ -67,11 +67,11 @@ public final class GetBootVolumesFilter {
             return values(List.of(values));
         }
         public GetBootVolumesFilter build() {
-            final var o = new GetBootVolumesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetBootVolumesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

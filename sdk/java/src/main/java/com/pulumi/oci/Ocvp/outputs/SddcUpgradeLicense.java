@@ -67,10 +67,10 @@ public final class SddcUpgradeLicense {
             return this;
         }
         public SddcUpgradeLicense build() {
-            final var o = new SddcUpgradeLicense();
-            o.licenseKey = licenseKey;
-            o.licenseType = licenseType;
-            return o;
+            final var _resultValue = new SddcUpgradeLicense();
+            _resultValue.licenseKey = licenseKey;
+            _resultValue.licenseType = licenseType;
+            return _resultValue;
         }
     }
 }

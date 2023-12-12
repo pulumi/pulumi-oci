@@ -74,10 +74,10 @@ public final class ApplicationTraceConfig {
             return this;
         }
         public ApplicationTraceConfig build() {
-            final var o = new ApplicationTraceConfig();
-            o.domainId = domainId;
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new ApplicationTraceConfig();
+            _resultValue.domainId = domainId;
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollection {
             return items(List.of(items));
         }
         public GetNamespaceScheduledTasksScheduledTaskCollection build() {
-            final var o = new GetNamespaceScheduledTasksScheduledTaskCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTasksScheduledTaskCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

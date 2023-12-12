@@ -350,25 +350,25 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfigSubj
             return this;
         }
         public GetCertificatesCertificateCollectionItemCertificateConfigSubject build() {
-            final var o = new GetCertificatesCertificateCollectionItemCertificateConfigSubject();
-            o.commonName = commonName;
-            o.country = country;
-            o.distinguishedNameQualifier = distinguishedNameQualifier;
-            o.domainComponent = domainComponent;
-            o.generationQualifier = generationQualifier;
-            o.givenName = givenName;
-            o.initials = initials;
-            o.localityName = localityName;
-            o.organization = organization;
-            o.organizationalUnit = organizationalUnit;
-            o.pseudonym = pseudonym;
-            o.serialNumber = serialNumber;
-            o.stateOrProvinceName = stateOrProvinceName;
-            o.street = street;
-            o.surname = surname;
-            o.title = title;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetCertificatesCertificateCollectionItemCertificateConfigSubject();
+            _resultValue.commonName = commonName;
+            _resultValue.country = country;
+            _resultValue.distinguishedNameQualifier = distinguishedNameQualifier;
+            _resultValue.domainComponent = domainComponent;
+            _resultValue.generationQualifier = generationQualifier;
+            _resultValue.givenName = givenName;
+            _resultValue.initials = initials;
+            _resultValue.localityName = localityName;
+            _resultValue.organization = organization;
+            _resultValue.organizationalUnit = organizationalUnit;
+            _resultValue.pseudonym = pseudonym;
+            _resultValue.serialNumber = serialNumber;
+            _resultValue.stateOrProvinceName = stateOrProvinceName;
+            _resultValue.street = street;
+            _resultValue.surname = surname;
+            _resultValue.title = title;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

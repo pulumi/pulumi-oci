@@ -329,24 +329,24 @@ public final class GetDataSafePrivateEndpointResult {
             return this;
         }
         public GetDataSafePrivateEndpointResult build() {
-            final var o = new GetDataSafePrivateEndpointResult();
-            o.compartmentId = compartmentId;
-            o.dataSafePrivateEndpointId = dataSafePrivateEndpointId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.endpointFqdn = endpointFqdn;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.nsgIds = nsgIds;
-            o.privateEndpointId = privateEndpointId;
-            o.privateEndpointIp = privateEndpointIp;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetDataSafePrivateEndpointResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataSafePrivateEndpointId = dataSafePrivateEndpointId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.endpointFqdn = endpointFqdn;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateEndpointId = privateEndpointId;
+            _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

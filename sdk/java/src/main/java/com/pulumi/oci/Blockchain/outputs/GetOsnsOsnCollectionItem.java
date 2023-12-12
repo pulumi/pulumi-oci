@@ -123,13 +123,13 @@ public final class GetOsnsOsnCollectionItem {
             return this;
         }
         public GetOsnsOsnCollectionItem build() {
-            final var o = new GetOsnsOsnCollectionItem();
-            o.ad = ad;
-            o.blockchainPlatformId = blockchainPlatformId;
-            o.ocpuAllocationParam = ocpuAllocationParam;
-            o.osnKey = osnKey;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOsnsOsnCollectionItem();
+            _resultValue.ad = ad;
+            _resultValue.blockchainPlatformId = blockchainPlatformId;
+            _resultValue.ocpuAllocationParam = ocpuAllocationParam;
+            _resultValue.osnKey = osnKey;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

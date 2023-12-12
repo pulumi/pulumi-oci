@@ -272,21 +272,21 @@ public final class GetSecurityRecipeResult {
             return this;
         }
         public GetSecurityRecipeResult build() {
-            final var o = new GetSecurityRecipeResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.owner = owner;
-            o.securityPolicies = securityPolicies;
-            o.securityRecipeId = securityRecipeId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetSecurityRecipeResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.owner = owner;
+            _resultValue.securityPolicies = securityPolicies;
+            _resultValue.securityRecipeId = securityRecipeId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

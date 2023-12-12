@@ -144,14 +144,14 @@ public final class GetIntegrationInstancesResult {
             return this;
         }
         public GetIntegrationInstancesResult build() {
-            final var o = new GetIntegrationInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.integrationInstances = integrationInstances;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetIntegrationInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.integrationInstances = integrationInstances;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -68,11 +68,11 @@ public final class GetPrivateApplicationPackageDetail {
             return this;
         }
         public GetPrivateApplicationPackageDetail build() {
-            final var o = new GetPrivateApplicationPackageDetail();
-            o.packageType = packageType;
-            o.version = version;
-            o.zipFileBase64encoded = zipFileBase64encoded;
-            return o;
+            final var _resultValue = new GetPrivateApplicationPackageDetail();
+            _resultValue.packageType = packageType;
+            _resultValue.version = version;
+            _resultValue.zipFileBase64encoded = zipFileBase64encoded;
+            return _resultValue;
         }
     }
 }

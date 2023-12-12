@@ -123,13 +123,13 @@ public final class GetMonitorConfigurationNetworkConfiguration {
             return this;
         }
         public GetMonitorConfigurationNetworkConfiguration build() {
-            final var o = new GetMonitorConfigurationNetworkConfiguration();
-            o.numberOfHops = numberOfHops;
-            o.probeMode = probeMode;
-            o.probePerHop = probePerHop;
-            o.protocol = protocol;
-            o.transmissionRate = transmissionRate;
-            return o;
+            final var _resultValue = new GetMonitorConfigurationNetworkConfiguration();
+            _resultValue.numberOfHops = numberOfHops;
+            _resultValue.probeMode = probeMode;
+            _resultValue.probePerHop = probePerHop;
+            _resultValue.protocol = protocol;
+            _resultValue.transmissionRate = transmissionRate;
+            return _resultValue;
         }
     }
 }

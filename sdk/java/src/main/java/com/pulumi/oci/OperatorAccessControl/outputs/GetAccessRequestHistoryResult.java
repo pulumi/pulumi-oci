@@ -81,11 +81,11 @@ public final class GetAccessRequestHistoryResult {
             return items(List.of(items));
         }
         public GetAccessRequestHistoryResult build() {
-            final var o = new GetAccessRequestHistoryResult();
-            o.accessRequestId = accessRequestId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAccessRequestHistoryResult();
+            _resultValue.accessRequestId = accessRequestId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

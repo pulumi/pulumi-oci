@@ -161,15 +161,15 @@ public final class GetExternalListenerServicedDatabase {
             return this;
         }
         public GetExternalListenerServicedDatabase build() {
-            final var o = new GetExternalListenerServicedDatabase();
-            o.compartmentId = compartmentId;
-            o.databaseSubType = databaseSubType;
-            o.databaseType = databaseType;
-            o.dbUniqueName = dbUniqueName;
-            o.displayName = displayName;
-            o.id = id;
-            o.isManaged = isManaged;
-            return o;
+            final var _resultValue = new GetExternalListenerServicedDatabase();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseSubType = databaseSubType;
+            _resultValue.databaseType = databaseType;
+            _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isManaged = isManaged;
+            return _resultValue;
         }
     }
 }

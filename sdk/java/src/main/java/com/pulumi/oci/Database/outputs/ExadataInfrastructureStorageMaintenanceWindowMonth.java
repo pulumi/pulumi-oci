@@ -38,9 +38,9 @@ public final class ExadataInfrastructureStorageMaintenanceWindowMonth {
             return this;
         }
         public ExadataInfrastructureStorageMaintenanceWindowMonth build() {
-            final var o = new ExadataInfrastructureStorageMaintenanceWindowMonth();
-            o.name = name;
-            return o;
+            final var _resultValue = new ExadataInfrastructureStorageMaintenanceWindowMonth();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

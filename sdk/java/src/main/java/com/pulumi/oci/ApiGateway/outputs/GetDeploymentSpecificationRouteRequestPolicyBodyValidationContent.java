@@ -65,10 +65,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidationCon
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent();
-            o.mediaType = mediaType;
-            o.validationType = validationType;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyBodyValidationContent();
+            _resultValue.mediaType = mediaType;
+            _resultValue.validationType = validationType;
+            return _resultValue;
         }
     }
 }

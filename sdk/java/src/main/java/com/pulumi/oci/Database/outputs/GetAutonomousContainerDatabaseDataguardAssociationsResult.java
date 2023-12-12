@@ -105,12 +105,12 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsResult {
             return this;
         }
         public GetAutonomousContainerDatabaseDataguardAssociationsResult build() {
-            final var o = new GetAutonomousContainerDatabaseDataguardAssociationsResult();
-            o.autonomousContainerDatabaseDataguardAssociations = autonomousContainerDatabaseDataguardAssociations;
-            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseDataguardAssociationsResult();
+            _resultValue.autonomousContainerDatabaseDataguardAssociations = autonomousContainerDatabaseDataguardAssociations;
+            _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

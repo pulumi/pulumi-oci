@@ -97,12 +97,12 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         public DatabaseDatabaseDbBackupConfigBackupDestinationDetail build() {
-            final var o = new DatabaseDatabaseDbBackupConfigBackupDestinationDetail();
-            o.dbrsPolicyId = dbrsPolicyId;
-            o.id = id;
-            o.type = type;
-            o.vpcUser = vpcUser;
-            return o;
+            final var _resultValue = new DatabaseDatabaseDbBackupConfigBackupDestinationDetail();
+            _resultValue.dbrsPolicyId = dbrsPolicyId;
+            _resultValue.id = id;
+            _resultValue.type = type;
+            _resultValue.vpcUser = vpcUser;
+            return _resultValue;
         }
     }
 }

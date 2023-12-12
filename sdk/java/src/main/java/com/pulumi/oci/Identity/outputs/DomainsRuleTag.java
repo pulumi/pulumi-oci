@@ -105,10 +105,10 @@ public final class DomainsRuleTag {
             return this;
         }
         public DomainsRuleTag build() {
-            final var o = new DomainsRuleTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsRuleTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -215,19 +215,19 @@ public final class GetJavaDownloadsJavaDownloadRecordsResult {
             return this;
         }
         public GetJavaDownloadsJavaDownloadRecordsResult build() {
-            final var o = new GetJavaDownloadsJavaDownloadRecordsResult();
-            o.architecture = architecture;
-            o.compartmentId = compartmentId;
-            o.familyVersion = familyVersion;
-            o.filters = filters;
-            o.id = id;
-            o.javaDownloadRecordCollections = javaDownloadRecordCollections;
-            o.osFamily = osFamily;
-            o.packageTypeDetail = packageTypeDetail;
-            o.releaseVersion = releaseVersion;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadRecordsResult();
+            _resultValue.architecture = architecture;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.familyVersion = familyVersion;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.javaDownloadRecordCollections = javaDownloadRecordCollections;
+            _resultValue.osFamily = osFamily;
+            _resultValue.packageTypeDetail = packageTypeDetail;
+            _resultValue.releaseVersion = releaseVersion;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

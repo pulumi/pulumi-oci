@@ -182,16 +182,16 @@ public final class GetCertificateAuthoritiesResult {
             return this;
         }
         public GetCertificateAuthoritiesResult build() {
-            final var o = new GetCertificateAuthoritiesResult();
-            o.certificateAuthorityCollections = certificateAuthorityCollections;
-            o.certificateAuthorityId = certificateAuthorityId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCertificateAuthoritiesResult();
+            _resultValue.certificateAuthorityCollections = certificateAuthorityCollections;
+            _resultValue.certificateAuthorityId = certificateAuthorityId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

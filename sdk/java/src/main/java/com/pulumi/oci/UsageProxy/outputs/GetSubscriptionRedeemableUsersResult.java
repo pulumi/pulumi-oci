@@ -108,13 +108,13 @@ public final class GetSubscriptionRedeemableUsersResult {
             return this;
         }
         public GetSubscriptionRedeemableUsersResult build() {
-            final var o = new GetSubscriptionRedeemableUsersResult();
-            o.filters = filters;
-            o.id = id;
-            o.redeemableUserCollections = redeemableUserCollections;
-            o.subscriptionId = subscriptionId;
-            o.tenancyId = tenancyId;
-            return o;
+            final var _resultValue = new GetSubscriptionRedeemableUsersResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.redeemableUserCollections = redeemableUserCollections;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.tenancyId = tenancyId;
+            return _resultValue;
         }
     }
 }

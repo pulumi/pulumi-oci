@@ -42,9 +42,9 @@ public final class GetSddcsSddcCollectionInitialConfiguration {
             return initialClusterConfigurations(List.of(initialClusterConfigurations));
         }
         public GetSddcsSddcCollectionInitialConfiguration build() {
-            final var o = new GetSddcsSddcCollectionInitialConfiguration();
-            o.initialClusterConfigurations = initialClusterConfigurations;
-            return o;
+            final var _resultValue = new GetSddcsSddcCollectionInitialConfiguration();
+            _resultValue.initialClusterConfigurations = initialClusterConfigurations;
+            return _resultValue;
         }
     }
 }

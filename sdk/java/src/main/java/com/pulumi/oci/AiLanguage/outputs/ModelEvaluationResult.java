@@ -159,14 +159,14 @@ public final class ModelEvaluationResult {
             return this;
         }
         public ModelEvaluationResult build() {
-            final var o = new ModelEvaluationResult();
-            o.classMetrics = classMetrics;
-            o.confusionMatrix = confusionMatrix;
-            o.entityMetrics = entityMetrics;
-            o.labels = labels;
-            o.metrics = metrics;
-            o.modelType = modelType;
-            return o;
+            final var _resultValue = new ModelEvaluationResult();
+            _resultValue.classMetrics = classMetrics;
+            _resultValue.confusionMatrix = confusionMatrix;
+            _resultValue.entityMetrics = entityMetrics;
+            _resultValue.labels = labels;
+            _resultValue.metrics = metrics;
+            _resultValue.modelType = modelType;
+            return _resultValue;
         }
     }
 }

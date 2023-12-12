@@ -163,15 +163,15 @@ public final class GetDeployEnvironmentsResult {
             return this;
         }
         public GetDeployEnvironmentsResult build() {
-            final var o = new GetDeployEnvironmentsResult();
-            o.compartmentId = compartmentId;
-            o.deployEnvironmentCollections = deployEnvironmentCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deployEnvironmentCollections = deployEnvironmentCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

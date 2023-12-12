@@ -65,10 +65,10 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetail build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetail();
-            o.type = type;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicySourceUriDetail();
+            _resultValue.type = type;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

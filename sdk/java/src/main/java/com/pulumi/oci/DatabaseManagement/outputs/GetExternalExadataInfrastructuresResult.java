@@ -125,13 +125,13 @@ public final class GetExternalExadataInfrastructuresResult {
             return this;
         }
         public GetExternalExadataInfrastructuresResult build() {
-            final var o = new GetExternalExadataInfrastructuresResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalExadataInfrastructureCollections = externalExadataInfrastructureCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalExadataInfrastructuresResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalExadataInfrastructureCollections = externalExadataInfrastructureCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

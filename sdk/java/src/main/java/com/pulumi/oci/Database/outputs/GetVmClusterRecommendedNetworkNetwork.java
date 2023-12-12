@@ -160,15 +160,15 @@ public final class GetVmClusterRecommendedNetworkNetwork {
             return this;
         }
         public GetVmClusterRecommendedNetworkNetwork build() {
-            final var o = new GetVmClusterRecommendedNetworkNetwork();
-            o.cidr = cidr;
-            o.domain = domain;
-            o.gateway = gateway;
-            o.netmask = netmask;
-            o.networkType = networkType;
-            o.prefix = prefix;
-            o.vlanId = vlanId;
-            return o;
+            final var _resultValue = new GetVmClusterRecommendedNetworkNetwork();
+            _resultValue.cidr = cidr;
+            _resultValue.domain = domain;
+            _resultValue.gateway = gateway;
+            _resultValue.netmask = netmask;
+            _resultValue.networkType = networkType;
+            _resultValue.prefix = prefix;
+            _resultValue.vlanId = vlanId;
+            return _resultValue;
         }
     }
 }

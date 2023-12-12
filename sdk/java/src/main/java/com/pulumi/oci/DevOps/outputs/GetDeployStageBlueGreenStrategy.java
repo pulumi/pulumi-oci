@@ -103,12 +103,12 @@ public final class GetDeployStageBlueGreenStrategy {
             return this;
         }
         public GetDeployStageBlueGreenStrategy build() {
-            final var o = new GetDeployStageBlueGreenStrategy();
-            o.ingressName = ingressName;
-            o.namespaceA = namespaceA;
-            o.namespaceB = namespaceB;
-            o.strategyType = strategyType;
-            return o;
+            final var _resultValue = new GetDeployStageBlueGreenStrategy();
+            _resultValue.ingressName = ingressName;
+            _resultValue.namespaceA = namespaceA;
+            _resultValue.namespaceB = namespaceB;
+            _resultValue.strategyType = strategyType;
+            return _resultValue;
         }
     }
 }

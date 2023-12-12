@@ -103,12 +103,12 @@ public final class GetFusionEnvironmentAdminUserItem {
             return this;
         }
         public GetFusionEnvironmentAdminUserItem build() {
-            final var o = new GetFusionEnvironmentAdminUserItem();
-            o.emailAddress = emailAddress;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentAdminUserItem();
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

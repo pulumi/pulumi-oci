@@ -75,11 +75,11 @@ public final class GetCrossConnectPortSpeedShapeFilter {
             return values(List.of(values));
         }
         public GetCrossConnectPortSpeedShapeFilter build() {
-            final var o = new GetCrossConnectPortSpeedShapeFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCrossConnectPortSpeedShapeFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

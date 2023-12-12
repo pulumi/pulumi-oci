@@ -65,10 +65,10 @@ public final class GetTargetAssetRecommendedSpecAgentConfigPluginsConfig {
             return this;
         }
         public GetTargetAssetRecommendedSpecAgentConfigPluginsConfig build() {
-            final var o = new GetTargetAssetRecommendedSpecAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetTargetAssetRecommendedSpecAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -183,12 +183,12 @@ public final class DomainsAppAliasApp {
             return this;
         }
         public DomainsAppAliasApp build() {
-            final var o = new DomainsAppAliasApp();
-            o.description = description;
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppAliasApp();
+            _resultValue.description = description;
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

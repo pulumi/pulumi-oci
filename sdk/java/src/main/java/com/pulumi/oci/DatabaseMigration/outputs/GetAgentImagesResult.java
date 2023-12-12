@@ -86,11 +86,11 @@ public final class GetAgentImagesResult {
             return this;
         }
         public GetAgentImagesResult build() {
-            final var o = new GetAgentImagesResult();
-            o.agentImageCollections = agentImageCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAgentImagesResult();
+            _resultValue.agentImageCollections = agentImageCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

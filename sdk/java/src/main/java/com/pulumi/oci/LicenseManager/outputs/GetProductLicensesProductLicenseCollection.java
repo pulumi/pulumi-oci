@@ -42,9 +42,9 @@ public final class GetProductLicensesProductLicenseCollection {
             return items(List.of(items));
         }
         public GetProductLicensesProductLicenseCollection build() {
-            final var o = new GetProductLicensesProductLicenseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProductLicensesProductLicenseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

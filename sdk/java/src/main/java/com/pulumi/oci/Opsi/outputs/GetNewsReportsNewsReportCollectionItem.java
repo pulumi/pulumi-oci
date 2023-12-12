@@ -338,24 +338,24 @@ public final class GetNewsReportsNewsReportCollectionItem {
             return this;
         }
         public GetNewsReportsNewsReportCollectionItem build() {
-            final var o = new GetNewsReportsNewsReportCollectionItem();
-            o.compartmentId = compartmentId;
-            o.contentTypes = contentTypes;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.locale = locale;
-            o.name = name;
-            o.newsFrequency = newsFrequency;
-            o.onsTopicId = onsTopicId;
-            o.state = state;
-            o.status = status;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetNewsReportsNewsReportCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.contentTypes = contentTypes;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locale = locale;
+            _resultValue.name = name;
+            _resultValue.newsFrequency = newsFrequency;
+            _resultValue.onsTopicId = onsTopicId;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

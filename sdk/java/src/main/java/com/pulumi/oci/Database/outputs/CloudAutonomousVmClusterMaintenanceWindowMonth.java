@@ -48,9 +48,9 @@ public final class CloudAutonomousVmClusterMaintenanceWindowMonth {
             return this;
         }
         public CloudAutonomousVmClusterMaintenanceWindowMonth build() {
-            final var o = new CloudAutonomousVmClusterMaintenanceWindowMonth();
-            o.name = name;
-            return o;
+            final var _resultValue = new CloudAutonomousVmClusterMaintenanceWindowMonth();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

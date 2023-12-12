@@ -104,12 +104,12 @@ public final class GetDomainsUsersUserRole {
             return this;
         }
         public GetDomainsUsersUserRole build() {
-            final var o = new GetDomainsUsersUserRole();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserRole();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

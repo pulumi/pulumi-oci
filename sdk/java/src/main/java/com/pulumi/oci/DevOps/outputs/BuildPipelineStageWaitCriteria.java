@@ -71,10 +71,10 @@ public final class BuildPipelineStageWaitCriteria {
             return this;
         }
         public BuildPipelineStageWaitCriteria build() {
-            final var o = new BuildPipelineStageWaitCriteria();
-            o.waitDuration = waitDuration;
-            o.waitType = waitType;
-            return o;
+            final var _resultValue = new BuildPipelineStageWaitCriteria();
+            _resultValue.waitDuration = waitDuration;
+            _resultValue.waitType = waitType;
+            return _resultValue;
         }
     }
 }

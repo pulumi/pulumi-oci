@@ -51,9 +51,9 @@ public final class BuildRunBuildOutputDeliveredArtifact {
             return items(List.of(items));
         }
         public BuildRunBuildOutputDeliveredArtifact build() {
-            final var o = new BuildRunBuildOutputDeliveredArtifact();
-            o.items = items;
-            return o;
+            final var _resultValue = new BuildRunBuildOutputDeliveredArtifact();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

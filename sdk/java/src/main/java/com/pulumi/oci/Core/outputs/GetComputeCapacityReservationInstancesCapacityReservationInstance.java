@@ -146,14 +146,14 @@ public final class GetComputeCapacityReservationInstancesCapacityReservationInst
             return shapeConfigs(List.of(shapeConfigs));
         }
         public GetComputeCapacityReservationInstancesCapacityReservationInstance build() {
-            final var o = new GetComputeCapacityReservationInstancesCapacityReservationInstance();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.faultDomain = faultDomain;
-            o.id = id;
-            o.shape = shape;
-            o.shapeConfigs = shapeConfigs;
-            return o;
+            final var _resultValue = new GetComputeCapacityReservationInstancesCapacityReservationInstance();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.id = id;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfigs = shapeConfigs;
+            return _resultValue;
         }
     }
 }

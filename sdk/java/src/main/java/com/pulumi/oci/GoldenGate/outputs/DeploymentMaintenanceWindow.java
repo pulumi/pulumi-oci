@@ -66,10 +66,10 @@ public final class DeploymentMaintenanceWindow {
             return this;
         }
         public DeploymentMaintenanceWindow build() {
-            final var o = new DeploymentMaintenanceWindow();
-            o.day = day;
-            o.startHour = startHour;
-            return o;
+            final var _resultValue = new DeploymentMaintenanceWindow();
+            _resultValue.day = day;
+            _resultValue.startHour = startHour;
+            return _resultValue;
         }
     }
 }

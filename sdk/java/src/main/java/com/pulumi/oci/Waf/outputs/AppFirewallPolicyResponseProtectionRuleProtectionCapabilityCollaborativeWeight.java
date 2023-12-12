@@ -66,10 +66,10 @@ public final class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCo
             return this;
         }
         public AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight build() {
-            final var o = new AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight();
-            o.key = key;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight();
+            _resultValue.key = key;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

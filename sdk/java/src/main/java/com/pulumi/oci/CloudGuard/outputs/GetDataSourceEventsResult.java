@@ -125,13 +125,13 @@ public final class GetDataSourceEventsResult {
             return this;
         }
         public GetDataSourceEventsResult build() {
-            final var o = new GetDataSourceEventsResult();
-            o.dataSourceEventCollections = dataSourceEventCollections;
-            o.dataSourceId = dataSourceId;
-            o.filters = filters;
-            o.id = id;
-            o.region = region;
-            return o;
+            final var _resultValue = new GetDataSourceEventsResult();
+            _resultValue.dataSourceEventCollections = dataSourceEventCollections;
+            _resultValue.dataSourceId = dataSourceId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.region = region;
+            return _resultValue;
         }
     }
 }

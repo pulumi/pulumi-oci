@@ -136,13 +136,13 @@ public final class ScriptParameter {
             return scriptParameters(List.of(scriptParameters));
         }
         public ScriptParameter build() {
-            final var o = new ScriptParameter();
-            o.isOverwritten = isOverwritten;
-            o.isSecret = isSecret;
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            o.scriptParameters = scriptParameters;
-            return o;
+            final var _resultValue = new ScriptParameter();
+            _resultValue.isOverwritten = isOverwritten;
+            _resultValue.isSecret = isSecret;
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            _resultValue.scriptParameters = scriptParameters;
+            return _resultValue;
         }
     }
 }

@@ -136,14 +136,14 @@ public final class GetLogAnalyticsLogGroupsResult {
             return this;
         }
         public GetLogAnalyticsLogGroupsResult build() {
-            final var o = new GetLogAnalyticsLogGroupsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.logAnalyticsLogGroupSummaryCollections = logAnalyticsLogGroupSummaryCollections;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetLogAnalyticsLogGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.logAnalyticsLogGroupSummaryCollections = logAnalyticsLogGroupSummaryCollections;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

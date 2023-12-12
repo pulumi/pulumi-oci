@@ -48,9 +48,9 @@ public final class DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails 
             return this;
         }
         public DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails build() {
-            final var o = new DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails();
-            o.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
-            return o;
+            final var _resultValue = new DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails();
+            _resultValue.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
+            return _resultValue;
         }
     }
 }

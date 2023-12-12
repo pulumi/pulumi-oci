@@ -112,14 +112,14 @@ public final class GetEncryptedDataResult {
             return this;
         }
         public GetEncryptedDataResult build() {
-            final var o = new GetEncryptedDataResult();
-            o.associatedData = associatedData;
-            o.ciphertext = ciphertext;
-            o.cryptoEndpoint = cryptoEndpoint;
-            o.id = id;
-            o.keyId = keyId;
-            o.plaintext = plaintext;
-            return o;
+            final var _resultValue = new GetEncryptedDataResult();
+            _resultValue.associatedData = associatedData;
+            _resultValue.ciphertext = ciphertext;
+            _resultValue.cryptoEndpoint = cryptoEndpoint;
+            _resultValue.id = id;
+            _resultValue.keyId = keyId;
+            _resultValue.plaintext = plaintext;
+            return _resultValue;
         }
     }
 }

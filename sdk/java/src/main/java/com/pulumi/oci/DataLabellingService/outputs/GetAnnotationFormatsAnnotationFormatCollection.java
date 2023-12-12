@@ -50,9 +50,9 @@ public final class GetAnnotationFormatsAnnotationFormatCollection {
             return items(List.of(items));
         }
         public GetAnnotationFormatsAnnotationFormatCollection build() {
-            final var o = new GetAnnotationFormatsAnnotationFormatCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAnnotationFormatsAnnotationFormatCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

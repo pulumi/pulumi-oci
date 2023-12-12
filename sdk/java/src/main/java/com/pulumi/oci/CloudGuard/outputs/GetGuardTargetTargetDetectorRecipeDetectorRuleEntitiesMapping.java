@@ -84,11 +84,11 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping
             return this;
         }
         public GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping build() {
-            final var o = new GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping();
-            o.displayName = displayName;
-            o.entityType = entityType;
-            o.queryField = queryField;
-            return o;
+            final var _resultValue = new GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping();
+            _resultValue.displayName = displayName;
+            _resultValue.entityType = entityType;
+            _resultValue.queryField = queryField;
+            return _resultValue;
         }
     }
 }

@@ -49,10 +49,10 @@ public final class GetSddcsSddcCollectionVsphereUpgradeObject {
             return this;
         }
         public GetSddcsSddcCollectionVsphereUpgradeObject build() {
-            final var o = new GetSddcsSddcCollectionVsphereUpgradeObject();
-            o.downloadLink = downloadLink;
-            o.linkDescription = linkDescription;
-            return o;
+            final var _resultValue = new GetSddcsSddcCollectionVsphereUpgradeObject();
+            _resultValue.downloadLink = downloadLink;
+            _resultValue.linkDescription = linkDescription;
+            return _resultValue;
         }
     }
 }

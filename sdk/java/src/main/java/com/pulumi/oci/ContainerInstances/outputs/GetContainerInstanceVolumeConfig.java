@@ -84,11 +84,11 @@ public final class GetContainerInstanceVolumeConfig {
             return this;
         }
         public GetContainerInstanceVolumeConfig build() {
-            final var o = new GetContainerInstanceVolumeConfig();
-            o.data = data;
-            o.fileName = fileName;
-            o.path = path;
-            return o;
+            final var _resultValue = new GetContainerInstanceVolumeConfig();
+            _resultValue.data = data;
+            _resultValue.fileName = fileName;
+            _resultValue.path = path;
+            return _resultValue;
         }
     }
 }

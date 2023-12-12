@@ -160,15 +160,15 @@ public final class GetUserCapability {
             return this;
         }
         public GetUserCapability build() {
-            final var o = new GetUserCapability();
-            o.canUseApiKeys = canUseApiKeys;
-            o.canUseAuthTokens = canUseAuthTokens;
-            o.canUseConsolePassword = canUseConsolePassword;
-            o.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
-            o.canUseDbCredentials = canUseDbCredentials;
-            o.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
-            o.canUseSmtpCredentials = canUseSmtpCredentials;
-            return o;
+            final var _resultValue = new GetUserCapability();
+            _resultValue.canUseApiKeys = canUseApiKeys;
+            _resultValue.canUseAuthTokens = canUseAuthTokens;
+            _resultValue.canUseConsolePassword = canUseConsolePassword;
+            _resultValue.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
+            _resultValue.canUseDbCredentials = canUseDbCredentials;
+            _resultValue.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
+            _resultValue.canUseSmtpCredentials = canUseSmtpCredentials;
+            return _resultValue;
         }
     }
 }

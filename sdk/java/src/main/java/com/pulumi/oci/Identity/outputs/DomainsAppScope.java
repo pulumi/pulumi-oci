@@ -268,14 +268,14 @@ public final class DomainsAppScope {
             return this;
         }
         public DomainsAppScope build() {
-            final var o = new DomainsAppScope();
-            o.description = description;
-            o.displayName = displayName;
-            o.fqs = fqs;
-            o.readOnly = readOnly;
-            o.requiresConsent = requiresConsent;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppScope();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.fqs = fqs;
+            _resultValue.readOnly = readOnly;
+            _resultValue.requiresConsent = requiresConsent;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

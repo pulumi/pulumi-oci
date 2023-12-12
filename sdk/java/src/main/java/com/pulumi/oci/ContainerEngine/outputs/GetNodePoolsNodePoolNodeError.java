@@ -60,11 +60,11 @@ public final class GetNodePoolsNodePoolNodeError {
             return this;
         }
         public GetNodePoolsNodePoolNodeError build() {
-            final var o = new GetNodePoolsNodePoolNodeError();
-            o.code = code;
-            o.message = message;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetNodePoolsNodePoolNodeError();
+            _resultValue.code = code;
+            _resultValue.message = message;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

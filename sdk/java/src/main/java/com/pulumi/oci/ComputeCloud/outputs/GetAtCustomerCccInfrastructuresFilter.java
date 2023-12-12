@@ -67,11 +67,11 @@ public final class GetAtCustomerCccInfrastructuresFilter {
             return values(List.of(values));
         }
         public GetAtCustomerCccInfrastructuresFilter build() {
-            final var o = new GetAtCustomerCccInfrastructuresFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructuresFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -113,12 +113,12 @@ public final class GetQueriesQueryCollectionItemQueryDefinition {
             return this;
         }
         public GetQueriesQueryCollectionItemQueryDefinition build() {
-            final var o = new GetQueriesQueryCollectionItemQueryDefinition();
-            o.costAnalysisUis = costAnalysisUis;
-            o.displayName = displayName;
-            o.reportQueries = reportQueries;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetQueriesQueryCollectionItemQueryDefinition();
+            _resultValue.costAnalysisUis = costAnalysisUis;
+            _resultValue.displayName = displayName;
+            _resultValue.reportQueries = reportQueries;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

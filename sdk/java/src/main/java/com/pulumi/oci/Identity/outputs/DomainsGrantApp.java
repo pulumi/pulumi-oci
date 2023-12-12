@@ -146,11 +146,11 @@ public final class DomainsGrantApp {
             return this;
         }
         public DomainsGrantApp build() {
-            final var o = new DomainsGrantApp();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsGrantApp();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

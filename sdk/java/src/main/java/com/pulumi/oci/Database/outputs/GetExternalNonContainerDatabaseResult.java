@@ -433,29 +433,29 @@ public final class GetExternalNonContainerDatabaseResult {
             return this;
         }
         public GetExternalNonContainerDatabaseResult build() {
-            final var o = new GetExternalNonContainerDatabaseResult();
-            o.characterSet = characterSet;
-            o.compartmentId = compartmentId;
-            o.databaseConfiguration = databaseConfiguration;
-            o.databaseEdition = databaseEdition;
-            o.databaseManagementConfigs = databaseManagementConfigs;
-            o.databaseVersion = databaseVersion;
-            o.dbId = dbId;
-            o.dbPacks = dbPacks;
-            o.dbUniqueName = dbUniqueName;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.externalNonContainerDatabaseId = externalNonContainerDatabaseId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.ncharacterSet = ncharacterSet;
-            o.operationsInsightsConfigs = operationsInsightsConfigs;
-            o.stackMonitoringConfigs = stackMonitoringConfigs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeZone = timeZone;
-            return o;
+            final var _resultValue = new GetExternalNonContainerDatabaseResult();
+            _resultValue.characterSet = characterSet;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseConfiguration = databaseConfiguration;
+            _resultValue.databaseEdition = databaseEdition;
+            _resultValue.databaseManagementConfigs = databaseManagementConfigs;
+            _resultValue.databaseVersion = databaseVersion;
+            _resultValue.dbId = dbId;
+            _resultValue.dbPacks = dbPacks;
+            _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.externalNonContainerDatabaseId = externalNonContainerDatabaseId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.ncharacterSet = ncharacterSet;
+            _resultValue.operationsInsightsConfigs = operationsInsightsConfigs;
+            _resultValue.stackMonitoringConfigs = stackMonitoringConfigs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeZone = timeZone;
+            return _resultValue;
         }
     }
 }

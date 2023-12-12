@@ -90,12 +90,12 @@ public final class GetExadataInfrastructureDownloadConfigFileResult {
             return this;
         }
         public GetExadataInfrastructureDownloadConfigFileResult build() {
-            final var o = new GetExadataInfrastructureDownloadConfigFileResult();
-            o.base64EncodeContent = base64EncodeContent;
-            o.content = content;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExadataInfrastructureDownloadConfigFileResult();
+            _resultValue.base64EncodeContent = base64EncodeContent;
+            _resultValue.content = content;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

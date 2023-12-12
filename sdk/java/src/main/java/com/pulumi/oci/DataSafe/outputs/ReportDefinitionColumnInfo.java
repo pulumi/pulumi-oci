@@ -126,13 +126,13 @@ public final class ReportDefinitionColumnInfo {
             return this;
         }
         public ReportDefinitionColumnInfo build() {
-            final var o = new ReportDefinitionColumnInfo();
-            o.dataType = dataType;
-            o.displayName = displayName;
-            o.displayOrder = displayOrder;
-            o.fieldName = fieldName;
-            o.isHidden = isHidden;
-            return o;
+            final var _resultValue = new ReportDefinitionColumnInfo();
+            _resultValue.dataType = dataType;
+            _resultValue.displayName = displayName;
+            _resultValue.displayOrder = displayOrder;
+            _resultValue.fieldName = fieldName;
+            _resultValue.isHidden = isHidden;
+            return _resultValue;
         }
     }
 }

@@ -161,15 +161,15 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcSe
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp();
-            o.currentFederationMode = currentFederationMode;
-            o.currentSynchronizationMode = currentSynchronizationMode;
-            o.enablingNextFedSyncModes = enablingNextFedSyncModes;
-            o.nextFederationMode = nextFederationMode;
-            o.nextSynchronizationMode = nextSynchronizationMode;
-            o.region = region;
-            o.serviceInstanceIdentifier = serviceInstanceIdentifier;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp();
+            _resultValue.currentFederationMode = currentFederationMode;
+            _resultValue.currentSynchronizationMode = currentSynchronizationMode;
+            _resultValue.enablingNextFedSyncModes = enablingNextFedSyncModes;
+            _resultValue.nextFederationMode = nextFederationMode;
+            _resultValue.nextSynchronizationMode = nextSynchronizationMode;
+            _resultValue.region = region;
+            _resultValue.serviceInstanceIdentifier = serviceInstanceIdentifier;
+            return _resultValue;
         }
     }
 }

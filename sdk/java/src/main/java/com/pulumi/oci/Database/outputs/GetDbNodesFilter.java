@@ -67,11 +67,11 @@ public final class GetDbNodesFilter {
             return values(List.of(values));
         }
         public GetDbNodesFilter build() {
-            final var o = new GetDbNodesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDbNodesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

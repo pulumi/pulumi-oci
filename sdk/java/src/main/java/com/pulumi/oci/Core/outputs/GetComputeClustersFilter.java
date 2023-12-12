@@ -67,11 +67,11 @@ public final class GetComputeClustersFilter {
             return values(List.of(values));
         }
         public GetComputeClustersFilter build() {
-            final var o = new GetComputeClustersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetComputeClustersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

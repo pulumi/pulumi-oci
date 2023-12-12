@@ -81,11 +81,11 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityResult {
             return this;
         }
         public GetExternalExadataStorageServerTopSqlCpuActivityResult build() {
-            final var o = new GetExternalExadataStorageServerTopSqlCpuActivityResult();
-            o.activities = activities;
-            o.externalExadataStorageServerId = externalExadataStorageServerId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServerTopSqlCpuActivityResult();
+            _resultValue.activities = activities;
+            _resultValue.externalExadataStorageServerId = externalExadataStorageServerId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

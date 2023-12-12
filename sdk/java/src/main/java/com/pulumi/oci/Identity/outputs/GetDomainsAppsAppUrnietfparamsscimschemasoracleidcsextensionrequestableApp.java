@@ -46,9 +46,9 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionr
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp();
-            o.requestable = requestable;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp();
+            _resultValue.requestable = requestable;
+            return _resultValue;
         }
     }
 }

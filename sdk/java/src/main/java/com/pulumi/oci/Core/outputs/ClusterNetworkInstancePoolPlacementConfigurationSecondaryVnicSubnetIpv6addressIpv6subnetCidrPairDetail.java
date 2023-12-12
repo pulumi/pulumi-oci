@@ -48,9 +48,9 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnic
             return this;
         }
         public ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail build() {
-            final var o = new ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail();
-            o.ipv6subnetCidr = ipv6subnetCidr;
-            return o;
+            final var _resultValue = new ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail();
+            _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            return _resultValue;
         }
     }
 }

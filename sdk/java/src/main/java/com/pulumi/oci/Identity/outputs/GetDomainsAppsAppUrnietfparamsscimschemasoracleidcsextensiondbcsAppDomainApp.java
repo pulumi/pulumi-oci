@@ -84,11 +84,11 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiond
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

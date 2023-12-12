@@ -614,36 +614,36 @@ public final class GetDomainsGroupsGroup {
             return urnietfparamsscimschemasoracleidcsextensionrequestableGroups(List.of(urnietfparamsscimschemasoracleidcsextensionrequestableGroups));
         }
         public GetDomainsGroupsGroup build() {
-            final var o = new GetDomainsGroupsGroup();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.displayName = displayName;
-            o.domainOcid = domainOcid;
-            o.externalId = externalId;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.members = members;
-            o.metas = metas;
-            o.nonUniqueDisplayName = nonUniqueDisplayName;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.urnietfparamsscimschemasoracleidcsextensionOciTags = urnietfparamsscimschemasoracleidcsextensionOciTags;
-            o.urnietfparamsscimschemasoracleidcsextensiondbcsGroups = urnietfparamsscimschemasoracleidcsextensiondbcsGroups;
-            o.urnietfparamsscimschemasoracleidcsextensiondynamicGroups = urnietfparamsscimschemasoracleidcsextensiondynamicGroups;
-            o.urnietfparamsscimschemasoracleidcsextensiongroupGroups = urnietfparamsscimschemasoracleidcsextensiongroupGroups;
-            o.urnietfparamsscimschemasoracleidcsextensionposixGroups = urnietfparamsscimschemasoracleidcsextensionposixGroups;
-            o.urnietfparamsscimschemasoracleidcsextensionrequestableGroups = urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
-            return o;
+            final var _resultValue = new GetDomainsGroupsGroup();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.displayName = displayName;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.externalId = externalId;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.members = members;
+            _resultValue.metas = metas;
+            _resultValue.nonUniqueDisplayName = nonUniqueDisplayName;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensionOciTags = urnietfparamsscimschemasoracleidcsextensionOciTags;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensiondbcsGroups = urnietfparamsscimschemasoracleidcsextensiondbcsGroups;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensiondynamicGroups = urnietfparamsscimschemasoracleidcsextensiondynamicGroups;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensiongroupGroups = urnietfparamsscimschemasoracleidcsextensiongroupGroups;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensionposixGroups = urnietfparamsscimschemasoracleidcsextensionposixGroups;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensionrequestableGroups = urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
+            return _resultValue;
         }
     }
 }

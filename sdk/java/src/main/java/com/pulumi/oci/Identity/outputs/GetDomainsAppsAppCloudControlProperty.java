@@ -69,10 +69,10 @@ public final class GetDomainsAppsAppCloudControlProperty {
             return values(List.of(values));
         }
         public GetDomainsAppsAppCloudControlProperty build() {
-            final var o = new GetDomainsAppsAppCloudControlProperty();
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppCloudControlProperty();
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

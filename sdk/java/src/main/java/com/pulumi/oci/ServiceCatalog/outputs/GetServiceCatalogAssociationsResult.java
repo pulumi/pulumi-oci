@@ -155,15 +155,15 @@ public final class GetServiceCatalogAssociationsResult {
             return this;
         }
         public GetServiceCatalogAssociationsResult build() {
-            final var o = new GetServiceCatalogAssociationsResult();
-            o.entityId = entityId;
-            o.entityType = entityType;
-            o.filters = filters;
-            o.id = id;
-            o.serviceCatalogAssociationCollections = serviceCatalogAssociationCollections;
-            o.serviceCatalogAssociationId = serviceCatalogAssociationId;
-            o.serviceCatalogId = serviceCatalogId;
-            return o;
+            final var _resultValue = new GetServiceCatalogAssociationsResult();
+            _resultValue.entityId = entityId;
+            _resultValue.entityType = entityType;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.serviceCatalogAssociationCollections = serviceCatalogAssociationCollections;
+            _resultValue.serviceCatalogAssociationId = serviceCatalogAssociationId;
+            _resultValue.serviceCatalogId = serviceCatalogId;
+            return _resultValue;
         }
     }
 }

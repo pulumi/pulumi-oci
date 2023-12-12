@@ -50,9 +50,9 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
             return items(List.of(items));
         }
         public GetProtectionCapabilitiesProtectionCapabilityCollection build() {
-            final var o = new GetProtectionCapabilitiesProtectionCapabilityCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProtectionCapabilitiesProtectionCapabilityCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -163,15 +163,15 @@ public final class GetVmClustersResult {
             return vmClusters(List.of(vmClusters));
         }
         public GetVmClustersResult build() {
-            final var o = new GetVmClustersResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.vmClusters = vmClusters;
-            return o;
+            final var _resultValue = new GetVmClustersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.vmClusters = vmClusters;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemSource build() {
-            final var o = new GetDbSystemsDbSystemCollectionItemSource();
-            o.backupId = backupId;
-            o.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItemSource();
+            _resultValue.backupId = backupId;
+            _resultValue.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

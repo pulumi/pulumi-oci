@@ -93,11 +93,11 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
             return this;
         }
         public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore build() {
-            final var o = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore();
-            o.keyStoreContents = keyStoreContents;
-            o.keyStorePasswords = keyStorePasswords;
-            o.keyStoreType = keyStoreType;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore();
+            _resultValue.keyStoreContents = keyStoreContents;
+            _resultValue.keyStorePasswords = keyStorePasswords;
+            _resultValue.keyStoreType = keyStoreType;
+            return _resultValue;
         }
     }
 }

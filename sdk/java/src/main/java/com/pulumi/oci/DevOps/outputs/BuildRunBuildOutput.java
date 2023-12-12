@@ -120,12 +120,12 @@ public final class BuildRunBuildOutput {
             return vulnerabilityAuditSummaryCollections(List.of(vulnerabilityAuditSummaryCollections));
         }
         public BuildRunBuildOutput build() {
-            final var o = new BuildRunBuildOutput();
-            o.artifactOverrideParameters = artifactOverrideParameters;
-            o.deliveredArtifacts = deliveredArtifacts;
-            o.exportedVariables = exportedVariables;
-            o.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
-            return o;
+            final var _resultValue = new BuildRunBuildOutput();
+            _resultValue.artifactOverrideParameters = artifactOverrideParameters;
+            _resultValue.deliveredArtifacts = deliveredArtifacts;
+            _resultValue.exportedVariables = exportedVariables;
+            _resultValue.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
+            return _resultValue;
         }
     }
 }

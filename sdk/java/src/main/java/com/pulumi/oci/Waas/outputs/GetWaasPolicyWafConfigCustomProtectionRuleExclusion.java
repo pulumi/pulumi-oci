@@ -69,10 +69,10 @@ public final class GetWaasPolicyWafConfigCustomProtectionRuleExclusion {
             return this;
         }
         public GetWaasPolicyWafConfigCustomProtectionRuleExclusion build() {
-            final var o = new GetWaasPolicyWafConfigCustomProtectionRuleExclusion();
-            o.exclusions = exclusions;
-            o.target = target;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigCustomProtectionRuleExclusion();
+            _resultValue.exclusions = exclusions;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

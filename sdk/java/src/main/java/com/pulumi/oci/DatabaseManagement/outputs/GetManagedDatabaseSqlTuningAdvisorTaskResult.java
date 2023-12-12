@@ -135,15 +135,15 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskResult {
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTaskResult build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTaskResult();
-            o.id = id;
-            o.items = items;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.status = status;
-            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTaskResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.status = status;
+            _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            _resultValue.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return _resultValue;
         }
     }
 }

@@ -205,18 +205,18 @@ public final class GetReplicasResult {
             return this;
         }
         public GetReplicasResult build() {
-            final var o = new GetReplicasResult();
-            o.compartmentId = compartmentId;
-            o.configurationId = configurationId;
-            o.dbSystemId = dbSystemId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isUpToDate = isUpToDate;
-            o.replicaId = replicaId;
-            o.replicas = replicas;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetReplicasResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationId = configurationId;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isUpToDate = isUpToDate;
+            _resultValue.replicaId = replicaId;
+            _resultValue.replicas = replicas;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

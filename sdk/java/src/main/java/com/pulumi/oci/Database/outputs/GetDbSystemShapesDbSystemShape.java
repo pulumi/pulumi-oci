@@ -455,30 +455,30 @@ public final class GetDbSystemShapesDbSystemShape {
             return this;
         }
         public GetDbSystemShapesDbSystemShape build() {
-            final var o = new GetDbSystemShapesDbSystemShape();
-            o.availableCoreCount = availableCoreCount;
-            o.availableCoreCountPerNode = availableCoreCountPerNode;
-            o.availableDataStorageInTbs = availableDataStorageInTbs;
-            o.availableDataStoragePerServerInTbs = availableDataStoragePerServerInTbs;
-            o.availableDbNodePerNodeInGbs = availableDbNodePerNodeInGbs;
-            o.availableDbNodeStorageInGbs = availableDbNodeStorageInGbs;
-            o.availableMemoryInGbs = availableMemoryInGbs;
-            o.availableMemoryPerNodeInGbs = availableMemoryPerNodeInGbs;
-            o.coreCountIncrement = coreCountIncrement;
-            o.maxStorageCount = maxStorageCount;
-            o.maximumNodeCount = maximumNodeCount;
-            o.minCoreCountPerNode = minCoreCountPerNode;
-            o.minDataStorageInTbs = minDataStorageInTbs;
-            o.minDbNodeStoragePerNodeInGbs = minDbNodeStoragePerNodeInGbs;
-            o.minMemoryPerNodeInGbs = minMemoryPerNodeInGbs;
-            o.minStorageCount = minStorageCount;
-            o.minimumCoreCount = minimumCoreCount;
-            o.minimumNodeCount = minimumNodeCount;
-            o.name = name;
-            o.shape = shape;
-            o.shapeFamily = shapeFamily;
-            o.shapeType = shapeType;
-            return o;
+            final var _resultValue = new GetDbSystemShapesDbSystemShape();
+            _resultValue.availableCoreCount = availableCoreCount;
+            _resultValue.availableCoreCountPerNode = availableCoreCountPerNode;
+            _resultValue.availableDataStorageInTbs = availableDataStorageInTbs;
+            _resultValue.availableDataStoragePerServerInTbs = availableDataStoragePerServerInTbs;
+            _resultValue.availableDbNodePerNodeInGbs = availableDbNodePerNodeInGbs;
+            _resultValue.availableDbNodeStorageInGbs = availableDbNodeStorageInGbs;
+            _resultValue.availableMemoryInGbs = availableMemoryInGbs;
+            _resultValue.availableMemoryPerNodeInGbs = availableMemoryPerNodeInGbs;
+            _resultValue.coreCountIncrement = coreCountIncrement;
+            _resultValue.maxStorageCount = maxStorageCount;
+            _resultValue.maximumNodeCount = maximumNodeCount;
+            _resultValue.minCoreCountPerNode = minCoreCountPerNode;
+            _resultValue.minDataStorageInTbs = minDataStorageInTbs;
+            _resultValue.minDbNodeStoragePerNodeInGbs = minDbNodeStoragePerNodeInGbs;
+            _resultValue.minMemoryPerNodeInGbs = minMemoryPerNodeInGbs;
+            _resultValue.minStorageCount = minStorageCount;
+            _resultValue.minimumCoreCount = minimumCoreCount;
+            _resultValue.minimumNodeCount = minimumNodeCount;
+            _resultValue.name = name;
+            _resultValue.shape = shape;
+            _resultValue.shapeFamily = shapeFamily;
+            _resultValue.shapeType = shapeType;
+            return _resultValue;
         }
     }
 }

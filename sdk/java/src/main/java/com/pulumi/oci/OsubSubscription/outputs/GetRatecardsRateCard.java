@@ -212,17 +212,17 @@ public final class GetRatecardsRateCard {
             return this;
         }
         public GetRatecardsRateCard build() {
-            final var o = new GetRatecardsRateCard();
-            o.currencies = currencies;
-            o.discretionaryDiscountPercentage = discretionaryDiscountPercentage;
-            o.isTier = isTier;
-            o.netUnitPrice = netUnitPrice;
-            o.overagePrice = overagePrice;
-            o.products = products;
-            o.rateCardTiers = rateCardTiers;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetRatecardsRateCard();
+            _resultValue.currencies = currencies;
+            _resultValue.discretionaryDiscountPercentage = discretionaryDiscountPercentage;
+            _resultValue.isTier = isTier;
+            _resultValue.netUnitPrice = netUnitPrice;
+            _resultValue.overagePrice = overagePrice;
+            _resultValue.products = products;
+            _resultValue.rateCardTiers = rateCardTiers;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

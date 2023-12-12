@@ -65,10 +65,10 @@ public final class GetPrivateEndpointScanDetail {
             return this;
         }
         public GetPrivateEndpointScanDetail build() {
-            final var o = new GetPrivateEndpointScanDetail();
-            o.fqdn = fqdn;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetPrivateEndpointScanDetail();
+            _resultValue.fqdn = fqdn;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

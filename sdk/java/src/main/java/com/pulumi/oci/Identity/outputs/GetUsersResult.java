@@ -182,16 +182,16 @@ public final class GetUsersResult {
             return users(List.of(users));
         }
         public GetUsersResult build() {
-            final var o = new GetUsersResult();
-            o.compartmentId = compartmentId;
-            o.externalIdentifier = externalIdentifier;
-            o.filters = filters;
-            o.id = id;
-            o.identityProviderId = identityProviderId;
-            o.name = name;
-            o.state = state;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetUsersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.externalIdentifier = externalIdentifier;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.identityProviderId = identityProviderId;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

@@ -161,15 +161,15 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemDepen
             return this;
         }
         public GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata build() {
-            final var o = new GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata();
-            o.action = action;
-            o.identifier = identifier;
-            o.key = key;
-            o.name = name;
-            o.namePath = namePath;
-            o.objectVersion = objectVersion;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata();
+            _resultValue.action = action;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.namePath = namePath;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

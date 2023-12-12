@@ -67,10 +67,10 @@ public final class DeploymentSpecificationRouteBackendHeader {
             return this;
         }
         public DeploymentSpecificationRouteBackendHeader build() {
-            final var o = new DeploymentSpecificationRouteBackendHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteBackendHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

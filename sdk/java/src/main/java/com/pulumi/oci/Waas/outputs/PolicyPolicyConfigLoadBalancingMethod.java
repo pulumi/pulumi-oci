@@ -118,12 +118,12 @@ public final class PolicyPolicyConfigLoadBalancingMethod {
             return this;
         }
         public PolicyPolicyConfigLoadBalancingMethod build() {
-            final var o = new PolicyPolicyConfigLoadBalancingMethod();
-            o.domain = domain;
-            o.expirationTimeInSeconds = expirationTimeInSeconds;
-            o.method = method;
-            o.name = name;
-            return o;
+            final var _resultValue = new PolicyPolicyConfigLoadBalancingMethod();
+            _resultValue.domain = domain;
+            _resultValue.expirationTimeInSeconds = expirationTimeInSeconds;
+            _resultValue.method = method;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -218,18 +218,18 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTotpSetting build() {
-            final var o = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTotpSetting();
-            o.emailOtpValidityDurationInMins = emailOtpValidityDurationInMins;
-            o.emailPasscodeLength = emailPasscodeLength;
-            o.hashingAlgorithm = hashingAlgorithm;
-            o.jwtValidityDurationInSecs = jwtValidityDurationInSecs;
-            o.keyRefreshIntervalInDays = keyRefreshIntervalInDays;
-            o.passcodeLength = passcodeLength;
-            o.smsOtpValidityDurationInMins = smsOtpValidityDurationInMins;
-            o.smsPasscodeLength = smsPasscodeLength;
-            o.timeStepInSecs = timeStepInSecs;
-            o.timeStepTolerance = timeStepTolerance;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingTotpSetting();
+            _resultValue.emailOtpValidityDurationInMins = emailOtpValidityDurationInMins;
+            _resultValue.emailPasscodeLength = emailPasscodeLength;
+            _resultValue.hashingAlgorithm = hashingAlgorithm;
+            _resultValue.jwtValidityDurationInSecs = jwtValidityDurationInSecs;
+            _resultValue.keyRefreshIntervalInDays = keyRefreshIntervalInDays;
+            _resultValue.passcodeLength = passcodeLength;
+            _resultValue.smsOtpValidityDurationInMins = smsOtpValidityDurationInMins;
+            _resultValue.smsPasscodeLength = smsPasscodeLength;
+            _resultValue.timeStepInSecs = timeStepInSecs;
+            _resultValue.timeStepTolerance = timeStepTolerance;
+            return _resultValue;
         }
     }
 }

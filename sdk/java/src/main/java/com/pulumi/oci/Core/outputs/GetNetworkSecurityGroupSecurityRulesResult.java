@@ -117,13 +117,13 @@ public final class GetNetworkSecurityGroupSecurityRulesResult {
             return securityRules(List.of(securityRules));
         }
         public GetNetworkSecurityGroupSecurityRulesResult build() {
-            final var o = new GetNetworkSecurityGroupSecurityRulesResult();
-            o.direction = direction;
-            o.filters = filters;
-            o.id = id;
-            o.networkSecurityGroupId = networkSecurityGroupId;
-            o.securityRules = securityRules;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupSecurityRulesResult();
+            _resultValue.direction = direction;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkSecurityGroupId = networkSecurityGroupId;
+            _resultValue.securityRules = securityRules;
+            return _resultValue;
         }
     }
 }

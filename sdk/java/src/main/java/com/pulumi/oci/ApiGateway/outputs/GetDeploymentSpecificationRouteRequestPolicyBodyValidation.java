@@ -90,11 +90,11 @@ public final class GetDeploymentSpecificationRouteRequestPolicyBodyValidation {
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyBodyValidation build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyBodyValidation();
-            o.contents = contents;
-            o.required = required;
-            o.validationMode = validationMode;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyBodyValidation();
+            _resultValue.contents = contents;
+            _resultValue.required = required;
+            _resultValue.validationMode = validationMode;
+            return _resultValue;
         }
     }
 }

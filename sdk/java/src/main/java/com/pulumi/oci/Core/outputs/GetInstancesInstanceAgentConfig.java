@@ -108,12 +108,12 @@ public final class GetInstancesInstanceAgentConfig {
             return pluginsConfigs(List.of(pluginsConfigs));
         }
         public GetInstancesInstanceAgentConfig build() {
-            final var o = new GetInstancesInstanceAgentConfig();
-            o.areAllPluginsDisabled = areAllPluginsDisabled;
-            o.isManagementDisabled = isManagementDisabled;
-            o.isMonitoringDisabled = isMonitoringDisabled;
-            o.pluginsConfigs = pluginsConfigs;
-            return o;
+            final var _resultValue = new GetInstancesInstanceAgentConfig();
+            _resultValue.areAllPluginsDisabled = areAllPluginsDisabled;
+            _resultValue.isManagementDisabled = isManagementDisabled;
+            _resultValue.isMonitoringDisabled = isMonitoringDisabled;
+            _resultValue.pluginsConfigs = pluginsConfigs;
+            return _resultValue;
         }
     }
 }

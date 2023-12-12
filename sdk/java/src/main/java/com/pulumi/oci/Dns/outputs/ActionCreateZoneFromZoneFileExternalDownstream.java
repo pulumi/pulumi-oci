@@ -87,11 +87,11 @@ public final class ActionCreateZoneFromZoneFileExternalDownstream {
             return this;
         }
         public ActionCreateZoneFromZoneFileExternalDownstream build() {
-            final var o = new ActionCreateZoneFromZoneFileExternalDownstream();
-            o.address = address;
-            o.port = port;
-            o.tsigKeyId = tsigKeyId;
-            return o;
+            final var _resultValue = new ActionCreateZoneFromZoneFileExternalDownstream();
+            _resultValue.address = address;
+            _resultValue.port = port;
+            _resultValue.tsigKeyId = tsigKeyId;
+            return _resultValue;
         }
     }
 }

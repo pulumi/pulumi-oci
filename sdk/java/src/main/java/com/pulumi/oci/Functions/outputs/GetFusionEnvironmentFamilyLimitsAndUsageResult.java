@@ -127,13 +127,13 @@ public final class GetFusionEnvironmentFamilyLimitsAndUsageResult {
             return testLimitAndUsages(List.of(testLimitAndUsages));
         }
         public GetFusionEnvironmentFamilyLimitsAndUsageResult build() {
-            final var o = new GetFusionEnvironmentFamilyLimitsAndUsageResult();
-            o.developmentLimitAndUsages = developmentLimitAndUsages;
-            o.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
-            o.id = id;
-            o.productionLimitAndUsages = productionLimitAndUsages;
-            o.testLimitAndUsages = testLimitAndUsages;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamilyLimitsAndUsageResult();
+            _resultValue.developmentLimitAndUsages = developmentLimitAndUsages;
+            _resultValue.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
+            _resultValue.id = id;
+            _resultValue.productionLimitAndUsages = productionLimitAndUsages;
+            _resultValue.testLimitAndUsages = testLimitAndUsages;
+            return _resultValue;
         }
     }
 }

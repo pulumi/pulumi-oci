@@ -122,13 +122,13 @@ public final class GetDomainsAuthTokensAuthTokenMeta {
             return this;
         }
         public GetDomainsAuthTokensAuthTokenMeta build() {
-            final var o = new GetDomainsAuthTokensAuthTokenMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDomainsAuthTokensAuthTokenMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

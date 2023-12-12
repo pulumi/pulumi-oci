@@ -147,15 +147,15 @@ public final class GetSuppressionsResult {
             return this;
         }
         public GetSuppressionsResult build() {
-            final var o = new GetSuppressionsResult();
-            o.compartmentId = compartmentId;
-            o.emailAddress = emailAddress;
-            o.filters = filters;
-            o.id = id;
-            o.suppressions = suppressions;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetSuppressionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.suppressions = suppressions;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

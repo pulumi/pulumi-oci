@@ -99,13 +99,13 @@ public final class GetPublicationsPublicationPackageDetail {
             return this;
         }
         public GetPublicationsPublicationPackageDetail build() {
-            final var o = new GetPublicationsPublicationPackageDetail();
-            o.eulas = eulas;
-            o.imageId = imageId;
-            o.operatingSystems = operatingSystems;
-            o.packageType = packageType;
-            o.packageVersion = packageVersion;
-            return o;
+            final var _resultValue = new GetPublicationsPublicationPackageDetail();
+            _resultValue.eulas = eulas;
+            _resultValue.imageId = imageId;
+            _resultValue.operatingSystems = operatingSystems;
+            _resultValue.packageType = packageType;
+            _resultValue.packageVersion = packageVersion;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDbSystemsDbSystemDataCollectionOption {
             return this;
         }
         public GetDbSystemsDbSystemDataCollectionOption build() {
-            final var o = new GetDbSystemsDbSystemDataCollectionOption();
-            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemDataCollectionOption();
+            _resultValue.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            _resultValue.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            _resultValue.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return _resultValue;
         }
     }
 }

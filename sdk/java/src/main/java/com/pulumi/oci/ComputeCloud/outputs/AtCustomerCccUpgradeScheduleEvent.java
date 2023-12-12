@@ -124,13 +124,13 @@ public final class AtCustomerCccUpgradeScheduleEvent {
             return this;
         }
         public AtCustomerCccUpgradeScheduleEvent build() {
-            final var o = new AtCustomerCccUpgradeScheduleEvent();
-            o.description = description;
-            o.name = name;
-            o.scheduleEventDuration = scheduleEventDuration;
-            o.scheduleEventRecurrences = scheduleEventRecurrences;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new AtCustomerCccUpgradeScheduleEvent();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.scheduleEventDuration = scheduleEventDuration;
+            _resultValue.scheduleEventRecurrences = scheduleEventRecurrences;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDomainsAuthenticationFactorSettingIdentityStoreSetting {
             return this;
         }
         public GetDomainsAuthenticationFactorSettingIdentityStoreSetting build() {
-            final var o = new GetDomainsAuthenticationFactorSettingIdentityStoreSetting();
-            o.mobileNumberEnabled = mobileNumberEnabled;
-            o.mobileNumberUpdateEnabled = mobileNumberUpdateEnabled;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingIdentityStoreSetting();
+            _resultValue.mobileNumberEnabled = mobileNumberEnabled;
+            _resultValue.mobileNumberUpdateEnabled = mobileNumberUpdateEnabled;
+            return _resultValue;
         }
     }
 }

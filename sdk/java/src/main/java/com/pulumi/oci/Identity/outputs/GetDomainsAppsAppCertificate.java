@@ -122,13 +122,13 @@ public final class GetDomainsAppsAppCertificate {
             return this;
         }
         public GetDomainsAppsAppCertificate build() {
-            final var o = new GetDomainsAppsAppCertificate();
-            o.certAlias = certAlias;
-            o.kid = kid;
-            o.sha1thumbprint = sha1thumbprint;
-            o.x509base64certificate = x509base64certificate;
-            o.x5t = x5t;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppCertificate();
+            _resultValue.certAlias = certAlias;
+            _resultValue.kid = kid;
+            _resultValue.sha1thumbprint = sha1thumbprint;
+            _resultValue.x509base64certificate = x509base64certificate;
+            _resultValue.x5t = x5t;
+            return _resultValue;
         }
     }
 }

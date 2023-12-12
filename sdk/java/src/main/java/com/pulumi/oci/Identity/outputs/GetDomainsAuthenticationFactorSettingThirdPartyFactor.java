@@ -46,9 +46,9 @@ public final class GetDomainsAuthenticationFactorSettingThirdPartyFactor {
             return this;
         }
         public GetDomainsAuthenticationFactorSettingThirdPartyFactor build() {
-            final var o = new GetDomainsAuthenticationFactorSettingThirdPartyFactor();
-            o.duoSecurity = duoSecurity;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingThirdPartyFactor();
+            _resultValue.duoSecurity = duoSecurity;
+            return _resultValue;
         }
     }
 }

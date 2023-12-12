@@ -319,23 +319,23 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
             return this;
         }
         public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem build() {
-            final var o = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.filterGroups = filterGroups;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.onsTopicId = onsTopicId;
-            o.preferredLanguage = preferredLanguage;
-            o.preferredTimeZone = preferredTimeZone;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.filterGroups = filterGroups;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.onsTopicId = onsTopicId;
+            _resultValue.preferredLanguage = preferredLanguage;
+            _resultValue.preferredTimeZone = preferredTimeZone;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

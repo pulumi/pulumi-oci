@@ -67,10 +67,10 @@ public final class ConfigVantagePoint {
             return this;
         }
         public ConfigVantagePoint build() {
-            final var o = new ConfigVantagePoint();
-            o.displayName = displayName;
-            o.name = name;
-            return o;
+            final var _resultValue = new ConfigVantagePoint();
+            _resultValue.displayName = displayName;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

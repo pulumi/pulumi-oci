@@ -65,10 +65,10 @@ public final class GetSecretbundleSecretBundleContent {
             return this;
         }
         public GetSecretbundleSecretBundleContent build() {
-            final var o = new GetSecretbundleSecretBundleContent();
-            o.content = content;
-            o.contentType = contentType;
-            return o;
+            final var _resultValue = new GetSecretbundleSecretBundleContent();
+            _resultValue.content = content;
+            _resultValue.contentType = contentType;
+            return _resultValue;
         }
     }
 }

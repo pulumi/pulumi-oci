@@ -133,14 +133,14 @@ public final class GetNamespaceStorageRecalledDataSizeResult {
             return this;
         }
         public GetNamespaceStorageRecalledDataSizeResult build() {
-            final var o = new GetNamespaceStorageRecalledDataSizeResult();
-            o.id = id;
-            o.namespace = namespace;
-            o.notRecalledDataInBytes = notRecalledDataInBytes;
-            o.recalledDataInBytes = recalledDataInBytes;
-            o.timeDataEnded = timeDataEnded;
-            o.timeDataStarted = timeDataStarted;
-            return o;
+            final var _resultValue = new GetNamespaceStorageRecalledDataSizeResult();
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.notRecalledDataInBytes = notRecalledDataInBytes;
+            _resultValue.recalledDataInBytes = recalledDataInBytes;
+            _resultValue.timeDataEnded = timeDataEnded;
+            _resultValue.timeDataStarted = timeDataStarted;
+            return _resultValue;
         }
     }
 }

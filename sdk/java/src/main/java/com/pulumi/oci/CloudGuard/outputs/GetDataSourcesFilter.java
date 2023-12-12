@@ -67,11 +67,11 @@ public final class GetDataSourcesFilter {
             return values(List.of(values));
         }
         public GetDataSourcesFilter build() {
-            final var o = new GetDataSourcesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDataSourcesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

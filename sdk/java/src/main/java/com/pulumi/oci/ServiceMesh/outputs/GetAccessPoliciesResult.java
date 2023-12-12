@@ -163,15 +163,15 @@ public final class GetAccessPoliciesResult {
             return this;
         }
         public GetAccessPoliciesResult build() {
-            final var o = new GetAccessPoliciesResult();
-            o.accessPolicyCollections = accessPolicyCollections;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.meshId = meshId;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAccessPoliciesResult();
+            _resultValue.accessPolicyCollections = accessPolicyCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.meshId = meshId;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetMigrationVaultDetail {
             return this;
         }
         public GetMigrationVaultDetail build() {
-            final var o = new GetMigrationVaultDetail();
-            o.compartmentId = compartmentId;
-            o.keyId = keyId;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetMigrationVaultDetail();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.keyId = keyId;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

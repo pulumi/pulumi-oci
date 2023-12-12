@@ -104,12 +104,12 @@ public final class GetDbSystemStorageDetail {
             return this;
         }
         public GetDbSystemStorageDetail build() {
-            final var o = new GetDbSystemStorageDetail();
-            o.availabilityDomain = availabilityDomain;
-            o.iops = iops;
-            o.isRegionallyDurable = isRegionallyDurable;
-            o.systemType = systemType;
-            return o;
+            final var _resultValue = new GetDbSystemStorageDetail();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.iops = iops;
+            _resultValue.isRegionallyDurable = isRegionallyDurable;
+            _resultValue.systemType = systemType;
+            return _resultValue;
         }
     }
 }

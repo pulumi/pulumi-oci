@@ -67,10 +67,10 @@ public final class ClusterUpgradeLicense {
             return this;
         }
         public ClusterUpgradeLicense build() {
-            final var o = new ClusterUpgradeLicense();
-            o.licenseKey = licenseKey;
-            o.licenseType = licenseType;
-            return o;
+            final var _resultValue = new ClusterUpgradeLicense();
+            _resultValue.licenseKey = licenseKey;
+            _resultValue.licenseType = licenseType;
+            return _resultValue;
         }
     }
 }

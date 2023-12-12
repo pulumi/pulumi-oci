@@ -256,20 +256,20 @@ public final class GetManagedDatabaseSqlTuningAdvisorTaskItem {
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTaskItem build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTaskItem();
-            o.daysToExpire = daysToExpire;
-            o.description = description;
-            o.instanceId = instanceId;
-            o.name = name;
-            o.owner = owner;
-            o.recommendationCount = recommendationCount;
-            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-            o.taskStatus = taskStatus;
-            o.timeCreated = timeCreated;
-            o.timeExecutionEnded = timeExecutionEnded;
-            o.timeExecutionStarted = timeExecutionStarted;
-            o.totalSqlStatements = totalSqlStatements;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTaskItem();
+            _resultValue.daysToExpire = daysToExpire;
+            _resultValue.description = description;
+            _resultValue.instanceId = instanceId;
+            _resultValue.name = name;
+            _resultValue.owner = owner;
+            _resultValue.recommendationCount = recommendationCount;
+            _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            _resultValue.taskStatus = taskStatus;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExecutionEnded = timeExecutionEnded;
+            _resultValue.timeExecutionStarted = timeExecutionStarted;
+            _resultValue.totalSqlStatements = totalSqlStatements;
+            return _resultValue;
         }
     }
 }

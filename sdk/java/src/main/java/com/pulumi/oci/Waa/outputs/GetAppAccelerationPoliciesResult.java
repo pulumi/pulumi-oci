@@ -147,14 +147,14 @@ public final class GetAppAccelerationPoliciesResult {
             return webAppAccelerationPolicyCollections(List.of(webAppAccelerationPolicyCollections));
         }
         public GetAppAccelerationPoliciesResult build() {
-            final var o = new GetAppAccelerationPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.states = states;
-            o.webAppAccelerationPolicyCollections = webAppAccelerationPolicyCollections;
-            return o;
+            final var _resultValue = new GetAppAccelerationPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            _resultValue.webAppAccelerationPolicyCollections = webAppAccelerationPolicyCollections;
+            return _resultValue;
         }
     }
 }

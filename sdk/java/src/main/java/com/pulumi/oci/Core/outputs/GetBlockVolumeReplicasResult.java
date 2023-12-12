@@ -174,16 +174,16 @@ public final class GetBlockVolumeReplicasResult {
             return this;
         }
         public GetBlockVolumeReplicasResult build() {
-            final var o = new GetBlockVolumeReplicasResult();
-            o.availabilityDomain = availabilityDomain;
-            o.blockVolumeReplicas = blockVolumeReplicas;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.volumeGroupReplicaId = volumeGroupReplicaId;
-            return o;
+            final var _resultValue = new GetBlockVolumeReplicasResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.blockVolumeReplicas = blockVolumeReplicas;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.volumeGroupReplicaId = volumeGroupReplicaId;
+            return _resultValue;
         }
     }
 }

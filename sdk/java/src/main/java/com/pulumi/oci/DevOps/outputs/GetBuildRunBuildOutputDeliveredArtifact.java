@@ -50,9 +50,9 @@ public final class GetBuildRunBuildOutputDeliveredArtifact {
             return items(List.of(items));
         }
         public GetBuildRunBuildOutputDeliveredArtifact build() {
-            final var o = new GetBuildRunBuildOutputDeliveredArtifact();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBuildRunBuildOutputDeliveredArtifact();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -141,14 +141,14 @@ public final class GetDomainsUserName {
             return this;
         }
         public GetDomainsUserName build() {
-            final var o = new GetDomainsUserName();
-            o.familyName = familyName;
-            o.formatted = formatted;
-            o.givenName = givenName;
-            o.honorificPrefix = honorificPrefix;
-            o.honorificSuffix = honorificSuffix;
-            o.middleName = middleName;
-            return o;
+            final var _resultValue = new GetDomainsUserName();
+            _resultValue.familyName = familyName;
+            _resultValue.formatted = formatted;
+            _resultValue.givenName = givenName;
+            _resultValue.honorificPrefix = honorificPrefix;
+            _resultValue.honorificSuffix = honorificSuffix;
+            _resultValue.middleName = middleName;
+            return _resultValue;
         }
     }
 }

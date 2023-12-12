@@ -65,10 +65,10 @@ public final class GetCertificateAuthorityCurrentVersionRevocationStatus {
             return this;
         }
         public GetCertificateAuthorityCurrentVersionRevocationStatus build() {
-            final var o = new GetCertificateAuthorityCurrentVersionRevocationStatus();
-            o.revocationReason = revocationReason;
-            o.timeOfRevocation = timeOfRevocation;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityCurrentVersionRevocationStatus();
+            _resultValue.revocationReason = revocationReason;
+            _resultValue.timeOfRevocation = timeOfRevocation;
+            return _resultValue;
         }
     }
 }

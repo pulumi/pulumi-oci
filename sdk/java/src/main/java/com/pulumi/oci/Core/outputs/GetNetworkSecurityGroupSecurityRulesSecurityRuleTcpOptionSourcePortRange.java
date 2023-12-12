@@ -65,10 +65,10 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSour
             return this;
         }
         public GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange build() {
-            final var o = new GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionSourcePortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

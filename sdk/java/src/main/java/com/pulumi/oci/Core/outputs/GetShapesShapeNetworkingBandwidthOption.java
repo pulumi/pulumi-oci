@@ -84,11 +84,11 @@ public final class GetShapesShapeNetworkingBandwidthOption {
             return this;
         }
         public GetShapesShapeNetworkingBandwidthOption build() {
-            final var o = new GetShapesShapeNetworkingBandwidthOption();
-            o.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
-            o.maxInGbps = maxInGbps;
-            o.minInGbps = minInGbps;
-            return o;
+            final var _resultValue = new GetShapesShapeNetworkingBandwidthOption();
+            _resultValue.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
+            _resultValue.maxInGbps = maxInGbps;
+            _resultValue.minInGbps = minInGbps;
+            return _resultValue;
         }
     }
 }

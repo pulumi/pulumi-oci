@@ -228,18 +228,18 @@ public final class GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge {
             return setHttpHeaders(List.of(setHttpHeaders));
         }
         public GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge();
-            o.action = action;
-            o.actionExpirationInSeconds = actionExpirationInSeconds;
-            o.challengeSettings = challengeSettings;
-            o.failureThreshold = failureThreshold;
-            o.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
-            o.interactionThreshold = interactionThreshold;
-            o.isEnabled = isEnabled;
-            o.isNatEnabled = isNatEnabled;
-            o.recordingPeriodInSeconds = recordingPeriodInSeconds;
-            o.setHttpHeaders = setHttpHeaders;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge();
+            _resultValue.action = action;
+            _resultValue.actionExpirationInSeconds = actionExpirationInSeconds;
+            _resultValue.challengeSettings = challengeSettings;
+            _resultValue.failureThreshold = failureThreshold;
+            _resultValue.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
+            _resultValue.interactionThreshold = interactionThreshold;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isNatEnabled = isNatEnabled;
+            _resultValue.recordingPeriodInSeconds = recordingPeriodInSeconds;
+            _resultValue.setHttpHeaders = setHttpHeaders;
+            return _resultValue;
         }
     }
 }

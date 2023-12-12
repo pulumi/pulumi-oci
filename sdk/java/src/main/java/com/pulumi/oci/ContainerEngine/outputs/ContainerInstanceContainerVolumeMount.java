@@ -126,13 +126,13 @@ public final class ContainerInstanceContainerVolumeMount {
             return this;
         }
         public ContainerInstanceContainerVolumeMount build() {
-            final var o = new ContainerInstanceContainerVolumeMount();
-            o.isReadOnly = isReadOnly;
-            o.mountPath = mountPath;
-            o.partition = partition;
-            o.subPath = subPath;
-            o.volumeName = volumeName;
-            return o;
+            final var _resultValue = new ContainerInstanceContainerVolumeMount();
+            _resultValue.isReadOnly = isReadOnly;
+            _resultValue.mountPath = mountPath;
+            _resultValue.partition = partition;
+            _resultValue.subPath = subPath;
+            _resultValue.volumeName = volumeName;
+            return _resultValue;
         }
     }
 }

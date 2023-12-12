@@ -70,10 +70,10 @@ public final class GetAddressRuleAddress {
             return this;
         }
         public GetAddressRuleAddress build() {
-            final var o = new GetAddressRuleAddress();
-            o.fields = fields;
-            o.thirdPartyValidation = thirdPartyValidation;
-            return o;
+            final var _resultValue = new GetAddressRuleAddress();
+            _resultValue.fields = fields;
+            _resultValue.thirdPartyValidation = thirdPartyValidation;
+            return _resultValue;
         }
     }
 }

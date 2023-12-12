@@ -85,11 +85,11 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRu
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig build() {
-            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig();
-            o.buildRunnerType = buildRunnerType;
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetBuildPipelineStagesBuildPipelineStageCollectionItemBuildRunnerShapeConfig();
+            _resultValue.buildRunnerType = buildRunnerType;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

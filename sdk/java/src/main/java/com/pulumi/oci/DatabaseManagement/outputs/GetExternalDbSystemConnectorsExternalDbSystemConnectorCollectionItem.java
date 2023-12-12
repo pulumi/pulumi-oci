@@ -298,22 +298,22 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
             return this;
         }
         public GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem build() {
-            final var o = new GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem();
-            o.agentId = agentId;
-            o.compartmentId = compartmentId;
-            o.connectionFailureMessage = connectionFailureMessage;
-            o.connectionInfos = connectionInfos;
-            o.connectionStatus = connectionStatus;
-            o.connectorType = connectorType;
-            o.displayName = displayName;
-            o.externalDbSystemId = externalDbSystemId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItem();
+            _resultValue.agentId = agentId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionFailureMessage = connectionFailureMessage;
+            _resultValue.connectionInfos = connectionInfos;
+            _resultValue.connectionStatus = connectionStatus;
+            _resultValue.connectorType = connectorType;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

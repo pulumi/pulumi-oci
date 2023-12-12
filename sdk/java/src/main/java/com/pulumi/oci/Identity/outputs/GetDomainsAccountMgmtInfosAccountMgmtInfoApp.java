@@ -389,27 +389,27 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfoApp {
             return this;
         }
         public GetDomainsAccountMgmtInfosAccountMgmtInfoApp build() {
-            final var o = new GetDomainsAccountMgmtInfosAccountMgmtInfoApp();
-            o.active = active;
-            o.appIcon = appIcon;
-            o.appThumbnail = appThumbnail;
-            o.audience = audience;
-            o.description = description;
-            o.display = display;
-            o.isAliasApp = isAliasApp;
-            o.isAuthoritative = isAuthoritative;
-            o.isLoginTarget = isLoginTarget;
-            o.isManagedApp = isManagedApp;
-            o.isOauthResource = isOauthResource;
-            o.isOpcService = isOpcService;
-            o.isUnmanagedApp = isUnmanagedApp;
-            o.loginMechanism = loginMechanism;
-            o.meterAsOpcService = meterAsOpcService;
-            o.ref = ref;
-            o.serviceTypeUrn = serviceTypeUrn;
-            o.showInMyApps = showInMyApps;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAccountMgmtInfosAccountMgmtInfoApp();
+            _resultValue.active = active;
+            _resultValue.appIcon = appIcon;
+            _resultValue.appThumbnail = appThumbnail;
+            _resultValue.audience = audience;
+            _resultValue.description = description;
+            _resultValue.display = display;
+            _resultValue.isAliasApp = isAliasApp;
+            _resultValue.isAuthoritative = isAuthoritative;
+            _resultValue.isLoginTarget = isLoginTarget;
+            _resultValue.isManagedApp = isManagedApp;
+            _resultValue.isOauthResource = isOauthResource;
+            _resultValue.isOpcService = isOpcService;
+            _resultValue.isUnmanagedApp = isUnmanagedApp;
+            _resultValue.loginMechanism = loginMechanism;
+            _resultValue.meterAsOpcService = meterAsOpcService;
+            _resultValue.ref = ref;
+            _resultValue.serviceTypeUrn = serviceTypeUrn;
+            _resultValue.showInMyApps = showInMyApps;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

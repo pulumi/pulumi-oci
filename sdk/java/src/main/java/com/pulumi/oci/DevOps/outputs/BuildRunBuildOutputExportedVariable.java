@@ -51,9 +51,9 @@ public final class BuildRunBuildOutputExportedVariable {
             return items(List.of(items));
         }
         public BuildRunBuildOutputExportedVariable build() {
-            final var o = new BuildRunBuildOutputExportedVariable();
-            o.items = items;
-            return o;
+            final var _resultValue = new BuildRunBuildOutputExportedVariable();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

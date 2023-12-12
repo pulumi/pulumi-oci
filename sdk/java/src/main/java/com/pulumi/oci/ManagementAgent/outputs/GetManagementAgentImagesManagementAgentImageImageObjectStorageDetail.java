@@ -122,13 +122,13 @@ public final class GetManagementAgentImagesManagementAgentImageImageObjectStorag
             return this;
         }
         public GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail build() {
-            final var o = new GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail();
-            o.checksum = checksum;
-            o.object = object;
-            o.objectBucket = objectBucket;
-            o.objectNamespace = objectNamespace;
-            o.objectUrl = objectUrl;
-            return o;
+            final var _resultValue = new GetManagementAgentImagesManagementAgentImageImageObjectStorageDetail();
+            _resultValue.checksum = checksum;
+            _resultValue.object = object;
+            _resultValue.objectBucket = objectBucket;
+            _resultValue.objectNamespace = objectNamespace;
+            _resultValue.objectUrl = objectUrl;
+            return _resultValue;
         }
     }
 }

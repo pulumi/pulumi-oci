@@ -46,9 +46,9 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
             return this;
         }
         public GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup build() {
-            final var o = new GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup();
-            o.requestable = requestable;
-            return o;
+            final var _resultValue = new GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup();
+            _resultValue.requestable = requestable;
+            return _resultValue;
         }
     }
 }

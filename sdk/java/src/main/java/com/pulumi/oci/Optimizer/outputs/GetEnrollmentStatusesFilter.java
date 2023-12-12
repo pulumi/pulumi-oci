@@ -67,11 +67,11 @@ public final class GetEnrollmentStatusesFilter {
             return values(List.of(values));
         }
         public GetEnrollmentStatusesFilter build() {
-            final var o = new GetEnrollmentStatusesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetEnrollmentStatusesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

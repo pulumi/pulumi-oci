@@ -42,9 +42,9 @@ public final class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection
             return items(List.of(items));
         }
         public GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection build() {
-            final var o = new GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

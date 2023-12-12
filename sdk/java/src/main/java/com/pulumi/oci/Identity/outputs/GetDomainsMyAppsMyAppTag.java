@@ -65,10 +65,10 @@ public final class GetDomainsMyAppsMyAppTag {
             return this;
         }
         public GetDomainsMyAppsMyAppTag build() {
-            final var o = new GetDomainsMyAppsMyAppTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyAppsMyAppTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

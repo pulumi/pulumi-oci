@@ -66,10 +66,10 @@ public final class PipelineRunStepOverrideDetail {
             return this;
         }
         public PipelineRunStepOverrideDetail build() {
-            final var o = new PipelineRunStepOverrideDetail();
-            o.stepConfigurationDetails = stepConfigurationDetails;
-            o.stepName = stepName;
-            return o;
+            final var _resultValue = new PipelineRunStepOverrideDetail();
+            _resultValue.stepConfigurationDetails = stepConfigurationDetails;
+            _resultValue.stepName = stepName;
+            return _resultValue;
         }
     }
 }

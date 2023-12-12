@@ -182,16 +182,16 @@ public final class GetBootVolumeBackupsResult {
             return this;
         }
         public GetBootVolumeBackupsResult build() {
-            final var o = new GetBootVolumeBackupsResult();
-            o.bootVolumeBackups = bootVolumeBackups;
-            o.bootVolumeId = bootVolumeId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.sourceBootVolumeBackupId = sourceBootVolumeBackupId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetBootVolumeBackupsResult();
+            _resultValue.bootVolumeBackups = bootVolumeBackups;
+            _resultValue.bootVolumeId = bootVolumeId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.sourceBootVolumeBackupId = sourceBootVolumeBackupId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

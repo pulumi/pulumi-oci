@@ -65,10 +65,10 @@ public final class GetPluggableDatabasePdbNodeLevelDetail {
             return this;
         }
         public GetPluggableDatabasePdbNodeLevelDetail build() {
-            final var o = new GetPluggableDatabasePdbNodeLevelDetail();
-            o.nodeName = nodeName;
-            o.openMode = openMode;
-            return o;
+            final var _resultValue = new GetPluggableDatabasePdbNodeLevelDetail();
+            _resultValue.nodeName = nodeName;
+            _resultValue.openMode = openMode;
+            return _resultValue;
         }
     }
 }

@@ -91,11 +91,11 @@ public final class GetIpsecAlgorithmDefaultPhaseTwoParameter {
             return this;
         }
         public GetIpsecAlgorithmDefaultPhaseTwoParameter build() {
-            final var o = new GetIpsecAlgorithmDefaultPhaseTwoParameter();
-            o.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
-            o.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
-            o.defaultPfsDhGroup = defaultPfsDhGroup;
-            return o;
+            final var _resultValue = new GetIpsecAlgorithmDefaultPhaseTwoParameter();
+            _resultValue.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
+            _resultValue.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
+            _resultValue.defaultPfsDhGroup = defaultPfsDhGroup;
+            return _resultValue;
         }
     }
 }

@@ -150,14 +150,14 @@ public final class GetCertificateAuthorityCertificateAuthorityConfig {
             return this;
         }
         public GetCertificateAuthorityCertificateAuthorityConfig build() {
-            final var o = new GetCertificateAuthorityCertificateAuthorityConfig();
-            o.configType = configType;
-            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-            o.signingAlgorithm = signingAlgorithm;
-            o.subjects = subjects;
-            o.validities = validities;
-            o.versionName = versionName;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityCertificateAuthorityConfig();
+            _resultValue.configType = configType;
+            _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            _resultValue.signingAlgorithm = signingAlgorithm;
+            _resultValue.subjects = subjects;
+            _resultValue.validities = validities;
+            _resultValue.versionName = versionName;
+            return _resultValue;
         }
     }
 }

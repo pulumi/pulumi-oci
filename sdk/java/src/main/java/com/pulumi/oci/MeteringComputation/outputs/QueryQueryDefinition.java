@@ -112,12 +112,12 @@ public final class QueryQueryDefinition {
             return this;
         }
         public QueryQueryDefinition build() {
-            final var o = new QueryQueryDefinition();
-            o.costAnalysisUi = costAnalysisUi;
-            o.displayName = displayName;
-            o.reportQuery = reportQuery;
-            o.version = version;
-            return o;
+            final var _resultValue = new QueryQueryDefinition();
+            _resultValue.costAnalysisUi = costAnalysisUi;
+            _resultValue.displayName = displayName;
+            _resultValue.reportQuery = reportQuery;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

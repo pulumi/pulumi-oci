@@ -353,24 +353,24 @@ public final class GetPingProbeResultsPingProbeResult {
             return this;
         }
         public GetPingProbeResultsPingProbeResult build() {
-            final var o = new GetPingProbeResultsPingProbeResult();
-            o.connections = connections;
-            o.dns = dns;
-            o.domainLookupEnd = domainLookupEnd;
-            o.domainLookupStart = domainLookupStart;
-            o.errorCategory = errorCategory;
-            o.errorMessage = errorMessage;
-            o.icmpCode = icmpCode;
-            o.isHealthy = isHealthy;
-            o.isTimedOut = isTimedOut;
-            o.key = key;
-            o.latencyInMs = latencyInMs;
-            o.probeConfigurationId = probeConfigurationId;
-            o.protocol = protocol;
-            o.startTime = startTime;
-            o.target = target;
-            o.vantagePointName = vantagePointName;
-            return o;
+            final var _resultValue = new GetPingProbeResultsPingProbeResult();
+            _resultValue.connections = connections;
+            _resultValue.dns = dns;
+            _resultValue.domainLookupEnd = domainLookupEnd;
+            _resultValue.domainLookupStart = domainLookupStart;
+            _resultValue.errorCategory = errorCategory;
+            _resultValue.errorMessage = errorMessage;
+            _resultValue.icmpCode = icmpCode;
+            _resultValue.isHealthy = isHealthy;
+            _resultValue.isTimedOut = isTimedOut;
+            _resultValue.key = key;
+            _resultValue.latencyInMs = latencyInMs;
+            _resultValue.probeConfigurationId = probeConfigurationId;
+            _resultValue.protocol = protocol;
+            _resultValue.startTime = startTime;
+            _resultValue.target = target;
+            _resultValue.vantagePointName = vantagePointName;
+            return _resultValue;
         }
     }
 }

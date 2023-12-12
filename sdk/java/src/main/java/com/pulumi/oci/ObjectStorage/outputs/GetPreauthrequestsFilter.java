@@ -75,11 +75,11 @@ public final class GetPreauthrequestsFilter {
             return values(List.of(values));
         }
         public GetPreauthrequestsFilter build() {
-            final var o = new GetPreauthrequestsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPreauthrequestsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

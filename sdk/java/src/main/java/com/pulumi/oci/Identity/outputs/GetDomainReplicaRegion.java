@@ -84,11 +84,11 @@ public final class GetDomainReplicaRegion {
             return this;
         }
         public GetDomainReplicaRegion build() {
-            final var o = new GetDomainReplicaRegion();
-            o.region = region;
-            o.state = state;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetDomainReplicaRegion();
+            _resultValue.region = region;
+            _resultValue.state = state;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

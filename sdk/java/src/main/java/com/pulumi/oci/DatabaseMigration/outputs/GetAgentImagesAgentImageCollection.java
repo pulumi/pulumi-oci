@@ -50,9 +50,9 @@ public final class GetAgentImagesAgentImageCollection {
             return items(List.of(items));
         }
         public GetAgentImagesAgentImageCollection build() {
-            final var o = new GetAgentImagesAgentImageCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAgentImagesAgentImageCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

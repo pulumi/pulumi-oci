@@ -66,10 +66,10 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItemStackMonito
             return this;
         }
         public GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig build() {
-            final var o = new GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig();
-            o.isEnabled = isEnabled;
-            o.metadata = metadata;
-            return o;
+            final var _resultValue = new GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.metadata = metadata;
+            return _resultValue;
         }
     }
 }

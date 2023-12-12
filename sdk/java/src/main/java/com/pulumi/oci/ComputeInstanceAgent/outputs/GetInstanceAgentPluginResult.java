@@ -155,16 +155,16 @@ public final class GetInstanceAgentPluginResult {
             return this;
         }
         public GetInstanceAgentPluginResult build() {
-            final var o = new GetInstanceAgentPluginResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.instanceagentId = instanceagentId;
-            o.message = message;
-            o.name = name;
-            o.pluginName = pluginName;
-            o.status = status;
-            o.timeLastUpdatedUtc = timeLastUpdatedUtc;
-            return o;
+            final var _resultValue = new GetInstanceAgentPluginResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.instanceagentId = instanceagentId;
+            _resultValue.message = message;
+            _resultValue.name = name;
+            _resultValue.pluginName = pluginName;
+            _resultValue.status = status;
+            _resultValue.timeLastUpdatedUtc = timeLastUpdatedUtc;
+            return _resultValue;
         }
     }
 }

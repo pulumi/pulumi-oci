@@ -103,12 +103,12 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            o.wellKnownId = wellKnownId;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            _resultValue.wellKnownId = wellKnownId;
+            return _resultValue;
         }
     }
 }

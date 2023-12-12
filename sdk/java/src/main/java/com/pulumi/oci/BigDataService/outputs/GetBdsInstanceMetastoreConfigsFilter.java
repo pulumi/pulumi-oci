@@ -67,11 +67,11 @@ public final class GetBdsInstanceMetastoreConfigsFilter {
             return values(List.of(values));
         }
         public GetBdsInstanceMetastoreConfigsFilter build() {
-            final var o = new GetBdsInstanceMetastoreConfigsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetBdsInstanceMetastoreConfigsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

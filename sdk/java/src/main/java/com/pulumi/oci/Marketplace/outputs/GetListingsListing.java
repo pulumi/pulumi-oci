@@ -358,24 +358,24 @@ public final class GetListingsListing {
             return supportedOperatingSystems(List.of(supportedOperatingSystems));
         }
         public GetListingsListing build() {
-            final var o = new GetListingsListing();
-            o.banners = banners;
-            o.categories = categories;
-            o.compatibleArchitectures = compatibleArchitectures;
-            o.defaultPackageVersion = defaultPackageVersion;
-            o.documentationLinks = documentationLinks;
-            o.icons = icons;
-            o.id = id;
-            o.isFeatured = isFeatured;
-            o.listingType = listingType;
-            o.name = name;
-            o.packageType = packageType;
-            o.pricingTypes = pricingTypes;
-            o.publishers = publishers;
-            o.regions = regions;
-            o.shortDescription = shortDescription;
-            o.supportedOperatingSystems = supportedOperatingSystems;
-            return o;
+            final var _resultValue = new GetListingsListing();
+            _resultValue.banners = banners;
+            _resultValue.categories = categories;
+            _resultValue.compatibleArchitectures = compatibleArchitectures;
+            _resultValue.defaultPackageVersion = defaultPackageVersion;
+            _resultValue.documentationLinks = documentationLinks;
+            _resultValue.icons = icons;
+            _resultValue.id = id;
+            _resultValue.isFeatured = isFeatured;
+            _resultValue.listingType = listingType;
+            _resultValue.name = name;
+            _resultValue.packageType = packageType;
+            _resultValue.pricingTypes = pricingTypes;
+            _resultValue.publishers = publishers;
+            _resultValue.regions = regions;
+            _resultValue.shortDescription = shortDescription;
+            _resultValue.supportedOperatingSystems = supportedOperatingSystems;
+            return _resultValue;
         }
     }
 }

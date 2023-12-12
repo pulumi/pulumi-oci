@@ -65,10 +65,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource();
-            o.selector = selector;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource();
+            _resultValue.selector = selector;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

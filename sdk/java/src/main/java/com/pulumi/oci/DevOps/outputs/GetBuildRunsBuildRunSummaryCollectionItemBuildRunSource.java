@@ -89,11 +89,11 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource {
             return triggerInfos(List.of(triggerInfos));
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource build() {
-            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource();
-            o.repositoryId = repositoryId;
-            o.sourceType = sourceType;
-            o.triggerInfos = triggerInfos;
-            return o;
+            final var _resultValue = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource();
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.sourceType = sourceType;
+            _resultValue.triggerInfos = triggerInfos;
+            return _resultValue;
         }
     }
 }

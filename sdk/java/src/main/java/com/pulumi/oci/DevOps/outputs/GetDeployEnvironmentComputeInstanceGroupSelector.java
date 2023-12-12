@@ -50,9 +50,9 @@ public final class GetDeployEnvironmentComputeInstanceGroupSelector {
             return items(List.of(items));
         }
         public GetDeployEnvironmentComputeInstanceGroupSelector build() {
-            final var o = new GetDeployEnvironmentComputeInstanceGroupSelector();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentComputeInstanceGroupSelector();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

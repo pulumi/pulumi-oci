@@ -155,15 +155,15 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
             return this;
         }
         public GetLogAnalyticsObjectCollectionRulesResult build() {
-            final var o = new GetLogAnalyticsObjectCollectionRulesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.logAnalyticsObjectCollectionRuleCollections = logAnalyticsObjectCollectionRuleCollections;
-            o.name = name;
-            o.namespace = namespace;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetLogAnalyticsObjectCollectionRulesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.logAnalyticsObjectCollectionRuleCollections = logAnalyticsObjectCollectionRuleCollections;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

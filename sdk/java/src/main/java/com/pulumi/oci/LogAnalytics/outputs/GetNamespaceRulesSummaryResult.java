@@ -126,14 +126,14 @@ public final class GetNamespaceRulesSummaryResult {
             return this;
         }
         public GetNamespaceRulesSummaryResult build() {
-            final var o = new GetNamespaceRulesSummaryResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.ingestTimeRulesCount = ingestTimeRulesCount;
-            o.namespace = namespace;
-            o.savedSearchRulesCount = savedSearchRulesCount;
-            o.totalCount = totalCount;
-            return o;
+            final var _resultValue = new GetNamespaceRulesSummaryResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.ingestTimeRulesCount = ingestTimeRulesCount;
+            _resultValue.namespace = namespace;
+            _resultValue.savedSearchRulesCount = savedSearchRulesCount;
+            _resultValue.totalCount = totalCount;
+            return _resultValue;
         }
     }
 }

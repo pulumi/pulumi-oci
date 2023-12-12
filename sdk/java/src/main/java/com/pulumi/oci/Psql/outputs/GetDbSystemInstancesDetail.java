@@ -76,11 +76,11 @@ public final class GetDbSystemInstancesDetail {
             return this;
         }
         public GetDbSystemInstancesDetail build() {
-            final var o = new GetDbSystemInstancesDetail();
-            o.description = description;
-            o.displayName = displayName;
-            o.privateIp = privateIp;
-            return o;
+            final var _resultValue = new GetDbSystemInstancesDetail();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.privateIp = privateIp;
+            return _resultValue;
         }
     }
 }

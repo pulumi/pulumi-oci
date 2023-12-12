@@ -125,13 +125,13 @@ public final class ConfigConfigurationNetworkConfiguration {
             return this;
         }
         public ConfigConfigurationNetworkConfiguration build() {
-            final var o = new ConfigConfigurationNetworkConfiguration();
-            o.numberOfHops = numberOfHops;
-            o.probeMode = probeMode;
-            o.probePerHop = probePerHop;
-            o.protocol = protocol;
-            o.transmissionRate = transmissionRate;
-            return o;
+            final var _resultValue = new ConfigConfigurationNetworkConfiguration();
+            _resultValue.numberOfHops = numberOfHops;
+            _resultValue.probeMode = probeMode;
+            _resultValue.probePerHop = probePerHop;
+            _resultValue.protocol = protocol;
+            _resultValue.transmissionRate = transmissionRate;
+            return _resultValue;
         }
     }
 }

@@ -127,13 +127,13 @@ public final class GetVmClusterRecommendedNetworkScan {
             return this;
         }
         public GetVmClusterRecommendedNetworkScan build() {
-            final var o = new GetVmClusterRecommendedNetworkScan();
-            o.hostname = hostname;
-            o.ips = ips;
-            o.port = port;
-            o.scanListenerPortTcp = scanListenerPortTcp;
-            o.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
-            return o;
+            final var _resultValue = new GetVmClusterRecommendedNetworkScan();
+            _resultValue.hostname = hostname;
+            _resultValue.ips = ips;
+            _resultValue.port = port;
+            _resultValue.scanListenerPortTcp = scanListenerPortTcp;
+            _resultValue.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            return _resultValue;
         }
     }
 }

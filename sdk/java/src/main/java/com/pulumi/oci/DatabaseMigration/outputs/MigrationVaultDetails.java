@@ -90,11 +90,11 @@ public final class MigrationVaultDetails {
             return this;
         }
         public MigrationVaultDetails build() {
-            final var o = new MigrationVaultDetails();
-            o.compartmentId = compartmentId;
-            o.keyId = keyId;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new MigrationVaultDetails();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.keyId = keyId;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

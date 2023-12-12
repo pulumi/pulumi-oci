@@ -88,11 +88,11 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
             return values(List.of(values));
         }
         public GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem build() {
-            final var o = new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem();
-            o.ifExists = ifExists;
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItem();
+            _resultValue.ifExists = ifExists;
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

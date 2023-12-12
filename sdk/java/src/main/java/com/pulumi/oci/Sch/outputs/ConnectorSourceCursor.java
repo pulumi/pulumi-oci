@@ -48,9 +48,9 @@ public final class ConnectorSourceCursor {
             return this;
         }
         public ConnectorSourceCursor build() {
-            final var o = new ConnectorSourceCursor();
-            o.kind = kind;
-            return o;
+            final var _resultValue = new ConnectorSourceCursor();
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

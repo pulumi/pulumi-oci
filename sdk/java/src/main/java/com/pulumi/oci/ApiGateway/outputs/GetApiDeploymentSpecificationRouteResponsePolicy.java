@@ -73,10 +73,10 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicy {
             return responseCacheStores(List.of(responseCacheStores));
         }
         public GetApiDeploymentSpecificationRouteResponsePolicy build() {
-            final var o = new GetApiDeploymentSpecificationRouteResponsePolicy();
-            o.headerTransformations = headerTransformations;
-            o.responseCacheStores = responseCacheStores;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteResponsePolicy();
+            _resultValue.headerTransformations = headerTransformations;
+            _resultValue.responseCacheStores = responseCacheStores;
+            return _resultValue;
         }
     }
 }

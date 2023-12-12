@@ -482,32 +482,32 @@ public final class GetVolumeAttachmentsVolumeAttachment {
             return this;
         }
         public GetVolumeAttachmentsVolumeAttachment build() {
-            final var o = new GetVolumeAttachmentsVolumeAttachment();
-            o.attachmentType = attachmentType;
-            o.availabilityDomain = availabilityDomain;
-            o.chapSecret = chapSecret;
-            o.chapUsername = chapUsername;
-            o.compartmentId = compartmentId;
-            o.device = device;
-            o.displayName = displayName;
-            o.encryptionInTransitType = encryptionInTransitType;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.ipv4 = ipv4;
-            o.iqn = iqn;
-            o.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
-            o.isMultipath = isMultipath;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.isReadOnly = isReadOnly;
-            o.isShareable = isShareable;
-            o.iscsiLoginState = iscsiLoginState;
-            o.multipathDevices = multipathDevices;
-            o.port = port;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.useChap = useChap;
-            o.volumeId = volumeId;
-            return o;
+            final var _resultValue = new GetVolumeAttachmentsVolumeAttachment();
+            _resultValue.attachmentType = attachmentType;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.chapSecret = chapSecret;
+            _resultValue.chapUsername = chapUsername;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.device = device;
+            _resultValue.displayName = displayName;
+            _resultValue.encryptionInTransitType = encryptionInTransitType;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.ipv4 = ipv4;
+            _resultValue.iqn = iqn;
+            _resultValue.isAgentAutoIscsiLoginEnabled = isAgentAutoIscsiLoginEnabled;
+            _resultValue.isMultipath = isMultipath;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.isReadOnly = isReadOnly;
+            _resultValue.isShareable = isShareable;
+            _resultValue.iscsiLoginState = iscsiLoginState;
+            _resultValue.multipathDevices = multipathDevices;
+            _resultValue.port = port;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.useChap = useChap;
+            _resultValue.volumeId = volumeId;
+            return _resultValue;
         }
     }
 }

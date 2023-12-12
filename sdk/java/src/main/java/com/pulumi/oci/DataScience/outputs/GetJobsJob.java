@@ -409,30 +409,30 @@ public final class GetJobsJob {
             return this;
         }
         public GetJobsJob build() {
-            final var o = new GetJobsJob();
-            o.artifactContentDisposition = artifactContentDisposition;
-            o.artifactContentLength = artifactContentLength;
-            o.artifactContentMd5 = artifactContentMd5;
-            o.artifactLastModified = artifactLastModified;
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.deleteRelatedJobRuns = deleteRelatedJobRuns;
-            o.description = description;
-            o.displayName = displayName;
-            o.emptyArtifact = emptyArtifact;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.jobArtifact = jobArtifact;
-            o.jobConfigurationDetails = jobConfigurationDetails;
-            o.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
-            o.jobLogConfigurationDetails = jobLogConfigurationDetails;
-            o.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
-            o.lifecycleDetails = lifecycleDetails;
-            o.projectId = projectId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetJobsJob();
+            _resultValue.artifactContentDisposition = artifactContentDisposition;
+            _resultValue.artifactContentLength = artifactContentLength;
+            _resultValue.artifactContentMd5 = artifactContentMd5;
+            _resultValue.artifactLastModified = artifactLastModified;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deleteRelatedJobRuns = deleteRelatedJobRuns;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.emptyArtifact = emptyArtifact;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.jobArtifact = jobArtifact;
+            _resultValue.jobConfigurationDetails = jobConfigurationDetails;
+            _resultValue.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+            _resultValue.jobLogConfigurationDetails = jobLogConfigurationDetails;
+            _resultValue.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

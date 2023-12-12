@@ -65,10 +65,10 @@ public final class MigrationGoldenGateServiceDetailsSourceContainerDbCredentials
             return this;
         }
         public MigrationGoldenGateServiceDetailsSourceContainerDbCredentials build() {
-            final var o = new MigrationGoldenGateServiceDetailsSourceContainerDbCredentials();
-            o.password = password;
-            o.username = username;
-            return o;
+            final var _resultValue = new MigrationGoldenGateServiceDetailsSourceContainerDbCredentials();
+            _resultValue.password = password;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

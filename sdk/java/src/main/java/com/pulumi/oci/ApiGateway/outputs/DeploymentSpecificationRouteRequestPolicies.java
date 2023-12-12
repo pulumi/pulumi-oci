@@ -188,16 +188,16 @@ public final class DeploymentSpecificationRouteRequestPolicies {
             return this;
         }
         public DeploymentSpecificationRouteRequestPolicies build() {
-            final var o = new DeploymentSpecificationRouteRequestPolicies();
-            o.authorization = authorization;
-            o.bodyValidation = bodyValidation;
-            o.cors = cors;
-            o.headerTransformations = headerTransformations;
-            o.headerValidations = headerValidations;
-            o.queryParameterTransformations = queryParameterTransformations;
-            o.queryParameterValidations = queryParameterValidations;
-            o.responseCacheLookup = responseCacheLookup;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPolicies();
+            _resultValue.authorization = authorization;
+            _resultValue.bodyValidation = bodyValidation;
+            _resultValue.cors = cors;
+            _resultValue.headerTransformations = headerTransformations;
+            _resultValue.headerValidations = headerValidations;
+            _resultValue.queryParameterTransformations = queryParameterTransformations;
+            _resultValue.queryParameterValidations = queryParameterValidations;
+            _resultValue.responseCacheLookup = responseCacheLookup;
+            return _resultValue;
         }
     }
 }

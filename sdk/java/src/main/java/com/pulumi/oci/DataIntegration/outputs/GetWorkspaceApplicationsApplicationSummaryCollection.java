@@ -42,9 +42,9 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollection {
             return items(List.of(items));
         }
         public GetWorkspaceApplicationsApplicationSummaryCollection build() {
-            final var o = new GetWorkspaceApplicationsApplicationSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetWorkspaceApplicationsApplicationSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

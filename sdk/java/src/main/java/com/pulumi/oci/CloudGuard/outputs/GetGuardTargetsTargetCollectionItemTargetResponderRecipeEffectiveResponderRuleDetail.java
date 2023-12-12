@@ -109,12 +109,12 @@ public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffec
             return this;
         }
         public GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail build() {
-            final var o = new GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail();
-            o.condition = condition;
-            o.configurations = configurations;
-            o.isEnabled = isEnabled;
-            o.mode = mode;
-            return o;
+            final var _resultValue = new GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetail();
+            _resultValue.condition = condition;
+            _resultValue.configurations = configurations;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.mode = mode;
+            return _resultValue;
         }
     }
 }

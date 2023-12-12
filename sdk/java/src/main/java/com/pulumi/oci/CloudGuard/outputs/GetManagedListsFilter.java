@@ -67,11 +67,11 @@ public final class GetManagedListsFilter {
             return values(List.of(values));
         }
         public GetManagedListsFilter build() {
-            final var o = new GetManagedListsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedListsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

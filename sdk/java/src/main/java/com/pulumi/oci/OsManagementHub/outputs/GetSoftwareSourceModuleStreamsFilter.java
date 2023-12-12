@@ -75,11 +75,11 @@ public final class GetSoftwareSourceModuleStreamsFilter {
             return values(List.of(values));
         }
         public GetSoftwareSourceModuleStreamsFilter build() {
-            final var o = new GetSoftwareSourceModuleStreamsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSoftwareSourceModuleStreamsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -109,12 +109,12 @@ public final class GetDrgRouteDistributionStatementsDrgRouteDistributionStatemen
             return this;
         }
         public GetDrgRouteDistributionStatementsDrgRouteDistributionStatement build() {
-            final var o = new GetDrgRouteDistributionStatementsDrgRouteDistributionStatement();
-            o.action = action;
-            o.id = id;
-            o.matchCriterias = matchCriterias;
-            o.priority = priority;
-            return o;
+            final var _resultValue = new GetDrgRouteDistributionStatementsDrgRouteDistributionStatement();
+            _resultValue.action = action;
+            _resultValue.id = id;
+            _resultValue.matchCriterias = matchCriterias;
+            _resultValue.priority = priority;
+            return _resultValue;
         }
     }
 }

@@ -127,13 +127,13 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnFilte
             return this;
         }
         public GetReportDefinitionsReportDefinitionCollectionItemColumnFilter build() {
-            final var o = new GetReportDefinitionsReportDefinitionCollectionItemColumnFilter();
-            o.expressions = expressions;
-            o.fieldName = fieldName;
-            o.isEnabled = isEnabled;
-            o.isHidden = isHidden;
-            o.operator = operator;
-            return o;
+            final var _resultValue = new GetReportDefinitionsReportDefinitionCollectionItemColumnFilter();
+            _resultValue.expressions = expressions;
+            _resultValue.fieldName = fieldName;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isHidden = isHidden;
+            _resultValue.operator = operator;
+            return _resultValue;
         }
     }
 }

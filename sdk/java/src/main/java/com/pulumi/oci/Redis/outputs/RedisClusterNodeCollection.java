@@ -51,9 +51,9 @@ public final class RedisClusterNodeCollection {
             return items(List.of(items));
         }
         public RedisClusterNodeCollection build() {
-            final var o = new RedisClusterNodeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new RedisClusterNodeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

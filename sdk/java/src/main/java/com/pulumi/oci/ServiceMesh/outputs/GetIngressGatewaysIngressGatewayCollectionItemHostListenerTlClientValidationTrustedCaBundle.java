@@ -84,11 +84,11 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlC
             return this;
         }
         public GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle();
-            o.caBundleId = caBundleId;
-            o.secretName = secretName;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundle();
+            _resultValue.caBundleId = caBundleId;
+            _resultValue.secretName = secretName;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

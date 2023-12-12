@@ -108,12 +108,12 @@ public final class GetFleetBlocklistsItem {
             return targets(List.of(targets));
         }
         public GetFleetBlocklistsItem build() {
-            final var o = new GetFleetBlocklistsItem();
-            o.key = key;
-            o.operation = operation;
-            o.reason = reason;
-            o.targets = targets;
-            return o;
+            final var _resultValue = new GetFleetBlocklistsItem();
+            _resultValue.key = key;
+            _resultValue.operation = operation;
+            _resultValue.reason = reason;
+            _resultValue.targets = targets;
+            return _resultValue;
         }
     }
 }

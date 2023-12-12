@@ -417,29 +417,29 @@ public final class GetWorkspaceExportRequestResult {
             return this;
         }
         public GetWorkspaceExportRequestResult build() {
-            final var o = new GetWorkspaceExportRequestResult();
-            o.areReferencesIncluded = areReferencesIncluded;
-            o.bucket = bucket;
-            o.createdBy = createdBy;
-            o.errorMessages = errorMessages;
-            o.exportRequestKey = exportRequestKey;
-            o.exportedItems = exportedItems;
-            o.fileName = fileName;
-            o.filters = filters;
-            o.id = id;
-            o.isObjectOverwriteEnabled = isObjectOverwriteEnabled;
-            o.key = key;
-            o.name = name;
-            o.objectKeys = objectKeys;
-            o.objectStorageRegion = objectStorageRegion;
-            o.objectStorageTenancyId = objectStorageTenancyId;
-            o.referencedItems = referencedItems;
-            o.status = status;
-            o.timeEndedInMillis = timeEndedInMillis;
-            o.timeStartedInMillis = timeStartedInMillis;
-            o.totalExportedObjectCount = totalExportedObjectCount;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceExportRequestResult();
+            _resultValue.areReferencesIncluded = areReferencesIncluded;
+            _resultValue.bucket = bucket;
+            _resultValue.createdBy = createdBy;
+            _resultValue.errorMessages = errorMessages;
+            _resultValue.exportRequestKey = exportRequestKey;
+            _resultValue.exportedItems = exportedItems;
+            _resultValue.fileName = fileName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isObjectOverwriteEnabled = isObjectOverwriteEnabled;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.objectKeys = objectKeys;
+            _resultValue.objectStorageRegion = objectStorageRegion;
+            _resultValue.objectStorageTenancyId = objectStorageTenancyId;
+            _resultValue.referencedItems = referencedItems;
+            _resultValue.status = status;
+            _resultValue.timeEndedInMillis = timeEndedInMillis;
+            _resultValue.timeStartedInMillis = timeStartedInMillis;
+            _resultValue.totalExportedObjectCount = totalExportedObjectCount;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

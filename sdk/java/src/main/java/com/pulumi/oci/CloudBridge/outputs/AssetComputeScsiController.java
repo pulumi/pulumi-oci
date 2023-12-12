@@ -87,11 +87,11 @@ public final class AssetComputeScsiController {
             return this;
         }
         public AssetComputeScsiController build() {
-            final var o = new AssetComputeScsiController();
-            o.label = label;
-            o.sharedBus = sharedBus;
-            o.unitNumber = unitNumber;
-            return o;
+            final var _resultValue = new AssetComputeScsiController();
+            _resultValue.label = label;
+            _resultValue.sharedBus = sharedBus;
+            _resultValue.unitNumber = unitNumber;
+            return _resultValue;
         }
     }
 }

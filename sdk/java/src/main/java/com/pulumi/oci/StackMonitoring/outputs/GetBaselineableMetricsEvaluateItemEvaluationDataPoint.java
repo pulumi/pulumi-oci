@@ -66,10 +66,10 @@ public final class GetBaselineableMetricsEvaluateItemEvaluationDataPoint {
             return this;
         }
         public GetBaselineableMetricsEvaluateItemEvaluationDataPoint build() {
-            final var o = new GetBaselineableMetricsEvaluateItemEvaluationDataPoint();
-            o.timestamp = timestamp;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetBaselineableMetricsEvaluateItemEvaluationDataPoint();
+            _resultValue.timestamp = timestamp;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

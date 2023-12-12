@@ -65,10 +65,10 @@ public final class GetRegionsRegion {
             return this;
         }
         public GetRegionsRegion build() {
-            final var o = new GetRegionsRegion();
-            o.key = key;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetRegionsRegion();
+            _resultValue.key = key;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

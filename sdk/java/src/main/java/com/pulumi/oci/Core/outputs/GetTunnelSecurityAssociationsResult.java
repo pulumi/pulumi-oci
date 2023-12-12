@@ -108,13 +108,13 @@ public final class GetTunnelSecurityAssociationsResult {
             return tunnelSecurityAssociations(List.of(tunnelSecurityAssociations));
         }
         public GetTunnelSecurityAssociationsResult build() {
-            final var o = new GetTunnelSecurityAssociationsResult();
-            o.filters = filters;
-            o.id = id;
-            o.ipsecId = ipsecId;
-            o.tunnelId = tunnelId;
-            o.tunnelSecurityAssociations = tunnelSecurityAssociations;
-            return o;
+            final var _resultValue = new GetTunnelSecurityAssociationsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ipsecId = ipsecId;
+            _resultValue.tunnelId = tunnelId;
+            _resultValue.tunnelSecurityAssociations = tunnelSecurityAssociations;
+            return _resultValue;
         }
     }
 }

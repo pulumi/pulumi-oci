@@ -75,11 +75,11 @@ public final class GetDataMaskRulesFilter {
             return values(List.of(values));
         }
         public GetDataMaskRulesFilter build() {
-            final var o = new GetDataMaskRulesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDataMaskRulesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

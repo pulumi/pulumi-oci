@@ -136,14 +136,14 @@ public final class GetPrivateApplicationsResult {
             return this;
         }
         public GetPrivateApplicationsResult build() {
-            final var o = new GetPrivateApplicationsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.privateApplicationCollections = privateApplicationCollections;
-            o.privateApplicationId = privateApplicationId;
-            return o;
+            final var _resultValue = new GetPrivateApplicationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.privateApplicationCollections = privateApplicationCollections;
+            _resultValue.privateApplicationId = privateApplicationId;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetBackendSetsBackendSetCollection {
             return items(List.of(items));
         }
         public GetBackendSetsBackendSetCollection build() {
-            final var o = new GetBackendSetsBackendSetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBackendSetsBackendSetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

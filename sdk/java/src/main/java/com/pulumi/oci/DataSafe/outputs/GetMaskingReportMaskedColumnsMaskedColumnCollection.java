@@ -50,9 +50,9 @@ public final class GetMaskingReportMaskedColumnsMaskedColumnCollection {
             return items(List.of(items));
         }
         public GetMaskingReportMaskedColumnsMaskedColumnCollection build() {
-            final var o = new GetMaskingReportMaskedColumnsMaskedColumnCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMaskingReportMaskedColumnsMaskedColumnCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

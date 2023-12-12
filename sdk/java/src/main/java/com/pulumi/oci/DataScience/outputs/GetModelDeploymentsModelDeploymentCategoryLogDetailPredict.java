@@ -65,10 +65,10 @@ public final class GetModelDeploymentsModelDeploymentCategoryLogDetailPredict {
             return this;
         }
         public GetModelDeploymentsModelDeploymentCategoryLogDetailPredict build() {
-            final var o = new GetModelDeploymentsModelDeploymentCategoryLogDetailPredict();
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new GetModelDeploymentsModelDeploymentCategoryLogDetailPredict();
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

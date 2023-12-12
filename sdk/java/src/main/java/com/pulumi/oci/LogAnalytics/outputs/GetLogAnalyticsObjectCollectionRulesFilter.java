@@ -75,11 +75,11 @@ public final class GetLogAnalyticsObjectCollectionRulesFilter {
             return values(List.of(values));
         }
         public GetLogAnalyticsObjectCollectionRulesFilter build() {
-            final var o = new GetLogAnalyticsObjectCollectionRulesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetLogAnalyticsObjectCollectionRulesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

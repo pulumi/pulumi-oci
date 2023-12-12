@@ -42,9 +42,9 @@ public final class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection {
             return items(List.of(items));
         }
         public GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection build() {
-            final var o = new GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAuditArchiveRetrievalsAuditArchiveRetrievalCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetJobExecutionsStatusesFilter {
             return values(List.of(values));
         }
         public GetJobExecutionsStatusesFilter build() {
-            final var o = new GetJobExecutionsStatusesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetJobExecutionsStatusesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

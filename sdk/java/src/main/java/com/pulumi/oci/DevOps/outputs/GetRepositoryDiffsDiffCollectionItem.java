@@ -198,17 +198,17 @@ public final class GetRepositoryDiffsDiffCollectionItem {
             return this;
         }
         public GetRepositoryDiffsDiffCollectionItem build() {
-            final var o = new GetRepositoryDiffsDiffCollectionItem();
-            o.areConflictsInFile = areConflictsInFile;
-            o.changes = changes;
-            o.freeformTags = freeformTags;
-            o.isBinary = isBinary;
-            o.isLarge = isLarge;
-            o.newId = newId;
-            o.newPath = newPath;
-            o.oldId = oldId;
-            o.oldPath = oldPath;
-            return o;
+            final var _resultValue = new GetRepositoryDiffsDiffCollectionItem();
+            _resultValue.areConflictsInFile = areConflictsInFile;
+            _resultValue.changes = changes;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.isBinary = isBinary;
+            _resultValue.isLarge = isLarge;
+            _resultValue.newId = newId;
+            _resultValue.newPath = newPath;
+            _resultValue.oldId = oldId;
+            _resultValue.oldPath = oldPath;
+            return _resultValue;
         }
     }
 }

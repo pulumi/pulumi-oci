@@ -91,11 +91,11 @@ public final class ClusterEndpointConfig {
             return this;
         }
         public ClusterEndpointConfig build() {
-            final var o = new ClusterEndpointConfig();
-            o.isPublicIpEnabled = isPublicIpEnabled;
-            o.nsgIds = nsgIds;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new ClusterEndpointConfig();
+            _resultValue.isPublicIpEnabled = isPublicIpEnabled;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

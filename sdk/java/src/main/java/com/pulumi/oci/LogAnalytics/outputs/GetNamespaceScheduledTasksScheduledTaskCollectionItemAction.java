@@ -177,16 +177,16 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemAction {
             return this;
         }
         public GetNamespaceScheduledTasksScheduledTaskCollectionItemAction build() {
-            final var o = new GetNamespaceScheduledTasksScheduledTaskCollectionItemAction();
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.dataType = dataType;
-            o.metricExtractions = metricExtractions;
-            o.purgeCompartmentId = purgeCompartmentId;
-            o.purgeDuration = purgeDuration;
-            o.queryString = queryString;
-            o.savedSearchId = savedSearchId;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTasksScheduledTaskCollectionItemAction();
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dataType = dataType;
+            _resultValue.metricExtractions = metricExtractions;
+            _resultValue.purgeCompartmentId = purgeCompartmentId;
+            _resultValue.purgeDuration = purgeDuration;
+            _resultValue.queryString = queryString;
+            _resultValue.savedSearchId = savedSearchId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

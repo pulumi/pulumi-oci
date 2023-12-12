@@ -86,11 +86,11 @@ public final class SubscriptionRedeemableUserItem {
             return this;
         }
         public SubscriptionRedeemableUserItem build() {
-            final var o = new SubscriptionRedeemableUserItem();
-            o.emailId = emailId;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            return o;
+            final var _resultValue = new SubscriptionRedeemableUserItem();
+            _resultValue.emailId = emailId;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            return _resultValue;
         }
     }
 }

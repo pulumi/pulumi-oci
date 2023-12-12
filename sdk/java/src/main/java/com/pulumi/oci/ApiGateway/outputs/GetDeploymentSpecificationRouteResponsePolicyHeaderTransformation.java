@@ -96,11 +96,11 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
             return setHeaders(List.of(setHeaders));
         }
         public GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation build() {
-            final var o = new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation();
-            o.filterHeaders = filterHeaders;
-            o.renameHeaders = renameHeaders;
-            o.setHeaders = setHeaders;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformation();
+            _resultValue.filterHeaders = filterHeaders;
+            _resultValue.renameHeaders = renameHeaders;
+            _resultValue.setHeaders = setHeaders;
+            return _resultValue;
         }
     }
 }

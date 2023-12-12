@@ -199,17 +199,17 @@ public final class GetRemediationRecipeScmConfiguration {
             return this;
         }
         public GetRemediationRecipeScmConfiguration build() {
-            final var o = new GetRemediationRecipeScmConfiguration();
-            o.branch = branch;
-            o.buildFileLocation = buildFileLocation;
-            o.externalScmType = externalScmType;
-            o.isAutomergeEnabled = isAutomergeEnabled;
-            o.ociCodeRepositoryId = ociCodeRepositoryId;
-            o.patSecretId = patSecretId;
-            o.repositoryUrl = repositoryUrl;
-            o.scmType = scmType;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetRemediationRecipeScmConfiguration();
+            _resultValue.branch = branch;
+            _resultValue.buildFileLocation = buildFileLocation;
+            _resultValue.externalScmType = externalScmType;
+            _resultValue.isAutomergeEnabled = isAutomergeEnabled;
+            _resultValue.ociCodeRepositoryId = ociCodeRepositoryId;
+            _resultValue.patSecretId = patSecretId;
+            _resultValue.repositoryUrl = repositoryUrl;
+            _resultValue.scmType = scmType;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

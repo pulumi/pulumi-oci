@@ -75,11 +75,11 @@ public final class GetGroupsFilter {
             return values(List.of(values));
         }
         public GetGroupsFilter build() {
-            final var o = new GetGroupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetGroupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

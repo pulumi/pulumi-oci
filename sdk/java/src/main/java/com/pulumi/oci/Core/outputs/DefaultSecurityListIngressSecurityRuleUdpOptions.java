@@ -63,11 +63,11 @@ public final class DefaultSecurityListIngressSecurityRuleUdpOptions {
             return this;
         }
         public DefaultSecurityListIngressSecurityRuleUdpOptions build() {
-            final var o = new DefaultSecurityListIngressSecurityRuleUdpOptions();
-            o.max = max;
-            o.min = min;
-            o.sourcePortRange = sourcePortRange;
-            return o;
+            final var _resultValue = new DefaultSecurityListIngressSecurityRuleUdpOptions();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            _resultValue.sourcePortRange = sourcePortRange;
+            return _resultValue;
         }
     }
 }

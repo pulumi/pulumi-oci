@@ -165,18 +165,18 @@ public final class GetSubscriptionsResult {
             return this;
         }
         public GetSubscriptionsResult build() {
-            final var o = new GetSubscriptionsResult();
-            o.buyerEmail = buyerEmail;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.isCommitInfoRequired = isCommitInfoRequired;
-            o.planNumber = planNumber;
-            o.subscriptionId = subscriptionId;
-            o.subscriptions = subscriptions;
-            o.xOneGatewaySubscriptionId = xOneGatewaySubscriptionId;
-            o.xOneOriginRegion = xOneOriginRegion;
-            return o;
+            final var _resultValue = new GetSubscriptionsResult();
+            _resultValue.buyerEmail = buyerEmail;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isCommitInfoRequired = isCommitInfoRequired;
+            _resultValue.planNumber = planNumber;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.subscriptions = subscriptions;
+            _resultValue.xOneGatewaySubscriptionId = xOneGatewaySubscriptionId;
+            _resultValue.xOneOriginRegion = xOneOriginRegion;
+            return _resultValue;
         }
     }
 }

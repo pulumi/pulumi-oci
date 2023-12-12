@@ -50,9 +50,9 @@ public final class GetProblemEntitiesProblemEntityCollection {
             return items(List.of(items));
         }
         public GetProblemEntitiesProblemEntityCollection build() {
-            final var o = new GetProblemEntitiesProblemEntityCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProblemEntitiesProblemEntityCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

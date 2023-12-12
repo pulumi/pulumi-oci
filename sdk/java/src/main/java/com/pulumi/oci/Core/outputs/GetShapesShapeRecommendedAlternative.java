@@ -46,9 +46,9 @@ public final class GetShapesShapeRecommendedAlternative {
             return this;
         }
         public GetShapesShapeRecommendedAlternative build() {
-            final var o = new GetShapesShapeRecommendedAlternative();
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new GetShapesShapeRecommendedAlternative();
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

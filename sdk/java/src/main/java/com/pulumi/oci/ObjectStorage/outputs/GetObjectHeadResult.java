@@ -190,18 +190,18 @@ public final class GetObjectHeadResult {
             return this;
         }
         public GetObjectHeadResult build() {
-            final var o = new GetObjectHeadResult();
-            o.archivalState = archivalState;
-            o.bucket = bucket;
-            o.contentLength = contentLength;
-            o.contentType = contentType;
-            o.etag = etag;
-            o.id = id;
-            o.metadata = metadata;
-            o.namespace = namespace;
-            o.object = object;
-            o.storageTier = storageTier;
-            return o;
+            final var _resultValue = new GetObjectHeadResult();
+            _resultValue.archivalState = archivalState;
+            _resultValue.bucket = bucket;
+            _resultValue.contentLength = contentLength;
+            _resultValue.contentType = contentType;
+            _resultValue.etag = etag;
+            _resultValue.id = id;
+            _resultValue.metadata = metadata;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.storageTier = storageTier;
+            return _resultValue;
         }
     }
 }

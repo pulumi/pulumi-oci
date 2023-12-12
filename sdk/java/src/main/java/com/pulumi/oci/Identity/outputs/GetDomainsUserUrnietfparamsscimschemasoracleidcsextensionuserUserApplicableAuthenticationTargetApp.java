@@ -123,13 +123,13 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp();
-            o.display = display;
-            o.ref = ref;
-            o.targetRequestTimeout = targetRequestTimeout;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.targetRequestTimeout = targetRequestTimeout;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

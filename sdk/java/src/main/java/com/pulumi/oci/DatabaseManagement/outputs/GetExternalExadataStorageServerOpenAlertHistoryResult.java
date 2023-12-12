@@ -81,11 +81,11 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
             return this;
         }
         public GetExternalExadataStorageServerOpenAlertHistoryResult build() {
-            final var o = new GetExternalExadataStorageServerOpenAlertHistoryResult();
-            o.alerts = alerts;
-            o.externalExadataStorageServerId = externalExadataStorageServerId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServerOpenAlertHistoryResult();
+            _resultValue.alerts = alerts;
+            _resultValue.externalExadataStorageServerId = externalExadataStorageServerId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

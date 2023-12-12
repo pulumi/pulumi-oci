@@ -146,11 +146,11 @@ public final class DomainsIdentityProviderJitUserProvAssignedGroup {
             return this;
         }
         public DomainsIdentityProviderJitUserProvAssignedGroup build() {
-            final var o = new DomainsIdentityProviderJitUserProvAssignedGroup();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsIdentityProviderJitUserProvAssignedGroup();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

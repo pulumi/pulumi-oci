@@ -1136,35 +1136,35 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
             return userAssertionAttributes(List.of(userAssertionAttributes));
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp();
-            o.assertionConsumerUrl = assertionConsumerUrl;
-            o.encryptAssertion = encryptAssertion;
-            o.encryptionAlgorithm = encryptionAlgorithm;
-            o.encryptionCertificate = encryptionCertificate;
-            o.federationProtocol = federationProtocol;
-            o.groupAssertionAttributes = groupAssertionAttributes;
-            o.hokAcsUrl = hokAcsUrl;
-            o.hokRequired = hokRequired;
-            o.includeSigningCertInSignature = includeSigningCertInSignature;
-            o.keyEncryptionAlgorithm = keyEncryptionAlgorithm;
-            o.lastNotificationSentTime = lastNotificationSentTime;
-            o.logoutBinding = logoutBinding;
-            o.logoutEnabled = logoutEnabled;
-            o.logoutRequestUrl = logoutRequestUrl;
-            o.logoutResponseUrl = logoutResponseUrl;
-            o.metadata = metadata;
-            o.nameIdFormat = nameIdFormat;
-            o.nameIdUserstoreAttribute = nameIdUserstoreAttribute;
-            o.outboundAssertionAttributes = outboundAssertionAttributes;
-            o.partnerProviderId = partnerProviderId;
-            o.partnerProviderPattern = partnerProviderPattern;
-            o.signResponseOrAssertion = signResponseOrAssertion;
-            o.signatureHashAlgorithm = signatureHashAlgorithm;
-            o.signingCertificate = signingCertificate;
-            o.succinctId = succinctId;
-            o.tenantProviderId = tenantProviderId;
-            o.userAssertionAttributes = userAssertionAttributes;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp();
+            _resultValue.assertionConsumerUrl = assertionConsumerUrl;
+            _resultValue.encryptAssertion = encryptAssertion;
+            _resultValue.encryptionAlgorithm = encryptionAlgorithm;
+            _resultValue.encryptionCertificate = encryptionCertificate;
+            _resultValue.federationProtocol = federationProtocol;
+            _resultValue.groupAssertionAttributes = groupAssertionAttributes;
+            _resultValue.hokAcsUrl = hokAcsUrl;
+            _resultValue.hokRequired = hokRequired;
+            _resultValue.includeSigningCertInSignature = includeSigningCertInSignature;
+            _resultValue.keyEncryptionAlgorithm = keyEncryptionAlgorithm;
+            _resultValue.lastNotificationSentTime = lastNotificationSentTime;
+            _resultValue.logoutBinding = logoutBinding;
+            _resultValue.logoutEnabled = logoutEnabled;
+            _resultValue.logoutRequestUrl = logoutRequestUrl;
+            _resultValue.logoutResponseUrl = logoutResponseUrl;
+            _resultValue.metadata = metadata;
+            _resultValue.nameIdFormat = nameIdFormat;
+            _resultValue.nameIdUserstoreAttribute = nameIdUserstoreAttribute;
+            _resultValue.outboundAssertionAttributes = outboundAssertionAttributes;
+            _resultValue.partnerProviderId = partnerProviderId;
+            _resultValue.partnerProviderPattern = partnerProviderPattern;
+            _resultValue.signResponseOrAssertion = signResponseOrAssertion;
+            _resultValue.signatureHashAlgorithm = signatureHashAlgorithm;
+            _resultValue.signingCertificate = signingCertificate;
+            _resultValue.succinctId = succinctId;
+            _resultValue.tenantProviderId = tenantProviderId;
+            _resultValue.userAssertionAttributes = userAssertionAttributes;
+            return _resultValue;
         }
     }
 }

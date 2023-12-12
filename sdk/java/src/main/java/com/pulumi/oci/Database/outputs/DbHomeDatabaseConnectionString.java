@@ -64,11 +64,11 @@ public final class DbHomeDatabaseConnectionString {
             return this;
         }
         public DbHomeDatabaseConnectionString build() {
-            final var o = new DbHomeDatabaseConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.cdbDefault = cdbDefault;
-            o.cdbIpDefault = cdbIpDefault;
-            return o;
+            final var _resultValue = new DbHomeDatabaseConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.cdbDefault = cdbDefault;
+            _resultValue.cdbIpDefault = cdbIpDefault;
+            return _resultValue;
         }
     }
 }

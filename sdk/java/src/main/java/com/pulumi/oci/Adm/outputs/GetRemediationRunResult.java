@@ -330,24 +330,24 @@ public final class GetRemediationRunResult {
             return this;
         }
         public GetRemediationRunResult build() {
-            final var o = new GetRemediationRunResult();
-            o.compartmentId = compartmentId;
-            o.currentStageType = currentStageType;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.remediationRecipeId = remediationRecipeId;
-            o.remediationRunId = remediationRunId;
-            o.remediationRunSource = remediationRunSource;
-            o.stages = stages;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetRemediationRunResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.currentStageType = currentStageType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.remediationRecipeId = remediationRecipeId;
+            _resultValue.remediationRunId = remediationRunId;
+            _resultValue.remediationRunSource = remediationRunSource;
+            _resultValue.stages = stages;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

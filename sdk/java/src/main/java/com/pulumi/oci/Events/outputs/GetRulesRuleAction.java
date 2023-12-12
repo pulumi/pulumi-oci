@@ -50,9 +50,9 @@ public final class GetRulesRuleAction {
             return actions(List.of(actions));
         }
         public GetRulesRuleAction build() {
-            final var o = new GetRulesRuleAction();
-            o.actions = actions;
-            return o;
+            final var _resultValue = new GetRulesRuleAction();
+            _resultValue.actions = actions;
+            return _resultValue;
         }
     }
 }

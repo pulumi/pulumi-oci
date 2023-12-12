@@ -541,35 +541,35 @@ public final class GetSecurityAssessmentResult {
             return this;
         }
         public GetSecurityAssessmentResult build() {
-            final var o = new GetSecurityAssessmentResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ignoredAssessmentIds = ignoredAssessmentIds;
-            o.ignoredTargets = ignoredTargets;
-            o.isBaseline = isBaseline;
-            o.isDeviatedFromBaseline = isDeviatedFromBaseline;
-            o.lastComparedBaselineId = lastComparedBaselineId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.link = link;
-            o.schedule = schedule;
-            o.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
-            o.securityAssessmentId = securityAssessmentId;
-            o.state = state;
-            o.statistics = statistics;
-            o.systemTags = systemTags;
-            o.targetId = targetId;
-            o.targetIds = targetIds;
-            o.targetVersion = targetVersion;
-            o.timeCreated = timeCreated;
-            o.timeLastAssessed = timeLastAssessed;
-            o.timeUpdated = timeUpdated;
-            o.triggeredBy = triggeredBy;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ignoredAssessmentIds = ignoredAssessmentIds;
+            _resultValue.ignoredTargets = ignoredTargets;
+            _resultValue.isBaseline = isBaseline;
+            _resultValue.isDeviatedFromBaseline = isDeviatedFromBaseline;
+            _resultValue.lastComparedBaselineId = lastComparedBaselineId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.link = link;
+            _resultValue.schedule = schedule;
+            _resultValue.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
+            _resultValue.securityAssessmentId = securityAssessmentId;
+            _resultValue.state = state;
+            _resultValue.statistics = statistics;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetId = targetId;
+            _resultValue.targetIds = targetIds;
+            _resultValue.targetVersion = targetVersion;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastAssessed = timeLastAssessed;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggeredBy = triggeredBy;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetDomainsApiKeysApiKeyUrnietfparamsscimschemasoracleidcsexte
             return this;
         }
         public GetDomainsApiKeysApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new GetDomainsApiKeysApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new GetDomainsApiKeysApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

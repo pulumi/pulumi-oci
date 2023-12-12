@@ -130,13 +130,13 @@ public final class TargetDatabaseTlsConfig {
             return this;
         }
         public TargetDatabaseTlsConfig build() {
-            final var o = new TargetDatabaseTlsConfig();
-            o.certificateStoreType = certificateStoreType;
-            o.keyStoreContent = keyStoreContent;
-            o.status = status;
-            o.storePassword = storePassword;
-            o.trustStoreContent = trustStoreContent;
-            return o;
+            final var _resultValue = new TargetDatabaseTlsConfig();
+            _resultValue.certificateStoreType = certificateStoreType;
+            _resultValue.keyStoreContent = keyStoreContent;
+            _resultValue.status = status;
+            _resultValue.storePassword = storePassword;
+            _resultValue.trustStoreContent = trustStoreContent;
+            return _resultValue;
         }
     }
 }

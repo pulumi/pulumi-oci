@@ -66,10 +66,10 @@ public final class GetDomainsApprovalWorkflowMaxDuration {
             return this;
         }
         public GetDomainsApprovalWorkflowMaxDuration build() {
-            final var o = new GetDomainsApprovalWorkflowMaxDuration();
-            o.unit = unit;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsApprovalWorkflowMaxDuration();
+            _resultValue.unit = unit;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

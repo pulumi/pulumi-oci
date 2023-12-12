@@ -338,24 +338,24 @@ public final class GetDeployPipelineResult {
             return this;
         }
         public GetDeployPipelineResult build() {
-            final var o = new GetDeployPipelineResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.deployPipelineArtifacts = deployPipelineArtifacts;
-            o.deployPipelineEnvironments = deployPipelineEnvironments;
-            o.deployPipelineId = deployPipelineId;
-            o.deployPipelineParameters = deployPipelineParameters;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDeployPipelineResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deployPipelineArtifacts = deployPipelineArtifacts;
+            _resultValue.deployPipelineEnvironments = deployPipelineEnvironments;
+            _resultValue.deployPipelineId = deployPipelineId;
+            _resultValue.deployPipelineParameters = deployPipelineParameters;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

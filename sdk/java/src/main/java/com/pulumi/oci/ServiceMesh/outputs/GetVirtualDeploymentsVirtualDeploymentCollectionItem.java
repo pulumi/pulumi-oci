@@ -327,23 +327,23 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItem {
             return this;
         }
         public GetVirtualDeploymentsVirtualDeploymentCollectionItem build() {
-            final var o = new GetVirtualDeploymentsVirtualDeploymentCollectionItem();
-            o.accessLoggings = accessLoggings;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.listeners = listeners;
-            o.name = name;
-            o.serviceDiscoveries = serviceDiscoveries;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.virtualServiceId = virtualServiceId;
-            return o;
+            final var _resultValue = new GetVirtualDeploymentsVirtualDeploymentCollectionItem();
+            _resultValue.accessLoggings = accessLoggings;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.listeners = listeners;
+            _resultValue.name = name;
+            _resultValue.serviceDiscoveries = serviceDiscoveries;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.virtualServiceId = virtualServiceId;
+            return _resultValue;
         }
     }
 }

@@ -68,11 +68,11 @@ public final class GetStackTfStateResult {
             return this;
         }
         public GetStackTfStateResult build() {
-            final var o = new GetStackTfStateResult();
-            o.id = id;
-            o.localPath = localPath;
-            o.stackId = stackId;
-            return o;
+            final var _resultValue = new GetStackTfStateResult();
+            _resultValue.id = id;
+            _resultValue.localPath = localPath;
+            _resultValue.stackId = stackId;
+            return _resultValue;
         }
     }
 }

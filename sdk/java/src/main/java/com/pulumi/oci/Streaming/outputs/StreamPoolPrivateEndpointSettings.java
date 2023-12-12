@@ -96,11 +96,11 @@ public final class StreamPoolPrivateEndpointSettings {
             return this;
         }
         public StreamPoolPrivateEndpointSettings build() {
-            final var o = new StreamPoolPrivateEndpointSettings();
-            o.nsgIds = nsgIds;
-            o.privateEndpointIp = privateEndpointIp;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new StreamPoolPrivateEndpointSettings();
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

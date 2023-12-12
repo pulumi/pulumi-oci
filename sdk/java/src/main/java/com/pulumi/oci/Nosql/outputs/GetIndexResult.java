@@ -210,19 +210,19 @@ public final class GetIndexResult {
             return this;
         }
         public GetIndexResult build() {
-            final var o = new GetIndexResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.indexName = indexName;
-            o.isIfNotExists = isIfNotExists;
-            o.keys = keys;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.state = state;
-            o.tableId = tableId;
-            o.tableName = tableName;
-            o.tableNameOrId = tableNameOrId;
-            return o;
+            final var _resultValue = new GetIndexResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.indexName = indexName;
+            _resultValue.isIfNotExists = isIfNotExists;
+            _resultValue.keys = keys;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.tableId = tableId;
+            _resultValue.tableName = tableName;
+            _resultValue.tableNameOrId = tableNameOrId;
+            return _resultValue;
         }
     }
 }

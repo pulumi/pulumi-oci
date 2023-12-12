@@ -70,10 +70,10 @@ public final class GetTrailFilesTrailFileCollection {
             return this;
         }
         public GetTrailFilesTrailFileCollection build() {
-            final var o = new GetTrailFilesTrailFileCollection();
-            o.items = items;
-            o.timeLastFetched = timeLastFetched;
-            return o;
+            final var _resultValue = new GetTrailFilesTrailFileCollection();
+            _resultValue.items = items;
+            _resultValue.timeLastFetched = timeLastFetched;
+            return _resultValue;
         }
     }
 }

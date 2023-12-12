@@ -84,11 +84,11 @@ public final class GetRedisClustersRedisClusterCollectionItemNodeCollectionItem 
             return this;
         }
         public GetRedisClustersRedisClusterCollectionItemNodeCollectionItem build() {
-            final var o = new GetRedisClustersRedisClusterCollectionItemNodeCollectionItem();
-            o.displayName = displayName;
-            o.privateEndpointFqdn = privateEndpointFqdn;
-            o.privateEndpointIpAddress = privateEndpointIpAddress;
-            return o;
+            final var _resultValue = new GetRedisClustersRedisClusterCollectionItemNodeCollectionItem();
+            _resultValue.displayName = displayName;
+            _resultValue.privateEndpointFqdn = privateEndpointFqdn;
+            _resultValue.privateEndpointIpAddress = privateEndpointIpAddress;
+            return _resultValue;
         }
     }
 }

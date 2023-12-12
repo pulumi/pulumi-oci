@@ -138,12 +138,12 @@ public final class TargetAssetUserSpecAgentConfig {
             return pluginsConfigs(List.of(pluginsConfigs));
         }
         public TargetAssetUserSpecAgentConfig build() {
-            final var o = new TargetAssetUserSpecAgentConfig();
-            o.areAllPluginsDisabled = areAllPluginsDisabled;
-            o.isManagementDisabled = isManagementDisabled;
-            o.isMonitoringDisabled = isMonitoringDisabled;
-            o.pluginsConfigs = pluginsConfigs;
-            return o;
+            final var _resultValue = new TargetAssetUserSpecAgentConfig();
+            _resultValue.areAllPluginsDisabled = areAllPluginsDisabled;
+            _resultValue.isManagementDisabled = isManagementDisabled;
+            _resultValue.isMonitoringDisabled = isMonitoringDisabled;
+            _resultValue.pluginsConfigs = pluginsConfigs;
+            return _resultValue;
         }
     }
 }

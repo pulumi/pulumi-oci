@@ -200,17 +200,17 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy();
-            o.ftpProxyHost = ftpProxyHost;
-            o.ftpProxyPort = ftpProxyPort;
-            o.httpProxyHost = httpProxyHost;
-            o.httpProxyPort = httpProxyPort;
-            o.httpsProxyHost = httpsProxyHost;
-            o.httpsProxyPort = httpsProxyPort;
-            o.socksProxyHost = socksProxyHost;
-            o.socksProxyPort = socksProxyPort;
-            o.useSystemProxies = useSystemProxies;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy();
+            _resultValue.ftpProxyHost = ftpProxyHost;
+            _resultValue.ftpProxyPort = ftpProxyPort;
+            _resultValue.httpProxyHost = httpProxyHost;
+            _resultValue.httpProxyPort = httpProxyPort;
+            _resultValue.httpsProxyHost = httpsProxyHost;
+            _resultValue.httpsProxyPort = httpsProxyPort;
+            _resultValue.socksProxyHost = socksProxyHost;
+            _resultValue.socksProxyPort = socksProxyPort;
+            _resultValue.useSystemProxies = useSystemProxies;
+            return _resultValue;
         }
     }
 }

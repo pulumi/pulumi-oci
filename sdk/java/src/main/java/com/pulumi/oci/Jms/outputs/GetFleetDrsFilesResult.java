@@ -97,12 +97,12 @@ public final class GetFleetDrsFilesResult {
             return this;
         }
         public GetFleetDrsFilesResult build() {
-            final var o = new GetFleetDrsFilesResult();
-            o.drsFileCollections = drsFileCollections;
-            o.filters = filters;
-            o.fleetId = fleetId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetFleetDrsFilesResult();
+            _resultValue.drsFileCollections = drsFileCollections;
+            _resultValue.filters = filters;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

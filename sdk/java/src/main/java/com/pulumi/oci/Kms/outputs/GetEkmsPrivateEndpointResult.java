@@ -307,23 +307,23 @@ public final class GetEkmsPrivateEndpointResult {
             return this;
         }
         public GetEkmsPrivateEndpointResult build() {
-            final var o = new GetEkmsPrivateEndpointResult();
-            o.caBundle = caBundle;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.ekmsPrivateEndpointId = ekmsPrivateEndpointId;
-            o.externalKeyManagerIp = externalKeyManagerIp;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.port = port;
-            o.privateEndpointIp = privateEndpointIp;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetEkmsPrivateEndpointResult();
+            _resultValue.caBundle = caBundle;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.ekmsPrivateEndpointId = ekmsPrivateEndpointId;
+            _resultValue.externalKeyManagerIp = externalKeyManagerIp;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.port = port;
+            _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

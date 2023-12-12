@@ -122,13 +122,13 @@ public final class GetServiceCatalogAssociationsServiceCatalogAssociationCollect
             return this;
         }
         public GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem build() {
-            final var o = new GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem();
-            o.entityId = entityId;
-            o.entityType = entityType;
-            o.id = id;
-            o.serviceCatalogId = serviceCatalogId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem();
+            _resultValue.entityId = entityId;
+            _resultValue.entityType = entityType;
+            _resultValue.id = id;
+            _resultValue.serviceCatalogId = serviceCatalogId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

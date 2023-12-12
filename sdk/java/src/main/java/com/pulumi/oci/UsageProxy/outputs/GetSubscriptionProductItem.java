@@ -124,13 +124,13 @@ public final class GetSubscriptionProductItem {
             return this;
         }
         public GetSubscriptionProductItem build() {
-            final var o = new GetSubscriptionProductItem();
-            o.earnedRewards = earnedRewards;
-            o.isEligibleToEarnRewards = isEligibleToEarnRewards;
-            o.productName = productName;
-            o.productNumber = productNumber;
-            o.usageAmount = usageAmount;
-            return o;
+            final var _resultValue = new GetSubscriptionProductItem();
+            _resultValue.earnedRewards = earnedRewards;
+            _resultValue.isEligibleToEarnRewards = isEligibleToEarnRewards;
+            _resultValue.productName = productName;
+            _resultValue.productNumber = productNumber;
+            _resultValue.usageAmount = usageAmount;
+            return _resultValue;
         }
     }
 }

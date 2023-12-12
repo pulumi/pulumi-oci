@@ -128,14 +128,14 @@ public final class GetAutonomousContainerPatchesResult {
             return this;
         }
         public GetAutonomousContainerPatchesResult build() {
-            final var o = new GetAutonomousContainerPatchesResult();
-            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-            o.autonomousPatchType = autonomousPatchType;
-            o.autonomousPatches = autonomousPatches;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAutonomousContainerPatchesResult();
+            _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            _resultValue.autonomousPatchType = autonomousPatchType;
+            _resultValue.autonomousPatches = autonomousPatches;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

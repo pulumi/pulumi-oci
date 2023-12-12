@@ -84,11 +84,11 @@ public final class GetResourcesResourcesCollectionItemSkus {
             return this;
         }
         public GetResourcesResourcesCollectionItemSkus build() {
-            final var o = new GetResourcesResourcesCollectionItemSkus();
-            o.cloudCreditType = cloudCreditType;
-            o.skuId = skuId;
-            o.skuType = skuType;
-            return o;
+            final var _resultValue = new GetResourcesResourcesCollectionItemSkus();
+            _resultValue.cloudCreditType = cloudCreditType;
+            _resultValue.skuId = skuId;
+            _resultValue.skuType = skuType;
+            return _resultValue;
         }
     }
 }

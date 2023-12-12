@@ -111,12 +111,12 @@ public final class ManagementStationMirror {
             return this;
         }
         public ManagementStationMirror build() {
-            final var o = new ManagementStationMirror();
-            o.directory = directory;
-            o.port = port;
-            o.sslcert = sslcert;
-            o.sslport = sslport;
-            return o;
+            final var _resultValue = new ManagementStationMirror();
+            _resultValue.directory = directory;
+            _resultValue.port = port;
+            _resultValue.sslcert = sslcert;
+            _resultValue.sslport = sslport;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetDeploymentSpecificationLoggingPolicyAccessLog {
             return this;
         }
         public GetDeploymentSpecificationLoggingPolicyAccessLog build() {
-            final var o = new GetDeploymentSpecificationLoggingPolicyAccessLog();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationLoggingPolicyAccessLog();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

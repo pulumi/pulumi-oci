@@ -65,10 +65,10 @@ public final class GetCertificateVersionSubjectAlternativeName {
             return this;
         }
         public GetCertificateVersionSubjectAlternativeName build() {
-            final var o = new GetCertificateVersionSubjectAlternativeName();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetCertificateVersionSubjectAlternativeName();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

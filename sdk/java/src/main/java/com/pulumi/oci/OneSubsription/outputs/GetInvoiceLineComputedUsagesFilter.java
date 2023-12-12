@@ -75,11 +75,11 @@ public final class GetInvoiceLineComputedUsagesFilter {
             return values(List.of(values));
         }
         public GetInvoiceLineComputedUsagesFilter build() {
-            final var o = new GetInvoiceLineComputedUsagesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetInvoiceLineComputedUsagesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

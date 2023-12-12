@@ -97,12 +97,12 @@ public final class GetMessagesResult {
             return this;
         }
         public GetMessagesResult build() {
-            final var o = new GetMessagesResult();
-            o.deploymentId = deploymentId;
-            o.deploymentMessagesCollections = deploymentMessagesCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetMessagesResult();
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.deploymentMessagesCollections = deploymentMessagesCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

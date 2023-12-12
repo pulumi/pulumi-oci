@@ -65,10 +65,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciT
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

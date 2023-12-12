@@ -97,11 +97,11 @@ public final class FusionEnvironmentRule {
             return this;
         }
         public FusionEnvironmentRule build() {
-            final var o = new FusionEnvironmentRule();
-            o.action = action;
-            o.conditions = conditions;
-            o.description = description;
-            return o;
+            final var _resultValue = new FusionEnvironmentRule();
+            _resultValue.action = action;
+            _resultValue.conditions = conditions;
+            _resultValue.description = description;
+            return _resultValue;
         }
     }
 }

@@ -333,24 +333,24 @@ public final class GetIdentityProvidersIdentityProvider {
             return this;
         }
         public GetIdentityProvidersIdentityProvider build() {
-            final var o = new GetIdentityProvidersIdentityProvider();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformAttributes = freeformAttributes;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.inactiveState = inactiveState;
-            o.metadata = metadata;
-            o.metadataUrl = metadataUrl;
-            o.name = name;
-            o.productType = productType;
-            o.protocol = protocol;
-            o.redirectUrl = redirectUrl;
-            o.signingCertificate = signingCertificate;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetIdentityProvidersIdentityProvider();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformAttributes = freeformAttributes;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.metadata = metadata;
+            _resultValue.metadataUrl = metadataUrl;
+            _resultValue.name = name;
+            _resultValue.productType = productType;
+            _resultValue.protocol = protocol;
+            _resultValue.redirectUrl = redirectUrl;
+            _resultValue.signingCertificate = signingCertificate;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

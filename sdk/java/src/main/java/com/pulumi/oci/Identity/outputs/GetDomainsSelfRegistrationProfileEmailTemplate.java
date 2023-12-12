@@ -84,11 +84,11 @@ public final class GetDomainsSelfRegistrationProfileEmailTemplate {
             return this;
         }
         public GetDomainsSelfRegistrationProfileEmailTemplate build() {
-            final var o = new GetDomainsSelfRegistrationProfileEmailTemplate();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSelfRegistrationProfileEmailTemplate();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -66,10 +66,10 @@ public final class GetNodePoolNodeEvictionNodePoolSetting {
             return this;
         }
         public GetNodePoolNodeEvictionNodePoolSetting build() {
-            final var o = new GetNodePoolNodeEvictionNodePoolSetting();
-            o.evictionGraceDuration = evictionGraceDuration;
-            o.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
-            return o;
+            final var _resultValue = new GetNodePoolNodeEvictionNodePoolSetting();
+            _resultValue.evictionGraceDuration = evictionGraceDuration;
+            _resultValue.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
+            return _resultValue;
         }
     }
 }

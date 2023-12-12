@@ -106,13 +106,13 @@ public final class GetTopUtilizedResourcesResult {
             return this;
         }
         public GetTopUtilizedResourcesResult build() {
-            final var o = new GetTopUtilizedResourcesResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-            o.items = items;
-            o.resourceUnitType = resourceUnitType;
-            return o;
+            final var _resultValue = new GetTopUtilizedResourcesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            _resultValue.items = items;
+            _resultValue.resourceUnitType = resourceUnitType;
+            return _resultValue;
         }
     }
 }

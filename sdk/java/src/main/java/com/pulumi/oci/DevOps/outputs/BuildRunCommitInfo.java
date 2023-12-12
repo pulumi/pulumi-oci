@@ -84,11 +84,11 @@ public final class BuildRunCommitInfo {
             return this;
         }
         public BuildRunCommitInfo build() {
-            final var o = new BuildRunCommitInfo();
-            o.commitHash = commitHash;
-            o.repositoryBranch = repositoryBranch;
-            o.repositoryUrl = repositoryUrl;
-            return o;
+            final var _resultValue = new BuildRunCommitInfo();
+            _resultValue.commitHash = commitHash;
+            _resultValue.repositoryBranch = repositoryBranch;
+            _resultValue.repositoryUrl = repositoryUrl;
+            return _resultValue;
         }
     }
 }

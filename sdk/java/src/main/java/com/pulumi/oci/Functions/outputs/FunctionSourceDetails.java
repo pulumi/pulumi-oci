@@ -65,10 +65,10 @@ public final class FunctionSourceDetails {
             return this;
         }
         public FunctionSourceDetails build() {
-            final var o = new FunctionSourceDetails();
-            o.pbfListingId = pbfListingId;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new FunctionSourceDetails();
+            _resultValue.pbfListingId = pbfListingId;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

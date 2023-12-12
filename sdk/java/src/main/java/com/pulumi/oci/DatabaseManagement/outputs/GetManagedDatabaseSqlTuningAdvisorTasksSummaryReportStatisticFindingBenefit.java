@@ -103,12 +103,12 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit();
-            o.dbTimeAfterImplemented = dbTimeAfterImplemented;
-            o.dbTimeAfterRecommended = dbTimeAfterRecommended;
-            o.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
-            o.dbTimeBeforeRecommended = dbTimeBeforeRecommended;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit();
+            _resultValue.dbTimeAfterImplemented = dbTimeAfterImplemented;
+            _resultValue.dbTimeAfterRecommended = dbTimeAfterRecommended;
+            _resultValue.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
+            _resultValue.dbTimeBeforeRecommended = dbTimeBeforeRecommended;
+            return _resultValue;
         }
     }
 }

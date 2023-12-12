@@ -57,10 +57,10 @@ public final class GetUserAssessmentComparisonSummaryBaseline {
             return this;
         }
         public GetUserAssessmentComparisonSummaryBaseline build() {
-            final var o = new GetUserAssessmentComparisonSummaryBaseline();
-            o.targetId = targetId;
-            o.userAssessmentId = userAssessmentId;
-            return o;
+            final var _resultValue = new GetUserAssessmentComparisonSummaryBaseline();
+            _resultValue.targetId = targetId;
+            _resultValue.userAssessmentId = userAssessmentId;
+            return _resultValue;
         }
     }
 }

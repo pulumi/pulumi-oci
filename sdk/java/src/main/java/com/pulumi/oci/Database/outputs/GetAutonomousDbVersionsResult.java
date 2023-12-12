@@ -125,13 +125,13 @@ public final class GetAutonomousDbVersionsResult {
             return this;
         }
         public GetAutonomousDbVersionsResult build() {
-            final var o = new GetAutonomousDbVersionsResult();
-            o.autonomousDbVersions = autonomousDbVersions;
-            o.compartmentId = compartmentId;
-            o.dbWorkload = dbWorkload;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAutonomousDbVersionsResult();
+            _resultValue.autonomousDbVersions = autonomousDbVersions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbWorkload = dbWorkload;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

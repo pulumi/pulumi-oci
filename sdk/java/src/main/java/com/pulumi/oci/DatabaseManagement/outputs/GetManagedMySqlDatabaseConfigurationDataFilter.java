@@ -75,11 +75,11 @@ public final class GetManagedMySqlDatabaseConfigurationDataFilter {
             return values(List.of(values));
         }
         public GetManagedMySqlDatabaseConfigurationDataFilter build() {
-            final var o = new GetManagedMySqlDatabaseConfigurationDataFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabaseConfigurationDataFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

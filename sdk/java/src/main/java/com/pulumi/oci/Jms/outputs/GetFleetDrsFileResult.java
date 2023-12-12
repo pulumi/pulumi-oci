@@ -191,17 +191,17 @@ public final class GetFleetDrsFileResult {
             return this;
         }
         public GetFleetDrsFileResult build() {
-            final var o = new GetFleetDrsFileResult();
-            o.bucket = bucket;
-            o.checksumType = checksumType;
-            o.checksumValue = checksumValue;
-            o.drsFileKey = drsFileKey;
-            o.drsFileName = drsFileName;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.isDefault = isDefault;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetFleetDrsFileResult();
+            _resultValue.bucket = bucket;
+            _resultValue.checksumType = checksumType;
+            _resultValue.checksumValue = checksumValue;
+            _resultValue.drsFileKey = drsFileKey;
+            _resultValue.drsFileName = drsFileName;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.isDefault = isDefault;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

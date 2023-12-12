@@ -159,15 +159,15 @@ public final class GetEnterpriseManagerBridgesResult {
             return states(List.of(states));
         }
         public GetEnterpriseManagerBridgesResult build() {
-            final var o = new GetEnterpriseManagerBridgesResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.enterpriseManagerBridgeCollections = enterpriseManagerBridgeCollections;
-            o.filters = filters;
-            o.id = id;
-            o.states = states;
-            return o;
+            final var _resultValue = new GetEnterpriseManagerBridgesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.enterpriseManagerBridgeCollections = enterpriseManagerBridgeCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            return _resultValue;
         }
     }
 }

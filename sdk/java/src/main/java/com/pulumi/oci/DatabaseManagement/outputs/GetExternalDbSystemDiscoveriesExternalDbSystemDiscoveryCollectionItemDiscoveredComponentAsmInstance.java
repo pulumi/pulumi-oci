@@ -84,11 +84,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance();
-            o.adrHomeDirectory = adrHomeDirectory;
-            o.hostName = hostName;
-            o.instanceName = instanceName;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance();
+            _resultValue.adrHomeDirectory = adrHomeDirectory;
+            _resultValue.hostName = hostName;
+            _resultValue.instanceName = instanceName;
+            return _resultValue;
         }
     }
 }

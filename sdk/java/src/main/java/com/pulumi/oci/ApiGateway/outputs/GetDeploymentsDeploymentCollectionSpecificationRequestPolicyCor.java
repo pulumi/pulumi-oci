@@ -156,14 +156,14 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyC
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor();
-            o.allowedHeaders = allowedHeaders;
-            o.allowedMethods = allowedMethods;
-            o.allowedOrigins = allowedOrigins;
-            o.exposedHeaders = exposedHeaders;
-            o.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
-            o.maxAgeInSeconds = maxAgeInSeconds;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyCor();
+            _resultValue.allowedHeaders = allowedHeaders;
+            _resultValue.allowedMethods = allowedMethods;
+            _resultValue.allowedOrigins = allowedOrigins;
+            _resultValue.exposedHeaders = exposedHeaders;
+            _resultValue.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
+            _resultValue.maxAgeInSeconds = maxAgeInSeconds;
+            return _resultValue;
         }
     }
 }

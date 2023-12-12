@@ -94,12 +94,12 @@ public final class GetManagedDatabasesAsmPropertyResult {
             return this;
         }
         public GetManagedDatabasesAsmPropertyResult build() {
-            final var o = new GetManagedDatabasesAsmPropertyResult();
-            o.id = id;
-            o.items = items;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabasesAsmPropertyResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

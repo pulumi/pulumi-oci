@@ -66,10 +66,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser();
-            o.dbLoginAttempts = dbLoginAttempts;
-            o.dbUserName = dbUserName;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser();
+            _resultValue.dbLoginAttempts = dbLoginAttempts;
+            _resultValue.dbUserName = dbUserName;
+            return _resultValue;
         }
     }
 }

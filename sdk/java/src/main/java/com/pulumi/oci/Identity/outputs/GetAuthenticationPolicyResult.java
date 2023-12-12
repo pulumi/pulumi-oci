@@ -104,12 +104,12 @@ public final class GetAuthenticationPolicyResult {
             return passwordPolicies(List.of(passwordPolicies));
         }
         public GetAuthenticationPolicyResult build() {
-            final var o = new GetAuthenticationPolicyResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.networkPolicies = networkPolicies;
-            o.passwordPolicies = passwordPolicies;
-            return o;
+            final var _resultValue = new GetAuthenticationPolicyResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.networkPolicies = networkPolicies;
+            _resultValue.passwordPolicies = passwordPolicies;
+            return _resultValue;
         }
     }
 }

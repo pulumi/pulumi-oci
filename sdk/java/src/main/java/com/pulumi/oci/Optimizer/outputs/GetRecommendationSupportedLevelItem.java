@@ -46,9 +46,9 @@ public final class GetRecommendationSupportedLevelItem {
             return this;
         }
         public GetRecommendationSupportedLevelItem build() {
-            final var o = new GetRecommendationSupportedLevelItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetRecommendationSupportedLevelItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemQueryProperty
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail build() {
-            final var o = new GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail();
-            o.content = content;
-            o.scriptFileName = scriptFileName;
-            return o;
+            final var _resultValue = new GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail();
+            _resultValue.content = content;
+            _resultValue.scriptFileName = scriptFileName;
+            return _resultValue;
         }
     }
 }

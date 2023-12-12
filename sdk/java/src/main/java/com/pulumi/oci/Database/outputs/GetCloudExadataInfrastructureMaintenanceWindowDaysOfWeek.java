@@ -46,9 +46,9 @@ public final class GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek {
             return this;
         }
         public GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek build() {
-            final var o = new GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeek();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

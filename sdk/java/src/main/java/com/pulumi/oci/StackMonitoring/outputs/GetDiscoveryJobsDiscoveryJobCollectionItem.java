@@ -295,22 +295,22 @@ public final class GetDiscoveryJobsDiscoveryJobCollectionItem {
             return this;
         }
         public GetDiscoveryJobsDiscoveryJobCollectionItem build() {
-            final var o = new GetDiscoveryJobsDiscoveryJobCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.discoveryType = discoveryType;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.resourceName = resourceName;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.status = status;
-            o.statusMessage = statusMessage;
-            o.systemTags = systemTags;
-            o.tenantId = tenantId;
-            o.timeUpdated = timeUpdated;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetDiscoveryJobsDiscoveryJobCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.discoveryType = discoveryType;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.resourceName = resourceName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.statusMessage = statusMessage;
+            _resultValue.systemTags = systemTags;
+            _resultValue.tenantId = tenantId;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

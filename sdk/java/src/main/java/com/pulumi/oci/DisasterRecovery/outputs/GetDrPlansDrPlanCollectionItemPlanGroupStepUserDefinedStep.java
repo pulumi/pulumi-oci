@@ -203,17 +203,17 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
             return this;
         }
         public GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep build() {
-            final var o = new GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep();
-            o.functionId = functionId;
-            o.functionRegion = functionRegion;
-            o.objectStorageScriptLocations = objectStorageScriptLocations;
-            o.requestBody = requestBody;
-            o.runAsUser = runAsUser;
-            o.runOnInstanceId = runOnInstanceId;
-            o.runOnInstanceRegion = runOnInstanceRegion;
-            o.scriptCommand = scriptCommand;
-            o.stepType = stepType;
-            return o;
+            final var _resultValue = new GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep();
+            _resultValue.functionId = functionId;
+            _resultValue.functionRegion = functionRegion;
+            _resultValue.objectStorageScriptLocations = objectStorageScriptLocations;
+            _resultValue.requestBody = requestBody;
+            _resultValue.runAsUser = runAsUser;
+            _resultValue.runOnInstanceId = runOnInstanceId;
+            _resultValue.runOnInstanceRegion = runOnInstanceRegion;
+            _resultValue.scriptCommand = scriptCommand;
+            _resultValue.stepType = stepType;
+            return _resultValue;
         }
     }
 }

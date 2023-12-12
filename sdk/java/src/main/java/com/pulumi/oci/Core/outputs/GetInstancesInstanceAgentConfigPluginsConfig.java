@@ -65,10 +65,10 @@ public final class GetInstancesInstanceAgentConfigPluginsConfig {
             return this;
         }
         public GetInstancesInstanceAgentConfigPluginsConfig build() {
-            final var o = new GetInstancesInstanceAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetInstancesInstanceAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

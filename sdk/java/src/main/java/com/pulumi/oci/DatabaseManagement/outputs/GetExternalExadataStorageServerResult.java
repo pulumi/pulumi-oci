@@ -465,31 +465,31 @@ public final class GetExternalExadataStorageServerResult {
             return this;
         }
         public GetExternalExadataStorageServerResult build() {
-            final var o = new GetExternalExadataStorageServerResult();
-            o.additionalDetails = additionalDetails;
-            o.connectors = connectors;
-            o.cpuCount = cpuCount;
-            o.displayName = displayName;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.externalExadataStorageServerId = externalExadataStorageServerId;
-            o.id = id;
-            o.internalId = internalId;
-            o.ipAddress = ipAddress;
-            o.lifecycleDetails = lifecycleDetails;
-            o.makeModel = makeModel;
-            o.maxFlashDiskIops = maxFlashDiskIops;
-            o.maxFlashDiskThroughput = maxFlashDiskThroughput;
-            o.maxHardDiskIops = maxHardDiskIops;
-            o.maxHardDiskThroughput = maxHardDiskThroughput;
-            o.memoryGb = memoryGb;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.status = status;
-            o.storageGridId = storageGridId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServerResult();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.connectors = connectors;
+            _resultValue.cpuCount = cpuCount;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.externalExadataStorageServerId = externalExadataStorageServerId;
+            _resultValue.id = id;
+            _resultValue.internalId = internalId;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.makeModel = makeModel;
+            _resultValue.maxFlashDiskIops = maxFlashDiskIops;
+            _resultValue.maxFlashDiskThroughput = maxFlashDiskThroughput;
+            _resultValue.maxHardDiskIops = maxHardDiskIops;
+            _resultValue.maxHardDiskThroughput = maxHardDiskThroughput;
+            _resultValue.memoryGb = memoryGb;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.storageGridId = storageGridId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

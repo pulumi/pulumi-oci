@@ -125,13 +125,13 @@ public final class GetSubscriptionsResult {
             return this;
         }
         public GetSubscriptionsResult build() {
-            final var o = new GetSubscriptionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.subscriptions = subscriptions;
-            o.topicId = topicId;
-            return o;
+            final var _resultValue = new GetSubscriptionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.subscriptions = subscriptions;
+            _resultValue.topicId = topicId;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetEdgeSubnetsEdgeSubnet {
             return this;
         }
         public GetEdgeSubnetsEdgeSubnet build() {
-            final var o = new GetEdgeSubnetsEdgeSubnet();
-            o.cidr = cidr;
-            o.region = region;
-            o.timeModified = timeModified;
-            return o;
+            final var _resultValue = new GetEdgeSubnetsEdgeSubnet();
+            _resultValue.cidr = cidr;
+            _resultValue.region = region;
+            _resultValue.timeModified = timeModified;
+            return _resultValue;
         }
     }
 }

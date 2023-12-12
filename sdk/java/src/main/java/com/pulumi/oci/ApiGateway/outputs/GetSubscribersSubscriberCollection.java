@@ -42,9 +42,9 @@ public final class GetSubscribersSubscriberCollection {
             return items(List.of(items));
         }
         public GetSubscribersSubscriberCollection build() {
-            final var o = new GetSubscribersSubscriberCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSubscribersSubscriberCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

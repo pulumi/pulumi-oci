@@ -87,11 +87,11 @@ public final class DataSafeConfigurationGlobalSetting {
             return this;
         }
         public DataSafeConfigurationGlobalSetting build() {
-            final var o = new DataSafeConfigurationGlobalSetting();
-            o.isPaidUsage = isPaidUsage;
-            o.offlineRetentionPeriod = offlineRetentionPeriod;
-            o.onlineRetentionPeriod = onlineRetentionPeriod;
-            return o;
+            final var _resultValue = new DataSafeConfigurationGlobalSetting();
+            _resultValue.isPaidUsage = isPaidUsage;
+            _resultValue.offlineRetentionPeriod = offlineRetentionPeriod;
+            _resultValue.onlineRetentionPeriod = onlineRetentionPeriod;
+            return _resultValue;
         }
     }
 }

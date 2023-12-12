@@ -483,31 +483,31 @@ public final class LibraryMasingFormatFormatEntry {
             return this;
         }
         public LibraryMasingFormatFormatEntry build() {
-            final var o = new LibraryMasingFormatFormatEntry();
-            o.columnName = columnName;
-            o.description = description;
-            o.endDate = endDate;
-            o.endLength = endLength;
-            o.endValue = endValue;
-            o.fixedNumber = fixedNumber;
-            o.fixedString = fixedString;
-            o.groupingColumns = groupingColumns;
-            o.length = length;
-            o.libraryMaskingFormatId = libraryMaskingFormatId;
-            o.postProcessingFunction = postProcessingFunction;
-            o.randomLists = randomLists;
-            o.regularExpression = regularExpression;
-            o.replaceWith = replaceWith;
-            o.schemaName = schemaName;
-            o.sqlExpression = sqlExpression;
-            o.startDate = startDate;
-            o.startLength = startLength;
-            o.startPosition = startPosition;
-            o.startValue = startValue;
-            o.tableName = tableName;
-            o.type = type;
-            o.userDefinedFunction = userDefinedFunction;
-            return o;
+            final var _resultValue = new LibraryMasingFormatFormatEntry();
+            _resultValue.columnName = columnName;
+            _resultValue.description = description;
+            _resultValue.endDate = endDate;
+            _resultValue.endLength = endLength;
+            _resultValue.endValue = endValue;
+            _resultValue.fixedNumber = fixedNumber;
+            _resultValue.fixedString = fixedString;
+            _resultValue.groupingColumns = groupingColumns;
+            _resultValue.length = length;
+            _resultValue.libraryMaskingFormatId = libraryMaskingFormatId;
+            _resultValue.postProcessingFunction = postProcessingFunction;
+            _resultValue.randomLists = randomLists;
+            _resultValue.regularExpression = regularExpression;
+            _resultValue.replaceWith = replaceWith;
+            _resultValue.schemaName = schemaName;
+            _resultValue.sqlExpression = sqlExpression;
+            _resultValue.startDate = startDate;
+            _resultValue.startLength = startLength;
+            _resultValue.startPosition = startPosition;
+            _resultValue.startValue = startValue;
+            _resultValue.tableName = tableName;
+            _resultValue.type = type;
+            _resultValue.userDefinedFunction = userDefinedFunction;
+            return _resultValue;
         }
     }
 }

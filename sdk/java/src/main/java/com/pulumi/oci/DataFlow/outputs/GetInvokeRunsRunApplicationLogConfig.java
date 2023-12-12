@@ -65,10 +65,10 @@ public final class GetInvokeRunsRunApplicationLogConfig {
             return this;
         }
         public GetInvokeRunsRunApplicationLogConfig build() {
-            final var o = new GetInvokeRunsRunApplicationLogConfig();
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new GetInvokeRunsRunApplicationLogConfig();
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

@@ -71,12 +71,12 @@ public final class GetSecretSecretContent {
             return this;
         }
         public GetSecretSecretContent build() {
-            final var o = new GetSecretSecretContent();
-            o.content = content;
-            o.contentType = contentType;
-            o.name = name;
-            o.stage = stage;
-            return o;
+            final var _resultValue = new GetSecretSecretContent();
+            _resultValue.content = content;
+            _resultValue.contentType = contentType;
+            _resultValue.name = name;
+            _resultValue.stage = stage;
+            return _resultValue;
         }
     }
 }

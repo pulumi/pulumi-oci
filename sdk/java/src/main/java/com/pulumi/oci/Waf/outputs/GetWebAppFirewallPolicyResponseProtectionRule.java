@@ -191,16 +191,16 @@ public final class GetWebAppFirewallPolicyResponseProtectionRule {
             return this;
         }
         public GetWebAppFirewallPolicyResponseProtectionRule build() {
-            final var o = new GetWebAppFirewallPolicyResponseProtectionRule();
-            o.actionName = actionName;
-            o.condition = condition;
-            o.conditionLanguage = conditionLanguage;
-            o.isBodyInspectionEnabled = isBodyInspectionEnabled;
-            o.name = name;
-            o.protectionCapabilities = protectionCapabilities;
-            o.protectionCapabilitySettings = protectionCapabilitySettings;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPolicyResponseProtectionRule();
+            _resultValue.actionName = actionName;
+            _resultValue.condition = condition;
+            _resultValue.conditionLanguage = conditionLanguage;
+            _resultValue.isBodyInspectionEnabled = isBodyInspectionEnabled;
+            _resultValue.name = name;
+            _resultValue.protectionCapabilities = protectionCapabilities;
+            _resultValue.protectionCapabilitySettings = protectionCapabilitySettings;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

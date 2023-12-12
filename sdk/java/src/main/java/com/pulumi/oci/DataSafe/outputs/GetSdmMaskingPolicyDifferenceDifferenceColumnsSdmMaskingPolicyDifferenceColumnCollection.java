@@ -42,9 +42,9 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolic
             return items(List.of(items));
         }
         public GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection build() {
-            final var o = new GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetDetectionModelsFilter {
             return values(List.of(values));
         }
         public GetDetectionModelsFilter build() {
-            final var o = new GetDetectionModelsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDetectionModelsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

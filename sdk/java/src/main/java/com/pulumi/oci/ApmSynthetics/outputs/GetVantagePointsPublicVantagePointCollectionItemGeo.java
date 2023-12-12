@@ -142,14 +142,14 @@ public final class GetVantagePointsPublicVantagePointCollectionItemGeo {
             return this;
         }
         public GetVantagePointsPublicVantagePointCollectionItemGeo build() {
-            final var o = new GetVantagePointsPublicVantagePointCollectionItemGeo();
-            o.adminDivCode = adminDivCode;
-            o.cityName = cityName;
-            o.countryCode = countryCode;
-            o.countryName = countryName;
-            o.latitude = latitude;
-            o.longitude = longitude;
-            return o;
+            final var _resultValue = new GetVantagePointsPublicVantagePointCollectionItemGeo();
+            _resultValue.adminDivCode = adminDivCode;
+            _resultValue.cityName = cityName;
+            _resultValue.countryCode = countryCode;
+            _resultValue.countryName = countryName;
+            _resultValue.latitude = latitude;
+            _resultValue.longitude = longitude;
+            return _resultValue;
         }
     }
 }

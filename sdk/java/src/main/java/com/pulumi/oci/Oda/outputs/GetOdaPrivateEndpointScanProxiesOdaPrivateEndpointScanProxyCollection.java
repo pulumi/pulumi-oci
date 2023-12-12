@@ -42,9 +42,9 @@ public final class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCo
             return items(List.of(items));
         }
         public GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection build() {
-            final var o = new GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

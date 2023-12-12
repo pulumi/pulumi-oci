@@ -146,14 +146,14 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetwork {
             return this;
         }
         public GetVmClusterNetworksVmClusterNetworkVmNetwork build() {
-            final var o = new GetVmClusterNetworksVmClusterNetworkVmNetwork();
-            o.domainName = domainName;
-            o.gateway = gateway;
-            o.netmask = netmask;
-            o.networkType = networkType;
-            o.nodes = nodes;
-            o.vlanId = vlanId;
-            return o;
+            final var _resultValue = new GetVmClusterNetworksVmClusterNetworkVmNetwork();
+            _resultValue.domainName = domainName;
+            _resultValue.gateway = gateway;
+            _resultValue.netmask = netmask;
+            _resultValue.networkType = networkType;
+            _resultValue.nodes = nodes;
+            _resultValue.vlanId = vlanId;
+            return _resultValue;
         }
     }
 }

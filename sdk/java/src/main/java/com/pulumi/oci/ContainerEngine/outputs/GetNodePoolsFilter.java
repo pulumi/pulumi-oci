@@ -75,11 +75,11 @@ public final class GetNodePoolsFilter {
             return values(List.of(values));
         }
         public GetNodePoolsFilter build() {
-            final var o = new GetNodePoolsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNodePoolsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

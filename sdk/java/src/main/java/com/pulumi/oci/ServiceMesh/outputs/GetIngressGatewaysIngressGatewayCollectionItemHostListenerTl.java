@@ -93,11 +93,11 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl 
             return serverCertificates(List.of(serverCertificates));
         }
         public GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl();
-            o.clientValidations = clientValidations;
-            o.mode = mode;
-            o.serverCertificates = serverCertificates;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTl();
+            _resultValue.clientValidations = clientValidations;
+            _resultValue.mode = mode;
+            _resultValue.serverCertificates = serverCertificates;
+            return _resultValue;
         }
     }
 }

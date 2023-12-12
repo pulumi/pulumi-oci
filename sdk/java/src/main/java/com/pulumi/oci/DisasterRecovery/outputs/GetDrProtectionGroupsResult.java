@@ -193,17 +193,17 @@ public final class GetDrProtectionGroupsResult {
             return this;
         }
         public GetDrProtectionGroupsResult build() {
-            final var o = new GetDrProtectionGroupsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.drProtectionGroupCollections = drProtectionGroupCollections;
-            o.drProtectionGroupId = drProtectionGroupId;
-            o.filters = filters;
-            o.id = id;
-            o.lifecycleSubState = lifecycleSubState;
-            o.role = role;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.drProtectionGroupCollections = drProtectionGroupCollections;
+            _resultValue.drProtectionGroupId = drProtectionGroupId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.lifecycleSubState = lifecycleSubState;
+            _resultValue.role = role;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

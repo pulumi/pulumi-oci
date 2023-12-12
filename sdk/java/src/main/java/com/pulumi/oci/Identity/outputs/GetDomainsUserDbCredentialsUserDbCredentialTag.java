@@ -65,10 +65,10 @@ public final class GetDomainsUserDbCredentialsUserDbCredentialTag {
             return this;
         }
         public GetDomainsUserDbCredentialsUserDbCredentialTag build() {
-            final var o = new GetDomainsUserDbCredentialsUserDbCredentialTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserDbCredentialsUserDbCredentialTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

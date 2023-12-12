@@ -105,10 +105,10 @@ public final class DomainsMySupportAccountTag {
             return this;
         }
         public DomainsMySupportAccountTag build() {
-            final var o = new DomainsMySupportAccountTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMySupportAccountTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

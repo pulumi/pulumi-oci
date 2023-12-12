@@ -70,10 +70,10 @@ public final class GetAuditProfileAnalyticItem {
             return dimensions(List.of(dimensions));
         }
         public GetAuditProfileAnalyticItem build() {
-            final var o = new GetAuditProfileAnalyticItem();
-            o.count = count;
-            o.dimensions = dimensions;
-            return o;
+            final var _resultValue = new GetAuditProfileAnalyticItem();
+            _resultValue.count = count;
+            _resultValue.dimensions = dimensions;
+            return _resultValue;
         }
     }
 }

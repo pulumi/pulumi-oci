@@ -176,18 +176,18 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVnic {
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemVnic build() {
-            final var o = new GetContainerInstancesContainerInstanceCollectionItemVnic();
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.isPublicIpAssigned = isPublicIpAssigned;
-            o.nsgIds = nsgIds;
-            o.privateIp = privateIp;
-            o.skipSourceDestCheck = skipSourceDestCheck;
-            o.subnetId = subnetId;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetContainerInstancesContainerInstanceCollectionItemVnic();
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.isPublicIpAssigned = isPublicIpAssigned;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateIp = privateIp;
+            _resultValue.skipSourceDestCheck = skipSourceDestCheck;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

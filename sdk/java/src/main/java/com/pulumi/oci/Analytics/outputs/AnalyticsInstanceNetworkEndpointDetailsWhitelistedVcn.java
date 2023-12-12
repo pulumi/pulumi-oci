@@ -71,10 +71,10 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn {
             return whitelistedIps(List.of(whitelistedIps));
         }
         public AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn build() {
-            final var o = new AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn();
-            o.id = id;
-            o.whitelistedIps = whitelistedIps;
-            return o;
+            final var _resultValue = new AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn();
+            _resultValue.id = id;
+            _resultValue.whitelistedIps = whitelistedIps;
+            return _resultValue;
         }
     }
 }

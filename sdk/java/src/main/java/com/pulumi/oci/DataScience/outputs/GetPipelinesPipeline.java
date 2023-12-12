@@ -396,27 +396,27 @@ public final class GetPipelinesPipeline {
             return this;
         }
         public GetPipelinesPipeline build() {
-            final var o = new GetPipelinesPipeline();
-            o.compartmentId = compartmentId;
-            o.configurationDetails = configurationDetails;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.deleteRelatedPipelineRuns = deleteRelatedPipelineRuns;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
-            o.lifecycleDetails = lifecycleDetails;
-            o.logConfigurationDetails = logConfigurationDetails;
-            o.projectId = projectId;
-            o.state = state;
-            o.stepArtifacts = stepArtifacts;
-            o.stepDetails = stepDetails;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetPipelinesPipeline();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationDetails = configurationDetails;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deleteRelatedPipelineRuns = deleteRelatedPipelineRuns;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.logConfigurationDetails = logConfigurationDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.stepArtifacts = stepArtifacts;
+            _resultValue.stepDetails = stepDetails;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

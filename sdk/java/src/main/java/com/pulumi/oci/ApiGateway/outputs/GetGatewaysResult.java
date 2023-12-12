@@ -163,15 +163,15 @@ public final class GetGatewaysResult {
             return this;
         }
         public GetGatewaysResult build() {
-            final var o = new GetGatewaysResult();
-            o.certificateId = certificateId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.gatewayCollections = gatewayCollections;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetGatewaysResult();
+            _resultValue.certificateId = certificateId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.gatewayCollections = gatewayCollections;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

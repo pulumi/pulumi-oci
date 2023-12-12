@@ -208,17 +208,17 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             return targetTechnologies(List.of(targetTechnologies));
         }
         public GetDeploymentTypesDeploymentTypeCollectionItem build() {
-            final var o = new GetDeploymentTypesDeploymentTypeCollectionItem();
-            o.category = category;
-            o.connectionTypes = connectionTypes;
-            o.defaultUsername = defaultUsername;
-            o.deploymentType = deploymentType;
-            o.displayName = displayName;
-            o.oggVersion = oggVersion;
-            o.sourceTechnologies = sourceTechnologies;
-            o.supportedTechnologiesUrl = supportedTechnologiesUrl;
-            o.targetTechnologies = targetTechnologies;
-            return o;
+            final var _resultValue = new GetDeploymentTypesDeploymentTypeCollectionItem();
+            _resultValue.category = category;
+            _resultValue.connectionTypes = connectionTypes;
+            _resultValue.defaultUsername = defaultUsername;
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.displayName = displayName;
+            _resultValue.oggVersion = oggVersion;
+            _resultValue.sourceTechnologies = sourceTechnologies;
+            _resultValue.supportedTechnologiesUrl = supportedTechnologiesUrl;
+            _resultValue.targetTechnologies = targetTechnologies;
+            return _resultValue;
         }
     }
 }

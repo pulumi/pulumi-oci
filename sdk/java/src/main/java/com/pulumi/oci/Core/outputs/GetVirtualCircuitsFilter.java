@@ -67,11 +67,11 @@ public final class GetVirtualCircuitsFilter {
             return values(List.of(values));
         }
         public GetVirtualCircuitsFilter build() {
-            final var o = new GetVirtualCircuitsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVirtualCircuitsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

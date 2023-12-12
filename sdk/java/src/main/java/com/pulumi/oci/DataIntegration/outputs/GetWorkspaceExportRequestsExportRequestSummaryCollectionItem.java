@@ -403,27 +403,27 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItem 
             return this;
         }
         public GetWorkspaceExportRequestsExportRequestSummaryCollectionItem build() {
-            final var o = new GetWorkspaceExportRequestsExportRequestSummaryCollectionItem();
-            o.areReferencesIncluded = areReferencesIncluded;
-            o.bucket = bucket;
-            o.createdBy = createdBy;
-            o.errorMessages = errorMessages;
-            o.exportedItems = exportedItems;
-            o.fileName = fileName;
-            o.filters = filters;
-            o.isObjectOverwriteEnabled = isObjectOverwriteEnabled;
-            o.key = key;
-            o.name = name;
-            o.objectKeys = objectKeys;
-            o.objectStorageRegion = objectStorageRegion;
-            o.objectStorageTenancyId = objectStorageTenancyId;
-            o.referencedItems = referencedItems;
-            o.status = status;
-            o.timeEndedInMillis = timeEndedInMillis;
-            o.timeStartedInMillis = timeStartedInMillis;
-            o.totalExportedObjectCount = totalExportedObjectCount;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceExportRequestsExportRequestSummaryCollectionItem();
+            _resultValue.areReferencesIncluded = areReferencesIncluded;
+            _resultValue.bucket = bucket;
+            _resultValue.createdBy = createdBy;
+            _resultValue.errorMessages = errorMessages;
+            _resultValue.exportedItems = exportedItems;
+            _resultValue.fileName = fileName;
+            _resultValue.filters = filters;
+            _resultValue.isObjectOverwriteEnabled = isObjectOverwriteEnabled;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.objectKeys = objectKeys;
+            _resultValue.objectStorageRegion = objectStorageRegion;
+            _resultValue.objectStorageTenancyId = objectStorageTenancyId;
+            _resultValue.referencedItems = referencedItems;
+            _resultValue.status = status;
+            _resultValue.timeEndedInMillis = timeEndedInMillis;
+            _resultValue.timeStartedInMillis = timeStartedInMillis;
+            _resultValue.totalExportedObjectCount = totalExportedObjectCount;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

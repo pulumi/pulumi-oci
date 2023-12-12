@@ -46,9 +46,9 @@ public final class VmClusterRemoveVirtualMachineDbServer {
             return this;
         }
         public VmClusterRemoveVirtualMachineDbServer build() {
-            final var o = new VmClusterRemoveVirtualMachineDbServer();
-            o.dbServerId = dbServerId;
-            return o;
+            final var _resultValue = new VmClusterRemoveVirtualMachineDbServer();
+            _resultValue.dbServerId = dbServerId;
+            return _resultValue;
         }
     }
 }

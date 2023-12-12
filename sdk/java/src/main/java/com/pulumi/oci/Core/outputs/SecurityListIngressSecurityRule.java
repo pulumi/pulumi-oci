@@ -201,16 +201,16 @@ public final class SecurityListIngressSecurityRule {
             return this;
         }
         public SecurityListIngressSecurityRule build() {
-            final var o = new SecurityListIngressSecurityRule();
-            o.description = description;
-            o.icmpOptions = icmpOptions;
-            o.protocol = protocol;
-            o.source = source;
-            o.sourceType = sourceType;
-            o.stateless = stateless;
-            o.tcpOptions = tcpOptions;
-            o.udpOptions = udpOptions;
-            return o;
+            final var _resultValue = new SecurityListIngressSecurityRule();
+            _resultValue.description = description;
+            _resultValue.icmpOptions = icmpOptions;
+            _resultValue.protocol = protocol;
+            _resultValue.source = source;
+            _resultValue.sourceType = sourceType;
+            _resultValue.stateless = stateless;
+            _resultValue.tcpOptions = tcpOptions;
+            _resultValue.udpOptions = udpOptions;
+            return _resultValue;
         }
     }
 }

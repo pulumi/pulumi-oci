@@ -108,12 +108,12 @@ public final class GetManagementStationsManagementStationCollectionItemProxy {
             return this;
         }
         public GetManagementStationsManagementStationCollectionItemProxy build() {
-            final var o = new GetManagementStationsManagementStationCollectionItemProxy();
-            o.forward = forward;
-            o.hosts = hosts;
-            o.isEnabled = isEnabled;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetManagementStationsManagementStationCollectionItemProxy();
+            _resultValue.forward = forward;
+            _resultValue.hosts = hosts;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

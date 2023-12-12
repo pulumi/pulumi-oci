@@ -50,9 +50,9 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
             return items(List.of(items));
         }
         public GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem build() {
-            final var o = new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

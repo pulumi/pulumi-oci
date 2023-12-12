@@ -207,19 +207,19 @@ public final class GetRecordsResult {
             return this;
         }
         public GetRecordsResult build() {
-            final var o = new GetRecordsResult();
-            o.compartmentId = compartmentId;
-            o.domain = domain;
-            o.domainContains = domainContains;
-            o.filters = filters;
-            o.id = id;
-            o.records = records;
-            o.rtype = rtype;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.zoneNameOrId = zoneNameOrId;
-            o.zoneVersion = zoneVersion;
-            return o;
+            final var _resultValue = new GetRecordsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.domain = domain;
+            _resultValue.domainContains = domainContains;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.records = records;
+            _resultValue.rtype = rtype;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.zoneNameOrId = zoneNameOrId;
+            _resultValue.zoneVersion = zoneVersion;
+            return _resultValue;
         }
     }
 }

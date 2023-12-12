@@ -185,16 +185,16 @@ public final class GetExportsExport {
             return this;
         }
         public GetExportsExport build() {
-            final var o = new GetExportsExport();
-            o.exportOptions = exportOptions;
-            o.exportSetId = exportSetId;
-            o.fileSystemId = fileSystemId;
-            o.id = id;
-            o.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
-            o.path = path;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetExportsExport();
+            _resultValue.exportOptions = exportOptions;
+            _resultValue.exportSetId = exportSetId;
+            _resultValue.fileSystemId = fileSystemId;
+            _resultValue.id = id;
+            _resultValue.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
+            _resultValue.path = path;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

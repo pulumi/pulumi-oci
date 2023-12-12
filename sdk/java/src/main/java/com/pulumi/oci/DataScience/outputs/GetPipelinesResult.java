@@ -182,16 +182,16 @@ public final class GetPipelinesResult {
             return this;
         }
         public GetPipelinesResult build() {
-            final var o = new GetPipelinesResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.pipelines = pipelines;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPipelinesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.pipelines = pipelines;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

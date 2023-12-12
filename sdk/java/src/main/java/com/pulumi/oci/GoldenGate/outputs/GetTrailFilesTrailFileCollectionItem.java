@@ -204,17 +204,17 @@ public final class GetTrailFilesTrailFileCollectionItem {
             return this;
         }
         public GetTrailFilesTrailFileCollectionItem build() {
-            final var o = new GetTrailFilesTrailFileCollectionItem();
-            o.consumers = consumers;
-            o.displayName = displayName;
-            o.maxSequenceNumber = maxSequenceNumber;
-            o.minSequenceNumber = minSequenceNumber;
-            o.numberOfSequences = numberOfSequences;
-            o.producer = producer;
-            o.sizeInBytes = sizeInBytes;
-            o.timeLastUpdated = timeLastUpdated;
-            o.trailFileId = trailFileId;
-            return o;
+            final var _resultValue = new GetTrailFilesTrailFileCollectionItem();
+            _resultValue.consumers = consumers;
+            _resultValue.displayName = displayName;
+            _resultValue.maxSequenceNumber = maxSequenceNumber;
+            _resultValue.minSequenceNumber = minSequenceNumber;
+            _resultValue.numberOfSequences = numberOfSequences;
+            _resultValue.producer = producer;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.timeLastUpdated = timeLastUpdated;
+            _resultValue.trailFileId = trailFileId;
+            return _resultValue;
         }
     }
 }

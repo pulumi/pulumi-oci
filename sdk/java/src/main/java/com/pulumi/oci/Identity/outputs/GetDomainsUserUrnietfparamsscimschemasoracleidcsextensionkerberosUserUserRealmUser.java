@@ -103,12 +103,12 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerb
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser();
-            o.principalName = principalName;
-            o.realmName = realmName;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser();
+            _resultValue.principalName = principalName;
+            _resultValue.realmName = realmName;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

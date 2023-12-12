@@ -67,11 +67,11 @@ public final class GetOsnsFilter {
             return values(List.of(values));
         }
         public GetOsnsFilter build() {
-            final var o = new GetOsnsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetOsnsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

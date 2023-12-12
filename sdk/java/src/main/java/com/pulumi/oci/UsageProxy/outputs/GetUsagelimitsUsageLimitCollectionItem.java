@@ -324,24 +324,24 @@ public final class GetUsagelimitsUsageLimitCollectionItem {
             return this;
         }
         public GetUsagelimitsUsageLimitCollectionItem build() {
-            final var o = new GetUsagelimitsUsageLimitCollectionItem();
-            o.action = action;
-            o.alertLevel = alertLevel;
-            o.createdBy = createdBy;
-            o.entitlementId = entitlementId;
-            o.id = id;
-            o.limit = limit;
-            o.limitType = limitType;
-            o.maxHardLimit = maxHardLimit;
-            o.modifiedBy = modifiedBy;
-            o.resourceName = resourceName;
-            o.serviceName = serviceName;
-            o.skuPartId = skuPartId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            o.valueType = valueType;
-            return o;
+            final var _resultValue = new GetUsagelimitsUsageLimitCollectionItem();
+            _resultValue.action = action;
+            _resultValue.alertLevel = alertLevel;
+            _resultValue.createdBy = createdBy;
+            _resultValue.entitlementId = entitlementId;
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.limitType = limitType;
+            _resultValue.maxHardLimit = maxHardLimit;
+            _resultValue.modifiedBy = modifiedBy;
+            _resultValue.resourceName = resourceName;
+            _resultValue.serviceName = serviceName;
+            _resultValue.skuPartId = skuPartId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            _resultValue.valueType = valueType;
+            return _resultValue;
         }
     }
 }

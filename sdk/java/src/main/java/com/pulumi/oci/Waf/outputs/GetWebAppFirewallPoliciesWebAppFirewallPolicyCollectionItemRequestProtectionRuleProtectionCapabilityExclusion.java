@@ -72,10 +72,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
             return requestCookies(List.of(requestCookies));
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion();
-            o.args = args;
-            o.requestCookies = requestCookies;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusion();
+            _resultValue.args = args;
+            _resultValue.requestCookies = requestCookies;
+            return _resultValue;
         }
     }
 }

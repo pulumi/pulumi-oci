@@ -280,21 +280,21 @@ public final class GetIpsecConnectionsConnection {
             return this;
         }
         public GetIpsecConnectionsConnection build() {
-            final var o = new GetIpsecConnectionsConnection();
-            o.compartmentId = compartmentId;
-            o.cpeId = cpeId;
-            o.cpeLocalIdentifier = cpeLocalIdentifier;
-            o.cpeLocalIdentifierType = cpeLocalIdentifierType;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.drgId = drgId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.state = state;
-            o.staticRoutes = staticRoutes;
-            o.timeCreated = timeCreated;
-            o.transportType = transportType;
-            return o;
+            final var _resultValue = new GetIpsecConnectionsConnection();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.cpeId = cpeId;
+            _resultValue.cpeLocalIdentifier = cpeLocalIdentifier;
+            _resultValue.cpeLocalIdentifierType = cpeLocalIdentifierType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.drgId = drgId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.staticRoutes = staticRoutes;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.transportType = transportType;
+            return _resultValue;
         }
     }
 }

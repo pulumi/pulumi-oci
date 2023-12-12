@@ -67,11 +67,11 @@ public final class GetFilesystemSnapshotPoliciesFilter {
             return values(List.of(values));
         }
         public GetFilesystemSnapshotPoliciesFilter build() {
-            final var o = new GetFilesystemSnapshotPoliciesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFilesystemSnapshotPoliciesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -169,14 +169,14 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
             return this;
         }
         public ComputeCapacityReservationInstanceReservationConfig build() {
-            final var o = new ComputeCapacityReservationInstanceReservationConfig();
-            o.clusterConfig = clusterConfig;
-            o.faultDomain = faultDomain;
-            o.instanceShape = instanceShape;
-            o.instanceShapeConfig = instanceShapeConfig;
-            o.reservedCount = reservedCount;
-            o.usedCount = usedCount;
-            return o;
+            final var _resultValue = new ComputeCapacityReservationInstanceReservationConfig();
+            _resultValue.clusterConfig = clusterConfig;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.instanceShape = instanceShape;
+            _resultValue.instanceShapeConfig = instanceShapeConfig;
+            _resultValue.reservedCount = reservedCount;
+            _resultValue.usedCount = usedCount;
+            return _resultValue;
         }
     }
 }

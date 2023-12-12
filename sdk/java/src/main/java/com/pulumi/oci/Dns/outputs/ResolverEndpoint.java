@@ -258,20 +258,20 @@ public final class ResolverEndpoint {
             return this;
         }
         public ResolverEndpoint build() {
-            final var o = new ResolverEndpoint();
-            o.compartmentId = compartmentId;
-            o.endpointType = endpointType;
-            o.forwardingAddress = forwardingAddress;
-            o.isForwarding = isForwarding;
-            o.isListening = isListening;
-            o.listeningAddress = listeningAddress;
-            o.name = name;
-            o.self = self;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new ResolverEndpoint();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.endpointType = endpointType;
+            _resultValue.forwardingAddress = forwardingAddress;
+            _resultValue.isForwarding = isForwarding;
+            _resultValue.isListening = isListening;
+            _resultValue.listeningAddress = listeningAddress;
+            _resultValue.name = name;
+            _resultValue.self = self;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

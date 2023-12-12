@@ -120,14 +120,14 @@ public final class GetAuditProfileAnalyticResult {
             return items(List.of(items));
         }
         public GetAuditProfileAnalyticResult build() {
-            final var o = new GetAuditProfileAnalyticResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.groupBies = groupBies;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAuditProfileAnalyticResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.groupBies = groupBies;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

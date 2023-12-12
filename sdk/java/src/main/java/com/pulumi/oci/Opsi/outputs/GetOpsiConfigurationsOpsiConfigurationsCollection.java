@@ -42,9 +42,9 @@ public final class GetOpsiConfigurationsOpsiConfigurationsCollection {
             return items(List.of(items));
         }
         public GetOpsiConfigurationsOpsiConfigurationsCollection build() {
-            final var o = new GetOpsiConfigurationsOpsiConfigurationsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationsOpsiConfigurationsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

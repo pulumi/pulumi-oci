@@ -65,10 +65,10 @@ public final class GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoraclei
             return this;
         }
         public GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag build() {
-            final var o = new GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagFreeformTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

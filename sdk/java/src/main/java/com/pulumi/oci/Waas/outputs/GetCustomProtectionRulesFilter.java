@@ -67,11 +67,11 @@ public final class GetCustomProtectionRulesFilter {
             return values(List.of(values));
         }
         public GetCustomProtectionRulesFilter build() {
-            final var o = new GetCustomProtectionRulesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCustomProtectionRulesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -198,17 +198,17 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem build() {
-            final var o = new GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem();
-            o.action = action;
-            o.condition = condition;
-            o.decryptionProfile = decryptionProfile;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.position = position;
-            o.priorityOrder = priorityOrder;
-            o.secret = secret;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItem();
+            _resultValue.action = action;
+            _resultValue.condition = condition;
+            _resultValue.decryptionProfile = decryptionProfile;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.position = position;
+            _resultValue.priorityOrder = priorityOrder;
+            _resultValue.secret = secret;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetConnectionsConnectionCollectionItemConnectDescriptor {
             return this;
         }
         public GetConnectionsConnectionCollectionItemConnectDescriptor build() {
-            final var o = new GetConnectionsConnectionCollectionItemConnectDescriptor();
-            o.connectString = connectString;
-            o.databaseServiceName = databaseServiceName;
-            o.host = host;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItemConnectDescriptor();
+            _resultValue.connectString = connectString;
+            _resultValue.databaseServiceName = databaseServiceName;
+            _resultValue.host = host;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

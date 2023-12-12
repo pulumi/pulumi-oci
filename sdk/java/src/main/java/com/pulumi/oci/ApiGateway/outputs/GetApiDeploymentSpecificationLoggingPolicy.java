@@ -73,10 +73,10 @@ public final class GetApiDeploymentSpecificationLoggingPolicy {
             return executionLogs(List.of(executionLogs));
         }
         public GetApiDeploymentSpecificationLoggingPolicy build() {
-            final var o = new GetApiDeploymentSpecificationLoggingPolicy();
-            o.accessLogs = accessLogs;
-            o.executionLogs = executionLogs;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationLoggingPolicy();
+            _resultValue.accessLogs = accessLogs;
+            _resultValue.executionLogs = executionLogs;
+            return _resultValue;
         }
     }
 }

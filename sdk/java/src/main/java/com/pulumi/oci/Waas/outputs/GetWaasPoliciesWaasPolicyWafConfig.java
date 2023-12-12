@@ -299,20 +299,20 @@ public final class GetWaasPoliciesWaasPolicyWafConfig {
             return whitelists(List.of(whitelists));
         }
         public GetWaasPoliciesWaasPolicyWafConfig build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfig();
-            o.accessRules = accessRules;
-            o.addressRateLimitings = addressRateLimitings;
-            o.cachingRules = cachingRules;
-            o.captchas = captchas;
-            o.customProtectionRules = customProtectionRules;
-            o.deviceFingerprintChallenges = deviceFingerprintChallenges;
-            o.humanInteractionChallenges = humanInteractionChallenges;
-            o.jsChallenges = jsChallenges;
-            o.origin = origin;
-            o.originGroups = originGroups;
-            o.protectionSettings = protectionSettings;
-            o.whitelists = whitelists;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfig();
+            _resultValue.accessRules = accessRules;
+            _resultValue.addressRateLimitings = addressRateLimitings;
+            _resultValue.cachingRules = cachingRules;
+            _resultValue.captchas = captchas;
+            _resultValue.customProtectionRules = customProtectionRules;
+            _resultValue.deviceFingerprintChallenges = deviceFingerprintChallenges;
+            _resultValue.humanInteractionChallenges = humanInteractionChallenges;
+            _resultValue.jsChallenges = jsChallenges;
+            _resultValue.origin = origin;
+            _resultValue.originGroups = originGroups;
+            _resultValue.protectionSettings = protectionSettings;
+            _resultValue.whitelists = whitelists;
+            return _resultValue;
         }
     }
 }

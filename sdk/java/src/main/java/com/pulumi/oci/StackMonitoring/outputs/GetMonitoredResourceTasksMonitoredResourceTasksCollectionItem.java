@@ -265,20 +265,20 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
             return workRequestIds(List.of(workRequestIds));
         }
         public GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem build() {
-            final var o = new GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.taskDetails = taskDetails;
-            o.tenantId = tenantId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.workRequestIds = workRequestIds;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.taskDetails = taskDetails;
+            _resultValue.tenantId = tenantId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.workRequestIds = workRequestIds;
+            return _resultValue;
         }
     }
 }

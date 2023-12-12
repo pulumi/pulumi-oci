@@ -65,10 +65,10 @@ public final class GetMonitorVantagePoint {
             return this;
         }
         public GetMonitorVantagePoint build() {
-            final var o = new GetMonitorVantagePoint();
-            o.displayName = displayName;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetMonitorVantagePoint();
+            _resultValue.displayName = displayName;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

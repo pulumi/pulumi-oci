@@ -65,11 +65,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return values(List.of(values));
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperation build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperation();
-            o.operation = operation;
-            o.selection = selection;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperation();
+            _resultValue.operation = operation;
+            _resultValue.selection = selection;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

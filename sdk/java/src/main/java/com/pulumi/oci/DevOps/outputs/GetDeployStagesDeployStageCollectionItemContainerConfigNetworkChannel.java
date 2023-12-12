@@ -88,11 +88,11 @@ public final class GetDeployStagesDeployStageCollectionItemContainerConfigNetwor
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel();
-            o.networkChannelType = networkChannelType;
-            o.nsgIds = nsgIds;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemContainerConfigNetworkChannel();
+            _resultValue.networkChannelType = networkChannelType;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

@@ -242,19 +242,19 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem {
             return this;
         }
         public GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem build() {
-            final var o = new GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.nsgIds = nsgIds;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

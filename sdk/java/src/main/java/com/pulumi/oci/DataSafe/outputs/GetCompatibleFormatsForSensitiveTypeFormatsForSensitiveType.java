@@ -70,10 +70,10 @@ public final class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType {
             return this;
         }
         public GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType build() {
-            final var o = new GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType();
-            o.maskingFormats = maskingFormats;
-            o.sensitiveTypeId = sensitiveTypeId;
-            return o;
+            final var _resultValue = new GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType();
+            _resultValue.maskingFormats = maskingFormats;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            return _resultValue;
         }
     }
 }

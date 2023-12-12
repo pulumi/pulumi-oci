@@ -389,26 +389,26 @@ public final class GetTargetAssetRecommendedSpec {
             return sourceDetails(List.of(sourceDetails));
         }
         public GetTargetAssetRecommendedSpec build() {
-            final var o = new GetTargetAssetRecommendedSpec();
-            o.agentConfigs = agentConfigs;
-            o.availabilityDomain = availabilityDomain;
-            o.capacityReservationId = capacityReservationId;
-            o.compartmentId = compartmentId;
-            o.createVnicDetails = createVnicDetails;
-            o.dedicatedVmHostId = dedicatedVmHostId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.instanceOptions = instanceOptions;
-            o.ipxeScript = ipxeScript;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
-            o.shape = shape;
-            o.shapeConfigs = shapeConfigs;
-            o.sourceDetails = sourceDetails;
-            return o;
+            final var _resultValue = new GetTargetAssetRecommendedSpec();
+            _resultValue.agentConfigs = agentConfigs;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createVnicDetails = createVnicDetails;
+            _resultValue.dedicatedVmHostId = dedicatedVmHostId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.instanceOptions = instanceOptions;
+            _resultValue.ipxeScript = ipxeScript;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfigs = shapeConfigs;
+            _resultValue.sourceDetails = sourceDetails;
+            return _resultValue;
         }
     }
 }

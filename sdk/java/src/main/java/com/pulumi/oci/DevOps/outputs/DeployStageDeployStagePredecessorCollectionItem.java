@@ -46,9 +46,9 @@ public final class DeployStageDeployStagePredecessorCollectionItem {
             return this;
         }
         public DeployStageDeployStagePredecessorCollectionItem build() {
-            final var o = new DeployStageDeployStagePredecessorCollectionItem();
-            o.id = id;
-            return o;
+            final var _resultValue = new DeployStageDeployStagePredecessorCollectionItem();
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

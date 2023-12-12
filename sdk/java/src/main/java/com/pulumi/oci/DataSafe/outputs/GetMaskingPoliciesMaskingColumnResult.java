@@ -362,26 +362,26 @@ public final class GetMaskingPoliciesMaskingColumnResult {
             return this;
         }
         public GetMaskingPoliciesMaskingColumnResult build() {
-            final var o = new GetMaskingPoliciesMaskingColumnResult();
-            o.childColumns = childColumns;
-            o.columnName = columnName;
-            o.dataType = dataType;
-            o.id = id;
-            o.isMaskingEnabled = isMaskingEnabled;
-            o.key = key;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maskingColumnGroup = maskingColumnGroup;
-            o.maskingColumnKey = maskingColumnKey;
-            o.maskingFormats = maskingFormats;
-            o.maskingPolicyId = maskingPolicyId;
-            o.object = object;
-            o.objectType = objectType;
-            o.schemaName = schemaName;
-            o.sensitiveTypeId = sensitiveTypeId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesMaskingColumnResult();
+            _resultValue.childColumns = childColumns;
+            _resultValue.columnName = columnName;
+            _resultValue.dataType = dataType;
+            _resultValue.id = id;
+            _resultValue.isMaskingEnabled = isMaskingEnabled;
+            _resultValue.key = key;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maskingColumnGroup = maskingColumnGroup;
+            _resultValue.maskingColumnKey = maskingColumnKey;
+            _resultValue.maskingFormats = maskingFormats;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.object = object;
+            _resultValue.objectType = objectType;
+            _resultValue.schemaName = schemaName;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

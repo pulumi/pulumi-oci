@@ -422,29 +422,29 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
             return this;
         }
         public GetAuditTrailsAuditTrailCollectionItem build() {
-            final var o = new GetAuditTrailsAuditTrailCollectionItem();
-            o.auditCollectionStartTime = auditCollectionStartTime;
-            o.auditProfileId = auditProfileId;
-            o.auditTrailId = auditTrailId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAutoPurgeEnabled = isAutoPurgeEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.resumeTrigger = resumeTrigger;
-            o.state = state;
-            o.status = status;
-            o.systemTags = systemTags;
-            o.targetId = targetId;
-            o.timeCreated = timeCreated;
-            o.timeLastCollected = timeLastCollected;
-            o.timeUpdated = timeUpdated;
-            o.trailLocation = trailLocation;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetAuditTrailsAuditTrailCollectionItem();
+            _resultValue.auditCollectionStartTime = auditCollectionStartTime;
+            _resultValue.auditProfileId = auditProfileId;
+            _resultValue.auditTrailId = auditTrailId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAutoPurgeEnabled = isAutoPurgeEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.resumeTrigger = resumeTrigger;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastCollected = timeLastCollected;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.trailLocation = trailLocation;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

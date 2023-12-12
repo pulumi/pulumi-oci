@@ -158,16 +158,16 @@ public final class GetNamespacePropertiesMetadataResult {
             return propertyMetadataSummaryCollections(List.of(propertyMetadataSummaryCollections));
         }
         public GetNamespacePropertiesMetadataResult build() {
-            final var o = new GetNamespacePropertiesMetadataResult();
-            o.constraints = constraints;
-            o.displayText = displayText;
-            o.filters = filters;
-            o.id = id;
-            o.level = level;
-            o.name = name;
-            o.namespace = namespace;
-            o.propertyMetadataSummaryCollections = propertyMetadataSummaryCollections;
-            return o;
+            final var _resultValue = new GetNamespacePropertiesMetadataResult();
+            _resultValue.constraints = constraints;
+            _resultValue.displayText = displayText;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.level = level;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.propertyMetadataSummaryCollections = propertyMetadataSummaryCollections;
+            return _resultValue;
         }
     }
 }

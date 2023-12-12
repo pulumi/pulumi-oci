@@ -135,13 +135,13 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
             return targets(List.of(targets));
         }
         public GetUsagePlansUsagePlanCollectionItemEntitlement build() {
-            final var o = new GetUsagePlansUsagePlanCollectionItemEntitlement();
-            o.description = description;
-            o.name = name;
-            o.quotas = quotas;
-            o.rateLimits = rateLimits;
-            o.targets = targets;
-            return o;
+            final var _resultValue = new GetUsagePlansUsagePlanCollectionItemEntitlement();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.quotas = quotas;
+            _resultValue.rateLimits = rateLimits;
+            _resultValue.targets = targets;
+            return _resultValue;
         }
     }
 }

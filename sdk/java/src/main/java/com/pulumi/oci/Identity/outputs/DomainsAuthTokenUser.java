@@ -230,13 +230,13 @@ public final class DomainsAuthTokenUser {
             return this;
         }
         public DomainsAuthTokenUser build() {
-            final var o = new DomainsAuthTokenUser();
-            o.display = display;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAuthTokenUser();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

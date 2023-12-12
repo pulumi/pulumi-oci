@@ -124,13 +124,13 @@ public final class GetFaultDomainsResult {
             return this;
         }
         public GetFaultDomainsResult build() {
-            final var o = new GetFaultDomainsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.faultDomains = faultDomains;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetFaultDomainsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.faultDomains = faultDomains;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -119,13 +119,13 @@ public final class GetMaskingPolicyMaskingSchemasResult {
             return schemaNames(List.of(schemaNames));
         }
         public GetMaskingPolicyMaskingSchemasResult build() {
-            final var o = new GetMaskingPolicyMaskingSchemasResult();
-            o.filters = filters;
-            o.id = id;
-            o.maskingPolicyId = maskingPolicyId;
-            o.maskingSchemaCollections = maskingSchemaCollections;
-            o.schemaNames = schemaNames;
-            return o;
+            final var _resultValue = new GetMaskingPolicyMaskingSchemasResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.maskingSchemaCollections = maskingSchemaCollections;
+            _resultValue.schemaNames = schemaNames;
+            return _resultValue;
         }
     }
 }

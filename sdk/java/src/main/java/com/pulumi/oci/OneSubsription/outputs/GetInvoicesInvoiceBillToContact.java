@@ -179,16 +179,16 @@ public final class GetInvoicesInvoiceBillToContact {
             return this;
         }
         public GetInvoicesInvoiceBillToContact build() {
-            final var o = new GetInvoicesInvoiceBillToContact();
-            o.email = email;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            o.name = name;
-            o.tcaContactId = tcaContactId;
-            o.tcaCustAccntSiteId = tcaCustAccntSiteId;
-            o.tcaPartyId = tcaPartyId;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceBillToContact();
+            _resultValue.email = email;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            _resultValue.name = name;
+            _resultValue.tcaContactId = tcaContactId;
+            _resultValue.tcaCustAccntSiteId = tcaCustAccntSiteId;
+            _resultValue.tcaPartyId = tcaPartyId;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

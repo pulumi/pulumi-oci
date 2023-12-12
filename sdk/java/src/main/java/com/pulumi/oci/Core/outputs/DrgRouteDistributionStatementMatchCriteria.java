@@ -86,11 +86,11 @@ public final class DrgRouteDistributionStatementMatchCriteria {
             return this;
         }
         public DrgRouteDistributionStatementMatchCriteria build() {
-            final var o = new DrgRouteDistributionStatementMatchCriteria();
-            o.attachmentType = attachmentType;
-            o.drgAttachmentId = drgAttachmentId;
-            o.matchType = matchType;
-            return o;
+            final var _resultValue = new DrgRouteDistributionStatementMatchCriteria();
+            _resultValue.attachmentType = attachmentType;
+            _resultValue.drgAttachmentId = drgAttachmentId;
+            _resultValue.matchType = matchType;
+            return _resultValue;
         }
     }
 }

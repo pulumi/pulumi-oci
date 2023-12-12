@@ -137,15 +137,15 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult();
-            o.executionId = executionId;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.modifieds = modifieds;
-            o.originals = originals;
-            o.sqlObjectId = sqlObjectId;
-            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult();
+            _resultValue.executionId = executionId;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.modifieds = modifieds;
+            _resultValue.originals = originals;
+            _resultValue.sqlObjectId = sqlObjectId;
+            _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
             return items(List.of(items));
         }
         public GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection build() {
-            final var o = new GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

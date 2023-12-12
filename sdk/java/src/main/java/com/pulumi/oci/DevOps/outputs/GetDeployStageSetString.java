@@ -50,9 +50,9 @@ public final class GetDeployStageSetString {
             return items(List.of(items));
         }
         public GetDeployStageSetString build() {
-            final var o = new GetDeployStageSetString();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeployStageSetString();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

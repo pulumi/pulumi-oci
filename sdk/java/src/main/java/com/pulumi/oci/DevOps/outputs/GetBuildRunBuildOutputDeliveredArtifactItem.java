@@ -198,17 +198,17 @@ public final class GetBuildRunBuildOutputDeliveredArtifactItem {
             return this;
         }
         public GetBuildRunBuildOutputDeliveredArtifactItem build() {
-            final var o = new GetBuildRunBuildOutputDeliveredArtifactItem();
-            o.artifactRepositoryId = artifactRepositoryId;
-            o.artifactType = artifactType;
-            o.deliveredArtifactHash = deliveredArtifactHash;
-            o.deliveredArtifactId = deliveredArtifactId;
-            o.deployArtifactId = deployArtifactId;
-            o.imageUri = imageUri;
-            o.outputArtifactName = outputArtifactName;
-            o.path = path;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetBuildRunBuildOutputDeliveredArtifactItem();
+            _resultValue.artifactRepositoryId = artifactRepositoryId;
+            _resultValue.artifactType = artifactType;
+            _resultValue.deliveredArtifactHash = deliveredArtifactHash;
+            _resultValue.deliveredArtifactId = deliveredArtifactId;
+            _resultValue.deployArtifactId = deployArtifactId;
+            _resultValue.imageUri = imageUri;
+            _resultValue.outputArtifactName = outputArtifactName;
+            _resultValue.path = path;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

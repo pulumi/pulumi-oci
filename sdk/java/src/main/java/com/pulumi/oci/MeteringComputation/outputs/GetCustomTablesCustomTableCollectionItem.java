@@ -108,12 +108,12 @@ public final class GetCustomTablesCustomTableCollectionItem {
             return this;
         }
         public GetCustomTablesCustomTableCollectionItem build() {
-            final var o = new GetCustomTablesCustomTableCollectionItem();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.savedCustomTables = savedCustomTables;
-            o.savedReportId = savedReportId;
-            return o;
+            final var _resultValue = new GetCustomTablesCustomTableCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.savedCustomTables = savedCustomTables;
+            _resultValue.savedReportId = savedReportId;
+            return _resultValue;
         }
     }
 }

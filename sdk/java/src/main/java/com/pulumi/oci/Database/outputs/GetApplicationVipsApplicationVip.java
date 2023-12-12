@@ -249,20 +249,20 @@ public final class GetApplicationVipsApplicationVip {
             return this;
         }
         public GetApplicationVipsApplicationVip build() {
-            final var o = new GetApplicationVipsApplicationVip();
-            o.cloudVmClusterId = cloudVmClusterId;
-            o.compartmentId = compartmentId;
-            o.dbNodeId = dbNodeId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeAssigned = timeAssigned;
-            return o;
+            final var _resultValue = new GetApplicationVipsApplicationVip();
+            _resultValue.cloudVmClusterId = cloudVmClusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbNodeId = dbNodeId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeAssigned = timeAssigned;
+            return _resultValue;
         }
     }
 }

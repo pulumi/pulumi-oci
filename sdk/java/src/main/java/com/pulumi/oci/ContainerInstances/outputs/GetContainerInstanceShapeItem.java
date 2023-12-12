@@ -135,13 +135,13 @@ public final class GetContainerInstanceShapeItem {
             return this;
         }
         public GetContainerInstanceShapeItem build() {
-            final var o = new GetContainerInstanceShapeItem();
-            o.memoryOptions = memoryOptions;
-            o.name = name;
-            o.networkingBandwidthOptions = networkingBandwidthOptions;
-            o.ocpuOptions = ocpuOptions;
-            o.processorDescription = processorDescription;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapeItem();
+            _resultValue.memoryOptions = memoryOptions;
+            _resultValue.name = name;
+            _resultValue.networkingBandwidthOptions = networkingBandwidthOptions;
+            _resultValue.ocpuOptions = ocpuOptions;
+            _resultValue.processorDescription = processorDescription;
+            return _resultValue;
         }
     }
 }

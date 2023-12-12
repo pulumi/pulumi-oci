@@ -72,9 +72,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequesta
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp();
-            o.requestable = requestable;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp();
+            _resultValue.requestable = requestable;
+            return _resultValue;
         }
     }
 }

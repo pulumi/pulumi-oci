@@ -46,9 +46,9 @@ public final class VirtualServiceDefaultRoutingPolicy {
             return this;
         }
         public VirtualServiceDefaultRoutingPolicy build() {
-            final var o = new VirtualServiceDefaultRoutingPolicy();
-            o.type = type;
-            return o;
+            final var _resultValue = new VirtualServiceDefaultRoutingPolicy();
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

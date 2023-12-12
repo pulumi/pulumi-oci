@@ -103,12 +103,12 @@ public final class GetManagedInstanceGroupSoftwareSource {
             return this;
         }
         public GetManagedInstanceGroupSoftwareSource build() {
-            final var o = new GetManagedInstanceGroupSoftwareSource();
-            o.description = description;
-            o.displayName = displayName;
-            o.id = id;
-            o.softwareSourceType = softwareSourceType;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupSoftwareSource();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.softwareSourceType = softwareSourceType;
+            return _resultValue;
         }
     }
 }

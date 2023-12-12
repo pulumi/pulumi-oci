@@ -95,12 +95,12 @@ public final class GetHostnamesHostname {
             return this;
         }
         public GetHostnamesHostname build() {
-            final var o = new GetHostnamesHostname();
-            o.hostname = hostname;
-            o.loadBalancerId = loadBalancerId;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetHostnamesHostname();
+            _resultValue.hostname = hostname;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetMetricExtensionsMetricExtensionCollection {
             return items(List.of(items));
         }
         public GetMetricExtensionsMetricExtensionCollection build() {
-            final var o = new GetMetricExtensionsMetricExtensionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMetricExtensionsMetricExtensionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

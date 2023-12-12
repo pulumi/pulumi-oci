@@ -71,10 +71,10 @@ public final class ContainerRepositoryReadme {
             return this;
         }
         public ContainerRepositoryReadme build() {
-            final var o = new ContainerRepositoryReadme();
-            o.content = content;
-            o.format = format;
-            return o;
+            final var _resultValue = new ContainerRepositoryReadme();
+            _resultValue.content = content;
+            _resultValue.format = format;
+            return _resultValue;
         }
     }
 }

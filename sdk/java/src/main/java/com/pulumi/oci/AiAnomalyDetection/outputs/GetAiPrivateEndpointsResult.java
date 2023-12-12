@@ -144,14 +144,14 @@ public final class GetAiPrivateEndpointsResult {
             return this;
         }
         public GetAiPrivateEndpointsResult build() {
-            final var o = new GetAiPrivateEndpointsResult();
-            o.aiPrivateEndpointCollections = aiPrivateEndpointCollections;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAiPrivateEndpointsResult();
+            _resultValue.aiPrivateEndpointCollections = aiPrivateEndpointCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

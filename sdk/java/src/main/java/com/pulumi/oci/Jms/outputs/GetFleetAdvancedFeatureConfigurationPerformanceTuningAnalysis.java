@@ -46,9 +46,9 @@ public final class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

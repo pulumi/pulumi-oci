@@ -71,10 +71,10 @@ public final class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange {
             return this;
         }
         public CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange build() {
-            final var o = new CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

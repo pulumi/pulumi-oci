@@ -67,10 +67,10 @@ public final class ConfigConfigurationRequestHeader {
             return this;
         }
         public ConfigConfigurationRequestHeader build() {
-            final var o = new ConfigConfigurationRequestHeader();
-            o.headerName = headerName;
-            o.headerValue = headerValue;
-            return o;
+            final var _resultValue = new ConfigConfigurationRequestHeader();
+            _resultValue.headerName = headerName;
+            _resultValue.headerValue = headerValue;
+            return _resultValue;
         }
     }
 }

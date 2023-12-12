@@ -187,16 +187,16 @@ public final class StorageObjectSourceUriDetails {
             return this;
         }
         public StorageObjectSourceUriDetails build() {
-            final var o = new StorageObjectSourceUriDetails();
-            o.bucket = bucket;
-            o.destinationObjectIfMatchEtag = destinationObjectIfMatchEtag;
-            o.destinationObjectIfNoneMatchEtag = destinationObjectIfNoneMatchEtag;
-            o.namespace = namespace;
-            o.object = object;
-            o.region = region;
-            o.sourceObjectIfMatchEtag = sourceObjectIfMatchEtag;
-            o.sourceVersionId = sourceVersionId;
-            return o;
+            final var _resultValue = new StorageObjectSourceUriDetails();
+            _resultValue.bucket = bucket;
+            _resultValue.destinationObjectIfMatchEtag = destinationObjectIfMatchEtag;
+            _resultValue.destinationObjectIfNoneMatchEtag = destinationObjectIfNoneMatchEtag;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.region = region;
+            _resultValue.sourceObjectIfMatchEtag = sourceObjectIfMatchEtag;
+            _resultValue.sourceVersionId = sourceVersionId;
+            return _resultValue;
         }
     }
 }

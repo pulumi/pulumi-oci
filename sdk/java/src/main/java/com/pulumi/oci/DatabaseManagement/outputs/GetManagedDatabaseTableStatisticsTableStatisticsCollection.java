@@ -50,9 +50,9 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollection {
             return items(List.of(items));
         }
         public GetManagedDatabaseTableStatisticsTableStatisticsCollection build() {
-            final var o = new GetManagedDatabaseTableStatisticsTableStatisticsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseTableStatisticsTableStatisticsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

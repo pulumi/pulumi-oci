@@ -103,12 +103,12 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
             return this;
         }
         public GetDiscoveryJobLogsDiscoveryJobLogCollectionItem build() {
-            final var o = new GetDiscoveryJobLogsDiscoveryJobLogCollectionItem();
-            o.id = id;
-            o.logMessage = logMessage;
-            o.logType = logType;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDiscoveryJobLogsDiscoveryJobLogCollectionItem();
+            _resultValue.id = id;
+            _resultValue.logMessage = logMessage;
+            _resultValue.logType = logType;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

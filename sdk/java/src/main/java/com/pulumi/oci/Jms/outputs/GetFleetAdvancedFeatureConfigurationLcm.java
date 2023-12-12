@@ -70,10 +70,10 @@ public final class GetFleetAdvancedFeatureConfigurationLcm {
             return postInstallationActions(List.of(postInstallationActions));
         }
         public GetFleetAdvancedFeatureConfigurationLcm build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationLcm();
-            o.isEnabled = isEnabled;
-            o.postInstallationActions = postInstallationActions;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationLcm();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.postInstallationActions = postInstallationActions;
+            return _resultValue;
         }
     }
 }

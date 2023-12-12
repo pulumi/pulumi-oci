@@ -203,18 +203,18 @@ public final class GetAddonResult {
             return this;
         }
         public GetAddonResult build() {
-            final var o = new GetAddonResult();
-            o.addonErrors = addonErrors;
-            o.addonName = addonName;
-            o.clusterId = clusterId;
-            o.configurations = configurations;
-            o.currentInstalledVersion = currentInstalledVersion;
-            o.id = id;
-            o.removeAddonResourcesOnDelete = removeAddonResourcesOnDelete;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAddonResult();
+            _resultValue.addonErrors = addonErrors;
+            _resultValue.addonName = addonName;
+            _resultValue.clusterId = clusterId;
+            _resultValue.configurations = configurations;
+            _resultValue.currentInstalledVersion = currentInstalledVersion;
+            _resultValue.id = id;
+            _resultValue.removeAddonResourcesOnDelete = removeAddonResourcesOnDelete;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

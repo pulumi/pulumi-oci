@@ -68,10 +68,10 @@ public final class RecommendationResourceCount {
             return this;
         }
         public RecommendationResourceCount build() {
-            final var o = new RecommendationResourceCount();
-            o.count = count;
-            o.status = status;
-            return o;
+            final var _resultValue = new RecommendationResourceCount();
+            _resultValue.count = count;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

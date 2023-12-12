@@ -65,10 +65,10 @@ public final class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction {
             return this;
         }
         public GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction build() {
-            final var o = new GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction();
-            o.backendSetName = backendSetName;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetLoadBalancerRoutingPoliciesRoutingPolicyRuleAction();
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

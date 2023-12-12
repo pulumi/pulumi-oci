@@ -404,27 +404,27 @@ public final class GetFunctionsFunction {
             return traceConfigs(List.of(traceConfigs));
         }
         public GetFunctionsFunction build() {
-            final var o = new GetFunctionsFunction();
-            o.applicationId = applicationId;
-            o.compartmentId = compartmentId;
-            o.config = config;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.image = image;
-            o.imageDigest = imageDigest;
-            o.invokeEndpoint = invokeEndpoint;
-            o.memoryInMbs = memoryInMbs;
-            o.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
-            o.shape = shape;
-            o.sourceDetails = sourceDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.timeoutInSeconds = timeoutInSeconds;
-            o.traceConfigs = traceConfigs;
-            return o;
+            final var _resultValue = new GetFunctionsFunction();
+            _resultValue.applicationId = applicationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.config = config;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.image = image;
+            _resultValue.imageDigest = imageDigest;
+            _resultValue.invokeEndpoint = invokeEndpoint;
+            _resultValue.memoryInMbs = memoryInMbs;
+            _resultValue.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
+            _resultValue.shape = shape;
+            _resultValue.sourceDetails = sourceDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.timeoutInSeconds = timeoutInSeconds;
+            _resultValue.traceConfigs = traceConfigs;
+            return _resultValue;
         }
     }
 }

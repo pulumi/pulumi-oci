@@ -65,10 +65,10 @@ public final class GetDomainsMyOauth2clientCredentialScope {
             return this;
         }
         public GetDomainsMyOauth2clientCredentialScope build() {
-            final var o = new GetDomainsMyOauth2clientCredentialScope();
-            o.audience = audience;
-            o.scope = scope;
-            return o;
+            final var _resultValue = new GetDomainsMyOauth2clientCredentialScope();
+            _resultValue.audience = audience;
+            _resultValue.scope = scope;
+            return _resultValue;
         }
     }
 }

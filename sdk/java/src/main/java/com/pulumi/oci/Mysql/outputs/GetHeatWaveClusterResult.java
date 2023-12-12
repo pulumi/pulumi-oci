@@ -216,18 +216,18 @@ public final class GetHeatWaveClusterResult {
             return this;
         }
         public GetHeatWaveClusterResult build() {
-            final var o = new GetHeatWaveClusterResult();
-            o.clusterNodes = clusterNodes;
-            o.clusterSize = clusterSize;
-            o.dbSystemId = dbSystemId;
-            o.id = id;
-            o.isLakehouseEnabled = isLakehouseEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.shapeName = shapeName;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetHeatWaveClusterResult();
+            _resultValue.clusterNodes = clusterNodes;
+            _resultValue.clusterSize = clusterSize;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.id = id;
+            _resultValue.isLakehouseEnabled = isLakehouseEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.shapeName = shapeName;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

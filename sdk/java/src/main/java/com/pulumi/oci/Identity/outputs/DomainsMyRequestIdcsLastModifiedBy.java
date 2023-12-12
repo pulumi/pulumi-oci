@@ -224,13 +224,13 @@ public final class DomainsMyRequestIdcsLastModifiedBy {
             return this;
         }
         public DomainsMyRequestIdcsLastModifiedBy build() {
-            final var o = new DomainsMyRequestIdcsLastModifiedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyRequestIdcsLastModifiedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

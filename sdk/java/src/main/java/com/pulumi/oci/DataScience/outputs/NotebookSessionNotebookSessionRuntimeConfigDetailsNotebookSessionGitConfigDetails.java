@@ -51,9 +51,9 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSes
             return notebookSessionGitRepoConfigCollections(List.of(notebookSessionGitRepoConfigCollections));
         }
         public NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails build() {
-            final var o = new NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails();
-            o.notebookSessionGitRepoConfigCollections = notebookSessionGitRepoConfigCollections;
-            return o;
+            final var _resultValue = new NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails();
+            _resultValue.notebookSessionGitRepoConfigCollections = notebookSessionGitRepoConfigCollections;
+            return _resultValue;
         }
     }
 }

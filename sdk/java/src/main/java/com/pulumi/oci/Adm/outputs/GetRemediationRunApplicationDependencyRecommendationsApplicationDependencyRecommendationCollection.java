@@ -50,9 +50,9 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
             return items(List.of(items));
         }
         public GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection build() {
-            final var o = new GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

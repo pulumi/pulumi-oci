@@ -105,10 +105,10 @@ public final class DomainsGrantTag {
             return this;
         }
         public DomainsGrantTag build() {
-            final var o = new DomainsGrantTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsGrantTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

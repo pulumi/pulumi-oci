@@ -65,10 +65,10 @@ public final class GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourc
             return this;
         }
         public GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange build() {
-            final var o = new GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetSecurityListsSecurityListIngressSecurityRuleUdpOptionSourcePortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

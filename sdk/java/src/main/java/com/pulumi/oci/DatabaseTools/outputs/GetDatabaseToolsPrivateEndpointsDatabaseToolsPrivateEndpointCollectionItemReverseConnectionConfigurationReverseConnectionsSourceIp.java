@@ -46,9 +46,9 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
             return this;
         }
         public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp build() {
-            final var o = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp();
-            o.sourceIp = sourceIp;
-            return o;
+            final var _resultValue = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp();
+            _resultValue.sourceIp = sourceIp;
+            return _resultValue;
         }
     }
 }

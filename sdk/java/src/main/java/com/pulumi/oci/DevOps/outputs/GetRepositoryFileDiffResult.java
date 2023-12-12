@@ -261,22 +261,22 @@ public final class GetRepositoryFileDiffResult {
             return this;
         }
         public GetRepositoryFileDiffResult build() {
-            final var o = new GetRepositoryFileDiffResult();
-            o.areConflictsInFile = areConflictsInFile;
-            o.baseVersion = baseVersion;
-            o.changes = changes;
-            o.filePath = filePath;
-            o.id = id;
-            o.isBinary = isBinary;
-            o.isComparisonFromMergeBase = isComparisonFromMergeBase;
-            o.isLarge = isLarge;
-            o.newId = newId;
-            o.newPath = newPath;
-            o.oldId = oldId;
-            o.oldPath = oldPath;
-            o.repositoryId = repositoryId;
-            o.targetVersion = targetVersion;
-            return o;
+            final var _resultValue = new GetRepositoryFileDiffResult();
+            _resultValue.areConflictsInFile = areConflictsInFile;
+            _resultValue.baseVersion = baseVersion;
+            _resultValue.changes = changes;
+            _resultValue.filePath = filePath;
+            _resultValue.id = id;
+            _resultValue.isBinary = isBinary;
+            _resultValue.isComparisonFromMergeBase = isComparisonFromMergeBase;
+            _resultValue.isLarge = isLarge;
+            _resultValue.newId = newId;
+            _resultValue.newPath = newPath;
+            _resultValue.oldId = oldId;
+            _resultValue.oldPath = oldPath;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.targetVersion = targetVersion;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollec
             return items(List.of(items));
         }
         public GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

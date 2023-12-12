@@ -88,11 +88,11 @@ public final class InstanceConfigurationInstanceDetailsSecondaryVnic {
             return this;
         }
         public InstanceConfigurationInstanceDetailsSecondaryVnic build() {
-            final var o = new InstanceConfigurationInstanceDetailsSecondaryVnic();
-            o.createVnicDetails = createVnicDetails;
-            o.displayName = displayName;
-            o.nicIndex = nicIndex;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsSecondaryVnic();
+            _resultValue.createVnicDetails = createVnicDetails;
+            _resultValue.displayName = displayName;
+            _resultValue.nicIndex = nicIndex;
+            return _resultValue;
         }
     }
 }

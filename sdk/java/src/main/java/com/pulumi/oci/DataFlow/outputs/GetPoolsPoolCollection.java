@@ -42,9 +42,9 @@ public final class GetPoolsPoolCollection {
             return items(List.of(items));
         }
         public GetPoolsPoolCollection build() {
-            final var o = new GetPoolsPoolCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetPoolsPoolCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

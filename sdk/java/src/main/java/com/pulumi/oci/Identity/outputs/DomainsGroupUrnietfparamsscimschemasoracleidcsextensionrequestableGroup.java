@@ -80,9 +80,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionreques
             return this;
         }
         public DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup build() {
-            final var o = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup();
-            o.requestable = requestable;
-            return o;
+            final var _resultValue = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup();
+            _resultValue.requestable = requestable;
+            return _resultValue;
         }
     }
 }

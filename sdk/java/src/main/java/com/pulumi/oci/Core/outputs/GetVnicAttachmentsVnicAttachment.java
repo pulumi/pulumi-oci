@@ -272,21 +272,21 @@ public final class GetVnicAttachmentsVnicAttachment {
             return this;
         }
         public GetVnicAttachmentsVnicAttachment build() {
-            final var o = new GetVnicAttachmentsVnicAttachment();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.createVnicDetails = createVnicDetails;
-            o.displayName = displayName;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.nicIndex = nicIndex;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.vlanId = vlanId;
-            o.vlanTag = vlanTag;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetVnicAttachmentsVnicAttachment();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createVnicDetails = createVnicDetails;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.nicIndex = nicIndex;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vlanId = vlanId;
+            _resultValue.vlanTag = vlanTag;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

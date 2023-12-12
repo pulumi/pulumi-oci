@@ -122,14 +122,14 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult {
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult();
-            o.executionId = executionId;
-            o.id = id;
-            o.items = items;
-            o.managedDatabaseId = managedDatabaseId;
-            o.sqlObjectId = sqlObjectId;
-            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult();
+            _resultValue.executionId = executionId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.sqlObjectId = sqlObjectId;
+            _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            return _resultValue;
         }
     }
 }

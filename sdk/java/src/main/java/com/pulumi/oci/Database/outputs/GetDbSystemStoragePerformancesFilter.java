@@ -67,11 +67,11 @@ public final class GetDbSystemStoragePerformancesFilter {
             return values(List.of(values));
         }
         public GetDbSystemStoragePerformancesFilter build() {
-            final var o = new GetDbSystemStoragePerformancesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDbSystemStoragePerformancesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

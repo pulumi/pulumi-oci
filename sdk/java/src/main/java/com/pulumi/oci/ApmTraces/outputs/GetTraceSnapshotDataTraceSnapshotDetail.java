@@ -65,10 +65,10 @@ public final class GetTraceSnapshotDataTraceSnapshotDetail {
             return this;
         }
         public GetTraceSnapshotDataTraceSnapshotDetail build() {
-            final var o = new GetTraceSnapshotDataTraceSnapshotDetail();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetTraceSnapshotDataTraceSnapshotDetail();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

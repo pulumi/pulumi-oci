@@ -92,12 +92,12 @@ public final class GetManagementAgentPluginCountResult {
             return items(List.of(items));
         }
         public GetManagementAgentPluginCountResult build() {
-            final var o = new GetManagementAgentPluginCountResult();
-            o.compartmentId = compartmentId;
-            o.groupBy = groupBy;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagementAgentPluginCountResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.groupBy = groupBy;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

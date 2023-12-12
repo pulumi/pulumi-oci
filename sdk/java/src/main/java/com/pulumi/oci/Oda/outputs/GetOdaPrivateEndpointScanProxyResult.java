@@ -168,16 +168,16 @@ public final class GetOdaPrivateEndpointScanProxyResult {
             return this;
         }
         public GetOdaPrivateEndpointScanProxyResult build() {
-            final var o = new GetOdaPrivateEndpointScanProxyResult();
-            o.id = id;
-            o.odaPrivateEndpointId = odaPrivateEndpointId;
-            o.odaPrivateEndpointScanProxyId = odaPrivateEndpointScanProxyId;
-            o.protocol = protocol;
-            o.scanListenerInfos = scanListenerInfos;
-            o.scanListenerType = scanListenerType;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointScanProxyResult();
+            _resultValue.id = id;
+            _resultValue.odaPrivateEndpointId = odaPrivateEndpointId;
+            _resultValue.odaPrivateEndpointScanProxyId = odaPrivateEndpointScanProxyId;
+            _resultValue.protocol = protocol;
+            _resultValue.scanListenerInfos = scanListenerInfos;
+            _resultValue.scanListenerType = scanListenerType;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

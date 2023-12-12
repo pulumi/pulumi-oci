@@ -219,18 +219,18 @@ public final class ModelEvaluationResultMetric {
             return this;
         }
         public ModelEvaluationResultMetric build() {
-            final var o = new ModelEvaluationResultMetric();
-            o.accuracy = accuracy;
-            o.macroF1 = macroF1;
-            o.macroPrecision = macroPrecision;
-            o.macroRecall = macroRecall;
-            o.microF1 = microF1;
-            o.microPrecision = microPrecision;
-            o.microRecall = microRecall;
-            o.weightedF1 = weightedF1;
-            o.weightedPrecision = weightedPrecision;
-            o.weightedRecall = weightedRecall;
-            return o;
+            final var _resultValue = new ModelEvaluationResultMetric();
+            _resultValue.accuracy = accuracy;
+            _resultValue.macroF1 = macroF1;
+            _resultValue.macroPrecision = macroPrecision;
+            _resultValue.macroRecall = macroRecall;
+            _resultValue.microF1 = microF1;
+            _resultValue.microPrecision = microPrecision;
+            _resultValue.microRecall = microRecall;
+            _resultValue.weightedF1 = weightedF1;
+            _resultValue.weightedPrecision = weightedPrecision;
+            _resultValue.weightedRecall = weightedRecall;
+            return _resultValue;
         }
     }
 }

@@ -118,13 +118,13 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateServiceDetail {
             return targetDbCredentials(List.of(targetDbCredentials));
         }
         public GetMigrationsMigrationCollectionItemGoldenGateServiceDetail build() {
-            final var o = new GetMigrationsMigrationCollectionItemGoldenGateServiceDetail();
-            o.ggsDeployments = ggsDeployments;
-            o.settings = settings;
-            o.sourceContainerDbCredentials = sourceContainerDbCredentials;
-            o.sourceDbCredentials = sourceDbCredentials;
-            o.targetDbCredentials = targetDbCredentials;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemGoldenGateServiceDetail();
+            _resultValue.ggsDeployments = ggsDeployments;
+            _resultValue.settings = settings;
+            _resultValue.sourceContainerDbCredentials = sourceContainerDbCredentials;
+            _resultValue.sourceDbCredentials = sourceDbCredentials;
+            _resultValue.targetDbCredentials = targetDbCredentials;
+            return _resultValue;
         }
     }
 }

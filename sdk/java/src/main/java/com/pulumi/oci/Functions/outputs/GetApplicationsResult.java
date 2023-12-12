@@ -144,14 +144,14 @@ public final class GetApplicationsResult {
             return this;
         }
         public GetApplicationsResult build() {
-            final var o = new GetApplicationsResult();
-            o.applications = applications;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetApplicationsResult();
+            _resultValue.applications = applications;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

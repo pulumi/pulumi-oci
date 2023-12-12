@@ -114,13 +114,13 @@ public final class GetClusterCredentialRotationStatusResult {
             return this;
         }
         public GetClusterCredentialRotationStatusResult build() {
-            final var o = new GetClusterCredentialRotationStatusResult();
-            o.clusterId = clusterId;
-            o.id = id;
-            o.status = status;
-            o.statusDetails = statusDetails;
-            o.timeAutoCompletionScheduled = timeAutoCompletionScheduled;
-            return o;
+            final var _resultValue = new GetClusterCredentialRotationStatusResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.id = id;
+            _resultValue.status = status;
+            _resultValue.statusDetails = statusDetails;
+            _resultValue.timeAutoCompletionScheduled = timeAutoCompletionScheduled;
+            return _resultValue;
         }
     }
 }

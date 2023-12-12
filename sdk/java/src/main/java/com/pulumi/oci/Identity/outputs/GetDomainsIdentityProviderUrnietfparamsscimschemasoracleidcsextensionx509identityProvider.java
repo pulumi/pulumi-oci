@@ -362,25 +362,25 @@ public final class GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcse
             return this;
         }
         public GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider build() {
-            final var o = new GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider();
-            o.certMatchAttribute = certMatchAttribute;
-            o.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
-            o.crlEnabled = crlEnabled;
-            o.crlLocation = crlLocation;
-            o.crlReloadDuration = crlReloadDuration;
-            o.ekuValidationEnabled = ekuValidationEnabled;
-            o.ekuValues = ekuValues;
-            o.ocspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
-            o.ocspEnableSignedResponse = ocspEnableSignedResponse;
-            o.ocspEnabled = ocspEnabled;
-            o.ocspResponderUrl = ocspResponderUrl;
-            o.ocspRevalidateTime = ocspRevalidateTime;
-            o.ocspServerName = ocspServerName;
-            o.ocspTrustCertChains = ocspTrustCertChains;
-            o.otherCertMatchAttribute = otherCertMatchAttribute;
-            o.signingCertificateChains = signingCertificateChains;
-            o.userMatchAttribute = userMatchAttribute;
-            return o;
+            final var _resultValue = new GetDomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProvider();
+            _resultValue.certMatchAttribute = certMatchAttribute;
+            _resultValue.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
+            _resultValue.crlEnabled = crlEnabled;
+            _resultValue.crlLocation = crlLocation;
+            _resultValue.crlReloadDuration = crlReloadDuration;
+            _resultValue.ekuValidationEnabled = ekuValidationEnabled;
+            _resultValue.ekuValues = ekuValues;
+            _resultValue.ocspAllowUnknownResponseStatus = ocspAllowUnknownResponseStatus;
+            _resultValue.ocspEnableSignedResponse = ocspEnableSignedResponse;
+            _resultValue.ocspEnabled = ocspEnabled;
+            _resultValue.ocspResponderUrl = ocspResponderUrl;
+            _resultValue.ocspRevalidateTime = ocspRevalidateTime;
+            _resultValue.ocspServerName = ocspServerName;
+            _resultValue.ocspTrustCertChains = ocspTrustCertChains;
+            _resultValue.otherCertMatchAttribute = otherCertMatchAttribute;
+            _resultValue.signingCertificateChains = signingCertificateChains;
+            _resultValue.userMatchAttribute = userMatchAttribute;
+            return _resultValue;
         }
     }
 }

@@ -49,10 +49,10 @@ public final class DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRang
             return this;
         }
         public DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange build() {
-            final var o = new DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new DefaultSecurityListEgressSecurityRuleTcpOptionsSourcePortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

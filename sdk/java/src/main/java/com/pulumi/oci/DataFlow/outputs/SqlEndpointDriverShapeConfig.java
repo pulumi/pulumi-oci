@@ -67,10 +67,10 @@ public final class SqlEndpointDriverShapeConfig {
             return this;
         }
         public SqlEndpointDriverShapeConfig build() {
-            final var o = new SqlEndpointDriverShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new SqlEndpointDriverShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
             return strategies(List.of(strategies));
         }
         public GetRecommendationStrategiesRecommendationStrategyCollectionItem build() {
-            final var o = new GetRecommendationStrategiesRecommendationStrategyCollectionItem();
-            o.name = name;
-            o.strategies = strategies;
-            return o;
+            final var _resultValue = new GetRecommendationStrategiesRecommendationStrategyCollectionItem();
+            _resultValue.name = name;
+            _resultValue.strategies = strategies;
+            return _resultValue;
         }
     }
 }

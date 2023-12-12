@@ -122,13 +122,13 @@ public final class GetKeyRestoreFromObjectStore {
             return this;
         }
         public GetKeyRestoreFromObjectStore build() {
-            final var o = new GetKeyRestoreFromObjectStore();
-            o.bucket = bucket;
-            o.destination = destination;
-            o.namespace = namespace;
-            o.object = object;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetKeyRestoreFromObjectStore();
+            _resultValue.bucket = bucket;
+            _resultValue.destination = destination;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

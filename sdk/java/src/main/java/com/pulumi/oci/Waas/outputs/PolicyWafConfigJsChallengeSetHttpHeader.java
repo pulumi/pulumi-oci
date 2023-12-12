@@ -71,10 +71,10 @@ public final class PolicyWafConfigJsChallengeSetHttpHeader {
             return this;
         }
         public PolicyWafConfigJsChallengeSetHttpHeader build() {
-            final var o = new PolicyWafConfigJsChallengeSetHttpHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new PolicyWafConfigJsChallengeSetHttpHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

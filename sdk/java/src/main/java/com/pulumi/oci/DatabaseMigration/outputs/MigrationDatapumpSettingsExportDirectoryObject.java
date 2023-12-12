@@ -67,10 +67,10 @@ public final class MigrationDatapumpSettingsExportDirectoryObject {
             return this;
         }
         public MigrationDatapumpSettingsExportDirectoryObject build() {
-            final var o = new MigrationDatapumpSettingsExportDirectoryObject();
-            o.name = name;
-            o.path = path;
-            return o;
+            final var _resultValue = new MigrationDatapumpSettingsExportDirectoryObject();
+            _resultValue.name = name;
+            _resultValue.path = path;
+            return _resultValue;
         }
     }
 }

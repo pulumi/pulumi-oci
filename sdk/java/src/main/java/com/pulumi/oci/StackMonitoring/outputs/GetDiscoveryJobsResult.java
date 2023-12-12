@@ -117,13 +117,13 @@ public final class GetDiscoveryJobsResult {
             return this;
         }
         public GetDiscoveryJobsResult build() {
-            final var o = new GetDiscoveryJobsResult();
-            o.compartmentId = compartmentId;
-            o.discoveryJobCollections = discoveryJobCollections;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetDiscoveryJobsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.discoveryJobCollections = discoveryJobCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

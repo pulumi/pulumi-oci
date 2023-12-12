@@ -302,23 +302,23 @@ public final class GetCertificateResult {
             return this;
         }
         public GetCertificateResult build() {
-            final var o = new GetCertificateResult();
-            o.certificate = certificate;
-            o.certificateId = certificateId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.intermediateCertificates = intermediateCertificates;
-            o.lifecycleDetails = lifecycleDetails;
-            o.privateKey = privateKey;
-            o.state = state;
-            o.subjectNames = subjectNames;
-            o.timeCreated = timeCreated;
-            o.timeNotValidAfter = timeNotValidAfter;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetCertificateResult();
+            _resultValue.certificate = certificate;
+            _resultValue.certificateId = certificateId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.intermediateCertificates = intermediateCertificates;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.privateKey = privateKey;
+            _resultValue.state = state;
+            _resultValue.subjectNames = subjectNames;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeNotValidAfter = timeNotValidAfter;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

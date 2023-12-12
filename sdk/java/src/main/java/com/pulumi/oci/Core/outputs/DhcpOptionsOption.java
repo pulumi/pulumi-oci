@@ -126,12 +126,12 @@ public final class DhcpOptionsOption {
             return this;
         }
         public DhcpOptionsOption build() {
-            final var o = new DhcpOptionsOption();
-            o.customDnsServers = customDnsServers;
-            o.searchDomainNames = searchDomainNames;
-            o.serverType = serverType;
-            o.type = type;
-            return o;
+            final var _resultValue = new DhcpOptionsOption();
+            _resultValue.customDnsServers = customDnsServers;
+            _resultValue.searchDomainNames = searchDomainNames;
+            _resultValue.serverType = serverType;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

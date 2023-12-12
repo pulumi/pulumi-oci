@@ -65,10 +65,10 @@ public final class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape 
             return this;
         }
         public GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape build() {
-            final var o = new GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape();
-            o.availabilityDomain = availabilityDomain;
-            o.instanceShapeName = instanceShapeName;
-            return o;
+            final var _resultValue = new GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.instanceShapeName = instanceShapeName;
+            return _resultValue;
         }
     }
 }

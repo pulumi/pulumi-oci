@@ -182,16 +182,16 @@ public final class GetPublicIpsResult {
             return this;
         }
         public GetPublicIpsResult build() {
-            final var o = new GetPublicIpsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.lifetime = lifetime;
-            o.publicIpPoolId = publicIpPoolId;
-            o.publicIps = publicIps;
-            o.scope = scope;
-            return o;
+            final var _resultValue = new GetPublicIpsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.lifetime = lifetime;
+            _resultValue.publicIpPoolId = publicIpPoolId;
+            _resultValue.publicIps = publicIps;
+            _resultValue.scope = scope;
+            return _resultValue;
         }
     }
 }

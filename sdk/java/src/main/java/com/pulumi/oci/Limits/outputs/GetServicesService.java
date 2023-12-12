@@ -65,10 +65,10 @@ public final class GetServicesService {
             return this;
         }
         public GetServicesService build() {
-            final var o = new GetServicesService();
-            o.description = description;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetServicesService();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

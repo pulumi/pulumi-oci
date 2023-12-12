@@ -90,11 +90,11 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource build() {
-            final var o = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource();
-            o.metrics = metrics;
-            o.recordInput = recordInput;
-            o.type = type;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource();
+            _resultValue.metrics = metrics;
+            _resultValue.recordInput = recordInput;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

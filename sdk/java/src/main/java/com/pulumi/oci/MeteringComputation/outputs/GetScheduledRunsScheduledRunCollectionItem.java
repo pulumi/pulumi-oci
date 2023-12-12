@@ -141,14 +141,14 @@ public final class GetScheduledRunsScheduledRunCollectionItem {
             return this;
         }
         public GetScheduledRunsScheduledRunCollectionItem build() {
-            final var o = new GetScheduledRunsScheduledRunCollectionItem();
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.scheduleId = scheduleId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            return o;
+            final var _resultValue = new GetScheduledRunsScheduledRunCollectionItem();
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.scheduleId = scheduleId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            return _resultValue;
         }
     }
 }

@@ -181,16 +181,16 @@ public final class GetResourceQuotasResourceQuotumCollectionItem {
             return this;
         }
         public GetResourceQuotasResourceQuotumCollectionItem build() {
-            final var o = new GetResourceQuotasResourceQuotumCollectionItem();
-            o.affectedResource = affectedResource;
-            o.balance = balance;
-            o.isAllowed = isAllowed;
-            o.isDependency = isDependency;
-            o.isOverage = isOverage;
-            o.name = name;
-            o.purchasedLimit = purchasedLimit;
-            o.service = service;
-            return o;
+            final var _resultValue = new GetResourceQuotasResourceQuotumCollectionItem();
+            _resultValue.affectedResource = affectedResource;
+            _resultValue.balance = balance;
+            _resultValue.isAllowed = isAllowed;
+            _resultValue.isDependency = isDependency;
+            _resultValue.isOverage = isOverage;
+            _resultValue.name = name;
+            _resultValue.purchasedLimit = purchasedLimit;
+            _resultValue.service = service;
+            return _resultValue;
         }
     }
 }

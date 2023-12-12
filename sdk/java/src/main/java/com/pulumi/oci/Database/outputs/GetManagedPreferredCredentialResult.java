@@ -191,17 +191,17 @@ public final class GetManagedPreferredCredentialResult {
             return this;
         }
         public GetManagedPreferredCredentialResult build() {
-            final var o = new GetManagedPreferredCredentialResult();
-            o.credentialName = credentialName;
-            o.id = id;
-            o.isAccessible = isAccessible;
-            o.managedDatabaseId = managedDatabaseId;
-            o.passwordSecretId = passwordSecretId;
-            o.role = role;
-            o.status = status;
-            o.type = type;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedPreferredCredentialResult();
+            _resultValue.credentialName = credentialName;
+            _resultValue.id = id;
+            _resultValue.isAccessible = isAccessible;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.role = role;
+            _resultValue.status = status;
+            _resultValue.type = type;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

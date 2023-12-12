@@ -98,14 +98,14 @@ public final class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
             return this;
         }
         public GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail build() {
-            final var o = new GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail();
-            o.creationType = creationType;
-            o.dblinkUserPassword = dblinkUserPassword;
-            o.dblinkUsername = dblinkUsername;
-            o.refreshableCloneDetails = refreshableCloneDetails;
-            o.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
-            o.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
-            return o;
+            final var _resultValue = new GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail();
+            _resultValue.creationType = creationType;
+            _resultValue.dblinkUserPassword = dblinkUserPassword;
+            _resultValue.dblinkUsername = dblinkUsername;
+            _resultValue.refreshableCloneDetails = refreshableCloneDetails;
+            _resultValue.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
+            _resultValue.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
+            return _resultValue;
         }
     }
 }

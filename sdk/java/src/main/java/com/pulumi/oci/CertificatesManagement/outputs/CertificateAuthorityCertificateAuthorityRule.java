@@ -86,11 +86,11 @@ public final class CertificateAuthorityCertificateAuthorityRule {
             return this;
         }
         public CertificateAuthorityCertificateAuthorityRule build() {
-            final var o = new CertificateAuthorityCertificateAuthorityRule();
-            o.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
-            o.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
-            o.ruleType = ruleType;
-            return o;
+            final var _resultValue = new CertificateAuthorityCertificateAuthorityRule();
+            _resultValue.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
+            _resultValue.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
+            _resultValue.ruleType = ruleType;
+            return _resultValue;
         }
     }
 }

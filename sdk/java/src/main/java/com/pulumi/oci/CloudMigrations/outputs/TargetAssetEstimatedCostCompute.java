@@ -238,19 +238,19 @@ public final class TargetAssetEstimatedCostCompute {
             return this;
         }
         public TargetAssetEstimatedCostCompute build() {
-            final var o = new TargetAssetEstimatedCostCompute();
-            o.gpuCount = gpuCount;
-            o.gpuPerHour = gpuPerHour;
-            o.gpuPerHourBySubscription = gpuPerHourBySubscription;
-            o.memoryAmountGb = memoryAmountGb;
-            o.memoryGbPerHour = memoryGbPerHour;
-            o.memoryGbPerHourBySubscription = memoryGbPerHourBySubscription;
-            o.ocpuCount = ocpuCount;
-            o.ocpuPerHour = ocpuPerHour;
-            o.ocpuPerHourBySubscription = ocpuPerHourBySubscription;
-            o.totalPerHour = totalPerHour;
-            o.totalPerHourBySubscription = totalPerHourBySubscription;
-            return o;
+            final var _resultValue = new TargetAssetEstimatedCostCompute();
+            _resultValue.gpuCount = gpuCount;
+            _resultValue.gpuPerHour = gpuPerHour;
+            _resultValue.gpuPerHourBySubscription = gpuPerHourBySubscription;
+            _resultValue.memoryAmountGb = memoryAmountGb;
+            _resultValue.memoryGbPerHour = memoryGbPerHour;
+            _resultValue.memoryGbPerHourBySubscription = memoryGbPerHourBySubscription;
+            _resultValue.ocpuCount = ocpuCount;
+            _resultValue.ocpuPerHour = ocpuPerHour;
+            _resultValue.ocpuPerHourBySubscription = ocpuPerHourBySubscription;
+            _resultValue.totalPerHour = totalPerHour;
+            _resultValue.totalPerHourBySubscription = totalPerHourBySubscription;
+            return _resultValue;
         }
     }
 }

@@ -553,36 +553,36 @@ public final class GetDomainsOauthPartnerCertificateResult {
             return this;
         }
         public GetDomainsOauthPartnerCertificateResult build() {
-            final var o = new GetDomainsOauthPartnerCertificateResult();
-            o.authorization = authorization;
-            o.certEndDate = certEndDate;
-            o.certStartDate = certStartDate;
-            o.certificateAlias = certificateAlias;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.externalId = externalId;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.keyStoreId = keyStoreId;
-            o.keyStoreName = keyStoreName;
-            o.keyStorePassword = keyStorePassword;
-            o.map = map;
-            o.metas = metas;
-            o.oAuthPartnerCertificateId = oAuthPartnerCertificateId;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sha1thumbprint = sha1thumbprint;
-            o.sha256thumbprint = sha256thumbprint;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.x509base64certificate = x509base64certificate;
-            return o;
+            final var _resultValue = new GetDomainsOauthPartnerCertificateResult();
+            _resultValue.authorization = authorization;
+            _resultValue.certEndDate = certEndDate;
+            _resultValue.certStartDate = certStartDate;
+            _resultValue.certificateAlias = certificateAlias;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.externalId = externalId;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.keyStoreId = keyStoreId;
+            _resultValue.keyStoreName = keyStoreName;
+            _resultValue.keyStorePassword = keyStorePassword;
+            _resultValue.map = map;
+            _resultValue.metas = metas;
+            _resultValue.oAuthPartnerCertificateId = oAuthPartnerCertificateId;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sha1thumbprint = sha1thumbprint;
+            _resultValue.sha256thumbprint = sha256thumbprint;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.x509base64certificate = x509base64certificate;
+            return _resultValue;
         }
     }
 }

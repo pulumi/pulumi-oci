@@ -232,20 +232,20 @@ public final class GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration {
             return this;
         }
         public GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration build() {
-            final var o = new GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration();
-            o.activateTrigger = activateTrigger;
-            o.bdsApiKeyId = bdsApiKeyId;
-            o.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
-            o.bdsInstanceId = bdsInstanceId;
-            o.clusterAdminPassword = clusterAdminPassword;
-            o.displayName = displayName;
-            o.id = id;
-            o.metastoreId = metastoreId;
-            o.metastoreType = metastoreType;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration();
+            _resultValue.activateTrigger = activateTrigger;
+            _resultValue.bdsApiKeyId = bdsApiKeyId;
+            _resultValue.bdsApiKeyPassphrase = bdsApiKeyPassphrase;
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.clusterAdminPassword = clusterAdminPassword;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.metastoreId = metastoreId;
+            _resultValue.metastoreType = metastoreType;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

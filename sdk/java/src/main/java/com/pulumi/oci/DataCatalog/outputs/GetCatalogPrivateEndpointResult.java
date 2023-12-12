@@ -275,21 +275,21 @@ public final class GetCatalogPrivateEndpointResult {
             return this;
         }
         public GetCatalogPrivateEndpointResult build() {
-            final var o = new GetCatalogPrivateEndpointResult();
-            o.attachedCatalogs = attachedCatalogs;
-            o.catalogPrivateEndpointId = catalogPrivateEndpointId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.dnsZones = dnsZones;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetCatalogPrivateEndpointResult();
+            _resultValue.attachedCatalogs = attachedCatalogs;
+            _resultValue.catalogPrivateEndpointId = catalogPrivateEndpointId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.dnsZones = dnsZones;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

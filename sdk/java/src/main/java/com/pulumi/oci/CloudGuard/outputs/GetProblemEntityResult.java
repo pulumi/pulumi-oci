@@ -89,11 +89,11 @@ public final class GetProblemEntityResult {
             return this;
         }
         public GetProblemEntityResult build() {
-            final var o = new GetProblemEntityResult();
-            o.id = id;
-            o.items = items;
-            o.problemId = problemId;
-            return o;
+            final var _resultValue = new GetProblemEntityResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.problemId = problemId;
+            return _resultValue;
         }
     }
 }

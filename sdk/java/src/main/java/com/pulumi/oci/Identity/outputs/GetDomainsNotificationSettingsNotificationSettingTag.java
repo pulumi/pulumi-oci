@@ -65,10 +65,10 @@ public final class GetDomainsNotificationSettingsNotificationSettingTag {
             return this;
         }
         public GetDomainsNotificationSettingsNotificationSettingTag build() {
-            final var o = new GetDomainsNotificationSettingsNotificationSettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsNotificationSettingsNotificationSettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

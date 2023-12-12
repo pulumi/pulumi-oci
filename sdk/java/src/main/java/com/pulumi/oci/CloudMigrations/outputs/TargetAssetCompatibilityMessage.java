@@ -86,11 +86,11 @@ public final class TargetAssetCompatibilityMessage {
             return this;
         }
         public TargetAssetCompatibilityMessage build() {
-            final var o = new TargetAssetCompatibilityMessage();
-            o.message = message;
-            o.name = name;
-            o.severity = severity;
-            return o;
+            final var _resultValue = new TargetAssetCompatibilityMessage();
+            _resultValue.message = message;
+            _resultValue.name = name;
+            _resultValue.severity = severity;
+            return _resultValue;
         }
     }
 }

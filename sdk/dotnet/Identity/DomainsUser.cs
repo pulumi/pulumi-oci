@@ -1034,8 +1034,8 @@ namespace Pulumi.Oci.Identity
         /// * type: string
         /// * uniqueness: none
         /// </summary>
-        [Input("name", required: true)]
-        public Input<Inputs.DomainsUserNameArgs> Name { get; set; } = null!;
+        [Input("name")]
+        public Input<Inputs.DomainsUserNameArgs>? Name { get; set; }
 
         /// <summary>
         /// (Updatable) Nick name

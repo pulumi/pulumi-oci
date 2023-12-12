@@ -17,7 +17,6 @@ __all__ = ['DomainsUserArgs', 'DomainsUser']
 class DomainsUserArgs:
     def __init__(__self__, *,
                  idcs_endpoint: pulumi.Input[str],
-                 name: pulumi.Input['DomainsUserNameArgs'],
                  schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
                  user_name: pulumi.Input[str],
                  active: Optional[pulumi.Input[bool]] = None,
@@ -32,6 +31,7 @@ class DomainsUserArgs:
                  external_id: Optional[pulumi.Input[str]] = None,
                  ims: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]] = None,
                  locale: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input['DomainsUserNameArgs']] = None,
                  nick_name: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
@@ -66,19 +66,6 @@ class DomainsUserArgs:
         """
         The set of arguments for constructing a DomainsUser resource.
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input['DomainsUserNameArgs'] name: (Updatable) Name of the account assigned to the User.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
                **SCIM++ Properties:**
@@ -209,6 +196,19 @@ class DomainsUserArgs:
                * idcsSearchable: true
                * multiValued: false
                * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input['DomainsUserNameArgs'] name: (Updatable) Name of the account assigned to the User.
+               
+               **Added In:** 17.4.6
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
                * required: false
                * returned: default
                * type: string
@@ -398,7 +398,6 @@ class DomainsUserArgs:
                * uniqueness: none
         """
         pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "schemas", schemas)
         pulumi.set(__self__, "user_name", user_name)
         if active is not None:
@@ -425,6 +424,8 @@ class DomainsUserArgs:
             pulumi.set(__self__, "ims", ims)
         if locale is not None:
             pulumi.set(__self__, "locale", locale)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if nick_name is not None:
             pulumi.set(__self__, "nick_name", nick_name)
         if ocid is not None:
@@ -499,30 +500,6 @@ class DomainsUserArgs:
     @idcs_endpoint.setter
     def idcs_endpoint(self, value: pulumi.Input[str]):
         pulumi.set(self, "idcs_endpoint", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input['DomainsUserNameArgs']:
-        """
-        (Updatable) Name of the account assigned to the User.
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input['DomainsUserNameArgs']):
-        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -811,6 +788,30 @@ class DomainsUserArgs:
     @locale.setter
     def locale(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "locale", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input['DomainsUserNameArgs']]:
+        """
+        (Updatable) Name of the account assigned to the User.
+
+        **Added In:** 17.4.6
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input['DomainsUserNameArgs']]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter(name="nickName")
@@ -3568,8 +3569,6 @@ class DomainsUser(pulumi.CustomResource):
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
             __props__.__dict__["ims"] = ims
             __props__.__dict__["locale"] = locale
-            if name is None and not opts.urn:
-                raise TypeError("Missing required property 'name'")
             __props__.__dict__["name"] = name
             __props__.__dict__["nick_name"] = nick_name
             __props__.__dict__["ocid"] = ocid

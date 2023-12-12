@@ -539,9 +539,6 @@ func NewDomainsUser(ctx *pulumi.Context,
 	if args.IdcsEndpoint == nil {
 		return nil, errors.New("invalid value for required argument 'IdcsEndpoint'")
 	}
-	if args.Name == nil {
-		return nil, errors.New("invalid value for required argument 'Name'")
-	}
 	if args.Schemas == nil {
 		return nil, errors.New("invalid value for required argument 'Schemas'")
 	}
@@ -1722,7 +1719,7 @@ type domainsUserArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Name DomainsUserName `pulumi:"name"`
+	Name *DomainsUserName `pulumi:"name"`
 	// (Updatable) Nick name
 	//
 	// **SCIM++ Properties:**
@@ -2104,7 +2101,7 @@ type DomainsUserArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	Name DomainsUserNameInput
+	Name DomainsUserNamePtrInput
 	// (Updatable) Nick name
 	//
 	// **SCIM++ Properties:**

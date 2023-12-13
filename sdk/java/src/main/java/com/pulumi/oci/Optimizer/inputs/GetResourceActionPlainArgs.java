@@ -4,13 +4,31 @@
 package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetResourceActionPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetResourceActionPlainArgs Empty = new GetResourceActionPlainArgs();
+
+    /**
+     * Supplement additional resource information in extended metadata response.
+     * 
+     */
+    @Import(name="includeResourceMetadata")
+    private @Nullable Boolean includeResourceMetadata;
+
+    /**
+     * @return Supplement additional resource information in extended metadata response.
+     * 
+     */
+    public Optional<Boolean> includeResourceMetadata() {
+        return Optional.ofNullable(this.includeResourceMetadata);
+    }
 
     /**
      * The unique OCID associated with the resource action.
@@ -30,6 +48,7 @@ public final class GetResourceActionPlainArgs extends com.pulumi.resources.Invok
     private GetResourceActionPlainArgs() {}
 
     private GetResourceActionPlainArgs(GetResourceActionPlainArgs $) {
+        this.includeResourceMetadata = $.includeResourceMetadata;
         this.resourceActionId = $.resourceActionId;
     }
 
@@ -49,6 +68,17 @@ public final class GetResourceActionPlainArgs extends com.pulumi.resources.Invok
 
         public Builder(GetResourceActionPlainArgs defaults) {
             $ = new GetResourceActionPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param includeResourceMetadata Supplement additional resource information in extended metadata response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeResourceMetadata(@Nullable Boolean includeResourceMetadata) {
+            $.includeResourceMetadata = includeResourceMetadata;
+            return this;
         }
 
         /**

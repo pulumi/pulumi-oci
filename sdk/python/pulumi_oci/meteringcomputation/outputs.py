@@ -22,6 +22,13 @@ __all__ = [
     'ScheduleQueryPropertiesDateRange',
     'ScheduleQueryPropertiesGroupByTag',
     'ScheduleResultLocation',
+    'UsageCarbonEmissionGroupByTag',
+    'UsageCarbonEmissionItem',
+    'UsageCarbonEmissionItemTag',
+    'UsageCarbonEmissionsQueryQueryDefinition',
+    'UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi',
+    'UsageCarbonEmissionsQueryQueryDefinitionReportQuery',
+    'UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag',
     'UsageForecast',
     'UsageGroupByTag',
     'UsageItem',
@@ -61,6 +68,18 @@ __all__ = [
     'GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult',
     'GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult',
     'GetSchedulesScheduleCollectionItemResultLocationResult',
+    'GetUsageCarbonEmissionsConfigItemResult',
+    'GetUsageCarbonEmissionsQueriesFilterResult',
+    'GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionResult',
+    'GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemResult',
+    'GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionResult',
+    'GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiResult',
+    'GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryResult',
+    'GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult',
+    'GetUsageCarbonEmissionsQueryQueryDefinitionResult',
+    'GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiResult',
+    'GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryResult',
+    'GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagResult',
 ]
 
 @pulumi.output_type
@@ -935,6 +954,688 @@ class ScheduleResultLocation(dict):
         (Updatable) The destination Object Store Region specified by the customer.
         """
         return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class UsageCarbonEmissionGroupByTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str key: The tag key.
+        :param str namespace: The tag namespace.
+        :param str value: The tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        The tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        The tag namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The tag value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class UsageCarbonEmissionItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "compartmentName":
+            suggest = "compartment_name"
+        elif key == "compartmentPath":
+            suggest = "compartment_path"
+        elif key == "computedCarbonEmission":
+            suggest = "computed_carbon_emission"
+        elif key == "emissionCalculationMethod":
+            suggest = "emission_calculation_method"
+        elif key == "resourceId":
+            suggest = "resource_id"
+        elif key == "resourceName":
+            suggest = "resource_name"
+        elif key == "skuName":
+            suggest = "sku_name"
+        elif key == "skuPartNumber":
+            suggest = "sku_part_number"
+        elif key == "subscriptionId":
+            suggest = "subscription_id"
+        elif key == "tenantId":
+            suggest = "tenant_id"
+        elif key == "tenantName":
+            suggest = "tenant_name"
+        elif key == "timeUsageEnded":
+            suggest = "time_usage_ended"
+        elif key == "timeUsageStarted":
+            suggest = "time_usage_started"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsageCarbonEmissionItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsageCarbonEmissionItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsageCarbonEmissionItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ad: Optional[str] = None,
+                 compartment_id: Optional[str] = None,
+                 compartment_name: Optional[str] = None,
+                 compartment_path: Optional[str] = None,
+                 computed_carbon_emission: Optional[float] = None,
+                 emission_calculation_method: Optional[str] = None,
+                 platform: Optional[str] = None,
+                 region: Optional[str] = None,
+                 resource_id: Optional[str] = None,
+                 resource_name: Optional[str] = None,
+                 service: Optional[str] = None,
+                 sku_name: Optional[str] = None,
+                 sku_part_number: Optional[str] = None,
+                 subscription_id: Optional[str] = None,
+                 tags: Optional[Sequence['outputs.UsageCarbonEmissionItemTag']] = None,
+                 tenant_id: Optional[str] = None,
+                 tenant_name: Optional[str] = None,
+                 time_usage_ended: Optional[str] = None,
+                 time_usage_started: Optional[str] = None):
+        """
+        :param str ad: The availability domain of the usage.
+        :param str compartment_id: The compartment OCID.
+        :param str compartment_name: The compartment name.
+        :param str compartment_path: The compartment path, starting from root.
+        :param float computed_carbon_emission: The carbon emission in MTCO2 unit.
+        :param str emission_calculation_method: The method used to calculate carbon emission.
+        :param str platform: Platform for the cost.
+        :param str region: The region of the usage.
+        :param str resource_id: The resource OCID that is incurring the cost.
+        :param str resource_name: The resource name that is incurring the cost.
+        :param str service: The service name that is incurring the cost.
+        :param str sku_name: The SKU friendly name.
+        :param str sku_part_number: The SKU part number.
+        :param str subscription_id: The subscription ID.
+        :param Sequence['UsageCarbonEmissionItemTagArgs'] tags: For grouping, a tag definition. For filtering, a definition and key.
+        :param str tenant_id: Tenant ID.
+        :param str tenant_name: The tenancy name.
+        :param str time_usage_ended: The usage end time.
+        :param str time_usage_started: The usage start time.
+        """
+        if ad is not None:
+            pulumi.set(__self__, "ad", ad)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_name is not None:
+            pulumi.set(__self__, "compartment_name", compartment_name)
+        if compartment_path is not None:
+            pulumi.set(__self__, "compartment_path", compartment_path)
+        if computed_carbon_emission is not None:
+            pulumi.set(__self__, "computed_carbon_emission", computed_carbon_emission)
+        if emission_calculation_method is not None:
+            pulumi.set(__self__, "emission_calculation_method", emission_calculation_method)
+        if platform is not None:
+            pulumi.set(__self__, "platform", platform)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+        if sku_name is not None:
+            pulumi.set(__self__, "sku_name", sku_name)
+        if sku_part_number is not None:
+            pulumi.set(__self__, "sku_part_number", sku_part_number)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
+        if tenant_name is not None:
+            pulumi.set(__self__, "tenant_name", tenant_name)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
+
+    @property
+    @pulumi.getter
+    def ad(self) -> Optional[str]:
+        """
+        The availability domain of the usage.
+        """
+        return pulumi.get(self, "ad")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        The compartment OCID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="compartmentName")
+    def compartment_name(self) -> Optional[str]:
+        """
+        The compartment name.
+        """
+        return pulumi.get(self, "compartment_name")
+
+    @property
+    @pulumi.getter(name="compartmentPath")
+    def compartment_path(self) -> Optional[str]:
+        """
+        The compartment path, starting from root.
+        """
+        return pulumi.get(self, "compartment_path")
+
+    @property
+    @pulumi.getter(name="computedCarbonEmission")
+    def computed_carbon_emission(self) -> Optional[float]:
+        """
+        The carbon emission in MTCO2 unit.
+        """
+        return pulumi.get(self, "computed_carbon_emission")
+
+    @property
+    @pulumi.getter(name="emissionCalculationMethod")
+    def emission_calculation_method(self) -> Optional[str]:
+        """
+        The method used to calculate carbon emission.
+        """
+        return pulumi.get(self, "emission_calculation_method")
+
+    @property
+    @pulumi.getter
+    def platform(self) -> Optional[str]:
+        """
+        Platform for the cost.
+        """
+        return pulumi.get(self, "platform")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        """
+        The region of the usage.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[str]:
+        """
+        The resource OCID that is incurring the cost.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> Optional[str]:
+        """
+        The resource name that is incurring the cost.
+        """
+        return pulumi.get(self, "resource_name")
+
+    @property
+    @pulumi.getter
+    def service(self) -> Optional[str]:
+        """
+        The service name that is incurring the cost.
+        """
+        return pulumi.get(self, "service")
+
+    @property
+    @pulumi.getter(name="skuName")
+    def sku_name(self) -> Optional[str]:
+        """
+        The SKU friendly name.
+        """
+        return pulumi.get(self, "sku_name")
+
+    @property
+    @pulumi.getter(name="skuPartNumber")
+    def sku_part_number(self) -> Optional[str]:
+        """
+        The SKU part number.
+        """
+        return pulumi.get(self, "sku_part_number")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[str]:
+        """
+        The subscription ID.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.UsageCarbonEmissionItemTag']]:
+        """
+        For grouping, a tag definition. For filtering, a definition and key.
+        """
+        return pulumi.get(self, "tags")
+
+    @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> Optional[str]:
+        """
+        Tenant ID.
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @property
+    @pulumi.getter(name="tenantName")
+    def tenant_name(self) -> Optional[str]:
+        """
+        The tenancy name.
+        """
+        return pulumi.get(self, "tenant_name")
+
+    @property
+    @pulumi.getter(name="timeUsageEnded")
+    def time_usage_ended(self) -> Optional[str]:
+        """
+        The usage end time.
+        """
+        return pulumi.get(self, "time_usage_ended")
+
+    @property
+    @pulumi.getter(name="timeUsageStarted")
+    def time_usage_started(self) -> Optional[str]:
+        """
+        The usage start time.
+        """
+        return pulumi.get(self, "time_usage_started")
+
+
+@pulumi.output_type
+class UsageCarbonEmissionItemTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str key: The tag key.
+        :param str namespace: The tag namespace.
+        :param str value: The tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        The tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        The tag namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The tag value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class UsageCarbonEmissionsQueryQueryDefinition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "costAnalysisUi":
+            suggest = "cost_analysis_ui"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "reportQuery":
+            suggest = "report_query"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsageCarbonEmissionsQueryQueryDefinition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsageCarbonEmissionsQueryQueryDefinition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsageCarbonEmissionsQueryQueryDefinition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cost_analysis_ui: 'outputs.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi',
+                 display_name: str,
+                 report_query: 'outputs.UsageCarbonEmissionsQueryQueryDefinitionReportQuery',
+                 version: int):
+        """
+        :param 'UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs' cost_analysis_ui: (Updatable) The common fields for Cost Analysis UI rendering.
+        :param str display_name: (Updatable) The query display name. Avoid entering confidential information.
+        :param 'UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs' report_query: (Updatable) The request of the generated usage carbon emissions report.
+        :param int version: (Updatable) The saved query version.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "cost_analysis_ui", cost_analysis_ui)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "report_query", report_query)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="costAnalysisUi")
+    def cost_analysis_ui(self) -> 'outputs.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi':
+        """
+        (Updatable) The common fields for Cost Analysis UI rendering.
+        """
+        return pulumi.get(self, "cost_analysis_ui")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        (Updatable) The query display name. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="reportQuery")
+    def report_query(self) -> 'outputs.UsageCarbonEmissionsQueryQueryDefinitionReportQuery':
+        """
+        (Updatable) The request of the generated usage carbon emissions report.
+        """
+        return pulumi.get(self, "report_query")
+
+    @property
+    @pulumi.getter
+    def version(self) -> int:
+        """
+        (Updatable) The saved query version.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isCumulativeGraph":
+            suggest = "is_cumulative_graph"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 graph: Optional[str] = None,
+                 is_cumulative_graph: Optional[bool] = None):
+        """
+        :param str graph: (Updatable) The graph type.
+        :param bool is_cumulative_graph: (Updatable) A cumulative graph.
+        """
+        if graph is not None:
+            pulumi.set(__self__, "graph", graph)
+        if is_cumulative_graph is not None:
+            pulumi.set(__self__, "is_cumulative_graph", is_cumulative_graph)
+
+    @property
+    @pulumi.getter
+    def graph(self) -> Optional[str]:
+        """
+        (Updatable) The graph type.
+        """
+        return pulumi.get(self, "graph")
+
+    @property
+    @pulumi.getter(name="isCumulativeGraph")
+    def is_cumulative_graph(self) -> Optional[bool]:
+        """
+        (Updatable) A cumulative graph.
+        """
+        return pulumi.get(self, "is_cumulative_graph")
+
+
+@pulumi.output_type
+class UsageCarbonEmissionsQueryQueryDefinitionReportQuery(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "tenantId":
+            suggest = "tenant_id"
+        elif key == "compartmentDepth":
+            suggest = "compartment_depth"
+        elif key == "dateRangeName":
+            suggest = "date_range_name"
+        elif key == "groupBies":
+            suggest = "group_bies"
+        elif key == "groupByTags":
+            suggest = "group_by_tags"
+        elif key == "isAggregateByTime":
+            suggest = "is_aggregate_by_time"
+        elif key == "timeUsageEnded":
+            suggest = "time_usage_ended"
+        elif key == "timeUsageStarted":
+            suggest = "time_usage_started"
+        elif key == "usageCarbonEmissionsQueryFilter":
+            suggest = "usage_carbon_emissions_query_filter"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsageCarbonEmissionsQueryQueryDefinitionReportQuery. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsageCarbonEmissionsQueryQueryDefinitionReportQuery.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsageCarbonEmissionsQueryQueryDefinitionReportQuery.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 tenant_id: str,
+                 compartment_depth: Optional[int] = None,
+                 date_range_name: Optional[str] = None,
+                 group_bies: Optional[Sequence[str]] = None,
+                 group_by_tags: Optional[Sequence['outputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag']] = None,
+                 is_aggregate_by_time: Optional[bool] = None,
+                 time_usage_ended: Optional[str] = None,
+                 time_usage_started: Optional[str] = None,
+                 usage_carbon_emissions_query_filter: Optional[str] = None):
+        """
+        :param str tenant_id: (Updatable) Tenant ID.
+        :param int compartment_depth: (Updatable) The compartment depth level.
+        :param str date_range_name: (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        :param Sequence[str] group_bies: (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        :param Sequence['UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs'] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param bool is_aggregate_by_time: (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param str time_usage_ended: (Updatable) The usage end time.
+        :param str time_usage_started: (Updatable) The usage start time.
+        :param str usage_carbon_emissions_query_filter: (Updatable) The filter object for query usage.
+        """
+        pulumi.set(__self__, "tenant_id", tenant_id)
+        if compartment_depth is not None:
+            pulumi.set(__self__, "compartment_depth", compartment_depth)
+        if date_range_name is not None:
+            pulumi.set(__self__, "date_range_name", date_range_name)
+        if group_bies is not None:
+            pulumi.set(__self__, "group_bies", group_bies)
+        if group_by_tags is not None:
+            pulumi.set(__self__, "group_by_tags", group_by_tags)
+        if is_aggregate_by_time is not None:
+            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
+        if usage_carbon_emissions_query_filter is not None:
+            pulumi.set(__self__, "usage_carbon_emissions_query_filter", usage_carbon_emissions_query_filter)
+
+    @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> str:
+        """
+        (Updatable) Tenant ID.
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @property
+    @pulumi.getter(name="compartmentDepth")
+    def compartment_depth(self) -> Optional[int]:
+        """
+        (Updatable) The compartment depth level.
+        """
+        return pulumi.get(self, "compartment_depth")
+
+    @property
+    @pulumi.getter(name="dateRangeName")
+    def date_range_name(self) -> Optional[str]:
+        """
+        (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        """
+        return pulumi.get(self, "date_range_name")
+
+    @property
+    @pulumi.getter(name="groupBies")
+    def group_bies(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        """
+        return pulumi.get(self, "group_bies")
+
+    @property
+    @pulumi.getter(name="groupByTags")
+    def group_by_tags(self) -> Optional[Sequence['outputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag']]:
+        """
+        (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        """
+        return pulumi.get(self, "group_by_tags")
+
+    @property
+    @pulumi.getter(name="isAggregateByTime")
+    def is_aggregate_by_time(self) -> Optional[bool]:
+        """
+        (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        """
+        return pulumi.get(self, "is_aggregate_by_time")
+
+    @property
+    @pulumi.getter(name="timeUsageEnded")
+    def time_usage_ended(self) -> Optional[str]:
+        """
+        (Updatable) The usage end time.
+        """
+        return pulumi.get(self, "time_usage_ended")
+
+    @property
+    @pulumi.getter(name="timeUsageStarted")
+    def time_usage_started(self) -> Optional[str]:
+        """
+        (Updatable) The usage start time.
+        """
+        return pulumi.get(self, "time_usage_started")
+
+    @property
+    @pulumi.getter(name="usageCarbonEmissionsQueryFilter")
+    def usage_carbon_emissions_query_filter(self) -> Optional[str]:
+        """
+        (Updatable) The filter object for query usage.
+        """
+        return pulumi.get(self, "usage_carbon_emissions_query_filter")
+
+
+@pulumi.output_type
+class UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str key: (Updatable) The tag key.
+        :param str namespace: (Updatable) The tag namespace.
+        :param str value: (Updatable) The tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        (Updatable) The tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        (Updatable) The tag namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) The tag value.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -2938,10 +3639,10 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: The OCID representing a unique shedule.
         :param str name: Query parameter for filtering by name
-        :param str output_file_format: Specifies supported output file format.
+        :param str output_file_format: Specifies the supported output file format.
         :param Sequence['GetSchedulesScheduleCollectionItemQueryPropertyArgs'] query_properties: The query properties.
         :param Sequence['GetSchedulesScheduleCollectionItemResultLocationArgs'] result_locations: The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param str saved_report_id: The saved report id which can also be used to generate query.
+        :param str saved_report_id: The saved report ID which can also be used to generate a query.
         :param str schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param str state: The schedule lifecycle state.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3018,7 +3719,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     @pulumi.getter(name="outputFileFormat")
     def output_file_format(self) -> str:
         """
-        Specifies supported output file format.
+        Specifies the supported output file format.
         """
         return pulumi.get(self, "output_file_format")
 
@@ -3042,7 +3743,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     @pulumi.getter(name="savedReportId")
     def saved_report_id(self) -> str:
         """
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
         """
         return pulumi.get(self, "saved_report_id")
 
@@ -3326,5 +4027,565 @@ class GetSchedulesScheduleCollectionItemResultLocationResult(dict):
         The destination Object Store Region specified by the customer.
         """
         return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsConfigItemResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 values: Sequence[str]):
+        """
+        :param str key: The configuration key.
+        :param Sequence[str] values: The configuration value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The configuration key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        """
+        The configuration value.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 id: str,
+                 query_definitions: Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionResult']):
+        """
+        :param str compartment_id: The compartment ID in which to list resources.
+        :param str id: The query OCID.
+        :param Sequence['GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs'] query_definitions: The common fields for queries.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "query_definitions", query_definitions)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The query OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="queryDefinitions")
+    def query_definitions(self) -> Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionResult']:
+        """
+        The common fields for queries.
+        """
+        return pulumi.get(self, "query_definitions")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionResult(dict):
+    def __init__(__self__, *,
+                 cost_analysis_uis: Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiResult'],
+                 display_name: str,
+                 report_queries: Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryResult'],
+                 version: int):
+        """
+        :param Sequence['GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs'] cost_analysis_uis: The common fields for Cost Analysis UI rendering.
+        :param str display_name: The query display name. Avoid entering confidential information.
+        :param Sequence['GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs'] report_queries: The request of the generated usage carbon emissions report.
+        :param int version: The saved query version.
+        """
+        pulumi.set(__self__, "cost_analysis_uis", cost_analysis_uis)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "report_queries", report_queries)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="costAnalysisUis")
+    def cost_analysis_uis(self) -> Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiResult']:
+        """
+        The common fields for Cost Analysis UI rendering.
+        """
+        return pulumi.get(self, "cost_analysis_uis")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The query display name. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="reportQueries")
+    def report_queries(self) -> Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryResult']:
+        """
+        The request of the generated usage carbon emissions report.
+        """
+        return pulumi.get(self, "report_queries")
+
+    @property
+    @pulumi.getter
+    def version(self) -> int:
+        """
+        The saved query version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiResult(dict):
+    def __init__(__self__, *,
+                 graph: str,
+                 is_cumulative_graph: bool):
+        """
+        :param str graph: The graph type.
+        :param bool is_cumulative_graph: A cumulative graph.
+        """
+        pulumi.set(__self__, "graph", graph)
+        pulumi.set(__self__, "is_cumulative_graph", is_cumulative_graph)
+
+    @property
+    @pulumi.getter
+    def graph(self) -> str:
+        """
+        The graph type.
+        """
+        return pulumi.get(self, "graph")
+
+    @property
+    @pulumi.getter(name="isCumulativeGraph")
+    def is_cumulative_graph(self) -> bool:
+        """
+        A cumulative graph.
+        """
+        return pulumi.get(self, "is_cumulative_graph")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryResult(dict):
+    def __init__(__self__, *,
+                 compartment_depth: int,
+                 date_range_name: str,
+                 group_bies: Sequence[str],
+                 group_by_tags: Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult'],
+                 is_aggregate_by_time: bool,
+                 tenant_id: str,
+                 time_usage_ended: str,
+                 time_usage_started: str,
+                 usage_carbon_emissions_query_filter: str):
+        """
+        :param int compartment_depth: The compartment depth level.
+        :param str date_range_name: The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        :param Sequence[str] group_bies: Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        :param Sequence['GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param str tenant_id: Tenant ID.
+        :param str time_usage_ended: The usage end time.
+        :param str time_usage_started: The usage start time.
+        :param str usage_carbon_emissions_query_filter: The filter object for query usage.
+        """
+        pulumi.set(__self__, "compartment_depth", compartment_depth)
+        pulumi.set(__self__, "date_range_name", date_range_name)
+        pulumi.set(__self__, "group_bies", group_bies)
+        pulumi.set(__self__, "group_by_tags", group_by_tags)
+        pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        pulumi.set(__self__, "time_usage_started", time_usage_started)
+        pulumi.set(__self__, "usage_carbon_emissions_query_filter", usage_carbon_emissions_query_filter)
+
+    @property
+    @pulumi.getter(name="compartmentDepth")
+    def compartment_depth(self) -> int:
+        """
+        The compartment depth level.
+        """
+        return pulumi.get(self, "compartment_depth")
+
+    @property
+    @pulumi.getter(name="dateRangeName")
+    def date_range_name(self) -> str:
+        """
+        The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        """
+        return pulumi.get(self, "date_range_name")
+
+    @property
+    @pulumi.getter(name="groupBies")
+    def group_bies(self) -> Sequence[str]:
+        """
+        Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        """
+        return pulumi.get(self, "group_bies")
+
+    @property
+    @pulumi.getter(name="groupByTags")
+    def group_by_tags(self) -> Sequence['outputs.GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult']:
+        """
+        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        """
+        return pulumi.get(self, "group_by_tags")
+
+    @property
+    @pulumi.getter(name="isAggregateByTime")
+    def is_aggregate_by_time(self) -> bool:
+        """
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        """
+        return pulumi.get(self, "is_aggregate_by_time")
+
+    @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> str:
+        """
+        Tenant ID.
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @property
+    @pulumi.getter(name="timeUsageEnded")
+    def time_usage_ended(self) -> str:
+        """
+        The usage end time.
+        """
+        return pulumi.get(self, "time_usage_ended")
+
+    @property
+    @pulumi.getter(name="timeUsageStarted")
+    def time_usage_started(self) -> str:
+        """
+        The usage start time.
+        """
+        return pulumi.get(self, "time_usage_started")
+
+    @property
+    @pulumi.getter(name="usageCarbonEmissionsQueryFilter")
+    def usage_carbon_emissions_query_filter(self) -> str:
+        """
+        The filter object for query usage.
+        """
+        return pulumi.get(self, "usage_carbon_emissions_query_filter")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 namespace: str,
+                 value: str):
+        """
+        :param str key: The tag key.
+        :param str namespace: The tag namespace.
+        :param str value: The tag value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The tag namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The tag value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueryQueryDefinitionResult(dict):
+    def __init__(__self__, *,
+                 cost_analysis_uis: Sequence['outputs.GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiResult'],
+                 display_name: str,
+                 report_queries: Sequence['outputs.GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryResult'],
+                 version: int):
+        """
+        :param Sequence['GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs'] cost_analysis_uis: The common fields for Cost Analysis UI rendering.
+        :param str display_name: The query display name. Avoid entering confidential information.
+        :param Sequence['GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs'] report_queries: The request of the generated usage carbon emissions report.
+        :param int version: The saved query version.
+        """
+        pulumi.set(__self__, "cost_analysis_uis", cost_analysis_uis)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "report_queries", report_queries)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="costAnalysisUis")
+    def cost_analysis_uis(self) -> Sequence['outputs.GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiResult']:
+        """
+        The common fields for Cost Analysis UI rendering.
+        """
+        return pulumi.get(self, "cost_analysis_uis")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The query display name. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="reportQueries")
+    def report_queries(self) -> Sequence['outputs.GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryResult']:
+        """
+        The request of the generated usage carbon emissions report.
+        """
+        return pulumi.get(self, "report_queries")
+
+    @property
+    @pulumi.getter
+    def version(self) -> int:
+        """
+        The saved query version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiResult(dict):
+    def __init__(__self__, *,
+                 graph: str,
+                 is_cumulative_graph: bool):
+        """
+        :param str graph: The graph type.
+        :param bool is_cumulative_graph: A cumulative graph.
+        """
+        pulumi.set(__self__, "graph", graph)
+        pulumi.set(__self__, "is_cumulative_graph", is_cumulative_graph)
+
+    @property
+    @pulumi.getter
+    def graph(self) -> str:
+        """
+        The graph type.
+        """
+        return pulumi.get(self, "graph")
+
+    @property
+    @pulumi.getter(name="isCumulativeGraph")
+    def is_cumulative_graph(self) -> bool:
+        """
+        A cumulative graph.
+        """
+        return pulumi.get(self, "is_cumulative_graph")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryResult(dict):
+    def __init__(__self__, *,
+                 compartment_depth: int,
+                 date_range_name: str,
+                 group_bies: Sequence[str],
+                 group_by_tags: Sequence['outputs.GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagResult'],
+                 is_aggregate_by_time: bool,
+                 tenant_id: str,
+                 time_usage_ended: str,
+                 time_usage_started: str,
+                 usage_carbon_emissions_query_filter: str):
+        """
+        :param int compartment_depth: The compartment depth level.
+        :param str date_range_name: The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        :param Sequence[str] group_bies: Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        :param Sequence['GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        :param str tenant_id: Tenant ID.
+        :param str time_usage_ended: The usage end time.
+        :param str time_usage_started: The usage start time.
+        :param str usage_carbon_emissions_query_filter: The filter object for query usage.
+        """
+        pulumi.set(__self__, "compartment_depth", compartment_depth)
+        pulumi.set(__self__, "date_range_name", date_range_name)
+        pulumi.set(__self__, "group_bies", group_bies)
+        pulumi.set(__self__, "group_by_tags", group_by_tags)
+        pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        pulumi.set(__self__, "time_usage_started", time_usage_started)
+        pulumi.set(__self__, "usage_carbon_emissions_query_filter", usage_carbon_emissions_query_filter)
+
+    @property
+    @pulumi.getter(name="compartmentDepth")
+    def compartment_depth(self) -> int:
+        """
+        The compartment depth level.
+        """
+        return pulumi.get(self, "compartment_depth")
+
+    @property
+    @pulumi.getter(name="dateRangeName")
+    def date_range_name(self) -> str:
+        """
+        The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+        """
+        return pulumi.get(self, "date_range_name")
+
+    @property
+    @pulumi.getter(name="groupBies")
+    def group_bies(self) -> Sequence[str]:
+        """
+        Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+        """
+        return pulumi.get(self, "group_bies")
+
+    @property
+    @pulumi.getter(name="groupByTags")
+    def group_by_tags(self) -> Sequence['outputs.GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagResult']:
+        """
+        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+        """
+        return pulumi.get(self, "group_by_tags")
+
+    @property
+    @pulumi.getter(name="isAggregateByTime")
+    def is_aggregate_by_time(self) -> bool:
+        """
+        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+        """
+        return pulumi.get(self, "is_aggregate_by_time")
+
+    @property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> str:
+        """
+        Tenant ID.
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @property
+    @pulumi.getter(name="timeUsageEnded")
+    def time_usage_ended(self) -> str:
+        """
+        The usage end time.
+        """
+        return pulumi.get(self, "time_usage_ended")
+
+    @property
+    @pulumi.getter(name="timeUsageStarted")
+    def time_usage_started(self) -> str:
+        """
+        The usage start time.
+        """
+        return pulumi.get(self, "time_usage_started")
+
+    @property
+    @pulumi.getter(name="usageCarbonEmissionsQueryFilter")
+    def usage_carbon_emissions_query_filter(self) -> str:
+        """
+        The filter object for query usage.
+        """
+        return pulumi.get(self, "usage_carbon_emissions_query_filter")
+
+
+@pulumi.output_type
+class GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagResult(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 namespace: str,
+                 value: str):
+        """
+        :param str key: The tag key.
+        :param str namespace: The tag namespace.
+        :param str value: The tag value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The tag namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The tag value.
+        """
+        return pulumi.get(self, "value")
 
 

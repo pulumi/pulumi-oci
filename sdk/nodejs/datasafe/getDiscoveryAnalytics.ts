@@ -23,7 +23,9 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     compartmentIdInSubtree: _var.discovery_analytic_compartment_id_in_subtree,
  *     groupBy: _var.discovery_analytic_group_by,
+ *     isCommon: _var.discovery_analytic_is_common,
  *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
@@ -36,7 +38,9 @@ export function getDiscoveryAnalytics(args: GetDiscoveryAnalyticsArgs, opts?: pu
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "groupBy": args.groupBy,
+        "isCommon": args.isCommon,
         "sensitiveDataModelId": args.sensitiveDataModelId,
+        "sensitiveTypeId": args.sensitiveTypeId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -59,9 +63,17 @@ export interface GetDiscoveryAnalyticsArgs {
      */
     groupBy?: string;
     /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    isCommon?: boolean;
+    /**
      * A filter to return only the resources that match the specified sensitive data model OCID.
      */
     sensitiveDataModelId?: string;
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
+    sensitiveTypeId?: string;
     /**
      * A filter to return only items related to a specific target OCID.
      */
@@ -84,10 +96,15 @@ export interface GetDiscoveryAnalyticsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isCommon?: boolean;
     /**
      * The OCID of the sensitive data model.
      */
     readonly sensitiveDataModelId?: string;
+    /**
+     * The OCID of the sensitive type.
+     */
+    readonly sensitiveTypeId?: string;
     /**
      * The OCID of the target database.
      */
@@ -110,7 +127,9 @@ export interface GetDiscoveryAnalyticsResult {
  *     compartmentId: _var.compartment_id,
  *     compartmentIdInSubtree: _var.discovery_analytic_compartment_id_in_subtree,
  *     groupBy: _var.discovery_analytic_group_by,
+ *     isCommon: _var.discovery_analytic_is_common,
  *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
@@ -137,9 +156,17 @@ export interface GetDiscoveryAnalyticsOutputArgs {
      */
     groupBy?: pulumi.Input<string>;
     /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    isCommon?: pulumi.Input<boolean>;
+    /**
      * A filter to return only the resources that match the specified sensitive data model OCID.
      */
     sensitiveDataModelId?: pulumi.Input<string>;
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
+    sensitiveTypeId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

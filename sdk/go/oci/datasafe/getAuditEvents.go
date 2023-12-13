@@ -85,7 +85,7 @@ type GetAuditEventsResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
 	// The list of audit_event_collection.
 	AuditEventCollections []GetAuditEventsAuditEventCollection `pulumi:"auditEventCollections"`
-	// The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
+	// The OCID of the compartment containing the audit event. The compartment is the same as that of audit profile of the target database resource.
 	CompartmentId          string                 `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool                  `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetAuditEventsFilter `pulumi:"filters"`
@@ -150,7 +150,7 @@ func (o GetAuditEventsResultOutput) AuditEventCollections() GetAuditEventsAuditE
 	return o.ApplyT(func(v GetAuditEventsResult) []GetAuditEventsAuditEventCollection { return v.AuditEventCollections }).(GetAuditEventsAuditEventCollectionArrayOutput)
 }
 
-// The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
+// The OCID of the compartment containing the audit event. The compartment is the same as that of audit profile of the target database resource.
 func (o GetAuditEventsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

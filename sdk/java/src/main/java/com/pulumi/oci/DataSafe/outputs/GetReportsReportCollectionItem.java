@@ -42,7 +42,7 @@ public final class GetReportsReportCollectionItem {
      */
     private String id;
     /**
-     * @return Specifies the format of report to be excel or pdf
+     * @return Specifies the format of report to be .xls or .pdf
      * 
      */
     private String mimeType;
@@ -116,7 +116,7 @@ public final class GetReportsReportCollectionItem {
         return this.id;
     }
     /**
-     * @return Specifies the format of report to be excel or pdf
+     * @return Specifies the format of report to be .xls or .pdf
      * 
      */
     public String mimeType() {

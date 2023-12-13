@@ -62,6 +62,7 @@ public final class GetProfileResult {
      * 
      */
     private String state;
+    private Map<String,Object> systemTags;
     /**
      * @return Optional. The compartments specified in the profile override for a recommendation.
      * 
@@ -150,6 +151,9 @@ public final class GetProfileResult {
     public String state() {
         return this.state;
     }
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
     /**
      * @return Optional. The compartments specified in the profile override for a recommendation.
      * 
@@ -198,6 +202,7 @@ public final class GetProfileResult {
         private String name;
         private String profileId;
         private String state;
+        private Map<String,Object> systemTags;
         private List<GetProfileTargetCompartment> targetCompartments;
         private List<GetProfileTargetTag> targetTags;
         private String timeCreated;
@@ -215,6 +220,7 @@ public final class GetProfileResult {
     	      this.name = defaults.name;
     	      this.profileId = defaults.profileId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.targetCompartments = defaults.targetCompartments;
     	      this.targetTags = defaults.targetTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -275,6 +281,11 @@ public final class GetProfileResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            this.systemTags = Objects.requireNonNull(systemTags);
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetCompartments(List<GetProfileTargetCompartment> targetCompartments) {
             this.targetCompartments = Objects.requireNonNull(targetCompartments);
             return this;
@@ -312,6 +323,7 @@ public final class GetProfileResult {
             _resultValue.name = name;
             _resultValue.profileId = profileId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.targetCompartments = targetCompartments;
             _resultValue.targetTags = targetTags;
             _resultValue.timeCreated = timeCreated;

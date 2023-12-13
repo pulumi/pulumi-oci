@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetCatalogPrivateEndpointResult',
@@ -21,7 +22,7 @@ class GetCatalogPrivateEndpointResult:
     """
     A collection of values returned by getCatalogPrivateEndpoint.
     """
-    def __init__(__self__, attached_catalogs=None, catalog_private_endpoint_id=None, compartment_id=None, defined_tags=None, display_name=None, dns_zones=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, attached_catalogs=None, catalog_private_endpoint_id=None, compartment_id=None, defined_tags=None, display_name=None, dns_zones=None, freeform_tags=None, id=None, lifecycle_details=None, locks=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if attached_catalogs and not isinstance(attached_catalogs, list):
             raise TypeError("Expected argument 'attached_catalogs' to be a list")
         pulumi.set(__self__, "attached_catalogs", attached_catalogs)
@@ -49,12 +50,18 @@ class GetCatalogPrivateEndpointResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -133,6 +140,14 @@ class GetCatalogPrivateEndpointResult:
 
     @property
     @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetCatalogPrivateEndpointLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
+    @pulumi.getter
     def state(self) -> str:
         """
         The current state of the private endpoint resource.
@@ -146,6 +161,14 @@ class GetCatalogPrivateEndpointResult:
         Subnet Identifier
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -179,8 +202,10 @@ class AwaitableGetCatalogPrivateEndpointResult(GetCatalogPrivateEndpointResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             state=self.state,
             subnet_id=self.subnet_id,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -219,8 +244,10 @@ def get_catalog_private_endpoint(catalog_private_endpoint_id: Optional[str] = No
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 

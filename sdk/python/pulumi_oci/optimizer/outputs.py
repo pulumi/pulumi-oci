@@ -1616,6 +1616,7 @@ class GetProfilesProfileCollectionItemResult(dict):
                  levels_configurations: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult'],
                  name: str,
                  state: str,
+                 system_tags: Mapping[str, Any],
                  target_compartments: Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult'],
                  target_tags: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult'],
                  time_created: str,
@@ -1644,6 +1645,7 @@ class GetProfilesProfileCollectionItemResult(dict):
         pulumi.set(__self__, "levels_configurations", levels_configurations)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_compartments", target_compartments)
         pulumi.set(__self__, "target_tags", target_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -1720,6 +1722,11 @@ class GetProfilesProfileCollectionItemResult(dict):
         A filter that returns results that match the lifecycle state specified.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetCompartments")

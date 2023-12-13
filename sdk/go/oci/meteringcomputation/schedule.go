@@ -102,13 +102,13 @@ type Schedule struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The unique name of the user-created schedule.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// (Updatable) Specifies supported output file format.
+	// (Updatable) Specifies the supported output file format.
 	OutputFileFormat pulumi.StringOutput `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties ScheduleQueryPropertiesOutput `pulumi:"queryProperties"`
 	// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocation ScheduleResultLocationOutput `pulumi:"resultLocation"`
-	// The saved report id which can also be used to generate query.
+	// The saved report ID which can also be used to generate a query.
 	SavedReportId pulumi.StringOutput `pulumi:"savedReportId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringOutput `pulumi:"scheduleRecurrences"`
@@ -179,13 +179,13 @@ type scheduleState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique name of the user-created schedule.
 	Name *string `pulumi:"name"`
-	// (Updatable) Specifies supported output file format.
+	// (Updatable) Specifies the supported output file format.
 	OutputFileFormat *string `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties *ScheduleQueryProperties `pulumi:"queryProperties"`
 	// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocation *ScheduleResultLocation `pulumi:"resultLocation"`
-	// The saved report id which can also be used to generate query.
+	// The saved report ID which can also be used to generate a query.
 	SavedReportId *string `pulumi:"savedReportId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences *string `pulumi:"scheduleRecurrences"`
@@ -215,13 +215,13 @@ type ScheduleState struct {
 	FreeformTags pulumi.MapInput
 	// The unique name of the user-created schedule.
 	Name pulumi.StringPtrInput
-	// (Updatable) Specifies supported output file format.
+	// (Updatable) Specifies the supported output file format.
 	OutputFileFormat pulumi.StringPtrInput
 	// The query properties.
 	QueryProperties ScheduleQueryPropertiesPtrInput
 	// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocation ScheduleResultLocationPtrInput
-	// The saved report id which can also be used to generate query.
+	// The saved report ID which can also be used to generate a query.
 	SavedReportId pulumi.StringPtrInput
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringPtrInput
@@ -255,13 +255,13 @@ type scheduleArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique name of the user-created schedule.
 	Name *string `pulumi:"name"`
-	// (Updatable) Specifies supported output file format.
+	// (Updatable) Specifies the supported output file format.
 	OutputFileFormat *string `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties *ScheduleQueryProperties `pulumi:"queryProperties"`
 	// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocation ScheduleResultLocation `pulumi:"resultLocation"`
-	// The saved report id which can also be used to generate query.
+	// The saved report ID which can also be used to generate a query.
 	SavedReportId *string `pulumi:"savedReportId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
@@ -284,13 +284,13 @@ type ScheduleArgs struct {
 	FreeformTags pulumi.MapInput
 	// The unique name of the user-created schedule.
 	Name pulumi.StringPtrInput
-	// (Updatable) Specifies supported output file format.
+	// (Updatable) Specifies the supported output file format.
 	OutputFileFormat pulumi.StringPtrInput
 	// The query properties.
 	QueryProperties ScheduleQueryPropertiesPtrInput
 	// (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocation ScheduleResultLocationInput
-	// The saved report id which can also be used to generate query.
+	// The saved report ID which can also be used to generate a query.
 	SavedReportId pulumi.StringPtrInput
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringInput
@@ -413,7 +413,7 @@ func (o ScheduleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) Specifies supported output file format.
+// (Updatable) Specifies the supported output file format.
 func (o ScheduleOutput) OutputFileFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.OutputFileFormat }).(pulumi.StringOutput)
 }
@@ -428,7 +428,7 @@ func (o ScheduleOutput) ResultLocation() ScheduleResultLocationOutput {
 	return o.ApplyT(func(v *Schedule) ScheduleResultLocationOutput { return v.ResultLocation }).(ScheduleResultLocationOutput)
 }
 
-// The saved report id which can also be used to generate query.
+// The saved report ID which can also be used to generate a query.
 func (o ScheduleOutput) SavedReportId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.SavedReportId }).(pulumi.StringOutput)
 }

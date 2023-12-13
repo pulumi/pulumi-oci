@@ -201,6 +201,12 @@ public class Profile extends com.pulumi.resources.CustomResource {
     public Output<String> state() {
         return this.state;
     }
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> systemTags;
+
+    public Output<Map<String,Object>> systemTags() {
+        return this.systemTags;
+    }
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      * 

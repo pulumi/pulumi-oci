@@ -15,6 +15,7 @@ __all__ = [
     'ConnectionBootstrapServer',
     'ConnectionIngressIp',
     'DeploymentDeploymentDiagnosticData',
+    'DeploymentIngressIp',
     'DeploymentMaintenanceConfiguration',
     'DeploymentMaintenanceWindow',
     'DeploymentOggData',
@@ -40,6 +41,7 @@ __all__ = [
     'GetDeploymentCertificatesCertificateCollectionItemResult',
     'GetDeploymentCertificatesFilterResult',
     'GetDeploymentDeploymentDiagnosticDataResult',
+    'GetDeploymentIngressIpResult',
     'GetDeploymentMaintenanceConfigurationResult',
     'GetDeploymentMaintenanceWindowResult',
     'GetDeploymentOggDataResult',
@@ -56,6 +58,7 @@ __all__ = [
     'GetDeploymentsDeploymentCollectionResult',
     'GetDeploymentsDeploymentCollectionItemResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult',
+    'GetDeploymentsDeploymentCollectionItemIngressIpResult',
     'GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult',
     'GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult',
     'GetDeploymentsDeploymentCollectionItemOggDataResult',
@@ -132,7 +135,8 @@ class ConnectionBootstrapServer(dict):
         :param str host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param int port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param str private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param str private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         if host is not None:
             pulumi.set(__self__, "host", host)
@@ -162,7 +166,8 @@ class ConnectionBootstrapServer(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[str]:
         """
-        (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
 
@@ -301,6 +306,42 @@ class DeploymentDeploymentDiagnosticData(dict):
         The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_diagnostic_start")
+
+
+@pulumi.output_type
+class DeploymentIngressIp(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ingressIp":
+            suggest = "ingress_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentIngressIp. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentIngressIp.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentIngressIp.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ingress_ip: Optional[str] = None):
+        """
+        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        if ingress_ip is not None:
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> Optional[str]:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
 
 
 @pulumi.output_type
@@ -764,7 +805,8 @@ class GetConnectionBootstrapServerResult(dict):
                In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param int port: The port of an endpoint usually specified for a connection.
-        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param str private_ip: Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "port", port)
@@ -792,6 +834,7 @@ class GetConnectionBootstrapServerResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> str:
         """
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -877,6 +920,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  producer_properties: str,
                  public_key_fingerprint: str,
                  region: str,
+                 routing_method: str,
                  sas_token: str,
                  secret_access_key: str,
                  security_protocol: str,
@@ -947,8 +991,10 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param int port: The port of an endpoint usually specified for a connection.
-        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param str private_ip: Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param str region: The name of the region. e.g.: us-ashburn-1
+        :param str routing_method: Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param str security_protocol: Security Protocol to be provided for the following connection types:
                * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
                * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -961,7 +1007,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str ssl_mode: SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         :param str state: A filter to return only connections having the 'lifecycleState' given.
         :param str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str technology_type: The array of technology types.
         :param str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
@@ -1019,6 +1065,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "producer_properties", producer_properties)
         pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
         pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "routing_method", routing_method)
         pulumi.set(__self__, "sas_token", sas_token)
         pulumi.set(__self__, "secret_access_key", secret_access_key)
         pulumi.set(__self__, "security_protocol", security_protocol)
@@ -1362,6 +1409,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> str:
         """
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -1393,6 +1441,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         The name of the region. e.g.: us-ashburn-1
         """
         return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="routingMethod")
+    def routing_method(self) -> str:
+        """
+        Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+        """
+        return pulumi.get(self, "routing_method")
 
     @property
     @pulumi.getter(name="sasToken")
@@ -1508,7 +1564,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -1640,7 +1696,8 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
                In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param int port: The port of an endpoint usually specified for a connection.
-        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param str private_ip: Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "port", port)
@@ -1668,6 +1725,7 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> str:
         """
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -1784,7 +1842,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
         :param str secret_id: The OCID of the customer's GoldenGate Service Secret.  If provided, it references a key that customers will be required to ensure the policies are established  to permit GoldenGate to use this Secret.
         :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -1971,7 +2029,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2599,6 +2657,24 @@ class GetDeploymentDeploymentDiagnosticDataResult(dict):
         The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_diagnostic_start")
+
+
+@pulumi.output_type
+class GetDeploymentIngressIpResult(dict):
+    def __init__(__self__, *,
+                 ingress_ip: str):
+        """
+        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> str:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
 
 
 @pulumi.output_type
@@ -3528,6 +3604,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  fqdn: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 ingress_ips: Sequence['outputs.GetDeploymentsDeploymentCollectionItemIngressIpResult'],
                  is_auto_scaling_enabled: bool,
                  is_healthy: bool,
                  is_latest_version: bool,
@@ -3536,6 +3613,8 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  license_model: str,
                  lifecycle_details: str,
                  lifecycle_sub_state: str,
+                 load_balancer_id: str,
+                 load_balancer_subnet_id: str,
                  maintenance_configurations: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult'],
                  maintenance_windows: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult'],
                  next_maintenance_action_type: str,
@@ -3566,6 +3645,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str fqdn: A filter to return only the resources that match the 'fqdn' given.
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param bool is_healthy: True if all of the aggregate resources are working correctly.
         :param bool is_latest_version: Indicates if the resource is the the latest available version.
@@ -3574,6 +3654,8 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str license_model: The Oracle license model that applies to a Deployment.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
+        :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        :param str load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs'] maintenance_configurations: Attributes for configuring automatic deployment maintenance.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs'] maintenance_windows: Defines the maintenance window, when automatic actions can be performed.
         :param str next_maintenance_action_type: Type of the next maintenance.
@@ -3584,7 +3666,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str public_ip_address: The public IP address representing the access point for the Deployment.
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
         :param str storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -3604,6 +3686,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "fqdn", fqdn)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ingress_ips", ingress_ips)
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         pulumi.set(__self__, "is_healthy", is_healthy)
         pulumi.set(__self__, "is_latest_version", is_latest_version)
@@ -3612,6 +3695,8 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        pulumi.set(__self__, "load_balancer_subnet_id", load_balancer_subnet_id)
         pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
@@ -3727,6 +3812,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemIngressIpResult']:
+        """
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        """
+        return pulumi.get(self, "ingress_ips")
+
+    @property
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> bool:
         """
@@ -3789,6 +3882,22 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         A filter to return only the resources that match the 'lifecycleSubState' given.
         """
         return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
+    @pulumi.getter(name="loadBalancerId")
+    def load_balancer_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        """
+        return pulumi.get(self, "load_balancer_id")
+
+    @property
+    @pulumi.getter(name="loadBalancerSubnetId")
+    def load_balancer_subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        """
+        return pulumi.get(self, "load_balancer_subnet_id")
 
     @property
     @pulumi.getter(name="maintenanceConfigurations")
@@ -3874,7 +3983,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -3998,6 +4107,24 @@ class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(dict)
         The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_diagnostic_start")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemIngressIpResult(dict):
+    def __init__(__self__, *,
+                 ingress_ip: str):
+        """
+        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> str:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
 
 
 @pulumi.output_type

@@ -35,7 +35,9 @@ import (
 //				CompartmentId:          _var.Compartment_id,
 //				CompartmentIdInSubtree: pulumi.BoolRef(_var.Discovery_analytic_compartment_id_in_subtree),
 //				GroupBy:                pulumi.StringRef(_var.Discovery_analytic_group_by),
+//				IsCommon:               pulumi.BoolRef(_var.Discovery_analytic_is_common),
 //				SensitiveDataModelId:   pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
+//				SensitiveTypeId:        pulumi.StringRef(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
 //				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
 //			}, nil)
 //			if err != nil {
@@ -65,8 +67,12 @@ type GetDiscoveryAnalyticsArgs struct {
 	Filters                []GetDiscoveryAnalyticsFilter `pulumi:"filters"`
 	// Attribute by which the discovery analytics data should be grouped.
 	GroupBy *string `pulumi:"groupBy"`
+	// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon *bool `pulumi:"isCommon"`
 	// A filter to return only the resources that match the specified sensitive data model OCID.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
+	// A filter to return only items related to a specific sensitive type OCID.
+	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -80,9 +86,12 @@ type GetDiscoveryAnalyticsResult struct {
 	Filters                       []GetDiscoveryAnalyticsFilter                       `pulumi:"filters"`
 	GroupBy                       *string                                             `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id       string `pulumi:"id"`
+	IsCommon *bool  `pulumi:"isCommon"`
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
+	// The OCID of the sensitive type.
+	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
 	// The OCID of the target database.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -109,8 +118,12 @@ type GetDiscoveryAnalyticsOutputArgs struct {
 	Filters                GetDiscoveryAnalyticsFilterArrayInput `pulumi:"filters"`
 	// Attribute by which the discovery analytics data should be grouped.
 	GroupBy pulumi.StringPtrInput `pulumi:"groupBy"`
+	// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon pulumi.BoolPtrInput `pulumi:"isCommon"`
 	// A filter to return only the resources that match the specified sensitive data model OCID.
 	SensitiveDataModelId pulumi.StringPtrInput `pulumi:"sensitiveDataModelId"`
+	// A filter to return only items related to a specific sensitive type OCID.
+	SensitiveTypeId pulumi.StringPtrInput `pulumi:"sensitiveTypeId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
@@ -162,9 +175,18 @@ func (o GetDiscoveryAnalyticsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o GetDiscoveryAnalyticsResultOutput) IsCommon() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) *bool { return v.IsCommon }).(pulumi.BoolPtrOutput)
+}
+
 // The OCID of the sensitive data model.
 func (o GetDiscoveryAnalyticsResultOutput) SensitiveDataModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) *string { return v.SensitiveDataModelId }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the sensitive type.
+func (o GetDiscoveryAnalyticsResultOutput) SensitiveTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) *string { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target database.

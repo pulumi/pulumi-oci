@@ -111,6 +111,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private String preferredUiLandingPage;
     /**
+     * @return Indicates if User is a Service User
+     * 
+     */
+    private Boolean serviceUser;
+    /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
      */
@@ -269,6 +274,13 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.preferredUiLandingPage;
     }
     /**
+     * @return Indicates if User is a Service User
+     * 
+     */
+    public Boolean serviceUser() {
+        return this.serviceUser;
+    }
+    /**
      * @return A supplemental status indicating the reason why a user is disabled
      * 
      */
@@ -338,6 +350,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         private Boolean isGroupMembershipSyncedToUsersGroups;
         private String notificationEmailTemplateId;
         private String preferredUiLandingPage;
+        private Boolean serviceUser;
         private String status;
         private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts;
         private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps;
@@ -365,6 +378,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
     	      this.isGroupMembershipSyncedToUsersGroups = defaults.isGroupMembershipSyncedToUsersGroups;
     	      this.notificationEmailTemplateId = defaults.notificationEmailTemplateId;
     	      this.preferredUiLandingPage = defaults.preferredUiLandingPage;
+    	      this.serviceUser = defaults.serviceUser;
     	      this.status = defaults.status;
     	      this.supportAccounts = defaults.supportAccounts;
     	      this.syncedFromApps = defaults.syncedFromApps;
@@ -482,6 +496,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         @CustomType.Setter
+        public Builder serviceUser(Boolean serviceUser) {
+            this.serviceUser = Objects.requireNonNull(serviceUser);
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
@@ -540,6 +559,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             _resultValue.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             _resultValue.notificationEmailTemplateId = notificationEmailTemplateId;
             _resultValue.preferredUiLandingPage = preferredUiLandingPage;
+            _resultValue.serviceUser = serviceUser;
             _resultValue.status = status;
             _resultValue.supportAccounts = supportAccounts;
             _resultValue.syncedFromApps = syncedFromApps;

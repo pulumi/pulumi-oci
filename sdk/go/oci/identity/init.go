@@ -71,6 +71,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainsGrant{}
 	case "oci:Identity/domainsGroup:DomainsGroup":
 		r = &DomainsGroup{}
+	case "oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust":
+		r = &DomainsIdentityPropagationTrust{}
 	case "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider":
 		r = &DomainsIdentityProvider{}
 	case "oci:Identity/domainsIdentitySetting:DomainsIdentitySetting":
@@ -289,6 +291,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/domainsGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsIdentityPropagationTrust",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

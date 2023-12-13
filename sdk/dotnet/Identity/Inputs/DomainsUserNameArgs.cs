@@ -21,13 +21,13 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
-        [Input("familyName", required: true)]
-        public Input<string> FamilyName { get; set; } = null!;
+        [Input("familyName")]
+        public Input<string>? FamilyName { get; set; }
 
         /// <summary>
         /// (Updatable) Full name

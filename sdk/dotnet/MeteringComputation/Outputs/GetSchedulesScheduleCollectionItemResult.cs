@@ -38,7 +38,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Specifies supported output file format.
+        /// Specifies the supported output file format.
         /// </summary>
         public readonly string OutputFileFormat;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulesScheduleCollectionItemResultLocationResult> ResultLocations;
         /// <summary>
-        /// The saved report id which can also be used to generate query.
+        /// The saved report ID which can also be used to generate a query.
         /// </summary>
         public readonly string SavedReportId;
         /// <summary>

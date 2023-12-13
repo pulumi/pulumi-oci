@@ -169,6 +169,21 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
     }
 
     /**
+     * (Updatable) The pattern that should be used to mask data.
+     * 
+     */
+    @Import(name="pattern")
+    private @Nullable Output<String> pattern;
+
+    /**
+     * @return (Updatable) The pattern that should be used to mask data.
+     * 
+     */
+    public Optional<Output<String>> pattern() {
+        return Optional.ofNullable(this.pattern);
+    }
+
+    /**
      * (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
@@ -384,6 +399,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
         this.groupingColumns = $.groupingColumns;
         this.length = $.length;
         this.libraryMaskingFormatId = $.libraryMaskingFormatId;
+        this.pattern = $.pattern;
         this.postProcessingFunction = $.postProcessingFunction;
         this.randomLists = $.randomLists;
         this.regularExpression = $.regularExpression;
@@ -635,6 +651,27 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs exte
          */
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
             return libraryMaskingFormatId(Output.of(libraryMaskingFormatId));
+        }
+
+        /**
+         * @param pattern (Updatable) The pattern that should be used to mask data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pattern(@Nullable Output<String> pattern) {
+            $.pattern = pattern;
+            return this;
+        }
+
+        /**
+         * @param pattern (Updatable) The pattern that should be used to mask data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pattern(String pattern) {
+            return pattern(Output.of(pattern));
         }
 
         /**

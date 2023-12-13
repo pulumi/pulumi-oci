@@ -155,7 +155,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly string? References;
         public readonly string SecurityAssessmentId;
         /// <summary>
-        /// The severity of the finding.
+        /// The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
         /// </summary>
         public readonly string? Severity;
 

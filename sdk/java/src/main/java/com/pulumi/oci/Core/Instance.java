@@ -203,14 +203,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.createVnicDetails;
     }
     /**
-     * The OCID of the dedicated virtual machine host to place the instance on.
+     * (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
     @Export(name="dedicatedVmHostId", refs={String.class}, tree="[0]")
     private Output<String> dedicatedVmHostId;
 
     /**
-     * @return The OCID of the dedicated virtual machine host to place the instance on.
+     * @return (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
     public Output<String> dedicatedVmHostId() {

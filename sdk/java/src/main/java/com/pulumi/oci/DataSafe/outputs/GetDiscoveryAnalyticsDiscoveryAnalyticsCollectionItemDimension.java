@@ -15,6 +15,11 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensio
      */
     private String sensitiveDataModelId;
     /**
+     * @return A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    private String sensitiveTypeId;
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -27,6 +32,13 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensio
      */
     public String sensitiveDataModelId() {
         return this.sensitiveDataModelId;
+    }
+    /**
+     * @return A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    public String sensitiveTypeId() {
+        return this.sensitiveTypeId;
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
@@ -46,17 +58,24 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensio
     @CustomType.Builder
     public static final class Builder {
         private String sensitiveDataModelId;
+        private String sensitiveTypeId;
         private String targetId;
         public Builder() {}
         public Builder(GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.sensitiveDataModelId = defaults.sensitiveDataModelId;
+    	      this.sensitiveTypeId = defaults.sensitiveTypeId;
     	      this.targetId = defaults.targetId;
         }
 
         @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sensitiveTypeId(String sensitiveTypeId) {
+            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
             return this;
         }
         @CustomType.Setter
@@ -67,6 +86,7 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensio
         public GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension build() {
             final var _resultValue = new GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension();
             _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
             _resultValue.targetId = targetId;
             return _resultValue;
         }

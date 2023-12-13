@@ -130,9 +130,9 @@ type ReportDefinition struct {
 	RecordTimeSpan pulumi.StringOutput `pulumi:"recordTimeSpan"`
 	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule pulumi.StringOutput `pulumi:"schedule"`
-	// The OCID of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId pulumi.StringOutput `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of the report ( either XLS or PDF )
+	// Specifies the format of the report ( either .xls or .pdf )
 	ScheduledReportMimeType pulumi.StringOutput `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName pulumi.StringOutput `pulumi:"scheduledReportName"`
@@ -149,9 +149,9 @@ type ReportDefinition struct {
 	Summaries ReportDefinitionSummaryArrayOutput `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// Specifies the data and time the report definition was created.
+	// Specifies the date and time the report definition was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the report definition was update.
+	// The date and time the report definition was updated.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -238,9 +238,9 @@ type reportDefinitionState struct {
 	RecordTimeSpan *string `pulumi:"recordTimeSpan"`
 	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule *string `pulumi:"schedule"`
-	// The OCID of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId *string `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of the report ( either XLS or PDF )
+	// Specifies the format of the report ( either .xls or .pdf )
 	ScheduledReportMimeType *string `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName *string `pulumi:"scheduledReportName"`
@@ -257,9 +257,9 @@ type reportDefinitionState struct {
 	Summaries []ReportDefinitionSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Specifies the data and time the report definition was created.
+	// Specifies the date and time the report definition was created.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the report definition was update.
+	// The date and time the report definition was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
@@ -296,9 +296,9 @@ type ReportDefinitionState struct {
 	RecordTimeSpan pulumi.StringPtrInput
 	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule pulumi.StringPtrInput
-	// The OCID of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId pulumi.StringPtrInput
-	// Specifies the format of the report ( either XLS or PDF )
+	// Specifies the format of the report ( either .xls or .pdf )
 	ScheduledReportMimeType pulumi.StringPtrInput
 	// The name of the report to be scheduled.
 	ScheduledReportName pulumi.StringPtrInput
@@ -315,9 +315,9 @@ type ReportDefinitionState struct {
 	Summaries ReportDefinitionSummaryArrayInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// Specifies the data and time the report definition was created.
+	// Specifies the date and time the report definition was created.
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the report definition was update.
+	// The date and time the report definition was updated.
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -539,12 +539,12 @@ func (o ReportDefinitionOutput) Schedule() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.Schedule }).(pulumi.StringOutput)
 }
 
-// The OCID of the compartment in which the scheduled resource should be created.
+// The OCID of the compartment in which the scheduled resource will be created.
 func (o ReportDefinitionOutput) ScheduledReportCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.ScheduledReportCompartmentId }).(pulumi.StringOutput)
 }
 
-// Specifies the format of the report ( either XLS or PDF )
+// Specifies the format of the report ( either .xls or .pdf )
 func (o ReportDefinitionOutput) ScheduledReportMimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
 }
@@ -582,12 +582,12 @@ func (o ReportDefinitionOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Specifies the data and time the report definition was created.
+// Specifies the date and time the report definition was created.
 func (o ReportDefinitionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the report definition was update.
+// The date and time the report definition was updated.
 func (o ReportDefinitionOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

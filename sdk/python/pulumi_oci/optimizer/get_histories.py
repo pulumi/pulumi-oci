@@ -23,7 +23,7 @@ class GetHistoriesResult:
     """
     A collection of values returned by getHistories.
     """
-    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, filters=None, history_collections=None, id=None, name=None, recommendation_id=None, recommendation_name=None, resource_type=None, state=None, status=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, filters=None, history_collections=None, id=None, include_resource_metadata=None, name=None, recommendation_id=None, recommendation_name=None, resource_type=None, state=None, status=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -39,6 +39,9 @@ class GetHistoriesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if include_resource_metadata and not isinstance(include_resource_metadata, bool):
+            raise TypeError("Expected argument 'include_resource_metadata' to be a bool")
+        pulumi.set(__self__, "include_resource_metadata", include_resource_metadata)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -91,6 +94,11 @@ class GetHistoriesResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="includeResourceMetadata")
+    def include_resource_metadata(self) -> Optional[bool]:
+        return pulumi.get(self, "include_resource_metadata")
 
     @property
     @pulumi.getter
@@ -152,6 +160,7 @@ class AwaitableGetHistoriesResult(GetHistoriesResult):
             filters=self.filters,
             history_collections=self.history_collections,
             id=self.id,
+            include_resource_metadata=self.include_resource_metadata,
             name=self.name,
             recommendation_id=self.recommendation_id,
             recommendation_name=self.recommendation_name,
@@ -163,6 +172,7 @@ class AwaitableGetHistoriesResult(GetHistoriesResult):
 def get_histories(compartment_id: Optional[str] = None,
                   compartment_id_in_subtree: Optional[bool] = None,
                   filters: Optional[Sequence[pulumi.InputType['GetHistoriesFilterArgs']]] = None,
+                  include_resource_metadata: Optional[bool] = None,
                   name: Optional[str] = None,
                   recommendation_id: Optional[str] = None,
                   recommendation_name: Optional[str] = None,
@@ -184,6 +194,7 @@ def get_histories(compartment_id: Optional[str] = None,
 
     test_histories = oci.Optimizer.get_histories(compartment_id=var["compartment_id"],
         compartment_id_in_subtree=var["history_compartment_id_in_subtree"],
+        include_resource_metadata=var["history_include_resource_metadata"],
         name=var["history_name"],
         recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
         recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
@@ -197,6 +208,7 @@ def get_histories(compartment_id: Optional[str] = None,
     :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
            
            Can only be set to true when performing ListCompartments on the tenancy (root compartment).
+    :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_id: The unique OCID associated with the recommendation.
     :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
@@ -208,6 +220,7 @@ def get_histories(compartment_id: Optional[str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
+    __args__['includeResourceMetadata'] = include_resource_metadata
     __args__['name'] = name
     __args__['recommendationId'] = recommendation_id
     __args__['recommendationName'] = recommendation_name
@@ -223,6 +236,7 @@ def get_histories(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         history_collections=pulumi.get(__ret__, 'history_collections'),
         id=pulumi.get(__ret__, 'id'),
+        include_resource_metadata=pulumi.get(__ret__, 'include_resource_metadata'),
         name=pulumi.get(__ret__, 'name'),
         recommendation_id=pulumi.get(__ret__, 'recommendation_id'),
         recommendation_name=pulumi.get(__ret__, 'recommendation_name'),
@@ -235,6 +249,7 @@ def get_histories(compartment_id: Optional[str] = None,
 def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetHistoriesFilterArgs']]]]] = None,
+                         include_resource_metadata: Optional[pulumi.Input[Optional[bool]]] = None,
                          name: Optional[pulumi.Input[Optional[str]]] = None,
                          recommendation_id: Optional[pulumi.Input[Optional[str]]] = None,
                          recommendation_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -256,6 +271,7 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     test_histories = oci.Optimizer.get_histories(compartment_id=var["compartment_id"],
         compartment_id_in_subtree=var["history_compartment_id_in_subtree"],
+        include_resource_metadata=var["history_include_resource_metadata"],
         name=var["history_name"],
         recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
         recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
@@ -269,6 +285,7 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     :param bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
            
            Can only be set to true when performing ListCompartments on the tenancy (root compartment).
+    :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_id: The unique OCID associated with the recommendation.
     :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.

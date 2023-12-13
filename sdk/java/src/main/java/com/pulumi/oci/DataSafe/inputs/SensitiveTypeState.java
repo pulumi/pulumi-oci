@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -150,6 +151,21 @@ public final class SensitiveTypeState extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    @Import(name="isCommon")
+    private @Nullable Output<Boolean> isCommon;
+
+    /**
+     * @return Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    public Optional<Output<Boolean>> isCommon() {
+        return Optional.ofNullable(this.isCommon);
     }
 
     /**
@@ -305,6 +321,7 @@ public final class SensitiveTypeState extends com.pulumi.resources.ResourceArgs 
         this.displayName = $.displayName;
         this.entityType = $.entityType;
         this.freeformTags = $.freeformTags;
+        this.isCommon = $.isCommon;
         this.namePattern = $.namePattern;
         this.parentCategoryId = $.parentCategoryId;
         this.searchType = $.searchType;
@@ -521,6 +538,27 @@ public final class SensitiveTypeState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isCommon Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCommon(@Nullable Output<Boolean> isCommon) {
+            $.isCommon = isCommon;
+            return this;
+        }
+
+        /**
+         * @param isCommon Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCommon(Boolean isCommon) {
+            return isCommon(Output.of(isCommon));
         }
 
         /**

@@ -38,6 +38,11 @@ public final class GetAwrHubResult {
      */
     private Map<String,Object> freeformTags;
     /**
+     * @return Dst Time Zone Version of the AWR Hub
+     * 
+     */
+    private String hubDstTimezoneVersion;
+    /**
      * @return AWR Hub OCID
      * 
      */
@@ -118,6 +123,13 @@ public final class GetAwrHubResult {
         return this.freeformTags;
     }
     /**
+     * @return Dst Time Zone Version of the AWR Hub
+     * 
+     */
+    public String hubDstTimezoneVersion() {
+        return this.hubDstTimezoneVersion;
+    }
+    /**
      * @return AWR Hub OCID
      * 
      */
@@ -189,6 +201,7 @@ public final class GetAwrHubResult {
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
+        private String hubDstTimezoneVersion;
         private String id;
         private String lifecycleDetails;
         private String objectStorageBucketName;
@@ -206,6 +219,7 @@ public final class GetAwrHubResult {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.hubDstTimezoneVersion = defaults.hubDstTimezoneVersion;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.objectStorageBucketName = defaults.objectStorageBucketName;
@@ -244,6 +258,11 @@ public final class GetAwrHubResult {
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hubDstTimezoneVersion(String hubDstTimezoneVersion) {
+            this.hubDstTimezoneVersion = Objects.requireNonNull(hubDstTimezoneVersion);
             return this;
         }
         @CustomType.Setter
@@ -294,6 +313,7 @@ public final class GetAwrHubResult {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.hubDstTimezoneVersion = hubDstTimezoneVersion;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.objectStorageBucketName = objectStorageBucketName;

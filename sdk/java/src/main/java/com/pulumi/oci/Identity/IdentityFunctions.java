@@ -108,6 +108,10 @@ import com.pulumi.oci.Identity.inputs.GetDomainsGroupArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsGroupPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsGroupsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsGroupsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProviderArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProviderPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProvidersArgs;
@@ -347,6 +351,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsGrantResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsGrantsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityProviderResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityProvidersResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentitySettingResult;
@@ -9597,6 +9603,366 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetDomainsGroupsResult> getDomainsGroupsPlain(GetDomainsGroupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsGroups:getDomainsGroups", TypeShape.of(GetDomainsGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an existing Identity Propagation Trust configuration.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .identityPropagationTrustId(oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.identity_propagation_trust_authorization())
+     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsIdentityPropagationTrustResult> getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs args) {
+        return getDomainsIdentityPropagationTrust(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an existing Identity Propagation Trust configuration.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .identityPropagationTrustId(oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.identity_propagation_trust_authorization())
+     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityPropagationTrustResult> getDomainsIdentityPropagationTrustPlain(GetDomainsIdentityPropagationTrustPlainArgs args) {
+        return getDomainsIdentityPropagationTrustPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an existing Identity Propagation Trust configuration.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .identityPropagationTrustId(oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.identity_propagation_trust_authorization())
+     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsIdentityPropagationTrustResult> getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", TypeShape.of(GetDomainsIdentityPropagationTrustResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an existing Identity Propagation Trust configuration.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityPropagationTrust = IdentityFunctions.getDomainsIdentityPropagationTrust(GetDomainsIdentityPropagationTrustArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .identityPropagationTrustId(oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.identity_propagation_trust_authorization())
+     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityPropagationTrustResult> getDomainsIdentityPropagationTrustPlain(GetDomainsIdentityPropagationTrustPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsIdentityPropagationTrust:getDomainsIdentityPropagationTrust", TypeShape.of(GetDomainsIdentityPropagationTrustResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Identity Propagation Trusts in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * List the Identity Propagation Trust configurations.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .identityPropagationTrustCount(var_.identity_propagation_trust_identity_propagation_trust_count())
+     *             .identityPropagationTrustFilter(var_.identity_propagation_trust_identity_propagation_trust_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.identity_propagation_trust_authorization())
+     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .startIndex(var_.identity_propagation_trust_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsIdentityPropagationTrustsResult> getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs args) {
+        return getDomainsIdentityPropagationTrusts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Identity Propagation Trusts in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * List the Identity Propagation Trust configurations.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .identityPropagationTrustCount(var_.identity_propagation_trust_identity_propagation_trust_count())
+     *             .identityPropagationTrustFilter(var_.identity_propagation_trust_identity_propagation_trust_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.identity_propagation_trust_authorization())
+     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .startIndex(var_.identity_propagation_trust_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityPropagationTrustsResult> getDomainsIdentityPropagationTrustsPlain(GetDomainsIdentityPropagationTrustsPlainArgs args) {
+        return getDomainsIdentityPropagationTrustsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Identity Propagation Trusts in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * List the Identity Propagation Trust configurations.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .identityPropagationTrustCount(var_.identity_propagation_trust_identity_propagation_trust_count())
+     *             .identityPropagationTrustFilter(var_.identity_propagation_trust_identity_propagation_trust_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.identity_propagation_trust_authorization())
+     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .startIndex(var_.identity_propagation_trust_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsIdentityPropagationTrustsResult> getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsIdentityPropagationTrusts:getDomainsIdentityPropagationTrusts", TypeShape.of(GetDomainsIdentityPropagationTrustsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Identity Propagation Trusts in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * List the Identity Propagation Trust configurations.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIdentityPropagationTrusts = IdentityFunctions.getDomainsIdentityPropagationTrusts(GetDomainsIdentityPropagationTrustsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .identityPropagationTrustCount(var_.identity_propagation_trust_identity_propagation_trust_count())
+     *             .identityPropagationTrustFilter(var_.identity_propagation_trust_identity_propagation_trust_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.identity_propagation_trust_authorization())
+     *             .resourceTypeSchemaVersion(var_.identity_propagation_trust_resource_type_schema_version())
+     *             .startIndex(var_.identity_propagation_trust_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsIdentityPropagationTrustsResult> getDomainsIdentityPropagationTrustsPlain(GetDomainsIdentityPropagationTrustsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsIdentityPropagationTrusts:getDomainsIdentityPropagationTrusts", TypeShape.of(GetDomainsIdentityPropagationTrustsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.

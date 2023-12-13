@@ -70,13 +70,13 @@ type LookupScheduleResult struct {
 	Id string `pulumi:"id"`
 	// The unique name of the schedule created by the user.
 	Name string `pulumi:"name"`
-	// Specifies supported output file format.
+	// Specifies the supported output file format.
 	OutputFileFormat string `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties []GetScheduleQueryProperty `pulumi:"queryProperties"`
 	// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocations []GetScheduleResultLocation `pulumi:"resultLocations"`
-	// The saved report id which can also be used to generate query.
+	// The saved report ID which can also be used to generate a query.
 	SavedReportId string `pulumi:"savedReportId"`
 	ScheduleId    string `pulumi:"scheduleId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
@@ -161,7 +161,7 @@ func (o LookupScheduleResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Specifies supported output file format.
+// Specifies the supported output file format.
 func (o LookupScheduleResultOutput) OutputFileFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.OutputFileFormat }).(pulumi.StringOutput)
 }
@@ -176,7 +176,7 @@ func (o LookupScheduleResultOutput) ResultLocations() GetScheduleResultLocationA
 	return o.ApplyT(func(v LookupScheduleResult) []GetScheduleResultLocation { return v.ResultLocations }).(GetScheduleResultLocationArrayOutput)
 }
 
-// The saved report id which can also be used to generate query.
+// The saved report ID which can also be used to generate a query.
 func (o LookupScheduleResultOutput) SavedReportId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.SavedReportId }).(pulumi.StringOutput)
 }

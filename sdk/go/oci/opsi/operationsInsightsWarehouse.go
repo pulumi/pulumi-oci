@@ -65,7 +65,7 @@ import (
 type OperationsInsightsWarehouse struct {
 	pulumi.CustomResourceState
 
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64Output `pulumi:"cpuAllocated"`
@@ -141,7 +141,7 @@ func GetOperationsInsightsWarehouse(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OperationsInsightsWarehouse resources.
 type operationsInsightsWarehouseState struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated *float64 `pulumi:"cpuAllocated"`
@@ -179,7 +179,7 @@ type operationsInsightsWarehouseState struct {
 }
 
 type OperationsInsightsWarehouseState struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64PtrInput
@@ -221,7 +221,7 @@ func (OperationsInsightsWarehouseState) ElementType() reflect.Type {
 }
 
 type operationsInsightsWarehouseArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated float64 `pulumi:"cpuAllocated"`
@@ -240,7 +240,7 @@ type operationsInsightsWarehouseArgs struct {
 
 // The set of arguments for constructing a OperationsInsightsWarehouse resource.
 type OperationsInsightsWarehouseArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64Input
@@ -344,7 +344,7 @@ func (o OperationsInsightsWarehouseOutput) ToOperationsInsightsWarehouseOutputWi
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o OperationsInsightsWarehouseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

@@ -287,6 +287,24 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? PreferredUiLandingPage;
         /// <summary>
+        /// (Updatable) Indicates if User is a Service User
+        /// 
+        /// **Added In:** 2306131901
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Service User
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
+        /// </summary>
+        public readonly bool? ServiceUser;
+        /// <summary>
         /// (Updatable) A supplemental status indicating the reason why a user is disabled
         /// 
         /// **SCIM++ Properties:**
@@ -418,6 +436,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string? preferredUiLandingPage,
 
+            bool? serviceUser,
+
             string? status,
 
             ImmutableArray<Outputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts,
@@ -448,6 +468,7 @@ namespace Pulumi.Oci.Identity.Outputs
             IsGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             NotificationEmailTemplateId = notificationEmailTemplateId;
             PreferredUiLandingPage = preferredUiLandingPage;
+            ServiceUser = serviceUser;
             Status = status;
             SupportAccounts = supportAccounts;
             SyncedFromApp = syncedFromApp;

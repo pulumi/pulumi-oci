@@ -206,7 +206,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetSdmMaskingPolicyDifferencesResult
     {
         /// <summary>
-        /// The OCID of the compartment that contains the SDM masking policy difference.
+        /// The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;

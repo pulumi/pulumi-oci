@@ -125,7 +125,8 @@ type ConnectionBootstrapServer struct {
 	Host *string `pulumi:"host"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port *int `pulumi:"port"`
-	// (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp *string `pulumi:"privateIp"`
 }
 
@@ -146,7 +147,8 @@ type ConnectionBootstrapServerArgs struct {
 	Host pulumi.StringPtrInput `pulumi:"host"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
 }
 
@@ -212,7 +214,8 @@ func (o ConnectionBootstrapServerOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectionBootstrapServer) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+// (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 func (o ConnectionBootstrapServerOutput) PrivateIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionBootstrapServer) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
@@ -474,6 +477,103 @@ func (o DeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeploymentDiagnosticData {
 		return vs[0].([]DeploymentDeploymentDiagnosticData)[vs[1].(int)]
 	}).(DeploymentDeploymentDiagnosticDataOutput)
+}
+
+type DeploymentIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp *string `pulumi:"ingressIp"`
+}
+
+// DeploymentIngressIpInput is an input type that accepts DeploymentIngressIpArgs and DeploymentIngressIpOutput values.
+// You can construct a concrete instance of `DeploymentIngressIpInput` via:
+//
+//	DeploymentIngressIpArgs{...}
+type DeploymentIngressIpInput interface {
+	pulumi.Input
+
+	ToDeploymentIngressIpOutput() DeploymentIngressIpOutput
+	ToDeploymentIngressIpOutputWithContext(context.Context) DeploymentIngressIpOutput
+}
+
+type DeploymentIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringPtrInput `pulumi:"ingressIp"`
+}
+
+func (DeploymentIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentIngressIp)(nil)).Elem()
+}
+
+func (i DeploymentIngressIpArgs) ToDeploymentIngressIpOutput() DeploymentIngressIpOutput {
+	return i.ToDeploymentIngressIpOutputWithContext(context.Background())
+}
+
+func (i DeploymentIngressIpArgs) ToDeploymentIngressIpOutputWithContext(ctx context.Context) DeploymentIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentIngressIpOutput)
+}
+
+// DeploymentIngressIpArrayInput is an input type that accepts DeploymentIngressIpArray and DeploymentIngressIpArrayOutput values.
+// You can construct a concrete instance of `DeploymentIngressIpArrayInput` via:
+//
+//	DeploymentIngressIpArray{ DeploymentIngressIpArgs{...} }
+type DeploymentIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentIngressIpArrayOutput() DeploymentIngressIpArrayOutput
+	ToDeploymentIngressIpArrayOutputWithContext(context.Context) DeploymentIngressIpArrayOutput
+}
+
+type DeploymentIngressIpArray []DeploymentIngressIpInput
+
+func (DeploymentIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentIngressIp)(nil)).Elem()
+}
+
+func (i DeploymentIngressIpArray) ToDeploymentIngressIpArrayOutput() DeploymentIngressIpArrayOutput {
+	return i.ToDeploymentIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentIngressIpArray) ToDeploymentIngressIpArrayOutputWithContext(ctx context.Context) DeploymentIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentIngressIpArrayOutput)
+}
+
+type DeploymentIngressIpOutput struct{ *pulumi.OutputState }
+
+func (DeploymentIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentIngressIp)(nil)).Elem()
+}
+
+func (o DeploymentIngressIpOutput) ToDeploymentIngressIpOutput() DeploymentIngressIpOutput {
+	return o
+}
+
+func (o DeploymentIngressIpOutput) ToDeploymentIngressIpOutputWithContext(ctx context.Context) DeploymentIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o DeploymentIngressIpOutput) IngressIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentIngressIp) *string { return v.IngressIp }).(pulumi.StringPtrOutput)
+}
+
+type DeploymentIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentIngressIp)(nil)).Elem()
+}
+
+func (o DeploymentIngressIpArrayOutput) ToDeploymentIngressIpArrayOutput() DeploymentIngressIpArrayOutput {
+	return o
+}
+
+func (o DeploymentIngressIpArrayOutput) ToDeploymentIngressIpArrayOutputWithContext(ctx context.Context) DeploymentIngressIpArrayOutput {
+	return o
+}
+
+func (o DeploymentIngressIpArrayOutput) Index(i pulumi.IntInput) DeploymentIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentIngressIp {
+		return vs[0].([]DeploymentIngressIp)[vs[1].(int)]
+	}).(DeploymentIngressIpOutput)
 }
 
 type DeploymentMaintenanceConfiguration struct {
@@ -1612,6 +1712,7 @@ type GetConnectionBootstrapServer struct {
 	Host string `pulumi:"host"`
 	// The port of an endpoint usually specified for a connection.
 	Port int `pulumi:"port"`
+	// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp string `pulumi:"privateIp"`
 }
@@ -1634,6 +1735,7 @@ type GetConnectionBootstrapServerArgs struct {
 	Host pulumi.StringInput `pulumi:"host"`
 	// The port of an endpoint usually specified for a connection.
 	Port pulumi.IntInput `pulumi:"port"`
+	// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
 }
@@ -1701,6 +1803,7 @@ func (o GetConnectionBootstrapServerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConnectionBootstrapServer) int { return v.Port }).(pulumi.IntOutput)
 }
 
+// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 // The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 func (o GetConnectionBootstrapServerOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionBootstrapServer) string { return v.PrivateIp }).(pulumi.StringOutput)
@@ -1999,6 +2102,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	Password string   `pulumi:"password"`
 	// The port of an endpoint usually specified for a connection.
 	Port int `pulumi:"port"`
+	// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp            string `pulumi:"privateIp"`
 	PrivateKeyFile       string `pulumi:"privateKeyFile"`
@@ -2006,7 +2110,9 @@ type GetConnectionsConnectionCollectionItem struct {
 	ProducerProperties   string `pulumi:"producerProperties"`
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
 	// The name of the region. e.g.: us-ashburn-1
-	Region          string `pulumi:"region"`
+	Region string `pulumi:"region"`
+	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+	RoutingMethod   string `pulumi:"routingMethod"`
 	SasToken        string `pulumi:"sasToken"`
 	SecretAccessKey string `pulumi:"secretAccessKey"`
 	// Security Protocol to be provided for the following connection types:
@@ -2035,7 +2141,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 	StreamPoolId string `pulumi:"streamPoolId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -2153,6 +2259,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	Password pulumi.StringInput      `pulumi:"password"`
 	// The port of an endpoint usually specified for a connection.
 	Port pulumi.IntInput `pulumi:"port"`
+	// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp            pulumi.StringInput `pulumi:"privateIp"`
 	PrivateKeyFile       pulumi.StringInput `pulumi:"privateKeyFile"`
@@ -2160,7 +2267,9 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	ProducerProperties   pulumi.StringInput `pulumi:"producerProperties"`
 	PublicKeyFingerprint pulumi.StringInput `pulumi:"publicKeyFingerprint"`
 	// The name of the region. e.g.: us-ashburn-1
-	Region          pulumi.StringInput `pulumi:"region"`
+	Region pulumi.StringInput `pulumi:"region"`
+	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+	RoutingMethod   pulumi.StringInput `pulumi:"routingMethod"`
 	SasToken        pulumi.StringInput `pulumi:"sasToken"`
 	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
 	// Security Protocol to be provided for the following connection types:
@@ -2189,7 +2298,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 	StreamPoolId pulumi.StringInput `pulumi:"streamPoolId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
@@ -2475,6 +2584,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) int { return v.Port }).(pulumi.IntOutput)
 }
 
+// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 // The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 func (o GetConnectionsConnectionCollectionItemOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.PrivateIp }).(pulumi.StringOutput)
@@ -2499,6 +2609,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) PublicKeyFingerprint() pul
 // The name of the region. e.g.: us-ashburn-1
 func (o GetConnectionsConnectionCollectionItemOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+func (o GetConnectionsConnectionCollectionItemOutput) RoutingMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.RoutingMethod }).(pulumi.StringOutput)
 }
 
 func (o GetConnectionsConnectionCollectionItemOutput) SasToken() pulumi.StringOutput {
@@ -2577,7 +2692,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) StreamPoolId() pulumi.Stri
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.StreamPoolId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 func (o GetConnectionsConnectionCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -2772,6 +2887,7 @@ type GetConnectionsConnectionCollectionItemBootstrapServer struct {
 	Host string `pulumi:"host"`
 	// The port of an endpoint usually specified for a connection.
 	Port int `pulumi:"port"`
+	// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp string `pulumi:"privateIp"`
 }
@@ -2794,6 +2910,7 @@ type GetConnectionsConnectionCollectionItemBootstrapServerArgs struct {
 	Host pulumi.StringInput `pulumi:"host"`
 	// The port of an endpoint usually specified for a connection.
 	Port pulumi.IntInput `pulumi:"port"`
+	// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
 }
@@ -2861,6 +2978,7 @@ func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) Port() pulu
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemBootstrapServer) int { return v.Port }).(pulumi.IntOutput)
 }
 
+// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 // The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemBootstrapServer) string { return v.PrivateIp }).(pulumi.StringOutput)
@@ -3226,7 +3344,7 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItem struct {
 	SessionMode string `pulumi:"sessionMode"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State string `pulumi:"state"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -3290,7 +3408,7 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs struct {
 	SessionMode pulumi.StringInput `pulumi:"sessionMode"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
@@ -3456,7 +3574,7 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) State(
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -4663,6 +4781,103 @@ func (o GetDeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeploymentDiagnosticData {
 		return vs[0].([]GetDeploymentDeploymentDiagnosticData)[vs[1].(int)]
 	}).(GetDeploymentDeploymentDiagnosticDataOutput)
+}
+
+type GetDeploymentIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp string `pulumi:"ingressIp"`
+}
+
+// GetDeploymentIngressIpInput is an input type that accepts GetDeploymentIngressIpArgs and GetDeploymentIngressIpOutput values.
+// You can construct a concrete instance of `GetDeploymentIngressIpInput` via:
+//
+//	GetDeploymentIngressIpArgs{...}
+type GetDeploymentIngressIpInput interface {
+	pulumi.Input
+
+	ToGetDeploymentIngressIpOutput() GetDeploymentIngressIpOutput
+	ToGetDeploymentIngressIpOutputWithContext(context.Context) GetDeploymentIngressIpOutput
+}
+
+type GetDeploymentIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringInput `pulumi:"ingressIp"`
+}
+
+func (GetDeploymentIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentIngressIp)(nil)).Elem()
+}
+
+func (i GetDeploymentIngressIpArgs) ToGetDeploymentIngressIpOutput() GetDeploymentIngressIpOutput {
+	return i.ToGetDeploymentIngressIpOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentIngressIpArgs) ToGetDeploymentIngressIpOutputWithContext(ctx context.Context) GetDeploymentIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentIngressIpOutput)
+}
+
+// GetDeploymentIngressIpArrayInput is an input type that accepts GetDeploymentIngressIpArray and GetDeploymentIngressIpArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentIngressIpArrayInput` via:
+//
+//	GetDeploymentIngressIpArray{ GetDeploymentIngressIpArgs{...} }
+type GetDeploymentIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentIngressIpArrayOutput() GetDeploymentIngressIpArrayOutput
+	ToGetDeploymentIngressIpArrayOutputWithContext(context.Context) GetDeploymentIngressIpArrayOutput
+}
+
+type GetDeploymentIngressIpArray []GetDeploymentIngressIpInput
+
+func (GetDeploymentIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentIngressIp)(nil)).Elem()
+}
+
+func (i GetDeploymentIngressIpArray) ToGetDeploymentIngressIpArrayOutput() GetDeploymentIngressIpArrayOutput {
+	return i.ToGetDeploymentIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentIngressIpArray) ToGetDeploymentIngressIpArrayOutputWithContext(ctx context.Context) GetDeploymentIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentIngressIpArrayOutput)
+}
+
+type GetDeploymentIngressIpOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentIngressIp)(nil)).Elem()
+}
+
+func (o GetDeploymentIngressIpOutput) ToGetDeploymentIngressIpOutput() GetDeploymentIngressIpOutput {
+	return o
+}
+
+func (o GetDeploymentIngressIpOutput) ToGetDeploymentIngressIpOutputWithContext(ctx context.Context) GetDeploymentIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o GetDeploymentIngressIpOutput) IngressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentIngressIp) string { return v.IngressIp }).(pulumi.StringOutput)
+}
+
+type GetDeploymentIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentIngressIp)(nil)).Elem()
+}
+
+func (o GetDeploymentIngressIpArrayOutput) ToGetDeploymentIngressIpArrayOutput() GetDeploymentIngressIpArrayOutput {
+	return o
+}
+
+func (o GetDeploymentIngressIpArrayOutput) ToGetDeploymentIngressIpArrayOutputWithContext(ctx context.Context) GetDeploymentIngressIpArrayOutput {
+	return o
+}
+
+func (o GetDeploymentIngressIpArrayOutput) Index(i pulumi.IntInput) GetDeploymentIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentIngressIp {
+		return vs[0].([]GetDeploymentIngressIp)[vs[1].(int)]
+	}).(GetDeploymentIngressIpOutput)
 }
 
 type GetDeploymentMaintenanceConfiguration struct {
@@ -6614,6 +6829,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	Id string `pulumi:"id"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps []GetDeploymentsDeploymentCollectionItemIngressIp `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// True if all of the aggregate resources are working correctly.
@@ -6630,6 +6847,10 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+	LoadBalancerId string `pulumi:"loadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	LoadBalancerSubnetId string `pulumi:"loadBalancerSubnetId"`
 	// Attributes for configuring automatic deployment maintenance.
 	MaintenanceConfigurations []GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
@@ -6650,7 +6871,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	State string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes string `pulumi:"storageUtilizationInBytes"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -6702,6 +6923,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps GetDeploymentsDeploymentCollectionItemIngressIpArrayInput `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
 	// True if all of the aggregate resources are working correctly.
@@ -6718,6 +6941,10 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	LoadBalancerSubnetId pulumi.StringInput `pulumi:"loadBalancerSubnetId"`
 	// Attributes for configuring automatic deployment maintenance.
 	MaintenanceConfigurations GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
@@ -6738,7 +6965,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringInput `pulumi:"storageUtilizationInBytes"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
@@ -6867,6 +7094,13 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+func (o GetDeploymentsDeploymentCollectionItemOutput) IngressIps() GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemIngressIp {
+		return v.IngressIps
+	}).(GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput)
+}
+
 // Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o GetDeploymentsDeploymentCollectionItemOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
@@ -6905,6 +7139,16 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) LifecycleDetails() pulumi.
 // A filter to return only the resources that match the 'lifecycleSubState' given.
 func (o GetDeploymentsDeploymentCollectionItemOutput) LifecycleSubState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+func (o GetDeploymentsDeploymentCollectionItemOutput) LoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+func (o GetDeploymentsDeploymentCollectionItemOutput) LoadBalancerSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
 }
 
 // Attributes for configuring automatic deployment maintenance.
@@ -6963,7 +7207,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) StorageUtilizationInBytes(
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.StorageUtilizationInBytes }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 func (o GetDeploymentsDeploymentCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -7164,6 +7408,103 @@ func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp string `pulumi:"ingressIp"`
+}
+
+// GetDeploymentsDeploymentCollectionItemIngressIpInput is an input type that accepts GetDeploymentsDeploymentCollectionItemIngressIpArgs and GetDeploymentsDeploymentCollectionItemIngressIpOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemIngressIpInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemIngressIpArgs{...}
+type GetDeploymentsDeploymentCollectionItemIngressIpInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemIngressIpOutput() GetDeploymentsDeploymentCollectionItemIngressIpOutput
+	ToGetDeploymentsDeploymentCollectionItemIngressIpOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemIngressIpOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringInput `pulumi:"ingressIp"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemIngressIpArgs) ToGetDeploymentsDeploymentCollectionItemIngressIpOutput() GetDeploymentsDeploymentCollectionItemIngressIpOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemIngressIpOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemIngressIpArgs) ToGetDeploymentsDeploymentCollectionItemIngressIpOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemIngressIpOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemIngressIpArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemIngressIpArray and GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemIngressIpArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemIngressIpArray{ GetDeploymentsDeploymentCollectionItemIngressIpArgs{...} }
+type GetDeploymentsDeploymentCollectionItemIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemIngressIpArrayOutput() GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemIngressIpArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemIngressIpArray []GetDeploymentsDeploymentCollectionItemIngressIpInput
+
+func (GetDeploymentsDeploymentCollectionItemIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemIngressIpArray) ToGetDeploymentsDeploymentCollectionItemIngressIpArrayOutput() GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemIngressIpArray) ToGetDeploymentsDeploymentCollectionItemIngressIpArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemIngressIpOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemIngressIpOutput) ToGetDeploymentsDeploymentCollectionItemIngressIpOutput() GetDeploymentsDeploymentCollectionItemIngressIpOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemIngressIpOutput) ToGetDeploymentsDeploymentCollectionItemIngressIpOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o GetDeploymentsDeploymentCollectionItemIngressIpOutput) IngressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemIngressIp) string { return v.IngressIp }).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput) ToGetDeploymentsDeploymentCollectionItemIngressIpArrayOutput() GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput) ToGetDeploymentsDeploymentCollectionItemIngressIpArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemIngressIp {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemIngressIp)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemIngressIpOutput)
 }
 
 type GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration struct {
@@ -9140,6 +9481,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentIngressIpInput)(nil)).Elem(), DeploymentIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentIngressIpArrayInput)(nil)).Elem(), DeploymentIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceConfigurationInput)(nil)).Elem(), DeploymentMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceConfigurationPtrInput)(nil)).Elem(), DeploymentMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceWindowInput)(nil)).Elem(), DeploymentMaintenanceWindowArgs{})
@@ -9190,6 +9533,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesFilterArrayInput)(nil)).Elem(), GetDeploymentCertificatesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentIngressIpInput)(nil)).Elem(), GetDeploymentIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentIngressIpArrayInput)(nil)).Elem(), GetDeploymentIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceConfigurationInput)(nil)).Elem(), GetDeploymentMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceConfigurationArrayInput)(nil)).Elem(), GetDeploymentMaintenanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceWindowInput)(nil)).Elem(), GetDeploymentMaintenanceWindowArgs{})
@@ -9222,6 +9567,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemIngressIpInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemIngressIpArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindowInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs{})
@@ -9262,6 +9609,8 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentIngressIpOutput{})
+	pulumi.RegisterOutputType(DeploymentIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentMaintenanceConfigurationOutput{})
 	pulumi.RegisterOutputType(DeploymentMaintenanceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentMaintenanceWindowOutput{})
@@ -9312,6 +9661,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentCertificatesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentIngressIpOutput{})
+	pulumi.RegisterOutputType(GetDeploymentIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceWindowOutput{})
@@ -9344,6 +9695,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemIngressIpOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput{})

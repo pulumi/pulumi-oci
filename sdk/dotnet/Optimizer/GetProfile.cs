@@ -144,6 +144,7 @@ namespace Pulumi.Oci.Optimizer
         /// The profile's current state.
         /// </summary>
         public readonly string State;
+        public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
         /// Optional. The compartments specified in the profile override for a recommendation.
         /// </summary>
@@ -183,6 +184,8 @@ namespace Pulumi.Oci.Optimizer
 
             string state,
 
+            ImmutableDictionary<string, object> systemTags,
+
             ImmutableArray<Outputs.GetProfileTargetCompartmentResult> targetCompartments,
 
             ImmutableArray<Outputs.GetProfileTargetTagResult> targetTags,
@@ -201,6 +204,7 @@ namespace Pulumi.Oci.Optimizer
             Name = name;
             ProfileId = profileId;
             State = state;
+            SystemTags = systemTags;
             TargetCompartments = targetCompartments;
             TargetTags = targetTags;
             TimeCreated = timeCreated;

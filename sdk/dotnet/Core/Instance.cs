@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Core
         public Output<Outputs.InstanceCreateVnicDetails> CreateVnicDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the dedicated virtual machine host to place the instance on.
+        /// (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         /// </summary>
         [Output("dedicatedVmHostId")]
         public Output<string> DedicatedVmHostId { get; private set; } = null!;
@@ -464,7 +464,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.InstanceCreateVnicDetailsArgs>? CreateVnicDetails { get; set; }
 
         /// <summary>
-        /// The OCID of the dedicated virtual machine host to place the instance on.
+        /// (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         /// </summary>
         [Input("dedicatedVmHostId")]
         public Input<string>? DedicatedVmHostId { get; set; }
@@ -748,7 +748,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.InstanceCreateVnicDetailsGetArgs>? CreateVnicDetails { get; set; }
 
         /// <summary>
-        /// The OCID of the dedicated virtual machine host to place the instance on.
+        /// (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         /// </summary>
         [Input("dedicatedVmHostId")]
         public Input<string>? DedicatedVmHostId { get; set; }

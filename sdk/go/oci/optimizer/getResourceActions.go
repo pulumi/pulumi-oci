@@ -30,16 +30,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetResourceActions(ctx, &optimizer.GetResourceActionsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: _var.Resource_action_compartment_id_in_subtree,
-//				ChildTenancyIds:        _var.Resource_action_child_tenancy_ids,
-//				IncludeOrganization:    pulumi.BoolRef(_var.Resource_action_include_organization),
-//				Name:                   pulumi.StringRef(_var.Resource_action_name),
-//				RecommendationId:       pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Id),
-//				RecommendationName:     pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
-//				ResourceType:           pulumi.StringRef(_var.Resource_action_resource_type),
-//				State:                  pulumi.StringRef(_var.Resource_action_state),
-//				Status:                 pulumi.StringRef(_var.Resource_action_status),
+//				CompartmentId:           _var.Compartment_id,
+//				CompartmentIdInSubtree:  _var.Resource_action_compartment_id_in_subtree,
+//				ChildTenancyIds:         _var.Resource_action_child_tenancy_ids,
+//				IncludeOrganization:     pulumi.BoolRef(_var.Resource_action_include_organization),
+//				IncludeResourceMetadata: pulumi.BoolRef(_var.Resource_action_include_resource_metadata),
+//				Name:                    pulumi.StringRef(_var.Resource_action_name),
+//				RecommendationId:        pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Id),
+//				RecommendationName:      pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
+//				ResourceType:            pulumi.StringRef(_var.Resource_action_resource_type),
+//				State:                   pulumi.StringRef(_var.Resource_action_state),
+//				Status:                  pulumi.StringRef(_var.Resource_action_status),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -82,6 +83,8 @@ type GetResourceActionsArgs struct {
 	//
 	// When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
 	IncludeOrganization *bool `pulumi:"includeOrganization"`
+	// Supplement additional resource information in extended metadata response.
+	IncludeResourceMetadata *bool `pulumi:"includeResourceMetadata"`
 	// Optional. A filter that returns results that match the name specified.
 	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -104,8 +107,9 @@ type GetResourceActionsResult struct {
 	CompartmentIdInSubtree bool                       `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetResourceActionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string `pulumi:"id"`
-	IncludeOrganization *bool  `pulumi:"includeOrganization"`
+	Id                      string `pulumi:"id"`
+	IncludeOrganization     *bool  `pulumi:"includeOrganization"`
+	IncludeResourceMetadata *bool  `pulumi:"includeResourceMetadata"`
 	// The name assigned to the resource.
 	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -157,6 +161,8 @@ type GetResourceActionsOutputArgs struct {
 	//
 	// When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
 	IncludeOrganization pulumi.BoolPtrInput `pulumi:"includeOrganization"`
+	// Supplement additional resource information in extended metadata response.
+	IncludeResourceMetadata pulumi.BoolPtrInput `pulumi:"includeResourceMetadata"`
 	// Optional. A filter that returns results that match the name specified.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -214,6 +220,10 @@ func (o GetResourceActionsResultOutput) Id() pulumi.StringOutput {
 
 func (o GetResourceActionsResultOutput) IncludeOrganization() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetResourceActionsResult) *bool { return v.IncludeOrganization }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetResourceActionsResultOutput) IncludeResourceMetadata() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceActionsResult) *bool { return v.IncludeResourceMetadata }).(pulumi.BoolPtrOutput)
 }
 
 // The name assigned to the resource.

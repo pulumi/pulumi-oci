@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.SensitiveTypeArgs;
 import com.pulumi.oci.DataSafe.inputs.SensitiveTypeState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -200,6 +201,20 @@ public class SensitiveType extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    @Export(name="isCommon", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isCommon;
+
+    /**
+     * @return Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    public Output<Boolean> isCommon() {
+        return this.isCommon;
     }
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column names.

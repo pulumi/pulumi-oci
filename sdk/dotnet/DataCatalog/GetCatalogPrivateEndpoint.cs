@@ -139,6 +139,10 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCatalogPrivateEndpointLockResult> Locks;
+        /// <summary>
         /// The current state of the private endpoint resource.
         /// </summary>
         public readonly string State;
@@ -146,6 +150,10 @@ namespace Pulumi.Oci.DataCatalog
         /// Subnet Identifier
         /// </summary>
         public readonly string SubnetId;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
         /// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
@@ -175,9 +183,13 @@ namespace Pulumi.Oci.DataCatalog
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetCatalogPrivateEndpointLockResult> locks,
+
             string state,
 
             string subnetId,
+
+            ImmutableDictionary<string, object> systemTags,
 
             string timeCreated,
 
@@ -192,8 +204,10 @@ namespace Pulumi.Oci.DataCatalog
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             State = state;
             SubnetId = subnetId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

@@ -2129,6 +2129,1269 @@ func (o ScheduleResultLocationPtrOutput) Region() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type UsageCarbonEmissionGroupByTag struct {
+	// The tag key.
+	Key *string `pulumi:"key"`
+	// The tag namespace.
+	Namespace *string `pulumi:"namespace"`
+	// The tag value.
+	Value *string `pulumi:"value"`
+}
+
+// UsageCarbonEmissionGroupByTagInput is an input type that accepts UsageCarbonEmissionGroupByTagArgs and UsageCarbonEmissionGroupByTagOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionGroupByTagInput` via:
+//
+//	UsageCarbonEmissionGroupByTagArgs{...}
+type UsageCarbonEmissionGroupByTagInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionGroupByTagOutput() UsageCarbonEmissionGroupByTagOutput
+	ToUsageCarbonEmissionGroupByTagOutputWithContext(context.Context) UsageCarbonEmissionGroupByTagOutput
+}
+
+type UsageCarbonEmissionGroupByTagArgs struct {
+	// The tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// The tag namespace.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// The tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (UsageCarbonEmissionGroupByTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionGroupByTag)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionGroupByTagArgs) ToUsageCarbonEmissionGroupByTagOutput() UsageCarbonEmissionGroupByTagOutput {
+	return i.ToUsageCarbonEmissionGroupByTagOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionGroupByTagArgs) ToUsageCarbonEmissionGroupByTagOutputWithContext(ctx context.Context) UsageCarbonEmissionGroupByTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionGroupByTagOutput)
+}
+
+// UsageCarbonEmissionGroupByTagArrayInput is an input type that accepts UsageCarbonEmissionGroupByTagArray and UsageCarbonEmissionGroupByTagArrayOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionGroupByTagArrayInput` via:
+//
+//	UsageCarbonEmissionGroupByTagArray{ UsageCarbonEmissionGroupByTagArgs{...} }
+type UsageCarbonEmissionGroupByTagArrayInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionGroupByTagArrayOutput() UsageCarbonEmissionGroupByTagArrayOutput
+	ToUsageCarbonEmissionGroupByTagArrayOutputWithContext(context.Context) UsageCarbonEmissionGroupByTagArrayOutput
+}
+
+type UsageCarbonEmissionGroupByTagArray []UsageCarbonEmissionGroupByTagInput
+
+func (UsageCarbonEmissionGroupByTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageCarbonEmissionGroupByTag)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionGroupByTagArray) ToUsageCarbonEmissionGroupByTagArrayOutput() UsageCarbonEmissionGroupByTagArrayOutput {
+	return i.ToUsageCarbonEmissionGroupByTagArrayOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionGroupByTagArray) ToUsageCarbonEmissionGroupByTagArrayOutputWithContext(ctx context.Context) UsageCarbonEmissionGroupByTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionGroupByTagArrayOutput)
+}
+
+type UsageCarbonEmissionGroupByTagOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionGroupByTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionGroupByTag)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionGroupByTagOutput) ToUsageCarbonEmissionGroupByTagOutput() UsageCarbonEmissionGroupByTagOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionGroupByTagOutput) ToUsageCarbonEmissionGroupByTagOutputWithContext(ctx context.Context) UsageCarbonEmissionGroupByTagOutput {
+	return o
+}
+
+// The tag key.
+func (o UsageCarbonEmissionGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// The tag namespace.
+func (o UsageCarbonEmissionGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// The tag value.
+func (o UsageCarbonEmissionGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type UsageCarbonEmissionGroupByTagArrayOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionGroupByTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageCarbonEmissionGroupByTag)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionGroupByTagArrayOutput) ToUsageCarbonEmissionGroupByTagArrayOutput() UsageCarbonEmissionGroupByTagArrayOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionGroupByTagArrayOutput) ToUsageCarbonEmissionGroupByTagArrayOutputWithContext(ctx context.Context) UsageCarbonEmissionGroupByTagArrayOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionGroupByTagArrayOutput) Index(i pulumi.IntInput) UsageCarbonEmissionGroupByTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsageCarbonEmissionGroupByTag {
+		return vs[0].([]UsageCarbonEmissionGroupByTag)[vs[1].(int)]
+	}).(UsageCarbonEmissionGroupByTagOutput)
+}
+
+type UsageCarbonEmissionItem struct {
+	// The availability domain of the usage.
+	Ad *string `pulumi:"ad"`
+	// The compartment OCID.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// The compartment name.
+	CompartmentName *string `pulumi:"compartmentName"`
+	// The compartment path, starting from root.
+	CompartmentPath *string `pulumi:"compartmentPath"`
+	// The carbon emission in MTCO2 unit.
+	ComputedCarbonEmission *float64 `pulumi:"computedCarbonEmission"`
+	// The method used to calculate carbon emission.
+	EmissionCalculationMethod *string `pulumi:"emissionCalculationMethod"`
+	// Platform for the cost.
+	Platform *string `pulumi:"platform"`
+	// The region of the usage.
+	Region *string `pulumi:"region"`
+	// The resource OCID that is incurring the cost.
+	ResourceId *string `pulumi:"resourceId"`
+	// The resource name that is incurring the cost.
+	ResourceName *string `pulumi:"resourceName"`
+	// The service name that is incurring the cost.
+	Service *string `pulumi:"service"`
+	// The SKU friendly name.
+	SkuName *string `pulumi:"skuName"`
+	// The SKU part number.
+	SkuPartNumber *string `pulumi:"skuPartNumber"`
+	// The subscription ID.
+	SubscriptionId *string `pulumi:"subscriptionId"`
+	// For grouping, a tag definition. For filtering, a definition and key.
+	Tags []UsageCarbonEmissionItemTag `pulumi:"tags"`
+	// Tenant ID.
+	TenantId *string `pulumi:"tenantId"`
+	// The tenancy name.
+	TenantName *string `pulumi:"tenantName"`
+	// The usage end time.
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
+}
+
+// UsageCarbonEmissionItemInput is an input type that accepts UsageCarbonEmissionItemArgs and UsageCarbonEmissionItemOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionItemInput` via:
+//
+//	UsageCarbonEmissionItemArgs{...}
+type UsageCarbonEmissionItemInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionItemOutput() UsageCarbonEmissionItemOutput
+	ToUsageCarbonEmissionItemOutputWithContext(context.Context) UsageCarbonEmissionItemOutput
+}
+
+type UsageCarbonEmissionItemArgs struct {
+	// The availability domain of the usage.
+	Ad pulumi.StringPtrInput `pulumi:"ad"`
+	// The compartment OCID.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// The compartment name.
+	CompartmentName pulumi.StringPtrInput `pulumi:"compartmentName"`
+	// The compartment path, starting from root.
+	CompartmentPath pulumi.StringPtrInput `pulumi:"compartmentPath"`
+	// The carbon emission in MTCO2 unit.
+	ComputedCarbonEmission pulumi.Float64PtrInput `pulumi:"computedCarbonEmission"`
+	// The method used to calculate carbon emission.
+	EmissionCalculationMethod pulumi.StringPtrInput `pulumi:"emissionCalculationMethod"`
+	// Platform for the cost.
+	Platform pulumi.StringPtrInput `pulumi:"platform"`
+	// The region of the usage.
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// The resource OCID that is incurring the cost.
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// The resource name that is incurring the cost.
+	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
+	// The service name that is incurring the cost.
+	Service pulumi.StringPtrInput `pulumi:"service"`
+	// The SKU friendly name.
+	SkuName pulumi.StringPtrInput `pulumi:"skuName"`
+	// The SKU part number.
+	SkuPartNumber pulumi.StringPtrInput `pulumi:"skuPartNumber"`
+	// The subscription ID.
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
+	// For grouping, a tag definition. For filtering, a definition and key.
+	Tags UsageCarbonEmissionItemTagArrayInput `pulumi:"tags"`
+	// Tenant ID.
+	TenantId pulumi.StringPtrInput `pulumi:"tenantId"`
+	// The tenancy name.
+	TenantName pulumi.StringPtrInput `pulumi:"tenantName"`
+	// The usage end time.
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
+}
+
+func (UsageCarbonEmissionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionItem)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionItemArgs) ToUsageCarbonEmissionItemOutput() UsageCarbonEmissionItemOutput {
+	return i.ToUsageCarbonEmissionItemOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionItemArgs) ToUsageCarbonEmissionItemOutputWithContext(ctx context.Context) UsageCarbonEmissionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionItemOutput)
+}
+
+// UsageCarbonEmissionItemArrayInput is an input type that accepts UsageCarbonEmissionItemArray and UsageCarbonEmissionItemArrayOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionItemArrayInput` via:
+//
+//	UsageCarbonEmissionItemArray{ UsageCarbonEmissionItemArgs{...} }
+type UsageCarbonEmissionItemArrayInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionItemArrayOutput() UsageCarbonEmissionItemArrayOutput
+	ToUsageCarbonEmissionItemArrayOutputWithContext(context.Context) UsageCarbonEmissionItemArrayOutput
+}
+
+type UsageCarbonEmissionItemArray []UsageCarbonEmissionItemInput
+
+func (UsageCarbonEmissionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageCarbonEmissionItem)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionItemArray) ToUsageCarbonEmissionItemArrayOutput() UsageCarbonEmissionItemArrayOutput {
+	return i.ToUsageCarbonEmissionItemArrayOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionItemArray) ToUsageCarbonEmissionItemArrayOutputWithContext(ctx context.Context) UsageCarbonEmissionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionItemArrayOutput)
+}
+
+type UsageCarbonEmissionItemOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionItem)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionItemOutput) ToUsageCarbonEmissionItemOutput() UsageCarbonEmissionItemOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionItemOutput) ToUsageCarbonEmissionItemOutputWithContext(ctx context.Context) UsageCarbonEmissionItemOutput {
+	return o
+}
+
+// The availability domain of the usage.
+func (o UsageCarbonEmissionItemOutput) Ad() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.Ad }).(pulumi.StringPtrOutput)
+}
+
+// The compartment OCID.
+func (o UsageCarbonEmissionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// The compartment name.
+func (o UsageCarbonEmissionItemOutput) CompartmentName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.CompartmentName }).(pulumi.StringPtrOutput)
+}
+
+// The compartment path, starting from root.
+func (o UsageCarbonEmissionItemOutput) CompartmentPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.CompartmentPath }).(pulumi.StringPtrOutput)
+}
+
+// The carbon emission in MTCO2 unit.
+func (o UsageCarbonEmissionItemOutput) ComputedCarbonEmission() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *float64 { return v.ComputedCarbonEmission }).(pulumi.Float64PtrOutput)
+}
+
+// The method used to calculate carbon emission.
+func (o UsageCarbonEmissionItemOutput) EmissionCalculationMethod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.EmissionCalculationMethod }).(pulumi.StringPtrOutput)
+}
+
+// Platform for the cost.
+func (o UsageCarbonEmissionItemOutput) Platform() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.Platform }).(pulumi.StringPtrOutput)
+}
+
+// The region of the usage.
+func (o UsageCarbonEmissionItemOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// The resource OCID that is incurring the cost.
+func (o UsageCarbonEmissionItemOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The resource name that is incurring the cost.
+func (o UsageCarbonEmissionItemOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
+}
+
+// The service name that is incurring the cost.
+func (o UsageCarbonEmissionItemOutput) Service() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.Service }).(pulumi.StringPtrOutput)
+}
+
+// The SKU friendly name.
+func (o UsageCarbonEmissionItemOutput) SkuName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.SkuName }).(pulumi.StringPtrOutput)
+}
+
+// The SKU part number.
+func (o UsageCarbonEmissionItemOutput) SkuPartNumber() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.SkuPartNumber }).(pulumi.StringPtrOutput)
+}
+
+// The subscription ID.
+func (o UsageCarbonEmissionItemOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
+}
+
+// For grouping, a tag definition. For filtering, a definition and key.
+func (o UsageCarbonEmissionItemOutput) Tags() UsageCarbonEmissionItemTagArrayOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) []UsageCarbonEmissionItemTag { return v.Tags }).(UsageCarbonEmissionItemTagArrayOutput)
+}
+
+// Tenant ID.
+func (o UsageCarbonEmissionItemOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.TenantId }).(pulumi.StringPtrOutput)
+}
+
+// The tenancy name.
+func (o UsageCarbonEmissionItemOutput) TenantName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.TenantName }).(pulumi.StringPtrOutput)
+}
+
+// The usage end time.
+func (o UsageCarbonEmissionItemOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
+}
+
+// The usage start time.
+func (o UsageCarbonEmissionItemOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItem) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
+}
+
+type UsageCarbonEmissionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageCarbonEmissionItem)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionItemArrayOutput) ToUsageCarbonEmissionItemArrayOutput() UsageCarbonEmissionItemArrayOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionItemArrayOutput) ToUsageCarbonEmissionItemArrayOutputWithContext(ctx context.Context) UsageCarbonEmissionItemArrayOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionItemArrayOutput) Index(i pulumi.IntInput) UsageCarbonEmissionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsageCarbonEmissionItem {
+		return vs[0].([]UsageCarbonEmissionItem)[vs[1].(int)]
+	}).(UsageCarbonEmissionItemOutput)
+}
+
+type UsageCarbonEmissionItemTag struct {
+	// The tag key.
+	Key *string `pulumi:"key"`
+	// The tag namespace.
+	Namespace *string `pulumi:"namespace"`
+	// The tag value.
+	Value *string `pulumi:"value"`
+}
+
+// UsageCarbonEmissionItemTagInput is an input type that accepts UsageCarbonEmissionItemTagArgs and UsageCarbonEmissionItemTagOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionItemTagInput` via:
+//
+//	UsageCarbonEmissionItemTagArgs{...}
+type UsageCarbonEmissionItemTagInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionItemTagOutput() UsageCarbonEmissionItemTagOutput
+	ToUsageCarbonEmissionItemTagOutputWithContext(context.Context) UsageCarbonEmissionItemTagOutput
+}
+
+type UsageCarbonEmissionItemTagArgs struct {
+	// The tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// The tag namespace.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// The tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (UsageCarbonEmissionItemTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionItemTag)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionItemTagArgs) ToUsageCarbonEmissionItemTagOutput() UsageCarbonEmissionItemTagOutput {
+	return i.ToUsageCarbonEmissionItemTagOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionItemTagArgs) ToUsageCarbonEmissionItemTagOutputWithContext(ctx context.Context) UsageCarbonEmissionItemTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionItemTagOutput)
+}
+
+// UsageCarbonEmissionItemTagArrayInput is an input type that accepts UsageCarbonEmissionItemTagArray and UsageCarbonEmissionItemTagArrayOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionItemTagArrayInput` via:
+//
+//	UsageCarbonEmissionItemTagArray{ UsageCarbonEmissionItemTagArgs{...} }
+type UsageCarbonEmissionItemTagArrayInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionItemTagArrayOutput() UsageCarbonEmissionItemTagArrayOutput
+	ToUsageCarbonEmissionItemTagArrayOutputWithContext(context.Context) UsageCarbonEmissionItemTagArrayOutput
+}
+
+type UsageCarbonEmissionItemTagArray []UsageCarbonEmissionItemTagInput
+
+func (UsageCarbonEmissionItemTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageCarbonEmissionItemTag)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionItemTagArray) ToUsageCarbonEmissionItemTagArrayOutput() UsageCarbonEmissionItemTagArrayOutput {
+	return i.ToUsageCarbonEmissionItemTagArrayOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionItemTagArray) ToUsageCarbonEmissionItemTagArrayOutputWithContext(ctx context.Context) UsageCarbonEmissionItemTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionItemTagArrayOutput)
+}
+
+type UsageCarbonEmissionItemTagOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionItemTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionItemTag)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionItemTagOutput) ToUsageCarbonEmissionItemTagOutput() UsageCarbonEmissionItemTagOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionItemTagOutput) ToUsageCarbonEmissionItemTagOutputWithContext(ctx context.Context) UsageCarbonEmissionItemTagOutput {
+	return o
+}
+
+// The tag key.
+func (o UsageCarbonEmissionItemTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItemTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// The tag namespace.
+func (o UsageCarbonEmissionItemTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItemTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// The tag value.
+func (o UsageCarbonEmissionItemTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionItemTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type UsageCarbonEmissionItemTagArrayOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionItemTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageCarbonEmissionItemTag)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionItemTagArrayOutput) ToUsageCarbonEmissionItemTagArrayOutput() UsageCarbonEmissionItemTagArrayOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionItemTagArrayOutput) ToUsageCarbonEmissionItemTagArrayOutputWithContext(ctx context.Context) UsageCarbonEmissionItemTagArrayOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionItemTagArrayOutput) Index(i pulumi.IntInput) UsageCarbonEmissionItemTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsageCarbonEmissionItemTag {
+		return vs[0].([]UsageCarbonEmissionItemTag)[vs[1].(int)]
+	}).(UsageCarbonEmissionItemTagOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinition struct {
+	// (Updatable) The common fields for Cost Analysis UI rendering.
+	CostAnalysisUi UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi `pulumi:"costAnalysisUi"`
+	// (Updatable) The query display name. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// (Updatable) The request of the generated usage carbon emissions report.
+	ReportQuery UsageCarbonEmissionsQueryQueryDefinitionReportQuery `pulumi:"reportQuery"`
+	// (Updatable) The saved query version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Version int `pulumi:"version"`
+}
+
+// UsageCarbonEmissionsQueryQueryDefinitionInput is an input type that accepts UsageCarbonEmissionsQueryQueryDefinitionArgs and UsageCarbonEmissionsQueryQueryDefinitionOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionsQueryQueryDefinitionInput` via:
+//
+//	UsageCarbonEmissionsQueryQueryDefinitionArgs{...}
+type UsageCarbonEmissionsQueryQueryDefinitionInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionsQueryQueryDefinitionOutput() UsageCarbonEmissionsQueryQueryDefinitionOutput
+	ToUsageCarbonEmissionsQueryQueryDefinitionOutputWithContext(context.Context) UsageCarbonEmissionsQueryQueryDefinitionOutput
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionArgs struct {
+	// (Updatable) The common fields for Cost Analysis UI rendering.
+	CostAnalysisUi UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput `pulumi:"costAnalysisUi"`
+	// (Updatable) The query display name. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// (Updatable) The request of the generated usage carbon emissions report.
+	ReportQuery UsageCarbonEmissionsQueryQueryDefinitionReportQueryInput `pulumi:"reportQuery"`
+	// (Updatable) The saved query version.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Version pulumi.IntInput `pulumi:"version"`
+}
+
+func (UsageCarbonEmissionsQueryQueryDefinitionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinition)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionArgs) ToUsageCarbonEmissionsQueryQueryDefinitionOutput() UsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionArgs) ToUsageCarbonEmissionsQueryQueryDefinitionOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionOutput)
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionArgs) ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionPtrOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionArgs) ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionOutput).ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(ctx)
+}
+
+// UsageCarbonEmissionsQueryQueryDefinitionPtrInput is an input type that accepts UsageCarbonEmissionsQueryQueryDefinitionArgs, UsageCarbonEmissionsQueryQueryDefinitionPtr and UsageCarbonEmissionsQueryQueryDefinitionPtrOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionsQueryQueryDefinitionPtrInput` via:
+//
+//	        UsageCarbonEmissionsQueryQueryDefinitionArgs{...}
+//
+//	or:
+//
+//	        nil
+type UsageCarbonEmissionsQueryQueryDefinitionPtrInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionPtrOutput
+	ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(context.Context) UsageCarbonEmissionsQueryQueryDefinitionPtrOutput
+}
+
+type usageCarbonEmissionsQueryQueryDefinitionPtrType UsageCarbonEmissionsQueryQueryDefinitionArgs
+
+func UsageCarbonEmissionsQueryQueryDefinitionPtr(v *UsageCarbonEmissionsQueryQueryDefinitionArgs) UsageCarbonEmissionsQueryQueryDefinitionPtrInput {
+	return (*usageCarbonEmissionsQueryQueryDefinitionPtrType)(v)
+}
+
+func (*usageCarbonEmissionsQueryQueryDefinitionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsageCarbonEmissionsQueryQueryDefinition)(nil)).Elem()
+}
+
+func (i *usageCarbonEmissionsQueryQueryDefinitionPtrType) ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionPtrOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(context.Background())
+}
+
+func (i *usageCarbonEmissionsQueryQueryDefinitionPtrType) ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionsQueryQueryDefinitionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinition)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) ToUsageCarbonEmissionsQueryQueryDefinitionOutput() UsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) ToUsageCarbonEmissionsQueryQueryDefinitionOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionPtrOutput {
+	return o.ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(context.Background())
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UsageCarbonEmissionsQueryQueryDefinition) *UsageCarbonEmissionsQueryQueryDefinition {
+		return &v
+	}).(UsageCarbonEmissionsQueryQueryDefinitionPtrOutput)
+}
+
+// (Updatable) The common fields for Cost Analysis UI rendering.
+func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) CostAnalysisUi() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinition) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi {
+		return v.CostAnalysisUi
+	}).(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput)
+}
+
+// (Updatable) The query display name. Avoid entering confidential information.
+func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinition) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The request of the generated usage carbon emissions report.
+func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) ReportQuery() UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinition) UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
+		return v.ReportQuery
+	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput)
+}
+
+// (Updatable) The saved query version.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o UsageCarbonEmissionsQueryQueryDefinitionOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinition) int { return v.Version }).(pulumi.IntOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionPtrOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsageCarbonEmissionsQueryQueryDefinition)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionPtrOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) ToUsageCarbonEmissionsQueryQueryDefinitionPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionPtrOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) Elem() UsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinition) UsageCarbonEmissionsQueryQueryDefinition {
+		if v != nil {
+			return *v
+		}
+		var ret UsageCarbonEmissionsQueryQueryDefinition
+		return ret
+	}).(UsageCarbonEmissionsQueryQueryDefinitionOutput)
+}
+
+// (Updatable) The common fields for Cost Analysis UI rendering.
+func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) CostAnalysisUi() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinition) *UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi {
+		if v == nil {
+			return nil
+		}
+		return &v.CostAnalysisUi
+	}).(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput)
+}
+
+// (Updatable) The query display name. Avoid entering confidential information.
+func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinition) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DisplayName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The request of the generated usage carbon emissions report.
+func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) ReportQuery() UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinition) *UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
+		if v == nil {
+			return nil
+		}
+		return &v.ReportQuery
+	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput)
+}
+
+// (Updatable) The saved query version.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o UsageCarbonEmissionsQueryQueryDefinitionPtrOutput) Version() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinition) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.Version
+	}).(pulumi.IntPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi struct {
+	// (Updatable) The graph type.
+	Graph *string `pulumi:"graph"`
+	// (Updatable) A cumulative graph.
+	IsCumulativeGraph *bool `pulumi:"isCumulativeGraph"`
+}
+
+// UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput is an input type that accepts UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs and UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput` via:
+//
+//	UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs{...}
+type UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput
+	ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutputWithContext(context.Context) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs struct {
+	// (Updatable) The graph type.
+	Graph pulumi.StringPtrInput `pulumi:"graph"`
+	// (Updatable) A cumulative graph.
+	IsCumulativeGraph pulumi.BoolPtrInput `pulumi:"isCumulativeGraph"`
+}
+
+func (UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput)
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput).ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(ctx)
+}
+
+// UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrInput is an input type that accepts UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs, UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtr and UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrInput` via:
+//
+//	        UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs{...}
+//
+//	or:
+//
+//	        nil
+type UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput
+	ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(context.Context) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput
+}
+
+type usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrType UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs
+
+func UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtr(v *UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrInput {
+	return (*usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrType)(v)
+}
+
+func (*usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (i *usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrType) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(context.Background())
+}
+
+func (i *usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrType) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return o.ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(context.Background())
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi) *UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi {
+		return &v
+	}).(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput)
+}
+
+// (Updatable) The graph type.
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) Graph() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi) *string { return v.Graph }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A cumulative graph.
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) IsCumulativeGraph() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi) *bool { return v.IsCumulativeGraph }).(pulumi.BoolPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput) ToUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput) Elem() UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi) UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi {
+		if v != nil {
+			return *v
+		}
+		var ret UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi
+		return ret
+	}).(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput)
+}
+
+// (Updatable) The graph type.
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput) Graph() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Graph
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A cumulative graph.
+func (o UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput) IsCumulativeGraph() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsCumulativeGraph
+	}).(pulumi.BoolPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQuery struct {
+	// (Updatable) The compartment depth level.
+	CompartmentDepth *int `pulumi:"compartmentDepth"`
+	// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	DateRangeName *string `pulumi:"dateRangeName"`
+	// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	GroupBies []string `pulumi:"groupBies"`
+	// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+	GroupByTags []UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
+	// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
+	// (Updatable) Tenant ID.
+	TenantId string `pulumi:"tenantId"`
+	// (Updatable) The usage end time.
+	TimeUsageEnded *string `pulumi:"timeUsageEnded"`
+	// (Updatable) The usage start time.
+	TimeUsageStarted *string `pulumi:"timeUsageStarted"`
+	// (Updatable) The filter object for query usage.
+	UsageCarbonEmissionsQueryFilter *string `pulumi:"usageCarbonEmissionsQueryFilter"`
+}
+
+// UsageCarbonEmissionsQueryQueryDefinitionReportQueryInput is an input type that accepts UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs and UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionsQueryQueryDefinitionReportQueryInput` via:
+//
+//	UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{...}
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput
+	ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutputWithContext(context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs struct {
+	// (Updatable) The compartment depth level.
+	CompartmentDepth pulumi.IntPtrInput `pulumi:"compartmentDepth"`
+	// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	DateRangeName pulumi.StringPtrInput `pulumi:"dateRangeName"`
+	// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
+	// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+	GroupByTags UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
+	// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
+	// (Updatable) Tenant ID.
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// (Updatable) The usage end time.
+	TimeUsageEnded pulumi.StringPtrInput `pulumi:"timeUsageEnded"`
+	// (Updatable) The usage start time.
+	TimeUsageStarted pulumi.StringPtrInput `pulumi:"timeUsageStarted"`
+	// (Updatable) The filter object for query usage.
+	UsageCarbonEmissionsQueryFilter pulumi.StringPtrInput `pulumi:"usageCarbonEmissionsQueryFilter"`
+}
+
+func (UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput)
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput).ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(ctx)
+}
+
+// UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrInput is an input type that accepts UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs, UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtr and UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrInput` via:
+//
+//	        UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{...}
+//
+//	or:
+//
+//	        nil
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput
+	ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput
+}
+
+type usageCarbonEmissionsQueryQueryDefinitionReportQueryPtrType UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs
+
+func UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtr(v *UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrInput {
+	return (*usageCarbonEmissionsQueryQueryDefinitionReportQueryPtrType)(v)
+}
+
+func (*usageCarbonEmissionsQueryQueryDefinitionReportQueryPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsageCarbonEmissionsQueryQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (i *usageCarbonEmissionsQueryQueryDefinitionReportQueryPtrType) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(context.Background())
+}
+
+func (i *usageCarbonEmissionsQueryQueryDefinitionReportQueryPtrType) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return o.ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(context.Background())
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
+		return &v
+	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput)
+}
+
+// (Updatable) The compartment depth level.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) CompartmentDepth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *int { return v.CompartmentDepth }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string { return v.DateRangeName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) GroupByTags() UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) []UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag {
+		return v.GroupByTags
+	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
+}
+
+// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Tenant ID.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The usage end time.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string { return v.TimeUsageEnded }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The usage start time.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string { return v.TimeUsageStarted }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The filter object for query usage.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) UsageCarbonEmissionsQueryFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		return v.UsageCarbonEmissionsQueryFilter
+	}).(pulumi.StringPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**UsageCarbonEmissionsQueryQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) Elem() UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
+		if v != nil {
+			return *v
+		}
+		var ret UsageCarbonEmissionsQueryQueryDefinitionReportQuery
+		return ret
+	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput)
+}
+
+// (Updatable) The compartment depth level.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) CompartmentDepth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *int {
+		if v == nil {
+			return nil
+		}
+		return v.CompartmentDepth
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) DateRangeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DateRangeName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) []string {
+		if v == nil {
+			return nil
+		}
+		return v.GroupBies
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) GroupByTags() UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) []UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag {
+		if v == nil {
+			return nil
+		}
+		return v.GroupByTags
+	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
+}
+
+// (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsAggregateByTime
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Tenant ID.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TenantId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The usage end time.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) TimeUsageEnded() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeUsageEnded
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The usage start time.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) TimeUsageStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeUsageStarted
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The filter object for query usage.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput) UsageCarbonEmissionsQueryFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UsageCarbonEmissionsQueryQueryDefinitionReportQuery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UsageCarbonEmissionsQueryFilter
+	}).(pulumi.StringPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag struct {
+	// (Updatable) The tag key.
+	Key *string `pulumi:"key"`
+	// (Updatable) The tag namespace.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The tag value.
+	Value *string `pulumi:"value"`
+}
+
+// UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput is an input type that accepts UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs and UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput` via:
+//
+//	UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{...}
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput
+	ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs struct {
+	// (Updatable) The tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) The tag namespace.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput)
+}
+
+// UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray and UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput values.
+// You can construct a concrete instance of `UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput` via:
+//
+//	UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray{ UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{...} }
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput interface {
+	pulumi.Input
+
+	ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput
+	ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray []UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput
+
+func (UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return i.ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(context.Background())
+}
+
+func (i UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return o
+}
+
+// (Updatable) The tag key.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The tag namespace.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The tag value.
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput struct{ *pulumi.OutputState }
+
+func (UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput() UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx context.Context) UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o
+}
+
+func (o UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.IntInput) UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag {
+		return vs[0].([]UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)[vs[1].(int)]
+	}).(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput)
+}
+
 type UsageForecast struct {
 	// BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
 	ForecastType *string `pulumi:"forecastType"`
@@ -6569,13 +7832,13 @@ type GetSchedulesScheduleCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Query parameter for filtering by name
 	Name string `pulumi:"name"`
-	// Specifies supported output file format.
+	// Specifies the supported output file format.
 	OutputFileFormat string `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties []GetSchedulesScheduleCollectionItemQueryProperty `pulumi:"queryProperties"`
 	// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocations []GetSchedulesScheduleCollectionItemResultLocation `pulumi:"resultLocations"`
-	// The saved report id which can also be used to generate query.
+	// The saved report ID which can also be used to generate a query.
 	SavedReportId string `pulumi:"savedReportId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
@@ -6615,13 +7878,13 @@ type GetSchedulesScheduleCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Query parameter for filtering by name
 	Name pulumi.StringInput `pulumi:"name"`
-	// Specifies supported output file format.
+	// Specifies the supported output file format.
 	OutputFileFormat pulumi.StringInput `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties GetSchedulesScheduleCollectionItemQueryPropertyArrayInput `pulumi:"queryProperties"`
 	// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocations GetSchedulesScheduleCollectionItemResultLocationArrayInput `pulumi:"resultLocations"`
-	// The saved report id which can also be used to generate query.
+	// The saved report ID which can also be used to generate a query.
 	SavedReportId pulumi.StringInput `pulumi:"savedReportId"`
 	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringInput `pulumi:"scheduleRecurrences"`
@@ -6718,7 +7981,7 @@ func (o GetSchedulesScheduleCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Specifies supported output file format.
+// Specifies the supported output file format.
 func (o GetSchedulesScheduleCollectionItemOutput) OutputFileFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.OutputFileFormat }).(pulumi.StringOutput)
 }
@@ -6737,7 +8000,7 @@ func (o GetSchedulesScheduleCollectionItemOutput) ResultLocations() GetSchedules
 	}).(GetSchedulesScheduleCollectionItemResultLocationArrayOutput)
 }
 
-// The saved report id which can also be used to generate query.
+// The saved report ID which can also be used to generate a query.
 func (o GetSchedulesScheduleCollectionItemOutput) SavedReportId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.SavedReportId }).(pulumi.StringOutput)
 }
@@ -7316,6 +8579,1505 @@ func (o GetSchedulesScheduleCollectionItemResultLocationArrayOutput) Index(i pul
 	}).(GetSchedulesScheduleCollectionItemResultLocationOutput)
 }
 
+type GetUsageCarbonEmissionsConfigItem struct {
+	// The configuration key.
+	Key string `pulumi:"key"`
+	// The configuration value.
+	Values []string `pulumi:"values"`
+}
+
+// GetUsageCarbonEmissionsConfigItemInput is an input type that accepts GetUsageCarbonEmissionsConfigItemArgs and GetUsageCarbonEmissionsConfigItemOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsConfigItemInput` via:
+//
+//	GetUsageCarbonEmissionsConfigItemArgs{...}
+type GetUsageCarbonEmissionsConfigItemInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsConfigItemOutput() GetUsageCarbonEmissionsConfigItemOutput
+	ToGetUsageCarbonEmissionsConfigItemOutputWithContext(context.Context) GetUsageCarbonEmissionsConfigItemOutput
+}
+
+type GetUsageCarbonEmissionsConfigItemArgs struct {
+	// The configuration key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The configuration value.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUsageCarbonEmissionsConfigItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsConfigItem)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsConfigItemArgs) ToGetUsageCarbonEmissionsConfigItemOutput() GetUsageCarbonEmissionsConfigItemOutput {
+	return i.ToGetUsageCarbonEmissionsConfigItemOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsConfigItemArgs) ToGetUsageCarbonEmissionsConfigItemOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsConfigItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsConfigItemOutput)
+}
+
+// GetUsageCarbonEmissionsConfigItemArrayInput is an input type that accepts GetUsageCarbonEmissionsConfigItemArray and GetUsageCarbonEmissionsConfigItemArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsConfigItemArrayInput` via:
+//
+//	GetUsageCarbonEmissionsConfigItemArray{ GetUsageCarbonEmissionsConfigItemArgs{...} }
+type GetUsageCarbonEmissionsConfigItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsConfigItemArrayOutput() GetUsageCarbonEmissionsConfigItemArrayOutput
+	ToGetUsageCarbonEmissionsConfigItemArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsConfigItemArrayOutput
+}
+
+type GetUsageCarbonEmissionsConfigItemArray []GetUsageCarbonEmissionsConfigItemInput
+
+func (GetUsageCarbonEmissionsConfigItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsConfigItem)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsConfigItemArray) ToGetUsageCarbonEmissionsConfigItemArrayOutput() GetUsageCarbonEmissionsConfigItemArrayOutput {
+	return i.ToGetUsageCarbonEmissionsConfigItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsConfigItemArray) ToGetUsageCarbonEmissionsConfigItemArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsConfigItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsConfigItemArrayOutput)
+}
+
+type GetUsageCarbonEmissionsConfigItemOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsConfigItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsConfigItem)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsConfigItemOutput) ToGetUsageCarbonEmissionsConfigItemOutput() GetUsageCarbonEmissionsConfigItemOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsConfigItemOutput) ToGetUsageCarbonEmissionsConfigItemOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsConfigItemOutput {
+	return o
+}
+
+// The configuration key.
+func (o GetUsageCarbonEmissionsConfigItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsConfigItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The configuration value.
+func (o GetUsageCarbonEmissionsConfigItemOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsConfigItem) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUsageCarbonEmissionsConfigItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsConfigItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsConfigItem)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsConfigItemArrayOutput) ToGetUsageCarbonEmissionsConfigItemArrayOutput() GetUsageCarbonEmissionsConfigItemArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsConfigItemArrayOutput) ToGetUsageCarbonEmissionsConfigItemArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsConfigItemArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsConfigItemArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsConfigItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsConfigItem {
+		return vs[0].([]GetUsageCarbonEmissionsConfigItem)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsConfigItemOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUsageCarbonEmissionsQueriesFilterInput is an input type that accepts GetUsageCarbonEmissionsQueriesFilterArgs and GetUsageCarbonEmissionsQueriesFilterOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesFilterInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesFilterArgs{...}
+type GetUsageCarbonEmissionsQueriesFilterInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesFilterOutput() GetUsageCarbonEmissionsQueriesFilterOutput
+	ToGetUsageCarbonEmissionsQueriesFilterOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesFilterOutput
+}
+
+type GetUsageCarbonEmissionsQueriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUsageCarbonEmissionsQueriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesFilter)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesFilterArgs) ToGetUsageCarbonEmissionsQueriesFilterOutput() GetUsageCarbonEmissionsQueriesFilterOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesFilterArgs) ToGetUsageCarbonEmissionsQueriesFilterOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesFilterOutput)
+}
+
+// GetUsageCarbonEmissionsQueriesFilterArrayInput is an input type that accepts GetUsageCarbonEmissionsQueriesFilterArray and GetUsageCarbonEmissionsQueriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesFilterArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesFilterArray{ GetUsageCarbonEmissionsQueriesFilterArgs{...} }
+type GetUsageCarbonEmissionsQueriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesFilterArrayOutput() GetUsageCarbonEmissionsQueriesFilterArrayOutput
+	ToGetUsageCarbonEmissionsQueriesFilterArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesFilterArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueriesFilterArray []GetUsageCarbonEmissionsQueriesFilterInput
+
+func (GetUsageCarbonEmissionsQueriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesFilter)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesFilterArray) ToGetUsageCarbonEmissionsQueriesFilterArrayOutput() GetUsageCarbonEmissionsQueriesFilterArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesFilterArray) ToGetUsageCarbonEmissionsQueriesFilterArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesFilterArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesFilter)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesFilterOutput) ToGetUsageCarbonEmissionsQueriesFilterOutput() GetUsageCarbonEmissionsQueriesFilterOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesFilterOutput) ToGetUsageCarbonEmissionsQueriesFilterOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesFilterOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUsageCarbonEmissionsQueriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUsageCarbonEmissionsQueriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesFilter)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesFilterArrayOutput) ToGetUsageCarbonEmissionsQueriesFilterArrayOutput() GetUsageCarbonEmissionsQueriesFilterArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesFilterArrayOutput) ToGetUsageCarbonEmissionsQueriesFilterArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesFilterArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesFilterArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueriesFilter {
+		return vs[0].([]GetUsageCarbonEmissionsQueriesFilter)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueriesFilterOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection struct {
+	Items []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem `pulumi:"items"`
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArgs and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArgs{...}
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArgs struct {
+	Items GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput)
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArray and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArray{ GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArgs{...} }
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArray []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionInput
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput) Items() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection) []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem {
+		return v.Items
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection {
+		return vs[0].([]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollection)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem struct {
+	// The compartment ID in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The query OCID.
+	Id string `pulumi:"id"`
+	// The common fields for queries.
+	QueryDefinitions []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition `pulumi:"queryDefinitions"`
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArgs and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArgs{...}
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArgs struct {
+	// The compartment ID in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The query OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The common fields for queries.
+	QueryDefinitions GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayInput `pulumi:"queryDefinitions"`
+}
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput)
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArray and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArray{ GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArgs{...} }
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArray []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemInput
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput {
+	return o
+}
+
+// The compartment ID in which to list resources.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The query OCID.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The common fields for queries.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput) QueryDefinitions() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem) []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition {
+		return v.QueryDefinitions
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem {
+		return vs[0].([]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItem)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition struct {
+	// The common fields for Cost Analysis UI rendering.
+	CostAnalysisUis []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi `pulumi:"costAnalysisUis"`
+	// The query display name. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The request of the generated usage carbon emissions report.
+	ReportQueries []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery `pulumi:"reportQueries"`
+	// The saved query version.
+	Version int `pulumi:"version"`
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs{...}
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs struct {
+	// The common fields for Cost Analysis UI rendering.
+	CostAnalysisUis GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput `pulumi:"costAnalysisUis"`
+	// The query display name. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The request of the generated usage carbon emissions report.
+	ReportQueries GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayInput `pulumi:"reportQueries"`
+	// The saved query version.
+	Version pulumi.IntInput `pulumi:"version"`
+}
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput)
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArray and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArray{ GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs{...} }
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArray []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionInput
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput {
+	return o
+}
+
+// The common fields for Cost Analysis UI rendering.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput) CostAnalysisUis() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition) []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi {
+		return v.CostAnalysisUis
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput)
+}
+
+// The query display name. Avoid entering confidential information.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The request of the generated usage carbon emissions report.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput) ReportQueries() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition) []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery {
+		return v.ReportQueries
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput)
+}
+
+// The saved query version.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition) int {
+		return v.Version
+	}).(pulumi.IntOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition {
+		return vs[0].([]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinition)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi struct {
+	// The graph type.
+	Graph string `pulumi:"graph"`
+	// A cumulative graph.
+	IsCumulativeGraph bool `pulumi:"isCumulativeGraph"`
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs{...}
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs struct {
+	// The graph type.
+	Graph pulumi.StringInput `pulumi:"graph"`
+	// A cumulative graph.
+	IsCumulativeGraph pulumi.BoolInput `pulumi:"isCumulativeGraph"`
+}
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput)
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArray and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArray{ GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs{...} }
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArray []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiInput
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput {
+	return o
+}
+
+// The graph type.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) Graph() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi) string {
+		return v.Graph
+	}).(pulumi.StringOutput)
+}
+
+// A cumulative graph.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput) IsCumulativeGraph() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi) bool {
+		return v.IsCumulativeGraph
+	}).(pulumi.BoolOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi {
+		return vs[0].([]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUi)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery struct {
+	// The compartment depth level.
+	CompartmentDepth int `pulumi:"compartmentDepth"`
+	// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	DateRangeName string `pulumi:"dateRangeName"`
+	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	GroupBies []string `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+	GroupByTags []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
+	// Tenant ID.
+	TenantId string `pulumi:"tenantId"`
+	// The usage end time.
+	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+	// The filter object for query usage.
+	UsageCarbonEmissionsQueryFilter string `pulumi:"usageCarbonEmissionsQueryFilter"`
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs{...}
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs struct {
+	// The compartment depth level.
+	CompartmentDepth pulumi.IntInput `pulumi:"compartmentDepth"`
+	// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	DateRangeName pulumi.StringInput `pulumi:"dateRangeName"`
+	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+	GroupByTags GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
+	// Tenant ID.
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// The usage end time.
+	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+	// The filter object for query usage.
+	UsageCarbonEmissionsQueryFilter pulumi.StringInput `pulumi:"usageCarbonEmissionsQueryFilter"`
+}
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput)
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArray and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArray{ GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs{...} }
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArray []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryInput
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput {
+	return o
+}
+
+// The compartment depth level.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) CompartmentDepth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) int {
+		return v.CompartmentDepth
+	}).(pulumi.IntOutput)
+}
+
+// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
+		return v.DateRangeName
+	}).(pulumi.StringOutput)
+}
+
+// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) []string {
+		return v.GroupBies
+	}).(pulumi.StringArrayOutput)
+}
+
+// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) GroupByTags() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag {
+		return v.GroupByTags
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput)
+}
+
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) bool {
+		return v.IsAggregateByTime
+	}).(pulumi.BoolOutput)
+}
+
+// Tenant ID.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
+		return v.TenantId
+	}).(pulumi.StringOutput)
+}
+
+// The usage end time.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) TimeUsageEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
+		return v.TimeUsageEnded
+	}).(pulumi.StringOutput)
+}
+
+// The usage start time.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) TimeUsageStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
+		return v.TimeUsageStarted
+	}).(pulumi.StringOutput)
+}
+
+// The filter object for query usage.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput) UsageCarbonEmissionsQueryFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery) string {
+		return v.UsageCarbonEmissionsQueryFilter
+	}).(pulumi.StringOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery {
+		return vs[0].([]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQuery)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag struct {
+	// The tag key.
+	Key string `pulumi:"key"`
+	// The tag namespace.
+	Namespace string `pulumi:"namespace"`
+	// The tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs{...}
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs struct {
+	// The tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The tag namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput)
+}
+
+// GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray and GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray{ GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs{...} }
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput
+	ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray []GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput {
+	return o
+}
+
+// The tag key.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// The tag namespace.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The tag value.
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput() GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput) ToGetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag {
+		return vs[0].([]GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTag)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinition struct {
+	// The common fields for Cost Analysis UI rendering.
+	CostAnalysisUis []GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi `pulumi:"costAnalysisUis"`
+	// The query display name. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The request of the generated usage carbon emissions report.
+	ReportQueries []GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery `pulumi:"reportQueries"`
+	// The saved query version.
+	Version int `pulumi:"version"`
+}
+
+// GetUsageCarbonEmissionsQueryQueryDefinitionInput is an input type that accepts GetUsageCarbonEmissionsQueryQueryDefinitionArgs and GetUsageCarbonEmissionsQueryQueryDefinitionOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueryQueryDefinitionInput` via:
+//
+//	GetUsageCarbonEmissionsQueryQueryDefinitionArgs{...}
+type GetUsageCarbonEmissionsQueryQueryDefinitionInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionOutput() GetUsageCarbonEmissionsQueryQueryDefinitionOutput
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionOutputWithContext(context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionOutput
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionArgs struct {
+	// The common fields for Cost Analysis UI rendering.
+	CostAnalysisUis GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayInput `pulumi:"costAnalysisUis"`
+	// The query display name. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The request of the generated usage carbon emissions report.
+	ReportQueries GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayInput `pulumi:"reportQueries"`
+	// The saved query version.
+	Version pulumi.IntInput `pulumi:"version"`
+}
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinition)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionArgs) ToGetUsageCarbonEmissionsQueryQueryDefinitionOutput() GetUsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return i.ToGetUsageCarbonEmissionsQueryQueryDefinitionOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionArgs) ToGetUsageCarbonEmissionsQueryQueryDefinitionOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueryQueryDefinitionOutput)
+}
+
+// GetUsageCarbonEmissionsQueryQueryDefinitionArrayInput is an input type that accepts GetUsageCarbonEmissionsQueryQueryDefinitionArray and GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueryQueryDefinitionArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueryQueryDefinitionArray{ GetUsageCarbonEmissionsQueryQueryDefinitionArgs{...} }
+type GetUsageCarbonEmissionsQueryQueryDefinitionArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionArray []GetUsageCarbonEmissionsQueryQueryDefinitionInput
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueryQueryDefinition)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionArray) ToGetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueryQueryDefinitionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionArray) ToGetUsageCarbonEmissionsQueryQueryDefinitionArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinition)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionOutput() GetUsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return o
+}
+
+// The common fields for Cost Analysis UI rendering.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionOutput) CostAnalysisUis() GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinition) []GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi {
+		return v.CostAnalysisUis
+	}).(GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput)
+}
+
+// The query display name. Avoid entering confidential information.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinition) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The request of the generated usage carbon emissions report.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionOutput) ReportQueries() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinition) []GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
+		return v.ReportQueries
+	}).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput)
+}
+
+// The saved query version.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionOutput) Version() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinition) int { return v.Version }).(pulumi.IntOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueryQueryDefinition)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueryQueryDefinitionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueryQueryDefinition {
+		return vs[0].([]GetUsageCarbonEmissionsQueryQueryDefinition)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueryQueryDefinitionOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi struct {
+	// The graph type.
+	Graph string `pulumi:"graph"`
+	// A cumulative graph.
+	IsCumulativeGraph bool `pulumi:"isCumulativeGraph"`
+}
+
+// GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput is an input type that accepts GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs and GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput` via:
+//
+//	GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs{...}
+type GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput() GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutputWithContext(context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs struct {
+	// The graph type.
+	Graph pulumi.StringInput `pulumi:"graph"`
+	// A cumulative graph.
+	IsCumulativeGraph pulumi.BoolInput `pulumi:"isCumulativeGraph"`
+}
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput() GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return i.ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs) ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput)
+}
+
+// GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayInput is an input type that accepts GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArray and GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArray{ GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs{...} }
+type GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArray []GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArray) ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArray) ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput() GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return o
+}
+
+// The graph type.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) Graph() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi) string { return v.Graph }).(pulumi.StringOutput)
+}
+
+// A cumulative graph.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput) IsCumulativeGraph() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi) bool { return v.IsCumulativeGraph }).(pulumi.BoolOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi {
+		return vs[0].([]GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery struct {
+	// The compartment depth level.
+	CompartmentDepth int `pulumi:"compartmentDepth"`
+	// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	DateRangeName string `pulumi:"dateRangeName"`
+	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	GroupBies []string `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+	GroupByTags []GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
+	// Tenant ID.
+	TenantId string `pulumi:"tenantId"`
+	// The usage end time.
+	TimeUsageEnded string `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted string `pulumi:"timeUsageStarted"`
+	// The filter object for query usage.
+	UsageCarbonEmissionsQueryFilter string `pulumi:"usageCarbonEmissionsQueryFilter"`
+}
+
+// GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryInput is an input type that accepts GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs and GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryInput` via:
+//
+//	GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{...}
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutputWithContext(context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs struct {
+	// The compartment depth level.
+	CompartmentDepth pulumi.IntInput `pulumi:"compartmentDepth"`
+	// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+	DateRangeName pulumi.StringInput `pulumi:"dateRangeName"`
+	// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
+	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+	GroupByTags GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput `pulumi:"groupByTags"`
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
+	// Tenant ID.
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// The usage end time.
+	TimeUsageEnded pulumi.StringInput `pulumi:"timeUsageEnded"`
+	// The usage start time.
+	TimeUsageStarted pulumi.StringInput `pulumi:"timeUsageStarted"`
+	// The filter object for query usage.
+	UsageCarbonEmissionsQueryFilter pulumi.StringInput `pulumi:"usageCarbonEmissionsQueryFilter"`
+}
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return i.ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput)
+}
+
+// GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayInput is an input type that accepts GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArray and GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArray{ GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{...} }
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArray []GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryInput
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArray) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArray) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return o
+}
+
+// The compartment depth level.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) CompartmentDepth() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) int { return v.CompartmentDepth }).(pulumi.IntOutput)
+}
+
+// The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) DateRangeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string { return v.DateRangeName }).(pulumi.StringOutput)
+}
+
+// Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) GroupBies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) []string { return v.GroupBies }).(pulumi.StringArrayOutput)
+}
+
+// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) GroupByTags() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) []GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag {
+		return v.GroupByTags
+	}).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
+}
+
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) IsAggregateByTime() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
+}
+
+// Tenant ID.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// The usage end time.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) TimeUsageEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string { return v.TimeUsageEnded }).(pulumi.StringOutput)
+}
+
+// The usage start time.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) TimeUsageStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string { return v.TimeUsageStarted }).(pulumi.StringOutput)
+}
+
+// The filter object for query usage.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput) UsageCarbonEmissionsQueryFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery) string {
+		return v.UsageCarbonEmissionsQueryFilter
+	}).(pulumi.StringOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery {
+		return vs[0].([]GetUsageCarbonEmissionsQueryQueryDefinitionReportQuery)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag struct {
+	// The tag key.
+	Key string `pulumi:"key"`
+	// The tag namespace.
+	Namespace string `pulumi:"namespace"`
+	// The tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput is an input type that accepts GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs and GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput` via:
+//
+//	GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{...}
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs struct {
+	// The tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The tag namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return i.ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput)
+}
+
+// GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput is an input type that accepts GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray and GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput values.
+// You can construct a concrete instance of `GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput` via:
+//
+//	GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray{ GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{...} }
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput
+	ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray []GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return i.ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return o
+}
+
+// The tag key.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The tag namespace.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The tag value.
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)(nil)).Elem()
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput() GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput) ToGetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutputWithContext(ctx context.Context) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput {
+	return o
+}
+
+func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput) Index(i pulumi.IntInput) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag {
+		return vs[0].([]GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag)[vs[1].(int)]
+	}).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomTableSavedCustomTableInput)(nil)).Elem(), CustomTableSavedCustomTableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomTableSavedCustomTablePtrInput)(nil)).Elem(), CustomTableSavedCustomTableArgs{})
@@ -7339,6 +10101,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleQueryPropertiesGroupByTagArrayInput)(nil)).Elem(), ScheduleQueryPropertiesGroupByTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResultLocationInput)(nil)).Elem(), ScheduleResultLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ScheduleResultLocationPtrInput)(nil)).Elem(), ScheduleResultLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionGroupByTagInput)(nil)).Elem(), UsageCarbonEmissionGroupByTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionGroupByTagArrayInput)(nil)).Elem(), UsageCarbonEmissionGroupByTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionItemInput)(nil)).Elem(), UsageCarbonEmissionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionItemArrayInput)(nil)).Elem(), UsageCarbonEmissionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionItemTagInput)(nil)).Elem(), UsageCarbonEmissionItemTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionItemTagArrayInput)(nil)).Elem(), UsageCarbonEmissionItemTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionInput)(nil)).Elem(), UsageCarbonEmissionsQueryQueryDefinitionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionPtrInput)(nil)).Elem(), UsageCarbonEmissionsQueryQueryDefinitionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput)(nil)).Elem(), UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrInput)(nil)).Elem(), UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionReportQueryInput)(nil)).Elem(), UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrInput)(nil)).Elem(), UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput)(nil)).Elem(), UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput)(nil)).Elem(), UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageForecastInput)(nil)).Elem(), UsageForecastArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageForecastPtrInput)(nil)).Elem(), UsageForecastArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageGroupByTagInput)(nil)).Elem(), UsageGroupByTagArgs{})
@@ -7417,6 +10193,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResultLocationInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResultLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleCollectionItemResultLocationArrayInput)(nil)).Elem(), GetSchedulesScheduleCollectionItemResultLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsConfigItemInput)(nil)).Elem(), GetUsageCarbonEmissionsConfigItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsConfigItemArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsConfigItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesFilterInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesFilterArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTableOutput{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTablePtrOutput{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTableGroupByTagOutput{})
@@ -7439,6 +10239,20 @@ func init() {
 	pulumi.RegisterOutputType(ScheduleQueryPropertiesGroupByTagArrayOutput{})
 	pulumi.RegisterOutputType(ScheduleResultLocationOutput{})
 	pulumi.RegisterOutputType(ScheduleResultLocationPtrOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionGroupByTagOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionGroupByTagArrayOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionItemOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionItemArrayOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionItemTagOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionItemTagArrayOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionsQueryQueryDefinitionOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionsQueryQueryDefinitionPtrOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiPtrOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionsQueryQueryDefinitionReportQueryPtrOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput{})
+	pulumi.RegisterOutputType(UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput{})
 	pulumi.RegisterOutputType(UsageForecastOutput{})
 	pulumi.RegisterOutputType(UsageForecastPtrOutput{})
 	pulumi.RegisterOutputType(UsageGroupByTagOutput{})
@@ -7517,4 +10331,28 @@ func init() {
 	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput{})
 	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResultLocationOutput{})
 	pulumi.RegisterOutputType(GetSchedulesScheduleCollectionItemResultLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsConfigItemOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsConfigItemArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesFilterOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionCostAnalysisUiArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueriesUsageCarbonEmissionsQueryCollectionItemQueryDefinitionReportQueryGroupByTagArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput{})
+	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput{})
 }

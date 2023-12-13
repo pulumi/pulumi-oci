@@ -22,7 +22,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_key_id=None, account_key=None, account_name=None, additional_attributes=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, region=None, sas_token=None, secret_access_key=None, security_protocol=None, servers=None, service_account_key_file=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_name=None, additional_attributes=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, region=None, routing_method=None, sas_token=None, secret_access_key=None, security_protocol=None, servers=None, service_account_key_file=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
         if access_key_id and not isinstance(access_key_id, str):
             raise TypeError("Expected argument 'access_key_id' to be a str")
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -167,6 +167,9 @@ class GetConnectionResult:
         if region and not isinstance(region, str):
             raise TypeError("Expected argument 'region' to be a str")
         pulumi.set(__self__, "region", region)
+        if routing_method and not isinstance(routing_method, str):
+            raise TypeError("Expected argument 'routing_method' to be a str")
+        pulumi.set(__self__, "routing_method", routing_method)
         if sas_token and not isinstance(sas_token, str):
             raise TypeError("Expected argument 'sas_token' to be a str")
         pulumi.set(__self__, "sas_token", sas_token)
@@ -573,6 +576,7 @@ class GetConnectionResult:
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> str:
         """
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
@@ -604,6 +608,14 @@ class GetConnectionResult:
         The name of the region. e.g.: us-ashburn-1
         """
         return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="routingMethod")
+    def routing_method(self) -> str:
+        """
+        Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+        """
+        return pulumi.get(self, "routing_method")
 
     @property
     @pulumi.getter(name="sasToken")
@@ -719,7 +731,7 @@ class GetConnectionResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -865,6 +877,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             producer_properties=self.producer_properties,
             public_key_fingerprint=self.public_key_fingerprint,
             region=self.region,
+            routing_method=self.routing_method,
             sas_token=self.sas_token,
             secret_access_key=self.secret_access_key,
             security_protocol=self.security_protocol,
@@ -969,6 +982,7 @@ def get_connection(connection_id: Optional[str] = None,
         producer_properties=pulumi.get(__ret__, 'producer_properties'),
         public_key_fingerprint=pulumi.get(__ret__, 'public_key_fingerprint'),
         region=pulumi.get(__ret__, 'region'),
+        routing_method=pulumi.get(__ret__, 'routing_method'),
         sas_token=pulumi.get(__ret__, 'sas_token'),
         secret_access_key=pulumi.get(__ret__, 'secret_access_key'),
         security_protocol=pulumi.get(__ret__, 'security_protocol'),

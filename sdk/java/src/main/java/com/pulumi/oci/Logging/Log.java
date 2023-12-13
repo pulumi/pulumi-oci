@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *                     .resource(var_.log_configuration_source_resource())
  *                     .service(var_.log_configuration_source_service())
  *                     .sourceType(var_.log_configuration_source_source_type())
+ *                     .parameters(var_.log_configuration_source_parameters())
  *                     .build())
  *                 .compartmentId(var_.compartment_id())
  *                 .build())

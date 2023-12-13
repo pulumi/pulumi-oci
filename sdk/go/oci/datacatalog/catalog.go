@@ -77,6 +77,8 @@ type Catalog struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks CatalogLockArrayOutput `pulumi:"locks"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 	NumberOfObjects pulumi.IntOutput `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
@@ -85,6 +87,8 @@ type Catalog struct {
 	ServiceConsoleUrl pulumi.StringOutput `pulumi:"serviceConsoleUrl"`
 	// The current state of the data catalog resource.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -139,6 +143,8 @@ type catalogState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []CatalogLock `pulumi:"locks"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 	NumberOfObjects *int `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
@@ -147,6 +153,8 @@ type catalogState struct {
 	ServiceConsoleUrl *string `pulumi:"serviceConsoleUrl"`
 	// The current state of the data catalog resource.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -169,6 +177,8 @@ type CatalogState struct {
 	FreeformTags pulumi.MapInput
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks CatalogLockArrayInput
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 	NumberOfObjects pulumi.IntPtrInput
 	// The REST front endpoint URL to the data catalog instance.
@@ -177,6 +187,8 @@ type CatalogState struct {
 	ServiceConsoleUrl pulumi.StringPtrInput
 	// The current state of the data catalog resource.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -340,6 +352,11 @@ func (o CatalogOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o CatalogOutput) Locks() CatalogLockArrayOutput {
+	return o.ApplyT(func(v *Catalog) CatalogLockArrayOutput { return v.Locks }).(CatalogLockArrayOutput)
+}
+
 // The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 func (o CatalogOutput) NumberOfObjects() pulumi.IntOutput {
 	return o.ApplyT(func(v *Catalog) pulumi.IntOutput { return v.NumberOfObjects }).(pulumi.IntOutput)
@@ -358,6 +375,11 @@ func (o CatalogOutput) ServiceConsoleUrl() pulumi.StringOutput {
 // The current state of the data catalog resource.
 func (o CatalogOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o CatalogOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

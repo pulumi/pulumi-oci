@@ -83,6 +83,10 @@ export interface GetSensitiveTypeResult {
      */
     readonly id: string;
     /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    readonly isCommon: boolean;
+    /**
      * A regular expression to be used by data discovery for matching column names.
      */
     readonly namePattern: string;

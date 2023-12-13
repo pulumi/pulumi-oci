@@ -169,14 +169,14 @@ public class Schedule extends com.pulumi.resources.CustomResource {
         return this.name;
     }
     /**
-     * (Updatable) Specifies supported output file format.
+     * (Updatable) Specifies the supported output file format.
      * 
      */
     @Export(name="outputFileFormat", refs={String.class}, tree="[0]")
     private Output<String> outputFileFormat;
 
     /**
-     * @return (Updatable) Specifies supported output file format.
+     * @return (Updatable) Specifies the supported output file format.
      * 
      */
     public Output<String> outputFileFormat() {
@@ -211,14 +211,14 @@ public class Schedule extends com.pulumi.resources.CustomResource {
         return this.resultLocation;
     }
     /**
-     * The saved report id which can also be used to generate query.
+     * The saved report ID which can also be used to generate a query.
      * 
      */
     @Export(name="savedReportId", refs={String.class}, tree="[0]")
     private Output<String> savedReportId;
 
     /**
-     * @return The saved report id which can also be used to generate query.
+     * @return The saved report ID which can also be used to generate a query.
      * 
      */
     public Output<String> savedReportId() {

@@ -70,6 +70,7 @@ namespace Pulumi.Oci.DataSafe
     ///                         GroupingColumns = @var.Masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
     ///                         Length = @var.Masking_policies_masking_column_masking_formats_format_entries_length,
     ///                         LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
+    ///                         Pattern = @var.Masking_policies_masking_column_masking_formats_format_entries_pattern,
     ///                         PostProcessingFunction = @var.Masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
     ///                         RandomLists = @var.Masking_policies_masking_column_masking_formats_format_entries_random_list,
     ///                         RegularExpression = @var.Masking_policies_masking_column_masking_formats_format_entries_regular_expression,

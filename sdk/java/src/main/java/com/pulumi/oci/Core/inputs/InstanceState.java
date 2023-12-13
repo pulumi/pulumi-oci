@@ -155,14 +155,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the dedicated virtual machine host to place the instance on.
+     * (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
     @Import(name="dedicatedVmHostId")
     private @Nullable Output<String> dedicatedVmHostId;
 
     /**
-     * @return The OCID of the dedicated virtual machine host to place the instance on.
+     * @return (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
      * 
      */
     public Optional<Output<String>> dedicatedVmHostId() {
@@ -1038,7 +1038,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dedicatedVmHostId The OCID of the dedicated virtual machine host to place the instance on.
+         * @param dedicatedVmHostId (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
          * 
          * @return builder
          * 
@@ -1049,7 +1049,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dedicatedVmHostId The OCID of the dedicated virtual machine host to place the instance on.
+         * @param dedicatedVmHostId (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
          * 
          * @return builder
          * 

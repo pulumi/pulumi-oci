@@ -54,6 +54,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string? LibraryMaskingFormatId;
         /// <summary>
+        /// (Updatable) The pattern that should be used to mask data.
+        /// </summary>
+        public readonly string? Pattern;
+        /// <summary>
         /// (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         /// </summary>
         public readonly string? PostProcessingFunction;
@@ -132,6 +136,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string? libraryMaskingFormatId,
 
+            string? pattern,
+
             string? postProcessingFunction,
 
             ImmutableArray<string> randomLists,
@@ -168,6 +174,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             GroupingColumns = groupingColumns;
             Length = length;
             LibraryMaskingFormatId = libraryMaskingFormatId;
+            Pattern = pattern;
             PostProcessingFunction = postProcessingFunction;
             RandomLists = randomLists;
             RegularExpression = regularExpression;

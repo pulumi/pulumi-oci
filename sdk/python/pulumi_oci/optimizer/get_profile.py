@@ -22,7 +22,7 @@ class GetProfileResult:
     """
     A collection of values returned by getProfile.
     """
-    def __init__(__self__, aggregation_interval_in_days=None, compartment_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, levels_configurations=None, name=None, profile_id=None, state=None, target_compartments=None, target_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, aggregation_interval_in_days=None, compartment_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, levels_configurations=None, name=None, profile_id=None, state=None, system_tags=None, target_compartments=None, target_tags=None, time_created=None, time_updated=None):
         if aggregation_interval_in_days and not isinstance(aggregation_interval_in_days, int):
             raise TypeError("Expected argument 'aggregation_interval_in_days' to be a int")
         pulumi.set(__self__, "aggregation_interval_in_days", aggregation_interval_in_days)
@@ -53,6 +53,9 @@ class GetProfileResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if target_compartments and not isinstance(target_compartments, list):
             raise TypeError("Expected argument 'target_compartments' to be a list")
         pulumi.set(__self__, "target_compartments", target_compartments)
@@ -144,6 +147,11 @@ class GetProfileResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="targetCompartments")
     def target_compartments(self) -> Sequence['outputs.GetProfileTargetCompartmentResult']:
         """
@@ -192,6 +200,7 @@ class AwaitableGetProfileResult(GetProfileResult):
             name=self.name,
             profile_id=self.profile_id,
             state=self.state,
+            system_tags=self.system_tags,
             target_compartments=self.target_compartments,
             target_tags=self.target_tags,
             time_created=self.time_created,
@@ -233,6 +242,7 @@ def get_profile(profile_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         profile_id=pulumi.get(__ret__, 'profile_id'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         target_compartments=pulumi.get(__ret__, 'target_compartments'),
         target_tags=pulumi.get(__ret__, 'target_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),

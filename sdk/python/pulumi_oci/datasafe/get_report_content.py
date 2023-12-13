@@ -58,7 +58,7 @@ def get_report_content(report_id: Optional[str] = None,
     """
     This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Downloads the specified report in the form of PDF or XLXS.
+    Downloads the specified report in the form of .xls or .pdf.
 
     ## Example Usage
 
@@ -88,7 +88,7 @@ def get_report_content_output(report_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
 
-    Downloads the specified report in the form of PDF or XLXS.
+    Downloads the specified report in the form of .xls or .pdf.
 
     ## Example Usage
 

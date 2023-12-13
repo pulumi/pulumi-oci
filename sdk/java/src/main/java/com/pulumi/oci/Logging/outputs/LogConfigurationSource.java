@@ -4,8 +4,11 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class LogConfigurationSource {
@@ -14,6 +17,11 @@ public final class LogConfigurationSource {
      * 
      */
     private String category;
+    /**
+     * @return (Updatable) Log category parameters are stored here.
+     * 
+     */
+    private @Nullable Map<String,Object> parameters;
     /**
      * @return The unique identifier of the resource emitting the log.
      * 
@@ -38,6 +46,13 @@ public final class LogConfigurationSource {
      */
     public String category() {
         return this.category;
+    }
+    /**
+     * @return (Updatable) Log category parameters are stored here.
+     * 
+     */
+    public Map<String,Object> parameters() {
+        return this.parameters == null ? Map.of() : this.parameters;
     }
     /**
      * @return The unique identifier of the resource emitting the log.
@@ -72,6 +87,7 @@ public final class LogConfigurationSource {
     @CustomType.Builder
     public static final class Builder {
         private String category;
+        private @Nullable Map<String,Object> parameters;
         private String resource;
         private String service;
         private String sourceType;
@@ -79,6 +95,7 @@ public final class LogConfigurationSource {
         public Builder(LogConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
+    	      this.parameters = defaults.parameters;
     	      this.resource = defaults.resource;
     	      this.service = defaults.service;
     	      this.sourceType = defaults.sourceType;
@@ -87,6 +104,11 @@ public final class LogConfigurationSource {
         @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parameters(@Nullable Map<String,Object> parameters) {
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
@@ -107,6 +129,7 @@ public final class LogConfigurationSource {
         public LogConfigurationSource build() {
             final var _resultValue = new LogConfigurationSource();
             _resultValue.category = category;
+            _resultValue.parameters = parameters;
             _resultValue.resource = resource;
             _resultValue.service = service;
             _resultValue.sourceType = sourceType;

@@ -129,6 +129,9 @@ namespace Pulumi.Oci.Optimizer
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
         /// </summary>
@@ -332,6 +335,14 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<object>? _systemTags;
+        public InputMap<object> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// (Updatable) Optional. The compartments specified in the profile override for a recommendation.

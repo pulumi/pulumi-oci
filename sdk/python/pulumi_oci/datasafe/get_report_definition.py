@@ -253,7 +253,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="scheduledReportCompartmentId")
     def scheduled_report_compartment_id(self) -> str:
         """
-        The OCID of the compartment in which the scheduled resource should be created.
+        The OCID of the compartment in which the scheduled resource will be created.
         """
         return pulumi.get(self, "scheduled_report_compartment_id")
 
@@ -261,7 +261,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> str:
         """
-        Specifies the format of the report ( either XLS or PDF )
+        Specifies the format of the report ( either .xls or .pdf )
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
@@ -317,7 +317,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        Specifies the data and time the report definition was created.
+        Specifies the date and time the report definition was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -325,7 +325,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the report definition was update.
+        The date and time the report definition was updated.
         """
         return pulumi.get(self, "time_updated")
 

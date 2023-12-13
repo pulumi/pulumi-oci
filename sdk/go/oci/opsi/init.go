@@ -23,6 +23,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Opsi/awrHub:AwrHub":
 		r = &AwrHub{}
+	case "oci:Opsi/awrHubSource:AwrHubSource":
+		r = &AwrHubSource{}
+	case "oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement":
+		r = &AwrHubSourceAwrhubsourcesManagement{}
 	case "oci:Opsi/databaseInsight:DatabaseInsight":
 		r = &DatabaseInsight{}
 	case "oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge":
@@ -61,6 +65,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Opsi/awrHub",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Opsi/awrHubSource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Opsi/awrHubSourceAwrhubsourcesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

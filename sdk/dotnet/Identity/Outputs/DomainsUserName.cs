@@ -22,12 +22,12 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
-        public readonly string FamilyName;
+        public readonly string? FamilyName;
         /// <summary>
         /// (Updatable) Full name
         /// 
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private DomainsUserName(
-            string familyName,
+            string? familyName,
 
             string? formatted,
 

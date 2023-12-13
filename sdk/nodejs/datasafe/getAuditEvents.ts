@@ -84,7 +84,7 @@ export interface GetAuditEventsResult {
      */
     readonly auditEventCollections: outputs.DataSafe.GetAuditEventsAuditEventCollection[];
     /**
-     * The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
+     * The OCID of the compartment containing the audit event. The compartment is the same as that of audit profile of the target database resource.
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;

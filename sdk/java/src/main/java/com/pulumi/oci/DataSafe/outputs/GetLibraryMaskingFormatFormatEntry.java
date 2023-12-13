@@ -63,6 +63,11 @@ public final class GetLibraryMaskingFormatFormatEntry {
      */
     private String libraryMaskingFormatId;
     /**
+     * @return The pattern that should be used to mask data.
+     * 
+     */
+    private String pattern;
+    /**
      * @return The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
@@ -200,6 +205,13 @@ public final class GetLibraryMaskingFormatFormatEntry {
         return this.libraryMaskingFormatId;
     }
     /**
+     * @return The pattern that should be used to mask data.
+     * 
+     */
+    public String pattern() {
+        return this.pattern;
+    }
+    /**
      * @return The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
@@ -310,6 +322,7 @@ public final class GetLibraryMaskingFormatFormatEntry {
         private List<String> groupingColumns;
         private Integer length;
         private String libraryMaskingFormatId;
+        private String pattern;
         private String postProcessingFunction;
         private List<String> randomLists;
         private String regularExpression;
@@ -336,6 +349,7 @@ public final class GetLibraryMaskingFormatFormatEntry {
     	      this.groupingColumns = defaults.groupingColumns;
     	      this.length = defaults.length;
     	      this.libraryMaskingFormatId = defaults.libraryMaskingFormatId;
+    	      this.pattern = defaults.pattern;
     	      this.postProcessingFunction = defaults.postProcessingFunction;
     	      this.randomLists = defaults.randomLists;
     	      this.regularExpression = defaults.regularExpression;
@@ -402,6 +416,11 @@ public final class GetLibraryMaskingFormatFormatEntry {
         @CustomType.Setter
         public Builder libraryMaskingFormatId(String libraryMaskingFormatId) {
             this.libraryMaskingFormatId = Objects.requireNonNull(libraryMaskingFormatId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder pattern(String pattern) {
+            this.pattern = Objects.requireNonNull(pattern);
             return this;
         }
         @CustomType.Setter
@@ -484,6 +503,7 @@ public final class GetLibraryMaskingFormatFormatEntry {
             _resultValue.groupingColumns = groupingColumns;
             _resultValue.length = length;
             _resultValue.libraryMaskingFormatId = libraryMaskingFormatId;
+            _resultValue.pattern = pattern;
             _resultValue.postProcessingFunction = postProcessingFunction;
             _resultValue.randomLists = randomLists;
             _resultValue.regularExpression = regularExpression;

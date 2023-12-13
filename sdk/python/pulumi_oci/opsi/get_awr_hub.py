@@ -21,7 +21,7 @@ class GetAwrHubResult:
     """
     A collection of values returned by getAwrHub.
     """
-    def __init__(__self__, awr_hub_id=None, awr_mailbox_url=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, object_storage_bucket_name=None, operations_insights_warehouse_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, awr_hub_id=None, awr_mailbox_url=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, hub_dst_timezone_version=None, id=None, lifecycle_details=None, object_storage_bucket_name=None, operations_insights_warehouse_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if awr_hub_id and not isinstance(awr_hub_id, str):
             raise TypeError("Expected argument 'awr_hub_id' to be a str")
         pulumi.set(__self__, "awr_hub_id", awr_hub_id)
@@ -40,6 +40,9 @@ class GetAwrHubResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hub_dst_timezone_version and not isinstance(hub_dst_timezone_version, str):
+            raise TypeError("Expected argument 'hub_dst_timezone_version' to be a str")
+        pulumi.set(__self__, "hub_dst_timezone_version", hub_dst_timezone_version)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -109,6 +112,14 @@ class GetAwrHubResult:
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="hubDstTimezoneVersion")
+    def hub_dst_timezone_version(self) -> str:
+        """
+        Dst Time Zone Version of the AWR Hub
+        """
+        return pulumi.get(self, "hub_dst_timezone_version")
 
     @property
     @pulumi.getter
@@ -187,6 +198,7 @@ class AwaitableGetAwrHubResult(GetAwrHubResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            hub_dst_timezone_version=self.hub_dst_timezone_version,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             object_storage_bucket_name=self.object_storage_bucket_name,
@@ -228,6 +240,7 @@ def get_awr_hub(awr_hub_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        hub_dst_timezone_version=pulumi.get(__ret__, 'hub_dst_timezone_version'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         object_storage_bucket_name=pulumi.get(__ret__, 'object_storage_bucket_name'),

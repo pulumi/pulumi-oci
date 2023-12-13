@@ -3113,6 +3113,508 @@ func (o GetAwrHubAwrSourcesSummaryItemArrayOutput) Index(i pulumi.IntInput) GetA
 	}).(GetAwrHubAwrSourcesSummaryItemOutput)
 }
 
+type GetAwrHubSourcesAwrHubSourceSummaryCollection struct {
+	Items []GetAwrHubSourcesAwrHubSourceSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetAwrHubSourcesAwrHubSourceSummaryCollectionInput is an input type that accepts GetAwrHubSourcesAwrHubSourceSummaryCollectionArgs and GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetAwrHubSourcesAwrHubSourceSummaryCollectionInput` via:
+//
+//	GetAwrHubSourcesAwrHubSourceSummaryCollectionArgs{...}
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetAwrHubSourcesAwrHubSourceSummaryCollectionOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput
+	ToGetAwrHubSourcesAwrHubSourceSummaryCollectionOutputWithContext(context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionArgs struct {
+	Items GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAwrHubSourcesAwrHubSourceSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAwrHubSourcesAwrHubSourceSummaryCollection)(nil)).Elem()
+}
+
+func (i GetAwrHubSourcesAwrHubSourceSummaryCollectionArgs) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput {
+	return i.ToGetAwrHubSourcesAwrHubSourceSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAwrHubSourcesAwrHubSourceSummaryCollectionArgs) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionOutputWithContext(ctx context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput)
+}
+
+// GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayInput is an input type that accepts GetAwrHubSourcesAwrHubSourceSummaryCollectionArray and GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayInput` via:
+//
+//	GetAwrHubSourcesAwrHubSourceSummaryCollectionArray{ GetAwrHubSourcesAwrHubSourceSummaryCollectionArgs{...} }
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput
+	ToGetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutputWithContext(context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionArray []GetAwrHubSourcesAwrHubSourceSummaryCollectionInput
+
+func (GetAwrHubSourcesAwrHubSourceSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAwrHubSourcesAwrHubSourceSummaryCollection)(nil)).Elem()
+}
+
+func (i GetAwrHubSourcesAwrHubSourceSummaryCollectionArray) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput {
+	return i.ToGetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAwrHubSourcesAwrHubSourceSummaryCollectionArray) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutputWithContext(ctx context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput)
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAwrHubSourcesAwrHubSourceSummaryCollection)(nil)).Elem()
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionOutputWithContext(ctx context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput) Items() GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollection) []GetAwrHubSourcesAwrHubSourceSummaryCollectionItem {
+		return v.Items
+	}).(GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput)
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAwrHubSourcesAwrHubSourceSummaryCollection)(nil)).Elem()
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutputWithContext(ctx context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAwrHubSourcesAwrHubSourceSummaryCollection {
+		return vs[0].([]GetAwrHubSourcesAwrHubSourceSummaryCollection)[vs[1].(int)]
+	}).(GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput)
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+	AssociatedOpsiId string `pulumi:"associatedOpsiId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+	AssociatedResourceId string `pulumi:"associatedResourceId"`
+	// Unique Awr Hub identifier
+	AwrHubId string `pulumi:"awrHubId"`
+	// The shorted string of the Awr Hub source database identifier.
+	AwrHubOpsiSourceId string `pulumi:"awrHubOpsiSourceId"`
+	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+	AwrSourceDatabaseId string `pulumi:"awrSourceDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Number of hours since last AWR snapshots import happened from the Source database.
+	HoursSinceLastImport float64 `pulumi:"hoursSinceLastImport"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
+	Id string `pulumi:"id"`
+	// This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
+	IsRegisteredWithAwrHub bool `pulumi:"isRegisteredWithAwrHub"`
+	// The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+	MaxSnapshotIdentifier float64 `pulumi:"maxSnapshotIdentifier"`
+	// The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+	MinSnapshotIdentifier float64 `pulumi:"minSnapshotIdentifier"`
+	// Awr Hub source database name
+	Name string `pulumi:"name"`
+	// Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
+	SourceMailBoxUrl string `pulumi:"sourceMailBoxUrl"`
+	// Lifecycle states
+	State string `pulumi:"state"`
+	// Resource Status
+	Status string `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time at which the resource was first created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+	TimeFirstSnapshotGenerated string `pulumi:"timeFirstSnapshotGenerated"`
+	// The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+	TimeLastSnapshotGenerated string `pulumi:"timeLastSnapshotGenerated"`
+	// The time at which the resource was last updated. An RFC3339 formatted datetime string
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// source type of the database
+	Type string `pulumi:"type"`
+}
+
+// GetAwrHubSourcesAwrHubSourceSummaryCollectionItemInput is an input type that accepts GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs and GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetAwrHubSourcesAwrHubSourceSummaryCollectionItemInput` via:
+//
+//	GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs{...}
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput
+	ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutputWithContext(context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+	AssociatedOpsiId pulumi.StringInput `pulumi:"associatedOpsiId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+	AssociatedResourceId pulumi.StringInput `pulumi:"associatedResourceId"`
+	// Unique Awr Hub identifier
+	AwrHubId pulumi.StringInput `pulumi:"awrHubId"`
+	// The shorted string of the Awr Hub source database identifier.
+	AwrHubOpsiSourceId pulumi.StringInput `pulumi:"awrHubOpsiSourceId"`
+	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+	AwrSourceDatabaseId pulumi.StringInput `pulumi:"awrSourceDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Number of hours since last AWR snapshots import happened from the Source database.
+	HoursSinceLastImport pulumi.Float64Input `pulumi:"hoursSinceLastImport"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
+	IsRegisteredWithAwrHub pulumi.BoolInput `pulumi:"isRegisteredWithAwrHub"`
+	// The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+	MaxSnapshotIdentifier pulumi.Float64Input `pulumi:"maxSnapshotIdentifier"`
+	// The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+	MinSnapshotIdentifier pulumi.Float64Input `pulumi:"minSnapshotIdentifier"`
+	// Awr Hub source database name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
+	SourceMailBoxUrl pulumi.StringInput `pulumi:"sourceMailBoxUrl"`
+	// Lifecycle states
+	State pulumi.StringInput `pulumi:"state"`
+	// Resource Status
+	Status pulumi.StringInput `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time at which the resource was first created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+	TimeFirstSnapshotGenerated pulumi.StringInput `pulumi:"timeFirstSnapshotGenerated"`
+	// The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+	TimeLastSnapshotGenerated pulumi.StringInput `pulumi:"timeLastSnapshotGenerated"`
+	// The time at which the resource was last updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// source type of the database
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAwrHubSourcesAwrHubSourceSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput {
+	return i.ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutputWithContext(ctx context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput)
+}
+
+// GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayInput is an input type that accepts GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArray and GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayInput` via:
+//
+//	GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArray{ GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs{...} }
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput
+	ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutputWithContext(context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArray []GetAwrHubSourcesAwrHubSourceSummaryCollectionItemInput
+
+func (GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAwrHubSourcesAwrHubSourceSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArray) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput {
+	return i.ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArray) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput)
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAwrHubSourcesAwrHubSourceSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutputWithContext(ctx context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) AssociatedOpsiId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.AssociatedOpsiId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) AssociatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.AssociatedResourceId }).(pulumi.StringOutput)
+}
+
+// Unique Awr Hub identifier
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) AwrHubId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.AwrHubId }).(pulumi.StringOutput)
+}
+
+// The shorted string of the Awr Hub source database identifier.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) AwrHubOpsiSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.AwrHubOpsiSourceId }).(pulumi.StringOutput)
+}
+
+// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) AwrSourceDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.AwrSourceDatabaseId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Number of hours since last AWR snapshots import happened from the Source database.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) HoursSinceLastImport() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) float64 { return v.HoursSinceLastImport }).(pulumi.Float64Output)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) IsRegisteredWithAwrHub() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) bool { return v.IsRegisteredWithAwrHub }).(pulumi.BoolOutput)
+}
+
+// The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) MaxSnapshotIdentifier() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) float64 { return v.MaxSnapshotIdentifier }).(pulumi.Float64Output)
+}
+
+// The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) MinSnapshotIdentifier() pulumi.Float64Output {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) float64 { return v.MinSnapshotIdentifier }).(pulumi.Float64Output)
+}
+
+// Awr Hub source database name
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) SourceMailBoxUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.SourceMailBoxUrl }).(pulumi.StringOutput)
+}
+
+// Lifecycle states
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Resource Status
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The time at which the resource was first created. An RFC3339 formatted datetime string
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) TimeFirstSnapshotGenerated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.TimeFirstSnapshotGenerated }).(pulumi.StringOutput)
+}
+
+// The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) TimeLastSnapshotGenerated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.TimeLastSnapshotGenerated }).(pulumi.StringOutput)
+}
+
+// The time at which the resource was last updated. An RFC3339 formatted datetime string
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// source type of the database
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAwrHubSourcesAwrHubSourceSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput() GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput) ToGetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAwrHubSourcesAwrHubSourceSummaryCollectionItem {
+		return vs[0].([]GetAwrHubSourcesAwrHubSourceSummaryCollectionItem)[vs[1].(int)]
+	}).(GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput)
+}
+
+type GetAwrHubSourcesFilter struct {
+	// Awr Hub source database name
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAwrHubSourcesFilterInput is an input type that accepts GetAwrHubSourcesFilterArgs and GetAwrHubSourcesFilterOutput values.
+// You can construct a concrete instance of `GetAwrHubSourcesFilterInput` via:
+//
+//	GetAwrHubSourcesFilterArgs{...}
+type GetAwrHubSourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetAwrHubSourcesFilterOutput() GetAwrHubSourcesFilterOutput
+	ToGetAwrHubSourcesFilterOutputWithContext(context.Context) GetAwrHubSourcesFilterOutput
+}
+
+type GetAwrHubSourcesFilterArgs struct {
+	// Awr Hub source database name
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAwrHubSourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAwrHubSourcesFilter)(nil)).Elem()
+}
+
+func (i GetAwrHubSourcesFilterArgs) ToGetAwrHubSourcesFilterOutput() GetAwrHubSourcesFilterOutput {
+	return i.ToGetAwrHubSourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetAwrHubSourcesFilterArgs) ToGetAwrHubSourcesFilterOutputWithContext(ctx context.Context) GetAwrHubSourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubSourcesFilterOutput)
+}
+
+// GetAwrHubSourcesFilterArrayInput is an input type that accepts GetAwrHubSourcesFilterArray and GetAwrHubSourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetAwrHubSourcesFilterArrayInput` via:
+//
+//	GetAwrHubSourcesFilterArray{ GetAwrHubSourcesFilterArgs{...} }
+type GetAwrHubSourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAwrHubSourcesFilterArrayOutput() GetAwrHubSourcesFilterArrayOutput
+	ToGetAwrHubSourcesFilterArrayOutputWithContext(context.Context) GetAwrHubSourcesFilterArrayOutput
+}
+
+type GetAwrHubSourcesFilterArray []GetAwrHubSourcesFilterInput
+
+func (GetAwrHubSourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAwrHubSourcesFilter)(nil)).Elem()
+}
+
+func (i GetAwrHubSourcesFilterArray) ToGetAwrHubSourcesFilterArrayOutput() GetAwrHubSourcesFilterArrayOutput {
+	return i.ToGetAwrHubSourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAwrHubSourcesFilterArray) ToGetAwrHubSourcesFilterArrayOutputWithContext(ctx context.Context) GetAwrHubSourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAwrHubSourcesFilterArrayOutput)
+}
+
+type GetAwrHubSourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAwrHubSourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAwrHubSourcesFilter)(nil)).Elem()
+}
+
+func (o GetAwrHubSourcesFilterOutput) ToGetAwrHubSourcesFilterOutput() GetAwrHubSourcesFilterOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesFilterOutput) ToGetAwrHubSourcesFilterOutputWithContext(ctx context.Context) GetAwrHubSourcesFilterOutput {
+	return o
+}
+
+// Awr Hub source database name
+func (o GetAwrHubSourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAwrHubSourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAwrHubSourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAwrHubSourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAwrHubSourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAwrHubSourcesFilter)(nil)).Elem()
+}
+
+func (o GetAwrHubSourcesFilterArrayOutput) ToGetAwrHubSourcesFilterArrayOutput() GetAwrHubSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesFilterArrayOutput) ToGetAwrHubSourcesFilterArrayOutputWithContext(ctx context.Context) GetAwrHubSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetAwrHubSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetAwrHubSourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAwrHubSourcesFilter {
+		return vs[0].([]GetAwrHubSourcesFilter)[vs[1].(int)]
+	}).(GetAwrHubSourcesFilterOutput)
+}
+
 type GetAwrHubsAwrHubSummaryCollection struct {
 	Items []GetAwrHubsAwrHubSummaryCollectionItem `pulumi:"items"`
 }
@@ -3218,6 +3720,8 @@ type GetAwrHubsAwrHubSummaryCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Dst Time Zone Version of the AWR Hub
+	HubDstTimezoneVersion string `pulumi:"hubDstTimezoneVersion"`
 	// Unique Awr Hub identifier
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -3258,6 +3762,8 @@ type GetAwrHubsAwrHubSummaryCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Dst Time Zone Version of the AWR Hub
+	HubDstTimezoneVersion pulumi.StringInput `pulumi:"hubDstTimezoneVersion"`
 	// Unique Awr Hub identifier
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -3350,6 +3856,11 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) DisplayName() pulumi.String
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Dst Time Zone Version of the AWR Hub
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) HubDstTimezoneVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) string { return v.HubDstTimezoneVersion }).(pulumi.StringOutput)
 }
 
 // Unique Awr Hub identifier
@@ -12747,6 +13258,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSnapshotsFilterArrayInput)(nil)).Elem(), GetAwrHubAwrSnapshotsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSourcesSummaryItemInput)(nil)).Elem(), GetAwrHubAwrSourcesSummaryItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSourcesSummaryItemArrayInput)(nil)).Elem(), GetAwrHubAwrSourcesSummaryItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubSourcesAwrHubSourceSummaryCollectionInput)(nil)).Elem(), GetAwrHubSourcesAwrHubSourceSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayInput)(nil)).Elem(), GetAwrHubSourcesAwrHubSourceSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubSourcesAwrHubSourceSummaryCollectionItemInput)(nil)).Elem(), GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayInput)(nil)).Elem(), GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubSourcesFilterInput)(nil)).Elem(), GetAwrHubSourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubSourcesFilterArrayInput)(nil)).Elem(), GetAwrHubSourcesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubsAwrHubSummaryCollectionInput)(nil)).Elem(), GetAwrHubsAwrHubSummaryCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubsAwrHubSummaryCollectionArrayInput)(nil)).Elem(), GetAwrHubsAwrHubSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubsAwrHubSummaryCollectionItemInput)(nil)).Elem(), GetAwrHubsAwrHubSummaryCollectionItemArgs{})
@@ -12919,6 +13436,12 @@ func init() {
 	pulumi.RegisterOutputType(GetAwrHubAwrSnapshotsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAwrHubAwrSourcesSummaryItemOutput{})
 	pulumi.RegisterOutputType(GetAwrHubAwrSourcesSummaryItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAwrHubSourcesAwrHubSourceSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetAwrHubSourcesAwrHubSourceSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAwrHubSourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetAwrHubSourcesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAwrHubsAwrHubSummaryCollectionOutput{})
 	pulumi.RegisterOutputType(GetAwrHubsAwrHubSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAwrHubsAwrHubSummaryCollectionItemOutput{})

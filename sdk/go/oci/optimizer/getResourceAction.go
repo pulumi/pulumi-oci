@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetResourceAction(ctx, &optimizer.GetResourceActionArgs{
-//				ResourceActionId: oci_optimizer_resource_action.Test_resource_action.Id,
+//				ResourceActionId:        oci_optimizer_resource_action.Test_resource_action.Id,
+//				IncludeResourceMetadata: pulumi.BoolRef(_var.Resource_action_include_resource_metadata),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -52,6 +53,8 @@ func LookupResourceAction(ctx *pulumi.Context, args *LookupResourceActionArgs, o
 
 // A collection of arguments for invoking getResourceAction.
 type LookupResourceActionArgs struct {
+	// Supplement additional resource information in extended metadata response.
+	IncludeResourceMetadata *bool `pulumi:"includeResourceMetadata"`
 	// The unique OCID associated with the resource action.
 	ResourceActionId string `pulumi:"resourceActionId"`
 }
@@ -71,7 +74,8 @@ type LookupResourceActionResult struct {
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
 	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the resource action.
-	Id string `pulumi:"id"`
+	Id                      string `pulumi:"id"`
+	IncludeResourceMetadata *bool  `pulumi:"includeResourceMetadata"`
 	// Custom metadata key/value pairs for the resource action.
 	Metadata map[string]interface{} `pulumi:"metadata"`
 	// The name assigned to the resource.
@@ -112,6 +116,8 @@ func LookupResourceActionOutput(ctx *pulumi.Context, args LookupResourceActionOu
 
 // A collection of arguments for invoking getResourceAction.
 type LookupResourceActionOutputArgs struct {
+	// Supplement additional resource information in extended metadata response.
+	IncludeResourceMetadata pulumi.BoolPtrInput `pulumi:"includeResourceMetadata"`
 	// The unique OCID associated with the resource action.
 	ResourceActionId pulumi.StringInput `pulumi:"resourceActionId"`
 }
@@ -168,6 +174,10 @@ func (o LookupResourceActionResultOutput) ExtendedMetadata() pulumi.MapOutput {
 // The unique OCID associated with the resource action.
 func (o LookupResourceActionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResourceActionResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupResourceActionResultOutput) IncludeResourceMetadata() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupResourceActionResult) *bool { return v.IncludeResourceMetadata }).(pulumi.BoolPtrOutput)
 }
 
 // Custom metadata key/value pairs for the resource action.

@@ -10,6 +10,16 @@ export type CustomTable = import("./customTable").CustomTable;
 export const CustomTable: typeof import("./customTable").CustomTable = null as any;
 utilities.lazyLoad(exports, ["CustomTable"], () => require("./customTable"));
 
+export { GetAverageCarbonEmissionArgs, GetAverageCarbonEmissionResult, GetAverageCarbonEmissionOutputArgs } from "./getAverageCarbonEmission";
+export const getAverageCarbonEmission: typeof import("./getAverageCarbonEmission").getAverageCarbonEmission = null as any;
+export const getAverageCarbonEmissionOutput: typeof import("./getAverageCarbonEmission").getAverageCarbonEmissionOutput = null as any;
+utilities.lazyLoad(exports, ["getAverageCarbonEmission","getAverageCarbonEmissionOutput"], () => require("./getAverageCarbonEmission"));
+
+export { GetCleanEnergyUsageArgs, GetCleanEnergyUsageResult, GetCleanEnergyUsageOutputArgs } from "./getCleanEnergyUsage";
+export const getCleanEnergyUsage: typeof import("./getCleanEnergyUsage").getCleanEnergyUsage = null as any;
+export const getCleanEnergyUsageOutput: typeof import("./getCleanEnergyUsage").getCleanEnergyUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getCleanEnergyUsage","getCleanEnergyUsageOutput"], () => require("./getCleanEnergyUsage"));
+
 export { GetConfigurationArgs, GetConfigurationResult, GetConfigurationOutputArgs } from "./getConfiguration";
 export const getConfiguration: typeof import("./getConfiguration").getConfiguration = null as any;
 export const getConfigurationOutput: typeof import("./getConfiguration").getConfigurationOutput = null as any;
@@ -55,6 +65,21 @@ export const getSchedules: typeof import("./getSchedules").getSchedules = null a
 export const getSchedulesOutput: typeof import("./getSchedules").getSchedulesOutput = null as any;
 utilities.lazyLoad(exports, ["getSchedules","getSchedulesOutput"], () => require("./getSchedules"));
 
+export { GetUsageCarbonEmissionsConfigArgs, GetUsageCarbonEmissionsConfigResult, GetUsageCarbonEmissionsConfigOutputArgs } from "./getUsageCarbonEmissionsConfig";
+export const getUsageCarbonEmissionsConfig: typeof import("./getUsageCarbonEmissionsConfig").getUsageCarbonEmissionsConfig = null as any;
+export const getUsageCarbonEmissionsConfigOutput: typeof import("./getUsageCarbonEmissionsConfig").getUsageCarbonEmissionsConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getUsageCarbonEmissionsConfig","getUsageCarbonEmissionsConfigOutput"], () => require("./getUsageCarbonEmissionsConfig"));
+
+export { GetUsageCarbonEmissionsQueriesArgs, GetUsageCarbonEmissionsQueriesResult, GetUsageCarbonEmissionsQueriesOutputArgs } from "./getUsageCarbonEmissionsQueries";
+export const getUsageCarbonEmissionsQueries: typeof import("./getUsageCarbonEmissionsQueries").getUsageCarbonEmissionsQueries = null as any;
+export const getUsageCarbonEmissionsQueriesOutput: typeof import("./getUsageCarbonEmissionsQueries").getUsageCarbonEmissionsQueriesOutput = null as any;
+utilities.lazyLoad(exports, ["getUsageCarbonEmissionsQueries","getUsageCarbonEmissionsQueriesOutput"], () => require("./getUsageCarbonEmissionsQueries"));
+
+export { GetUsageCarbonEmissionsQueryArgs, GetUsageCarbonEmissionsQueryResult, GetUsageCarbonEmissionsQueryOutputArgs } from "./getUsageCarbonEmissionsQuery";
+export const getUsageCarbonEmissionsQuery: typeof import("./getUsageCarbonEmissionsQuery").getUsageCarbonEmissionsQuery = null as any;
+export const getUsageCarbonEmissionsQueryOutput: typeof import("./getUsageCarbonEmissionsQuery").getUsageCarbonEmissionsQueryOutput = null as any;
+utilities.lazyLoad(exports, ["getUsageCarbonEmissionsQuery","getUsageCarbonEmissionsQueryOutput"], () => require("./getUsageCarbonEmissionsQuery"));
+
 export { QueryArgs, QueryState } from "./query";
 export type Query = import("./query").Query;
 export const Query: typeof import("./query").Query = null as any;
@@ -70,6 +95,16 @@ export type Usage = import("./usage").Usage;
 export const Usage: typeof import("./usage").Usage = null as any;
 utilities.lazyLoad(exports, ["Usage"], () => require("./usage"));
 
+export { UsageCarbonEmissionArgs, UsageCarbonEmissionState } from "./usageCarbonEmission";
+export type UsageCarbonEmission = import("./usageCarbonEmission").UsageCarbonEmission;
+export const UsageCarbonEmission: typeof import("./usageCarbonEmission").UsageCarbonEmission = null as any;
+utilities.lazyLoad(exports, ["UsageCarbonEmission"], () => require("./usageCarbonEmission"));
+
+export { UsageCarbonEmissionsQueryArgs, UsageCarbonEmissionsQueryState } from "./usageCarbonEmissionsQuery";
+export type UsageCarbonEmissionsQuery = import("./usageCarbonEmissionsQuery").UsageCarbonEmissionsQuery;
+export const UsageCarbonEmissionsQuery: typeof import("./usageCarbonEmissionsQuery").UsageCarbonEmissionsQuery = null as any;
+utilities.lazyLoad(exports, ["UsageCarbonEmissionsQuery"], () => require("./usageCarbonEmissionsQuery"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -83,6 +118,10 @@ const _module = {
                 return new Schedule(name, <any>undefined, { urn })
             case "oci:MeteringComputation/usage:Usage":
                 return new Usage(name, <any>undefined, { urn })
+            case "oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission":
+                return new UsageCarbonEmission(name, <any>undefined, { urn })
+            case "oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery":
+                return new UsageCarbonEmissionsQuery(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -92,3 +131,5 @@ pulumi.runtime.registerResourceModule("oci", "MeteringComputation/customTable", 
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/query", _module)
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/schedule", _module)
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/usage", _module)
+pulumi.runtime.registerResourceModule("oci", "MeteringComputation/usageCarbonEmission", _module)
+pulumi.runtime.registerResourceModule("oci", "MeteringComputation/usageCarbonEmissionsQuery", _module)

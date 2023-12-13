@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseDbToolsDetailArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseResourcePoolSummaryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
 import java.lang.Boolean;
@@ -699,6 +700,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Details for the long-term backup schedule.
+     * 
+     */
+    @Import(name="longTermBackupSchedules")
+    private @Nullable Output<List<AutonomousDatabaseLongTermBackupScheduleArgs>> longTermBackupSchedules;
+
+    /**
+     * @return Details for the long-term backup schedule.
+     * 
+     */
+    public Optional<Output<List<AutonomousDatabaseLongTermBackupScheduleArgs>>> longTermBackupSchedules() {
+        return Optional.ofNullable(this.longTermBackupSchedules);
+    }
+
+    /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      * 
      */
@@ -1218,6 +1234,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.kmsKeyId = $.kmsKeyId;
         this.licenseModel = $.licenseModel;
         this.localAdgAutoFailoverMaxDataLossLimit = $.localAdgAutoFailoverMaxDataLossLimit;
+        this.longTermBackupSchedules = $.longTermBackupSchedules;
         this.maxCpuCoreCount = $.maxCpuCoreCount;
         this.ncharacterSet = $.ncharacterSet;
         this.nsgIds = $.nsgIds;
@@ -2205,6 +2222,37 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder localAdgAutoFailoverMaxDataLossLimit(Integer localAdgAutoFailoverMaxDataLossLimit) {
             return localAdgAutoFailoverMaxDataLossLimit(Output.of(localAdgAutoFailoverMaxDataLossLimit));
+        }
+
+        /**
+         * @param longTermBackupSchedules Details for the long-term backup schedule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder longTermBackupSchedules(@Nullable Output<List<AutonomousDatabaseLongTermBackupScheduleArgs>> longTermBackupSchedules) {
+            $.longTermBackupSchedules = longTermBackupSchedules;
+            return this;
+        }
+
+        /**
+         * @param longTermBackupSchedules Details for the long-term backup schedule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder longTermBackupSchedules(List<AutonomousDatabaseLongTermBackupScheduleArgs> longTermBackupSchedules) {
+            return longTermBackupSchedules(Output.of(longTermBackupSchedules));
+        }
+
+        /**
+         * @param longTermBackupSchedules Details for the long-term backup schedule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder longTermBackupSchedules(AutonomousDatabaseLongTermBackupScheduleArgs... longTermBackupSchedules) {
+            return longTermBackupSchedules(List.of(longTermBackupSchedules));
         }
 
         /**

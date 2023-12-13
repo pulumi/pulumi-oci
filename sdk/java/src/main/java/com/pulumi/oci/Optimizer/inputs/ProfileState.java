@@ -141,6 +141,13 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.state);
     }
 
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,Object>> systemTags;
+
+    public Optional<Output<Map<String,Object>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      * 
@@ -212,6 +219,7 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
         this.levelsConfiguration = $.levelsConfiguration;
         this.name = $.name;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.targetCompartments = $.targetCompartments;
         this.targetTags = $.targetTags;
         this.timeCreated = $.timeCreated;
@@ -402,6 +410,15 @@ public final class ProfileState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        public Builder systemTags(Map<String,Object> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

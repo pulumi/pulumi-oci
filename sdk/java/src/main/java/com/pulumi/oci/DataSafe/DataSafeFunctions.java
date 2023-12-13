@@ -5878,7 +5878,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
      *             .groupBy(var_.discovery_analytic_group_by())
+     *             .isCommon(var_.discovery_analytic_is_common())
      *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
      *             .targetId(oci_cloud_guard_target.test_target().id())
      *             .build());
      * 
@@ -5923,7 +5925,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
      *             .groupBy(var_.discovery_analytic_group_by())
+     *             .isCommon(var_.discovery_analytic_is_common())
      *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
      *             .targetId(oci_cloud_guard_target.test_target().id())
      *             .build());
      * 
@@ -5968,7 +5972,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
      *             .groupBy(var_.discovery_analytic_group_by())
+     *             .isCommon(var_.discovery_analytic_is_common())
      *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
      *             .targetId(oci_cloud_guard_target.test_target().id())
      *             .build());
      * 
@@ -6013,7 +6019,9 @@ public final class DataSafeFunctions {
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
      *             .groupBy(var_.discovery_analytic_group_by())
+     *             .isCommon(var_.discovery_analytic_is_common())
      *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
      *             .targetId(oci_cloud_guard_target.test_target().id())
      *             .build());
      * 
@@ -9652,7 +9660,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Downloads the specified report in the form of PDF or XLXS.
+     * Downloads the specified report in the form of .xls or .pdf.
      * 
      * ## Example Usage
      * ```java
@@ -9691,7 +9699,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Downloads the specified report in the form of PDF or XLXS.
+     * Downloads the specified report in the form of .xls or .pdf.
      * 
      * ## Example Usage
      * ```java
@@ -9730,7 +9738,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Downloads the specified report in the form of PDF or XLXS.
+     * Downloads the specified report in the form of .xls or .pdf.
      * 
      * ## Example Usage
      * ```java
@@ -9769,7 +9777,7 @@ public final class DataSafeFunctions {
     /**
      * This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
      * 
-     * Downloads the specified report in the form of PDF or XLXS.
+     * Downloads the specified report in the form of .xls or .pdf.
      * 
      * ## Example Usage
      * ```java
@@ -12875,6 +12883,7 @@ public final class DataSafeFunctions {
      *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
      *             .displayName(var_.sensitive_type_display_name())
      *             .entityType(var_.sensitive_type_entity_type())
+     *             .isCommon(var_.sensitive_type_is_common())
      *             .parentCategoryId(oci_marketplace_category.test_category().id())
      *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
      *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
@@ -12925,6 +12934,7 @@ public final class DataSafeFunctions {
      *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
      *             .displayName(var_.sensitive_type_display_name())
      *             .entityType(var_.sensitive_type_entity_type())
+     *             .isCommon(var_.sensitive_type_is_common())
      *             .parentCategoryId(oci_marketplace_category.test_category().id())
      *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
      *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
@@ -12975,6 +12985,7 @@ public final class DataSafeFunctions {
      *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
      *             .displayName(var_.sensitive_type_display_name())
      *             .entityType(var_.sensitive_type_entity_type())
+     *             .isCommon(var_.sensitive_type_is_common())
      *             .parentCategoryId(oci_marketplace_category.test_category().id())
      *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
      *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
@@ -13025,6 +13036,7 @@ public final class DataSafeFunctions {
      *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
      *             .displayName(var_.sensitive_type_display_name())
      *             .entityType(var_.sensitive_type_entity_type())
+     *             .isCommon(var_.sensitive_type_is_common())
      *             .parentCategoryId(oci_marketplace_category.test_category().id())
      *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
      *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
@@ -14763,7 +14775,7 @@ public final class DataSafeFunctions {
      * When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
      * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
@@ -14821,7 +14833,7 @@ public final class DataSafeFunctions {
      * When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
      * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
@@ -14879,7 +14891,7 @@ public final class DataSafeFunctions {
      * When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
      * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
@@ -14937,7 +14949,7 @@ public final class DataSafeFunctions {
      * When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
      * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
@@ -15275,7 +15287,7 @@ public final class DataSafeFunctions {
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
      * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is
@@ -15342,7 +15354,7 @@ public final class DataSafeFunctions {
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
      * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is
@@ -15409,7 +15421,7 @@ public final class DataSafeFunctions {
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
      * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is
@@ -15476,7 +15488,7 @@ public final class DataSafeFunctions {
      * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to &#34;true,&#34; and if the
      * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
      * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
      * compartmentId, then &#34;Not Authorized&#34; is returned.
      * 
      * The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is

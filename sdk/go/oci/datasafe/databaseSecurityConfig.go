@@ -47,7 +47,7 @@ type DatabaseSecurityConfig struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RefreshTrigger pulumi.IntPtrOutput `pulumi:"refreshTrigger"`
-	// (Updatable) Details to update the SQL firewall config.
+	// (Updatable) Details to update the SQL Firewall config.
 	SqlFirewallConfig DatabaseSecurityConfigSqlFirewallConfigOutput `pulumi:"sqlFirewallConfig"`
 	// The current state of the database security config.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -115,7 +115,7 @@ type databaseSecurityConfigState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RefreshTrigger *int `pulumi:"refreshTrigger"`
-	// (Updatable) Details to update the SQL firewall config.
+	// (Updatable) Details to update the SQL Firewall config.
 	SqlFirewallConfig *DatabaseSecurityConfigSqlFirewallConfig `pulumi:"sqlFirewallConfig"`
 	// The current state of the database security config.
 	State *string `pulumi:"state"`
@@ -151,7 +151,7 @@ type DatabaseSecurityConfigState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RefreshTrigger pulumi.IntPtrInput
-	// (Updatable) Details to update the SQL firewall config.
+	// (Updatable) Details to update the SQL Firewall config.
 	SqlFirewallConfig DatabaseSecurityConfigSqlFirewallConfigPtrInput
 	// The current state of the database security config.
 	State pulumi.StringPtrInput
@@ -189,7 +189,7 @@ type databaseSecurityConfigArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RefreshTrigger *int `pulumi:"refreshTrigger"`
-	// (Updatable) Details to update the SQL firewall config.
+	// (Updatable) Details to update the SQL Firewall config.
 	SqlFirewallConfig *DatabaseSecurityConfigSqlFirewallConfig `pulumi:"sqlFirewallConfig"`
 }
 
@@ -212,7 +212,7 @@ type DatabaseSecurityConfigArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RefreshTrigger pulumi.IntPtrInput
-	// (Updatable) Details to update the SQL firewall config.
+	// (Updatable) Details to update the SQL Firewall config.
 	SqlFirewallConfig DatabaseSecurityConfigSqlFirewallConfigPtrInput
 }
 
@@ -346,7 +346,7 @@ func (o DatabaseSecurityConfigOutput) RefreshTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.IntPtrOutput { return v.RefreshTrigger }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Details to update the SQL firewall config.
+// (Updatable) Details to update the SQL Firewall config.
 func (o DatabaseSecurityConfigOutput) SqlFirewallConfig() DatabaseSecurityConfigSqlFirewallConfigOutput {
 	return o.ApplyT(func(v *DatabaseSecurityConfig) DatabaseSecurityConfigSqlFirewallConfigOutput {
 		return v.SqlFirewallConfig

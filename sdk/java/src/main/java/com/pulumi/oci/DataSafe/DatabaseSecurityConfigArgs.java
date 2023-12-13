@@ -131,14 +131,14 @@ public final class DatabaseSecurityConfigArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) Details to update the SQL firewall config.
+     * (Updatable) Details to update the SQL Firewall config.
      * 
      */
     @Import(name="sqlFirewallConfig")
     private @Nullable Output<DatabaseSecurityConfigSqlFirewallConfigArgs> sqlFirewallConfig;
 
     /**
-     * @return (Updatable) Details to update the SQL firewall config.
+     * @return (Updatable) Details to update the SQL Firewall config.
      * 
      */
     public Optional<Output<DatabaseSecurityConfigSqlFirewallConfigArgs>> sqlFirewallConfig() {
@@ -330,7 +330,7 @@ public final class DatabaseSecurityConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param sqlFirewallConfig (Updatable) Details to update the SQL firewall config.
+         * @param sqlFirewallConfig (Updatable) Details to update the SQL Firewall config.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class DatabaseSecurityConfigArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param sqlFirewallConfig (Updatable) Details to update the SQL firewall config.
+         * @param sqlFirewallConfig (Updatable) Details to update the SQL Firewall config.
          * 
          * @return builder
          * 

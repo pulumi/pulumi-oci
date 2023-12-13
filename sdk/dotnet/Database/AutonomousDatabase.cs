@@ -1178,6 +1178,18 @@ namespace Pulumi.Oci.Database
         [Input("localAdgAutoFailoverMaxDataLossLimit")]
         public Input<int>? LocalAdgAutoFailoverMaxDataLossLimit { get; set; }
 
+        [Input("longTermBackupSchedules")]
+        private InputList<Inputs.AutonomousDatabaseLongTermBackupScheduleArgs>? _longTermBackupSchedules;
+
+        /// <summary>
+        /// Details for the long-term backup schedule.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabaseLongTermBackupScheduleArgs> LongTermBackupSchedules
+        {
+            get => _longTermBackupSchedules ?? (_longTermBackupSchedules = new InputList<Inputs.AutonomousDatabaseLongTermBackupScheduleArgs>());
+            set => _longTermBackupSchedules = value;
+        }
+
         /// <summary>
         /// (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         /// </summary>

@@ -199,7 +199,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAuditEventsAuditEventCollectionResult> AuditEventCollections;
         /// <summary>
-        /// The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
+        /// The OCID of the compartment containing the audit event. The compartment is the same as that of audit profile of the target database resource.
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;

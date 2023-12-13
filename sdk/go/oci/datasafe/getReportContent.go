@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Downloads the specified report in the form of PDF or XLXS.
+// Downloads the specified report in the form of .xls or .pdf.
 //
 // ## Example Usage
 //

@@ -76,7 +76,8 @@ type LookupProfileResult struct {
 	Name      string `pulumi:"name"`
 	ProfileId string `pulumi:"profileId"`
 	// The profile's current state.
-	State string `pulumi:"state"`
+	State      string                 `pulumi:"state"`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments []GetProfileTargetCompartment `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
@@ -172,6 +173,10 @@ func (o LookupProfileResultOutput) ProfileId() pulumi.StringOutput {
 // The profile's current state.
 func (o LookupProfileResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o LookupProfileResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // Optional. The compartments specified in the profile override for a recommendation.

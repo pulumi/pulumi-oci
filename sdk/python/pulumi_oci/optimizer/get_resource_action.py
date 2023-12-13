@@ -22,7 +22,7 @@ class GetResourceActionResult:
     """
     A collection of values returned by getResourceAction.
     """
-    def __init__(__self__, actions=None, category_id=None, compartment_id=None, compartment_name=None, estimated_cost_saving=None, extended_metadata=None, id=None, metadata=None, name=None, recommendation_id=None, resource_action_id=None, resource_id=None, resource_type=None, state=None, status=None, time_created=None, time_status_begin=None, time_status_end=None, time_updated=None):
+    def __init__(__self__, actions=None, category_id=None, compartment_id=None, compartment_name=None, estimated_cost_saving=None, extended_metadata=None, id=None, include_resource_metadata=None, metadata=None, name=None, recommendation_id=None, resource_action_id=None, resource_id=None, resource_type=None, state=None, status=None, time_created=None, time_status_begin=None, time_status_end=None, time_updated=None):
         if actions and not isinstance(actions, list):
             raise TypeError("Expected argument 'actions' to be a list")
         pulumi.set(__self__, "actions", actions)
@@ -44,6 +44,9 @@ class GetResourceActionResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if include_resource_metadata and not isinstance(include_resource_metadata, bool):
+            raise TypeError("Expected argument 'include_resource_metadata' to be a bool")
+        pulumi.set(__self__, "include_resource_metadata", include_resource_metadata)
         if metadata and not isinstance(metadata, dict):
             raise TypeError("Expected argument 'metadata' to be a dict")
         pulumi.set(__self__, "metadata", metadata)
@@ -136,6 +139,11 @@ class GetResourceActionResult:
         The unique OCID associated with the resource action.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="includeResourceMetadata")
+    def include_resource_metadata(self) -> Optional[bool]:
+        return pulumi.get(self, "include_resource_metadata")
 
     @property
     @pulumi.getter
@@ -244,6 +252,7 @@ class AwaitableGetResourceActionResult(GetResourceActionResult):
             estimated_cost_saving=self.estimated_cost_saving,
             extended_metadata=self.extended_metadata,
             id=self.id,
+            include_resource_metadata=self.include_resource_metadata,
             metadata=self.metadata,
             name=self.name,
             recommendation_id=self.recommendation_id,
@@ -258,7 +267,8 @@ class AwaitableGetResourceActionResult(GetResourceActionResult):
             time_updated=self.time_updated)
 
 
-def get_resource_action(resource_action_id: Optional[str] = None,
+def get_resource_action(include_resource_metadata: Optional[bool] = None,
+                        resource_action_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetResourceActionResult:
     """
     This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
@@ -271,13 +281,16 @@ def get_resource_action(resource_action_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"])
+    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"],
+        include_resource_metadata=var["resource_action_include_resource_metadata"])
     ```
 
 
+    :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.
     :param str resource_action_id: The unique OCID associated with the resource action.
     """
     __args__ = dict()
+    __args__['includeResourceMetadata'] = include_resource_metadata
     __args__['resourceActionId'] = resource_action_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Optimizer/getResourceAction:getResourceAction', __args__, opts=opts, typ=GetResourceActionResult).value
@@ -290,6 +303,7 @@ def get_resource_action(resource_action_id: Optional[str] = None,
         estimated_cost_saving=pulumi.get(__ret__, 'estimated_cost_saving'),
         extended_metadata=pulumi.get(__ret__, 'extended_metadata'),
         id=pulumi.get(__ret__, 'id'),
+        include_resource_metadata=pulumi.get(__ret__, 'include_resource_metadata'),
         metadata=pulumi.get(__ret__, 'metadata'),
         name=pulumi.get(__ret__, 'name'),
         recommendation_id=pulumi.get(__ret__, 'recommendation_id'),
@@ -305,7 +319,8 @@ def get_resource_action(resource_action_id: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_resource_action)
-def get_resource_action_output(resource_action_id: Optional[pulumi.Input[str]] = None,
+def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[Optional[bool]]] = None,
+                               resource_action_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetResourceActionResult]:
     """
     This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
@@ -318,10 +333,12 @@ def get_resource_action_output(resource_action_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"])
+    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=oci_optimizer_resource_action["test_resource_action"]["id"],
+        include_resource_metadata=var["resource_action_include_resource_metadata"])
     ```
 
 
+    :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.
     :param str resource_action_id: The unique OCID associated with the resource action.
     """
     ...

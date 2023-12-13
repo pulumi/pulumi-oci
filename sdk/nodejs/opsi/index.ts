@@ -10,6 +10,16 @@ export type AwrHub = import("./awrHub").AwrHub;
 export const AwrHub: typeof import("./awrHub").AwrHub = null as any;
 utilities.lazyLoad(exports, ["AwrHub"], () => require("./awrHub"));
 
+export { AwrHubSourceArgs, AwrHubSourceState } from "./awrHubSource";
+export type AwrHubSource = import("./awrHubSource").AwrHubSource;
+export const AwrHubSource: typeof import("./awrHubSource").AwrHubSource = null as any;
+utilities.lazyLoad(exports, ["AwrHubSource"], () => require("./awrHubSource"));
+
+export { AwrHubSourceAwrhubsourcesManagementArgs, AwrHubSourceAwrhubsourcesManagementState } from "./awrHubSourceAwrhubsourcesManagement";
+export type AwrHubSourceAwrhubsourcesManagement = import("./awrHubSourceAwrhubsourcesManagement").AwrHubSourceAwrhubsourcesManagement;
+export const AwrHubSourceAwrhubsourcesManagement: typeof import("./awrHubSourceAwrhubsourcesManagement").AwrHubSourceAwrhubsourcesManagement = null as any;
+utilities.lazyLoad(exports, ["AwrHubSourceAwrhubsourcesManagement"], () => require("./awrHubSourceAwrhubsourcesManagement"));
+
 export { DatabaseInsightArgs, DatabaseInsightState } from "./databaseInsight";
 export type DatabaseInsight = import("./databaseInsight").DatabaseInsight;
 export const DatabaseInsight: typeof import("./databaseInsight").DatabaseInsight = null as any;
@@ -44,6 +54,16 @@ export { GetAwrHubAwrSourcesSummaryArgs, GetAwrHubAwrSourcesSummaryResult, GetAw
 export const getAwrHubAwrSourcesSummary: typeof import("./getAwrHubAwrSourcesSummary").getAwrHubAwrSourcesSummary = null as any;
 export const getAwrHubAwrSourcesSummaryOutput: typeof import("./getAwrHubAwrSourcesSummary").getAwrHubAwrSourcesSummaryOutput = null as any;
 utilities.lazyLoad(exports, ["getAwrHubAwrSourcesSummary","getAwrHubAwrSourcesSummaryOutput"], () => require("./getAwrHubAwrSourcesSummary"));
+
+export { GetAwrHubSourceArgs, GetAwrHubSourceResult, GetAwrHubSourceOutputArgs } from "./getAwrHubSource";
+export const getAwrHubSource: typeof import("./getAwrHubSource").getAwrHubSource = null as any;
+export const getAwrHubSourceOutput: typeof import("./getAwrHubSource").getAwrHubSourceOutput = null as any;
+utilities.lazyLoad(exports, ["getAwrHubSource","getAwrHubSourceOutput"], () => require("./getAwrHubSource"));
+
+export { GetAwrHubSourcesArgs, GetAwrHubSourcesResult, GetAwrHubSourcesOutputArgs } from "./getAwrHubSources";
+export const getAwrHubSources: typeof import("./getAwrHubSources").getAwrHubSources = null as any;
+export const getAwrHubSourcesOutput: typeof import("./getAwrHubSources").getAwrHubSourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getAwrHubSources","getAwrHubSourcesOutput"], () => require("./getAwrHubSources"));
 
 export { GetAwrHubsArgs, GetAwrHubsResult, GetAwrHubsOutputArgs } from "./getAwrHubs";
 export const getAwrHubs: typeof import("./getAwrHubs").getAwrHubs = null as any;
@@ -217,6 +237,10 @@ const _module = {
         switch (type) {
             case "oci:Opsi/awrHub:AwrHub":
                 return new AwrHub(name, <any>undefined, { urn })
+            case "oci:Opsi/awrHubSource:AwrHubSource":
+                return new AwrHubSource(name, <any>undefined, { urn })
+            case "oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement":
+                return new AwrHubSourceAwrhubsourcesManagement(name, <any>undefined, { urn })
             case "oci:Opsi/databaseInsight:DatabaseInsight":
                 return new DatabaseInsight(name, <any>undefined, { urn })
             case "oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge":
@@ -245,6 +269,8 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Opsi/awrHub", _module)
+pulumi.runtime.registerResourceModule("oci", "Opsi/awrHubSource", _module)
+pulumi.runtime.registerResourceModule("oci", "Opsi/awrHubSourceAwrhubsourcesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/databaseInsight", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/enterpriseManagerBridge", _module)
 pulumi.runtime.registerResourceModule("oci", "Opsi/exadataInsight", _module)

@@ -4343,7 +4343,8 @@ type GetProfilesProfileCollectionItem struct {
 	// Optional. A filter that returns results that match the name specified.
 	Name string `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
-	State string `pulumi:"state"`
+	State      string                 `pulumi:"state"`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments []GetProfilesProfileCollectionItemTargetCompartment `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
@@ -4383,7 +4384,8 @@ type GetProfilesProfileCollectionItemArgs struct {
 	// Optional. A filter that returns results that match the name specified.
 	Name pulumi.StringInput `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
-	State pulumi.StringInput `pulumi:"state"`
+	State      pulumi.StringInput `pulumi:"state"`
+	SystemTags pulumi.MapInput    `pulumi:"systemTags"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments GetProfilesProfileCollectionItemTargetCompartmentArrayInput `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
@@ -4490,6 +4492,10 @@ func (o GetProfilesProfileCollectionItemOutput) Name() pulumi.StringOutput {
 // A filter that returns results that match the lifecycle state specified.
 func (o GetProfilesProfileCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetProfilesProfileCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // Optional. The compartments specified in the profile override for a recommendation.

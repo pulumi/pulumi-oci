@@ -115,6 +115,21 @@ public final class GetSensitiveTypesPlainArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    @Import(name="isCommon")
+    private @Nullable Boolean isCommon;
+
+    /**
+     * @return A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    public Optional<Boolean> isCommon() {
+        return Optional.ofNullable(this.isCommon);
+    }
+
+    /**
      * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
      * 
      */
@@ -222,6 +237,7 @@ public final class GetSensitiveTypesPlainArgs extends com.pulumi.resources.Invok
         this.displayName = $.displayName;
         this.entityType = $.entityType;
         this.filters = $.filters;
+        this.isCommon = $.isCommon;
         this.parentCategoryId = $.parentCategoryId;
         this.sensitiveTypeId = $.sensitiveTypeId;
         this.sensitiveTypeSource = $.sensitiveTypeSource;
@@ -321,6 +337,17 @@ public final class GetSensitiveTypesPlainArgs extends com.pulumi.resources.Invok
 
         public Builder filters(GetSensitiveTypesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isCommon A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCommon(@Nullable Boolean isCommon) {
+            $.isCommon = isCommon;
+            return this;
         }
 
         /**

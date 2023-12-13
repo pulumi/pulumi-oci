@@ -23,7 +23,7 @@ class GetSensitiveTypesResult:
     """
     A collection of values returned by getSensitiveTypes.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, default_masking_format_id=None, display_name=None, entity_type=None, filters=None, id=None, parent_category_id=None, sensitive_type_collections=None, sensitive_type_id=None, sensitive_type_source=None, state=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, default_masking_format_id=None, display_name=None, entity_type=None, filters=None, id=None, is_common=None, parent_category_id=None, sensitive_type_collections=None, sensitive_type_id=None, sensitive_type_source=None, state=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -48,6 +48,9 @@ class GetSensitiveTypesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_common and not isinstance(is_common, bool):
+            raise TypeError("Expected argument 'is_common' to be a bool")
+        pulumi.set(__self__, "is_common", is_common)
         if parent_category_id and not isinstance(parent_category_id, str):
             raise TypeError("Expected argument 'parent_category_id' to be a str")
         pulumi.set(__self__, "parent_category_id", parent_category_id)
@@ -126,6 +129,14 @@ class GetSensitiveTypesResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isCommon")
+    def is_common(self) -> Optional[bool]:
+        """
+        Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        """
+        return pulumi.get(self, "is_common")
+
+    @property
     @pulumi.getter(name="parentCategoryId")
     def parent_category_id(self) -> Optional[str]:
         """
@@ -184,6 +195,7 @@ class AwaitableGetSensitiveTypesResult(GetSensitiveTypesResult):
             entity_type=self.entity_type,
             filters=self.filters,
             id=self.id,
+            is_common=self.is_common,
             parent_category_id=self.parent_category_id,
             sensitive_type_collections=self.sensitive_type_collections,
             sensitive_type_id=self.sensitive_type_id,
@@ -200,6 +212,7 @@ def get_sensitive_types(access_level: Optional[str] = None,
                         display_name: Optional[str] = None,
                         entity_type: Optional[str] = None,
                         filters: Optional[Sequence[pulumi.InputType['GetSensitiveTypesFilterArgs']]] = None,
+                        is_common: Optional[bool] = None,
                         parent_category_id: Optional[str] = None,
                         sensitive_type_id: Optional[str] = None,
                         sensitive_type_source: Optional[str] = None,
@@ -224,6 +237,7 @@ def get_sensitive_types(access_level: Optional[str] = None,
         default_masking_format_id=oci_data_safe_default_masking_format["test_default_masking_format"]["id"],
         display_name=var["sensitive_type_display_name"],
         entity_type=var["sensitive_type_entity_type"],
+        is_common=var["sensitive_type_is_common"],
         parent_category_id=oci_marketplace_category["test_category"]["id"],
         sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
         sensitive_type_source=var["sensitive_type_sensitive_type_source"],
@@ -239,6 +253,7 @@ def get_sensitive_types(access_level: Optional[str] = None,
     :param str default_masking_format_id: A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
     :param str display_name: A filter to return only resources that match the specified display name.
     :param str entity_type: A filter to return the sensitive type resources based on the value of their entityType attribute.
+    :param bool is_common: A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
     :param str parent_category_id: A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
     :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
     :param str sensitive_type_source: A filter to return the sensitive type resources based on the value of their source attribute.
@@ -258,6 +273,7 @@ def get_sensitive_types(access_level: Optional[str] = None,
     __args__['displayName'] = display_name
     __args__['entityType'] = entity_type
     __args__['filters'] = filters
+    __args__['isCommon'] = is_common
     __args__['parentCategoryId'] = parent_category_id
     __args__['sensitiveTypeId'] = sensitive_type_id
     __args__['sensitiveTypeSource'] = sensitive_type_source
@@ -276,6 +292,7 @@ def get_sensitive_types(access_level: Optional[str] = None,
         entity_type=pulumi.get(__ret__, 'entity_type'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        is_common=pulumi.get(__ret__, 'is_common'),
         parent_category_id=pulumi.get(__ret__, 'parent_category_id'),
         sensitive_type_collections=pulumi.get(__ret__, 'sensitive_type_collections'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
@@ -293,6 +310,7 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]
                                display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                entity_type: Optional[pulumi.Input[Optional[str]]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSensitiveTypesFilterArgs']]]]] = None,
+                               is_common: Optional[pulumi.Input[Optional[bool]]] = None,
                                parent_category_id: Optional[pulumi.Input[Optional[str]]] = None,
                                sensitive_type_id: Optional[pulumi.Input[Optional[str]]] = None,
                                sensitive_type_source: Optional[pulumi.Input[Optional[str]]] = None,
@@ -317,6 +335,7 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]
         default_masking_format_id=oci_data_safe_default_masking_format["test_default_masking_format"]["id"],
         display_name=var["sensitive_type_display_name"],
         entity_type=var["sensitive_type_entity_type"],
+        is_common=var["sensitive_type_is_common"],
         parent_category_id=oci_marketplace_category["test_category"]["id"],
         sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
         sensitive_type_source=var["sensitive_type_sensitive_type_source"],
@@ -332,6 +351,7 @@ def get_sensitive_types_output(access_level: Optional[pulumi.Input[Optional[str]
     :param str default_masking_format_id: A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
     :param str display_name: A filter to return only resources that match the specified display name.
     :param str entity_type: A filter to return the sensitive type resources based on the value of their entityType attribute.
+    :param bool is_common: A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
     :param str parent_category_id: A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
     :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
     :param str sensitive_type_source: A filter to return the sensitive type resources based on the value of their source attribute.

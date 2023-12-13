@@ -69,7 +69,7 @@ export interface GetScheduleResult {
      */
     readonly name: string;
     /**
-     * Specifies supported output file format.
+     * Specifies the supported output file format.
      */
     readonly outputFileFormat: string;
     /**
@@ -81,7 +81,7 @@ export interface GetScheduleResult {
      */
     readonly resultLocations: outputs.MeteringComputation.GetScheduleResultLocation[];
     /**
-     * The saved report id which can also be used to generate query.
+     * The saved report ID which can also be used to generate a query.
      */
     readonly savedReportId: string;
     readonly scheduleId: string;

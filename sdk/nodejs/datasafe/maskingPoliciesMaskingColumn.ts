@@ -56,6 +56,7 @@ import * as utilities from "../utilities";
  *             groupingColumns: _var.masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
  *             length: _var.masking_policies_masking_column_masking_formats_format_entries_length,
  *             libraryMaskingFormatId: oci_data_safe_library_masking_format.test_library_masking_format.id,
+ *             pattern: _var.masking_policies_masking_column_masking_formats_format_entries_pattern,
  *             postProcessingFunction: _var.masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
  *             randomLists: _var.masking_policies_masking_column_masking_formats_format_entries_random_list,
  *             regularExpression: _var.masking_policies_masking_column_masking_formats_format_entries_regular_expression,

@@ -58,7 +58,7 @@ type LookupSdmMaskingPolicyDifferenceArgs struct {
 
 // A collection of values returned by getSdmMaskingPolicyDifference.
 type LookupSdmMaskingPolicyDifferenceResult struct {
-	// The OCID of the compartment that contains the SDM masking policy difference.
+	// The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -68,7 +68,7 @@ type LookupSdmMaskingPolicyDifferenceResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the SDM masking policy difference.
+	// The OCID of the Sensitive data model and masking policy difference resource.
 	Id string `pulumi:"id"`
 	// The OCID of the masking policy associated with the SDM masking policy difference.
 	MaskingPolicyId              string `pulumi:"maskingPolicyId"`
@@ -123,7 +123,7 @@ func (o LookupSdmMaskingPolicyDifferenceResultOutput) ToLookupSdmMaskingPolicyDi
 	return o
 }
 
-// The OCID of the compartment that contains the SDM masking policy difference.
+// The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
 func (o LookupSdmMaskingPolicyDifferenceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -148,7 +148,7 @@ func (o LookupSdmMaskingPolicyDifferenceResultOutput) FreeformTags() pulumi.MapO
 	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the SDM masking policy difference.
+// The OCID of the Sensitive data model and masking policy difference resource.
 func (o LookupSdmMaskingPolicyDifferenceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSdmMaskingPolicyDifferenceResult) string { return v.Id }).(pulumi.StringOutput)
 }

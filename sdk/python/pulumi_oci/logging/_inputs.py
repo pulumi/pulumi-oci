@@ -73,18 +73,22 @@ class LogConfigurationSourceArgs:
                  category: pulumi.Input[str],
                  resource: pulumi.Input[str],
                  service: pulumi.Input[str],
-                 source_type: pulumi.Input[str]):
+                 source_type: pulumi.Input[str],
+                 parameters: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         :param pulumi.Input[str] category: Log object category.
         :param pulumi.Input[str] resource: The unique identifier of the resource emitting the log.
         :param pulumi.Input[str] service: Service generating log.
         :param pulumi.Input[str] source_type: The log source.
                * **OCISERVICE:** Oracle Service.
+        :param pulumi.Input[Mapping[str, Any]] parameters: (Updatable) Log category parameters are stored here.
         """
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "resource", resource)
         pulumi.set(__self__, "service", service)
         pulumi.set(__self__, "source_type", source_type)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
 
     @property
     @pulumi.getter
@@ -134,6 +138,18 @@ class LogConfigurationSourceArgs:
     @source_type.setter
     def source_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "source_type", value)
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Log category parameters are stored here.
+        """
+        return pulumi.get(self, "parameters")
+
+    @parameters.setter
+    def parameters(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "parameters", value)
 
 
 @pulumi.input_type

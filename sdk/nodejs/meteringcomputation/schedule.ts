@@ -115,7 +115,7 @@ export class Schedule extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * (Updatable) Specifies supported output file format.
+     * (Updatable) Specifies the supported output file format.
      */
     public readonly outputFileFormat!: pulumi.Output<string>;
     /**
@@ -127,7 +127,7 @@ export class Schedule extends pulumi.CustomResource {
      */
     public readonly resultLocation!: pulumi.Output<outputs.MeteringComputation.ScheduleResultLocation>;
     /**
-     * The saved report id which can also be used to generate query.
+     * The saved report ID which can also be used to generate a query.
      */
     public readonly savedReportId!: pulumi.Output<string>;
     /**
@@ -247,7 +247,7 @@ export interface ScheduleState {
      */
     name?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies supported output file format.
+     * (Updatable) Specifies the supported output file format.
      */
     outputFileFormat?: pulumi.Input<string>;
     /**
@@ -259,7 +259,7 @@ export interface ScheduleState {
      */
     resultLocation?: pulumi.Input<inputs.MeteringComputation.ScheduleResultLocation>;
     /**
-     * The saved report id which can also be used to generate query.
+     * The saved report ID which can also be used to generate a query.
      */
     savedReportId?: pulumi.Input<string>;
     /**
@@ -317,7 +317,7 @@ export interface ScheduleArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies supported output file format.
+     * (Updatable) Specifies the supported output file format.
      */
     outputFileFormat?: pulumi.Input<string>;
     /**
@@ -329,7 +329,7 @@ export interface ScheduleArgs {
      */
     resultLocation: pulumi.Input<inputs.MeteringComputation.ScheduleResultLocation>;
     /**
-     * The saved report id which can also be used to generate query.
+     * The saved report ID which can also be used to generate a query.
      */
     savedReportId?: pulumi.Input<string>;
     /**

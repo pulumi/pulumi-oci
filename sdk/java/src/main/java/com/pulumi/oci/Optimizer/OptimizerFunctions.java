@@ -739,6 +739,7 @@ public final class OptimizerFunctions {
      *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.history_compartment_id_in_subtree())
+     *             .includeResourceMetadata(var_.history_include_resource_metadata())
      *             .name(var_.history_name())
      *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
      *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
@@ -786,6 +787,7 @@ public final class OptimizerFunctions {
      *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.history_compartment_id_in_subtree())
+     *             .includeResourceMetadata(var_.history_include_resource_metadata())
      *             .name(var_.history_name())
      *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
      *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
@@ -833,6 +835,7 @@ public final class OptimizerFunctions {
      *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.history_compartment_id_in_subtree())
+     *             .includeResourceMetadata(var_.history_include_resource_metadata())
      *             .name(var_.history_name())
      *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
      *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
@@ -880,6 +883,7 @@ public final class OptimizerFunctions {
      *         final var testHistories = OptimizerFunctions.getHistories(GetHistoriesArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .compartmentIdInSubtree(var_.history_compartment_id_in_subtree())
+     *             .includeResourceMetadata(var_.history_include_resource_metadata())
      *             .name(var_.history_name())
      *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
      *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
@@ -2261,6 +2265,7 @@ public final class OptimizerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
      *             .resourceActionId(oci_optimizer_resource_action.test_resource_action().id())
+     *             .includeResourceMetadata(var_.resource_action_include_resource_metadata())
      *             .build());
      * 
      *     }
@@ -2300,6 +2305,7 @@ public final class OptimizerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
      *             .resourceActionId(oci_optimizer_resource_action.test_resource_action().id())
+     *             .includeResourceMetadata(var_.resource_action_include_resource_metadata())
      *             .build());
      * 
      *     }
@@ -2339,6 +2345,7 @@ public final class OptimizerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
      *             .resourceActionId(oci_optimizer_resource_action.test_resource_action().id())
+     *             .includeResourceMetadata(var_.resource_action_include_resource_metadata())
      *             .build());
      * 
      *     }
@@ -2378,6 +2385,7 @@ public final class OptimizerFunctions {
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
      *             .resourceActionId(oci_optimizer_resource_action.test_resource_action().id())
+     *             .includeResourceMetadata(var_.resource_action_include_resource_metadata())
      *             .build());
      * 
      *     }
@@ -2420,6 +2428,7 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
      *             .childTenancyIds(var_.resource_action_child_tenancy_ids())
      *             .includeOrganization(var_.resource_action_include_organization())
+     *             .includeResourceMetadata(var_.resource_action_include_resource_metadata())
      *             .name(var_.resource_action_name())
      *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
      *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
@@ -2468,6 +2477,7 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
      *             .childTenancyIds(var_.resource_action_child_tenancy_ids())
      *             .includeOrganization(var_.resource_action_include_organization())
+     *             .includeResourceMetadata(var_.resource_action_include_resource_metadata())
      *             .name(var_.resource_action_name())
      *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
      *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
@@ -2516,6 +2526,7 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
      *             .childTenancyIds(var_.resource_action_child_tenancy_ids())
      *             .includeOrganization(var_.resource_action_include_organization())
+     *             .includeResourceMetadata(var_.resource_action_include_resource_metadata())
      *             .name(var_.resource_action_name())
      *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
      *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())
@@ -2564,6 +2575,7 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(var_.resource_action_compartment_id_in_subtree())
      *             .childTenancyIds(var_.resource_action_child_tenancy_ids())
      *             .includeOrganization(var_.resource_action_include_organization())
+     *             .includeResourceMetadata(var_.resource_action_include_resource_metadata())
      *             .name(var_.resource_action_name())
      *             .recommendationId(oci_optimizer_recommendation.test_recommendation().id())
      *             .recommendationName(oci_optimizer_recommendation.test_recommendation().name())

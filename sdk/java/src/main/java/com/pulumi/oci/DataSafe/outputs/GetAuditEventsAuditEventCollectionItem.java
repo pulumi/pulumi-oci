@@ -18,7 +18,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String actionTaken;
     /**
-     * @return The time of the audit event occurrence in the target database.
+     * @return The time that the audit event occurs in the target database.
      * 
      */
     private String auditEventTime;
@@ -58,7 +58,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String clientIp;
     /**
-     * @return The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     * @return The application from which the audit event was generated. For example SQL Plus or SQL Developer.
      * 
      */
     private String clientProgram;
@@ -101,12 +101,12 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String errorCode;
     /**
-     * @return The detailed message on why the Error occurred.
+     * @return The detailed message on why the error occurred.
      * 
      */
     private String errorMessage;
     /**
-     * @return The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * @return The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
      * 
      */
     private String eventName;
@@ -141,12 +141,12 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String objectOwner;
     /**
-     * @return The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+     * @return The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
      * 
      */
     private String objectType;
     /**
-     * @return The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * @return The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
      * 
      */
     private String operation;
@@ -195,7 +195,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.actionTaken;
     }
     /**
-     * @return The time of the audit event occurrence in the target database.
+     * @return The time that the audit event occurs in the target database.
      * 
      */
     public String auditEventTime() {
@@ -251,7 +251,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.clientIp;
     }
     /**
-     * @return The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+     * @return The application from which the audit event was generated. For example SQL Plus or SQL Developer.
      * 
      */
     public String clientProgram() {
@@ -310,14 +310,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.errorCode;
     }
     /**
-     * @return The detailed message on why the Error occurred.
+     * @return The detailed message on why the error occurred.
      * 
      */
     public String errorMessage() {
         return this.errorMessage;
     }
     /**
-     * @return The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+     * @return The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
      * 
      */
     public String eventName() {
@@ -366,14 +366,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.objectOwner;
     }
     /**
-     * @return The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+     * @return The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
      * 
      */
     public String objectType() {
         return this.objectType;
     }
     /**
-     * @return The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+     * @return The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
      * 
      */
     public String operation() {

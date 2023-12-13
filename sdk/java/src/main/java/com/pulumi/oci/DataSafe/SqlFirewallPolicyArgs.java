@@ -19,14 +19,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     public static final SqlFirewallPolicyArgs Empty = new SqlFirewallPolicyArgs();
 
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      * 
      */
     @Import(name="allowedClientIps")
     private @Nullable Output<List<String>> allowedClientIps;
 
     /**
-     * @return (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * @return (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      * 
      */
     public Optional<Output<List<String>>> allowedClientIps() {
@@ -34,14 +34,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      * 
      */
     @Import(name="allowedClientOsUsernames")
     private @Nullable Output<List<String>> allowedClientOsUsernames;
 
     /**
-     * @return (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * @return (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      * 
      */
     public Optional<Output<List<String>>> allowedClientOsUsernames() {
@@ -49,14 +49,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      * 
      */
     @Import(name="allowedClientPrograms")
     private @Nullable Output<List<String>> allowedClientPrograms;
 
     /**
-     * @return (Updatable) List of allowed client programs for the SQL firewall policy.
+     * @return (Updatable) List of allowed client programs for the SQL Firewall policy.
      * 
      */
     public Optional<Output<List<String>>> allowedClientPrograms() {
@@ -64,14 +64,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * @return (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -94,14 +94,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the SQL firewall policy.
+     * @return (Updatable) The description of the SQL Firewall policy.
      * 
      */
     public Optional<Output<String>> description() {
@@ -109,14 +109,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * @return (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -124,14 +124,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      * 
      */
     @Import(name="enforcementScope")
     private @Nullable Output<String> enforcementScope;
 
     /**
-     * @return (Updatable) Specifies the SQL firewall policy enforcement option.
+     * @return (Updatable) Specifies the SQL Firewall policy enforcement option.
      * 
      */
     public Optional<Output<String>> enforcementScope() {
@@ -154,14 +154,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The OCID of the SQL firewall policy resource.
+     * The OCID of the SQL Firewall policy resource.
      * 
      */
     @Import(name="sqlFirewallPolicyId", required=true)
     private Output<String> sqlFirewallPolicyId;
 
     /**
-     * @return The OCID of the SQL firewall policy resource.
+     * @return The OCID of the SQL Firewall policy resource.
      * 
      */
     public Output<String> sqlFirewallPolicyId() {
@@ -169,14 +169,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+     * (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+     * @return (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      * 
      */
     public Optional<Output<String>> status() {
@@ -184,14 +184,14 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+     * (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      * 
      */
     @Import(name="violationAction")
     private @Nullable Output<String> violationAction;
 
     /**
-     * @return (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+     * @return (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      * 
      */
     public Optional<Output<String>> violationAction() {
@@ -199,7 +199,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -209,7 +209,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
     private @Nullable Output<String> violationAudit;
 
     /**
-     * @return (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+     * @return (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -256,7 +256,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientIps (Updatable) List of allowed ip addresses for the SQL firewall policy.
+         * @param allowedClientIps (Updatable) List of allowed ip addresses for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -267,7 +267,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientIps (Updatable) List of allowed ip addresses for the SQL firewall policy.
+         * @param allowedClientIps (Updatable) List of allowed ip addresses for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -277,7 +277,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientIps (Updatable) List of allowed ip addresses for the SQL firewall policy.
+         * @param allowedClientIps (Updatable) List of allowed ip addresses for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientOsUsernames (Updatable) List of allowed operating system user names for the SQL firewall policy.
+         * @param allowedClientOsUsernames (Updatable) List of allowed operating system user names for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -298,7 +298,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientOsUsernames (Updatable) List of allowed operating system user names for the SQL firewall policy.
+         * @param allowedClientOsUsernames (Updatable) List of allowed operating system user names for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -308,7 +308,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientOsUsernames (Updatable) List of allowed operating system user names for the SQL firewall policy.
+         * @param allowedClientOsUsernames (Updatable) List of allowed operating system user names for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -318,7 +318,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientPrograms (Updatable) List of allowed client programs for the SQL firewall policy.
+         * @param allowedClientPrograms (Updatable) List of allowed client programs for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientPrograms (Updatable) List of allowed client programs for the SQL firewall policy.
+         * @param allowedClientPrograms (Updatable) List of allowed client programs for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -339,7 +339,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param allowedClientPrograms (Updatable) List of allowed client programs for the SQL firewall policy.
+         * @param allowedClientPrograms (Updatable) List of allowed client programs for the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the SQL firewall policy.
+         * @param compartmentId (Updatable) The OCID of the compartment containing the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the SQL firewall policy.
+         * @param compartmentId (Updatable) The OCID of the compartment containing the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) The description of the SQL firewall policy.
+         * @param description (Updatable) The description of the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -402,7 +402,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) The description of the SQL firewall policy.
+         * @param description (Updatable) The description of the SQL Firewall policy.
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+         * @param displayName (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
          * 
          * @return builder
          * 
@@ -423,7 +423,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param displayName (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+         * @param displayName (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param enforcementScope (Updatable) Specifies the SQL firewall policy enforcement option.
+         * @param enforcementScope (Updatable) Specifies the SQL Firewall policy enforcement option.
          * 
          * @return builder
          * 
@@ -444,7 +444,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param enforcementScope (Updatable) Specifies the SQL firewall policy enforcement option.
+         * @param enforcementScope (Updatable) Specifies the SQL Firewall policy enforcement option.
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param sqlFirewallPolicyId The OCID of the SQL firewall policy resource.
+         * @param sqlFirewallPolicyId The OCID of the SQL Firewall policy resource.
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param sqlFirewallPolicyId The OCID of the SQL firewall policy resource.
+         * @param sqlFirewallPolicyId The OCID of the SQL Firewall policy resource.
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+         * @param status (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+         * @param status (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param violationAction (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+         * @param violationAction (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
          * 
          * @return builder
          * 
@@ -528,7 +528,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param violationAction (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+         * @param violationAction (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
          * 
          * @return builder
          * 
@@ -538,7 +538,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param violationAudit (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+         * @param violationAudit (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -552,7 +552,7 @@ public final class SqlFirewallPolicyArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param violationAudit (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+         * @param violationAudit (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

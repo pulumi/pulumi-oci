@@ -221,8 +221,8 @@ class _ReportDefinitionState:
         :param pulumi.Input[str] parent_id: The OCID of the parent report definition.
         :param pulumi.Input[str] record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param pulumi.Input[str] schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
-        :param pulumi.Input[str] scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource should be created.
-        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of the report ( either XLS or PDF )
+        :param pulumi.Input[str] scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource will be created.
+        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf )
         :param pulumi.Input[str] scheduled_report_name: The name of the report to be scheduled.
         :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
@@ -233,8 +233,8 @@ class _ReportDefinitionState:
         :param pulumi.Input[str] state: The current state of the report.
         :param pulumi.Input[Sequence[pulumi.Input['ReportDefinitionSummaryArgs']]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: Specifies the data and time the report definition was created.
-        :param pulumi.Input[str] time_updated: The date and time the report definition was update.
+        :param pulumi.Input[str] time_created: Specifies the date and time the report definition was created.
+        :param pulumi.Input[str] time_updated: The date and time the report definition was updated.
         """
         if category is not None:
             pulumi.set(__self__, "category", category)
@@ -485,7 +485,7 @@ class _ReportDefinitionState:
     @pulumi.getter(name="scheduledReportCompartmentId")
     def scheduled_report_compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the compartment in which the scheduled resource should be created.
+        The OCID of the compartment in which the scheduled resource will be created.
         """
         return pulumi.get(self, "scheduled_report_compartment_id")
 
@@ -497,7 +497,7 @@ class _ReportDefinitionState:
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the format of the report ( either XLS or PDF )
+        Specifies the format of the report ( either .xls or .pdf )
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
@@ -585,7 +585,7 @@ class _ReportDefinitionState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the data and time the report definition was created.
+        Specifies the date and time the report definition was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -597,7 +597,7 @@ class _ReportDefinitionState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the report definition was update.
+        The date and time the report definition was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -892,8 +892,8 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[str] parent_id: The OCID of the parent report definition.
         :param pulumi.Input[str] record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param pulumi.Input[str] schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
-        :param pulumi.Input[str] scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource should be created.
-        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of the report ( either XLS or PDF )
+        :param pulumi.Input[str] scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource will be created.
+        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf )
         :param pulumi.Input[str] scheduled_report_name: The name of the report to be scheduled.
         :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param pulumi.Input[str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
@@ -904,8 +904,8 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the report.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReportDefinitionSummaryArgs']]]] summaries: (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: Specifies the data and time the report definition was created.
-        :param pulumi.Input[str] time_updated: The date and time the report definition was update.
+        :param pulumi.Input[str] time_created: Specifies the date and time the report definition was created.
+        :param pulumi.Input[str] time_updated: The date and time the report definition was updated.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1071,7 +1071,7 @@ class ReportDefinition(pulumi.CustomResource):
     @pulumi.getter(name="scheduledReportCompartmentId")
     def scheduled_report_compartment_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the compartment in which the scheduled resource should be created.
+        The OCID of the compartment in which the scheduled resource will be created.
         """
         return pulumi.get(self, "scheduled_report_compartment_id")
 
@@ -1079,7 +1079,7 @@ class ReportDefinition(pulumi.CustomResource):
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> pulumi.Output[str]:
         """
-        Specifies the format of the report ( either XLS or PDF )
+        Specifies the format of the report ( either .xls or .pdf )
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
@@ -1139,7 +1139,7 @@ class ReportDefinition(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        Specifies the data and time the report definition was created.
+        Specifies the date and time the report definition was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -1147,7 +1147,7 @@ class ReportDefinition(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The date and time the report definition was update.
+        The date and time the report definition was updated.
         """
         return pulumi.get(self, "time_updated")
 

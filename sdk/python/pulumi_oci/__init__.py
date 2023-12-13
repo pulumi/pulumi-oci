@@ -2277,6 +2277,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/autonomousDatabaseSaasAdminUser",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser": "AutonomousDatabaseSaasAdminUser"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/autonomousDatabaseWallet",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -3549,6 +3557,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsIdentityPropagationTrust",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust": "DomainsIdentityPropagationTrust"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/domainsIdentityProvider",
   "fqn": "pulumi_oci.identity",
   "classes": {
@@ -4365,6 +4381,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "MeteringComputation/usageCarbonEmission",
+  "fqn": "pulumi_oci.meteringcomputation",
+  "classes": {
+   "oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission": "UsageCarbonEmission"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "MeteringComputation/usageCarbonEmissionsQuery",
+  "fqn": "pulumi_oci.meteringcomputation",
+  "classes": {
+   "oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery": "UsageCarbonEmissionsQuery"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Monitoring/alarm",
   "fqn": "pulumi_oci.monitoring",
   "classes": {
@@ -4745,6 +4777,22 @@ _utilities.register(
   "fqn": "pulumi_oci.opsi",
   "classes": {
    "oci:Opsi/awrHub:AwrHub": "AwrHub"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Opsi/awrHubSource",
+  "fqn": "pulumi_oci.opsi",
+  "classes": {
+   "oci:Opsi/awrHubSource:AwrHubSource": "AwrHubSource"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Opsi/awrHubSourceAwrhubsourcesManagement",
+  "fqn": "pulumi_oci.opsi",
+  "classes": {
+   "oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement": "AwrHubSourceAwrhubsourcesManagement"
   }
  },
  {

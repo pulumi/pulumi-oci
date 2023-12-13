@@ -46,9 +46,17 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMetastoresMetastoreLockResult> Locks;
+        /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
         /// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
@@ -76,7 +84,11 @@ namespace Pulumi.Oci.DataCatalog.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetMetastoresMetastoreLockResult> locks,
+
             string state,
+
+            ImmutableDictionary<string, object> systemTags,
 
             string timeCreated,
 
@@ -90,7 +102,9 @@ namespace Pulumi.Oci.DataCatalog.Outputs
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

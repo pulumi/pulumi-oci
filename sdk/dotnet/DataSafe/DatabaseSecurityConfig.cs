@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<int?> RefreshTrigger { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Details to update the SQL firewall config.
+        /// (Updatable) Details to update the SQL Firewall config.
         /// </summary>
         [Output("sqlFirewallConfig")]
         public Output<Outputs.DatabaseSecurityConfigSqlFirewallConfig> SqlFirewallConfig { get; private set; } = null!;
@@ -224,7 +224,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<int>? RefreshTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable) Details to update the SQL firewall config.
+        /// (Updatable) Details to update the SQL Firewall config.
         /// </summary>
         [Input("sqlFirewallConfig")]
         public Input<Inputs.DatabaseSecurityConfigSqlFirewallConfigArgs>? SqlFirewallConfig { get; set; }
@@ -302,7 +302,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<int>? RefreshTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable) Details to update the SQL firewall config.
+        /// (Updatable) Details to update the SQL Firewall config.
         /// </summary>
         [Input("sqlFirewallConfig")]
         public Input<Inputs.DatabaseSecurityConfigSqlFirewallConfigGetArgs>? SqlFirewallConfig { get; set; }

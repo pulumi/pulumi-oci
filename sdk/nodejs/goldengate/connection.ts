@@ -74,6 +74,7 @@ import * as utilities from "../utilities";
  *     producerProperties: _var.connection_producer_properties,
  *     publicKeyFingerprint: _var.connection_public_key_fingerprint,
  *     region: _var.connection_region,
+ *     routingMethod: _var.connection_routing_method,
  *     sasToken: _var.connection_sas_token,
  *     secretAccessKey: _var.connection_secret_access_key,
  *     securityProtocol: _var.connection_security_protocol,
@@ -299,11 +300,12 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly port!: pulumi.Output<number>;
     /**
-     * (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
     public readonly privateIp!: pulumi.Output<string>;
     /**
-     * (Updatable) The base64 encoded content of private key file in PEM format.
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      */
     public readonly privateKeyFile!: pulumi.Output<string>;
     /**
@@ -322,6 +324,10 @@ export class Connection extends pulumi.CustomResource {
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      */
     public readonly region!: pulumi.Output<string>;
+    /**
+     * (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     */
+    public readonly routingMethod!: pulumi.Output<string>;
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
      */
@@ -387,7 +393,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly streamPoolId!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
@@ -501,6 +507,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["producerProperties"] = state ? state.producerProperties : undefined;
             resourceInputs["publicKeyFingerprint"] = state ? state.publicKeyFingerprint : undefined;
             resourceInputs["region"] = state ? state.region : undefined;
+            resourceInputs["routingMethod"] = state ? state.routingMethod : undefined;
             resourceInputs["sasToken"] = state ? state.sasToken : undefined;
             resourceInputs["secretAccessKey"] = state ? state.secretAccessKey : undefined;
             resourceInputs["securityProtocol"] = state ? state.securityProtocol : undefined;
@@ -588,6 +595,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["producerProperties"] = args ? args.producerProperties : undefined;
             resourceInputs["publicKeyFingerprint"] = args ? args.publicKeyFingerprint : undefined;
             resourceInputs["region"] = args ? args.region : undefined;
+            resourceInputs["routingMethod"] = args ? args.routingMethod : undefined;
             resourceInputs["sasToken"] = args ? args.sasToken : undefined;
             resourceInputs["secretAccessKey"] = args ? args.secretAccessKey : undefined;
             resourceInputs["securityProtocol"] = args ? args.securityProtocol : undefined;
@@ -793,11 +801,12 @@ export interface ConnectionState {
      */
     port?: pulumi.Input<number>;
     /**
-     * (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
     privateIp?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded content of private key file in PEM format.
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      */
     privateKeyFile?: pulumi.Input<string>;
     /**
@@ -816,6 +825,10 @@ export interface ConnectionState {
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      */
     region?: pulumi.Input<string>;
+    /**
+     * (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     */
+    routingMethod?: pulumi.Input<string>;
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
      */
@@ -881,7 +894,7 @@ export interface ConnectionState {
      */
     streamPoolId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     subnetId?: pulumi.Input<string>;
     /**
@@ -1095,11 +1108,12 @@ export interface ConnectionArgs {
      */
     port?: pulumi.Input<number>;
     /**
-     * (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      */
     privateIp?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded content of private key file in PEM format.
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      */
     privateKeyFile?: pulumi.Input<string>;
     /**
@@ -1118,6 +1132,10 @@ export interface ConnectionArgs {
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      */
     region?: pulumi.Input<string>;
+    /**
+     * (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     */
+    routingMethod?: pulumi.Input<string>;
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
      */
@@ -1179,7 +1197,7 @@ export interface ConnectionArgs {
      */
     streamPoolId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     subnetId?: pulumi.Input<string>;
     /**

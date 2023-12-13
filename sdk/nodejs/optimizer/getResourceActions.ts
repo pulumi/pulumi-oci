@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: _var.resource_action_compartment_id_in_subtree,
  *     childTenancyIds: _var.resource_action_child_tenancy_ids,
  *     includeOrganization: _var.resource_action_include_organization,
+ *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
  *     name: _var.resource_action_name,
  *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
  *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
@@ -40,6 +41,7 @@ export function getResourceActions(args: GetResourceActionsArgs, opts?: pulumi.I
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "includeOrganization": args.includeOrganization,
+        "includeResourceMetadata": args.includeResourceMetadata,
         "name": args.name,
         "recommendationId": args.recommendationId,
         "recommendationName": args.recommendationName,
@@ -83,6 +85,10 @@ export interface GetResourceActionsArgs {
      */
     includeOrganization?: boolean;
     /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    includeResourceMetadata?: boolean;
+    /**
      * Optional. A filter that returns results that match the name specified.
      */
     name?: string;
@@ -124,6 +130,7 @@ export interface GetResourceActionsResult {
      */
     readonly id: string;
     readonly includeOrganization?: boolean;
+    readonly includeResourceMetadata?: boolean;
     /**
      * The name assigned to the resource.
      */
@@ -166,6 +173,7 @@ export interface GetResourceActionsResult {
  *     compartmentIdInSubtree: _var.resource_action_compartment_id_in_subtree,
  *     childTenancyIds: _var.resource_action_child_tenancy_ids,
  *     includeOrganization: _var.resource_action_include_organization,
+ *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
  *     name: _var.resource_action_name,
  *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
  *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
@@ -212,6 +220,10 @@ export interface GetResourceActionsOutputArgs {
      * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      */
     includeOrganization?: pulumi.Input<boolean>;
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    includeResourceMetadata?: pulumi.Input<boolean>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */

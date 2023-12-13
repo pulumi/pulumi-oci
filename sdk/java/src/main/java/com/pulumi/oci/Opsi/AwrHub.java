@@ -46,10 +46,10 @@ import javax.annotation.Nullable;
  *         var testAwrHub = new AwrHub(&#34;testAwrHub&#34;, AwrHubArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .displayName(var_.awr_hub_display_name())
- *             .objectStorageBucketName(oci_objectstorage_bucket.test_bucket().name())
  *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .objectStorageBucketName(oci_objectstorage_bucket.test_bucket().name())
  *             .build());
  * 
  *     }
@@ -136,6 +136,20 @@ public class AwrHub extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * Dst Time Zone Version of the AWR Hub
+     * 
+     */
+    @Export(name="hubDstTimezoneVersion", refs={String.class}, tree="[0]")
+    private Output<String> hubDstTimezoneVersion;
+
+    /**
+     * @return Dst Time Zone Version of the AWR Hub
+     * 
+     */
+    public Output<String> hubDstTimezoneVersion() {
+        return this.hubDstTimezoneVersion;
     }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

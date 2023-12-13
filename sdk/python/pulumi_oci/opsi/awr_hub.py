@@ -16,15 +16,14 @@ class AwrHubArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
-                 object_storage_bucket_name: pulumi.Input[str],
                  operations_insights_warehouse_id: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 object_storage_bucket_name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AwrHub resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] display_name: (Updatable) User-friedly name of AWR Hub that does not have to be unique.
-        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
         :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
                
                
@@ -32,15 +31,17 @@ class AwrHubArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
         pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if object_storage_bucket_name is not None:
+            pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -65,18 +66,6 @@ class AwrHubArgs:
     @display_name.setter
     def display_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "display_name", value)
-
-    @property
-    @pulumi.getter(name="objectStorageBucketName")
-    def object_storage_bucket_name(self) -> pulumi.Input[str]:
-        """
-        Object Storage Bucket Name
-        """
-        return pulumi.get(self, "object_storage_bucket_name")
-
-    @object_storage_bucket_name.setter
-    def object_storage_bucket_name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "object_storage_bucket_name", value)
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
@@ -118,6 +107,18 @@ class AwrHubArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="objectStorageBucketName")
+    def object_storage_bucket_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Object Storage Bucket Name
+        """
+        return pulumi.get(self, "object_storage_bucket_name")
+
+    @object_storage_bucket_name.setter
+    def object_storage_bucket_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object_storage_bucket_name", value)
+
 
 @pulumi.input_type
 class _AwrHubState:
@@ -127,6 +128,7 @@ class _AwrHubState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 hub_dst_timezone_version: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  object_storage_bucket_name: Optional[pulumi.Input[str]] = None,
                  operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
@@ -141,6 +143,7 @@ class _AwrHubState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) User-friedly name of AWR Hub that does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] hub_dst_timezone_version: Dst Time Zone Version of the AWR Hub
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
         :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
@@ -163,6 +166,8 @@ class _AwrHubState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if hub_dst_timezone_version is not None:
+            pulumi.set(__self__, "hub_dst_timezone_version", hub_dst_timezone_version)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if object_storage_bucket_name is not None:
@@ -237,6 +242,18 @@ class _AwrHubState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="hubDstTimezoneVersion")
+    def hub_dst_timezone_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        Dst Time Zone Version of the AWR Hub
+        """
+        return pulumi.get(self, "hub_dst_timezone_version")
+
+    @hub_dst_timezone_version.setter
+    def hub_dst_timezone_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "hub_dst_timezone_version", value)
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -354,14 +371,14 @@ class AwrHub(pulumi.CustomResource):
         test_awr_hub = oci.opsi.AwrHub("testAwrHub",
             compartment_id=var["compartment_id"],
             display_name=var["awr_hub_display_name"],
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
             operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"])
         ```
 
         ## Import
@@ -406,14 +423,14 @@ class AwrHub(pulumi.CustomResource):
         test_awr_hub = oci.opsi.AwrHub("testAwrHub",
             compartment_id=var["compartment_id"],
             display_name=var["awr_hub_display_name"],
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
             operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"])
         ```
 
         ## Import
@@ -462,13 +479,12 @@ class AwrHub(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if object_storage_bucket_name is None and not opts.urn:
-                raise TypeError("Missing required property 'object_storage_bucket_name'")
             __props__.__dict__["object_storage_bucket_name"] = object_storage_bucket_name
             if operations_insights_warehouse_id is None and not opts.urn:
                 raise TypeError("Missing required property 'operations_insights_warehouse_id'")
             __props__.__dict__["operations_insights_warehouse_id"] = operations_insights_warehouse_id
             __props__.__dict__["awr_mailbox_url"] = None
+            __props__.__dict__["hub_dst_timezone_version"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -489,6 +505,7 @@ class AwrHub(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            hub_dst_timezone_version: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             object_storage_bucket_name: Optional[pulumi.Input[str]] = None,
             operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
@@ -508,6 +525,7 @@ class AwrHub(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) User-friedly name of AWR Hub that does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] hub_dst_timezone_version: Dst Time Zone Version of the AWR Hub
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] object_storage_bucket_name: Object Storage Bucket Name
         :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
@@ -529,6 +547,7 @@ class AwrHub(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["hub_dst_timezone_version"] = hub_dst_timezone_version
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["object_storage_bucket_name"] = object_storage_bucket_name
         __props__.__dict__["operations_insights_warehouse_id"] = operations_insights_warehouse_id
@@ -577,6 +596,14 @@ class AwrHub(pulumi.CustomResource):
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="hubDstTimezoneVersion")
+    def hub_dst_timezone_version(self) -> pulumi.Output[str]:
+        """
+        Dst Time Zone Version of the AWR Hub
+        """
+        return pulumi.get(self, "hub_dst_timezone_version")
 
     @property
     @pulumi.getter(name="lifecycleDetails")

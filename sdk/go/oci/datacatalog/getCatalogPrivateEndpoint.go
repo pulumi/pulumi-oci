@@ -75,10 +75,14 @@ type LookupCatalogPrivateEndpointResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetCatalogPrivateEndpointLock `pulumi:"locks"`
 	// The current state of the private endpoint resource.
 	State string `pulumi:"state"`
 	// Subnet Identifier
 	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -167,6 +171,11 @@ func (o LookupCatalogPrivateEndpointResultOutput) LifecycleDetails() pulumi.Stri
 	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o LookupCatalogPrivateEndpointResultOutput) Locks() GetCatalogPrivateEndpointLockArrayOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) []GetCatalogPrivateEndpointLock { return v.Locks }).(GetCatalogPrivateEndpointLockArrayOutput)
+}
+
 // The current state of the private endpoint resource.
 func (o LookupCatalogPrivateEndpointResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
@@ -175,6 +184,11 @@ func (o LookupCatalogPrivateEndpointResultOutput) State() pulumi.StringOutput {
 // Subnet Identifier
 func (o LookupCatalogPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupCatalogPrivateEndpointResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

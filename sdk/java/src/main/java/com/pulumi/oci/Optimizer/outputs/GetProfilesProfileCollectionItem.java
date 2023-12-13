@@ -61,6 +61,7 @@ public final class GetProfilesProfileCollectionItem {
      * 
      */
     private String state;
+    private Map<String,Object> systemTags;
     /**
      * @return Optional. The compartments specified in the profile override for a recommendation.
      * 
@@ -146,6 +147,9 @@ public final class GetProfilesProfileCollectionItem {
     public String state() {
         return this.state;
     }
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
+    }
     /**
      * @return Optional. The compartments specified in the profile override for a recommendation.
      * 
@@ -193,6 +197,7 @@ public final class GetProfilesProfileCollectionItem {
         private List<GetProfilesProfileCollectionItemLevelsConfiguration> levelsConfigurations;
         private String name;
         private String state;
+        private Map<String,Object> systemTags;
         private List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments;
         private List<GetProfilesProfileCollectionItemTargetTag> targetTags;
         private String timeCreated;
@@ -209,6 +214,7 @@ public final class GetProfilesProfileCollectionItem {
     	      this.levelsConfigurations = defaults.levelsConfigurations;
     	      this.name = defaults.name;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.targetCompartments = defaults.targetCompartments;
     	      this.targetTags = defaults.targetTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -264,6 +270,11 @@ public final class GetProfilesProfileCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            this.systemTags = Objects.requireNonNull(systemTags);
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetCompartments(List<GetProfilesProfileCollectionItemTargetCompartment> targetCompartments) {
             this.targetCompartments = Objects.requireNonNull(targetCompartments);
             return this;
@@ -300,6 +311,7 @@ public final class GetProfilesProfileCollectionItem {
             _resultValue.levelsConfigurations = levelsConfigurations;
             _resultValue.name = name;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.targetCompartments = targetCompartments;
             _resultValue.targetTags = targetTags;
             _resultValue.timeCreated = timeCreated;

@@ -34,7 +34,6 @@ import (
 //			_, err := Opsi.NewAwrHub(ctx, "testAwrHub", &Opsi.AwrHubArgs{
 //				CompartmentId:                 pulumi.Any(_var.Compartment_id),
 //				DisplayName:                   pulumi.Any(_var.Awr_hub_display_name),
-//				ObjectStorageBucketName:       pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
 //				OperationsInsightsWarehouseId: pulumi.Any(oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
@@ -42,6 +41,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				ObjectStorageBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
 //			})
 //			if err != nil {
 //				return err
@@ -74,6 +74,8 @@ type AwrHub struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Dst Time Zone Version of the AWR Hub
+	HubDstTimezoneVersion pulumi.StringOutput `pulumi:"hubDstTimezoneVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
@@ -105,9 +107,6 @@ func NewAwrHub(ctx *pulumi.Context,
 	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
-	}
-	if args.ObjectStorageBucketName == nil {
-		return nil, errors.New("invalid value for required argument 'ObjectStorageBucketName'")
 	}
 	if args.OperationsInsightsWarehouseId == nil {
 		return nil, errors.New("invalid value for required argument 'OperationsInsightsWarehouseId'")
@@ -145,6 +144,8 @@ type awrHubState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Dst Time Zone Version of the AWR Hub
+	HubDstTimezoneVersion *string `pulumi:"hubDstTimezoneVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
@@ -175,6 +176,8 @@ type AwrHubState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Dst Time Zone Version of the AWR Hub
+	HubDstTimezoneVersion pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Object Storage Bucket Name
@@ -208,7 +211,7 @@ type awrHubArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Object Storage Bucket Name
-	ObjectStorageBucketName string `pulumi:"objectStorageBucketName"`
+	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// OPSI Warehouse OCID
 	//
 	// ** IMPORTANT **
@@ -227,7 +230,7 @@ type AwrHubArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// Object Storage Bucket Name
-	ObjectStorageBucketName pulumi.StringInput
+	ObjectStorageBucketName pulumi.StringPtrInput
 	// OPSI Warehouse OCID
 	//
 	// ** IMPORTANT **
@@ -345,6 +348,11 @@ func (o AwrHubOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o AwrHubOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *AwrHub) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Dst Time Zone Version of the AWR Hub
+func (o AwrHubOutput) HubDstTimezoneVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringOutput { return v.HubDstTimezoneVersion }).(pulumi.StringOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

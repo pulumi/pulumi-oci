@@ -194,13 +194,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> Schedule { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the compartment in which the scheduled resource should be created.
+        /// The OCID of the compartment in which the scheduled resource will be created.
         /// </summary>
         [Output("scheduledReportCompartmentId")]
         public Output<string> ScheduledReportCompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the format of the report ( either XLS or PDF )
+        /// Specifies the format of the report ( either .xls or .pdf )
         /// </summary>
         [Output("scheduledReportMimeType")]
         public Output<string> ScheduledReportMimeType { get; private set; } = null!;
@@ -246,13 +246,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the data and time the report definition was created.
+        /// Specifies the date and time the report definition was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the report definition was update.
+        /// The date and time the report definition was updated.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -540,13 +540,13 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? Schedule { get; set; }
 
         /// <summary>
-        /// The OCID of the compartment in which the scheduled resource should be created.
+        /// The OCID of the compartment in which the scheduled resource will be created.
         /// </summary>
         [Input("scheduledReportCompartmentId")]
         public Input<string>? ScheduledReportCompartmentId { get; set; }
 
         /// <summary>
-        /// Specifies the format of the report ( either XLS or PDF )
+        /// Specifies the format of the report ( either .xls or .pdf )
         /// </summary>
         [Input("scheduledReportMimeType")]
         public Input<string>? ScheduledReportMimeType { get; set; }
@@ -604,13 +604,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Specifies the data and time the report definition was created.
+        /// Specifies the date and time the report definition was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the report definition was update.
+        /// The date and time the report definition was updated.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

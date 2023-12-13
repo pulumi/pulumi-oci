@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSdmMaskingPolicyDifferencesResult {
     /**
-     * @return The OCID of the compartment that contains the SDM masking policy difference.
+     * @return The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
      * 
      */
     private String compartmentId;
@@ -56,7 +56,7 @@ public final class GetSdmMaskingPolicyDifferencesResult {
 
     private GetSdmMaskingPolicyDifferencesResult() {}
     /**
-     * @return The OCID of the compartment that contains the SDM masking policy difference.
+     * @return The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
      * 
      */
     public String compartmentId() {

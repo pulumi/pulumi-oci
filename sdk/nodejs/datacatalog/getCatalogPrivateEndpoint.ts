@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -76,6 +78,10 @@ export interface GetCatalogPrivateEndpointResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.DataCatalog.GetCatalogPrivateEndpointLock[];
+    /**
      * The current state of the private endpoint resource.
      */
     readonly state: string;
@@ -83,6 +89,10 @@ export interface GetCatalogPrivateEndpointResult {
      * Subnet Identifier
      */
     readonly subnetId: string;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: any};
     /**
      * The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */

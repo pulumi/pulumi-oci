@@ -204,6 +204,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * 
+     */
+    @Import(name="loadBalancerSubnetId")
+    private @Nullable Output<String> loadBalancerSubnetId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * 
+     */
+    public Optional<Output<String>> loadBalancerSubnetId() {
+        return Optional.ofNullable(this.loadBalancerSubnetId);
+    }
+
+    /**
      * (Updatable) Defines the maintenance configuration for create operation.
      * 
      */
@@ -271,14 +286,14 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
      * 
      */
     public Output<String> subnetId() {
@@ -300,6 +315,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
         this.isPublic = $.isPublic;
         this.licenseModel = $.licenseModel;
+        this.loadBalancerSubnetId = $.loadBalancerSubnetId;
         this.maintenanceConfiguration = $.maintenanceConfiguration;
         this.maintenanceWindow = $.maintenanceWindow;
         this.nsgIds = $.nsgIds;
@@ -579,6 +595,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param loadBalancerSubnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerSubnetId(@Nullable Output<String> loadBalancerSubnetId) {
+            $.loadBalancerSubnetId = loadBalancerSubnetId;
+            return this;
+        }
+
+        /**
+         * @param loadBalancerSubnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            return loadBalancerSubnetId(Output.of(loadBalancerSubnetId));
+        }
+
+        /**
          * @param maintenanceConfiguration (Updatable) Defines the maintenance configuration for create operation.
          * 
          * @return builder
@@ -682,7 +719,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
          * 
          * @return builder
          * 
@@ -693,7 +730,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
          * 
          * @return builder
          * 

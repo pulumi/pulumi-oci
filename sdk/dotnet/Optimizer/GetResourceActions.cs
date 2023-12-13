@@ -35,6 +35,7 @@ namespace Pulumi.Oci.Optimizer
         ///         CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
         ///         ChildTenancyIds = @var.Resource_action_child_tenancy_ids,
         ///         IncludeOrganization = @var.Resource_action_include_organization,
+        ///         IncludeResourceMetadata = @var.Resource_action_include_resource_metadata,
         ///         Name = @var.Resource_action_name,
         ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
         ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
@@ -75,6 +76,7 @@ namespace Pulumi.Oci.Optimizer
         ///         CompartmentIdInSubtree = @var.Resource_action_compartment_id_in_subtree,
         ///         ChildTenancyIds = @var.Resource_action_child_tenancy_ids,
         ///         IncludeOrganization = @var.Resource_action_include_organization,
+        ///         IncludeResourceMetadata = @var.Resource_action_include_resource_metadata,
         ///         Name = @var.Resource_action_name,
         ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
         ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
@@ -144,6 +146,12 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         [Input("includeOrganization")]
         public bool? IncludeOrganization { get; set; }
+
+        /// <summary>
+        /// Supplement additional resource information in extended metadata response.
+        /// </summary>
+        [Input("includeResourceMetadata")]
+        public bool? IncludeResourceMetadata { get; set; }
 
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
@@ -240,6 +248,12 @@ namespace Pulumi.Oci.Optimizer
         public Input<bool>? IncludeOrganization { get; set; }
 
         /// <summary>
+        /// Supplement additional resource information in extended metadata response.
+        /// </summary>
+        [Input("includeResourceMetadata")]
+        public Input<bool>? IncludeResourceMetadata { get; set; }
+
+        /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
         [Input("name")]
@@ -297,6 +311,7 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public readonly string Id;
         public readonly bool? IncludeOrganization;
+        public readonly bool? IncludeResourceMetadata;
         /// <summary>
         /// The name assigned to the resource.
         /// </summary>
@@ -337,6 +352,8 @@ namespace Pulumi.Oci.Optimizer
 
             bool? includeOrganization,
 
+            bool? includeResourceMetadata,
+
             string? name,
 
             string? recommendationId,
@@ -357,6 +374,7 @@ namespace Pulumi.Oci.Optimizer
             Filters = filters;
             Id = id;
             IncludeOrganization = includeOrganization;
+            IncludeResourceMetadata = includeResourceMetadata;
             Name = name;
             RecommendationId = recommendationId;
             RecommendationName = recommendationName;

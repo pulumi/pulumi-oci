@@ -5,8 +5,12 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class LogConfigurationSourceArgs extends com.pulumi.resources.ResourceArgs {
@@ -26,6 +30,21 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
      */
     public Output<String> category() {
         return this.category;
+    }
+
+    /**
+     * (Updatable) Log category parameters are stored here.
+     * 
+     */
+    @Import(name="parameters")
+    private @Nullable Output<Map<String,Object>> parameters;
+
+    /**
+     * @return (Updatable) Log category parameters are stored here.
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> parameters() {
+        return Optional.ofNullable(this.parameters);
     }
 
     /**
@@ -79,6 +98,7 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
 
     private LogConfigurationSourceArgs(LogConfigurationSourceArgs $) {
         this.category = $.category;
+        this.parameters = $.parameters;
         this.resource = $.resource;
         this.service = $.service;
         this.sourceType = $.sourceType;
@@ -121,6 +141,27 @@ public final class LogConfigurationSourceArgs extends com.pulumi.resources.Resou
          */
         public Builder category(String category) {
             return category(Output.of(category));
+        }
+
+        /**
+         * @param parameters (Updatable) Log category parameters are stored here.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(@Nullable Output<Map<String,Object>> parameters) {
+            $.parameters = parameters;
+            return this;
+        }
+
+        /**
+         * @param parameters (Updatable) Log category parameters are stored here.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder parameters(Map<String,Object> parameters) {
+            return parameters(Output.of(parameters));
         }
 
         /**

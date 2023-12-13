@@ -74,9 +74,13 @@ type LookupMetastoreResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	MetastoreId      string `pulumi:"metastoreId"`
+	// Locks associated with this resource.
+	Locks       []GetMetastoreLock `pulumi:"locks"`
+	MetastoreId string             `pulumi:"metastoreId"`
 	// The current state of the metastore.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -161,6 +165,11 @@ func (o LookupMetastoreResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMetastoreResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o LookupMetastoreResultOutput) Locks() GetMetastoreLockArrayOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) []GetMetastoreLock { return v.Locks }).(GetMetastoreLockArrayOutput)
+}
+
 func (o LookupMetastoreResultOutput) MetastoreId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMetastoreResult) string { return v.MetastoreId }).(pulumi.StringOutput)
 }
@@ -168,6 +177,11 @@ func (o LookupMetastoreResultOutput) MetastoreId() pulumi.StringOutput {
 // The current state of the metastore.
 func (o LookupMetastoreResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMetastoreResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupMetastoreResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

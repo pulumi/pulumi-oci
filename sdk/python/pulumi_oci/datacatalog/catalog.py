@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['CatalogArgs', 'Catalog']
 
@@ -115,10 +117,12 @@ class _CatalogState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['CatalogLockArgs']]]] = None,
                  number_of_objects: Optional[pulumi.Input[int]] = None,
                  service_api_url: Optional[pulumi.Input[str]] = None,
                  service_console_url: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
@@ -133,10 +137,12 @@ class _CatalogState:
         :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
+        :param pulumi.Input[Sequence[pulumi.Input['CatalogLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[int] number_of_objects: The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
         :param pulumi.Input[str] service_api_url: The REST front endpoint URL to the data catalog instance.
         :param pulumi.Input[str] service_console_url: The console front endpoint URL to the data catalog instance.
         :param pulumi.Input[str] state: The current state of the data catalog resource.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
@@ -152,6 +158,8 @@ class _CatalogState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if number_of_objects is not None:
             pulumi.set(__self__, "number_of_objects", number_of_objects)
         if service_api_url is not None:
@@ -160,6 +168,8 @@ class _CatalogState:
             pulumi.set(__self__, "service_console_url", service_console_url)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -242,6 +252,18 @@ class _CatalogState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CatalogLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CatalogLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="numberOfObjects")
     def number_of_objects(self) -> Optional[pulumi.Input[int]]:
         """
@@ -288,6 +310,18 @@ class _CatalogState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -442,10 +476,12 @@ class Catalog(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["locks"] = None
             __props__.__dict__["number_of_objects"] = None
             __props__.__dict__["service_api_url"] = None
             __props__.__dict__["service_console_url"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(Catalog, __self__).__init__(
@@ -464,10 +500,12 @@ class Catalog(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CatalogLockArgs']]]]] = None,
             number_of_objects: Optional[pulumi.Input[int]] = None,
             service_api_url: Optional[pulumi.Input[str]] = None,
             service_console_url: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'Catalog':
         """
@@ -487,10 +525,12 @@ class Catalog(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Data catalog identifier.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CatalogLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[int] number_of_objects: The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
         :param pulumi.Input[str] service_api_url: The REST front endpoint URL to the data catalog instance.
         :param pulumi.Input[str] service_console_url: The console front endpoint URL to the data catalog instance.
         :param pulumi.Input[str] state: The current state of the data catalog resource.
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
@@ -504,10 +544,12 @@ class Catalog(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["number_of_objects"] = number_of_objects
         __props__.__dict__["service_api_url"] = service_api_url
         __props__.__dict__["service_console_url"] = service_console_url
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return Catalog(resource_name, opts=opts, __props__=__props__)
@@ -565,6 +607,14 @@ class Catalog(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.CatalogLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="numberOfObjects")
     def number_of_objects(self) -> pulumi.Output[int]:
         """
@@ -595,6 +645,14 @@ class Catalog(pulumi.CustomResource):
         The current state of the data catalog resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

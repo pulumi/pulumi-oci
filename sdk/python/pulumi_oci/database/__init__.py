@@ -14,6 +14,7 @@ from .autonomous_database import *
 from .autonomous_database_backup import *
 from .autonomous_database_instance_wallet_management import *
 from .autonomous_database_regional_wallet_management import *
+from .autonomous_database_saas_admin_user import *
 from .autonomous_database_wallet import *
 from .autonomous_exadata_infrastructure import *
 from .autonomous_vm_cluster import *

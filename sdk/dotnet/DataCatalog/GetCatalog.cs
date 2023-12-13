@@ -135,6 +135,10 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCatalogLockResult> Locks;
+        /// <summary>
         /// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
         /// </summary>
         public readonly int NumberOfObjects;
@@ -150,6 +154,10 @@ namespace Pulumi.Oci.DataCatalog
         /// The current state of the data catalog resource.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
         /// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         /// </summary>
@@ -177,6 +185,8 @@ namespace Pulumi.Oci.DataCatalog
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetCatalogLockResult> locks,
+
             int numberOfObjects,
 
             string serviceApiUrl,
@@ -184,6 +194,8 @@ namespace Pulumi.Oci.DataCatalog
             string serviceConsoleUrl,
 
             string state,
+
+            ImmutableDictionary<string, object> systemTags,
 
             string timeCreated,
 
@@ -197,10 +209,12 @@ namespace Pulumi.Oci.DataCatalog
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             NumberOfObjects = numberOfObjects;
             ServiceApiUrl = serviceApiUrl;
             ServiceConsoleUrl = serviceConsoleUrl;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

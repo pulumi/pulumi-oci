@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -61,6 +62,11 @@ public final class GetSensitiveTypeResult {
      * 
      */
     private String id;
+    /**
+     * @return Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    private Boolean isCommon;
     /**
      * @return A regular expression to be used by data discovery for matching column names.
      * 
@@ -180,6 +186,13 @@ public final class GetSensitiveTypeResult {
         return this.id;
     }
     /**
+     * @return Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    public Boolean isCommon() {
+        return this.isCommon;
+    }
+    /**
      * @return A regular expression to be used by data discovery for matching column names.
      * 
      */
@@ -265,6 +278,7 @@ public final class GetSensitiveTypeResult {
         private String entityType;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isCommon;
         private String namePattern;
         private String parentCategoryId;
         private String searchType;
@@ -288,6 +302,7 @@ public final class GetSensitiveTypeResult {
     	      this.entityType = defaults.entityType;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isCommon = defaults.isCommon;
     	      this.namePattern = defaults.namePattern;
     	      this.parentCategoryId = defaults.parentCategoryId;
     	      this.searchType = defaults.searchType;
@@ -348,6 +363,11 @@ public final class GetSensitiveTypeResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCommon(Boolean isCommon) {
+            this.isCommon = Objects.requireNonNull(isCommon);
             return this;
         }
         @CustomType.Setter
@@ -412,6 +432,7 @@ public final class GetSensitiveTypeResult {
             _resultValue.entityType = entityType;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isCommon = isCommon;
             _resultValue.namePattern = namePattern;
             _resultValue.parentCategoryId = parentCategoryId;
             _resultValue.searchType = searchType;

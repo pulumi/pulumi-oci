@@ -119,7 +119,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies supported output file format.
+        /// (Updatable) Specifies the supported output file format.
         /// </summary>
         [Output("outputFileFormat")]
         public Output<string> OutputFileFormat { get; private set; } = null!;
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<Outputs.ScheduleResultLocation> ResultLocation { get; private set; } = null!;
 
         /// <summary>
-        /// The saved report id which can also be used to generate query.
+        /// The saved report ID which can also be used to generate a query.
         /// </summary>
         [Output("savedReportId")]
         public Output<string> SavedReportId { get; private set; } = null!;
@@ -271,7 +271,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies supported output file format.
+        /// (Updatable) Specifies the supported output file format.
         /// </summary>
         [Input("outputFileFormat")]
         public Input<string>? OutputFileFormat { get; set; }
@@ -289,7 +289,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<Inputs.ScheduleResultLocationArgs> ResultLocation { get; set; } = null!;
 
         /// <summary>
-        /// The saved report id which can also be used to generate query.
+        /// The saved report ID which can also be used to generate a query.
         /// </summary>
         [Input("savedReportId")]
         public Input<string>? SavedReportId { get; set; }
@@ -361,7 +361,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies supported output file format.
+        /// (Updatable) Specifies the supported output file format.
         /// </summary>
         [Input("outputFileFormat")]
         public Input<string>? OutputFileFormat { get; set; }
@@ -379,7 +379,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Input<Inputs.ScheduleResultLocationGetArgs>? ResultLocation { get; set; }
 
         /// <summary>
-        /// The saved report id which can also be used to generate query.
+        /// The saved report ID which can also be used to generate a query.
         /// </summary>
         [Input("savedReportId")]
         public Input<string>? SavedReportId { get; set; }

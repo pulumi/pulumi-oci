@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSdmMaskingPolicyDifferenceResult {
     /**
-     * @return The OCID of the compartment that contains the SDM masking policy difference.
+     * @return The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
      * 
      */
     private String compartmentId;
@@ -37,7 +37,7 @@ public final class GetSdmMaskingPolicyDifferenceResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the SDM masking policy difference.
+     * @return The OCID of the Sensitive data model and masking policy difference resource.
      * 
      */
     private String id;
@@ -75,7 +75,7 @@ public final class GetSdmMaskingPolicyDifferenceResult {
 
     private GetSdmMaskingPolicyDifferenceResult() {}
     /**
-     * @return The OCID of the compartment that contains the SDM masking policy difference.
+     * @return The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
      * 
      */
     public String compartmentId() {
@@ -110,7 +110,7 @@ public final class GetSdmMaskingPolicyDifferenceResult {
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the SDM masking policy difference.
+     * @return The OCID of the Sensitive data model and masking policy difference resource.
      * 
      */
     public String id() {

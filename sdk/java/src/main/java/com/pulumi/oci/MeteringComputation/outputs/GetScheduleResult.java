@@ -45,7 +45,7 @@ public final class GetScheduleResult {
      */
     private String name;
     /**
-     * @return Specifies supported output file format.
+     * @return Specifies the supported output file format.
      * 
      */
     private String outputFileFormat;
@@ -60,7 +60,7 @@ public final class GetScheduleResult {
      */
     private List<GetScheduleResultLocation> resultLocations;
     /**
-     * @return The saved report id which can also be used to generate query.
+     * @return The saved report ID which can also be used to generate a query.
      * 
      */
     private String savedReportId;
@@ -140,7 +140,7 @@ public final class GetScheduleResult {
         return this.name;
     }
     /**
-     * @return Specifies supported output file format.
+     * @return Specifies the supported output file format.
      * 
      */
     public String outputFileFormat() {
@@ -161,7 +161,7 @@ public final class GetScheduleResult {
         return this.resultLocations;
     }
     /**
-     * @return The saved report id which can also be used to generate query.
+     * @return The saved report ID which can also be used to generate a query.
      * 
      */
     public String savedReportId() {

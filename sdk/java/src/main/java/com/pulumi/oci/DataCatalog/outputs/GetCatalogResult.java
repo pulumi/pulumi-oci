@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataCatalog.outputs.GetCatalogLock;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -50,6 +51,11 @@ public final class GetCatalogResult {
      */
     private String lifecycleDetails;
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetCatalogLock> locks;
+    /**
      * @return The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
      * 
      */
@@ -69,6 +75,11 @@ public final class GetCatalogResult {
      * 
      */
     private String state;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
     /**
      * @return The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
@@ -134,6 +145,13 @@ public final class GetCatalogResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetCatalogLock> locks() {
+        return this.locks;
+    }
+    /**
      * @return The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
      * 
      */
@@ -160,6 +178,13 @@ public final class GetCatalogResult {
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -193,10 +218,12 @@ public final class GetCatalogResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private List<GetCatalogLock> locks;
         private Integer numberOfObjects;
         private String serviceApiUrl;
         private String serviceConsoleUrl;
         private String state;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -210,10 +237,12 @@ public final class GetCatalogResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.numberOfObjects = defaults.numberOfObjects;
     	      this.serviceApiUrl = defaults.serviceApiUrl;
     	      this.serviceConsoleUrl = defaults.serviceConsoleUrl;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -262,6 +291,14 @@ public final class GetCatalogResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetCatalogLock> locks) {
+            this.locks = Objects.requireNonNull(locks);
+            return this;
+        }
+        public Builder locks(GetCatalogLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder numberOfObjects(Integer numberOfObjects) {
             this.numberOfObjects = Objects.requireNonNull(numberOfObjects);
             return this;
@@ -279,6 +316,11 @@ public final class GetCatalogResult {
         @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
         @CustomType.Setter
@@ -301,10 +343,12 @@ public final class GetCatalogResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.numberOfObjects = numberOfObjects;
             _resultValue.serviceApiUrl = serviceApiUrl;
             _resultValue.serviceConsoleUrl = serviceConsoleUrl;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

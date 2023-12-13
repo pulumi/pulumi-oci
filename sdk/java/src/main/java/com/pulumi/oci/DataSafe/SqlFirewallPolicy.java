@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
  * 
- * Updates the SQL firewall policy.
+ * Updates the SQL Firewall policy.
  * 
  * ## Import
  * 
@@ -33,56 +33,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy")
 public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      * 
      */
     @Export(name="allowedClientIps", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedClientIps;
 
     /**
-     * @return (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * @return (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      * 
      */
     public Output<List<String>> allowedClientIps() {
         return this.allowedClientIps;
     }
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      * 
      */
     @Export(name="allowedClientOsUsernames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedClientOsUsernames;
 
     /**
-     * @return (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * @return (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      * 
      */
     public Output<List<String>> allowedClientOsUsernames() {
         return this.allowedClientOsUsernames;
     }
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      * 
      */
     @Export(name="allowedClientPrograms", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedClientPrograms;
 
     /**
-     * @return (Updatable) List of allowed client programs for the SQL firewall policy.
+     * @return (Updatable) List of allowed client programs for the SQL Firewall policy.
      * 
      */
     public Output<List<String>> allowedClientPrograms() {
         return this.allowedClientPrograms;
     }
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * @return (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      * 
      */
     public Output<String> compartmentId() {
@@ -117,42 +117,42 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) The description of the SQL firewall policy.
+     * @return (Updatable) The description of the SQL Firewall policy.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * @return (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      * 
      */
     @Export(name="enforcementScope", refs={String.class}, tree="[0]")
     private Output<String> enforcementScope;
 
     /**
-     * @return (Updatable) Specifies the SQL firewall policy enforcement option.
+     * @return (Updatable) Specifies the SQL Firewall policy enforcement option.
      * 
      */
     public Output<String> enforcementScope() {
@@ -173,84 +173,84 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Details about the current state of the SQL firewall policy in Data Safe.
+     * Details about the current state of the SQL Firewall policy in Data Safe.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
-     * @return Details about the current state of the SQL firewall policy in Data Safe.
+     * @return Details about the current state of the SQL Firewall policy in Data Safe.
      * 
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * The OCID of the security policy corresponding to the SQL firewall policy.
+     * The OCID of the security policy corresponding to the SQL Firewall policy.
      * 
      */
     @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
-     * @return The OCID of the security policy corresponding to the SQL firewall policy.
+     * @return The OCID of the security policy corresponding to the SQL Firewall policy.
      * 
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
-     * The OCID of the SQL firewall policy resource.
+     * The OCID of the SQL Firewall policy resource.
      * 
      */
     @Export(name="sqlFirewallPolicyId", refs={String.class}, tree="[0]")
     private Output<String> sqlFirewallPolicyId;
 
     /**
-     * @return The OCID of the SQL firewall policy resource.
+     * @return The OCID of the SQL Firewall policy resource.
      * 
      */
     public Output<String> sqlFirewallPolicyId() {
         return this.sqlFirewallPolicyId;
     }
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
     @Export(name="sqlLevel", refs={String.class}, tree="[0]")
     private Output<String> sqlLevel;
 
     /**
-     * @return Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     * @return Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      * 
      */
     public Output<String> sqlLevel() {
         return this.sqlLevel;
     }
     /**
-     * The current state of the SQL firewall policy.
+     * The current state of the SQL Firewall policy.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the SQL firewall policy.
+     * @return The current state of the SQL Firewall policy.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+     * (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+     * @return (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      * 
      */
     public Output<String> status() {
@@ -271,49 +271,49 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time that the SQL firewall policy was created, in the format defined by RFC3339.
+     * The time that the SQL Firewall policy was created, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time that the SQL firewall policy was created, in the format defined by RFC3339.
+     * @return The time that the SQL Firewall policy was created, in the format defined by RFC3339.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+     * The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+     * @return The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+     * (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      * 
      */
     @Export(name="violationAction", refs={String.class}, tree="[0]")
     private Output<String> violationAction;
 
     /**
-     * @return (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+     * @return (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      * 
      */
     public Output<String> violationAction() {
         return this.violationAction;
     }
     /**
-     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -323,7 +323,7 @@ public class SqlFirewallPolicy extends com.pulumi.resources.CustomResource {
     private Output<String> violationAudit;
 
     /**
-     * @return (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+     * @return (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -70,7 +70,7 @@ type GetReportResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of report to be .xls or .pdf
 	MimeType string `pulumi:"mimeType"`
 	// The OCID of the report definition.
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
@@ -153,7 +153,7 @@ func (o GetReportResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Specifies the format of report to be excel or pdf
+// Specifies the format of report to be .xls or .pdf
 func (o GetReportResultOutput) MimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportResult) string { return v.MimeType }).(pulumi.StringOutput)
 }

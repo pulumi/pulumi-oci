@@ -116,6 +116,21 @@ public final class GetSensitiveTypesArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    @Import(name="isCommon")
+    private @Nullable Output<Boolean> isCommon;
+
+    /**
+     * @return A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    public Optional<Output<Boolean>> isCommon() {
+        return Optional.ofNullable(this.isCommon);
+    }
+
+    /**
      * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
      * 
      */
@@ -223,6 +238,7 @@ public final class GetSensitiveTypesArgs extends com.pulumi.resources.InvokeArgs
         this.displayName = $.displayName;
         this.entityType = $.entityType;
         this.filters = $.filters;
+        this.isCommon = $.isCommon;
         this.parentCategoryId = $.parentCategoryId;
         this.sensitiveTypeId = $.sensitiveTypeId;
         this.sensitiveTypeSource = $.sensitiveTypeSource;
@@ -386,6 +402,27 @@ public final class GetSensitiveTypesArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder filters(GetSensitiveTypesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isCommon A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCommon(@Nullable Output<Boolean> isCommon) {
+            $.isCommon = isCommon;
+            return this;
+        }
+
+        /**
+         * @param isCommon A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCommon(Boolean isCommon) {
+            return isCommon(Output.of(isCommon));
         }
 
         /**

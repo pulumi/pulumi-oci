@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataCatalog.outputs.GetCatalogPrivateEndpointLock;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -54,6 +55,11 @@ public final class GetCatalogPrivateEndpointResult {
      */
     private String lifecycleDetails;
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetCatalogPrivateEndpointLock> locks;
+    /**
      * @return The current state of the private endpoint resource.
      * 
      */
@@ -63,6 +69,11 @@ public final class GetCatalogPrivateEndpointResult {
      * 
      */
     private String subnetId;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,Object> systemTags;
     /**
      * @return The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
@@ -135,6 +146,13 @@ public final class GetCatalogPrivateEndpointResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetCatalogPrivateEndpointLock> locks() {
+        return this.locks;
+    }
+    /**
      * @return The current state of the private endpoint resource.
      * 
      */
@@ -147,6 +165,13 @@ public final class GetCatalogPrivateEndpointResult {
      */
     public String subnetId() {
         return this.subnetId;
+    }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,Object> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -181,8 +206,10 @@ public final class GetCatalogPrivateEndpointResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private List<GetCatalogPrivateEndpointLock> locks;
         private String state;
         private String subnetId;
+        private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -197,8 +224,10 @@ public final class GetCatalogPrivateEndpointResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -255,6 +284,14 @@ public final class GetCatalogPrivateEndpointResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetCatalogPrivateEndpointLock> locks) {
+            this.locks = Objects.requireNonNull(locks);
+            return this;
+        }
+        public Builder locks(GetCatalogPrivateEndpointLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -262,6 +299,11 @@ public final class GetCatalogPrivateEndpointResult {
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
             this.subnetId = Objects.requireNonNull(subnetId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,Object> systemTags) {
+            this.systemTags = Objects.requireNonNull(systemTags);
             return this;
         }
         @CustomType.Setter
@@ -285,8 +327,10 @@ public final class GetCatalogPrivateEndpointResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

@@ -92,6 +92,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        /// </summary>
+        [Output("ingressIps")]
+        public Output<ImmutableArray<Outputs.DeploymentIngressIp>> IngressIps { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         /// </summary>
         [Output("isAutoScalingEnabled")]
@@ -138,6 +144,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("lifecycleSubState")]
         public Output<string> LifecycleSubState { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        /// </summary>
+        [Output("loadBalancerId")]
+        public Output<string> LoadBalancerId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        /// </summary>
+        [Output("loadBalancerSubnetId")]
+        public Output<string> LoadBalancerSubnetId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defines the maintenance configuration for create operation.
@@ -197,7 +215,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> StorageUtilizationInBytes { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -369,6 +387,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> LicenseModel { get; set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        /// </summary>
+        [Input("loadBalancerSubnetId")]
+        public Input<string>? LoadBalancerSubnetId { get; set; }
+
+        /// <summary>
         /// (Updatable) Defines the maintenance configuration for create operation.
         /// </summary>
         [Input("maintenanceConfiguration")]
@@ -402,7 +426,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -499,6 +523,18 @@ namespace Pulumi.Oci.GoldenGate
             set => _freeformTags = value;
         }
 
+        [Input("ingressIps")]
+        private InputList<Inputs.DeploymentIngressIpGetArgs>? _ingressIps;
+
+        /// <summary>
+        /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        /// </summary>
+        public InputList<Inputs.DeploymentIngressIpGetArgs> IngressIps
+        {
+            get => _ingressIps ?? (_ingressIps = new InputList<Inputs.DeploymentIngressIpGetArgs>());
+            set => _ingressIps = value;
+        }
+
         /// <summary>
         /// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         /// </summary>
@@ -546,6 +582,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("lifecycleSubState")]
         public Input<string>? LifecycleSubState { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        /// </summary>
+        [Input("loadBalancerId")]
+        public Input<string>? LoadBalancerId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        /// </summary>
+        [Input("loadBalancerSubnetId")]
+        public Input<string>? LoadBalancerSubnetId { get; set; }
 
         /// <summary>
         /// (Updatable) Defines the maintenance configuration for create operation.
@@ -611,7 +659,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? StorageUtilizationInBytes { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

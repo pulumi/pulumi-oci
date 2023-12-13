@@ -36,7 +36,9 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
         ///         GroupBy = @var.Discovery_analytic_group_by,
+        ///         IsCommon = @var.Discovery_analytic_is_common,
         ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
         ///         TargetId = oci_cloud_guard_target.Test_target.Id,
         ///     });
         /// 
@@ -73,7 +75,9 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
         ///         GroupBy = @var.Discovery_analytic_group_by,
+        ///         IsCommon = @var.Discovery_analytic_is_common,
         ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
         ///         TargetId = oci_cloud_guard_target.Test_target.Id,
         ///     });
         /// 
@@ -116,10 +120,22 @@ namespace Pulumi.Oci.DataSafe
         public string? GroupBy { get; set; }
 
         /// <summary>
+        /// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        /// </summary>
+        [Input("isCommon")]
+        public bool? IsCommon { get; set; }
+
+        /// <summary>
         /// A filter to return only the resources that match the specified sensitive data model OCID.
         /// </summary>
         [Input("sensitiveDataModelId")]
         public string? SensitiveDataModelId { get; set; }
+
+        /// <summary>
+        /// A filter to return only items related to a specific sensitive type OCID.
+        /// </summary>
+        [Input("sensitiveTypeId")]
+        public string? SensitiveTypeId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -162,10 +178,22 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? GroupBy { get; set; }
 
         /// <summary>
+        /// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        /// </summary>
+        [Input("isCommon")]
+        public Input<bool>? IsCommon { get; set; }
+
+        /// <summary>
         /// A filter to return only the resources that match the specified sensitive data model OCID.
         /// </summary>
         [Input("sensitiveDataModelId")]
         public Input<string>? SensitiveDataModelId { get; set; }
+
+        /// <summary>
+        /// A filter to return only items related to a specific sensitive type OCID.
+        /// </summary>
+        [Input("sensitiveTypeId")]
+        public Input<string>? SensitiveTypeId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -195,10 +223,15 @@ namespace Pulumi.Oci.DataSafe
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsCommon;
         /// <summary>
         /// The OCID of the sensitive data model.
         /// </summary>
         public readonly string? SensitiveDataModelId;
+        /// <summary>
+        /// The OCID of the sensitive type.
+        /// </summary>
+        public readonly string? SensitiveTypeId;
         /// <summary>
         /// The OCID of the target database.
         /// </summary>
@@ -218,7 +251,11 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            bool? isCommon,
+
             string? sensitiveDataModelId,
+
+            string? sensitiveTypeId,
 
             string? targetId)
         {
@@ -228,7 +265,9 @@ namespace Pulumi.Oci.DataSafe
             Filters = filters;
             GroupBy = groupBy;
             Id = id;
+            IsCommon = isCommon;
             SensitiveDataModelId = sensitiveDataModelId;
+            SensitiveTypeId = sensitiveTypeId;
             TargetId = targetId;
         }
     }

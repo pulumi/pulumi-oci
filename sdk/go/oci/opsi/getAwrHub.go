@@ -69,6 +69,8 @@ type LookupAwrHubResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Dst Time Zone Version of the AWR Hub
+	HubDstTimezoneVersion string `pulumi:"hubDstTimezoneVersion"`
 	// AWR Hub OCID
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -152,6 +154,11 @@ func (o LookupAwrHubResultOutput) DisplayName() pulumi.StringOutput {
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o LookupAwrHubResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupAwrHubResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Dst Time Zone Version of the AWR Hub
+func (o LookupAwrHubResultOutput) HubDstTimezoneVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAwrHubResult) string { return v.HubDstTimezoneVersion }).(pulumi.StringOutput)
 }
 
 // AWR Hub OCID

@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     defaultMaskingFormatId: oci_data_safe_default_masking_format.test_default_masking_format.id,
  *     displayName: _var.sensitive_type_display_name,
  *     entityType: _var.sensitive_type_entity_type,
+ *     isCommon: _var.sensitive_type_is_common,
  *     parentCategoryId: oci_marketplace_category.test_category.id,
  *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
  *     sensitiveTypeSource: _var.sensitive_type_sensitive_type_source,
@@ -44,6 +45,7 @@ export function getSensitiveTypes(args: GetSensitiveTypesArgs, opts?: pulumi.Inv
         "displayName": args.displayName,
         "entityType": args.entityType,
         "filters": args.filters,
+        "isCommon": args.isCommon,
         "parentCategoryId": args.parentCategoryId,
         "sensitiveTypeId": args.sensitiveTypeId,
         "sensitiveTypeSource": args.sensitiveTypeSource,
@@ -82,6 +84,10 @@ export interface GetSensitiveTypesArgs {
      */
     entityType?: string;
     filters?: inputs.DataSafe.GetSensitiveTypesFilter[];
+    /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    isCommon?: boolean;
     /**
      * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
      */
@@ -140,6 +146,10 @@ export interface GetSensitiveTypesResult {
      */
     readonly id: string;
     /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    readonly isCommon?: boolean;
+    /**
      * The OCID of the parent sensitive category.
      */
     readonly parentCategoryId?: string;
@@ -174,6 +184,7 @@ export interface GetSensitiveTypesResult {
  *     defaultMaskingFormatId: oci_data_safe_default_masking_format.test_default_masking_format.id,
  *     displayName: _var.sensitive_type_display_name,
  *     entityType: _var.sensitive_type_entity_type,
+ *     isCommon: _var.sensitive_type_is_common,
  *     parentCategoryId: oci_marketplace_category.test_category.id,
  *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
  *     sensitiveTypeSource: _var.sensitive_type_sensitive_type_source,
@@ -216,6 +227,10 @@ export interface GetSensitiveTypesOutputArgs {
      */
     entityType?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveTypesFilterArgs>[]>;
+    /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    isCommon?: pulumi.Input<boolean>;
     /**
      * A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
      */

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta;
@@ -1031,7 +1032,10 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
 
         @CustomType.Setter
         public Builder canonicalValues(List<String> canonicalValues) {
-            this.canonicalValues = Objects.requireNonNull(canonicalValues);
+            if (canonicalValues == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "canonicalValues");
+            }
+            this.canonicalValues = canonicalValues;
             return this;
         }
         public Builder canonicalValues(String... canonicalValues) {
@@ -1039,37 +1043,58 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder caseExact(Boolean caseExact) {
-            this.caseExact = Objects.requireNonNull(caseExact);
+            if (caseExact == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "caseExact");
+            }
+            this.caseExact = caseExact;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder endUserMutability(String endUserMutability) {
-            this.endUserMutability = Objects.requireNonNull(endUserMutability);
+            if (endUserMutability == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "endUserMutability");
+            }
+            this.endUserMutability = endUserMutability;
             return this;
         }
         @CustomType.Setter
         public Builder endUserMutabilityAllowedValues(List<String> endUserMutabilityAllowedValues) {
-            this.endUserMutabilityAllowedValues = Objects.requireNonNull(endUserMutabilityAllowedValues);
+            if (endUserMutabilityAllowedValues == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "endUserMutabilityAllowedValues");
+            }
+            this.endUserMutabilityAllowedValues = endUserMutabilityAllowedValues;
             return this;
         }
         public Builder endUserMutabilityAllowedValues(String... endUserMutabilityAllowedValues) {
@@ -1077,52 +1102,82 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAddedSinceReleaseNumber(String idcsAddedSinceReleaseNumber) {
-            this.idcsAddedSinceReleaseNumber = Objects.requireNonNull(idcsAddedSinceReleaseNumber);
+            if (idcsAddedSinceReleaseNumber == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsAddedSinceReleaseNumber");
+            }
+            this.idcsAddedSinceReleaseNumber = idcsAddedSinceReleaseNumber;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAddedSinceVersion(Integer idcsAddedSinceVersion) {
-            this.idcsAddedSinceVersion = Objects.requireNonNull(idcsAddedSinceVersion);
+            if (idcsAddedSinceVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsAddedSinceVersion");
+            }
+            this.idcsAddedSinceVersion = idcsAddedSinceVersion;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAttributeCacheable(Boolean idcsAttributeCacheable) {
-            this.idcsAttributeCacheable = Objects.requireNonNull(idcsAttributeCacheable);
+            if (idcsAttributeCacheable == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsAttributeCacheable");
+            }
+            this.idcsAttributeCacheable = idcsAttributeCacheable;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAttributeMappable(Boolean idcsAttributeMappable) {
-            this.idcsAttributeMappable = Objects.requireNonNull(idcsAttributeMappable);
+            if (idcsAttributeMappable == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsAttributeMappable");
+            }
+            this.idcsAttributeMappable = idcsAttributeMappable;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAuditable(Boolean idcsAuditable) {
-            this.idcsAuditable = Objects.requireNonNull(idcsAuditable);
+            if (idcsAuditable == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsAuditable");
+            }
+            this.idcsAuditable = idcsAuditable;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAutoIncrementSeqName(String idcsAutoIncrementSeqName) {
-            this.idcsAutoIncrementSeqName = Objects.requireNonNull(idcsAutoIncrementSeqName);
+            if (idcsAutoIncrementSeqName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsAutoIncrementSeqName");
+            }
+            this.idcsAutoIncrementSeqName = idcsAutoIncrementSeqName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCanonicalValueSourceFilter(String idcsCanonicalValueSourceFilter) {
-            this.idcsCanonicalValueSourceFilter = Objects.requireNonNull(idcsCanonicalValueSourceFilter);
+            if (idcsCanonicalValueSourceFilter == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsCanonicalValueSourceFilter");
+            }
+            this.idcsCanonicalValueSourceFilter = idcsCanonicalValueSourceFilter;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCanonicalValueSourceResourceType(String idcsCanonicalValueSourceResourceType) {
-            this.idcsCanonicalValueSourceResourceType = Objects.requireNonNull(idcsCanonicalValueSourceResourceType);
+            if (idcsCanonicalValueSourceResourceType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsCanonicalValueSourceResourceType");
+            }
+            this.idcsCanonicalValueSourceResourceType = idcsCanonicalValueSourceResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCompositeKeys(List<String> idcsCompositeKeys) {
-            this.idcsCompositeKeys = Objects.requireNonNull(idcsCompositeKeys);
+            if (idcsCompositeKeys == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsCompositeKeys");
+            }
+            this.idcsCompositeKeys = idcsCompositeKeys;
             return this;
         }
         public Builder idcsCompositeKeys(String... idcsCompositeKeys) {
@@ -1130,7 +1185,10 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsCreatedBy... idcsCreatedBies) {
@@ -1138,72 +1196,114 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder idcsCsvColumnHeaderName(String idcsCsvColumnHeaderName) {
-            this.idcsCsvColumnHeaderName = Objects.requireNonNull(idcsCsvColumnHeaderName);
+            if (idcsCsvColumnHeaderName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsCsvColumnHeaderName");
+            }
+            this.idcsCsvColumnHeaderName = idcsCsvColumnHeaderName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCustomAttribute(Boolean idcsCustomAttribute) {
-            this.idcsCustomAttribute = Objects.requireNonNull(idcsCustomAttribute);
+            if (idcsCustomAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsCustomAttribute");
+            }
+            this.idcsCustomAttribute = idcsCustomAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder idcsDeprecatedSinceReleaseNumber(String idcsDeprecatedSinceReleaseNumber) {
-            this.idcsDeprecatedSinceReleaseNumber = Objects.requireNonNull(idcsDeprecatedSinceReleaseNumber);
+            if (idcsDeprecatedSinceReleaseNumber == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsDeprecatedSinceReleaseNumber");
+            }
+            this.idcsDeprecatedSinceReleaseNumber = idcsDeprecatedSinceReleaseNumber;
             return this;
         }
         @CustomType.Setter
         public Builder idcsDeprecatedSinceVersion(Integer idcsDeprecatedSinceVersion) {
-            this.idcsDeprecatedSinceVersion = Objects.requireNonNull(idcsDeprecatedSinceVersion);
+            if (idcsDeprecatedSinceVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsDeprecatedSinceVersion");
+            }
+            this.idcsDeprecatedSinceVersion = idcsDeprecatedSinceVersion;
             return this;
         }
         @CustomType.Setter
         public Builder idcsDisplayName(String idcsDisplayName) {
-            this.idcsDisplayName = Objects.requireNonNull(idcsDisplayName);
+            if (idcsDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsDisplayName");
+            }
+            this.idcsDisplayName = idcsDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsDisplayNameMessageId(String idcsDisplayNameMessageId) {
-            this.idcsDisplayNameMessageId = Objects.requireNonNull(idcsDisplayNameMessageId);
+            if (idcsDisplayNameMessageId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsDisplayNameMessageId");
+            }
+            this.idcsDisplayNameMessageId = idcsDisplayNameMessageId;
             return this;
         }
         @CustomType.Setter
         public Builder idcsFetchComplexAttributeValues(Boolean idcsFetchComplexAttributeValues) {
-            this.idcsFetchComplexAttributeValues = Objects.requireNonNull(idcsFetchComplexAttributeValues);
+            if (idcsFetchComplexAttributeValues == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsFetchComplexAttributeValues");
+            }
+            this.idcsFetchComplexAttributeValues = idcsFetchComplexAttributeValues;
             return this;
         }
         @CustomType.Setter
         public Builder idcsFromTargetMapper(String idcsFromTargetMapper) {
-            this.idcsFromTargetMapper = Objects.requireNonNull(idcsFromTargetMapper);
+            if (idcsFromTargetMapper == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsFromTargetMapper");
+            }
+            this.idcsFromTargetMapper = idcsFromTargetMapper;
             return this;
         }
         @CustomType.Setter
         public Builder idcsFullyQualifiedName(String idcsFullyQualifiedName) {
-            this.idcsFullyQualifiedName = Objects.requireNonNull(idcsFullyQualifiedName);
+            if (idcsFullyQualifiedName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsFullyQualifiedName");
+            }
+            this.idcsFullyQualifiedName = idcsFullyQualifiedName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsGenerated(Boolean idcsGenerated) {
-            this.idcsGenerated = Objects.requireNonNull(idcsGenerated);
+            if (idcsGenerated == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsGenerated");
+            }
+            this.idcsGenerated = idcsGenerated;
             return this;
         }
         @CustomType.Setter
         public Builder idcsIcfAttributeType(String idcsIcfAttributeType) {
-            this.idcsIcfAttributeType = Objects.requireNonNull(idcsIcfAttributeType);
+            if (idcsIcfAttributeType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsIcfAttributeType");
+            }
+            this.idcsIcfAttributeType = idcsIcfAttributeType;
             return this;
         }
         @CustomType.Setter
         public Builder idcsIcfBundleAttributeName(String idcsIcfBundleAttributeName) {
-            this.idcsIcfBundleAttributeName = Objects.requireNonNull(idcsIcfBundleAttributeName);
+            if (idcsIcfBundleAttributeName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsIcfBundleAttributeName");
+            }
+            this.idcsIcfBundleAttributeName = idcsIcfBundleAttributeName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsIcfRequired(Boolean idcsIcfRequired) {
-            this.idcsIcfRequired = Objects.requireNonNull(idcsIcfRequired);
+            if (idcsIcfRequired == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsIcfRequired");
+            }
+            this.idcsIcfRequired = idcsIcfRequired;
             return this;
         }
         @CustomType.Setter
         public Builder idcsIndirectRefResourceAttributes(List<String> idcsIndirectRefResourceAttributes) {
-            this.idcsIndirectRefResourceAttributes = Objects.requireNonNull(idcsIndirectRefResourceAttributes);
+            if (idcsIndirectRefResourceAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsIndirectRefResourceAttributes");
+            }
+            this.idcsIndirectRefResourceAttributes = idcsIndirectRefResourceAttributes;
             return this;
         }
         public Builder idcsIndirectRefResourceAttributes(String... idcsIndirectRefResourceAttributes) {
@@ -1211,12 +1311,18 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder idcsInternal(Boolean idcsInternal) {
-            this.idcsInternal = Objects.requireNonNull(idcsInternal);
+            if (idcsInternal == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsInternal");
+            }
+            this.idcsInternal = idcsInternal;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -1224,37 +1330,58 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsMaxLength(Integer idcsMaxLength) {
-            this.idcsMaxLength = Objects.requireNonNull(idcsMaxLength);
+            if (idcsMaxLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsMaxLength");
+            }
+            this.idcsMaxLength = idcsMaxLength;
             return this;
         }
         @CustomType.Setter
         public Builder idcsMaxValue(Integer idcsMaxValue) {
-            this.idcsMaxValue = Objects.requireNonNull(idcsMaxValue);
+            if (idcsMaxValue == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsMaxValue");
+            }
+            this.idcsMaxValue = idcsMaxValue;
             return this;
         }
         @CustomType.Setter
         public Builder idcsMinLength(Integer idcsMinLength) {
-            this.idcsMinLength = Objects.requireNonNull(idcsMinLength);
+            if (idcsMinLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsMinLength");
+            }
+            this.idcsMinLength = idcsMinLength;
             return this;
         }
         @CustomType.Setter
         public Builder idcsMinValue(Integer idcsMinValue) {
-            this.idcsMinValue = Objects.requireNonNull(idcsMinValue);
+            if (idcsMinValue == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsMinValue");
+            }
+            this.idcsMinValue = idcsMinValue;
             return this;
         }
         @CustomType.Setter
         public Builder idcsMultiLanguage(Boolean idcsMultiLanguage) {
-            this.idcsMultiLanguage = Objects.requireNonNull(idcsMultiLanguage);
+            if (idcsMultiLanguage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsMultiLanguage");
+            }
+            this.idcsMultiLanguage = idcsMultiLanguage;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -1262,12 +1389,18 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder idcsRefResourceAttribute(String idcsRefResourceAttribute) {
-            this.idcsRefResourceAttribute = Objects.requireNonNull(idcsRefResourceAttribute);
+            if (idcsRefResourceAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsRefResourceAttribute");
+            }
+            this.idcsRefResourceAttribute = idcsRefResourceAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder idcsRefResourceAttributes(List<String> idcsRefResourceAttributes) {
-            this.idcsRefResourceAttributes = Objects.requireNonNull(idcsRefResourceAttributes);
+            if (idcsRefResourceAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsRefResourceAttributes");
+            }
+            this.idcsRefResourceAttributes = idcsRefResourceAttributes;
             return this;
         }
         public Builder idcsRefResourceAttributes(String... idcsRefResourceAttributes) {
@@ -1275,67 +1408,106 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder idcsSchemaUrn(String idcsSchemaUrn) {
-            this.idcsSchemaUrn = Objects.requireNonNull(idcsSchemaUrn);
+            if (idcsSchemaUrn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsSchemaUrn");
+            }
+            this.idcsSchemaUrn = idcsSchemaUrn;
             return this;
         }
         @CustomType.Setter
         public Builder idcsScimCompliant(Boolean idcsScimCompliant) {
-            this.idcsScimCompliant = Objects.requireNonNull(idcsScimCompliant);
+            if (idcsScimCompliant == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsScimCompliant");
+            }
+            this.idcsScimCompliant = idcsScimCompliant;
             return this;
         }
         @CustomType.Setter
         public Builder idcsSearchable(Boolean idcsSearchable) {
-            this.idcsSearchable = Objects.requireNonNull(idcsSearchable);
+            if (idcsSearchable == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsSearchable");
+            }
+            this.idcsSearchable = idcsSearchable;
             return this;
         }
         @CustomType.Setter
         public Builder idcsSensitive(String idcsSensitive) {
-            this.idcsSensitive = Objects.requireNonNull(idcsSensitive);
+            if (idcsSensitive == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsSensitive");
+            }
+            this.idcsSensitive = idcsSensitive;
             return this;
         }
         @CustomType.Setter
         public Builder idcsTargetAttributeName(String idcsTargetAttributeName) {
-            this.idcsTargetAttributeName = Objects.requireNonNull(idcsTargetAttributeName);
+            if (idcsTargetAttributeName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsTargetAttributeName");
+            }
+            this.idcsTargetAttributeName = idcsTargetAttributeName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsTargetAttributeNameToMigrateFrom(String idcsTargetAttributeNameToMigrateFrom) {
-            this.idcsTargetAttributeNameToMigrateFrom = Objects.requireNonNull(idcsTargetAttributeNameToMigrateFrom);
+            if (idcsTargetAttributeNameToMigrateFrom == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsTargetAttributeNameToMigrateFrom");
+            }
+            this.idcsTargetAttributeNameToMigrateFrom = idcsTargetAttributeNameToMigrateFrom;
             return this;
         }
         @CustomType.Setter
         public Builder idcsTargetNormAttributeName(String idcsTargetNormAttributeName) {
-            this.idcsTargetNormAttributeName = Objects.requireNonNull(idcsTargetNormAttributeName);
+            if (idcsTargetNormAttributeName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsTargetNormAttributeName");
+            }
+            this.idcsTargetNormAttributeName = idcsTargetNormAttributeName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsTargetUniqueConstraintName(String idcsTargetUniqueConstraintName) {
-            this.idcsTargetUniqueConstraintName = Objects.requireNonNull(idcsTargetUniqueConstraintName);
+            if (idcsTargetUniqueConstraintName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsTargetUniqueConstraintName");
+            }
+            this.idcsTargetUniqueConstraintName = idcsTargetUniqueConstraintName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsToTargetMapper(String idcsToTargetMapper) {
-            this.idcsToTargetMapper = Objects.requireNonNull(idcsToTargetMapper);
+            if (idcsToTargetMapper == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsToTargetMapper");
+            }
+            this.idcsToTargetMapper = idcsToTargetMapper;
             return this;
         }
         @CustomType.Setter
         public Builder idcsTrimStringValue(Boolean idcsTrimStringValue) {
-            this.idcsTrimStringValue = Objects.requireNonNull(idcsTrimStringValue);
+            if (idcsTrimStringValue == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsTrimStringValue");
+            }
+            this.idcsTrimStringValue = idcsTrimStringValue;
             return this;
         }
         @CustomType.Setter
         public Builder idcsValidateReference(Boolean idcsValidateReference) {
-            this.idcsValidateReference = Objects.requireNonNull(idcsValidateReference);
+            if (idcsValidateReference == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsValidateReference");
+            }
+            this.idcsValidateReference = idcsValidateReference;
             return this;
         }
         @CustomType.Setter
         public Builder idcsValuePersisted(Boolean idcsValuePersisted) {
-            this.idcsValuePersisted = Objects.requireNonNull(idcsValuePersisted);
+            if (idcsValuePersisted == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "idcsValuePersisted");
+            }
+            this.idcsValuePersisted = idcsValuePersisted;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeMeta... metas) {
@@ -1343,27 +1515,42 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder multiValued(Boolean multiValued) {
-            this.multiValued = Objects.requireNonNull(multiValued);
+            if (multiValued == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "multiValued");
+            }
+            this.multiValued = multiValued;
             return this;
         }
         @CustomType.Setter
         public Builder mutability(String mutability) {
-            this.mutability = Objects.requireNonNull(mutability);
+            if (mutability == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "mutability");
+            }
+            this.mutability = mutability;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder referenceTypes(List<String> referenceTypes) {
-            this.referenceTypes = Objects.requireNonNull(referenceTypes);
+            if (referenceTypes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "referenceTypes");
+            }
+            this.referenceTypes = referenceTypes;
             return this;
         }
         public Builder referenceTypes(String... referenceTypes) {
@@ -1371,22 +1558,34 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+            if (required == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "required");
+            }
+            this.required = required;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder returned(String returned) {
-            this.returned = Objects.requireNonNull(returned);
+            if (returned == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "returned");
+            }
+            this.returned = returned;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -1394,7 +1593,10 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttributeTag... tags) {
@@ -1402,17 +1604,26 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder uniqueness(String uniqueness) {
-            this.uniqueness = Objects.requireNonNull(uniqueness);
+            if (uniqueness == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute", "uniqueness");
+            }
+            this.uniqueness = uniqueness;
             return this;
         }
         public GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute build() {

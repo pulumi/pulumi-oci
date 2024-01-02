@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -54,17 +55,26 @@ public final class GetDbNodeConsoleHistoryContentResult {
 
         @CustomType.Setter
         public Builder consoleHistoryId(String consoleHistoryId) {
-            this.consoleHistoryId = Objects.requireNonNull(consoleHistoryId);
+            if (consoleHistoryId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleHistoryContentResult", "consoleHistoryId");
+            }
+            this.consoleHistoryId = consoleHistoryId;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeId(String dbNodeId) {
-            this.dbNodeId = Objects.requireNonNull(dbNodeId);
+            if (dbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleHistoryContentResult", "dbNodeId");
+            }
+            this.dbNodeId = dbNodeId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeConsoleHistoryContentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDbNodeConsoleHistoryContentResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica;
@@ -405,17 +406,26 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
 
         @CustomType.Setter
         public Builder caCertArchiveText(String caCertArchiveText) {
-            this.caCertArchiveText = Objects.requireNonNull(caCertArchiveText);
+            if (caCertArchiveText == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "caCertArchiveText");
+            }
+            this.caCertArchiveText = caCertArchiveText;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentDetails(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail> componentDetails) {
-            this.componentDetails = Objects.requireNonNull(componentDetails);
+            if (componentDetails == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "componentDetails");
+            }
+            this.componentDetails = componentDetails;
             return this;
         }
         public Builder componentDetails(GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail... componentDetails) {
@@ -423,37 +433,58 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
         }
         @CustomType.Setter
         public Builder computeShape(String computeShape) {
-            this.computeShape = Objects.requireNonNull(computeShape);
+            if (computeShape == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "computeShape");
+            }
+            this.computeShape = computeShape;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder federatedUserId(String federatedUserId) {
-            this.federatedUserId = Objects.requireNonNull(federatedUserId);
+            if (federatedUserId == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "federatedUserId");
+            }
+            this.federatedUserId = federatedUserId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostOcpuUtilizationInfos(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo> hostOcpuUtilizationInfos) {
-            this.hostOcpuUtilizationInfos = Objects.requireNonNull(hostOcpuUtilizationInfos);
+            if (hostOcpuUtilizationInfos == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "hostOcpuUtilizationInfos");
+            }
+            this.hostOcpuUtilizationInfos = hostOcpuUtilizationInfos;
             return this;
         }
         public Builder hostOcpuUtilizationInfos(GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo... hostOcpuUtilizationInfos) {
@@ -461,52 +492,82 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAccessToken(String idcsAccessToken) {
-            this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
+            if (idcsAccessToken == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "idcsAccessToken");
+            }
+            this.idcsAccessToken = idcsAccessToken;
             return this;
         }
         @CustomType.Setter
         public Builder isByol(Boolean isByol) {
-            this.isByol = Objects.requireNonNull(isByol);
+            if (isByol == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "isByol");
+            }
+            this.isByol = isByol;
             return this;
         }
         @CustomType.Setter
         public Builder isMultiAd(Boolean isMultiAd) {
-            this.isMultiAd = Objects.requireNonNull(isMultiAd);
+            if (isMultiAd == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "isMultiAd");
+            }
+            this.isMultiAd = isMultiAd;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerShape(String loadBalancerShape) {
-            this.loadBalancerShape = Objects.requireNonNull(loadBalancerShape);
+            if (loadBalancerShape == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "loadBalancerShape");
+            }
+            this.loadBalancerShape = loadBalancerShape;
             return this;
         }
         @CustomType.Setter
         public Builder platformRole(String platformRole) {
-            this.platformRole = Objects.requireNonNull(platformRole);
+            if (platformRole == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "platformRole");
+            }
+            this.platformRole = platformRole;
             return this;
         }
         @CustomType.Setter
         public Builder platformShapeType(String platformShapeType) {
-            this.platformShapeType = Objects.requireNonNull(platformShapeType);
+            if (platformShapeType == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "platformShapeType");
+            }
+            this.platformShapeType = platformShapeType;
             return this;
         }
         @CustomType.Setter
         public Builder platformVersion(String platformVersion) {
-            this.platformVersion = Objects.requireNonNull(platformVersion);
+            if (platformVersion == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "platformVersion");
+            }
+            this.platformVersion = platformVersion;
             return this;
         }
         @CustomType.Setter
         public Builder replicas(List<GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica> replicas) {
-            this.replicas = Objects.requireNonNull(replicas);
+            if (replicas == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "replicas");
+            }
+            this.replicas = replicas;
             return this;
         }
         public Builder replicas(GetBlockchainPlatformsBlockchainPlatformCollectionItemReplica... replicas) {
@@ -514,42 +575,66 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
         }
         @CustomType.Setter
         public Builder serviceEndpoint(String serviceEndpoint) {
-            this.serviceEndpoint = Objects.requireNonNull(serviceEndpoint);
+            if (serviceEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "serviceEndpoint");
+            }
+            this.serviceEndpoint = serviceEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder serviceVersion(String serviceVersion) {
-            this.serviceVersion = Objects.requireNonNull(serviceVersion);
+            if (serviceVersion == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "serviceVersion");
+            }
+            this.serviceVersion = serviceVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder storageSizeInTbs(Double storageSizeInTbs) {
-            this.storageSizeInTbs = Objects.requireNonNull(storageSizeInTbs);
+            if (storageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "storageSizeInTbs");
+            }
+            this.storageSizeInTbs = storageSizeInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder storageUsedInTbs(Double storageUsedInTbs) {
-            this.storageUsedInTbs = Objects.requireNonNull(storageUsedInTbs);
+            if (storageUsedInTbs == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "storageUsedInTbs");
+            }
+            this.storageUsedInTbs = storageUsedInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalOcpuCapacity(Integer totalOcpuCapacity) {
-            this.totalOcpuCapacity = Objects.requireNonNull(totalOcpuCapacity);
+            if (totalOcpuCapacity == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollectionItem", "totalOcpuCapacity");
+            }
+            this.totalOcpuCapacity = totalOcpuCapacity;
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItem build() {

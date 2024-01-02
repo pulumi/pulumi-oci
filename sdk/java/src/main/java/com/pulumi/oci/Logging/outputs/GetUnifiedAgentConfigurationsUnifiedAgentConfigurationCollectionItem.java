@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -199,62 +200,98 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationState(String configurationState) {
-            this.configurationState = Objects.requireNonNull(configurationState);
+            if (configurationState == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "configurationState");
+            }
+            this.configurationState = configurationState;
             return this;
         }
         @CustomType.Setter
         public Builder configurationType(String configurationType) {
-            this.configurationType = Objects.requireNonNull(configurationType);
+            if (configurationType == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "configurationType");
+            }
+            this.configurationType = configurationType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+            if (timeLastModified == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem", "timeLastModified");
+            }
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem build() {

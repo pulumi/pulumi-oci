@@ -5,6 +5,7 @@ package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetJavaDownloadsJavaDownloadTokenArgs extends com.pulumi.reso
         }
 
         public GetJavaDownloadsJavaDownloadTokenArgs build() {
-            $.javaDownloadTokenId = Objects.requireNonNull($.javaDownloadTokenId, "expected parameter 'javaDownloadTokenId' to be non-null");
+            if ($.javaDownloadTokenId == null) {
+                throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenArgs", "javaDownloadTokenId");
+            }
             return $;
         }
     }

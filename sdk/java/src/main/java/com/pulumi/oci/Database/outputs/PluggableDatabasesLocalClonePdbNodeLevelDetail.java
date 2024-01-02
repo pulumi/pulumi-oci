@@ -58,11 +58,13 @@ public final class PluggableDatabasesLocalClonePdbNodeLevelDetail {
 
         @CustomType.Setter
         public Builder nodeName(@Nullable String nodeName) {
+
             this.nodeName = nodeName;
             return this;
         }
         @CustomType.Setter
         public Builder openMode(@Nullable String openMode) {
+
             this.openMode = openMode;
             return this;
         }

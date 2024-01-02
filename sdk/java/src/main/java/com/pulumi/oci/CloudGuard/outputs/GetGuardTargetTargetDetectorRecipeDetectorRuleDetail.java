@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration;
 import java.lang.Boolean;
@@ -116,7 +117,10 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
 
         @CustomType.Setter
         public Builder conditionGroups(List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup> conditionGroups) {
-            this.conditionGroups = Objects.requireNonNull(conditionGroups);
+            if (conditionGroups == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetail", "conditionGroups");
+            }
+            this.conditionGroups = conditionGroups;
             return this;
         }
         public Builder conditionGroups(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroup... conditionGroups) {
@@ -124,7 +128,10 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder configurations(List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetail", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration... configurations) {
@@ -132,17 +139,26 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder isConfigurationAllowed(Boolean isConfigurationAllowed) {
-            this.isConfigurationAllowed = Objects.requireNonNull(isConfigurationAllowed);
+            if (isConfigurationAllowed == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetail", "isConfigurationAllowed");
+            }
+            this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetail", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetail", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
@@ -150,7 +166,10 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetail {
         }
         @CustomType.Setter
         public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+            if (riskLevel == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetail", "riskLevel");
+            }
+            this.riskLevel = riskLevel;
             return this;
         }
         public GetGuardTargetTargetDetectorRecipeDetectorRuleDetail build() {

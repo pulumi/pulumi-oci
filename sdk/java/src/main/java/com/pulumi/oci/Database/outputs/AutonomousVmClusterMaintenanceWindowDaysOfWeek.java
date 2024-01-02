@@ -44,6 +44,7 @@ public final class AutonomousVmClusterMaintenanceWindowDaysOfWeek {
 
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

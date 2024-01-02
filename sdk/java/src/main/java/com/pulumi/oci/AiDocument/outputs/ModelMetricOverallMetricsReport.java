@@ -75,6 +75,7 @@ public final class ModelMetricOverallMetricsReport {
 
         @CustomType.Setter
         public Builder confidenceEntries(@Nullable List<ModelMetricOverallMetricsReportConfidenceEntry> confidenceEntries) {
+
             this.confidenceEntries = confidenceEntries;
             return this;
         }
@@ -83,11 +84,13 @@ public final class ModelMetricOverallMetricsReport {
         }
         @CustomType.Setter
         public Builder documentCount(@Nullable Integer documentCount) {
+
             this.documentCount = documentCount;
             return this;
         }
         @CustomType.Setter
         public Builder meanAveragePrecision(@Nullable Double meanAveragePrecision) {
+
             this.meanAveragePrecision = meanAveragePrecision;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+            if (riskLevel == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser", "riskLevel");
+            }
+            this.riskLevel = riskLevel;
             return this;
         }
         @CustomType.Setter
         public Builder riskScores(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores) {
-            this.riskScores = Objects.requireNonNull(riskScores);
+            if (riskScores == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser", "riskScores");
+            }
+            this.riskScores = riskScores;
             return this;
         }
         public Builder riskScores(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore... riskScores) {

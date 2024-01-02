@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -189,9 +190,15 @@ public final class GetDecryptedDataArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetDecryptedDataArgs build() {
-            $.ciphertext = Objects.requireNonNull($.ciphertext, "expected parameter 'ciphertext' to be non-null");
-            $.cryptoEndpoint = Objects.requireNonNull($.cryptoEndpoint, "expected parameter 'cryptoEndpoint' to be non-null");
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
+            if ($.ciphertext == null) {
+                throw new MissingRequiredPropertyException("GetDecryptedDataArgs", "ciphertext");
+            }
+            if ($.cryptoEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDecryptedDataArgs", "cryptoEndpoint");
+            }
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("GetDecryptedDataArgs", "keyId");
+            }
             return $;
         }
     }

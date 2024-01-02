@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemConnectorsFilter;
 import java.lang.String;
@@ -109,17 +110,22 @@ public final class GetExternalDbSystemConnectorsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemConnectorCollections(List<GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection> externalDbSystemConnectorCollections) {
-            this.externalDbSystemConnectorCollections = Objects.requireNonNull(externalDbSystemConnectorCollections);
+            if (externalDbSystemConnectorCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsResult", "externalDbSystemConnectorCollections");
+            }
+            this.externalDbSystemConnectorCollections = externalDbSystemConnectorCollections;
             return this;
         }
         public Builder externalDbSystemConnectorCollections(GetExternalDbSystemConnectorsExternalDbSystemConnectorCollection... externalDbSystemConnectorCollections) {
@@ -127,11 +133,13 @@ public final class GetExternalDbSystemConnectorsResult {
         }
         @CustomType.Setter
         public Builder externalDbSystemId(@Nullable String externalDbSystemId) {
+
             this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalDbSystemConnectorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,7 +148,10 @@ public final class GetExternalDbSystemConnectorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemConnectorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalDbSystemConnectorsResult build() {

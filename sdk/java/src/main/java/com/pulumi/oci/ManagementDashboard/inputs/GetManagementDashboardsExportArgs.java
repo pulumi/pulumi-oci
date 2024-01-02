@@ -5,6 +5,7 @@ package com.pulumi.oci.ManagementDashboard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetManagementDashboardsExportArgs extends com.pulumi.resource
         }
 
         public GetManagementDashboardsExportArgs build() {
-            $.exportDashboardId = Objects.requireNonNull($.exportDashboardId, "expected parameter 'exportDashboardId' to be non-null");
+            if ($.exportDashboardId == null) {
+                throw new MissingRequiredPropertyException("GetManagementDashboardsExportArgs", "exportDashboardId");
+            }
             return $;
         }
     }

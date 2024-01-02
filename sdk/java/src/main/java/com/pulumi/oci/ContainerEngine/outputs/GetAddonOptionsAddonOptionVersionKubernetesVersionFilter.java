@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
 
         @CustomType.Setter
         public Builder exactKubernetesVersions(List<String> exactKubernetesVersions) {
-            this.exactKubernetesVersions = Objects.requireNonNull(exactKubernetesVersions);
+            if (exactKubernetesVersions == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOptionVersionKubernetesVersionFilter", "exactKubernetesVersions");
+            }
+            this.exactKubernetesVersions = exactKubernetesVersions;
             return this;
         }
         public Builder exactKubernetesVersions(String... exactKubernetesVersions) {
@@ -79,12 +83,18 @@ public final class GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
         }
         @CustomType.Setter
         public Builder maximumVersion(String maximumVersion) {
-            this.maximumVersion = Objects.requireNonNull(maximumVersion);
+            if (maximumVersion == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOptionVersionKubernetesVersionFilter", "maximumVersion");
+            }
+            this.maximumVersion = maximumVersion;
             return this;
         }
         @CustomType.Setter
         public Builder minimalVersion(String minimalVersion) {
-            this.minimalVersion = Objects.requireNonNull(minimalVersion);
+            if (minimalVersion == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOptionVersionKubernetesVersionFilter", "minimalVersion");
+            }
+            this.minimalVersion = minimalVersion;
             return this;
         }
         public GetAddonOptionsAddonOptionVersionKubernetesVersionFilter build() {

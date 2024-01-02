@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.inputs.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs;
 import java.lang.String;
 import java.util.List;
@@ -236,10 +237,18 @@ public final class NamespaceIngestTimeRuleConditionsArgs extends com.pulumi.reso
         }
 
         public NamespaceIngestTimeRuleConditionsArgs build() {
-            $.fieldName = Objects.requireNonNull($.fieldName, "expected parameter 'fieldName' to be non-null");
-            $.fieldOperator = Objects.requireNonNull($.fieldOperator, "expected parameter 'fieldOperator' to be non-null");
-            $.fieldValue = Objects.requireNonNull($.fieldValue, "expected parameter 'fieldValue' to be non-null");
-            $.kind = Objects.requireNonNull($.kind, "expected parameter 'kind' to be non-null");
+            if ($.fieldName == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsArgs", "fieldName");
+            }
+            if ($.fieldOperator == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsArgs", "fieldOperator");
+            }
+            if ($.fieldValue == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsArgs", "fieldValue");
+            }
+            if ($.kind == null) {
+                throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsArgs", "kind");
+            }
             return $;
         }
     }

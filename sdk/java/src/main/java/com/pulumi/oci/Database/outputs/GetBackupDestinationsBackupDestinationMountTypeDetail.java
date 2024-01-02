@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -77,22 +78,34 @@ public final class GetBackupDestinationsBackupDestinationMountTypeDetail {
 
         @CustomType.Setter
         public Builder localMountPointPath(String localMountPointPath) {
-            this.localMountPointPath = Objects.requireNonNull(localMountPointPath);
+            if (localMountPointPath == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestinationMountTypeDetail", "localMountPointPath");
+            }
+            this.localMountPointPath = localMountPointPath;
             return this;
         }
         @CustomType.Setter
         public Builder mountType(String mountType) {
-            this.mountType = Objects.requireNonNull(mountType);
+            if (mountType == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestinationMountTypeDetail", "mountType");
+            }
+            this.mountType = mountType;
             return this;
         }
         @CustomType.Setter
         public Builder nfsServerExport(String nfsServerExport) {
-            this.nfsServerExport = Objects.requireNonNull(nfsServerExport);
+            if (nfsServerExport == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestinationMountTypeDetail", "nfsServerExport");
+            }
+            this.nfsServerExport = nfsServerExport;
             return this;
         }
         @CustomType.Setter
         public Builder nfsServers(List<String> nfsServers) {
-            this.nfsServers = Objects.requireNonNull(nfsServers);
+            if (nfsServers == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestinationMountTypeDetail", "nfsServers");
+            }
+            this.nfsServers = nfsServers;
             return this;
         }
         public Builder nfsServers(String... nfsServers) {

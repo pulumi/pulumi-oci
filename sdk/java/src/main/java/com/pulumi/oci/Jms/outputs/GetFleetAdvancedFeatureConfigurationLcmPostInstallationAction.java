@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy;
 import java.lang.Boolean;
@@ -120,12 +121,18 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
 
         @CustomType.Setter
         public Builder addLoggingHandler(Boolean addLoggingHandler) {
-            this.addLoggingHandler = Objects.requireNonNull(addLoggingHandler);
+            if (addLoggingHandler == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction", "addLoggingHandler");
+            }
+            this.addLoggingHandler = addLoggingHandler;
             return this;
         }
         @CustomType.Setter
         public Builder disabledTlsVersions(List<String> disabledTlsVersions) {
-            this.disabledTlsVersions = Objects.requireNonNull(disabledTlsVersions);
+            if (disabledTlsVersions == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction", "disabledTlsVersions");
+            }
+            this.disabledTlsVersions = disabledTlsVersions;
             return this;
         }
         public Builder disabledTlsVersions(String... disabledTlsVersions) {
@@ -133,12 +140,18 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
         @CustomType.Setter
         public Builder globalLoggingLevel(String globalLoggingLevel) {
-            this.globalLoggingLevel = Objects.requireNonNull(globalLoggingLevel);
+            if (globalLoggingLevel == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction", "globalLoggingLevel");
+            }
+            this.globalLoggingLevel = globalLoggingLevel;
             return this;
         }
         @CustomType.Setter
         public Builder minimumKeySizeSettings(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting> minimumKeySizeSettings) {
-            this.minimumKeySizeSettings = Objects.requireNonNull(minimumKeySizeSettings);
+            if (minimumKeySizeSettings == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction", "minimumKeySizeSettings");
+            }
+            this.minimumKeySizeSettings = minimumKeySizeSettings;
             return this;
         }
         public Builder minimumKeySizeSettings(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting... minimumKeySizeSettings) {
@@ -146,7 +159,10 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
         @CustomType.Setter
         public Builder proxies(List<GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy> proxies) {
-            this.proxies = Objects.requireNonNull(proxies);
+            if (proxies == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction", "proxies");
+            }
+            this.proxies = proxies;
             return this;
         }
         public Builder proxies(GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy... proxies) {
@@ -154,7 +170,10 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
         }
         @CustomType.Setter
         public Builder shouldReplaceCertificatesOperatingSystem(Boolean shouldReplaceCertificatesOperatingSystem) {
-            this.shouldReplaceCertificatesOperatingSystem = Objects.requireNonNull(shouldReplaceCertificatesOperatingSystem);
+            if (shouldReplaceCertificatesOperatingSystem == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction", "shouldReplaceCertificatesOperatingSystem");
+            }
+            this.shouldReplaceCertificatesOperatingSystem = shouldReplaceCertificatesOperatingSystem;
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction build() {

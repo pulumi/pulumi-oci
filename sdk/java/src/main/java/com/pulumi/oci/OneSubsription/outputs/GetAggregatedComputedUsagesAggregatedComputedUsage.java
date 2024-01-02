@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage;
 import com.pulumi.oci.OneSubsription.outputs.GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct;
 import java.lang.String;
@@ -171,7 +172,10 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsage {
 
         @CustomType.Setter
         public Builder aggregatedComputedUsages(List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage> aggregatedComputedUsages) {
-            this.aggregatedComputedUsages = Objects.requireNonNull(aggregatedComputedUsages);
+            if (aggregatedComputedUsages == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "aggregatedComputedUsages");
+            }
+            this.aggregatedComputedUsages = aggregatedComputedUsages;
             return this;
         }
         public Builder aggregatedComputedUsages(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage... aggregatedComputedUsages) {
@@ -179,12 +183,18 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsage {
         }
         @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+            if (currencyCode == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "currencyCode");
+            }
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
         public Builder parentProducts(List<GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct> parentProducts) {
-            this.parentProducts = Objects.requireNonNull(parentProducts);
+            if (parentProducts == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "parentProducts");
+            }
+            this.parentProducts = parentProducts;
             return this;
         }
         public Builder parentProducts(GetAggregatedComputedUsagesAggregatedComputedUsageParentProduct... parentProducts) {
@@ -192,37 +202,58 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsage {
         }
         @CustomType.Setter
         public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
-            this.parentSubscribedServiceId = Objects.requireNonNull(parentSubscribedServiceId);
+            if (parentSubscribedServiceId == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "parentSubscribedServiceId");
+            }
+            this.parentSubscribedServiceId = parentSubscribedServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder planNumber(String planNumber) {
-            this.planNumber = Objects.requireNonNull(planNumber);
+            if (planNumber == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "planNumber");
+            }
+            this.planNumber = planNumber;
             return this;
         }
         @CustomType.Setter
         public Builder pricingModel(String pricingModel) {
-            this.pricingModel = Objects.requireNonNull(pricingModel);
+            if (pricingModel == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "pricingModel");
+            }
+            this.pricingModel = pricingModel;
             return this;
         }
         @CustomType.Setter
         public Builder rateCardId(String rateCardId) {
-            this.rateCardId = Objects.requireNonNull(rateCardId);
+            if (rateCardId == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "rateCardId");
+            }
+            this.rateCardId = rateCardId;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsage", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetAggregatedComputedUsagesAggregatedComputedUsage build() {

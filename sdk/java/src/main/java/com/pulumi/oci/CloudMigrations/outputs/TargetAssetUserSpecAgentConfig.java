@@ -116,21 +116,25 @@ public final class TargetAssetUserSpecAgentConfig {
 
         @CustomType.Setter
         public Builder areAllPluginsDisabled(@Nullable Boolean areAllPluginsDisabled) {
+
             this.areAllPluginsDisabled = areAllPluginsDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder isManagementDisabled(@Nullable Boolean isManagementDisabled) {
+
             this.isManagementDisabled = isManagementDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMonitoringDisabled(@Nullable Boolean isMonitoringDisabled) {
+
             this.isMonitoringDisabled = isMonitoringDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder pluginsConfigs(@Nullable List<TargetAssetUserSpecAgentConfigPluginsConfig> pluginsConfigs) {
+
             this.pluginsConfigs = pluginsConfigs;
             return this;
         }

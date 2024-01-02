@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesFilter;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingPolicyCollection;
 import java.lang.Boolean;
@@ -168,26 +169,33 @@ public final class GetMaskingPoliciesResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMaskingPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -196,12 +204,18 @@ public final class GetMaskingPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maskingPolicyCollections(List<GetMaskingPoliciesMaskingPolicyCollection> maskingPolicyCollections) {
-            this.maskingPolicyCollections = Objects.requireNonNull(maskingPolicyCollections);
+            if (maskingPolicyCollections == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesResult", "maskingPolicyCollections");
+            }
+            this.maskingPolicyCollections = maskingPolicyCollections;
             return this;
         }
         public Builder maskingPolicyCollections(GetMaskingPoliciesMaskingPolicyCollection... maskingPolicyCollections) {
@@ -209,31 +223,37 @@ public final class GetMaskingPoliciesResult {
         }
         @CustomType.Setter
         public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
+
             this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(@Nullable String sensitiveDataModelId) {
+
             this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }

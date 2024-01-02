@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserN
 
         @CustomType.Setter
         public Builder fieldTimeKey(String fieldTimeKey) {
-            this.fieldTimeKey = Objects.requireNonNull(fieldTimeKey);
+            if (fieldTimeKey == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser", "fieldTimeKey");
+            }
+            this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder isKeepTimeKey(Boolean isKeepTimeKey) {
-            this.isKeepTimeKey = Objects.requireNonNull(isKeepTimeKey);
+            if (isKeepTimeKey == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser", "isKeepTimeKey");
+            }
+            this.isKeepTimeKey = isKeepTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder timeFormat(String timeFormat) {
-            this.timeFormat = Objects.requireNonNull(timeFormat);
+            if (timeFormat == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser", "timeFormat");
+            }
+            this.timeFormat = timeFormat;
             return this;
         }
         @CustomType.Setter
         public Builder timeType(String timeType) {
-            this.timeType = Objects.requireNonNull(timeType);
+            if (timeType == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser", "timeType");
+            }
+            this.timeType = timeType;
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser build() {

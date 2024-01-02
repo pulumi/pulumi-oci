@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.inputs.GetReplicationSourcesFilter;
 import java.lang.String;
 import java.util.List;
@@ -111,8 +112,12 @@ public final class GetReplicationSourcesPlainArgs extends com.pulumi.resources.I
         }
 
         public GetReplicationSourcesPlainArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("GetReplicationSourcesPlainArgs", "bucket");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("GetReplicationSourcesPlainArgs", "namespace");
+            }
             return $;
         }
     }

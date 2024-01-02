@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsDomainReplicaRegion;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -293,92 +294,146 @@ public final class GetDomainsDomain {
 
         @CustomType.Setter
         public Builder adminEmail(String adminEmail) {
-            this.adminEmail = Objects.requireNonNull(adminEmail);
+            if (adminEmail == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "adminEmail");
+            }
+            this.adminEmail = adminEmail;
             return this;
         }
         @CustomType.Setter
         public Builder adminFirstName(String adminFirstName) {
-            this.adminFirstName = Objects.requireNonNull(adminFirstName);
+            if (adminFirstName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "adminFirstName");
+            }
+            this.adminFirstName = adminFirstName;
             return this;
         }
         @CustomType.Setter
         public Builder adminLastName(String adminLastName) {
-            this.adminLastName = Objects.requireNonNull(adminLastName);
+            if (adminLastName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "adminLastName");
+            }
+            this.adminLastName = adminLastName;
             return this;
         }
         @CustomType.Setter
         public Builder adminUserName(String adminUserName) {
-            this.adminUserName = Objects.requireNonNull(adminUserName);
+            if (adminUserName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "adminUserName");
+            }
+            this.adminUserName = adminUserName;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder homeRegion(String homeRegion) {
-            this.homeRegion = Objects.requireNonNull(homeRegion);
+            if (homeRegion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "homeRegion");
+            }
+            this.homeRegion = homeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder homeRegionUrl(String homeRegionUrl) {
-            this.homeRegionUrl = Objects.requireNonNull(homeRegionUrl);
+            if (homeRegionUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "homeRegionUrl");
+            }
+            this.homeRegionUrl = homeRegionUrl;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isHiddenOnLogin(Boolean isHiddenOnLogin) {
-            this.isHiddenOnLogin = Objects.requireNonNull(isHiddenOnLogin);
+            if (isHiddenOnLogin == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "isHiddenOnLogin");
+            }
+            this.isHiddenOnLogin = isHiddenOnLogin;
             return this;
         }
         @CustomType.Setter
         public Builder isNotificationBypassed(Boolean isNotificationBypassed) {
-            this.isNotificationBypassed = Objects.requireNonNull(isNotificationBypassed);
+            if (isNotificationBypassed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "isNotificationBypassed");
+            }
+            this.isNotificationBypassed = isNotificationBypassed;
             return this;
         }
         @CustomType.Setter
         public Builder isPrimaryEmailRequired(Boolean isPrimaryEmailRequired) {
-            this.isPrimaryEmailRequired = Objects.requireNonNull(isPrimaryEmailRequired);
+            if (isPrimaryEmailRequired == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "isPrimaryEmailRequired");
+            }
+            this.isPrimaryEmailRequired = isPrimaryEmailRequired;
             return this;
         }
         @CustomType.Setter
         public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+            if (licenseType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "licenseType");
+            }
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder replicaRegions(List<GetDomainsDomainReplicaRegion> replicaRegions) {
-            this.replicaRegions = Objects.requireNonNull(replicaRegions);
+            if (replicaRegions == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "replicaRegions");
+            }
+            this.replicaRegions = replicaRegions;
             return this;
         }
         public Builder replicaRegions(GetDomainsDomainReplicaRegion... replicaRegions) {
@@ -386,22 +441,34 @@ public final class GetDomainsDomain {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetDomainsDomain", "url");
+            }
+            this.url = url;
             return this;
         }
         public GetDomainsDomain build() {

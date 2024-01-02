@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmStatusesAlarmStatus;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmStatusesFilter;
 import java.lang.Boolean;
@@ -126,7 +127,10 @@ public final class GetAlarmStatusesResult {
 
         @CustomType.Setter
         public Builder alarmStatuses(List<GetAlarmStatusesAlarmStatus> alarmStatuses) {
-            this.alarmStatuses = Objects.requireNonNull(alarmStatuses);
+            if (alarmStatuses == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesResult", "alarmStatuses");
+            }
+            this.alarmStatuses = alarmStatuses;
             return this;
         }
         public Builder alarmStatuses(GetAlarmStatusesAlarmStatus... alarmStatuses) {
@@ -134,26 +138,33 @@ public final class GetAlarmStatusesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder entityId(@Nullable String entityId) {
+
             this.entityId = entityId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAlarmStatusesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -162,21 +173,27 @@ public final class GetAlarmStatusesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
+
             this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

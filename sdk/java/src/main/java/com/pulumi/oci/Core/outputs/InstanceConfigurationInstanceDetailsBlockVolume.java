@@ -74,16 +74,19 @@ public final class InstanceConfigurationInstanceDetailsBlockVolume {
 
         @CustomType.Setter
         public Builder attachDetails(@Nullable InstanceConfigurationInstanceDetailsBlockVolumeAttachDetails attachDetails) {
+
             this.attachDetails = attachDetails;
             return this;
         }
         @CustomType.Setter
         public Builder createDetails(@Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails createDetails) {
+
             this.createDetails = createDetails;
             return this;
         }
         @CustomType.Setter
         public Builder volumeId(@Nullable String volumeId) {
+
             this.volumeId = volumeId;
             return this;
         }

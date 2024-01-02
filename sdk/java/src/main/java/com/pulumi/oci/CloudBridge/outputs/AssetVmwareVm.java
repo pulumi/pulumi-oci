@@ -194,11 +194,13 @@ public final class AssetVmwareVm {
 
         @CustomType.Setter
         public Builder cluster(@Nullable String cluster) {
+
             this.cluster = cluster;
             return this;
         }
         @CustomType.Setter
         public Builder customerFields(@Nullable List<String> customerFields) {
+
             this.customerFields = customerFields;
             return this;
         }
@@ -207,6 +209,7 @@ public final class AssetVmwareVm {
         }
         @CustomType.Setter
         public Builder customerTags(@Nullable List<AssetVmwareVmCustomerTag> customerTags) {
+
             this.customerTags = customerTags;
             return this;
         }
@@ -215,41 +218,49 @@ public final class AssetVmwareVm {
         }
         @CustomType.Setter
         public Builder faultToleranceBandwidth(@Nullable Integer faultToleranceBandwidth) {
+
             this.faultToleranceBandwidth = faultToleranceBandwidth;
             return this;
         }
         @CustomType.Setter
         public Builder faultToleranceSecondaryLatency(@Nullable Integer faultToleranceSecondaryLatency) {
+
             this.faultToleranceSecondaryLatency = faultToleranceSecondaryLatency;
             return this;
         }
         @CustomType.Setter
         public Builder faultToleranceState(@Nullable String faultToleranceState) {
+
             this.faultToleranceState = faultToleranceState;
             return this;
         }
         @CustomType.Setter
         public Builder instanceUuid(@Nullable String instanceUuid) {
+
             this.instanceUuid = instanceUuid;
             return this;
         }
         @CustomType.Setter
         public Builder isDisksCbtEnabled(@Nullable Boolean isDisksCbtEnabled) {
+
             this.isDisksCbtEnabled = isDisksCbtEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isDisksUuidEnabled(@Nullable Boolean isDisksUuidEnabled) {
+
             this.isDisksUuidEnabled = isDisksUuidEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder path(@Nullable String path) {
+
             this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder vmwareToolsStatus(@Nullable String vmwareToolsStatus) {
+
             this.vmwareToolsStatus = vmwareToolsStatus;
             return this;
         }

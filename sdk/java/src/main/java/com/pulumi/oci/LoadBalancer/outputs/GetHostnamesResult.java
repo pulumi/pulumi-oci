@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetHostnamesFilter;
 import com.pulumi.oci.LoadBalancer.outputs.GetHostnamesHostname;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetHostnamesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetHostnamesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,7 +82,10 @@ public final class GetHostnamesResult {
         }
         @CustomType.Setter
         public Builder hostnames(List<GetHostnamesHostname> hostnames) {
-            this.hostnames = Objects.requireNonNull(hostnames);
+            if (hostnames == null) {
+              throw new MissingRequiredPropertyException("GetHostnamesResult", "hostnames");
+            }
+            this.hostnames = hostnames;
             return this;
         }
         public Builder hostnames(GetHostnamesHostname... hostnames) {
@@ -88,12 +93,18 @@ public final class GetHostnamesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetHostnamesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetHostnamesResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         public GetHostnamesResult build() {

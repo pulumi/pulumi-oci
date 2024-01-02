@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolLoadBalancerArgs;
 import com.pulumi.oci.Core.inputs.ClusterNetworkInstancePoolPlacementConfigurationArgs;
 import java.lang.Integer;
@@ -506,8 +507,12 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
         }
 
         public ClusterNetworkInstancePoolArgs build() {
-            $.instanceConfigurationId = Objects.requireNonNull($.instanceConfigurationId, "expected parameter 'instanceConfigurationId' to be non-null");
-            $.size = Objects.requireNonNull($.size, "expected parameter 'size' to be non-null");
+            if ($.instanceConfigurationId == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkInstancePoolArgs", "instanceConfigurationId");
+            }
+            if ($.size == null) {
+                throw new MissingRequiredPropertyException("ClusterNetworkInstancePoolArgs", "size");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionw
 
         @CustomType.Setter
         public Builder resourceRef(Boolean resourceRef) {
-            this.resourceRef = Objects.requireNonNull(resourceRef);
+            if (resourceRef == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp", "resourceRef");
+            }
+            this.resourceRef = resourceRef;
             return this;
         }
         @CustomType.Setter
         public Builder webTierPolicyAzControl(String webTierPolicyAzControl) {
-            this.webTierPolicyAzControl = Objects.requireNonNull(webTierPolicyAzControl);
+            if (webTierPolicyAzControl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp", "webTierPolicyAzControl");
+            }
+            this.webTierPolicyAzControl = webTierPolicyAzControl;
             return this;
         }
         @CustomType.Setter
         public Builder webTierPolicyJson(String webTierPolicyJson) {
-            this.webTierPolicyJson = Objects.requireNonNull(webTierPolicyJson);
+            if (webTierPolicyJson == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp", "webTierPolicyJson");
+            }
+            this.webTierPolicyJson = webTierPolicyJson;
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp build() {

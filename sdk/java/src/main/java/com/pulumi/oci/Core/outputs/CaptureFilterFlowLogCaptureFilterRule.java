@@ -203,56 +203,67 @@ public final class CaptureFilterFlowLogCaptureFilterRule {
 
         @CustomType.Setter
         public Builder destinationCidr(@Nullable String destinationCidr) {
+
             this.destinationCidr = destinationCidr;
             return this;
         }
         @CustomType.Setter
         public Builder flowLogType(@Nullable String flowLogType) {
+
             this.flowLogType = flowLogType;
             return this;
         }
         @CustomType.Setter
         public Builder icmpOptions(@Nullable CaptureFilterFlowLogCaptureFilterRuleIcmpOptions icmpOptions) {
+
             this.icmpOptions = icmpOptions;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder priority(@Nullable Integer priority) {
+
             this.priority = priority;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
+
             this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder ruleAction(@Nullable String ruleAction) {
+
             this.ruleAction = ruleAction;
             return this;
         }
         @CustomType.Setter
         public Builder samplingRate(@Nullable Integer samplingRate) {
+
             this.samplingRate = samplingRate;
             return this;
         }
         @CustomType.Setter
         public Builder sourceCidr(@Nullable String sourceCidr) {
+
             this.sourceCidr = sourceCidr;
             return this;
         }
         @CustomType.Setter
         public Builder tcpOptions(@Nullable CaptureFilterFlowLogCaptureFilterRuleTcpOptions tcpOptions) {
+
             this.tcpOptions = tcpOptions;
             return this;
         }
         @CustomType.Setter
         public Builder udpOptions(@Nullable CaptureFilterFlowLogCaptureFilterRuleUdpOptions udpOptions) {
+
             this.udpOptions = udpOptions;
             return this;
         }

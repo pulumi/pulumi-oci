@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForDataTypeFormatsForDataType;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetCompatibleFormatsForDataTypeResult {
 
         @CustomType.Setter
         public Builder formatsForDataTypes(List<GetCompatibleFormatsForDataTypeFormatsForDataType> formatsForDataTypes) {
-            this.formatsForDataTypes = Objects.requireNonNull(formatsForDataTypes);
+            if (formatsForDataTypes == null) {
+              throw new MissingRequiredPropertyException("GetCompatibleFormatsForDataTypeResult", "formatsForDataTypes");
+            }
+            this.formatsForDataTypes = formatsForDataTypes;
             return this;
         }
         public Builder formatsForDataTypes(GetCompatibleFormatsForDataTypeFormatsForDataType... formatsForDataTypes) {
@@ -66,7 +70,10 @@ public final class GetCompatibleFormatsForDataTypeResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCompatibleFormatsForDataTypeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetCompatibleFormatsForDataTypeResult build() {

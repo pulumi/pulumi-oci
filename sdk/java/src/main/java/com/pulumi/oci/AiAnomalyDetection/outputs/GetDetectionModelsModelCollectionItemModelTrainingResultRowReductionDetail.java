@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
@@ -76,17 +77,26 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultRowRe
 
         @CustomType.Setter
         public Builder isReductionEnabled(Boolean isReductionEnabled) {
-            this.isReductionEnabled = Objects.requireNonNull(isReductionEnabled);
+            if (isReductionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail", "isReductionEnabled");
+            }
+            this.isReductionEnabled = isReductionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder reductionMethod(String reductionMethod) {
-            this.reductionMethod = Objects.requireNonNull(reductionMethod);
+            if (reductionMethod == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail", "reductionMethod");
+            }
+            this.reductionMethod = reductionMethod;
             return this;
         }
         @CustomType.Setter
         public Builder reductionPercentage(Double reductionPercentage) {
-            this.reductionPercentage = Objects.requireNonNull(reductionPercentage);
+            if (reductionPercentage == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail", "reductionPercentage");
+            }
+            this.reductionPercentage = reductionPercentage;
             return this;
         }
         public GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail build() {

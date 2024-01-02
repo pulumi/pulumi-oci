@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -248,56 +249,77 @@ public final class ClusterNetworkConfiguration {
 
         @CustomType.Setter
         public Builder hcxVlanId(@Nullable String hcxVlanId) {
+
             this.hcxVlanId = hcxVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeUplink1vlanId(@Nullable String nsxEdgeUplink1vlanId) {
+
             this.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeUplink2vlanId(@Nullable String nsxEdgeUplink2vlanId) {
+
             this.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxEdgeVtepVlanId(String nsxEdgeVtepVlanId) {
-            this.nsxEdgeVtepVlanId = Objects.requireNonNull(nsxEdgeVtepVlanId);
+            if (nsxEdgeVtepVlanId == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkConfiguration", "nsxEdgeVtepVlanId");
+            }
+            this.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder nsxVtepVlanId(String nsxVtepVlanId) {
-            this.nsxVtepVlanId = Objects.requireNonNull(nsxVtepVlanId);
+            if (nsxVtepVlanId == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkConfiguration", "nsxVtepVlanId");
+            }
+            this.nsxVtepVlanId = nsxVtepVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningSubnetId(String provisioningSubnetId) {
-            this.provisioningSubnetId = Objects.requireNonNull(provisioningSubnetId);
+            if (provisioningSubnetId == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkConfiguration", "provisioningSubnetId");
+            }
+            this.provisioningSubnetId = provisioningSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder provisioningVlanId(@Nullable String provisioningVlanId) {
+
             this.provisioningVlanId = provisioningVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder replicationVlanId(@Nullable String replicationVlanId) {
+
             this.replicationVlanId = replicationVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vmotionVlanId(String vmotionVlanId) {
-            this.vmotionVlanId = Objects.requireNonNull(vmotionVlanId);
+            if (vmotionVlanId == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkConfiguration", "vmotionVlanId");
+            }
+            this.vmotionVlanId = vmotionVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vsanVlanId(String vsanVlanId) {
-            this.vsanVlanId = Objects.requireNonNull(vsanVlanId);
+            if (vsanVlanId == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkConfiguration", "vsanVlanId");
+            }
+            this.vsanVlanId = vsanVlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vsphereVlanId(@Nullable String vsphereVlanId) {
+
             this.vsphereVlanId = vsphereVlanId;
             return this;
         }

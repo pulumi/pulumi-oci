@@ -130,16 +130,19 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
 
         @CustomType.Setter
         public Builder agentId(@Nullable String agentId) {
+
             this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionFailureMessage(@Nullable String connectionFailureMessage) {
+
             this.connectionFailureMessage = connectionFailureMessage;
             return this;
         }
         @CustomType.Setter
         public Builder connectionInfos(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo> connectionInfos) {
+
             this.connectionInfos = connectionInfos;
             return this;
         }
@@ -148,21 +151,25 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
         @CustomType.Setter
         public Builder connectionStatus(@Nullable String connectionStatus) {
+
             this.connectionStatus = connectionStatus;
             return this;
         }
         @CustomType.Setter
         public Builder connectorType(@Nullable String connectorType) {
+
             this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder timeConnectionStatusLastUpdated(@Nullable String timeConnectionStatusLastUpdated) {
+
             this.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             return this;
         }

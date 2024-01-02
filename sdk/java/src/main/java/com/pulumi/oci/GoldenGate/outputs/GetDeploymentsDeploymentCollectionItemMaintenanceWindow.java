@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetDeploymentsDeploymentCollectionItemMaintenanceWindow {
 
         @CustomType.Setter
         public Builder day(String day) {
-            this.day = Objects.requireNonNull(day);
+            if (day == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemMaintenanceWindow", "day");
+            }
+            this.day = day;
             return this;
         }
         @CustomType.Setter
         public Builder startHour(Integer startHour) {
-            this.startHour = Objects.requireNonNull(startHour);
+            if (startHour == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemMaintenanceWindow", "startHour");
+            }
+            this.startHour = startHour;
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemMaintenanceWindow build() {

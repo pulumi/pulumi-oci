@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsFilter;
 import java.lang.String;
 import java.util.List;
@@ -219,7 +220,9 @@ public final class GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs exte
         }
 
         public GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs build() {
-            $.computeCapacityTopologyId = Objects.requireNonNull($.computeCapacityTopologyId, "expected parameter 'computeCapacityTopologyId' to be non-null");
+            if ($.computeCapacityTopologyId == null) {
+                throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs", "computeCapacityTopologyId");
+            }
             return $;
         }
     }

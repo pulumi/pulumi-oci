@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDeployStageBlueGreenStrategy {
 
         @CustomType.Setter
         public Builder ingressName(String ingressName) {
-            this.ingressName = Objects.requireNonNull(ingressName);
+            if (ingressName == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageBlueGreenStrategy", "ingressName");
+            }
+            this.ingressName = ingressName;
             return this;
         }
         @CustomType.Setter
         public Builder namespaceA(String namespaceA) {
-            this.namespaceA = Objects.requireNonNull(namespaceA);
+            if (namespaceA == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageBlueGreenStrategy", "namespaceA");
+            }
+            this.namespaceA = namespaceA;
             return this;
         }
         @CustomType.Setter
         public Builder namespaceB(String namespaceB) {
-            this.namespaceB = Objects.requireNonNull(namespaceB);
+            if (namespaceB == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageBlueGreenStrategy", "namespaceB");
+            }
+            this.namespaceB = namespaceB;
             return this;
         }
         @CustomType.Setter
         public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+            if (strategyType == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageBlueGreenStrategy", "strategyType");
+            }
+            this.strategyType = strategyType;
             return this;
         }
         public GetDeployStageBlueGreenStrategy build() {

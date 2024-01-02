@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAutonomousVirtualMachineArgs extends com.pulumi.resources.
         }
 
         public GetAutonomousVirtualMachineArgs build() {
-            $.autonomousVirtualMachineId = Objects.requireNonNull($.autonomousVirtualMachineId, "expected parameter 'autonomousVirtualMachineId' to be non-null");
+            if ($.autonomousVirtualMachineId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousVirtualMachineArgs", "autonomousVirtualMachineId");
+            }
             return $;
         }
     }

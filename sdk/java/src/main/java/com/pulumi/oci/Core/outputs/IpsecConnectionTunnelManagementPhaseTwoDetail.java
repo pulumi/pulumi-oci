@@ -218,66 +218,79 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
 
         @CustomType.Setter
         public Builder customAuthenticationAlgorithm(@Nullable String customAuthenticationAlgorithm) {
+
             this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder customEncryptionAlgorithm(@Nullable String customEncryptionAlgorithm) {
+
             this.customEncryptionAlgorithm = customEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder dhGroup(@Nullable String dhGroup) {
+
             this.dhGroup = dhGroup;
             return this;
         }
         @CustomType.Setter
         public Builder isCustomPhaseTwoConfig(@Nullable Boolean isCustomPhaseTwoConfig) {
+
             this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
             return this;
         }
         @CustomType.Setter
         public Builder isEspEstablished(@Nullable Boolean isEspEstablished) {
+
             this.isEspEstablished = isEspEstablished;
             return this;
         }
         @CustomType.Setter
         public Builder isPfsEnabled(@Nullable Boolean isPfsEnabled) {
+
             this.isPfsEnabled = isPfsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifetime(@Nullable Integer lifetime) {
+
             this.lifetime = lifetime;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedAuthenticationAlgorithm(@Nullable String negotiatedAuthenticationAlgorithm) {
+
             this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedDhGroup(@Nullable String negotiatedDhGroup) {
+
             this.negotiatedDhGroup = negotiatedDhGroup;
             return this;
         }
         @CustomType.Setter
         public Builder negotiatedEncryptionAlgorithm(@Nullable String negotiatedEncryptionAlgorithm) {
+
             this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetime(@Nullable String remainingLifetime) {
+
             this.remainingLifetime = remainingLifetime;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetimeInt(@Nullable Integer remainingLifetimeInt) {
+
             this.remainingLifetimeInt = remainingLifetimeInt;
             return this;
         }
         @CustomType.Setter
         public Builder remainingLifetimeLastRetrieved(@Nullable String remainingLifetimeLastRetrieved) {
+
             this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return this;
         }

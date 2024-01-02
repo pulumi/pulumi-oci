@@ -59,11 +59,13 @@ public final class IngressGatewayMtls {
 
         @CustomType.Setter
         public Builder certificateId(@Nullable String certificateId) {
+
             this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder maximumValidity(@Nullable Integer maximumValidity) {
+
             this.maximumValidity = maximumValidity;
             return this;
         }

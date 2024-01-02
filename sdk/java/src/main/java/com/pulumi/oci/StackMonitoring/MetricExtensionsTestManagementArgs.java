@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class MetricExtensionsTestManagementArgs extends com.pulumi.resourc
         }
 
         public MetricExtensionsTestManagementArgs build() {
-            $.metricExtensionId = Objects.requireNonNull($.metricExtensionId, "expected parameter 'metricExtensionId' to be non-null");
-            $.resourceIds = Objects.requireNonNull($.resourceIds, "expected parameter 'resourceIds' to be non-null");
+            if ($.metricExtensionId == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionsTestManagementArgs", "metricExtensionId");
+            }
+            if ($.resourceIds == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionsTestManagementArgs", "resourceIds");
+            }
             return $;
         }
     }

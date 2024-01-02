@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewayRouteTableRouteRuleDestination;
 import com.pulumi.oci.ServiceMesh.outputs.GetIngressGatewayRouteTableRouteRuleIngressGatewayHost;
 import java.lang.Boolean;
@@ -158,7 +159,10 @@ public final class GetIngressGatewayRouteTableRouteRule {
 
         @CustomType.Setter
         public Builder destinations(List<GetIngressGatewayRouteTableRouteRuleDestination> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+            if (destinations == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "destinations");
+            }
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(GetIngressGatewayRouteTableRouteRuleDestination... destinations) {
@@ -166,7 +170,10 @@ public final class GetIngressGatewayRouteTableRouteRule {
         }
         @CustomType.Setter
         public Builder ingressGatewayHosts(List<GetIngressGatewayRouteTableRouteRuleIngressGatewayHost> ingressGatewayHosts) {
-            this.ingressGatewayHosts = Objects.requireNonNull(ingressGatewayHosts);
+            if (ingressGatewayHosts == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "ingressGatewayHosts");
+            }
+            this.ingressGatewayHosts = ingressGatewayHosts;
             return this;
         }
         public Builder ingressGatewayHosts(GetIngressGatewayRouteTableRouteRuleIngressGatewayHost... ingressGatewayHosts) {
@@ -174,37 +181,58 @@ public final class GetIngressGatewayRouteTableRouteRule {
         }
         @CustomType.Setter
         public Builder isGrpc(Boolean isGrpc) {
-            this.isGrpc = Objects.requireNonNull(isGrpc);
+            if (isGrpc == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "isGrpc");
+            }
+            this.isGrpc = isGrpc;
             return this;
         }
         @CustomType.Setter
         public Builder isHostRewriteEnabled(Boolean isHostRewriteEnabled) {
-            this.isHostRewriteEnabled = Objects.requireNonNull(isHostRewriteEnabled);
+            if (isHostRewriteEnabled == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "isHostRewriteEnabled");
+            }
+            this.isHostRewriteEnabled = isHostRewriteEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isPathRewriteEnabled(Boolean isPathRewriteEnabled) {
-            this.isPathRewriteEnabled = Objects.requireNonNull(isPathRewriteEnabled);
+            if (isPathRewriteEnabled == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "isPathRewriteEnabled");
+            }
+            this.isPathRewriteEnabled = isPathRewriteEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder pathType(String pathType) {
-            this.pathType = Objects.requireNonNull(pathType);
+            if (pathType == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "pathType");
+            }
+            this.pathType = pathType;
             return this;
         }
         @CustomType.Setter
         public Builder requestTimeoutInMs(String requestTimeoutInMs) {
-            this.requestTimeoutInMs = Objects.requireNonNull(requestTimeoutInMs);
+            if (requestTimeoutInMs == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "requestTimeoutInMs");
+            }
+            this.requestTimeoutInMs = requestTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetIngressGatewayRouteTableRouteRule", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetIngressGatewayRouteTableRouteRule build() {

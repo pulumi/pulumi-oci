@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowAssignmentsApprovalWorkflowAssignment;
 import java.lang.Integer;
 import java.lang.String;
@@ -153,17 +154,22 @@ public final class GetDomainsApprovalWorkflowAssignmentsResult {
 
         @CustomType.Setter
         public Builder approvalWorkflowAssignmentCount(@Nullable Integer approvalWorkflowAssignmentCount) {
+
             this.approvalWorkflowAssignmentCount = approvalWorkflowAssignmentCount;
             return this;
         }
         @CustomType.Setter
         public Builder approvalWorkflowAssignmentFilter(@Nullable String approvalWorkflowAssignmentFilter) {
+
             this.approvalWorkflowAssignmentFilter = approvalWorkflowAssignmentFilter;
             return this;
         }
         @CustomType.Setter
         public Builder approvalWorkflowAssignments(List<GetDomainsApprovalWorkflowAssignmentsApprovalWorkflowAssignment> approvalWorkflowAssignments) {
-            this.approvalWorkflowAssignments = Objects.requireNonNull(approvalWorkflowAssignments);
+            if (approvalWorkflowAssignments == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowAssignmentsResult", "approvalWorkflowAssignments");
+            }
+            this.approvalWorkflowAssignments = approvalWorkflowAssignments;
             return this;
         }
         public Builder approvalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsApprovalWorkflowAssignment... approvalWorkflowAssignments) {
@@ -171,6 +177,7 @@ public final class GetDomainsApprovalWorkflowAssignmentsResult {
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -179,42 +186,58 @@ public final class GetDomainsApprovalWorkflowAssignmentsResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowAssignmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowAssignmentsResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+            if (itemsPerPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowAssignmentsResult", "itemsPerPage");
+            }
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowAssignmentsResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -222,22 +245,28 @@ public final class GetDomainsApprovalWorkflowAssignmentsResult {
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder startIndex(@Nullable Integer startIndex) {
+
             this.startIndex = startIndex;
             return this;
         }
         @CustomType.Setter
         public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+            if (totalResults == null) {
+              throw new MissingRequiredPropertyException("GetDomainsApprovalWorkflowAssignmentsResult", "totalResults");
+            }
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsApprovalWorkflowAssignmentsResult build() {

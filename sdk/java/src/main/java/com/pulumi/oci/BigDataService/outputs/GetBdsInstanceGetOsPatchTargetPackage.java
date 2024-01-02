@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -85,12 +86,18 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
 
         @CustomType.Setter
         public Builder packageName(String packageName) {
-            this.packageName = Objects.requireNonNull(packageName);
+            if (packageName == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchTargetPackage", "packageName");
+            }
+            this.packageName = packageName;
             return this;
         }
         @CustomType.Setter
         public Builder relatedCvEs(List<String> relatedCvEs) {
-            this.relatedCvEs = Objects.requireNonNull(relatedCvEs);
+            if (relatedCvEs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchTargetPackage", "relatedCvEs");
+            }
+            this.relatedCvEs = relatedCvEs;
             return this;
         }
         public Builder relatedCvEs(String... relatedCvEs) {
@@ -98,12 +105,18 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
         }
         @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
-            this.targetVersion = Objects.requireNonNull(targetVersion);
+            if (targetVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchTargetPackage", "targetVersion");
+            }
+            this.targetVersion = targetVersion;
             return this;
         }
         @CustomType.Setter
         public Builder updateType(String updateType) {
-            this.updateType = Objects.requireNonNull(updateType);
+            if (updateType == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchTargetPackage", "updateType");
+            }
+            this.updateType = updateType;
             return this;
         }
         public GetBdsInstanceGetOsPatchTargetPackage build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -182,7 +183,9 @@ public final class MigrationDataTransferMediumDetailsV2Args extends com.pulumi.r
         }
 
         public MigrationDataTransferMediumDetailsV2Args build() {
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("MigrationDataTransferMediumDetailsV2Args", "type");
+            }
             return $;
         }
     }

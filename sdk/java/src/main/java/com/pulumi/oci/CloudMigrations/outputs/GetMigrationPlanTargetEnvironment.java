@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -154,47 +155,74 @@ public final class GetMigrationPlanTargetEnvironment {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHost(String dedicatedVmHost) {
-            this.dedicatedVmHost = Objects.requireNonNull(dedicatedVmHost);
+            if (dedicatedVmHost == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "dedicatedVmHost");
+            }
+            this.dedicatedVmHost = dedicatedVmHost;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder msLicense(String msLicense) {
-            this.msLicense = Objects.requireNonNull(msLicense);
+            if (msLicense == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "msLicense");
+            }
+            this.msLicense = msLicense;
             return this;
         }
         @CustomType.Setter
         public Builder preferredShapeType(String preferredShapeType) {
-            this.preferredShapeType = Objects.requireNonNull(preferredShapeType);
+            if (preferredShapeType == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "preferredShapeType");
+            }
+            this.preferredShapeType = preferredShapeType;
             return this;
         }
         @CustomType.Setter
         public Builder subnet(String subnet) {
-            this.subnet = Objects.requireNonNull(subnet);
+            if (subnet == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "subnet");
+            }
+            this.subnet = subnet;
             return this;
         }
         @CustomType.Setter
         public Builder targetCompartmentId(String targetCompartmentId) {
-            this.targetCompartmentId = Objects.requireNonNull(targetCompartmentId);
+            if (targetCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "targetCompartmentId");
+            }
+            this.targetCompartmentId = targetCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder targetEnvironmentType(String targetEnvironmentType) {
-            this.targetEnvironmentType = Objects.requireNonNull(targetEnvironmentType);
+            if (targetEnvironmentType == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "targetEnvironmentType");
+            }
+            this.targetEnvironmentType = targetEnvironmentType;
             return this;
         }
         @CustomType.Setter
         public Builder vcn(String vcn) {
-            this.vcn = Objects.requireNonNull(vcn);
+            if (vcn == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanTargetEnvironment", "vcn");
+            }
+            this.vcn = vcn;
             return this;
         }
         public GetMigrationPlanTargetEnvironment build() {

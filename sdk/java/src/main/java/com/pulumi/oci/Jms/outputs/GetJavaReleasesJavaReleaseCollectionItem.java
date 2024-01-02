@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaReleasesJavaReleaseCollectionItemArtifact;
 import com.pulumi.oci.Jms.outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetail;
 import com.pulumi.oci.Jms.outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetail;
@@ -230,7 +231,10 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
 
         @CustomType.Setter
         public Builder artifactContentTypes(List<String> artifactContentTypes) {
-            this.artifactContentTypes = Objects.requireNonNull(artifactContentTypes);
+            if (artifactContentTypes == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "artifactContentTypes");
+            }
+            this.artifactContentTypes = artifactContentTypes;
             return this;
         }
         public Builder artifactContentTypes(String... artifactContentTypes) {
@@ -238,7 +242,10 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         }
         @CustomType.Setter
         public Builder artifacts(List<GetJavaReleasesJavaReleaseCollectionItemArtifact> artifacts) {
-            this.artifacts = Objects.requireNonNull(artifacts);
+            if (artifacts == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "artifacts");
+            }
+            this.artifacts = artifacts;
             return this;
         }
         public Builder artifacts(GetJavaReleasesJavaReleaseCollectionItemArtifact... artifacts) {
@@ -246,12 +253,18 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         }
         @CustomType.Setter
         public Builder daysUnderSecurityBaseline(Integer daysUnderSecurityBaseline) {
-            this.daysUnderSecurityBaseline = Objects.requireNonNull(daysUnderSecurityBaseline);
+            if (daysUnderSecurityBaseline == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "daysUnderSecurityBaseline");
+            }
+            this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
             return this;
         }
         @CustomType.Setter
         public Builder familyDetails(List<GetJavaReleasesJavaReleaseCollectionItemFamilyDetail> familyDetails) {
-            this.familyDetails = Objects.requireNonNull(familyDetails);
+            if (familyDetails == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "familyDetails");
+            }
+            this.familyDetails = familyDetails;
             return this;
         }
         public Builder familyDetails(GetJavaReleasesJavaReleaseCollectionItemFamilyDetail... familyDetails) {
@@ -259,12 +272,18 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         }
         @CustomType.Setter
         public Builder familyVersion(String familyVersion) {
-            this.familyVersion = Objects.requireNonNull(familyVersion);
+            if (familyVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "familyVersion");
+            }
+            this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder licenseDetails(List<GetJavaReleasesJavaReleaseCollectionItemLicenseDetail> licenseDetails) {
-            this.licenseDetails = Objects.requireNonNull(licenseDetails);
+            if (licenseDetails == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "licenseDetails");
+            }
+            this.licenseDetails = licenseDetails;
             return this;
         }
         public Builder licenseDetails(GetJavaReleasesJavaReleaseCollectionItemLicenseDetail... licenseDetails) {
@@ -272,12 +291,18 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         }
         @CustomType.Setter
         public Builder licenseType(String licenseType) {
-            this.licenseType = Objects.requireNonNull(licenseType);
+            if (licenseType == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "licenseType");
+            }
+            this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder mosPatches(List<GetJavaReleasesJavaReleaseCollectionItemMosPatch> mosPatches) {
-            this.mosPatches = Objects.requireNonNull(mosPatches);
+            if (mosPatches == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "mosPatches");
+            }
+            this.mosPatches = mosPatches;
             return this;
         }
         public Builder mosPatches(GetJavaReleasesJavaReleaseCollectionItemMosPatch... mosPatches) {
@@ -285,32 +310,50 @@ public final class GetJavaReleasesJavaReleaseCollectionItem {
         }
         @CustomType.Setter
         public Builder parentReleaseVersion(String parentReleaseVersion) {
-            this.parentReleaseVersion = Objects.requireNonNull(parentReleaseVersion);
+            if (parentReleaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "parentReleaseVersion");
+            }
+            this.parentReleaseVersion = parentReleaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+            if (releaseDate == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "releaseDate");
+            }
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
         public Builder releaseNotesUrl(String releaseNotesUrl) {
-            this.releaseNotesUrl = Objects.requireNonNull(releaseNotesUrl);
+            if (releaseNotesUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "releaseNotesUrl");
+            }
+            this.releaseNotesUrl = releaseNotesUrl;
             return this;
         }
         @CustomType.Setter
         public Builder releaseType(String releaseType) {
-            this.releaseType = Objects.requireNonNull(releaseType);
+            if (releaseType == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "releaseType");
+            }
+            this.releaseType = releaseType;
             return this;
         }
         @CustomType.Setter
         public Builder releaseVersion(String releaseVersion) {
-            this.releaseVersion = Objects.requireNonNull(releaseVersion);
+            if (releaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "releaseVersion");
+            }
+            this.releaseVersion = releaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder securityStatus(String securityStatus) {
-            this.securityStatus = Objects.requireNonNull(securityStatus);
+            if (securityStatus == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleasesJavaReleaseCollectionItem", "securityStatus");
+            }
+            this.securityStatus = securityStatus;
             return this;
         }
         public GetJavaReleasesJavaReleaseCollectionItem build() {

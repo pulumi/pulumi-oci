@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetOrganizationSubscriptionsOrganizationSubscriptionCurrency;
 import java.lang.String;
 import java.util.List;
@@ -142,7 +143,10 @@ public final class GetOrganizationSubscriptionsOrganizationSubscription {
 
         @CustomType.Setter
         public Builder currencies(List<GetOrganizationSubscriptionsOrganizationSubscriptionCurrency> currencies) {
-            this.currencies = Objects.requireNonNull(currencies);
+            if (currencies == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsOrganizationSubscription", "currencies");
+            }
+            this.currencies = currencies;
             return this;
         }
         public Builder currencies(GetOrganizationSubscriptionsOrganizationSubscriptionCurrency... currencies) {
@@ -150,37 +154,58 @@ public final class GetOrganizationSubscriptionsOrganizationSubscription {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsOrganizationSubscription", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsOrganizationSubscription", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsOrganizationSubscription", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsOrganizationSubscription", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsOrganizationSubscription", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         @CustomType.Setter
         public Builder totalValue(String totalValue) {
-            this.totalValue = Objects.requireNonNull(totalValue);
+            if (totalValue == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsOrganizationSubscription", "totalValue");
+            }
+            this.totalValue = totalValue;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsOrganizationSubscription", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetOrganizationSubscriptionsOrganizationSubscription build() {

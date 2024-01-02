@@ -5,6 +5,7 @@ package com.pulumi.oci.AiAnomalyDetection;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.inputs.DataAssetDataSourceDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -350,9 +351,15 @@ public final class DataAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DataAssetArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dataSourceDetails = Objects.requireNonNull($.dataSourceDetails, "expected parameter 'dataSourceDetails' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DataAssetArgs", "compartmentId");
+            }
+            if ($.dataSourceDetails == null) {
+                throw new MissingRequiredPropertyException("DataAssetArgs", "dataSourceDetails");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("DataAssetArgs", "projectId");
+            }
             return $;
         }
     }

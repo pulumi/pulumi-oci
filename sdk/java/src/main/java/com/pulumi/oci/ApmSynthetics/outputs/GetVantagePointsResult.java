@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetVantagePointsFilter;
 import com.pulumi.oci.ApmSynthetics.outputs.GetVantagePointsPublicVantagePointCollection;
 import java.lang.String;
@@ -101,16 +102,21 @@ public final class GetVantagePointsResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVantagePointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -119,17 +125,24 @@ public final class GetVantagePointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder publicVantagePointCollections(List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections) {
-            this.publicVantagePointCollections = Objects.requireNonNull(publicVantagePointCollections);
+            if (publicVantagePointCollections == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsResult", "publicVantagePointCollections");
+            }
+            this.publicVantagePointCollections = publicVantagePointCollections;
             return this;
         }
         public Builder publicVantagePointCollections(GetVantagePointsPublicVantagePointCollection... publicVantagePointCollections) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class BuildRunCommitInfoArgs extends com.pulumi.resources.ResourceA
         }
 
         public BuildRunCommitInfoArgs build() {
-            $.commitHash = Objects.requireNonNull($.commitHash, "expected parameter 'commitHash' to be non-null");
-            $.repositoryBranch = Objects.requireNonNull($.repositoryBranch, "expected parameter 'repositoryBranch' to be non-null");
-            $.repositoryUrl = Objects.requireNonNull($.repositoryUrl, "expected parameter 'repositoryUrl' to be non-null");
+            if ($.commitHash == null) {
+                throw new MissingRequiredPropertyException("BuildRunCommitInfoArgs", "commitHash");
+            }
+            if ($.repositoryBranch == null) {
+                throw new MissingRequiredPropertyException("BuildRunCommitInfoArgs", "repositoryBranch");
+            }
+            if ($.repositoryUrl == null) {
+                throw new MissingRequiredPropertyException("BuildRunCommitInfoArgs", "repositoryUrl");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetSecurityAssessmentComparisonPlainArgs extends com.pulumi.r
         }
 
         public GetSecurityAssessmentComparisonPlainArgs build() {
-            $.comparisonSecurityAssessmentId = Objects.requireNonNull($.comparisonSecurityAssessmentId, "expected parameter 'comparisonSecurityAssessmentId' to be non-null");
-            $.securityAssessmentId = Objects.requireNonNull($.securityAssessmentId, "expected parameter 'securityAssessmentId' to be non-null");
+            if ($.comparisonSecurityAssessmentId == null) {
+                throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonPlainArgs", "comparisonSecurityAssessmentId");
+            }
+            if ($.securityAssessmentId == null) {
+                throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonPlainArgs", "securityAssessmentId");
+            }
             return $;
         }
     }

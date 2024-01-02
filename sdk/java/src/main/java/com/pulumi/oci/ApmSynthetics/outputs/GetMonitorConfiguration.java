@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationClientCertificateDetail;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationDnsConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfigurationNetworkConfiguration;
@@ -275,7 +276,10 @@ public final class GetMonitorConfiguration {
 
         @CustomType.Setter
         public Builder clientCertificateDetails(List<GetMonitorConfigurationClientCertificateDetail> clientCertificateDetails) {
-            this.clientCertificateDetails = Objects.requireNonNull(clientCertificateDetails);
+            if (clientCertificateDetails == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "clientCertificateDetails");
+            }
+            this.clientCertificateDetails = clientCertificateDetails;
             return this;
         }
         public Builder clientCertificateDetails(GetMonitorConfigurationClientCertificateDetail... clientCertificateDetails) {
@@ -283,12 +287,18 @@ public final class GetMonitorConfiguration {
         }
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder dnsConfigurations(List<GetMonitorConfigurationDnsConfiguration> dnsConfigurations) {
-            this.dnsConfigurations = Objects.requireNonNull(dnsConfigurations);
+            if (dnsConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "dnsConfigurations");
+            }
+            this.dnsConfigurations = dnsConfigurations;
             return this;
         }
         public Builder dnsConfigurations(GetMonitorConfigurationDnsConfiguration... dnsConfigurations) {
@@ -296,27 +306,42 @@ public final class GetMonitorConfiguration {
         }
         @CustomType.Setter
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
-            this.isCertificateValidationEnabled = Objects.requireNonNull(isCertificateValidationEnabled);
+            if (isCertificateValidationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "isCertificateValidationEnabled");
+            }
+            this.isCertificateValidationEnabled = isCertificateValidationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isDefaultSnapshotEnabled(Boolean isDefaultSnapshotEnabled) {
-            this.isDefaultSnapshotEnabled = Objects.requireNonNull(isDefaultSnapshotEnabled);
+            if (isDefaultSnapshotEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "isDefaultSnapshotEnabled");
+            }
+            this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isFailureRetried(Boolean isFailureRetried) {
-            this.isFailureRetried = Objects.requireNonNull(isFailureRetried);
+            if (isFailureRetried == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "isFailureRetried");
+            }
+            this.isFailureRetried = isFailureRetried;
             return this;
         }
         @CustomType.Setter
         public Builder isRedirectionEnabled(Boolean isRedirectionEnabled) {
-            this.isRedirectionEnabled = Objects.requireNonNull(isRedirectionEnabled);
+            if (isRedirectionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "isRedirectionEnabled");
+            }
+            this.isRedirectionEnabled = isRedirectionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(List<GetMonitorConfigurationNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetMonitorConfigurationNetworkConfiguration... networkConfigurations) {
@@ -324,7 +349,10 @@ public final class GetMonitorConfiguration {
         }
         @CustomType.Setter
         public Builder reqAuthenticationDetails(List<GetMonitorConfigurationReqAuthenticationDetail> reqAuthenticationDetails) {
-            this.reqAuthenticationDetails = Objects.requireNonNull(reqAuthenticationDetails);
+            if (reqAuthenticationDetails == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "reqAuthenticationDetails");
+            }
+            this.reqAuthenticationDetails = reqAuthenticationDetails;
             return this;
         }
         public Builder reqAuthenticationDetails(GetMonitorConfigurationReqAuthenticationDetail... reqAuthenticationDetails) {
@@ -332,12 +360,18 @@ public final class GetMonitorConfiguration {
         }
         @CustomType.Setter
         public Builder reqAuthenticationScheme(String reqAuthenticationScheme) {
-            this.reqAuthenticationScheme = Objects.requireNonNull(reqAuthenticationScheme);
+            if (reqAuthenticationScheme == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "reqAuthenticationScheme");
+            }
+            this.reqAuthenticationScheme = reqAuthenticationScheme;
             return this;
         }
         @CustomType.Setter
         public Builder requestHeaders(List<GetMonitorConfigurationRequestHeader> requestHeaders) {
-            this.requestHeaders = Objects.requireNonNull(requestHeaders);
+            if (requestHeaders == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "requestHeaders");
+            }
+            this.requestHeaders = requestHeaders;
             return this;
         }
         public Builder requestHeaders(GetMonitorConfigurationRequestHeader... requestHeaders) {
@@ -345,17 +379,26 @@ public final class GetMonitorConfiguration {
         }
         @CustomType.Setter
         public Builder requestMethod(String requestMethod) {
-            this.requestMethod = Objects.requireNonNull(requestMethod);
+            if (requestMethod == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "requestMethod");
+            }
+            this.requestMethod = requestMethod;
             return this;
         }
         @CustomType.Setter
         public Builder requestPostBody(String requestPostBody) {
-            this.requestPostBody = Objects.requireNonNull(requestPostBody);
+            if (requestPostBody == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "requestPostBody");
+            }
+            this.requestPostBody = requestPostBody;
             return this;
         }
         @CustomType.Setter
         public Builder requestQueryParams(List<GetMonitorConfigurationRequestQueryParam> requestQueryParams) {
-            this.requestQueryParams = Objects.requireNonNull(requestQueryParams);
+            if (requestQueryParams == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "requestQueryParams");
+            }
+            this.requestQueryParams = requestQueryParams;
             return this;
         }
         public Builder requestQueryParams(GetMonitorConfigurationRequestQueryParam... requestQueryParams) {
@@ -363,7 +406,10 @@ public final class GetMonitorConfiguration {
         }
         @CustomType.Setter
         public Builder verifyResponseCodes(List<String> verifyResponseCodes) {
-            this.verifyResponseCodes = Objects.requireNonNull(verifyResponseCodes);
+            if (verifyResponseCodes == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "verifyResponseCodes");
+            }
+            this.verifyResponseCodes = verifyResponseCodes;
             return this;
         }
         public Builder verifyResponseCodes(String... verifyResponseCodes) {
@@ -371,12 +417,18 @@ public final class GetMonitorConfiguration {
         }
         @CustomType.Setter
         public Builder verifyResponseContent(String verifyResponseContent) {
-            this.verifyResponseContent = Objects.requireNonNull(verifyResponseContent);
+            if (verifyResponseContent == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "verifyResponseContent");
+            }
+            this.verifyResponseContent = verifyResponseContent;
             return this;
         }
         @CustomType.Setter
         public Builder verifyTexts(List<GetMonitorConfigurationVerifyText> verifyTexts) {
-            this.verifyTexts = Objects.requireNonNull(verifyTexts);
+            if (verifyTexts == null) {
+              throw new MissingRequiredPropertyException("GetMonitorConfiguration", "verifyTexts");
+            }
+            this.verifyTexts = verifyTexts;
             return this;
         }
         public Builder verifyTexts(GetMonitorConfigurationVerifyText... verifyTexts) {

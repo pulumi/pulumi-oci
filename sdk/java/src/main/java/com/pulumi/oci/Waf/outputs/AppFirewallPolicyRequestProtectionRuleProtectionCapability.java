@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight;
 import com.pulumi.oci.Waf.outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions;
 import java.lang.Integer;
@@ -118,16 +119,19 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapability {
 
         @CustomType.Setter
         public Builder actionName(@Nullable String actionName) {
+
             this.actionName = actionName;
             return this;
         }
         @CustomType.Setter
         public Builder collaborativeActionThreshold(@Nullable Integer collaborativeActionThreshold) {
+
             this.collaborativeActionThreshold = collaborativeActionThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder collaborativeWeights(@Nullable List<AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight> collaborativeWeights) {
+
             this.collaborativeWeights = collaborativeWeights;
             return this;
         }
@@ -136,17 +140,24 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapability {
         }
         @CustomType.Setter
         public Builder exclusions(@Nullable AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions exclusions) {
+
             this.exclusions = exclusions;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestProtectionRuleProtectionCapability", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestProtectionRuleProtectionCapability", "version");
+            }
+            this.version = version;
             return this;
         }
         public AppFirewallPolicyRequestProtectionRuleProtectionCapability build() {

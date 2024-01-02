@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
 
         @CustomType.Setter
         public Builder instanceShapeName(String instanceShapeName) {
-            this.instanceShapeName = Objects.requireNonNull(instanceShapeName);
+            if (instanceShapeName == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration", "instanceShapeName");
+            }
+            this.instanceShapeName = instanceShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder modelDeploymentInstanceShapeConfigDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails) {
-            this.modelDeploymentInstanceShapeConfigDetails = Objects.requireNonNull(modelDeploymentInstanceShapeConfigDetails);
+            if (modelDeploymentInstanceShapeConfigDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration", "modelDeploymentInstanceShapeConfigDetails");
+            }
+            this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
             return this;
         }
         public Builder modelDeploymentInstanceShapeConfigDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail... modelDeploymentInstanceShapeConfigDetails) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConsoleConnectionsFilter;
 import com.pulumi.oci.Core.outputs.GetInstanceConsoleConnectionsInstanceConsoleConnection;
 import java.lang.String;
@@ -95,11 +96,15 @@ public final class GetInstanceConsoleConnectionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstanceConsoleConnectionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,12 +113,18 @@ public final class GetInstanceConsoleConnectionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConsoleConnections(List<GetInstanceConsoleConnectionsInstanceConsoleConnection> instanceConsoleConnections) {
-            this.instanceConsoleConnections = Objects.requireNonNull(instanceConsoleConnections);
+            if (instanceConsoleConnections == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsResult", "instanceConsoleConnections");
+            }
+            this.instanceConsoleConnections = instanceConsoleConnections;
             return this;
         }
         public Builder instanceConsoleConnections(GetInstanceConsoleConnectionsInstanceConsoleConnection... instanceConsoleConnections) {
@@ -121,6 +132,7 @@ public final class GetInstanceConsoleConnectionsResult {
         }
         @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
+
             this.instanceId = instanceId;
             return this;
         }

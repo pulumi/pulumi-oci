@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetAuditProfileAnalyticItemDimension {
 
         @CustomType.Setter
         public Builder isPaidUsageEnabled(Boolean isPaidUsageEnabled) {
-            this.isPaidUsageEnabled = Objects.requireNonNull(isPaidUsageEnabled);
+            if (isPaidUsageEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAnalyticItemDimension", "isPaidUsageEnabled");
+            }
+            this.isPaidUsageEnabled = isPaidUsageEnabled;
             return this;
         }
         public GetAuditProfileAnalyticItemDimension build() {

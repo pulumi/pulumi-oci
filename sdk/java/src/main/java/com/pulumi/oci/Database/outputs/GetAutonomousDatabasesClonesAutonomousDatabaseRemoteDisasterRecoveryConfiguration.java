@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
 
         @CustomType.Setter
         public Builder disasterRecoveryType(String disasterRecoveryType) {
-            this.disasterRecoveryType = Objects.requireNonNull(disasterRecoveryType);
+            if (disasterRecoveryType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration", "disasterRecoveryType");
+            }
+            this.disasterRecoveryType = disasterRecoveryType;
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration build() {

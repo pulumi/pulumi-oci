@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -460,8 +461,12 @@ public final class HostInsightArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public HostInsightArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.entitySource = Objects.requireNonNull($.entitySource, "expected parameter 'entitySource' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("HostInsightArgs", "compartmentId");
+            }
+            if ($.entitySource == null) {
+                throw new MissingRequiredPropertyException("HostInsightArgs", "entitySource");
+            }
             return $;
         }
     }

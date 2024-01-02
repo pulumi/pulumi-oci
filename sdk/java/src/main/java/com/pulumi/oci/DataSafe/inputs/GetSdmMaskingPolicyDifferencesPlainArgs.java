@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetSdmMaskingPolicyDifferencesFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -247,7 +248,9 @@ public final class GetSdmMaskingPolicyDifferencesPlainArgs extends com.pulumi.re
         }
 
         public GetSdmMaskingPolicyDifferencesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferencesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,7 +276,9 @@ public final class SecurityPolicyDeploymentArgs extends com.pulumi.resources.Res
         }
 
         public SecurityPolicyDeploymentArgs build() {
-            $.securityPolicyDeploymentId = Objects.requireNonNull($.securityPolicyDeploymentId, "expected parameter 'securityPolicyDeploymentId' to be non-null");
+            if ($.securityPolicyDeploymentId == null) {
+                throw new MissingRequiredPropertyException("SecurityPolicyDeploymentArgs", "securityPolicyDeploymentId");
+            }
             return $;
         }
     }

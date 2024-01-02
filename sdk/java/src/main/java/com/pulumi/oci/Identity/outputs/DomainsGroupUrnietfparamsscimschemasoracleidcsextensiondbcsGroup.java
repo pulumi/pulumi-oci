@@ -181,11 +181,13 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
 
         @CustomType.Setter
         public Builder domainLevelSchema(@Nullable String domainLevelSchema) {
+
             this.domainLevelSchema = domainLevelSchema;
             return this;
         }
         @CustomType.Setter
         public Builder domainLevelSchemaNames(@Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaName> domainLevelSchemaNames) {
+
             this.domainLevelSchemaNames = domainLevelSchemaNames;
             return this;
         }
@@ -194,11 +196,13 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
         }
         @CustomType.Setter
         public Builder instanceLevelSchema(@Nullable String instanceLevelSchema) {
+
             this.instanceLevelSchema = instanceLevelSchema;
             return this;
         }
         @CustomType.Setter
         public Builder instanceLevelSchemaNames(@Nullable List<DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName> instanceLevelSchemaNames) {
+
             this.instanceLevelSchemaNames = instanceLevelSchemaNames;
             return this;
         }

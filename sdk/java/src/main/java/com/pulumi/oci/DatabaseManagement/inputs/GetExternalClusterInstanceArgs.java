@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetExternalClusterInstanceArgs extends com.pulumi.resources.I
         }
 
         public GetExternalClusterInstanceArgs build() {
-            $.externalClusterInstanceId = Objects.requireNonNull($.externalClusterInstanceId, "expected parameter 'externalClusterInstanceId' to be non-null");
+            if ($.externalClusterInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetExternalClusterInstanceArgs", "externalClusterInstanceId");
+            }
             return $;
         }
     }

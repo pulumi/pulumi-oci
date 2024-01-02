@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetSteeringPoliciesSteeringPolicyAnswer {
 
         @CustomType.Setter
         public Builder isDisabled(Boolean isDisabled) {
-            this.isDisabled = Objects.requireNonNull(isDisabled);
+            if (isDisabled == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesSteeringPolicyAnswer", "isDisabled");
+            }
+            this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesSteeringPolicyAnswer", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pool(String pool) {
-            this.pool = Objects.requireNonNull(pool);
+            if (pool == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesSteeringPolicyAnswer", "pool");
+            }
+            this.pool = pool;
             return this;
         }
         @CustomType.Setter
         public Builder rdata(String rdata) {
-            this.rdata = Objects.requireNonNull(rdata);
+            if (rdata == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesSteeringPolicyAnswer", "rdata");
+            }
+            this.rdata = rdata;
             return this;
         }
         @CustomType.Setter
         public Builder rtype(String rtype) {
-            this.rtype = Objects.requireNonNull(rtype);
+            if (rtype == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPoliciesSteeringPolicyAnswer", "rtype");
+            }
+            this.rtype = rtype;
             return this;
         }
         public GetSteeringPoliciesSteeringPolicyAnswer build() {

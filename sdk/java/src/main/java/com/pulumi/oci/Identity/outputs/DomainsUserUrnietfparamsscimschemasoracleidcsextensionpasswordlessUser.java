@@ -145,16 +145,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
 
         @CustomType.Setter
         public Builder factorIdentifier(@Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier factorIdentifier) {
+
             this.factorIdentifier = factorIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder factorMethod(@Nullable String factorMethod) {
+
             this.factorMethod = factorMethod;
             return this;
         }
         @CustomType.Setter
         public Builder factorType(@Nullable String factorType) {
+
             this.factorType = factorType;
             return this;
         }

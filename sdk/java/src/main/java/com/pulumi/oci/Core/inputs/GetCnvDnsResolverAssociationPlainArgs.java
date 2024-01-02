@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetCnvDnsResolverAssociationPlainArgs extends com.pulumi.reso
         }
 
         public GetCnvDnsResolverAssociationPlainArgs build() {
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("GetCnvDnsResolverAssociationPlainArgs", "vcnId");
+            }
             return $;
         }
     }

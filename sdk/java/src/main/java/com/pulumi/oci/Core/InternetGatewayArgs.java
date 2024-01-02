@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -313,8 +314,12 @@ public final class InternetGatewayArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public InternetGatewayArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("InternetGatewayArgs", "compartmentId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("InternetGatewayArgs", "vcnId");
+            }
             return $;
         }
     }

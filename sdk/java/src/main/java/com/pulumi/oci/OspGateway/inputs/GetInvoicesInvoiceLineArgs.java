@@ -5,6 +5,7 @@ package com.pulumi.oci.OspGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class GetInvoicesInvoiceLineArgs extends com.pulumi.resources.Invok
         }
 
         public GetInvoicesInvoiceLineArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.internalInvoiceId = Objects.requireNonNull($.internalInvoiceId, "expected parameter 'internalInvoiceId' to be non-null");
-            $.ospHomeRegion = Objects.requireNonNull($.ospHomeRegion, "expected parameter 'ospHomeRegion' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineArgs", "compartmentId");
+            }
+            if ($.internalInvoiceId == null) {
+                throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineArgs", "internalInvoiceId");
+            }
+            if ($.ospHomeRegion == null) {
+                throw new MissingRequiredPropertyException("GetInvoicesInvoiceLineArgs", "ospHomeRegion");
+            }
             return $;
         }
     }

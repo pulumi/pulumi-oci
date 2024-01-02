@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadata;
 import java.lang.String;
 import java.util.List;
@@ -128,7 +129,10 @@ public final class GetOpsiConfigurationConfigurationItemConfigItem {
 
         @CustomType.Setter
         public Builder applicableContexts(List<String> applicableContexts) {
-            this.applicableContexts = Objects.requireNonNull(applicableContexts);
+            if (applicableContexts == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItem", "applicableContexts");
+            }
+            this.applicableContexts = applicableContexts;
             return this;
         }
         public Builder applicableContexts(String... applicableContexts) {
@@ -136,17 +140,26 @@ public final class GetOpsiConfigurationConfigurationItemConfigItem {
         }
         @CustomType.Setter
         public Builder configItemType(String configItemType) {
-            this.configItemType = Objects.requireNonNull(configItemType);
+            if (configItemType == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItem", "configItemType");
+            }
+            this.configItemType = configItemType;
             return this;
         }
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+            if (defaultValue == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItem", "defaultValue");
+            }
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(List<GetOpsiConfigurationConfigurationItemConfigItemMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItem", "metadatas");
+            }
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetOpsiConfigurationConfigurationItemConfigItemMetadata... metadatas) {
@@ -154,17 +167,26 @@ public final class GetOpsiConfigurationConfigurationItemConfigItem {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItem", "value");
+            }
+            this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder valueSourceConfig(String valueSourceConfig) {
-            this.valueSourceConfig = Objects.requireNonNull(valueSourceConfig);
+            if (valueSourceConfig == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationConfigurationItemConfigItem", "valueSourceConfig");
+            }
+            this.valueSourceConfig = valueSourceConfig;
             return this;
         }
         public GetOpsiConfigurationConfigurationItemConfigItem build() {

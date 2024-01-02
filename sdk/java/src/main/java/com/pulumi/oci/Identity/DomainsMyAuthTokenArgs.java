@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsMyAuthTokenTagArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyAuthTokenUserArgs;
 import java.lang.String;
@@ -744,8 +745,12 @@ public final class DomainsMyAuthTokenArgs extends com.pulumi.resources.ResourceA
         }
 
         public DomainsMyAuthTokenArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsMyAuthTokenArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsMyAuthTokenArgs", "schemas");
+            }
             return $;
         }
     }

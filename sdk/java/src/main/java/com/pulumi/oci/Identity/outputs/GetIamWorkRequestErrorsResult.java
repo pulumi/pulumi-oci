@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetIamWorkRequestErrorsFilter;
 import com.pulumi.oci.Identity.outputs.GetIamWorkRequestErrorsIamWorkRequestError;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetIamWorkRequestErrorsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIamWorkRequestErrorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,7 +82,10 @@ public final class GetIamWorkRequestErrorsResult {
         }
         @CustomType.Setter
         public Builder iamWorkRequestErrors(List<GetIamWorkRequestErrorsIamWorkRequestError> iamWorkRequestErrors) {
-            this.iamWorkRequestErrors = Objects.requireNonNull(iamWorkRequestErrors);
+            if (iamWorkRequestErrors == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestErrorsResult", "iamWorkRequestErrors");
+            }
+            this.iamWorkRequestErrors = iamWorkRequestErrors;
             return this;
         }
         public Builder iamWorkRequestErrors(GetIamWorkRequestErrorsIamWorkRequestError... iamWorkRequestErrors) {
@@ -88,12 +93,18 @@ public final class GetIamWorkRequestErrorsResult {
         }
         @CustomType.Setter
         public Builder iamWorkRequestId(String iamWorkRequestId) {
-            this.iamWorkRequestId = Objects.requireNonNull(iamWorkRequestId);
+            if (iamWorkRequestId == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestErrorsResult", "iamWorkRequestId");
+            }
+            this.iamWorkRequestId = iamWorkRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestErrorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetIamWorkRequestErrorsResult build() {

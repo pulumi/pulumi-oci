@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,22 @@ public final class WorkspaceImportRequestImportConflictResolution {
 
         @CustomType.Setter
         public Builder duplicatePrefix(@Nullable String duplicatePrefix) {
+
             this.duplicatePrefix = duplicatePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder duplicateSuffix(@Nullable String duplicateSuffix) {
+
             this.duplicateSuffix = duplicateSuffix;
             return this;
         }
         @CustomType.Setter
         public Builder importConflictResolutionType(String importConflictResolutionType) {
-            this.importConflictResolutionType = Objects.requireNonNull(importConflictResolutionType);
+            if (importConflictResolutionType == null) {
+              throw new MissingRequiredPropertyException("WorkspaceImportRequestImportConflictResolution", "importConflictResolutionType");
+            }
+            this.importConflictResolutionType = importConflictResolutionType;
             return this;
         }
         public WorkspaceImportRequestImportConflictResolution build() {

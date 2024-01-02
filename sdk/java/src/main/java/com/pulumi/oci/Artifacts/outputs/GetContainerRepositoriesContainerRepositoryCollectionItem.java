@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadme;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -286,72 +287,114 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
 
         @CustomType.Setter
         public Builder billableSizeInGbs(String billableSizeInGbs) {
-            this.billableSizeInGbs = Objects.requireNonNull(billableSizeInGbs);
+            if (billableSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "billableSizeInGbs");
+            }
+            this.billableSizeInGbs = billableSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageCount(Integer imageCount) {
-            this.imageCount = Objects.requireNonNull(imageCount);
+            if (imageCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "imageCount");
+            }
+            this.imageCount = imageCount;
             return this;
         }
         @CustomType.Setter
         public Builder isImmutable(Boolean isImmutable) {
-            this.isImmutable = Objects.requireNonNull(isImmutable);
+            if (isImmutable == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "isImmutable");
+            }
+            this.isImmutable = isImmutable;
             return this;
         }
         @CustomType.Setter
         public Builder isPublic(Boolean isPublic) {
-            this.isPublic = Objects.requireNonNull(isPublic);
+            if (isPublic == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "isPublic");
+            }
+            this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
         public Builder layerCount(Integer layerCount) {
-            this.layerCount = Objects.requireNonNull(layerCount);
+            if (layerCount == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "layerCount");
+            }
+            this.layerCount = layerCount;
             return this;
         }
         @CustomType.Setter
         public Builder layersSizeInBytes(String layersSizeInBytes) {
-            this.layersSizeInBytes = Objects.requireNonNull(layersSizeInBytes);
+            if (layersSizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "layersSizeInBytes");
+            }
+            this.layersSizeInBytes = layersSizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder readmes(List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes) {
-            this.readmes = Objects.requireNonNull(readmes);
+            if (readmes == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "readmes");
+            }
+            this.readmes = readmes;
             return this;
         }
         public Builder readmes(GetContainerRepositoriesContainerRepositoryCollectionItemReadme... readmes) {
@@ -359,22 +402,34 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastPushed(String timeLastPushed) {
-            this.timeLastPushed = Objects.requireNonNull(timeLastPushed);
+            if (timeLastPushed == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "timeLastPushed");
+            }
+            this.timeLastPushed = timeLastPushed;
             return this;
         }
         public GetContainerRepositoriesContainerRepositoryCollectionItem build() {

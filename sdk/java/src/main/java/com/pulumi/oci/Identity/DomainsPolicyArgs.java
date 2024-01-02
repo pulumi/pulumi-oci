@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsPolicyPolicyTypeArgs;
 import com.pulumi.oci.Identity.inputs.DomainsPolicyRuleArgs;
 import com.pulumi.oci.Identity.inputs.DomainsPolicyTagArgs;
@@ -1065,9 +1066,15 @@ public final class DomainsPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DomainsPolicyArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.policyType = Objects.requireNonNull($.policyType, "expected parameter 'policyType' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsPolicyArgs", "idcsEndpoint");
+            }
+            if ($.policyType == null) {
+                throw new MissingRequiredPropertyException("DomainsPolicyArgs", "policyType");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsPolicyArgs", "schemas");
+            }
             return $;
         }
     }

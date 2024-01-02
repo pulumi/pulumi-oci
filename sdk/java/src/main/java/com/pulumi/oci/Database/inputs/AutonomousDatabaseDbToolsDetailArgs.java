@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -190,7 +191,9 @@ public final class AutonomousDatabaseDbToolsDetailArgs extends com.pulumi.resour
         }
 
         public AutonomousDatabaseDbToolsDetailArgs build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("AutonomousDatabaseDbToolsDetailArgs", "name");
+            }
             return $;
         }
     }

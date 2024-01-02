@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs;
 import java.lang.String;
@@ -287,7 +288,9 @@ public final class InstancePoolPlacementConfigurationArgs extends com.pulumi.res
         }
 
         public InstancePoolPlacementConfigurationArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("InstancePoolPlacementConfigurationArgs", "availabilityDomain");
+            }
             return $;
         }
     }

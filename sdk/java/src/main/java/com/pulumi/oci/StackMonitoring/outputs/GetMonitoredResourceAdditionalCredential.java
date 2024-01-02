@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceAdditionalCredentialProperty;
 import java.lang.String;
 import java.util.List;
@@ -134,27 +135,42 @@ public final class GetMonitoredResourceAdditionalCredential {
 
         @CustomType.Setter
         public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+            if (credentialType == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceAdditionalCredential", "credentialType");
+            }
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceAdditionalCredential", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+            if (keyId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceAdditionalCredential", "keyId");
+            }
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceAdditionalCredential", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder properties(List<GetMonitoredResourceAdditionalCredentialProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceAdditionalCredential", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetMonitoredResourceAdditionalCredentialProperty... properties) {
@@ -162,12 +178,18 @@ public final class GetMonitoredResourceAdditionalCredential {
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceAdditionalCredential", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceAdditionalCredential", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetMonitoredResourceAdditionalCredential build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetAnalyticsInstancePrivateAccessChannelPlainArgs extends com
         }
 
         public GetAnalyticsInstancePrivateAccessChannelPlainArgs build() {
-            $.analyticsInstanceId = Objects.requireNonNull($.analyticsInstanceId, "expected parameter 'analyticsInstanceId' to be non-null");
-            $.privateAccessChannelKey = Objects.requireNonNull($.privateAccessChannelKey, "expected parameter 'privateAccessChannelKey' to be non-null");
+            if ($.analyticsInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelPlainArgs", "analyticsInstanceId");
+            }
+            if ($.privateAccessChannelKey == null) {
+                throw new MissingRequiredPropertyException("GetAnalyticsInstancePrivateAccessChannelPlainArgs", "privateAccessChannelKey");
+            }
             return $;
         }
     }

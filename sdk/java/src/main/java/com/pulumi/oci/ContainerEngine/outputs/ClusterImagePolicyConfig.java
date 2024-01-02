@@ -60,11 +60,13 @@ public final class ClusterImagePolicyConfig {
 
         @CustomType.Setter
         public Builder isPolicyEnabled(@Nullable Boolean isPolicyEnabled) {
+
             this.isPolicyEnabled = isPolicyEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder keyDetails(@Nullable List<ClusterImagePolicyConfigKeyDetail> keyDetails) {
+
             this.keyDetails = keyDetails;
             return this;
         }

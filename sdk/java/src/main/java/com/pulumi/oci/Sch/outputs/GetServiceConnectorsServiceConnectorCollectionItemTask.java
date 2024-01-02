@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTask {
 
         @CustomType.Setter
         public Builder batchSizeInKbs(Integer batchSizeInKbs) {
-            this.batchSizeInKbs = Objects.requireNonNull(batchSizeInKbs);
+            if (batchSizeInKbs == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTask", "batchSizeInKbs");
+            }
+            this.batchSizeInKbs = batchSizeInKbs;
             return this;
         }
         @CustomType.Setter
         public Builder batchTimeInSec(Integer batchTimeInSec) {
-            this.batchTimeInSec = Objects.requireNonNull(batchTimeInSec);
+            if (batchTimeInSec == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTask", "batchTimeInSec");
+            }
+            this.batchTimeInSec = batchTimeInSec;
             return this;
         }
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTask", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+            if (functionId == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTask", "functionId");
+            }
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTask", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemTask build() {

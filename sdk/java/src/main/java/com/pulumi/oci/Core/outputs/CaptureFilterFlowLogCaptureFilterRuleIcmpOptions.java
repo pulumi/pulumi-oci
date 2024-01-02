@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 import java.util.Optional;
@@ -58,12 +59,16 @@ public final class CaptureFilterFlowLogCaptureFilterRuleIcmpOptions {
 
         @CustomType.Setter
         public Builder code(@Nullable Integer code) {
+
             this.code = code;
             return this;
         }
         @CustomType.Setter
         public Builder type(Integer type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("CaptureFilterFlowLogCaptureFilterRuleIcmpOptions", "type");
+            }
+            this.type = type;
             return this;
         }
         public CaptureFilterFlowLogCaptureFilterRuleIcmpOptions build() {

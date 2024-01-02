@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.GetModelsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -318,9 +319,15 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetModelsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.modelVersionSetName = Objects.requireNonNull($.modelVersionSetName, "expected parameter 'modelVersionSetName' to be non-null");
-            $.versionLabel = Objects.requireNonNull($.versionLabel, "expected parameter 'versionLabel' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetModelsArgs", "compartmentId");
+            }
+            if ($.modelVersionSetName == null) {
+                throw new MissingRequiredPropertyException("GetModelsArgs", "modelVersionSetName");
+            }
+            if ($.versionLabel == null) {
+                throw new MissingRequiredPropertyException("GetModelsArgs", "versionLabel");
+            }
             return $;
         }
     }

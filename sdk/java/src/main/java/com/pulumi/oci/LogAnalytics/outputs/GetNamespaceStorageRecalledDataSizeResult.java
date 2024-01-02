@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -104,32 +105,50 @@ public final class GetNamespaceStorageRecalledDataSizeResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecalledDataSizeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecalledDataSizeResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder notRecalledDataInBytes(String notRecalledDataInBytes) {
-            this.notRecalledDataInBytes = Objects.requireNonNull(notRecalledDataInBytes);
+            if (notRecalledDataInBytes == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecalledDataSizeResult", "notRecalledDataInBytes");
+            }
+            this.notRecalledDataInBytes = notRecalledDataInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder recalledDataInBytes(String recalledDataInBytes) {
-            this.recalledDataInBytes = Objects.requireNonNull(recalledDataInBytes);
+            if (recalledDataInBytes == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecalledDataSizeResult", "recalledDataInBytes");
+            }
+            this.recalledDataInBytes = recalledDataInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder timeDataEnded(String timeDataEnded) {
-            this.timeDataEnded = Objects.requireNonNull(timeDataEnded);
+            if (timeDataEnded == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecalledDataSizeResult", "timeDataEnded");
+            }
+            this.timeDataEnded = timeDataEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeDataStarted(String timeDataStarted) {
-            this.timeDataStarted = Objects.requireNonNull(timeDataStarted);
+            if (timeDataStarted == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageRecalledDataSizeResult", "timeDataStarted");
+            }
+            this.timeDataStarted = timeDataStarted;
             return this;
         }
         public GetNamespaceStorageRecalledDataSizeResult build() {

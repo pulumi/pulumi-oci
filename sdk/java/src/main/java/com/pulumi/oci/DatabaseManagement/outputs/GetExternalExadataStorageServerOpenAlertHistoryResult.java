@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageServerOpenAlertHistoryAlert;
 import java.lang.String;
 import java.util.List;
@@ -64,7 +65,10 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
 
         @CustomType.Setter
         public Builder alerts(List<GetExternalExadataStorageServerOpenAlertHistoryAlert> alerts) {
-            this.alerts = Objects.requireNonNull(alerts);
+            if (alerts == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerOpenAlertHistoryResult", "alerts");
+            }
+            this.alerts = alerts;
             return this;
         }
         public Builder alerts(GetExternalExadataStorageServerOpenAlertHistoryAlert... alerts) {
@@ -72,12 +76,18 @@ public final class GetExternalExadataStorageServerOpenAlertHistoryResult {
         }
         @CustomType.Setter
         public Builder externalExadataStorageServerId(String externalExadataStorageServerId) {
-            this.externalExadataStorageServerId = Objects.requireNonNull(externalExadataStorageServerId);
+            if (externalExadataStorageServerId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerOpenAlertHistoryResult", "externalExadataStorageServerId");
+            }
+            this.externalExadataStorageServerId = externalExadataStorageServerId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerOpenAlertHistoryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalExadataStorageServerOpenAlertHistoryResult build() {

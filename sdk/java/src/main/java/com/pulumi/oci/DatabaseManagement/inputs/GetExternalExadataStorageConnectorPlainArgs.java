@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetExternalExadataStorageConnectorPlainArgs extends com.pulum
         }
 
         public GetExternalExadataStorageConnectorPlainArgs build() {
-            $.externalExadataStorageConnectorId = Objects.requireNonNull($.externalExadataStorageConnectorId, "expected parameter 'externalExadataStorageConnectorId' to be non-null");
+            if ($.externalExadataStorageConnectorId == null) {
+                throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorPlainArgs", "externalExadataStorageConnectorId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -210,62 +211,76 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConf
 
         @CustomType.Setter
         public Builder areVirtualInstructionsEnabled(@Nullable Boolean areVirtualInstructionsEnabled) {
+
             this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder configMap(@Nullable Map<String,Object> configMap) {
+
             this.configMap = configMap;
             return this;
         }
         @CustomType.Setter
         public Builder isAccessControlServiceEnabled(@Nullable Boolean isAccessControlServiceEnabled) {
+
             this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isInputOutputMemoryManagementUnitEnabled(@Nullable Boolean isInputOutputMemoryManagementUnitEnabled) {
+
             this.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMeasuredBootEnabled(@Nullable Boolean isMeasuredBootEnabled) {
+
             this.isMeasuredBootEnabled = isMeasuredBootEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMemoryEncryptionEnabled(@Nullable Boolean isMemoryEncryptionEnabled) {
+
             this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSecureBootEnabled(@Nullable Boolean isSecureBootEnabled) {
+
             this.isSecureBootEnabled = isSecureBootEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSymmetricMultiThreadingEnabled(@Nullable Boolean isSymmetricMultiThreadingEnabled) {
+
             this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTrustedPlatformModuleEnabled(@Nullable Boolean isTrustedPlatformModuleEnabled) {
+
             this.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder numaNodesPerSocket(@Nullable String numaNodesPerSocket) {
+
             this.numaNodesPerSocket = numaNodesPerSocket;
             return this;
         }
         @CustomType.Setter
         public Builder percentageOfCoresEnabled(@Nullable Integer percentageOfCoresEnabled) {
+
             this.percentageOfCoresEnabled = percentageOfCoresEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig", "type");
+            }
+            this.type = type;
             return this;
         }
         public InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetSteeringPolicyArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetSteeringPolicyArgs build() {
-            $.steeringPolicyId = Objects.requireNonNull($.steeringPolicyId, "expected parameter 'steeringPolicyId' to be non-null");
+            if ($.steeringPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetSteeringPolicyArgs", "steeringPolicyId");
+            }
             return $;
         }
     }

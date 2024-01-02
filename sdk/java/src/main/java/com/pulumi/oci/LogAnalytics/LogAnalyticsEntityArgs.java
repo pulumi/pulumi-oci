@@ -5,6 +5,7 @@ package com.pulumi.oci.LogAnalytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -497,9 +498,15 @@ public final class LogAnalyticsEntityArgs extends com.pulumi.resources.ResourceA
         }
 
         public LogAnalyticsEntityArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.entityTypeName = Objects.requireNonNull($.entityTypeName, "expected parameter 'entityTypeName' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsEntityArgs", "compartmentId");
+            }
+            if ($.entityTypeName == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsEntityArgs", "entityTypeName");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("LogAnalyticsEntityArgs", "namespace");
+            }
             return $;
         }
     }

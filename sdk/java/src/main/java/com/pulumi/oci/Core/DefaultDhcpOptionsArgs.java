@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.DefaultDhcpOptionsOptionArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -166,8 +167,12 @@ public final class DefaultDhcpOptionsArgs extends com.pulumi.resources.ResourceA
         }
 
         public DefaultDhcpOptionsArgs build() {
-            $.manageDefaultResourceId = Objects.requireNonNull($.manageDefaultResourceId, "expected parameter 'manageDefaultResourceId' to be non-null");
-            $.options = Objects.requireNonNull($.options, "expected parameter 'options' to be non-null");
+            if ($.manageDefaultResourceId == null) {
+                throw new MissingRequiredPropertyException("DefaultDhcpOptionsArgs", "manageDefaultResourceId");
+            }
+            if ($.options == null) {
+                throw new MissingRequiredPropertyException("DefaultDhcpOptionsArgs", "options");
+            }
             return $;
         }
     }

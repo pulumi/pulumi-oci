@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
 
         @CustomType.Setter
         public Builder details(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail> details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding", "details");
+            }
+            this.details = details;
             return this;
         }
         public Builder details(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetail... details) {
@@ -81,12 +85,18 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder recommendations(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation> recommendations) {
-            this.recommendations = Objects.requireNonNull(recommendations);
+            if (recommendations == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFinding", "recommendations");
+            }
+            this.recommendations = recommendations;
             return this;
         }
         public Builder recommendations(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendation... recommendations) {

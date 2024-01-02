@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
 
         @CustomType.Setter
         public Builder destinationBackendSetName(String destinationBackendSetName) {
-            this.destinationBackendSetName = Objects.requireNonNull(destinationBackendSetName);
+            if (destinationBackendSetName == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping", "destinationBackendSetName");
+            }
+            this.destinationBackendSetName = destinationBackendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder isBackendSetForNonMovable(Boolean isBackendSetForNonMovable) {
-            this.isBackendSetForNonMovable = Objects.requireNonNull(isBackendSetForNonMovable);
+            if (isBackendSetForNonMovable == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping", "isBackendSetForNonMovable");
+            }
+            this.isBackendSetForNonMovable = isBackendSetForNonMovable;
             return this;
         }
         @CustomType.Setter
         public Builder sourceBackendSetName(String sourceBackendSetName) {
-            this.sourceBackendSetName = Objects.requireNonNull(sourceBackendSetName);
+            if (sourceBackendSetName == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping", "sourceBackendSetName");
+            }
+            this.sourceBackendSetName = sourceBackendSetName;
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping build() {

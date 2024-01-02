@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -97,37 +98,56 @@ public final class GetDecryptedDataResult {
 
         @CustomType.Setter
         public Builder associatedData(@Nullable Map<String,Object> associatedData) {
+
             this.associatedData = associatedData;
             return this;
         }
         @CustomType.Setter
         public Builder ciphertext(String ciphertext) {
-            this.ciphertext = Objects.requireNonNull(ciphertext);
+            if (ciphertext == null) {
+              throw new MissingRequiredPropertyException("GetDecryptedDataResult", "ciphertext");
+            }
+            this.ciphertext = ciphertext;
             return this;
         }
         @CustomType.Setter
         public Builder cryptoEndpoint(String cryptoEndpoint) {
-            this.cryptoEndpoint = Objects.requireNonNull(cryptoEndpoint);
+            if (cryptoEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDecryptedDataResult", "cryptoEndpoint");
+            }
+            this.cryptoEndpoint = cryptoEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDecryptedDataResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+            if (keyId == null) {
+              throw new MissingRequiredPropertyException("GetDecryptedDataResult", "keyId");
+            }
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
         public Builder plaintext(String plaintext) {
-            this.plaintext = Objects.requireNonNull(plaintext);
+            if (plaintext == null) {
+              throw new MissingRequiredPropertyException("GetDecryptedDataResult", "plaintext");
+            }
+            this.plaintext = plaintext;
             return this;
         }
         @CustomType.Setter
         public Builder plaintextChecksum(String plaintextChecksum) {
-            this.plaintextChecksum = Objects.requireNonNull(plaintextChecksum);
+            if (plaintextChecksum == null) {
+              throw new MissingRequiredPropertyException("GetDecryptedDataResult", "plaintextChecksum");
+            }
+            this.plaintextChecksum = plaintextChecksum;
             return this;
         }
         public GetDecryptedDataResult build() {

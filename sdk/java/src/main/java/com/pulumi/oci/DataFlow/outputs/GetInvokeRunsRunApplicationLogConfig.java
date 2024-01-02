@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetInvokeRunsRunApplicationLogConfig {
 
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunsRunApplicationLogConfig", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logId(String logId) {
-            this.logId = Objects.requireNonNull(logId);
+            if (logId == null) {
+              throw new MissingRequiredPropertyException("GetInvokeRunsRunApplicationLogConfig", "logId");
+            }
+            this.logId = logId;
             return this;
         }
         public GetInvokeRunsRunApplicationLogConfig build() {

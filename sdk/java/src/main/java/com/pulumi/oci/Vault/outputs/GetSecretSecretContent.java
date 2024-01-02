@@ -4,6 +4,7 @@
 package com.pulumi.oci.Vault.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -52,22 +53,34 @@ public final class GetSecretSecretContent {
 
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetSecretSecretContent", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetSecretSecretContent", "contentType");
+            }
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSecretSecretContent", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder stage(String stage) {
-            this.stage = Objects.requireNonNull(stage);
+            if (stage == null) {
+              throw new MissingRequiredPropertyException("GetSecretSecretContent", "stage");
+            }
+            this.stage = stage;
             return this;
         }
         public GetSecretSecretContent build() {

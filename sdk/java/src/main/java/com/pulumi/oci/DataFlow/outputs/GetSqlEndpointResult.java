@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointNetworkConfiguration;
@@ -391,32 +392,50 @@ public final class GetSqlEndpointResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder driverShape(String driverShape) {
-            this.driverShape = Objects.requireNonNull(driverShape);
+            if (driverShape == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "driverShape");
+            }
+            this.driverShape = driverShape;
             return this;
         }
         @CustomType.Setter
         public Builder driverShapeConfigs(List<GetSqlEndpointDriverShapeConfig> driverShapeConfigs) {
-            this.driverShapeConfigs = Objects.requireNonNull(driverShapeConfigs);
+            if (driverShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "driverShapeConfigs");
+            }
+            this.driverShapeConfigs = driverShapeConfigs;
             return this;
         }
         public Builder driverShapeConfigs(GetSqlEndpointDriverShapeConfig... driverShapeConfigs) {
@@ -424,12 +443,18 @@ public final class GetSqlEndpointResult {
         }
         @CustomType.Setter
         public Builder executorShape(String executorShape) {
-            this.executorShape = Objects.requireNonNull(executorShape);
+            if (executorShape == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "executorShape");
+            }
+            this.executorShape = executorShape;
             return this;
         }
         @CustomType.Setter
         public Builder executorShapeConfigs(List<GetSqlEndpointExecutorShapeConfig> executorShapeConfigs) {
-            this.executorShapeConfigs = Objects.requireNonNull(executorShapeConfigs);
+            if (executorShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "executorShapeConfigs");
+            }
+            this.executorShapeConfigs = executorShapeConfigs;
             return this;
         }
         public Builder executorShapeConfigs(GetSqlEndpointExecutorShapeConfig... executorShapeConfigs) {
@@ -437,47 +462,74 @@ public final class GetSqlEndpointResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder jdbcEndpointUrl(String jdbcEndpointUrl) {
-            this.jdbcEndpointUrl = Objects.requireNonNull(jdbcEndpointUrl);
+            if (jdbcEndpointUrl == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "jdbcEndpointUrl");
+            }
+            this.jdbcEndpointUrl = jdbcEndpointUrl;
             return this;
         }
         @CustomType.Setter
         public Builder lakeId(String lakeId) {
-            this.lakeId = Objects.requireNonNull(lakeId);
+            if (lakeId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "lakeId");
+            }
+            this.lakeId = lakeId;
             return this;
         }
         @CustomType.Setter
         public Builder lastAcceptedRequestToken(String lastAcceptedRequestToken) {
-            this.lastAcceptedRequestToken = Objects.requireNonNull(lastAcceptedRequestToken);
+            if (lastAcceptedRequestToken == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "lastAcceptedRequestToken");
+            }
+            this.lastAcceptedRequestToken = lastAcceptedRequestToken;
             return this;
         }
         @CustomType.Setter
         public Builder maxExecutorCount(Integer maxExecutorCount) {
-            this.maxExecutorCount = Objects.requireNonNull(maxExecutorCount);
+            if (maxExecutorCount == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "maxExecutorCount");
+            }
+            this.maxExecutorCount = maxExecutorCount;
             return this;
         }
         @CustomType.Setter
         public Builder metastoreId(String metastoreId) {
-            this.metastoreId = Objects.requireNonNull(metastoreId);
+            if (metastoreId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "metastoreId");
+            }
+            this.metastoreId = metastoreId;
             return this;
         }
         @CustomType.Setter
         public Builder minExecutorCount(Integer minExecutorCount) {
-            this.minExecutorCount = Objects.requireNonNull(minExecutorCount);
+            if (minExecutorCount == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "minExecutorCount");
+            }
+            this.minExecutorCount = minExecutorCount;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(List<GetSqlEndpointNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetSqlEndpointNetworkConfiguration... networkConfigurations) {
@@ -485,47 +537,74 @@ public final class GetSqlEndpointResult {
         }
         @CustomType.Setter
         public Builder sparkAdvancedConfigurations(Map<String,Object> sparkAdvancedConfigurations) {
-            this.sparkAdvancedConfigurations = Objects.requireNonNull(sparkAdvancedConfigurations);
+            if (sparkAdvancedConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "sparkAdvancedConfigurations");
+            }
+            this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
             return this;
         }
         @CustomType.Setter
         public Builder sqlEndpointId(String sqlEndpointId) {
-            this.sqlEndpointId = Objects.requireNonNull(sqlEndpointId);
+            if (sqlEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "sqlEndpointId");
+            }
+            this.sqlEndpointId = sqlEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlEndpointVersion(String sqlEndpointVersion) {
-            this.sqlEndpointVersion = Objects.requireNonNull(sqlEndpointVersion);
+            if (sqlEndpointVersion == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "sqlEndpointVersion");
+            }
+            this.sqlEndpointVersion = sqlEndpointVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+            if (stateMessage == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "stateMessage");
+            }
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder warehouseBucketUri(String warehouseBucketUri) {
-            this.warehouseBucketUri = Objects.requireNonNull(warehouseBucketUri);
+            if (warehouseBucketUri == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointResult", "warehouseBucketUri");
+            }
+            this.warehouseBucketUri = warehouseBucketUri;
             return this;
         }
         public GetSqlEndpointResult build() {

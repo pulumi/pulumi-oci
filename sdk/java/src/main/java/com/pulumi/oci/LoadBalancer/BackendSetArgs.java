@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetHealthCheckerArgs;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetLbCookieSessionPersistenceConfigurationArgs;
 import com.pulumi.oci.LoadBalancer.inputs.BackendSetSessionPersistenceConfigurationArgs;
@@ -430,9 +431,15 @@ public final class BackendSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BackendSetArgs build() {
-            $.healthChecker = Objects.requireNonNull($.healthChecker, "expected parameter 'healthChecker' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.policy = Objects.requireNonNull($.policy, "expected parameter 'policy' to be non-null");
+            if ($.healthChecker == null) {
+                throw new MissingRequiredPropertyException("BackendSetArgs", "healthChecker");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("BackendSetArgs", "loadBalancerId");
+            }
+            if ($.policy == null) {
+                throw new MissingRequiredPropertyException("BackendSetArgs", "policy");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -124,42 +125,66 @@ public final class GetIpsecConnectionTunnelErrorResult {
 
         @CustomType.Setter
         public Builder errorCode(String errorCode) {
-            this.errorCode = Objects.requireNonNull(errorCode);
+            if (errorCode == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorResult", "errorCode");
+            }
+            this.errorCode = errorCode;
             return this;
         }
         @CustomType.Setter
         public Builder errorDescription(String errorDescription) {
-            this.errorDescription = Objects.requireNonNull(errorDescription);
+            if (errorDescription == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorResult", "errorDescription");
+            }
+            this.errorDescription = errorDescription;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
-            this.ipsecId = Objects.requireNonNull(ipsecId);
+            if (ipsecId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorResult", "ipsecId");
+            }
+            this.ipsecId = ipsecId;
             return this;
         }
         @CustomType.Setter
         public Builder ociResourcesLink(String ociResourcesLink) {
-            this.ociResourcesLink = Objects.requireNonNull(ociResourcesLink);
+            if (ociResourcesLink == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorResult", "ociResourcesLink");
+            }
+            this.ociResourcesLink = ociResourcesLink;
             return this;
         }
         @CustomType.Setter
         public Builder solution(String solution) {
-            this.solution = Objects.requireNonNull(solution);
+            if (solution == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorResult", "solution");
+            }
+            this.solution = solution;
             return this;
         }
         @CustomType.Setter
         public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+            if (timestamp == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorResult", "timestamp");
+            }
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelId(String tunnelId) {
-            this.tunnelId = Objects.requireNonNull(tunnelId);
+            if (tunnelId == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConnectionTunnelErrorResult", "tunnelId");
+            }
+            this.tunnelId = tunnelId;
             return this;
         }
         public GetIpsecConnectionTunnelErrorResult build() {

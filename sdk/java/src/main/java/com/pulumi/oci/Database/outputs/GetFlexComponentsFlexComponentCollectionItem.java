@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
 
         @CustomType.Setter
         public Builder availableCoreCount(Integer availableCoreCount) {
-            this.availableCoreCount = Objects.requireNonNull(availableCoreCount);
+            if (availableCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "availableCoreCount");
+            }
+            this.availableCoreCount = availableCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder availableDbStorageInGbs(Integer availableDbStorageInGbs) {
-            this.availableDbStorageInGbs = Objects.requireNonNull(availableDbStorageInGbs);
+            if (availableDbStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "availableDbStorageInGbs");
+            }
+            this.availableDbStorageInGbs = availableDbStorageInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minimumCoreCount(Integer minimumCoreCount) {
-            this.minimumCoreCount = Objects.requireNonNull(minimumCoreCount);
+            if (minimumCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "minimumCoreCount");
+            }
+            this.minimumCoreCount = minimumCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetFlexComponentsFlexComponentCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetFlexComponentsFlexComponentCollectionItem build() {

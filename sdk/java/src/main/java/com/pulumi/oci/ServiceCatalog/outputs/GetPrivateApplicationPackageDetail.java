@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -54,17 +55,26 @@ public final class GetPrivateApplicationPackageDetail {
 
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackageDetail", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackageDetail", "version");
+            }
+            this.version = version;
             return this;
         }
         @CustomType.Setter
         public Builder zipFileBase64encoded(String zipFileBase64encoded) {
-            this.zipFileBase64encoded = Objects.requireNonNull(zipFileBase64encoded);
+            if (zipFileBase64encoded == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackageDetail", "zipFileBase64encoded");
+            }
+            this.zipFileBase64encoded = zipFileBase64encoded;
             return this;
         }
         public GetPrivateApplicationPackageDetail build() {

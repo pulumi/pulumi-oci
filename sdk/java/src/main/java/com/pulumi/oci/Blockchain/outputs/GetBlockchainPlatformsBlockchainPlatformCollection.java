@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollection {
 
         @CustomType.Setter
         public Builder items(List<GetBlockchainPlatformsBlockchainPlatformCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsBlockchainPlatformCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetBlockchainPlatformsBlockchainPlatformCollectionItem... items) {

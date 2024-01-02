@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationAssetsFilter;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationAssetsMigrationAssetCollection;
 import java.lang.String;
@@ -115,11 +116,13 @@ public final class GetMigrationAssetsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMigrationAssetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,12 +131,18 @@ public final class GetMigrationAssetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrationAssetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder migrationAssetCollections(List<GetMigrationAssetsMigrationAssetCollection> migrationAssetCollections) {
-            this.migrationAssetCollections = Objects.requireNonNull(migrationAssetCollections);
+            if (migrationAssetCollections == null) {
+              throw new MissingRequiredPropertyException("GetMigrationAssetsResult", "migrationAssetCollections");
+            }
+            this.migrationAssetCollections = migrationAssetCollections;
             return this;
         }
         public Builder migrationAssetCollections(GetMigrationAssetsMigrationAssetCollection... migrationAssetCollections) {
@@ -141,16 +150,19 @@ public final class GetMigrationAssetsResult {
         }
         @CustomType.Setter
         public Builder migrationAssetId(@Nullable String migrationAssetId) {
+
             this.migrationAssetId = migrationAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder migrationId(@Nullable String migrationId) {
+
             this.migrationId = migrationId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

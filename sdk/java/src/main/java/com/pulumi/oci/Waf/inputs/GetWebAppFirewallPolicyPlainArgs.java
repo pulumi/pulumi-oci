@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetWebAppFirewallPolicyPlainArgs extends com.pulumi.resources
         }
 
         public GetWebAppFirewallPolicyPlainArgs build() {
-            $.webAppFirewallPolicyId = Objects.requireNonNull($.webAppFirewallPolicyId, "expected parameter 'webAppFirewallPolicyId' to be non-null");
+            if ($.webAppFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyPlainArgs", "webAppFirewallPolicyId");
+            }
             return $;
         }
     }

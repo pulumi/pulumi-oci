@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -171,52 +172,82 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuni
 
         @CustomType.Setter
         public Builder benefit(Double benefit) {
-            this.benefit = Objects.requireNonNull(benefit);
+            if (benefit == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "benefit");
+            }
+            this.benefit = benefit;
             return this;
         }
         @CustomType.Setter
         public Builder finding(String finding) {
-            this.finding = Objects.requireNonNull(finding);
+            if (finding == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "finding");
+            }
+            this.finding = finding;
             return this;
         }
         @CustomType.Setter
         public Builder implementActionSql(String implementActionSql) {
-            this.implementActionSql = Objects.requireNonNull(implementActionSql);
+            if (implementActionSql == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "implementActionSql");
+            }
+            this.implementActionSql = implementActionSql;
             return this;
         }
         @CustomType.Setter
         public Builder isParallelExecution(Boolean isParallelExecution) {
-            this.isParallelExecution = Objects.requireNonNull(isParallelExecution);
+            if (isParallelExecution == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "isParallelExecution");
+            }
+            this.isParallelExecution = isParallelExecution;
             return this;
         }
         @CustomType.Setter
         public Builder rationale(String rationale) {
-            this.rationale = Objects.requireNonNull(rationale);
+            if (rationale == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "rationale");
+            }
+            this.rationale = rationale;
             return this;
         }
         @CustomType.Setter
         public Builder recommendation(String recommendation) {
-            this.recommendation = Objects.requireNonNull(recommendation);
+            if (recommendation == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "recommendation");
+            }
+            this.recommendation = recommendation;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationKey(Integer recommendationKey) {
-            this.recommendationKey = Objects.requireNonNull(recommendationKey);
+            if (recommendationKey == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "recommendationKey");
+            }
+            this.recommendationKey = recommendationKey;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationType(String recommendationType) {
-            this.recommendationType = Objects.requireNonNull(recommendationType);
+            if (recommendationType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "recommendationType");
+            }
+            this.recommendationType = recommendationType;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskObjectId(String sqlTuningAdvisorTaskObjectId) {
-            this.sqlTuningAdvisorTaskObjectId = Objects.requireNonNull(sqlTuningAdvisorTaskObjectId);
+            if (sqlTuningAdvisorTaskObjectId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem", "sqlTuningAdvisorTaskObjectId");
+            }
+            this.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollectionItem build() {

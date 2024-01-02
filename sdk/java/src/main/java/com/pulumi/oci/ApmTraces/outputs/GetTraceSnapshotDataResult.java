@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmTraces.outputs.GetTraceSnapshotDataTraceSnapshotDetail;
 import java.lang.Boolean;
 import java.lang.String;
@@ -133,52 +134,76 @@ public final class GetTraceSnapshotDataResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetTraceSnapshotDataResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTraceSnapshotDataResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isSummarized(@Nullable Boolean isSummarized) {
+
             this.isSummarized = isSummarized;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetTraceSnapshotDataResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder snapshotTime(@Nullable String snapshotTime) {
+
             this.snapshotTime = snapshotTime;
             return this;
         }
         @CustomType.Setter
         public Builder threadId(@Nullable String threadId) {
+
             this.threadId = threadId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetTraceSnapshotDataResult", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetTraceSnapshotDataResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder traceKey(String traceKey) {
-            this.traceKey = Objects.requireNonNull(traceKey);
+            if (traceKey == null) {
+              throw new MissingRequiredPropertyException("GetTraceSnapshotDataResult", "traceKey");
+            }
+            this.traceKey = traceKey;
             return this;
         }
         @CustomType.Setter
         public Builder traceSnapshotDetails(List<GetTraceSnapshotDataTraceSnapshotDetail> traceSnapshotDetails) {
-            this.traceSnapshotDetails = Objects.requireNonNull(traceSnapshotDetails);
+            if (traceSnapshotDetails == null) {
+              throw new MissingRequiredPropertyException("GetTraceSnapshotDataResult", "traceSnapshotDetails");
+            }
+            this.traceSnapshotDetails = traceSnapshotDetails;
             return this;
         }
         public Builder traceSnapshotDetails(GetTraceSnapshotDataTraceSnapshotDetail... traceSnapshotDetails) {

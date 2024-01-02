@@ -144,6 +144,7 @@ public final class ConfigConfigurationReqAuthenticationDetails {
 
         @CustomType.Setter
         public Builder authHeaders(@Nullable List<ConfigConfigurationReqAuthenticationDetailsAuthHeader> authHeaders) {
+
             this.authHeaders = authHeaders;
             return this;
         }
@@ -152,36 +153,43 @@ public final class ConfigConfigurationReqAuthenticationDetails {
         }
         @CustomType.Setter
         public Builder authRequestMethod(@Nullable String authRequestMethod) {
+
             this.authRequestMethod = authRequestMethod;
             return this;
         }
         @CustomType.Setter
         public Builder authRequestPostBody(@Nullable String authRequestPostBody) {
+
             this.authRequestPostBody = authRequestPostBody;
             return this;
         }
         @CustomType.Setter
         public Builder authToken(@Nullable String authToken) {
+
             this.authToken = authToken;
             return this;
         }
         @CustomType.Setter
         public Builder authUrl(@Nullable String authUrl) {
+
             this.authUrl = authUrl;
             return this;
         }
         @CustomType.Setter
         public Builder authUserName(@Nullable String authUserName) {
+
             this.authUserName = authUserName;
             return this;
         }
         @CustomType.Setter
         public Builder authUserPassword(@Nullable String authUserPassword) {
+
             this.authUserPassword = authUserPassword;
             return this;
         }
         @CustomType.Setter
         public Builder oauthScheme(@Nullable String oauthScheme) {
+
             this.oauthScheme = oauthScheme;
             return this;
         }

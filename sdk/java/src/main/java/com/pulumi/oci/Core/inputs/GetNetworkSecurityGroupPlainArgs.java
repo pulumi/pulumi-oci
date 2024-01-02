@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetNetworkSecurityGroupPlainArgs extends com.pulumi.resources
         }
 
         public GetNetworkSecurityGroupPlainArgs build() {
-            $.networkSecurityGroupId = Objects.requireNonNull($.networkSecurityGroupId, "expected parameter 'networkSecurityGroupId' to be non-null");
+            if ($.networkSecurityGroupId == null) {
+                throw new MissingRequiredPropertyException("GetNetworkSecurityGroupPlainArgs", "networkSecurityGroupId");
+            }
             return $;
         }
     }

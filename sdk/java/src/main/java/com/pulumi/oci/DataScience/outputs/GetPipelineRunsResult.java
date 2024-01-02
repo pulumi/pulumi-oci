@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsFilter;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRun;
 import java.lang.String;
@@ -137,21 +138,27 @@ public final class GetPipelineRunsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
+
             this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPipelineRunsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,17 +167,22 @@ public final class GetPipelineRunsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineId(@Nullable String pipelineId) {
+
             this.pipelineId = pipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineRuns(List<GetPipelineRunsPipelineRun> pipelineRuns) {
-            this.pipelineRuns = Objects.requireNonNull(pipelineRuns);
+            if (pipelineRuns == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsResult", "pipelineRuns");
+            }
+            this.pipelineRuns = pipelineRuns;
             return this;
         }
         public Builder pipelineRuns(GetPipelineRunsPipelineRun... pipelineRuns) {
@@ -178,6 +190,7 @@ public final class GetPipelineRunsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

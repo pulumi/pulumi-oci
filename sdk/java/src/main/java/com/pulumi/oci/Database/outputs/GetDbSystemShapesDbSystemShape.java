@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -346,112 +347,178 @@ public final class GetDbSystemShapesDbSystemShape {
 
         @CustomType.Setter
         public Builder availableCoreCount(Integer availableCoreCount) {
-            this.availableCoreCount = Objects.requireNonNull(availableCoreCount);
+            if (availableCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "availableCoreCount");
+            }
+            this.availableCoreCount = availableCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder availableCoreCountPerNode(Integer availableCoreCountPerNode) {
-            this.availableCoreCountPerNode = Objects.requireNonNull(availableCoreCountPerNode);
+            if (availableCoreCountPerNode == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "availableCoreCountPerNode");
+            }
+            this.availableCoreCountPerNode = availableCoreCountPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder availableDataStorageInTbs(Integer availableDataStorageInTbs) {
-            this.availableDataStorageInTbs = Objects.requireNonNull(availableDataStorageInTbs);
+            if (availableDataStorageInTbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "availableDataStorageInTbs");
+            }
+            this.availableDataStorageInTbs = availableDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder availableDataStoragePerServerInTbs(Double availableDataStoragePerServerInTbs) {
-            this.availableDataStoragePerServerInTbs = Objects.requireNonNull(availableDataStoragePerServerInTbs);
+            if (availableDataStoragePerServerInTbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "availableDataStoragePerServerInTbs");
+            }
+            this.availableDataStoragePerServerInTbs = availableDataStoragePerServerInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder availableDbNodePerNodeInGbs(Integer availableDbNodePerNodeInGbs) {
-            this.availableDbNodePerNodeInGbs = Objects.requireNonNull(availableDbNodePerNodeInGbs);
+            if (availableDbNodePerNodeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "availableDbNodePerNodeInGbs");
+            }
+            this.availableDbNodePerNodeInGbs = availableDbNodePerNodeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder availableDbNodeStorageInGbs(Integer availableDbNodeStorageInGbs) {
-            this.availableDbNodeStorageInGbs = Objects.requireNonNull(availableDbNodeStorageInGbs);
+            if (availableDbNodeStorageInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "availableDbNodeStorageInGbs");
+            }
+            this.availableDbNodeStorageInGbs = availableDbNodeStorageInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder availableMemoryInGbs(Integer availableMemoryInGbs) {
-            this.availableMemoryInGbs = Objects.requireNonNull(availableMemoryInGbs);
+            if (availableMemoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "availableMemoryInGbs");
+            }
+            this.availableMemoryInGbs = availableMemoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder availableMemoryPerNodeInGbs(Integer availableMemoryPerNodeInGbs) {
-            this.availableMemoryPerNodeInGbs = Objects.requireNonNull(availableMemoryPerNodeInGbs);
+            if (availableMemoryPerNodeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "availableMemoryPerNodeInGbs");
+            }
+            this.availableMemoryPerNodeInGbs = availableMemoryPerNodeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder coreCountIncrement(Integer coreCountIncrement) {
-            this.coreCountIncrement = Objects.requireNonNull(coreCountIncrement);
+            if (coreCountIncrement == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "coreCountIncrement");
+            }
+            this.coreCountIncrement = coreCountIncrement;
             return this;
         }
         @CustomType.Setter
         public Builder maxStorageCount(Integer maxStorageCount) {
-            this.maxStorageCount = Objects.requireNonNull(maxStorageCount);
+            if (maxStorageCount == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "maxStorageCount");
+            }
+            this.maxStorageCount = maxStorageCount;
             return this;
         }
         @CustomType.Setter
         public Builder maximumNodeCount(Integer maximumNodeCount) {
-            this.maximumNodeCount = Objects.requireNonNull(maximumNodeCount);
+            if (maximumNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "maximumNodeCount");
+            }
+            this.maximumNodeCount = maximumNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder minCoreCountPerNode(Integer minCoreCountPerNode) {
-            this.minCoreCountPerNode = Objects.requireNonNull(minCoreCountPerNode);
+            if (minCoreCountPerNode == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "minCoreCountPerNode");
+            }
+            this.minCoreCountPerNode = minCoreCountPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder minDataStorageInTbs(Integer minDataStorageInTbs) {
-            this.minDataStorageInTbs = Objects.requireNonNull(minDataStorageInTbs);
+            if (minDataStorageInTbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "minDataStorageInTbs");
+            }
+            this.minDataStorageInTbs = minDataStorageInTbs;
             return this;
         }
         @CustomType.Setter
         public Builder minDbNodeStoragePerNodeInGbs(Integer minDbNodeStoragePerNodeInGbs) {
-            this.minDbNodeStoragePerNodeInGbs = Objects.requireNonNull(minDbNodeStoragePerNodeInGbs);
+            if (minDbNodeStoragePerNodeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "minDbNodeStoragePerNodeInGbs");
+            }
+            this.minDbNodeStoragePerNodeInGbs = minDbNodeStoragePerNodeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minMemoryPerNodeInGbs(Integer minMemoryPerNodeInGbs) {
-            this.minMemoryPerNodeInGbs = Objects.requireNonNull(minMemoryPerNodeInGbs);
+            if (minMemoryPerNodeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "minMemoryPerNodeInGbs");
+            }
+            this.minMemoryPerNodeInGbs = minMemoryPerNodeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder minStorageCount(Integer minStorageCount) {
-            this.minStorageCount = Objects.requireNonNull(minStorageCount);
+            if (minStorageCount == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "minStorageCount");
+            }
+            this.minStorageCount = minStorageCount;
             return this;
         }
         @CustomType.Setter
         public Builder minimumCoreCount(Integer minimumCoreCount) {
-            this.minimumCoreCount = Objects.requireNonNull(minimumCoreCount);
+            if (minimumCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "minimumCoreCount");
+            }
+            this.minimumCoreCount = minimumCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder minimumNodeCount(Integer minimumNodeCount) {
-            this.minimumNodeCount = Objects.requireNonNull(minimumNodeCount);
+            if (minimumNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "minimumNodeCount");
+            }
+            this.minimumNodeCount = minimumNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeFamily(String shapeFamily) {
-            this.shapeFamily = Objects.requireNonNull(shapeFamily);
+            if (shapeFamily == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "shapeFamily");
+            }
+            this.shapeFamily = shapeFamily;
             return this;
         }
         @CustomType.Setter
         public Builder shapeType(String shapeType) {
-            this.shapeType = Objects.requireNonNull(shapeType);
+            if (shapeType == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemShapesDbSystemShape", "shapeType");
+            }
+            this.shapeType = shapeType;
             return this;
         }
         public GetDbSystemShapesDbSystemShape build() {

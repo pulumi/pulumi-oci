@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -92,7 +93,9 @@ public final class GetDataSourceEventPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetDataSourceEventPlainArgs build() {
-            $.dataSourceId = Objects.requireNonNull($.dataSourceId, "expected parameter 'dataSourceId' to be non-null");
+            if ($.dataSourceId == null) {
+                throw new MissingRequiredPropertyException("GetDataSourceEventPlainArgs", "dataSourceId");
+            }
             return $;
         }
     }

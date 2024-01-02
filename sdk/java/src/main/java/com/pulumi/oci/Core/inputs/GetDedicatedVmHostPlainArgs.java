@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDedicatedVmHostPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetDedicatedVmHostPlainArgs build() {
-            $.dedicatedVmHostId = Objects.requireNonNull($.dedicatedVmHostId, "expected parameter 'dedicatedVmHostId' to be non-null");
+            if ($.dedicatedVmHostId == null) {
+                throw new MissingRequiredPropertyException("GetDedicatedVmHostPlainArgs", "dedicatedVmHostId");
+            }
             return $;
         }
     }

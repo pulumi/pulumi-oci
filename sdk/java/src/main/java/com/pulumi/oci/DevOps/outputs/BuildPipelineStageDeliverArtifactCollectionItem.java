@@ -58,11 +58,13 @@ public final class BuildPipelineStageDeliverArtifactCollectionItem {
 
         @CustomType.Setter
         public Builder artifactId(@Nullable String artifactId) {
+
             this.artifactId = artifactId;
             return this;
         }
         @CustomType.Setter
         public Builder artifactName(@Nullable String artifactName) {
+
             this.artifactName = artifactName;
             return this;
         }

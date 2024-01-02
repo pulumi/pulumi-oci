@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.inputs.GeneratedKeyKeyShapeArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -277,10 +278,18 @@ public final class GeneratedKeyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public GeneratedKeyArgs build() {
-            $.cryptoEndpoint = Objects.requireNonNull($.cryptoEndpoint, "expected parameter 'cryptoEndpoint' to be non-null");
-            $.includePlaintextKey = Objects.requireNonNull($.includePlaintextKey, "expected parameter 'includePlaintextKey' to be non-null");
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
-            $.keyShape = Objects.requireNonNull($.keyShape, "expected parameter 'keyShape' to be non-null");
+            if ($.cryptoEndpoint == null) {
+                throw new MissingRequiredPropertyException("GeneratedKeyArgs", "cryptoEndpoint");
+            }
+            if ($.includePlaintextKey == null) {
+                throw new MissingRequiredPropertyException("GeneratedKeyArgs", "includePlaintextKey");
+            }
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("GeneratedKeyArgs", "keyId");
+            }
+            if ($.keyShape == null) {
+                throw new MissingRequiredPropertyException("GeneratedKeyArgs", "keyShape");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -76,27 +77,42 @@ public final class GetAutonomousDatabaseRegionalWalletManagementResult {
 
         @CustomType.Setter
         public Builder gracePeriod(Integer gracePeriod) {
-            this.gracePeriod = Objects.requireNonNull(gracePeriod);
+            if (gracePeriod == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseRegionalWalletManagementResult", "gracePeriod");
+            }
+            this.gracePeriod = gracePeriod;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseRegionalWalletManagementResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder shouldRotate(Boolean shouldRotate) {
-            this.shouldRotate = Objects.requireNonNull(shouldRotate);
+            if (shouldRotate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseRegionalWalletManagementResult", "shouldRotate");
+            }
+            this.shouldRotate = shouldRotate;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseRegionalWalletManagementResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeRotated(String timeRotated) {
-            this.timeRotated = Objects.requireNonNull(timeRotated);
+            if (timeRotated == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseRegionalWalletManagementResult", "timeRotated");
+            }
+            this.timeRotated = timeRotated;
             return this;
         }
         public GetAutonomousDatabaseRegionalWalletManagementResult build() {

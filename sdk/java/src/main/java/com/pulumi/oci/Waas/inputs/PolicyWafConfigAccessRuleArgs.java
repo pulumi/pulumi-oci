@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigAccessRuleCriteriaArgs;
 import com.pulumi.oci.Waas.inputs.PolicyWafConfigAccessRuleResponseHeaderManipulationArgs;
 import java.lang.Integer;
@@ -705,9 +706,15 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         public PolicyWafConfigAccessRuleArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.criterias = Objects.requireNonNull($.criterias, "expected parameter 'criterias' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleArgs", "action");
+            }
+            if ($.criterias == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleArgs", "criterias");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleArgs", "name");
+            }
             return $;
         }
     }

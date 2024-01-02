@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetMessagesDeploymentMessagesCollection;
 import com.pulumi.oci.GoldenGate.outputs.GetMessagesFilter;
 import java.lang.String;
@@ -72,12 +73,18 @@ public final class GetMessagesResult {
 
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetMessagesResult", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentMessagesCollections(List<GetMessagesDeploymentMessagesCollection> deploymentMessagesCollections) {
-            this.deploymentMessagesCollections = Objects.requireNonNull(deploymentMessagesCollections);
+            if (deploymentMessagesCollections == null) {
+              throw new MissingRequiredPropertyException("GetMessagesResult", "deploymentMessagesCollections");
+            }
+            this.deploymentMessagesCollections = deploymentMessagesCollections;
             return this;
         }
         public Builder deploymentMessagesCollections(GetMessagesDeploymentMessagesCollection... deploymentMessagesCollections) {
@@ -85,6 +92,7 @@ public final class GetMessagesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMessagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetMessagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMessagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetMessagesResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetDedicatedVantagePointsDedicatedVantagePointCollection;
 import com.pulumi.oci.ApmSynthetics.outputs.GetDedicatedVantagePointsFilter;
 import java.lang.String;
@@ -115,12 +116,18 @@ public final class GetDedicatedVantagePointsResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVantagePointsResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVantagePointCollections(List<GetDedicatedVantagePointsDedicatedVantagePointCollection> dedicatedVantagePointCollections) {
-            this.dedicatedVantagePointCollections = Objects.requireNonNull(dedicatedVantagePointCollections);
+            if (dedicatedVantagePointCollections == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVantagePointsResult", "dedicatedVantagePointCollections");
+            }
+            this.dedicatedVantagePointCollections = dedicatedVantagePointCollections;
             return this;
         }
         public Builder dedicatedVantagePointCollections(GetDedicatedVantagePointsDedicatedVantagePointCollection... dedicatedVantagePointCollections) {
@@ -128,11 +135,13 @@ public final class GetDedicatedVantagePointsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDedicatedVantagePointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,16 +150,21 @@ public final class GetDedicatedVantagePointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVantagePointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

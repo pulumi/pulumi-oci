@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -146,9 +147,15 @@ public final class GetResourceAvailabilityPlainArgs extends com.pulumi.resources
         }
 
         public GetResourceAvailabilityPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.limitName = Objects.requireNonNull($.limitName, "expected parameter 'limitName' to be non-null");
-            $.serviceName = Objects.requireNonNull($.serviceName, "expected parameter 'serviceName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetResourceAvailabilityPlainArgs", "compartmentId");
+            }
+            if ($.limitName == null) {
+                throw new MissingRequiredPropertyException("GetResourceAvailabilityPlainArgs", "limitName");
+            }
+            if ($.serviceName == null) {
+                throw new MissingRequiredPropertyException("GetResourceAvailabilityPlainArgs", "serviceName");
+            }
             return $;
         }
     }

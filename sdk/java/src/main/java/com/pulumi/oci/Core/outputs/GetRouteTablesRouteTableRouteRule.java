@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -120,32 +121,50 @@ public final class GetRouteTablesRouteTableRouteRule {
 
         @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+            if (cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesRouteTableRouteRule", "cidrBlock");
+            }
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesRouteTableRouteRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder destination(String destination) {
-            this.destination = Objects.requireNonNull(destination);
+            if (destination == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesRouteTableRouteRule", "destination");
+            }
+            this.destination = destination;
             return this;
         }
         @CustomType.Setter
         public Builder destinationType(String destinationType) {
-            this.destinationType = Objects.requireNonNull(destinationType);
+            if (destinationType == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesRouteTableRouteRule", "destinationType");
+            }
+            this.destinationType = destinationType;
             return this;
         }
         @CustomType.Setter
         public Builder networkEntityId(String networkEntityId) {
-            this.networkEntityId = Objects.requireNonNull(networkEntityId);
+            if (networkEntityId == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesRouteTableRouteRule", "networkEntityId");
+            }
+            this.networkEntityId = networkEntityId;
             return this;
         }
         @CustomType.Setter
         public Builder routeType(String routeType) {
-            this.routeType = Objects.requireNonNull(routeType);
+            if (routeType == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesRouteTableRouteRule", "routeType");
+            }
+            this.routeType = routeType;
             return this;
         }
         public GetRouteTablesRouteTableRouteRule build() {

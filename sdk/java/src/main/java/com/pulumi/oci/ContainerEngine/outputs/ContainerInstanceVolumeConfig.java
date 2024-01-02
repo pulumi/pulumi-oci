@@ -72,16 +72,19 @@ public final class ContainerInstanceVolumeConfig {
 
         @CustomType.Setter
         public Builder data(@Nullable String data) {
+
             this.data = data;
             return this;
         }
         @CustomType.Setter
         public Builder fileName(@Nullable String fileName) {
+
             this.fileName = fileName;
             return this;
         }
         @CustomType.Setter
         public Builder path(@Nullable String path) {
+
             this.path = path;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClusterPatchHistoryEntriesFilter;
 import com.pulumi.oci.Database.outputs.GetVmClusterPatchHistoryEntriesPatchHistoryEntry;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetVmClusterPatchHistoryEntriesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClusterPatchHistoryEntriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,12 +82,18 @@ public final class GetVmClusterPatchHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder patchHistoryEntries(List<GetVmClusterPatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
-            this.patchHistoryEntries = Objects.requireNonNull(patchHistoryEntries);
+            if (patchHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntriesResult", "patchHistoryEntries");
+            }
+            this.patchHistoryEntries = patchHistoryEntries;
             return this;
         }
         public Builder patchHistoryEntries(GetVmClusterPatchHistoryEntriesPatchHistoryEntry... patchHistoryEntries) {
@@ -93,7 +101,10 @@ public final class GetVmClusterPatchHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntriesResult", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetVmClusterPatchHistoryEntriesResult build() {

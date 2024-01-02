@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetFastLaunchJobConfigsFastLaunchJobConfig;
 import com.pulumi.oci.DataScience.outputs.GetFastLaunchJobConfigsFilter;
 import java.lang.String;
@@ -72,12 +73,18 @@ public final class GetFastLaunchJobConfigsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFastLaunchJobConfigsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder fastLaunchJobConfigs(List<GetFastLaunchJobConfigsFastLaunchJobConfig> fastLaunchJobConfigs) {
-            this.fastLaunchJobConfigs = Objects.requireNonNull(fastLaunchJobConfigs);
+            if (fastLaunchJobConfigs == null) {
+              throw new MissingRequiredPropertyException("GetFastLaunchJobConfigsResult", "fastLaunchJobConfigs");
+            }
+            this.fastLaunchJobConfigs = fastLaunchJobConfigs;
             return this;
         }
         public Builder fastLaunchJobConfigs(GetFastLaunchJobConfigsFastLaunchJobConfig... fastLaunchJobConfigs) {
@@ -85,6 +92,7 @@ public final class GetFastLaunchJobConfigsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFastLaunchJobConfigsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetFastLaunchJobConfigsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFastLaunchJobConfigsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetFastLaunchJobConfigsResult build() {

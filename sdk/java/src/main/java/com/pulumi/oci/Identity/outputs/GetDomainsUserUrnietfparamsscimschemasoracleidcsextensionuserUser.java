@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp;
@@ -389,12 +390,18 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
 
         @CustomType.Setter
         public Builder accountRecoveryRequired(Boolean accountRecoveryRequired) {
-            this.accountRecoveryRequired = Objects.requireNonNull(accountRecoveryRequired);
+            if (accountRecoveryRequired == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "accountRecoveryRequired");
+            }
+            this.accountRecoveryRequired = accountRecoveryRequired;
             return this;
         }
         @CustomType.Setter
         public Builder accounts(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount> accounts) {
-            this.accounts = Objects.requireNonNull(accounts);
+            if (accounts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "accounts");
+            }
+            this.accounts = accounts;
             return this;
         }
         public Builder accounts(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccount... accounts) {
@@ -402,7 +409,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder appRoles(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole> appRoles) {
-            this.appRoles = Objects.requireNonNull(appRoles);
+            if (appRoles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "appRoles");
+            }
+            this.appRoles = appRoles;
             return this;
         }
         public Builder appRoles(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRole... appRoles) {
@@ -410,7 +420,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder applicableAuthenticationTargetApps(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp> applicableAuthenticationTargetApps) {
-            this.applicableAuthenticationTargetApps = Objects.requireNonNull(applicableAuthenticationTargetApps);
+            if (applicableAuthenticationTargetApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "applicableAuthenticationTargetApps");
+            }
+            this.applicableAuthenticationTargetApps = applicableAuthenticationTargetApps;
             return this;
         }
         public Builder applicableAuthenticationTargetApps(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp... applicableAuthenticationTargetApps) {
@@ -418,17 +431,26 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder bypassNotification(Boolean bypassNotification) {
-            this.bypassNotification = Objects.requireNonNull(bypassNotification);
+            if (bypassNotification == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "bypassNotification");
+            }
+            this.bypassNotification = bypassNotification;
             return this;
         }
         @CustomType.Setter
         public Builder creationMechanism(String creationMechanism) {
-            this.creationMechanism = Objects.requireNonNull(creationMechanism);
+            if (creationMechanism == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "creationMechanism");
+            }
+            this.creationMechanism = creationMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder delegatedAuthenticationTargetApps(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps) {
-            this.delegatedAuthenticationTargetApps = Objects.requireNonNull(delegatedAuthenticationTargetApps);
+            if (delegatedAuthenticationTargetApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "delegatedAuthenticationTargetApps");
+            }
+            this.delegatedAuthenticationTargetApps = delegatedAuthenticationTargetApps;
             return this;
         }
         public Builder delegatedAuthenticationTargetApps(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp... delegatedAuthenticationTargetApps) {
@@ -436,12 +458,18 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder doNotShowGettingStarted(Boolean doNotShowGettingStarted) {
-            this.doNotShowGettingStarted = Objects.requireNonNull(doNotShowGettingStarted);
+            if (doNotShowGettingStarted == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "doNotShowGettingStarted");
+            }
+            this.doNotShowGettingStarted = doNotShowGettingStarted;
             return this;
         }
         @CustomType.Setter
         public Builder grants(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+            if (grants == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "grants");
+            }
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrant... grants) {
@@ -449,12 +477,18 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder groupMembershipLastModified(String groupMembershipLastModified) {
-            this.groupMembershipLastModified = Objects.requireNonNull(groupMembershipLastModified);
+            if (groupMembershipLastModified == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "groupMembershipLastModified");
+            }
+            this.groupMembershipLastModified = groupMembershipLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAppRolesLimitedToGroups(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup> idcsAppRolesLimitedToGroups) {
-            this.idcsAppRolesLimitedToGroups = Objects.requireNonNull(idcsAppRolesLimitedToGroups);
+            if (idcsAppRolesLimitedToGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "idcsAppRolesLimitedToGroups");
+            }
+            this.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
             return this;
         }
         public Builder idcsAppRolesLimitedToGroups(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroup... idcsAppRolesLimitedToGroups) {
@@ -462,52 +496,82 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder isAccountRecoveryEnrolled(Boolean isAccountRecoveryEnrolled) {
-            this.isAccountRecoveryEnrolled = Objects.requireNonNull(isAccountRecoveryEnrolled);
+            if (isAccountRecoveryEnrolled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "isAccountRecoveryEnrolled");
+            }
+            this.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
             return this;
         }
         @CustomType.Setter
         public Builder isAuthenticationDelegated(Boolean isAuthenticationDelegated) {
-            this.isAuthenticationDelegated = Objects.requireNonNull(isAuthenticationDelegated);
+            if (isAuthenticationDelegated == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "isAuthenticationDelegated");
+            }
+            this.isAuthenticationDelegated = isAuthenticationDelegated;
             return this;
         }
         @CustomType.Setter
         public Builder isFederatedUser(Boolean isFederatedUser) {
-            this.isFederatedUser = Objects.requireNonNull(isFederatedUser);
+            if (isFederatedUser == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "isFederatedUser");
+            }
+            this.isFederatedUser = isFederatedUser;
             return this;
         }
         @CustomType.Setter
         public Builder isGroupMembershipNormalized(Boolean isGroupMembershipNormalized) {
-            this.isGroupMembershipNormalized = Objects.requireNonNull(isGroupMembershipNormalized);
+            if (isGroupMembershipNormalized == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "isGroupMembershipNormalized");
+            }
+            this.isGroupMembershipNormalized = isGroupMembershipNormalized;
             return this;
         }
         @CustomType.Setter
         public Builder isGroupMembershipSyncedToUsersGroups(Boolean isGroupMembershipSyncedToUsersGroups) {
-            this.isGroupMembershipSyncedToUsersGroups = Objects.requireNonNull(isGroupMembershipSyncedToUsersGroups);
+            if (isGroupMembershipSyncedToUsersGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "isGroupMembershipSyncedToUsersGroups");
+            }
+            this.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             return this;
         }
         @CustomType.Setter
         public Builder notificationEmailTemplateId(String notificationEmailTemplateId) {
-            this.notificationEmailTemplateId = Objects.requireNonNull(notificationEmailTemplateId);
+            if (notificationEmailTemplateId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "notificationEmailTemplateId");
+            }
+            this.notificationEmailTemplateId = notificationEmailTemplateId;
             return this;
         }
         @CustomType.Setter
         public Builder preferredUiLandingPage(String preferredUiLandingPage) {
-            this.preferredUiLandingPage = Objects.requireNonNull(preferredUiLandingPage);
+            if (preferredUiLandingPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "preferredUiLandingPage");
+            }
+            this.preferredUiLandingPage = preferredUiLandingPage;
             return this;
         }
         @CustomType.Setter
         public Builder serviceUser(Boolean serviceUser) {
-            this.serviceUser = Objects.requireNonNull(serviceUser);
+            if (serviceUser == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "serviceUser");
+            }
+            this.serviceUser = serviceUser;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder supportAccounts(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts) {
-            this.supportAccounts = Objects.requireNonNull(supportAccounts);
+            if (supportAccounts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "supportAccounts");
+            }
+            this.supportAccounts = supportAccounts;
             return this;
         }
         public Builder supportAccounts(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount... supportAccounts) {
@@ -515,7 +579,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder syncedFromApps(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp> syncedFromApps) {
-            this.syncedFromApps = Objects.requireNonNull(syncedFromApps);
+            if (syncedFromApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "syncedFromApps");
+            }
+            this.syncedFromApps = syncedFromApps;
             return this;
         }
         public Builder syncedFromApps(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp... syncedFromApps) {
@@ -523,17 +590,26 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
         }
         @CustomType.Setter
         public Builder userFlowControlledByExternalClient(Boolean userFlowControlledByExternalClient) {
-            this.userFlowControlledByExternalClient = Objects.requireNonNull(userFlowControlledByExternalClient);
+            if (userFlowControlledByExternalClient == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "userFlowControlledByExternalClient");
+            }
+            this.userFlowControlledByExternalClient = userFlowControlledByExternalClient;
             return this;
         }
         @CustomType.Setter
         public Builder userProvider(String userProvider) {
-            this.userProvider = Objects.requireNonNull(userProvider);
+            if (userProvider == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "userProvider");
+            }
+            this.userProvider = userProvider;
             return this;
         }
         @CustomType.Setter
         public Builder userTokens(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken> userTokens) {
-            this.userTokens = Objects.requireNonNull(userTokens);
+            if (userTokens == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser", "userTokens");
+            }
+            this.userTokens = userTokens;
             return this;
         }
         public Builder userTokens(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken... userTokens) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskActionMetricExtraction;
 import java.lang.Boolean;
 import java.lang.String;
@@ -143,17 +144,26 @@ public final class GetNamespaceScheduledTaskAction {
 
         @CustomType.Setter
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
-            this.compartmentIdInSubtree = Objects.requireNonNull(compartmentIdInSubtree);
+            if (compartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "compartmentIdInSubtree");
+            }
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder metricExtractions(List<GetNamespaceScheduledTaskActionMetricExtraction> metricExtractions) {
-            this.metricExtractions = Objects.requireNonNull(metricExtractions);
+            if (metricExtractions == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "metricExtractions");
+            }
+            this.metricExtractions = metricExtractions;
             return this;
         }
         public Builder metricExtractions(GetNamespaceScheduledTaskActionMetricExtraction... metricExtractions) {
@@ -161,27 +171,42 @@ public final class GetNamespaceScheduledTaskAction {
         }
         @CustomType.Setter
         public Builder purgeCompartmentId(String purgeCompartmentId) {
-            this.purgeCompartmentId = Objects.requireNonNull(purgeCompartmentId);
+            if (purgeCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "purgeCompartmentId");
+            }
+            this.purgeCompartmentId = purgeCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder purgeDuration(String purgeDuration) {
-            this.purgeDuration = Objects.requireNonNull(purgeDuration);
+            if (purgeDuration == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "purgeDuration");
+            }
+            this.purgeDuration = purgeDuration;
             return this;
         }
         @CustomType.Setter
         public Builder queryString(String queryString) {
-            this.queryString = Objects.requireNonNull(queryString);
+            if (queryString == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "queryString");
+            }
+            this.queryString = queryString;
             return this;
         }
         @CustomType.Setter
         public Builder savedSearchId(String savedSearchId) {
-            this.savedSearchId = Objects.requireNonNull(savedSearchId);
+            if (savedSearchId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "savedSearchId");
+            }
+            this.savedSearchId = savedSearchId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceScheduledTaskAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetNamespaceScheduledTaskAction build() {

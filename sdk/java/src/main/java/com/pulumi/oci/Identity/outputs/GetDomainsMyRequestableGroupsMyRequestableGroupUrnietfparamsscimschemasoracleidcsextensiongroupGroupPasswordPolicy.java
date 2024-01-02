@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+            if (priority == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy", "priority");
+            }
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy build() {

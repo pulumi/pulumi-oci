@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehouseUsersFilter;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection;
 import java.lang.String;
@@ -115,16 +116,19 @@ public final class GetOperationsInsightsWarehouseUsersResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOperationsInsightsWarehouseUsersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,17 +137,24 @@ public final class GetOperationsInsightsWarehouseUsersResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsWarehouseId(String operationsInsightsWarehouseId) {
-            this.operationsInsightsWarehouseId = Objects.requireNonNull(operationsInsightsWarehouseId);
+            if (operationsInsightsWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseUsersResult", "operationsInsightsWarehouseId");
+            }
+            this.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsWarehouseUserSummaryCollections(List<GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection> operationsInsightsWarehouseUserSummaryCollections) {
-            this.operationsInsightsWarehouseUserSummaryCollections = Objects.requireNonNull(operationsInsightsWarehouseUserSummaryCollections);
+            if (operationsInsightsWarehouseUserSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseUsersResult", "operationsInsightsWarehouseUserSummaryCollections");
+            }
+            this.operationsInsightsWarehouseUserSummaryCollections = operationsInsightsWarehouseUserSummaryCollections;
             return this;
         }
         public Builder operationsInsightsWarehouseUserSummaryCollections(GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollection... operationsInsightsWarehouseUserSummaryCollections) {
@@ -151,6 +162,7 @@ public final class GetOperationsInsightsWarehouseUsersResult {
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }

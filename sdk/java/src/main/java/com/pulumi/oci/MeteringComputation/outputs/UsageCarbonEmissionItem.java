@@ -299,76 +299,91 @@ public final class UsageCarbonEmissionItem {
 
         @CustomType.Setter
         public Builder ad(@Nullable String ad) {
+
             this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentName(@Nullable String compartmentName) {
+
             this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentPath(@Nullable String compartmentPath) {
+
             this.compartmentPath = compartmentPath;
             return this;
         }
         @CustomType.Setter
         public Builder computedCarbonEmission(@Nullable Double computedCarbonEmission) {
+
             this.computedCarbonEmission = computedCarbonEmission;
             return this;
         }
         @CustomType.Setter
         public Builder emissionCalculationMethod(@Nullable String emissionCalculationMethod) {
+
             this.emissionCalculationMethod = emissionCalculationMethod;
             return this;
         }
         @CustomType.Setter
         public Builder platform(@Nullable String platform) {
+
             this.platform = platform;
             return this;
         }
         @CustomType.Setter
         public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
+
             this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder service(@Nullable String service) {
+
             this.service = service;
             return this;
         }
         @CustomType.Setter
         public Builder skuName(@Nullable String skuName) {
+
             this.skuName = skuName;
             return this;
         }
         @CustomType.Setter
         public Builder skuPartNumber(@Nullable String skuPartNumber) {
+
             this.skuPartNumber = skuPartNumber;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(@Nullable String subscriptionId) {
+
             this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder tags(@Nullable List<UsageCarbonEmissionItemTag> tags) {
+
             this.tags = tags;
             return this;
         }
@@ -377,21 +392,25 @@ public final class UsageCarbonEmissionItem {
         }
         @CustomType.Setter
         public Builder tenantId(@Nullable String tenantId) {
+
             this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder tenantName(@Nullable String tenantName) {
+
             this.tenantName = tenantName;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
+
             this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
+
             this.timeUsageStarted = timeUsageStarted;
             return this;
         }

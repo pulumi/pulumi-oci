@@ -340,6 +340,7 @@ public final class TargetAssetRecommendedSpec {
 
         @CustomType.Setter
         public Builder agentConfigs(@Nullable List<TargetAssetRecommendedSpecAgentConfig> agentConfigs) {
+
             this.agentConfigs = agentConfigs;
             return this;
         }
@@ -348,21 +349,25 @@ public final class TargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(@Nullable String capacityReservationId) {
+
             this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createVnicDetails(@Nullable List<TargetAssetRecommendedSpecCreateVnicDetail> createVnicDetails) {
+
             this.createVnicDetails = createVnicDetails;
             return this;
         }
@@ -371,36 +376,43 @@ public final class TargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder dedicatedVmHostId(@Nullable String dedicatedVmHostId) {
+
             this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(@Nullable String hostnameLabel) {
+
             this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder instanceOptions(@Nullable List<TargetAssetRecommendedSpecInstanceOption> instanceOptions) {
+
             this.instanceOptions = instanceOptions;
             return this;
         }
@@ -409,16 +421,19 @@ public final class TargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder ipxeScript(@Nullable String ipxeScript) {
+
             this.ipxeScript = ipxeScript;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder preemptibleInstanceConfigs(@Nullable List<TargetAssetRecommendedSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs) {
+
             this.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             return this;
         }
@@ -427,11 +442,13 @@ public final class TargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfigs(@Nullable List<TargetAssetRecommendedSpecShapeConfig> shapeConfigs) {
+
             this.shapeConfigs = shapeConfigs;
             return this;
         }
@@ -440,6 +457,7 @@ public final class TargetAssetRecommendedSpec {
         }
         @CustomType.Setter
         public Builder sourceDetails(@Nullable List<TargetAssetRecommendedSpecSourceDetail> sourceDetails) {
+
             this.sourceDetails = sourceDetails;
             return this;
         }

@@ -101,26 +101,31 @@ public final class AssetComputeGpuDevice {
 
         @CustomType.Setter
         public Builder coresCount(@Nullable Integer coresCount) {
+
             this.coresCount = coresCount;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder manufacturer(@Nullable String manufacturer) {
+
             this.manufacturer = manufacturer;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInMbs(@Nullable String memoryInMbs) {
+
             this.memoryInMbs = memoryInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

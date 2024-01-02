@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmStatusesAlarmStatusSuppression;
 import java.lang.String;
 import java.util.List;
@@ -114,27 +115,42 @@ public final class GetAlarmStatusesAlarmStatus {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder suppressions(List<GetAlarmStatusesAlarmStatusSuppression> suppressions) {
-            this.suppressions = Objects.requireNonNull(suppressions);
+            if (suppressions == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "suppressions");
+            }
+            this.suppressions = suppressions;
             return this;
         }
         public Builder suppressions(GetAlarmStatusesAlarmStatusSuppression... suppressions) {
@@ -142,7 +158,10 @@ public final class GetAlarmStatusesAlarmStatus {
         }
         @CustomType.Setter
         public Builder timestampTriggered(String timestampTriggered) {
-            this.timestampTriggered = Objects.requireNonNull(timestampTriggered);
+            if (timestampTriggered == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "timestampTriggered");
+            }
+            this.timestampTriggered = timestampTriggered;
             return this;
         }
         public GetAlarmStatusesAlarmStatus build() {

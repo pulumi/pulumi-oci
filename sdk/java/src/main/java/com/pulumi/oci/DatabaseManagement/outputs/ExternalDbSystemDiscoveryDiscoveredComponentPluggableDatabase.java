@@ -88,11 +88,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectors(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector> connectors) {
+
             this.connectors = connectors;
             return this;
         }
@@ -101,11 +103,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
         }
         @CustomType.Setter
         public Builder containerDatabaseId(@Nullable String containerDatabaseId) {
+
             this.containerDatabaseId = containerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder guid(@Nullable String guid) {
+
             this.guid = guid;
             return this;
         }

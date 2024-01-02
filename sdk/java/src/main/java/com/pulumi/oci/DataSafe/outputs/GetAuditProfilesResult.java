@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfilesAuditProfileCollection;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfilesFilter;
 import java.lang.Boolean;
@@ -184,17 +185,22 @@ public final class GetAuditProfilesResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder auditCollectedVolumeGreaterThanOrEqualTo(@Nullable String auditCollectedVolumeGreaterThanOrEqualTo) {
+
             this.auditCollectedVolumeGreaterThanOrEqualTo = auditCollectedVolumeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder auditProfileCollections(List<GetAuditProfilesAuditProfileCollection> auditProfileCollections) {
-            this.auditProfileCollections = Objects.requireNonNull(auditProfileCollections);
+            if (auditProfileCollections == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesResult", "auditProfileCollections");
+            }
+            this.auditProfileCollections = auditProfileCollections;
             return this;
         }
         public Builder auditProfileCollections(GetAuditProfilesAuditProfileCollection... auditProfileCollections) {
@@ -202,26 +208,33 @@ public final class GetAuditProfilesResult {
         }
         @CustomType.Setter
         public Builder auditProfileId(@Nullable String auditProfileId) {
+
             this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAuditProfilesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -230,26 +243,33 @@ public final class GetAuditProfilesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfilesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isOverrideGlobalRetentionSetting(@Nullable Boolean isOverrideGlobalRetentionSetting) {
+
             this.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             return this;
         }
         @CustomType.Setter
         public Builder isPaidUsageEnabled(@Nullable Boolean isPaidUsageEnabled) {
+
             this.isPaidUsageEnabled = isPaidUsageEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }

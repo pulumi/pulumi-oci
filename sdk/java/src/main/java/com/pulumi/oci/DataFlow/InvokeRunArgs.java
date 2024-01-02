@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunApplicationLogConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunDriverShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.InvokeRunExecutorShapeConfigArgs;
@@ -985,7 +986,9 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public InvokeRunArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("InvokeRunArgs", "compartmentId");
+            }
             return $;
         }
     }

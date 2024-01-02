@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class BootVolumeBootVolumeReplicaArgs extends com.pulumi.resources.
         }
 
         public BootVolumeBootVolumeReplicaArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("BootVolumeBootVolumeReplicaArgs", "availabilityDomain");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetTagsFilter;
 import com.pulumi.oci.Identity.outputs.GetTagsTag;
 import java.lang.String;
@@ -95,6 +96,7 @@ public final class GetTagsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTagsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -103,22 +105,32 @@ public final class GetTagsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTagsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tagNamespaceId(String tagNamespaceId) {
-            this.tagNamespaceId = Objects.requireNonNull(tagNamespaceId);
+            if (tagNamespaceId == null) {
+              throw new MissingRequiredPropertyException("GetTagsResult", "tagNamespaceId");
+            }
+            this.tagNamespaceId = tagNamespaceId;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetTagsTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetTagsResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetTagsTag... tags) {

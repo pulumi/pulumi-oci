@@ -54,21 +54,25 @@ public final class LogAnalyticsObjectCollectionRuleOverride {
 
         @CustomType.Setter
         public Builder matchType(@Nullable String matchType) {
+
             this.matchType = matchType;
             return this;
         }
         @CustomType.Setter
         public Builder matchValue(@Nullable String matchValue) {
+
             this.matchValue = matchValue;
             return this;
         }
         @CustomType.Setter
         public Builder propertyName(@Nullable String propertyName) {
+
             this.propertyName = propertyName;
             return this;
         }
         @CustomType.Setter
         public Builder propertyValue(@Nullable String propertyValue) {
+
             this.propertyValue = propertyValue;
             return this;
         }

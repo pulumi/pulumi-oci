@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -470,9 +471,15 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
         }
 
         public VolumeBackupPolicyScheduleArgs build() {
-            $.backupType = Objects.requireNonNull($.backupType, "expected parameter 'backupType' to be non-null");
-            $.period = Objects.requireNonNull($.period, "expected parameter 'period' to be non-null");
-            $.retentionSeconds = Objects.requireNonNull($.retentionSeconds, "expected parameter 'retentionSeconds' to be non-null");
+            if ($.backupType == null) {
+                throw new MissingRequiredPropertyException("VolumeBackupPolicyScheduleArgs", "backupType");
+            }
+            if ($.period == null) {
+                throw new MissingRequiredPropertyException("VolumeBackupPolicyScheduleArgs", "period");
+            }
+            if ($.retentionSeconds == null) {
+                throw new MissingRequiredPropertyException("VolumeBackupPolicyScheduleArgs", "retentionSeconds");
+            }
             return $;
         }
     }

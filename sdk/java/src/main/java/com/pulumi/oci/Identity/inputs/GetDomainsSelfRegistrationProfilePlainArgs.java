@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -211,8 +212,12 @@ public final class GetDomainsSelfRegistrationProfilePlainArgs extends com.pulumi
         }
 
         public GetDomainsSelfRegistrationProfilePlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.selfRegistrationProfileId = Objects.requireNonNull($.selfRegistrationProfileId, "expected parameter 'selfRegistrationProfileId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilePlainArgs", "idcsEndpoint");
+            }
+            if ($.selfRegistrationProfileId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsSelfRegistrationProfilePlainArgs", "selfRegistrationProfileId");
+            }
             return $;
         }
     }

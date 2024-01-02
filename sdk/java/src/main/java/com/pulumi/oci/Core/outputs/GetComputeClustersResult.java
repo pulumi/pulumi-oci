@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeClustersComputeClusterCollection;
 import com.pulumi.oci.Core.outputs.GetComputeClustersFilter;
 import java.lang.String;
@@ -109,17 +110,24 @@ public final class GetComputeClustersResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetComputeClustersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeClusterCollections(List<GetComputeClustersComputeClusterCollection> computeClusterCollections) {
-            this.computeClusterCollections = Objects.requireNonNull(computeClusterCollections);
+            if (computeClusterCollections == null) {
+              throw new MissingRequiredPropertyException("GetComputeClustersResult", "computeClusterCollections");
+            }
+            this.computeClusterCollections = computeClusterCollections;
             return this;
         }
         public Builder computeClusterCollections(GetComputeClustersComputeClusterCollection... computeClusterCollections) {
@@ -127,11 +135,13 @@ public final class GetComputeClustersResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeClustersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,7 +150,10 @@ public final class GetComputeClustersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeClustersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetComputeClustersResult build() {

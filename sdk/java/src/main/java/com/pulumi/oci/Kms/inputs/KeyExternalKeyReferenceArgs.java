@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class KeyExternalKeyReferenceArgs extends com.pulumi.resources.Reso
         }
 
         public KeyExternalKeyReferenceArgs build() {
-            $.externalKeyId = Objects.requireNonNull($.externalKeyId, "expected parameter 'externalKeyId' to be non-null");
+            if ($.externalKeyId == null) {
+                throw new MissingRequiredPropertyException("KeyExternalKeyReferenceArgs", "externalKeyId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetExternalExadataStorageServerTopSqlCpuActivityActivity {
 
         @CustomType.Setter
         public Builder cpuActivity(Double cpuActivity) {
-            this.cpuActivity = Objects.requireNonNull(cpuActivity);
+            if (cpuActivity == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerTopSqlCpuActivityActivity", "cpuActivity");
+            }
+            this.cpuActivity = cpuActivity;
             return this;
         }
         @CustomType.Setter
         public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+            if (databaseName == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerTopSqlCpuActivityActivity", "databaseName");
+            }
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
         public Builder sqlId(String sqlId) {
-            this.sqlId = Objects.requireNonNull(sqlId);
+            if (sqlId == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageServerTopSqlCpuActivityActivity", "sqlId");
+            }
+            this.sqlId = sqlId;
             return this;
         }
         public GetExternalExadataStorageServerTopSqlCpuActivityActivity build() {

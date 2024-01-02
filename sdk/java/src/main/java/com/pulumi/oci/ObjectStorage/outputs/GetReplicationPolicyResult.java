@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -176,62 +177,98 @@ public final class GetReplicationPolicyResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder deleteObjectInDestinationBucket(String deleteObjectInDestinationBucket) {
-            this.deleteObjectInDestinationBucket = Objects.requireNonNull(deleteObjectInDestinationBucket);
+            if (deleteObjectInDestinationBucket == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "deleteObjectInDestinationBucket");
+            }
+            this.deleteObjectInDestinationBucket = deleteObjectInDestinationBucket;
             return this;
         }
         @CustomType.Setter
         public Builder destinationBucketName(String destinationBucketName) {
-            this.destinationBucketName = Objects.requireNonNull(destinationBucketName);
+            if (destinationBucketName == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "destinationBucketName");
+            }
+            this.destinationBucketName = destinationBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder destinationRegionName(String destinationRegionName) {
-            this.destinationRegionName = Objects.requireNonNull(destinationRegionName);
+            if (destinationRegionName == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "destinationRegionName");
+            }
+            this.destinationRegionName = destinationRegionName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder replicationId(String replicationId) {
-            this.replicationId = Objects.requireNonNull(replicationId);
+            if (replicationId == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "replicationId");
+            }
+            this.replicationId = replicationId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusMessage(String statusMessage) {
-            this.statusMessage = Objects.requireNonNull(statusMessage);
+            if (statusMessage == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "statusMessage");
+            }
+            this.statusMessage = statusMessage;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSync(String timeLastSync) {
-            this.timeLastSync = Objects.requireNonNull(timeLastSync);
+            if (timeLastSync == null) {
+              throw new MissingRequiredPropertyException("GetReplicationPolicyResult", "timeLastSync");
+            }
+            this.timeLastSync = timeLastSync;
             return this;
         }
         public GetReplicationPolicyResult build() {

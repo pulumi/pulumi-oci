@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -155,47 +156,74 @@ public final class GetRemediationRecipeScmConfiguration {
 
         @CustomType.Setter
         public Builder branch(String branch) {
-            this.branch = Objects.requireNonNull(branch);
+            if (branch == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "branch");
+            }
+            this.branch = branch;
             return this;
         }
         @CustomType.Setter
         public Builder buildFileLocation(String buildFileLocation) {
-            this.buildFileLocation = Objects.requireNonNull(buildFileLocation);
+            if (buildFileLocation == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "buildFileLocation");
+            }
+            this.buildFileLocation = buildFileLocation;
             return this;
         }
         @CustomType.Setter
         public Builder externalScmType(String externalScmType) {
-            this.externalScmType = Objects.requireNonNull(externalScmType);
+            if (externalScmType == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "externalScmType");
+            }
+            this.externalScmType = externalScmType;
             return this;
         }
         @CustomType.Setter
         public Builder isAutomergeEnabled(Boolean isAutomergeEnabled) {
-            this.isAutomergeEnabled = Objects.requireNonNull(isAutomergeEnabled);
+            if (isAutomergeEnabled == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "isAutomergeEnabled");
+            }
+            this.isAutomergeEnabled = isAutomergeEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder ociCodeRepositoryId(String ociCodeRepositoryId) {
-            this.ociCodeRepositoryId = Objects.requireNonNull(ociCodeRepositoryId);
+            if (ociCodeRepositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "ociCodeRepositoryId");
+            }
+            this.ociCodeRepositoryId = ociCodeRepositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder patSecretId(String patSecretId) {
-            this.patSecretId = Objects.requireNonNull(patSecretId);
+            if (patSecretId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "patSecretId");
+            }
+            this.patSecretId = patSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+            if (repositoryUrl == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "repositoryUrl");
+            }
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
         public Builder scmType(String scmType) {
-            this.scmType = Objects.requireNonNull(scmType);
+            if (scmType == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "scmType");
+            }
+            this.scmType = scmType;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeScmConfiguration", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetRemediationRecipeScmConfiguration build() {

@@ -59,11 +59,13 @@ public final class CaptureFilterFlowLogCaptureFilterRuleUdpOptions {
 
         @CustomType.Setter
         public Builder destinationPortRange(@Nullable CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRange destinationPortRange) {
+
             this.destinationPortRange = destinationPortRange;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePortRange(@Nullable CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRange sourcePortRange) {
+
             this.sourcePortRange = sourcePortRange;
             return this;
         }

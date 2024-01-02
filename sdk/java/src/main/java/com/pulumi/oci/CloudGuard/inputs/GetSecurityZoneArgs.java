@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetSecurityZoneArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSecurityZoneArgs build() {
-            $.securityZoneId = Objects.requireNonNull($.securityZoneId, "expected parameter 'securityZoneId' to be non-null");
+            if ($.securityZoneId == null) {
+                throw new MissingRequiredPropertyException("GetSecurityZoneArgs", "securityZoneId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportReportLocationDetailObjectStorageDetail;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetJobAdvisorReportReportLocationDetail {
 
         @CustomType.Setter
         public Builder locationInSource(String locationInSource) {
-            this.locationInSource = Objects.requireNonNull(locationInSource);
+            if (locationInSource == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportReportLocationDetail", "locationInSource");
+            }
+            this.locationInSource = locationInSource;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageDetails(List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails) {
-            this.objectStorageDetails = Objects.requireNonNull(objectStorageDetails);
+            if (objectStorageDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobAdvisorReportReportLocationDetail", "objectStorageDetails");
+            }
+            this.objectStorageDetails = objectStorageDetails;
             return this;
         }
         public Builder objectStorageDetails(GetJobAdvisorReportReportLocationDetailObjectStorageDetail... objectStorageDetails) {

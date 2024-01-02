@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailBlockVolume;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailLaunchDetail;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailOption;
@@ -103,7 +104,10 @@ public final class GetInstanceConfigurationInstanceDetail {
 
         @CustomType.Setter
         public Builder blockVolumes(List<GetInstanceConfigurationInstanceDetailBlockVolume> blockVolumes) {
-            this.blockVolumes = Objects.requireNonNull(blockVolumes);
+            if (blockVolumes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetail", "blockVolumes");
+            }
+            this.blockVolumes = blockVolumes;
             return this;
         }
         public Builder blockVolumes(GetInstanceConfigurationInstanceDetailBlockVolume... blockVolumes) {
@@ -111,12 +115,18 @@ public final class GetInstanceConfigurationInstanceDetail {
         }
         @CustomType.Setter
         public Builder instanceType(String instanceType) {
-            this.instanceType = Objects.requireNonNull(instanceType);
+            if (instanceType == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetail", "instanceType");
+            }
+            this.instanceType = instanceType;
             return this;
         }
         @CustomType.Setter
         public Builder launchDetails(List<GetInstanceConfigurationInstanceDetailLaunchDetail> launchDetails) {
-            this.launchDetails = Objects.requireNonNull(launchDetails);
+            if (launchDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetail", "launchDetails");
+            }
+            this.launchDetails = launchDetails;
             return this;
         }
         public Builder launchDetails(GetInstanceConfigurationInstanceDetailLaunchDetail... launchDetails) {
@@ -124,7 +134,10 @@ public final class GetInstanceConfigurationInstanceDetail {
         }
         @CustomType.Setter
         public Builder options(List<GetInstanceConfigurationInstanceDetailOption> options) {
-            this.options = Objects.requireNonNull(options);
+            if (options == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetail", "options");
+            }
+            this.options = options;
             return this;
         }
         public Builder options(GetInstanceConfigurationInstanceDetailOption... options) {
@@ -132,7 +145,10 @@ public final class GetInstanceConfigurationInstanceDetail {
         }
         @CustomType.Setter
         public Builder secondaryVnics(List<GetInstanceConfigurationInstanceDetailSecondaryVnic> secondaryVnics) {
-            this.secondaryVnics = Objects.requireNonNull(secondaryVnics);
+            if (secondaryVnics == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetail", "secondaryVnics");
+            }
+            this.secondaryVnics = secondaryVnics;
             return this;
         }
         public Builder secondaryVnics(GetInstanceConfigurationInstanceDetailSecondaryVnic... secondaryVnics) {

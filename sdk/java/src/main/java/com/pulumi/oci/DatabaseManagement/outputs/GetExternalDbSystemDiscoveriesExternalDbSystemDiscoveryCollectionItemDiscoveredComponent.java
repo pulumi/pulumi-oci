@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance;
@@ -682,12 +683,18 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
 
         @CustomType.Setter
         public Builder adrHomeDirectory(String adrHomeDirectory) {
-            this.adrHomeDirectory = Objects.requireNonNull(adrHomeDirectory);
+            if (adrHomeDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "adrHomeDirectory");
+            }
+            this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder asmInstances(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance> asmInstances) {
-            this.asmInstances = Objects.requireNonNull(asmInstances);
+            if (asmInstances == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "asmInstances");
+            }
+            this.asmInstances = asmInstances;
             return this;
         }
         public Builder asmInstances(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstance... asmInstances) {
@@ -695,7 +702,10 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder associatedComponents(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent> associatedComponents) {
-            this.associatedComponents = Objects.requireNonNull(associatedComponents);
+            if (associatedComponents == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "associatedComponents");
+            }
+            this.associatedComponents = associatedComponents;
             return this;
         }
         public Builder associatedComponents(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent... associatedComponents) {
@@ -703,12 +713,18 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder clusterInstances(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance> clusterInstances) {
-            this.clusterInstances = Objects.requireNonNull(clusterInstances);
+            if (clusterInstances == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "clusterInstances");
+            }
+            this.clusterInstances = clusterInstances;
             return this;
         }
         public Builder clusterInstances(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance... clusterInstances) {
@@ -716,27 +732,42 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentId(String componentId) {
-            this.componentId = Objects.requireNonNull(componentId);
+            if (componentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "componentId");
+            }
+            this.componentId = componentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+            if (componentName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "componentName");
+            }
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
         public Builder componentType(String componentType) {
-            this.componentType = Objects.requireNonNull(componentType);
+            if (componentType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "componentType");
+            }
+            this.componentType = componentType;
             return this;
         }
         @CustomType.Setter
         public Builder connectors(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector> connectors) {
-            this.connectors = Objects.requireNonNull(connectors);
+            if (connectors == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "connectors");
+            }
+            this.connectors = connectors;
             return this;
         }
         public Builder connectors(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector... connectors) {
@@ -744,67 +775,106 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder containerDatabaseId(String containerDatabaseId) {
-            this.containerDatabaseId = Objects.requireNonNull(containerDatabaseId);
+            if (containerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "containerDatabaseId");
+            }
+            this.containerDatabaseId = containerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Double cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder crsBaseDirectory(String crsBaseDirectory) {
-            this.crsBaseDirectory = Objects.requireNonNull(crsBaseDirectory);
+            if (crsBaseDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "crsBaseDirectory");
+            }
+            this.crsBaseDirectory = crsBaseDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder dbEdition(String dbEdition) {
-            this.dbEdition = Objects.requireNonNull(dbEdition);
+            if (dbEdition == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbEdition");
+            }
+            this.dbEdition = dbEdition;
             return this;
         }
         @CustomType.Setter
         public Builder dbId(String dbId) {
-            this.dbId = Objects.requireNonNull(dbId);
+            if (dbId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbId");
+            }
+            this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
         public Builder dbNodeName(String dbNodeName) {
-            this.dbNodeName = Objects.requireNonNull(dbNodeName);
+            if (dbNodeName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbNodeName");
+            }
+            this.dbNodeName = dbNodeName;
             return this;
         }
         @CustomType.Setter
         public Builder dbPacks(String dbPacks) {
-            this.dbPacks = Objects.requireNonNull(dbPacks);
+            if (dbPacks == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbPacks");
+            }
+            this.dbPacks = dbPacks;
             return this;
         }
         @CustomType.Setter
         public Builder dbRole(String dbRole) {
-            this.dbRole = Objects.requireNonNull(dbRole);
+            if (dbRole == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbRole");
+            }
+            this.dbRole = dbRole;
             return this;
         }
         @CustomType.Setter
         public Builder dbType(String dbType) {
-            this.dbType = Objects.requireNonNull(dbType);
+            if (dbType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbType");
+            }
+            this.dbType = dbType;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+            if (endpoints == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "endpoints");
+            }
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint... endpoints) {
@@ -812,72 +882,114 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder gridHome(String gridHome) {
-            this.gridHome = Objects.requireNonNull(gridHome);
+            if (gridHome == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "gridHome");
+            }
+            this.gridHome = gridHome;
             return this;
         }
         @CustomType.Setter
         public Builder guid(String guid) {
-            this.guid = Objects.requireNonNull(guid);
+            if (guid == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "guid");
+            }
+            this.guid = guid;
             return this;
         }
         @CustomType.Setter
         public Builder homeDirectory(String homeDirectory) {
-            this.homeDirectory = Objects.requireNonNull(homeDirectory);
+            if (homeDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "homeDirectory");
+            }
+            this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceName(String instanceName) {
-            this.instanceName = Objects.requireNonNull(instanceName);
+            if (instanceName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "instanceName");
+            }
+            this.instanceName = instanceName;
             return this;
         }
         @CustomType.Setter
         public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+            if (isCluster == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "isCluster");
+            }
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
         public Builder isFlexCluster(Boolean isFlexCluster) {
-            this.isFlexCluster = Objects.requireNonNull(isFlexCluster);
+            if (isFlexCluster == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "isFlexCluster");
+            }
+            this.isFlexCluster = isFlexCluster;
             return this;
         }
         @CustomType.Setter
         public Builder isFlexEnabled(Boolean isFlexEnabled) {
-            this.isFlexEnabled = Objects.requireNonNull(isFlexEnabled);
+            if (isFlexEnabled == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "isFlexEnabled");
+            }
+            this.isFlexEnabled = isFlexEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSelectedForMonitoring(Boolean isSelectedForMonitoring) {
-            this.isSelectedForMonitoring = Objects.requireNonNull(isSelectedForMonitoring);
+            if (isSelectedForMonitoring == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "isSelectedForMonitoring");
+            }
+            this.isSelectedForMonitoring = isSelectedForMonitoring;
             return this;
         }
         @CustomType.Setter
         public Builder listenerAlias(String listenerAlias) {
-            this.listenerAlias = Objects.requireNonNull(listenerAlias);
+            if (listenerAlias == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "listenerAlias");
+            }
+            this.listenerAlias = listenerAlias;
             return this;
         }
         @CustomType.Setter
         public Builder listenerType(String listenerType) {
-            this.listenerType = Objects.requireNonNull(listenerType);
+            if (listenerType == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "listenerType");
+            }
+            this.listenerType = listenerType;
             return this;
         }
         @CustomType.Setter
         public Builder logDirectory(String logDirectory) {
-            this.logDirectory = Objects.requireNonNull(logDirectory);
+            if (logDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "logDirectory");
+            }
+            this.logDirectory = logDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder memorySizeInGbs(Double memorySizeInGbs) {
-            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            if (memorySizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "memorySizeInGbs");
+            }
+            this.memorySizeInGbs = memorySizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration... networkConfigurations) {
@@ -885,22 +997,34 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder nodeRole(String nodeRole) {
-            this.nodeRole = Objects.requireNonNull(nodeRole);
+            if (nodeRole == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "nodeRole");
+            }
+            this.nodeRole = nodeRole;
             return this;
         }
         @CustomType.Setter
         public Builder ocrFileLocation(String ocrFileLocation) {
-            this.ocrFileLocation = Objects.requireNonNull(ocrFileLocation);
+            if (ocrFileLocation == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "ocrFileLocation");
+            }
+            this.ocrFileLocation = ocrFileLocation;
             return this;
         }
         @CustomType.Setter
         public Builder oracleHome(String oracleHome) {
-            this.oracleHome = Objects.requireNonNull(oracleHome);
+            if (oracleHome == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "oracleHome");
+            }
+            this.oracleHome = oracleHome;
             return this;
         }
         @CustomType.Setter
         public Builder pluggableDatabases(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase> pluggableDatabases) {
-            this.pluggableDatabases = Objects.requireNonNull(pluggableDatabases);
+            if (pluggableDatabases == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "pluggableDatabases");
+            }
+            this.pluggableDatabases = pluggableDatabases;
             return this;
         }
         public Builder pluggableDatabases(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase... pluggableDatabases) {
@@ -908,12 +1032,18 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder scanConfigurations(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration> scanConfigurations) {
-            this.scanConfigurations = Objects.requireNonNull(scanConfigurations);
+            if (scanConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "scanConfigurations");
+            }
+            this.scanConfigurations = scanConfigurations;
             return this;
         }
         public Builder scanConfigurations(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfiguration... scanConfigurations) {
@@ -921,22 +1051,34 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder traceDirectory(String traceDirectory) {
-            this.traceDirectory = Objects.requireNonNull(traceDirectory);
+            if (traceDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "traceDirectory");
+            }
+            this.traceDirectory = traceDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "version");
+            }
+            this.version = version;
             return this;
         }
         @CustomType.Setter
         public Builder vipConfigurations(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration> vipConfigurations) {
-            this.vipConfigurations = Objects.requireNonNull(vipConfigurations);
+            if (vipConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "vipConfigurations");
+            }
+            this.vipConfigurations = vipConfigurations;
             return this;
         }
         public Builder vipConfigurations(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfiguration... vipConfigurations) {

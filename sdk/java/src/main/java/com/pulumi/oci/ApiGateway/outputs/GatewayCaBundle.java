@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,22 @@ public final class GatewayCaBundle {
 
         @CustomType.Setter
         public Builder caBundleId(@Nullable String caBundleId) {
+
             this.caBundleId = caBundleId;
             return this;
         }
         @CustomType.Setter
         public Builder certificateAuthorityId(@Nullable String certificateAuthorityId) {
+
             this.certificateAuthorityId = certificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GatewayCaBundle", "type");
+            }
+            this.type = type;
             return this;
         }
         public GatewayCaBundle build() {

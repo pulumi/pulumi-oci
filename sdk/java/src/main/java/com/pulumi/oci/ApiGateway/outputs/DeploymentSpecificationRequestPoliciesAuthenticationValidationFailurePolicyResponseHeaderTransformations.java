@@ -74,16 +74,19 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
 
         @CustomType.Setter
         public Builder filterHeaders(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders filterHeaders) {
+
             this.filterHeaders = filterHeaders;
             return this;
         }
         @CustomType.Setter
         public Builder renameHeaders(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeaders renameHeaders) {
+
             this.renameHeaders = renameHeaders;
             return this;
         }
         @CustomType.Setter
         public Builder setHeaders(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeaders setHeaders) {
+
             this.setHeaders = setHeaders;
             return this;
         }

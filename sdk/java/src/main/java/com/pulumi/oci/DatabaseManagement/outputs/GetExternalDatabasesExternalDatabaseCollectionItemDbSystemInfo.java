@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo;
 import java.lang.String;
 import java.util.List;
@@ -86,17 +87,26 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInfraInfos(List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos) {
-            this.exadataInfraInfos = Objects.requireNonNull(exadataInfraInfos);
+            if (exadataInfraInfos == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo", "exadataInfraInfos");
+            }
+            this.exadataInfraInfos = exadataInfraInfos;
             return this;
         }
         public Builder exadataInfraInfos(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo... exadataInfraInfos) {
@@ -104,7 +114,10 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo build() {

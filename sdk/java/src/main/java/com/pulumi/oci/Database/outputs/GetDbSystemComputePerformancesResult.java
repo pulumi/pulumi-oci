@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemComputePerformancesDbSystemComputePerformance;
 import com.pulumi.oci.Database.outputs.GetDbSystemComputePerformancesFilter;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDbSystemComputePerformancesResult {
 
         @CustomType.Setter
         public Builder dbSystemComputePerformances(List<GetDbSystemComputePerformancesDbSystemComputePerformance> dbSystemComputePerformances) {
-            this.dbSystemComputePerformances = Objects.requireNonNull(dbSystemComputePerformances);
+            if (dbSystemComputePerformances == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesResult", "dbSystemComputePerformances");
+            }
+            this.dbSystemComputePerformances = dbSystemComputePerformances;
             return this;
         }
         public Builder dbSystemComputePerformances(GetDbSystemComputePerformancesDbSystemComputePerformance... dbSystemComputePerformances) {
@@ -81,11 +85,13 @@ public final class GetDbSystemComputePerformancesResult {
         }
         @CustomType.Setter
         public Builder dbSystemShape(@Nullable String dbSystemShape) {
+
             this.dbSystemShape = dbSystemShape;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbSystemComputePerformancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -94,7 +100,10 @@ public final class GetDbSystemComputePerformancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDbSystemComputePerformancesResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.VisualBuilder.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -101,27 +102,42 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItemAttachment {
 
         @CustomType.Setter
         public Builder isImplicit(Boolean isImplicit) {
-            this.isImplicit = Objects.requireNonNull(isImplicit);
+            if (isImplicit == null) {
+              throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItemAttachment", "isImplicit");
+            }
+            this.isImplicit = isImplicit;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItemAttachment", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetInstanceUrl(String targetInstanceUrl) {
-            this.targetInstanceUrl = Objects.requireNonNull(targetInstanceUrl);
+            if (targetInstanceUrl == null) {
+              throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItemAttachment", "targetInstanceUrl");
+            }
+            this.targetInstanceUrl = targetInstanceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder targetRole(String targetRole) {
-            this.targetRole = Objects.requireNonNull(targetRole);
+            if (targetRole == null) {
+              throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItemAttachment", "targetRole");
+            }
+            this.targetRole = targetRole;
             return this;
         }
         @CustomType.Setter
         public Builder targetServiceType(String targetServiceType) {
-            this.targetServiceType = Objects.requireNonNull(targetServiceType);
+            if (targetServiceType == null) {
+              throw new MissingRequiredPropertyException("GetVbInstancesVbInstanceSummaryCollectionItemAttachment", "targetServiceType");
+            }
+            this.targetServiceType = targetServiceType;
             return this;
         }
         public GetVbInstancesVbInstanceSummaryCollectionItemAttachment build() {

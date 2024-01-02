@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric;
 import java.lang.Integer;
 import java.util.List;
@@ -100,22 +101,34 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
 
         @CustomType.Setter
         public Builder maxMemoryPerNode(Integer maxMemoryPerNode) {
-            this.maxMemoryPerNode = Objects.requireNonNull(maxMemoryPerNode);
+            if (maxMemoryPerNode == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleUpConfig", "maxMemoryPerNode");
+            }
+            this.maxMemoryPerNode = maxMemoryPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder maxOcpusPerNode(Integer maxOcpusPerNode) {
-            this.maxOcpusPerNode = Objects.requireNonNull(maxOcpusPerNode);
+            if (maxOcpusPerNode == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleUpConfig", "maxOcpusPerNode");
+            }
+            this.maxOcpusPerNode = maxOcpusPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder memoryStepSize(Integer memoryStepSize) {
-            this.memoryStepSize = Objects.requireNonNull(memoryStepSize);
+            if (memoryStepSize == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleUpConfig", "memoryStepSize");
+            }
+            this.memoryStepSize = memoryStepSize;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleUpConfig", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetric... metrics) {
@@ -123,7 +136,10 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
         }
         @CustomType.Setter
         public Builder ocpuStepSize(Integer ocpuStepSize) {
-            this.ocpuStepSize = Objects.requireNonNull(ocpuStepSize);
+            if (ocpuStepSize == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleUpConfig", "ocpuStepSize");
+            }
+            this.ocpuStepSize = ocpuStepSize;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleUpConfig build() {

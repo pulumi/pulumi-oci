@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -210,10 +211,18 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs ex
         }
 
         public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs build() {
-            $.executionId = Objects.requireNonNull($.executionId, "expected parameter 'executionId' to be non-null");
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.sqlObjectId = Objects.requireNonNull($.sqlObjectId, "expected parameter 'sqlObjectId' to be non-null");
-            $.sqlTuningAdvisorTaskId = Objects.requireNonNull($.sqlTuningAdvisorTaskId, "expected parameter 'sqlTuningAdvisorTaskId' to be non-null");
+            if ($.executionId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs", "executionId");
+            }
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs", "managedDatabaseId");
+            }
+            if ($.sqlObjectId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs", "sqlObjectId");
+            }
+            if ($.sqlTuningAdvisorTaskId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs", "sqlTuningAdvisorTaskId");
+            }
             return $;
         }
     }

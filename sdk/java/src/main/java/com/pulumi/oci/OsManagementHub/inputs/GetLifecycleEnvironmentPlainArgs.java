@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetLifecycleEnvironmentPlainArgs extends com.pulumi.resources
         }
 
         public GetLifecycleEnvironmentPlainArgs build() {
-            $.lifecycleEnvironmentId = Objects.requireNonNull($.lifecycleEnvironmentId, "expected parameter 'lifecycleEnvironmentId' to be non-null");
+            if ($.lifecycleEnvironmentId == null) {
+                throw new MissingRequiredPropertyException("GetLifecycleEnvironmentPlainArgs", "lifecycleEnvironmentId");
+            }
             return $;
         }
     }

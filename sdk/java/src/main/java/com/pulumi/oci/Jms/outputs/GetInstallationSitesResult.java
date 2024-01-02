@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesFilter;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollection;
 import java.lang.String;
@@ -147,11 +148,13 @@ public final class GetInstallationSitesResult {
 
         @CustomType.Setter
         public Builder applicationId(@Nullable String applicationId) {
+
             this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstallationSitesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,22 +163,32 @@ public final class GetInstallationSitesResult {
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder installationPath(@Nullable String installationPath) {
+
             this.installationPath = installationPath;
             return this;
         }
         @CustomType.Setter
         public Builder installationSiteCollections(List<GetInstallationSitesInstallationSiteCollection> installationSiteCollections) {
-            this.installationSiteCollections = Objects.requireNonNull(installationSiteCollections);
+            if (installationSiteCollections == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesResult", "installationSiteCollections");
+            }
+            this.installationSiteCollections = installationSiteCollections;
             return this;
         }
         public Builder installationSiteCollections(GetInstallationSitesInstallationSiteCollection... installationSiteCollections) {
@@ -183,31 +196,37 @@ public final class GetInstallationSitesResult {
         }
         @CustomType.Setter
         public Builder jreDistribution(@Nullable String jreDistribution) {
+
             this.jreDistribution = jreDistribution;
             return this;
         }
         @CustomType.Setter
         public Builder jreSecurityStatus(@Nullable String jreSecurityStatus) {
+
             this.jreSecurityStatus = jreSecurityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder jreVendor(@Nullable String jreVendor) {
+
             this.jreVendor = jreVendor;
             return this;
         }
         @CustomType.Setter
         public Builder jreVersion(@Nullable String jreVersion) {
+
             this.jreVersion = jreVersion;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
+
             this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder osFamilies(@Nullable List<String> osFamilies) {
+
             this.osFamilies = osFamilies;
             return this;
         }
@@ -216,16 +235,19 @@ public final class GetInstallationSitesResult {
         }
         @CustomType.Setter
         public Builder pathContains(@Nullable String pathContains) {
+
             this.pathContains = pathContains;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(@Nullable String timeEnd) {
+
             this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(@Nullable String timeStart) {
+
             this.timeStart = timeStart;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -172,51 +173,63 @@ public final class RemediationRecipeVerifyConfiguration {
 
         @CustomType.Setter
         public Builder additionalParameters(@Nullable Map<String,Object> additionalParameters) {
+
             this.additionalParameters = additionalParameters;
             return this;
         }
         @CustomType.Setter
         public Builder buildServiceType(String buildServiceType) {
-            this.buildServiceType = Objects.requireNonNull(buildServiceType);
+            if (buildServiceType == null) {
+              throw new MissingRequiredPropertyException("RemediationRecipeVerifyConfiguration", "buildServiceType");
+            }
+            this.buildServiceType = buildServiceType;
             return this;
         }
         @CustomType.Setter
         public Builder jenkinsUrl(@Nullable String jenkinsUrl) {
+
             this.jenkinsUrl = jenkinsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder jobName(@Nullable String jobName) {
+
             this.jobName = jobName;
             return this;
         }
         @CustomType.Setter
         public Builder patSecretId(@Nullable String patSecretId) {
+
             this.patSecretId = patSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineId(@Nullable String pipelineId) {
+
             this.pipelineId = pipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(@Nullable String repositoryUrl) {
+
             this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
         public Builder triggerSecretId(@Nullable String triggerSecretId) {
+
             this.triggerSecretId = triggerSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder username(@Nullable String username) {
+
             this.username = username;
             return this;
         }
         @CustomType.Setter
         public Builder workflowName(@Nullable String workflowName) {
+
             this.workflowName = workflowName;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestsMyRequestApprovalDetail;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestsMyRequestIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestsMyRequestIdcsLastModifiedBy;
@@ -317,12 +318,18 @@ public final class GetDomainsMyRequestsMyRequest {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder approvalDetails(List<GetDomainsMyRequestsMyRequestApprovalDetail> approvalDetails) {
-            this.approvalDetails = Objects.requireNonNull(approvalDetails);
+            if (approvalDetails == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "approvalDetails");
+            }
+            this.approvalDetails = approvalDetails;
             return this;
         }
         public Builder approvalDetails(GetDomainsMyRequestsMyRequestApprovalDetail... approvalDetails) {
@@ -330,32 +337,50 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expires(String expires) {
-            this.expires = Objects.requireNonNull(expires);
+            if (expires == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "expires");
+            }
+            this.expires = expires;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyRequestsMyRequestIdcsCreatedBy... idcsCreatedBies) {
@@ -363,7 +388,10 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyRequestsMyRequestIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -371,12 +399,18 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -384,12 +418,18 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder justification(String justification) {
-            this.justification = Objects.requireNonNull(justification);
+            if (justification == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "justification");
+            }
+            this.justification = justification;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMyRequestsMyRequestMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyRequestsMyRequestMeta... metas) {
@@ -397,12 +437,18 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder requestings(List<GetDomainsMyRequestsMyRequestRequesting> requestings) {
-            this.requestings = Objects.requireNonNull(requestings);
+            if (requestings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "requestings");
+            }
+            this.requestings = requestings;
             return this;
         }
         public Builder requestings(GetDomainsMyRequestsMyRequestRequesting... requestings) {
@@ -410,7 +456,10 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder requestors(List<GetDomainsMyRequestsMyRequestRequestor> requestors) {
-            this.requestors = Objects.requireNonNull(requestors);
+            if (requestors == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "requestors");
+            }
+            this.requestors = requestors;
             return this;
         }
         public Builder requestors(GetDomainsMyRequestsMyRequestRequestor... requestors) {
@@ -418,7 +467,10 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -426,12 +478,18 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMyRequestsMyRequestTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyRequestsMyRequestTag... tags) {
@@ -439,7 +497,10 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMyRequestsMyRequest", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsMyRequestsMyRequest build() {

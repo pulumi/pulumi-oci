@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -129,37 +130,58 @@ public final class GetTopUtilizedProductLicensesItem {
 
         @CustomType.Setter
         public Builder isUnlimited(Boolean isUnlimited) {
-            this.isUnlimited = Objects.requireNonNull(isUnlimited);
+            if (isUnlimited == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesItem", "isUnlimited");
+            }
+            this.isUnlimited = isUnlimited;
             return this;
         }
         @CustomType.Setter
         public Builder productLicenseId(String productLicenseId) {
-            this.productLicenseId = Objects.requireNonNull(productLicenseId);
+            if (productLicenseId == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesItem", "productLicenseId");
+            }
+            this.productLicenseId = productLicenseId;
             return this;
         }
         @CustomType.Setter
         public Builder productType(String productType) {
-            this.productType = Objects.requireNonNull(productType);
+            if (productType == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesItem", "productType");
+            }
+            this.productType = productType;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder totalLicenseUnitCount(Integer totalLicenseUnitCount) {
-            this.totalLicenseUnitCount = Objects.requireNonNull(totalLicenseUnitCount);
+            if (totalLicenseUnitCount == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesItem", "totalLicenseUnitCount");
+            }
+            this.totalLicenseUnitCount = totalLicenseUnitCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalUnitsConsumed(Double totalUnitsConsumed) {
-            this.totalUnitsConsumed = Objects.requireNonNull(totalUnitsConsumed);
+            if (totalUnitsConsumed == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesItem", "totalUnitsConsumed");
+            }
+            this.totalUnitsConsumed = totalUnitsConsumed;
             return this;
         }
         @CustomType.Setter
         public Builder unitType(String unitType) {
-            this.unitType = Objects.requireNonNull(unitType);
+            if (unitType == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedProductLicensesItem", "unitType");
+            }
+            this.unitType = unitType;
             return this;
         }
         public GetTopUtilizedProductLicensesItem build() {

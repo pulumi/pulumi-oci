@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetActionsFilter;
 import com.pulumi.oci.OperatorAccessControl.outputs.GetActionsOperatorActionCollection;
 import java.lang.String;
@@ -107,11 +108,15 @@ public final class GetActionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetActionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetActionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -120,17 +125,24 @@ public final class GetActionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetActionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder operatorActionCollections(List<GetActionsOperatorActionCollection> operatorActionCollections) {
-            this.operatorActionCollections = Objects.requireNonNull(operatorActionCollections);
+            if (operatorActionCollections == null) {
+              throw new MissingRequiredPropertyException("GetActionsResult", "operatorActionCollections");
+            }
+            this.operatorActionCollections = operatorActionCollections;
             return this;
         }
         public Builder operatorActionCollections(GetActionsOperatorActionCollection... operatorActionCollections) {
@@ -138,11 +150,13 @@ public final class GetActionsResult {
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

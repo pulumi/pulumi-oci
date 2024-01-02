@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
 
         @CustomType.Setter
         public Builder archTypes(List<String> archTypes) {
-            this.archTypes = Objects.requireNonNull(archTypes);
+            if (archTypes == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem", "archTypes");
+            }
+            this.archTypes = archTypes;
             return this;
         }
         public Builder archTypes(String... archTypes) {
@@ -79,12 +83,18 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder osFamilies(List<String> osFamilies) {
-            this.osFamilies = Objects.requireNonNull(osFamilies);
+            if (osFamilies == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem", "osFamilies");
+            }
+            this.osFamilies = osFamilies;
             return this;
         }
         public Builder osFamilies(String... osFamilies) {

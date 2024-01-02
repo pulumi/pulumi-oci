@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetAiPrivateEndpointsAiPrivateEndpointCollection {
 
         @CustomType.Setter
         public Builder items(List<GetAiPrivateEndpointsAiPrivateEndpointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAiPrivateEndpointsAiPrivateEndpointCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAiPrivateEndpointsAiPrivateEndpointCollectionItem... items) {

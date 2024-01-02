@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk;
@@ -133,7 +134,10 @@ public final class GetSecurityAssessmentsSecurityAssessmentStatistic {
 
         @CustomType.Setter
         public Builder advisories(List<GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory> advisories) {
-            this.advisories = Objects.requireNonNull(advisories);
+            if (advisories == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessmentStatistic", "advisories");
+            }
+            this.advisories = advisories;
             return this;
         }
         public Builder advisories(GetSecurityAssessmentsSecurityAssessmentStatisticAdvisory... advisories) {
@@ -141,7 +145,10 @@ public final class GetSecurityAssessmentsSecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder evaluates(List<GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate> evaluates) {
-            this.evaluates = Objects.requireNonNull(evaluates);
+            if (evaluates == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessmentStatistic", "evaluates");
+            }
+            this.evaluates = evaluates;
             return this;
         }
         public Builder evaluates(GetSecurityAssessmentsSecurityAssessmentStatisticEvaluate... evaluates) {
@@ -149,7 +156,10 @@ public final class GetSecurityAssessmentsSecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder highRisks(List<GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk> highRisks) {
-            this.highRisks = Objects.requireNonNull(highRisks);
+            if (highRisks == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessmentStatistic", "highRisks");
+            }
+            this.highRisks = highRisks;
             return this;
         }
         public Builder highRisks(GetSecurityAssessmentsSecurityAssessmentStatisticHighRisk... highRisks) {
@@ -157,7 +167,10 @@ public final class GetSecurityAssessmentsSecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder lowRisks(List<GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk> lowRisks) {
-            this.lowRisks = Objects.requireNonNull(lowRisks);
+            if (lowRisks == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessmentStatistic", "lowRisks");
+            }
+            this.lowRisks = lowRisks;
             return this;
         }
         public Builder lowRisks(GetSecurityAssessmentsSecurityAssessmentStatisticLowRisk... lowRisks) {
@@ -165,7 +178,10 @@ public final class GetSecurityAssessmentsSecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder mediumRisks(List<GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk> mediumRisks) {
-            this.mediumRisks = Objects.requireNonNull(mediumRisks);
+            if (mediumRisks == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessmentStatistic", "mediumRisks");
+            }
+            this.mediumRisks = mediumRisks;
             return this;
         }
         public Builder mediumRisks(GetSecurityAssessmentsSecurityAssessmentStatisticMediumRisk... mediumRisks) {
@@ -173,7 +189,10 @@ public final class GetSecurityAssessmentsSecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder passes(List<GetSecurityAssessmentsSecurityAssessmentStatisticPass> passes) {
-            this.passes = Objects.requireNonNull(passes);
+            if (passes == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessmentStatistic", "passes");
+            }
+            this.passes = passes;
             return this;
         }
         public Builder passes(GetSecurityAssessmentsSecurityAssessmentStatisticPass... passes) {
@@ -181,7 +200,10 @@ public final class GetSecurityAssessmentsSecurityAssessmentStatistic {
         }
         @CustomType.Setter
         public Builder targetsCount(Integer targetsCount) {
-            this.targetsCount = Objects.requireNonNull(targetsCount);
+            if (targetsCount == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentsSecurityAssessmentStatistic", "targetsCount");
+            }
+            this.targetsCount = targetsCount;
             return this;
         }
         public GetSecurityAssessmentsSecurityAssessmentStatistic build() {

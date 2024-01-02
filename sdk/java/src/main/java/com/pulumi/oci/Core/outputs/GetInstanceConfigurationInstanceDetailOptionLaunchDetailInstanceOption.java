@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetInstanceConfigurationInstanceDetailOptionLaunchDetailInsta
 
         @CustomType.Setter
         public Builder areLegacyImdsEndpointsDisabled(Boolean areLegacyImdsEndpointsDisabled) {
-            this.areLegacyImdsEndpointsDisabled = Objects.requireNonNull(areLegacyImdsEndpointsDisabled);
+            if (areLegacyImdsEndpointsDisabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption", "areLegacyImdsEndpointsDisabled");
+            }
+            this.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
             return this;
         }
         public GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption build() {

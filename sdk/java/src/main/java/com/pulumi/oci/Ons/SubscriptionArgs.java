@@ -5,6 +5,7 @@ package com.pulumi.oci.Ons;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -328,10 +329,18 @@ public final class SubscriptionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SubscriptionArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.endpoint = Objects.requireNonNull($.endpoint, "expected parameter 'endpoint' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
-            $.topicId = Objects.requireNonNull($.topicId, "expected parameter 'topicId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "compartmentId");
+            }
+            if ($.endpoint == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "endpoint");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "protocol");
+            }
+            if ($.topicId == null) {
+                throw new MissingRequiredPropertyException("SubscriptionArgs", "topicId");
+            }
             return $;
         }
     }

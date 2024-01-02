@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -107,9 +108,15 @@ public final class AutonomousContainerDatabaseDataguardRoleChangeArgs extends co
         }
 
         public AutonomousContainerDatabaseDataguardRoleChangeArgs build() {
-            $.autonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull($.autonomousContainerDatabaseDataguardAssociationId, "expected parameter 'autonomousContainerDatabaseDataguardAssociationId' to be non-null");
-            $.autonomousContainerDatabaseId = Objects.requireNonNull($.autonomousContainerDatabaseId, "expected parameter 'autonomousContainerDatabaseId' to be non-null");
-            $.role = Objects.requireNonNull($.role, "expected parameter 'role' to be non-null");
+            if ($.autonomousContainerDatabaseDataguardAssociationId == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardRoleChangeArgs", "autonomousContainerDatabaseDataguardAssociationId");
+            }
+            if ($.autonomousContainerDatabaseId == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardRoleChangeArgs", "autonomousContainerDatabaseId");
+            }
+            if ($.role == null) {
+                throw new MissingRequiredPropertyException("AutonomousContainerDatabaseDataguardRoleChangeArgs", "role");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceDataSourceDetailLoggingQueryDetail;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceDataSourceDetailQueryStartTime;
 import java.lang.Integer;
@@ -172,22 +173,34 @@ public final class GetDataSourceDataSourceDetail {
 
         @CustomType.Setter
         public Builder additionalEntitiesCount(Integer additionalEntitiesCount) {
-            this.additionalEntitiesCount = Objects.requireNonNull(additionalEntitiesCount);
+            if (additionalEntitiesCount == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "additionalEntitiesCount");
+            }
+            this.additionalEntitiesCount = additionalEntitiesCount;
             return this;
         }
         @CustomType.Setter
         public Builder dataSourceFeedProvider(String dataSourceFeedProvider) {
-            this.dataSourceFeedProvider = Objects.requireNonNull(dataSourceFeedProvider);
+            if (dataSourceFeedProvider == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "dataSourceFeedProvider");
+            }
+            this.dataSourceFeedProvider = dataSourceFeedProvider;
             return this;
         }
         @CustomType.Setter
         public Builder intervalInMinutes(Integer intervalInMinutes) {
-            this.intervalInMinutes = Objects.requireNonNull(intervalInMinutes);
+            if (intervalInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "intervalInMinutes");
+            }
+            this.intervalInMinutes = intervalInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder loggingQueryDetails(List<GetDataSourceDataSourceDetailLoggingQueryDetail> loggingQueryDetails) {
-            this.loggingQueryDetails = Objects.requireNonNull(loggingQueryDetails);
+            if (loggingQueryDetails == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "loggingQueryDetails");
+            }
+            this.loggingQueryDetails = loggingQueryDetails;
             return this;
         }
         public Builder loggingQueryDetails(GetDataSourceDataSourceDetailLoggingQueryDetail... loggingQueryDetails) {
@@ -195,22 +208,34 @@ public final class GetDataSourceDataSourceDetail {
         }
         @CustomType.Setter
         public Builder loggingQueryType(String loggingQueryType) {
-            this.loggingQueryType = Objects.requireNonNull(loggingQueryType);
+            if (loggingQueryType == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "loggingQueryType");
+            }
+            this.loggingQueryType = loggingQueryType;
             return this;
         }
         @CustomType.Setter
         public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+            if (operator == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "operator");
+            }
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
         public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+            if (query == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "query");
+            }
+            this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder queryStartTimes(List<GetDataSourceDataSourceDetailQueryStartTime> queryStartTimes) {
-            this.queryStartTimes = Objects.requireNonNull(queryStartTimes);
+            if (queryStartTimes == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "queryStartTimes");
+            }
+            this.queryStartTimes = queryStartTimes;
             return this;
         }
         public Builder queryStartTimes(GetDataSourceDataSourceDetailQueryStartTime... queryStartTimes) {
@@ -218,7 +243,10 @@ public final class GetDataSourceDataSourceDetail {
         }
         @CustomType.Setter
         public Builder regions(List<String> regions) {
-            this.regions = Objects.requireNonNull(regions);
+            if (regions == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "regions");
+            }
+            this.regions = regions;
             return this;
         }
         public Builder regions(String... regions) {
@@ -226,7 +254,10 @@ public final class GetDataSourceDataSourceDetail {
         }
         @CustomType.Setter
         public Builder threshold(Integer threshold) {
-            this.threshold = Objects.requireNonNull(threshold);
+            if (threshold == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetail", "threshold");
+            }
+            this.threshold = threshold;
             return this;
         }
         public GetDataSourceDataSourceDetail build() {

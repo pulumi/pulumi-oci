@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetProductLicenseConsumersItemMissingProduct {
 
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItemMissingProduct", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder count(Double count) {
-            this.count = Objects.requireNonNull(count);
+            if (count == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItemMissingProduct", "count");
+            }
+            this.count = count;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersItemMissingProduct", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetProductLicenseConsumersItemMissingProduct build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesFilter;
 import java.lang.String;
 import java.util.List;
@@ -192,8 +193,12 @@ public final class GetAutonomousDatabasesClonesPlainArgs extends com.pulumi.reso
         }
 
         public GetAutonomousDatabasesClonesPlainArgs build() {
-            $.autonomousDatabaseId = Objects.requireNonNull($.autonomousDatabaseId, "expected parameter 'autonomousDatabaseId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.autonomousDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesPlainArgs", "autonomousDatabaseId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

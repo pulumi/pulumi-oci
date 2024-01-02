@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -213,7 +214,10 @@ public final class GetWaasPolicyWafConfigProtectionSettings {
 
         @CustomType.Setter
         public Builder allowedHttpMethods(List<String> allowedHttpMethods) {
-            this.allowedHttpMethods = Objects.requireNonNull(allowedHttpMethods);
+            if (allowedHttpMethods == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "allowedHttpMethods");
+            }
+            this.allowedHttpMethods = allowedHttpMethods;
             return this;
         }
         public Builder allowedHttpMethods(String... allowedHttpMethods) {
@@ -221,57 +225,90 @@ public final class GetWaasPolicyWafConfigProtectionSettings {
         }
         @CustomType.Setter
         public Builder blockAction(String blockAction) {
-            this.blockAction = Objects.requireNonNull(blockAction);
+            if (blockAction == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "blockAction");
+            }
+            this.blockAction = blockAction;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageCode(String blockErrorPageCode) {
-            this.blockErrorPageCode = Objects.requireNonNull(blockErrorPageCode);
+            if (blockErrorPageCode == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "blockErrorPageCode");
+            }
+            this.blockErrorPageCode = blockErrorPageCode;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageDescription(String blockErrorPageDescription) {
-            this.blockErrorPageDescription = Objects.requireNonNull(blockErrorPageDescription);
+            if (blockErrorPageDescription == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "blockErrorPageDescription");
+            }
+            this.blockErrorPageDescription = blockErrorPageDescription;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageMessage(String blockErrorPageMessage) {
-            this.blockErrorPageMessage = Objects.requireNonNull(blockErrorPageMessage);
+            if (blockErrorPageMessage == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "blockErrorPageMessage");
+            }
+            this.blockErrorPageMessage = blockErrorPageMessage;
             return this;
         }
         @CustomType.Setter
         public Builder blockResponseCode(Integer blockResponseCode) {
-            this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
+            if (blockResponseCode == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "blockResponseCode");
+            }
+            this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder isResponseInspected(Boolean isResponseInspected) {
-            this.isResponseInspected = Objects.requireNonNull(isResponseInspected);
+            if (isResponseInspected == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "isResponseInspected");
+            }
+            this.isResponseInspected = isResponseInspected;
             return this;
         }
         @CustomType.Setter
         public Builder maxArgumentCount(Integer maxArgumentCount) {
-            this.maxArgumentCount = Objects.requireNonNull(maxArgumentCount);
+            if (maxArgumentCount == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "maxArgumentCount");
+            }
+            this.maxArgumentCount = maxArgumentCount;
             return this;
         }
         @CustomType.Setter
         public Builder maxNameLengthPerArgument(Integer maxNameLengthPerArgument) {
-            this.maxNameLengthPerArgument = Objects.requireNonNull(maxNameLengthPerArgument);
+            if (maxNameLengthPerArgument == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "maxNameLengthPerArgument");
+            }
+            this.maxNameLengthPerArgument = maxNameLengthPerArgument;
             return this;
         }
         @CustomType.Setter
         public Builder maxResponseSizeInKiB(Integer maxResponseSizeInKiB) {
-            this.maxResponseSizeInKiB = Objects.requireNonNull(maxResponseSizeInKiB);
+            if (maxResponseSizeInKiB == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "maxResponseSizeInKiB");
+            }
+            this.maxResponseSizeInKiB = maxResponseSizeInKiB;
             return this;
         }
         @CustomType.Setter
         public Builder maxTotalNameLengthOfArguments(Integer maxTotalNameLengthOfArguments) {
-            this.maxTotalNameLengthOfArguments = Objects.requireNonNull(maxTotalNameLengthOfArguments);
+            if (maxTotalNameLengthOfArguments == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "maxTotalNameLengthOfArguments");
+            }
+            this.maxTotalNameLengthOfArguments = maxTotalNameLengthOfArguments;
             return this;
         }
         @CustomType.Setter
         public Builder mediaTypes(List<String> mediaTypes) {
-            this.mediaTypes = Objects.requireNonNull(mediaTypes);
+            if (mediaTypes == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "mediaTypes");
+            }
+            this.mediaTypes = mediaTypes;
             return this;
         }
         public Builder mediaTypes(String... mediaTypes) {
@@ -279,7 +316,10 @@ public final class GetWaasPolicyWafConfigProtectionSettings {
         }
         @CustomType.Setter
         public Builder recommendationsPeriodInDays(Integer recommendationsPeriodInDays) {
-            this.recommendationsPeriodInDays = Objects.requireNonNull(recommendationsPeriodInDays);
+            if (recommendationsPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigProtectionSettings", "recommendationsPeriodInDays");
+            }
+            this.recommendationsPeriodInDays = recommendationsPeriodInDays;
             return this;
         }
         public GetWaasPolicyWafConfigProtectionSettings build() {

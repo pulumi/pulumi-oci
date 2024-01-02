@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetGiVersionsFilter;
 import com.pulumi.oci.Database.outputs.GetGiVersionsGiVersion;
 import java.lang.String;
@@ -79,11 +80,15 @@ public final class GetGiVersionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetGiVersionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetGiVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -92,7 +97,10 @@ public final class GetGiVersionsResult {
         }
         @CustomType.Setter
         public Builder giVersions(List<GetGiVersionsGiVersion> giVersions) {
-            this.giVersions = Objects.requireNonNull(giVersions);
+            if (giVersions == null) {
+              throw new MissingRequiredPropertyException("GetGiVersionsResult", "giVersions");
+            }
+            this.giVersions = giVersions;
             return this;
         }
         public Builder giVersions(GetGiVersionsGiVersion... giVersions) {
@@ -100,11 +108,15 @@ public final class GetGiVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetGiVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }

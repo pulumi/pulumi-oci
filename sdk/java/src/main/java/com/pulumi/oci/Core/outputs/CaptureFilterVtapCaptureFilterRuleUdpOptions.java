@@ -59,11 +59,13 @@ public final class CaptureFilterVtapCaptureFilterRuleUdpOptions {
 
         @CustomType.Setter
         public Builder destinationPortRange(@Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRange destinationPortRange) {
+
             this.destinationPortRange = destinationPortRange;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePortRange(@Nullable CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange sourcePortRange) {
+
             this.sourcePortRange = sourcePortRange;
             return this;
         }

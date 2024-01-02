@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -159,9 +160,15 @@ public final class VirtualNodePoolPlacementConfigurationArgs extends com.pulumi.
         }
 
         public VirtualNodePoolPlacementConfigurationArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.faultDomains = Objects.requireNonNull($.faultDomains, "expected parameter 'faultDomains' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolPlacementConfigurationArgs", "availabilityDomain");
+            }
+            if ($.faultDomains == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolPlacementConfigurationArgs", "faultDomains");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("VirtualNodePoolPlacementConfigurationArgs", "subnetId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ons.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -69,7 +70,9 @@ public final class GetNotificationTopicPlainArgs extends com.pulumi.resources.In
         }
 
         public GetNotificationTopicPlainArgs build() {
-            $.topicId = Objects.requireNonNull($.topicId, "expected parameter 'topicId' to be non-null");
+            if ($.topicId == null) {
+                throw new MissingRequiredPropertyException("GetNotificationTopicPlainArgs", "topicId");
+            }
             return $;
         }
     }

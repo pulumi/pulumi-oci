@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesFilterArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -451,7 +452,9 @@ public final class GetManagedDatabaseSqlPlanBaselinesArgs extends com.pulumi.res
         }
 
         public GetManagedDatabaseSqlPlanBaselinesArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselinesArgs", "managedDatabaseId");
+            }
             return $;
         }
     }

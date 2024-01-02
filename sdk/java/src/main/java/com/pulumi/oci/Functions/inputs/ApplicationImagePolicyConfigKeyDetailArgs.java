@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class ApplicationImagePolicyConfigKeyDetailArgs extends com.pulumi.
         }
 
         public ApplicationImagePolicyConfigKeyDetailArgs build() {
-            $.kmsKeyId = Objects.requireNonNull($.kmsKeyId, "expected parameter 'kmsKeyId' to be non-null");
+            if ($.kmsKeyId == null) {
+                throw new MissingRequiredPropertyException("ApplicationImagePolicyConfigKeyDetailArgs", "kmsKeyId");
+            }
             return $;
         }
     }

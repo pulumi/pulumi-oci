@@ -44,6 +44,7 @@ public final class BlockchainPlatformComponentDetailPeerOcpuAllocationParam {
 
         @CustomType.Setter
         public Builder ocpuAllocationNumber(@Nullable Double ocpuAllocationNumber) {
+
             this.ocpuAllocationNumber = ocpuAllocationNumber;
             return this;
         }

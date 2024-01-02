@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetMessagePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetMessagePlainArgs build() {
-            $.deploymentId = Objects.requireNonNull($.deploymentId, "expected parameter 'deploymentId' to be non-null");
+            if ($.deploymentId == null) {
+                throw new MissingRequiredPropertyException("GetMessagePlainArgs", "deploymentId");
+            }
             return $;
         }
     }

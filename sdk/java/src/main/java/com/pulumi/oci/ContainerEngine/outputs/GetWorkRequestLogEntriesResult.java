@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestLogEntriesFilter;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestLogEntriesWorkRequestLogEntry;
 import java.lang.String;
@@ -78,11 +79,15 @@ public final class GetWorkRequestLogEntriesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestLogEntriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkRequestLogEntriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -91,17 +96,26 @@ public final class GetWorkRequestLogEntriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestLogEntriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestLogEntriesResult", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestLogEntries(List<GetWorkRequestLogEntriesWorkRequestLogEntry> workRequestLogEntries) {
-            this.workRequestLogEntries = Objects.requireNonNull(workRequestLogEntries);
+            if (workRequestLogEntries == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestLogEntriesResult", "workRequestLogEntries");
+            }
+            this.workRequestLogEntries = workRequestLogEntries;
             return this;
         }
         public Builder workRequestLogEntries(GetWorkRequestLogEntriesWorkRequestLogEntry... workRequestLogEntries) {

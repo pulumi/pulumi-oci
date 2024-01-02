@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionProvisionedConcurrencyConfig;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionSourceDetail;
 import com.pulumi.oci.Functions.outputs.GetFunctionsFunctionTraceConfig;
@@ -301,62 +302,98 @@ public final class GetFunctionsFunction {
 
         @CustomType.Setter
         public Builder applicationId(String applicationId) {
-            this.applicationId = Objects.requireNonNull(applicationId);
+            if (applicationId == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "applicationId");
+            }
+            this.applicationId = applicationId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder config(Map<String,Object> config) {
-            this.config = Objects.requireNonNull(config);
+            if (config == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "config");
+            }
+            this.config = config;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder image(String image) {
-            this.image = Objects.requireNonNull(image);
+            if (image == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "image");
+            }
+            this.image = image;
             return this;
         }
         @CustomType.Setter
         public Builder imageDigest(String imageDigest) {
-            this.imageDigest = Objects.requireNonNull(imageDigest);
+            if (imageDigest == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "imageDigest");
+            }
+            this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
         public Builder invokeEndpoint(String invokeEndpoint) {
-            this.invokeEndpoint = Objects.requireNonNull(invokeEndpoint);
+            if (invokeEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "invokeEndpoint");
+            }
+            this.invokeEndpoint = invokeEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInMbs(String memoryInMbs) {
-            this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
+            if (memoryInMbs == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "memoryInMbs");
+            }
+            this.memoryInMbs = memoryInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder provisionedConcurrencyConfigs(List<GetFunctionsFunctionProvisionedConcurrencyConfig> provisionedConcurrencyConfigs) {
-            this.provisionedConcurrencyConfigs = Objects.requireNonNull(provisionedConcurrencyConfigs);
+            if (provisionedConcurrencyConfigs == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "provisionedConcurrencyConfigs");
+            }
+            this.provisionedConcurrencyConfigs = provisionedConcurrencyConfigs;
             return this;
         }
         public Builder provisionedConcurrencyConfigs(GetFunctionsFunctionProvisionedConcurrencyConfig... provisionedConcurrencyConfigs) {
@@ -364,12 +401,18 @@ public final class GetFunctionsFunction {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetFunctionsFunctionSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetFunctionsFunctionSourceDetail... sourceDetails) {
@@ -377,27 +420,42 @@ public final class GetFunctionsFunction {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+            if (timeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "timeoutInSeconds");
+            }
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder traceConfigs(List<GetFunctionsFunctionTraceConfig> traceConfigs) {
-            this.traceConfigs = Objects.requireNonNull(traceConfigs);
+            if (traceConfigs == null) {
+              throw new MissingRequiredPropertyException("GetFunctionsFunction", "traceConfigs");
+            }
+            this.traceConfigs = traceConfigs;
             return this;
         }
         public Builder traceConfigs(GetFunctionsFunctionTraceConfig... traceConfigs) {

@@ -44,6 +44,7 @@ public final class DeployStageRollbackPolicy {
 
         @CustomType.Setter
         public Builder policyType(@Nullable String policyType) {
+
             this.policyType = policyType;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetCompatibilityMessage;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetEstimatedCost;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetMigrationAsset;
@@ -337,17 +338,26 @@ public final class GetTargetAssetResult {
 
         @CustomType.Setter
         public Builder blockVolumesPerformance(Integer blockVolumesPerformance) {
-            this.blockVolumesPerformance = Objects.requireNonNull(blockVolumesPerformance);
+            if (blockVolumesPerformance == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "blockVolumesPerformance");
+            }
+            this.blockVolumesPerformance = blockVolumesPerformance;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compatibilityMessages(List<GetTargetAssetCompatibilityMessage> compatibilityMessages) {
-            this.compatibilityMessages = Objects.requireNonNull(compatibilityMessages);
+            if (compatibilityMessages == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "compatibilityMessages");
+            }
+            this.compatibilityMessages = compatibilityMessages;
             return this;
         }
         public Builder compatibilityMessages(GetTargetAssetCompatibilityMessage... compatibilityMessages) {
@@ -355,17 +365,26 @@ public final class GetTargetAssetResult {
         }
         @CustomType.Setter
         public Builder createdResourceId(String createdResourceId) {
-            this.createdResourceId = Objects.requireNonNull(createdResourceId);
+            if (createdResourceId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "createdResourceId");
+            }
+            this.createdResourceId = createdResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedCosts(List<GetTargetAssetEstimatedCost> estimatedCosts) {
-            this.estimatedCosts = Objects.requireNonNull(estimatedCosts);
+            if (estimatedCosts == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "estimatedCosts");
+            }
+            this.estimatedCosts = estimatedCosts;
             return this;
         }
         public Builder estimatedCosts(GetTargetAssetEstimatedCost... estimatedCosts) {
@@ -373,22 +392,34 @@ public final class GetTargetAssetResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isExcludedFromExecution(Boolean isExcludedFromExecution) {
-            this.isExcludedFromExecution = Objects.requireNonNull(isExcludedFromExecution);
+            if (isExcludedFromExecution == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "isExcludedFromExecution");
+            }
+            this.isExcludedFromExecution = isExcludedFromExecution;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder migrationAssets(List<GetTargetAssetMigrationAsset> migrationAssets) {
-            this.migrationAssets = Objects.requireNonNull(migrationAssets);
+            if (migrationAssets == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "migrationAssets");
+            }
+            this.migrationAssets = migrationAssets;
             return this;
         }
         public Builder migrationAssets(GetTargetAssetMigrationAsset... migrationAssets) {
@@ -396,22 +427,34 @@ public final class GetTargetAssetResult {
         }
         @CustomType.Setter
         public Builder migrationPlanId(String migrationPlanId) {
-            this.migrationPlanId = Objects.requireNonNull(migrationPlanId);
+            if (migrationPlanId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "migrationPlanId");
+            }
+            this.migrationPlanId = migrationPlanId;
             return this;
         }
         @CustomType.Setter
         public Builder msLicense(String msLicense) {
-            this.msLicense = Objects.requireNonNull(msLicense);
+            if (msLicense == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "msLicense");
+            }
+            this.msLicense = msLicense;
             return this;
         }
         @CustomType.Setter
         public Builder preferredShapeType(String preferredShapeType) {
-            this.preferredShapeType = Objects.requireNonNull(preferredShapeType);
+            if (preferredShapeType == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "preferredShapeType");
+            }
+            this.preferredShapeType = preferredShapeType;
             return this;
         }
         @CustomType.Setter
         public Builder recommendedSpecs(List<GetTargetAssetRecommendedSpec> recommendedSpecs) {
-            this.recommendedSpecs = Objects.requireNonNull(recommendedSpecs);
+            if (recommendedSpecs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "recommendedSpecs");
+            }
+            this.recommendedSpecs = recommendedSpecs;
             return this;
         }
         public Builder recommendedSpecs(GetTargetAssetRecommendedSpec... recommendedSpecs) {
@@ -419,17 +462,26 @@ public final class GetTargetAssetResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetAssetId(String targetAssetId) {
-            this.targetAssetId = Objects.requireNonNull(targetAssetId);
+            if (targetAssetId == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "targetAssetId");
+            }
+            this.targetAssetId = targetAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder testSpecs(List<GetTargetAssetTestSpec> testSpecs) {
-            this.testSpecs = Objects.requireNonNull(testSpecs);
+            if (testSpecs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "testSpecs");
+            }
+            this.testSpecs = testSpecs;
             return this;
         }
         public Builder testSpecs(GetTargetAssetTestSpec... testSpecs) {
@@ -437,27 +489,42 @@ public final class GetTargetAssetResult {
         }
         @CustomType.Setter
         public Builder timeAssessed(String timeAssessed) {
-            this.timeAssessed = Objects.requireNonNull(timeAssessed);
+            if (timeAssessed == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "timeAssessed");
+            }
+            this.timeAssessed = timeAssessed;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userSpecs(List<GetTargetAssetUserSpec> userSpecs) {
-            this.userSpecs = Objects.requireNonNull(userSpecs);
+            if (userSpecs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetResult", "userSpecs");
+            }
+            this.userSpecs = userSpecs;
             return this;
         }
         public Builder userSpecs(GetTargetAssetUserSpec... userSpecs) {

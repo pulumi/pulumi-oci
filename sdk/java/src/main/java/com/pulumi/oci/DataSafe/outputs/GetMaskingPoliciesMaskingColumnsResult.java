@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingColumnsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollection;
 import java.lang.Boolean;
@@ -230,6 +231,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
 
         @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
+
             this.columnNames = columnNames;
             return this;
         }
@@ -238,6 +240,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         }
         @CustomType.Setter
         public Builder dataTypes(@Nullable List<String> dataTypes) {
+
             this.dataTypes = dataTypes;
             return this;
         }
@@ -246,6 +249,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMaskingPoliciesMaskingColumnsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -254,22 +258,30 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isMaskingEnabled(@Nullable Boolean isMaskingEnabled) {
+
             this.isMaskingEnabled = isMaskingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSeedRequired(@Nullable Boolean isSeedRequired) {
+
             this.isSeedRequired = isSeedRequired;
             return this;
         }
         @CustomType.Setter
         public Builder maskingColumnCollections(List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollection> maskingColumnCollections) {
-            this.maskingColumnCollections = Objects.requireNonNull(maskingColumnCollections);
+            if (maskingColumnCollections == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnsResult", "maskingColumnCollections");
+            }
+            this.maskingColumnCollections = maskingColumnCollections;
             return this;
         }
         public Builder maskingColumnCollections(GetMaskingPoliciesMaskingColumnsMaskingColumnCollection... maskingColumnCollections) {
@@ -277,6 +289,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         }
         @CustomType.Setter
         public Builder maskingColumnGroups(@Nullable List<String> maskingColumnGroups) {
+
             this.maskingColumnGroups = maskingColumnGroups;
             return this;
         }
@@ -285,16 +298,21 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         }
         @CustomType.Setter
         public Builder maskingColumnLifecycleState(@Nullable String maskingColumnLifecycleState) {
+
             this.maskingColumnLifecycleState = maskingColumnLifecycleState;
             return this;
         }
         @CustomType.Setter
         public Builder maskingPolicyId(String maskingPolicyId) {
-            this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
+            if (maskingPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnsResult", "maskingPolicyId");
+            }
+            this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder objectTypes(@Nullable List<String> objectTypes) {
+
             this.objectTypes = objectTypes;
             return this;
         }
@@ -303,6 +321,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         }
         @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
+
             this.objects = objects;
             return this;
         }
@@ -311,6 +330,7 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -319,26 +339,31 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+
             this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdatedGreaterThanOrEqualTo(@Nullable String timeUpdatedGreaterThanOrEqualTo) {
+
             this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdatedLessThan(@Nullable String timeUpdatedLessThan) {
+
             this.timeUpdatedLessThan = timeUpdatedLessThan;
             return this;
         }

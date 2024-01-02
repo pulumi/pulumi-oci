@@ -5,6 +5,7 @@ package com.pulumi.oci.FusionApps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class FusionEnvironmentRuleConditionArgs extends com.pulumi.resourc
         }
 
         public FusionEnvironmentRuleConditionArgs build() {
-            $.attributeName = Objects.requireNonNull($.attributeName, "expected parameter 'attributeName' to be non-null");
-            $.attributeValue = Objects.requireNonNull($.attributeValue, "expected parameter 'attributeValue' to be non-null");
+            if ($.attributeName == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentRuleConditionArgs", "attributeName");
+            }
+            if ($.attributeValue == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentRuleConditionArgs", "attributeValue");
+            }
             return $;
         }
     }

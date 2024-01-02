@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetDomainsSettingsSettingPurgeConfig {
 
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingsSettingPurgeConfig", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPeriod(Integer retentionPeriod) {
-            this.retentionPeriod = Objects.requireNonNull(retentionPeriod);
+            if (retentionPeriod == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingsSettingPurgeConfig", "retentionPeriod");
+            }
+            this.retentionPeriod = retentionPeriod;
             return this;
         }
         public GetDomainsSettingsSettingPurgeConfig build() {

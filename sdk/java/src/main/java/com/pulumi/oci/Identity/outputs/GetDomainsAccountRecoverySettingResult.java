@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAccountRecoverySettingIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsAccountRecoverySettingIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsAccountRecoverySettingMeta;
@@ -311,11 +312,15 @@ public final class GetDomainsAccountRecoverySettingResult {
 
         @CustomType.Setter
         public Builder accountRecoverySettingId(String accountRecoverySettingId) {
-            this.accountRecoverySettingId = Objects.requireNonNull(accountRecoverySettingId);
+            if (accountRecoverySettingId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "accountRecoverySettingId");
+            }
+            this.accountRecoverySettingId = accountRecoverySettingId;
             return this;
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -324,37 +329,54 @@ public final class GetDomainsAccountRecoverySettingResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder factors(List<String> factors) {
-            this.factors = Objects.requireNonNull(factors);
+            if (factors == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "factors");
+            }
+            this.factors = factors;
             return this;
         }
         public Builder factors(String... factors) {
@@ -362,12 +384,18 @@ public final class GetDomainsAccountRecoverySettingResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsAccountRecoverySettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsAccountRecoverySettingIdcsCreatedBy... idcsCreatedBies) {
@@ -375,12 +403,18 @@ public final class GetDomainsAccountRecoverySettingResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsAccountRecoverySettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsAccountRecoverySettingIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -388,12 +422,18 @@ public final class GetDomainsAccountRecoverySettingResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -401,17 +441,26 @@ public final class GetDomainsAccountRecoverySettingResult {
         }
         @CustomType.Setter
         public Builder lockoutDuration(Integer lockoutDuration) {
-            this.lockoutDuration = Objects.requireNonNull(lockoutDuration);
+            if (lockoutDuration == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "lockoutDuration");
+            }
+            this.lockoutDuration = lockoutDuration;
             return this;
         }
         @CustomType.Setter
         public Builder maxIncorrectAttempts(Integer maxIncorrectAttempts) {
-            this.maxIncorrectAttempts = Objects.requireNonNull(maxIncorrectAttempts);
+            if (maxIncorrectAttempts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "maxIncorrectAttempts");
+            }
+            this.maxIncorrectAttempts = maxIncorrectAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsAccountRecoverySettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsAccountRecoverySettingMeta... metas) {
@@ -419,17 +468,24 @@ public final class GetDomainsAccountRecoverySettingResult {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -437,7 +493,10 @@ public final class GetDomainsAccountRecoverySettingResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsAccountRecoverySettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsAccountRecoverySettingTag... tags) {
@@ -445,7 +504,10 @@ public final class GetDomainsAccountRecoverySettingResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountRecoverySettingResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsAccountRecoverySettingResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformation;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicy {
 
         @CustomType.Setter
         public Builder headerTransformations(List<GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations) {
-            this.headerTransformations = Objects.requireNonNull(headerTransformations);
+            if (headerTransformations == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteResponsePolicy", "headerTransformations");
+            }
+            this.headerTransformations = headerTransformations;
             return this;
         }
         public Builder headerTransformations(GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformation... headerTransformations) {
@@ -66,7 +70,10 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicy {
         }
         @CustomType.Setter
         public Builder responseCacheStores(List<GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores) {
-            this.responseCacheStores = Objects.requireNonNull(responseCacheStores);
+            if (responseCacheStores == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteResponsePolicy", "responseCacheStores");
+            }
+            this.responseCacheStores = responseCacheStores;
             return this;
         }
         public Builder responseCacheStores(GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStore... responseCacheStores) {

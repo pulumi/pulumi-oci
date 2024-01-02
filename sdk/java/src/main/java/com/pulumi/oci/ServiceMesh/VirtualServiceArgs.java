@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.VirtualServiceDefaultRoutingPolicyArgs;
 import com.pulumi.oci.ServiceMesh.inputs.VirtualServiceMtlsArgs;
 import java.lang.Object;
@@ -399,8 +400,12 @@ public final class VirtualServiceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public VirtualServiceArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.meshId = Objects.requireNonNull($.meshId, "expected parameter 'meshId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VirtualServiceArgs", "compartmentId");
+            }
+            if ($.meshId == null) {
+                throw new MissingRequiredPropertyException("VirtualServiceArgs", "meshId");
+            }
             return $;
         }
     }

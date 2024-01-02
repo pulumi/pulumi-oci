@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -60,22 +61,34 @@ public final class GetMigrateToNativeVcnStatusResult {
 
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetMigrateToNativeVcnStatusResult", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrateToNativeVcnStatusResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMigrateToNativeVcnStatusResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeDecommissionScheduled(String timeDecommissionScheduled) {
-            this.timeDecommissionScheduled = Objects.requireNonNull(timeDecommissionScheduled);
+            if (timeDecommissionScheduled == null) {
+              throw new MissingRequiredPropertyException("GetMigrateToNativeVcnStatusResult", "timeDecommissionScheduled");
+            }
+            this.timeDecommissionScheduled = timeDecommissionScheduled;
             return this;
         }
         public GetMigrateToNativeVcnStatusResult build() {

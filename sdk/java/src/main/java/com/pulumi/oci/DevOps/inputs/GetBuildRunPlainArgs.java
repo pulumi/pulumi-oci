@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetBuildRunPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetBuildRunPlainArgs build() {
-            $.buildRunId = Objects.requireNonNull($.buildRunId, "expected parameter 'buildRunId' to be non-null");
+            if ($.buildRunId == null) {
+                throw new MissingRequiredPropertyException("GetBuildRunPlainArgs", "buildRunId");
+            }
             return $;
         }
     }

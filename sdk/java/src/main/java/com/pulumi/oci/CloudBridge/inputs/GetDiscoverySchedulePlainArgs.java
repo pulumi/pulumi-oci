@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDiscoverySchedulePlainArgs extends com.pulumi.resources.In
         }
 
         public GetDiscoverySchedulePlainArgs build() {
-            $.discoveryScheduleId = Objects.requireNonNull($.discoveryScheduleId, "expected parameter 'discoveryScheduleId' to be non-null");
+            if ($.discoveryScheduleId == null) {
+                throw new MissingRequiredPropertyException("GetDiscoverySchedulePlainArgs", "discoveryScheduleId");
+            }
             return $;
         }
     }

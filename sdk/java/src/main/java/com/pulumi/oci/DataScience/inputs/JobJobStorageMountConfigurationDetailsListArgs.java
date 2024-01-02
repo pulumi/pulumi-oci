@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -335,8 +336,12 @@ public final class JobJobStorageMountConfigurationDetailsListArgs extends com.pu
         }
 
         public JobJobStorageMountConfigurationDetailsListArgs build() {
-            $.destinationDirectoryName = Objects.requireNonNull($.destinationDirectoryName, "expected parameter 'destinationDirectoryName' to be non-null");
-            $.storageType = Objects.requireNonNull($.storageType, "expected parameter 'storageType' to be non-null");
+            if ($.destinationDirectoryName == null) {
+                throw new MissingRequiredPropertyException("JobJobStorageMountConfigurationDetailsListArgs", "destinationDirectoryName");
+            }
+            if ($.storageType == null) {
+                throw new MissingRequiredPropertyException("JobJobStorageMountConfigurationDetailsListArgs", "storageType");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -163,7 +164,9 @@ public final class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs exte
         }
 
         public InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs build() {
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs", "subnetId");
+            }
             return $;
         }
     }

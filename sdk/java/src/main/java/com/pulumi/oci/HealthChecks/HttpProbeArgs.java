@@ -5,6 +5,7 @@ package com.pulumi.oci.HealthChecks;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -419,9 +420,15 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public HttpProbeArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
-            $.targets = Objects.requireNonNull($.targets, "expected parameter 'targets' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("HttpProbeArgs", "compartmentId");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("HttpProbeArgs", "protocol");
+            }
+            if ($.targets == null) {
+                throw new MissingRequiredPropertyException("HttpProbeArgs", "targets");
+            }
             return $;
         }
     }

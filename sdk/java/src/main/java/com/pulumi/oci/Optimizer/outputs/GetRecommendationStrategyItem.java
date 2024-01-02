@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationStrategyItemStrategy;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetRecommendationStrategyItem {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategyItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder strategies(List<GetRecommendationStrategyItemStrategy> strategies) {
-            this.strategies = Objects.requireNonNull(strategies);
+            if (strategies == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategyItem", "strategies");
+            }
+            this.strategies = strategies;
             return this;
         }
         public Builder strategies(GetRecommendationStrategyItemStrategy... strategies) {

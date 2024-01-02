@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.GetListenerRulesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,8 +137,12 @@ public final class GetListenerRulesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetListenerRulesArgs build() {
-            $.listenerName = Objects.requireNonNull($.listenerName, "expected parameter 'listenerName' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            if ($.listenerName == null) {
+                throw new MissingRequiredPropertyException("GetListenerRulesArgs", "listenerName");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("GetListenerRulesArgs", "loadBalancerId");
+            }
             return $;
         }
     }

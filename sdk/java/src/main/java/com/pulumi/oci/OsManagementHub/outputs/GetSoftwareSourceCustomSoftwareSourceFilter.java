@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter;
@@ -73,7 +74,10 @@ public final class GetSoftwareSourceCustomSoftwareSourceFilter {
 
         @CustomType.Setter
         public Builder moduleStreamProfileFilters(List<GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter> moduleStreamProfileFilters) {
-            this.moduleStreamProfileFilters = Objects.requireNonNull(moduleStreamProfileFilters);
+            if (moduleStreamProfileFilters == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceCustomSoftwareSourceFilter", "moduleStreamProfileFilters");
+            }
+            this.moduleStreamProfileFilters = moduleStreamProfileFilters;
             return this;
         }
         public Builder moduleStreamProfileFilters(GetSoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter... moduleStreamProfileFilters) {
@@ -81,7 +85,10 @@ public final class GetSoftwareSourceCustomSoftwareSourceFilter {
         }
         @CustomType.Setter
         public Builder packageFilters(List<GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter> packageFilters) {
-            this.packageFilters = Objects.requireNonNull(packageFilters);
+            if (packageFilters == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceCustomSoftwareSourceFilter", "packageFilters");
+            }
+            this.packageFilters = packageFilters;
             return this;
         }
         public Builder packageFilters(GetSoftwareSourceCustomSoftwareSourceFilterPackageFilter... packageFilters) {
@@ -89,7 +96,10 @@ public final class GetSoftwareSourceCustomSoftwareSourceFilter {
         }
         @CustomType.Setter
         public Builder packageGroupFilters(List<GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter> packageGroupFilters) {
-            this.packageGroupFilters = Objects.requireNonNull(packageGroupFilters);
+            if (packageGroupFilters == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceCustomSoftwareSourceFilter", "packageGroupFilters");
+            }
+            this.packageGroupFilters = packageGroupFilters;
             return this;
         }
         public Builder packageGroupFilters(GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter... packageGroupFilters) {

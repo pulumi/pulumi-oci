@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluste
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder unAllocatedAdbStorageInTbs(Double unAllocatedAdbStorageInTbs) {
-            this.unAllocatedAdbStorageInTbs = Objects.requireNonNull(unAllocatedAdbStorageInTbs);
+            if (unAllocatedAdbStorageInTbs == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster", "unAllocatedAdbStorageInTbs");
+            }
+            this.unAllocatedAdbStorageInTbs = unAllocatedAdbStorageInTbs;
             return this;
         }
         public GetExadataInfrastructureUnAllocatedResourceAutonomousVmCluster build() {

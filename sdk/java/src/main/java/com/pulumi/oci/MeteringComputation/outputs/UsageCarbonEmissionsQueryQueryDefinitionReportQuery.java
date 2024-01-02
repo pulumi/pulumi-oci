@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -160,16 +161,19 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
 
         @CustomType.Setter
         public Builder compartmentDepth(@Nullable Integer compartmentDepth) {
+
             this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
         public Builder dateRangeName(@Nullable String dateRangeName) {
+
             this.dateRangeName = dateRangeName;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
+
             this.groupBies = groupBies;
             return this;
         }
@@ -178,6 +182,7 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
         }
         @CustomType.Setter
         public Builder groupByTags(@Nullable List<UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag> groupByTags) {
+
             this.groupByTags = groupByTags;
             return this;
         }
@@ -186,26 +191,33 @@ public final class UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
         }
         @CustomType.Setter
         public Builder isAggregateByTime(@Nullable Boolean isAggregateByTime) {
+
             this.isAggregateByTime = isAggregateByTime;
             return this;
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinitionReportQuery", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
+
             this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
+
             this.timeUsageStarted = timeUsageStarted;
             return this;
         }
         @CustomType.Setter
         public Builder usageCarbonEmissionsQueryFilter(@Nullable String usageCarbonEmissionsQueryFilter) {
+
             this.usageCarbonEmissionsQueryFilter = usageCarbonEmissionsQueryFilter;
             return this;
         }

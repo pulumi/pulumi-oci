@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -170,22 +171,28 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
 
         @CustomType.Setter
         public Builder principalName(@Nullable String principalName) {
+
             this.principalName = principalName;
             return this;
         }
         @CustomType.Setter
         public Builder realmName(@Nullable String realmName) {
+
             this.realmName = realmName;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser build() {

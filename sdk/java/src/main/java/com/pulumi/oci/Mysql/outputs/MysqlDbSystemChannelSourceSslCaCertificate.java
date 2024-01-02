@@ -58,11 +58,13 @@ public final class MysqlDbSystemChannelSourceSslCaCertificate {
 
         @CustomType.Setter
         public Builder certificateType(@Nullable String certificateType) {
+
             this.certificateType = certificateType;
             return this;
         }
         @CustomType.Setter
         public Builder contents(@Nullable String contents) {
+
             this.contents = contents;
             return this;
         }

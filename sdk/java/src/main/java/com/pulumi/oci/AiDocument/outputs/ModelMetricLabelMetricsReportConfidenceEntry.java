@@ -100,26 +100,31 @@ public final class ModelMetricLabelMetricsReportConfidenceEntry {
 
         @CustomType.Setter
         public Builder accuracy(@Nullable Double accuracy) {
+
             this.accuracy = accuracy;
             return this;
         }
         @CustomType.Setter
         public Builder f1score(@Nullable Double f1score) {
+
             this.f1score = f1score;
             return this;
         }
         @CustomType.Setter
         public Builder precision(@Nullable Double precision) {
+
             this.precision = precision;
             return this;
         }
         @CustomType.Setter
         public Builder recall(@Nullable Double recall) {
+
             this.recall = recall;
             return this;
         }
         @CustomType.Setter
         public Builder threshold(@Nullable Double threshold) {
+
             this.threshold = threshold;
             return this;
         }

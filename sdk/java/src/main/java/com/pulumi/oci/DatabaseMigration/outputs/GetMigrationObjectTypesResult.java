@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationObjectTypesFilter;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationObjectTypesMigrationObjectTypeSummaryCollection;
 import java.lang.String;
@@ -66,6 +67,7 @@ public final class GetMigrationObjectTypesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMigrationObjectTypesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -74,12 +76,18 @@ public final class GetMigrationObjectTypesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrationObjectTypesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder migrationObjectTypeSummaryCollections(List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections) {
-            this.migrationObjectTypeSummaryCollections = Objects.requireNonNull(migrationObjectTypeSummaryCollections);
+            if (migrationObjectTypeSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetMigrationObjectTypesResult", "migrationObjectTypeSummaryCollections");
+            }
+            this.migrationObjectTypeSummaryCollections = migrationObjectTypeSummaryCollections;
             return this;
         }
         public Builder migrationObjectTypeSummaryCollections(GetMigrationObjectTypesMigrationObjectTypeSummaryCollection... migrationObjectTypeSummaryCollections) {

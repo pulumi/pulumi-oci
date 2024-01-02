@@ -44,6 +44,7 @@ public final class MysqlBackupDbSystemSnapshotMaintenance {
 
         @CustomType.Setter
         public Builder windowStartTime(@Nullable String windowStartTime) {
+
             this.windowStartTime = windowStartTime;
             return this;
         }

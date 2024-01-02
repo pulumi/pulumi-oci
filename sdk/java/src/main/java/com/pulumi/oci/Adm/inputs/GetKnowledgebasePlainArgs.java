@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetKnowledgebasePlainArgs extends com.pulumi.resources.Invoke
         }
 
         public GetKnowledgebasePlainArgs build() {
-            $.knowledgeBaseId = Objects.requireNonNull($.knowledgeBaseId, "expected parameter 'knowledgeBaseId' to be non-null");
+            if ($.knowledgeBaseId == null) {
+                throw new MissingRequiredPropertyException("GetKnowledgebasePlainArgs", "knowledgeBaseId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetJobJobStorageMountConfigurationDetailsList {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetJobJobStorageMountConfigurationDetailsList", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder destinationDirectoryName(String destinationDirectoryName) {
-            this.destinationDirectoryName = Objects.requireNonNull(destinationDirectoryName);
+            if (destinationDirectoryName == null) {
+              throw new MissingRequiredPropertyException("GetJobJobStorageMountConfigurationDetailsList", "destinationDirectoryName");
+            }
+            this.destinationDirectoryName = destinationDirectoryName;
             return this;
         }
         @CustomType.Setter
         public Builder destinationPath(String destinationPath) {
-            this.destinationPath = Objects.requireNonNull(destinationPath);
+            if (destinationPath == null) {
+              throw new MissingRequiredPropertyException("GetJobJobStorageMountConfigurationDetailsList", "destinationPath");
+            }
+            this.destinationPath = destinationPath;
             return this;
         }
         @CustomType.Setter
         public Builder exportId(String exportId) {
-            this.exportId = Objects.requireNonNull(exportId);
+            if (exportId == null) {
+              throw new MissingRequiredPropertyException("GetJobJobStorageMountConfigurationDetailsList", "exportId");
+            }
+            this.exportId = exportId;
             return this;
         }
         @CustomType.Setter
         public Builder mountTargetId(String mountTargetId) {
-            this.mountTargetId = Objects.requireNonNull(mountTargetId);
+            if (mountTargetId == null) {
+              throw new MissingRequiredPropertyException("GetJobJobStorageMountConfigurationDetailsList", "mountTargetId");
+            }
+            this.mountTargetId = mountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetJobJobStorageMountConfigurationDetailsList", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+            if (prefix == null) {
+              throw new MissingRequiredPropertyException("GetJobJobStorageMountConfigurationDetailsList", "prefix");
+            }
+            this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
         public Builder storageType(String storageType) {
-            this.storageType = Objects.requireNonNull(storageType);
+            if (storageType == null) {
+              throw new MissingRequiredPropertyException("GetJobJobStorageMountConfigurationDetailsList", "storageType");
+            }
+            this.storageType = storageType;
             return this;
         }
         public GetJobJobStorageMountConfigurationDetailsList build() {

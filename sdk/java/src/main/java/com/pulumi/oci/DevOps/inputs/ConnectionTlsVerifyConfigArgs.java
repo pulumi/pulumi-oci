@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class ConnectionTlsVerifyConfigArgs extends com.pulumi.resources.Re
         }
 
         public ConnectionTlsVerifyConfigArgs build() {
-            $.caCertificateBundleId = Objects.requireNonNull($.caCertificateBundleId, "expected parameter 'caCertificateBundleId' to be non-null");
-            $.tlsVerifyMode = Objects.requireNonNull($.tlsVerifyMode, "expected parameter 'tlsVerifyMode' to be non-null");
+            if ($.caCertificateBundleId == null) {
+                throw new MissingRequiredPropertyException("ConnectionTlsVerifyConfigArgs", "caCertificateBundleId");
+            }
+            if ($.tlsVerifyMode == null) {
+                throw new MissingRequiredPropertyException("ConnectionTlsVerifyConfigArgs", "tlsVerifyMode");
+            }
             return $;
         }
     }

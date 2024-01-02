@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
 
         @CustomType.Setter
         public Builder distinctSql(Integer distinctSql) {
-            this.distinctSql = Objects.requireNonNull(distinctSql);
+            if (distinctSql == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount", "distinctSql");
+            }
+            this.distinctSql = distinctSql;
             return this;
         }
         @CustomType.Setter
         public Builder errorCount(Integer errorCount) {
-            this.errorCount = Objects.requireNonNull(errorCount);
+            if (errorCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount", "errorCount");
+            }
+            this.errorCount = errorCount;
             return this;
         }
         @CustomType.Setter
         public Builder findingCount(Integer findingCount) {
-            this.findingCount = Objects.requireNonNull(findingCount);
+            if (findingCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount", "findingCount");
+            }
+            this.findingCount = findingCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalSql(Integer totalSql) {
-            this.totalSql = Objects.requireNonNull(totalSql);
+            if (totalSql == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount", "totalSql");
+            }
+            this.totalSql = totalSql;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticStatementCount build() {

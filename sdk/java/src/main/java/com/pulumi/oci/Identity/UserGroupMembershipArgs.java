@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -162,8 +163,12 @@ public final class UserGroupMembershipArgs extends com.pulumi.resources.Resource
         }
 
         public UserGroupMembershipArgs build() {
-            $.groupId = Objects.requireNonNull($.groupId, "expected parameter 'groupId' to be non-null");
-            $.userId = Objects.requireNonNull($.userId, "expected parameter 'userId' to be non-null");
+            if ($.groupId == null) {
+                throw new MissingRequiredPropertyException("UserGroupMembershipArgs", "groupId");
+            }
+            if ($.userId == null) {
+                throw new MissingRequiredPropertyException("UserGroupMembershipArgs", "userId");
+            }
             return $;
         }
     }

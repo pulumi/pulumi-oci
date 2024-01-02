@@ -4,6 +4,7 @@
 package com.pulumi.oci.VisualBuilder.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -73,17 +74,22 @@ public final class VbInstanceAlternateCustomEndpoint {
 
         @CustomType.Setter
         public Builder certificateSecretId(@Nullable String certificateSecretId) {
+
             this.certificateSecretId = certificateSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder certificateSecretVersion(@Nullable Integer certificateSecretVersion) {
+
             this.certificateSecretVersion = certificateSecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("VbInstanceAlternateCustomEndpoint", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         public VbInstanceAlternateCustomEndpoint build() {

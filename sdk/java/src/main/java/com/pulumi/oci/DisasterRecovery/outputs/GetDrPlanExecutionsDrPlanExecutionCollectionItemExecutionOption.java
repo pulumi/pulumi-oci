@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOpti
 
         @CustomType.Setter
         public Builder arePrechecksEnabled(Boolean arePrechecksEnabled) {
-            this.arePrechecksEnabled = Objects.requireNonNull(arePrechecksEnabled);
+            if (arePrechecksEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption", "arePrechecksEnabled");
+            }
+            this.arePrechecksEnabled = arePrechecksEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder areWarningsIgnored(Boolean areWarningsIgnored) {
-            this.areWarningsIgnored = Objects.requireNonNull(areWarningsIgnored);
+            if (areWarningsIgnored == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption", "areWarningsIgnored");
+            }
+            this.areWarningsIgnored = areWarningsIgnored;
             return this;
         }
         @CustomType.Setter
         public Builder planExecutionType(String planExecutionType) {
-            this.planExecutionType = Objects.requireNonNull(planExecutionType);
+            if (planExecutionType == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption", "planExecutionType");
+            }
+            this.planExecutionType = planExecutionType;
             return this;
         }
         public GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption build() {

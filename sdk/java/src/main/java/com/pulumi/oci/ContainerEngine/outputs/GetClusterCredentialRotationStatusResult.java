@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,27 +91,42 @@ public final class GetClusterCredentialRotationStatusResult {
 
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetClusterCredentialRotationStatusResult", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterCredentialRotationStatusResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetClusterCredentialRotationStatusResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusDetails(String statusDetails) {
-            this.statusDetails = Objects.requireNonNull(statusDetails);
+            if (statusDetails == null) {
+              throw new MissingRequiredPropertyException("GetClusterCredentialRotationStatusResult", "statusDetails");
+            }
+            this.statusDetails = statusDetails;
             return this;
         }
         @CustomType.Setter
         public Builder timeAutoCompletionScheduled(String timeAutoCompletionScheduled) {
-            this.timeAutoCompletionScheduled = Objects.requireNonNull(timeAutoCompletionScheduled);
+            if (timeAutoCompletionScheduled == null) {
+              throw new MissingRequiredPropertyException("GetClusterCredentialRotationStatusResult", "timeAutoCompletionScheduled");
+            }
+            this.timeAutoCompletionScheduled = timeAutoCompletionScheduled;
             return this;
         }
         public GetClusterCredentialRotationStatusResult build() {

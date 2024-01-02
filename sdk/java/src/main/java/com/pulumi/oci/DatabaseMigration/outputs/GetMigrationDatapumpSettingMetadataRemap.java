@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetMigrationDatapumpSettingMetadataRemap {
 
         @CustomType.Setter
         public Builder newValue(String newValue) {
-            this.newValue = Objects.requireNonNull(newValue);
+            if (newValue == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDatapumpSettingMetadataRemap", "newValue");
+            }
+            this.newValue = newValue;
             return this;
         }
         @CustomType.Setter
         public Builder oldValue(String oldValue) {
-            this.oldValue = Objects.requireNonNull(oldValue);
+            if (oldValue == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDatapumpSettingMetadataRemap", "oldValue");
+            }
+            this.oldValue = oldValue;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMigrationDatapumpSettingMetadataRemap", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetMigrationDatapumpSettingMetadataRemap build() {

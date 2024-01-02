@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingItem;
 import java.lang.String;
 import java.util.List;
@@ -116,32 +117,42 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
 
         @CustomType.Setter
         public Builder beginExecId(@Nullable String beginExecId) {
+
             this.beginExecId = beginExecId;
             return this;
         }
         @CustomType.Setter
         public Builder endExecId(@Nullable String endExecId) {
+
             this.endExecId = endExecId;
             return this;
         }
         @CustomType.Setter
         public Builder findingFilter(@Nullable String findingFilter) {
+
             this.findingFilter = findingFilter;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder indexHashFilter(@Nullable String indexHashFilter) {
+
             this.indexHashFilter = indexHashFilter;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetManagedDatabaseSqlTuningAdvisorTasksFindingItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedDatabaseSqlTuningAdvisorTasksFindingItem... items) {
@@ -149,21 +160,29 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder searchPeriod(@Nullable String searchPeriod) {
+
             this.searchPeriod = searchPeriod;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingResult", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
         public Builder statsHashFilter(@Nullable String statsHashFilter) {
+
             this.statsHashFilter = statsHashFilter;
             return this;
         }

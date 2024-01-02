@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetRemediationRunStagePullRequestProperty {
 
         @CustomType.Setter
         public Builder pullRequestIdentifier(String pullRequestIdentifier) {
-            this.pullRequestIdentifier = Objects.requireNonNull(pullRequestIdentifier);
+            if (pullRequestIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStagePullRequestProperty", "pullRequestIdentifier");
+            }
+            this.pullRequestIdentifier = pullRequestIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder pullRequestUrl(String pullRequestUrl) {
-            this.pullRequestUrl = Objects.requireNonNull(pullRequestUrl);
+            if (pullRequestUrl == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunStagePullRequestProperty", "pullRequestUrl");
+            }
+            this.pullRequestUrl = pullRequestUrl;
             return this;
         }
         public GetRemediationRunStagePullRequestProperty build() {

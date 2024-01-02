@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetBuildRunBuildOutputArtifactOverrideParameterItem {
 
         @CustomType.Setter
         public Builder deployArtifactId(String deployArtifactId) {
-            this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
+            if (deployArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputArtifactOverrideParameterItem", "deployArtifactId");
+            }
+            this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputArtifactOverrideParameterItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputArtifactOverrideParameterItem", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetBuildRunBuildOutputArtifactOverrideParameterItem build() {

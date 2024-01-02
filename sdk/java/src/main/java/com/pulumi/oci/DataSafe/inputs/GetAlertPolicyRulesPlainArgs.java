@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetAlertPolicyRulesFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetAlertPolicyRulesPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetAlertPolicyRulesPlainArgs build() {
-            $.alertPolicyId = Objects.requireNonNull($.alertPolicyId, "expected parameter 'alertPolicyId' to be non-null");
+            if ($.alertPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetAlertPolicyRulesPlainArgs", "alertPolicyId");
+            }
             return $;
         }
     }

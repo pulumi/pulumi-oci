@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiAnomalyDetection.outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail;
 import java.lang.String;
 import java.util.List;
@@ -310,97 +311,154 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
 
         @CustomType.Setter
         public Builder atpPasswordSecretId(String atpPasswordSecretId) {
-            this.atpPasswordSecretId = Objects.requireNonNull(atpPasswordSecretId);
+            if (atpPasswordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "atpPasswordSecretId");
+            }
+            this.atpPasswordSecretId = atpPasswordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder atpUserName(String atpUserName) {
-            this.atpUserName = Objects.requireNonNull(atpUserName);
+            if (atpUserName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "atpUserName");
+            }
+            this.atpUserName = atpUserName;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder cwalletFileSecretId(String cwalletFileSecretId) {
-            this.cwalletFileSecretId = Objects.requireNonNull(cwalletFileSecretId);
+            if (cwalletFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "cwalletFileSecretId");
+            }
+            this.cwalletFileSecretId = cwalletFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder dataSourceType(String dataSourceType) {
-            this.dataSourceType = Objects.requireNonNull(dataSourceType);
+            if (dataSourceType == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "dataSourceType");
+            }
+            this.dataSourceType = dataSourceType;
             return this;
         }
         @CustomType.Setter
         public Builder databaseName(String databaseName) {
-            this.databaseName = Objects.requireNonNull(databaseName);
+            if (databaseName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "databaseName");
+            }
+            this.databaseName = databaseName;
             return this;
         }
         @CustomType.Setter
         public Builder ewalletFileSecretId(String ewalletFileSecretId) {
-            this.ewalletFileSecretId = Objects.requireNonNull(ewalletFileSecretId);
+            if (ewalletFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "ewalletFileSecretId");
+            }
+            this.ewalletFileSecretId = ewalletFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreFileSecretId(String keyStoreFileSecretId) {
-            this.keyStoreFileSecretId = Objects.requireNonNull(keyStoreFileSecretId);
+            if (keyStoreFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "keyStoreFileSecretId");
+            }
+            this.keyStoreFileSecretId = keyStoreFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder measurementName(String measurementName) {
-            this.measurementName = Objects.requireNonNull(measurementName);
+            if (measurementName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "measurementName");
+            }
+            this.measurementName = measurementName;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder ojdbcFileSecretId(String ojdbcFileSecretId) {
-            this.ojdbcFileSecretId = Objects.requireNonNull(ojdbcFileSecretId);
+            if (ojdbcFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "ojdbcFileSecretId");
+            }
+            this.ojdbcFileSecretId = ojdbcFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+            if (passwordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "passwordSecretId");
+            }
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+            if (tableName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "tableName");
+            }
+            this.tableName = tableName;
             return this;
         }
         @CustomType.Setter
         public Builder tnsnamesFileSecretId(String tnsnamesFileSecretId) {
-            this.tnsnamesFileSecretId = Objects.requireNonNull(tnsnamesFileSecretId);
+            if (tnsnamesFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "tnsnamesFileSecretId");
+            }
+            this.tnsnamesFileSecretId = tnsnamesFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder truststoreFileSecretId(String truststoreFileSecretId) {
-            this.truststoreFileSecretId = Objects.requireNonNull(truststoreFileSecretId);
+            if (truststoreFileSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "truststoreFileSecretId");
+            }
+            this.truststoreFileSecretId = truststoreFileSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "url");
+            }
+            this.url = url;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder versionSpecificDetails(List<GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail> versionSpecificDetails) {
-            this.versionSpecificDetails = Objects.requireNonNull(versionSpecificDetails);
+            if (versionSpecificDetails == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "versionSpecificDetails");
+            }
+            this.versionSpecificDetails = versionSpecificDetails;
             return this;
         }
         public Builder versionSpecificDetails(GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetail... versionSpecificDetails) {
@@ -408,7 +466,10 @@ public final class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail
         }
         @CustomType.Setter
         public Builder walletPasswordSecretId(String walletPasswordSecretId) {
-            this.walletPasswordSecretId = Objects.requireNonNull(walletPasswordSecretId);
+            if (walletPasswordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail", "walletPasswordSecretId");
+            }
+            this.walletPasswordSecretId = walletPasswordSecretId;
             return this;
         }
         public GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetail build() {

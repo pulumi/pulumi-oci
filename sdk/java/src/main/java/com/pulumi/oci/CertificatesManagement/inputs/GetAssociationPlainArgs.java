@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAssociationPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetAssociationPlainArgs build() {
-            $.associationId = Objects.requireNonNull($.associationId, "expected parameter 'associationId' to be non-null");
+            if ($.associationId == null) {
+                throw new MissingRequiredPropertyException("GetAssociationPlainArgs", "associationId");
+            }
             return $;
         }
     }

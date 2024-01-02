@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceManagerProxy.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -119,8 +120,12 @@ public final class GetServiceEnvironmentArgs extends com.pulumi.resources.Invoke
         }
 
         public GetServiceEnvironmentArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.serviceEnvironmentId = Objects.requireNonNull($.serviceEnvironmentId, "expected parameter 'serviceEnvironmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetServiceEnvironmentArgs", "compartmentId");
+            }
+            if ($.serviceEnvironmentId == null) {
+                throw new MissingRequiredPropertyException("GetServiceEnvironmentArgs", "serviceEnvironmentId");
+            }
             return $;
         }
     }

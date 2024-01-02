@@ -4,6 +4,7 @@
 package com.pulumi.oci.ResourceManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ResourceManager.outputs.GetStacksFilter;
 import com.pulumi.oci.ResourceManager.outputs.GetStacksStack;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetStacksResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetStacksResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetStacksFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,16 @@ public final class GetStacksResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder stacks(List<GetStacksStack> stacks) {
-            this.stacks = Objects.requireNonNull(stacks);
+            if (stacks == null) {
+              throw new MissingRequiredPropertyException("GetStacksResult", "stacks");
+            }
+            this.stacks = stacks;
             return this;
         }
         public Builder stacks(GetStacksStack... stacks) {
@@ -140,6 +150,7 @@ public final class GetStacksResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

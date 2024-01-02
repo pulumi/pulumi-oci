@@ -129,36 +129,43 @@ public final class ManagementAgentPluginList {
 
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder pluginDisplayName(@Nullable String pluginDisplayName) {
+
             this.pluginDisplayName = pluginDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder pluginId(@Nullable String pluginId) {
+
             this.pluginId = pluginId;
             return this;
         }
         @CustomType.Setter
         public Builder pluginName(@Nullable String pluginName) {
+
             this.pluginName = pluginName;
             return this;
         }
         @CustomType.Setter
         public Builder pluginStatus(@Nullable String pluginStatus) {
+
             this.pluginStatus = pluginStatus;
             return this;
         }
         @CustomType.Setter
         public Builder pluginStatusMessage(@Nullable String pluginStatusMessage) {
+
             this.pluginStatusMessage = pluginStatusMessage;
             return this;
         }
         @CustomType.Setter
         public Builder pluginVersion(@Nullable String pluginVersion) {
+
             this.pluginVersion = pluginVersion;
             return this;
         }

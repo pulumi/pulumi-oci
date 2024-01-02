@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudVmClusterIormConfigDbPlan;
 import java.lang.String;
 import java.util.List;
@@ -98,12 +99,18 @@ public final class GetCloudVmClusterIormConfigResult {
 
         @CustomType.Setter
         public Builder cloudVmClusterId(String cloudVmClusterId) {
-            this.cloudVmClusterId = Objects.requireNonNull(cloudVmClusterId);
+            if (cloudVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigResult", "cloudVmClusterId");
+            }
+            this.cloudVmClusterId = cloudVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder dbPlans(List<GetCloudVmClusterIormConfigDbPlan> dbPlans) {
-            this.dbPlans = Objects.requireNonNull(dbPlans);
+            if (dbPlans == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigResult", "dbPlans");
+            }
+            this.dbPlans = dbPlans;
             return this;
         }
         public Builder dbPlans(GetCloudVmClusterIormConfigDbPlan... dbPlans) {
@@ -111,22 +118,34 @@ public final class GetCloudVmClusterIormConfigResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder objective(String objective) {
-            this.objective = Objects.requireNonNull(objective);
+            if (objective == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigResult", "objective");
+            }
+            this.objective = objective;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterIormConfigResult", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetCloudVmClusterIormConfigResult build() {

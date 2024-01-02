@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -104,37 +105,56 @@ public final class GetCertificatesCertificate {
 
         @CustomType.Setter
         public Builder caCertificate(String caCertificate) {
-            this.caCertificate = Objects.requireNonNull(caCertificate);
+            if (caCertificate == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificate", "caCertificate");
+            }
+            this.caCertificate = caCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder certificateName(String certificateName) {
-            this.certificateName = Objects.requireNonNull(certificateName);
+            if (certificateName == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificate", "certificateName");
+            }
+            this.certificateName = certificateName;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificate", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder passphrase(@Nullable String passphrase) {
+
             this.passphrase = passphrase;
             return this;
         }
         @CustomType.Setter
         public Builder privateKey(String privateKey) {
-            this.privateKey = Objects.requireNonNull(privateKey);
+            if (privateKey == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificate", "privateKey");
+            }
+            this.privateKey = privateKey;
             return this;
         }
         @CustomType.Setter
         public Builder publicCertificate(String publicCertificate) {
-            this.publicCertificate = Objects.requireNonNull(publicCertificate);
+            if (publicCertificate == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificate", "publicCertificate");
+            }
+            this.publicCertificate = publicCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificate", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetCertificatesCertificate build() {

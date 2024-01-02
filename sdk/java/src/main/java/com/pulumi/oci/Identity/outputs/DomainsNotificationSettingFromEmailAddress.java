@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -164,22 +165,30 @@ public final class DomainsNotificationSettingFromEmailAddress {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder validate(String validate) {
-            this.validate = Objects.requireNonNull(validate);
+            if (validate == null) {
+              throw new MissingRequiredPropertyException("DomainsNotificationSettingFromEmailAddress", "validate");
+            }
+            this.validate = validate;
             return this;
         }
         @CustomType.Setter
         public Builder validationStatus(@Nullable String validationStatus) {
+
             this.validationStatus = validationStatus;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsNotificationSettingFromEmailAddress", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsNotificationSettingFromEmailAddress build() {

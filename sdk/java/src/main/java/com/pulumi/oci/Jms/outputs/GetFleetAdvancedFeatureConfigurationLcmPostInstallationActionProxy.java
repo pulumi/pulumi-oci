@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -156,47 +157,74 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
 
         @CustomType.Setter
         public Builder ftpProxyHost(String ftpProxyHost) {
-            this.ftpProxyHost = Objects.requireNonNull(ftpProxyHost);
+            if (ftpProxyHost == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "ftpProxyHost");
+            }
+            this.ftpProxyHost = ftpProxyHost;
             return this;
         }
         @CustomType.Setter
         public Builder ftpProxyPort(Integer ftpProxyPort) {
-            this.ftpProxyPort = Objects.requireNonNull(ftpProxyPort);
+            if (ftpProxyPort == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "ftpProxyPort");
+            }
+            this.ftpProxyPort = ftpProxyPort;
             return this;
         }
         @CustomType.Setter
         public Builder httpProxyHost(String httpProxyHost) {
-            this.httpProxyHost = Objects.requireNonNull(httpProxyHost);
+            if (httpProxyHost == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "httpProxyHost");
+            }
+            this.httpProxyHost = httpProxyHost;
             return this;
         }
         @CustomType.Setter
         public Builder httpProxyPort(Integer httpProxyPort) {
-            this.httpProxyPort = Objects.requireNonNull(httpProxyPort);
+            if (httpProxyPort == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "httpProxyPort");
+            }
+            this.httpProxyPort = httpProxyPort;
             return this;
         }
         @CustomType.Setter
         public Builder httpsProxyHost(String httpsProxyHost) {
-            this.httpsProxyHost = Objects.requireNonNull(httpsProxyHost);
+            if (httpsProxyHost == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "httpsProxyHost");
+            }
+            this.httpsProxyHost = httpsProxyHost;
             return this;
         }
         @CustomType.Setter
         public Builder httpsProxyPort(Integer httpsProxyPort) {
-            this.httpsProxyPort = Objects.requireNonNull(httpsProxyPort);
+            if (httpsProxyPort == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "httpsProxyPort");
+            }
+            this.httpsProxyPort = httpsProxyPort;
             return this;
         }
         @CustomType.Setter
         public Builder socksProxyHost(String socksProxyHost) {
-            this.socksProxyHost = Objects.requireNonNull(socksProxyHost);
+            if (socksProxyHost == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "socksProxyHost");
+            }
+            this.socksProxyHost = socksProxyHost;
             return this;
         }
         @CustomType.Setter
         public Builder socksProxyPort(Integer socksProxyPort) {
-            this.socksProxyPort = Objects.requireNonNull(socksProxyPort);
+            if (socksProxyPort == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "socksProxyPort");
+            }
+            this.socksProxyPort = socksProxyPort;
             return this;
         }
         @CustomType.Setter
         public Builder useSystemProxies(Boolean useSystemProxies) {
-            this.useSystemProxies = Objects.requireNonNull(useSystemProxies);
+            if (useSystemProxies == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy", "useSystemProxies");
+            }
+            this.useSystemProxies = useSystemProxies;
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxy build() {

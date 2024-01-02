@@ -77,16 +77,19 @@ public final class TargetAssetTestSpecShapeConfig {
 
         @CustomType.Setter
         public Builder baselineOcpuUtilization(@Nullable String baselineOcpuUtilization) {
+
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }

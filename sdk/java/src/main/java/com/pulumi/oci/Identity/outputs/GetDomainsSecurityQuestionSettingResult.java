@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsSecurityQuestionSettingIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsSecurityQuestionSettingIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsSecurityQuestionSettingMeta;
@@ -325,6 +326,7 @@ public final class GetDomainsSecurityQuestionSettingResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -333,42 +335,62 @@ public final class GetDomainsSecurityQuestionSettingResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsSecurityQuestionSettingIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsSecurityQuestionSettingIdcsCreatedBy... idcsCreatedBies) {
@@ -376,12 +398,18 @@ public final class GetDomainsSecurityQuestionSettingResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsSecurityQuestionSettingIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsSecurityQuestionSettingIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -389,12 +417,18 @@ public final class GetDomainsSecurityQuestionSettingResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -402,12 +436,18 @@ public final class GetDomainsSecurityQuestionSettingResult {
         }
         @CustomType.Setter
         public Builder maxFieldLength(Integer maxFieldLength) {
-            this.maxFieldLength = Objects.requireNonNull(maxFieldLength);
+            if (maxFieldLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "maxFieldLength");
+            }
+            this.maxFieldLength = maxFieldLength;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsSecurityQuestionSettingMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsSecurityQuestionSettingMeta... metas) {
@@ -415,32 +455,48 @@ public final class GetDomainsSecurityQuestionSettingResult {
         }
         @CustomType.Setter
         public Builder minAnswerLength(Integer minAnswerLength) {
-            this.minAnswerLength = Objects.requireNonNull(minAnswerLength);
+            if (minAnswerLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "minAnswerLength");
+            }
+            this.minAnswerLength = minAnswerLength;
             return this;
         }
         @CustomType.Setter
         public Builder numQuestionsToAns(Integer numQuestionsToAns) {
-            this.numQuestionsToAns = Objects.requireNonNull(numQuestionsToAns);
+            if (numQuestionsToAns == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "numQuestionsToAns");
+            }
+            this.numQuestionsToAns = numQuestionsToAns;
             return this;
         }
         @CustomType.Setter
         public Builder numQuestionsToSetup(Integer numQuestionsToSetup) {
-            this.numQuestionsToSetup = Objects.requireNonNull(numQuestionsToSetup);
+            if (numQuestionsToSetup == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "numQuestionsToSetup");
+            }
+            this.numQuestionsToSetup = numQuestionsToSetup;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -448,12 +504,18 @@ public final class GetDomainsSecurityQuestionSettingResult {
         }
         @CustomType.Setter
         public Builder securityQuestionSettingId(String securityQuestionSettingId) {
-            this.securityQuestionSettingId = Objects.requireNonNull(securityQuestionSettingId);
+            if (securityQuestionSettingId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "securityQuestionSettingId");
+            }
+            this.securityQuestionSettingId = securityQuestionSettingId;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsSecurityQuestionSettingTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsSecurityQuestionSettingTag... tags) {
@@ -461,7 +523,10 @@ public final class GetDomainsSecurityQuestionSettingResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSecurityQuestionSettingResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         public GetDomainsSecurityQuestionSettingResult build() {

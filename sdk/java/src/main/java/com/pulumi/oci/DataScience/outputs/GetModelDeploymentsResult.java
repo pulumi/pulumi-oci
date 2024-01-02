@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsFilter;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeployment;
 import java.lang.String;
@@ -137,21 +138,27 @@ public final class GetModelDeploymentsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(@Nullable String createdBy) {
+
             this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetModelDeploymentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,12 +167,16 @@ public final class GetModelDeploymentsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modelDeployments(List<GetModelDeploymentsModelDeployment> modelDeployments) {
-            this.modelDeployments = Objects.requireNonNull(modelDeployments);
+            if (modelDeployments == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsResult", "modelDeployments");
+            }
+            this.modelDeployments = modelDeployments;
             return this;
         }
         public Builder modelDeployments(GetModelDeploymentsModelDeployment... modelDeployments) {
@@ -173,11 +184,13 @@ public final class GetModelDeploymentsResult {
         }
         @CustomType.Setter
         public Builder projectId(@Nullable String projectId) {
+
             this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

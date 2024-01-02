@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.ResponderRecipeResponderRuleDetailsArgs;
 import java.lang.String;
 import java.util.List;
@@ -521,8 +522,12 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         public ResponderRecipeResponderRuleArgs build() {
-            $.details = Objects.requireNonNull($.details, "expected parameter 'details' to be non-null");
-            $.responderRuleId = Objects.requireNonNull($.responderRuleId, "expected parameter 'responderRuleId' to be non-null");
+            if ($.details == null) {
+                throw new MissingRequiredPropertyException("ResponderRecipeResponderRuleArgs", "details");
+            }
+            if ($.responderRuleId == null) {
+                throw new MissingRequiredPropertyException("ResponderRecipeResponderRuleArgs", "responderRuleId");
+            }
             return $;
         }
     }

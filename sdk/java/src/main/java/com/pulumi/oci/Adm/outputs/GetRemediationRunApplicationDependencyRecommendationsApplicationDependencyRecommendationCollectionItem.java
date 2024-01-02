@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,10 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
 
         @CustomType.Setter
         public Builder applicationDependencyNodeIds(List<String> applicationDependencyNodeIds) {
-            this.applicationDependencyNodeIds = Objects.requireNonNull(applicationDependencyNodeIds);
+            if (applicationDependencyNodeIds == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem", "applicationDependencyNodeIds");
+            }
+            this.applicationDependencyNodeIds = applicationDependencyNodeIds;
             return this;
         }
         public Builder applicationDependencyNodeIds(String... applicationDependencyNodeIds) {
@@ -93,17 +97,26 @@ public final class GetRemediationRunApplicationDependencyRecommendationsApplicat
         }
         @CustomType.Setter
         public Builder gav(String gav) {
-            this.gav = Objects.requireNonNull(gav);
+            if (gav == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem", "gav");
+            }
+            this.gav = gav;
             return this;
         }
         @CustomType.Setter
         public Builder nodeId(String nodeId) {
-            this.nodeId = Objects.requireNonNull(nodeId);
+            if (nodeId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem", "nodeId");
+            }
+            this.nodeId = nodeId;
             return this;
         }
         @CustomType.Setter
         public Builder recommendedGav(String recommendedGav) {
-            this.recommendedGav = Objects.requireNonNull(recommendedGav);
+            if (recommendedGav == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem", "recommendedGav");
+            }
+            this.recommendedGav = recommendedGav;
             return this;
         }
         public GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem build() {

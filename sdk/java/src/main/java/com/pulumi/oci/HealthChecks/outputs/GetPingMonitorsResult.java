@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.outputs.GetPingMonitorsFilter;
 import com.pulumi.oci.HealthChecks.outputs.GetPingMonitorsPingMonitor;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetPingMonitorsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPingMonitorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,17 +133,24 @@ public final class GetPingMonitorsResult {
         }
         @CustomType.Setter
         public Builder homeRegion(@Nullable String homeRegion) {
+
             this.homeRegion = homeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder pingMonitors(List<GetPingMonitorsPingMonitor> pingMonitors) {
-            this.pingMonitors = Objects.requireNonNull(pingMonitors);
+            if (pingMonitors == null) {
+              throw new MissingRequiredPropertyException("GetPingMonitorsResult", "pingMonitors");
+            }
+            this.pingMonitors = pingMonitors;
             return this;
         }
         public Builder pingMonitors(GetPingMonitorsPingMonitor... pingMonitors) {

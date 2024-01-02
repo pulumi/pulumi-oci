@@ -44,6 +44,7 @@ public final class WorkspaceProjectMetadataCountStatistic {
 
         @CustomType.Setter
         public Builder objectTypeCountLists(@Nullable List<WorkspaceProjectMetadataCountStatisticObjectTypeCountList> objectTypeCountLists) {
+
             this.objectTypeCountLists = objectTypeCountLists;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -117,9 +118,15 @@ public final class GetSoftwareSourceModuleStreamPlainArgs extends com.pulumi.res
         }
 
         public GetSoftwareSourceModuleStreamPlainArgs build() {
-            $.moduleName = Objects.requireNonNull($.moduleName, "expected parameter 'moduleName' to be non-null");
-            $.softwareSourceId = Objects.requireNonNull($.softwareSourceId, "expected parameter 'softwareSourceId' to be non-null");
-            $.streamName = Objects.requireNonNull($.streamName, "expected parameter 'streamName' to be non-null");
+            if ($.moduleName == null) {
+                throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamPlainArgs", "moduleName");
+            }
+            if ($.softwareSourceId == null) {
+                throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamPlainArgs", "softwareSourceId");
+            }
+            if ($.streamName == null) {
+                throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamPlainArgs", "streamName");
+            }
             return $;
         }
     }

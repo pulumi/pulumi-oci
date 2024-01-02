@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetPrivateEndpointPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetPrivateEndpointPlainArgs build() {
-            $.dataSciencePrivateEndpointId = Objects.requireNonNull($.dataSciencePrivateEndpointId, "expected parameter 'dataSciencePrivateEndpointId' to be non-null");
+            if ($.dataSciencePrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetPrivateEndpointPlainArgs", "dataSciencePrivateEndpointId");
+            }
             return $;
         }
     }

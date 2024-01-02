@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -158,31 +159,41 @@ public final class TargetDatabaseDatabaseDetails {
 
         @CustomType.Setter
         public Builder autonomousDatabaseId(@Nullable String autonomousDatabaseId) {
+
             this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseType(String databaseType) {
-            this.databaseType = Objects.requireNonNull(databaseType);
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("TargetDatabaseDatabaseDetails", "databaseType");
+            }
+            this.databaseType = databaseType;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder infrastructureType(String infrastructureType) {
-            this.infrastructureType = Objects.requireNonNull(infrastructureType);
+            if (infrastructureType == null) {
+              throw new MissingRequiredPropertyException("TargetDatabaseDatabaseDetails", "infrastructureType");
+            }
+            this.infrastructureType = infrastructureType;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
+
             this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddresses(@Nullable List<String> ipAddresses) {
+
             this.ipAddresses = ipAddresses;
             return this;
         }
@@ -191,16 +202,19 @@ public final class TargetDatabaseDatabaseDetails {
         }
         @CustomType.Setter
         public Builder listenerPort(@Nullable Integer listenerPort) {
+
             this.listenerPort = listenerPort;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
+
             this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(@Nullable String vmClusterId) {
+
             this.vmClusterId = vmClusterId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetBillingSchedulesBillingScheduleProduct;
 import java.lang.String;
 import java.util.List;
@@ -212,42 +213,66 @@ public final class GetBillingSchedulesBillingSchedule {
 
         @CustomType.Setter
         public Builder amount(String amount) {
-            this.amount = Objects.requireNonNull(amount);
+            if (amount == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "amount");
+            }
+            this.amount = amount;
             return this;
         }
         @CustomType.Setter
         public Builder arCustomerTransactionId(String arCustomerTransactionId) {
-            this.arCustomerTransactionId = Objects.requireNonNull(arCustomerTransactionId);
+            if (arCustomerTransactionId == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "arCustomerTransactionId");
+            }
+            this.arCustomerTransactionId = arCustomerTransactionId;
             return this;
         }
         @CustomType.Setter
         public Builder arInvoiceNumber(String arInvoiceNumber) {
-            this.arInvoiceNumber = Objects.requireNonNull(arInvoiceNumber);
+            if (arInvoiceNumber == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "arInvoiceNumber");
+            }
+            this.arInvoiceNumber = arInvoiceNumber;
             return this;
         }
         @CustomType.Setter
         public Builder billingFrequency(String billingFrequency) {
-            this.billingFrequency = Objects.requireNonNull(billingFrequency);
+            if (billingFrequency == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "billingFrequency");
+            }
+            this.billingFrequency = billingFrequency;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceStatus(String invoiceStatus) {
-            this.invoiceStatus = Objects.requireNonNull(invoiceStatus);
+            if (invoiceStatus == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "invoiceStatus");
+            }
+            this.invoiceStatus = invoiceStatus;
             return this;
         }
         @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder orderNumber(String orderNumber) {
-            this.orderNumber = Objects.requireNonNull(orderNumber);
+            if (orderNumber == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "orderNumber");
+            }
+            this.orderNumber = orderNumber;
             return this;
         }
         @CustomType.Setter
         public Builder products(List<GetBillingSchedulesBillingScheduleProduct> products) {
-            this.products = Objects.requireNonNull(products);
+            if (products == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "products");
+            }
+            this.products = products;
             return this;
         }
         public Builder products(GetBillingSchedulesBillingScheduleProduct... products) {
@@ -255,27 +280,42 @@ public final class GetBillingSchedulesBillingSchedule {
         }
         @CustomType.Setter
         public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder subscribedServiceId(String subscribedServiceId) {
-            this.subscribedServiceId = Objects.requireNonNull(subscribedServiceId);
+            if (subscribedServiceId == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "subscribedServiceId");
+            }
+            this.subscribedServiceId = subscribedServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeInvoicing(String timeInvoicing) {
-            this.timeInvoicing = Objects.requireNonNull(timeInvoicing);
+            if (timeInvoicing == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "timeInvoicing");
+            }
+            this.timeInvoicing = timeInvoicing;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetBillingSchedulesBillingSchedule", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetBillingSchedulesBillingSchedule build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs 
         }
 
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.optimizerStatisticsCollectionOperationId = Objects.requireNonNull($.optimizerStatisticsCollectionOperationId, "expected parameter 'optimizerStatisticsCollectionOperationId' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs", "managedDatabaseId");
+            }
+            if ($.optimizerStatisticsCollectionOperationId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs", "optimizerStatisticsCollectionOperationId");
+            }
             return $;
         }
     }

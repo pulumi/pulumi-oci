@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.inputs.GetRrsetsFilter;
 import java.lang.String;
 import java.util.List;
@@ -219,7 +220,9 @@ public final class GetRrsetsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetRrsetsPlainArgs build() {
-            $.zoneNameOrId = Objects.requireNonNull($.zoneNameOrId, "expected parameter 'zoneNameOrId' to be non-null");
+            if ($.zoneNameOrId == null) {
+                throw new MissingRequiredPropertyException("GetRrsetsPlainArgs", "zoneNameOrId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat;
 import java.lang.Integer;
@@ -73,12 +74,18 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSetting {
 
         @CustomType.Setter
         public Builder acceptableLag(Integer acceptableLag) {
-            this.acceptableLag = Objects.requireNonNull(acceptableLag);
+            if (acceptableLag == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemGoldenGateDetailSetting", "acceptableLag");
+            }
+            this.acceptableLag = acceptableLag;
             return this;
         }
         @CustomType.Setter
         public Builder extracts(List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract> extracts) {
-            this.extracts = Objects.requireNonNull(extracts);
+            if (extracts == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemGoldenGateDetailSetting", "extracts");
+            }
+            this.extracts = extracts;
             return this;
         }
         public Builder extracts(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtract... extracts) {
@@ -86,7 +93,10 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetailSetting {
         }
         @CustomType.Setter
         public Builder replicats(List<GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat> replicats) {
-            this.replicats = Objects.requireNonNull(replicats);
+            if (replicats == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemGoldenGateDetailSetting", "replicats");
+            }
+            this.replicats = replicats;
             return this;
         }
         public Builder replicats(GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicat... replicats) {

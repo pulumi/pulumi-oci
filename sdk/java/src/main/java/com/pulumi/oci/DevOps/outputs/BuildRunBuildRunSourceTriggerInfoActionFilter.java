@@ -81,6 +81,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
 
         @CustomType.Setter
         public Builder events(@Nullable List<String> events) {
+
             this.events = events;
             return this;
         }
@@ -89,6 +90,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
         }
         @CustomType.Setter
         public Builder excludes(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterExclude> excludes) {
+
             this.excludes = excludes;
             return this;
         }
@@ -97,6 +99,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
         }
         @CustomType.Setter
         public Builder includes(@Nullable List<BuildRunBuildRunSourceTriggerInfoActionFilterInclude> includes) {
+
             this.includes = includes;
             return this;
         }
@@ -105,6 +108,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
         }
         @CustomType.Setter
         public Builder triggerSource(@Nullable String triggerSource) {
+
             this.triggerSource = triggerSource;
             return this;
         }

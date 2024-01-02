@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadTokenCreatedBy;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadTokenLastUpdatedBy;
 import java.lang.Boolean;
@@ -306,12 +307,18 @@ public final class GetJavaDownloadsJavaDownloadTokenResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBies(List<GetJavaDownloadsJavaDownloadTokenCreatedBy> createdBies) {
-            this.createdBies = Objects.requireNonNull(createdBies);
+            if (createdBies == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "createdBies");
+            }
+            this.createdBies = createdBies;
             return this;
         }
         public Builder createdBies(GetJavaDownloadsJavaDownloadTokenCreatedBy... createdBies) {
@@ -319,47 +326,74 @@ public final class GetJavaDownloadsJavaDownloadTokenResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder javaDownloadTokenId(String javaDownloadTokenId) {
-            this.javaDownloadTokenId = Objects.requireNonNull(javaDownloadTokenId);
+            if (javaDownloadTokenId == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "javaDownloadTokenId");
+            }
+            this.javaDownloadTokenId = javaDownloadTokenId;
             return this;
         }
         @CustomType.Setter
         public Builder javaVersion(String javaVersion) {
-            this.javaVersion = Objects.requireNonNull(javaVersion);
+            if (javaVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "javaVersion");
+            }
+            this.javaVersion = javaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder lastUpdatedBies(List<GetJavaDownloadsJavaDownloadTokenLastUpdatedBy> lastUpdatedBies) {
-            this.lastUpdatedBies = Objects.requireNonNull(lastUpdatedBies);
+            if (lastUpdatedBies == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "lastUpdatedBies");
+            }
+            this.lastUpdatedBies = lastUpdatedBies;
             return this;
         }
         public Builder lastUpdatedBies(GetJavaDownloadsJavaDownloadTokenLastUpdatedBy... lastUpdatedBies) {
@@ -367,7 +401,10 @@ public final class GetJavaDownloadsJavaDownloadTokenResult {
         }
         @CustomType.Setter
         public Builder licenseTypes(List<String> licenseTypes) {
-            this.licenseTypes = Objects.requireNonNull(licenseTypes);
+            if (licenseTypes == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "licenseTypes");
+            }
+            this.licenseTypes = licenseTypes;
             return this;
         }
         public Builder licenseTypes(String... licenseTypes) {
@@ -375,42 +412,66 @@ public final class GetJavaDownloadsJavaDownloadTokenResult {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+            if (timeExpires == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "timeExpires");
+            }
+            this.timeExpires = timeExpires;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUsed(String timeLastUsed) {
-            this.timeLastUsed = Objects.requireNonNull(timeLastUsed);
+            if (timeLastUsed == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "timeLastUsed");
+            }
+            this.timeLastUsed = timeLastUsed;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadTokenResult", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetJavaDownloadsJavaDownloadTokenResult build() {

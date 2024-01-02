@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity;
 import java.lang.String;
@@ -115,22 +116,34 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
 
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
-            this.issuerCertificateAuthorityId = Objects.requireNonNull(issuerCertificateAuthorityId);
+            if (issuerCertificateAuthorityId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig", "issuerCertificateAuthorityId");
+            }
+            this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder signingAlgorithm(String signingAlgorithm) {
-            this.signingAlgorithm = Objects.requireNonNull(signingAlgorithm);
+            if (signingAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig", "signingAlgorithm");
+            }
+            this.signingAlgorithm = signingAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder subjects(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject> subjects) {
-            this.subjects = Objects.requireNonNull(subjects);
+            if (subjects == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig", "subjects");
+            }
+            this.subjects = subjects;
             return this;
         }
         public Builder subjects(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject... subjects) {
@@ -138,7 +151,10 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
         }
         @CustomType.Setter
         public Builder validities(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity> validities) {
-            this.validities = Objects.requireNonNull(validities);
+            if (validities == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig", "validities");
+            }
+            this.validities = validities;
             return this;
         }
         public Builder validities(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity... validities) {
@@ -146,7 +162,10 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
         }
         @CustomType.Setter
         public Builder versionName(String versionName) {
-            this.versionName = Objects.requireNonNull(versionName);
+            if (versionName == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig", "versionName");
+            }
+            this.versionName = versionName;
             return this;
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig build() {

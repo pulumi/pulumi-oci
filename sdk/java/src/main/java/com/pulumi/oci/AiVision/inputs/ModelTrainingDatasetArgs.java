@@ -5,6 +5,7 @@ package com.pulumi.oci.AiVision.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -236,7 +237,9 @@ public final class ModelTrainingDatasetArgs extends com.pulumi.resources.Resourc
         }
 
         public ModelTrainingDatasetArgs build() {
-            $.datasetType = Objects.requireNonNull($.datasetType, "expected parameter 'datasetType' to be non-null");
+            if ($.datasetType == null) {
+                throw new MissingRequiredPropertyException("ModelTrainingDatasetArgs", "datasetType");
+            }
             return $;
         }
     }

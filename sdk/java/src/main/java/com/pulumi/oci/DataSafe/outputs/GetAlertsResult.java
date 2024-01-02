@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAlertsAlertCollection;
 import com.pulumi.oci.DataSafe.outputs.GetAlertsFilter;
 import java.lang.Boolean;
@@ -106,12 +107,16 @@ public final class GetAlertsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder alertCollections(List<GetAlertsAlertCollection> alertCollections) {
-            this.alertCollections = Objects.requireNonNull(alertCollections);
+            if (alertCollections == null) {
+              throw new MissingRequiredPropertyException("GetAlertsResult", "alertCollections");
+            }
+            this.alertCollections = alertCollections;
             return this;
         }
         public Builder alertCollections(GetAlertsAlertCollection... alertCollections) {
@@ -119,16 +124,21 @@ public final class GetAlertsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlertsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -137,6 +147,7 @@ public final class GetAlertsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAlertsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -145,11 +156,13 @@ public final class GetAlertsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder scimQuery(@Nullable String scimQuery) {
+
             this.scimQuery = scimQuery;
             return this;
         }

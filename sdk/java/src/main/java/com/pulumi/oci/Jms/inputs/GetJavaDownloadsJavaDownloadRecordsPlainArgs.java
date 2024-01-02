@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsFilter;
 import java.lang.String;
 import java.util.List;
@@ -273,7 +274,9 @@ public final class GetJavaDownloadsJavaDownloadRecordsPlainArgs extends com.pulu
         }
 
         public GetJavaDownloadsJavaDownloadRecordsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Vbs.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Vbs.outputs.GetInstVbsInstancesFilter;
 import com.pulumi.oci.Vbs.outputs.GetInstVbsInstancesVbsInstanceSummaryCollection;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetInstVbsInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInstVbsInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,22 +127,28 @@ public final class GetInstVbsInstancesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vbsInstanceSummaryCollections(List<GetInstVbsInstancesVbsInstanceSummaryCollection> vbsInstanceSummaryCollections) {
-            this.vbsInstanceSummaryCollections = Objects.requireNonNull(vbsInstanceSummaryCollections);
+            if (vbsInstanceSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetInstVbsInstancesResult", "vbsInstanceSummaryCollections");
+            }
+            this.vbsInstanceSummaryCollections = vbsInstanceSummaryCollections;
             return this;
         }
         public Builder vbsInstanceSummaryCollections(GetInstVbsInstancesVbsInstanceSummaryCollection... vbsInstanceSummaryCollections) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -66,27 +67,42 @@ public final class GetDataSourceEventItemEventInfo {
 
         @CustomType.Setter
         public Builder dataSourceFeedProvider(String dataSourceFeedProvider) {
-            this.dataSourceFeedProvider = Objects.requireNonNull(dataSourceFeedProvider);
+            if (dataSourceFeedProvider == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventItemEventInfo", "dataSourceFeedProvider");
+            }
+            this.dataSourceFeedProvider = dataSourceFeedProvider;
             return this;
         }
         @CustomType.Setter
         public Builder logResult(String logResult) {
-            this.logResult = Objects.requireNonNull(logResult);
+            if (logResult == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventItemEventInfo", "logResult");
+            }
+            this.logResult = logResult;
             return this;
         }
         @CustomType.Setter
         public Builder observedValue(String observedValue) {
-            this.observedValue = Objects.requireNonNull(observedValue);
+            if (observedValue == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventItemEventInfo", "observedValue");
+            }
+            this.observedValue = observedValue;
             return this;
         }
         @CustomType.Setter
         public Builder operator(String operator) {
-            this.operator = Objects.requireNonNull(operator);
+            if (operator == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventItemEventInfo", "operator");
+            }
+            this.operator = operator;
             return this;
         }
         @CustomType.Setter
         public Builder triggerValue(String triggerValue) {
-            this.triggerValue = Objects.requireNonNull(triggerValue);
+            if (triggerValue == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceEventItemEventInfo", "triggerValue");
+            }
+            this.triggerValue = triggerValue;
             return this;
         }
         public GetDataSourceEventItemEventInfo build() {

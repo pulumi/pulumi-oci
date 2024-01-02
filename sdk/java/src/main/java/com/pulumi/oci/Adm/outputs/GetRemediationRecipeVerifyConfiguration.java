@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -170,52 +171,82 @@ public final class GetRemediationRecipeVerifyConfiguration {
 
         @CustomType.Setter
         public Builder additionalParameters(Map<String,Object> additionalParameters) {
-            this.additionalParameters = Objects.requireNonNull(additionalParameters);
+            if (additionalParameters == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "additionalParameters");
+            }
+            this.additionalParameters = additionalParameters;
             return this;
         }
         @CustomType.Setter
         public Builder buildServiceType(String buildServiceType) {
-            this.buildServiceType = Objects.requireNonNull(buildServiceType);
+            if (buildServiceType == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "buildServiceType");
+            }
+            this.buildServiceType = buildServiceType;
             return this;
         }
         @CustomType.Setter
         public Builder jenkinsUrl(String jenkinsUrl) {
-            this.jenkinsUrl = Objects.requireNonNull(jenkinsUrl);
+            if (jenkinsUrl == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "jenkinsUrl");
+            }
+            this.jenkinsUrl = jenkinsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder jobName(String jobName) {
-            this.jobName = Objects.requireNonNull(jobName);
+            if (jobName == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "jobName");
+            }
+            this.jobName = jobName;
             return this;
         }
         @CustomType.Setter
         public Builder patSecretId(String patSecretId) {
-            this.patSecretId = Objects.requireNonNull(patSecretId);
+            if (patSecretId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "patSecretId");
+            }
+            this.patSecretId = patSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineId(String pipelineId) {
-            this.pipelineId = Objects.requireNonNull(pipelineId);
+            if (pipelineId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "pipelineId");
+            }
+            this.pipelineId = pipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+            if (repositoryUrl == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "repositoryUrl");
+            }
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
         public Builder triggerSecretId(String triggerSecretId) {
-            this.triggerSecretId = Objects.requireNonNull(triggerSecretId);
+            if (triggerSecretId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "triggerSecretId");
+            }
+            this.triggerSecretId = triggerSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "username");
+            }
+            this.username = username;
             return this;
         }
         @CustomType.Setter
         public Builder workflowName(String workflowName) {
-            this.workflowName = Objects.requireNonNull(workflowName);
+            if (workflowName == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeVerifyConfiguration", "workflowName");
+            }
+            this.workflowName = workflowName;
             return this;
         }
         public GetRemediationRecipeVerifyConfiguration build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -168,52 +169,82 @@ public final class GetMaskingReportsMaskedColumnItem {
 
         @CustomType.Setter
         public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+            if (columnName == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "columnName");
+            }
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder maskingColumnGroup(String maskingColumnGroup) {
-            this.maskingColumnGroup = Objects.requireNonNull(maskingColumnGroup);
+            if (maskingColumnGroup == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "maskingColumnGroup");
+            }
+            this.maskingColumnGroup = maskingColumnGroup;
             return this;
         }
         @CustomType.Setter
         public Builder maskingFormatUsed(String maskingFormatUsed) {
-            this.maskingFormatUsed = Objects.requireNonNull(maskingFormatUsed);
+            if (maskingFormatUsed == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "maskingFormatUsed");
+            }
+            this.maskingFormatUsed = maskingFormatUsed;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder parentColumnKey(String parentColumnKey) {
-            this.parentColumnKey = Objects.requireNonNull(parentColumnKey);
+            if (parentColumnKey == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "parentColumnKey");
+            }
+            this.parentColumnKey = parentColumnKey;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+            if (sensitiveTypeId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "sensitiveTypeId");
+            }
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
         public Builder totalMaskedValues(String totalMaskedValues) {
-            this.totalMaskedValues = Objects.requireNonNull(totalMaskedValues);
+            if (totalMaskedValues == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskedColumnItem", "totalMaskedValues");
+            }
+            this.totalMaskedValues = totalMaskedValues;
             return this;
         }
         public GetMaskingReportsMaskedColumnItem build() {

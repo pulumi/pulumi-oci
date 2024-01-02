@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -320,122 +321,194 @@ public final class GetWorkspaceResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dnsServerIp(String dnsServerIp) {
-            this.dnsServerIp = Objects.requireNonNull(dnsServerIp);
+            if (dnsServerIp == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "dnsServerIp");
+            }
+            this.dnsServerIp = dnsServerIp;
             return this;
         }
         @CustomType.Setter
         public Builder dnsServerZone(String dnsServerZone) {
-            this.dnsServerZone = Objects.requireNonNull(dnsServerZone);
+            if (dnsServerZone == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "dnsServerZone");
+            }
+            this.dnsServerZone = dnsServerZone;
             return this;
         }
         @CustomType.Setter
         public Builder endpointCompartmentId(String endpointCompartmentId) {
-            this.endpointCompartmentId = Objects.requireNonNull(endpointCompartmentId);
+            if (endpointCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "endpointCompartmentId");
+            }
+            this.endpointCompartmentId = endpointCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder endpointId(String endpointId) {
-            this.endpointId = Objects.requireNonNull(endpointId);
+            if (endpointId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "endpointId");
+            }
+            this.endpointId = endpointId;
             return this;
         }
         @CustomType.Setter
         public Builder endpointName(String endpointName) {
-            this.endpointName = Objects.requireNonNull(endpointName);
+            if (endpointName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "endpointName");
+            }
+            this.endpointName = endpointName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isForceOperation(Boolean isForceOperation) {
-            this.isForceOperation = Objects.requireNonNull(isForceOperation);
+            if (isForceOperation == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "isForceOperation");
+            }
+            this.isForceOperation = isForceOperation;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivateNetworkEnabled(Boolean isPrivateNetworkEnabled) {
-            this.isPrivateNetworkEnabled = Objects.requireNonNull(isPrivateNetworkEnabled);
+            if (isPrivateNetworkEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "isPrivateNetworkEnabled");
+            }
+            this.isPrivateNetworkEnabled = isPrivateNetworkEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder quiesceTimeout(Integer quiesceTimeout) {
-            this.quiesceTimeout = Objects.requireNonNull(quiesceTimeout);
+            if (quiesceTimeout == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "quiesceTimeout");
+            }
+            this.quiesceTimeout = quiesceTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder registryCompartmentId(String registryCompartmentId) {
-            this.registryCompartmentId = Objects.requireNonNull(registryCompartmentId);
+            if (registryCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "registryCompartmentId");
+            }
+            this.registryCompartmentId = registryCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder registryId(String registryId) {
-            this.registryId = Objects.requireNonNull(registryId);
+            if (registryId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "registryId");
+            }
+            this.registryId = registryId;
             return this;
         }
         @CustomType.Setter
         public Builder registryName(String registryName) {
-            this.registryName = Objects.requireNonNull(registryName);
+            if (registryName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "registryName");
+            }
+            this.registryName = registryName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+            if (stateMessage == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "stateMessage");
+            }
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceResult build() {

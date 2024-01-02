@@ -114,31 +114,37 @@ public final class DeploymentDeploymentDiagnosticData {
 
         @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
+
             this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder diagnosticState(@Nullable String diagnosticState) {
+
             this.diagnosticState = diagnosticState;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(@Nullable String namespace) {
+
             this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(@Nullable String object) {
+
             this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder timeDiagnosticEnd(@Nullable String timeDiagnosticEnd) {
+
             this.timeDiagnosticEnd = timeDiagnosticEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeDiagnosticStart(@Nullable String timeDiagnosticStart) {
+
             this.timeDiagnosticStart = timeDiagnosticStart;
             return this;
         }

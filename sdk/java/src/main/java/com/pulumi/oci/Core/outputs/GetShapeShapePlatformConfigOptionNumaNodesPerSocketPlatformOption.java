@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -41,7 +42,10 @@ public final class GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOp
 
         @CustomType.Setter
         public Builder allowedValues(List<String> allowedValues) {
-            this.allowedValues = Objects.requireNonNull(allowedValues);
+            if (allowedValues == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption", "allowedValues");
+            }
+            this.allowedValues = allowedValues;
             return this;
         }
         public Builder allowedValues(String... allowedValues) {
@@ -49,7 +53,10 @@ public final class GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOp
         }
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+            if (defaultValue == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption", "defaultValue");
+            }
+            this.defaultValue = defaultValue;
             return this;
         }
         public GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption build() {

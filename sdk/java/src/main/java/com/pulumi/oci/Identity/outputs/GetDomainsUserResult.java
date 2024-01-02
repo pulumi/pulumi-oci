@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserAddress;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserEmail;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserEntitlement;
@@ -894,12 +895,18 @@ public final class GetDomainsUserResult {
 
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder addresses(List<GetDomainsUserAddress> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+            if (addresses == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "addresses");
+            }
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(GetDomainsUserAddress... addresses) {
@@ -907,6 +914,7 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -915,42 +923,62 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder emails(List<GetDomainsUserEmail> emails) {
-            this.emails = Objects.requireNonNull(emails);
+            if (emails == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "emails");
+            }
+            this.emails = emails;
             return this;
         }
         public Builder emails(GetDomainsUserEmail... emails) {
@@ -958,7 +986,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder entitlements(List<GetDomainsUserEntitlement> entitlements) {
-            this.entitlements = Objects.requireNonNull(entitlements);
+            if (entitlements == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "entitlements");
+            }
+            this.entitlements = entitlements;
             return this;
         }
         public Builder entitlements(GetDomainsUserEntitlement... entitlements) {
@@ -966,12 +997,18 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder groups(List<GetDomainsUserGroup> groups) {
-            this.groups = Objects.requireNonNull(groups);
+            if (groups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "groups");
+            }
+            this.groups = groups;
             return this;
         }
         public Builder groups(GetDomainsUserGroup... groups) {
@@ -979,12 +1016,18 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsUserIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsUserIdcsCreatedBy... idcsCreatedBies) {
@@ -992,12 +1035,18 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsUserIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsUserIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -1005,12 +1054,18 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -1018,7 +1073,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder ims(List<GetDomainsUserIm> ims) {
-            this.ims = Objects.requireNonNull(ims);
+            if (ims == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "ims");
+            }
+            this.ims = ims;
             return this;
         }
         public Builder ims(GetDomainsUserIm... ims) {
@@ -1026,12 +1084,18 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder locale(String locale) {
-            this.locale = Objects.requireNonNull(locale);
+            if (locale == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "locale");
+            }
+            this.locale = locale;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsUserMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsUserMeta... metas) {
@@ -1039,7 +1103,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder names(List<GetDomainsUserName> names) {
-            this.names = Objects.requireNonNull(names);
+            if (names == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "names");
+            }
+            this.names = names;
             return this;
         }
         public Builder names(GetDomainsUserName... names) {
@@ -1047,22 +1114,34 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder nickName(String nickName) {
-            this.nickName = Objects.requireNonNull(nickName);
+            if (nickName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "nickName");
+            }
+            this.nickName = nickName;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder phoneNumbers(List<GetDomainsUserPhoneNumber> phoneNumbers) {
-            this.phoneNumbers = Objects.requireNonNull(phoneNumbers);
+            if (phoneNumbers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "phoneNumbers");
+            }
+            this.phoneNumbers = phoneNumbers;
             return this;
         }
         public Builder phoneNumbers(GetDomainsUserPhoneNumber... phoneNumbers) {
@@ -1070,7 +1149,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder photos(List<GetDomainsUserPhoto> photos) {
-            this.photos = Objects.requireNonNull(photos);
+            if (photos == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "photos");
+            }
+            this.photos = photos;
             return this;
         }
         public Builder photos(GetDomainsUserPhoto... photos) {
@@ -1078,22 +1160,32 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder preferredLanguage(String preferredLanguage) {
-            this.preferredLanguage = Objects.requireNonNull(preferredLanguage);
+            if (preferredLanguage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "preferredLanguage");
+            }
+            this.preferredLanguage = preferredLanguage;
             return this;
         }
         @CustomType.Setter
         public Builder profileUrl(String profileUrl) {
-            this.profileUrl = Objects.requireNonNull(profileUrl);
+            if (profileUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "profileUrl");
+            }
+            this.profileUrl = profileUrl;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder roles(List<GetDomainsUserRole> roles) {
-            this.roles = Objects.requireNonNull(roles);
+            if (roles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "roles");
+            }
+            this.roles = roles;
             return this;
         }
         public Builder roles(GetDomainsUserRole... roles) {
@@ -1101,7 +1193,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -1109,7 +1204,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsUserTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsUserTag... tags) {
@@ -1117,22 +1215,34 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+            if (timezone == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "timezone");
+            }
+            this.timezone = timezone;
             return this;
         }
         @CustomType.Setter
         public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+            if (title == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "title");
+            }
+            this.title = title;
             return this;
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasextensionenterprise20users(List<GetDomainsUserUrnietfparamsscimschemasextensionenterprise20user> urnietfparamsscimschemasextensionenterprise20users) {
-            this.urnietfparamsscimschemasextensionenterprise20users = Objects.requireNonNull(urnietfparamsscimschemasextensionenterprise20users);
+            if (urnietfparamsscimschemasextensionenterprise20users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasextensionenterprise20users");
+            }
+            this.urnietfparamsscimschemasextensionenterprise20users = urnietfparamsscimschemasextensionenterprise20users;
             return this;
         }
         public Builder urnietfparamsscimschemasextensionenterprise20users(GetDomainsUserUrnietfparamsscimschemasextensionenterprise20user... urnietfparamsscimschemasextensionenterprise20users) {
@@ -1140,7 +1250,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags) {
-            this.urnietfparamsscimschemasoracleidcsextensionOciTags = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionOciTags);
+            if (urnietfparamsscimschemasoracleidcsextensionOciTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionOciTags");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionOciTags = urnietfparamsscimschemasoracleidcsextensionOciTags;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTag... urnietfparamsscimschemasoracleidcsextensionOciTags) {
@@ -1148,7 +1261,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionadaptiveUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser> urnietfparamsscimschemasoracleidcsextensionadaptiveUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionadaptiveUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionadaptiveUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionadaptiveUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionadaptiveUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionadaptiveUsers = urnietfparamsscimschemasoracleidcsextensionadaptiveUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionadaptiveUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser... urnietfparamsscimschemasoracleidcsextensionadaptiveUsers) {
@@ -1156,7 +1272,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser> urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers);
+            if (urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers = urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser... urnietfparamsscimschemasoracleidcsextensioncapabilitiesUsers) {
@@ -1164,7 +1283,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser> urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers);
+            if (urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers = urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser... urnietfparamsscimschemasoracleidcsextensiondbCredentialsUsers) {
@@ -1172,7 +1294,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensiondbUserUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser> urnietfparamsscimschemasoracleidcsextensiondbUserUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiondbUserUsers);
+            if (urnietfparamsscimschemasoracleidcsextensiondbUserUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensiondbUserUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensiondbUserUsers = urnietfparamsscimschemasoracleidcsextensiondbUserUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiondbUserUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser... urnietfparamsscimschemasoracleidcsextensiondbUserUsers) {
@@ -1180,7 +1305,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser> urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers = urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser... urnietfparamsscimschemasoracleidcsextensionkerberosUserUsers) {
@@ -1188,7 +1316,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionmfaUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser> urnietfparamsscimschemasoracleidcsextensionmfaUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionmfaUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionmfaUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionmfaUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionmfaUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionmfaUsers = urnietfparamsscimschemasoracleidcsextensionmfaUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionmfaUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser... urnietfparamsscimschemasoracleidcsextensionmfaUsers) {
@@ -1196,7 +1327,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser> urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers = urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser... urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers) {
@@ -1204,7 +1338,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser> urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers = urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser... urnietfparamsscimschemasoracleidcsextensionpasswordlessUsers) {
@@ -1212,7 +1349,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionposixUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser> urnietfparamsscimschemasoracleidcsextensionposixUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionposixUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionposixUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionposixUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionposixUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionposixUsers = urnietfparamsscimschemasoracleidcsextensionposixUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionposixUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser... urnietfparamsscimschemasoracleidcsextensionposixUsers) {
@@ -1220,7 +1360,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser> urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers = urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser... urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUsers) {
@@ -1228,7 +1371,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionselfChangeUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionselfChangeUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionselfChangeUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser... urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
@@ -1236,7 +1382,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser> urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers = urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser... urnietfparamsscimschemasoracleidcsextensionselfRegistrationUsers) {
@@ -1244,7 +1393,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionsffUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser> urnietfparamsscimschemasoracleidcsextensionsffUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionsffUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsffUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionsffUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionsffUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionsffUsers = urnietfparamsscimschemasoracleidcsextensionsffUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsffUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser... urnietfparamsscimschemasoracleidcsextensionsffUsers) {
@@ -1252,7 +1404,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser> urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers = urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser... urnietfparamsscimschemasoracleidcsextensionsocialAccountUsers) {
@@ -1260,7 +1415,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser> urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers);
+            if (urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers = urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser... urnietfparamsscimschemasoracleidcsextensiontermsOfUseUsers) {
@@ -1268,7 +1426,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser> urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers = urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser... urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers) {
@@ -1276,7 +1437,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionuserStateUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser> urnietfparamsscimschemasoracleidcsextensionuserStateUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionuserStateUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionuserStateUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionuserStateUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionuserStateUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionuserStateUsers = urnietfparamsscimschemasoracleidcsextensionuserStateUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionuserStateUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser... urnietfparamsscimschemasoracleidcsextensionuserStateUsers) {
@@ -1284,7 +1448,10 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionuserUsers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser> urnietfparamsscimschemasoracleidcsextensionuserUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionuserUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionuserUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionuserUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "urnietfparamsscimschemasoracleidcsextensionuserUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionuserUsers = urnietfparamsscimschemasoracleidcsextensionuserUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionuserUsers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser... urnietfparamsscimschemasoracleidcsextensionuserUsers) {
@@ -1292,22 +1459,34 @@ public final class GetDomainsUserResult {
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         @CustomType.Setter
         public Builder userType(String userType) {
-            this.userType = Objects.requireNonNull(userType);
+            if (userType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "userType");
+            }
+            this.userType = userType;
             return this;
         }
         @CustomType.Setter
         public Builder x509certificates(List<GetDomainsUserX509certificate> x509certificates) {
-            this.x509certificates = Objects.requireNonNull(x509certificates);
+            if (x509certificates == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserResult", "x509certificates");
+            }
+            this.x509certificates = x509certificates;
             return this;
         }
         public Builder x509certificates(GetDomainsUserX509certificate... x509certificates) {

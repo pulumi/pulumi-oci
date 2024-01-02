@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
 
         @CustomType.Setter
         public Builder availabilityStatus(String availabilityStatus) {
-            this.availabilityStatus = Objects.requireNonNull(availabilityStatus);
+            if (availabilityStatus == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentAvailableHistoriesAvailabilityHistory", "availabilityStatus");
+            }
+            this.availabilityStatus = availabilityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentAvailableHistoriesAvailabilityHistory", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder timeAvailabilityStatusEnded(String timeAvailabilityStatusEnded) {
-            this.timeAvailabilityStatusEnded = Objects.requireNonNull(timeAvailabilityStatusEnded);
+            if (timeAvailabilityStatusEnded == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentAvailableHistoriesAvailabilityHistory", "timeAvailabilityStatusEnded");
+            }
+            this.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeAvailabilityStatusStarted(String timeAvailabilityStatusStarted) {
-            this.timeAvailabilityStatusStarted = Objects.requireNonNull(timeAvailabilityStatusStarted);
+            if (timeAvailabilityStatusStarted == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentAvailableHistoriesAvailabilityHistory", "timeAvailabilityStatusStarted");
+            }
+            this.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
             return this;
         }
         public GetManagementAgentAvailableHistoriesAvailabilityHistory build() {

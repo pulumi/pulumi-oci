@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollection;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsFilter;
 import java.lang.String;
@@ -143,17 +144,24 @@ public final class GetDrProtectionGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drProtectionGroupCollections(List<GetDrProtectionGroupsDrProtectionGroupCollection> drProtectionGroupCollections) {
-            this.drProtectionGroupCollections = Objects.requireNonNull(drProtectionGroupCollections);
+            if (drProtectionGroupCollections == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsResult", "drProtectionGroupCollections");
+            }
+            this.drProtectionGroupCollections = drProtectionGroupCollections;
             return this;
         }
         public Builder drProtectionGroupCollections(GetDrProtectionGroupsDrProtectionGroupCollection... drProtectionGroupCollections) {
@@ -161,11 +169,13 @@ public final class GetDrProtectionGroupsResult {
         }
         @CustomType.Setter
         public Builder drProtectionGroupId(@Nullable String drProtectionGroupId) {
+
             this.drProtectionGroupId = drProtectionGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDrProtectionGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -174,21 +184,27 @@ public final class GetDrProtectionGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubState(@Nullable String lifecycleSubState) {
+
             this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
         public Builder role(@Nullable String role) {
+
             this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

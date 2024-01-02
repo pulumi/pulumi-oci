@@ -105,11 +105,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCrede
 
         @CustomType.Setter
         public Builder dbLoginAttempts(@Nullable Integer dbLoginAttempts) {
+
             this.dbLoginAttempts = dbLoginAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder dbUserName(@Nullable String dbUserName) {
+
             this.dbUserName = dbUserName;
             return this;
         }

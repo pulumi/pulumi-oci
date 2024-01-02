@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DbSystemDbHomeDatabaseArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -500,7 +501,9 @@ public final class DbSystemDbHomeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public DbSystemDbHomeArgs build() {
-            $.database = Objects.requireNonNull($.database, "expected parameter 'database' to be non-null");
+            if ($.database == null) {
+                throw new MissingRequiredPropertyException("DbSystemDbHomeArgs", "database");
+            }
             return $;
         }
     }

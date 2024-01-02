@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -46,17 +47,26 @@ public final class GetShapeShapeOcpuOption {
 
         @CustomType.Setter
         public Builder max(Double max) {
-            this.max = Objects.requireNonNull(max);
+            if (max == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapeOcpuOption", "max");
+            }
+            this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder maxPerNumaNode(Double maxPerNumaNode) {
-            this.maxPerNumaNode = Objects.requireNonNull(maxPerNumaNode);
+            if (maxPerNumaNode == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapeOcpuOption", "maxPerNumaNode");
+            }
+            this.maxPerNumaNode = maxPerNumaNode;
             return this;
         }
         @CustomType.Setter
         public Builder min(Double min) {
-            this.min = Objects.requireNonNull(min);
+            if (min == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapeOcpuOption", "min");
+            }
+            this.min = min;
             return this;
         }
         public GetShapeShapeOcpuOption build() {

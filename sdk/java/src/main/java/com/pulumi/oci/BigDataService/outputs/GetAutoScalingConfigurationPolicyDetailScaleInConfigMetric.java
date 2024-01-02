@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric {
 
         @CustomType.Setter
         public Builder metricType(String metricType) {
-            this.metricType = Objects.requireNonNull(metricType);
+            if (metricType == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric", "metricType");
+            }
+            this.metricType = metricType;
             return this;
         }
         @CustomType.Setter
         public Builder thresholds(List<GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold> thresholds) {
-            this.thresholds = Objects.requireNonNull(thresholds);
+            if (thresholds == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleInConfigMetric", "thresholds");
+            }
+            this.thresholds = thresholds;
             return this;
         }
         public Builder thresholds(GetAutoScalingConfigurationPolicyDetailScaleInConfigMetricThreshold... thresholds) {

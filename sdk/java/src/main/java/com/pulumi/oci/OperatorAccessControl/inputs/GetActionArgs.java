@@ -5,6 +5,7 @@ package com.pulumi.oci.OperatorAccessControl.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetActionArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetActionArgs build() {
-            $.operatorActionId = Objects.requireNonNull($.operatorActionId, "expected parameter 'operatorActionId' to be non-null");
+            if ($.operatorActionId == null) {
+                throw new MissingRequiredPropertyException("GetActionArgs", "operatorActionId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.MediaServices;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -238,9 +239,15 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
         }
 
         public MediaWorkflowConfigurationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.parameters = Objects.requireNonNull($.parameters, "expected parameter 'parameters' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowConfigurationArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowConfigurationArgs", "displayName");
+            }
+            if ($.parameters == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowConfigurationArgs", "parameters");
+            }
             return $;
         }
     }

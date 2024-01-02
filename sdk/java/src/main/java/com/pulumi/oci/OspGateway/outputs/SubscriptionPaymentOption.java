@@ -184,56 +184,67 @@ public final class SubscriptionPaymentOption {
 
         @CustomType.Setter
         public Builder creditCardType(@Nullable String creditCardType) {
+
             this.creditCardType = creditCardType;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
+
             this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder extBillingAgreementId(@Nullable String extBillingAgreementId) {
+
             this.extBillingAgreementId = extBillingAgreementId;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(@Nullable String firstName) {
+
             this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder lastDigits(@Nullable String lastDigits) {
+
             this.lastDigits = lastDigits;
             return this;
         }
         @CustomType.Setter
         public Builder lastName(@Nullable String lastName) {
+
             this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder nameOnCard(@Nullable String nameOnCard) {
+
             this.nameOnCard = nameOnCard;
             return this;
         }
         @CustomType.Setter
         public Builder paymentMethod(@Nullable String paymentMethod) {
+
             this.paymentMethod = paymentMethod;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpiration(@Nullable String timeExpiration) {
+
             this.timeExpiration = timeExpiration;
             return this;
         }
         @CustomType.Setter
         public Builder walletInstrumentId(@Nullable String walletInstrumentId) {
+
             this.walletInstrumentId = walletInstrumentId;
             return this;
         }
         @CustomType.Setter
         public Builder walletTransactionId(@Nullable String walletTransactionId) {
+
             this.walletTransactionId = walletTransactionId;
             return this;
         }

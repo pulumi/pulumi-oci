@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetOpsiConfigurationConfigItem;
 import java.lang.Object;
 import java.lang.String;
@@ -244,12 +245,18 @@ public final class GetOpsiConfigurationResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configItemCustomStatuses(List<String> configItemCustomStatuses) {
-            this.configItemCustomStatuses = Objects.requireNonNull(configItemCustomStatuses);
+            if (configItemCustomStatuses == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "configItemCustomStatuses");
+            }
+            this.configItemCustomStatuses = configItemCustomStatuses;
             return this;
         }
         public Builder configItemCustomStatuses(String... configItemCustomStatuses) {
@@ -257,7 +264,10 @@ public final class GetOpsiConfigurationResult {
         }
         @CustomType.Setter
         public Builder configItemFields(List<String> configItemFields) {
-            this.configItemFields = Objects.requireNonNull(configItemFields);
+            if (configItemFields == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "configItemFields");
+            }
+            this.configItemFields = configItemFields;
             return this;
         }
         public Builder configItemFields(String... configItemFields) {
@@ -265,7 +275,10 @@ public final class GetOpsiConfigurationResult {
         }
         @CustomType.Setter
         public Builder configItems(List<GetOpsiConfigurationConfigItem> configItems) {
-            this.configItems = Objects.requireNonNull(configItems);
+            if (configItems == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "configItems");
+            }
+            this.configItems = configItems;
             return this;
         }
         public Builder configItems(GetOpsiConfigurationConfigItem... configItems) {
@@ -273,7 +286,10 @@ public final class GetOpsiConfigurationResult {
         }
         @CustomType.Setter
         public Builder configItemsApplicableContexts(List<String> configItemsApplicableContexts) {
-            this.configItemsApplicableContexts = Objects.requireNonNull(configItemsApplicableContexts);
+            if (configItemsApplicableContexts == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "configItemsApplicableContexts");
+            }
+            this.configItemsApplicableContexts = configItemsApplicableContexts;
             return this;
         }
         public Builder configItemsApplicableContexts(String... configItemsApplicableContexts) {
@@ -281,37 +297,58 @@ public final class GetOpsiConfigurationResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder opsiConfigFields(List<String> opsiConfigFields) {
-            this.opsiConfigFields = Objects.requireNonNull(opsiConfigFields);
+            if (opsiConfigFields == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "opsiConfigFields");
+            }
+            this.opsiConfigFields = opsiConfigFields;
             return this;
         }
         public Builder opsiConfigFields(String... opsiConfigFields) {
@@ -319,32 +356,50 @@ public final class GetOpsiConfigurationResult {
         }
         @CustomType.Setter
         public Builder opsiConfigType(String opsiConfigType) {
-            this.opsiConfigType = Objects.requireNonNull(opsiConfigType);
+            if (opsiConfigType == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "opsiConfigType");
+            }
+            this.opsiConfigType = opsiConfigType;
             return this;
         }
         @CustomType.Setter
         public Builder opsiConfigurationId(String opsiConfigurationId) {
-            this.opsiConfigurationId = Objects.requireNonNull(opsiConfigurationId);
+            if (opsiConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "opsiConfigurationId");
+            }
+            this.opsiConfigurationId = opsiConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOpsiConfigurationResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetViewsFilter;
 import com.pulumi.oci.Dns.outputs.GetViewsView;
 import java.lang.String;
@@ -115,16 +116,21 @@ public final class GetViewsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetViewsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetViewsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,22 +139,28 @@ public final class GetViewsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder scope(@Nullable String scope) {
+
             this.scope = scope;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder views(List<GetViewsView> views) {
-            this.views = Objects.requireNonNull(views);
+            if (views == null) {
+              throw new MissingRequiredPropertyException("GetViewsResult", "views");
+            }
+            this.views = views;
             return this;
         }
         public Builder views(GetViewsView... views) {

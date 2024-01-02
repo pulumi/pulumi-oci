@@ -4,6 +4,7 @@
 package com.pulumi.oci.RecoveryMod.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemMetric;
 import com.pulumi.oci.RecoveryMod.outputs.GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet;
 import java.lang.Boolean;
@@ -340,72 +341,114 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSize(String databaseSize) {
-            this.databaseSize = Objects.requireNonNull(databaseSize);
+            if (databaseSize == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "databaseSize");
+            }
+            this.databaseSize = databaseSize;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder health(String health) {
-            this.health = Objects.requireNonNull(health);
+            if (health == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "health");
+            }
+            this.health = health;
             return this;
         }
         @CustomType.Setter
         public Builder healthDetails(String healthDetails) {
-            this.healthDetails = Objects.requireNonNull(healthDetails);
+            if (healthDetails == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "healthDetails");
+            }
+            this.healthDetails = healthDetails;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isReadOnlyResource(Boolean isReadOnlyResource) {
-            this.isReadOnlyResource = Objects.requireNonNull(isReadOnlyResource);
+            if (isReadOnlyResource == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "isReadOnlyResource");
+            }
+            this.isReadOnlyResource = isReadOnlyResource;
             return this;
         }
         @CustomType.Setter
         public Builder isRedoLogsShipped(Boolean isRedoLogsShipped) {
-            this.isRedoLogsShipped = Objects.requireNonNull(isRedoLogsShipped);
+            if (isRedoLogsShipped == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "isRedoLogsShipped");
+            }
+            this.isRedoLogsShipped = isRedoLogsShipped;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetProtectedDatabasesProtectedDatabaseCollectionItemMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetProtectedDatabasesProtectedDatabaseCollectionItemMetric... metrics) {
@@ -413,17 +456,26 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder protectionPolicyId(String protectionPolicyId) {
-            this.protectionPolicyId = Objects.requireNonNull(protectionPolicyId);
+            if (protectionPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "protectionPolicyId");
+            }
+            this.protectionPolicyId = protectionPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryServiceSubnets(List<GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet> recoveryServiceSubnets) {
-            this.recoveryServiceSubnets = Objects.requireNonNull(recoveryServiceSubnets);
+            if (recoveryServiceSubnets == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "recoveryServiceSubnets");
+            }
+            this.recoveryServiceSubnets = recoveryServiceSubnets;
             return this;
         }
         public Builder recoveryServiceSubnets(GetProtectedDatabasesProtectedDatabaseCollectionItemRecoveryServiceSubnet... recoveryServiceSubnets) {
@@ -431,27 +483,42 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder vpcUserName(String vpcUserName) {
-            this.vpcUserName = Objects.requireNonNull(vpcUserName);
+            if (vpcUserName == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabasesProtectedDatabaseCollectionItem", "vpcUserName");
+            }
+            this.vpcUserName = vpcUserName;
             return this;
         }
         public GetProtectedDatabasesProtectedDatabaseCollectionItem build() {

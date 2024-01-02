@@ -4,6 +4,7 @@
 package com.pulumi.oci.Events.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Events.outputs.RuleActionsAction;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class RuleActions {
 
         @CustomType.Setter
         public Builder actions(List<RuleActionsAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("RuleActions", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(RuleActionsAction... actions) {

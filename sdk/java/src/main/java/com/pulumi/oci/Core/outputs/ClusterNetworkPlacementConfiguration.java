@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnets;
 import com.pulumi.oci.Core.outputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnet;
 import java.lang.String;
@@ -95,26 +96,33 @@ public final class ClusterNetworkPlacementConfiguration {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("ClusterNetworkPlacementConfiguration", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder placementConstraint(@Nullable String placementConstraint) {
+
             this.placementConstraint = placementConstraint;
             return this;
         }
         @CustomType.Setter
         public Builder primarySubnetId(@Nullable String primarySubnetId) {
+
             this.primarySubnetId = primarySubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder primaryVnicSubnets(@Nullable ClusterNetworkPlacementConfigurationPrimaryVnicSubnets primaryVnicSubnets) {
+
             this.primaryVnicSubnets = primaryVnicSubnets;
             return this;
         }
         @CustomType.Setter
         public Builder secondaryVnicSubnets(@Nullable List<ClusterNetworkPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets) {
+
             this.secondaryVnicSubnets = secondaryVnicSubnets;
             return this;
         }

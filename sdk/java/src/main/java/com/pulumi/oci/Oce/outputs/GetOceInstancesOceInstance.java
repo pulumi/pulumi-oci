@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oce.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -401,7 +402,10 @@ public final class GetOceInstancesOceInstance {
 
         @CustomType.Setter
         public Builder addOnFeatures(List<String> addOnFeatures) {
-            this.addOnFeatures = Objects.requireNonNull(addOnFeatures);
+            if (addOnFeatures == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "addOnFeatures");
+            }
+            this.addOnFeatures = addOnFeatures;
             return this;
         }
         public Builder addOnFeatures(String... addOnFeatures) {
@@ -409,132 +413,210 @@ public final class GetOceInstancesOceInstance {
         }
         @CustomType.Setter
         public Builder adminEmail(String adminEmail) {
-            this.adminEmail = Objects.requireNonNull(adminEmail);
+            if (adminEmail == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "adminEmail");
+            }
+            this.adminEmail = adminEmail;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder drRegion(String drRegion) {
-            this.drRegion = Objects.requireNonNull(drRegion);
+            if (drRegion == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "drRegion");
+            }
+            this.drRegion = drRegion;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder guid(String guid) {
-            this.guid = Objects.requireNonNull(guid);
+            if (guid == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "guid");
+            }
+            this.guid = guid;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAccessToken(String idcsAccessToken) {
-            this.idcsAccessToken = Objects.requireNonNull(idcsAccessToken);
+            if (idcsAccessToken == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "idcsAccessToken");
+            }
+            this.idcsAccessToken = idcsAccessToken;
             return this;
         }
         @CustomType.Setter
         public Builder idcsTenancy(String idcsTenancy) {
-            this.idcsTenancy = Objects.requireNonNull(idcsTenancy);
+            if (idcsTenancy == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "idcsTenancy");
+            }
+            this.idcsTenancy = idcsTenancy;
             return this;
         }
         @CustomType.Setter
         public Builder instanceAccessType(String instanceAccessType) {
-            this.instanceAccessType = Objects.requireNonNull(instanceAccessType);
+            if (instanceAccessType == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "instanceAccessType");
+            }
+            this.instanceAccessType = instanceAccessType;
             return this;
         }
         @CustomType.Setter
         public Builder instanceLicenseType(String instanceLicenseType) {
-            this.instanceLicenseType = Objects.requireNonNull(instanceLicenseType);
+            if (instanceLicenseType == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "instanceLicenseType");
+            }
+            this.instanceLicenseType = instanceLicenseType;
             return this;
         }
         @CustomType.Setter
         public Builder instanceUsageType(String instanceUsageType) {
-            this.instanceUsageType = Objects.requireNonNull(instanceUsageType);
+            if (instanceUsageType == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "instanceUsageType");
+            }
+            this.instanceUsageType = instanceUsageType;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageNamespace(String objectStorageNamespace) {
-            this.objectStorageNamespace = Objects.requireNonNull(objectStorageNamespace);
+            if (objectStorageNamespace == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "objectStorageNamespace");
+            }
+            this.objectStorageNamespace = objectStorageNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder service(Map<String,Object> service) {
-            this.service = Objects.requireNonNull(service);
+            if (service == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "service");
+            }
+            this.service = service;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+            if (stateMessage == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "stateMessage");
+            }
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyName(String tenancyName) {
-            this.tenancyName = Objects.requireNonNull(tenancyName);
+            if (tenancyName == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "tenancyName");
+            }
+            this.tenancyName = tenancyName;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder upgradeSchedule(String upgradeSchedule) {
-            this.upgradeSchedule = Objects.requireNonNull(upgradeSchedule);
+            if (upgradeSchedule == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "upgradeSchedule");
+            }
+            this.upgradeSchedule = upgradeSchedule;
             return this;
         }
         @CustomType.Setter
         public Builder wafPrimaryDomain(String wafPrimaryDomain) {
-            this.wafPrimaryDomain = Objects.requireNonNull(wafPrimaryDomain);
+            if (wafPrimaryDomain == null) {
+              throw new MissingRequiredPropertyException("GetOceInstancesOceInstance", "wafPrimaryDomain");
+            }
+            this.wafPrimaryDomain = wafPrimaryDomain;
             return this;
         }
         public GetOceInstancesOceInstance build() {

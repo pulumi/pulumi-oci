@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.inputs.ApplicationImagePolicyConfigArgs;
 import com.pulumi.oci.Functions.inputs.ApplicationTraceConfigArgs;
 import java.lang.Object;
@@ -479,9 +480,15 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ApplicationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.subnetIds = Objects.requireNonNull($.subnetIds, "expected parameter 'subnetIds' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "displayName");
+            }
+            if ($.subnetIds == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "subnetIds");
+            }
             return $;
         }
     }

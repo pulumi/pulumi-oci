@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -352,47 +353,58 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
 
         @CustomType.Setter
         public Builder authenticationMethod(@Nullable String authenticationMethod) {
+
             this.authenticationMethod = authenticationMethod;
             return this;
         }
         @CustomType.Setter
         public Builder display(@Nullable String display) {
+
             this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder factorStatus(@Nullable String factorStatus) {
+
             this.factorStatus = factorStatus;
             return this;
         }
         @CustomType.Setter
         public Builder factorType(@Nullable String factorType) {
+
             this.factorType = factorType;
             return this;
         }
         @CustomType.Setter
         public Builder lastSyncTime(@Nullable String lastSyncTime) {
+
             this.lastSyncTime = lastSyncTime;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder thirdPartyVendorName(@Nullable String thirdPartyVendorName) {
+
             this.thirdPartyVendorName = thirdPartyVendorName;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice build() {

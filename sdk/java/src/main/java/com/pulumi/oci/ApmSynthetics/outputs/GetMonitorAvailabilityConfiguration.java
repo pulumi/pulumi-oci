@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetMonitorAvailabilityConfiguration {
 
         @CustomType.Setter
         public Builder maxAllowedFailuresPerInterval(Integer maxAllowedFailuresPerInterval) {
-            this.maxAllowedFailuresPerInterval = Objects.requireNonNull(maxAllowedFailuresPerInterval);
+            if (maxAllowedFailuresPerInterval == null) {
+              throw new MissingRequiredPropertyException("GetMonitorAvailabilityConfiguration", "maxAllowedFailuresPerInterval");
+            }
+            this.maxAllowedFailuresPerInterval = maxAllowedFailuresPerInterval;
             return this;
         }
         @CustomType.Setter
         public Builder minAllowedRunsPerInterval(Integer minAllowedRunsPerInterval) {
-            this.minAllowedRunsPerInterval = Objects.requireNonNull(minAllowedRunsPerInterval);
+            if (minAllowedRunsPerInterval == null) {
+              throw new MissingRequiredPropertyException("GetMonitorAvailabilityConfiguration", "minAllowedRunsPerInterval");
+            }
+            this.minAllowedRunsPerInterval = minAllowedRunsPerInterval;
             return this;
         }
         public GetMonitorAvailabilityConfiguration build() {

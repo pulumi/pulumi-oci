@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
 
         @CustomType.Setter
         public Builder isResponseHeaderBasedCachingEnabled(Boolean isResponseHeaderBasedCachingEnabled) {
-            this.isResponseHeaderBasedCachingEnabled = Objects.requireNonNull(isResponseHeaderBasedCachingEnabled);
+            if (isResponseHeaderBasedCachingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy", "isResponseHeaderBasedCachingEnabled");
+            }
+            this.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
             return this;
         }
         public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy build() {

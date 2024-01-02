@@ -102,26 +102,31 @@ public final class DrProtectionGroupMemberFileSystemOperation {
 
         @CustomType.Setter
         public Builder exportPath(@Nullable String exportPath) {
+
             this.exportPath = exportPath;
             return this;
         }
         @CustomType.Setter
         public Builder mountDetails(@Nullable DrProtectionGroupMemberFileSystemOperationMountDetails mountDetails) {
+
             this.mountDetails = mountDetails;
             return this;
         }
         @CustomType.Setter
         public Builder mountPoint(@Nullable String mountPoint) {
+
             this.mountPoint = mountPoint;
             return this;
         }
         @CustomType.Setter
         public Builder mountTargetId(@Nullable String mountTargetId) {
+
             this.mountTargetId = mountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder unmountDetails(@Nullable DrProtectionGroupMemberFileSystemOperationUnmountDetails unmountDetails) {
+
             this.unmountDetails = unmountDetails;
             return this;
         }

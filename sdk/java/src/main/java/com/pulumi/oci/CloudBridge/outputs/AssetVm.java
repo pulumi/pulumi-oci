@@ -72,16 +72,19 @@ public final class AssetVm {
 
         @CustomType.Setter
         public Builder hypervisorHost(@Nullable String hypervisorHost) {
+
             this.hypervisorHost = hypervisorHost;
             return this;
         }
         @CustomType.Setter
         public Builder hypervisorVendor(@Nullable String hypervisorVendor) {
+
             this.hypervisorVendor = hypervisorVendor;
             return this;
         }
         @CustomType.Setter
         public Builder hypervisorVersion(@Nullable String hypervisorVersion) {
+
             this.hypervisorVersion = hypervisorVersion;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauthClientCertificateIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauthClientCertificateIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauthClientCertificateMeta;
@@ -396,52 +397,80 @@ public final class GetDomainsOauthClientCertificateResult {
 
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder certEndDate(String certEndDate) {
-            this.certEndDate = Objects.requireNonNull(certEndDate);
+            if (certEndDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "certEndDate");
+            }
+            this.certEndDate = certEndDate;
             return this;
         }
         @CustomType.Setter
         public Builder certStartDate(String certStartDate) {
-            this.certStartDate = Objects.requireNonNull(certStartDate);
+            if (certStartDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "certStartDate");
+            }
+            this.certStartDate = certStartDate;
             return this;
         }
         @CustomType.Setter
         public Builder certificateAlias(String certificateAlias) {
-            this.certificateAlias = Objects.requireNonNull(certificateAlias);
+            if (certificateAlias == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "certificateAlias");
+            }
+            this.certificateAlias = certificateAlias;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsOauthClientCertificateIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsOauthClientCertificateIdcsCreatedBy... idcsCreatedBies) {
@@ -449,12 +478,18 @@ public final class GetDomainsOauthClientCertificateResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsOauthClientCertificateIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsOauthClientCertificateIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -462,12 +497,18 @@ public final class GetDomainsOauthClientCertificateResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -475,27 +516,42 @@ public final class GetDomainsOauthClientCertificateResult {
         }
         @CustomType.Setter
         public Builder keyStoreId(String keyStoreId) {
-            this.keyStoreId = Objects.requireNonNull(keyStoreId);
+            if (keyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "keyStoreId");
+            }
+            this.keyStoreId = keyStoreId;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreName(String keyStoreName) {
-            this.keyStoreName = Objects.requireNonNull(keyStoreName);
+            if (keyStoreName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "keyStoreName");
+            }
+            this.keyStoreName = keyStoreName;
             return this;
         }
         @CustomType.Setter
         public Builder keyStorePassword(String keyStorePassword) {
-            this.keyStorePassword = Objects.requireNonNull(keyStorePassword);
+            if (keyStorePassword == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "keyStorePassword");
+            }
+            this.keyStorePassword = keyStorePassword;
             return this;
         }
         @CustomType.Setter
         public Builder map(String map) {
-            this.map = Objects.requireNonNull(map);
+            if (map == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "map");
+            }
+            this.map = map;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsOauthClientCertificateMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsOauthClientCertificateMeta... metas) {
@@ -503,22 +559,32 @@ public final class GetDomainsOauthClientCertificateResult {
         }
         @CustomType.Setter
         public Builder oAuthClientCertificateId(String oAuthClientCertificateId) {
-            this.oAuthClientCertificateId = Objects.requireNonNull(oAuthClientCertificateId);
+            if (oAuthClientCertificateId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "oAuthClientCertificateId");
+            }
+            this.oAuthClientCertificateId = oAuthClientCertificateId;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -526,17 +592,26 @@ public final class GetDomainsOauthClientCertificateResult {
         }
         @CustomType.Setter
         public Builder sha1thumbprint(String sha1thumbprint) {
-            this.sha1thumbprint = Objects.requireNonNull(sha1thumbprint);
+            if (sha1thumbprint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "sha1thumbprint");
+            }
+            this.sha1thumbprint = sha1thumbprint;
             return this;
         }
         @CustomType.Setter
         public Builder sha256thumbprint(String sha256thumbprint) {
-            this.sha256thumbprint = Objects.requireNonNull(sha256thumbprint);
+            if (sha256thumbprint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "sha256thumbprint");
+            }
+            this.sha256thumbprint = sha256thumbprint;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsOauthClientCertificateTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsOauthClientCertificateTag... tags) {
@@ -544,12 +619,18 @@ public final class GetDomainsOauthClientCertificateResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder x509base64certificate(String x509base64certificate) {
-            this.x509base64certificate = Objects.requireNonNull(x509base64certificate);
+            if (x509base64certificate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsOauthClientCertificateResult", "x509base64certificate");
+            }
+            this.x509base64certificate = x509base64certificate;
             return this;
         }
         public GetDomainsOauthClientCertificateResult build() {

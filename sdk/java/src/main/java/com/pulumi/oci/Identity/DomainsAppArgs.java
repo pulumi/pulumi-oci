@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsAppAliasAppArgs;
 import com.pulumi.oci.Identity.inputs.DomainsAppAllowedScopeArgs;
 import com.pulumi.oci.Identity.inputs.DomainsAppAllowedTagArgs;
@@ -7119,10 +7120,18 @@ public final class DomainsAppArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DomainsAppArgs build() {
-            $.basedOnTemplate = Objects.requireNonNull($.basedOnTemplate, "expected parameter 'basedOnTemplate' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.basedOnTemplate == null) {
+                throw new MissingRequiredPropertyException("DomainsAppArgs", "basedOnTemplate");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DomainsAppArgs", "displayName");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsAppArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsAppArgs", "schemas");
+            }
             return $;
         }
     }

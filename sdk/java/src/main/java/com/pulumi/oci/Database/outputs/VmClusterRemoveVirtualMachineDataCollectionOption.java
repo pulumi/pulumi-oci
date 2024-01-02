@@ -72,16 +72,19 @@ public final class VmClusterRemoveVirtualMachineDataCollectionOption {
 
         @CustomType.Setter
         public Builder isDiagnosticsEventsEnabled(@Nullable Boolean isDiagnosticsEventsEnabled) {
+
             this.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHealthMonitoringEnabled(@Nullable Boolean isHealthMonitoringEnabled) {
+
             this.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isIncidentLogsEnabled(@Nullable Boolean isIncidentLogsEnabled) {
+
             this.isIncidentLogsEnabled = isIncidentLogsEnabled;
             return this;
         }

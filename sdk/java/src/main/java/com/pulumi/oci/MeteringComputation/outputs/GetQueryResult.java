@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueryQueryDefinition;
 import java.lang.String;
 import java.util.List;
@@ -78,17 +79,26 @@ public final class GetQueryResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetQueryResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetQueryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder queryDefinitions(List<GetQueryQueryDefinition> queryDefinitions) {
-            this.queryDefinitions = Objects.requireNonNull(queryDefinitions);
+            if (queryDefinitions == null) {
+              throw new MissingRequiredPropertyException("GetQueryResult", "queryDefinitions");
+            }
+            this.queryDefinitions = queryDefinitions;
             return this;
         }
         public Builder queryDefinitions(GetQueryQueryDefinition... queryDefinitions) {
@@ -96,7 +106,10 @@ public final class GetQueryResult {
         }
         @CustomType.Setter
         public Builder queryId(String queryId) {
-            this.queryId = Objects.requireNonNull(queryId);
+            if (queryId == null) {
+              throw new MissingRequiredPropertyException("GetQueryResult", "queryId");
+            }
+            this.queryId = queryId;
             return this;
         }
         public GetQueryResult build() {

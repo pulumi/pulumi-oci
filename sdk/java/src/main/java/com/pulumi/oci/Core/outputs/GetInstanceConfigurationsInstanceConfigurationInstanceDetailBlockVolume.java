@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
 
         @CustomType.Setter
         public Builder attachDetails(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail> attachDetails) {
-            this.attachDetails = Objects.requireNonNull(attachDetails);
+            if (attachDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolume", "attachDetails");
+            }
+            this.attachDetails = attachDetails;
             return this;
         }
         public Builder attachDetails(GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail... attachDetails) {
@@ -81,7 +85,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
         }
         @CustomType.Setter
         public Builder createDetails(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail> createDetails) {
-            this.createDetails = Objects.requireNonNull(createDetails);
+            if (createDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolume", "createDetails");
+            }
+            this.createDetails = createDetails;
             return this;
         }
         public Builder createDetails(GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetail... createDetails) {
@@ -89,7 +96,10 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
         }
         @CustomType.Setter
         public Builder volumeId(String volumeId) {
-            this.volumeId = Objects.requireNonNull(volumeId);
+            if (volumeId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolume", "volumeId");
+            }
+            this.volumeId = volumeId;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolume build() {

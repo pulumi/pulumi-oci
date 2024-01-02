@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
 
         @CustomType.Setter
         public Builder items(List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem... items) {

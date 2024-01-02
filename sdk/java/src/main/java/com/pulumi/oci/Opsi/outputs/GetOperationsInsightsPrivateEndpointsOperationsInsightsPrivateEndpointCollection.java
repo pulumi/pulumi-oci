@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivat
 
         @CustomType.Setter
         public Builder items(List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem... items) {

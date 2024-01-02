@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingPublisherLink;
 import com.pulumi.oci.Marketplace.outputs.GetListingPublisherLogo;
 import java.lang.String;
@@ -171,32 +172,50 @@ public final class GetListingPublisher {
 
         @CustomType.Setter
         public Builder contactEmail(String contactEmail) {
-            this.contactEmail = Objects.requireNonNull(contactEmail);
+            if (contactEmail == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "contactEmail");
+            }
+            this.contactEmail = contactEmail;
             return this;
         }
         @CustomType.Setter
         public Builder contactPhone(String contactPhone) {
-            this.contactPhone = Objects.requireNonNull(contactPhone);
+            if (contactPhone == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "contactPhone");
+            }
+            this.contactPhone = contactPhone;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder hqAddress(String hqAddress) {
-            this.hqAddress = Objects.requireNonNull(hqAddress);
+            if (hqAddress == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "hqAddress");
+            }
+            this.hqAddress = hqAddress;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder links(List<GetListingPublisherLink> links) {
-            this.links = Objects.requireNonNull(links);
+            if (links == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "links");
+            }
+            this.links = links;
             return this;
         }
         public Builder links(GetListingPublisherLink... links) {
@@ -204,7 +223,10 @@ public final class GetListingPublisher {
         }
         @CustomType.Setter
         public Builder logos(List<GetListingPublisherLogo> logos) {
-            this.logos = Objects.requireNonNull(logos);
+            if (logos == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "logos");
+            }
+            this.logos = logos;
             return this;
         }
         public Builder logos(GetListingPublisherLogo... logos) {
@@ -212,17 +234,26 @@ public final class GetListingPublisher {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder websiteUrl(String websiteUrl) {
-            this.websiteUrl = Objects.requireNonNull(websiteUrl);
+            if (websiteUrl == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "websiteUrl");
+            }
+            this.websiteUrl = websiteUrl;
             return this;
         }
         @CustomType.Setter
         public Builder yearFounded(String yearFounded) {
-            this.yearFounded = Objects.requireNonNull(yearFounded);
+            if (yearFounded == null) {
+              throw new MissingRequiredPropertyException("GetListingPublisher", "yearFounded");
+            }
+            this.yearFounded = yearFounded;
             return this;
         }
         public GetListingPublisher build() {

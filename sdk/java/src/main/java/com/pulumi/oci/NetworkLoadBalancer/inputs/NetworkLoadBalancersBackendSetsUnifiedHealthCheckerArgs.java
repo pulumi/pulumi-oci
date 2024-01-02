@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkLoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -410,7 +411,9 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs exten
         }
 
         public NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs build() {
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs", "protocol");
+            }
             return $;
         }
     }

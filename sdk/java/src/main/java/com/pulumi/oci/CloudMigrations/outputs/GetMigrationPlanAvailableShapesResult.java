@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanAvailableShapesAvailableShapesCollection;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanAvailableShapesFilter;
 import java.lang.String;
@@ -105,12 +106,16 @@ public final class GetMigrationPlanAvailableShapesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder availableShapesCollections(List<GetMigrationPlanAvailableShapesAvailableShapesCollection> availableShapesCollections) {
-            this.availableShapesCollections = Objects.requireNonNull(availableShapesCollections);
+            if (availableShapesCollections == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesResult", "availableShapesCollections");
+            }
+            this.availableShapesCollections = availableShapesCollections;
             return this;
         }
         public Builder availableShapesCollections(GetMigrationPlanAvailableShapesAvailableShapesCollection... availableShapesCollections) {
@@ -118,16 +123,19 @@ public final class GetMigrationPlanAvailableShapesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dvhHostId(@Nullable String dvhHostId) {
+
             this.dvhHostId = dvhHostId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMigrationPlanAvailableShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -136,16 +144,23 @@ public final class GetMigrationPlanAvailableShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder migrationPlanId(String migrationPlanId) {
-            this.migrationPlanId = Objects.requireNonNull(migrationPlanId);
+            if (migrationPlanId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanAvailableShapesResult", "migrationPlanId");
+            }
+            this.migrationPlanId = migrationPlanId;
             return this;
         }
         @CustomType.Setter
         public Builder reservedCapacityId(@Nullable String reservedCapacityId) {
+
             this.reservedCapacityId = reservedCapacityId;
             return this;
         }

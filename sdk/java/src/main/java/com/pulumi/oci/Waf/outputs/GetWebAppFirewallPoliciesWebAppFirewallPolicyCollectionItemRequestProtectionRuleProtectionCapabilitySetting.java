@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -114,7 +115,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
 
         @CustomType.Setter
         public Builder allowedHttpMethods(List<String> allowedHttpMethods) {
-            this.allowedHttpMethods = Objects.requireNonNull(allowedHttpMethods);
+            if (allowedHttpMethods == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting", "allowedHttpMethods");
+            }
+            this.allowedHttpMethods = allowedHttpMethods;
             return this;
         }
         public Builder allowedHttpMethods(String... allowedHttpMethods) {
@@ -122,27 +126,42 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
         }
         @CustomType.Setter
         public Builder maxHttpRequestHeaderLength(Integer maxHttpRequestHeaderLength) {
-            this.maxHttpRequestHeaderLength = Objects.requireNonNull(maxHttpRequestHeaderLength);
+            if (maxHttpRequestHeaderLength == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting", "maxHttpRequestHeaderLength");
+            }
+            this.maxHttpRequestHeaderLength = maxHttpRequestHeaderLength;
             return this;
         }
         @CustomType.Setter
         public Builder maxHttpRequestHeaders(Integer maxHttpRequestHeaders) {
-            this.maxHttpRequestHeaders = Objects.requireNonNull(maxHttpRequestHeaders);
+            if (maxHttpRequestHeaders == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting", "maxHttpRequestHeaders");
+            }
+            this.maxHttpRequestHeaders = maxHttpRequestHeaders;
             return this;
         }
         @CustomType.Setter
         public Builder maxNumberOfArguments(Integer maxNumberOfArguments) {
-            this.maxNumberOfArguments = Objects.requireNonNull(maxNumberOfArguments);
+            if (maxNumberOfArguments == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting", "maxNumberOfArguments");
+            }
+            this.maxNumberOfArguments = maxNumberOfArguments;
             return this;
         }
         @CustomType.Setter
         public Builder maxSingleArgumentLength(Integer maxSingleArgumentLength) {
-            this.maxSingleArgumentLength = Objects.requireNonNull(maxSingleArgumentLength);
+            if (maxSingleArgumentLength == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting", "maxSingleArgumentLength");
+            }
+            this.maxSingleArgumentLength = maxSingleArgumentLength;
             return this;
         }
         @CustomType.Setter
         public Builder maxTotalArgumentLength(Integer maxTotalArgumentLength) {
-            this.maxTotalArgumentLength = Objects.requireNonNull(maxTotalArgumentLength);
+            if (maxTotalArgumentLength == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting", "maxTotalArgumentLength");
+            }
+            this.maxTotalArgumentLength = maxTotalArgumentLength;
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySetting build() {

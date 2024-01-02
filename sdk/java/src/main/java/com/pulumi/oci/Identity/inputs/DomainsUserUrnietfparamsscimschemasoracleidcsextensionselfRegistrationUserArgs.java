@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -272,7 +273,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
         }
 
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs build() {
-            $.selfRegistrationProfile = Objects.requireNonNull($.selfRegistrationProfile, "expected parameter 'selfRegistrationProfile' to be non-null");
+            if ($.selfRegistrationProfile == null) {
+                throw new MissingRequiredPropertyException("DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs", "selfRegistrationProfile");
+            }
             return $;
         }
     }

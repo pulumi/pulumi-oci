@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail;
@@ -294,7 +295,10 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItem {
 
         @CustomType.Setter
         public Builder certificateAuthorityConfigs(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig> certificateAuthorityConfigs) {
-            this.certificateAuthorityConfigs = Objects.requireNonNull(certificateAuthorityConfigs);
+            if (certificateAuthorityConfigs == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "certificateAuthorityConfigs");
+            }
+            this.certificateAuthorityConfigs = certificateAuthorityConfigs;
             return this;
         }
         public Builder certificateAuthorityConfigs(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig... certificateAuthorityConfigs) {
@@ -302,7 +306,10 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItem {
         }
         @CustomType.Setter
         public Builder certificateAuthorityRules(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule> certificateAuthorityRules) {
-            this.certificateAuthorityRules = Objects.requireNonNull(certificateAuthorityRules);
+            if (certificateAuthorityRules == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "certificateAuthorityRules");
+            }
+            this.certificateAuthorityRules = certificateAuthorityRules;
             return this;
         }
         public Builder certificateAuthorityRules(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule... certificateAuthorityRules) {
@@ -310,7 +317,10 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItem {
         }
         @CustomType.Setter
         public Builder certificateRevocationListDetails(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail> certificateRevocationListDetails) {
-            this.certificateRevocationListDetails = Objects.requireNonNull(certificateRevocationListDetails);
+            if (certificateRevocationListDetails == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "certificateRevocationListDetails");
+            }
+            this.certificateRevocationListDetails = certificateRevocationListDetails;
             return this;
         }
         public Builder certificateRevocationListDetails(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail... certificateRevocationListDetails) {
@@ -318,17 +328,26 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItem {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder currentVersions(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion> currentVersions) {
-            this.currentVersions = Objects.requireNonNull(currentVersions);
+            if (currentVersions == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "currentVersions");
+            }
+            this.currentVersions = currentVersions;
             return this;
         }
         public Builder currentVersions(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion... currentVersions) {
@@ -336,57 +355,90 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItem {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
-            this.issuerCertificateAuthorityId = Objects.requireNonNull(issuerCertificateAuthorityId);
+            if (issuerCertificateAuthorityId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "issuerCertificateAuthorityId");
+            }
+            this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder signingAlgorithm(String signingAlgorithm) {
-            this.signingAlgorithm = Objects.requireNonNull(signingAlgorithm);
+            if (signingAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "signingAlgorithm");
+            }
+            this.signingAlgorithm = signingAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subjects(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject> subjects) {
-            this.subjects = Objects.requireNonNull(subjects);
+            if (subjects == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "subjects");
+            }
+            this.subjects = subjects;
             return this;
         }
         public Builder subjects(GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubject... subjects) {
@@ -394,12 +446,18 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItem {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItem", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItem build() {

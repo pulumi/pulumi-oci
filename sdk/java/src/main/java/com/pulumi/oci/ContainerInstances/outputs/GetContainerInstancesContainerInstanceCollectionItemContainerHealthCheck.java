@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader;
 import java.lang.Integer;
 import java.lang.String;
@@ -131,7 +132,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
 
         @CustomType.Setter
         public Builder commands(List<String> commands) {
-            this.commands = Objects.requireNonNull(commands);
+            if (commands == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "commands");
+            }
+            this.commands = commands;
             return this;
         }
         public Builder commands(String... commands) {
@@ -139,17 +143,26 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
         @CustomType.Setter
         public Builder failureAction(String failureAction) {
-            this.failureAction = Objects.requireNonNull(failureAction);
+            if (failureAction == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "failureAction");
+            }
+            this.failureAction = failureAction;
             return this;
         }
         @CustomType.Setter
         public Builder failureThreshold(Integer failureThreshold) {
-            this.failureThreshold = Objects.requireNonNull(failureThreshold);
+            if (failureThreshold == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "failureThreshold");
+            }
+            this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder headers(List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+            if (headers == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "headers");
+            }
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader... headers) {
@@ -157,52 +170,82 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         }
         @CustomType.Setter
         public Builder healthCheckType(String healthCheckType) {
-            this.healthCheckType = Objects.requireNonNull(healthCheckType);
+            if (healthCheckType == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "healthCheckType");
+            }
+            this.healthCheckType = healthCheckType;
             return this;
         }
         @CustomType.Setter
         public Builder initialDelayInSeconds(Integer initialDelayInSeconds) {
-            this.initialDelayInSeconds = Objects.requireNonNull(initialDelayInSeconds);
+            if (initialDelayInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "initialDelayInSeconds");
+            }
+            this.initialDelayInSeconds = initialDelayInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder intervalInSeconds(Integer intervalInSeconds) {
-            this.intervalInSeconds = Objects.requireNonNull(intervalInSeconds);
+            if (intervalInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "intervalInSeconds");
+            }
+            this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusDetails(String statusDetails) {
-            this.statusDetails = Objects.requireNonNull(statusDetails);
+            if (statusDetails == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "statusDetails");
+            }
+            this.statusDetails = statusDetails;
             return this;
         }
         @CustomType.Setter
         public Builder successThreshold(Integer successThreshold) {
-            this.successThreshold = Objects.requireNonNull(successThreshold);
+            if (successThreshold == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "successThreshold");
+            }
+            this.successThreshold = successThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+            if (timeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck", "timeoutInSeconds");
+            }
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck build() {

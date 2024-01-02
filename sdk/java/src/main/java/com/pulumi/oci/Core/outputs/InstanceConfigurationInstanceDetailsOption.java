@@ -79,6 +79,7 @@ public final class InstanceConfigurationInstanceDetailsOption {
 
         @CustomType.Setter
         public Builder blockVolumes(@Nullable List<InstanceConfigurationInstanceDetailsOptionBlockVolume> blockVolumes) {
+
             this.blockVolumes = blockVolumes;
             return this;
         }
@@ -87,11 +88,13 @@ public final class InstanceConfigurationInstanceDetailsOption {
         }
         @CustomType.Setter
         public Builder launchDetails(@Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetails launchDetails) {
+
             this.launchDetails = launchDetails;
             return this;
         }
         @CustomType.Setter
         public Builder secondaryVnics(@Nullable List<InstanceConfigurationInstanceDetailsOptionSecondaryVnic> secondaryVnics) {
+
             this.secondaryVnics = secondaryVnics;
             return this;
         }

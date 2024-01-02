@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -234,11 +235,21 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
         }
 
         public ReportDefinitionColumnFilterArgs build() {
-            $.expressions = Objects.requireNonNull($.expressions, "expected parameter 'expressions' to be non-null");
-            $.fieldName = Objects.requireNonNull($.fieldName, "expected parameter 'fieldName' to be non-null");
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
-            $.isHidden = Objects.requireNonNull($.isHidden, "expected parameter 'isHidden' to be non-null");
-            $.operator = Objects.requireNonNull($.operator, "expected parameter 'operator' to be non-null");
+            if ($.expressions == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnFilterArgs", "expressions");
+            }
+            if ($.fieldName == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnFilterArgs", "fieldName");
+            }
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnFilterArgs", "isEnabled");
+            }
+            if ($.isHidden == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnFilterArgs", "isHidden");
+            }
+            if ($.operator == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnFilterArgs", "operator");
+            }
             return $;
         }
     }

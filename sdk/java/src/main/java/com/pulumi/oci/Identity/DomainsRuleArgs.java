@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsRuleConditionGroupArgs;
 import com.pulumi.oci.Identity.inputs.DomainsRulePolicyTypeArgs;
 import com.pulumi.oci.Identity.inputs.DomainsRuleReturnArgs;
@@ -1285,11 +1286,21 @@ public final class DomainsRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DomainsRuleArgs build() {
-            $.condition = Objects.requireNonNull($.condition, "expected parameter 'condition' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.policyType = Objects.requireNonNull($.policyType, "expected parameter 'policyType' to be non-null");
-            $.returns = Objects.requireNonNull($.returns, "expected parameter 'returns' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.condition == null) {
+                throw new MissingRequiredPropertyException("DomainsRuleArgs", "condition");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsRuleArgs", "idcsEndpoint");
+            }
+            if ($.policyType == null) {
+                throw new MissingRequiredPropertyException("DomainsRuleArgs", "policyType");
+            }
+            if ($.returns == null) {
+                throw new MissingRequiredPropertyException("DomainsRuleArgs", "returns");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsRuleArgs", "schemas");
+            }
             return $;
         }
     }

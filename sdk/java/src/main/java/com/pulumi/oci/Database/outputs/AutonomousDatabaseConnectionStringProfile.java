@@ -149,46 +149,55 @@ public final class AutonomousDatabaseConnectionStringProfile {
 
         @CustomType.Setter
         public Builder consumerGroup(@Nullable String consumerGroup) {
+
             this.consumerGroup = consumerGroup;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder hostFormat(@Nullable String hostFormat) {
+
             this.hostFormat = hostFormat;
             return this;
         }
         @CustomType.Setter
         public Builder isRegional(@Nullable Boolean isRegional) {
+
             this.isRegional = isRegional;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
+
             this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder sessionMode(@Nullable String sessionMode) {
+
             this.sessionMode = sessionMode;
             return this;
         }
         @CustomType.Setter
         public Builder syntaxFormat(@Nullable String syntaxFormat) {
+
             this.syntaxFormat = syntaxFormat;
             return this;
         }
         @CustomType.Setter
         public Builder tlsAuthentication(@Nullable String tlsAuthentication) {
+
             this.tlsAuthentication = tlsAuthentication;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable String value) {
+
             this.value = value;
             return this;
         }

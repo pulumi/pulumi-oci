@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -164,52 +165,80 @@ public final class GetBackendsBackend {
 
         @CustomType.Setter
         public Builder backendsetName(String backendsetName) {
-            this.backendsetName = Objects.requireNonNull(backendsetName);
+            if (backendsetName == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "backendsetName");
+            }
+            this.backendsetName = backendsetName;
             return this;
         }
         @CustomType.Setter
         public Builder backup(@Nullable Boolean backup) {
+
             this.backup = backup;
             return this;
         }
         @CustomType.Setter
         public Builder drain(Boolean drain) {
-            this.drain = Objects.requireNonNull(drain);
+            if (drain == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "drain");
+            }
+            this.drain = drain;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder offline(Boolean offline) {
-            this.offline = Objects.requireNonNull(offline);
+            if (offline == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "offline");
+            }
+            this.offline = offline;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+            if (weight == null) {
+              throw new MissingRequiredPropertyException("GetBackendsBackend", "weight");
+            }
+            this.weight = weight;
             return this;
         }
         public GetBackendsBackend build() {

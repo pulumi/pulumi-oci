@@ -4,6 +4,7 @@
 package com.pulumi.oci.Redis.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Redis.outputs.GetRedisClusterNodeCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetRedisClusterNodeCollection {
 
         @CustomType.Setter
         public Builder items(List<GetRedisClusterNodeCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterNodeCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetRedisClusterNodeCollectionItem... items) {

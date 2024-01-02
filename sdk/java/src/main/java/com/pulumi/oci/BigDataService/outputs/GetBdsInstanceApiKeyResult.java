@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -172,62 +173,98 @@ public final class GetBdsInstanceApiKeyResult {
 
         @CustomType.Setter
         public Builder apiKeyId(String apiKeyId) {
-            this.apiKeyId = Objects.requireNonNull(apiKeyId);
+            if (apiKeyId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "apiKeyId");
+            }
+            this.apiKeyId = apiKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            if (bdsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "bdsInstanceId");
+            }
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder defaultRegion(String defaultRegion) {
-            this.defaultRegion = Objects.requireNonNull(defaultRegion);
+            if (defaultRegion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "defaultRegion");
+            }
+            this.defaultRegion = defaultRegion;
             return this;
         }
         @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+            if (fingerprint == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "fingerprint");
+            }
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyAlias(String keyAlias) {
-            this.keyAlias = Objects.requireNonNull(keyAlias);
+            if (keyAlias == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "keyAlias");
+            }
+            this.keyAlias = keyAlias;
             return this;
         }
         @CustomType.Setter
         public Builder passphrase(String passphrase) {
-            this.passphrase = Objects.requireNonNull(passphrase);
+            if (passphrase == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "passphrase");
+            }
+            this.passphrase = passphrase;
             return this;
         }
         @CustomType.Setter
         public Builder pemfilepath(String pemfilepath) {
-            this.pemfilepath = Objects.requireNonNull(pemfilepath);
+            if (pemfilepath == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "pemfilepath");
+            }
+            this.pemfilepath = pemfilepath;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceApiKeyResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetBdsInstanceApiKeyResult build() {

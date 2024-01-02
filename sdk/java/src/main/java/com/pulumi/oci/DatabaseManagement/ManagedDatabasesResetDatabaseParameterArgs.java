@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ManagedDatabasesResetDatabaseParameterCredentialsArgs;
 import java.lang.String;
 import java.util.List;
@@ -217,10 +218,18 @@ public final class ManagedDatabasesResetDatabaseParameterArgs extends com.pulumi
         }
 
         public ManagedDatabasesResetDatabaseParameterArgs build() {
-            $.credentials = Objects.requireNonNull($.credentials, "expected parameter 'credentials' to be non-null");
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.parameters = Objects.requireNonNull($.parameters, "expected parameter 'parameters' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
+            if ($.credentials == null) {
+                throw new MissingRequiredPropertyException("ManagedDatabasesResetDatabaseParameterArgs", "credentials");
+            }
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("ManagedDatabasesResetDatabaseParameterArgs", "managedDatabaseId");
+            }
+            if ($.parameters == null) {
+                throw new MissingRequiredPropertyException("ManagedDatabasesResetDatabaseParameterArgs", "parameters");
+            }
+            if ($.scope == null) {
+                throw new MissingRequiredPropertyException("ManagedDatabasesResetDatabaseParameterArgs", "scope");
+            }
             return $;
         }
     }

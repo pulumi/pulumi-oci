@@ -62,6 +62,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
 
         @CustomType.Setter
         public Builder realmUsers(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser> realmUsers) {
+
             this.realmUsers = realmUsers;
             return this;
         }

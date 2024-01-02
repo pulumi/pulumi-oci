@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayHostListenerTlsClientValidationArgs;
 import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayHostListenerTlsServerCertificateArgs;
 import java.lang.String;
@@ -152,7 +153,9 @@ public final class IngressGatewayHostListenerTlsArgs extends com.pulumi.resource
         }
 
         public IngressGatewayHostListenerTlsArgs build() {
-            $.mode = Objects.requireNonNull($.mode, "expected parameter 'mode' to be non-null");
+            if ($.mode == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayHostListenerTlsArgs", "mode");
+            }
             return $;
         }
     }

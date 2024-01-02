@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy;
@@ -239,7 +240,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
 
         @CustomType.Setter
         public Builder audiences(List<String> audiences) {
-            this.audiences = Objects.requireNonNull(audiences);
+            if (audiences == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "audiences");
+            }
+            this.audiences = audiences;
             return this;
         }
         public Builder audiences(String... audiences) {
@@ -247,7 +251,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
         @CustomType.Setter
         public Builder cacheKeys(List<String> cacheKeys) {
-            this.cacheKeys = Objects.requireNonNull(cacheKeys);
+            if (cacheKeys == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "cacheKeys");
+            }
+            this.cacheKeys = cacheKeys;
             return this;
         }
         public Builder cacheKeys(String... cacheKeys) {
@@ -255,17 +262,26 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
         @CustomType.Setter
         public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+            if (functionId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "functionId");
+            }
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder isAnonymousAccessAllowed(Boolean isAnonymousAccessAllowed) {
-            this.isAnonymousAccessAllowed = Objects.requireNonNull(isAnonymousAccessAllowed);
+            if (isAnonymousAccessAllowed == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "isAnonymousAccessAllowed");
+            }
+            this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder issuers(List<String> issuers) {
-            this.issuers = Objects.requireNonNull(issuers);
+            if (issuers == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "issuers");
+            }
+            this.issuers = issuers;
             return this;
         }
         public Builder issuers(String... issuers) {
@@ -273,17 +289,26 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
         @CustomType.Setter
         public Builder maxClockSkewInSeconds(Double maxClockSkewInSeconds) {
-            this.maxClockSkewInSeconds = Objects.requireNonNull(maxClockSkewInSeconds);
+            if (maxClockSkewInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "maxClockSkewInSeconds");
+            }
+            this.maxClockSkewInSeconds = maxClockSkewInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(Map<String,Object> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
         public Builder publicKeys(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey> publicKeys) {
-            this.publicKeys = Objects.requireNonNull(publicKeys);
+            if (publicKeys == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "publicKeys");
+            }
+            this.publicKeys = publicKeys;
             return this;
         }
         public Builder publicKeys(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey... publicKeys) {
@@ -291,27 +316,42 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
         @CustomType.Setter
         public Builder tokenAuthScheme(String tokenAuthScheme) {
-            this.tokenAuthScheme = Objects.requireNonNull(tokenAuthScheme);
+            if (tokenAuthScheme == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "tokenAuthScheme");
+            }
+            this.tokenAuthScheme = tokenAuthScheme;
             return this;
         }
         @CustomType.Setter
         public Builder tokenHeader(String tokenHeader) {
-            this.tokenHeader = Objects.requireNonNull(tokenHeader);
+            if (tokenHeader == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "tokenHeader");
+            }
+            this.tokenHeader = tokenHeader;
             return this;
         }
         @CustomType.Setter
         public Builder tokenQueryParam(String tokenQueryParam) {
-            this.tokenQueryParam = Objects.requireNonNull(tokenQueryParam);
+            if (tokenQueryParam == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "tokenQueryParam");
+            }
+            this.tokenQueryParam = tokenQueryParam;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder validationFailurePolicies(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies) {
-            this.validationFailurePolicies = Objects.requireNonNull(validationFailurePolicies);
+            if (validationFailurePolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "validationFailurePolicies");
+            }
+            this.validationFailurePolicies = validationFailurePolicies;
             return this;
         }
         public Builder validationFailurePolicies(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicy... validationFailurePolicies) {
@@ -319,7 +359,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
         @CustomType.Setter
         public Builder validationPolicies(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies) {
-            this.validationPolicies = Objects.requireNonNull(validationPolicies);
+            if (validationPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "validationPolicies");
+            }
+            this.validationPolicies = validationPolicies;
             return this;
         }
         public Builder validationPolicies(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicy... validationPolicies) {
@@ -327,7 +370,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
         @CustomType.Setter
         public Builder verifyClaims(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims) {
-            this.verifyClaims = Objects.requireNonNull(verifyClaims);
+            if (verifyClaims == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication", "verifyClaims");
+            }
+            this.verifyClaims = verifyClaims;
             return this;
         }
         public Builder verifyClaims(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationVerifyClaim... verifyClaims) {

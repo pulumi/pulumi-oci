@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPolicyResponseCachingPolicy;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPolicyResponseCompressionPolicy;
 import java.lang.Object;
@@ -207,37 +208,58 @@ public final class GetAppAccelerationPolicyResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder responseCachingPolicies(List<GetAppAccelerationPolicyResponseCachingPolicy> responseCachingPolicies) {
-            this.responseCachingPolicies = Objects.requireNonNull(responseCachingPolicies);
+            if (responseCachingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "responseCachingPolicies");
+            }
+            this.responseCachingPolicies = responseCachingPolicies;
             return this;
         }
         public Builder responseCachingPolicies(GetAppAccelerationPolicyResponseCachingPolicy... responseCachingPolicies) {
@@ -245,7 +267,10 @@ public final class GetAppAccelerationPolicyResult {
         }
         @CustomType.Setter
         public Builder responseCompressionPolicies(List<GetAppAccelerationPolicyResponseCompressionPolicy> responseCompressionPolicies) {
-            this.responseCompressionPolicies = Objects.requireNonNull(responseCompressionPolicies);
+            if (responseCompressionPolicies == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "responseCompressionPolicies");
+            }
+            this.responseCompressionPolicies = responseCompressionPolicies;
             return this;
         }
         public Builder responseCompressionPolicies(GetAppAccelerationPolicyResponseCompressionPolicy... responseCompressionPolicies) {
@@ -253,27 +278,42 @@ public final class GetAppAccelerationPolicyResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder webAppAccelerationPolicyId(String webAppAccelerationPolicyId) {
-            this.webAppAccelerationPolicyId = Objects.requireNonNull(webAppAccelerationPolicyId);
+            if (webAppAccelerationPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPolicyResult", "webAppAccelerationPolicyId");
+            }
+            this.webAppAccelerationPolicyId = webAppAccelerationPolicyId;
             return this;
         }
         public GetAppAccelerationPolicyResult build() {

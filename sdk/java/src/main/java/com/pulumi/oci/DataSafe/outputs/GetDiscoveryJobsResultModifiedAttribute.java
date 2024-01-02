@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -57,7 +58,10 @@ public final class GetDiscoveryJobsResultModifiedAttribute {
 
         @CustomType.Setter
         public Builder appDefinedChildColumnKeys(List<String> appDefinedChildColumnKeys) {
-            this.appDefinedChildColumnKeys = Objects.requireNonNull(appDefinedChildColumnKeys);
+            if (appDefinedChildColumnKeys == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultModifiedAttribute", "appDefinedChildColumnKeys");
+            }
+            this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             return this;
         }
         public Builder appDefinedChildColumnKeys(String... appDefinedChildColumnKeys) {
@@ -65,7 +69,10 @@ public final class GetDiscoveryJobsResultModifiedAttribute {
         }
         @CustomType.Setter
         public Builder dbDefinedChildColumnKeys(List<String> dbDefinedChildColumnKeys) {
-            this.dbDefinedChildColumnKeys = Objects.requireNonNull(dbDefinedChildColumnKeys);
+            if (dbDefinedChildColumnKeys == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultModifiedAttribute", "dbDefinedChildColumnKeys");
+            }
+            this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             return this;
         }
         public Builder dbDefinedChildColumnKeys(String... dbDefinedChildColumnKeys) {

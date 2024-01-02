@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -194,27 +195,36 @@ public final class DomainsSelfRegistrationProfileUserAttribute {
 
         @CustomType.Setter
         public Builder deletable(@Nullable Boolean deletable) {
+
             this.deletable = deletable;
             return this;
         }
         @CustomType.Setter
         public Builder fullyQualifiedAttributeName(@Nullable String fullyQualifiedAttributeName) {
+
             this.fullyQualifiedAttributeName = fullyQualifiedAttributeName;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(@Nullable String metadata) {
+
             this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder seqNumber(Integer seqNumber) {
-            this.seqNumber = Objects.requireNonNull(seqNumber);
+            if (seqNumber == null) {
+              throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileUserAttribute", "seqNumber");
+            }
+            this.seqNumber = seqNumber;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileUserAttribute", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsSelfRegistrationProfileUserAttribute build() {

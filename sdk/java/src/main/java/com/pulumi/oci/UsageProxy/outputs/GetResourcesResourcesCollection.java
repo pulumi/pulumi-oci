@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetResourcesResourcesCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetResourcesResourcesCollection {
 
         @CustomType.Setter
         public Builder items(List<GetResourcesResourcesCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetResourcesResourcesCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetResourcesResourcesCollectionItem... items) {

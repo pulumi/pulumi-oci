@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAiPrivateEndpointPlainArgs extends com.pulumi.resources.In
         }
 
         public GetAiPrivateEndpointPlainArgs build() {
-            $.aiPrivateEndpointId = Objects.requireNonNull($.aiPrivateEndpointId, "expected parameter 'aiPrivateEndpointId' to be non-null");
+            if ($.aiPrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetAiPrivateEndpointPlainArgs", "aiPrivateEndpointId");
+            }
             return $;
         }
     }

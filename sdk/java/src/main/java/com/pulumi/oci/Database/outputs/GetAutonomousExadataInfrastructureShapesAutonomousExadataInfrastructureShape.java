@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetAutonomousExadataInfrastructureShapesAutonomousExadataInfr
 
         @CustomType.Setter
         public Builder availableCoreCount(Integer availableCoreCount) {
-            this.availableCoreCount = Objects.requireNonNull(availableCoreCount);
+            if (availableCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape", "availableCoreCount");
+            }
+            this.availableCoreCount = availableCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder coreCountIncrement(Integer coreCountIncrement) {
-            this.coreCountIncrement = Objects.requireNonNull(coreCountIncrement);
+            if (coreCountIncrement == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape", "coreCountIncrement");
+            }
+            this.coreCountIncrement = coreCountIncrement;
             return this;
         }
         @CustomType.Setter
         public Builder maximumNodeCount(Integer maximumNodeCount) {
-            this.maximumNodeCount = Objects.requireNonNull(maximumNodeCount);
+            if (maximumNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape", "maximumNodeCount");
+            }
+            this.maximumNodeCount = maximumNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder minimumCoreCount(Integer minimumCoreCount) {
-            this.minimumCoreCount = Objects.requireNonNull(minimumCoreCount);
+            if (minimumCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape", "minimumCoreCount");
+            }
+            this.minimumCoreCount = minimumCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder minimumNodeCount(Integer minimumNodeCount) {
-            this.minimumNodeCount = Objects.requireNonNull(minimumNodeCount);
+            if (minimumNodeCount == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape", "minimumNodeCount");
+            }
+            this.minimumNodeCount = minimumNodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape build() {

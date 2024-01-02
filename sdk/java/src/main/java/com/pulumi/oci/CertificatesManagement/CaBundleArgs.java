@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -275,8 +276,12 @@ public final class CaBundleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public CaBundleArgs build() {
-            $.caBundlePem = Objects.requireNonNull($.caBundlePem, "expected parameter 'caBundlePem' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.caBundlePem == null) {
+                throw new MissingRequiredPropertyException("CaBundleArgs", "caBundlePem");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CaBundleArgs", "compartmentId");
+            }
             return $;
         }
     }

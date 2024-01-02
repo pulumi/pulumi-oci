@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAverageCarbonEmissionPlainArgs extends com.pulumi.resource
         }
 
         public GetAverageCarbonEmissionPlainArgs build() {
-            $.skuPartNumber = Objects.requireNonNull($.skuPartNumber, "expected parameter 'skuPartNumber' to be non-null");
+            if ($.skuPartNumber == null) {
+                throw new MissingRequiredPropertyException("GetAverageCarbonEmissionPlainArgs", "skuPartNumber");
+            }
             return $;
         }
     }

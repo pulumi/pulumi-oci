@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentityPropagationTrustsIdentityPropagationTrustImpersonationServiceUser;
@@ -541,22 +542,34 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
 
         @CustomType.Setter
         public Builder accountId(String accountId) {
-            this.accountId = Objects.requireNonNull(accountId);
+            if (accountId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "accountId");
+            }
+            this.accountId = accountId;
             return this;
         }
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder allowImpersonation(Boolean allowImpersonation) {
-            this.allowImpersonation = Objects.requireNonNull(allowImpersonation);
+            if (allowImpersonation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "allowImpersonation");
+            }
+            this.allowImpersonation = allowImpersonation;
             return this;
         }
         @CustomType.Setter
         public Builder attributeSets(List<String> attributeSets) {
-            this.attributeSets = Objects.requireNonNull(attributeSets);
+            if (attributeSets == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "attributeSets");
+            }
+            this.attributeSets = attributeSets;
             return this;
         }
         public Builder attributeSets(String... attributeSets) {
@@ -564,22 +577,34 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder attributes(String attributes) {
-            this.attributes = Objects.requireNonNull(attributes);
+            if (attributes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "attributes");
+            }
+            this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder clientClaimName(String clientClaimName) {
-            this.clientClaimName = Objects.requireNonNull(clientClaimName);
+            if (clientClaimName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "clientClaimName");
+            }
+            this.clientClaimName = clientClaimName;
             return this;
         }
         @CustomType.Setter
         public Builder clientClaimValues(List<String> clientClaimValues) {
-            this.clientClaimValues = Objects.requireNonNull(clientClaimValues);
+            if (clientClaimValues == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "clientClaimValues");
+            }
+            this.clientClaimValues = clientClaimValues;
             return this;
         }
         public Builder clientClaimValues(String... clientClaimValues) {
@@ -587,37 +612,58 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder clockSkewSeconds(Integer clockSkewSeconds) {
-            this.clockSkewSeconds = Objects.requireNonNull(clockSkewSeconds);
+            if (clockSkewSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "clockSkewSeconds");
+            }
+            this.clockSkewSeconds = clockSkewSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsCreatedBy... idcsCreatedBies) {
@@ -625,12 +671,18 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsIdentityPropagationTrustsIdentityPropagationTrustIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -638,12 +690,18 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -651,7 +709,10 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder impersonationServiceUsers(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustImpersonationServiceUser> impersonationServiceUsers) {
-            this.impersonationServiceUsers = Objects.requireNonNull(impersonationServiceUsers);
+            if (impersonationServiceUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "impersonationServiceUsers");
+            }
+            this.impersonationServiceUsers = impersonationServiceUsers;
             return this;
         }
         public Builder impersonationServiceUsers(GetDomainsIdentityPropagationTrustsIdentityPropagationTrustImpersonationServiceUser... impersonationServiceUsers) {
@@ -659,12 +720,18 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder issuer(String issuer) {
-            this.issuer = Objects.requireNonNull(issuer);
+            if (issuer == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "issuer");
+            }
+            this.issuer = issuer;
             return this;
         }
         @CustomType.Setter
         public Builder keytabs(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustKeytab> keytabs) {
-            this.keytabs = Objects.requireNonNull(keytabs);
+            if (keytabs == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "keytabs");
+            }
+            this.keytabs = keytabs;
             return this;
         }
         public Builder keytabs(GetDomainsIdentityPropagationTrustsIdentityPropagationTrustKeytab... keytabs) {
@@ -672,7 +739,10 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsIdentityPropagationTrustsIdentityPropagationTrustMeta... metas) {
@@ -680,12 +750,18 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder oauthClients(List<String> oauthClients) {
-            this.oauthClients = Objects.requireNonNull(oauthClients);
+            if (oauthClients == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "oauthClients");
+            }
+            this.oauthClients = oauthClients;
             return this;
         }
         public Builder oauthClients(String... oauthClients) {
@@ -693,27 +769,42 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder publicCertificate(String publicCertificate) {
-            this.publicCertificate = Objects.requireNonNull(publicCertificate);
+            if (publicCertificate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "publicCertificate");
+            }
+            this.publicCertificate = publicCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder publicKeyEndpoint(String publicKeyEndpoint) {
-            this.publicKeyEndpoint = Objects.requireNonNull(publicKeyEndpoint);
+            if (publicKeyEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "publicKeyEndpoint");
+            }
+            this.publicKeyEndpoint = publicKeyEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -721,22 +812,34 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder subjectClaimName(String subjectClaimName) {
-            this.subjectClaimName = Objects.requireNonNull(subjectClaimName);
+            if (subjectClaimName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "subjectClaimName");
+            }
+            this.subjectClaimName = subjectClaimName;
             return this;
         }
         @CustomType.Setter
         public Builder subjectMappingAttribute(String subjectMappingAttribute) {
-            this.subjectMappingAttribute = Objects.requireNonNull(subjectMappingAttribute);
+            if (subjectMappingAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "subjectMappingAttribute");
+            }
+            this.subjectMappingAttribute = subjectMappingAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder subjectType(String subjectType) {
-            this.subjectType = Objects.requireNonNull(subjectType);
+            if (subjectType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "subjectType");
+            }
+            this.subjectType = subjectType;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsIdentityPropagationTrustsIdentityPropagationTrustTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsIdentityPropagationTrustsIdentityPropagationTrustTag... tags) {
@@ -744,12 +847,18 @@ public final class GetDomainsIdentityPropagationTrustsIdentityPropagationTrust {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityPropagationTrustsIdentityPropagationTrust", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDomainsIdentityPropagationTrustsIdentityPropagationTrust build() {

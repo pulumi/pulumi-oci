@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserDbCredentialIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserDbCredentialIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserDbCredentialMeta;
@@ -424,6 +425,7 @@ public final class GetDomainsUserDbCredentialResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -432,57 +434,86 @@ public final class GetDomainsUserDbCredentialResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder dbPassword(String dbPassword) {
-            this.dbPassword = Objects.requireNonNull(dbPassword);
+            if (dbPassword == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "dbPassword");
+            }
+            this.dbPassword = dbPassword;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder expired(Boolean expired) {
-            this.expired = Objects.requireNonNull(expired);
+            if (expired == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "expired");
+            }
+            this.expired = expired;
             return this;
         }
         @CustomType.Setter
         public Builder expiresOn(String expiresOn) {
-            this.expiresOn = Objects.requireNonNull(expiresOn);
+            if (expiresOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "expiresOn");
+            }
+            this.expiresOn = expiresOn;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsUserDbCredentialIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsUserDbCredentialIdcsCreatedBy... idcsCreatedBies) {
@@ -490,12 +521,18 @@ public final class GetDomainsUserDbCredentialResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsUserDbCredentialIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsUserDbCredentialIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -503,12 +540,18 @@ public final class GetDomainsUserDbCredentialResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -516,12 +559,18 @@ public final class GetDomainsUserDbCredentialResult {
         }
         @CustomType.Setter
         public Builder lastSetDate(String lastSetDate) {
-            this.lastSetDate = Objects.requireNonNull(lastSetDate);
+            if (lastSetDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "lastSetDate");
+            }
+            this.lastSetDate = lastSetDate;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsUserDbCredentialMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsUserDbCredentialMeta... metas) {
@@ -529,37 +578,56 @@ public final class GetDomainsUserDbCredentialResult {
         }
         @CustomType.Setter
         public Builder mixedDbPassword(String mixedDbPassword) {
-            this.mixedDbPassword = Objects.requireNonNull(mixedDbPassword);
+            if (mixedDbPassword == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "mixedDbPassword");
+            }
+            this.mixedDbPassword = mixedDbPassword;
             return this;
         }
         @CustomType.Setter
         public Builder mixedSalt(String mixedSalt) {
-            this.mixedSalt = Objects.requireNonNull(mixedSalt);
+            if (mixedSalt == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "mixedSalt");
+            }
+            this.mixedSalt = mixedSalt;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder salt(String salt) {
-            this.salt = Objects.requireNonNull(salt);
+            if (salt == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "salt");
+            }
+            this.salt = salt;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -567,12 +635,18 @@ public final class GetDomainsUserDbCredentialResult {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsUserDbCredentialTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsUserDbCredentialTag... tags) {
@@ -580,12 +654,18 @@ public final class GetDomainsUserDbCredentialResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(List<GetDomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser> urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
-            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionselfChangeUsers);
+            if (urnietfparamsscimschemasoracleidcsextensionselfChangeUsers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "urnietfparamsscimschemasoracleidcsextensionselfChangeUsers");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionselfChangeUsers(GetDomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser... urnietfparamsscimschemasoracleidcsextensionselfChangeUsers) {
@@ -593,12 +673,18 @@ public final class GetDomainsUserDbCredentialResult {
         }
         @CustomType.Setter
         public Builder userDbCredentialId(String userDbCredentialId) {
-            this.userDbCredentialId = Objects.requireNonNull(userDbCredentialId);
+            if (userDbCredentialId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "userDbCredentialId");
+            }
+            this.userDbCredentialId = userDbCredentialId;
             return this;
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsUserDbCredentialUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserDbCredentialResult", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsUserDbCredentialUser... users) {

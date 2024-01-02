@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionArgs extends com
         }
 
         public GetComputeGlobalImageCapabilitySchemasVersionArgs build() {
-            $.computeGlobalImageCapabilitySchemaId = Objects.requireNonNull($.computeGlobalImageCapabilitySchemaId, "expected parameter 'computeGlobalImageCapabilitySchemaId' to be non-null");
-            $.computeGlobalImageCapabilitySchemaVersionName = Objects.requireNonNull($.computeGlobalImageCapabilitySchemaVersionName, "expected parameter 'computeGlobalImageCapabilitySchemaVersionName' to be non-null");
+            if ($.computeGlobalImageCapabilitySchemaId == null) {
+                throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionArgs", "computeGlobalImageCapabilitySchemaId");
+            }
+            if ($.computeGlobalImageCapabilitySchemaVersionName == null) {
+                throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionArgs", "computeGlobalImageCapabilitySchemaVersionName");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollection {
 
         @CustomType.Setter
         public Builder items(List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem... items) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -350,7 +351,9 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public MysqlBackupArgs build() {
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("MysqlBackupArgs", "dbSystemId");
+            }
             return $;
         }
     }

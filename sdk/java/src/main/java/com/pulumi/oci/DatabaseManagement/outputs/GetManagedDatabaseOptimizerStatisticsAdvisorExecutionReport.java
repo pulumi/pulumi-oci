@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport {
 
         @CustomType.Setter
         public Builder rules(List<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRule... rules) {
@@ -66,7 +70,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport {
         }
         @CustomType.Setter
         public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+            if (summary == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport", "summary");
+            }
+            this.summary = summary;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReport build() {

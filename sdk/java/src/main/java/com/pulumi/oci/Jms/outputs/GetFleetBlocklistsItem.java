@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsItemTarget;
 import java.lang.String;
 import java.util.List;
@@ -86,22 +87,34 @@ public final class GetFleetBlocklistsItem {
 
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+            if (operation == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsItem", "operation");
+            }
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
         public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+            if (reason == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsItem", "reason");
+            }
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
         public Builder targets(List<GetFleetBlocklistsItemTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+            if (targets == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsItem", "targets");
+            }
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetFleetBlocklistsItemTarget... targets) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata;
 import java.lang.String;
 import java.util.Objects;
@@ -59,11 +60,15 @@ public final class DatasetDatasetFormatDetails {
 
         @CustomType.Setter
         public Builder formatType(String formatType) {
-            this.formatType = Objects.requireNonNull(formatType);
+            if (formatType == null) {
+              throw new MissingRequiredPropertyException("DatasetDatasetFormatDetails", "formatType");
+            }
+            this.formatType = formatType;
             return this;
         }
         @CustomType.Setter
         public Builder textFileTypeMetadata(@Nullable DatasetDatasetFormatDetailsTextFileTypeMetadata textFileTypeMetadata) {
+
             this.textFileTypeMetadata = textFileTypeMetadata;
             return this;
         }

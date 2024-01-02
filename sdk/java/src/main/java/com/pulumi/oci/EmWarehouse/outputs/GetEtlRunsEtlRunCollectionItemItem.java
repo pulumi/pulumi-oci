@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -184,57 +185,90 @@ public final class GetEtlRunsEtlRunCollectionItemItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dataReadInBytes(String dataReadInBytes) {
-            this.dataReadInBytes = Objects.requireNonNull(dataReadInBytes);
+            if (dataReadInBytes == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "dataReadInBytes");
+            }
+            this.dataReadInBytes = dataReadInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder dataWritten(String dataWritten) {
-            this.dataWritten = Objects.requireNonNull(dataWritten);
+            if (dataWritten == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "dataWritten");
+            }
+            this.dataWritten = dataWritten;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder runDurationInMilliseconds(String runDurationInMilliseconds) {
-            this.runDurationInMilliseconds = Objects.requireNonNull(runDurationInMilliseconds);
+            if (runDurationInMilliseconds == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "runDurationInMilliseconds");
+            }
+            this.runDurationInMilliseconds = runDurationInMilliseconds;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItemItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetEtlRunsEtlRunCollectionItemItem build() {

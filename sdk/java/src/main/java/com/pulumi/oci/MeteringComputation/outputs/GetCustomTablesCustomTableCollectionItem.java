@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTable;
 import java.lang.String;
 import java.util.List;
@@ -86,17 +87,26 @@ public final class GetCustomTablesCustomTableCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCustomTablesCustomTableCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCustomTablesCustomTableCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder savedCustomTables(List<GetCustomTablesCustomTableCollectionItemSavedCustomTable> savedCustomTables) {
-            this.savedCustomTables = Objects.requireNonNull(savedCustomTables);
+            if (savedCustomTables == null) {
+              throw new MissingRequiredPropertyException("GetCustomTablesCustomTableCollectionItem", "savedCustomTables");
+            }
+            this.savedCustomTables = savedCustomTables;
             return this;
         }
         public Builder savedCustomTables(GetCustomTablesCustomTableCollectionItemSavedCustomTable... savedCustomTables) {
@@ -104,7 +114,10 @@ public final class GetCustomTablesCustomTableCollectionItem {
         }
         @CustomType.Setter
         public Builder savedReportId(String savedReportId) {
-            this.savedReportId = Objects.requireNonNull(savedReportId);
+            if (savedReportId == null) {
+              throw new MissingRequiredPropertyException("GetCustomTablesCustomTableCollectionItem", "savedReportId");
+            }
+            this.savedReportId = savedReportId;
             return this;
         }
         public GetCustomTablesCustomTableCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
@@ -100,27 +101,42 @@ public final class GetSubscriptionProductsProductCollectionItemItem {
 
         @CustomType.Setter
         public Builder earnedRewards(Double earnedRewards) {
-            this.earnedRewards = Objects.requireNonNull(earnedRewards);
+            if (earnedRewards == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductsProductCollectionItemItem", "earnedRewards");
+            }
+            this.earnedRewards = earnedRewards;
             return this;
         }
         @CustomType.Setter
         public Builder isEligibleToEarnRewards(Boolean isEligibleToEarnRewards) {
-            this.isEligibleToEarnRewards = Objects.requireNonNull(isEligibleToEarnRewards);
+            if (isEligibleToEarnRewards == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductsProductCollectionItemItem", "isEligibleToEarnRewards");
+            }
+            this.isEligibleToEarnRewards = isEligibleToEarnRewards;
             return this;
         }
         @CustomType.Setter
         public Builder productName(String productName) {
-            this.productName = Objects.requireNonNull(productName);
+            if (productName == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductsProductCollectionItemItem", "productName");
+            }
+            this.productName = productName;
             return this;
         }
         @CustomType.Setter
         public Builder productNumber(String productNumber) {
-            this.productNumber = Objects.requireNonNull(productNumber);
+            if (productNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductsProductCollectionItemItem", "productNumber");
+            }
+            this.productNumber = productNumber;
             return this;
         }
         @CustomType.Setter
         public Builder usageAmount(Double usageAmount) {
-            this.usageAmount = Objects.requireNonNull(usageAmount);
+            if (usageAmount == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionProductsProductCollectionItemItem", "usageAmount");
+            }
+            this.usageAmount = usageAmount;
             return this;
         }
         public GetSubscriptionProductsProductCollectionItemItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.ComputeCapacityReservationInstanceReservationConfigArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -335,9 +336,15 @@ public final class ComputeCapacityReservationArgs extends com.pulumi.resources.R
         }
 
         public ComputeCapacityReservationArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.instanceReservationConfigs = Objects.requireNonNull($.instanceReservationConfigs, "expected parameter 'instanceReservationConfigs' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("ComputeCapacityReservationArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ComputeCapacityReservationArgs", "compartmentId");
+            }
+            if ($.instanceReservationConfigs == null) {
+                throw new MissingRequiredPropertyException("ComputeCapacityReservationArgs", "instanceReservationConfigs");
+            }
             return $;
         }
     }

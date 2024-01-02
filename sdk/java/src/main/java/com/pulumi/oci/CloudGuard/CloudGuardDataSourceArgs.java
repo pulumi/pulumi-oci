@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -284,9 +285,15 @@ public final class CloudGuardDataSourceArgs extends com.pulumi.resources.Resourc
         }
 
         public CloudGuardDataSourceArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dataSourceFeedProvider = Objects.requireNonNull($.dataSourceFeedProvider, "expected parameter 'dataSourceFeedProvider' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CloudGuardDataSourceArgs", "compartmentId");
+            }
+            if ($.dataSourceFeedProvider == null) {
+                throw new MissingRequiredPropertyException("CloudGuardDataSourceArgs", "dataSourceFeedProvider");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("CloudGuardDataSourceArgs", "displayName");
+            }
             return $;
         }
     }

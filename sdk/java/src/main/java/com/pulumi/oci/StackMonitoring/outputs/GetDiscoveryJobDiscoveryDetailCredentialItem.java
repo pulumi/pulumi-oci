@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobDiscoveryDetailCredentialItemProperty;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetDiscoveryJobDiscoveryDetailCredentialItem {
 
         @CustomType.Setter
         public Builder credentialName(String credentialName) {
-            this.credentialName = Objects.requireNonNull(credentialName);
+            if (credentialName == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetailCredentialItem", "credentialName");
+            }
+            this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+            if (credentialType == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetailCredentialItem", "credentialType");
+            }
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder properties(List<GetDiscoveryJobDiscoveryDetailCredentialItemProperty> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobDiscoveryDetailCredentialItem", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         public Builder properties(GetDiscoveryJobDiscoveryDetailCredentialItemProperty... properties) {

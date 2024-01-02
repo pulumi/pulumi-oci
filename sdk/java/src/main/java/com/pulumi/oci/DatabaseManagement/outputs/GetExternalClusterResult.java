@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClusterNetworkConfiguration;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClusterScanConfiguration;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalClusterVipConfiguration;
@@ -293,62 +294,98 @@ public final class GetExternalClusterResult {
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+            if (componentName == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "componentName");
+            }
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalClusterId(String externalClusterId) {
-            this.externalClusterId = Objects.requireNonNull(externalClusterId);
+            if (externalClusterId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "externalClusterId");
+            }
+            this.externalClusterId = externalClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder externalConnectorId(String externalConnectorId) {
-            this.externalConnectorId = Objects.requireNonNull(externalConnectorId);
+            if (externalConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "externalConnectorId");
+            }
+            this.externalConnectorId = externalConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+            if (externalDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "externalDbSystemId");
+            }
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder gridHome(String gridHome) {
-            this.gridHome = Objects.requireNonNull(gridHome);
+            if (gridHome == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "gridHome");
+            }
+            this.gridHome = gridHome;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isFlexCluster(Boolean isFlexCluster) {
-            this.isFlexCluster = Objects.requireNonNull(isFlexCluster);
+            if (isFlexCluster == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "isFlexCluster");
+            }
+            this.isFlexCluster = isFlexCluster;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(List<GetExternalClusterNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetExternalClusterNetworkConfiguration... networkConfigurations) {
@@ -356,12 +393,18 @@ public final class GetExternalClusterResult {
         }
         @CustomType.Setter
         public Builder ocrFileLocation(String ocrFileLocation) {
-            this.ocrFileLocation = Objects.requireNonNull(ocrFileLocation);
+            if (ocrFileLocation == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "ocrFileLocation");
+            }
+            this.ocrFileLocation = ocrFileLocation;
             return this;
         }
         @CustomType.Setter
         public Builder scanConfigurations(List<GetExternalClusterScanConfiguration> scanConfigurations) {
-            this.scanConfigurations = Objects.requireNonNull(scanConfigurations);
+            if (scanConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "scanConfigurations");
+            }
+            this.scanConfigurations = scanConfigurations;
             return this;
         }
         public Builder scanConfigurations(GetExternalClusterScanConfiguration... scanConfigurations) {
@@ -369,27 +412,42 @@ public final class GetExternalClusterResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "version");
+            }
+            this.version = version;
             return this;
         }
         @CustomType.Setter
         public Builder vipConfigurations(List<GetExternalClusterVipConfiguration> vipConfigurations) {
-            this.vipConfigurations = Objects.requireNonNull(vipConfigurations);
+            if (vipConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterResult", "vipConfigurations");
+            }
+            this.vipConfigurations = vipConfigurations;
             return this;
         }
         public Builder vipConfigurations(GetExternalClusterVipConfiguration... vipConfigurations) {

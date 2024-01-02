@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetManagementAgentsManagementAgentPluginList {
 
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgentPluginList", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder pluginDisplayName(String pluginDisplayName) {
-            this.pluginDisplayName = Objects.requireNonNull(pluginDisplayName);
+            if (pluginDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgentPluginList", "pluginDisplayName");
+            }
+            this.pluginDisplayName = pluginDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder pluginId(String pluginId) {
-            this.pluginId = Objects.requireNonNull(pluginId);
+            if (pluginId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgentPluginList", "pluginId");
+            }
+            this.pluginId = pluginId;
             return this;
         }
         @CustomType.Setter
         public Builder pluginName(String pluginName) {
-            this.pluginName = Objects.requireNonNull(pluginName);
+            if (pluginName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgentPluginList", "pluginName");
+            }
+            this.pluginName = pluginName;
             return this;
         }
         @CustomType.Setter
         public Builder pluginStatus(String pluginStatus) {
-            this.pluginStatus = Objects.requireNonNull(pluginStatus);
+            if (pluginStatus == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgentPluginList", "pluginStatus");
+            }
+            this.pluginStatus = pluginStatus;
             return this;
         }
         @CustomType.Setter
         public Builder pluginStatusMessage(String pluginStatusMessage) {
-            this.pluginStatusMessage = Objects.requireNonNull(pluginStatusMessage);
+            if (pluginStatusMessage == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgentPluginList", "pluginStatusMessage");
+            }
+            this.pluginStatusMessage = pluginStatusMessage;
             return this;
         }
         @CustomType.Setter
         public Builder pluginVersion(String pluginVersion) {
-            this.pluginVersion = Objects.requireNonNull(pluginVersion);
+            if (pluginVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgentPluginList", "pluginVersion");
+            }
+            this.pluginVersion = pluginVersion;
             return this;
         }
         public GetManagementAgentsManagementAgentPluginList build() {

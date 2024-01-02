@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -938,8 +939,12 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         public DomainsCloudGateMappingArgs build() {
-            $.resourcePrefix = Objects.requireNonNull($.resourcePrefix, "expected parameter 'resourcePrefix' to be non-null");
-            $.serverId = Objects.requireNonNull($.serverId, "expected parameter 'serverId' to be non-null");
+            if ($.resourcePrefix == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "resourcePrefix");
+            }
+            if ($.serverId == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "serverId");
+            }
             return $;
         }
     }

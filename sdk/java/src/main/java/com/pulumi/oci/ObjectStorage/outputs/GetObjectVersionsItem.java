@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -169,52 +170,82 @@ public final class GetObjectVersionsItem {
 
         @CustomType.Setter
         public Builder archivalState(String archivalState) {
-            this.archivalState = Objects.requireNonNull(archivalState);
+            if (archivalState == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "archivalState");
+            }
+            this.archivalState = archivalState;
             return this;
         }
         @CustomType.Setter
         public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+            if (etag == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "etag");
+            }
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
         public Builder isDeleteMarker(Boolean isDeleteMarker) {
-            this.isDeleteMarker = Objects.requireNonNull(isDeleteMarker);
+            if (isDeleteMarker == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "isDeleteMarker");
+            }
+            this.isDeleteMarker = isDeleteMarker;
             return this;
         }
         @CustomType.Setter
         public Builder md5(String md5) {
-            this.md5 = Objects.requireNonNull(md5);
+            if (md5 == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "md5");
+            }
+            this.md5 = md5;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder size(String size) {
-            this.size = Objects.requireNonNull(size);
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
         public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+            if (storageTier == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "storageTier");
+            }
+            this.storageTier = storageTier;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
         public Builder versionId(String versionId) {
-            this.versionId = Objects.requireNonNull(versionId);
+            if (versionId == null) {
+              throw new MissingRequiredPropertyException("GetObjectVersionsItem", "versionId");
+            }
+            this.versionId = versionId;
             return this;
         }
         public GetObjectVersionsItem build() {

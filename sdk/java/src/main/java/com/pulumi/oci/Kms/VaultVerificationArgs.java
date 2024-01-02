@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -115,8 +116,12 @@ public final class VaultVerificationArgs extends com.pulumi.resources.ResourceAr
         }
 
         public VaultVerificationArgs build() {
-            $.replicaRegion = Objects.requireNonNull($.replicaRegion, "expected parameter 'replicaRegion' to be non-null");
-            $.vaultId = Objects.requireNonNull($.vaultId, "expected parameter 'vaultId' to be non-null");
+            if ($.replicaRegion == null) {
+                throw new MissingRequiredPropertyException("VaultVerificationArgs", "replicaRegion");
+            }
+            if ($.vaultId == null) {
+                throw new MissingRequiredPropertyException("VaultVerificationArgs", "vaultId");
+            }
             return $;
         }
     }

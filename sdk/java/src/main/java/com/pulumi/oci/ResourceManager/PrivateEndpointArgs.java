@@ -5,6 +5,7 @@ package com.pulumi.oci.ResourceManager;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -445,10 +446,18 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public PrivateEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "displayName");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "subnetId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("PrivateEndpointArgs", "vcnId");
+            }
             return $;
         }
     }

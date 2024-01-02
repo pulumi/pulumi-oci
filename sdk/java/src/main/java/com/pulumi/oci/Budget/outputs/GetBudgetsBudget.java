@@ -4,6 +4,7 @@
 package com.pulumi.oci.Budget.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -369,97 +370,154 @@ public final class GetBudgetsBudget {
 
         @CustomType.Setter
         public Builder actualSpend(Double actualSpend) {
-            this.actualSpend = Objects.requireNonNull(actualSpend);
+            if (actualSpend == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "actualSpend");
+            }
+            this.actualSpend = actualSpend;
             return this;
         }
         @CustomType.Setter
         public Builder alertRuleCount(Integer alertRuleCount) {
-            this.alertRuleCount = Objects.requireNonNull(alertRuleCount);
+            if (alertRuleCount == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "alertRuleCount");
+            }
+            this.alertRuleCount = alertRuleCount;
             return this;
         }
         @CustomType.Setter
         public Builder amount(Integer amount) {
-            this.amount = Objects.requireNonNull(amount);
+            if (amount == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "amount");
+            }
+            this.amount = amount;
             return this;
         }
         @CustomType.Setter
         public Builder budgetProcessingPeriodStartOffset(Integer budgetProcessingPeriodStartOffset) {
-            this.budgetProcessingPeriodStartOffset = Objects.requireNonNull(budgetProcessingPeriodStartOffset);
+            if (budgetProcessingPeriodStartOffset == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "budgetProcessingPeriodStartOffset");
+            }
+            this.budgetProcessingPeriodStartOffset = budgetProcessingPeriodStartOffset;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endDate(String endDate) {
-            this.endDate = Objects.requireNonNull(endDate);
+            if (endDate == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "endDate");
+            }
+            this.endDate = endDate;
             return this;
         }
         @CustomType.Setter
         public Builder forecastedSpend(Double forecastedSpend) {
-            this.forecastedSpend = Objects.requireNonNull(forecastedSpend);
+            if (forecastedSpend == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "forecastedSpend");
+            }
+            this.forecastedSpend = forecastedSpend;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder processingPeriodType(String processingPeriodType) {
-            this.processingPeriodType = Objects.requireNonNull(processingPeriodType);
+            if (processingPeriodType == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "processingPeriodType");
+            }
+            this.processingPeriodType = processingPeriodType;
             return this;
         }
         @CustomType.Setter
         public Builder resetPeriod(String resetPeriod) {
-            this.resetPeriod = Objects.requireNonNull(resetPeriod);
+            if (resetPeriod == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "resetPeriod");
+            }
+            this.resetPeriod = resetPeriod;
             return this;
         }
         @CustomType.Setter
         public Builder startDate(String startDate) {
-            this.startDate = Objects.requireNonNull(startDate);
+            if (startDate == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "startDate");
+            }
+            this.startDate = startDate;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetCompartmentId(String targetCompartmentId) {
-            this.targetCompartmentId = Objects.requireNonNull(targetCompartmentId);
+            if (targetCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "targetCompartmentId");
+            }
+            this.targetCompartmentId = targetCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder targetType(String targetType) {
-            this.targetType = Objects.requireNonNull(targetType);
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "targetType");
+            }
+            this.targetType = targetType;
             return this;
         }
         @CustomType.Setter
         public Builder targets(List<String> targets) {
-            this.targets = Objects.requireNonNull(targets);
+            if (targets == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "targets");
+            }
+            this.targets = targets;
             return this;
         }
         public Builder targets(String... targets) {
@@ -467,22 +525,34 @@ public final class GetBudgetsBudget {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeSpendComputed(String timeSpendComputed) {
-            this.timeSpendComputed = Objects.requireNonNull(timeSpendComputed);
+            if (timeSpendComputed == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "timeSpendComputed");
+            }
+            this.timeSpendComputed = timeSpendComputed;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetBudgetsBudget", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetBudgetsBudget build() {

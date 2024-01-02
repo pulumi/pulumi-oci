@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder socialAccounts(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount> socialAccounts) {
-            this.socialAccounts = Objects.requireNonNull(socialAccounts);
+            if (socialAccounts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser", "socialAccounts");
+            }
+            this.socialAccounts = socialAccounts;
             return this;
         }
         public Builder socialAccounts(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccount... socialAccounts) {

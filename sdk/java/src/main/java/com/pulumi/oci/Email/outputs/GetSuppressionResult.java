@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -160,52 +161,82 @@ public final class GetSuppressionResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder errorDetail(String errorDetail) {
-            this.errorDetail = Objects.requireNonNull(errorDetail);
+            if (errorDetail == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "errorDetail");
+            }
+            this.errorDetail = errorDetail;
             return this;
         }
         @CustomType.Setter
         public Builder errorSource(String errorSource) {
-            this.errorSource = Objects.requireNonNull(errorSource);
+            if (errorSource == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "errorSource");
+            }
+            this.errorSource = errorSource;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder messageId(String messageId) {
-            this.messageId = Objects.requireNonNull(messageId);
+            if (messageId == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "messageId");
+            }
+            this.messageId = messageId;
             return this;
         }
         @CustomType.Setter
         public Builder reason(String reason) {
-            this.reason = Objects.requireNonNull(reason);
+            if (reason == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "reason");
+            }
+            this.reason = reason;
             return this;
         }
         @CustomType.Setter
         public Builder suppressionId(String suppressionId) {
-            this.suppressionId = Objects.requireNonNull(suppressionId);
+            if (suppressionId == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "suppressionId");
+            }
+            this.suppressionId = suppressionId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSuppressed(String timeLastSuppressed) {
-            this.timeLastSuppressed = Objects.requireNonNull(timeLastSuppressed);
+            if (timeLastSuppressed == null) {
+              throw new MissingRequiredPropertyException("GetSuppressionResult", "timeLastSuppressed");
+            }
+            this.timeLastSuppressed = timeLastSuppressed;
             return this;
         }
         public GetSuppressionResult build() {

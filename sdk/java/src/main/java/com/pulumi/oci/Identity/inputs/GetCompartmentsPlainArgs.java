@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.GetCompartmentsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -199,7 +200,9 @@ public final class GetCompartmentsPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetCompartmentsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetCompartmentsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

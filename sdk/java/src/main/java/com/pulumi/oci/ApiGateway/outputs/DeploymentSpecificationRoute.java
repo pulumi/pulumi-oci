@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteBackend;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteLoggingPolicies;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteRequestPolicies;
@@ -119,16 +120,21 @@ public final class DeploymentSpecificationRoute {
 
         @CustomType.Setter
         public Builder backend(DeploymentSpecificationRouteBackend backend) {
-            this.backend = Objects.requireNonNull(backend);
+            if (backend == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRoute", "backend");
+            }
+            this.backend = backend;
             return this;
         }
         @CustomType.Setter
         public Builder loggingPolicies(@Nullable DeploymentSpecificationRouteLoggingPolicies loggingPolicies) {
+
             this.loggingPolicies = loggingPolicies;
             return this;
         }
         @CustomType.Setter
         public Builder methods(@Nullable List<String> methods) {
+
             this.methods = methods;
             return this;
         }
@@ -137,16 +143,21 @@ public final class DeploymentSpecificationRoute {
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRoute", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder requestPolicies(@Nullable DeploymentSpecificationRouteRequestPolicies requestPolicies) {
+
             this.requestPolicies = requestPolicies;
             return this;
         }
         @CustomType.Setter
         public Builder responsePolicies(@Nullable DeploymentSpecificationRouteResponsePolicies responsePolicies) {
+
             this.responsePolicies = responsePolicies;
             return this;
         }

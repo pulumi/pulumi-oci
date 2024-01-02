@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetQuotaPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetQuotaPlainArgs build() {
-            $.quotaId = Objects.requireNonNull($.quotaId, "expected parameter 'quotaId' to be non-null");
+            if ($.quotaId == null) {
+                throw new MissingRequiredPropertyException("GetQuotaPlainArgs", "quotaId");
+            }
             return $;
         }
     }

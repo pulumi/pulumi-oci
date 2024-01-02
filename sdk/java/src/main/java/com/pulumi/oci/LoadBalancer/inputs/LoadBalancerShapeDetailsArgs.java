@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -127,8 +128,12 @@ public final class LoadBalancerShapeDetailsArgs extends com.pulumi.resources.Res
         }
 
         public LoadBalancerShapeDetailsArgs build() {
-            $.maximumBandwidthInMbps = Objects.requireNonNull($.maximumBandwidthInMbps, "expected parameter 'maximumBandwidthInMbps' to be non-null");
-            $.minimumBandwidthInMbps = Objects.requireNonNull($.minimumBandwidthInMbps, "expected parameter 'minimumBandwidthInMbps' to be non-null");
+            if ($.maximumBandwidthInMbps == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerShapeDetailsArgs", "maximumBandwidthInMbps");
+            }
+            if ($.minimumBandwidthInMbps == null) {
+                throw new MissingRequiredPropertyException("LoadBalancerShapeDetailsArgs", "minimumBandwidthInMbps");
+            }
             return $;
         }
     }

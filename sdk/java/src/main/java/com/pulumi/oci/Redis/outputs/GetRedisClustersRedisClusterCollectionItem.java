@@ -4,6 +4,7 @@
 package com.pulumi.oci.Redis.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Redis.outputs.GetRedisClustersRedisClusterCollectionItemNodeCollection;
 import java.lang.Double;
 import java.lang.Integer;
@@ -300,37 +301,58 @@ public final class GetRedisClustersRedisClusterCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder nodeCollections(List<GetRedisClustersRedisClusterCollectionItemNodeCollection> nodeCollections) {
-            this.nodeCollections = Objects.requireNonNull(nodeCollections);
+            if (nodeCollections == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "nodeCollections");
+            }
+            this.nodeCollections = nodeCollections;
             return this;
         }
         public Builder nodeCollections(GetRedisClustersRedisClusterCollectionItemNodeCollection... nodeCollections) {
@@ -338,62 +360,98 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         }
         @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+            if (nodeCount == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "nodeCount");
+            }
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder nodeMemoryInGbs(Double nodeMemoryInGbs) {
-            this.nodeMemoryInGbs = Objects.requireNonNull(nodeMemoryInGbs);
+            if (nodeMemoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "nodeMemoryInGbs");
+            }
+            this.nodeMemoryInGbs = nodeMemoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder primaryEndpointIpAddress(String primaryEndpointIpAddress) {
-            this.primaryEndpointIpAddress = Objects.requireNonNull(primaryEndpointIpAddress);
+            if (primaryEndpointIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "primaryEndpointIpAddress");
+            }
+            this.primaryEndpointIpAddress = primaryEndpointIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder primaryFqdn(String primaryFqdn) {
-            this.primaryFqdn = Objects.requireNonNull(primaryFqdn);
+            if (primaryFqdn == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "primaryFqdn");
+            }
+            this.primaryFqdn = primaryFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder replicasEndpointIpAddress(String replicasEndpointIpAddress) {
-            this.replicasEndpointIpAddress = Objects.requireNonNull(replicasEndpointIpAddress);
+            if (replicasEndpointIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "replicasEndpointIpAddress");
+            }
+            this.replicasEndpointIpAddress = replicasEndpointIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder replicasFqdn(String replicasFqdn) {
-            this.replicasFqdn = Objects.requireNonNull(replicasFqdn);
+            if (replicasFqdn == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "replicasFqdn");
+            }
+            this.replicasFqdn = replicasFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder softwareVersion(String softwareVersion) {
-            this.softwareVersion = Objects.requireNonNull(softwareVersion);
+            if (softwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "softwareVersion");
+            }
+            this.softwareVersion = softwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetRedisClustersRedisClusterCollectionItem build() {

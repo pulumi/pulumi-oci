@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder exclusions(List<GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+            if (exclusions == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule", "exclusions");
+            }
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion... exclusions) {
@@ -85,7 +92,10 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule build() {

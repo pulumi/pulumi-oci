@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsFilter;
 import com.pulumi.oci.UsageProxy.outputs.GetSubscriptionRewardsRewardCollection;
 import java.lang.String;
@@ -94,6 +95,7 @@ public final class GetSubscriptionRewardsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionRewardsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -102,12 +104,18 @@ public final class GetSubscriptionRewardsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder rewardCollections(List<GetSubscriptionRewardsRewardCollection> rewardCollections) {
-            this.rewardCollections = Objects.requireNonNull(rewardCollections);
+            if (rewardCollections == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardsResult", "rewardCollections");
+            }
+            this.rewardCollections = rewardCollections;
             return this;
         }
         public Builder rewardCollections(GetSubscriptionRewardsRewardCollection... rewardCollections) {
@@ -115,12 +123,18 @@ public final class GetSubscriptionRewardsResult {
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardsResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionRewardsResult", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         public GetSubscriptionRewardsResult build() {

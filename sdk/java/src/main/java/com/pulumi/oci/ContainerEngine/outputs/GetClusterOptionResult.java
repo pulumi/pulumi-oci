@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetClusterOptionClusterPodNetworkOption;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetClusterOptionResult {
 
         @CustomType.Setter
         public Builder clusterOptionId(String clusterOptionId) {
-            this.clusterOptionId = Objects.requireNonNull(clusterOptionId);
+            if (clusterOptionId == null) {
+              throw new MissingRequiredPropertyException("GetClusterOptionResult", "clusterOptionId");
+            }
+            this.clusterOptionId = clusterOptionId;
             return this;
         }
         @CustomType.Setter
         public Builder clusterPodNetworkOptions(List<GetClusterOptionClusterPodNetworkOption> clusterPodNetworkOptions) {
-            this.clusterPodNetworkOptions = Objects.requireNonNull(clusterPodNetworkOptions);
+            if (clusterPodNetworkOptions == null) {
+              throw new MissingRequiredPropertyException("GetClusterOptionResult", "clusterPodNetworkOptions");
+            }
+            this.clusterPodNetworkOptions = clusterPodNetworkOptions;
             return this;
         }
         public Builder clusterPodNetworkOptions(GetClusterOptionClusterPodNetworkOption... clusterPodNetworkOptions) {
@@ -99,17 +106,24 @@ public final class GetClusterOptionResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterOptionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder kubernetesVersions(List<String> kubernetesVersions) {
-            this.kubernetesVersions = Objects.requireNonNull(kubernetesVersions);
+            if (kubernetesVersions == null) {
+              throw new MissingRequiredPropertyException("GetClusterOptionResult", "kubernetesVersions");
+            }
+            this.kubernetesVersions = kubernetesVersions;
             return this;
         }
         public Builder kubernetesVersions(String... kubernetesVersions) {

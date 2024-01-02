@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetMediaWorkflowsMediaWorkflowCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetMediaWorkflowsMediaWorkflowCollection {
 
         @CustomType.Setter
         public Builder items(List<GetMediaWorkflowsMediaWorkflowCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetMediaWorkflowsMediaWorkflowCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetMediaWorkflowsMediaWorkflowCollectionItem... items) {

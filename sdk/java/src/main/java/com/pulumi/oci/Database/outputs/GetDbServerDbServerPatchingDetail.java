@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetDbServerDbServerPatchingDetail {
 
         @CustomType.Setter
         public Builder estimatedPatchDuration(Integer estimatedPatchDuration) {
-            this.estimatedPatchDuration = Objects.requireNonNull(estimatedPatchDuration);
+            if (estimatedPatchDuration == null) {
+              throw new MissingRequiredPropertyException("GetDbServerDbServerPatchingDetail", "estimatedPatchDuration");
+            }
+            this.estimatedPatchDuration = estimatedPatchDuration;
             return this;
         }
         @CustomType.Setter
         public Builder patchingStatus(String patchingStatus) {
-            this.patchingStatus = Objects.requireNonNull(patchingStatus);
+            if (patchingStatus == null) {
+              throw new MissingRequiredPropertyException("GetDbServerDbServerPatchingDetail", "patchingStatus");
+            }
+            this.patchingStatus = patchingStatus;
             return this;
         }
         @CustomType.Setter
         public Builder timePatchingEnded(String timePatchingEnded) {
-            this.timePatchingEnded = Objects.requireNonNull(timePatchingEnded);
+            if (timePatchingEnded == null) {
+              throw new MissingRequiredPropertyException("GetDbServerDbServerPatchingDetail", "timePatchingEnded");
+            }
+            this.timePatchingEnded = timePatchingEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timePatchingStarted(String timePatchingStarted) {
-            this.timePatchingStarted = Objects.requireNonNull(timePatchingStarted);
+            if (timePatchingStarted == null) {
+              throw new MissingRequiredPropertyException("GetDbServerDbServerPatchingDetail", "timePatchingStarted");
+            }
+            this.timePatchingStarted = timePatchingStarted;
             return this;
         }
         public GetDbServerDbServerPatchingDetail build() {

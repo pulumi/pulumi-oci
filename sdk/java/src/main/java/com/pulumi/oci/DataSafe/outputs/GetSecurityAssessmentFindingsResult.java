@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetSecurityAssessmentFindingsFinding;
 import java.lang.Boolean;
@@ -120,16 +121,19 @@ public final class GetSecurityAssessmentFindingsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSecurityAssessmentFindingsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -138,12 +142,16 @@ public final class GetSecurityAssessmentFindingsResult {
         }
         @CustomType.Setter
         public Builder findingKey(@Nullable String findingKey) {
+
             this.findingKey = findingKey;
             return this;
         }
         @CustomType.Setter
         public Builder findings(List<GetSecurityAssessmentFindingsFinding> findings) {
-            this.findings = Objects.requireNonNull(findings);
+            if (findings == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsResult", "findings");
+            }
+            this.findings = findings;
             return this;
         }
         public Builder findings(GetSecurityAssessmentFindingsFinding... findings) {
@@ -151,21 +159,29 @@ public final class GetSecurityAssessmentFindingsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder references(@Nullable String references) {
+
             this.references = references;
             return this;
         }
         @CustomType.Setter
         public Builder securityAssessmentId(String securityAssessmentId) {
-            this.securityAssessmentId = Objects.requireNonNull(securityAssessmentId);
+            if (securityAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsResult", "securityAssessmentId");
+            }
+            this.securityAssessmentId = securityAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder severity(@Nullable String severity) {
+
             this.severity = severity;
             return this;
         }

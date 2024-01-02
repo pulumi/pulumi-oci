@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter;
 import java.lang.String;
 import java.util.List;
@@ -78,12 +79,18 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude {
 
         @CustomType.Setter
         public Builder baseRef(String baseRef) {
-            this.baseRef = Objects.requireNonNull(baseRef);
+            if (baseRef == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude", "baseRef");
+            }
+            this.baseRef = baseRef;
             return this;
         }
         @CustomType.Setter
         public Builder fileFilters(List<GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter> fileFilters) {
-            this.fileFilters = Objects.requireNonNull(fileFilters);
+            if (fileFilters == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude", "fileFilters");
+            }
+            this.fileFilters = fileFilters;
             return this;
         }
         public Builder fileFilters(GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter... fileFilters) {
@@ -91,12 +98,18 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude {
         }
         @CustomType.Setter
         public Builder headRef(String headRef) {
-            this.headRef = Objects.requireNonNull(headRef);
+            if (headRef == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude", "headRef");
+            }
+            this.headRef = headRef;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryName(String repositoryName) {
-            this.repositoryName = Objects.requireNonNull(repositoryName);
+            if (repositoryName == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude", "repositoryName");
+            }
+            this.repositoryName = repositoryName;
             return this;
         }
         public GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude build() {

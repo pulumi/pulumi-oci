@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -199,8 +200,12 @@ public final class ActionCreateZoneFromZoneFileArgs extends com.pulumi.resources
         }
 
         public ActionCreateZoneFromZoneFileArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.createZoneFromZoneFileDetails = Objects.requireNonNull($.createZoneFromZoneFileDetails, "expected parameter 'createZoneFromZoneFileDetails' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ActionCreateZoneFromZoneFileArgs", "compartmentId");
+            }
+            if ($.createZoneFromZoneFileDetails == null) {
+                throw new MissingRequiredPropertyException("ActionCreateZoneFromZoneFileArgs", "createZoneFromZoneFileDetails");
+            }
             return $;
         }
     }

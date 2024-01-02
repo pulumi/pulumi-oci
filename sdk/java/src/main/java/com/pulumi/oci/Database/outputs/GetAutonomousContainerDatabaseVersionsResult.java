@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseVersionsFilter;
 import java.lang.String;
@@ -78,7 +79,10 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
 
         @CustomType.Setter
         public Builder autonomousContainerDatabaseVersions(List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion> autonomousContainerDatabaseVersions) {
-            this.autonomousContainerDatabaseVersions = Objects.requireNonNull(autonomousContainerDatabaseVersions);
+            if (autonomousContainerDatabaseVersions == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsResult", "autonomousContainerDatabaseVersions");
+            }
+            this.autonomousContainerDatabaseVersions = autonomousContainerDatabaseVersions;
             return this;
         }
         public Builder autonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion... autonomousContainerDatabaseVersions) {
@@ -86,11 +90,15 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousContainerDatabaseVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -99,12 +107,18 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceComponent(String serviceComponent) {
-            this.serviceComponent = Objects.requireNonNull(serviceComponent);
+            if (serviceComponent == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsResult", "serviceComponent");
+            }
+            this.serviceComponent = serviceComponent;
             return this;
         }
         public GetAutonomousContainerDatabaseVersionsResult build() {

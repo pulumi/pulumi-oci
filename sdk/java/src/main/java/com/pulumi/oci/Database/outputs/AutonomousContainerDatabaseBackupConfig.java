@@ -59,11 +59,13 @@ public final class AutonomousContainerDatabaseBackupConfig {
 
         @CustomType.Setter
         public Builder backupDestinationDetails(@Nullable AutonomousContainerDatabaseBackupConfigBackupDestinationDetails backupDestinationDetails) {
+
             this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
+
             this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBackendSetMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBlockVolumeOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberExportMapping;
@@ -287,7 +288,10 @@ public final class GetDrProtectionGroupMember {
 
         @CustomType.Setter
         public Builder backendSetMappings(List<GetDrProtectionGroupMemberBackendSetMapping> backendSetMappings) {
-            this.backendSetMappings = Objects.requireNonNull(backendSetMappings);
+            if (backendSetMappings == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "backendSetMappings");
+            }
+            this.backendSetMappings = backendSetMappings;
             return this;
         }
         public Builder backendSetMappings(GetDrProtectionGroupMemberBackendSetMapping... backendSetMappings) {
@@ -295,7 +299,10 @@ public final class GetDrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder blockVolumeOperations(List<GetDrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations) {
-            this.blockVolumeOperations = Objects.requireNonNull(blockVolumeOperations);
+            if (blockVolumeOperations == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "blockVolumeOperations");
+            }
+            this.blockVolumeOperations = blockVolumeOperations;
             return this;
         }
         public Builder blockVolumeOperations(GetDrProtectionGroupMemberBlockVolumeOperation... blockVolumeOperations) {
@@ -303,37 +310,58 @@ public final class GetDrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder destinationAvailabilityDomain(String destinationAvailabilityDomain) {
-            this.destinationAvailabilityDomain = Objects.requireNonNull(destinationAvailabilityDomain);
+            if (destinationAvailabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "destinationAvailabilityDomain");
+            }
+            this.destinationAvailabilityDomain = destinationAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder destinationCapacityReservationId(String destinationCapacityReservationId) {
-            this.destinationCapacityReservationId = Objects.requireNonNull(destinationCapacityReservationId);
+            if (destinationCapacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "destinationCapacityReservationId");
+            }
+            this.destinationCapacityReservationId = destinationCapacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder destinationCompartmentId(String destinationCompartmentId) {
-            this.destinationCompartmentId = Objects.requireNonNull(destinationCompartmentId);
+            if (destinationCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "destinationCompartmentId");
+            }
+            this.destinationCompartmentId = destinationCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder destinationDedicatedVmHostId(String destinationDedicatedVmHostId) {
-            this.destinationDedicatedVmHostId = Objects.requireNonNull(destinationDedicatedVmHostId);
+            if (destinationDedicatedVmHostId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "destinationDedicatedVmHostId");
+            }
+            this.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder destinationLoadBalancerId(String destinationLoadBalancerId) {
-            this.destinationLoadBalancerId = Objects.requireNonNull(destinationLoadBalancerId);
+            if (destinationLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "destinationLoadBalancerId");
+            }
+            this.destinationLoadBalancerId = destinationLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder destinationNetworkLoadBalancerId(String destinationNetworkLoadBalancerId) {
-            this.destinationNetworkLoadBalancerId = Objects.requireNonNull(destinationNetworkLoadBalancerId);
+            if (destinationNetworkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "destinationNetworkLoadBalancerId");
+            }
+            this.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder exportMappings(List<GetDrProtectionGroupMemberExportMapping> exportMappings) {
-            this.exportMappings = Objects.requireNonNull(exportMappings);
+            if (exportMappings == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "exportMappings");
+            }
+            this.exportMappings = exportMappings;
             return this;
         }
         public Builder exportMappings(GetDrProtectionGroupMemberExportMapping... exportMappings) {
@@ -341,7 +369,10 @@ public final class GetDrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder fileSystemOperations(List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations) {
-            this.fileSystemOperations = Objects.requireNonNull(fileSystemOperations);
+            if (fileSystemOperations == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "fileSystemOperations");
+            }
+            this.fileSystemOperations = fileSystemOperations;
             return this;
         }
         public Builder fileSystemOperations(GetDrProtectionGroupMemberFileSystemOperation... fileSystemOperations) {
@@ -349,37 +380,58 @@ public final class GetDrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder isMovable(Boolean isMovable) {
-            this.isMovable = Objects.requireNonNull(isMovable);
+            if (isMovable == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "isMovable");
+            }
+            this.isMovable = isMovable;
             return this;
         }
         @CustomType.Setter
         public Builder isRetainFaultDomain(Boolean isRetainFaultDomain) {
-            this.isRetainFaultDomain = Objects.requireNonNull(isRetainFaultDomain);
+            if (isRetainFaultDomain == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "isRetainFaultDomain");
+            }
+            this.isRetainFaultDomain = isRetainFaultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder isStartStopEnabled(Boolean isStartStopEnabled) {
-            this.isStartStopEnabled = Objects.requireNonNull(isStartStopEnabled);
+            if (isStartStopEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "isStartStopEnabled");
+            }
+            this.isStartStopEnabled = isStartStopEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder memberId(String memberId) {
-            this.memberId = Objects.requireNonNull(memberId);
+            if (memberId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "memberId");
+            }
+            this.memberId = memberId;
             return this;
         }
         @CustomType.Setter
         public Builder memberType(String memberType) {
-            this.memberType = Objects.requireNonNull(memberType);
+            if (memberType == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "memberType");
+            }
+            this.memberType = memberType;
             return this;
         }
         @CustomType.Setter
         public Builder passwordVaultSecretId(String passwordVaultSecretId) {
-            this.passwordVaultSecretId = Objects.requireNonNull(passwordVaultSecretId);
+            if (passwordVaultSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "passwordVaultSecretId");
+            }
+            this.passwordVaultSecretId = passwordVaultSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder vnicMapping(List<GetDrProtectionGroupMemberVnicMapping> vnicMapping) {
-            this.vnicMapping = Objects.requireNonNull(vnicMapping);
+            if (vnicMapping == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "vnicMapping");
+            }
+            this.vnicMapping = vnicMapping;
             return this;
         }
         public Builder vnicMapping(GetDrProtectionGroupMemberVnicMapping... vnicMapping) {
@@ -387,7 +439,10 @@ public final class GetDrProtectionGroupMember {
         }
         @CustomType.Setter
         public Builder vnicMappings(List<GetDrProtectionGroupMemberVnicMapping> vnicMappings) {
-            this.vnicMappings = Objects.requireNonNull(vnicMappings);
+            if (vnicMappings == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "vnicMappings");
+            }
+            this.vnicMappings = vnicMappings;
             return this;
         }
         public Builder vnicMappings(GetDrProtectionGroupMemberVnicMapping... vnicMappings) {

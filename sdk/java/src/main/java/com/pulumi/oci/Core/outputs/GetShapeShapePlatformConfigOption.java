@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionAccessControlServiceOption;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption;
 import com.pulumi.oci.Core.outputs.GetShapeShapePlatformConfigOptionMeasuredBootOption;
@@ -105,7 +106,10 @@ public final class GetShapeShapePlatformConfigOption {
 
         @CustomType.Setter
         public Builder accessControlServiceOptions(List<GetShapeShapePlatformConfigOptionAccessControlServiceOption> accessControlServiceOptions) {
-            this.accessControlServiceOptions = Objects.requireNonNull(accessControlServiceOptions);
+            if (accessControlServiceOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "accessControlServiceOptions");
+            }
+            this.accessControlServiceOptions = accessControlServiceOptions;
             return this;
         }
         public Builder accessControlServiceOptions(GetShapeShapePlatformConfigOptionAccessControlServiceOption... accessControlServiceOptions) {
@@ -113,7 +117,10 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder inputOutputMemoryManagementUnitOptions(List<GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption> inputOutputMemoryManagementUnitOptions) {
-            this.inputOutputMemoryManagementUnitOptions = Objects.requireNonNull(inputOutputMemoryManagementUnitOptions);
+            if (inputOutputMemoryManagementUnitOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "inputOutputMemoryManagementUnitOptions");
+            }
+            this.inputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
             return this;
         }
         public Builder inputOutputMemoryManagementUnitOptions(GetShapeShapePlatformConfigOptionInputOutputMemoryManagementUnitOption... inputOutputMemoryManagementUnitOptions) {
@@ -121,7 +128,10 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder measuredBootOptions(List<GetShapeShapePlatformConfigOptionMeasuredBootOption> measuredBootOptions) {
-            this.measuredBootOptions = Objects.requireNonNull(measuredBootOptions);
+            if (measuredBootOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "measuredBootOptions");
+            }
+            this.measuredBootOptions = measuredBootOptions;
             return this;
         }
         public Builder measuredBootOptions(GetShapeShapePlatformConfigOptionMeasuredBootOption... measuredBootOptions) {
@@ -129,7 +139,10 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder memoryEncryptionOptions(List<GetShapeShapePlatformConfigOptionMemoryEncryptionOption> memoryEncryptionOptions) {
-            this.memoryEncryptionOptions = Objects.requireNonNull(memoryEncryptionOptions);
+            if (memoryEncryptionOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "memoryEncryptionOptions");
+            }
+            this.memoryEncryptionOptions = memoryEncryptionOptions;
             return this;
         }
         public Builder memoryEncryptionOptions(GetShapeShapePlatformConfigOptionMemoryEncryptionOption... memoryEncryptionOptions) {
@@ -137,7 +150,10 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder numaNodesPerSocketPlatformOptions(List<GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption> numaNodesPerSocketPlatformOptions) {
-            this.numaNodesPerSocketPlatformOptions = Objects.requireNonNull(numaNodesPerSocketPlatformOptions);
+            if (numaNodesPerSocketPlatformOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "numaNodesPerSocketPlatformOptions");
+            }
+            this.numaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
             return this;
         }
         public Builder numaNodesPerSocketPlatformOptions(GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption... numaNodesPerSocketPlatformOptions) {
@@ -145,7 +161,10 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder percentageOfCoresEnabledOptions(List<GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption> percentageOfCoresEnabledOptions) {
-            this.percentageOfCoresEnabledOptions = Objects.requireNonNull(percentageOfCoresEnabledOptions);
+            if (percentageOfCoresEnabledOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "percentageOfCoresEnabledOptions");
+            }
+            this.percentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
             return this;
         }
         public Builder percentageOfCoresEnabledOptions(GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption... percentageOfCoresEnabledOptions) {
@@ -153,7 +172,10 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder secureBootOptions(List<GetShapeShapePlatformConfigOptionSecureBootOption> secureBootOptions) {
-            this.secureBootOptions = Objects.requireNonNull(secureBootOptions);
+            if (secureBootOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "secureBootOptions");
+            }
+            this.secureBootOptions = secureBootOptions;
             return this;
         }
         public Builder secureBootOptions(GetShapeShapePlatformConfigOptionSecureBootOption... secureBootOptions) {
@@ -161,7 +183,10 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder symmetricMultiThreadingOptions(List<GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption> symmetricMultiThreadingOptions) {
-            this.symmetricMultiThreadingOptions = Objects.requireNonNull(symmetricMultiThreadingOptions);
+            if (symmetricMultiThreadingOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "symmetricMultiThreadingOptions");
+            }
+            this.symmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
             return this;
         }
         public Builder symmetricMultiThreadingOptions(GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption... symmetricMultiThreadingOptions) {
@@ -169,7 +194,10 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder trustedPlatformModuleOptions(List<GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption> trustedPlatformModuleOptions) {
-            this.trustedPlatformModuleOptions = Objects.requireNonNull(trustedPlatformModuleOptions);
+            if (trustedPlatformModuleOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "trustedPlatformModuleOptions");
+            }
+            this.trustedPlatformModuleOptions = trustedPlatformModuleOptions;
             return this;
         }
         public Builder trustedPlatformModuleOptions(GetShapeShapePlatformConfigOptionTrustedPlatformModuleOption... trustedPlatformModuleOptions) {
@@ -177,12 +205,18 @@ public final class GetShapeShapePlatformConfigOption {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder virtualInstructionsOptions(List<GetShapeShapePlatformConfigOptionVirtualInstructionsOption> virtualInstructionsOptions) {
-            this.virtualInstructionsOptions = Objects.requireNonNull(virtualInstructionsOptions);
+            if (virtualInstructionsOptions == null) {
+              throw new MissingRequiredPropertyException("GetShapeShapePlatformConfigOption", "virtualInstructionsOptions");
+            }
+            this.virtualInstructionsOptions = virtualInstructionsOptions;
             return this;
         }
         public Builder virtualInstructionsOptions(GetShapeShapePlatformConfigOptionVirtualInstructionsOption... virtualInstructionsOptions) {

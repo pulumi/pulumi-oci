@@ -208,16 +208,19 @@ public final class ResponderRecipeEffectiveResponderRule {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder details(@Nullable List<ResponderRecipeEffectiveResponderRuleDetail> details) {
+
             this.details = details;
             return this;
         }
@@ -226,16 +229,19 @@ public final class ResponderRecipeEffectiveResponderRule {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder policies(@Nullable List<String> policies) {
+
             this.policies = policies;
             return this;
         }
@@ -244,16 +250,19 @@ public final class ResponderRecipeEffectiveResponderRule {
         }
         @CustomType.Setter
         public Builder responderRuleId(@Nullable String responderRuleId) {
+
             this.responderRuleId = responderRuleId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder supportedModes(@Nullable List<String> supportedModes) {
+
             this.supportedModes = supportedModes;
             return this;
         }
@@ -262,16 +271,19 @@ public final class ResponderRecipeEffectiveResponderRule {
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

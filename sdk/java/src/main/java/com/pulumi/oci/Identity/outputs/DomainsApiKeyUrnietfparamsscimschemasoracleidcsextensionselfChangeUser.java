@@ -66,6 +66,7 @@ public final class DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfC
 
         @CustomType.Setter
         public Builder allowSelfChange(@Nullable Boolean allowSelfChange) {
+
             this.allowSelfChange = allowSelfChange;
             return this;
         }

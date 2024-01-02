@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -226,7 +227,9 @@ public final class NotebookSessionNotebookSessionConfigDetailsArgs extends com.p
         }
 
         public NotebookSessionNotebookSessionConfigDetailsArgs build() {
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("NotebookSessionNotebookSessionConfigDetailsArgs", "shape");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetOperationsInsightsWarehouseUserArgs extends com.pulumi.res
         }
 
         public GetOperationsInsightsWarehouseUserArgs build() {
-            $.operationsInsightsWarehouseUserId = Objects.requireNonNull($.operationsInsightsWarehouseUserId, "expected parameter 'operationsInsightsWarehouseUserId' to be non-null");
+            if ($.operationsInsightsWarehouseUserId == null) {
+                throw new MissingRequiredPropertyException("GetOperationsInsightsWarehouseUserArgs", "operationsInsightsWarehouseUserId");
+            }
             return $;
         }
     }

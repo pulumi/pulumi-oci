@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -545,9 +546,15 @@ public final class ProfileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ProfileArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.profileType = Objects.requireNonNull($.profileType, "expected parameter 'profileType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ProfileArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ProfileArgs", "displayName");
+            }
+            if ($.profileType == null) {
+                throw new MissingRequiredPropertyException("ProfileArgs", "profileType");
+            }
             return $;
         }
     }

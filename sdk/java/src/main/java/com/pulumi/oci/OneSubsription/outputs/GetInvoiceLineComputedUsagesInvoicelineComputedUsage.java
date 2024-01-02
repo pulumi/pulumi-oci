@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct;
 import com.pulumi.oci.OneSubsription.outputs.GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct;
 import java.lang.Double;
@@ -144,22 +145,34 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
 
         @CustomType.Setter
         public Builder cost(Double cost) {
-            this.cost = Objects.requireNonNull(cost);
+            if (cost == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesInvoicelineComputedUsage", "cost");
+            }
+            this.cost = cost;
             return this;
         }
         @CustomType.Setter
         public Builder costRounded(Double costRounded) {
-            this.costRounded = Objects.requireNonNull(costRounded);
+            if (costRounded == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesInvoicelineComputedUsage", "costRounded");
+            }
+            this.costRounded = costRounded;
             return this;
         }
         @CustomType.Setter
         public Builder netUnitPrice(Double netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesInvoicelineComputedUsage", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder parentProducts(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct> parentProducts) {
-            this.parentProducts = Objects.requireNonNull(parentProducts);
+            if (parentProducts == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesInvoicelineComputedUsage", "parentProducts");
+            }
+            this.parentProducts = parentProducts;
             return this;
         }
         public Builder parentProducts(GetInvoiceLineComputedUsagesInvoicelineComputedUsageParentProduct... parentProducts) {
@@ -167,7 +180,10 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
         }
         @CustomType.Setter
         public Builder products(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct> products) {
-            this.products = Objects.requireNonNull(products);
+            if (products == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesInvoicelineComputedUsage", "products");
+            }
+            this.products = products;
             return this;
         }
         public Builder products(GetInvoiceLineComputedUsagesInvoicelineComputedUsageProduct... products) {
@@ -175,17 +191,26 @@ public final class GetInvoiceLineComputedUsagesInvoicelineComputedUsage {
         }
         @CustomType.Setter
         public Builder quantity(Double quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesInvoicelineComputedUsage", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder timeMeteredOn(String timeMeteredOn) {
-            this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
+            if (timeMeteredOn == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesInvoicelineComputedUsage", "timeMeteredOn");
+            }
+            this.timeMeteredOn = timeMeteredOn;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesInvoicelineComputedUsage", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetInvoiceLineComputedUsagesInvoicelineComputedUsage build() {

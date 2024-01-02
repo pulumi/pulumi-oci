@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -135,8 +136,12 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationCont
         }
 
         public DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs build() {
-            $.mediaType = Objects.requireNonNull($.mediaType, "expected parameter 'mediaType' to be non-null");
-            $.validationType = Objects.requireNonNull($.validationType, "expected parameter 'validationType' to be non-null");
+            if ($.mediaType == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs", "mediaType");
+            }
+            if ($.validationType == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs", "validationType");
+            }
             return $;
         }
     }

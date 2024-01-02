@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationMetadataAggregator;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationMetadataCountStatistic;
 import java.lang.Boolean;
@@ -231,12 +232,18 @@ public final class GetWorkspaceApplicationMetadata {
 
         @CustomType.Setter
         public Builder aggregatorKey(String aggregatorKey) {
-            this.aggregatorKey = Objects.requireNonNull(aggregatorKey);
+            if (aggregatorKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "aggregatorKey");
+            }
+            this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
         public Builder aggregators(List<GetWorkspaceApplicationMetadataAggregator> aggregators) {
-            this.aggregators = Objects.requireNonNull(aggregators);
+            if (aggregators == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "aggregators");
+            }
+            this.aggregators = aggregators;
             return this;
         }
         public Builder aggregators(GetWorkspaceApplicationMetadataAggregator... aggregators) {
@@ -244,7 +251,10 @@ public final class GetWorkspaceApplicationMetadata {
         }
         @CustomType.Setter
         public Builder countStatistics(List<GetWorkspaceApplicationMetadataCountStatistic> countStatistics) {
-            this.countStatistics = Objects.requireNonNull(countStatistics);
+            if (countStatistics == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "countStatistics");
+            }
+            this.countStatistics = countStatistics;
             return this;
         }
         public Builder countStatistics(GetWorkspaceApplicationMetadataCountStatistic... countStatistics) {
@@ -252,32 +262,50 @@ public final class GetWorkspaceApplicationMetadata {
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder createdByName(String createdByName) {
-            this.createdByName = Objects.requireNonNull(createdByName);
+            if (createdByName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "createdByName");
+            }
+            this.createdByName = createdByName;
             return this;
         }
         @CustomType.Setter
         public Builder identifierPath(String identifierPath) {
-            this.identifierPath = Objects.requireNonNull(identifierPath);
+            if (identifierPath == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "identifierPath");
+            }
+            this.identifierPath = identifierPath;
             return this;
         }
         @CustomType.Setter
         public Builder infoFields(Map<String,Object> infoFields) {
-            this.infoFields = Objects.requireNonNull(infoFields);
+            if (infoFields == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "infoFields");
+            }
+            this.infoFields = infoFields;
             return this;
         }
         @CustomType.Setter
         public Builder isFavorite(Boolean isFavorite) {
-            this.isFavorite = Objects.requireNonNull(isFavorite);
+            if (isFavorite == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "isFavorite");
+            }
+            this.isFavorite = isFavorite;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
@@ -285,27 +313,42 @@ public final class GetWorkspaceApplicationMetadata {
         }
         @CustomType.Setter
         public Builder registryVersion(Integer registryVersion) {
-            this.registryVersion = Objects.requireNonNull(registryVersion);
+            if (registryVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "registryVersion");
+            }
+            this.registryVersion = registryVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder updatedBy(String updatedBy) {
-            this.updatedBy = Objects.requireNonNull(updatedBy);
+            if (updatedBy == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "updatedBy");
+            }
+            this.updatedBy = updatedBy;
             return this;
         }
         @CustomType.Setter
         public Builder updatedByName(String updatedByName) {
-            this.updatedByName = Objects.requireNonNull(updatedByName);
+            if (updatedByName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationMetadata", "updatedByName");
+            }
+            this.updatedByName = updatedByName;
             return this;
         }
         public GetWorkspaceApplicationMetadata build() {

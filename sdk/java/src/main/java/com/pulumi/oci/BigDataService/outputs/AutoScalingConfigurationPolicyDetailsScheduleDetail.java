@@ -75,11 +75,13 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetail {
 
         @CustomType.Setter
         public Builder scheduleType(@Nullable String scheduleType) {
+
             this.scheduleType = scheduleType;
             return this;
         }
         @CustomType.Setter
         public Builder timeAndHorizontalScalingConfigs(@Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndHorizontalScalingConfig> timeAndHorizontalScalingConfigs) {
+
             this.timeAndHorizontalScalingConfigs = timeAndHorizontalScalingConfigs;
             return this;
         }
@@ -88,6 +90,7 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetail {
         }
         @CustomType.Setter
         public Builder timeAndVerticalScalingConfigs(@Nullable List<AutoScalingConfigurationPolicyDetailsScheduleDetailTimeAndVerticalScalingConfig> timeAndVerticalScalingConfigs) {
+
             this.timeAndVerticalScalingConfigs = timeAndVerticalScalingConfigs;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.VolumeGroupSourceDetailsArgs;
 import com.pulumi.oci.Core.inputs.VolumeGroupVolumeGroupReplicaArgs;
 import java.lang.Boolean;
@@ -444,9 +445,15 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public VolumeGroupArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.sourceDetails = Objects.requireNonNull($.sourceDetails, "expected parameter 'sourceDetails' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("VolumeGroupArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VolumeGroupArgs", "compartmentId");
+            }
+            if ($.sourceDetails == null) {
+                throw new MissingRequiredPropertyException("VolumeGroupArgs", "sourceDetails");
+            }
             return $;
         }
     }

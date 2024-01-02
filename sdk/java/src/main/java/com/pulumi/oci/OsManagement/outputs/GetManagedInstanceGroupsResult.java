@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceGroupsFilter;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceGroupsManagedInstanceGroup;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetManagedInstanceGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedInstanceGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,12 +147,18 @@ public final class GetManagedInstanceGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceGroups(List<GetManagedInstanceGroupsManagedInstanceGroup> managedInstanceGroups) {
-            this.managedInstanceGroups = Objects.requireNonNull(managedInstanceGroups);
+            if (managedInstanceGroups == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupsResult", "managedInstanceGroups");
+            }
+            this.managedInstanceGroups = managedInstanceGroups;
             return this;
         }
         public Builder managedInstanceGroups(GetManagedInstanceGroupsManagedInstanceGroup... managedInstanceGroups) {
@@ -154,11 +166,13 @@ public final class GetManagedInstanceGroupsResult {
         }
         @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
+
             this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

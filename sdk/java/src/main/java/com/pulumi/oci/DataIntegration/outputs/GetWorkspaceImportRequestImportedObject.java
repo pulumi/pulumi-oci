@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -168,52 +169,82 @@ public final class GetWorkspaceImportRequestImportedObject {
 
         @CustomType.Setter
         public Builder aggregatorKey(String aggregatorKey) {
-            this.aggregatorKey = Objects.requireNonNull(aggregatorKey);
+            if (aggregatorKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "aggregatorKey");
+            }
+            this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namePath(String namePath) {
-            this.namePath = Objects.requireNonNull(namePath);
+            if (namePath == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "namePath");
+            }
+            this.namePath = namePath;
             return this;
         }
         @CustomType.Setter
         public Builder newKey(String newKey) {
-            this.newKey = Objects.requireNonNull(newKey);
+            if (newKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "newKey");
+            }
+            this.newKey = newKey;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(String objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+            if (objectVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "objectVersion");
+            }
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder oldKey(String oldKey) {
-            this.oldKey = Objects.requireNonNull(oldKey);
+            if (oldKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "oldKey");
+            }
+            this.oldKey = oldKey;
             return this;
         }
         @CustomType.Setter
         public Builder resolutionAction(String resolutionAction) {
-            this.resolutionAction = Objects.requireNonNull(resolutionAction);
+            if (resolutionAction == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "resolutionAction");
+            }
+            this.resolutionAction = resolutionAction;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdatedInMillis(String timeUpdatedInMillis) {
-            this.timeUpdatedInMillis = Objects.requireNonNull(timeUpdatedInMillis);
+            if (timeUpdatedInMillis == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestImportedObject", "timeUpdatedInMillis");
+            }
+            this.timeUpdatedInMillis = timeUpdatedInMillis;
             return this;
         }
         public GetWorkspaceImportRequestImportedObject build() {

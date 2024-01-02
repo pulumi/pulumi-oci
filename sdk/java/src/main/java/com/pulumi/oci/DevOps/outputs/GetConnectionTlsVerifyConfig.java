@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetConnectionTlsVerifyConfig {
 
         @CustomType.Setter
         public Builder caCertificateBundleId(String caCertificateBundleId) {
-            this.caCertificateBundleId = Objects.requireNonNull(caCertificateBundleId);
+            if (caCertificateBundleId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionTlsVerifyConfig", "caCertificateBundleId");
+            }
+            this.caCertificateBundleId = caCertificateBundleId;
             return this;
         }
         @CustomType.Setter
         public Builder tlsVerifyMode(String tlsVerifyMode) {
-            this.tlsVerifyMode = Objects.requireNonNull(tlsVerifyMode);
+            if (tlsVerifyMode == null) {
+              throw new MissingRequiredPropertyException("GetConnectionTlsVerifyConfig", "tlsVerifyMode");
+            }
+            this.tlsVerifyMode = tlsVerifyMode;
             return this;
         }
         public GetConnectionTlsVerifyConfig build() {

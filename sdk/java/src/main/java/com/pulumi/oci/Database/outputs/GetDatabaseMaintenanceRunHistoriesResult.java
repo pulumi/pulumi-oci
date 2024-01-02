@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoriesFilter;
 import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory;
 import java.lang.String;
@@ -143,16 +144,21 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabaseMaintenanceRunHistoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -161,12 +167,18 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceRunHistories(List<GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory> maintenanceRunHistories) {
-            this.maintenanceRunHistories = Objects.requireNonNull(maintenanceRunHistories);
+            if (maintenanceRunHistories == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesResult", "maintenanceRunHistories");
+            }
+            this.maintenanceRunHistories = maintenanceRunHistories;
             return this;
         }
         public Builder maintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory... maintenanceRunHistories) {
@@ -174,21 +186,25 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
         }
         @CustomType.Setter
         public Builder maintenanceType(@Nullable String maintenanceType) {
+
             this.maintenanceType = maintenanceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceId(@Nullable String targetResourceId) {
+
             this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceType(@Nullable String targetResourceType) {
+
             this.targetResourceType = targetResourceType;
             return this;
         }

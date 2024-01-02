@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetExternalDbSystemPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetExternalDbSystemPlainArgs build() {
-            $.externalDbSystemId = Objects.requireNonNull($.externalDbSystemId, "expected parameter 'externalDbSystemId' to be non-null");
+            if ($.externalDbSystemId == null) {
+                throw new MissingRequiredPropertyException("GetExternalDbSystemPlainArgs", "externalDbSystemId");
+            }
             return $;
         }
     }

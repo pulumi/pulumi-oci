@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetOdaPrivateEndpointScanProxyScanListenerInfo {
 
         @CustomType.Setter
         public Builder scanListenerFqdn(String scanListenerFqdn) {
-            this.scanListenerFqdn = Objects.requireNonNull(scanListenerFqdn);
+            if (scanListenerFqdn == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyScanListenerInfo", "scanListenerFqdn");
+            }
+            this.scanListenerFqdn = scanListenerFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerIp(String scanListenerIp) {
-            this.scanListenerIp = Objects.requireNonNull(scanListenerIp);
+            if (scanListenerIp == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyScanListenerInfo", "scanListenerIp");
+            }
+            this.scanListenerIp = scanListenerIp;
             return this;
         }
         @CustomType.Setter
         public Builder scanListenerPort(Integer scanListenerPort) {
-            this.scanListenerPort = Objects.requireNonNull(scanListenerPort);
+            if (scanListenerPort == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxyScanListenerInfo", "scanListenerPort");
+            }
+            this.scanListenerPort = scanListenerPort;
             return this;
         }
         public GetOdaPrivateEndpointScanProxyScanListenerInfo build() {

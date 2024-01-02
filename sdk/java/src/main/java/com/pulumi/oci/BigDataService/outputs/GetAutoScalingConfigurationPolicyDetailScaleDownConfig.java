@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric;
 import java.lang.Integer;
 import java.util.List;
@@ -100,12 +101,18 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleDownConfig {
 
         @CustomType.Setter
         public Builder memoryStepSize(Integer memoryStepSize) {
-            this.memoryStepSize = Objects.requireNonNull(memoryStepSize);
+            if (memoryStepSize == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleDownConfig", "memoryStepSize");
+            }
+            this.memoryStepSize = memoryStepSize;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleDownConfig", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetAutoScalingConfigurationPolicyDetailScaleDownConfigMetric... metrics) {
@@ -113,17 +120,26 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleDownConfig {
         }
         @CustomType.Setter
         public Builder minMemoryPerNode(Integer minMemoryPerNode) {
-            this.minMemoryPerNode = Objects.requireNonNull(minMemoryPerNode);
+            if (minMemoryPerNode == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleDownConfig", "minMemoryPerNode");
+            }
+            this.minMemoryPerNode = minMemoryPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder minOcpusPerNode(Integer minOcpusPerNode) {
-            this.minOcpusPerNode = Objects.requireNonNull(minOcpusPerNode);
+            if (minOcpusPerNode == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleDownConfig", "minOcpusPerNode");
+            }
+            this.minOcpusPerNode = minOcpusPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuStepSize(Integer ocpuStepSize) {
-            this.ocpuStepSize = Objects.requireNonNull(ocpuStepSize);
+            if (ocpuStepSize == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScaleDownConfig", "ocpuStepSize");
+            }
+            this.ocpuStepSize = ocpuStepSize;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleDownConfig build() {

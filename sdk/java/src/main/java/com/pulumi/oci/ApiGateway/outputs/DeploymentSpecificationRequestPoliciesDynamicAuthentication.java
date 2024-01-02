@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthentication {
 
         @CustomType.Setter
         public Builder authenticationServers(List<DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer> authenticationServers) {
-            this.authenticationServers = Objects.requireNonNull(authenticationServers);
+            if (authenticationServers == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthentication", "authenticationServers");
+            }
+            this.authenticationServers = authenticationServers;
             return this;
         }
         public Builder authenticationServers(DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer... authenticationServers) {
@@ -66,7 +70,10 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthentication {
         }
         @CustomType.Setter
         public Builder selectionSource(DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource selectionSource) {
-            this.selectionSource = Objects.requireNonNull(selectionSource);
+            if (selectionSource == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthentication", "selectionSource");
+            }
+            this.selectionSource = selectionSource;
             return this;
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthentication build() {

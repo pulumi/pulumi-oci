@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs;
@@ -438,8 +439,12 @@ public final class NotebookSessionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public NotebookSessionArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("NotebookSessionArgs", "compartmentId");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("NotebookSessionArgs", "projectId");
+            }
             return $;
         }
     }

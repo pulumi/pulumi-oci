@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetGenericArtifactsFilter;
 import com.pulumi.oci.Artifacts.outputs.GetGenericArtifactsGenericArtifactCollection;
 import java.lang.String;
@@ -165,21 +166,27 @@ public final class GetGenericArtifactsResult {
 
         @CustomType.Setter
         public Builder artifactPath(@Nullable String artifactPath) {
+
             this.artifactPath = artifactPath;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetGenericArtifactsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetGenericArtifactsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -188,7 +195,10 @@ public final class GetGenericArtifactsResult {
         }
         @CustomType.Setter
         public Builder genericArtifactCollections(List<GetGenericArtifactsGenericArtifactCollection> genericArtifactCollections) {
-            this.genericArtifactCollections = Objects.requireNonNull(genericArtifactCollections);
+            if (genericArtifactCollections == null) {
+              throw new MissingRequiredPropertyException("GetGenericArtifactsResult", "genericArtifactCollections");
+            }
+            this.genericArtifactCollections = genericArtifactCollections;
             return this;
         }
         public Builder genericArtifactCollections(GetGenericArtifactsGenericArtifactCollection... genericArtifactCollections) {
@@ -196,26 +206,33 @@ public final class GetGenericArtifactsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetGenericArtifactsResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder sha256(@Nullable String sha256) {
+
             this.sha256 = sha256;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder version(@Nullable String version) {
+
             this.version = version;
             return this;
         }

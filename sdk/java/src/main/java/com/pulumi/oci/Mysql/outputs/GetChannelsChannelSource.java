@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetChannelsChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.GetChannelsChannelSourceSslCaCertificate;
 import java.lang.Integer;
@@ -136,7 +137,10 @@ public final class GetChannelsChannelSource {
 
         @CustomType.Setter
         public Builder anonymousTransactionsHandlings(List<GetChannelsChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
-            this.anonymousTransactionsHandlings = Objects.requireNonNull(anonymousTransactionsHandlings);
+            if (anonymousTransactionsHandlings == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "anonymousTransactionsHandlings");
+            }
+            this.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             return this;
         }
         public Builder anonymousTransactionsHandlings(GetChannelsChannelSourceAnonymousTransactionsHandling... anonymousTransactionsHandlings) {
@@ -144,27 +148,42 @@ public final class GetChannelsChannelSource {
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sslCaCertificates(List<GetChannelsChannelSourceSslCaCertificate> sslCaCertificates) {
-            this.sslCaCertificates = Objects.requireNonNull(sslCaCertificates);
+            if (sslCaCertificates == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "sslCaCertificates");
+            }
+            this.sslCaCertificates = sslCaCertificates;
             return this;
         }
         public Builder sslCaCertificates(GetChannelsChannelSourceSslCaCertificate... sslCaCertificates) {
@@ -172,12 +191,18 @@ public final class GetChannelsChannelSource {
         }
         @CustomType.Setter
         public Builder sslMode(String sslMode) {
-            this.sslMode = Objects.requireNonNull(sslMode);
+            if (sslMode == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "sslMode");
+            }
+            this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetChannelsChannelSource", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetChannelsChannelSource build() {

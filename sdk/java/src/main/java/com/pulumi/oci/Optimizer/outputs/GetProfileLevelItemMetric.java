@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetProfileLevelItemMetric {
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItemMetric", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder statistic(String statistic) {
-            this.statistic = Objects.requireNonNull(statistic);
+            if (statistic == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItemMetric", "statistic");
+            }
+            this.statistic = statistic;
             return this;
         }
         @CustomType.Setter
         public Builder target(Double target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItemMetric", "target");
+            }
+            this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder threshold(Double threshold) {
-            this.threshold = Objects.requireNonNull(threshold);
+            if (threshold == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItemMetric", "threshold");
+            }
+            this.threshold = threshold;
             return this;
         }
         public GetProfileLevelItemMetric build() {

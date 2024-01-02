@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetNetworkSourcesNetworkSourceVirtualSourceList;
 import java.lang.Object;
 import java.lang.String;
@@ -200,42 +201,66 @@ public final class GetNetworkSourcesNetworkSource {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+            if (inactiveState == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "inactiveState");
+            }
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder publicSourceLists(List<String> publicSourceLists) {
-            this.publicSourceLists = Objects.requireNonNull(publicSourceLists);
+            if (publicSourceLists == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "publicSourceLists");
+            }
+            this.publicSourceLists = publicSourceLists;
             return this;
         }
         public Builder publicSourceLists(String... publicSourceLists) {
@@ -243,7 +268,10 @@ public final class GetNetworkSourcesNetworkSource {
         }
         @CustomType.Setter
         public Builder services(List<String> services) {
-            this.services = Objects.requireNonNull(services);
+            if (services == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "services");
+            }
+            this.services = services;
             return this;
         }
         public Builder services(String... services) {
@@ -251,17 +279,26 @@ public final class GetNetworkSourcesNetworkSource {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder virtualSourceLists(List<GetNetworkSourcesNetworkSourceVirtualSourceList> virtualSourceLists) {
-            this.virtualSourceLists = Objects.requireNonNull(virtualSourceLists);
+            if (virtualSourceLists == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSource", "virtualSourceLists");
+            }
+            this.virtualSourceLists = virtualSourceLists;
             return this;
         }
         public Builder virtualSourceLists(GetNetworkSourcesNetworkSourceVirtualSourceList... virtualSourceLists) {

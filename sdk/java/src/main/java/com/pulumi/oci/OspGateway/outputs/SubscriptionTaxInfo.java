@@ -100,26 +100,31 @@ public final class SubscriptionTaxInfo {
 
         @CustomType.Setter
         public Builder noTaxReasonCode(@Nullable String noTaxReasonCode) {
+
             this.noTaxReasonCode = noTaxReasonCode;
             return this;
         }
         @CustomType.Setter
         public Builder noTaxReasonCodeDetails(@Nullable String noTaxReasonCodeDetails) {
+
             this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
             return this;
         }
         @CustomType.Setter
         public Builder taxCnpj(@Nullable String taxCnpj) {
+
             this.taxCnpj = taxCnpj;
             return this;
         }
         @CustomType.Setter
         public Builder taxPayerId(@Nullable String taxPayerId) {
+
             this.taxPayerId = taxPayerId;
             return this;
         }
         @CustomType.Setter
         public Builder taxRegNumber(@Nullable String taxRegNumber) {
+
             this.taxRegNumber = taxRegNumber;
             return this;
         }

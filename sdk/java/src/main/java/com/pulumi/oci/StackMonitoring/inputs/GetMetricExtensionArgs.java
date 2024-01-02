@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetMetricExtensionArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetMetricExtensionArgs build() {
-            $.metricExtensionId = Objects.requireNonNull($.metricExtensionId, "expected parameter 'metricExtensionId' to be non-null");
+            if ($.metricExtensionId == null) {
+                throw new MissingRequiredPropertyException("GetMetricExtensionArgs", "metricExtensionId");
+            }
             return $;
         }
     }

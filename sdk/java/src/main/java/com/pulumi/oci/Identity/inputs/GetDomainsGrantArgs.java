@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsGrantArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetDomainsGrantArgs build() {
-            $.grantId = Objects.requireNonNull($.grantId, "expected parameter 'grantId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.grantId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsGrantArgs", "grantId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsGrantArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

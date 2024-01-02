@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -262,8 +263,12 @@ public final class PluggableDatabasePdbCreationTypeDetailsArgs extends com.pulum
         }
 
         public PluggableDatabasePdbCreationTypeDetailsArgs build() {
-            $.creationType = Objects.requireNonNull($.creationType, "expected parameter 'creationType' to be non-null");
-            $.sourcePluggableDatabaseId = Objects.requireNonNull($.sourcePluggableDatabaseId, "expected parameter 'sourcePluggableDatabaseId' to be non-null");
+            if ($.creationType == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabasePdbCreationTypeDetailsArgs", "creationType");
+            }
+            if ($.sourcePluggableDatabaseId == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabasePdbCreationTypeDetailsArgs", "sourcePluggableDatabaseId");
+            }
             return $;
         }
     }

@@ -59,11 +59,13 @@ public final class ConfigConfigurationDnsConfiguration {
 
         @CustomType.Setter
         public Builder isOverrideDns(@Nullable Boolean isOverrideDns) {
+
             this.isOverrideDns = isOverrideDns;
             return this;
         }
         @CustomType.Setter
         public Builder overrideDnsIp(@Nullable String overrideDnsIp) {
+
             this.overrideDnsIp = overrideDnsIp;
             return this;
         }

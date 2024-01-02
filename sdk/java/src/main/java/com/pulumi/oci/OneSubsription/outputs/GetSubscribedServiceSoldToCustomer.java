@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -155,47 +156,74 @@ public final class GetSubscribedServiceSoldToCustomer {
 
         @CustomType.Setter
         public Builder customerChainType(String customerChainType) {
-            this.customerChainType = Objects.requireNonNull(customerChainType);
+            if (customerChainType == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "customerChainType");
+            }
+            this.customerChainType = customerChainType;
             return this;
         }
         @CustomType.Setter
         public Builder isChainCustomer(Boolean isChainCustomer) {
-            this.isChainCustomer = Objects.requireNonNull(isChainCustomer);
+            if (isChainCustomer == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "isChainCustomer");
+            }
+            this.isChainCustomer = isChainCustomer;
             return this;
         }
         @CustomType.Setter
         public Builder isPublicSector(Boolean isPublicSector) {
-            this.isPublicSector = Objects.requireNonNull(isPublicSector);
+            if (isPublicSector == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "isPublicSector");
+            }
+            this.isPublicSector = isPublicSector;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namePhonetic(String namePhonetic) {
-            this.namePhonetic = Objects.requireNonNull(namePhonetic);
+            if (namePhonetic == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "namePhonetic");
+            }
+            this.namePhonetic = namePhonetic;
             return this;
         }
         @CustomType.Setter
         public Builder tcaCustAccountNumber(String tcaCustAccountNumber) {
-            this.tcaCustAccountNumber = Objects.requireNonNull(tcaCustAccountNumber);
+            if (tcaCustAccountNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "tcaCustAccountNumber");
+            }
+            this.tcaCustAccountNumber = tcaCustAccountNumber;
             return this;
         }
         @CustomType.Setter
         public Builder tcaCustomerAccountId(String tcaCustomerAccountId) {
-            this.tcaCustomerAccountId = Objects.requireNonNull(tcaCustomerAccountId);
+            if (tcaCustomerAccountId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "tcaCustomerAccountId");
+            }
+            this.tcaCustomerAccountId = tcaCustomerAccountId;
             return this;
         }
         @CustomType.Setter
         public Builder tcaPartyId(String tcaPartyId) {
-            this.tcaPartyId = Objects.requireNonNull(tcaPartyId);
+            if (tcaPartyId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "tcaPartyId");
+            }
+            this.tcaPartyId = tcaPartyId;
             return this;
         }
         @CustomType.Setter
         public Builder tcaPartyNumber(String tcaPartyNumber) {
-            this.tcaPartyNumber = Objects.requireNonNull(tcaPartyNumber);
+            if (tcaPartyNumber == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServiceSoldToCustomer", "tcaPartyNumber");
+            }
+            this.tcaPartyNumber = tcaPartyNumber;
             return this;
         }
         public GetSubscribedServiceSoldToCustomer build() {

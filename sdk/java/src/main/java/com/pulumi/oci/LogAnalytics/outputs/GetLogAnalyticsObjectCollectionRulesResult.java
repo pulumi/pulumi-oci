@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsObjectCollectionRulesFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection;
 import java.lang.String;
@@ -115,11 +116,15 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLogAnalyticsObjectCollectionRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,12 +133,18 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder logAnalyticsObjectCollectionRuleCollections(List<GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection> logAnalyticsObjectCollectionRuleCollections) {
-            this.logAnalyticsObjectCollectionRuleCollections = Objects.requireNonNull(logAnalyticsObjectCollectionRuleCollections);
+            if (logAnalyticsObjectCollectionRuleCollections == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesResult", "logAnalyticsObjectCollectionRuleCollections");
+            }
+            this.logAnalyticsObjectCollectionRuleCollections = logAnalyticsObjectCollectionRuleCollections;
             return this;
         }
         public Builder logAnalyticsObjectCollectionRuleCollections(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection... logAnalyticsObjectCollectionRuleCollections) {
@@ -141,16 +152,21 @@ public final class GetLogAnalyticsObjectCollectionRulesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRulesResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

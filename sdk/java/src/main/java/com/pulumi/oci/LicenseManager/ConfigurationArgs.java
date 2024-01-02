@@ -5,6 +5,7 @@ package com.pulumi.oci.LicenseManager;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -137,8 +138,12 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConfigurationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.emailIds = Objects.requireNonNull($.emailIds, "expected parameter 'emailIds' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "compartmentId");
+            }
+            if ($.emailIds == null) {
+                throw new MissingRequiredPropertyException("ConfigurationArgs", "emailIds");
+            }
             return $;
         }
     }

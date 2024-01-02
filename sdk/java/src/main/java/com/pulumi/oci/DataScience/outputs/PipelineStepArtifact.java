@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -74,32 +75,44 @@ public final class PipelineStepArtifact {
 
         @CustomType.Setter
         public Builder artifactContentDisposition(@Nullable String artifactContentDisposition) {
+
             this.artifactContentDisposition = artifactContentDisposition;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentLength(String artifactContentLength) {
-            this.artifactContentLength = Objects.requireNonNull(artifactContentLength);
+            if (artifactContentLength == null) {
+              throw new MissingRequiredPropertyException("PipelineStepArtifact", "artifactContentLength");
+            }
+            this.artifactContentLength = artifactContentLength;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentMd5(@Nullable String artifactContentMd5) {
+
             this.artifactContentMd5 = artifactContentMd5;
             return this;
         }
         @CustomType.Setter
         public Builder artifactLastModified(@Nullable String artifactLastModified) {
+
             this.artifactLastModified = artifactLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder pipelineStepArtifact(String pipelineStepArtifact) {
-            this.pipelineStepArtifact = Objects.requireNonNull(pipelineStepArtifact);
+            if (pipelineStepArtifact == null) {
+              throw new MissingRequiredPropertyException("PipelineStepArtifact", "pipelineStepArtifact");
+            }
+            this.pipelineStepArtifact = pipelineStepArtifact;
             return this;
         }
         @CustomType.Setter
         public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+            if (stepName == null) {
+              throw new MissingRequiredPropertyException("PipelineStepArtifact", "stepName");
+            }
+            this.stepName = stepName;
             return this;
         }
         public PipelineStepArtifact build() {

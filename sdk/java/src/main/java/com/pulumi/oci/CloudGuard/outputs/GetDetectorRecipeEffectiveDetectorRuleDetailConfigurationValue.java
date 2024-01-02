@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValu
 
         @CustomType.Setter
         public Builder listType(String listType) {
-            this.listType = Objects.requireNonNull(listType);
+            if (listType == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue", "listType");
+            }
+            this.listType = listType;
             return this;
         }
         @CustomType.Setter
         public Builder managedListType(String managedListType) {
-            this.managedListType = Objects.requireNonNull(managedListType);
+            if (managedListType == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue", "managedListType");
+            }
+            this.managedListType = managedListType;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue build() {

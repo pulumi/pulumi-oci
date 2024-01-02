@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetProfilesProfileCollectionItemLevelsConfigurationItem {
 
         @CustomType.Setter
         public Builder level(String level) {
-            this.level = Objects.requireNonNull(level);
+            if (level == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItemLevelsConfigurationItem", "level");
+            }
+            this.level = level;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationId(String recommendationId) {
-            this.recommendationId = Objects.requireNonNull(recommendationId);
+            if (recommendationId == null) {
+              throw new MissingRequiredPropertyException("GetProfilesProfileCollectionItemLevelsConfigurationItem", "recommendationId");
+            }
+            this.recommendationId = recommendationId;
             return this;
         }
         public GetProfilesProfileCollectionItemLevelsConfigurationItem build() {

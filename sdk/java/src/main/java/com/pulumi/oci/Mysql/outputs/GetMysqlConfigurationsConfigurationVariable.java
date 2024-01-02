@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -1200,397 +1201,634 @@ public final class GetMysqlConfigurationsConfigurationVariable {
 
         @CustomType.Setter
         public Builder autocommit(Boolean autocommit) {
-            this.autocommit = Objects.requireNonNull(autocommit);
+            if (autocommit == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "autocommit");
+            }
+            this.autocommit = autocommit;
             return this;
         }
         @CustomType.Setter
         public Builder bigTables(Boolean bigTables) {
-            this.bigTables = Objects.requireNonNull(bigTables);
+            if (bigTables == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "bigTables");
+            }
+            this.bigTables = bigTables;
             return this;
         }
         @CustomType.Setter
         public Builder binlogExpireLogsSeconds(Integer binlogExpireLogsSeconds) {
-            this.binlogExpireLogsSeconds = Objects.requireNonNull(binlogExpireLogsSeconds);
+            if (binlogExpireLogsSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "binlogExpireLogsSeconds");
+            }
+            this.binlogExpireLogsSeconds = binlogExpireLogsSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder binlogRowMetadata(String binlogRowMetadata) {
-            this.binlogRowMetadata = Objects.requireNonNull(binlogRowMetadata);
+            if (binlogRowMetadata == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "binlogRowMetadata");
+            }
+            this.binlogRowMetadata = binlogRowMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder binlogRowValueOptions(String binlogRowValueOptions) {
-            this.binlogRowValueOptions = Objects.requireNonNull(binlogRowValueOptions);
+            if (binlogRowValueOptions == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "binlogRowValueOptions");
+            }
+            this.binlogRowValueOptions = binlogRowValueOptions;
             return this;
         }
         @CustomType.Setter
         public Builder binlogTransactionCompression(Boolean binlogTransactionCompression) {
-            this.binlogTransactionCompression = Objects.requireNonNull(binlogTransactionCompression);
+            if (binlogTransactionCompression == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "binlogTransactionCompression");
+            }
+            this.binlogTransactionCompression = binlogTransactionCompression;
             return this;
         }
         @CustomType.Setter
         public Builder completionType(String completionType) {
-            this.completionType = Objects.requireNonNull(completionType);
+            if (completionType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "completionType");
+            }
+            this.completionType = completionType;
             return this;
         }
         @CustomType.Setter
         public Builder connectTimeout(Integer connectTimeout) {
-            this.connectTimeout = Objects.requireNonNull(connectTimeout);
+            if (connectTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "connectTimeout");
+            }
+            this.connectTimeout = connectTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder connectionMemoryChunkSize(Integer connectionMemoryChunkSize) {
-            this.connectionMemoryChunkSize = Objects.requireNonNull(connectionMemoryChunkSize);
+            if (connectionMemoryChunkSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "connectionMemoryChunkSize");
+            }
+            this.connectionMemoryChunkSize = connectionMemoryChunkSize;
             return this;
         }
         @CustomType.Setter
         public Builder connectionMemoryLimit(String connectionMemoryLimit) {
-            this.connectionMemoryLimit = Objects.requireNonNull(connectionMemoryLimit);
+            if (connectionMemoryLimit == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "connectionMemoryLimit");
+            }
+            this.connectionMemoryLimit = connectionMemoryLimit;
             return this;
         }
         @CustomType.Setter
         public Builder cteMaxRecursionDepth(String cteMaxRecursionDepth) {
-            this.cteMaxRecursionDepth = Objects.requireNonNull(cteMaxRecursionDepth);
+            if (cteMaxRecursionDepth == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "cteMaxRecursionDepth");
+            }
+            this.cteMaxRecursionDepth = cteMaxRecursionDepth;
             return this;
         }
         @CustomType.Setter
         public Builder defaultAuthenticationPlugin(String defaultAuthenticationPlugin) {
-            this.defaultAuthenticationPlugin = Objects.requireNonNull(defaultAuthenticationPlugin);
+            if (defaultAuthenticationPlugin == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "defaultAuthenticationPlugin");
+            }
+            this.defaultAuthenticationPlugin = defaultAuthenticationPlugin;
             return this;
         }
         @CustomType.Setter
         public Builder foreignKeyChecks(Boolean foreignKeyChecks) {
-            this.foreignKeyChecks = Objects.requireNonNull(foreignKeyChecks);
+            if (foreignKeyChecks == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "foreignKeyChecks");
+            }
+            this.foreignKeyChecks = foreignKeyChecks;
             return this;
         }
         @CustomType.Setter
         public Builder generatedRandomPasswordLength(Integer generatedRandomPasswordLength) {
-            this.generatedRandomPasswordLength = Objects.requireNonNull(generatedRandomPasswordLength);
+            if (generatedRandomPasswordLength == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "generatedRandomPasswordLength");
+            }
+            this.generatedRandomPasswordLength = generatedRandomPasswordLength;
             return this;
         }
         @CustomType.Setter
         public Builder globalConnectionMemoryLimit(String globalConnectionMemoryLimit) {
-            this.globalConnectionMemoryLimit = Objects.requireNonNull(globalConnectionMemoryLimit);
+            if (globalConnectionMemoryLimit == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "globalConnectionMemoryLimit");
+            }
+            this.globalConnectionMemoryLimit = globalConnectionMemoryLimit;
             return this;
         }
         @CustomType.Setter
         public Builder globalConnectionMemoryTracking(Boolean globalConnectionMemoryTracking) {
-            this.globalConnectionMemoryTracking = Objects.requireNonNull(globalConnectionMemoryTracking);
+            if (globalConnectionMemoryTracking == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "globalConnectionMemoryTracking");
+            }
+            this.globalConnectionMemoryTracking = globalConnectionMemoryTracking;
             return this;
         }
         @CustomType.Setter
         public Builder groupReplicationConsistency(String groupReplicationConsistency) {
-            this.groupReplicationConsistency = Objects.requireNonNull(groupReplicationConsistency);
+            if (groupReplicationConsistency == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "groupReplicationConsistency");
+            }
+            this.groupReplicationConsistency = groupReplicationConsistency;
             return this;
         }
         @CustomType.Setter
         public Builder informationSchemaStatsExpiry(Integer informationSchemaStatsExpiry) {
-            this.informationSchemaStatsExpiry = Objects.requireNonNull(informationSchemaStatsExpiry);
+            if (informationSchemaStatsExpiry == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "informationSchemaStatsExpiry");
+            }
+            this.informationSchemaStatsExpiry = informationSchemaStatsExpiry;
             return this;
         }
         @CustomType.Setter
         public Builder innodbBufferPoolDumpPct(Integer innodbBufferPoolDumpPct) {
-            this.innodbBufferPoolDumpPct = Objects.requireNonNull(innodbBufferPoolDumpPct);
+            if (innodbBufferPoolDumpPct == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbBufferPoolDumpPct");
+            }
+            this.innodbBufferPoolDumpPct = innodbBufferPoolDumpPct;
             return this;
         }
         @CustomType.Setter
         public Builder innodbBufferPoolInstances(Integer innodbBufferPoolInstances) {
-            this.innodbBufferPoolInstances = Objects.requireNonNull(innodbBufferPoolInstances);
+            if (innodbBufferPoolInstances == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbBufferPoolInstances");
+            }
+            this.innodbBufferPoolInstances = innodbBufferPoolInstances;
             return this;
         }
         @CustomType.Setter
         public Builder innodbBufferPoolSize(String innodbBufferPoolSize) {
-            this.innodbBufferPoolSize = Objects.requireNonNull(innodbBufferPoolSize);
+            if (innodbBufferPoolSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbBufferPoolSize");
+            }
+            this.innodbBufferPoolSize = innodbBufferPoolSize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbDdlBufferSize(String innodbDdlBufferSize) {
-            this.innodbDdlBufferSize = Objects.requireNonNull(innodbDdlBufferSize);
+            if (innodbDdlBufferSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbDdlBufferSize");
+            }
+            this.innodbDdlBufferSize = innodbDdlBufferSize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbDdlThreads(Integer innodbDdlThreads) {
-            this.innodbDdlThreads = Objects.requireNonNull(innodbDdlThreads);
+            if (innodbDdlThreads == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbDdlThreads");
+            }
+            this.innodbDdlThreads = innodbDdlThreads;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtEnableStopword(Boolean innodbFtEnableStopword) {
-            this.innodbFtEnableStopword = Objects.requireNonNull(innodbFtEnableStopword);
+            if (innodbFtEnableStopword == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbFtEnableStopword");
+            }
+            this.innodbFtEnableStopword = innodbFtEnableStopword;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtMaxTokenSize(Integer innodbFtMaxTokenSize) {
-            this.innodbFtMaxTokenSize = Objects.requireNonNull(innodbFtMaxTokenSize);
+            if (innodbFtMaxTokenSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbFtMaxTokenSize");
+            }
+            this.innodbFtMaxTokenSize = innodbFtMaxTokenSize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtMinTokenSize(Integer innodbFtMinTokenSize) {
-            this.innodbFtMinTokenSize = Objects.requireNonNull(innodbFtMinTokenSize);
+            if (innodbFtMinTokenSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbFtMinTokenSize");
+            }
+            this.innodbFtMinTokenSize = innodbFtMinTokenSize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtNumWordOptimize(Integer innodbFtNumWordOptimize) {
-            this.innodbFtNumWordOptimize = Objects.requireNonNull(innodbFtNumWordOptimize);
+            if (innodbFtNumWordOptimize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbFtNumWordOptimize");
+            }
+            this.innodbFtNumWordOptimize = innodbFtNumWordOptimize;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtResultCacheLimit(String innodbFtResultCacheLimit) {
-            this.innodbFtResultCacheLimit = Objects.requireNonNull(innodbFtResultCacheLimit);
+            if (innodbFtResultCacheLimit == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbFtResultCacheLimit");
+            }
+            this.innodbFtResultCacheLimit = innodbFtResultCacheLimit;
             return this;
         }
         @CustomType.Setter
         public Builder innodbFtServerStopwordTable(String innodbFtServerStopwordTable) {
-            this.innodbFtServerStopwordTable = Objects.requireNonNull(innodbFtServerStopwordTable);
+            if (innodbFtServerStopwordTable == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbFtServerStopwordTable");
+            }
+            this.innodbFtServerStopwordTable = innodbFtServerStopwordTable;
             return this;
         }
         @CustomType.Setter
         public Builder innodbLockWaitTimeout(Integer innodbLockWaitTimeout) {
-            this.innodbLockWaitTimeout = Objects.requireNonNull(innodbLockWaitTimeout);
+            if (innodbLockWaitTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbLockWaitTimeout");
+            }
+            this.innodbLockWaitTimeout = innodbLockWaitTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder innodbLogWriterThreads(Boolean innodbLogWriterThreads) {
-            this.innodbLogWriterThreads = Objects.requireNonNull(innodbLogWriterThreads);
+            if (innodbLogWriterThreads == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbLogWriterThreads");
+            }
+            this.innodbLogWriterThreads = innodbLogWriterThreads;
             return this;
         }
         @CustomType.Setter
         public Builder innodbMaxPurgeLag(String innodbMaxPurgeLag) {
-            this.innodbMaxPurgeLag = Objects.requireNonNull(innodbMaxPurgeLag);
+            if (innodbMaxPurgeLag == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbMaxPurgeLag");
+            }
+            this.innodbMaxPurgeLag = innodbMaxPurgeLag;
             return this;
         }
         @CustomType.Setter
         public Builder innodbMaxPurgeLagDelay(Integer innodbMaxPurgeLagDelay) {
-            this.innodbMaxPurgeLagDelay = Objects.requireNonNull(innodbMaxPurgeLagDelay);
+            if (innodbMaxPurgeLagDelay == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbMaxPurgeLagDelay");
+            }
+            this.innodbMaxPurgeLagDelay = innodbMaxPurgeLagDelay;
             return this;
         }
         @CustomType.Setter
         public Builder innodbStatsPersistentSamplePages(String innodbStatsPersistentSamplePages) {
-            this.innodbStatsPersistentSamplePages = Objects.requireNonNull(innodbStatsPersistentSamplePages);
+            if (innodbStatsPersistentSamplePages == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbStatsPersistentSamplePages");
+            }
+            this.innodbStatsPersistentSamplePages = innodbStatsPersistentSamplePages;
             return this;
         }
         @CustomType.Setter
         public Builder innodbStatsTransientSamplePages(String innodbStatsTransientSamplePages) {
-            this.innodbStatsTransientSamplePages = Objects.requireNonNull(innodbStatsTransientSamplePages);
+            if (innodbStatsTransientSamplePages == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "innodbStatsTransientSamplePages");
+            }
+            this.innodbStatsTransientSamplePages = innodbStatsTransientSamplePages;
             return this;
         }
         @CustomType.Setter
         public Builder interactiveTimeout(Integer interactiveTimeout) {
-            this.interactiveTimeout = Objects.requireNonNull(interactiveTimeout);
+            if (interactiveTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "interactiveTimeout");
+            }
+            this.interactiveTimeout = interactiveTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder localInfile(Boolean localInfile) {
-            this.localInfile = Objects.requireNonNull(localInfile);
+            if (localInfile == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "localInfile");
+            }
+            this.localInfile = localInfile;
             return this;
         }
         @CustomType.Setter
         public Builder mandatoryRoles(String mandatoryRoles) {
-            this.mandatoryRoles = Objects.requireNonNull(mandatoryRoles);
+            if (mandatoryRoles == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mandatoryRoles");
+            }
+            this.mandatoryRoles = mandatoryRoles;
             return this;
         }
         @CustomType.Setter
         public Builder maxAllowedPacket(Integer maxAllowedPacket) {
-            this.maxAllowedPacket = Objects.requireNonNull(maxAllowedPacket);
+            if (maxAllowedPacket == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "maxAllowedPacket");
+            }
+            this.maxAllowedPacket = maxAllowedPacket;
             return this;
         }
         @CustomType.Setter
         public Builder maxBinlogCacheSize(String maxBinlogCacheSize) {
-            this.maxBinlogCacheSize = Objects.requireNonNull(maxBinlogCacheSize);
+            if (maxBinlogCacheSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "maxBinlogCacheSize");
+            }
+            this.maxBinlogCacheSize = maxBinlogCacheSize;
             return this;
         }
         @CustomType.Setter
         public Builder maxConnectErrors(String maxConnectErrors) {
-            this.maxConnectErrors = Objects.requireNonNull(maxConnectErrors);
+            if (maxConnectErrors == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "maxConnectErrors");
+            }
+            this.maxConnectErrors = maxConnectErrors;
             return this;
         }
         @CustomType.Setter
         public Builder maxConnections(Integer maxConnections) {
-            this.maxConnections = Objects.requireNonNull(maxConnections);
+            if (maxConnections == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "maxConnections");
+            }
+            this.maxConnections = maxConnections;
             return this;
         }
         @CustomType.Setter
         public Builder maxExecutionTime(String maxExecutionTime) {
-            this.maxExecutionTime = Objects.requireNonNull(maxExecutionTime);
+            if (maxExecutionTime == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "maxExecutionTime");
+            }
+            this.maxExecutionTime = maxExecutionTime;
             return this;
         }
         @CustomType.Setter
         public Builder maxHeapTableSize(String maxHeapTableSize) {
-            this.maxHeapTableSize = Objects.requireNonNull(maxHeapTableSize);
+            if (maxHeapTableSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "maxHeapTableSize");
+            }
+            this.maxHeapTableSize = maxHeapTableSize;
             return this;
         }
         @CustomType.Setter
         public Builder maxPreparedStmtCount(Integer maxPreparedStmtCount) {
-            this.maxPreparedStmtCount = Objects.requireNonNull(maxPreparedStmtCount);
+            if (maxPreparedStmtCount == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "maxPreparedStmtCount");
+            }
+            this.maxPreparedStmtCount = maxPreparedStmtCount;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlFirewallMode(Boolean mysqlFirewallMode) {
-            this.mysqlFirewallMode = Objects.requireNonNull(mysqlFirewallMode);
+            if (mysqlFirewallMode == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlFirewallMode");
+            }
+            this.mysqlFirewallMode = mysqlFirewallMode;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlZstdDefaultCompressionLevel(Integer mysqlZstdDefaultCompressionLevel) {
-            this.mysqlZstdDefaultCompressionLevel = Objects.requireNonNull(mysqlZstdDefaultCompressionLevel);
+            if (mysqlZstdDefaultCompressionLevel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlZstdDefaultCompressionLevel");
+            }
+            this.mysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxConnectTimeout(Integer mysqlxConnectTimeout) {
-            this.mysqlxConnectTimeout = Objects.requireNonNull(mysqlxConnectTimeout);
+            if (mysqlxConnectTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxConnectTimeout");
+            }
+            this.mysqlxConnectTimeout = mysqlxConnectTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxDeflateDefaultCompressionLevel(Integer mysqlxDeflateDefaultCompressionLevel) {
-            this.mysqlxDeflateDefaultCompressionLevel = Objects.requireNonNull(mysqlxDeflateDefaultCompressionLevel);
+            if (mysqlxDeflateDefaultCompressionLevel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxDeflateDefaultCompressionLevel");
+            }
+            this.mysqlxDeflateDefaultCompressionLevel = mysqlxDeflateDefaultCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxDeflateMaxClientCompressionLevel(Integer mysqlxDeflateMaxClientCompressionLevel) {
-            this.mysqlxDeflateMaxClientCompressionLevel = Objects.requireNonNull(mysqlxDeflateMaxClientCompressionLevel);
+            if (mysqlxDeflateMaxClientCompressionLevel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxDeflateMaxClientCompressionLevel");
+            }
+            this.mysqlxDeflateMaxClientCompressionLevel = mysqlxDeflateMaxClientCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxDocumentIdUniquePrefix(Integer mysqlxDocumentIdUniquePrefix) {
-            this.mysqlxDocumentIdUniquePrefix = Objects.requireNonNull(mysqlxDocumentIdUniquePrefix);
+            if (mysqlxDocumentIdUniquePrefix == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxDocumentIdUniquePrefix");
+            }
+            this.mysqlxDocumentIdUniquePrefix = mysqlxDocumentIdUniquePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxEnableHelloNotice(Boolean mysqlxEnableHelloNotice) {
-            this.mysqlxEnableHelloNotice = Objects.requireNonNull(mysqlxEnableHelloNotice);
+            if (mysqlxEnableHelloNotice == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxEnableHelloNotice");
+            }
+            this.mysqlxEnableHelloNotice = mysqlxEnableHelloNotice;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxIdleWorkerThreadTimeout(Integer mysqlxIdleWorkerThreadTimeout) {
-            this.mysqlxIdleWorkerThreadTimeout = Objects.requireNonNull(mysqlxIdleWorkerThreadTimeout);
+            if (mysqlxIdleWorkerThreadTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxIdleWorkerThreadTimeout");
+            }
+            this.mysqlxIdleWorkerThreadTimeout = mysqlxIdleWorkerThreadTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxInteractiveTimeout(Integer mysqlxInteractiveTimeout) {
-            this.mysqlxInteractiveTimeout = Objects.requireNonNull(mysqlxInteractiveTimeout);
+            if (mysqlxInteractiveTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxInteractiveTimeout");
+            }
+            this.mysqlxInteractiveTimeout = mysqlxInteractiveTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxLz4defaultCompressionLevel(Integer mysqlxLz4defaultCompressionLevel) {
-            this.mysqlxLz4defaultCompressionLevel = Objects.requireNonNull(mysqlxLz4defaultCompressionLevel);
+            if (mysqlxLz4defaultCompressionLevel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxLz4defaultCompressionLevel");
+            }
+            this.mysqlxLz4defaultCompressionLevel = mysqlxLz4defaultCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxLz4maxClientCompressionLevel(Integer mysqlxLz4maxClientCompressionLevel) {
-            this.mysqlxLz4maxClientCompressionLevel = Objects.requireNonNull(mysqlxLz4maxClientCompressionLevel);
+            if (mysqlxLz4maxClientCompressionLevel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxLz4maxClientCompressionLevel");
+            }
+            this.mysqlxLz4maxClientCompressionLevel = mysqlxLz4maxClientCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxMaxAllowedPacket(Integer mysqlxMaxAllowedPacket) {
-            this.mysqlxMaxAllowedPacket = Objects.requireNonNull(mysqlxMaxAllowedPacket);
+            if (mysqlxMaxAllowedPacket == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxMaxAllowedPacket");
+            }
+            this.mysqlxMaxAllowedPacket = mysqlxMaxAllowedPacket;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxMinWorkerThreads(Integer mysqlxMinWorkerThreads) {
-            this.mysqlxMinWorkerThreads = Objects.requireNonNull(mysqlxMinWorkerThreads);
+            if (mysqlxMinWorkerThreads == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxMinWorkerThreads");
+            }
+            this.mysqlxMinWorkerThreads = mysqlxMinWorkerThreads;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxReadTimeout(Integer mysqlxReadTimeout) {
-            this.mysqlxReadTimeout = Objects.requireNonNull(mysqlxReadTimeout);
+            if (mysqlxReadTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxReadTimeout");
+            }
+            this.mysqlxReadTimeout = mysqlxReadTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxWaitTimeout(Integer mysqlxWaitTimeout) {
-            this.mysqlxWaitTimeout = Objects.requireNonNull(mysqlxWaitTimeout);
+            if (mysqlxWaitTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxWaitTimeout");
+            }
+            this.mysqlxWaitTimeout = mysqlxWaitTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxWriteTimeout(Integer mysqlxWriteTimeout) {
-            this.mysqlxWriteTimeout = Objects.requireNonNull(mysqlxWriteTimeout);
+            if (mysqlxWriteTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxWriteTimeout");
+            }
+            this.mysqlxWriteTimeout = mysqlxWriteTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxZstdDefaultCompressionLevel(Integer mysqlxZstdDefaultCompressionLevel) {
-            this.mysqlxZstdDefaultCompressionLevel = Objects.requireNonNull(mysqlxZstdDefaultCompressionLevel);
+            if (mysqlxZstdDefaultCompressionLevel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxZstdDefaultCompressionLevel");
+            }
+            this.mysqlxZstdDefaultCompressionLevel = mysqlxZstdDefaultCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlxZstdMaxClientCompressionLevel(Integer mysqlxZstdMaxClientCompressionLevel) {
-            this.mysqlxZstdMaxClientCompressionLevel = Objects.requireNonNull(mysqlxZstdMaxClientCompressionLevel);
+            if (mysqlxZstdMaxClientCompressionLevel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "mysqlxZstdMaxClientCompressionLevel");
+            }
+            this.mysqlxZstdMaxClientCompressionLevel = mysqlxZstdMaxClientCompressionLevel;
             return this;
         }
         @CustomType.Setter
         public Builder netReadTimeout(Integer netReadTimeout) {
-            this.netReadTimeout = Objects.requireNonNull(netReadTimeout);
+            if (netReadTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "netReadTimeout");
+            }
+            this.netReadTimeout = netReadTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder netWriteTimeout(Integer netWriteTimeout) {
-            this.netWriteTimeout = Objects.requireNonNull(netWriteTimeout);
+            if (netWriteTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "netWriteTimeout");
+            }
+            this.netWriteTimeout = netWriteTimeout;
             return this;
         }
         @CustomType.Setter
         public Builder parserMaxMemSize(String parserMaxMemSize) {
-            this.parserMaxMemSize = Objects.requireNonNull(parserMaxMemSize);
+            if (parserMaxMemSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "parserMaxMemSize");
+            }
+            this.parserMaxMemSize = parserMaxMemSize;
             return this;
         }
         @CustomType.Setter
         public Builder queryAllocBlockSize(String queryAllocBlockSize) {
-            this.queryAllocBlockSize = Objects.requireNonNull(queryAllocBlockSize);
+            if (queryAllocBlockSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "queryAllocBlockSize");
+            }
+            this.queryAllocBlockSize = queryAllocBlockSize;
             return this;
         }
         @CustomType.Setter
         public Builder queryPreallocSize(String queryPreallocSize) {
-            this.queryPreallocSize = Objects.requireNonNull(queryPreallocSize);
+            if (queryPreallocSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "queryPreallocSize");
+            }
+            this.queryPreallocSize = queryPreallocSize;
             return this;
         }
         @CustomType.Setter
         public Builder regexpTimeLimit(Integer regexpTimeLimit) {
-            this.regexpTimeLimit = Objects.requireNonNull(regexpTimeLimit);
+            if (regexpTimeLimit == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "regexpTimeLimit");
+            }
+            this.regexpTimeLimit = regexpTimeLimit;
             return this;
         }
         @CustomType.Setter
         public Builder sortBufferSize(String sortBufferSize) {
-            this.sortBufferSize = Objects.requireNonNull(sortBufferSize);
+            if (sortBufferSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "sortBufferSize");
+            }
+            this.sortBufferSize = sortBufferSize;
             return this;
         }
         @CustomType.Setter
         public Builder sqlMode(String sqlMode) {
-            this.sqlMode = Objects.requireNonNull(sqlMode);
+            if (sqlMode == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "sqlMode");
+            }
+            this.sqlMode = sqlMode;
             return this;
         }
         @CustomType.Setter
         public Builder sqlRequirePrimaryKey(Boolean sqlRequirePrimaryKey) {
-            this.sqlRequirePrimaryKey = Objects.requireNonNull(sqlRequirePrimaryKey);
+            if (sqlRequirePrimaryKey == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "sqlRequirePrimaryKey");
+            }
+            this.sqlRequirePrimaryKey = sqlRequirePrimaryKey;
             return this;
         }
         @CustomType.Setter
         public Builder sqlWarnings(Boolean sqlWarnings) {
-            this.sqlWarnings = Objects.requireNonNull(sqlWarnings);
+            if (sqlWarnings == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "sqlWarnings");
+            }
+            this.sqlWarnings = sqlWarnings;
             return this;
         }
         @CustomType.Setter
         public Builder threadPoolDedicatedListeners(Boolean threadPoolDedicatedListeners) {
-            this.threadPoolDedicatedListeners = Objects.requireNonNull(threadPoolDedicatedListeners);
+            if (threadPoolDedicatedListeners == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "threadPoolDedicatedListeners");
+            }
+            this.threadPoolDedicatedListeners = threadPoolDedicatedListeners;
             return this;
         }
         @CustomType.Setter
         public Builder threadPoolMaxTransactionsLimit(Integer threadPoolMaxTransactionsLimit) {
-            this.threadPoolMaxTransactionsLimit = Objects.requireNonNull(threadPoolMaxTransactionsLimit);
+            if (threadPoolMaxTransactionsLimit == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "threadPoolMaxTransactionsLimit");
+            }
+            this.threadPoolMaxTransactionsLimit = threadPoolMaxTransactionsLimit;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
         public Builder tmpTableSize(String tmpTableSize) {
-            this.tmpTableSize = Objects.requireNonNull(tmpTableSize);
+            if (tmpTableSize == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "tmpTableSize");
+            }
+            this.tmpTableSize = tmpTableSize;
             return this;
         }
         @CustomType.Setter
         public Builder transactionIsolation(String transactionIsolation) {
-            this.transactionIsolation = Objects.requireNonNull(transactionIsolation);
+            if (transactionIsolation == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "transactionIsolation");
+            }
+            this.transactionIsolation = transactionIsolation;
             return this;
         }
         @CustomType.Setter
         public Builder waitTimeout(Integer waitTimeout) {
-            this.waitTimeout = Objects.requireNonNull(waitTimeout);
+            if (waitTimeout == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfigurationVariable", "waitTimeout");
+            }
+            this.waitTimeout = waitTimeout;
             return this;
         }
         public GetMysqlConfigurationsConfigurationVariable build() {

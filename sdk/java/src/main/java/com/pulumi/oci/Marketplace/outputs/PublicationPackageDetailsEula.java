@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -58,11 +59,15 @@ public final class PublicationPackageDetailsEula {
 
         @CustomType.Setter
         public Builder eulaType(String eulaType) {
-            this.eulaType = Objects.requireNonNull(eulaType);
+            if (eulaType == null) {
+              throw new MissingRequiredPropertyException("PublicationPackageDetailsEula", "eulaType");
+            }
+            this.eulaType = eulaType;
             return this;
         }
         @CustomType.Setter
         public Builder licenseText(@Nullable String licenseText) {
+
             this.licenseText = licenseText;
             return this;
         }

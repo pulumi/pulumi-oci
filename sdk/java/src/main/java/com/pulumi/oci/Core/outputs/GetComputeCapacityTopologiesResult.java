@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologiesComputeCapacityTopologyCollection;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologiesFilter;
 import java.lang.String;
@@ -109,17 +110,24 @@ public final class GetComputeCapacityTopologiesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologiesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeCapacityTopologyCollections(List<GetComputeCapacityTopologiesComputeCapacityTopologyCollection> computeCapacityTopologyCollections) {
-            this.computeCapacityTopologyCollections = Objects.requireNonNull(computeCapacityTopologyCollections);
+            if (computeCapacityTopologyCollections == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologiesResult", "computeCapacityTopologyCollections");
+            }
+            this.computeCapacityTopologyCollections = computeCapacityTopologyCollections;
             return this;
         }
         public Builder computeCapacityTopologyCollections(GetComputeCapacityTopologiesComputeCapacityTopologyCollection... computeCapacityTopologyCollections) {
@@ -127,11 +135,13 @@ public final class GetComputeCapacityTopologiesResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeCapacityTopologiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,7 +150,10 @@ public final class GetComputeCapacityTopologiesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetComputeCapacityTopologiesResult build() {

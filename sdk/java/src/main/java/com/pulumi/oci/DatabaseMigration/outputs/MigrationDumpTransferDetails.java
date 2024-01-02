@@ -66,16 +66,19 @@ public final class MigrationDumpTransferDetails {
 
         @CustomType.Setter
         public Builder sharedStorageMountTargetId(@Nullable String sharedStorageMountTargetId) {
+
             this.sharedStorageMountTargetId = sharedStorageMountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder source(@Nullable MigrationDumpTransferDetailsSource source) {
+
             this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder target(@Nullable MigrationDumpTransferDetailsTarget target) {
+
             this.target = target;
             return this;
         }

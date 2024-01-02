@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -201,51 +202,67 @@ public final class VolumeBackupPolicySchedule {
 
         @CustomType.Setter
         public Builder backupType(String backupType) {
-            this.backupType = Objects.requireNonNull(backupType);
+            if (backupType == null) {
+              throw new MissingRequiredPropertyException("VolumeBackupPolicySchedule", "backupType");
+            }
+            this.backupType = backupType;
             return this;
         }
         @CustomType.Setter
         public Builder dayOfMonth(@Nullable Integer dayOfMonth) {
+
             this.dayOfMonth = dayOfMonth;
             return this;
         }
         @CustomType.Setter
         public Builder dayOfWeek(@Nullable String dayOfWeek) {
+
             this.dayOfWeek = dayOfWeek;
             return this;
         }
         @CustomType.Setter
         public Builder hourOfDay(@Nullable Integer hourOfDay) {
+
             this.hourOfDay = hourOfDay;
             return this;
         }
         @CustomType.Setter
         public Builder month(@Nullable String month) {
+
             this.month = month;
             return this;
         }
         @CustomType.Setter
         public Builder offsetSeconds(@Nullable Integer offsetSeconds) {
+
             this.offsetSeconds = offsetSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder offsetType(@Nullable String offsetType) {
+
             this.offsetType = offsetType;
             return this;
         }
         @CustomType.Setter
         public Builder period(String period) {
-            this.period = Objects.requireNonNull(period);
+            if (period == null) {
+              throw new MissingRequiredPropertyException("VolumeBackupPolicySchedule", "period");
+            }
+            this.period = period;
             return this;
         }
         @CustomType.Setter
         public Builder retentionSeconds(Integer retentionSeconds) {
-            this.retentionSeconds = Objects.requireNonNull(retentionSeconds);
+            if (retentionSeconds == null) {
+              throw new MissingRequiredPropertyException("VolumeBackupPolicySchedule", "retentionSeconds");
+            }
+            this.retentionSeconds = retentionSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(@Nullable String timeZone) {
+
             this.timeZone = timeZone;
             return this;
         }

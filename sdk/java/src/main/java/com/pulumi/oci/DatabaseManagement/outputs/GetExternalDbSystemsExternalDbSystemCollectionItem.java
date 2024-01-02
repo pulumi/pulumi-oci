@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig;
 import java.lang.Boolean;
@@ -214,12 +215,18 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagementConfigs(List<GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig> databaseManagementConfigs) {
-            this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
+            if (databaseManagementConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "databaseManagementConfigs");
+            }
+            this.databaseManagementConfigs = databaseManagementConfigs;
             return this;
         }
         public Builder databaseManagementConfigs(GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig... databaseManagementConfigs) {
@@ -227,42 +234,66 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
         }
         @CustomType.Setter
         public Builder dbSystemDiscoveryId(String dbSystemDiscoveryId) {
-            this.dbSystemDiscoveryId = Objects.requireNonNull(dbSystemDiscoveryId);
+            if (dbSystemDiscoveryId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "dbSystemDiscoveryId");
+            }
+            this.dbSystemDiscoveryId = dbSystemDiscoveryId;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryAgentId(String discoveryAgentId) {
-            this.discoveryAgentId = Objects.requireNonNull(discoveryAgentId);
+            if (discoveryAgentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "discoveryAgentId");
+            }
+            this.discoveryAgentId = discoveryAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder homeDirectory(String homeDirectory) {
-            this.homeDirectory = Objects.requireNonNull(homeDirectory);
+            if (homeDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "homeDirectory");
+            }
+            this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCluster(Boolean isCluster) {
-            this.isCluster = Objects.requireNonNull(isCluster);
+            if (isCluster == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "isCluster");
+            }
+            this.isCluster = isCluster;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder stackMonitoringConfigs(List<GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig> stackMonitoringConfigs) {
-            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            if (stackMonitoringConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "stackMonitoringConfigs");
+            }
+            this.stackMonitoringConfigs = stackMonitoringConfigs;
             return this;
         }
         public Builder stackMonitoringConfigs(GetExternalDbSystemsExternalDbSystemCollectionItemStackMonitoringConfig... stackMonitoringConfigs) {
@@ -270,17 +301,26 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemsExternalDbSystemCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetExternalDbSystemsExternalDbSystemCollectionItem build() {

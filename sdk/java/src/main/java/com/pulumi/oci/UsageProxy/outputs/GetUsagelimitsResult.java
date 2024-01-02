@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetUsagelimitsFilter;
 import com.pulumi.oci.UsageProxy.outputs.GetUsagelimitsUsageLimitCollection;
 import java.lang.String;
@@ -105,11 +106,15 @@ public final class GetUsagelimitsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUsagelimitsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -118,32 +123,44 @@ public final class GetUsagelimitsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limitType(@Nullable String limitType) {
+
             this.limitType = limitType;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder serviceType(@Nullable String serviceType) {
+
             this.serviceType = serviceType;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder usageLimitCollections(List<GetUsagelimitsUsageLimitCollection> usageLimitCollections) {
-            this.usageLimitCollections = Objects.requireNonNull(usageLimitCollections);
+            if (usageLimitCollections == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsResult", "usageLimitCollections");
+            }
+            this.usageLimitCollections = usageLimitCollections;
             return this;
         }
         public Builder usageLimitCollections(GetUsagelimitsUsageLimitCollection... usageLimitCollections) {

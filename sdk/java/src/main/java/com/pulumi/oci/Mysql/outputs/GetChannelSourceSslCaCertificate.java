@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetChannelSourceSslCaCertificate {
 
         @CustomType.Setter
         public Builder certificateType(String certificateType) {
-            this.certificateType = Objects.requireNonNull(certificateType);
+            if (certificateType == null) {
+              throw new MissingRequiredPropertyException("GetChannelSourceSslCaCertificate", "certificateType");
+            }
+            this.certificateType = certificateType;
             return this;
         }
         @CustomType.Setter
         public Builder contents(String contents) {
-            this.contents = Objects.requireNonNull(contents);
+            if (contents == null) {
+              throw new MissingRequiredPropertyException("GetChannelSourceSslCaCertificate", "contents");
+            }
+            this.contents = contents;
             return this;
         }
         public GetChannelSourceSslCaCertificate build() {

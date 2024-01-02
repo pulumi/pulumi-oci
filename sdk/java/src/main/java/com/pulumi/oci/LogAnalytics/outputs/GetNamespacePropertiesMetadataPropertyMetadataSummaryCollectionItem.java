@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel;
 import java.lang.String;
 import java.util.List;
@@ -100,22 +101,34 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
 
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+            if (defaultValue == null) {
+              throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem", "defaultValue");
+            }
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder levels(List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel> levels) {
-            this.levels = Objects.requireNonNull(levels);
+            if (levels == null) {
+              throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem", "levels");
+            }
+            this.levels = levels;
             return this;
         }
         public Builder levels(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel... levels) {
@@ -123,7 +136,10 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItem build() {

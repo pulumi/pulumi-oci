@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.AccessPolicyRuleDestination;
 import com.pulumi.oci.ServiceMesh.outputs.AccessPolicyRuleSource;
 import java.lang.String;
@@ -72,17 +73,26 @@ public final class AccessPolicyRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("AccessPolicyRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder destination(AccessPolicyRuleDestination destination) {
-            this.destination = Objects.requireNonNull(destination);
+            if (destination == null) {
+              throw new MissingRequiredPropertyException("AccessPolicyRule", "destination");
+            }
+            this.destination = destination;
             return this;
         }
         @CustomType.Setter
         public Builder source(AccessPolicyRuleSource source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("AccessPolicyRule", "source");
+            }
+            this.source = source;
             return this;
         }
         public AccessPolicyRule build() {

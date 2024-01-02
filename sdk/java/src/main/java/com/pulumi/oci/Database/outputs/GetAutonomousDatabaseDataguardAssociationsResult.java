@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDataguardAssociationsFilter;
 import java.lang.String;
@@ -80,7 +81,10 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
 
         @CustomType.Setter
         public Builder autonomousDatabaseDataguardAssociations(List<GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation> autonomousDatabaseDataguardAssociations) {
-            this.autonomousDatabaseDataguardAssociations = Objects.requireNonNull(autonomousDatabaseDataguardAssociations);
+            if (autonomousDatabaseDataguardAssociations == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationsResult", "autonomousDatabaseDataguardAssociations");
+            }
+            this.autonomousDatabaseDataguardAssociations = autonomousDatabaseDataguardAssociations;
             return this;
         }
         public Builder autonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssociation... autonomousDatabaseDataguardAssociations) {
@@ -88,11 +92,15 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
         }
         @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            if (autonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationsResult", "autonomousDatabaseId");
+            }
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDatabaseDataguardAssociationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,7 +109,10 @@ public final class GetAutonomousDatabaseDataguardAssociationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAutonomousDatabaseDataguardAssociationsResult build() {

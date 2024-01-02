@@ -100,26 +100,31 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
 
         @CustomType.Setter
         public Builder fieldTimeFormat(@Nullable String fieldTimeFormat) {
+
             this.fieldTimeFormat = fieldTimeFormat;
             return this;
         }
         @CustomType.Setter
         public Builder fieldTimeKey(@Nullable String fieldTimeKey) {
+
             this.fieldTimeKey = fieldTimeKey;
             return this;
         }
         @CustomType.Setter
         public Builder fieldTimeZone(@Nullable String fieldTimeZone) {
+
             this.fieldTimeZone = fieldTimeZone;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pattern(@Nullable String pattern) {
+
             this.pattern = pattern;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetUserCapability;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -283,7 +284,10 @@ public final class GetUserResult {
 
         @CustomType.Setter
         public Builder capabilities(List<GetUserCapability> capabilities) {
-            this.capabilities = Objects.requireNonNull(capabilities);
+            if (capabilities == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "capabilities");
+            }
+            this.capabilities = capabilities;
             return this;
         }
         public Builder capabilities(GetUserCapability... capabilities) {
@@ -291,87 +295,138 @@ public final class GetUserResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbUserName(String dbUserName) {
-            this.dbUserName = Objects.requireNonNull(dbUserName);
+            if (dbUserName == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "dbUserName");
+            }
+            this.dbUserName = dbUserName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+            if (email == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "email");
+            }
+            this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder emailVerified(Boolean emailVerified) {
-            this.emailVerified = Objects.requireNonNull(emailVerified);
+            if (emailVerified == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "emailVerified");
+            }
+            this.emailVerified = emailVerified;
             return this;
         }
         @CustomType.Setter
         public Builder externalIdentifier(String externalIdentifier) {
-            this.externalIdentifier = Objects.requireNonNull(externalIdentifier);
+            if (externalIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "externalIdentifier");
+            }
+            this.externalIdentifier = externalIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identityProviderId(String identityProviderId) {
-            this.identityProviderId = Objects.requireNonNull(identityProviderId);
+            if (identityProviderId == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "identityProviderId");
+            }
+            this.identityProviderId = identityProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder inactiveState(String inactiveState) {
-            this.inactiveState = Objects.requireNonNull(inactiveState);
+            if (inactiveState == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "inactiveState");
+            }
+            this.inactiveState = inactiveState;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulLoginTime(String lastSuccessfulLoginTime) {
-            this.lastSuccessfulLoginTime = Objects.requireNonNull(lastSuccessfulLoginTime);
+            if (lastSuccessfulLoginTime == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "lastSuccessfulLoginTime");
+            }
+            this.lastSuccessfulLoginTime = lastSuccessfulLoginTime;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder previousSuccessfulLoginTime(String previousSuccessfulLoginTime) {
-            this.previousSuccessfulLoginTime = Objects.requireNonNull(previousSuccessfulLoginTime);
+            if (previousSuccessfulLoginTime == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "previousSuccessfulLoginTime");
+            }
+            this.previousSuccessfulLoginTime = previousSuccessfulLoginTime;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetUserResult build() {

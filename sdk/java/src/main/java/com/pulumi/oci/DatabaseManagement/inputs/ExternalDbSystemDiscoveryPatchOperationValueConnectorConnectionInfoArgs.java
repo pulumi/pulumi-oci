@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs;
 import java.lang.String;
@@ -152,7 +153,9 @@ public final class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnecti
         }
 
         public ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs build() {
-            $.componentType = Objects.requireNonNull($.componentType, "expected parameter 'componentType' to be non-null");
+            if ($.componentType == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs", "componentType");
+            }
             return $;
         }
     }

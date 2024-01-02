@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceConfigurationArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceWindowArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataArgs;
@@ -740,13 +741,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DeploymentArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.cpuCoreCount = Objects.requireNonNull($.cpuCoreCount, "expected parameter 'cpuCoreCount' to be non-null");
-            $.deploymentType = Objects.requireNonNull($.deploymentType, "expected parameter 'deploymentType' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.isAutoScalingEnabled = Objects.requireNonNull($.isAutoScalingEnabled, "expected parameter 'isAutoScalingEnabled' to be non-null");
-            $.licenseModel = Objects.requireNonNull($.licenseModel, "expected parameter 'licenseModel' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "compartmentId");
+            }
+            if ($.cpuCoreCount == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "cpuCoreCount");
+            }
+            if ($.deploymentType == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "deploymentType");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "displayName");
+            }
+            if ($.isAutoScalingEnabled == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "isAutoScalingEnabled");
+            }
+            if ($.licenseModel == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "licenseModel");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("DeploymentArgs", "subnetId");
+            }
             return $;
         }
     }

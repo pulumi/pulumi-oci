@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue;
 import java.lang.String;
 import java.util.List;
@@ -100,27 +101,42 @@ public final class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigura
 
         @CustomType.Setter
         public Builder configKey(String configKey) {
-            this.configKey = Objects.requireNonNull(configKey);
+            if (configKey == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration", "configKey");
+            }
+            this.configKey = configKey;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration", "value");
+            }
+            this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder values(List<GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values) {
-            this.values = Objects.requireNonNull(values);
+            if (values == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration", "values");
+            }
+            this.values = values;
             return this;
         }
         public Builder values(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue... values) {

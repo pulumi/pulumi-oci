@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsPreferenceItem;
 import java.lang.String;
 import java.util.List;
@@ -64,12 +65,18 @@ public final class GetLogAnalyticsPreferenceResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsPreferenceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetLogAnalyticsPreferenceItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsPreferenceResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsPreferenceItem... items) {
@@ -77,7 +84,10 @@ public final class GetLogAnalyticsPreferenceResult {
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsPreferenceResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         public GetLogAnalyticsPreferenceResult build() {

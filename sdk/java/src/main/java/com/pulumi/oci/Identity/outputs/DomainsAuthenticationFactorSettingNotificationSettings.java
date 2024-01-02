@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -64,7 +65,10 @@ public final class DomainsAuthenticationFactorSettingNotificationSettings {
 
         @CustomType.Setter
         public Builder pullEnabled(Boolean pullEnabled) {
-            this.pullEnabled = Objects.requireNonNull(pullEnabled);
+            if (pullEnabled == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingNotificationSettings", "pullEnabled");
+            }
+            this.pullEnabled = pullEnabled;
             return this;
         }
         public DomainsAuthenticationFactorSettingNotificationSettings build() {

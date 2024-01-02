@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -182,57 +183,90 @@ public final class GetAutonomousContainerPatchesAutonomousPatch {
 
         @CustomType.Setter
         public Builder autonomousPatchType(String autonomousPatchType) {
-            this.autonomousPatchType = Objects.requireNonNull(autonomousPatchType);
+            if (autonomousPatchType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "autonomousPatchType");
+            }
+            this.autonomousPatchType = autonomousPatchType;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder patchModel(String patchModel) {
-            this.patchModel = Objects.requireNonNull(patchModel);
+            if (patchModel == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "patchModel");
+            }
+            this.patchModel = patchModel;
             return this;
         }
         @CustomType.Setter
         public Builder quarter(String quarter) {
-            this.quarter = Objects.requireNonNull(quarter);
+            if (quarter == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "quarter");
+            }
+            this.quarter = quarter;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+            if (timeReleased == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "timeReleased");
+            }
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "version");
+            }
+            this.version = version;
             return this;
         }
         @CustomType.Setter
         public Builder year(String year) {
-            this.year = Objects.requireNonNull(year);
+            if (year == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerPatchesAutonomousPatch", "year");
+            }
+            this.year = year;
             return this;
         }
         public GetAutonomousContainerPatchesAutonomousPatch build() {

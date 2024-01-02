@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -115,32 +116,42 @@ public final class MigrationPlanStrategy {
 
         @CustomType.Setter
         public Builder adjustmentMultiplier(@Nullable Double adjustmentMultiplier) {
+
             this.adjustmentMultiplier = adjustmentMultiplier;
             return this;
         }
         @CustomType.Setter
         public Builder metricTimeWindow(@Nullable String metricTimeWindow) {
+
             this.metricTimeWindow = metricTimeWindow;
             return this;
         }
         @CustomType.Setter
         public Builder metricType(@Nullable String metricType) {
+
             this.metricType = metricType;
             return this;
         }
         @CustomType.Setter
         public Builder percentile(@Nullable String percentile) {
+
             this.percentile = percentile;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("MigrationPlanStrategy", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+            if (strategyType == null) {
+              throw new MissingRequiredPropertyException("MigrationPlanStrategy", "strategyType");
+            }
+            this.strategyType = strategyType;
             return this;
         }
         public MigrationPlanStrategy build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCpeDeviceShapesCpeDeviceShape;
 import com.pulumi.oci.Core.outputs.GetCpeDeviceShapesFilter;
 import java.lang.String;
@@ -66,7 +67,10 @@ public final class GetCpeDeviceShapesResult {
 
         @CustomType.Setter
         public Builder cpeDeviceShapes(List<GetCpeDeviceShapesCpeDeviceShape> cpeDeviceShapes) {
-            this.cpeDeviceShapes = Objects.requireNonNull(cpeDeviceShapes);
+            if (cpeDeviceShapes == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapesResult", "cpeDeviceShapes");
+            }
+            this.cpeDeviceShapes = cpeDeviceShapes;
             return this;
         }
         public Builder cpeDeviceShapes(GetCpeDeviceShapesCpeDeviceShape... cpeDeviceShapes) {
@@ -74,6 +78,7 @@ public final class GetCpeDeviceShapesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCpeDeviceShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -82,7 +87,10 @@ public final class GetCpeDeviceShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCpeDeviceShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetCpeDeviceShapesResult build() {

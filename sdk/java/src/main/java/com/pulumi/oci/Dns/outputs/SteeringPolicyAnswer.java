@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -101,27 +102,38 @@ public final class SteeringPolicyAnswer {
 
         @CustomType.Setter
         public Builder isDisabled(@Nullable Boolean isDisabled) {
+
             this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("SteeringPolicyAnswer", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pool(@Nullable String pool) {
+
             this.pool = pool;
             return this;
         }
         @CustomType.Setter
         public Builder rdata(String rdata) {
-            this.rdata = Objects.requireNonNull(rdata);
+            if (rdata == null) {
+              throw new MissingRequiredPropertyException("SteeringPolicyAnswer", "rdata");
+            }
+            this.rdata = rdata;
             return this;
         }
         @CustomType.Setter
         public Builder rtype(String rtype) {
-            this.rtype = Objects.requireNonNull(rtype);
+            if (rtype == null) {
+              throw new MissingRequiredPropertyException("SteeringPolicyAnswer", "rtype");
+            }
+            this.rtype = rtype;
             return this;
         }
         public SteeringPolicyAnswer build() {

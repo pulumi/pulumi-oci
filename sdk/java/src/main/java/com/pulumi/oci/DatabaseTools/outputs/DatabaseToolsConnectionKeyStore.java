@@ -74,16 +74,19 @@ public final class DatabaseToolsConnectionKeyStore {
 
         @CustomType.Setter
         public Builder keyStoreContent(@Nullable DatabaseToolsConnectionKeyStoreKeyStoreContent keyStoreContent) {
+
             this.keyStoreContent = keyStoreContent;
             return this;
         }
         @CustomType.Setter
         public Builder keyStorePassword(@Nullable DatabaseToolsConnectionKeyStoreKeyStorePassword keyStorePassword) {
+
             this.keyStorePassword = keyStorePassword;
             return this;
         }
         @CustomType.Setter
         public Builder keyStoreType(@Nullable String keyStoreType) {
+
             this.keyStoreType = keyStoreType;
             return this;
         }

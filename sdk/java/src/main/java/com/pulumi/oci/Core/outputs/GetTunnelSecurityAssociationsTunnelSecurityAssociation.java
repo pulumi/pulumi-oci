@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetTunnelSecurityAssociationsTunnelSecurityAssociation {
 
         @CustomType.Setter
         public Builder cpeSubnet(String cpeSubnet) {
-            this.cpeSubnet = Objects.requireNonNull(cpeSubnet);
+            if (cpeSubnet == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsTunnelSecurityAssociation", "cpeSubnet");
+            }
+            this.cpeSubnet = cpeSubnet;
             return this;
         }
         @CustomType.Setter
         public Builder oracleSubnet(String oracleSubnet) {
-            this.oracleSubnet = Objects.requireNonNull(oracleSubnet);
+            if (oracleSubnet == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsTunnelSecurityAssociation", "oracleSubnet");
+            }
+            this.oracleSubnet = oracleSubnet;
             return this;
         }
         @CustomType.Setter
         public Builder time(String time) {
-            this.time = Objects.requireNonNull(time);
+            if (time == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsTunnelSecurityAssociation", "time");
+            }
+            this.time = time;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelSaErrorInfo(String tunnelSaErrorInfo) {
-            this.tunnelSaErrorInfo = Objects.requireNonNull(tunnelSaErrorInfo);
+            if (tunnelSaErrorInfo == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsTunnelSecurityAssociation", "tunnelSaErrorInfo");
+            }
+            this.tunnelSaErrorInfo = tunnelSaErrorInfo;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelSaStatus(String tunnelSaStatus) {
-            this.tunnelSaStatus = Objects.requireNonNull(tunnelSaStatus);
+            if (tunnelSaStatus == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsTunnelSecurityAssociation", "tunnelSaStatus");
+            }
+            this.tunnelSaStatus = tunnelSaStatus;
             return this;
         }
         public GetTunnelSecurityAssociationsTunnelSecurityAssociation build() {

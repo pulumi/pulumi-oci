@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetOrganizationSubscriptionsFilter;
 import com.pulumi.oci.OneSubsription.outputs.GetOrganizationSubscriptionsOrganizationSubscription;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetOrganizationSubscriptionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOrganizationSubscriptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetOrganizationSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder organizationSubscriptions(List<GetOrganizationSubscriptionsOrganizationSubscription> organizationSubscriptions) {
-            this.organizationSubscriptions = Objects.requireNonNull(organizationSubscriptions);
+            if (organizationSubscriptions == null) {
+              throw new MissingRequiredPropertyException("GetOrganizationSubscriptionsResult", "organizationSubscriptions");
+            }
+            this.organizationSubscriptions = organizationSubscriptions;
             return this;
         }
         public Builder organizationSubscriptions(GetOrganizationSubscriptionsOrganizationSubscription... organizationSubscriptions) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetTargetDatabasesSchemasSchema {
 
         @CustomType.Setter
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
-            this.isOracleMaintained = Objects.requireNonNull(isOracleMaintained);
+            if (isOracleMaintained == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesSchemasSchema", "isOracleMaintained");
+            }
+            this.isOracleMaintained = isOracleMaintained;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesSchemasSchema", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         public GetTargetDatabasesSchemasSchema build() {

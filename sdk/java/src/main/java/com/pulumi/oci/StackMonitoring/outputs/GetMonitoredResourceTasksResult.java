@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTasksFilter;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollection;
 import java.lang.String;
@@ -87,11 +88,15 @@ public final class GetMonitoredResourceTasksResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMonitoredResourceTasksFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -100,12 +105,18 @@ public final class GetMonitoredResourceTasksResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder monitoredResourceTasksCollections(List<GetMonitoredResourceTasksMonitoredResourceTasksCollection> monitoredResourceTasksCollections) {
-            this.monitoredResourceTasksCollections = Objects.requireNonNull(monitoredResourceTasksCollections);
+            if (monitoredResourceTasksCollections == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksResult", "monitoredResourceTasksCollections");
+            }
+            this.monitoredResourceTasksCollections = monitoredResourceTasksCollections;
             return this;
         }
         public Builder monitoredResourceTasksCollections(GetMonitoredResourceTasksMonitoredResourceTasksCollection... monitoredResourceTasksCollections) {
@@ -113,6 +124,7 @@ public final class GetMonitoredResourceTasksResult {
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

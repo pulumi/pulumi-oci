@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmSuppression;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -361,27 +362,42 @@ public final class GetAlarmResult {
 
         @CustomType.Setter
         public Builder alarmId(String alarmId) {
-            this.alarmId = Objects.requireNonNull(alarmId);
+            if (alarmId == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "alarmId");
+            }
+            this.alarmId = alarmId;
             return this;
         }
         @CustomType.Setter
         public Builder body(String body) {
-            this.body = Objects.requireNonNull(body);
+            if (body == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "body");
+            }
+            this.body = body;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder destinations(List<String> destinations) {
-            this.destinations = Objects.requireNonNull(destinations);
+            if (destinations == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "destinations");
+            }
+            this.destinations = destinations;
             return this;
         }
         public Builder destinations(String... destinations) {
@@ -389,87 +405,138 @@ public final class GetAlarmResult {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isNotificationsPerMetricDimensionEnabled(Boolean isNotificationsPerMetricDimensionEnabled) {
-            this.isNotificationsPerMetricDimensionEnabled = Objects.requireNonNull(isNotificationsPerMetricDimensionEnabled);
+            if (isNotificationsPerMetricDimensionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "isNotificationsPerMetricDimensionEnabled");
+            }
+            this.isNotificationsPerMetricDimensionEnabled = isNotificationsPerMetricDimensionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder messageFormat(String messageFormat) {
-            this.messageFormat = Objects.requireNonNull(messageFormat);
+            if (messageFormat == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "messageFormat");
+            }
+            this.messageFormat = messageFormat;
             return this;
         }
         @CustomType.Setter
         public Builder metricCompartmentId(String metricCompartmentId) {
-            this.metricCompartmentId = Objects.requireNonNull(metricCompartmentId);
+            if (metricCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "metricCompartmentId");
+            }
+            this.metricCompartmentId = metricCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder metricCompartmentIdInSubtree(Boolean metricCompartmentIdInSubtree) {
-            this.metricCompartmentIdInSubtree = Objects.requireNonNull(metricCompartmentIdInSubtree);
+            if (metricCompartmentIdInSubtree == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "metricCompartmentIdInSubtree");
+            }
+            this.metricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder pendingDuration(String pendingDuration) {
-            this.pendingDuration = Objects.requireNonNull(pendingDuration);
+            if (pendingDuration == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "pendingDuration");
+            }
+            this.pendingDuration = pendingDuration;
             return this;
         }
         @CustomType.Setter
         public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+            if (query == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "query");
+            }
+            this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder repeatNotificationDuration(String repeatNotificationDuration) {
-            this.repeatNotificationDuration = Objects.requireNonNull(repeatNotificationDuration);
+            if (repeatNotificationDuration == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "repeatNotificationDuration");
+            }
+            this.repeatNotificationDuration = repeatNotificationDuration;
             return this;
         }
         @CustomType.Setter
         public Builder resolution(String resolution) {
-            this.resolution = Objects.requireNonNull(resolution);
+            if (resolution == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "resolution");
+            }
+            this.resolution = resolution;
             return this;
         }
         @CustomType.Setter
         public Builder resourceGroup(String resourceGroup) {
-            this.resourceGroup = Objects.requireNonNull(resourceGroup);
+            if (resourceGroup == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "resourceGroup");
+            }
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder suppressions(List<GetAlarmSuppression> suppressions) {
-            this.suppressions = Objects.requireNonNull(suppressions);
+            if (suppressions == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "suppressions");
+            }
+            this.suppressions = suppressions;
             return this;
         }
         public Builder suppressions(GetAlarmSuppression... suppressions) {
@@ -477,12 +544,18 @@ public final class GetAlarmResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAlarmResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAlarmResult build() {

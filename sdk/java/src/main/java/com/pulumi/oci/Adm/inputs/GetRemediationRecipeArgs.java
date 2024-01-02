@@ -5,6 +5,7 @@ package com.pulumi.oci.Adm.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetRemediationRecipeArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetRemediationRecipeArgs build() {
-            $.remediationRecipeId = Objects.requireNonNull($.remediationRecipeId, "expected parameter 'remediationRecipeId' to be non-null");
+            if ($.remediationRecipeId == null) {
+                throw new MissingRequiredPropertyException("GetRemediationRecipeArgs", "remediationRecipeId");
+            }
             return $;
         }
     }

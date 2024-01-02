@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey;
 import java.lang.Boolean;
 import java.lang.String;
@@ -87,17 +88,26 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
 
         @CustomType.Setter
         public Builder encryptionCipher(String encryptionCipher) {
-            this.encryptionCipher = Objects.requireNonNull(encryptionCipher);
+            if (encryptionCipher == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroupMacsecProperty", "encryptionCipher");
+            }
+            this.encryptionCipher = encryptionCipher;
             return this;
         }
         @CustomType.Setter
         public Builder isUnprotectedTrafficAllowed(Boolean isUnprotectedTrafficAllowed) {
-            this.isUnprotectedTrafficAllowed = Objects.requireNonNull(isUnprotectedTrafficAllowed);
+            if (isUnprotectedTrafficAllowed == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroupMacsecProperty", "isUnprotectedTrafficAllowed");
+            }
+            this.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder primaryKeys(List<GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey> primaryKeys) {
-            this.primaryKeys = Objects.requireNonNull(primaryKeys);
+            if (primaryKeys == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroupMacsecProperty", "primaryKeys");
+            }
+            this.primaryKeys = primaryKeys;
             return this;
         }
         public Builder primaryKeys(GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey... primaryKeys) {
@@ -105,7 +115,10 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroupMacsecProperty", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetCrossConnectGroupsCrossConnectGroupMacsecProperty build() {

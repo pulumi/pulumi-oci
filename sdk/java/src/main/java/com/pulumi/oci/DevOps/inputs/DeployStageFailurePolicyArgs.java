@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -151,7 +152,9 @@ public final class DeployStageFailurePolicyArgs extends com.pulumi.resources.Res
         }
 
         public DeployStageFailurePolicyArgs build() {
-            $.policyType = Objects.requireNonNull($.policyType, "expected parameter 'policyType' to be non-null");
+            if ($.policyType == null) {
+                throw new MissingRequiredPropertyException("DeployStageFailurePolicyArgs", "policyType");
+            }
             return $;
         }
     }

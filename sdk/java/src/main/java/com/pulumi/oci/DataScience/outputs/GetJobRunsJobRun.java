@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetail;
@@ -295,42 +296,66 @@ public final class GetJobRunsJobRun {
 
         @CustomType.Setter
         public Builder asynchronous(Boolean asynchronous) {
-            this.asynchronous = Objects.requireNonNull(asynchronous);
+            if (asynchronous == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "asynchronous");
+            }
+            this.asynchronous = asynchronous;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder jobConfigurationOverrideDetails(List<GetJobRunsJobRunJobConfigurationOverrideDetail> jobConfigurationOverrideDetails) {
-            this.jobConfigurationOverrideDetails = Objects.requireNonNull(jobConfigurationOverrideDetails);
+            if (jobConfigurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "jobConfigurationOverrideDetails");
+            }
+            this.jobConfigurationOverrideDetails = jobConfigurationOverrideDetails;
             return this;
         }
         public Builder jobConfigurationOverrideDetails(GetJobRunsJobRunJobConfigurationOverrideDetail... jobConfigurationOverrideDetails) {
@@ -338,12 +363,18 @@ public final class GetJobRunsJobRun {
         }
         @CustomType.Setter
         public Builder jobId(String jobId) {
-            this.jobId = Objects.requireNonNull(jobId);
+            if (jobId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "jobId");
+            }
+            this.jobId = jobId;
             return this;
         }
         @CustomType.Setter
         public Builder jobInfrastructureConfigurationDetails(List<GetJobRunsJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
-            this.jobInfrastructureConfigurationDetails = Objects.requireNonNull(jobInfrastructureConfigurationDetails);
+            if (jobInfrastructureConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "jobInfrastructureConfigurationDetails");
+            }
+            this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             return this;
         }
         public Builder jobInfrastructureConfigurationDetails(GetJobRunsJobRunJobInfrastructureConfigurationDetail... jobInfrastructureConfigurationDetails) {
@@ -351,7 +382,10 @@ public final class GetJobRunsJobRun {
         }
         @CustomType.Setter
         public Builder jobLogConfigurationOverrideDetails(List<GetJobRunsJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails) {
-            this.jobLogConfigurationOverrideDetails = Objects.requireNonNull(jobLogConfigurationOverrideDetails);
+            if (jobLogConfigurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "jobLogConfigurationOverrideDetails");
+            }
+            this.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
             return this;
         }
         public Builder jobLogConfigurationOverrideDetails(GetJobRunsJobRunJobLogConfigurationOverrideDetail... jobLogConfigurationOverrideDetails) {
@@ -359,7 +393,10 @@ public final class GetJobRunsJobRun {
         }
         @CustomType.Setter
         public Builder jobStorageMountConfigurationDetailsLists(List<GetJobRunsJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
-            this.jobStorageMountConfigurationDetailsLists = Objects.requireNonNull(jobStorageMountConfigurationDetailsLists);
+            if (jobStorageMountConfigurationDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "jobStorageMountConfigurationDetailsLists");
+            }
+            this.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             return this;
         }
         public Builder jobStorageMountConfigurationDetailsLists(GetJobRunsJobRunJobStorageMountConfigurationDetailsList... jobStorageMountConfigurationDetailsLists) {
@@ -367,12 +404,18 @@ public final class GetJobRunsJobRun {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder logDetails(List<GetJobRunsJobRunLogDetail> logDetails) {
-            this.logDetails = Objects.requireNonNull(logDetails);
+            if (logDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "logDetails");
+            }
+            this.logDetails = logDetails;
             return this;
         }
         public Builder logDetails(GetJobRunsJobRunLogDetail... logDetails) {
@@ -380,27 +423,42 @@ public final class GetJobRunsJobRun {
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeAccepted(String timeAccepted) {
-            this.timeAccepted = Objects.requireNonNull(timeAccepted);
+            if (timeAccepted == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "timeAccepted");
+            }
+            this.timeAccepted = timeAccepted;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+            if (timeFinished == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "timeFinished");
+            }
+            this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetJobRunsJobRun", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetJobRunsJobRun build() {

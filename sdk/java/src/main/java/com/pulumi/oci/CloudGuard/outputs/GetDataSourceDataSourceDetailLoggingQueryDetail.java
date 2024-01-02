@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetDataSourceDataSourceDetailLoggingQueryDetail {
 
         @CustomType.Setter
         public Builder keyEntitiesCount(Integer keyEntitiesCount) {
-            this.keyEntitiesCount = Objects.requireNonNull(keyEntitiesCount);
+            if (keyEntitiesCount == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetailLoggingQueryDetail", "keyEntitiesCount");
+            }
+            this.keyEntitiesCount = keyEntitiesCount;
             return this;
         }
         @CustomType.Setter
         public Builder loggingQueryType(String loggingQueryType) {
-            this.loggingQueryType = Objects.requireNonNull(loggingQueryType);
+            if (loggingQueryType == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetailLoggingQueryDetail", "loggingQueryType");
+            }
+            this.loggingQueryType = loggingQueryType;
             return this;
         }
         public GetDataSourceDataSourceDetailLoggingQueryDetail build() {

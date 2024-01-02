@@ -86,21 +86,25 @@ public final class AutonomousDatabaseKeyHistoryEntry {
 
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+
             this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder timeActivated(@Nullable String timeActivated) {
+
             this.timeActivated = timeActivated;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(@Nullable String vaultId) {
+
             this.vaultId = vaultId;
             return this;
         }

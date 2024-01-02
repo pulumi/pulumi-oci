@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetReplicationSourcesFilter;
 import com.pulumi.oci.ObjectStorage.outputs.GetReplicationSourcesReplicationSource;
 import java.lang.String;
@@ -78,11 +79,15 @@ public final class GetReplicationSourcesResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSourcesResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetReplicationSourcesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -91,17 +96,26 @@ public final class GetReplicationSourcesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSourcesResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder replicationSources(List<GetReplicationSourcesReplicationSource> replicationSources) {
-            this.replicationSources = Objects.requireNonNull(replicationSources);
+            if (replicationSources == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSourcesResult", "replicationSources");
+            }
+            this.replicationSources = replicationSources;
             return this;
         }
         public Builder replicationSources(GetReplicationSourcesReplicationSource... replicationSources) {

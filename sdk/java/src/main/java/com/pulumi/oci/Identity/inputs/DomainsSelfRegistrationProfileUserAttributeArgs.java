@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -410,8 +411,12 @@ public final class DomainsSelfRegistrationProfileUserAttributeArgs extends com.p
         }
 
         public DomainsSelfRegistrationProfileUserAttributeArgs build() {
-            $.seqNumber = Objects.requireNonNull($.seqNumber, "expected parameter 'seqNumber' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.seqNumber == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileUserAttributeArgs", "seqNumber");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsSelfRegistrationProfileUserAttributeArgs", "value");
+            }
             return $;
         }
     }

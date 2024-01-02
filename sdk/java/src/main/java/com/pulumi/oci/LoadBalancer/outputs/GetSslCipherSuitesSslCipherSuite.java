@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -77,7 +78,10 @@ public final class GetSslCipherSuitesSslCipherSuite {
 
         @CustomType.Setter
         public Builder ciphers(List<String> ciphers) {
-            this.ciphers = Objects.requireNonNull(ciphers);
+            if (ciphers == null) {
+              throw new MissingRequiredPropertyException("GetSslCipherSuitesSslCipherSuite", "ciphers");
+            }
+            this.ciphers = ciphers;
             return this;
         }
         public Builder ciphers(String... ciphers) {
@@ -85,17 +89,26 @@ public final class GetSslCipherSuitesSslCipherSuite {
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetSslCipherSuitesSslCipherSuite", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSslCipherSuitesSslCipherSuite", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSslCipherSuitesSslCipherSuite", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetSslCipherSuitesSslCipherSuite build() {

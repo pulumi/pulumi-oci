@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmConfig;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmConfig.inputs.ConfigDimensionArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigInUseByArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigMetricArgs;
@@ -678,9 +679,15 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConfigArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.configType = Objects.requireNonNull($.configType, "expected parameter 'configType' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "apmDomainId");
+            }
+            if ($.configType == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "configType");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "displayName");
+            }
             return $;
         }
     }

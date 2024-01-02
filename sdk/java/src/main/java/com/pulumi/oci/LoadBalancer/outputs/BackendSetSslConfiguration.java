@@ -217,6 +217,7 @@ public final class BackendSetSslConfiguration {
 
         @CustomType.Setter
         public Builder certificateIds(@Nullable List<String> certificateIds) {
+
             this.certificateIds = certificateIds;
             return this;
         }
@@ -225,16 +226,19 @@ public final class BackendSetSslConfiguration {
         }
         @CustomType.Setter
         public Builder certificateName(@Nullable String certificateName) {
+
             this.certificateName = certificateName;
             return this;
         }
         @CustomType.Setter
         public Builder cipherSuiteName(@Nullable String cipherSuiteName) {
+
             this.cipherSuiteName = cipherSuiteName;
             return this;
         }
         @CustomType.Setter
         public Builder protocols(@Nullable List<String> protocols) {
+
             this.protocols = protocols;
             return this;
         }
@@ -243,11 +247,13 @@ public final class BackendSetSslConfiguration {
         }
         @CustomType.Setter
         public Builder serverOrderPreference(@Nullable String serverOrderPreference) {
+
             this.serverOrderPreference = serverOrderPreference;
             return this;
         }
         @CustomType.Setter
         public Builder trustedCertificateAuthorityIds(@Nullable List<String> trustedCertificateAuthorityIds) {
+
             this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
             return this;
         }
@@ -256,11 +262,13 @@ public final class BackendSetSslConfiguration {
         }
         @CustomType.Setter
         public Builder verifyDepth(@Nullable Integer verifyDepth) {
+
             this.verifyDepth = verifyDepth;
             return this;
         }
         @CustomType.Setter
         public Builder verifyPeerCertificate(@Nullable Boolean verifyPeerCertificate) {
+
             this.verifyPeerCertificate = verifyPeerCertificate;
             return this;
         }

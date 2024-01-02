@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetIamWorkRequestLogsFilter;
 import com.pulumi.oci.Identity.outputs.GetIamWorkRequestLogsIamWorkRequestLog;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetIamWorkRequestLogsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIamWorkRequestLogsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,12 +82,18 @@ public final class GetIamWorkRequestLogsResult {
         }
         @CustomType.Setter
         public Builder iamWorkRequestId(String iamWorkRequestId) {
-            this.iamWorkRequestId = Objects.requireNonNull(iamWorkRequestId);
+            if (iamWorkRequestId == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestLogsResult", "iamWorkRequestId");
+            }
+            this.iamWorkRequestId = iamWorkRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder iamWorkRequestLogs(List<GetIamWorkRequestLogsIamWorkRequestLog> iamWorkRequestLogs) {
-            this.iamWorkRequestLogs = Objects.requireNonNull(iamWorkRequestLogs);
+            if (iamWorkRequestLogs == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestLogsResult", "iamWorkRequestLogs");
+            }
+            this.iamWorkRequestLogs = iamWorkRequestLogs;
             return this;
         }
         public Builder iamWorkRequestLogs(GetIamWorkRequestLogsIamWorkRequestLog... iamWorkRequestLogs) {
@@ -93,7 +101,10 @@ public final class GetIamWorkRequestLogsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIamWorkRequestLogsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetIamWorkRequestLogsResult build() {

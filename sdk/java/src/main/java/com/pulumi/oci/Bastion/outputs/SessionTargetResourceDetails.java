@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -135,36 +136,45 @@ public final class SessionTargetResourceDetails {
 
         @CustomType.Setter
         public Builder sessionType(String sessionType) {
-            this.sessionType = Objects.requireNonNull(sessionType);
+            if (sessionType == null) {
+              throw new MissingRequiredPropertyException("SessionTargetResourceDetails", "sessionType");
+            }
+            this.sessionType = sessionType;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceDisplayName(@Nullable String targetResourceDisplayName) {
+
             this.targetResourceDisplayName = targetResourceDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceFqdn(@Nullable String targetResourceFqdn) {
+
             this.targetResourceFqdn = targetResourceFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceId(@Nullable String targetResourceId) {
+
             this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceOperatingSystemUserName(@Nullable String targetResourceOperatingSystemUserName) {
+
             this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourcePort(@Nullable Integer targetResourcePort) {
+
             this.targetResourcePort = targetResourcePort;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourcePrivateIpAddress(@Nullable String targetResourcePrivateIpAddress) {
+
             this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
             return this;
         }

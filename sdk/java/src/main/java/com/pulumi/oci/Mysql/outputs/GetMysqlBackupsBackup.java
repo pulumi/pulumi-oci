@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshot;
 import java.lang.Integer;
 import java.lang.Object;
@@ -299,37 +300,58 @@ public final class GetMysqlBackupsBackup {
 
         @CustomType.Setter
         public Builder backupSizeInGbs(Integer backupSizeInGbs) {
-            this.backupSizeInGbs = Objects.requireNonNull(backupSizeInGbs);
+            if (backupSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "backupSizeInGbs");
+            }
+            this.backupSizeInGbs = backupSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder backupType(String backupType) {
-            this.backupType = Objects.requireNonNull(backupType);
+            if (backupType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "backupType");
+            }
+            this.backupType = backupType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder creationType(String creationType) {
-            this.creationType = Objects.requireNonNull(creationType);
+            if (creationType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "creationType");
+            }
+            this.creationType = creationType;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+            if (dataStorageSizeInGb == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "dataStorageSizeInGb");
+            }
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemSnapshots(List<GetMysqlBackupsBackupDbSystemSnapshot> dbSystemSnapshots) {
-            this.dbSystemSnapshots = Objects.requireNonNull(dbSystemSnapshots);
+            if (dbSystemSnapshots == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "dbSystemSnapshots");
+            }
+            this.dbSystemSnapshots = dbSystemSnapshots;
             return this;
         }
         public Builder dbSystemSnapshots(GetMysqlBackupsBackupDbSystemSnapshot... dbSystemSnapshots) {
@@ -337,62 +359,98 @@ public final class GetMysqlBackupsBackup {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlVersion(String mysqlVersion) {
-            this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
+            if (mysqlVersion == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "mysqlVersion");
+            }
+            this.mysqlVersion = mysqlVersion;
             return this;
         }
         @CustomType.Setter
         public Builder retentionInDays(Integer retentionInDays) {
-            this.retentionInDays = Objects.requireNonNull(retentionInDays);
+            if (retentionInDays == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "retentionInDays");
+            }
+            this.retentionInDays = retentionInDays;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMysqlBackupsBackup build() {

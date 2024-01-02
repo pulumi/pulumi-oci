@@ -106,11 +106,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
 
         @CustomType.Setter
         public Builder riskLevel(@Nullable String riskLevel) {
+
             this.riskLevel = riskLevel;
             return this;
         }
         @CustomType.Setter
         public Builder riskScores(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore> riskScores) {
+
             this.riskScores = riskScores;
             return this;
         }

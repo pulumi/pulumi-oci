@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem;
 import java.lang.String;
 import java.util.List;
@@ -64,7 +65,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
 
         @CustomType.Setter
         public Builder items(List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem... items) {
@@ -72,7 +76,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters", "type");
+            }
+            this.type = type;
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters build() {

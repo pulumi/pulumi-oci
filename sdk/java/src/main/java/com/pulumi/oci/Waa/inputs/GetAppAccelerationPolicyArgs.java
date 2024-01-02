@@ -5,6 +5,7 @@ package com.pulumi.oci.Waa.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAppAccelerationPolicyArgs extends com.pulumi.resources.Inv
         }
 
         public GetAppAccelerationPolicyArgs build() {
-            $.webAppAccelerationPolicyId = Objects.requireNonNull($.webAppAccelerationPolicyId, "expected parameter 'webAppAccelerationPolicyId' to be non-null");
+            if ($.webAppAccelerationPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetAppAccelerationPolicyArgs", "webAppAccelerationPolicyId");
+            }
             return $;
         }
     }

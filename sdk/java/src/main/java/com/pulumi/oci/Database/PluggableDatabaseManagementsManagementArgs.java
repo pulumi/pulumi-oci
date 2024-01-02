@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.PluggableDatabaseManagementsManagementCredentialDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -387,11 +388,21 @@ public final class PluggableDatabaseManagementsManagementArgs extends com.pulumi
         }
 
         public PluggableDatabaseManagementsManagementArgs build() {
-            $.credentialDetails = Objects.requireNonNull($.credentialDetails, "expected parameter 'credentialDetails' to be non-null");
-            $.enablePluggabledatabasemanagement = Objects.requireNonNull($.enablePluggabledatabasemanagement, "expected parameter 'enablePluggabledatabasemanagement' to be non-null");
-            $.pluggableDatabaseId = Objects.requireNonNull($.pluggableDatabaseId, "expected parameter 'pluggableDatabaseId' to be non-null");
-            $.privateEndPointId = Objects.requireNonNull($.privateEndPointId, "expected parameter 'privateEndPointId' to be non-null");
-            $.serviceName = Objects.requireNonNull($.serviceName, "expected parameter 'serviceName' to be non-null");
+            if ($.credentialDetails == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementArgs", "credentialDetails");
+            }
+            if ($.enablePluggabledatabasemanagement == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementArgs", "enablePluggabledatabasemanagement");
+            }
+            if ($.pluggableDatabaseId == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementArgs", "pluggableDatabaseId");
+            }
+            if ($.privateEndPointId == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementArgs", "privateEndPointId");
+            }
+            if ($.serviceName == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseManagementsManagementArgs", "serviceName");
+            }
             return $;
         }
     }

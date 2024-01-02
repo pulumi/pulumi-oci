@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi;
 import com.pulumi.oci.MeteringComputation.outputs.UsageCarbonEmissionsQueryQueryDefinitionReportQuery;
 import java.lang.Integer;
@@ -93,22 +94,34 @@ public final class UsageCarbonEmissionsQueryQueryDefinition {
 
         @CustomType.Setter
         public Builder costAnalysisUi(UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi costAnalysisUi) {
-            this.costAnalysisUi = Objects.requireNonNull(costAnalysisUi);
+            if (costAnalysisUi == null) {
+              throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinition", "costAnalysisUi");
+            }
+            this.costAnalysisUi = costAnalysisUi;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinition", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder reportQuery(UsageCarbonEmissionsQueryQueryDefinitionReportQuery reportQuery) {
-            this.reportQuery = Objects.requireNonNull(reportQuery);
+            if (reportQuery == null) {
+              throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinition", "reportQuery");
+            }
+            this.reportQuery = reportQuery;
             return this;
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryQueryDefinition", "version");
+            }
+            this.version = version;
             return this;
         }
         public UsageCarbonEmissionsQueryQueryDefinition build() {

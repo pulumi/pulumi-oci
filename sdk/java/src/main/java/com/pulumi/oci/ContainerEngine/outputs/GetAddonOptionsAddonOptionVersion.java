@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsAddonOptionVersionConfiguration;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonOptionsAddonOptionVersionKubernetesVersionFilter;
 import java.lang.String;
@@ -101,7 +102,10 @@ public final class GetAddonOptionsAddonOptionVersion {
 
         @CustomType.Setter
         public Builder configurations(List<GetAddonOptionsAddonOptionVersionConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOptionVersion", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetAddonOptionsAddonOptionVersionConfiguration... configurations) {
@@ -109,12 +113,18 @@ public final class GetAddonOptionsAddonOptionVersion {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOptionVersion", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder kubernetesVersionFilters(List<GetAddonOptionsAddonOptionVersionKubernetesVersionFilter> kubernetesVersionFilters) {
-            this.kubernetesVersionFilters = Objects.requireNonNull(kubernetesVersionFilters);
+            if (kubernetesVersionFilters == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOptionVersion", "kubernetesVersionFilters");
+            }
+            this.kubernetesVersionFilters = kubernetesVersionFilters;
             return this;
         }
         public Builder kubernetesVersionFilters(GetAddonOptionsAddonOptionVersionKubernetesVersionFilter... kubernetesVersionFilters) {
@@ -122,12 +132,18 @@ public final class GetAddonOptionsAddonOptionVersion {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOptionVersion", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder versionNumber(String versionNumber) {
-            this.versionNumber = Objects.requireNonNull(versionNumber);
+            if (versionNumber == null) {
+              throw new MissingRequiredPropertyException("GetAddonOptionsAddonOptionVersion", "versionNumber");
+            }
+            this.versionNumber = versionNumber;
             return this;
         }
         public GetAddonOptionsAddonOptionVersion build() {

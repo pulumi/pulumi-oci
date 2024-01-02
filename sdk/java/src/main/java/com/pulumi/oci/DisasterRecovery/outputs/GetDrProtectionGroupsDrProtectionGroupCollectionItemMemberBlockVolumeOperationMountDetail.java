@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
 
         @CustomType.Setter
         public Builder mountPoint(String mountPoint) {
-            this.mountPoint = Objects.requireNonNull(mountPoint);
+            if (mountPoint == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail", "mountPoint");
+            }
+            this.mountPoint = mountPoint;
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail build() {

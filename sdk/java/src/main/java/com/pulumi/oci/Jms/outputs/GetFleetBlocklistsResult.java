@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsFilter;
 import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsItem;
 import java.lang.String;
@@ -109,6 +110,7 @@ public final class GetFleetBlocklistsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFleetBlocklistsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -117,17 +119,26 @@ public final class GetFleetBlocklistsResult {
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetFleetBlocklistsItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetFleetBlocklistsResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetFleetBlocklistsItem... items) {
@@ -135,11 +146,13 @@ public final class GetFleetBlocklistsResult {
         }
         @CustomType.Setter
         public Builder managedInstanceId(@Nullable String managedInstanceId) {
+
             this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder operation(@Nullable String operation) {
+
             this.operation = operation;
             return this;
         }

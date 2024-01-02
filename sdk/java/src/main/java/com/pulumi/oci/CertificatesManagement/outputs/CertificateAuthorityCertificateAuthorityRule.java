@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,22 @@ public final class CertificateAuthorityCertificateAuthorityRule {
 
         @CustomType.Setter
         public Builder certificateAuthorityMaxValidityDuration(@Nullable String certificateAuthorityMaxValidityDuration) {
+
             this.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
             return this;
         }
         @CustomType.Setter
         public Builder leafCertificateMaxValidityDuration(@Nullable String leafCertificateMaxValidityDuration) {
+
             this.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
             return this;
         }
         @CustomType.Setter
         public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+            if (ruleType == null) {
+              throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityRule", "ruleType");
+            }
+            this.ruleType = ruleType;
             return this;
         }
         public CertificateAuthorityCertificateAuthorityRule build() {

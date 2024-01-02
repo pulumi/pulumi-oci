@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMember;
@@ -271,7 +272,10 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
 
         @CustomType.Setter
         public Builder associations(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation> associations) {
-            this.associations = Objects.requireNonNull(associations);
+            if (associations == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "associations");
+            }
+            this.associations = associations;
             return this;
         }
         public Builder associations(GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation... associations) {
@@ -279,47 +283,74 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder disassociateTrigger(Integer disassociateTrigger) {
-            this.disassociateTrigger = Objects.requireNonNull(disassociateTrigger);
+            if (disassociateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "disassociateTrigger");
+            }
+            this.disassociateTrigger = disassociateTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifeCycleDetails(String lifeCycleDetails) {
-            this.lifeCycleDetails = Objects.requireNonNull(lifeCycleDetails);
+            if (lifeCycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "lifeCycleDetails");
+            }
+            this.lifeCycleDetails = lifeCycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubState(String lifecycleSubState) {
-            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+            if (lifecycleSubState == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "lifecycleSubState");
+            }
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
         public Builder logLocations(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation> logLocations) {
-            this.logLocations = Objects.requireNonNull(logLocations);
+            if (logLocations == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "logLocations");
+            }
+            this.logLocations = logLocations;
             return this;
         }
         public Builder logLocations(GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation... logLocations) {
@@ -327,7 +358,10 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
         }
         @CustomType.Setter
         public Builder members(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMember> members) {
-            this.members = Objects.requireNonNull(members);
+            if (members == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "members");
+            }
+            this.members = members;
             return this;
         }
         public Builder members(GetDrProtectionGroupsDrProtectionGroupCollectionItemMember... members) {
@@ -335,37 +369,58 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
         }
         @CustomType.Setter
         public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+            if (peerId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "peerId");
+            }
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
         public Builder peerRegion(String peerRegion) {
-            this.peerRegion = Objects.requireNonNull(peerRegion);
+            if (peerRegion == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "peerRegion");
+            }
+            this.peerRegion = peerRegion;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItem build() {

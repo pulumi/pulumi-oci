@@ -51,11 +51,13 @@ public final class AutonomousDatabaseResourcePoolSummary {
 
         @CustomType.Setter
         public Builder isDisabled(@Nullable Boolean isDisabled) {
+
             this.isDisabled = isDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder poolSize(@Nullable Integer poolSize) {
+
             this.poolSize = poolSize;
             return this;
         }

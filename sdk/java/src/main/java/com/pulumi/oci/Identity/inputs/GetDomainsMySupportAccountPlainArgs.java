@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -146,8 +147,12 @@ public final class GetDomainsMySupportAccountPlainArgs extends com.pulumi.resour
         }
 
         public GetDomainsMySupportAccountPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.mySupportAccountId = Objects.requireNonNull($.mySupportAccountId, "expected parameter 'mySupportAccountId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMySupportAccountPlainArgs", "idcsEndpoint");
+            }
+            if ($.mySupportAccountId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMySupportAccountPlainArgs", "mySupportAccountId");
+            }
             return $;
         }
     }

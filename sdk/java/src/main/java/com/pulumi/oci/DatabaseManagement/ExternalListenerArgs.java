@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -125,7 +126,9 @@ public final class ExternalListenerArgs extends com.pulumi.resources.ResourceArg
         }
 
         public ExternalListenerArgs build() {
-            $.externalListenerId = Objects.requireNonNull($.externalListenerId, "expected parameter 'externalListenerId' to be non-null");
+            if ($.externalListenerId == null) {
+                throw new MissingRequiredPropertyException("ExternalListenerArgs", "externalListenerId");
+            }
             return $;
         }
     }

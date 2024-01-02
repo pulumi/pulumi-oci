@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
 
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         public GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy build() {

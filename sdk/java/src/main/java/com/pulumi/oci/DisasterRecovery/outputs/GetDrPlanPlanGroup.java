@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanPlanGroupStep;
 import java.lang.String;
 import java.util.List;
@@ -86,17 +87,26 @@ public final class GetDrPlanPlanGroup {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroup", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroup", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder steps(List<GetDrPlanPlanGroupStep> steps) {
-            this.steps = Objects.requireNonNull(steps);
+            if (steps == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroup", "steps");
+            }
+            this.steps = steps;
             return this;
         }
         public Builder steps(GetDrPlanPlanGroupStep... steps) {
@@ -104,7 +114,10 @@ public final class GetDrPlanPlanGroup {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroup", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDrPlanPlanGroup build() {

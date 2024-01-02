@@ -59,11 +59,13 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
 
         @CustomType.Setter
         public Builder hostIp(@Nullable String hostIp) {
+
             this.hostIp = hostIp;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }

@@ -78,16 +78,19 @@ public final class ReplicaReplicaOverrides {
 
         @CustomType.Setter
         public Builder configurationId(@Nullable String configurationId) {
+
             this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder mysqlVersion(@Nullable String mysqlVersion) {
+
             this.mysqlVersion = mysqlVersion;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
+
             this.shapeName = shapeName;
             return this;
         }

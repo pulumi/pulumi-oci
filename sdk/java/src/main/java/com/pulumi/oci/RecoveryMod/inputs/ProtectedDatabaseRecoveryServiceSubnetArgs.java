@@ -5,6 +5,7 @@ package com.pulumi.oci.RecoveryMod.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -125,7 +126,9 @@ public final class ProtectedDatabaseRecoveryServiceSubnetArgs extends com.pulumi
         }
 
         public ProtectedDatabaseRecoveryServiceSubnetArgs build() {
-            $.recoveryServiceSubnetId = Objects.requireNonNull($.recoveryServiceSubnetId, "expected parameter 'recoveryServiceSubnetId' to be non-null");
+            if ($.recoveryServiceSubnetId == null) {
+                throw new MissingRequiredPropertyException("ProtectedDatabaseRecoveryServiceSubnetArgs", "recoveryServiceSubnetId");
+            }
             return $;
         }
     }

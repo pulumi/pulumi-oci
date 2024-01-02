@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.inputs.ApplicationApplicationLogConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationDriverShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationExecutorShapeConfigArgs;
@@ -1115,13 +1116,27 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ApplicationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.driverShape = Objects.requireNonNull($.driverShape, "expected parameter 'driverShape' to be non-null");
-            $.executorShape = Objects.requireNonNull($.executorShape, "expected parameter 'executorShape' to be non-null");
-            $.language = Objects.requireNonNull($.language, "expected parameter 'language' to be non-null");
-            $.numExecutors = Objects.requireNonNull($.numExecutors, "expected parameter 'numExecutors' to be non-null");
-            $.sparkVersion = Objects.requireNonNull($.sparkVersion, "expected parameter 'sparkVersion' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "displayName");
+            }
+            if ($.driverShape == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "driverShape");
+            }
+            if ($.executorShape == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "executorShape");
+            }
+            if ($.language == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "language");
+            }
+            if ($.numExecutors == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "numExecutors");
+            }
+            if ($.sparkVersion == null) {
+                throw new MissingRequiredPropertyException("ApplicationArgs", "sparkVersion");
+            }
             return $;
         }
     }

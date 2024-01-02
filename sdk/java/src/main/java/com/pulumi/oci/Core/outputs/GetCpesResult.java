@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCpesCpe;
 import com.pulumi.oci.Core.outputs.GetCpesFilter;
 import java.lang.String;
@@ -80,12 +81,18 @@ public final class GetCpesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCpesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cpes(List<GetCpesCpe> cpes) {
-            this.cpes = Objects.requireNonNull(cpes);
+            if (cpes == null) {
+              throw new MissingRequiredPropertyException("GetCpesResult", "cpes");
+            }
+            this.cpes = cpes;
             return this;
         }
         public Builder cpes(GetCpesCpe... cpes) {
@@ -93,6 +100,7 @@ public final class GetCpesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCpesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,7 +109,10 @@ public final class GetCpesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCpesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetCpesResult build() {

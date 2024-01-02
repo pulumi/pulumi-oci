@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.GetReplicasFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -247,7 +248,9 @@ public final class GetReplicasPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetReplicasPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetReplicasPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

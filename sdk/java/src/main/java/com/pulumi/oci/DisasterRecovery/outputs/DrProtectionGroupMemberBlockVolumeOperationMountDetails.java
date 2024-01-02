@@ -44,6 +44,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationMountDetails {
 
         @CustomType.Setter
         public Builder mountPoint(@Nullable String mountPoint) {
+
             this.mountPoint = mountPoint;
             return this;
         }

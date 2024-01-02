@@ -4,6 +4,7 @@
 package com.pulumi.oci.VnMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.VnMonitoring.outputs.GetPathAnalyzerTestsFilter;
 import com.pulumi.oci.VnMonitoring.outputs.GetPathAnalyzerTestsPathAnalyzerTestCollection;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetPathAnalyzerTestsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPathAnalyzerTestsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetPathAnalyzerTestsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder pathAnalyzerTestCollections(List<GetPathAnalyzerTestsPathAnalyzerTestCollection> pathAnalyzerTestCollections) {
-            this.pathAnalyzerTestCollections = Objects.requireNonNull(pathAnalyzerTestCollections);
+            if (pathAnalyzerTestCollections == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsResult", "pathAnalyzerTestCollections");
+            }
+            this.pathAnalyzerTestCollections = pathAnalyzerTestCollections;
             return this;
         }
         public Builder pathAnalyzerTestCollections(GetPathAnalyzerTestsPathAnalyzerTestCollection... pathAnalyzerTestCollections) {
@@ -140,6 +152,7 @@ public final class GetPathAnalyzerTestsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

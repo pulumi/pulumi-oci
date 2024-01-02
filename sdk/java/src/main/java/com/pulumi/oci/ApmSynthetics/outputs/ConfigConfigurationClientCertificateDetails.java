@@ -59,11 +59,13 @@ public final class ConfigConfigurationClientCertificateDetails {
 
         @CustomType.Setter
         public Builder clientCertificate(@Nullable ConfigConfigurationClientCertificateDetailsClientCertificate clientCertificate) {
+
             this.clientCertificate = clientCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder privateKey(@Nullable ConfigConfigurationClientCertificateDetailsPrivateKey privateKey) {
+
             this.privateKey = privateKey;
             return this;
         }

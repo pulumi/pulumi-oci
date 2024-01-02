@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetOdaInstanceRestrictedOperation {
 
         @CustomType.Setter
         public Builder operationName(String operationName) {
-            this.operationName = Objects.requireNonNull(operationName);
+            if (operationName == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceRestrictedOperation", "operationName");
+            }
+            this.operationName = operationName;
             return this;
         }
         @CustomType.Setter
         public Builder restrictingService(String restrictingService) {
-            this.restrictingService = Objects.requireNonNull(restrictingService);
+            if (restrictingService == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceRestrictedOperation", "restrictingService");
+            }
+            this.restrictingService = restrictingService;
             return this;
         }
         public GetOdaInstanceRestrictedOperation build() {

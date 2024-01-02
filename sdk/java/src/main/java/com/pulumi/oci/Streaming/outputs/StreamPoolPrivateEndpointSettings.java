@@ -79,6 +79,7 @@ public final class StreamPoolPrivateEndpointSettings {
 
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
+
             this.nsgIds = nsgIds;
             return this;
         }
@@ -87,11 +88,13 @@ public final class StreamPoolPrivateEndpointSettings {
         }
         @CustomType.Setter
         public Builder privateEndpointIp(@Nullable String privateEndpointIp) {
+
             this.privateEndpointIp = privateEndpointIp;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }

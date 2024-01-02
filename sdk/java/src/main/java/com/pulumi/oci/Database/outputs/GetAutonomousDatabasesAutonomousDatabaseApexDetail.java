@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetAutonomousDatabasesAutonomousDatabaseApexDetail {
 
         @CustomType.Setter
         public Builder apexVersion(String apexVersion) {
-            this.apexVersion = Objects.requireNonNull(apexVersion);
+            if (apexVersion == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseApexDetail", "apexVersion");
+            }
+            this.apexVersion = apexVersion;
             return this;
         }
         @CustomType.Setter
         public Builder ordsVersion(String ordsVersion) {
-            this.ordsVersion = Objects.requireNonNull(ordsVersion);
+            if (ordsVersion == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseApexDetail", "ordsVersion");
+            }
+            this.ordsVersion = ordsVersion;
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseApexDetail build() {

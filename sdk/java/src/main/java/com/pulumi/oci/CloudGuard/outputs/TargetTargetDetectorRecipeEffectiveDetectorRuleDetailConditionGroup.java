@@ -58,11 +58,13 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder condition(@Nullable String condition) {
+
             this.condition = condition;
             return this;
         }

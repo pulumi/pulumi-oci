@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.inputs.GetSubscriptionRedeemableUsersFilter;
 import java.lang.String;
 import java.util.List;
@@ -111,8 +112,12 @@ public final class GetSubscriptionRedeemableUsersPlainArgs extends com.pulumi.re
         }
 
         public GetSubscriptionRedeemableUsersPlainArgs build() {
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
-            $.tenancyId = Objects.requireNonNull($.tenancyId, "expected parameter 'tenancyId' to be non-null");
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionRedeemableUsersPlainArgs", "subscriptionId");
+            }
+            if ($.tenancyId == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionRedeemableUsersPlainArgs", "tenancyId");
+            }
             return $;
         }
     }

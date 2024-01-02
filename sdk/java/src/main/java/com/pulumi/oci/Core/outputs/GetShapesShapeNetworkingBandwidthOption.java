@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetShapesShapeNetworkingBandwidthOption {
 
         @CustomType.Setter
         public Builder defaultPerOcpuInGbps(Double defaultPerOcpuInGbps) {
-            this.defaultPerOcpuInGbps = Objects.requireNonNull(defaultPerOcpuInGbps);
+            if (defaultPerOcpuInGbps == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeNetworkingBandwidthOption", "defaultPerOcpuInGbps");
+            }
+            this.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder maxInGbps(Double maxInGbps) {
-            this.maxInGbps = Objects.requireNonNull(maxInGbps);
+            if (maxInGbps == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeNetworkingBandwidthOption", "maxInGbps");
+            }
+            this.maxInGbps = maxInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder minInGbps(Double minInGbps) {
-            this.minInGbps = Objects.requireNonNull(minInGbps);
+            if (minInGbps == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapeNetworkingBandwidthOption", "minInGbps");
+            }
+            this.minInGbps = minInGbps;
             return this;
         }
         public GetShapesShapeNetworkingBandwidthOption build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsPasswordPolicyConfiguredPasswordPolicyRule;
 import com.pulumi.oci.Identity.outputs.GetDomainsPasswordPolicyGroup;
 import com.pulumi.oci.Identity.outputs.GetDomainsPasswordPolicyIdcsCreatedBy;
@@ -789,11 +790,15 @@ public final class GetDomainsPasswordPolicyResult {
 
         @CustomType.Setter
         public Builder allowedChars(String allowedChars) {
-            this.allowedChars = Objects.requireNonNull(allowedChars);
+            if (allowedChars == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "allowedChars");
+            }
+            this.allowedChars = allowedChars;
             return this;
         }
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -802,22 +807,30 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder configuredPasswordPolicyRules(List<GetDomainsPasswordPolicyConfiguredPasswordPolicyRule> configuredPasswordPolicyRules) {
-            this.configuredPasswordPolicyRules = Objects.requireNonNull(configuredPasswordPolicyRules);
+            if (configuredPasswordPolicyRules == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "configuredPasswordPolicyRules");
+            }
+            this.configuredPasswordPolicyRules = configuredPasswordPolicyRules;
             return this;
         }
         public Builder configuredPasswordPolicyRules(GetDomainsPasswordPolicyConfiguredPasswordPolicyRule... configuredPasswordPolicyRules) {
@@ -825,37 +838,58 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder dictionaryDelimiter(String dictionaryDelimiter) {
-            this.dictionaryDelimiter = Objects.requireNonNull(dictionaryDelimiter);
+            if (dictionaryDelimiter == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "dictionaryDelimiter");
+            }
+            this.dictionaryDelimiter = dictionaryDelimiter;
             return this;
         }
         @CustomType.Setter
         public Builder dictionaryLocation(String dictionaryLocation) {
-            this.dictionaryLocation = Objects.requireNonNull(dictionaryLocation);
+            if (dictionaryLocation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "dictionaryLocation");
+            }
+            this.dictionaryLocation = dictionaryLocation;
             return this;
         }
         @CustomType.Setter
         public Builder dictionaryWordDisallowed(Boolean dictionaryWordDisallowed) {
-            this.dictionaryWordDisallowed = Objects.requireNonNull(dictionaryWordDisallowed);
+            if (dictionaryWordDisallowed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "dictionaryWordDisallowed");
+            }
+            this.dictionaryWordDisallowed = dictionaryWordDisallowed;
             return this;
         }
         @CustomType.Setter
         public Builder disallowedChars(String disallowedChars) {
-            this.disallowedChars = Objects.requireNonNull(disallowedChars);
+            if (disallowedChars == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "disallowedChars");
+            }
+            this.disallowedChars = disallowedChars;
             return this;
         }
         @CustomType.Setter
         public Builder disallowedSubstrings(List<String> disallowedSubstrings) {
-            this.disallowedSubstrings = Objects.requireNonNull(disallowedSubstrings);
+            if (disallowedSubstrings == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "disallowedSubstrings");
+            }
+            this.disallowedSubstrings = disallowedSubstrings;
             return this;
         }
         public Builder disallowedSubstrings(String... disallowedSubstrings) {
@@ -863,7 +897,10 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder disallowedUserAttributeValues(List<String> disallowedUserAttributeValues) {
-            this.disallowedUserAttributeValues = Objects.requireNonNull(disallowedUserAttributeValues);
+            if (disallowedUserAttributeValues == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "disallowedUserAttributeValues");
+            }
+            this.disallowedUserAttributeValues = disallowedUserAttributeValues;
             return this;
         }
         public Builder disallowedUserAttributeValues(String... disallowedUserAttributeValues) {
@@ -871,32 +908,50 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder distinctCharacters(Integer distinctCharacters) {
-            this.distinctCharacters = Objects.requireNonNull(distinctCharacters);
+            if (distinctCharacters == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "distinctCharacters");
+            }
+            this.distinctCharacters = distinctCharacters;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder firstNameDisallowed(Boolean firstNameDisallowed) {
-            this.firstNameDisallowed = Objects.requireNonNull(firstNameDisallowed);
+            if (firstNameDisallowed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "firstNameDisallowed");
+            }
+            this.firstNameDisallowed = firstNameDisallowed;
             return this;
         }
         @CustomType.Setter
         public Builder forcePasswordReset(Boolean forcePasswordReset) {
-            this.forcePasswordReset = Objects.requireNonNull(forcePasswordReset);
+            if (forcePasswordReset == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "forcePasswordReset");
+            }
+            this.forcePasswordReset = forcePasswordReset;
             return this;
         }
         @CustomType.Setter
         public Builder groups(List<GetDomainsPasswordPolicyGroup> groups) {
-            this.groups = Objects.requireNonNull(groups);
+            if (groups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "groups");
+            }
+            this.groups = groups;
             return this;
         }
         public Builder groups(GetDomainsPasswordPolicyGroup... groups) {
@@ -904,12 +959,18 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsPasswordPolicyIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsPasswordPolicyIdcsCreatedBy... idcsCreatedBies) {
@@ -917,12 +978,18 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsPasswordPolicyIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsPasswordPolicyIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -930,12 +997,18 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -943,37 +1016,58 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder lastNameDisallowed(Boolean lastNameDisallowed) {
-            this.lastNameDisallowed = Objects.requireNonNull(lastNameDisallowed);
+            if (lastNameDisallowed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "lastNameDisallowed");
+            }
+            this.lastNameDisallowed = lastNameDisallowed;
             return this;
         }
         @CustomType.Setter
         public Builder lockoutDuration(Integer lockoutDuration) {
-            this.lockoutDuration = Objects.requireNonNull(lockoutDuration);
+            if (lockoutDuration == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "lockoutDuration");
+            }
+            this.lockoutDuration = lockoutDuration;
             return this;
         }
         @CustomType.Setter
         public Builder maxIncorrectAttempts(Integer maxIncorrectAttempts) {
-            this.maxIncorrectAttempts = Objects.requireNonNull(maxIncorrectAttempts);
+            if (maxIncorrectAttempts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "maxIncorrectAttempts");
+            }
+            this.maxIncorrectAttempts = maxIncorrectAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder maxLength(Integer maxLength) {
-            this.maxLength = Objects.requireNonNull(maxLength);
+            if (maxLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "maxLength");
+            }
+            this.maxLength = maxLength;
             return this;
         }
         @CustomType.Setter
         public Builder maxRepeatedChars(Integer maxRepeatedChars) {
-            this.maxRepeatedChars = Objects.requireNonNull(maxRepeatedChars);
+            if (maxRepeatedChars == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "maxRepeatedChars");
+            }
+            this.maxRepeatedChars = maxRepeatedChars;
             return this;
         }
         @CustomType.Setter
         public Builder maxSpecialChars(Integer maxSpecialChars) {
-            this.maxSpecialChars = Objects.requireNonNull(maxSpecialChars);
+            if (maxSpecialChars == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "maxSpecialChars");
+            }
+            this.maxSpecialChars = maxSpecialChars;
             return this;
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsPasswordPolicyMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsPasswordPolicyMeta... metas) {
@@ -981,102 +1075,160 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder minAlphaNumerals(Integer minAlphaNumerals) {
-            this.minAlphaNumerals = Objects.requireNonNull(minAlphaNumerals);
+            if (minAlphaNumerals == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minAlphaNumerals");
+            }
+            this.minAlphaNumerals = minAlphaNumerals;
             return this;
         }
         @CustomType.Setter
         public Builder minAlphas(Integer minAlphas) {
-            this.minAlphas = Objects.requireNonNull(minAlphas);
+            if (minAlphas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minAlphas");
+            }
+            this.minAlphas = minAlphas;
             return this;
         }
         @CustomType.Setter
         public Builder minLength(Integer minLength) {
-            this.minLength = Objects.requireNonNull(minLength);
+            if (minLength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minLength");
+            }
+            this.minLength = minLength;
             return this;
         }
         @CustomType.Setter
         public Builder minLowerCase(Integer minLowerCase) {
-            this.minLowerCase = Objects.requireNonNull(minLowerCase);
+            if (minLowerCase == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minLowerCase");
+            }
+            this.minLowerCase = minLowerCase;
             return this;
         }
         @CustomType.Setter
         public Builder minNumerals(Integer minNumerals) {
-            this.minNumerals = Objects.requireNonNull(minNumerals);
+            if (minNumerals == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minNumerals");
+            }
+            this.minNumerals = minNumerals;
             return this;
         }
         @CustomType.Setter
         public Builder minPasswordAge(Integer minPasswordAge) {
-            this.minPasswordAge = Objects.requireNonNull(minPasswordAge);
+            if (minPasswordAge == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minPasswordAge");
+            }
+            this.minPasswordAge = minPasswordAge;
             return this;
         }
         @CustomType.Setter
         public Builder minSpecialChars(Integer minSpecialChars) {
-            this.minSpecialChars = Objects.requireNonNull(minSpecialChars);
+            if (minSpecialChars == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minSpecialChars");
+            }
+            this.minSpecialChars = minSpecialChars;
             return this;
         }
         @CustomType.Setter
         public Builder minUniqueChars(Integer minUniqueChars) {
-            this.minUniqueChars = Objects.requireNonNull(minUniqueChars);
+            if (minUniqueChars == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minUniqueChars");
+            }
+            this.minUniqueChars = minUniqueChars;
             return this;
         }
         @CustomType.Setter
         public Builder minUpperCase(Integer minUpperCase) {
-            this.minUpperCase = Objects.requireNonNull(minUpperCase);
+            if (minUpperCase == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "minUpperCase");
+            }
+            this.minUpperCase = minUpperCase;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder numPasswordsInHistory(Integer numPasswordsInHistory) {
-            this.numPasswordsInHistory = Objects.requireNonNull(numPasswordsInHistory);
+            if (numPasswordsInHistory == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "numPasswordsInHistory");
+            }
+            this.numPasswordsInHistory = numPasswordsInHistory;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder passwordExpireWarning(Integer passwordExpireWarning) {
-            this.passwordExpireWarning = Objects.requireNonNull(passwordExpireWarning);
+            if (passwordExpireWarning == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "passwordExpireWarning");
+            }
+            this.passwordExpireWarning = passwordExpireWarning;
             return this;
         }
         @CustomType.Setter
         public Builder passwordExpiresAfter(Integer passwordExpiresAfter) {
-            this.passwordExpiresAfter = Objects.requireNonNull(passwordExpiresAfter);
+            if (passwordExpiresAfter == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "passwordExpiresAfter");
+            }
+            this.passwordExpiresAfter = passwordExpiresAfter;
             return this;
         }
         @CustomType.Setter
         public Builder passwordPolicyId(String passwordPolicyId) {
-            this.passwordPolicyId = Objects.requireNonNull(passwordPolicyId);
+            if (passwordPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "passwordPolicyId");
+            }
+            this.passwordPolicyId = passwordPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder passwordStrength(String passwordStrength) {
-            this.passwordStrength = Objects.requireNonNull(passwordStrength);
+            if (passwordStrength == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "passwordStrength");
+            }
+            this.passwordStrength = passwordStrength;
             return this;
         }
         @CustomType.Setter
         public Builder priority(Integer priority) {
-            this.priority = Objects.requireNonNull(priority);
+            if (priority == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "priority");
+            }
+            this.priority = priority;
             return this;
         }
         @CustomType.Setter
         public Builder requiredChars(String requiredChars) {
-            this.requiredChars = Objects.requireNonNull(requiredChars);
+            if (requiredChars == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "requiredChars");
+            }
+            this.requiredChars = requiredChars;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -1084,12 +1236,18 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder startsWithAlphabet(Boolean startsWithAlphabet) {
-            this.startsWithAlphabet = Objects.requireNonNull(startsWithAlphabet);
+            if (startsWithAlphabet == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "startsWithAlphabet");
+            }
+            this.startsWithAlphabet = startsWithAlphabet;
             return this;
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsPasswordPolicyTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsPasswordPolicyTag... tags) {
@@ -1097,12 +1255,18 @@ public final class GetDomainsPasswordPolicyResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder userNameDisallowed(Boolean userNameDisallowed) {
-            this.userNameDisallowed = Objects.requireNonNull(userNameDisallowed);
+            if (userNameDisallowed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsPasswordPolicyResult", "userNameDisallowed");
+            }
+            this.userNameDisallowed = userNameDisallowed;
             return this;
         }
         public GetDomainsPasswordPolicyResult build() {

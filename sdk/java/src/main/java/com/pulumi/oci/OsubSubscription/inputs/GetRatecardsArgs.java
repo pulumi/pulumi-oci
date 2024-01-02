@@ -5,6 +5,7 @@ package com.pulumi.oci.OsubSubscription.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubSubscription.inputs.GetRatecardsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -284,8 +285,12 @@ public final class GetRatecardsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetRatecardsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetRatecardsArgs", "compartmentId");
+            }
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetRatecardsArgs", "subscriptionId");
+            }
             return $;
         }
     }

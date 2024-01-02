@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -97,32 +98,50 @@ public final class GetNamespaceRulesSummaryResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesSummaryResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesSummaryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ingestTimeRulesCount(Integer ingestTimeRulesCount) {
-            this.ingestTimeRulesCount = Objects.requireNonNull(ingestTimeRulesCount);
+            if (ingestTimeRulesCount == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesSummaryResult", "ingestTimeRulesCount");
+            }
+            this.ingestTimeRulesCount = ingestTimeRulesCount;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesSummaryResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder savedSearchRulesCount(Integer savedSearchRulesCount) {
-            this.savedSearchRulesCount = Objects.requireNonNull(savedSearchRulesCount);
+            if (savedSearchRulesCount == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesSummaryResult", "savedSearchRulesCount");
+            }
+            this.savedSearchRulesCount = savedSearchRulesCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalCount(Integer totalCount) {
-            this.totalCount = Objects.requireNonNull(totalCount);
+            if (totalCount == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceRulesSummaryResult", "totalCount");
+            }
+            this.totalCount = totalCount;
             return this;
         }
         public GetNamespaceRulesSummaryResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.List;
 import java.util.Objects;
@@ -57,7 +58,10 @@ public final class GetShapesShapePlatformConfigOptionMemoryEncryptionOption {
 
         @CustomType.Setter
         public Builder allowedValues(List<Boolean> allowedValues) {
-            this.allowedValues = Objects.requireNonNull(allowedValues);
+            if (allowedValues == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapePlatformConfigOptionMemoryEncryptionOption", "allowedValues");
+            }
+            this.allowedValues = allowedValues;
             return this;
         }
         public Builder allowedValues(Boolean... allowedValues) {
@@ -65,7 +69,10 @@ public final class GetShapesShapePlatformConfigOptionMemoryEncryptionOption {
         }
         @CustomType.Setter
         public Builder isDefaultEnabled(Boolean isDefaultEnabled) {
-            this.isDefaultEnabled = Objects.requireNonNull(isDefaultEnabled);
+            if (isDefaultEnabled == null) {
+              throw new MissingRequiredPropertyException("GetShapesShapePlatformConfigOptionMemoryEncryptionOption", "isDefaultEnabled");
+            }
+            this.isDefaultEnabled = isDefaultEnabled;
             return this;
         }
         public GetShapesShapePlatformConfigOptionMemoryEncryptionOption build() {

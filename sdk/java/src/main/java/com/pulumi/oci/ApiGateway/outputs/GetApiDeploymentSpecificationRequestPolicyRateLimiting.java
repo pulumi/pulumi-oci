@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetApiDeploymentSpecificationRequestPolicyRateLimiting {
 
         @CustomType.Setter
         public Builder rateInRequestsPerSecond(Integer rateInRequestsPerSecond) {
-            this.rateInRequestsPerSecond = Objects.requireNonNull(rateInRequestsPerSecond);
+            if (rateInRequestsPerSecond == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyRateLimiting", "rateInRequestsPerSecond");
+            }
+            this.rateInRequestsPerSecond = rateInRequestsPerSecond;
             return this;
         }
         @CustomType.Setter
         public Builder rateKey(String rateKey) {
-            this.rateKey = Objects.requireNonNull(rateKey);
+            if (rateKey == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyRateLimiting", "rateKey");
+            }
+            this.rateKey = rateKey;
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyRateLimiting build() {

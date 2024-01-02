@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.outputs.GetContainerSignaturesContainerImageSignatureCollection;
 import com.pulumi.oci.Artifacts.outputs.GetContainerSignaturesFilter;
 import java.lang.Boolean;
@@ -176,17 +177,24 @@ public final class GetContainerSignaturesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder containerImageSignatureCollections(List<GetContainerSignaturesContainerImageSignatureCollection> containerImageSignatureCollections) {
-            this.containerImageSignatureCollections = Objects.requireNonNull(containerImageSignatureCollections);
+            if (containerImageSignatureCollections == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesResult", "containerImageSignatureCollections");
+            }
+            this.containerImageSignatureCollections = containerImageSignatureCollections;
             return this;
         }
         public Builder containerImageSignatureCollections(GetContainerSignaturesContainerImageSignatureCollection... containerImageSignatureCollections) {
@@ -194,11 +202,13 @@ public final class GetContainerSignaturesResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetContainerSignaturesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -207,41 +217,51 @@ public final class GetContainerSignaturesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerSignaturesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageDigest(@Nullable String imageDigest) {
+
             this.imageDigest = imageDigest;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
             this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+
             this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
+
             this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryName(@Nullable String repositoryName) {
+
             this.repositoryName = repositoryName;
             return this;
         }
         @CustomType.Setter
         public Builder signingAlgorithm(@Nullable String signingAlgorithm) {
+
             this.signingAlgorithm = signingAlgorithm;
             return this;
         }

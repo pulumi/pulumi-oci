@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetInvoiceBillToAddressCountry {
 
         @CustomType.Setter
         public Builder ascii3countryCode(String ascii3countryCode) {
-            this.ascii3countryCode = Objects.requireNonNull(ascii3countryCode);
+            if (ascii3countryCode == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddressCountry", "ascii3countryCode");
+            }
+            this.ascii3countryCode = ascii3countryCode;
             return this;
         }
         @CustomType.Setter
         public Builder countryCode(String countryCode) {
-            this.countryCode = Objects.requireNonNull(countryCode);
+            if (countryCode == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddressCountry", "countryCode");
+            }
+            this.countryCode = countryCode;
             return this;
         }
         @CustomType.Setter
         public Builder countryId(Double countryId) {
-            this.countryId = Objects.requireNonNull(countryId);
+            if (countryId == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddressCountry", "countryId");
+            }
+            this.countryId = countryId;
             return this;
         }
         @CustomType.Setter
         public Builder countryName(String countryName) {
-            this.countryName = Objects.requireNonNull(countryName);
+            if (countryName == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddressCountry", "countryName");
+            }
+            this.countryName = countryName;
             return this;
         }
         @CustomType.Setter
         public Builder languageId(Double languageId) {
-            this.languageId = Objects.requireNonNull(languageId);
+            if (languageId == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddressCountry", "languageId");
+            }
+            this.languageId = languageId;
             return this;
         }
         public GetInvoiceBillToAddressCountry build() {

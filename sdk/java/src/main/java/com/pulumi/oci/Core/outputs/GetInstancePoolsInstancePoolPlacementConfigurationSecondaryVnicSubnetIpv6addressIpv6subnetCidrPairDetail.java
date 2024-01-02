@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVn
 
         @CustomType.Setter
         public Builder ipv6subnetCidr(String ipv6subnetCidr) {
-            this.ipv6subnetCidr = Objects.requireNonNull(ipv6subnetCidr);
+            if (ipv6subnetCidr == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail", "ipv6subnetCidr");
+            }
+            this.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }
         public GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail build() {

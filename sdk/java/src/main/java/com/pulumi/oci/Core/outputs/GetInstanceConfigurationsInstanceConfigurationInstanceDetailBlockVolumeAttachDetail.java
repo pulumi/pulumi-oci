@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailB
 
         @CustomType.Setter
         public Builder device(String device) {
-            this.device = Objects.requireNonNull(device);
+            if (device == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail", "device");
+            }
+            this.device = device;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
-            this.isPvEncryptionInTransitEnabled = Objects.requireNonNull(isPvEncryptionInTransitEnabled);
+            if (isPvEncryptionInTransitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail", "isPvEncryptionInTransitEnabled");
+            }
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isReadOnly(Boolean isReadOnly) {
-            this.isReadOnly = Objects.requireNonNull(isReadOnly);
+            if (isReadOnly == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail", "isReadOnly");
+            }
+            this.isReadOnly = isReadOnly;
             return this;
         }
         @CustomType.Setter
         public Builder isShareable(Boolean isShareable) {
-            this.isShareable = Objects.requireNonNull(isShareable);
+            if (isShareable == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail", "isShareable");
+            }
+            this.isShareable = isShareable;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder useChap(Boolean useChap) {
-            this.useChap = Objects.requireNonNull(useChap);
+            if (useChap == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail", "useChap");
+            }
+            this.useChap = useChap;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeAttachDetail build() {

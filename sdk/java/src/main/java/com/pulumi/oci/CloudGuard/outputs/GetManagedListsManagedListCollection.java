@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetManagedListsManagedListCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetManagedListsManagedListCollection {
 
         @CustomType.Setter
         public Builder items(List<GetManagedListsManagedListCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetManagedListsManagedListCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetManagedListsManagedListCollectionItem... items) {

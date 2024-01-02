@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class ExternalDbSystemDatabaseManagementConfigArgs extends com.pulu
         }
 
         public ExternalDbSystemDatabaseManagementConfigArgs build() {
-            $.licenseModel = Objects.requireNonNull($.licenseModel, "expected parameter 'licenseModel' to be non-null");
+            if ($.licenseModel == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemDatabaseManagementConfigArgs", "licenseModel");
+            }
             return $;
         }
     }

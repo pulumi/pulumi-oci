@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestsFilter;
 import com.pulumi.oci.ContainerEngine.outputs.GetWorkRequestsWorkRequest;
 import java.lang.String;
@@ -113,16 +114,21 @@ public final class GetWorkRequestsResult {
 
         @CustomType.Setter
         public Builder clusterId(@Nullable String clusterId) {
+
             this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkRequestsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -131,21 +137,27 @@ public final class GetWorkRequestsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
+
             this.statuses = statuses;
             return this;
         }
@@ -154,7 +166,10 @@ public final class GetWorkRequestsResult {
         }
         @CustomType.Setter
         public Builder workRequests(List<GetWorkRequestsWorkRequest> workRequests) {
-            this.workRequests = Objects.requireNonNull(workRequests);
+            if (workRequests == null) {
+              throw new MissingRequiredPropertyException("GetWorkRequestsResult", "workRequests");
+            }
+            this.workRequests = workRequests;
             return this;
         }
         public Builder workRequests(GetWorkRequestsWorkRequest... workRequests) {

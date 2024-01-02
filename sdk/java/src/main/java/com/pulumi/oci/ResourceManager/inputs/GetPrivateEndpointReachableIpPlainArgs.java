@@ -4,6 +4,7 @@
 package com.pulumi.oci.ResourceManager.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetPrivateEndpointReachableIpPlainArgs extends com.pulumi.res
         }
 
         public GetPrivateEndpointReachableIpPlainArgs build() {
-            $.privateEndpointId = Objects.requireNonNull($.privateEndpointId, "expected parameter 'privateEndpointId' to be non-null");
-            $.privateIp = Objects.requireNonNull($.privateIp, "expected parameter 'privateIp' to be non-null");
+            if ($.privateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetPrivateEndpointReachableIpPlainArgs", "privateEndpointId");
+            }
+            if ($.privateIp == null) {
+                throw new MissingRequiredPropertyException("GetPrivateEndpointReachableIpPlainArgs", "privateIp");
+            }
             return $;
         }
     }

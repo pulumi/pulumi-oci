@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn;
 import java.lang.Boolean;
 import java.lang.String;
@@ -241,32 +242,50 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiu
 
         @CustomType.Setter
         public Builder captureClientIp(Boolean captureClientIp) {
-            this.captureClientIp = Objects.requireNonNull(captureClientIp);
+            if (captureClientIp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "captureClientIp");
+            }
+            this.captureClientIp = captureClientIp;
             return this;
         }
         @CustomType.Setter
         public Builder clientIp(String clientIp) {
-            this.clientIp = Objects.requireNonNull(clientIp);
+            if (clientIp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "clientIp");
+            }
+            this.clientIp = clientIp;
             return this;
         }
         @CustomType.Setter
         public Builder countryCodeResponseAttributeId(String countryCodeResponseAttributeId) {
-            this.countryCodeResponseAttributeId = Objects.requireNonNull(countryCodeResponseAttributeId);
+            if (countryCodeResponseAttributeId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "countryCodeResponseAttributeId");
+            }
+            this.countryCodeResponseAttributeId = countryCodeResponseAttributeId;
             return this;
         }
         @CustomType.Setter
         public Builder endUserIpAttribute(String endUserIpAttribute) {
-            this.endUserIpAttribute = Objects.requireNonNull(endUserIpAttribute);
+            if (endUserIpAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "endUserIpAttribute");
+            }
+            this.endUserIpAttribute = endUserIpAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder groupMembershipRadiusAttribute(String groupMembershipRadiusAttribute) {
-            this.groupMembershipRadiusAttribute = Objects.requireNonNull(groupMembershipRadiusAttribute);
+            if (groupMembershipRadiusAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "groupMembershipRadiusAttribute");
+            }
+            this.groupMembershipRadiusAttribute = groupMembershipRadiusAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder groupMembershipToReturns(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn> groupMembershipToReturns) {
-            this.groupMembershipToReturns = Objects.requireNonNull(groupMembershipToReturns);
+            if (groupMembershipToReturns == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "groupMembershipToReturns");
+            }
+            this.groupMembershipToReturns = groupMembershipToReturns;
             return this;
         }
         public Builder groupMembershipToReturns(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn... groupMembershipToReturns) {
@@ -274,47 +293,74 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiu
         }
         @CustomType.Setter
         public Builder groupNameFormat(String groupNameFormat) {
-            this.groupNameFormat = Objects.requireNonNull(groupNameFormat);
+            if (groupNameFormat == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "groupNameFormat");
+            }
+            this.groupNameFormat = groupNameFormat;
             return this;
         }
         @CustomType.Setter
         public Builder includeGroupInResponse(Boolean includeGroupInResponse) {
-            this.includeGroupInResponse = Objects.requireNonNull(includeGroupInResponse);
+            if (includeGroupInResponse == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "includeGroupInResponse");
+            }
+            this.includeGroupInResponse = includeGroupInResponse;
             return this;
         }
         @CustomType.Setter
         public Builder passwordAndOtpTogether(Boolean passwordAndOtpTogether) {
-            this.passwordAndOtpTogether = Objects.requireNonNull(passwordAndOtpTogether);
+            if (passwordAndOtpTogether == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "passwordAndOtpTogether");
+            }
+            this.passwordAndOtpTogether = passwordAndOtpTogether;
             return this;
         }
         @CustomType.Setter
         public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder radiusVendorSpecificId(String radiusVendorSpecificId) {
-            this.radiusVendorSpecificId = Objects.requireNonNull(radiusVendorSpecificId);
+            if (radiusVendorSpecificId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "radiusVendorSpecificId");
+            }
+            this.radiusVendorSpecificId = radiusVendorSpecificId;
             return this;
         }
         @CustomType.Setter
         public Builder responseFormat(String responseFormat) {
-            this.responseFormat = Objects.requireNonNull(responseFormat);
+            if (responseFormat == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "responseFormat");
+            }
+            this.responseFormat = responseFormat;
             return this;
         }
         @CustomType.Setter
         public Builder responseFormatDelimiter(String responseFormatDelimiter) {
-            this.responseFormatDelimiter = Objects.requireNonNull(responseFormatDelimiter);
+            if (responseFormatDelimiter == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "responseFormatDelimiter");
+            }
+            this.responseFormatDelimiter = responseFormatDelimiter;
             return this;
         }
         @CustomType.Setter
         public Builder secretKey(String secretKey) {
-            this.secretKey = Objects.requireNonNull(secretKey);
+            if (secretKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "secretKey");
+            }
+            this.secretKey = secretKey;
             return this;
         }
         @CustomType.Setter
         public Builder typeOfRadiusApp(String typeOfRadiusApp) {
-            this.typeOfRadiusApp = Objects.requireNonNull(typeOfRadiusApp);
+            if (typeOfRadiusApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp", "typeOfRadiusApp");
+            }
+            this.typeOfRadiusApp = typeOfRadiusApp;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp build() {

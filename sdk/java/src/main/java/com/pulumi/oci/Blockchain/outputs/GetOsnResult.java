@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetOsnOcpuAllocationParam;
 import java.lang.String;
 import java.util.List;
@@ -104,22 +105,34 @@ public final class GetOsnResult {
 
         @CustomType.Setter
         public Builder ad(String ad) {
-            this.ad = Objects.requireNonNull(ad);
+            if (ad == null) {
+              throw new MissingRequiredPropertyException("GetOsnResult", "ad");
+            }
+            this.ad = ad;
             return this;
         }
         @CustomType.Setter
         public Builder blockchainPlatformId(String blockchainPlatformId) {
-            this.blockchainPlatformId = Objects.requireNonNull(blockchainPlatformId);
+            if (blockchainPlatformId == null) {
+              throw new MissingRequiredPropertyException("GetOsnResult", "blockchainPlatformId");
+            }
+            this.blockchainPlatformId = blockchainPlatformId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOsnResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuAllocationParams(List<GetOsnOcpuAllocationParam> ocpuAllocationParams) {
-            this.ocpuAllocationParams = Objects.requireNonNull(ocpuAllocationParams);
+            if (ocpuAllocationParams == null) {
+              throw new MissingRequiredPropertyException("GetOsnResult", "ocpuAllocationParams");
+            }
+            this.ocpuAllocationParams = ocpuAllocationParams;
             return this;
         }
         public Builder ocpuAllocationParams(GetOsnOcpuAllocationParam... ocpuAllocationParams) {
@@ -127,17 +140,26 @@ public final class GetOsnResult {
         }
         @CustomType.Setter
         public Builder osnId(String osnId) {
-            this.osnId = Objects.requireNonNull(osnId);
+            if (osnId == null) {
+              throw new MissingRequiredPropertyException("GetOsnResult", "osnId");
+            }
+            this.osnId = osnId;
             return this;
         }
         @CustomType.Setter
         public Builder osnKey(String osnKey) {
-            this.osnKey = Objects.requireNonNull(osnKey);
+            if (osnKey == null) {
+              throw new MissingRequiredPropertyException("GetOsnResult", "osnKey");
+            }
+            this.osnKey = osnKey;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOsnResult", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetOsnResult build() {

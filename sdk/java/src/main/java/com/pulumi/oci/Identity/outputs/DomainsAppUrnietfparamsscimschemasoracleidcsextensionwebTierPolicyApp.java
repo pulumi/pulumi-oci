@@ -135,16 +135,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierP
 
         @CustomType.Setter
         public Builder resourceRef(@Nullable Boolean resourceRef) {
+
             this.resourceRef = resourceRef;
             return this;
         }
         @CustomType.Setter
         public Builder webTierPolicyAzControl(@Nullable String webTierPolicyAzControl) {
+
             this.webTierPolicyAzControl = webTierPolicyAzControl;
             return this;
         }
         @CustomType.Setter
         public Builder webTierPolicyJson(@Nullable String webTierPolicyJson) {
+
             this.webTierPolicyJson = webTierPolicyJson;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetCustomerSecretKeysCustomerSecretKey;
 import com.pulumi.oci.Identity.outputs.GetCustomerSecretKeysFilter;
 import java.lang.String;
@@ -80,7 +81,10 @@ public final class GetCustomerSecretKeysResult {
 
         @CustomType.Setter
         public Builder customerSecretKeys(List<GetCustomerSecretKeysCustomerSecretKey> customerSecretKeys) {
-            this.customerSecretKeys = Objects.requireNonNull(customerSecretKeys);
+            if (customerSecretKeys == null) {
+              throw new MissingRequiredPropertyException("GetCustomerSecretKeysResult", "customerSecretKeys");
+            }
+            this.customerSecretKeys = customerSecretKeys;
             return this;
         }
         public Builder customerSecretKeys(GetCustomerSecretKeysCustomerSecretKey... customerSecretKeys) {
@@ -88,6 +92,7 @@ public final class GetCustomerSecretKeysResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCustomerSecretKeysFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -96,12 +101,18 @@ public final class GetCustomerSecretKeysResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCustomerSecretKeysResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetCustomerSecretKeysResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetCustomerSecretKeysResult build() {

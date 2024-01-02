@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
@@ -587,10 +588,18 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public JobArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.jobConfigurationDetails = Objects.requireNonNull($.jobConfigurationDetails, "expected parameter 'jobConfigurationDetails' to be non-null");
-            $.jobInfrastructureConfigurationDetails = Objects.requireNonNull($.jobInfrastructureConfigurationDetails, "expected parameter 'jobInfrastructureConfigurationDetails' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("JobArgs", "compartmentId");
+            }
+            if ($.jobConfigurationDetails == null) {
+                throw new MissingRequiredPropertyException("JobArgs", "jobConfigurationDetails");
+            }
+            if ($.jobInfrastructureConfigurationDetails == null) {
+                throw new MissingRequiredPropertyException("JobArgs", "jobInfrastructureConfigurationDetails");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("JobArgs", "projectId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails;
 import java.lang.Integer;
 import java.lang.String;
@@ -74,17 +75,24 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetails {
 
         @CustomType.Setter
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
+            if (blockStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("PipelineStepDetailStepInfrastructureConfigurationDetails", "blockStorageSizeInGbs");
+            }
+            this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfigDetails(@Nullable PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails shapeConfigDetails) {
+
             this.shapeConfigDetails = shapeConfigDetails;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("PipelineStepDetailStepInfrastructureConfigurationDetails", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         public PipelineStepDetailStepInfrastructureConfigurationDetails build() {

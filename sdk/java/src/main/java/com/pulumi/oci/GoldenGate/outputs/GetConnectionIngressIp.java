@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetConnectionIngressIp {
 
         @CustomType.Setter
         public Builder ingressIp(String ingressIp) {
-            this.ingressIp = Objects.requireNonNull(ingressIp);
+            if (ingressIp == null) {
+              throw new MissingRequiredPropertyException("GetConnectionIngressIp", "ingressIp");
+            }
+            this.ingressIp = ingressIp;
             return this;
         }
         public GetConnectionIngressIp build() {

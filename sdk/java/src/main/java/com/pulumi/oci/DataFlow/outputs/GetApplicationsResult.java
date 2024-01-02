@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplication;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsFilter;
 import java.lang.String;
@@ -129,7 +130,10 @@ public final class GetApplicationsResult {
 
         @CustomType.Setter
         public Builder applications(List<GetApplicationsApplication> applications) {
-            this.applications = Objects.requireNonNull(applications);
+            if (applications == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsResult", "applications");
+            }
+            this.applications = applications;
             return this;
         }
         public Builder applications(GetApplicationsApplication... applications) {
@@ -137,21 +141,27 @@ public final class GetApplicationsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameStartsWith(@Nullable String displayNameStartsWith) {
+
             this.displayNameStartsWith = displayNameStartsWith;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetApplicationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,16 +170,21 @@ public final class GetApplicationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ownerPrincipalId(@Nullable String ownerPrincipalId) {
+
             this.ownerPrincipalId = ownerPrincipalId;
             return this;
         }
         @CustomType.Setter
         public Builder sparkVersion(@Nullable String sparkVersion) {
+
             this.sparkVersion = sparkVersion;
             return this;
         }

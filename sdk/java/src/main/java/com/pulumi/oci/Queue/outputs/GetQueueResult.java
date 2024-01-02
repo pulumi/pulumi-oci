@@ -4,6 +4,7 @@
 package com.pulumi.oci.Queue.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -288,102 +289,162 @@ public final class GetQueueResult {
 
         @CustomType.Setter
         public Builder channelConsumptionLimit(Integer channelConsumptionLimit) {
-            this.channelConsumptionLimit = Objects.requireNonNull(channelConsumptionLimit);
+            if (channelConsumptionLimit == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "channelConsumptionLimit");
+            }
+            this.channelConsumptionLimit = channelConsumptionLimit;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder customEncryptionKeyId(String customEncryptionKeyId) {
-            this.customEncryptionKeyId = Objects.requireNonNull(customEncryptionKeyId);
+            if (customEncryptionKeyId == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "customEncryptionKeyId");
+            }
+            this.customEncryptionKeyId = customEncryptionKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder deadLetterQueueDeliveryCount(Integer deadLetterQueueDeliveryCount) {
-            this.deadLetterQueueDeliveryCount = Objects.requireNonNull(deadLetterQueueDeliveryCount);
+            if (deadLetterQueueDeliveryCount == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "deadLetterQueueDeliveryCount");
+            }
+            this.deadLetterQueueDeliveryCount = deadLetterQueueDeliveryCount;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder messagesEndpoint(String messagesEndpoint) {
-            this.messagesEndpoint = Objects.requireNonNull(messagesEndpoint);
+            if (messagesEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "messagesEndpoint");
+            }
+            this.messagesEndpoint = messagesEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder purgeQueue(Boolean purgeQueue) {
-            this.purgeQueue = Objects.requireNonNull(purgeQueue);
+            if (purgeQueue == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "purgeQueue");
+            }
+            this.purgeQueue = purgeQueue;
             return this;
         }
         @CustomType.Setter
         public Builder purgeType(String purgeType) {
-            this.purgeType = Objects.requireNonNull(purgeType);
+            if (purgeType == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "purgeType");
+            }
+            this.purgeType = purgeType;
             return this;
         }
         @CustomType.Setter
         public Builder queueId(String queueId) {
-            this.queueId = Objects.requireNonNull(queueId);
+            if (queueId == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "queueId");
+            }
+            this.queueId = queueId;
             return this;
         }
         @CustomType.Setter
         public Builder retentionInSeconds(Integer retentionInSeconds) {
-            this.retentionInSeconds = Objects.requireNonNull(retentionInSeconds);
+            if (retentionInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "retentionInSeconds");
+            }
+            this.retentionInSeconds = retentionInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+            if (timeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "timeoutInSeconds");
+            }
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder visibilityInSeconds(Integer visibilityInSeconds) {
-            this.visibilityInSeconds = Objects.requireNonNull(visibilityInSeconds);
+            if (visibilityInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "visibilityInSeconds");
+            }
+            this.visibilityInSeconds = visibilityInSeconds;
             return this;
         }
         public GetQueueResult build() {

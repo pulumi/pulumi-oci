@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentDeploymentDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentMaintenanceConfiguration;
@@ -604,27 +605,42 @@ public final class GetDeploymentResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentBackupId(String deploymentBackupId) {
-            this.deploymentBackupId = Objects.requireNonNull(deploymentBackupId);
+            if (deploymentBackupId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentBackupId");
+            }
+            this.deploymentBackupId = deploymentBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentDiagnosticDatas(List<GetDeploymentDeploymentDiagnosticData> deploymentDiagnosticDatas) {
-            this.deploymentDiagnosticDatas = Objects.requireNonNull(deploymentDiagnosticDatas);
+            if (deploymentDiagnosticDatas == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentDiagnosticDatas");
+            }
+            this.deploymentDiagnosticDatas = deploymentDiagnosticDatas;
             return this;
         }
         public Builder deploymentDiagnosticDatas(GetDeploymentDeploymentDiagnosticData... deploymentDiagnosticDatas) {
@@ -632,47 +648,74 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentUrl(String deploymentUrl) {
-            this.deploymentUrl = Objects.requireNonNull(deploymentUrl);
+            if (deploymentUrl == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentUrl");
+            }
+            this.deploymentUrl = deploymentUrl;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder fqdn(String fqdn) {
-            this.fqdn = Objects.requireNonNull(fqdn);
+            if (fqdn == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "fqdn");
+            }
+            this.fqdn = fqdn;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ingressIps(List<GetDeploymentIngressIp> ingressIps) {
-            this.ingressIps = Objects.requireNonNull(ingressIps);
+            if (ingressIps == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "ingressIps");
+            }
+            this.ingressIps = ingressIps;
             return this;
         }
         public Builder ingressIps(GetDeploymentIngressIp... ingressIps) {
@@ -680,57 +723,90 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
-            this.isAutoScalingEnabled = Objects.requireNonNull(isAutoScalingEnabled);
+            if (isAutoScalingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "isAutoScalingEnabled");
+            }
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHealthy(Boolean isHealthy) {
-            this.isHealthy = Objects.requireNonNull(isHealthy);
+            if (isHealthy == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "isHealthy");
+            }
+            this.isHealthy = isHealthy;
             return this;
         }
         @CustomType.Setter
         public Builder isLatestVersion(Boolean isLatestVersion) {
-            this.isLatestVersion = Objects.requireNonNull(isLatestVersion);
+            if (isLatestVersion == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "isLatestVersion");
+            }
+            this.isLatestVersion = isLatestVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isPublic(Boolean isPublic) {
-            this.isPublic = Objects.requireNonNull(isPublic);
+            if (isPublic == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "isPublic");
+            }
+            this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
         public Builder isStorageUtilizationLimitExceeded(Boolean isStorageUtilizationLimitExceeded) {
-            this.isStorageUtilizationLimitExceeded = Objects.requireNonNull(isStorageUtilizationLimitExceeded);
+            if (isStorageUtilizationLimitExceeded == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "isStorageUtilizationLimitExceeded");
+            }
+            this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+            if (licenseModel == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "licenseModel");
+            }
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubState(String lifecycleSubState) {
-            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+            if (lifecycleSubState == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "lifecycleSubState");
+            }
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
-            this.loadBalancerSubnetId = Objects.requireNonNull(loadBalancerSubnetId);
+            if (loadBalancerSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "loadBalancerSubnetId");
+            }
+            this.loadBalancerSubnetId = loadBalancerSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceConfigurations(List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations) {
-            this.maintenanceConfigurations = Objects.requireNonNull(maintenanceConfigurations);
+            if (maintenanceConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "maintenanceConfigurations");
+            }
+            this.maintenanceConfigurations = maintenanceConfigurations;
             return this;
         }
         public Builder maintenanceConfigurations(GetDeploymentMaintenanceConfiguration... maintenanceConfigurations) {
@@ -738,7 +814,10 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder maintenanceWindows(List<GetDeploymentMaintenanceWindow> maintenanceWindows) {
-            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+            if (maintenanceWindows == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "maintenanceWindows");
+            }
+            this.maintenanceWindows = maintenanceWindows;
             return this;
         }
         public Builder maintenanceWindows(GetDeploymentMaintenanceWindow... maintenanceWindows) {
@@ -746,17 +825,26 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder nextMaintenanceActionType(String nextMaintenanceActionType) {
-            this.nextMaintenanceActionType = Objects.requireNonNull(nextMaintenanceActionType);
+            if (nextMaintenanceActionType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "nextMaintenanceActionType");
+            }
+            this.nextMaintenanceActionType = nextMaintenanceActionType;
             return this;
         }
         @CustomType.Setter
         public Builder nextMaintenanceDescription(String nextMaintenanceDescription) {
-            this.nextMaintenanceDescription = Objects.requireNonNull(nextMaintenanceDescription);
+            if (nextMaintenanceDescription == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "nextMaintenanceDescription");
+            }
+            this.nextMaintenanceDescription = nextMaintenanceDescription;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -764,7 +852,10 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder oggDatas(List<GetDeploymentOggData> oggDatas) {
-            this.oggDatas = Objects.requireNonNull(oggDatas);
+            if (oggDatas == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "oggDatas");
+            }
+            this.oggDatas = oggDatas;
             return this;
         }
         public Builder oggDatas(GetDeploymentOggData... oggDatas) {
@@ -772,57 +863,90 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder privateIpAddress(String privateIpAddress) {
-            this.privateIpAddress = Objects.requireNonNull(privateIpAddress);
+            if (privateIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "privateIpAddress");
+            }
+            this.privateIpAddress = privateIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder publicIpAddress(String publicIpAddress) {
-            this.publicIpAddress = Objects.requireNonNull(publicIpAddress);
+            if (publicIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "publicIpAddress");
+            }
+            this.publicIpAddress = publicIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder storageUtilizationInBytes(String storageUtilizationInBytes) {
-            this.storageUtilizationInBytes = Objects.requireNonNull(storageUtilizationInBytes);
+            if (storageUtilizationInBytes == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "storageUtilizationInBytes");
+            }
+            this.storageUtilizationInBytes = storageUtilizationInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfNextMaintenance(String timeOfNextMaintenance) {
-            this.timeOfNextMaintenance = Objects.requireNonNull(timeOfNextMaintenance);
+            if (timeOfNextMaintenance == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeOfNextMaintenance");
+            }
+            this.timeOfNextMaintenance = timeOfNextMaintenance;
             return this;
         }
         @CustomType.Setter
         public Builder timeOggVersionSupportedUntil(String timeOggVersionSupportedUntil) {
-            this.timeOggVersionSupportedUntil = Objects.requireNonNull(timeOggVersionSupportedUntil);
+            if (timeOggVersionSupportedUntil == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeOggVersionSupportedUntil");
+            }
+            this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpgradeRequired(String timeUpgradeRequired) {
-            this.timeUpgradeRequired = Objects.requireNonNull(timeUpgradeRequired);
+            if (timeUpgradeRequired == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeUpgradeRequired");
+            }
+            this.timeUpgradeRequired = timeUpgradeRequired;
             return this;
         }
         public GetDeploymentResult build() {

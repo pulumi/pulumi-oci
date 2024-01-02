@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion;
 import com.pulumi.oci.Database.outputs.GetAutonomousDbPreviewVersionsFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetAutonomousDbPreviewVersionsResult {
 
         @CustomType.Setter
         public Builder autonomousDbPreviewVersions(List<GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion> autonomousDbPreviewVersions) {
-            this.autonomousDbPreviewVersions = Objects.requireNonNull(autonomousDbPreviewVersions);
+            if (autonomousDbPreviewVersions == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbPreviewVersionsResult", "autonomousDbPreviewVersions");
+            }
+            this.autonomousDbPreviewVersions = autonomousDbPreviewVersions;
             return this;
         }
         public Builder autonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersion... autonomousDbPreviewVersions) {
@@ -80,11 +84,15 @@ public final class GetAutonomousDbPreviewVersionsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbPreviewVersionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousDbPreviewVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetAutonomousDbPreviewVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDbPreviewVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAutonomousDbPreviewVersionsResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.inputs.GetManagedInstanceModuleStreamsFilter;
 import java.lang.String;
 import java.util.List;
@@ -210,7 +211,9 @@ public final class GetManagedInstanceModuleStreamsPlainArgs extends com.pulumi.r
         }
 
         public GetManagedInstanceModuleStreamsPlainArgs build() {
-            $.managedInstanceId = Objects.requireNonNull($.managedInstanceId, "expected parameter 'managedInstanceId' to be non-null");
+            if ($.managedInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsPlainArgs", "managedInstanceId");
+            }
             return $;
         }
     }

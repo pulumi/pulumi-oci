@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonsAddon;
 import com.pulumi.oci.ContainerEngine.outputs.GetAddonsFilter;
 import java.lang.String;
@@ -72,7 +73,10 @@ public final class GetAddonsResult {
 
         @CustomType.Setter
         public Builder addons(List<GetAddonsAddon> addons) {
-            this.addons = Objects.requireNonNull(addons);
+            if (addons == null) {
+              throw new MissingRequiredPropertyException("GetAddonsResult", "addons");
+            }
+            this.addons = addons;
             return this;
         }
         public Builder addons(GetAddonsAddon... addons) {
@@ -80,11 +84,15 @@ public final class GetAddonsResult {
         }
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetAddonsResult", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAddonsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetAddonsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAddonsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAddonsResult build() {

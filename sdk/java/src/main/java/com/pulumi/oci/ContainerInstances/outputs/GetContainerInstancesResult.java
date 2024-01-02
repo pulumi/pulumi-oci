@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollection;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesFilter;
 import java.lang.String;
@@ -123,17 +124,24 @@ public final class GetContainerInstancesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder containerInstanceCollections(List<GetContainerInstancesContainerInstanceCollection> containerInstanceCollections) {
-            this.containerInstanceCollections = Objects.requireNonNull(containerInstanceCollections);
+            if (containerInstanceCollections == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesResult", "containerInstanceCollections");
+            }
+            this.containerInstanceCollections = containerInstanceCollections;
             return this;
         }
         public Builder containerInstanceCollections(GetContainerInstancesContainerInstanceCollection... containerInstanceCollections) {
@@ -141,11 +149,13 @@ public final class GetContainerInstancesResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetContainerInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +164,15 @@ public final class GetContainerInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

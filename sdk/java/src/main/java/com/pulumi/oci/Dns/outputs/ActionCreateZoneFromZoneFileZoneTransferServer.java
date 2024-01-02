@@ -88,21 +88,25 @@ public final class ActionCreateZoneFromZoneFileZoneTransferServer {
 
         @CustomType.Setter
         public Builder address(@Nullable String address) {
+
             this.address = address;
             return this;
         }
         @CustomType.Setter
         public Builder isTransferDestination(@Nullable Boolean isTransferDestination) {
+
             this.isTransferDestination = isTransferDestination;
             return this;
         }
         @CustomType.Setter
         public Builder isTransferSource(@Nullable Boolean isTransferSource) {
+
             this.isTransferSource = isTransferSource;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }

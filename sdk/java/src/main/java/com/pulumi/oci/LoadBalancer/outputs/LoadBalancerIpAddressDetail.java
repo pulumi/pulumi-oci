@@ -75,16 +75,19 @@ public final class LoadBalancerIpAddressDetail {
 
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isPublic(@Nullable Boolean isPublic) {
+
             this.isPublic = isPublic;
             return this;
         }
         @CustomType.Setter
         public Builder reservedIps(@Nullable List<LoadBalancerIpAddressDetailReservedIp> reservedIps) {
+
             this.reservedIps = reservedIps;
             return this;
         }

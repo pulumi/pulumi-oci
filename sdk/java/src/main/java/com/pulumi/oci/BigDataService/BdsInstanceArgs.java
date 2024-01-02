@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceCloudSqlDetailArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeArgs;
@@ -963,16 +964,36 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BdsInstanceArgs build() {
-            $.clusterAdminPassword = Objects.requireNonNull($.clusterAdminPassword, "expected parameter 'clusterAdminPassword' to be non-null");
-            $.clusterPublicKey = Objects.requireNonNull($.clusterPublicKey, "expected parameter 'clusterPublicKey' to be non-null");
-            $.clusterVersion = Objects.requireNonNull($.clusterVersion, "expected parameter 'clusterVersion' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.isHighAvailability = Objects.requireNonNull($.isHighAvailability, "expected parameter 'isHighAvailability' to be non-null");
-            $.isSecure = Objects.requireNonNull($.isSecure, "expected parameter 'isSecure' to be non-null");
-            $.masterNode = Objects.requireNonNull($.masterNode, "expected parameter 'masterNode' to be non-null");
-            $.utilNode = Objects.requireNonNull($.utilNode, "expected parameter 'utilNode' to be non-null");
-            $.workerNode = Objects.requireNonNull($.workerNode, "expected parameter 'workerNode' to be non-null");
+            if ($.clusterAdminPassword == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "clusterAdminPassword");
+            }
+            if ($.clusterPublicKey == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "clusterPublicKey");
+            }
+            if ($.clusterVersion == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "clusterVersion");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "displayName");
+            }
+            if ($.isHighAvailability == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "isHighAvailability");
+            }
+            if ($.isSecure == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "isSecure");
+            }
+            if ($.masterNode == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "masterNode");
+            }
+            if ($.utilNode == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "utilNode");
+            }
+            if ($.workerNode == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceArgs", "workerNode");
+            }
             return $;
         }
     }

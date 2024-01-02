@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyItem;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetLogAnalyticsEntityTopologyResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetLogAnalyticsEntityTopologyItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsEntityTopologyItem... items) {
@@ -99,16 +106,23 @@ public final class GetLogAnalyticsEntityTopologyResult {
         }
         @CustomType.Setter
         public Builder logAnalyticsEntityId(String logAnalyticsEntityId) {
-            this.logAnalyticsEntityId = Objects.requireNonNull(logAnalyticsEntityId);
+            if (logAnalyticsEntityId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyResult", "logAnalyticsEntityId");
+            }
+            this.logAnalyticsEntityId = logAnalyticsEntityId;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

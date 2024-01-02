@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType;
 import java.lang.Boolean;
 import java.lang.String;
@@ -79,22 +80,30 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCompatibleFormatsForSensitiveTypeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder formatsForSensitiveTypes(List<GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType> formatsForSensitiveTypes) {
-            this.formatsForSensitiveTypes = Objects.requireNonNull(formatsForSensitiveTypes);
+            if (formatsForSensitiveTypes == null) {
+              throw new MissingRequiredPropertyException("GetCompatibleFormatsForSensitiveTypeResult", "formatsForSensitiveTypes");
+            }
+            this.formatsForSensitiveTypes = formatsForSensitiveTypes;
             return this;
         }
         public Builder formatsForSensitiveTypes(GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveType... formatsForSensitiveTypes) {
@@ -102,7 +111,10 @@ public final class GetCompatibleFormatsForSensitiveTypeResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCompatibleFormatsForSensitiveTypeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetCompatibleFormatsForSensitiveTypeResult build() {

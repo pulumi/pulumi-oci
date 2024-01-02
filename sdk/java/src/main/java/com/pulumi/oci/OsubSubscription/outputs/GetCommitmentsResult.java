@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubSubscription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubSubscription.outputs.GetCommitmentsCommitment;
 import com.pulumi.oci.OsubSubscription.outputs.GetCommitmentsFilter;
 import java.lang.String;
@@ -91,7 +92,10 @@ public final class GetCommitmentsResult {
 
         @CustomType.Setter
         public Builder commitments(List<GetCommitmentsCommitment> commitments) {
-            this.commitments = Objects.requireNonNull(commitments);
+            if (commitments == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentsResult", "commitments");
+            }
+            this.commitments = commitments;
             return this;
         }
         public Builder commitments(GetCommitmentsCommitment... commitments) {
@@ -99,11 +103,15 @@ public final class GetCommitmentsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCommitmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -112,21 +120,29 @@ public final class GetCommitmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder subscribedServiceId(String subscribedServiceId) {
-            this.subscribedServiceId = Objects.requireNonNull(subscribedServiceId);
+            if (subscribedServiceId == null) {
+              throw new MissingRequiredPropertyException("GetCommitmentsResult", "subscribedServiceId");
+            }
+            this.subscribedServiceId = subscribedServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder xOneGatewaySubscriptionId(@Nullable String xOneGatewaySubscriptionId) {
+
             this.xOneGatewaySubscriptionId = xOneGatewaySubscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
+
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
         }

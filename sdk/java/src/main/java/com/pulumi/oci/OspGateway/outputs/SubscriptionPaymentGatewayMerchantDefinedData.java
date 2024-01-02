@@ -58,11 +58,13 @@ public final class SubscriptionPaymentGatewayMerchantDefinedData {
 
         @CustomType.Setter
         public Builder cloudAccountName(@Nullable String cloudAccountName) {
+
             this.cloudAccountName = cloudAccountName;
             return this;
         }
         @CustomType.Setter
         public Builder promoType(@Nullable String promoType) {
+
             this.promoType = promoType;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.RecoveryMod.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetProtectedDatabaseRecoveryServiceSubnet {
 
         @CustomType.Setter
         public Builder recoveryServiceSubnetId(String recoveryServiceSubnetId) {
-            this.recoveryServiceSubnetId = Objects.requireNonNull(recoveryServiceSubnetId);
+            if (recoveryServiceSubnetId == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseRecoveryServiceSubnet", "recoveryServiceSubnetId");
+            }
+            this.recoveryServiceSubnetId = recoveryServiceSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetProtectedDatabaseRecoveryServiceSubnet", "state");
+            }
+            this.state = state;
             return this;
         }
         public GetProtectedDatabaseRecoveryServiceSubnet build() {

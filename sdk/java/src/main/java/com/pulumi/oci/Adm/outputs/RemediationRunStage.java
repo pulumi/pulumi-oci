@@ -100,26 +100,31 @@ public final class RemediationRunStage {
 
         @CustomType.Setter
         public Builder summary(@Nullable String summary) {
+
             this.summary = summary;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(@Nullable String timeFinished) {
+
             this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
+
             this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

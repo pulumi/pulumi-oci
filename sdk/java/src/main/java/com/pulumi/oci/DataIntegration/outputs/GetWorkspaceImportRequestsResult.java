@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestsFilter;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestsImportRequestSummaryCollection;
 import java.lang.String;
@@ -127,6 +128,7 @@ public final class GetWorkspaceImportRequestsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetWorkspaceImportRequestsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,12 +137,18 @@ public final class GetWorkspaceImportRequestsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder importRequestSummaryCollections(List<GetWorkspaceImportRequestsImportRequestSummaryCollection> importRequestSummaryCollections) {
-            this.importRequestSummaryCollections = Objects.requireNonNull(importRequestSummaryCollections);
+            if (importRequestSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsResult", "importRequestSummaryCollections");
+            }
+            this.importRequestSummaryCollections = importRequestSummaryCollections;
             return this;
         }
         public Builder importRequestSummaryCollections(GetWorkspaceImportRequestsImportRequestSummaryCollection... importRequestSummaryCollections) {
@@ -148,32 +156,40 @@ public final class GetWorkspaceImportRequestsResult {
         }
         @CustomType.Setter
         public Builder importStatus(@Nullable String importStatus) {
+
             this.importStatus = importStatus;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder projection(@Nullable String projection) {
+
             this.projection = projection;
             return this;
         }
         @CustomType.Setter
         public Builder timeEndedInMillis(@Nullable String timeEndedInMillis) {
+
             this.timeEndedInMillis = timeEndedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder timeStartedInMillis(@Nullable String timeStartedInMillis) {
+
             this.timeStartedInMillis = timeStartedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceImportRequestsResult build() {

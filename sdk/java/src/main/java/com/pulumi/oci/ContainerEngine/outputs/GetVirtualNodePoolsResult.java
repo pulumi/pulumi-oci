@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsFilter;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePool;
 import java.lang.String;
@@ -123,21 +124,27 @@ public final class GetVirtualNodePoolsResult {
 
         @CustomType.Setter
         public Builder clusterId(@Nullable String clusterId) {
+
             this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualNodePoolsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -146,11 +153,15 @@ public final class GetVirtualNodePoolsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -159,7 +170,10 @@ public final class GetVirtualNodePoolsResult {
         }
         @CustomType.Setter
         public Builder virtualNodePools(List<GetVirtualNodePoolsVirtualNodePool> virtualNodePools) {
-            this.virtualNodePools = Objects.requireNonNull(virtualNodePools);
+            if (virtualNodePools == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsResult", "virtualNodePools");
+            }
+            this.virtualNodePools = virtualNodePools;
             return this;
         }
         public Builder virtualNodePools(GetVirtualNodePoolsVirtualNodePool... virtualNodePools) {

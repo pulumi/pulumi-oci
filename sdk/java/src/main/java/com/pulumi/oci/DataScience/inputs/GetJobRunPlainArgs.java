@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetJobRunPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetJobRunPlainArgs build() {
-            $.jobRunId = Objects.requireNonNull($.jobRunId, "expected parameter 'jobRunId' to be non-null");
+            if ($.jobRunId == null) {
+                throw new MissingRequiredPropertyException("GetJobRunPlainArgs", "jobRunId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsCloudGateServerCloudGateArgs;
 import com.pulumi.oci.Identity.inputs.DomainsCloudGateServerTagArgs;
 import java.lang.Boolean;
@@ -1057,13 +1058,27 @@ public final class DomainsCloudGateServerArgs extends com.pulumi.resources.Resou
         }
 
         public DomainsCloudGateServerArgs build() {
-            $.cloudGate = Objects.requireNonNull($.cloudGate, "expected parameter 'cloudGate' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.hostName = Objects.requireNonNull($.hostName, "expected parameter 'hostName' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.ssl = Objects.requireNonNull($.ssl, "expected parameter 'ssl' to be non-null");
+            if ($.cloudGate == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "cloudGate");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "displayName");
+            }
+            if ($.hostName == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "hostName");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "idcsEndpoint");
+            }
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "port");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "schemas");
+            }
+            if ($.ssl == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateServerArgs", "ssl");
+            }
             return $;
         }
     }

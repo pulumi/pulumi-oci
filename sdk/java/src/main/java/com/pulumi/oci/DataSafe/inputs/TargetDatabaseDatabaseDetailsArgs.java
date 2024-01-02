@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -384,8 +385,12 @@ public final class TargetDatabaseDatabaseDetailsArgs extends com.pulumi.resource
         }
 
         public TargetDatabaseDatabaseDetailsArgs build() {
-            $.databaseType = Objects.requireNonNull($.databaseType, "expected parameter 'databaseType' to be non-null");
-            $.infrastructureType = Objects.requireNonNull($.infrastructureType, "expected parameter 'infrastructureType' to be non-null");
+            if ($.databaseType == null) {
+                throw new MissingRequiredPropertyException("TargetDatabaseDatabaseDetailsArgs", "databaseType");
+            }
+            if ($.infrastructureType == null) {
+                throw new MissingRequiredPropertyException("TargetDatabaseDatabaseDetailsArgs", "infrastructureType");
+            }
             return $;
         }
     }

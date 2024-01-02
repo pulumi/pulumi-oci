@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetCaBundleArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetCaBundleArgs build() {
-            $.caBundleId = Objects.requireNonNull($.caBundleId, "expected parameter 'caBundleId' to be non-null");
+            if ($.caBundleId == null) {
+                throw new MissingRequiredPropertyException("GetCaBundleArgs", "caBundleId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Audit.outputs.GetEventsAuditEvent;
 import com.pulumi.oci.Audit.outputs.GetEventsFilter;
 import java.lang.String;
@@ -92,7 +93,10 @@ public final class GetEventsResult {
 
         @CustomType.Setter
         public Builder auditEvents(List<GetEventsAuditEvent> auditEvents) {
-            this.auditEvents = Objects.requireNonNull(auditEvents);
+            if (auditEvents == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "auditEvents");
+            }
+            this.auditEvents = auditEvents;
             return this;
         }
         public Builder auditEvents(GetEventsAuditEvent... auditEvents) {
@@ -100,16 +104,23 @@ public final class GetEventsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder endTime(String endTime) {
-            this.endTime = Objects.requireNonNull(endTime);
+            if (endTime == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "endTime");
+            }
+            this.endTime = endTime;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetEventsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -118,12 +129,18 @@ public final class GetEventsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(String startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetEventsResult", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         public GetEventsResult build() {

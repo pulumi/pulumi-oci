@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -311,10 +312,18 @@ public final class InstancePoolLoadBalancerArgs extends com.pulumi.resources.Res
         }
 
         public InstancePoolLoadBalancerArgs build() {
-            $.backendSetName = Objects.requireNonNull($.backendSetName, "expected parameter 'backendSetName' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.vnicSelection = Objects.requireNonNull($.vnicSelection, "expected parameter 'vnicSelection' to be non-null");
+            if ($.backendSetName == null) {
+                throw new MissingRequiredPropertyException("InstancePoolLoadBalancerArgs", "backendSetName");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("InstancePoolLoadBalancerArgs", "loadBalancerId");
+            }
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("InstancePoolLoadBalancerArgs", "port");
+            }
+            if ($.vnicSelection == null) {
+                throw new MissingRequiredPropertyException("InstancePoolLoadBalancerArgs", "vnicSelection");
+            }
             return $;
         }
     }

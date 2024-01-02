@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -415,142 +416,226 @@ public final class GetHostInsightResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeId(String computeId) {
-            this.computeId = Objects.requireNonNull(computeId);
+            if (computeId == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "computeId");
+            }
+            this.computeId = computeId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
-            this.enterpriseManagerBridgeId = Objects.requireNonNull(enterpriseManagerBridgeId);
+            if (enterpriseManagerBridgeId == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "enterpriseManagerBridgeId");
+            }
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityDisplayName(String enterpriseManagerEntityDisplayName) {
-            this.enterpriseManagerEntityDisplayName = Objects.requireNonNull(enterpriseManagerEntityDisplayName);
+            if (enterpriseManagerEntityDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "enterpriseManagerEntityDisplayName");
+            }
+            this.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
-            this.enterpriseManagerEntityIdentifier = Objects.requireNonNull(enterpriseManagerEntityIdentifier);
+            if (enterpriseManagerEntityIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "enterpriseManagerEntityIdentifier");
+            }
+            this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityName(String enterpriseManagerEntityName) {
-            this.enterpriseManagerEntityName = Objects.requireNonNull(enterpriseManagerEntityName);
+            if (enterpriseManagerEntityName == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "enterpriseManagerEntityName");
+            }
+            this.enterpriseManagerEntityName = enterpriseManagerEntityName;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
-            this.enterpriseManagerEntityType = Objects.requireNonNull(enterpriseManagerEntityType);
+            if (enterpriseManagerEntityType == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "enterpriseManagerEntityType");
+            }
+            this.enterpriseManagerEntityType = enterpriseManagerEntityType;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerIdentifier(String enterpriseManagerIdentifier) {
-            this.enterpriseManagerIdentifier = Objects.requireNonNull(enterpriseManagerIdentifier);
+            if (enterpriseManagerIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "enterpriseManagerIdentifier");
+            }
+            this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder entitySource(String entitySource) {
-            this.entitySource = Objects.requireNonNull(entitySource);
+            if (entitySource == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "entitySource");
+            }
+            this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
         public Builder exadataInsightId(String exadataInsightId) {
-            this.exadataInsightId = Objects.requireNonNull(exadataInsightId);
+            if (exadataInsightId == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "exadataInsightId");
+            }
+            this.exadataInsightId = exadataInsightId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostDisplayName(String hostDisplayName) {
-            this.hostDisplayName = Objects.requireNonNull(hostDisplayName);
+            if (hostDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "hostDisplayName");
+            }
+            this.hostDisplayName = hostDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder hostInsightId(String hostInsightId) {
-            this.hostInsightId = Objects.requireNonNull(hostInsightId);
+            if (hostInsightId == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "hostInsightId");
+            }
+            this.hostInsightId = hostInsightId;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder hostType(String hostType) {
-            this.hostType = Objects.requireNonNull(hostType);
+            if (hostType == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "hostType");
+            }
+            this.hostType = hostType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder platformName(String platformName) {
-            this.platformName = Objects.requireNonNull(platformName);
+            if (platformName == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "platformName");
+            }
+            this.platformName = platformName;
             return this;
         }
         @CustomType.Setter
         public Builder platformType(String platformType) {
-            this.platformType = Objects.requireNonNull(platformType);
+            if (platformType == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "platformType");
+            }
+            this.platformType = platformType;
             return this;
         }
         @CustomType.Setter
         public Builder platformVersion(String platformVersion) {
-            this.platformVersion = Objects.requireNonNull(platformVersion);
+            if (platformVersion == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "platformVersion");
+            }
+            this.platformVersion = platformVersion;
             return this;
         }
         @CustomType.Setter
         public Builder processorCount(Integer processorCount) {
-            this.processorCount = Objects.requireNonNull(processorCount);
+            if (processorCount == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "processorCount");
+            }
+            this.processorCount = processorCount;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetHostInsightResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetHostInsightResult build() {

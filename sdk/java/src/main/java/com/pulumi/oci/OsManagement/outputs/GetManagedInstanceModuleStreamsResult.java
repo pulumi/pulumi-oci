@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceModuleStreamsFilter;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance;
 import java.lang.String;
@@ -113,11 +114,13 @@ public final class GetManagedInstanceModuleStreamsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedInstanceModuleStreamsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -126,22 +129,32 @@ public final class GetManagedInstanceModuleStreamsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsResult", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder moduleName(@Nullable String moduleName) {
+
             this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
         public Builder moduleStreamOnManagedInstances(List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance> moduleStreamOnManagedInstances) {
-            this.moduleStreamOnManagedInstances = Objects.requireNonNull(moduleStreamOnManagedInstances);
+            if (moduleStreamOnManagedInstances == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsResult", "moduleStreamOnManagedInstances");
+            }
+            this.moduleStreamOnManagedInstances = moduleStreamOnManagedInstances;
             return this;
         }
         public Builder moduleStreamOnManagedInstances(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance... moduleStreamOnManagedInstances) {
@@ -149,11 +162,13 @@ public final class GetManagedInstanceModuleStreamsResult {
         }
         @CustomType.Setter
         public Builder streamName(@Nullable String streamName) {
+
             this.streamName = streamName;
             return this;
         }
         @CustomType.Setter
         public Builder streamStatus(@Nullable String streamStatus) {
+
             this.streamStatus = streamStatus;
             return this;
         }

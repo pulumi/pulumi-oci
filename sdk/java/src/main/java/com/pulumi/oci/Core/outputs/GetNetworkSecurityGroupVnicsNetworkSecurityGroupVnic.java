@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic {
 
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeAssociated(String timeAssociated) {
-            this.timeAssociated = Objects.requireNonNull(timeAssociated);
+            if (timeAssociated == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic", "timeAssociated");
+            }
+            this.timeAssociated = timeAssociated;
             return this;
         }
         @CustomType.Setter
         public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+            if (vnicId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic", "vnicId");
+            }
+            this.vnicId = vnicId;
             return this;
         }
         public GetNetworkSecurityGroupVnicsNetworkSecurityGroupVnic build() {

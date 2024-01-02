@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationsFilter;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationsPublication;
 import java.lang.String;
@@ -121,11 +122,15 @@ public final class GetPublicationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPublicationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -134,16 +139,23 @@ public final class GetPublicationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingType(String listingType) {
-            this.listingType = Objects.requireNonNull(listingType);
+            if (listingType == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsResult", "listingType");
+            }
+            this.listingType = listingType;
             return this;
         }
         @CustomType.Setter
         public Builder names(@Nullable List<String> names) {
+
             this.names = names;
             return this;
         }
@@ -152,6 +164,7 @@ public final class GetPublicationsResult {
         }
         @CustomType.Setter
         public Builder operatingSystems(@Nullable List<String> operatingSystems) {
+
             this.operatingSystems = operatingSystems;
             return this;
         }
@@ -160,12 +173,16 @@ public final class GetPublicationsResult {
         }
         @CustomType.Setter
         public Builder publicationId(@Nullable String publicationId) {
+
             this.publicationId = publicationId;
             return this;
         }
         @CustomType.Setter
         public Builder publications(List<GetPublicationsPublication> publications) {
-            this.publications = Objects.requireNonNull(publications);
+            if (publications == null) {
+              throw new MissingRequiredPropertyException("GetPublicationsResult", "publications");
+            }
+            this.publications = publications;
             return this;
         }
         public Builder publications(GetPublicationsPublication... publications) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollection;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeHpcIslandsFilter;
 import java.lang.String;
@@ -93,22 +94,30 @@ public final class GetComputeCapacityTopologyComputeHpcIslandsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeCapacityTopologyId(String computeCapacityTopologyId) {
-            this.computeCapacityTopologyId = Objects.requireNonNull(computeCapacityTopologyId);
+            if (computeCapacityTopologyId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsResult", "computeCapacityTopologyId");
+            }
+            this.computeCapacityTopologyId = computeCapacityTopologyId;
             return this;
         }
         @CustomType.Setter
         public Builder computeHpcIslandCollections(List<GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollection> computeHpcIslandCollections) {
-            this.computeHpcIslandCollections = Objects.requireNonNull(computeHpcIslandCollections);
+            if (computeHpcIslandCollections == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsResult", "computeHpcIslandCollections");
+            }
+            this.computeHpcIslandCollections = computeHpcIslandCollections;
             return this;
         }
         public Builder computeHpcIslandCollections(GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollection... computeHpcIslandCollections) {
@@ -116,6 +125,7 @@ public final class GetComputeCapacityTopologyComputeHpcIslandsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeCapacityTopologyComputeHpcIslandsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,7 +134,10 @@ public final class GetComputeCapacityTopologyComputeHpcIslandsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetComputeCapacityTopologyComputeHpcIslandsResult build() {

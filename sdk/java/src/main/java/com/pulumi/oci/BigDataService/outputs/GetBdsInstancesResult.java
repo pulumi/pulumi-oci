@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstance;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetBdsInstancesResult {
 
         @CustomType.Setter
         public Builder bdsInstances(List<GetBdsInstancesBdsInstance> bdsInstances) {
-            this.bdsInstances = Objects.requireNonNull(bdsInstances);
+            if (bdsInstances == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesResult", "bdsInstances");
+            }
+            this.bdsInstances = bdsInstances;
             return this;
         }
         public Builder bdsInstances(GetBdsInstancesBdsInstance... bdsInstances) {
@@ -117,16 +121,21 @@ public final class GetBdsInstancesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetBdsInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

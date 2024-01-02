@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceModuleStreamsFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceModuleStreamsModuleStreamCollection;
 import java.lang.Boolean;
@@ -130,6 +131,7 @@ public final class GetSoftwareSourceModuleStreamsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSoftwareSourceModuleStreamsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -138,27 +140,36 @@ public final class GetSoftwareSourceModuleStreamsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isLatest(@Nullable Boolean isLatest) {
+
             this.isLatest = isLatest;
             return this;
         }
         @CustomType.Setter
         public Builder moduleName(@Nullable String moduleName) {
+
             this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
         public Builder moduleNameContains(@Nullable String moduleNameContains) {
+
             this.moduleNameContains = moduleNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder moduleStreamCollections(List<GetSoftwareSourceModuleStreamsModuleStreamCollection> moduleStreamCollections) {
-            this.moduleStreamCollections = Objects.requireNonNull(moduleStreamCollections);
+            if (moduleStreamCollections == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamsResult", "moduleStreamCollections");
+            }
+            this.moduleStreamCollections = moduleStreamCollections;
             return this;
         }
         public Builder moduleStreamCollections(GetSoftwareSourceModuleStreamsModuleStreamCollection... moduleStreamCollections) {
@@ -166,12 +177,16 @@ public final class GetSoftwareSourceModuleStreamsResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+            if (softwareSourceId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamsResult", "softwareSourceId");
+            }
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         public GetSoftwareSourceModuleStreamsResult build() {

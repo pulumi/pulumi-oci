@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.CloudVmClusterIormConfigDbPlanArgs;
 import java.lang.String;
 import java.util.List;
@@ -162,8 +163,12 @@ public final class CloudVmClusterIormConfigArgs extends com.pulumi.resources.Res
         }
 
         public CloudVmClusterIormConfigArgs build() {
-            $.cloudVmClusterId = Objects.requireNonNull($.cloudVmClusterId, "expected parameter 'cloudVmClusterId' to be non-null");
-            $.dbPlans = Objects.requireNonNull($.dbPlans, "expected parameter 'dbPlans' to be non-null");
+            if ($.cloudVmClusterId == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterIormConfigArgs", "cloudVmClusterId");
+            }
+            if ($.dbPlans == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterIormConfigArgs", "dbPlans");
+            }
             return $;
         }
     }

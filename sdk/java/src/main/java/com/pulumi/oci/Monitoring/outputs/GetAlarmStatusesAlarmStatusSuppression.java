@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetAlarmStatusesAlarmStatusSuppression {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatusSuppression", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder timeSuppressFrom(String timeSuppressFrom) {
-            this.timeSuppressFrom = Objects.requireNonNull(timeSuppressFrom);
+            if (timeSuppressFrom == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatusSuppression", "timeSuppressFrom");
+            }
+            this.timeSuppressFrom = timeSuppressFrom;
             return this;
         }
         @CustomType.Setter
         public Builder timeSuppressUntil(String timeSuppressUntil) {
-            this.timeSuppressUntil = Objects.requireNonNull(timeSuppressUntil);
+            if (timeSuppressUntil == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatusSuppression", "timeSuppressUntil");
+            }
+            this.timeSuppressUntil = timeSuppressUntil;
             return this;
         }
         public GetAlarmStatusesAlarmStatusSuppression build() {

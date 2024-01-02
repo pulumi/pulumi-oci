@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs ext
         }
 
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs build() {
-            $.executionName = Objects.requireNonNull($.executionName, "expected parameter 'executionName' to be non-null");
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.taskName = Objects.requireNonNull($.taskName, "expected parameter 'taskName' to be non-null");
+            if ($.executionName == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs", "executionName");
+            }
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs", "managedDatabaseId");
+            }
+            if ($.taskName == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs", "taskName");
+            }
             return $;
         }
     }

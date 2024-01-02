@@ -215,6 +215,7 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
 
         @CustomType.Setter
         public Builder autotunePolicies(@Nullable List<InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicy> autotunePolicies) {
+
             this.autotunePolicies = autotunePolicies;
             return this;
         }
@@ -223,61 +224,73 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
         }
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupPolicyId(@Nullable String backupPolicyId) {
+
             this.backupPolicyId = backupPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder blockVolumeReplicas(@Nullable InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas) {
+
             this.blockVolumeReplicas = blockVolumeReplicas;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoTuneEnabled(@Nullable Boolean isAutoTuneEnabled) {
+
             this.isAutoTuneEnabled = isAutoTuneEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
             this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInGbs(@Nullable String sizeInGbs) {
+
             this.sizeInGbs = sizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetails(@Nullable InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetails sourceDetails) {
+
             this.sourceDetails = sourceDetails;
             return this;
         }
         @CustomType.Setter
         public Builder vpusPerGb(@Nullable String vpusPerGb) {
+
             this.vpusPerGb = vpusPerGb;
             return this;
         }

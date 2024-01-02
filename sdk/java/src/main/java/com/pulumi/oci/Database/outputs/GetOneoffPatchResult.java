@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -255,47 +256,74 @@ public final class GetOneoffPatchResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder downloadOneoffPatchTrigger(Integer downloadOneoffPatchTrigger) {
-            this.downloadOneoffPatchTrigger = Objects.requireNonNull(downloadOneoffPatchTrigger);
+            if (downloadOneoffPatchTrigger == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "downloadOneoffPatchTrigger");
+            }
+            this.downloadOneoffPatchTrigger = downloadOneoffPatchTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder oneOffPatches(List<String> oneOffPatches) {
-            this.oneOffPatches = Objects.requireNonNull(oneOffPatches);
+            if (oneOffPatches == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "oneOffPatches");
+            }
+            this.oneOffPatches = oneOffPatches;
             return this;
         }
         public Builder oneOffPatches(String... oneOffPatches) {
@@ -303,42 +331,66 @@ public final class GetOneoffPatchResult {
         }
         @CustomType.Setter
         public Builder oneoffPatchId(String oneoffPatchId) {
-            this.oneoffPatchId = Objects.requireNonNull(oneoffPatchId);
+            if (oneoffPatchId == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "oneoffPatchId");
+            }
+            this.oneoffPatchId = oneoffPatchId;
             return this;
         }
         @CustomType.Setter
         public Builder releaseUpdate(String releaseUpdate) {
-            this.releaseUpdate = Objects.requireNonNull(releaseUpdate);
+            if (releaseUpdate == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "releaseUpdate");
+            }
+            this.releaseUpdate = releaseUpdate;
             return this;
         }
         @CustomType.Setter
         public Builder sha256sum(String sha256sum) {
-            this.sha256sum = Objects.requireNonNull(sha256sum);
+            if (sha256sum == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "sha256sum");
+            }
+            this.sha256sum = sha256sum;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInKbs(Double sizeInKbs) {
-            this.sizeInKbs = Objects.requireNonNull(sizeInKbs);
+            if (sizeInKbs == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "sizeInKbs");
+            }
+            this.sizeInKbs = sizeInKbs;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfExpiration(String timeOfExpiration) {
-            this.timeOfExpiration = Objects.requireNonNull(timeOfExpiration);
+            if (timeOfExpiration == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "timeOfExpiration");
+            }
+            this.timeOfExpiration = timeOfExpiration;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetOneoffPatchResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetOneoffPatchResult build() {

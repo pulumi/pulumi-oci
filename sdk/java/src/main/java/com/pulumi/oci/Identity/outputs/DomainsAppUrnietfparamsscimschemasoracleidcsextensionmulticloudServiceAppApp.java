@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -104,12 +105,16 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticlo
 
         @CustomType.Setter
         public Builder multicloudPlatformUrl(@Nullable String multicloudPlatformUrl) {
+
             this.multicloudPlatformUrl = multicloudPlatformUrl;
             return this;
         }
         @CustomType.Setter
         public Builder multicloudServiceType(String multicloudServiceType) {
-            this.multicloudServiceType = Objects.requireNonNull(multicloudServiceType);
+            if (multicloudServiceType == null) {
+              throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp", "multicloudServiceType");
+            }
+            this.multicloudServiceType = multicloudServiceType;
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineA
 
         @CustomType.Setter
         public Builder deployStageId(String deployStageId) {
-            this.deployStageId = Objects.requireNonNull(deployStageId);
+            if (deployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem", "deployStageId");
+            }
+            this.deployStageId = deployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         public GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactItemDeployPipelineStageItem build() {

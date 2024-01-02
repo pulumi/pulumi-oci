@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndV
 
         @CustomType.Setter
         public Builder targetMemoryPerNode(Integer targetMemoryPerNode) {
-            this.targetMemoryPerNode = Objects.requireNonNull(targetMemoryPerNode);
+            if (targetMemoryPerNode == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig", "targetMemoryPerNode");
+            }
+            this.targetMemoryPerNode = targetMemoryPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder targetOcpusPerNode(Integer targetOcpusPerNode) {
-            this.targetOcpusPerNode = Objects.requireNonNull(targetOcpusPerNode);
+            if (targetOcpusPerNode == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig", "targetOcpusPerNode");
+            }
+            this.targetOcpusPerNode = targetOcpusPerNode;
             return this;
         }
         @CustomType.Setter
         public Builder targetShape(String targetShape) {
-            this.targetShape = Objects.requireNonNull(targetShape);
+            if (targetShape == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig", "targetShape");
+            }
+            this.targetShape = targetShape;
             return this;
         }
         @CustomType.Setter
         public Builder timeRecurrence(String timeRecurrence) {
-            this.timeRecurrence = Objects.requireNonNull(timeRecurrence);
+            if (timeRecurrence == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig", "timeRecurrence");
+            }
+            this.timeRecurrence = timeRecurrence;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig build() {

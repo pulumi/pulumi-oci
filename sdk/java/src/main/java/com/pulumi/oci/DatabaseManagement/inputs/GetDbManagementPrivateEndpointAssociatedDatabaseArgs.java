@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseArgs extends 
         }
 
         public GetDbManagementPrivateEndpointAssociatedDatabaseArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbManagementPrivateEndpointId = Objects.requireNonNull($.dbManagementPrivateEndpointId, "expected parameter 'dbManagementPrivateEndpointId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseArgs", "compartmentId");
+            }
+            if ($.dbManagementPrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseArgs", "dbManagementPrivateEndpointId");
+            }
             return $;
         }
     }

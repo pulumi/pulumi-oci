@@ -5,6 +5,7 @@ package com.pulumi.oci.IdentityDataPlane;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class GeneratedScopedAccessTokenArgs extends com.pulumi.resources.R
         }
 
         public GeneratedScopedAccessTokenArgs build() {
-            $.publicKey = Objects.requireNonNull($.publicKey, "expected parameter 'publicKey' to be non-null");
-            $.scope = Objects.requireNonNull($.scope, "expected parameter 'scope' to be non-null");
+            if ($.publicKey == null) {
+                throw new MissingRequiredPropertyException("GeneratedScopedAccessTokenArgs", "publicKey");
+            }
+            if ($.scope == null) {
+                throw new MissingRequiredPropertyException("GeneratedScopedAccessTokenArgs", "scope");
+            }
             return $;
         }
     }

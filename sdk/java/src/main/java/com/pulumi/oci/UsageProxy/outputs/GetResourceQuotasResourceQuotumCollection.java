@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetResourceQuotasResourceQuotumCollectionItem;
 import java.lang.Boolean;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetResourceQuotasResourceQuotumCollection {
 
         @CustomType.Setter
         public Builder isAllowed(Boolean isAllowed) {
-            this.isAllowed = Objects.requireNonNull(isAllowed);
+            if (isAllowed == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollection", "isAllowed");
+            }
+            this.isAllowed = isAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetResourceQuotasResourceQuotumCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResourceQuotumCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetResourceQuotasResourceQuotumCollectionItem... items) {

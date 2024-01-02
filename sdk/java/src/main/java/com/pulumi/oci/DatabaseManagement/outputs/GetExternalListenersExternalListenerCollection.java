@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenersExternalListenerCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetExternalListenersExternalListenerCollection {
 
         @CustomType.Setter
         public Builder items(List<GetExternalListenersExternalListenerCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetExternalListenersExternalListenerCollectionItem... items) {

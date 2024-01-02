@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKey;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -102,12 +103,18 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
 
         @CustomType.Setter
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
-            this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
+            if (isSslVerifyDisabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey", "isSslVerifyDisabled");
+            }
+            this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder keys(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyKey... keys) {
@@ -115,17 +122,26 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
         }
         @CustomType.Setter
         public Builder maxCacheDurationInHours(Integer maxCacheDurationInHours) {
-            this.maxCacheDurationInHours = Objects.requireNonNull(maxCacheDurationInHours);
+            if (maxCacheDurationInHours == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey", "maxCacheDurationInHours");
+            }
+            this.maxCacheDurationInHours = maxCacheDurationInHours;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder uri(String uri) {
-            this.uri = Objects.requireNonNull(uri);
+            if (uri == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey", "uri");
+            }
+            this.uri = uri;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKey build() {

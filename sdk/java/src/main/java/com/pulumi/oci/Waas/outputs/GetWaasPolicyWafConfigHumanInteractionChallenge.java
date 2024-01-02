@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader;
 import java.lang.Boolean;
@@ -172,52 +173,82 @@ public final class GetWaasPolicyWafConfigHumanInteractionChallenge {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder actionExpirationInSeconds(Integer actionExpirationInSeconds) {
-            this.actionExpirationInSeconds = Objects.requireNonNull(actionExpirationInSeconds);
+            if (actionExpirationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "actionExpirationInSeconds");
+            }
+            this.actionExpirationInSeconds = actionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder challengeSettings(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings challengeSettings) {
-            this.challengeSettings = Objects.requireNonNull(challengeSettings);
+            if (challengeSettings == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "challengeSettings");
+            }
+            this.challengeSettings = challengeSettings;
             return this;
         }
         @CustomType.Setter
         public Builder failureThreshold(Integer failureThreshold) {
-            this.failureThreshold = Objects.requireNonNull(failureThreshold);
+            if (failureThreshold == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "failureThreshold");
+            }
+            this.failureThreshold = failureThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder failureThresholdExpirationInSeconds(Integer failureThresholdExpirationInSeconds) {
-            this.failureThresholdExpirationInSeconds = Objects.requireNonNull(failureThresholdExpirationInSeconds);
+            if (failureThresholdExpirationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "failureThresholdExpirationInSeconds");
+            }
+            this.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder interactionThreshold(Integer interactionThreshold) {
-            this.interactionThreshold = Objects.requireNonNull(interactionThreshold);
+            if (interactionThreshold == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "interactionThreshold");
+            }
+            this.interactionThreshold = interactionThreshold;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isNatEnabled(Boolean isNatEnabled) {
-            this.isNatEnabled = Objects.requireNonNull(isNatEnabled);
+            if (isNatEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "isNatEnabled");
+            }
+            this.isNatEnabled = isNatEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder recordingPeriodInSeconds(Integer recordingPeriodInSeconds) {
-            this.recordingPeriodInSeconds = Objects.requireNonNull(recordingPeriodInSeconds);
+            if (recordingPeriodInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "recordingPeriodInSeconds");
+            }
+            this.recordingPeriodInSeconds = recordingPeriodInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder setHttpHeader(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader setHttpHeader) {
-            this.setHttpHeader = Objects.requireNonNull(setHttpHeader);
+            if (setHttpHeader == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigHumanInteractionChallenge", "setHttpHeader");
+            }
+            this.setHttpHeader = setHttpHeader;
             return this;
         }
         public GetWaasPolicyWafConfigHumanInteractionChallenge build() {

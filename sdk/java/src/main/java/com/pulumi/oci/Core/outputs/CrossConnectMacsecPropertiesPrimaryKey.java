@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -94,21 +95,29 @@ public final class CrossConnectMacsecPropertiesPrimaryKey {
 
         @CustomType.Setter
         public Builder connectivityAssociationKeySecretId(String connectivityAssociationKeySecretId) {
-            this.connectivityAssociationKeySecretId = Objects.requireNonNull(connectivityAssociationKeySecretId);
+            if (connectivityAssociationKeySecretId == null) {
+              throw new MissingRequiredPropertyException("CrossConnectMacsecPropertiesPrimaryKey", "connectivityAssociationKeySecretId");
+            }
+            this.connectivityAssociationKeySecretId = connectivityAssociationKeySecretId;
             return this;
         }
         @CustomType.Setter
         public Builder connectivityAssociationKeySecretVersion(@Nullable String connectivityAssociationKeySecretVersion) {
+
             this.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder connectivityAssociationNameSecretId(String connectivityAssociationNameSecretId) {
-            this.connectivityAssociationNameSecretId = Objects.requireNonNull(connectivityAssociationNameSecretId);
+            if (connectivityAssociationNameSecretId == null) {
+              throw new MissingRequiredPropertyException("CrossConnectMacsecPropertiesPrimaryKey", "connectivityAssociationNameSecretId");
+            }
+            this.connectivityAssociationNameSecretId = connectivityAssociationNameSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder connectivityAssociationNameSecretVersion(@Nullable String connectivityAssociationNameSecretVersion) {
+
             this.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
             return this;
         }

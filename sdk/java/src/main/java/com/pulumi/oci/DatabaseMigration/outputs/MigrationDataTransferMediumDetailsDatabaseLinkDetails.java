@@ -59,11 +59,13 @@ public final class MigrationDataTransferMediumDetailsDatabaseLinkDetails {
 
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder walletBucket(@Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket walletBucket) {
+
             this.walletBucket = walletBucket;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.HealthChecks.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,7 +174,9 @@ public final class GetPingMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetPingMonitorsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetPingMonitorsArgs", "compartmentId");
+            }
             return $;
         }
     }

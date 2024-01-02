@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetKeyStoresFilter;
 import com.pulumi.oci.Database.outputs.GetKeyStoresKeyStore;
 import java.lang.String;
@@ -80,11 +81,15 @@ public final class GetKeyStoresResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoresResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetKeyStoresFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,12 +98,18 @@ public final class GetKeyStoresResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoresResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyStores(List<GetKeyStoresKeyStore> keyStores) {
-            this.keyStores = Objects.requireNonNull(keyStores);
+            if (keyStores == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoresResult", "keyStores");
+            }
+            this.keyStores = keyStores;
             return this;
         }
         public Builder keyStores(GetKeyStoresKeyStore... keyStores) {

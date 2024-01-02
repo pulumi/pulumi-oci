@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -160,9 +161,15 @@ public final class ConnectionVaultDetailsArgs extends com.pulumi.resources.Resou
         }
 
         public ConnectionVaultDetailsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.keyId = Objects.requireNonNull($.keyId, "expected parameter 'keyId' to be non-null");
-            $.vaultId = Objects.requireNonNull($.vaultId, "expected parameter 'vaultId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConnectionVaultDetailsArgs", "compartmentId");
+            }
+            if ($.keyId == null) {
+                throw new MissingRequiredPropertyException("ConnectionVaultDetailsArgs", "keyId");
+            }
+            if ($.vaultId == null) {
+                throw new MissingRequiredPropertyException("ConnectionVaultDetailsArgs", "vaultId");
+            }
             return $;
         }
     }

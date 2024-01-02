@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -83,27 +84,42 @@ public final class GetCloudGuardConfigurationResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCloudGuardConfigurationResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCloudGuardConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder reportingRegion(String reportingRegion) {
-            this.reportingRegion = Objects.requireNonNull(reportingRegion);
+            if (reportingRegion == null) {
+              throw new MissingRequiredPropertyException("GetCloudGuardConfigurationResult", "reportingRegion");
+            }
+            this.reportingRegion = reportingRegion;
             return this;
         }
         @CustomType.Setter
         public Builder selfManageResources(Boolean selfManageResources) {
-            this.selfManageResources = Objects.requireNonNull(selfManageResources);
+            if (selfManageResources == null) {
+              throw new MissingRequiredPropertyException("GetCloudGuardConfigurationResult", "selfManageResources");
+            }
+            this.selfManageResources = selfManageResources;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetCloudGuardConfigurationResult", "status");
+            }
+            this.status = status;
             return this;
         }
         public GetCloudGuardConfigurationResult build() {

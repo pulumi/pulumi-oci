@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumeBackupPolicyAssignmentsFilter;
 import com.pulumi.oci.Core.outputs.GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment;
 import java.lang.String;
@@ -80,11 +81,15 @@ public final class GetVolumeBackupPolicyAssignmentsResult {
 
         @CustomType.Setter
         public Builder assetId(String assetId) {
-            this.assetId = Objects.requireNonNull(assetId);
+            if (assetId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPolicyAssignmentsResult", "assetId");
+            }
+            this.assetId = assetId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVolumeBackupPolicyAssignmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,12 +98,18 @@ public final class GetVolumeBackupPolicyAssignmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPolicyAssignmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder volumeBackupPolicyAssignments(List<GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment> volumeBackupPolicyAssignments) {
-            this.volumeBackupPolicyAssignments = Objects.requireNonNull(volumeBackupPolicyAssignments);
+            if (volumeBackupPolicyAssignments == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPolicyAssignmentsResult", "volumeBackupPolicyAssignments");
+            }
+            this.volumeBackupPolicyAssignments = volumeBackupPolicyAssignments;
             return this;
         }
         public Builder volumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignment... volumeBackupPolicyAssignments) {

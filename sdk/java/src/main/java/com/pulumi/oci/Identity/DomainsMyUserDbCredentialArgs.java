@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsMyUserDbCredentialTagArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyUserDbCredentialUserArgs;
 import java.lang.String;
@@ -809,9 +810,15 @@ public final class DomainsMyUserDbCredentialArgs extends com.pulumi.resources.Re
         }
 
         public DomainsMyUserDbCredentialArgs build() {
-            $.dbPassword = Objects.requireNonNull($.dbPassword, "expected parameter 'dbPassword' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.dbPassword == null) {
+                throw new MissingRequiredPropertyException("DomainsMyUserDbCredentialArgs", "dbPassword");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsMyUserDbCredentialArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsMyUserDbCredentialArgs", "schemas");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetEmailDomainPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetEmailDomainPlainArgs build() {
-            $.emailDomainId = Objects.requireNonNull($.emailDomainId, "expected parameter 'emailDomainId' to be non-null");
+            if ($.emailDomainId == null) {
+                throw new MissingRequiredPropertyException("GetEmailDomainPlainArgs", "emailDomainId");
+            }
             return $;
         }
     }

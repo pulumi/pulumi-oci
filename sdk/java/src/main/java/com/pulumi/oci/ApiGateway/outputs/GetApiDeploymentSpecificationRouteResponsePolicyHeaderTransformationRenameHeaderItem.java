@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransfo
 
         @CustomType.Setter
         public Builder from(String from) {
-            this.from = Objects.requireNonNull(from);
+            if (from == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem", "from");
+            }
+            this.from = from;
             return this;
         }
         @CustomType.Setter
         public Builder to(String to) {
-            this.to = Objects.requireNonNull(to);
+            if (to == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem", "to");
+            }
+            this.to = to;
             return this;
         }
         public GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationRenameHeaderItem build() {

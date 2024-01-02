@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceAlternateCustomEndpoint;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceAttachment;
 import com.pulumi.oci.Integration.outputs.GetIntegrationInstanceCustomEndpoint;
@@ -370,7 +371,10 @@ public final class GetIntegrationInstanceResult {
 
         @CustomType.Setter
         public Builder alternateCustomEndpoints(List<GetIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints) {
-            this.alternateCustomEndpoints = Objects.requireNonNull(alternateCustomEndpoints);
+            if (alternateCustomEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "alternateCustomEndpoints");
+            }
+            this.alternateCustomEndpoints = alternateCustomEndpoints;
             return this;
         }
         public Builder alternateCustomEndpoints(GetIntegrationInstanceAlternateCustomEndpoint... alternateCustomEndpoints) {
@@ -378,7 +382,10 @@ public final class GetIntegrationInstanceResult {
         }
         @CustomType.Setter
         public Builder attachments(List<GetIntegrationInstanceAttachment> attachments) {
-            this.attachments = Objects.requireNonNull(attachments);
+            if (attachments == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "attachments");
+            }
+            this.attachments = attachments;
             return this;
         }
         public Builder attachments(GetIntegrationInstanceAttachment... attachments) {
@@ -386,17 +393,26 @@ public final class GetIntegrationInstanceResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder consumptionModel(String consumptionModel) {
-            this.consumptionModel = Objects.requireNonNull(consumptionModel);
+            if (consumptionModel == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "consumptionModel");
+            }
+            this.consumptionModel = consumptionModel;
             return this;
         }
         @CustomType.Setter
         public Builder customEndpoints(List<GetIntegrationInstanceCustomEndpoint> customEndpoints) {
-            this.customEndpoints = Objects.requireNonNull(customEndpoints);
+            if (customEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "customEndpoints");
+            }
+            this.customEndpoints = customEndpoints;
             return this;
         }
         public Builder customEndpoints(GetIntegrationInstanceCustomEndpoint... customEndpoints) {
@@ -404,42 +420,66 @@ public final class GetIntegrationInstanceResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainId(String domainId) {
-            this.domainId = Objects.requireNonNull(domainId);
+            if (domainId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "domainId");
+            }
+            this.domainId = domainId;
             return this;
         }
         @CustomType.Setter
         public Builder enableProcessAutomationTrigger(Integer enableProcessAutomationTrigger) {
-            this.enableProcessAutomationTrigger = Objects.requireNonNull(enableProcessAutomationTrigger);
+            if (enableProcessAutomationTrigger == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "enableProcessAutomationTrigger");
+            }
+            this.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAt(String idcsAt) {
-            this.idcsAt = Objects.requireNonNull(idcsAt);
+            if (idcsAt == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "idcsAt");
+            }
+            this.idcsAt = idcsAt;
             return this;
         }
         @CustomType.Setter
         public Builder idcsInfos(List<GetIntegrationInstanceIdcsInfo> idcsInfos) {
-            this.idcsInfos = Objects.requireNonNull(idcsInfos);
+            if (idcsInfos == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "idcsInfos");
+            }
+            this.idcsInfos = idcsInfos;
             return this;
         }
         public Builder idcsInfos(GetIntegrationInstanceIdcsInfo... idcsInfos) {
@@ -447,42 +487,66 @@ public final class GetIntegrationInstanceResult {
         }
         @CustomType.Setter
         public Builder instanceUrl(String instanceUrl) {
-            this.instanceUrl = Objects.requireNonNull(instanceUrl);
+            if (instanceUrl == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "instanceUrl");
+            }
+            this.instanceUrl = instanceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder integrationInstanceId(String integrationInstanceId) {
-            this.integrationInstanceId = Objects.requireNonNull(integrationInstanceId);
+            if (integrationInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "integrationInstanceId");
+            }
+            this.integrationInstanceId = integrationInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder integrationInstanceType(String integrationInstanceType) {
-            this.integrationInstanceType = Objects.requireNonNull(integrationInstanceType);
+            if (integrationInstanceType == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "integrationInstanceType");
+            }
+            this.integrationInstanceType = integrationInstanceType;
             return this;
         }
         @CustomType.Setter
         public Builder isByol(Boolean isByol) {
-            this.isByol = Objects.requireNonNull(isByol);
+            if (isByol == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "isByol");
+            }
+            this.isByol = isByol;
             return this;
         }
         @CustomType.Setter
         public Builder isFileServerEnabled(Boolean isFileServerEnabled) {
-            this.isFileServerEnabled = Objects.requireNonNull(isFileServerEnabled);
+            if (isFileServerEnabled == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "isFileServerEnabled");
+            }
+            this.isFileServerEnabled = isFileServerEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
-            this.isVisualBuilderEnabled = Objects.requireNonNull(isVisualBuilderEnabled);
+            if (isVisualBuilderEnabled == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "isVisualBuilderEnabled");
+            }
+            this.isVisualBuilderEnabled = isVisualBuilderEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder messagePacks(Integer messagePacks) {
-            this.messagePacks = Objects.requireNonNull(messagePacks);
+            if (messagePacks == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "messagePacks");
+            }
+            this.messagePacks = messagePacks;
             return this;
         }
         @CustomType.Setter
         public Builder networkEndpointDetails(List<GetIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails) {
-            this.networkEndpointDetails = Objects.requireNonNull(networkEndpointDetails);
+            if (networkEndpointDetails == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "networkEndpointDetails");
+            }
+            this.networkEndpointDetails = networkEndpointDetails;
             return this;
         }
         public Builder networkEndpointDetails(GetIntegrationInstanceNetworkEndpointDetail... networkEndpointDetails) {
@@ -490,27 +554,42 @@ public final class GetIntegrationInstanceResult {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+            if (stateMessage == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "stateMessage");
+            }
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetIntegrationInstanceResult build() {

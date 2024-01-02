@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -325,107 +326,170 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem {
 
         @CustomType.Setter
         public Builder areLogsCollected(Boolean areLogsCollected) {
-            this.areLogsCollected = Objects.requireNonNull(areLogsCollected);
+            if (areLogsCollected == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "areLogsCollected");
+            }
+            this.areLogsCollected = areLogsCollected;
             return this;
         }
         @CustomType.Setter
         public Builder cloudResourceId(String cloudResourceId) {
-            this.cloudResourceId = Objects.requireNonNull(cloudResourceId);
+            if (cloudResourceId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "cloudResourceId");
+            }
+            this.cloudResourceId = cloudResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder entityTypeInternalName(String entityTypeInternalName) {
-            this.entityTypeInternalName = Objects.requireNonNull(entityTypeInternalName);
+            if (entityTypeInternalName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "entityTypeInternalName");
+            }
+            this.entityTypeInternalName = entityTypeInternalName;
             return this;
         }
         @CustomType.Setter
         public Builder entityTypeName(String entityTypeName) {
-            this.entityTypeName = Objects.requireNonNull(entityTypeName);
+            if (entityTypeName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "entityTypeName");
+            }
+            this.entityTypeName = entityTypeName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentCompartmentId(String managementAgentCompartmentId) {
-            this.managementAgentCompartmentId = Objects.requireNonNull(managementAgentCompartmentId);
+            if (managementAgentCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "managementAgentCompartmentId");
+            }
+            this.managementAgentCompartmentId = managementAgentCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentDisplayName(String managementAgentDisplayName) {
-            this.managementAgentDisplayName = Objects.requireNonNull(managementAgentDisplayName);
+            if (managementAgentDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "managementAgentDisplayName");
+            }
+            this.managementAgentDisplayName = managementAgentDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder properties(Map<String,Object> properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         @CustomType.Setter
         public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+            if (sourceId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "sourceId");
+            }
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timezoneRegion(String timezoneRegion) {
-            this.timezoneRegion = Objects.requireNonNull(timezoneRegion);
+            if (timezoneRegion == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem", "timezoneRegion");
+            }
+            this.timezoneRegion = timezoneRegion;
             return this;
         }
         public GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem build() {

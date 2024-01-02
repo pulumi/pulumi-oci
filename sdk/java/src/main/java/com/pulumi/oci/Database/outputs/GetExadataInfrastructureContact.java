@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetExadataInfrastructureContact {
 
         @CustomType.Setter
         public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+            if (email == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureContact", "email");
+            }
+            this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder isContactMosValidated(Boolean isContactMosValidated) {
-            this.isContactMosValidated = Objects.requireNonNull(isContactMosValidated);
+            if (isContactMosValidated == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureContact", "isContactMosValidated");
+            }
+            this.isContactMosValidated = isContactMosValidated;
             return this;
         }
         @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+            if (isPrimary == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureContact", "isPrimary");
+            }
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureContact", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder phoneNumber(String phoneNumber) {
-            this.phoneNumber = Objects.requireNonNull(phoneNumber);
+            if (phoneNumber == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureContact", "phoneNumber");
+            }
+            this.phoneNumber = phoneNumber;
             return this;
         }
         public GetExadataInfrastructureContact build() {

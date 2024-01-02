@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -129,37 +130,54 @@ public final class PolicyWafConfigCaptcha {
 
         @CustomType.Setter
         public Builder failureMessage(String failureMessage) {
-            this.failureMessage = Objects.requireNonNull(failureMessage);
+            if (failureMessage == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigCaptcha", "failureMessage");
+            }
+            this.failureMessage = failureMessage;
             return this;
         }
         @CustomType.Setter
         public Builder footerText(@Nullable String footerText) {
+
             this.footerText = footerText;
             return this;
         }
         @CustomType.Setter
         public Builder headerText(@Nullable String headerText) {
+
             this.headerText = headerText;
             return this;
         }
         @CustomType.Setter
         public Builder sessionExpirationInSeconds(Integer sessionExpirationInSeconds) {
-            this.sessionExpirationInSeconds = Objects.requireNonNull(sessionExpirationInSeconds);
+            if (sessionExpirationInSeconds == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigCaptcha", "sessionExpirationInSeconds");
+            }
+            this.sessionExpirationInSeconds = sessionExpirationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder submitLabel(String submitLabel) {
-            this.submitLabel = Objects.requireNonNull(submitLabel);
+            if (submitLabel == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigCaptcha", "submitLabel");
+            }
+            this.submitLabel = submitLabel;
             return this;
         }
         @CustomType.Setter
         public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+            if (title == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigCaptcha", "title");
+            }
+            this.title = title;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigCaptcha", "url");
+            }
+            this.url = url;
             return this;
         }
         public PolicyWafConfigCaptcha build() {

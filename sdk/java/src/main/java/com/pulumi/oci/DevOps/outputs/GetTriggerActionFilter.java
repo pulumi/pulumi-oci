@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetTriggerActionFilterExclude;
 import com.pulumi.oci.DevOps.outputs.GetTriggerActionFilterInclude;
 import java.lang.String;
@@ -79,7 +80,10 @@ public final class GetTriggerActionFilter {
 
         @CustomType.Setter
         public Builder events(List<String> events) {
-            this.events = Objects.requireNonNull(events);
+            if (events == null) {
+              throw new MissingRequiredPropertyException("GetTriggerActionFilter", "events");
+            }
+            this.events = events;
             return this;
         }
         public Builder events(String... events) {
@@ -87,7 +91,10 @@ public final class GetTriggerActionFilter {
         }
         @CustomType.Setter
         public Builder excludes(List<GetTriggerActionFilterExclude> excludes) {
-            this.excludes = Objects.requireNonNull(excludes);
+            if (excludes == null) {
+              throw new MissingRequiredPropertyException("GetTriggerActionFilter", "excludes");
+            }
+            this.excludes = excludes;
             return this;
         }
         public Builder excludes(GetTriggerActionFilterExclude... excludes) {
@@ -95,7 +102,10 @@ public final class GetTriggerActionFilter {
         }
         @CustomType.Setter
         public Builder includes(List<GetTriggerActionFilterInclude> includes) {
-            this.includes = Objects.requireNonNull(includes);
+            if (includes == null) {
+              throw new MissingRequiredPropertyException("GetTriggerActionFilter", "includes");
+            }
+            this.includes = includes;
             return this;
         }
         public Builder includes(GetTriggerActionFilterInclude... includes) {
@@ -103,7 +113,10 @@ public final class GetTriggerActionFilter {
         }
         @CustomType.Setter
         public Builder triggerSource(String triggerSource) {
-            this.triggerSource = Objects.requireNonNull(triggerSource);
+            if (triggerSource == null) {
+              throw new MissingRequiredPropertyException("GetTriggerActionFilter", "triggerSource");
+            }
+            this.triggerSource = triggerSource;
             return this;
         }
         public GetTriggerActionFilter build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetInvoiceLineComputedUsagesFilter;
 import com.pulumi.oci.OneSubsription.outputs.GetInvoiceLineComputedUsagesInvoicelineComputedUsage;
 import java.lang.String;
@@ -84,11 +85,15 @@ public final class GetInvoiceLineComputedUsagesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -97,6 +102,7 @@ public final class GetInvoiceLineComputedUsagesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInvoiceLineComputedUsagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -105,17 +111,26 @@ public final class GetInvoiceLineComputedUsagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceLineId(String invoiceLineId) {
-            this.invoiceLineId = Objects.requireNonNull(invoiceLineId);
+            if (invoiceLineId == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesResult", "invoiceLineId");
+            }
+            this.invoiceLineId = invoiceLineId;
             return this;
         }
         @CustomType.Setter
         public Builder invoicelineComputedUsages(List<GetInvoiceLineComputedUsagesInvoicelineComputedUsage> invoicelineComputedUsages) {
-            this.invoicelineComputedUsages = Objects.requireNonNull(invoicelineComputedUsages);
+            if (invoicelineComputedUsages == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceLineComputedUsagesResult", "invoicelineComputedUsages");
+            }
+            this.invoicelineComputedUsages = invoicelineComputedUsages;
             return this;
         }
         public Builder invoicelineComputedUsages(GetInvoiceLineComputedUsagesInvoicelineComputedUsage... invoicelineComputedUsages) {

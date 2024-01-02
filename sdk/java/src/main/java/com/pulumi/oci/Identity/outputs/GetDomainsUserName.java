@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetDomainsUserName {
 
         @CustomType.Setter
         public Builder familyName(String familyName) {
-            this.familyName = Objects.requireNonNull(familyName);
+            if (familyName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserName", "familyName");
+            }
+            this.familyName = familyName;
             return this;
         }
         @CustomType.Setter
         public Builder formatted(String formatted) {
-            this.formatted = Objects.requireNonNull(formatted);
+            if (formatted == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserName", "formatted");
+            }
+            this.formatted = formatted;
             return this;
         }
         @CustomType.Setter
         public Builder givenName(String givenName) {
-            this.givenName = Objects.requireNonNull(givenName);
+            if (givenName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserName", "givenName");
+            }
+            this.givenName = givenName;
             return this;
         }
         @CustomType.Setter
         public Builder honorificPrefix(String honorificPrefix) {
-            this.honorificPrefix = Objects.requireNonNull(honorificPrefix);
+            if (honorificPrefix == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserName", "honorificPrefix");
+            }
+            this.honorificPrefix = honorificPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder honorificSuffix(String honorificSuffix) {
-            this.honorificSuffix = Objects.requireNonNull(honorificSuffix);
+            if (honorificSuffix == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserName", "honorificSuffix");
+            }
+            this.honorificSuffix = honorificSuffix;
             return this;
         }
         @CustomType.Setter
         public Builder middleName(String middleName) {
-            this.middleName = Objects.requireNonNull(middleName);
+            if (middleName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserName", "middleName");
+            }
+            this.middleName = middleName;
             return this;
         }
         public GetDomainsUserName build() {

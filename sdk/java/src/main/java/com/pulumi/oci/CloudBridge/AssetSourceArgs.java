@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.inputs.AssetSourceDiscoveryCredentialsArgs;
 import com.pulumi.oci.CloudBridge.inputs.AssetSourceReplicationCredentialsArgs;
 import java.lang.Boolean;
@@ -611,13 +612,27 @@ public final class AssetSourceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AssetSourceArgs build() {
-            $.assetsCompartmentId = Objects.requireNonNull($.assetsCompartmentId, "expected parameter 'assetsCompartmentId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.discoveryCredentials = Objects.requireNonNull($.discoveryCredentials, "expected parameter 'discoveryCredentials' to be non-null");
-            $.environmentId = Objects.requireNonNull($.environmentId, "expected parameter 'environmentId' to be non-null");
-            $.inventoryId = Objects.requireNonNull($.inventoryId, "expected parameter 'inventoryId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
-            $.vcenterEndpoint = Objects.requireNonNull($.vcenterEndpoint, "expected parameter 'vcenterEndpoint' to be non-null");
+            if ($.assetsCompartmentId == null) {
+                throw new MissingRequiredPropertyException("AssetSourceArgs", "assetsCompartmentId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AssetSourceArgs", "compartmentId");
+            }
+            if ($.discoveryCredentials == null) {
+                throw new MissingRequiredPropertyException("AssetSourceArgs", "discoveryCredentials");
+            }
+            if ($.environmentId == null) {
+                throw new MissingRequiredPropertyException("AssetSourceArgs", "environmentId");
+            }
+            if ($.inventoryId == null) {
+                throw new MissingRequiredPropertyException("AssetSourceArgs", "inventoryId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("AssetSourceArgs", "type");
+            }
+            if ($.vcenterEndpoint == null) {
+                throw new MissingRequiredPropertyException("AssetSourceArgs", "vcenterEndpoint");
+            }
             return $;
         }
     }

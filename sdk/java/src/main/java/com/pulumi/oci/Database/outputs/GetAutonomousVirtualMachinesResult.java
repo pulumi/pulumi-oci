@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousVirtualMachinesAutonomousVirtualMachine;
 import com.pulumi.oci.Database.outputs.GetAutonomousVirtualMachinesFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetAutonomousVirtualMachinesResult {
 
         @CustomType.Setter
         public Builder autonomousVirtualMachines(List<GetAutonomousVirtualMachinesAutonomousVirtualMachine> autonomousVirtualMachines) {
-            this.autonomousVirtualMachines = Objects.requireNonNull(autonomousVirtualMachines);
+            if (autonomousVirtualMachines == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachinesResult", "autonomousVirtualMachines");
+            }
+            this.autonomousVirtualMachines = autonomousVirtualMachines;
             return this;
         }
         public Builder autonomousVirtualMachines(GetAutonomousVirtualMachinesAutonomousVirtualMachine... autonomousVirtualMachines) {
@@ -117,16 +121,23 @@ public final class GetAutonomousVirtualMachinesResult {
         }
         @CustomType.Setter
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
-            this.autonomousVmClusterId = Objects.requireNonNull(autonomousVmClusterId);
+            if (autonomousVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachinesResult", "autonomousVmClusterId");
+            }
+            this.autonomousVmClusterId = autonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachinesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousVirtualMachinesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +146,15 @@ public final class GetAutonomousVirtualMachinesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVirtualMachinesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

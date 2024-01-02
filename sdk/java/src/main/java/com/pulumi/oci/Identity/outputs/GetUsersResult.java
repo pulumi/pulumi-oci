@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetUsersFilter;
 import com.pulumi.oci.Identity.outputs.GetUsersUser;
 import java.lang.String;
@@ -137,16 +138,21 @@ public final class GetUsersResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUsersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder externalIdentifier(@Nullable String externalIdentifier) {
+
             this.externalIdentifier = externalIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUsersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -155,27 +161,36 @@ public final class GetUsersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUsersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identityProviderId(@Nullable String identityProviderId) {
+
             this.identityProviderId = identityProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder users(List<GetUsersUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetUsersResult", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetUsersUser... users) {

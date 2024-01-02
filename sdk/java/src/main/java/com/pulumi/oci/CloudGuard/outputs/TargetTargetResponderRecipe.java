@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetResponderRecipeEffectiveResponderRule;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetResponderRecipeResponderRule;
 import java.lang.String;
@@ -181,21 +182,25 @@ public final class TargetTargetResponderRecipe {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder effectiveResponderRules(@Nullable List<TargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules) {
+
             this.effectiveResponderRules = effectiveResponderRules;
             return this;
         }
@@ -204,21 +209,27 @@ public final class TargetTargetResponderRecipe {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder owner(@Nullable String owner) {
+
             this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder responderRecipeId(String responderRecipeId) {
-            this.responderRecipeId = Objects.requireNonNull(responderRecipeId);
+            if (responderRecipeId == null) {
+              throw new MissingRequiredPropertyException("TargetTargetResponderRecipe", "responderRecipeId");
+            }
+            this.responderRecipeId = responderRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder responderRules(@Nullable List<TargetTargetResponderRecipeResponderRule> responderRules) {
+
             this.responderRules = responderRules;
             return this;
         }
@@ -227,11 +238,13 @@ public final class TargetTargetResponderRecipe {
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }

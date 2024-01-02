@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration;
 import java.lang.Boolean;
 import java.lang.String;
@@ -115,12 +116,18 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
 
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration... configurations) {
@@ -128,17 +135,26 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
         }
         @CustomType.Setter
         public Builder isConfigurationAllowed(Boolean isConfigurationAllowed) {
-            this.isConfigurationAllowed = Objects.requireNonNull(isConfigurationAllowed);
+            if (isConfigurationAllowed == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail", "isConfigurationAllowed");
+            }
+            this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
@@ -146,7 +162,10 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
         }
         @CustomType.Setter
         public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+            if (riskLevel == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail", "riskLevel");
+            }
+            this.riskLevel = riskLevel;
             return this;
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetail build() {

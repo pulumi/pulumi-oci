@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -148,11 +149,13 @@ public final class ExportExportOption {
 
         @CustomType.Setter
         public Builder access(@Nullable String access) {
+
             this.access = access;
             return this;
         }
         @CustomType.Setter
         public Builder allowedAuths(@Nullable List<String> allowedAuths) {
+
             this.allowedAuths = allowedAuths;
             return this;
         }
@@ -161,32 +164,40 @@ public final class ExportExportOption {
         }
         @CustomType.Setter
         public Builder anonymousGid(@Nullable String anonymousGid) {
+
             this.anonymousGid = anonymousGid;
             return this;
         }
         @CustomType.Setter
         public Builder anonymousUid(@Nullable String anonymousUid) {
+
             this.anonymousUid = anonymousUid;
             return this;
         }
         @CustomType.Setter
         public Builder identitySquash(@Nullable String identitySquash) {
+
             this.identitySquash = identitySquash;
             return this;
         }
         @CustomType.Setter
         public Builder isAnonymousAccessAllowed(@Nullable Boolean isAnonymousAccessAllowed) {
+
             this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder requirePrivilegedSourcePort(@Nullable Boolean requirePrivilegedSourcePort) {
+
             this.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("ExportExportOption", "source");
+            }
+            this.source = source;
             return this;
         }
         public ExportExportOption build() {

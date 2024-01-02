@@ -106,26 +106,31 @@ public final class WorkspaceApplicationSourceApplicationInfo {
 
         @CustomType.Setter
         public Builder applicationKey(@Nullable String applicationKey) {
+
             this.applicationKey = applicationKey;
             return this;
         }
         @CustomType.Setter
         public Builder applicationVersion(@Nullable String applicationVersion) {
+
             this.applicationVersion = applicationVersion;
             return this;
         }
         @CustomType.Setter
         public Builder copyType(@Nullable String copyType) {
+
             this.copyType = copyType;
             return this;
         }
         @CustomType.Setter
         public Builder lastPatchKey(@Nullable String lastPatchKey) {
+
             this.lastPatchKey = lastPatchKey;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(@Nullable String workspaceId) {
+
             this.workspaceId = workspaceId;
             return this;
         }

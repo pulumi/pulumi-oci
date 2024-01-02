@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetKeyVersionsKeyVersionExternalKeyReferenceDetail {
 
         @CustomType.Setter
         public Builder externalKeyId(String externalKeyId) {
-            this.externalKeyId = Objects.requireNonNull(externalKeyId);
+            if (externalKeyId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersionExternalKeyReferenceDetail", "externalKeyId");
+            }
+            this.externalKeyId = externalKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder externalKeyVersionId(String externalKeyVersionId) {
-            this.externalKeyVersionId = Objects.requireNonNull(externalKeyVersionId);
+            if (externalKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersionExternalKeyReferenceDetail", "externalKeyVersionId");
+            }
+            this.externalKeyVersionId = externalKeyVersionId;
             return this;
         }
         public GetKeyVersionsKeyVersionExternalKeyReferenceDetail build() {

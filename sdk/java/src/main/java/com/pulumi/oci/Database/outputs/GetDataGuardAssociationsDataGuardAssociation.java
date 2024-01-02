@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDataGuardAssociationsDataGuardAssociationDataCollectionOption;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -420,22 +421,34 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
 
         @CustomType.Setter
         public Builder applyLag(String applyLag) {
-            this.applyLag = Objects.requireNonNull(applyLag);
+            if (applyLag == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "applyLag");
+            }
+            this.applyLag = applyLag;
             return this;
         }
         @CustomType.Setter
         public Builder applyRate(String applyRate) {
-            this.applyRate = Objects.requireNonNull(applyRate);
+            if (applyRate == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "applyRate");
+            }
+            this.applyRate = applyRate;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupNetworkNsgIds(List<String> backupNetworkNsgIds) {
-            this.backupNetworkNsgIds = Objects.requireNonNull(backupNetworkNsgIds);
+            if (backupNetworkNsgIds == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "backupNetworkNsgIds");
+            }
+            this.backupNetworkNsgIds = backupNetworkNsgIds;
             return this;
         }
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
@@ -443,22 +456,34 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder createAsync(Boolean createAsync) {
-            this.createAsync = Objects.requireNonNull(createAsync);
+            if (createAsync == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "createAsync");
+            }
+            this.createAsync = createAsync;
             return this;
         }
         @CustomType.Setter
         public Builder creationType(String creationType) {
-            this.creationType = Objects.requireNonNull(creationType);
+            if (creationType == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "creationType");
+            }
+            this.creationType = creationType;
             return this;
         }
         @CustomType.Setter
         public Builder dataCollectionOptions(List<GetDataGuardAssociationsDataGuardAssociationDataCollectionOption> dataCollectionOptions) {
-            this.dataCollectionOptions = Objects.requireNonNull(dataCollectionOptions);
+            if (dataCollectionOptions == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "dataCollectionOptions");
+            }
+            this.dataCollectionOptions = dataCollectionOptions;
             return this;
         }
         public Builder dataCollectionOptions(GetDataGuardAssociationsDataGuardAssociationDataCollectionOption... dataCollectionOptions) {
@@ -466,52 +491,82 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         }
         @CustomType.Setter
         public Builder databaseAdminPassword(String databaseAdminPassword) {
-            this.databaseAdminPassword = Objects.requireNonNull(databaseAdminPassword);
+            if (databaseAdminPassword == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "databaseAdminPassword");
+            }
+            this.databaseAdminPassword = databaseAdminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder databaseDefinedTags(Map<String,Object> databaseDefinedTags) {
-            this.databaseDefinedTags = Objects.requireNonNull(databaseDefinedTags);
+            if (databaseDefinedTags == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "databaseDefinedTags");
+            }
+            this.databaseDefinedTags = databaseDefinedTags;
             return this;
         }
         @CustomType.Setter
         public Builder databaseFreeformTags(Map<String,Object> databaseFreeformTags) {
-            this.databaseFreeformTags = Objects.requireNonNull(databaseFreeformTags);
+            if (databaseFreeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "databaseFreeformTags");
+            }
+            this.databaseFreeformTags = databaseFreeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder databaseId(String databaseId) {
-            this.databaseId = Objects.requireNonNull(databaseId);
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
-            this.databaseSoftwareImageId = Objects.requireNonNull(databaseSoftwareImageId);
+            if (databaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "databaseSoftwareImageId");
+            }
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemDefinedTags(Map<String,Object> dbSystemDefinedTags) {
-            this.dbSystemDefinedTags = Objects.requireNonNull(dbSystemDefinedTags);
+            if (dbSystemDefinedTags == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "dbSystemDefinedTags");
+            }
+            this.dbSystemDefinedTags = dbSystemDefinedTags;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemFreeformTags(Map<String,Object> dbSystemFreeformTags) {
-            this.dbSystemFreeformTags = Objects.requireNonNull(dbSystemFreeformTags);
+            if (dbSystemFreeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "dbSystemFreeformTags");
+            }
+            this.dbSystemFreeformTags = dbSystemFreeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder deleteStandbyDbHomeOnDelete(String deleteStandbyDbHomeOnDelete) {
-            this.deleteStandbyDbHomeOnDelete = Objects.requireNonNull(deleteStandbyDbHomeOnDelete);
+            if (deleteStandbyDbHomeOnDelete == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "deleteStandbyDbHomeOnDelete");
+            }
+            this.deleteStandbyDbHomeOnDelete = deleteStandbyDbHomeOnDelete;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomains(List<String> faultDomains) {
-            this.faultDomains = Objects.requireNonNull(faultDomains);
+            if (faultDomains == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "faultDomains");
+            }
+            this.faultDomains = faultDomains;
             return this;
         }
         public Builder faultDomains(String... faultDomains) {
@@ -519,37 +574,58 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
-            this.isActiveDataGuardEnabled = Objects.requireNonNull(isActiveDataGuardEnabled);
+            if (isActiveDataGuardEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "isActiveDataGuardEnabled");
+            }
+            this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+            if (licenseModel == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "licenseModel");
+            }
+            this.licenseModel = licenseModel;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = Objects.requireNonNull(nodeCount);
+            if (nodeCount == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "nodeCount");
+            }
+            this.nodeCount = nodeCount;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -557,92 +633,146 @@ public final class GetDataGuardAssociationsDataGuardAssociation {
         }
         @CustomType.Setter
         public Builder peerDataGuardAssociationId(String peerDataGuardAssociationId) {
-            this.peerDataGuardAssociationId = Objects.requireNonNull(peerDataGuardAssociationId);
+            if (peerDataGuardAssociationId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "peerDataGuardAssociationId");
+            }
+            this.peerDataGuardAssociationId = peerDataGuardAssociationId;
             return this;
         }
         @CustomType.Setter
         public Builder peerDatabaseId(String peerDatabaseId) {
-            this.peerDatabaseId = Objects.requireNonNull(peerDatabaseId);
+            if (peerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "peerDatabaseId");
+            }
+            this.peerDatabaseId = peerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder peerDbHomeId(String peerDbHomeId) {
-            this.peerDbHomeId = Objects.requireNonNull(peerDbHomeId);
+            if (peerDbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "peerDbHomeId");
+            }
+            this.peerDbHomeId = peerDbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder peerDbSystemId(String peerDbSystemId) {
-            this.peerDbSystemId = Objects.requireNonNull(peerDbSystemId);
+            if (peerDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "peerDbSystemId");
+            }
+            this.peerDbSystemId = peerDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder peerDbUniqueName(String peerDbUniqueName) {
-            this.peerDbUniqueName = Objects.requireNonNull(peerDbUniqueName);
+            if (peerDbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "peerDbUniqueName");
+            }
+            this.peerDbUniqueName = peerDbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder peerRole(String peerRole) {
-            this.peerRole = Objects.requireNonNull(peerRole);
+            if (peerRole == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "peerRole");
+            }
+            this.peerRole = peerRole;
             return this;
         }
         @CustomType.Setter
         public Builder peerSidPrefix(String peerSidPrefix) {
-            this.peerSidPrefix = Objects.requireNonNull(peerSidPrefix);
+            if (peerSidPrefix == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "peerSidPrefix");
+            }
+            this.peerSidPrefix = peerSidPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder peerVmClusterId(String peerVmClusterId) {
-            this.peerVmClusterId = Objects.requireNonNull(peerVmClusterId);
+            if (peerVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "peerVmClusterId");
+            }
+            this.peerVmClusterId = peerVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder privateIp(String privateIp) {
-            this.privateIp = Objects.requireNonNull(privateIp);
+            if (privateIp == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "privateIp");
+            }
+            this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder protectionMode(String protectionMode) {
-            this.protectionMode = Objects.requireNonNull(protectionMode);
+            if (protectionMode == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "protectionMode");
+            }
+            this.protectionMode = protectionMode;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder storageVolumePerformanceMode(String storageVolumePerformanceMode) {
-            this.storageVolumePerformanceMode = Objects.requireNonNull(storageVolumePerformanceMode);
+            if (storageVolumePerformanceMode == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "storageVolumePerformanceMode");
+            }
+            this.storageVolumePerformanceMode = storageVolumePerformanceMode;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         @CustomType.Setter
         public Builder transportType(String transportType) {
-            this.transportType = Objects.requireNonNull(transportType);
+            if (transportType == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationsDataGuardAssociation", "transportType");
+            }
+            this.transportType = transportType;
             return this;
         }
         public GetDataGuardAssociationsDataGuardAssociation build() {

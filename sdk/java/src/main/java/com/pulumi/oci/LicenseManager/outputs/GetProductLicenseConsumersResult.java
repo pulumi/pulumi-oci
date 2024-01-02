@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.outputs.GetProductLicenseConsumersItem;
 import java.lang.Boolean;
 import java.lang.String;
@@ -79,22 +80,32 @@ public final class GetProductLicenseConsumersResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
+
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetProductLicenseConsumersItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetProductLicenseConsumersItem... items) {
@@ -102,7 +113,10 @@ public final class GetProductLicenseConsumersResult {
         }
         @CustomType.Setter
         public Builder productLicenseId(String productLicenseId) {
-            this.productLicenseId = Objects.requireNonNull(productLicenseId);
+            if (productLicenseId == null) {
+              throw new MissingRequiredPropertyException("GetProductLicenseConsumersResult", "productLicenseId");
+            }
+            this.productLicenseId = productLicenseId;
             return this;
         }
         public GetProductLicenseConsumersResult build() {

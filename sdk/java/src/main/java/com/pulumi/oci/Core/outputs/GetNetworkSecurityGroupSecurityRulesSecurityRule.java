@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption;
 import com.pulumi.oci.Core.outputs.GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption;
@@ -233,27 +234,42 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder destination(String destination) {
-            this.destination = Objects.requireNonNull(destination);
+            if (destination == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "destination");
+            }
+            this.destination = destination;
             return this;
         }
         @CustomType.Setter
         public Builder destinationType(String destinationType) {
-            this.destinationType = Objects.requireNonNull(destinationType);
+            if (destinationType == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "destinationType");
+            }
+            this.destinationType = destinationType;
             return this;
         }
         @CustomType.Setter
         public Builder direction(String direction) {
-            this.direction = Objects.requireNonNull(direction);
+            if (direction == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "direction");
+            }
+            this.direction = direction;
             return this;
         }
         @CustomType.Setter
         public Builder icmpOptions(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption> icmpOptions) {
-            this.icmpOptions = Objects.requireNonNull(icmpOptions);
+            if (icmpOptions == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "icmpOptions");
+            }
+            this.icmpOptions = icmpOptions;
             return this;
         }
         public Builder icmpOptions(GetNetworkSecurityGroupSecurityRulesSecurityRuleIcmpOption... icmpOptions) {
@@ -261,37 +277,58 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isValid(Boolean isValid) {
-            this.isValid = Objects.requireNonNull(isValid);
+            if (isValid == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "isValid");
+            }
+            this.isValid = isValid;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder stateless(Boolean stateless) {
-            this.stateless = Objects.requireNonNull(stateless);
+            if (stateless == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "stateless");
+            }
+            this.stateless = stateless;
             return this;
         }
         @CustomType.Setter
         public Builder tcpOptions(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption> tcpOptions) {
-            this.tcpOptions = Objects.requireNonNull(tcpOptions);
+            if (tcpOptions == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "tcpOptions");
+            }
+            this.tcpOptions = tcpOptions;
             return this;
         }
         public Builder tcpOptions(GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption... tcpOptions) {
@@ -299,12 +336,18 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder udpOptions(List<GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption> udpOptions) {
-            this.udpOptions = Objects.requireNonNull(udpOptions);
+            if (udpOptions == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSecurityGroupSecurityRulesSecurityRule", "udpOptions");
+            }
+            this.udpOptions = udpOptions;
             return this;
         }
         public Builder udpOptions(GetNetworkSecurityGroupSecurityRulesSecurityRuleUdpOption... udpOptions) {

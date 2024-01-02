@@ -4,6 +4,7 @@
 package com.pulumi.oci.VnMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolPar
 
         @CustomType.Setter
         public Builder destinationPort(Integer destinationPort) {
-            this.destinationPort = Objects.requireNonNull(destinationPort);
+            if (destinationPort == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter", "destinationPort");
+            }
+            this.destinationPort = destinationPort;
             return this;
         }
         @CustomType.Setter
         public Builder icmpCode(Integer icmpCode) {
-            this.icmpCode = Objects.requireNonNull(icmpCode);
+            if (icmpCode == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter", "icmpCode");
+            }
+            this.icmpCode = icmpCode;
             return this;
         }
         @CustomType.Setter
         public Builder icmpType(Integer icmpType) {
-            this.icmpType = Objects.requireNonNull(icmpType);
+            if (icmpType == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter", "icmpType");
+            }
+            this.icmpType = icmpType;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePort(Integer sourcePort) {
-            this.sourcePort = Objects.requireNonNull(sourcePort);
+            if (sourcePort == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter", "sourcePort");
+            }
+            this.sourcePort = sourcePort;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameter build() {

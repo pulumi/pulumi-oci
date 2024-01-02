@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
 
         @CustomType.Setter
         public Builder metrics(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("ConnectorSourceMonitoringSourceNamespaceDetailsNamespace", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("ConnectorSourceMonitoringSourceNamespaceDetailsNamespace", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         public ConnectorSourceMonitoringSourceNamespaceDetailsNamespace build() {

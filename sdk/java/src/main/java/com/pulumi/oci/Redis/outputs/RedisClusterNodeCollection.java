@@ -44,6 +44,7 @@ public final class RedisClusterNodeCollection {
 
         @CustomType.Setter
         public Builder items(@Nullable List<RedisClusterNodeCollectionItem> items) {
+
             this.items = items;
             return this;
         }

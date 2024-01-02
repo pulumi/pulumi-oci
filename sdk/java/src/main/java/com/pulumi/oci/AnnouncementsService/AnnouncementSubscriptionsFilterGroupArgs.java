@@ -5,6 +5,7 @@ package com.pulumi.oci.AnnouncementsService;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AnnouncementsService.inputs.AnnouncementSubscriptionsFilterGroupFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -174,8 +175,12 @@ public final class AnnouncementSubscriptionsFilterGroupArgs extends com.pulumi.r
         }
 
         public AnnouncementSubscriptionsFilterGroupArgs build() {
-            $.announcementSubscriptionId = Objects.requireNonNull($.announcementSubscriptionId, "expected parameter 'announcementSubscriptionId' to be non-null");
-            $.filters = Objects.requireNonNull($.filters, "expected parameter 'filters' to be non-null");
+            if ($.announcementSubscriptionId == null) {
+                throw new MissingRequiredPropertyException("AnnouncementSubscriptionsFilterGroupArgs", "announcementSubscriptionId");
+            }
+            if ($.filters == null) {
+                throw new MissingRequiredPropertyException("AnnouncementSubscriptionsFilterGroupArgs", "filters");
+            }
             return $;
         }
     }

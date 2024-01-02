@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -232,77 +233,122 @@ public final class GetEnterpriseManagerBridgeResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerBridgeId(String enterpriseManagerBridgeId) {
-            this.enterpriseManagerBridgeId = Objects.requireNonNull(enterpriseManagerBridgeId);
+            if (enterpriseManagerBridgeId == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "enterpriseManagerBridgeId");
+            }
+            this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageBucketName(String objectStorageBucketName) {
-            this.objectStorageBucketName = Objects.requireNonNull(objectStorageBucketName);
+            if (objectStorageBucketName == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "objectStorageBucketName");
+            }
+            this.objectStorageBucketName = objectStorageBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageBucketStatusDetails(String objectStorageBucketStatusDetails) {
-            this.objectStorageBucketStatusDetails = Objects.requireNonNull(objectStorageBucketStatusDetails);
+            if (objectStorageBucketStatusDetails == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "objectStorageBucketStatusDetails");
+            }
+            this.objectStorageBucketStatusDetails = objectStorageBucketStatusDetails;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageNamespaceName(String objectStorageNamespaceName) {
-            this.objectStorageNamespaceName = Objects.requireNonNull(objectStorageNamespaceName);
+            if (objectStorageNamespaceName == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "objectStorageNamespaceName");
+            }
+            this.objectStorageNamespaceName = objectStorageNamespaceName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgeResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetEnterpriseManagerBridgeResult build() {

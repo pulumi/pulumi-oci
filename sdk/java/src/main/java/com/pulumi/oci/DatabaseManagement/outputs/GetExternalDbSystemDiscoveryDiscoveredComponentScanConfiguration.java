@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurat
 
         @CustomType.Setter
         public Builder networkNumber(Integer networkNumber) {
-            this.networkNumber = Objects.requireNonNull(networkNumber);
+            if (networkNumber == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration", "networkNumber");
+            }
+            this.networkNumber = networkNumber;
             return this;
         }
         @CustomType.Setter
         public Builder scanName(String scanName) {
-            this.scanName = Objects.requireNonNull(scanName);
+            if (scanName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration", "scanName");
+            }
+            this.scanName = scanName;
             return this;
         }
         @CustomType.Setter
         public Builder scanPort(Integer scanPort) {
-            this.scanPort = Objects.requireNonNull(scanPort);
+            if (scanPort == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration", "scanPort");
+            }
+            this.scanPort = scanPort;
             return this;
         }
         @CustomType.Setter
         public Builder scanProtocol(String scanProtocol) {
-            this.scanProtocol = Objects.requireNonNull(scanProtocol);
+            if (scanProtocol == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration", "scanProtocol");
+            }
+            this.scanProtocol = scanProtocol;
             return this;
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentScanConfiguration build() {

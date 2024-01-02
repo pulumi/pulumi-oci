@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetAppCatalogListingsAppCatalogListing {
 
         @CustomType.Setter
         public Builder contactUrl(String contactUrl) {
-            this.contactUrl = Objects.requireNonNull(contactUrl);
+            if (contactUrl == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsAppCatalogListing", "contactUrl");
+            }
+            this.contactUrl = contactUrl;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsAppCatalogListing", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsAppCatalogListing", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsAppCatalogListing", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder publisherLogoUrl(String publisherLogoUrl) {
-            this.publisherLogoUrl = Objects.requireNonNull(publisherLogoUrl);
+            if (publisherLogoUrl == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsAppCatalogListing", "publisherLogoUrl");
+            }
+            this.publisherLogoUrl = publisherLogoUrl;
             return this;
         }
         @CustomType.Setter
         public Builder publisherName(String publisherName) {
-            this.publisherName = Objects.requireNonNull(publisherName);
+            if (publisherName == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsAppCatalogListing", "publisherName");
+            }
+            this.publisherName = publisherName;
             return this;
         }
         @CustomType.Setter
         public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+            if (summary == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsAppCatalogListing", "summary");
+            }
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
         public Builder timePublished(String timePublished) {
-            this.timePublished = Objects.requireNonNull(timePublished);
+            if (timePublished == null) {
+              throw new MissingRequiredPropertyException("GetAppCatalogListingsAppCatalogListing", "timePublished");
+            }
+            this.timePublished = timePublished;
             return this;
         }
         public GetAppCatalogListingsAppCatalogListing build() {

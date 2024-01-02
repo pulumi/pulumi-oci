@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.outputs.GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance;
 import java.lang.Integer;
 import java.lang.Object;
@@ -341,12 +342,18 @@ public final class GetSoftwareSourcesSoftwareSource {
 
         @CustomType.Setter
         public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+            if (archType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "archType");
+            }
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder associatedManagedInstances(List<GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance> associatedManagedInstances) {
-            this.associatedManagedInstances = Objects.requireNonNull(associatedManagedInstances);
+            if (associatedManagedInstances == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "associatedManagedInstances");
+            }
+            this.associatedManagedInstances = associatedManagedInstances;
             return this;
         }
         public Builder associatedManagedInstances(GetSoftwareSourcesSoftwareSourceAssociatedManagedInstance... associatedManagedInstances) {
@@ -354,102 +361,162 @@ public final class GetSoftwareSourcesSoftwareSource {
         }
         @CustomType.Setter
         public Builder checksumType(String checksumType) {
-            this.checksumType = Objects.requireNonNull(checksumType);
+            if (checksumType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "checksumType");
+            }
+            this.checksumType = checksumType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder gpgKeyFingerprint(String gpgKeyFingerprint) {
-            this.gpgKeyFingerprint = Objects.requireNonNull(gpgKeyFingerprint);
+            if (gpgKeyFingerprint == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "gpgKeyFingerprint");
+            }
+            this.gpgKeyFingerprint = gpgKeyFingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder gpgKeyId(String gpgKeyId) {
-            this.gpgKeyId = Objects.requireNonNull(gpgKeyId);
+            if (gpgKeyId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "gpgKeyId");
+            }
+            this.gpgKeyId = gpgKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder gpgKeyUrl(String gpgKeyUrl) {
-            this.gpgKeyUrl = Objects.requireNonNull(gpgKeyUrl);
+            if (gpgKeyUrl == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "gpgKeyUrl");
+            }
+            this.gpgKeyUrl = gpgKeyUrl;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maintainerEmail(String maintainerEmail) {
-            this.maintainerEmail = Objects.requireNonNull(maintainerEmail);
+            if (maintainerEmail == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "maintainerEmail");
+            }
+            this.maintainerEmail = maintainerEmail;
             return this;
         }
         @CustomType.Setter
         public Builder maintainerName(String maintainerName) {
-            this.maintainerName = Objects.requireNonNull(maintainerName);
+            if (maintainerName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "maintainerName");
+            }
+            this.maintainerName = maintainerName;
             return this;
         }
         @CustomType.Setter
         public Builder maintainerPhone(String maintainerPhone) {
-            this.maintainerPhone = Objects.requireNonNull(maintainerPhone);
+            if (maintainerPhone == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "maintainerPhone");
+            }
+            this.maintainerPhone = maintainerPhone;
             return this;
         }
         @CustomType.Setter
         public Builder packages(Integer packages) {
-            this.packages = Objects.requireNonNull(packages);
+            if (packages == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "packages");
+            }
+            this.packages = packages;
             return this;
         }
         @CustomType.Setter
         public Builder parentId(String parentId) {
-            this.parentId = Objects.requireNonNull(parentId);
+            if (parentId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "parentId");
+            }
+            this.parentId = parentId;
             return this;
         }
         @CustomType.Setter
         public Builder parentName(String parentName) {
-            this.parentName = Objects.requireNonNull(parentName);
+            if (parentName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "parentName");
+            }
+            this.parentName = parentName;
             return this;
         }
         @CustomType.Setter
         public Builder repoType(String repoType) {
-            this.repoType = Objects.requireNonNull(repoType);
+            if (repoType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "repoType");
+            }
+            this.repoType = repoType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcesSoftwareSource", "url");
+            }
+            this.url = url;
             return this;
         }
         public GetSoftwareSourcesSoftwareSource build() {

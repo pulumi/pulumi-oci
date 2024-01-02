@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -245,82 +246,130 @@ public final class GetUsagelimitsUsageLimitCollectionItem {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder alertLevel(Double alertLevel) {
-            this.alertLevel = Objects.requireNonNull(alertLevel);
+            if (alertLevel == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "alertLevel");
+            }
+            this.alertLevel = alertLevel;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder entitlementId(String entitlementId) {
-            this.entitlementId = Objects.requireNonNull(entitlementId);
+            if (entitlementId == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "entitlementId");
+            }
+            this.entitlementId = entitlementId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limit(String limit) {
-            this.limit = Objects.requireNonNull(limit);
+            if (limit == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "limit");
+            }
+            this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder limitType(String limitType) {
-            this.limitType = Objects.requireNonNull(limitType);
+            if (limitType == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "limitType");
+            }
+            this.limitType = limitType;
             return this;
         }
         @CustomType.Setter
         public Builder maxHardLimit(String maxHardLimit) {
-            this.maxHardLimit = Objects.requireNonNull(maxHardLimit);
+            if (maxHardLimit == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "maxHardLimit");
+            }
+            this.maxHardLimit = maxHardLimit;
             return this;
         }
         @CustomType.Setter
         public Builder modifiedBy(String modifiedBy) {
-            this.modifiedBy = Objects.requireNonNull(modifiedBy);
+            if (modifiedBy == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "modifiedBy");
+            }
+            this.modifiedBy = modifiedBy;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder skuPartId(String skuPartId) {
-            this.skuPartId = Objects.requireNonNull(skuPartId);
+            if (skuPartId == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "skuPartId");
+            }
+            this.skuPartId = skuPartId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         @CustomType.Setter
         public Builder valueType(String valueType) {
-            this.valueType = Objects.requireNonNull(valueType);
+            if (valueType == null) {
+              throw new MissingRequiredPropertyException("GetUsagelimitsUsageLimitCollectionItem", "valueType");
+            }
+            this.valueType = valueType;
             return this;
         }
         public GetUsagelimitsUsageLimitCollectionItem build() {

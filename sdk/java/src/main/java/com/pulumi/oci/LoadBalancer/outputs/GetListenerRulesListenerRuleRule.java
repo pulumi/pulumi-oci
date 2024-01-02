@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetListenerRulesListenerRuleRuleCondition;
 import com.pulumi.oci.LoadBalancer.outputs.GetListenerRulesListenerRuleRuleRedirectUri;
 import java.lang.Boolean;
@@ -219,12 +220,18 @@ public final class GetListenerRulesListenerRuleRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder allowedMethods(List<String> allowedMethods) {
-            this.allowedMethods = Objects.requireNonNull(allowedMethods);
+            if (allowedMethods == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "allowedMethods");
+            }
+            this.allowedMethods = allowedMethods;
             return this;
         }
         public Builder allowedMethods(String... allowedMethods) {
@@ -232,12 +239,18 @@ public final class GetListenerRulesListenerRuleRule {
         }
         @CustomType.Setter
         public Builder areInvalidCharactersAllowed(Boolean areInvalidCharactersAllowed) {
-            this.areInvalidCharactersAllowed = Objects.requireNonNull(areInvalidCharactersAllowed);
+            if (areInvalidCharactersAllowed == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "areInvalidCharactersAllowed");
+            }
+            this.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder conditions(List<GetListenerRulesListenerRuleRuleCondition> conditions) {
-            this.conditions = Objects.requireNonNull(conditions);
+            if (conditions == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "conditions");
+            }
+            this.conditions = conditions;
             return this;
         }
         public Builder conditions(GetListenerRulesListenerRuleRuleCondition... conditions) {
@@ -245,27 +258,42 @@ public final class GetListenerRulesListenerRuleRule {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder header(String header) {
-            this.header = Objects.requireNonNull(header);
+            if (header == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "header");
+            }
+            this.header = header;
             return this;
         }
         @CustomType.Setter
         public Builder httpLargeHeaderSizeInKb(Integer httpLargeHeaderSizeInKb) {
-            this.httpLargeHeaderSizeInKb = Objects.requireNonNull(httpLargeHeaderSizeInKb);
+            if (httpLargeHeaderSizeInKb == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "httpLargeHeaderSizeInKb");
+            }
+            this.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
             return this;
         }
         @CustomType.Setter
         public Builder prefix(String prefix) {
-            this.prefix = Objects.requireNonNull(prefix);
+            if (prefix == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "prefix");
+            }
+            this.prefix = prefix;
             return this;
         }
         @CustomType.Setter
         public Builder redirectUris(List<GetListenerRulesListenerRuleRuleRedirectUri> redirectUris) {
-            this.redirectUris = Objects.requireNonNull(redirectUris);
+            if (redirectUris == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "redirectUris");
+            }
+            this.redirectUris = redirectUris;
             return this;
         }
         public Builder redirectUris(GetListenerRulesListenerRuleRuleRedirectUri... redirectUris) {
@@ -273,22 +301,34 @@ public final class GetListenerRulesListenerRuleRule {
         }
         @CustomType.Setter
         public Builder responseCode(Integer responseCode) {
-            this.responseCode = Objects.requireNonNull(responseCode);
+            if (responseCode == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "responseCode");
+            }
+            this.responseCode = responseCode;
             return this;
         }
         @CustomType.Setter
         public Builder statusCode(Integer statusCode) {
-            this.statusCode = Objects.requireNonNull(statusCode);
+            if (statusCode == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "statusCode");
+            }
+            this.statusCode = statusCode;
             return this;
         }
         @CustomType.Setter
         public Builder suffix(String suffix) {
-            this.suffix = Objects.requireNonNull(suffix);
+            if (suffix == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "suffix");
+            }
+            this.suffix = suffix;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetListenerRulesListenerRuleRule", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetListenerRulesListenerRuleRule build() {

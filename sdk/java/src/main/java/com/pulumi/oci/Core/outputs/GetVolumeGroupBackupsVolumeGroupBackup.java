@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumeGroupBackupsVolumeGroupBackupSourceDetail;
 import java.lang.Object;
 import java.lang.String;
@@ -290,47 +291,74 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder expirationTime(String expirationTime) {
-            this.expirationTime = Objects.requireNonNull(expirationTime);
+            if (expirationTime == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "expirationTime");
+            }
+            this.expirationTime = expirationTime;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
-            this.sizeInGbs = Objects.requireNonNull(sizeInGbs);
+            if (sizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "sizeInGbs");
+            }
+            this.sizeInGbs = sizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInMbs(String sizeInMbs) {
-            this.sizeInMbs = Objects.requireNonNull(sizeInMbs);
+            if (sizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "sizeInMbs");
+            }
+            this.sizeInMbs = sizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetVolumeGroupBackupsVolumeGroupBackupSourceDetail... sourceDetails) {
@@ -338,47 +366,74 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sourceVolumeGroupBackupId(String sourceVolumeGroupBackupId) {
-            this.sourceVolumeGroupBackupId = Objects.requireNonNull(sourceVolumeGroupBackupId);
+            if (sourceVolumeGroupBackupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "sourceVolumeGroupBackupId");
+            }
+            this.sourceVolumeGroupBackupId = sourceVolumeGroupBackupId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeRequestReceived(String timeRequestReceived) {
-            this.timeRequestReceived = Objects.requireNonNull(timeRequestReceived);
+            if (timeRequestReceived == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "timeRequestReceived");
+            }
+            this.timeRequestReceived = timeRequestReceived;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder uniqueSizeInGbs(String uniqueSizeInGbs) {
-            this.uniqueSizeInGbs = Objects.requireNonNull(uniqueSizeInGbs);
+            if (uniqueSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "uniqueSizeInGbs");
+            }
+            this.uniqueSizeInGbs = uniqueSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder uniqueSizeInMbs(String uniqueSizeInMbs) {
-            this.uniqueSizeInMbs = Objects.requireNonNull(uniqueSizeInMbs);
+            if (uniqueSizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "uniqueSizeInMbs");
+            }
+            this.uniqueSizeInMbs = uniqueSizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder volumeBackupIds(List<String> volumeBackupIds) {
-            this.volumeBackupIds = Objects.requireNonNull(volumeBackupIds);
+            if (volumeBackupIds == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "volumeBackupIds");
+            }
+            this.volumeBackupIds = volumeBackupIds;
             return this;
         }
         public Builder volumeBackupIds(String... volumeBackupIds) {
@@ -386,7 +441,10 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
         }
         @CustomType.Setter
         public Builder volumeGroupId(String volumeGroupId) {
-            this.volumeGroupId = Objects.requireNonNull(volumeGroupId);
+            if (volumeGroupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "volumeGroupId");
+            }
+            this.volumeGroupId = volumeGroupId;
             return this;
         }
         public GetVolumeGroupBackupsVolumeGroupBackup build() {

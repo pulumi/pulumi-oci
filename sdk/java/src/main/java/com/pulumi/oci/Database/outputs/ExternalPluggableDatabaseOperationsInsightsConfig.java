@@ -58,11 +58,13 @@ public final class ExternalPluggableDatabaseOperationsInsightsConfig {
 
         @CustomType.Setter
         public Builder operationsInsightsConnectorId(@Nullable String operationsInsightsConnectorId) {
+
             this.operationsInsightsConnectorId = operationsInsightsConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsStatus(@Nullable String operationsInsightsStatus) {
+
             this.operationsInsightsStatus = operationsInsightsStatus;
             return this;
         }

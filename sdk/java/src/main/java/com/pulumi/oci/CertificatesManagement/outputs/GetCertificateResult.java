@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateCertificateConfig;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateCertificateRevocationListDetail;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateCertificateRule;
@@ -322,7 +323,10 @@ public final class GetCertificateResult {
 
         @CustomType.Setter
         public Builder certificateConfigs(List<GetCertificateCertificateConfig> certificateConfigs) {
-            this.certificateConfigs = Objects.requireNonNull(certificateConfigs);
+            if (certificateConfigs == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "certificateConfigs");
+            }
+            this.certificateConfigs = certificateConfigs;
             return this;
         }
         public Builder certificateConfigs(GetCertificateCertificateConfig... certificateConfigs) {
@@ -330,17 +334,26 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "certificateId");
+            }
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder certificateProfileType(String certificateProfileType) {
-            this.certificateProfileType = Objects.requireNonNull(certificateProfileType);
+            if (certificateProfileType == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "certificateProfileType");
+            }
+            this.certificateProfileType = certificateProfileType;
             return this;
         }
         @CustomType.Setter
         public Builder certificateRevocationListDetails(List<GetCertificateCertificateRevocationListDetail> certificateRevocationListDetails) {
-            this.certificateRevocationListDetails = Objects.requireNonNull(certificateRevocationListDetails);
+            if (certificateRevocationListDetails == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "certificateRevocationListDetails");
+            }
+            this.certificateRevocationListDetails = certificateRevocationListDetails;
             return this;
         }
         public Builder certificateRevocationListDetails(GetCertificateCertificateRevocationListDetail... certificateRevocationListDetails) {
@@ -348,7 +361,10 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder certificateRules(List<GetCertificateCertificateRule> certificateRules) {
-            this.certificateRules = Objects.requireNonNull(certificateRules);
+            if (certificateRules == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "certificateRules");
+            }
+            this.certificateRules = certificateRules;
             return this;
         }
         public Builder certificateRules(GetCertificateCertificateRule... certificateRules) {
@@ -356,17 +372,26 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder currentVersions(List<GetCertificateCurrentVersion> currentVersions) {
-            this.currentVersions = Objects.requireNonNull(currentVersions);
+            if (currentVersions == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "currentVersions");
+            }
+            this.currentVersions = currentVersions;
             return this;
         }
         public Builder currentVersions(GetCertificateCurrentVersion... currentVersions) {
@@ -374,57 +399,90 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder issuerCertificateAuthorityId(String issuerCertificateAuthorityId) {
-            this.issuerCertificateAuthorityId = Objects.requireNonNull(issuerCertificateAuthorityId);
+            if (issuerCertificateAuthorityId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "issuerCertificateAuthorityId");
+            }
+            this.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder keyAlgorithm(String keyAlgorithm) {
-            this.keyAlgorithm = Objects.requireNonNull(keyAlgorithm);
+            if (keyAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "keyAlgorithm");
+            }
+            this.keyAlgorithm = keyAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder signatureAlgorithm(String signatureAlgorithm) {
-            this.signatureAlgorithm = Objects.requireNonNull(signatureAlgorithm);
+            if (signatureAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "signatureAlgorithm");
+            }
+            this.signatureAlgorithm = signatureAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subjects(List<GetCertificateSubject> subjects) {
-            this.subjects = Objects.requireNonNull(subjects);
+            if (subjects == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "subjects");
+            }
+            this.subjects = subjects;
             return this;
         }
         public Builder subjects(GetCertificateSubject... subjects) {
@@ -432,12 +490,18 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         public GetCertificateResult build() {

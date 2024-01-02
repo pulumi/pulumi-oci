@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
 
         @CustomType.Setter
         public Builder apiHostname(String apiHostname) {
-            this.apiHostname = Objects.requireNonNull(apiHostname);
+            if (apiHostname == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting", "apiHostname");
+            }
+            this.apiHostname = apiHostname;
             return this;
         }
         @CustomType.Setter
         public Builder attestationKey(String attestationKey) {
-            this.attestationKey = Objects.requireNonNull(attestationKey);
+            if (attestationKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting", "attestationKey");
+            }
+            this.attestationKey = attestationKey;
             return this;
         }
         @CustomType.Setter
         public Builder integrationKey(String integrationKey) {
-            this.integrationKey = Objects.requireNonNull(integrationKey);
+            if (integrationKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting", "integrationKey");
+            }
+            this.integrationKey = integrationKey;
             return this;
         }
         @CustomType.Setter
         public Builder secretKey(String secretKey) {
-            this.secretKey = Objects.requireNonNull(secretKey);
+            if (secretKey == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting", "secretKey");
+            }
+            this.secretKey = secretKey;
             return this;
         }
         @CustomType.Setter
         public Builder userMappingAttribute(String userMappingAttribute) {
-            this.userMappingAttribute = Objects.requireNonNull(userMappingAttribute);
+            if (userMappingAttribute == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting", "userMappingAttribute");
+            }
+            this.userMappingAttribute = userMappingAttribute;
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingDuoSecuritySetting build() {

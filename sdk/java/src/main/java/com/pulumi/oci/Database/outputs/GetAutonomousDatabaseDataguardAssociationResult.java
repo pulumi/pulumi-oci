@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -216,72 +217,114 @@ public final class GetAutonomousDatabaseDataguardAssociationResult {
 
         @CustomType.Setter
         public Builder applyLag(String applyLag) {
-            this.applyLag = Objects.requireNonNull(applyLag);
+            if (applyLag == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "applyLag");
+            }
+            this.applyLag = applyLag;
             return this;
         }
         @CustomType.Setter
         public Builder applyRate(String applyRate) {
-            this.applyRate = Objects.requireNonNull(applyRate);
+            if (applyRate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "applyRate");
+            }
+            this.applyRate = applyRate;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousDatabaseDataguardAssociationId(String autonomousDatabaseDataguardAssociationId) {
-            this.autonomousDatabaseDataguardAssociationId = Objects.requireNonNull(autonomousDatabaseDataguardAssociationId);
+            if (autonomousDatabaseDataguardAssociationId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "autonomousDatabaseDataguardAssociationId");
+            }
+            this.autonomousDatabaseDataguardAssociationId = autonomousDatabaseDataguardAssociationId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = Objects.requireNonNull(autonomousDatabaseId);
+            if (autonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "autonomousDatabaseId");
+            }
+            this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder peerAutonomousDatabaseId(String peerAutonomousDatabaseId) {
-            this.peerAutonomousDatabaseId = Objects.requireNonNull(peerAutonomousDatabaseId);
+            if (peerAutonomousDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "peerAutonomousDatabaseId");
+            }
+            this.peerAutonomousDatabaseId = peerAutonomousDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder peerAutonomousDatabaseLifeCycleState(String peerAutonomousDatabaseLifeCycleState) {
-            this.peerAutonomousDatabaseLifeCycleState = Objects.requireNonNull(peerAutonomousDatabaseLifeCycleState);
+            if (peerAutonomousDatabaseLifeCycleState == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "peerAutonomousDatabaseLifeCycleState");
+            }
+            this.peerAutonomousDatabaseLifeCycleState = peerAutonomousDatabaseLifeCycleState;
             return this;
         }
         @CustomType.Setter
         public Builder peerRole(String peerRole) {
-            this.peerRole = Objects.requireNonNull(peerRole);
+            if (peerRole == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "peerRole");
+            }
+            this.peerRole = peerRole;
             return this;
         }
         @CustomType.Setter
         public Builder protectionMode(String protectionMode) {
-            this.protectionMode = Objects.requireNonNull(protectionMode);
+            if (protectionMode == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "protectionMode");
+            }
+            this.protectionMode = protectionMode;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastRoleChanged(String timeLastRoleChanged) {
-            this.timeLastRoleChanged = Objects.requireNonNull(timeLastRoleChanged);
+            if (timeLastRoleChanged == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseDataguardAssociationResult", "timeLastRoleChanged");
+            }
+            this.timeLastRoleChanged = timeLastRoleChanged;
             return this;
         }
         public GetAutonomousDatabaseDataguardAssociationResult build() {

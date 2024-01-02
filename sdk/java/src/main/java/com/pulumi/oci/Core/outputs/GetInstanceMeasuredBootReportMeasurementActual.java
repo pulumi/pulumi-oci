@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetInstanceMeasuredBootReportMeasurementActual {
 
         @CustomType.Setter
         public Builder hashAlgorithm(String hashAlgorithm) {
-            this.hashAlgorithm = Objects.requireNonNull(hashAlgorithm);
+            if (hashAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportMeasurementActual", "hashAlgorithm");
+            }
+            this.hashAlgorithm = hashAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder pcrIndex(String pcrIndex) {
-            this.pcrIndex = Objects.requireNonNull(pcrIndex);
+            if (pcrIndex == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportMeasurementActual", "pcrIndex");
+            }
+            this.pcrIndex = pcrIndex;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportMeasurementActual", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetInstanceMeasuredBootReportMeasurementActual build() {

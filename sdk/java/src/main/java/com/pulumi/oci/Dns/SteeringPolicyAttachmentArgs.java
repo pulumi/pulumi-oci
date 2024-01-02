@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -199,9 +200,15 @@ public final class SteeringPolicyAttachmentArgs extends com.pulumi.resources.Res
         }
 
         public SteeringPolicyAttachmentArgs build() {
-            $.domainName = Objects.requireNonNull($.domainName, "expected parameter 'domainName' to be non-null");
-            $.steeringPolicyId = Objects.requireNonNull($.steeringPolicyId, "expected parameter 'steeringPolicyId' to be non-null");
-            $.zoneId = Objects.requireNonNull($.zoneId, "expected parameter 'zoneId' to be non-null");
+            if ($.domainName == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyAttachmentArgs", "domainName");
+            }
+            if ($.steeringPolicyId == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyAttachmentArgs", "steeringPolicyId");
+            }
+            if ($.zoneId == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyAttachmentArgs", "zoneId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetExadataInfrastructureNetworkBondingModeDetail {
 
         @CustomType.Setter
         public Builder backupNetworkBondingMode(String backupNetworkBondingMode) {
-            this.backupNetworkBondingMode = Objects.requireNonNull(backupNetworkBondingMode);
+            if (backupNetworkBondingMode == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureNetworkBondingModeDetail", "backupNetworkBondingMode");
+            }
+            this.backupNetworkBondingMode = backupNetworkBondingMode;
             return this;
         }
         @CustomType.Setter
         public Builder clientNetworkBondingMode(String clientNetworkBondingMode) {
-            this.clientNetworkBondingMode = Objects.requireNonNull(clientNetworkBondingMode);
+            if (clientNetworkBondingMode == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureNetworkBondingModeDetail", "clientNetworkBondingMode");
+            }
+            this.clientNetworkBondingMode = clientNetworkBondingMode;
             return this;
         }
         @CustomType.Setter
         public Builder drNetworkBondingMode(String drNetworkBondingMode) {
-            this.drNetworkBondingMode = Objects.requireNonNull(drNetworkBondingMode);
+            if (drNetworkBondingMode == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructureNetworkBondingModeDetail", "drNetworkBondingMode");
+            }
+            this.drNetworkBondingMode = drNetworkBondingMode;
             return this;
         }
         public GetExadataInfrastructureNetworkBondingModeDetail build() {

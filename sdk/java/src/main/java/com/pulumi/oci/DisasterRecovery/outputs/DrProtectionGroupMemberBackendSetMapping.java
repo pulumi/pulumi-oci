@@ -73,16 +73,19 @@ public final class DrProtectionGroupMemberBackendSetMapping {
 
         @CustomType.Setter
         public Builder destinationBackendSetName(@Nullable String destinationBackendSetName) {
+
             this.destinationBackendSetName = destinationBackendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder isBackendSetForNonMovable(@Nullable Boolean isBackendSetForNonMovable) {
+
             this.isBackendSetForNonMovable = isBackendSetForNonMovable;
             return this;
         }
         @CustomType.Setter
         public Builder sourceBackendSetName(@Nullable String sourceBackendSetName) {
+
             this.sourceBackendSetName = sourceBackendSetName;
             return this;
         }

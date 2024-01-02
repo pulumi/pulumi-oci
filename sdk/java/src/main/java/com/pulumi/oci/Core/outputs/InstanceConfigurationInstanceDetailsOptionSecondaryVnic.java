@@ -74,16 +74,19 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnic {
 
         @CustomType.Setter
         public Builder createVnicDetails(@Nullable InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails createVnicDetails) {
+
             this.createVnicDetails = createVnicDetails;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder nicIndex(@Nullable Integer nicIndex) {
+
             this.nicIndex = nicIndex;
             return this;
         }

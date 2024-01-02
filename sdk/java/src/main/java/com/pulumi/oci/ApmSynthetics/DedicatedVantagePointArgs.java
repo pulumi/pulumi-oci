@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.inputs.DedicatedVantagePointDvpStackDetailsArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -313,10 +314,18 @@ public final class DedicatedVantagePointArgs extends com.pulumi.resources.Resour
         }
 
         public DedicatedVantagePointArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.dvpStackDetails = Objects.requireNonNull($.dvpStackDetails, "expected parameter 'dvpStackDetails' to be non-null");
-            $.region = Objects.requireNonNull($.region, "expected parameter 'region' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("DedicatedVantagePointArgs", "apmDomainId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DedicatedVantagePointArgs", "displayName");
+            }
+            if ($.dvpStackDetails == null) {
+                throw new MissingRequiredPropertyException("DedicatedVantagePointArgs", "dvpStackDetails");
+            }
+            if ($.region == null) {
+                throw new MissingRequiredPropertyException("DedicatedVantagePointArgs", "region");
+            }
             return $;
         }
     }

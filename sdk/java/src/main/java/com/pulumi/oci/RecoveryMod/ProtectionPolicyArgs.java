@@ -5,6 +5,7 @@ package com.pulumi.oci.RecoveryMod;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -239,9 +240,15 @@ public final class ProtectionPolicyArgs extends com.pulumi.resources.ResourceArg
         }
 
         public ProtectionPolicyArgs build() {
-            $.backupRetentionPeriodInDays = Objects.requireNonNull($.backupRetentionPeriodInDays, "expected parameter 'backupRetentionPeriodInDays' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.backupRetentionPeriodInDays == null) {
+                throw new MissingRequiredPropertyException("ProtectionPolicyArgs", "backupRetentionPeriodInDays");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ProtectionPolicyArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ProtectionPolicyArgs", "displayName");
+            }
             return $;
         }
     }

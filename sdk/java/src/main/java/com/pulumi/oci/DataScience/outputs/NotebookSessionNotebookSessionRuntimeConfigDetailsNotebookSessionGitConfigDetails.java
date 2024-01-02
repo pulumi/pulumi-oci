@@ -44,6 +44,7 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSes
 
         @CustomType.Setter
         public Builder notebookSessionGitRepoConfigCollections(@Nullable List<NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection> notebookSessionGitRepoConfigCollections) {
+
             this.notebookSessionGitRepoConfigCollections = notebookSessionGitRepoConfigCollections;
             return this;
         }

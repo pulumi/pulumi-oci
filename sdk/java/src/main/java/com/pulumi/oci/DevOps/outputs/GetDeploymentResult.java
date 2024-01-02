@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentDeployArtifactOverrideArgument;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentDeployPipelineArtifact;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentDeployPipelineEnvironment;
@@ -344,17 +345,26 @@ public final class GetDeploymentResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactOverrideArguments(List<GetDeploymentDeployArtifactOverrideArgument> deployArtifactOverrideArguments) {
-            this.deployArtifactOverrideArguments = Objects.requireNonNull(deployArtifactOverrideArguments);
+            if (deployArtifactOverrideArguments == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deployArtifactOverrideArguments");
+            }
+            this.deployArtifactOverrideArguments = deployArtifactOverrideArguments;
             return this;
         }
         public Builder deployArtifactOverrideArguments(GetDeploymentDeployArtifactOverrideArgument... deployArtifactOverrideArguments) {
@@ -362,7 +372,10 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder deployPipelineArtifacts(List<GetDeploymentDeployPipelineArtifact> deployPipelineArtifacts) {
-            this.deployPipelineArtifacts = Objects.requireNonNull(deployPipelineArtifacts);
+            if (deployPipelineArtifacts == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deployPipelineArtifacts");
+            }
+            this.deployPipelineArtifacts = deployPipelineArtifacts;
             return this;
         }
         public Builder deployPipelineArtifacts(GetDeploymentDeployPipelineArtifact... deployPipelineArtifacts) {
@@ -370,7 +383,10 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder deployPipelineEnvironments(List<GetDeploymentDeployPipelineEnvironment> deployPipelineEnvironments) {
-            this.deployPipelineEnvironments = Objects.requireNonNull(deployPipelineEnvironments);
+            if (deployPipelineEnvironments == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deployPipelineEnvironments");
+            }
+            this.deployPipelineEnvironments = deployPipelineEnvironments;
             return this;
         }
         public Builder deployPipelineEnvironments(GetDeploymentDeployPipelineEnvironment... deployPipelineEnvironments) {
@@ -378,17 +394,26 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder deployPipelineId(String deployPipelineId) {
-            this.deployPipelineId = Objects.requireNonNull(deployPipelineId);
+            if (deployPipelineId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deployPipelineId");
+            }
+            this.deployPipelineId = deployPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder deployStageId(String deployStageId) {
-            this.deployStageId = Objects.requireNonNull(deployStageId);
+            if (deployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deployStageId");
+            }
+            this.deployStageId = deployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder deployStageOverrideArguments(List<GetDeploymentDeployStageOverrideArgument> deployStageOverrideArguments) {
-            this.deployStageOverrideArguments = Objects.requireNonNull(deployStageOverrideArguments);
+            if (deployStageOverrideArguments == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deployStageOverrideArguments");
+            }
+            this.deployStageOverrideArguments = deployStageOverrideArguments;
             return this;
         }
         public Builder deployStageOverrideArguments(GetDeploymentDeployStageOverrideArgument... deployStageOverrideArguments) {
@@ -396,7 +421,10 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder deploymentArguments(List<GetDeploymentDeploymentArgument> deploymentArguments) {
-            this.deploymentArguments = Objects.requireNonNull(deploymentArguments);
+            if (deploymentArguments == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentArguments");
+            }
+            this.deploymentArguments = deploymentArguments;
             return this;
         }
         public Builder deploymentArguments(GetDeploymentDeploymentArgument... deploymentArguments) {
@@ -404,7 +432,10 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder deploymentExecutionProgresses(List<GetDeploymentDeploymentExecutionProgress> deploymentExecutionProgresses) {
-            this.deploymentExecutionProgresses = Objects.requireNonNull(deploymentExecutionProgresses);
+            if (deploymentExecutionProgresses == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentExecutionProgresses");
+            }
+            this.deploymentExecutionProgresses = deploymentExecutionProgresses;
             return this;
         }
         public Builder deploymentExecutionProgresses(GetDeploymentDeploymentExecutionProgress... deploymentExecutionProgresses) {
@@ -412,67 +443,106 @@ public final class GetDeploymentResult {
         }
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
-            this.deploymentType = Objects.requireNonNull(deploymentType);
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder previousDeploymentId(String previousDeploymentId) {
-            this.previousDeploymentId = Objects.requireNonNull(previousDeploymentId);
+            if (previousDeploymentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "previousDeploymentId");
+            }
+            this.previousDeploymentId = previousDeploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder triggerNewDevopsDeployment(Boolean triggerNewDevopsDeployment) {
-            this.triggerNewDevopsDeployment = Objects.requireNonNull(triggerNewDevopsDeployment);
+            if (triggerNewDevopsDeployment == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "triggerNewDevopsDeployment");
+            }
+            this.triggerNewDevopsDeployment = triggerNewDevopsDeployment;
             return this;
         }
         public GetDeploymentResult build() {

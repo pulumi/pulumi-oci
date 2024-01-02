@@ -5,6 +5,7 @@ package com.pulumi.oci.Opensearch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opensearch.inputs.GetOpensearchVersionsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetOpensearchVersionsArgs extends com.pulumi.resources.Invoke
         }
 
         public GetOpensearchVersionsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetOpensearchVersionsArgs", "compartmentId");
+            }
             return $;
         }
     }

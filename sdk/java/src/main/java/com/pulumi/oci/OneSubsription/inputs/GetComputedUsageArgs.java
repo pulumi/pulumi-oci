@@ -5,6 +5,7 @@ package com.pulumi.oci.OneSubsription.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -161,8 +162,12 @@ public final class GetComputedUsageArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetComputedUsageArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.computedUsageId = Objects.requireNonNull($.computedUsageId, "expected parameter 'computedUsageId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetComputedUsageArgs", "compartmentId");
+            }
+            if ($.computedUsageId == null) {
+                throw new MissingRequiredPropertyException("GetComputedUsageArgs", "computedUsageId");
+            }
             return $;
         }
     }

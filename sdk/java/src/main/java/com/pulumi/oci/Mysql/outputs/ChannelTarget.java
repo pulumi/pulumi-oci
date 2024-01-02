@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.ChannelTargetFilter;
 import java.lang.Integer;
 import java.lang.String;
@@ -137,26 +138,33 @@ public final class ChannelTarget {
 
         @CustomType.Setter
         public Builder applierUsername(@Nullable String applierUsername) {
+
             this.applierUsername = applierUsername;
             return this;
         }
         @CustomType.Setter
         public Builder channelName(@Nullable String channelName) {
+
             this.channelName = channelName;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("ChannelTarget", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder delayInSeconds(@Nullable Integer delayInSeconds) {
+
             this.delayInSeconds = delayInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<ChannelTargetFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -165,12 +173,16 @@ public final class ChannelTarget {
         }
         @CustomType.Setter
         public Builder tablesWithoutPrimaryKeyHandling(@Nullable String tablesWithoutPrimaryKeyHandling) {
+
             this.tablesWithoutPrimaryKeyHandling = tablesWithoutPrimaryKeyHandling;
             return this;
         }
         @CustomType.Setter
         public Builder targetType(String targetType) {
-            this.targetType = Objects.requireNonNull(targetType);
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("ChannelTarget", "targetType");
+            }
+            this.targetType = targetType;
             return this;
         }
         public ChannelTarget build() {

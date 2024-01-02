@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -125,9 +126,15 @@ public final class ExadataInfrastructureStorageContactArgs extends com.pulumi.re
         }
 
         public ExadataInfrastructureStorageContactArgs build() {
-            $.email = Objects.requireNonNull($.email, "expected parameter 'email' to be non-null");
-            $.isPrimary = Objects.requireNonNull($.isPrimary, "expected parameter 'isPrimary' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.email == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureStorageContactArgs", "email");
+            }
+            if ($.isPrimary == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureStorageContactArgs", "isPrimary");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureStorageContactArgs", "name");
+            }
             return $;
         }
     }

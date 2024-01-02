@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.outputs.GetVantagePointsFilter;
 import com.pulumi.oci.HealthChecks.outputs.GetVantagePointsHealthChecksVantagePoint;
 import java.lang.String;
@@ -95,11 +96,13 @@ public final class GetVantagePointsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVantagePointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,7 +111,10 @@ public final class GetVantagePointsResult {
         }
         @CustomType.Setter
         public Builder healthChecksVantagePoints(List<GetVantagePointsHealthChecksVantagePoint> healthChecksVantagePoints) {
-            this.healthChecksVantagePoints = Objects.requireNonNull(healthChecksVantagePoints);
+            if (healthChecksVantagePoints == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsResult", "healthChecksVantagePoints");
+            }
+            this.healthChecksVantagePoints = healthChecksVantagePoints;
             return this;
         }
         public Builder healthChecksVantagePoints(GetVantagePointsHealthChecksVantagePoint... healthChecksVantagePoints) {
@@ -116,11 +122,15 @@ public final class GetVantagePointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

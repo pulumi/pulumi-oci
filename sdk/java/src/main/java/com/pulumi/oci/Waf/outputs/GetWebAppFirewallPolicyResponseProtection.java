@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPolicyResponseProtectionRule;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetWebAppFirewallPolicyResponseProtection {
 
         @CustomType.Setter
         public Builder rules(List<GetWebAppFirewallPolicyResponseProtectionRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("GetWebAppFirewallPolicyResponseProtection", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetWebAppFirewallPolicyResponseProtectionRule... rules) {

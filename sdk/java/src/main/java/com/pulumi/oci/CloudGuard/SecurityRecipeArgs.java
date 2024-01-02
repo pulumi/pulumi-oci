@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -297,9 +298,15 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public SecurityRecipeArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.securityPolicies = Objects.requireNonNull($.securityPolicies, "expected parameter 'securityPolicies' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SecurityRecipeArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("SecurityRecipeArgs", "displayName");
+            }
+            if ($.securityPolicies == null) {
+                throw new MissingRequiredPropertyException("SecurityRecipeArgs", "securityPolicies");
+            }
             return $;
         }
     }

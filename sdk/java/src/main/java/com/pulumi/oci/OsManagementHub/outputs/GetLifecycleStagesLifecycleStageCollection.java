@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleStagesLifecycleStageCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetLifecycleStagesLifecycleStageCollection {
 
         @CustomType.Setter
         public Builder items(List<GetLifecycleStagesLifecycleStageCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleStagesLifecycleStageCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetLifecycleStagesLifecycleStageCollectionItem... items) {

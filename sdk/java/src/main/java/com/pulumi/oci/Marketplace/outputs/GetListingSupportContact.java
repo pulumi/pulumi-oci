@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetListingSupportContact {
 
         @CustomType.Setter
         public Builder email(String email) {
-            this.email = Objects.requireNonNull(email);
+            if (email == null) {
+              throw new MissingRequiredPropertyException("GetListingSupportContact", "email");
+            }
+            this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetListingSupportContact", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder phone(String phone) {
-            this.phone = Objects.requireNonNull(phone);
+            if (phone == null) {
+              throw new MissingRequiredPropertyException("GetListingSupportContact", "phone");
+            }
+            this.phone = phone;
             return this;
         }
         @CustomType.Setter
         public Builder subject(String subject) {
-            this.subject = Objects.requireNonNull(subject);
+            if (subject == null) {
+              throw new MissingRequiredPropertyException("GetListingSupportContact", "subject");
+            }
+            this.subject = subject;
             return this;
         }
         public GetListingSupportContact build() {

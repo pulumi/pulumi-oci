@@ -58,11 +58,13 @@ public final class ImageAgentFeature {
 
         @CustomType.Setter
         public Builder isManagementSupported(@Nullable Boolean isManagementSupported) {
+
             this.isManagementSupported = isManagementSupported;
             return this;
         }
         @CustomType.Setter
         public Builder isMonitoringSupported(@Nullable Boolean isMonitoringSupported) {
+
             this.isMonitoringSupported = isMonitoringSupported;
             return this;
         }

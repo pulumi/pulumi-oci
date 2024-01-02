@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -311,41 +312,55 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
 
         @CustomType.Setter
         public Builder confidential(@Nullable Boolean confidential) {
+
             this.confidential = confidential;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder helpMessage(@Nullable String helpMessage) {
+
             this.helpMessage = helpMessage;
             return this;
         }
         @CustomType.Setter
         public Builder icfType(String icfType) {
-            this.icfType = Objects.requireNonNull(icfType);
+            if (icfType == null) {
+              throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty", "icfType");
+            }
+            this.icfType = icfType;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder order(@Nullable Integer order) {
+
             this.order = order;
             return this;
         }
         @CustomType.Setter
         public Builder required(Boolean required) {
-            this.required = Objects.requireNonNull(required);
+            if (required == null) {
+              throw new MissingRequiredPropertyException("DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty", "required");
+            }
+            this.required = required;
             return this;
         }
         @CustomType.Setter
         public Builder values(@Nullable List<String> values) {
+
             this.values = values;
             return this;
         }

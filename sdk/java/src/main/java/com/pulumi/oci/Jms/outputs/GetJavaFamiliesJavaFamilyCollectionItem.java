@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact;
 import java.lang.Boolean;
 import java.lang.String;
@@ -143,32 +144,50 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder docUrl(String docUrl) {
-            this.docUrl = Objects.requireNonNull(docUrl);
+            if (docUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "docUrl");
+            }
+            this.docUrl = docUrl;
             return this;
         }
         @CustomType.Setter
         public Builder endOfSupportLifeDate(String endOfSupportLifeDate) {
-            this.endOfSupportLifeDate = Objects.requireNonNull(endOfSupportLifeDate);
+            if (endOfSupportLifeDate == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "endOfSupportLifeDate");
+            }
+            this.endOfSupportLifeDate = endOfSupportLifeDate;
             return this;
         }
         @CustomType.Setter
         public Builder familyVersion(String familyVersion) {
-            this.familyVersion = Objects.requireNonNull(familyVersion);
+            if (familyVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "familyVersion");
+            }
+            this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportedVersion(Boolean isSupportedVersion) {
-            this.isSupportedVersion = Objects.requireNonNull(isSupportedVersion);
+            if (isSupportedVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "isSupportedVersion");
+            }
+            this.isSupportedVersion = isSupportedVersion;
             return this;
         }
         @CustomType.Setter
         public Builder latestReleaseArtifacts(List<GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact> latestReleaseArtifacts) {
-            this.latestReleaseArtifacts = Objects.requireNonNull(latestReleaseArtifacts);
+            if (latestReleaseArtifacts == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "latestReleaseArtifacts");
+            }
+            this.latestReleaseArtifacts = latestReleaseArtifacts;
             return this;
         }
         public Builder latestReleaseArtifacts(GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact... latestReleaseArtifacts) {
@@ -176,12 +195,18 @@ public final class GetJavaFamiliesJavaFamilyCollectionItem {
         }
         @CustomType.Setter
         public Builder latestReleaseVersion(String latestReleaseVersion) {
-            this.latestReleaseVersion = Objects.requireNonNull(latestReleaseVersion);
+            if (latestReleaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "latestReleaseVersion");
+            }
+            this.latestReleaseVersion = latestReleaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder supportType(String supportType) {
-            this.supportType = Objects.requireNonNull(supportType);
+            if (supportType == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamiliesJavaFamilyCollectionItem", "supportType");
+            }
+            this.supportType = supportType;
             return this;
         }
         public GetJavaFamiliesJavaFamilyCollectionItem build() {

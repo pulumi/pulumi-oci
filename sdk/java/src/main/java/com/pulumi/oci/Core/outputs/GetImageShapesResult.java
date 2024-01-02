@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetImageShapesFilter;
 import com.pulumi.oci.Core.outputs.GetImageShapesImageShapeCompatibility;
 import java.lang.String;
@@ -80,6 +81,7 @@ public final class GetImageShapesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetImageShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,17 +90,26 @@ public final class GetImageShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetImageShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetImageShapesResult", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder imageShapeCompatibilities(List<GetImageShapesImageShapeCompatibility> imageShapeCompatibilities) {
-            this.imageShapeCompatibilities = Objects.requireNonNull(imageShapeCompatibilities);
+            if (imageShapeCompatibilities == null) {
+              throw new MissingRequiredPropertyException("GetImageShapesResult", "imageShapeCompatibilities");
+            }
+            this.imageShapeCompatibilities = imageShapeCompatibilities;
             return this;
         }
         public Builder imageShapeCompatibilities(GetImageShapesImageShapeCompatibility... imageShapeCompatibilities) {

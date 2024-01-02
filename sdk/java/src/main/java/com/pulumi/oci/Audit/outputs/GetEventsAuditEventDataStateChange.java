@@ -4,6 +4,7 @@
 package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -58,12 +59,18 @@ public final class GetEventsAuditEventDataStateChange {
 
         @CustomType.Setter
         public Builder current(Map<String,Object> current) {
-            this.current = Objects.requireNonNull(current);
+            if (current == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataStateChange", "current");
+            }
+            this.current = current;
             return this;
         }
         @CustomType.Setter
         public Builder previous(Map<String,Object> previous) {
-            this.previous = Objects.requireNonNull(previous);
+            if (previous == null) {
+              throw new MissingRequiredPropertyException("GetEventsAuditEventDataStateChange", "previous");
+            }
+            this.previous = previous;
             return this;
         }
         public GetEventsAuditEventDataStateChange build() {

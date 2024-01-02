@@ -4,6 +4,7 @@
 package com.pulumi.oci.Artifacts.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetContainerImageSignaturePlainArgs extends com.pulumi.resour
         }
 
         public GetContainerImageSignaturePlainArgs build() {
-            $.imageSignatureId = Objects.requireNonNull($.imageSignatureId, "expected parameter 'imageSignatureId' to be non-null");
+            if ($.imageSignatureId == null) {
+                throw new MissingRequiredPropertyException("GetContainerImageSignaturePlainArgs", "imageSignatureId");
+            }
             return $;
         }
     }

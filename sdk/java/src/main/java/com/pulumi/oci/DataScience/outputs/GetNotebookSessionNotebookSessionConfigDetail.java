@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetNotebookSessionNotebookSessionConfigDetail {
 
         @CustomType.Setter
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            this.blockStorageSizeInGbs = Objects.requireNonNull(blockStorageSizeInGbs);
+            if (blockStorageSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionNotebookSessionConfigDetail", "blockStorageSizeInGbs");
+            }
+            this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder notebookSessionShapeConfigDetails(List<GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails) {
-            this.notebookSessionShapeConfigDetails = Objects.requireNonNull(notebookSessionShapeConfigDetails);
+            if (notebookSessionShapeConfigDetails == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionNotebookSessionConfigDetail", "notebookSessionShapeConfigDetails");
+            }
+            this.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
             return this;
         }
         public Builder notebookSessionShapeConfigDetails(GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail... notebookSessionShapeConfigDetails) {
@@ -114,17 +121,26 @@ public final class GetNotebookSessionNotebookSessionConfigDetail {
         }
         @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
-            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+            if (privateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionNotebookSessionConfigDetail", "privateEndpointId");
+            }
+            this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionNotebookSessionConfigDetail", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionNotebookSessionConfigDetail", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetNotebookSessionNotebookSessionConfigDetail build() {

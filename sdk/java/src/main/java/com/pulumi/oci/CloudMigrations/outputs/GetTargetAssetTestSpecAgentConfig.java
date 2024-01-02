@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetTestSpecAgentConfigPluginsConfig;
 import java.lang.Boolean;
 import java.util.List;
@@ -86,22 +87,34 @@ public final class GetTargetAssetTestSpecAgentConfig {
 
         @CustomType.Setter
         public Builder areAllPluginsDisabled(Boolean areAllPluginsDisabled) {
-            this.areAllPluginsDisabled = Objects.requireNonNull(areAllPluginsDisabled);
+            if (areAllPluginsDisabled == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetTestSpecAgentConfig", "areAllPluginsDisabled");
+            }
+            this.areAllPluginsDisabled = areAllPluginsDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder isManagementDisabled(Boolean isManagementDisabled) {
-            this.isManagementDisabled = Objects.requireNonNull(isManagementDisabled);
+            if (isManagementDisabled == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetTestSpecAgentConfig", "isManagementDisabled");
+            }
+            this.isManagementDisabled = isManagementDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMonitoringDisabled(Boolean isMonitoringDisabled) {
-            this.isMonitoringDisabled = Objects.requireNonNull(isMonitoringDisabled);
+            if (isMonitoringDisabled == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetTestSpecAgentConfig", "isMonitoringDisabled");
+            }
+            this.isMonitoringDisabled = isMonitoringDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder pluginsConfigs(List<GetTargetAssetTestSpecAgentConfigPluginsConfig> pluginsConfigs) {
-            this.pluginsConfigs = Objects.requireNonNull(pluginsConfigs);
+            if (pluginsConfigs == null) {
+              throw new MissingRequiredPropertyException("GetTargetAssetTestSpecAgentConfig", "pluginsConfigs");
+            }
+            this.pluginsConfigs = pluginsConfigs;
             return this;
         }
         public Builder pluginsConfigs(GetTargetAssetTestSpecAgentConfigPluginsConfig... pluginsConfigs) {

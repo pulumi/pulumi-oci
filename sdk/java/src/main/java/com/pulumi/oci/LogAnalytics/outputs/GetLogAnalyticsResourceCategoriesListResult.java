@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsResourceCategoriesListCategory;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsResourceCategoriesListItem;
 import java.lang.String;
@@ -99,7 +100,10 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
 
         @CustomType.Setter
         public Builder categories(List<GetLogAnalyticsResourceCategoriesListCategory> categories) {
-            this.categories = Objects.requireNonNull(categories);
+            if (categories == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListResult", "categories");
+            }
+            this.categories = categories;
             return this;
         }
         public Builder categories(GetLogAnalyticsResourceCategoriesListCategory... categories) {
@@ -107,12 +111,18 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetLogAnalyticsResourceCategoriesListItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsResourceCategoriesListItem... items) {
@@ -120,21 +130,27 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsResourceCategoriesListResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder resourceCategories(@Nullable String resourceCategories) {
+
             this.resourceCategories = resourceCategories;
             return this;
         }
         @CustomType.Setter
         public Builder resourceIds(@Nullable String resourceIds) {
+
             this.resourceIds = resourceIds;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypes(@Nullable String resourceTypes) {
+
             this.resourceTypes = resourceTypes;
             return this;
         }

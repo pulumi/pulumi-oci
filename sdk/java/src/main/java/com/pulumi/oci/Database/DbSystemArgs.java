@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DbSystemDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.DbSystemDbHomeArgs;
 import com.pulumi.oci.Database.inputs.DbSystemDbSystemOptionsArgs;
@@ -1560,13 +1561,27 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DbSystemArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbHome = Objects.requireNonNull($.dbHome, "expected parameter 'dbHome' to be non-null");
-            $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.sshPublicKeys = Objects.requireNonNull($.sshPublicKeys, "expected parameter 'sshPublicKeys' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "compartmentId");
+            }
+            if ($.dbHome == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "dbHome");
+            }
+            if ($.hostname == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "hostname");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "shape");
+            }
+            if ($.sshPublicKeys == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "sshPublicKeys");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("DbSystemArgs", "subnetId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetEnrollmentStatusPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetEnrollmentStatusPlainArgs build() {
-            $.enrollmentStatusId = Objects.requireNonNull($.enrollmentStatusId, "expected parameter 'enrollmentStatusId' to be non-null");
+            if ($.enrollmentStatusId == null) {
+                throw new MissingRequiredPropertyException("GetEnrollmentStatusPlainArgs", "enrollmentStatusId");
+            }
             return $;
         }
     }

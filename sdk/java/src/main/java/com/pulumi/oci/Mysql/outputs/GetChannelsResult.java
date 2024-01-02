@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetChannelsChannel;
 import com.pulumi.oci.Mysql.outputs.GetChannelsFilter;
 import java.lang.Boolean;
@@ -144,12 +145,16 @@ public final class GetChannelsResult {
 
         @CustomType.Setter
         public Builder channelId(@Nullable String channelId) {
+
             this.channelId = channelId;
             return this;
         }
         @CustomType.Setter
         public Builder channels(List<GetChannelsChannel> channels) {
-            this.channels = Objects.requireNonNull(channels);
+            if (channels == null) {
+              throw new MissingRequiredPropertyException("GetChannelsResult", "channels");
+            }
+            this.channels = channels;
             return this;
         }
         public Builder channels(GetChannelsChannel... channels) {
@@ -157,21 +162,27 @@ public final class GetChannelsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetChannelsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetChannelsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -180,16 +191,21 @@ public final class GetChannelsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetChannelsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

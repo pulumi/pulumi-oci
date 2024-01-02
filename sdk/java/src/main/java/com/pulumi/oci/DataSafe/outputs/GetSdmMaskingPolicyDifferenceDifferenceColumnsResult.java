@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection;
 import java.lang.String;
@@ -157,6 +158,7 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
 
         @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
+
             this.columnNames = columnNames;
             return this;
         }
@@ -165,11 +167,13 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
         }
         @CustomType.Setter
         public Builder differenceType(@Nullable String differenceType) {
+
             this.differenceType = differenceType;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSdmMaskingPolicyDifferenceDifferenceColumnsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -178,11 +182,15 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceDifferenceColumnsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder objects(@Nullable List<String> objects) {
+
             this.objects = objects;
             return this;
         }
@@ -191,11 +199,13 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
         }
         @CustomType.Setter
         public Builder plannedAction(@Nullable String plannedAction) {
+
             this.plannedAction = plannedAction;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -204,7 +214,10 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
         }
         @CustomType.Setter
         public Builder sdmMaskingPolicyDifferenceColumnCollections(List<GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection> sdmMaskingPolicyDifferenceColumnCollections) {
-            this.sdmMaskingPolicyDifferenceColumnCollections = Objects.requireNonNull(sdmMaskingPolicyDifferenceColumnCollections);
+            if (sdmMaskingPolicyDifferenceColumnCollections == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceDifferenceColumnsResult", "sdmMaskingPolicyDifferenceColumnCollections");
+            }
+            this.sdmMaskingPolicyDifferenceColumnCollections = sdmMaskingPolicyDifferenceColumnCollections;
             return this;
         }
         public Builder sdmMaskingPolicyDifferenceColumnCollections(GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollection... sdmMaskingPolicyDifferenceColumnCollections) {
@@ -212,11 +225,15 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnsResult {
         }
         @CustomType.Setter
         public Builder sdmMaskingPolicyDifferenceId(String sdmMaskingPolicyDifferenceId) {
-            this.sdmMaskingPolicyDifferenceId = Objects.requireNonNull(sdmMaskingPolicyDifferenceId);
+            if (sdmMaskingPolicyDifferenceId == null) {
+              throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceDifferenceColumnsResult", "sdmMaskingPolicyDifferenceId");
+            }
+            this.sdmMaskingPolicyDifferenceId = sdmMaskingPolicyDifferenceId;
             return this;
         }
         @CustomType.Setter
         public Builder syncStatus(@Nullable String syncStatus) {
+
             this.syncStatus = syncStatus;
             return this;
         }

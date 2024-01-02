@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionQueryPropertyInParamDetail;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionQueryPropertyOutParamDetail;
 import com.pulumi.oci.StackMonitoring.outputs.GetMetricExtensionQueryPropertyScriptDetail;
@@ -244,37 +245,58 @@ public final class GetMetricExtensionQueryProperty {
 
         @CustomType.Setter
         public Builder arguments(String arguments) {
-            this.arguments = Objects.requireNonNull(arguments);
+            if (arguments == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "arguments");
+            }
+            this.arguments = arguments;
             return this;
         }
         @CustomType.Setter
         public Builder autoRowPrefix(String autoRowPrefix) {
-            this.autoRowPrefix = Objects.requireNonNull(autoRowPrefix);
+            if (autoRowPrefix == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "autoRowPrefix");
+            }
+            this.autoRowPrefix = autoRowPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder collectionMethod(String collectionMethod) {
-            this.collectionMethod = Objects.requireNonNull(collectionMethod);
+            if (collectionMethod == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "collectionMethod");
+            }
+            this.collectionMethod = collectionMethod;
             return this;
         }
         @CustomType.Setter
         public Builder command(String command) {
-            this.command = Objects.requireNonNull(command);
+            if (command == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "command");
+            }
+            this.command = command;
             return this;
         }
         @CustomType.Setter
         public Builder delimiter(String delimiter) {
-            this.delimiter = Objects.requireNonNull(delimiter);
+            if (delimiter == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "delimiter");
+            }
+            this.delimiter = delimiter;
             return this;
         }
         @CustomType.Setter
         public Builder identityMetric(String identityMetric) {
-            this.identityMetric = Objects.requireNonNull(identityMetric);
+            if (identityMetric == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "identityMetric");
+            }
+            this.identityMetric = identityMetric;
             return this;
         }
         @CustomType.Setter
         public Builder inParamDetails(List<GetMetricExtensionQueryPropertyInParamDetail> inParamDetails) {
-            this.inParamDetails = Objects.requireNonNull(inParamDetails);
+            if (inParamDetails == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "inParamDetails");
+            }
+            this.inParamDetails = inParamDetails;
             return this;
         }
         public Builder inParamDetails(GetMetricExtensionQueryPropertyInParamDetail... inParamDetails) {
@@ -282,22 +304,34 @@ public final class GetMetricExtensionQueryProperty {
         }
         @CustomType.Setter
         public Builder isMetricServiceEnabled(Boolean isMetricServiceEnabled) {
-            this.isMetricServiceEnabled = Objects.requireNonNull(isMetricServiceEnabled);
+            if (isMetricServiceEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "isMetricServiceEnabled");
+            }
+            this.isMetricServiceEnabled = isMetricServiceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder jmxAttributes(String jmxAttributes) {
-            this.jmxAttributes = Objects.requireNonNull(jmxAttributes);
+            if (jmxAttributes == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "jmxAttributes");
+            }
+            this.jmxAttributes = jmxAttributes;
             return this;
         }
         @CustomType.Setter
         public Builder managedBeanQuery(String managedBeanQuery) {
-            this.managedBeanQuery = Objects.requireNonNull(managedBeanQuery);
+            if (managedBeanQuery == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "managedBeanQuery");
+            }
+            this.managedBeanQuery = managedBeanQuery;
             return this;
         }
         @CustomType.Setter
         public Builder outParamDetails(List<GetMetricExtensionQueryPropertyOutParamDetail> outParamDetails) {
-            this.outParamDetails = Objects.requireNonNull(outParamDetails);
+            if (outParamDetails == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "outParamDetails");
+            }
+            this.outParamDetails = outParamDetails;
             return this;
         }
         public Builder outParamDetails(GetMetricExtensionQueryPropertyOutParamDetail... outParamDetails) {
@@ -305,7 +339,10 @@ public final class GetMetricExtensionQueryProperty {
         }
         @CustomType.Setter
         public Builder scriptDetails(List<GetMetricExtensionQueryPropertyScriptDetail> scriptDetails) {
-            this.scriptDetails = Objects.requireNonNull(scriptDetails);
+            if (scriptDetails == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "scriptDetails");
+            }
+            this.scriptDetails = scriptDetails;
             return this;
         }
         public Builder scriptDetails(GetMetricExtensionQueryPropertyScriptDetail... scriptDetails) {
@@ -313,7 +350,10 @@ public final class GetMetricExtensionQueryProperty {
         }
         @CustomType.Setter
         public Builder sqlDetails(List<GetMetricExtensionQueryPropertySqlDetail> sqlDetails) {
-            this.sqlDetails = Objects.requireNonNull(sqlDetails);
+            if (sqlDetails == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "sqlDetails");
+            }
+            this.sqlDetails = sqlDetails;
             return this;
         }
         public Builder sqlDetails(GetMetricExtensionQueryPropertySqlDetail... sqlDetails) {
@@ -321,12 +361,18 @@ public final class GetMetricExtensionQueryProperty {
         }
         @CustomType.Setter
         public Builder sqlType(String sqlType) {
-            this.sqlType = Objects.requireNonNull(sqlType);
+            if (sqlType == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "sqlType");
+            }
+            this.sqlType = sqlType;
             return this;
         }
         @CustomType.Setter
         public Builder startsWith(String startsWith) {
-            this.startsWith = Objects.requireNonNull(startsWith);
+            if (startsWith == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionQueryProperty", "startsWith");
+            }
+            this.startsWith = startsWith;
             return this;
         }
         public GetMetricExtensionQueryProperty build() {

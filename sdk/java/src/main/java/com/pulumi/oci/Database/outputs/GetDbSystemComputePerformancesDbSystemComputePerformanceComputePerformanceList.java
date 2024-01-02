@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformanceCompu
 
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = Objects.requireNonNull(cpuCoreCount);
+            if (cpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList", "cpuCoreCount");
+            }
+            this.cpuCoreCount = cpuCoreCount;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder networkBandwidthInGbps(Double networkBandwidthInGbps) {
-            this.networkBandwidthInGbps = Objects.requireNonNull(networkBandwidthInGbps);
+            if (networkBandwidthInGbps == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList", "networkBandwidthInGbps");
+            }
+            this.networkBandwidthInGbps = networkBandwidthInGbps;
             return this;
         }
         @CustomType.Setter
         public Builder networkIops(Double networkIops) {
-            this.networkIops = Objects.requireNonNull(networkIops);
+            if (networkIops == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList", "networkIops");
+            }
+            this.networkIops = networkIops;
             return this;
         }
         @CustomType.Setter
         public Builder networkThroughputInMbps(Double networkThroughputInMbps) {
-            this.networkThroughputInMbps = Objects.requireNonNull(networkThroughputInMbps);
+            if (networkThroughputInMbps == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList", "networkThroughputInMbps");
+            }
+            this.networkThroughputInMbps = networkThroughputInMbps;
             return this;
         }
         public GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList build() {

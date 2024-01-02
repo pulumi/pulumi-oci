@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClusterUpdateHistoryEntriesFilter;
 import com.pulumi.oci.Database.outputs.GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry;
 import java.lang.String;
@@ -101,6 +102,7 @@ public final class GetVmClusterUpdateHistoryEntriesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClusterUpdateHistoryEntriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,27 +111,38 @@ public final class GetVmClusterUpdateHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder updateType(@Nullable String updateType) {
+
             this.updateType = updateType;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesResult", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterUpdateHistoryEntries(List<GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry> vmClusterUpdateHistoryEntries) {
-            this.vmClusterUpdateHistoryEntries = Objects.requireNonNull(vmClusterUpdateHistoryEntries);
+            if (vmClusterUpdateHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntriesResult", "vmClusterUpdateHistoryEntries");
+            }
+            this.vmClusterUpdateHistoryEntries = vmClusterUpdateHistoryEntries;
             return this;
         }
         public Builder vmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry... vmClusterUpdateHistoryEntries) {

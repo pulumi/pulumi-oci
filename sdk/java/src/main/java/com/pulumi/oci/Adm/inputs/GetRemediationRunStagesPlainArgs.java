@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.inputs.GetRemediationRunStagesFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetRemediationRunStagesPlainArgs extends com.pulumi.resources
         }
 
         public GetRemediationRunStagesPlainArgs build() {
-            $.remediationRunId = Objects.requireNonNull($.remediationRunId, "expected parameter 'remediationRunId' to be non-null");
+            if ($.remediationRunId == null) {
+                throw new MissingRequiredPropertyException("GetRemediationRunStagesPlainArgs", "remediationRunId");
+            }
             return $;
         }
     }

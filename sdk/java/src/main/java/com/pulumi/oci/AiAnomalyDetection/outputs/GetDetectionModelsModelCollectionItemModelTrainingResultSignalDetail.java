@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
@@ -162,47 +163,74 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultSigna
 
         @CustomType.Setter
         public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "details");
+            }
+            this.details = details;
             return this;
         }
         @CustomType.Setter
         public Builder fap(Double fap) {
-            this.fap = Objects.requireNonNull(fap);
+            if (fap == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "fap");
+            }
+            this.fap = fap;
             return this;
         }
         @CustomType.Setter
         public Builder isQuantized(Boolean isQuantized) {
-            this.isQuantized = Objects.requireNonNull(isQuantized);
+            if (isQuantized == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "isQuantized");
+            }
+            this.isQuantized = isQuantized;
             return this;
         }
         @CustomType.Setter
         public Builder max(Double max) {
-            this.max = Objects.requireNonNull(max);
+            if (max == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "max");
+            }
+            this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(Double min) {
-            this.min = Objects.requireNonNull(min);
+            if (min == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "min");
+            }
+            this.min = min;
             return this;
         }
         @CustomType.Setter
         public Builder mviRatio(Double mviRatio) {
-            this.mviRatio = Objects.requireNonNull(mviRatio);
+            if (mviRatio == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "mviRatio");
+            }
+            this.mviRatio = mviRatio;
             return this;
         }
         @CustomType.Setter
         public Builder signalName(String signalName) {
-            this.signalName = Objects.requireNonNull(signalName);
+            if (signalName == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "signalName");
+            }
+            this.signalName = signalName;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder std(Double std) {
-            this.std = Objects.requireNonNull(std);
+            if (std == null) {
+              throw new MissingRequiredPropertyException("GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail", "std");
+            }
+            this.std = std;
             return this;
         }
         public GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail build() {

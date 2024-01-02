@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRulesDataMaskRuleCollection;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRulesFilter;
 import java.lang.String;
@@ -155,17 +156,24 @@ public final class GetDataMaskRulesResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRulesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dataMaskRuleCollections(List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections) {
-            this.dataMaskRuleCollections = Objects.requireNonNull(dataMaskRuleCollections);
+            if (dataMaskRuleCollections == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRulesResult", "dataMaskRuleCollections");
+            }
+            this.dataMaskRuleCollections = dataMaskRuleCollections;
             return this;
         }
         public Builder dataMaskRuleCollections(GetDataMaskRulesDataMaskRuleCollection... dataMaskRuleCollections) {
@@ -173,16 +181,19 @@ public final class GetDataMaskRulesResult {
         }
         @CustomType.Setter
         public Builder dataMaskRuleStatus(@Nullable String dataMaskRuleStatus) {
+
             this.dataMaskRuleStatus = dataMaskRuleStatus;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDataMaskRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -191,26 +202,33 @@ public final class GetDataMaskRulesResult {
         }
         @CustomType.Setter
         public Builder iamGroupId(@Nullable String iamGroupId) {
+
             this.iamGroupId = iamGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetType(@Nullable String targetType) {
+
             this.targetType = targetType;
             return this;
         }

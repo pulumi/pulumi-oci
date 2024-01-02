@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetMediaAssetsFilter;
 import com.pulumi.oci.MediaServices.outputs.GetMediaAssetsMediaAssetCollection;
 import java.lang.String;
@@ -227,26 +228,31 @@ public final class GetMediaAssetsResult {
 
         @CustomType.Setter
         public Builder bucket(@Nullable String bucket) {
+
             this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder distributionChannelId(@Nullable String distributionChannelId) {
+
             this.distributionChannelId = distributionChannelId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMediaAssetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -255,17 +261,24 @@ public final class GetMediaAssetsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder masterMediaAssetId(@Nullable String masterMediaAssetId) {
+
             this.masterMediaAssetId = masterMediaAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder mediaAssetCollections(List<GetMediaAssetsMediaAssetCollection> mediaAssetCollections) {
-            this.mediaAssetCollections = Objects.requireNonNull(mediaAssetCollections);
+            if (mediaAssetCollections == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetsResult", "mediaAssetCollections");
+            }
+            this.mediaAssetCollections = mediaAssetCollections;
             return this;
         }
         public Builder mediaAssetCollections(GetMediaAssetsMediaAssetCollection... mediaAssetCollections) {
@@ -273,36 +286,43 @@ public final class GetMediaAssetsResult {
         }
         @CustomType.Setter
         public Builder mediaWorkflowJobId(@Nullable String mediaWorkflowJobId) {
+
             this.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
         @CustomType.Setter
         public Builder object(@Nullable String object) {
+
             this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder parentMediaAssetId(@Nullable String parentMediaAssetId) {
+
             this.parentMediaAssetId = parentMediaAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceMediaWorkflowId(@Nullable String sourceMediaWorkflowId) {
+
             this.sourceMediaWorkflowId = sourceMediaWorkflowId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceMediaWorkflowVersion(@Nullable String sourceMediaWorkflowVersion) {
+
             this.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

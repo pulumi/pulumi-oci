@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetMaskingPolicyColumnSource {
 
         @CustomType.Setter
         public Builder columnSource(String columnSource) {
-            this.columnSource = Objects.requireNonNull(columnSource);
+            if (columnSource == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyColumnSource", "columnSource");
+            }
+            this.columnSource = columnSource;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
-            this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+            if (sensitiveDataModelId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyColumnSource", "sensitiveDataModelId");
+            }
+            this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPolicyColumnSource", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         public GetMaskingPolicyColumnSource build() {

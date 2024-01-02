@@ -86,21 +86,25 @@ public final class DedicatedVantagePointMonitorStatusCountMap {
 
         @CustomType.Setter
         public Builder disabled(@Nullable Integer disabled) {
+
             this.disabled = disabled;
             return this;
         }
         @CustomType.Setter
         public Builder enabled(@Nullable Integer enabled) {
+
             this.enabled = enabled;
             return this;
         }
         @CustomType.Setter
         public Builder invalid(@Nullable Integer invalid) {
+
             this.invalid = invalid;
             return this;
         }
         @CustomType.Setter
         public Builder total(@Nullable Integer total) {
+
             this.total = total;
             return this;
         }

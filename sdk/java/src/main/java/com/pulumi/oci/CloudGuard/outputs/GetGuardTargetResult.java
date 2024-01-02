@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetail;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipe;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetResponderRecipe;
@@ -293,37 +294,58 @@ public final class GetGuardTargetResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inheritedByCompartments(List<String> inheritedByCompartments) {
-            this.inheritedByCompartments = Objects.requireNonNull(inheritedByCompartments);
+            if (inheritedByCompartments == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "inheritedByCompartments");
+            }
+            this.inheritedByCompartments = inheritedByCompartments;
             return this;
         }
         public Builder inheritedByCompartments(String... inheritedByCompartments) {
@@ -331,27 +353,42 @@ public final class GetGuardTargetResult {
         }
         @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+            if (lifecyleDetails == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "lifecyleDetails");
+            }
+            this.lifecyleDetails = lifecyleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder recipeCount(Integer recipeCount) {
-            this.recipeCount = Objects.requireNonNull(recipeCount);
+            if (recipeCount == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "recipeCount");
+            }
+            this.recipeCount = recipeCount;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetDetails(List<GetGuardTargetTargetDetail> targetDetails) {
-            this.targetDetails = Objects.requireNonNull(targetDetails);
+            if (targetDetails == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "targetDetails");
+            }
+            this.targetDetails = targetDetails;
             return this;
         }
         public Builder targetDetails(GetGuardTargetTargetDetail... targetDetails) {
@@ -359,7 +396,10 @@ public final class GetGuardTargetResult {
         }
         @CustomType.Setter
         public Builder targetDetectorRecipes(List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes) {
-            this.targetDetectorRecipes = Objects.requireNonNull(targetDetectorRecipes);
+            if (targetDetectorRecipes == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "targetDetectorRecipes");
+            }
+            this.targetDetectorRecipes = targetDetectorRecipes;
             return this;
         }
         public Builder targetDetectorRecipes(GetGuardTargetTargetDetectorRecipe... targetDetectorRecipes) {
@@ -367,22 +407,34 @@ public final class GetGuardTargetResult {
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceId(String targetResourceId) {
-            this.targetResourceId = Objects.requireNonNull(targetResourceId);
+            if (targetResourceId == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "targetResourceId");
+            }
+            this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceType(String targetResourceType) {
-            this.targetResourceType = Objects.requireNonNull(targetResourceType);
+            if (targetResourceType == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "targetResourceType");
+            }
+            this.targetResourceType = targetResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder targetResponderRecipes(List<GetGuardTargetTargetResponderRecipe> targetResponderRecipes) {
-            this.targetResponderRecipes = Objects.requireNonNull(targetResponderRecipes);
+            if (targetResponderRecipes == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "targetResponderRecipes");
+            }
+            this.targetResponderRecipes = targetResponderRecipes;
             return this;
         }
         public Builder targetResponderRecipes(GetGuardTargetTargetResponderRecipe... targetResponderRecipes) {
@@ -390,12 +442,18 @@ public final class GetGuardTargetResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetGuardTargetResult build() {

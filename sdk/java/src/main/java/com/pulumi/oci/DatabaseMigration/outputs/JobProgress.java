@@ -74,16 +74,19 @@ public final class JobProgress {
 
         @CustomType.Setter
         public Builder currentPhase(@Nullable String currentPhase) {
+
             this.currentPhase = currentPhase;
             return this;
         }
         @CustomType.Setter
         public Builder currentStatus(@Nullable String currentStatus) {
+
             this.currentStatus = currentStatus;
             return this;
         }
         @CustomType.Setter
         public Builder phases(@Nullable List<JobProgressPhase> phases) {
+
             this.phases = phases;
             return this;
         }

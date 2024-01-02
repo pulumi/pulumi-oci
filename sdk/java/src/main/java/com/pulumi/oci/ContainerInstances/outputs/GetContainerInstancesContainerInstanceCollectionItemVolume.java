@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfig;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolume {
 
         @CustomType.Setter
         public Builder backingStore(String backingStore) {
-            this.backingStore = Objects.requireNonNull(backingStore);
+            if (backingStore == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "backingStore");
+            }
+            this.backingStore = backingStore;
             return this;
         }
         @CustomType.Setter
         public Builder configs(List<GetContainerInstancesContainerInstanceCollectionItemVolumeConfig> configs) {
-            this.configs = Objects.requireNonNull(configs);
+            if (configs == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "configs");
+            }
+            this.configs = configs;
             return this;
         }
         public Builder configs(GetContainerInstancesContainerInstanceCollectionItemVolumeConfig... configs) {
@@ -99,12 +106,18 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolume {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder volumeType(String volumeType) {
-            this.volumeType = Objects.requireNonNull(volumeType);
+            if (volumeType == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "volumeType");
+            }
+            this.volumeType = volumeType;
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemVolume build() {

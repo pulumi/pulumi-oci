@@ -5,6 +5,7 @@ package com.pulumi.oci.Artifacts.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Artifacts.inputs.GetContainerSignaturesFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -433,7 +434,9 @@ public final class GetContainerSignaturesArgs extends com.pulumi.resources.Invok
         }
 
         public GetContainerSignaturesArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetContainerSignaturesArgs", "compartmentId");
+            }
             return $;
         }
     }

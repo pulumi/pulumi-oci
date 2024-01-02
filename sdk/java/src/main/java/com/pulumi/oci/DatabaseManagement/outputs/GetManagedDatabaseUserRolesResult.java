@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserRolesFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserRolesRoleCollection;
 import java.lang.String;
@@ -93,6 +94,7 @@ public final class GetManagedDatabaseUserRolesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseUserRolesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,22 +103,32 @@ public final class GetManagedDatabaseUserRolesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder roleCollections(List<GetManagedDatabaseUserRolesRoleCollection> roleCollections) {
-            this.roleCollections = Objects.requireNonNull(roleCollections);
+            if (roleCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesResult", "roleCollections");
+            }
+            this.roleCollections = roleCollections;
             return this;
         }
         public Builder roleCollections(GetManagedDatabaseUserRolesRoleCollection... roleCollections) {
@@ -124,7 +136,10 @@ public final class GetManagedDatabaseUserRolesResult {
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedDatabaseUserRolesResult build() {

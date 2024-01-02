@@ -5,6 +5,7 @@ package com.pulumi.oci.HealthChecks;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -298,9 +299,15 @@ public final class PingProbeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PingProbeArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
-            $.targets = Objects.requireNonNull($.targets, "expected parameter 'targets' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PingProbeArgs", "compartmentId");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("PingProbeArgs", "protocol");
+            }
+            if ($.targets == null) {
+                throw new MissingRequiredPropertyException("PingProbeArgs", "targets");
+            }
             return $;
         }
     }

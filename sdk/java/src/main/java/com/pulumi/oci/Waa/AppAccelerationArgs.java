@@ -5,6 +5,7 @@ package com.pulumi.oci.Waa;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -349,10 +350,18 @@ public final class AppAccelerationArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public AppAccelerationArgs build() {
-            $.backendType = Objects.requireNonNull($.backendType, "expected parameter 'backendType' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.webAppAccelerationPolicyId = Objects.requireNonNull($.webAppAccelerationPolicyId, "expected parameter 'webAppAccelerationPolicyId' to be non-null");
+            if ($.backendType == null) {
+                throw new MissingRequiredPropertyException("AppAccelerationArgs", "backendType");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AppAccelerationArgs", "compartmentId");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("AppAccelerationArgs", "loadBalancerId");
+            }
+            if ($.webAppAccelerationPolicyId == null) {
+                throw new MissingRequiredPropertyException("AppAccelerationArgs", "webAppAccelerationPolicyId");
+            }
             return $;
         }
     }

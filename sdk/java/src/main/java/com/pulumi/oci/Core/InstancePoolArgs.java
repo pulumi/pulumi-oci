@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.InstancePoolLoadBalancerArgs;
 import com.pulumi.oci.Core.inputs.InstancePoolPlacementConfigurationArgs;
 import java.lang.Integer;
@@ -494,10 +495,18 @@ public final class InstancePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public InstancePoolArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.instanceConfigurationId = Objects.requireNonNull($.instanceConfigurationId, "expected parameter 'instanceConfigurationId' to be non-null");
-            $.placementConfigurations = Objects.requireNonNull($.placementConfigurations, "expected parameter 'placementConfigurations' to be non-null");
-            $.size = Objects.requireNonNull($.size, "expected parameter 'size' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("InstancePoolArgs", "compartmentId");
+            }
+            if ($.instanceConfigurationId == null) {
+                throw new MissingRequiredPropertyException("InstancePoolArgs", "instanceConfigurationId");
+            }
+            if ($.placementConfigurations == null) {
+                throw new MissingRequiredPropertyException("InstancePoolArgs", "placementConfigurations");
+            }
+            if ($.size == null) {
+                throw new MissingRequiredPropertyException("InstancePoolArgs", "size");
+            }
             return $;
         }
     }

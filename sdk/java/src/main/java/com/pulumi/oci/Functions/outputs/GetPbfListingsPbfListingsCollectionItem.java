@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetPbfListingsPbfListingsCollectionItemPublisherDetail;
 import com.pulumi.oci.Functions.outputs.GetPbfListingsPbfListingsCollectionItemTrigger;
 import java.lang.Object;
@@ -187,32 +188,50 @@ public final class GetPbfListingsPbfListingsCollectionItem {
 
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder publisherDetails(List<GetPbfListingsPbfListingsCollectionItemPublisherDetail> publisherDetails) {
-            this.publisherDetails = Objects.requireNonNull(publisherDetails);
+            if (publisherDetails == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "publisherDetails");
+            }
+            this.publisherDetails = publisherDetails;
             return this;
         }
         public Builder publisherDetails(GetPbfListingsPbfListingsCollectionItemPublisherDetail... publisherDetails) {
@@ -220,27 +239,42 @@ public final class GetPbfListingsPbfListingsCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder triggers(List<GetPbfListingsPbfListingsCollectionItemTrigger> triggers) {
-            this.triggers = Objects.requireNonNull(triggers);
+            if (triggers == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingsPbfListingsCollectionItem", "triggers");
+            }
+            this.triggers = triggers;
             return this;
         }
         public Builder triggers(GetPbfListingsPbfListingsCollectionItemTrigger... triggers) {

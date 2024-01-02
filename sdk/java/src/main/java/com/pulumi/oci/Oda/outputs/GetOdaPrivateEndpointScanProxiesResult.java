@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointScanProxiesFilter;
 import com.pulumi.oci.Oda.outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection;
 import java.lang.String;
@@ -87,6 +88,7 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOdaPrivateEndpointScanProxiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -95,17 +97,26 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder odaPrivateEndpointId(String odaPrivateEndpointId) {
-            this.odaPrivateEndpointId = Objects.requireNonNull(odaPrivateEndpointId);
+            if (odaPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesResult", "odaPrivateEndpointId");
+            }
+            this.odaPrivateEndpointId = odaPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder odaPrivateEndpointScanProxyCollections(List<GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection> odaPrivateEndpointScanProxyCollections) {
-            this.odaPrivateEndpointScanProxyCollections = Objects.requireNonNull(odaPrivateEndpointScanProxyCollections);
+            if (odaPrivateEndpointScanProxyCollections == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointScanProxiesResult", "odaPrivateEndpointScanProxyCollections");
+            }
+            this.odaPrivateEndpointScanProxyCollections = odaPrivateEndpointScanProxyCollections;
             return this;
         }
         public Builder odaPrivateEndpointScanProxyCollections(GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollection... odaPrivateEndpointScanProxyCollections) {
@@ -113,6 +124,7 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

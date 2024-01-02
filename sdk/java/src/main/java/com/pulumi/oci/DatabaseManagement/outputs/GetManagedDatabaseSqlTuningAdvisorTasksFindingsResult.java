@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection;
 import java.lang.String;
@@ -123,16 +124,19 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
 
         @CustomType.Setter
         public Builder beginExecId(@Nullable String beginExecId) {
+
             this.beginExecId = beginExecId;
             return this;
         }
         @CustomType.Setter
         public Builder endExecId(@Nullable String endExecId) {
+
             this.endExecId = endExecId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,32 +145,44 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
         }
         @CustomType.Setter
         public Builder findingFilter(@Nullable String findingFilter) {
+
             this.findingFilter = findingFilter;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder indexHashFilter(@Nullable String indexHashFilter) {
+
             this.indexHashFilter = indexHashFilter;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder searchPeriod(@Nullable String searchPeriod) {
+
             this.searchPeriod = searchPeriod;
             return this;
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskFindingCollections(List<GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection> sqlTuningAdvisorTaskFindingCollections) {
-            this.sqlTuningAdvisorTaskFindingCollections = Objects.requireNonNull(sqlTuningAdvisorTaskFindingCollections);
+            if (sqlTuningAdvisorTaskFindingCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult", "sqlTuningAdvisorTaskFindingCollections");
+            }
+            this.sqlTuningAdvisorTaskFindingCollections = sqlTuningAdvisorTaskFindingCollections;
             return this;
         }
         public Builder sqlTuningAdvisorTaskFindingCollections(GetManagedDatabaseSqlTuningAdvisorTasksFindingsSqlTuningAdvisorTaskFindingCollection... sqlTuningAdvisorTaskFindingCollections) {
@@ -174,11 +190,15 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
         }
         @CustomType.Setter
         public Builder sqlTuningAdvisorTaskId(String sqlTuningAdvisorTaskId) {
-            this.sqlTuningAdvisorTaskId = Objects.requireNonNull(sqlTuningAdvisorTaskId);
+            if (sqlTuningAdvisorTaskId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult", "sqlTuningAdvisorTaskId");
+            }
+            this.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
             return this;
         }
         @CustomType.Setter
         public Builder statsHashFilter(@Nullable String statsHashFilter) {
+
             this.statsHashFilter = statsHashFilter;
             return this;
         }

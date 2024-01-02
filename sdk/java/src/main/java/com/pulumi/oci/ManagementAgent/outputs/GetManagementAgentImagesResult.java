@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentImagesFilter;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentImagesManagementAgentImage;
 import java.lang.String;
@@ -99,11 +100,15 @@ public final class GetManagementAgentImagesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentImagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -112,17 +117,24 @@ public final class GetManagementAgentImagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder installType(@Nullable String installType) {
+
             this.installType = installType;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentImages(List<GetManagementAgentImagesManagementAgentImage> managementAgentImages) {
-            this.managementAgentImages = Objects.requireNonNull(managementAgentImages);
+            if (managementAgentImages == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentImagesResult", "managementAgentImages");
+            }
+            this.managementAgentImages = managementAgentImages;
             return this;
         }
         public Builder managementAgentImages(GetManagementAgentImagesManagementAgentImage... managementAgentImages) {
@@ -130,11 +142,13 @@ public final class GetManagementAgentImagesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

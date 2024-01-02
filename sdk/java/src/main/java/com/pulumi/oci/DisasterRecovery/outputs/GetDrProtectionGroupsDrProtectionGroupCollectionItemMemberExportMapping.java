@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExp
 
         @CustomType.Setter
         public Builder destinationMountTargetId(String destinationMountTargetId) {
-            this.destinationMountTargetId = Objects.requireNonNull(destinationMountTargetId);
+            if (destinationMountTargetId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping", "destinationMountTargetId");
+            }
+            this.destinationMountTargetId = destinationMountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder exportId(String exportId) {
-            this.exportId = Objects.requireNonNull(exportId);
+            if (exportId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping", "exportId");
+            }
+            this.exportId = exportId;
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping build() {

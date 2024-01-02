@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBuildPipelineStageDeliverArtifactCollectionItem {
 
         @CustomType.Setter
         public Builder artifactId(String artifactId) {
-            this.artifactId = Objects.requireNonNull(artifactId);
+            if (artifactId == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStageDeliverArtifactCollectionItem", "artifactId");
+            }
+            this.artifactId = artifactId;
             return this;
         }
         @CustomType.Setter
         public Builder artifactName(String artifactName) {
-            this.artifactName = Objects.requireNonNull(artifactName);
+            if (artifactName == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStageDeliverArtifactCollectionItem", "artifactName");
+            }
+            this.artifactName = artifactName;
             return this;
         }
         public GetBuildPipelineStageDeliverArtifactCollectionItem build() {

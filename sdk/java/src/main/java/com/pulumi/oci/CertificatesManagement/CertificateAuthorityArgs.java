@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateAuthorityConfigArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateAuthorityRuleArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateRevocationListDetailsArgs;
@@ -400,9 +401,15 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
         }
 
         public CertificateAuthorityArgs build() {
-            $.certificateAuthorityConfig = Objects.requireNonNull($.certificateAuthorityConfig, "expected parameter 'certificateAuthorityConfig' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.kmsKeyId = Objects.requireNonNull($.kmsKeyId, "expected parameter 'kmsKeyId' to be non-null");
+            if ($.certificateAuthorityConfig == null) {
+                throw new MissingRequiredPropertyException("CertificateAuthorityArgs", "certificateAuthorityConfig");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CertificateAuthorityArgs", "compartmentId");
+            }
+            if ($.kmsKeyId == null) {
+                throw new MissingRequiredPropertyException("CertificateAuthorityArgs", "kmsKeyId");
+            }
             return $;
         }
     }

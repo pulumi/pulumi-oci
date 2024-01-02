@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigsFilter;
 import java.lang.String;
@@ -143,17 +144,24 @@ public final class GetBdsInstanceMetastoreConfigsResult {
 
         @CustomType.Setter
         public Builder bdsApiKeyId(@Nullable String bdsApiKeyId) {
+
             this.bdsApiKeyId = bdsApiKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            if (bdsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsResult", "bdsInstanceId");
+            }
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder bdsMetastoreConfigurations(List<GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration> bdsMetastoreConfigurations) {
-            this.bdsMetastoreConfigurations = Objects.requireNonNull(bdsMetastoreConfigurations);
+            if (bdsMetastoreConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsResult", "bdsMetastoreConfigurations");
+            }
+            this.bdsMetastoreConfigurations = bdsMetastoreConfigurations;
             return this;
         }
         public Builder bdsMetastoreConfigurations(GetBdsInstanceMetastoreConfigsBdsMetastoreConfiguration... bdsMetastoreConfigurations) {
@@ -161,11 +169,13 @@ public final class GetBdsInstanceMetastoreConfigsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstanceMetastoreConfigsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -174,21 +184,27 @@ public final class GetBdsInstanceMetastoreConfigsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceMetastoreConfigsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder metastoreId(@Nullable String metastoreId) {
+
             this.metastoreId = metastoreId;
             return this;
         }
         @CustomType.Setter
         public Builder metastoreType(@Nullable String metastoreType) {
+
             this.metastoreType = metastoreType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -161,9 +162,15 @@ public final class ExternalPluggableDatabasesStackMonitoringArgs extends com.pul
         }
 
         public ExternalPluggableDatabasesStackMonitoringArgs build() {
-            $.enableStackMonitoring = Objects.requireNonNull($.enableStackMonitoring, "expected parameter 'enableStackMonitoring' to be non-null");
-            $.externalDatabaseConnectorId = Objects.requireNonNull($.externalDatabaseConnectorId, "expected parameter 'externalDatabaseConnectorId' to be non-null");
-            $.externalPluggableDatabaseId = Objects.requireNonNull($.externalPluggableDatabaseId, "expected parameter 'externalPluggableDatabaseId' to be non-null");
+            if ($.enableStackMonitoring == null) {
+                throw new MissingRequiredPropertyException("ExternalPluggableDatabasesStackMonitoringArgs", "enableStackMonitoring");
+            }
+            if ($.externalDatabaseConnectorId == null) {
+                throw new MissingRequiredPropertyException("ExternalPluggableDatabasesStackMonitoringArgs", "externalDatabaseConnectorId");
+            }
+            if ($.externalPluggableDatabaseId == null) {
+                throw new MissingRequiredPropertyException("ExternalPluggableDatabasesStackMonitoringArgs", "externalPluggableDatabaseId");
+            }
             return $;
         }
     }

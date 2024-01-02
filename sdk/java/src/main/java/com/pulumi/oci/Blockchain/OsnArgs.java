@@ -5,6 +5,7 @@ package com.pulumi.oci.Blockchain;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.inputs.OsnOcpuAllocationParamArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -151,8 +152,12 @@ public final class OsnArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public OsnArgs build() {
-            $.ad = Objects.requireNonNull($.ad, "expected parameter 'ad' to be non-null");
-            $.blockchainPlatformId = Objects.requireNonNull($.blockchainPlatformId, "expected parameter 'blockchainPlatformId' to be non-null");
+            if ($.ad == null) {
+                throw new MissingRequiredPropertyException("OsnArgs", "ad");
+            }
+            if ($.blockchainPlatformId == null) {
+                throw new MissingRequiredPropertyException("OsnArgs", "blockchainPlatformId");
+            }
             return $;
         }
     }

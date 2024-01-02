@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute;
 import java.lang.Boolean;
 import java.lang.String;
@@ -335,7 +336,10 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
 
         @CustomType.Setter
         public Builder appDefinedChildColumnKeys(List<String> appDefinedChildColumnKeys) {
-            this.appDefinedChildColumnKeys = Objects.requireNonNull(appDefinedChildColumnKeys);
+            if (appDefinedChildColumnKeys == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "appDefinedChildColumnKeys");
+            }
+            this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             return this;
         }
         public Builder appDefinedChildColumnKeys(String... appDefinedChildColumnKeys) {
@@ -343,22 +347,34 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
         }
         @CustomType.Setter
         public Builder appName(String appName) {
-            this.appName = Objects.requireNonNull(appName);
+            if (appName == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "appName");
+            }
+            this.appName = appName;
             return this;
         }
         @CustomType.Setter
         public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+            if (columnName == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "columnName");
+            }
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder dbDefinedChildColumnKeys(List<String> dbDefinedChildColumnKeys) {
-            this.dbDefinedChildColumnKeys = Objects.requireNonNull(dbDefinedChildColumnKeys);
+            if (dbDefinedChildColumnKeys == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "dbDefinedChildColumnKeys");
+            }
+            this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             return this;
         }
         public Builder dbDefinedChildColumnKeys(String... dbDefinedChildColumnKeys) {
@@ -366,32 +382,50 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
         }
         @CustomType.Setter
         public Builder discoveryJobId(String discoveryJobId) {
-            this.discoveryJobId = Objects.requireNonNull(discoveryJobId);
+            if (discoveryJobId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "discoveryJobId");
+            }
+            this.discoveryJobId = discoveryJobId;
             return this;
         }
         @CustomType.Setter
         public Builder discoveryType(String discoveryType) {
-            this.discoveryType = Objects.requireNonNull(discoveryType);
+            if (discoveryType == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "discoveryType");
+            }
+            this.discoveryType = discoveryType;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedDataValueCount(String estimatedDataValueCount) {
-            this.estimatedDataValueCount = Objects.requireNonNull(estimatedDataValueCount);
+            if (estimatedDataValueCount == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "estimatedDataValueCount");
+            }
+            this.estimatedDataValueCount = estimatedDataValueCount;
             return this;
         }
         @CustomType.Setter
         public Builder isResultApplied(Boolean isResultApplied) {
-            this.isResultApplied = Objects.requireNonNull(isResultApplied);
+            if (isResultApplied == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "isResultApplied");
+            }
+            this.isResultApplied = isResultApplied;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder modifiedAttributes(List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute> modifiedAttributes) {
-            this.modifiedAttributes = Objects.requireNonNull(modifiedAttributes);
+            if (modifiedAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "modifiedAttributes");
+            }
+            this.modifiedAttributes = modifiedAttributes;
             return this;
         }
         public Builder modifiedAttributes(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute... modifiedAttributes) {
@@ -399,17 +433,26 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder parentColumnKeys(List<String> parentColumnKeys) {
-            this.parentColumnKeys = Objects.requireNonNull(parentColumnKeys);
+            if (parentColumnKeys == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "parentColumnKeys");
+            }
+            this.parentColumnKeys = parentColumnKeys;
             return this;
         }
         public Builder parentColumnKeys(String... parentColumnKeys) {
@@ -417,17 +460,26 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
         }
         @CustomType.Setter
         public Builder plannedAction(String plannedAction) {
-            this.plannedAction = Objects.requireNonNull(plannedAction);
+            if (plannedAction == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "plannedAction");
+            }
+            this.plannedAction = plannedAction;
             return this;
         }
         @CustomType.Setter
         public Builder relationType(String relationType) {
-            this.relationType = Objects.requireNonNull(relationType);
+            if (relationType == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "relationType");
+            }
+            this.relationType = relationType;
             return this;
         }
         @CustomType.Setter
         public Builder sampleDataValues(List<String> sampleDataValues) {
-            this.sampleDataValues = Objects.requireNonNull(sampleDataValues);
+            if (sampleDataValues == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "sampleDataValues");
+            }
+            this.sampleDataValues = sampleDataValues;
             return this;
         }
         public Builder sampleDataValues(String... sampleDataValues) {
@@ -435,17 +487,26 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveColumnkey(String sensitiveColumnkey) {
-            this.sensitiveColumnkey = Objects.requireNonNull(sensitiveColumnkey);
+            if (sensitiveColumnkey == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "sensitiveColumnkey");
+            }
+            this.sensitiveColumnkey = sensitiveColumnkey;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+            if (sensitiveTypeId == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "sensitiveTypeId");
+            }
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         public GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.ScheduleQueryPropertiesDateRange;
 import com.pulumi.oci.MeteringComputation.outputs.ScheduleQueryPropertiesGroupByTag;
 import java.lang.Boolean;
@@ -147,26 +148,35 @@ public final class ScheduleQueryProperties {
 
         @CustomType.Setter
         public Builder compartmentDepth(@Nullable Double compartmentDepth) {
+
             this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
         public Builder dateRange(ScheduleQueryPropertiesDateRange dateRange) {
-            this.dateRange = Objects.requireNonNull(dateRange);
+            if (dateRange == null) {
+              throw new MissingRequiredPropertyException("ScheduleQueryProperties", "dateRange");
+            }
+            this.dateRange = dateRange;
             return this;
         }
         @CustomType.Setter
         public Builder filter(@Nullable String filter) {
+
             this.filter = filter;
             return this;
         }
         @CustomType.Setter
         public Builder granularity(String granularity) {
-            this.granularity = Objects.requireNonNull(granularity);
+            if (granularity == null) {
+              throw new MissingRequiredPropertyException("ScheduleQueryProperties", "granularity");
+            }
+            this.granularity = granularity;
             return this;
         }
         @CustomType.Setter
         public Builder groupBies(@Nullable List<String> groupBies) {
+
             this.groupBies = groupBies;
             return this;
         }
@@ -175,6 +185,7 @@ public final class ScheduleQueryProperties {
         }
         @CustomType.Setter
         public Builder groupByTags(@Nullable List<ScheduleQueryPropertiesGroupByTag> groupByTags) {
+
             this.groupByTags = groupByTags;
             return this;
         }
@@ -183,11 +194,13 @@ public final class ScheduleQueryProperties {
         }
         @CustomType.Setter
         public Builder isAggregateByTime(@Nullable Boolean isAggregateByTime) {
+
             this.isAggregateByTime = isAggregateByTime;
             return this;
         }
         @CustomType.Setter
         public Builder queryType(@Nullable String queryType) {
+
             this.queryType = queryType;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.ResponderRecipeResponderRuleDetailsConfigurationArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -200,7 +201,9 @@ public final class ResponderRecipeResponderRuleDetailsArgs extends com.pulumi.re
         }
 
         public ResponderRecipeResponderRuleDetailsArgs build() {
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("ResponderRecipeResponderRuleDetailsArgs", "isEnabled");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetInventoryArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetInventoryArgs build() {
-            $.inventoryId = Objects.requireNonNull($.inventoryId, "expected parameter 'inventoryId' to be non-null");
+            if ($.inventoryId == null) {
+                throw new MissingRequiredPropertyException("GetInventoryArgs", "inventoryId");
+            }
             return $;
         }
     }

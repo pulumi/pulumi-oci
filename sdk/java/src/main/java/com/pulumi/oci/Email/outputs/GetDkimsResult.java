@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Email.outputs.GetDkimsDkimCollection;
 import com.pulumi.oci.Email.outputs.GetDkimsFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetDkimsResult {
 
         @CustomType.Setter
         public Builder dkimCollections(List<GetDkimsDkimCollection> dkimCollections) {
-            this.dkimCollections = Objects.requireNonNull(dkimCollections);
+            if (dkimCollections == null) {
+              throw new MissingRequiredPropertyException("GetDkimsResult", "dkimCollections");
+            }
+            this.dkimCollections = dkimCollections;
             return this;
         }
         public Builder dkimCollections(GetDkimsDkimCollection... dkimCollections) {
@@ -117,11 +121,15 @@ public final class GetDkimsResult {
         }
         @CustomType.Setter
         public Builder emailDomainId(String emailDomainId) {
-            this.emailDomainId = Objects.requireNonNull(emailDomainId);
+            if (emailDomainId == null) {
+              throw new MissingRequiredPropertyException("GetDkimsResult", "emailDomainId");
+            }
+            this.emailDomainId = emailDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDkimsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -130,16 +138,19 @@ public final class GetDkimsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

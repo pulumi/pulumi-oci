@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetZonesZoneExternalDownstream;
 import com.pulumi.oci.Dns.outputs.GetZonesZoneExternalMaster;
 import com.pulumi.oci.Dns.outputs.GetZonesZoneNameserver;
@@ -291,17 +292,26 @@ public final class GetZonesZone {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder externalDownstreams(List<GetZonesZoneExternalDownstream> externalDownstreams) {
-            this.externalDownstreams = Objects.requireNonNull(externalDownstreams);
+            if (externalDownstreams == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "externalDownstreams");
+            }
+            this.externalDownstreams = externalDownstreams;
             return this;
         }
         public Builder externalDownstreams(GetZonesZoneExternalDownstream... externalDownstreams) {
@@ -309,7 +319,10 @@ public final class GetZonesZone {
         }
         @CustomType.Setter
         public Builder externalMasters(List<GetZonesZoneExternalMaster> externalMasters) {
-            this.externalMasters = Objects.requireNonNull(externalMasters);
+            if (externalMasters == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "externalMasters");
+            }
+            this.externalMasters = externalMasters;
             return this;
         }
         public Builder externalMasters(GetZonesZoneExternalMaster... externalMasters) {
@@ -317,27 +330,42 @@ public final class GetZonesZone {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isProtected(Boolean isProtected) {
-            this.isProtected = Objects.requireNonNull(isProtected);
+            if (isProtected == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "isProtected");
+            }
+            this.isProtected = isProtected;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameservers(List<GetZonesZoneNameserver> nameservers) {
-            this.nameservers = Objects.requireNonNull(nameservers);
+            if (nameservers == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "nameservers");
+            }
+            this.nameservers = nameservers;
             return this;
         }
         public Builder nameservers(GetZonesZoneNameserver... nameservers) {
@@ -345,42 +373,66 @@ public final class GetZonesZone {
         }
         @CustomType.Setter
         public Builder scope(String scope) {
-            this.scope = Objects.requireNonNull(scope);
+            if (scope == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "scope");
+            }
+            this.scope = scope;
             return this;
         }
         @CustomType.Setter
         public Builder self(String self) {
-            this.self = Objects.requireNonNull(self);
+            if (self == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "self");
+            }
+            this.self = self;
             return this;
         }
         @CustomType.Setter
         public Builder serial(Integer serial) {
-            this.serial = Objects.requireNonNull(serial);
+            if (serial == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "serial");
+            }
+            this.serial = serial;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "version");
+            }
+            this.version = version;
             return this;
         }
         @CustomType.Setter
         public Builder viewId(String viewId) {
-            this.viewId = Objects.requireNonNull(viewId);
+            if (viewId == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "viewId");
+            }
+            this.viewId = viewId;
             return this;
         }
         @CustomType.Setter
         public Builder zoneTransferServers(List<GetZonesZoneZoneTransferServer> zoneTransferServers) {
-            this.zoneTransferServers = Objects.requireNonNull(zoneTransferServers);
+            if (zoneTransferServers == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "zoneTransferServers");
+            }
+            this.zoneTransferServers = zoneTransferServers;
             return this;
         }
         public Builder zoneTransferServers(GetZonesZoneZoneTransferServer... zoneTransferServers) {
@@ -388,7 +440,10 @@ public final class GetZonesZone {
         }
         @CustomType.Setter
         public Builder zoneType(String zoneType) {
-            this.zoneType = Objects.requireNonNull(zoneType);
+            if (zoneType == null) {
+              throw new MissingRequiredPropertyException("GetZonesZone", "zoneType");
+            }
+            this.zoneType = zoneType;
             return this;
         }
         public GetZonesZone build() {

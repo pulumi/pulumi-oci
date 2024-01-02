@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class ComputeCapacityTopologyCapacitySourceArgs extends com.pulumi.
         }
 
         public ComputeCapacityTopologyCapacitySourceArgs build() {
-            $.capacityType = Objects.requireNonNull($.capacityType, "expected parameter 'capacityType' to be non-null");
+            if ($.capacityType == null) {
+                throw new MissingRequiredPropertyException("ComputeCapacityTopologyCapacitySourceArgs", "capacityType");
+            }
             return $;
         }
     }

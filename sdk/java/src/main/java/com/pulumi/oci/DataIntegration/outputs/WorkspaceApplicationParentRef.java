@@ -58,11 +58,13 @@ public final class WorkspaceApplicationParentRef {
 
         @CustomType.Setter
         public Builder parent(@Nullable String parent) {
+
             this.parent = parent;
             return this;
         }
         @CustomType.Setter
         public Builder rootDocId(@Nullable String rootDocId) {
+
             this.rootDocId = rootDocId;
             return this;
         }

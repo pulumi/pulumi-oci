@@ -5,6 +5,7 @@ package com.pulumi.oci.OneSubsription.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -124,7 +125,9 @@ public final class GetSubscribedServiceArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetSubscribedServiceArgs build() {
-            $.subscribedServiceId = Objects.requireNonNull($.subscribedServiceId, "expected parameter 'subscribedServiceId' to be non-null");
+            if ($.subscribedServiceId == null) {
+                throw new MissingRequiredPropertyException("GetSubscribedServiceArgs", "subscribedServiceId");
+            }
             return $;
         }
     }

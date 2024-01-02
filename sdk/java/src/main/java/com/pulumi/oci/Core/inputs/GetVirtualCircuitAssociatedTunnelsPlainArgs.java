@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetVirtualCircuitAssociatedTunnelsFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetVirtualCircuitAssociatedTunnelsPlainArgs extends com.pulum
         }
 
         public GetVirtualCircuitAssociatedTunnelsPlainArgs build() {
-            $.virtualCircuitId = Objects.requireNonNull($.virtualCircuitId, "expected parameter 'virtualCircuitId' to be non-null");
+            if ($.virtualCircuitId == null) {
+                throw new MissingRequiredPropertyException("GetVirtualCircuitAssociatedTunnelsPlainArgs", "virtualCircuitId");
+            }
             return $;
         }
     }

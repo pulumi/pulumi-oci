@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -100,27 +101,42 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
 
         @CustomType.Setter
         public Builder expression(String expression) {
-            this.expression = Objects.requireNonNull(expression);
+            if (expression == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey", "expression");
+            }
+            this.expression = expression;
             return this;
         }
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder values(List<String> values) {
-            this.values = Objects.requireNonNull(values);
+            if (values == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey", "values");
+            }
+            this.values = values;
             return this;
         }
         public Builder values(String... values) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -88,22 +89,28 @@ public final class PipelineConfigurationDetails {
 
         @CustomType.Setter
         public Builder commandLineArguments(@Nullable String commandLineArguments) {
+
             this.commandLineArguments = commandLineArguments;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+
             this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder maximumRuntimeInMinutes(@Nullable String maximumRuntimeInMinutes) {
+
             this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("PipelineConfigurationDetails", "type");
+            }
+            this.type = type;
             return this;
         }
         public PipelineConfigurationDetails build() {

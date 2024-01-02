@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -287,8 +288,12 @@ public final class DomainsAppAllowedTagArgs extends com.pulumi.resources.Resourc
         }
 
         public DomainsAppAllowedTagArgs build() {
-            $.key = Objects.requireNonNull($.key, "expected parameter 'key' to be non-null");
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.key == null) {
+                throw new MissingRequiredPropertyException("DomainsAppAllowedTagArgs", "key");
+            }
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsAppAllowedTagArgs", "value");
+            }
             return $;
         }
     }

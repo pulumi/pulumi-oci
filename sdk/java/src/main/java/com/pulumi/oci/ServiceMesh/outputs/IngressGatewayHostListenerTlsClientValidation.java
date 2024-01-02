@@ -60,6 +60,7 @@ public final class IngressGatewayHostListenerTlsClientValidation {
 
         @CustomType.Setter
         public Builder subjectAlternateNames(@Nullable List<String> subjectAlternateNames) {
+
             this.subjectAlternateNames = subjectAlternateNames;
             return this;
         }
@@ -68,6 +69,7 @@ public final class IngressGatewayHostListenerTlsClientValidation {
         }
         @CustomType.Setter
         public Builder trustedCaBundle(@Nullable IngressGatewayHostListenerTlsClientValidationTrustedCaBundle trustedCaBundle) {
+
             this.trustedCaBundle = trustedCaBundle;
             return this;
         }

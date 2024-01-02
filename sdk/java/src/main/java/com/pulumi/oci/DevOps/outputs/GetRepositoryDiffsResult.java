@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffsDiffCollection;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffsFilter;
 import java.lang.Boolean;
@@ -92,12 +93,18 @@ public final class GetRepositoryDiffsResult {
 
         @CustomType.Setter
         public Builder baseVersion(String baseVersion) {
-            this.baseVersion = Objects.requireNonNull(baseVersion);
+            if (baseVersion == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsResult", "baseVersion");
+            }
+            this.baseVersion = baseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder diffCollections(List<GetRepositoryDiffsDiffCollection> diffCollections) {
-            this.diffCollections = Objects.requireNonNull(diffCollections);
+            if (diffCollections == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsResult", "diffCollections");
+            }
+            this.diffCollections = diffCollections;
             return this;
         }
         public Builder diffCollections(GetRepositoryDiffsDiffCollection... diffCollections) {
@@ -105,6 +112,7 @@ public final class GetRepositoryDiffsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRepositoryDiffsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -113,22 +121,32 @@ public final class GetRepositoryDiffsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isComparisonFromMergeBase(@Nullable Boolean isComparisonFromMergeBase) {
+
             this.isComparisonFromMergeBase = isComparisonFromMergeBase;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder targetVersion(String targetVersion) {
-            this.targetVersion = Objects.requireNonNull(targetVersion);
+            if (targetVersion == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryDiffsResult", "targetVersion");
+            }
+            this.targetVersion = targetVersion;
             return this;
         }
         public GetRepositoryDiffsResult build() {

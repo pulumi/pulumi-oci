@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetIdentityProviderGroupsPlainArgs extends com.pulumi.resourc
         }
 
         public GetIdentityProviderGroupsPlainArgs build() {
-            $.identityProviderId = Objects.requireNonNull($.identityProviderId, "expected parameter 'identityProviderId' to be non-null");
+            if ($.identityProviderId == null) {
+                throw new MissingRequiredPropertyException("GetIdentityProviderGroupsPlainArgs", "identityProviderId");
+            }
             return $;
         }
     }

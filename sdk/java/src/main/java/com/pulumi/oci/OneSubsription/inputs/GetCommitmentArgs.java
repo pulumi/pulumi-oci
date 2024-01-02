@@ -5,6 +5,7 @@ package com.pulumi.oci.OneSubsription.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetCommitmentArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetCommitmentArgs build() {
-            $.commitmentId = Objects.requireNonNull($.commitmentId, "expected parameter 'commitmentId' to be non-null");
+            if ($.commitmentId == null) {
+                throw new MissingRequiredPropertyException("GetCommitmentArgs", "commitmentId");
+            }
             return $;
         }
     }

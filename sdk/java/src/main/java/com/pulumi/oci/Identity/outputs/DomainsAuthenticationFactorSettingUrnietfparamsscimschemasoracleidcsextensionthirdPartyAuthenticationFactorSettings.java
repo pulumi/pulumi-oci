@@ -66,6 +66,7 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
 
         @CustomType.Setter
         public Builder duoSecuritySettings(@Nullable DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettings duoSecuritySettings) {
+
             this.duoSecuritySettings = duoSecuritySettings;
             return this;
         }

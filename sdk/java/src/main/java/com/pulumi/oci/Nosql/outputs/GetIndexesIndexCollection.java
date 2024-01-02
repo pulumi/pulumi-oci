@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Nosql.outputs.GetIndexesIndexCollectionKey;
 import java.lang.Boolean;
 import java.lang.String;
@@ -155,22 +156,34 @@ public final class GetIndexesIndexCollection {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isIfNotExists(Boolean isIfNotExists) {
-            this.isIfNotExists = Objects.requireNonNull(isIfNotExists);
+            if (isIfNotExists == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "isIfNotExists");
+            }
+            this.isIfNotExists = isIfNotExists;
             return this;
         }
         @CustomType.Setter
         public Builder keys(List<GetIndexesIndexCollectionKey> keys) {
-            this.keys = Objects.requireNonNull(keys);
+            if (keys == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "keys");
+            }
+            this.keys = keys;
             return this;
         }
         public Builder keys(GetIndexesIndexCollectionKey... keys) {
@@ -178,32 +191,50 @@ public final class GetIndexesIndexCollection {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tableId(String tableId) {
-            this.tableId = Objects.requireNonNull(tableId);
+            if (tableId == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "tableId");
+            }
+            this.tableId = tableId;
             return this;
         }
         @CustomType.Setter
         public Builder tableName(String tableName) {
-            this.tableName = Objects.requireNonNull(tableName);
+            if (tableName == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "tableName");
+            }
+            this.tableName = tableName;
             return this;
         }
         @CustomType.Setter
         public Builder tableNameOrId(String tableNameOrId) {
-            this.tableNameOrId = Objects.requireNonNull(tableNameOrId);
+            if (tableNameOrId == null) {
+              throw new MissingRequiredPropertyException("GetIndexesIndexCollection", "tableNameOrId");
+            }
+            this.tableNameOrId = tableNameOrId;
             return this;
         }
         public GetIndexesIndexCollection build() {

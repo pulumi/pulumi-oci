@@ -58,11 +58,13 @@ public final class MigrationGoldenGateServiceDetailsGgsDeployment {
 
         @CustomType.Setter
         public Builder deploymentId(@Nullable String deploymentId) {
+
             this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder ggsAdminCredentialsSecretId(@Nullable String ggsAdminCredentialsSecretId) {
+
             this.ggsAdminCredentialsSecretId = ggsAdminCredentialsSecretId;
             return this;
         }

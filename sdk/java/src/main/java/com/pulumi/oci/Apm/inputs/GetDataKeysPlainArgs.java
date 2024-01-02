@@ -4,6 +4,7 @@
 package com.pulumi.oci.Apm.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Apm.inputs.GetDataKeysFilter;
 import java.lang.String;
 import java.util.List;
@@ -111,7 +112,9 @@ public final class GetDataKeysPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetDataKeysPlainArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetDataKeysPlainArgs", "apmDomainId");
+            }
             return $;
         }
     }

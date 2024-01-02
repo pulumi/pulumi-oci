@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -398,7 +399,9 @@ public final class BackendSetHealthCheckerArgs extends com.pulumi.resources.Reso
         }
 
         public BackendSetHealthCheckerArgs build() {
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("BackendSetHealthCheckerArgs", "protocol");
+            }
             return $;
         }
     }

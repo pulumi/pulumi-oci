@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetBlockVolumeReplicasBlockVolumeReplica;
 import com.pulumi.oci.Core.outputs.GetBlockVolumeReplicasFilter;
 import java.lang.String;
@@ -129,12 +130,16 @@ public final class GetBlockVolumeReplicasResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder blockVolumeReplicas(List<GetBlockVolumeReplicasBlockVolumeReplica> blockVolumeReplicas) {
-            this.blockVolumeReplicas = Objects.requireNonNull(blockVolumeReplicas);
+            if (blockVolumeReplicas == null) {
+              throw new MissingRequiredPropertyException("GetBlockVolumeReplicasResult", "blockVolumeReplicas");
+            }
+            this.blockVolumeReplicas = blockVolumeReplicas;
             return this;
         }
         public Builder blockVolumeReplicas(GetBlockVolumeReplicasBlockVolumeReplica... blockVolumeReplicas) {
@@ -142,16 +147,19 @@ public final class GetBlockVolumeReplicasResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBlockVolumeReplicasFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,16 +168,21 @@ public final class GetBlockVolumeReplicasResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBlockVolumeReplicasResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder volumeGroupReplicaId(@Nullable String volumeGroupReplicaId) {
+
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             return this;
         }

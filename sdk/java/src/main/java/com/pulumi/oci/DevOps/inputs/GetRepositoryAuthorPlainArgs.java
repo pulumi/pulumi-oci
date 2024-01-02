@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -92,7 +93,9 @@ public final class GetRepositoryAuthorPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetRepositoryAuthorPlainArgs build() {
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryAuthorPlainArgs", "repositoryId");
+            }
             return $;
         }
     }

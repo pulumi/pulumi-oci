@@ -4,6 +4,7 @@
 package com.pulumi.oci.AnnouncementsService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AnnouncementsService.outputs.GetAnnouncementSubscriptionFilterGroupFilter;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetAnnouncementSubscriptionFilterGroup {
 
         @CustomType.Setter
         public Builder filters(List<GetAnnouncementSubscriptionFilterGroupFilter> filters) {
-            this.filters = Objects.requireNonNull(filters);
+            if (filters == null) {
+              throw new MissingRequiredPropertyException("GetAnnouncementSubscriptionFilterGroup", "filters");
+            }
+            this.filters = filters;
             return this;
         }
         public Builder filters(GetAnnouncementSubscriptionFilterGroupFilter... filters) {
@@ -66,7 +70,10 @@ public final class GetAnnouncementSubscriptionFilterGroup {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAnnouncementSubscriptionFilterGroup", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetAnnouncementSubscriptionFilterGroup build() {

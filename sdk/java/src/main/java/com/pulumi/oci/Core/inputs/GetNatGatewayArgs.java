@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetNatGatewayArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetNatGatewayArgs build() {
-            $.natGatewayId = Objects.requireNonNull($.natGatewayId, "expected parameter 'natGatewayId' to be non-null");
+            if ($.natGatewayId == null) {
+                throw new MissingRequiredPropertyException("GetNatGatewayArgs", "natGatewayId");
+            }
             return $;
         }
     }

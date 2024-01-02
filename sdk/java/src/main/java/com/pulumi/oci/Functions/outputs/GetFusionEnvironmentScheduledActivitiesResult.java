@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentScheduledActivitiesFilter;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection;
 import java.lang.String;
@@ -135,11 +136,13 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetFusionEnvironmentScheduledActivitiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -148,22 +151,32 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
         }
         @CustomType.Setter
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
-            this.fusionEnvironmentId = Objects.requireNonNull(fusionEnvironmentId);
+            if (fusionEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesResult", "fusionEnvironmentId");
+            }
+            this.fusionEnvironmentId = fusionEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder runCycle(@Nullable String runCycle) {
+
             this.runCycle = runCycle;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledActivityCollections(List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection> scheduledActivityCollections) {
-            this.scheduledActivityCollections = Objects.requireNonNull(scheduledActivityCollections);
+            if (scheduledActivityCollections == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesResult", "scheduledActivityCollections");
+            }
+            this.scheduledActivityCollections = scheduledActivityCollections;
             return this;
         }
         public Builder scheduledActivityCollections(GetFusionEnvironmentScheduledActivitiesScheduledActivityCollection... scheduledActivityCollections) {
@@ -171,16 +184,19 @@ public final class GetFusionEnvironmentScheduledActivitiesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpectedFinishLessThanOrEqualTo(@Nullable String timeExpectedFinishLessThanOrEqualTo) {
+
             this.timeExpectedFinishLessThanOrEqualTo = timeExpectedFinishLessThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeScheduledStartGreaterThanOrEqualTo(@Nullable String timeScheduledStartGreaterThanOrEqualTo) {
+
             this.timeScheduledStartGreaterThanOrEqualTo = timeScheduledStartGreaterThanOrEqualTo;
             return this;
         }

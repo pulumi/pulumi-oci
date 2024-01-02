@@ -118,31 +118,37 @@ public final class MysqlDbSystemHeatWaveCluster {
 
         @CustomType.Setter
         public Builder clusterSize(@Nullable Integer clusterSize) {
+
             this.clusterSize = clusterSize;
             return this;
         }
         @CustomType.Setter
         public Builder isLakehouseEnabled(@Nullable Boolean isLakehouseEnabled) {
+
             this.isLakehouseEnabled = isLakehouseEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(@Nullable String shapeName) {
+
             this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }

@@ -365,46 +365,55 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
 
         @CustomType.Setter
         public Builder lastFailedLoginDate(@Nullable String lastFailedLoginDate) {
+
             this.lastFailedLoginDate = lastFailedLoginDate;
             return this;
         }
         @CustomType.Setter
         public Builder lastSuccessfulLoginDate(@Nullable String lastSuccessfulLoginDate) {
+
             this.lastSuccessfulLoginDate = lastSuccessfulLoginDate;
             return this;
         }
         @CustomType.Setter
         public Builder locked(@Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked locked) {
+
             this.locked = locked;
             return this;
         }
         @CustomType.Setter
         public Builder loginAttempts(@Nullable Integer loginAttempts) {
+
             this.loginAttempts = loginAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder maxConcurrentSessions(@Nullable Integer maxConcurrentSessions) {
+
             this.maxConcurrentSessions = maxConcurrentSessions;
             return this;
         }
         @CustomType.Setter
         public Builder previousSuccessfulLoginDate(@Nullable String previousSuccessfulLoginDate) {
+
             this.previousSuccessfulLoginDate = previousSuccessfulLoginDate;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryAttempts(@Nullable Integer recoveryAttempts) {
+
             this.recoveryAttempts = recoveryAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryEnrollAttempts(@Nullable Integer recoveryEnrollAttempts) {
+
             this.recoveryEnrollAttempts = recoveryEnrollAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryLocked(@Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked recoveryLocked) {
+
             this.recoveryLocked = recoveryLocked;
             return this;
         }

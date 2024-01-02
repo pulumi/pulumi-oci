@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 import java.util.Optional;
@@ -72,17 +73,24 @@ public final class AppFirewallPolicyRequestRateLimitingRuleConfiguration {
 
         @CustomType.Setter
         public Builder actionDurationInSeconds(@Nullable Integer actionDurationInSeconds) {
+
             this.actionDurationInSeconds = actionDurationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder periodInSeconds(Integer periodInSeconds) {
-            this.periodInSeconds = Objects.requireNonNull(periodInSeconds);
+            if (periodInSeconds == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRuleConfiguration", "periodInSeconds");
+            }
+            this.periodInSeconds = periodInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder requestsLimit(Integer requestsLimit) {
-            this.requestsLimit = Objects.requireNonNull(requestsLimit);
+            if (requestsLimit == null) {
+              throw new MissingRequiredPropertyException("AppFirewallPolicyRequestRateLimitingRuleConfiguration", "requestsLimit");
+            }
+            this.requestsLimit = requestsLimit;
             return this;
         }
         public AppFirewallPolicyRequestRateLimitingRuleConfiguration build() {

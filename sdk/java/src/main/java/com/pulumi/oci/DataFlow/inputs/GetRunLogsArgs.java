@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.inputs.GetRunLogsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetRunLogsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetRunLogsArgs build() {
-            $.runId = Objects.requireNonNull($.runId, "expected parameter 'runId' to be non-null");
+            if ($.runId == null) {
+                throw new MissingRequiredPropertyException("GetRunLogsArgs", "runId");
+            }
             return $;
         }
     }

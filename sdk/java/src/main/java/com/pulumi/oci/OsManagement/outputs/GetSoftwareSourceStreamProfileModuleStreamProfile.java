@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
 
         @CustomType.Setter
         public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+            if (moduleName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceStreamProfileModuleStreamProfile", "moduleName");
+            }
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
         public Builder profileName(String profileName) {
-            this.profileName = Objects.requireNonNull(profileName);
+            if (profileName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceStreamProfileModuleStreamProfile", "profileName");
+            }
+            this.profileName = profileName;
             return this;
         }
         @CustomType.Setter
         public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+            if (streamName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceStreamProfileModuleStreamProfile", "streamName");
+            }
+            this.streamName = streamName;
             return this;
         }
         public GetSoftwareSourceStreamProfileModuleStreamProfile build() {

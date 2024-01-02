@@ -5,6 +5,7 @@ package com.pulumi.oci.Blockchain.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.inputs.GetPeersFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,9 @@ public final class GetPeersArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetPeersArgs build() {
-            $.blockchainPlatformId = Objects.requireNonNull($.blockchainPlatformId, "expected parameter 'blockchainPlatformId' to be non-null");
+            if ($.blockchainPlatformId == null) {
+                throw new MissingRequiredPropertyException("GetPeersArgs", "blockchainPlatformId");
+            }
             return $;
         }
     }

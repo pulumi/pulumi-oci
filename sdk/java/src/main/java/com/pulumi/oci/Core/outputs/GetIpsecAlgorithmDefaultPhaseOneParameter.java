@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
 
         @CustomType.Setter
         public Builder defaultAuthenticationAlgorithms(List<String> defaultAuthenticationAlgorithms) {
-            this.defaultAuthenticationAlgorithms = Objects.requireNonNull(defaultAuthenticationAlgorithms);
+            if (defaultAuthenticationAlgorithms == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmDefaultPhaseOneParameter", "defaultAuthenticationAlgorithms");
+            }
+            this.defaultAuthenticationAlgorithms = defaultAuthenticationAlgorithms;
             return this;
         }
         public Builder defaultAuthenticationAlgorithms(String... defaultAuthenticationAlgorithms) {
@@ -79,7 +83,10 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
         }
         @CustomType.Setter
         public Builder defaultDhGroups(List<String> defaultDhGroups) {
-            this.defaultDhGroups = Objects.requireNonNull(defaultDhGroups);
+            if (defaultDhGroups == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmDefaultPhaseOneParameter", "defaultDhGroups");
+            }
+            this.defaultDhGroups = defaultDhGroups;
             return this;
         }
         public Builder defaultDhGroups(String... defaultDhGroups) {
@@ -87,7 +94,10 @@ public final class GetIpsecAlgorithmDefaultPhaseOneParameter {
         }
         @CustomType.Setter
         public Builder defaultEncryptionAlgorithms(List<String> defaultEncryptionAlgorithms) {
-            this.defaultEncryptionAlgorithms = Objects.requireNonNull(defaultEncryptionAlgorithms);
+            if (defaultEncryptionAlgorithms == null) {
+              throw new MissingRequiredPropertyException("GetIpsecAlgorithmDefaultPhaseOneParameter", "defaultEncryptionAlgorithms");
+            }
+            this.defaultEncryptionAlgorithms = defaultEncryptionAlgorithms;
             return this;
         }
         public Builder defaultEncryptionAlgorithms(String... defaultEncryptionAlgorithms) {

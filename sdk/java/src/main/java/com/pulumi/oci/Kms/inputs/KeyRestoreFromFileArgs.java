@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,8 +151,12 @@ public final class KeyRestoreFromFileArgs extends com.pulumi.resources.ResourceA
         }
 
         public KeyRestoreFromFileArgs build() {
-            $.contentLength = Objects.requireNonNull($.contentLength, "expected parameter 'contentLength' to be non-null");
-            $.restoreKeyFromFileDetails = Objects.requireNonNull($.restoreKeyFromFileDetails, "expected parameter 'restoreKeyFromFileDetails' to be non-null");
+            if ($.contentLength == null) {
+                throw new MissingRequiredPropertyException("KeyRestoreFromFileArgs", "contentLength");
+            }
+            if ($.restoreKeyFromFileDetails == null) {
+                throw new MissingRequiredPropertyException("KeyRestoreFromFileArgs", "restoreKeyFromFileDetails");
+            }
             return $;
         }
     }

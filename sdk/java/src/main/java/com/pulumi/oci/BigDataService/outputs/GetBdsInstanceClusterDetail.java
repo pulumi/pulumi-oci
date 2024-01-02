@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -238,77 +239,122 @@ public final class GetBdsInstanceClusterDetail {
 
         @CustomType.Setter
         public Builder ambariUrl(String ambariUrl) {
-            this.ambariUrl = Objects.requireNonNull(ambariUrl);
+            if (ambariUrl == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "ambariUrl");
+            }
+            this.ambariUrl = ambariUrl;
             return this;
         }
         @CustomType.Setter
         public Builder bdCellVersion(String bdCellVersion) {
-            this.bdCellVersion = Objects.requireNonNull(bdCellVersion);
+            if (bdCellVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "bdCellVersion");
+            }
+            this.bdCellVersion = bdCellVersion;
             return this;
         }
         @CustomType.Setter
         public Builder bdaVersion(String bdaVersion) {
-            this.bdaVersion = Objects.requireNonNull(bdaVersion);
+            if (bdaVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "bdaVersion");
+            }
+            this.bdaVersion = bdaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder bdmVersion(String bdmVersion) {
-            this.bdmVersion = Objects.requireNonNull(bdmVersion);
+            if (bdmVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "bdmVersion");
+            }
+            this.bdmVersion = bdmVersion;
             return this;
         }
         @CustomType.Setter
         public Builder bdsVersion(String bdsVersion) {
-            this.bdsVersion = Objects.requireNonNull(bdsVersion);
+            if (bdsVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "bdsVersion");
+            }
+            this.bdsVersion = bdsVersion;
             return this;
         }
         @CustomType.Setter
         public Builder bigDataManagerUrl(String bigDataManagerUrl) {
-            this.bigDataManagerUrl = Objects.requireNonNull(bigDataManagerUrl);
+            if (bigDataManagerUrl == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "bigDataManagerUrl");
+            }
+            this.bigDataManagerUrl = bigDataManagerUrl;
             return this;
         }
         @CustomType.Setter
         public Builder clouderaManagerUrl(String clouderaManagerUrl) {
-            this.clouderaManagerUrl = Objects.requireNonNull(clouderaManagerUrl);
+            if (clouderaManagerUrl == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "clouderaManagerUrl");
+            }
+            this.clouderaManagerUrl = clouderaManagerUrl;
             return this;
         }
         @CustomType.Setter
         public Builder csqlCellVersion(String csqlCellVersion) {
-            this.csqlCellVersion = Objects.requireNonNull(csqlCellVersion);
+            if (csqlCellVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "csqlCellVersion");
+            }
+            this.csqlCellVersion = csqlCellVersion;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
-            this.dbVersion = Objects.requireNonNull(dbVersion);
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder hueServerUrl(String hueServerUrl) {
-            this.hueServerUrl = Objects.requireNonNull(hueServerUrl);
+            if (hueServerUrl == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "hueServerUrl");
+            }
+            this.hueServerUrl = hueServerUrl;
             return this;
         }
         @CustomType.Setter
         public Builder jupyterHubUrl(String jupyterHubUrl) {
-            this.jupyterHubUrl = Objects.requireNonNull(jupyterHubUrl);
+            if (jupyterHubUrl == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "jupyterHubUrl");
+            }
+            this.jupyterHubUrl = jupyterHubUrl;
             return this;
         }
         @CustomType.Setter
         public Builder odhVersion(String odhVersion) {
-            this.odhVersion = Objects.requireNonNull(odhVersion);
+            if (odhVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "odhVersion");
+            }
+            this.odhVersion = odhVersion;
             return this;
         }
         @CustomType.Setter
         public Builder osVersion(String osVersion) {
-            this.osVersion = Objects.requireNonNull(osVersion);
+            if (osVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "osVersion");
+            }
+            this.osVersion = osVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeRefreshed(String timeRefreshed) {
-            this.timeRefreshed = Objects.requireNonNull(timeRefreshed);
+            if (timeRefreshed == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceClusterDetail", "timeRefreshed");
+            }
+            this.timeRefreshed = timeRefreshed;
             return this;
         }
         public GetBdsInstanceClusterDetail build() {

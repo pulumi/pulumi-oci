@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetTraceAggregatedSnapshotDataPlainArgs extends com.pulumi.re
         }
 
         public GetTraceAggregatedSnapshotDataPlainArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.traceKey = Objects.requireNonNull($.traceKey, "expected parameter 'traceKey' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetTraceAggregatedSnapshotDataPlainArgs", "apmDomainId");
+            }
+            if ($.traceKey == null) {
+                throw new MissingRequiredPropertyException("GetTraceAggregatedSnapshotDataPlainArgs", "traceKey");
+            }
             return $;
         }
     }

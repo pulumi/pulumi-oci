@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Email.outputs.GetSendersFilter;
 import com.pulumi.oci.Email.outputs.GetSendersSender;
 import java.lang.String;
@@ -115,21 +116,27 @@ public final class GetSendersResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSendersResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder domain(@Nullable String domain) {
+
             this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(@Nullable String emailAddress) {
+
             this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSendersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -138,12 +145,18 @@ public final class GetSendersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSendersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder senders(List<GetSendersSender> senders) {
-            this.senders = Objects.requireNonNull(senders);
+            if (senders == null) {
+              throw new MissingRequiredPropertyException("GetSendersResult", "senders");
+            }
+            this.senders = senders;
             return this;
         }
         public Builder senders(GetSendersSender... senders) {
@@ -151,6 +164,7 @@ public final class GetSendersResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

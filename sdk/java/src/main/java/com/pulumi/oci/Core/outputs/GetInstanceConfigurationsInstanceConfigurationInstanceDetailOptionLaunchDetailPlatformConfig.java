@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -184,57 +185,90 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
 
         @CustomType.Setter
         public Builder areVirtualInstructionsEnabled(Boolean areVirtualInstructionsEnabled) {
-            this.areVirtualInstructionsEnabled = Objects.requireNonNull(areVirtualInstructionsEnabled);
+            if (areVirtualInstructionsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "areVirtualInstructionsEnabled");
+            }
+            this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isAccessControlServiceEnabled(Boolean isAccessControlServiceEnabled) {
-            this.isAccessControlServiceEnabled = Objects.requireNonNull(isAccessControlServiceEnabled);
+            if (isAccessControlServiceEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "isAccessControlServiceEnabled");
+            }
+            this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isInputOutputMemoryManagementUnitEnabled(Boolean isInputOutputMemoryManagementUnitEnabled) {
-            this.isInputOutputMemoryManagementUnitEnabled = Objects.requireNonNull(isInputOutputMemoryManagementUnitEnabled);
+            if (isInputOutputMemoryManagementUnitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "isInputOutputMemoryManagementUnitEnabled");
+            }
+            this.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMeasuredBootEnabled(Boolean isMeasuredBootEnabled) {
-            this.isMeasuredBootEnabled = Objects.requireNonNull(isMeasuredBootEnabled);
+            if (isMeasuredBootEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "isMeasuredBootEnabled");
+            }
+            this.isMeasuredBootEnabled = isMeasuredBootEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMemoryEncryptionEnabled(Boolean isMemoryEncryptionEnabled) {
-            this.isMemoryEncryptionEnabled = Objects.requireNonNull(isMemoryEncryptionEnabled);
+            if (isMemoryEncryptionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "isMemoryEncryptionEnabled");
+            }
+            this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSecureBootEnabled(Boolean isSecureBootEnabled) {
-            this.isSecureBootEnabled = Objects.requireNonNull(isSecureBootEnabled);
+            if (isSecureBootEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "isSecureBootEnabled");
+            }
+            this.isSecureBootEnabled = isSecureBootEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSymmetricMultiThreadingEnabled(Boolean isSymmetricMultiThreadingEnabled) {
-            this.isSymmetricMultiThreadingEnabled = Objects.requireNonNull(isSymmetricMultiThreadingEnabled);
+            if (isSymmetricMultiThreadingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "isSymmetricMultiThreadingEnabled");
+            }
+            this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTrustedPlatformModuleEnabled(Boolean isTrustedPlatformModuleEnabled) {
-            this.isTrustedPlatformModuleEnabled = Objects.requireNonNull(isTrustedPlatformModuleEnabled);
+            if (isTrustedPlatformModuleEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "isTrustedPlatformModuleEnabled");
+            }
+            this.isTrustedPlatformModuleEnabled = isTrustedPlatformModuleEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder numaNodesPerSocket(String numaNodesPerSocket) {
-            this.numaNodesPerSocket = Objects.requireNonNull(numaNodesPerSocket);
+            if (numaNodesPerSocket == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "numaNodesPerSocket");
+            }
+            this.numaNodesPerSocket = numaNodesPerSocket;
             return this;
         }
         @CustomType.Setter
         public Builder percentageOfCoresEnabled(Integer percentageOfCoresEnabled) {
-            this.percentageOfCoresEnabled = Objects.requireNonNull(percentageOfCoresEnabled);
+            if (percentageOfCoresEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "percentageOfCoresEnabled");
+            }
+            this.percentageOfCoresEnabled = percentageOfCoresEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig build() {

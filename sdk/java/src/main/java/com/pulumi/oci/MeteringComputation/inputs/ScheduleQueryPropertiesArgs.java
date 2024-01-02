@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesDateRangeArgs;
 import com.pulumi.oci.MeteringComputation.inputs.ScheduleQueryPropertiesGroupByTagArgs;
 import java.lang.Boolean;
@@ -360,8 +361,12 @@ public final class ScheduleQueryPropertiesArgs extends com.pulumi.resources.Reso
         }
 
         public ScheduleQueryPropertiesArgs build() {
-            $.dateRange = Objects.requireNonNull($.dateRange, "expected parameter 'dateRange' to be non-null");
-            $.granularity = Objects.requireNonNull($.granularity, "expected parameter 'granularity' to be non-null");
+            if ($.dateRange == null) {
+                throw new MissingRequiredPropertyException("ScheduleQueryPropertiesArgs", "dateRange");
+            }
+            if ($.granularity == null) {
+                throw new MissingRequiredPropertyException("ScheduleQueryPropertiesArgs", "granularity");
+            }
             return $;
         }
     }

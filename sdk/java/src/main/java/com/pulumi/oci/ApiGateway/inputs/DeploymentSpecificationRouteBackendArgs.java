@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRouteBackendHeaderArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRouteBackendRoutingBackendArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRouteBackendSelectionSourceArgs;
@@ -606,7 +607,9 @@ public final class DeploymentSpecificationRouteBackendArgs extends com.pulumi.re
         }
 
         public DeploymentSpecificationRouteBackendArgs build() {
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRouteBackendArgs", "type");
+            }
             return $;
         }
     }

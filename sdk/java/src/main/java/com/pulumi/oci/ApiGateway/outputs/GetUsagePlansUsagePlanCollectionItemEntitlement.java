@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansUsagePlanCollectionItemEntitlementQuota;
 import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit;
 import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansUsagePlanCollectionItemEntitlementTarget;
@@ -102,17 +103,26 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItemEntitlement", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItemEntitlement", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder quotas(List<GetUsagePlansUsagePlanCollectionItemEntitlementQuota> quotas) {
-            this.quotas = Objects.requireNonNull(quotas);
+            if (quotas == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItemEntitlement", "quotas");
+            }
+            this.quotas = quotas;
             return this;
         }
         public Builder quotas(GetUsagePlansUsagePlanCollectionItemEntitlementQuota... quotas) {
@@ -120,7 +130,10 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
         }
         @CustomType.Setter
         public Builder rateLimits(List<GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit> rateLimits) {
-            this.rateLimits = Objects.requireNonNull(rateLimits);
+            if (rateLimits == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItemEntitlement", "rateLimits");
+            }
+            this.rateLimits = rateLimits;
             return this;
         }
         public Builder rateLimits(GetUsagePlansUsagePlanCollectionItemEntitlementRateLimit... rateLimits) {
@@ -128,7 +141,10 @@ public final class GetUsagePlansUsagePlanCollectionItemEntitlement {
         }
         @CustomType.Setter
         public Builder targets(List<GetUsagePlansUsagePlanCollectionItemEntitlementTarget> targets) {
-            this.targets = Objects.requireNonNull(targets);
+            if (targets == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItemEntitlement", "targets");
+            }
+            this.targets = targets;
             return this;
         }
         public Builder targets(GetUsagePlansUsagePlanCollectionItemEntitlementTarget... targets) {

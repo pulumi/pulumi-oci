@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetRunStatementsStatementCollectionItemOutput;
 import java.lang.Double;
 import java.lang.String;
@@ -143,17 +144,26 @@ public final class GetRunStatementsStatementCollectionItem {
 
         @CustomType.Setter
         public Builder code(String code) {
-            this.code = Objects.requireNonNull(code);
+            if (code == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItem", "code");
+            }
+            this.code = code;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder outputs(List<GetRunStatementsStatementCollectionItemOutput> outputs) {
-            this.outputs = Objects.requireNonNull(outputs);
+            if (outputs == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItem", "outputs");
+            }
+            this.outputs = outputs;
             return this;
         }
         public Builder outputs(GetRunStatementsStatementCollectionItemOutput... outputs) {
@@ -161,27 +171,42 @@ public final class GetRunStatementsStatementCollectionItem {
         }
         @CustomType.Setter
         public Builder progress(Double progress) {
-            this.progress = Objects.requireNonNull(progress);
+            if (progress == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItem", "progress");
+            }
+            this.progress = progress;
             return this;
         }
         @CustomType.Setter
         public Builder runId(String runId) {
-            this.runId = Objects.requireNonNull(runId);
+            if (runId == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItem", "runId");
+            }
+            this.runId = runId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCompleted(String timeCompleted) {
-            this.timeCompleted = Objects.requireNonNull(timeCompleted);
+            if (timeCompleted == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItem", "timeCompleted");
+            }
+            this.timeCompleted = timeCompleted;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsStatementCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetRunStatementsStatementCollectionItem build() {

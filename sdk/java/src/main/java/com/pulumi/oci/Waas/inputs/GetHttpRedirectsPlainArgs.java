@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.GetHttpRedirectsFilter;
 import java.lang.String;
 import java.util.List;
@@ -249,7 +250,9 @@ public final class GetHttpRedirectsPlainArgs extends com.pulumi.resources.Invoke
         }
 
         public GetHttpRedirectsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetHttpRedirectsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

@@ -146,31 +146,37 @@ public final class DbSystemDbHomeDatabaseDbBackupConfig {
 
         @CustomType.Setter
         public Builder autoBackupEnabled(@Nullable Boolean autoBackupEnabled) {
+
             this.autoBackupEnabled = autoBackupEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder autoBackupWindow(@Nullable String autoBackupWindow) {
+
             this.autoBackupWindow = autoBackupWindow;
             return this;
         }
         @CustomType.Setter
         public Builder autoFullBackupDay(@Nullable String autoFullBackupDay) {
+
             this.autoFullBackupDay = autoFullBackupDay;
             return this;
         }
         @CustomType.Setter
         public Builder autoFullBackupWindow(@Nullable String autoFullBackupWindow) {
+
             this.autoFullBackupWindow = autoFullBackupWindow;
             return this;
         }
         @CustomType.Setter
         public Builder backupDeletionPolicy(@Nullable String backupDeletionPolicy) {
+
             this.backupDeletionPolicy = backupDeletionPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder backupDestinationDetails(@Nullable List<DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail> backupDestinationDetails) {
+
             this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
@@ -179,11 +185,13 @@ public final class DbSystemDbHomeDatabaseDbBackupConfig {
         }
         @CustomType.Setter
         public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
+
             this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }
         @CustomType.Setter
         public Builder runImmediateFullBackup(@Nullable Boolean runImmediateFullBackup) {
+
             this.runImmediateFullBackup = runImmediateFullBackup;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -114,37 +115,56 @@ public final class GetLicenseMetricResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLicenseMetricResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLicenseMetricResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
+
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder licenseRecordExpiringSoonCount(Integer licenseRecordExpiringSoonCount) {
-            this.licenseRecordExpiringSoonCount = Objects.requireNonNull(licenseRecordExpiringSoonCount);
+            if (licenseRecordExpiringSoonCount == null) {
+              throw new MissingRequiredPropertyException("GetLicenseMetricResult", "licenseRecordExpiringSoonCount");
+            }
+            this.licenseRecordExpiringSoonCount = licenseRecordExpiringSoonCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalByolInstanceCount(Integer totalByolInstanceCount) {
-            this.totalByolInstanceCount = Objects.requireNonNull(totalByolInstanceCount);
+            if (totalByolInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetLicenseMetricResult", "totalByolInstanceCount");
+            }
+            this.totalByolInstanceCount = totalByolInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalLicenseIncludedInstanceCount(Integer totalLicenseIncludedInstanceCount) {
-            this.totalLicenseIncludedInstanceCount = Objects.requireNonNull(totalLicenseIncludedInstanceCount);
+            if (totalLicenseIncludedInstanceCount == null) {
+              throw new MissingRequiredPropertyException("GetLicenseMetricResult", "totalLicenseIncludedInstanceCount");
+            }
+            this.totalLicenseIncludedInstanceCount = totalLicenseIncludedInstanceCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalProductLicenseCount(Integer totalProductLicenseCount) {
-            this.totalProductLicenseCount = Objects.requireNonNull(totalProductLicenseCount);
+            if (totalProductLicenseCount == null) {
+              throw new MissingRequiredPropertyException("GetLicenseMetricResult", "totalProductLicenseCount");
+            }
+            this.totalProductLicenseCount = totalProductLicenseCount;
             return this;
         }
         public GetLicenseMetricResult build() {

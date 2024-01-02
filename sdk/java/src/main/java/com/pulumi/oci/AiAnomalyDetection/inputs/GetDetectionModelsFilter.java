@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiAnomalyDetection.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -83,8 +84,12 @@ public final class GetDetectionModelsFilter extends com.pulumi.resources.InvokeA
         }
 
         public GetDetectionModelsFilter build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.values = Objects.requireNonNull($.values, "expected parameter 'values' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("GetDetectionModelsFilter", "name");
+            }
+            if ($.values == null) {
+                throw new MissingRequiredPropertyException("GetDetectionModelsFilter", "values");
+            }
             return $;
         }
     }

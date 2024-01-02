@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -1237,15 +1238,33 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public CloudVmClusterArgs build() {
-            $.backupSubnetId = Objects.requireNonNull($.backupSubnetId, "expected parameter 'backupSubnetId' to be non-null");
-            $.cloudExadataInfrastructureId = Objects.requireNonNull($.cloudExadataInfrastructureId, "expected parameter 'cloudExadataInfrastructureId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.cpuCoreCount = Objects.requireNonNull($.cpuCoreCount, "expected parameter 'cpuCoreCount' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.giVersion = Objects.requireNonNull($.giVersion, "expected parameter 'giVersion' to be non-null");
-            $.hostname = Objects.requireNonNull($.hostname, "expected parameter 'hostname' to be non-null");
-            $.sshPublicKeys = Objects.requireNonNull($.sshPublicKeys, "expected parameter 'sshPublicKeys' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.backupSubnetId == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "backupSubnetId");
+            }
+            if ($.cloudExadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "cloudExadataInfrastructureId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "compartmentId");
+            }
+            if ($.cpuCoreCount == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "cpuCoreCount");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "displayName");
+            }
+            if ($.giVersion == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "giVersion");
+            }
+            if ($.hostname == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "hostname");
+            }
+            if ($.sshPublicKeys == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "sshPublicKeys");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("CloudVmClusterArgs", "subnetId");
+            }
             return $;
         }
     }

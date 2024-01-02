@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage;
 import com.pulumi.oci.Database.outputs.GetAutonomousVmClusterAcdResourceUsagesFilter;
 import java.lang.String;
@@ -79,7 +80,10 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
 
         @CustomType.Setter
         public Builder autonomousContainerDatabaseResourceUsages(List<GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage> autonomousContainerDatabaseResourceUsages) {
-            this.autonomousContainerDatabaseResourceUsages = Objects.requireNonNull(autonomousContainerDatabaseResourceUsages);
+            if (autonomousContainerDatabaseResourceUsages == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterAcdResourceUsagesResult", "autonomousContainerDatabaseResourceUsages");
+            }
+            this.autonomousContainerDatabaseResourceUsages = autonomousContainerDatabaseResourceUsages;
             return this;
         }
         public Builder autonomousContainerDatabaseResourceUsages(GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsage... autonomousContainerDatabaseResourceUsages) {
@@ -87,16 +91,21 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
         }
         @CustomType.Setter
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
-            this.autonomousVmClusterId = Objects.requireNonNull(autonomousVmClusterId);
+            if (autonomousVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterAcdResourceUsagesResult", "autonomousVmClusterId");
+            }
+            this.autonomousVmClusterId = autonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAutonomousVmClusterAcdResourceUsagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -105,7 +114,10 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterAcdResourceUsagesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAutonomousVmClusterAcdResourceUsagesResult build() {

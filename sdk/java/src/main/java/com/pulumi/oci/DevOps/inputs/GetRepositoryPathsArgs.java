@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -248,7 +249,9 @@ public final class GetRepositoryPathsArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetRepositoryPathsArgs build() {
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryPathsArgs", "repositoryId");
+            }
             return $;
         }
     }

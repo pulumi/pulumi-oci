@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetResourceUsageEmInstance {
 
         @CustomType.Setter
         public Builder emDiscovererUrl(String emDiscovererUrl) {
-            this.emDiscovererUrl = Objects.requireNonNull(emDiscovererUrl);
+            if (emDiscovererUrl == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageEmInstance", "emDiscovererUrl");
+            }
+            this.emDiscovererUrl = emDiscovererUrl;
             return this;
         }
         @CustomType.Setter
         public Builder emHost(String emHost) {
-            this.emHost = Objects.requireNonNull(emHost);
+            if (emHost == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageEmInstance", "emHost");
+            }
+            this.emHost = emHost;
             return this;
         }
         @CustomType.Setter
         public Builder emId(String emId) {
-            this.emId = Objects.requireNonNull(emId);
+            if (emId == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageEmInstance", "emId");
+            }
+            this.emId = emId;
             return this;
         }
         @CustomType.Setter
         public Builder targetsCount(Integer targetsCount) {
-            this.targetsCount = Objects.requireNonNull(targetsCount);
+            if (targetsCount == null) {
+              throw new MissingRequiredPropertyException("GetResourceUsageEmInstance", "targetsCount");
+            }
+            this.targetsCount = targetsCount;
             return this;
         }
         public GetResourceUsageEmInstance build() {

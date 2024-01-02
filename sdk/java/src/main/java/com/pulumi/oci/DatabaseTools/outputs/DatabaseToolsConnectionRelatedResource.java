@@ -58,11 +58,13 @@ public final class DatabaseToolsConnectionRelatedResource {
 
         @CustomType.Setter
         public Builder entityType(@Nullable String entityType) {
+
             this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(@Nullable String identifier) {
+
             this.identifier = identifier;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetMigrationAdvisorSetting {
 
         @CustomType.Setter
         public Builder isIgnoreErrors(Boolean isIgnoreErrors) {
-            this.isIgnoreErrors = Objects.requireNonNull(isIgnoreErrors);
+            if (isIgnoreErrors == null) {
+              throw new MissingRequiredPropertyException("GetMigrationAdvisorSetting", "isIgnoreErrors");
+            }
+            this.isIgnoreErrors = isIgnoreErrors;
             return this;
         }
         @CustomType.Setter
         public Builder isSkipAdvisor(Boolean isSkipAdvisor) {
-            this.isSkipAdvisor = Objects.requireNonNull(isSkipAdvisor);
+            if (isSkipAdvisor == null) {
+              throw new MissingRequiredPropertyException("GetMigrationAdvisorSetting", "isSkipAdvisor");
+            }
+            this.isSkipAdvisor = isSkipAdvisor;
             return this;
         }
         public GetMigrationAdvisorSetting build() {

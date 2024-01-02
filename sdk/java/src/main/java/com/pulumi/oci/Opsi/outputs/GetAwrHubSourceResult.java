@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
@@ -360,122 +361,194 @@ public final class GetAwrHubSourceResult {
 
         @CustomType.Setter
         public Builder associatedOpsiId(String associatedOpsiId) {
-            this.associatedOpsiId = Objects.requireNonNull(associatedOpsiId);
+            if (associatedOpsiId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "associatedOpsiId");
+            }
+            this.associatedOpsiId = associatedOpsiId;
             return this;
         }
         @CustomType.Setter
         public Builder associatedResourceId(String associatedResourceId) {
-            this.associatedResourceId = Objects.requireNonNull(associatedResourceId);
+            if (associatedResourceId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "associatedResourceId");
+            }
+            this.associatedResourceId = associatedResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
-            this.awrHubId = Objects.requireNonNull(awrHubId);
+            if (awrHubId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "awrHubId");
+            }
+            this.awrHubId = awrHubId;
             return this;
         }
         @CustomType.Setter
         public Builder awrHubOpsiSourceId(String awrHubOpsiSourceId) {
-            this.awrHubOpsiSourceId = Objects.requireNonNull(awrHubOpsiSourceId);
+            if (awrHubOpsiSourceId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "awrHubOpsiSourceId");
+            }
+            this.awrHubOpsiSourceId = awrHubOpsiSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder awrHubSourceId(String awrHubSourceId) {
-            this.awrHubSourceId = Objects.requireNonNull(awrHubSourceId);
+            if (awrHubSourceId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "awrHubSourceId");
+            }
+            this.awrHubSourceId = awrHubSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder awrSourceDatabaseId(String awrSourceDatabaseId) {
-            this.awrSourceDatabaseId = Objects.requireNonNull(awrSourceDatabaseId);
+            if (awrSourceDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "awrSourceDatabaseId");
+            }
+            this.awrSourceDatabaseId = awrSourceDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hoursSinceLastImport(Double hoursSinceLastImport) {
-            this.hoursSinceLastImport = Objects.requireNonNull(hoursSinceLastImport);
+            if (hoursSinceLastImport == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "hoursSinceLastImport");
+            }
+            this.hoursSinceLastImport = hoursSinceLastImport;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRegisteredWithAwrHub(Boolean isRegisteredWithAwrHub) {
-            this.isRegisteredWithAwrHub = Objects.requireNonNull(isRegisteredWithAwrHub);
+            if (isRegisteredWithAwrHub == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "isRegisteredWithAwrHub");
+            }
+            this.isRegisteredWithAwrHub = isRegisteredWithAwrHub;
             return this;
         }
         @CustomType.Setter
         public Builder maxSnapshotIdentifier(Double maxSnapshotIdentifier) {
-            this.maxSnapshotIdentifier = Objects.requireNonNull(maxSnapshotIdentifier);
+            if (maxSnapshotIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "maxSnapshotIdentifier");
+            }
+            this.maxSnapshotIdentifier = maxSnapshotIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder minSnapshotIdentifier(Double minSnapshotIdentifier) {
-            this.minSnapshotIdentifier = Objects.requireNonNull(minSnapshotIdentifier);
+            if (minSnapshotIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "minSnapshotIdentifier");
+            }
+            this.minSnapshotIdentifier = minSnapshotIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder sourceMailBoxUrl(String sourceMailBoxUrl) {
-            this.sourceMailBoxUrl = Objects.requireNonNull(sourceMailBoxUrl);
+            if (sourceMailBoxUrl == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "sourceMailBoxUrl");
+            }
+            this.sourceMailBoxUrl = sourceMailBoxUrl;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeFirstSnapshotGenerated(String timeFirstSnapshotGenerated) {
-            this.timeFirstSnapshotGenerated = Objects.requireNonNull(timeFirstSnapshotGenerated);
+            if (timeFirstSnapshotGenerated == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "timeFirstSnapshotGenerated");
+            }
+            this.timeFirstSnapshotGenerated = timeFirstSnapshotGenerated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSnapshotGenerated(String timeLastSnapshotGenerated) {
-            this.timeLastSnapshotGenerated = Objects.requireNonNull(timeLastSnapshotGenerated);
+            if (timeLastSnapshotGenerated == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "timeLastSnapshotGenerated");
+            }
+            this.timeLastSnapshotGenerated = timeLastSnapshotGenerated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourceResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetAwrHubSourceResult build() {

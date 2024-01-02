@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetConnectionsConnectionCollectionItemLastConnectionValidatio
 
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemLastConnectionValidationResult", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder result(String result) {
-            this.result = Objects.requireNonNull(result);
+            if (result == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemLastConnectionValidationResult", "result");
+            }
+            this.result = result;
             return this;
         }
         @CustomType.Setter
         public Builder timeValidated(String timeValidated) {
-            this.timeValidated = Objects.requireNonNull(timeValidated);
+            if (timeValidated == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItemLastConnectionValidationResult", "timeValidated");
+            }
+            this.timeValidated = timeValidated;
             return this;
         }
         public GetConnectionsConnectionCollectionItemLastConnectionValidationResult build() {

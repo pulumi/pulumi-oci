@@ -5,6 +5,7 @@ package com.pulumi.oci.Opensearch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetOpensearchClusterArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetOpensearchClusterArgs build() {
-            $.opensearchClusterId = Objects.requireNonNull($.opensearchClusterId, "expected parameter 'opensearchClusterId' to be non-null");
+            if ($.opensearchClusterId == null) {
+                throw new MissingRequiredPropertyException("GetOpensearchClusterArgs", "opensearchClusterId");
+            }
             return $;
         }
     }

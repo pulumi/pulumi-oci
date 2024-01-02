@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.CustomTableSavedCustomTableArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -161,9 +162,15 @@ public final class CustomTableArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public CustomTableArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.savedCustomTable = Objects.requireNonNull($.savedCustomTable, "expected parameter 'savedCustomTable' to be non-null");
-            $.savedReportId = Objects.requireNonNull($.savedReportId, "expected parameter 'savedReportId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CustomTableArgs", "compartmentId");
+            }
+            if ($.savedCustomTable == null) {
+                throw new MissingRequiredPropertyException("CustomTableArgs", "savedCustomTable");
+            }
+            if ($.savedReportId == null) {
+                throw new MissingRequiredPropertyException("CustomTableArgs", "savedReportId");
+            }
             return $;
         }
     }

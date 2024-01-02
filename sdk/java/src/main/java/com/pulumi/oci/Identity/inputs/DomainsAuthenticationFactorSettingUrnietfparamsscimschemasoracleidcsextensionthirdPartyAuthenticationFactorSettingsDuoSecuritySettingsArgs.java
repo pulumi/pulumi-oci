@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -444,10 +445,18 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         }
 
         public DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs build() {
-            $.apiHostname = Objects.requireNonNull($.apiHostname, "expected parameter 'apiHostname' to be non-null");
-            $.integrationKey = Objects.requireNonNull($.integrationKey, "expected parameter 'integrationKey' to be non-null");
-            $.secretKey = Objects.requireNonNull($.secretKey, "expected parameter 'secretKey' to be non-null");
-            $.userMappingAttribute = Objects.requireNonNull($.userMappingAttribute, "expected parameter 'userMappingAttribute' to be non-null");
+            if ($.apiHostname == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs", "apiHostname");
+            }
+            if ($.integrationKey == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs", "integrationKey");
+            }
+            if ($.secretKey == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs", "secretKey");
+            }
+            if ($.userMappingAttribute == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsDuoSecuritySettingsArgs", "userMappingAttribute");
+            }
             return $;
         }
     }

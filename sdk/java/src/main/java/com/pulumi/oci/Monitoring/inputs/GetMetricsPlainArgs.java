@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.inputs.GetMetricsFilter;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -267,7 +268,9 @@ public final class GetMetricsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetMetricsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetMetricsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

@@ -993,31 +993,37 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
 
         @CustomType.Setter
         public Builder assertionConsumerUrl(@Nullable String assertionConsumerUrl) {
+
             this.assertionConsumerUrl = assertionConsumerUrl;
             return this;
         }
         @CustomType.Setter
         public Builder encryptAssertion(@Nullable Boolean encryptAssertion) {
+
             this.encryptAssertion = encryptAssertion;
             return this;
         }
         @CustomType.Setter
         public Builder encryptionAlgorithm(@Nullable String encryptionAlgorithm) {
+
             this.encryptionAlgorithm = encryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder encryptionCertificate(@Nullable String encryptionCertificate) {
+
             this.encryptionCertificate = encryptionCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder federationProtocol(@Nullable String federationProtocol) {
+
             this.federationProtocol = federationProtocol;
             return this;
         }
         @CustomType.Setter
         public Builder groupAssertionAttributes(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttribute> groupAssertionAttributes) {
+
             this.groupAssertionAttributes = groupAssertionAttributes;
             return this;
         }
@@ -1026,66 +1032,79 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         }
         @CustomType.Setter
         public Builder hokAcsUrl(@Nullable String hokAcsUrl) {
+
             this.hokAcsUrl = hokAcsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder hokRequired(@Nullable Boolean hokRequired) {
+
             this.hokRequired = hokRequired;
             return this;
         }
         @CustomType.Setter
         public Builder includeSigningCertInSignature(@Nullable Boolean includeSigningCertInSignature) {
+
             this.includeSigningCertInSignature = includeSigningCertInSignature;
             return this;
         }
         @CustomType.Setter
         public Builder keyEncryptionAlgorithm(@Nullable String keyEncryptionAlgorithm) {
+
             this.keyEncryptionAlgorithm = keyEncryptionAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder lastNotificationSentTime(@Nullable String lastNotificationSentTime) {
+
             this.lastNotificationSentTime = lastNotificationSentTime;
             return this;
         }
         @CustomType.Setter
         public Builder logoutBinding(@Nullable String logoutBinding) {
+
             this.logoutBinding = logoutBinding;
             return this;
         }
         @CustomType.Setter
         public Builder logoutEnabled(@Nullable Boolean logoutEnabled) {
+
             this.logoutEnabled = logoutEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder logoutRequestUrl(@Nullable String logoutRequestUrl) {
+
             this.logoutRequestUrl = logoutRequestUrl;
             return this;
         }
         @CustomType.Setter
         public Builder logoutResponseUrl(@Nullable String logoutResponseUrl) {
+
             this.logoutResponseUrl = logoutResponseUrl;
             return this;
         }
         @CustomType.Setter
         public Builder metadata(@Nullable String metadata) {
+
             this.metadata = metadata;
             return this;
         }
         @CustomType.Setter
         public Builder nameIdFormat(@Nullable String nameIdFormat) {
+
             this.nameIdFormat = nameIdFormat;
             return this;
         }
         @CustomType.Setter
         public Builder nameIdUserstoreAttribute(@Nullable String nameIdUserstoreAttribute) {
+
             this.nameIdUserstoreAttribute = nameIdUserstoreAttribute;
             return this;
         }
         @CustomType.Setter
         public Builder outboundAssertionAttributes(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppOutboundAssertionAttribute> outboundAssertionAttributes) {
+
             this.outboundAssertionAttributes = outboundAssertionAttributes;
             return this;
         }
@@ -1094,41 +1113,49 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         }
         @CustomType.Setter
         public Builder partnerProviderId(@Nullable String partnerProviderId) {
+
             this.partnerProviderId = partnerProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder partnerProviderPattern(@Nullable String partnerProviderPattern) {
+
             this.partnerProviderPattern = partnerProviderPattern;
             return this;
         }
         @CustomType.Setter
         public Builder signResponseOrAssertion(@Nullable String signResponseOrAssertion) {
+
             this.signResponseOrAssertion = signResponseOrAssertion;
             return this;
         }
         @CustomType.Setter
         public Builder signatureHashAlgorithm(@Nullable String signatureHashAlgorithm) {
+
             this.signatureHashAlgorithm = signatureHashAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder signingCertificate(@Nullable String signingCertificate) {
+
             this.signingCertificate = signingCertificate;
             return this;
         }
         @CustomType.Setter
         public Builder succinctId(@Nullable String succinctId) {
+
             this.succinctId = succinctId;
             return this;
         }
         @CustomType.Setter
         public Builder tenantProviderId(@Nullable String tenantProviderId) {
+
             this.tenantProviderId = tenantProviderId;
             return this;
         }
         @CustomType.Setter
         public Builder userAssertionAttributes(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute> userAssertionAttributes) {
+
             this.userAssertionAttributes = userAssertionAttributes;
             return this;
         }

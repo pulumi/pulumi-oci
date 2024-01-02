@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -160,52 +161,82 @@ public final class GetExportSetsExportSet {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maxFsStatBytes(String maxFsStatBytes) {
-            this.maxFsStatBytes = Objects.requireNonNull(maxFsStatBytes);
+            if (maxFsStatBytes == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "maxFsStatBytes");
+            }
+            this.maxFsStatBytes = maxFsStatBytes;
             return this;
         }
         @CustomType.Setter
         public Builder maxFsStatFiles(String maxFsStatFiles) {
-            this.maxFsStatFiles = Objects.requireNonNull(maxFsStatFiles);
+            if (maxFsStatFiles == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "maxFsStatFiles");
+            }
+            this.maxFsStatFiles = maxFsStatFiles;
             return this;
         }
         @CustomType.Setter
         public Builder mountTargetId(String mountTargetId) {
-            this.mountTargetId = Objects.requireNonNull(mountTargetId);
+            if (mountTargetId == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "mountTargetId");
+            }
+            this.mountTargetId = mountTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetExportSetsExportSet", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetExportSetsExportSet build() {

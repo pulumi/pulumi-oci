@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -778,13 +779,27 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public VmClusterArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.cpuCoreCount = Objects.requireNonNull($.cpuCoreCount, "expected parameter 'cpuCoreCount' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.exadataInfrastructureId = Objects.requireNonNull($.exadataInfrastructureId, "expected parameter 'exadataInfrastructureId' to be non-null");
-            $.giVersion = Objects.requireNonNull($.giVersion, "expected parameter 'giVersion' to be non-null");
-            $.sshPublicKeys = Objects.requireNonNull($.sshPublicKeys, "expected parameter 'sshPublicKeys' to be non-null");
-            $.vmClusterNetworkId = Objects.requireNonNull($.vmClusterNetworkId, "expected parameter 'vmClusterNetworkId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VmClusterArgs", "compartmentId");
+            }
+            if ($.cpuCoreCount == null) {
+                throw new MissingRequiredPropertyException("VmClusterArgs", "cpuCoreCount");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("VmClusterArgs", "displayName");
+            }
+            if ($.exadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("VmClusterArgs", "exadataInfrastructureId");
+            }
+            if ($.giVersion == null) {
+                throw new MissingRequiredPropertyException("VmClusterArgs", "giVersion");
+            }
+            if ($.sshPublicKeys == null) {
+                throw new MissingRequiredPropertyException("VmClusterArgs", "sshPublicKeys");
+            }
+            if ($.vmClusterNetworkId == null) {
+                throw new MissingRequiredPropertyException("VmClusterArgs", "vmClusterNetworkId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDeploymentSpecificationLoggingPolicyAccessLog {
 
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationLoggingPolicyAccessLog", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         public GetDeploymentSpecificationLoggingPolicyAccessLog build() {

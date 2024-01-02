@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig;
 import java.lang.String;
@@ -115,7 +116,10 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
 
         @CustomType.Setter
         public Builder clusterConfigs(List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs) {
-            this.clusterConfigs = Objects.requireNonNull(clusterConfigs);
+            if (clusterConfigs == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig", "clusterConfigs");
+            }
+            this.clusterConfigs = clusterConfigs;
             return this;
         }
         public Builder clusterConfigs(GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig... clusterConfigs) {
@@ -123,17 +127,26 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShape(String instanceShape) {
-            this.instanceShape = Objects.requireNonNull(instanceShape);
+            if (instanceShape == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig", "instanceShape");
+            }
+            this.instanceShape = instanceShape;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShapeConfigs(List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig> instanceShapeConfigs) {
-            this.instanceShapeConfigs = Objects.requireNonNull(instanceShapeConfigs);
+            if (instanceShapeConfigs == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig", "instanceShapeConfigs");
+            }
+            this.instanceShapeConfigs = instanceShapeConfigs;
             return this;
         }
         public Builder instanceShapeConfigs(GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig... instanceShapeConfigs) {
@@ -141,12 +154,18 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
         }
         @CustomType.Setter
         public Builder reservedCount(String reservedCount) {
-            this.reservedCount = Objects.requireNonNull(reservedCount);
+            if (reservedCount == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig", "reservedCount");
+            }
+            this.reservedCount = reservedCount;
             return this;
         }
         @CustomType.Setter
         public Builder usedCount(String usedCount) {
-            this.usedCount = Objects.requireNonNull(usedCount);
+            if (usedCount == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig", "usedCount");
+            }
+            this.usedCount = usedCount;
             return this;
         }
         public GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfig build() {

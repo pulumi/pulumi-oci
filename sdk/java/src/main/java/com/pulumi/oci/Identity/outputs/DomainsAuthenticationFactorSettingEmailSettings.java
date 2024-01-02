@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -103,12 +104,16 @@ public final class DomainsAuthenticationFactorSettingEmailSettings {
 
         @CustomType.Setter
         public Builder emailLinkCustomUrl(@Nullable String emailLinkCustomUrl) {
+
             this.emailLinkCustomUrl = emailLinkCustomUrl;
             return this;
         }
         @CustomType.Setter
         public Builder emailLinkEnabled(Boolean emailLinkEnabled) {
-            this.emailLinkEnabled = Objects.requireNonNull(emailLinkEnabled);
+            if (emailLinkEnabled == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEmailSettings", "emailLinkEnabled");
+            }
+            this.emailLinkEnabled = emailLinkEnabled;
             return this;
         }
         public DomainsAuthenticationFactorSettingEmailSettings build() {

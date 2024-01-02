@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenersExternalListenerCollectionItemEndpoint;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenersExternalListenerCollectionItemServicedAsm;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenersExternalListenerCollectionItemServicedDatabase;
@@ -390,32 +391,50 @@ public final class GetExternalListenersExternalListenerCollectionItem {
 
         @CustomType.Setter
         public Builder additionalDetails(Map<String,Object> additionalDetails) {
-            this.additionalDetails = Objects.requireNonNull(additionalDetails);
+            if (additionalDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "additionalDetails");
+            }
+            this.additionalDetails = additionalDetails;
             return this;
         }
         @CustomType.Setter
         public Builder adrHomeDirectory(String adrHomeDirectory) {
-            this.adrHomeDirectory = Objects.requireNonNull(adrHomeDirectory);
+            if (adrHomeDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "adrHomeDirectory");
+            }
+            this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder componentName(String componentName) {
-            this.componentName = Objects.requireNonNull(componentName);
+            if (componentName == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "componentName");
+            }
+            this.componentName = componentName;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(List<GetExternalListenersExternalListenerCollectionItemEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+            if (endpoints == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "endpoints");
+            }
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetExternalListenersExternalListenerCollectionItemEndpoint... endpoints) {
@@ -423,72 +442,114 @@ public final class GetExternalListenersExternalListenerCollectionItem {
         }
         @CustomType.Setter
         public Builder externalConnectorId(String externalConnectorId) {
-            this.externalConnectorId = Objects.requireNonNull(externalConnectorId);
+            if (externalConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "externalConnectorId");
+            }
+            this.externalConnectorId = externalConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbHomeId(String externalDbHomeId) {
-            this.externalDbHomeId = Objects.requireNonNull(externalDbHomeId);
+            if (externalDbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "externalDbHomeId");
+            }
+            this.externalDbHomeId = externalDbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbNodeId(String externalDbNodeId) {
-            this.externalDbNodeId = Objects.requireNonNull(externalDbNodeId);
+            if (externalDbNodeId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "externalDbNodeId");
+            }
+            this.externalDbNodeId = externalDbNodeId;
             return this;
         }
         @CustomType.Setter
         public Builder externalDbSystemId(String externalDbSystemId) {
-            this.externalDbSystemId = Objects.requireNonNull(externalDbSystemId);
+            if (externalDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "externalDbSystemId");
+            }
+            this.externalDbSystemId = externalDbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder externalListenerId(String externalListenerId) {
-            this.externalListenerId = Objects.requireNonNull(externalListenerId);
+            if (externalListenerId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "externalListenerId");
+            }
+            this.externalListenerId = externalListenerId;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder listenerAlias(String listenerAlias) {
-            this.listenerAlias = Objects.requireNonNull(listenerAlias);
+            if (listenerAlias == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "listenerAlias");
+            }
+            this.listenerAlias = listenerAlias;
             return this;
         }
         @CustomType.Setter
         public Builder listenerOraLocation(String listenerOraLocation) {
-            this.listenerOraLocation = Objects.requireNonNull(listenerOraLocation);
+            if (listenerOraLocation == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "listenerOraLocation");
+            }
+            this.listenerOraLocation = listenerOraLocation;
             return this;
         }
         @CustomType.Setter
         public Builder listenerType(String listenerType) {
-            this.listenerType = Objects.requireNonNull(listenerType);
+            if (listenerType == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "listenerType");
+            }
+            this.listenerType = listenerType;
             return this;
         }
         @CustomType.Setter
         public Builder logDirectory(String logDirectory) {
-            this.logDirectory = Objects.requireNonNull(logDirectory);
+            if (logDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "logDirectory");
+            }
+            this.logDirectory = logDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder oracleHome(String oracleHome) {
-            this.oracleHome = Objects.requireNonNull(oracleHome);
+            if (oracleHome == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "oracleHome");
+            }
+            this.oracleHome = oracleHome;
             return this;
         }
         @CustomType.Setter
         public Builder servicedAsms(List<GetExternalListenersExternalListenerCollectionItemServicedAsm> servicedAsms) {
-            this.servicedAsms = Objects.requireNonNull(servicedAsms);
+            if (servicedAsms == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "servicedAsms");
+            }
+            this.servicedAsms = servicedAsms;
             return this;
         }
         public Builder servicedAsms(GetExternalListenersExternalListenerCollectionItemServicedAsm... servicedAsms) {
@@ -496,7 +557,10 @@ public final class GetExternalListenersExternalListenerCollectionItem {
         }
         @CustomType.Setter
         public Builder servicedDatabases(List<GetExternalListenersExternalListenerCollectionItemServicedDatabase> servicedDatabases) {
-            this.servicedDatabases = Objects.requireNonNull(servicedDatabases);
+            if (servicedDatabases == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "servicedDatabases");
+            }
+            this.servicedDatabases = servicedDatabases;
             return this;
         }
         public Builder servicedDatabases(GetExternalListenersExternalListenerCollectionItemServicedDatabase... servicedDatabases) {
@@ -504,27 +568,42 @@ public final class GetExternalListenersExternalListenerCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder traceDirectory(String traceDirectory) {
-            this.traceDirectory = Objects.requireNonNull(traceDirectory);
+            if (traceDirectory == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "traceDirectory");
+            }
+            this.traceDirectory = traceDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenersExternalListenerCollectionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetExternalListenersExternalListenerCollectionItem build() {

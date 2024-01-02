@@ -105,6 +105,7 @@ public final class MigrationGoldenGateServiceDetails {
 
         @CustomType.Setter
         public Builder ggsDeployments(@Nullable List<MigrationGoldenGateServiceDetailsGgsDeployment> ggsDeployments) {
+
             this.ggsDeployments = ggsDeployments;
             return this;
         }
@@ -113,21 +114,25 @@ public final class MigrationGoldenGateServiceDetails {
         }
         @CustomType.Setter
         public Builder settings(@Nullable MigrationGoldenGateServiceDetailsSettings settings) {
+
             this.settings = settings;
             return this;
         }
         @CustomType.Setter
         public Builder sourceContainerDbCredentials(@Nullable MigrationGoldenGateServiceDetailsSourceContainerDbCredentials sourceContainerDbCredentials) {
+
             this.sourceContainerDbCredentials = sourceContainerDbCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDbCredentials(@Nullable MigrationGoldenGateServiceDetailsSourceDbCredentials sourceDbCredentials) {
+
             this.sourceDbCredentials = sourceDbCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder targetDbCredentials(@Nullable MigrationGoldenGateServiceDetailsTargetDbCredentials targetDbCredentials) {
+
             this.targetDbCredentials = targetDbCredentials;
             return this;
         }

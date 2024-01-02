@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.VirtualCircuitCrossConnectMappingArgs;
 import com.pulumi.oci.Core.inputs.VirtualCircuitPublicPrefixArgs;
 import java.lang.Boolean;
@@ -807,8 +808,12 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public VirtualCircuitArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VirtualCircuitArgs", "compartmentId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("VirtualCircuitArgs", "type");
+            }
             return $;
         }
     }

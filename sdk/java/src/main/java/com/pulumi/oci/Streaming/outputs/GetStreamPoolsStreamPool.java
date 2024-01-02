@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Streaming.outputs.GetStreamPoolsStreamPoolCustomEncryptionKey;
 import com.pulumi.oci.Streaming.outputs.GetStreamPoolsStreamPoolKafkaSetting;
 import com.pulumi.oci.Streaming.outputs.GetStreamPoolsStreamPoolPrivateEndpointSetting;
@@ -217,12 +218,18 @@ public final class GetStreamPoolsStreamPool {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder customEncryptionKeys(List<GetStreamPoolsStreamPoolCustomEncryptionKey> customEncryptionKeys) {
-            this.customEncryptionKeys = Objects.requireNonNull(customEncryptionKeys);
+            if (customEncryptionKeys == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "customEncryptionKeys");
+            }
+            this.customEncryptionKeys = customEncryptionKeys;
             return this;
         }
         public Builder customEncryptionKeys(GetStreamPoolsStreamPoolCustomEncryptionKey... customEncryptionKeys) {
@@ -230,32 +237,50 @@ public final class GetStreamPoolsStreamPool {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder endpointFqdn(String endpointFqdn) {
-            this.endpointFqdn = Objects.requireNonNull(endpointFqdn);
+            if (endpointFqdn == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "endpointFqdn");
+            }
+            this.endpointFqdn = endpointFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivate(Boolean isPrivate) {
-            this.isPrivate = Objects.requireNonNull(isPrivate);
+            if (isPrivate == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "isPrivate");
+            }
+            this.isPrivate = isPrivate;
             return this;
         }
         @CustomType.Setter
         public Builder kafkaSettings(List<GetStreamPoolsStreamPoolKafkaSetting> kafkaSettings) {
-            this.kafkaSettings = Objects.requireNonNull(kafkaSettings);
+            if (kafkaSettings == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "kafkaSettings");
+            }
+            this.kafkaSettings = kafkaSettings;
             return this;
         }
         public Builder kafkaSettings(GetStreamPoolsStreamPoolKafkaSetting... kafkaSettings) {
@@ -263,17 +288,26 @@ public final class GetStreamPoolsStreamPool {
         }
         @CustomType.Setter
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
-            this.lifecycleStateDetails = Objects.requireNonNull(lifecycleStateDetails);
+            if (lifecycleStateDetails == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "lifecycleStateDetails");
+            }
+            this.lifecycleStateDetails = lifecycleStateDetails;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder privateEndpointSettings(List<GetStreamPoolsStreamPoolPrivateEndpointSetting> privateEndpointSettings) {
-            this.privateEndpointSettings = Objects.requireNonNull(privateEndpointSettings);
+            if (privateEndpointSettings == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "privateEndpointSettings");
+            }
+            this.privateEndpointSettings = privateEndpointSettings;
             return this;
         }
         public Builder privateEndpointSettings(GetStreamPoolsStreamPoolPrivateEndpointSetting... privateEndpointSettings) {
@@ -281,12 +315,18 @@ public final class GetStreamPoolsStreamPool {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolsStreamPool", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetStreamPoolsStreamPool build() {

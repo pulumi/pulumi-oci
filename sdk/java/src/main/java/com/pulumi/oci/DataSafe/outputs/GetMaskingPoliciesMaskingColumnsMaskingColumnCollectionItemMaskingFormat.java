@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMa
 
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder formatEntries(List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry> formatEntries) {
-            this.formatEntries = Objects.requireNonNull(formatEntries);
+            if (formatEntries == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat", "formatEntries");
+            }
+            this.formatEntries = formatEntries;
             return this;
         }
         public Builder formatEntries(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry... formatEntries) {

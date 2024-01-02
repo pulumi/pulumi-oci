@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.ResponderRecipeResponderRuleDetailsConfiguration;
 import java.lang.Boolean;
 import java.lang.String;
@@ -89,11 +90,13 @@ public final class ResponderRecipeResponderRuleDetails {
 
         @CustomType.Setter
         public Builder condition(@Nullable String condition) {
+
             this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(@Nullable List<ResponderRecipeResponderRuleDetailsConfiguration> configurations) {
+
             this.configurations = configurations;
             return this;
         }
@@ -102,11 +105,15 @@ public final class ResponderRecipeResponderRuleDetails {
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("ResponderRecipeResponderRuleDetails", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder mode(@Nullable String mode) {
+
             this.mode = mode;
             return this;
         }

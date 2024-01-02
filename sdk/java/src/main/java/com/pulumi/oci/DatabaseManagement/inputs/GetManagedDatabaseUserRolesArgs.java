@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseUserRolesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,8 +174,12 @@ public final class GetManagedDatabaseUserRolesArgs extends com.pulumi.resources.
         }
 
         public GetManagedDatabaseUserRolesArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesArgs", "managedDatabaseId");
+            }
+            if ($.userName == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesArgs", "userName");
+            }
             return $;
         }
     }

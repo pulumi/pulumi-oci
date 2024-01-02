@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeAttachedBlockVolume;
 import java.lang.Integer;
 import java.lang.String;
@@ -269,7 +270,10 @@ public final class GetBdsInstanceNode {
 
         @CustomType.Setter
         public Builder attachedBlockVolumes(List<GetBdsInstanceNodeAttachedBlockVolume> attachedBlockVolumes) {
-            this.attachedBlockVolumes = Objects.requireNonNull(attachedBlockVolumes);
+            if (attachedBlockVolumes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "attachedBlockVolumes");
+            }
+            this.attachedBlockVolumes = attachedBlockVolumes;
             return this;
         }
         public Builder attachedBlockVolumes(GetBdsInstanceNodeAttachedBlockVolume... attachedBlockVolumes) {
@@ -277,82 +281,130 @@ public final class GetBdsInstanceNode {
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nodeType(String nodeType) {
-            this.nodeType = Objects.requireNonNull(nodeType);
+            if (nodeType == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "nodeType");
+            }
+            this.nodeType = nodeType;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder sshFingerprint(String sshFingerprint) {
-            this.sshFingerprint = Objects.requireNonNull(sshFingerprint);
+            if (sshFingerprint == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "sshFingerprint");
+            }
+            this.sshFingerprint = sshFingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaintenanceRebootDue(String timeMaintenanceRebootDue) {
-            this.timeMaintenanceRebootDue = Objects.requireNonNull(timeMaintenanceRebootDue);
+            if (timeMaintenanceRebootDue == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "timeMaintenanceRebootDue");
+            }
+            this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
             return this;
         }
         public GetBdsInstanceNode build() {

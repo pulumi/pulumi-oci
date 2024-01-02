@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -73,17 +74,24 @@ public final class ExadataIormConfigDbPlan {
 
         @CustomType.Setter
         public Builder dbName(String dbName) {
-            this.dbName = Objects.requireNonNull(dbName);
+            if (dbName == null) {
+              throw new MissingRequiredPropertyException("ExadataIormConfigDbPlan", "dbName");
+            }
+            this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder flashCacheLimit(@Nullable String flashCacheLimit) {
+
             this.flashCacheLimit = flashCacheLimit;
             return this;
         }
         @CustomType.Setter
         public Builder share(Integer share) {
-            this.share = Objects.requireNonNull(share);
+            if (share == null) {
+              throw new MissingRequiredPropertyException("ExadataIormConfigDbPlan", "share");
+            }
+            this.share = share;
             return this;
         }
         public ExadataIormConfigDbPlan build() {

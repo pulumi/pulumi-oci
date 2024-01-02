@@ -4,6 +4,7 @@
 package com.pulumi.oci.UsageProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.UsageProxy.outputs.GetResourceQuotasFilter;
 import com.pulumi.oci.UsageProxy.outputs.GetResourceQuotasResourceQuotumCollection;
 import java.lang.String;
@@ -85,11 +86,15 @@ public final class GetResourceQuotasResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetResourceQuotasFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -98,12 +103,18 @@ public final class GetResourceQuotasResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder resourceQuotumCollections(List<GetResourceQuotasResourceQuotumCollection> resourceQuotumCollections) {
-            this.resourceQuotumCollections = Objects.requireNonNull(resourceQuotumCollections);
+            if (resourceQuotumCollections == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResult", "resourceQuotumCollections");
+            }
+            this.resourceQuotumCollections = resourceQuotumCollections;
             return this;
         }
         public Builder resourceQuotumCollections(GetResourceQuotasResourceQuotumCollection... resourceQuotumCollections) {
@@ -111,12 +122,16 @@ public final class GetResourceQuotasResult {
         }
         @CustomType.Setter
         public Builder serviceEntitlement(@Nullable String serviceEntitlement) {
+
             this.serviceEntitlement = serviceEntitlement;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetResourceQuotasResult", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         public GetResourceQuotasResult build() {

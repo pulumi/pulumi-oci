@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDetailScaleDownConfig;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDetailScaleInConfig;
 import com.pulumi.oci.BigDataService.outputs.GetAutoScalingConfigurationPolicyDetailScaleOutConfig;
@@ -160,17 +161,26 @@ public final class GetAutoScalingConfigurationPolicyDetail {
 
         @CustomType.Setter
         public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+            if (actionType == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "actionType");
+            }
+            this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
         public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+            if (policyType == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "policyType");
+            }
+            this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
         public Builder scaleDownConfigs(List<GetAutoScalingConfigurationPolicyDetailScaleDownConfig> scaleDownConfigs) {
-            this.scaleDownConfigs = Objects.requireNonNull(scaleDownConfigs);
+            if (scaleDownConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "scaleDownConfigs");
+            }
+            this.scaleDownConfigs = scaleDownConfigs;
             return this;
         }
         public Builder scaleDownConfigs(GetAutoScalingConfigurationPolicyDetailScaleDownConfig... scaleDownConfigs) {
@@ -178,7 +188,10 @@ public final class GetAutoScalingConfigurationPolicyDetail {
         }
         @CustomType.Setter
         public Builder scaleInConfigs(List<GetAutoScalingConfigurationPolicyDetailScaleInConfig> scaleInConfigs) {
-            this.scaleInConfigs = Objects.requireNonNull(scaleInConfigs);
+            if (scaleInConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "scaleInConfigs");
+            }
+            this.scaleInConfigs = scaleInConfigs;
             return this;
         }
         public Builder scaleInConfigs(GetAutoScalingConfigurationPolicyDetailScaleInConfig... scaleInConfigs) {
@@ -186,7 +199,10 @@ public final class GetAutoScalingConfigurationPolicyDetail {
         }
         @CustomType.Setter
         public Builder scaleOutConfigs(List<GetAutoScalingConfigurationPolicyDetailScaleOutConfig> scaleOutConfigs) {
-            this.scaleOutConfigs = Objects.requireNonNull(scaleOutConfigs);
+            if (scaleOutConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "scaleOutConfigs");
+            }
+            this.scaleOutConfigs = scaleOutConfigs;
             return this;
         }
         public Builder scaleOutConfigs(GetAutoScalingConfigurationPolicyDetailScaleOutConfig... scaleOutConfigs) {
@@ -194,7 +210,10 @@ public final class GetAutoScalingConfigurationPolicyDetail {
         }
         @CustomType.Setter
         public Builder scaleUpConfigs(List<GetAutoScalingConfigurationPolicyDetailScaleUpConfig> scaleUpConfigs) {
-            this.scaleUpConfigs = Objects.requireNonNull(scaleUpConfigs);
+            if (scaleUpConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "scaleUpConfigs");
+            }
+            this.scaleUpConfigs = scaleUpConfigs;
             return this;
         }
         public Builder scaleUpConfigs(GetAutoScalingConfigurationPolicyDetailScaleUpConfig... scaleUpConfigs) {
@@ -202,7 +221,10 @@ public final class GetAutoScalingConfigurationPolicyDetail {
         }
         @CustomType.Setter
         public Builder scheduleDetails(List<GetAutoScalingConfigurationPolicyDetailScheduleDetail> scheduleDetails) {
-            this.scheduleDetails = Objects.requireNonNull(scheduleDetails);
+            if (scheduleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "scheduleDetails");
+            }
+            this.scheduleDetails = scheduleDetails;
             return this;
         }
         public Builder scheduleDetails(GetAutoScalingConfigurationPolicyDetailScheduleDetail... scheduleDetails) {
@@ -210,12 +232,18 @@ public final class GetAutoScalingConfigurationPolicyDetail {
         }
         @CustomType.Setter
         public Builder timezone(String timezone) {
-            this.timezone = Objects.requireNonNull(timezone);
+            if (timezone == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "timezone");
+            }
+            this.timezone = timezone;
             return this;
         }
         @CustomType.Setter
         public Builder triggerType(String triggerType) {
-            this.triggerType = Objects.requireNonNull(triggerType);
+            if (triggerType == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPolicyDetail", "triggerType");
+            }
+            this.triggerType = triggerType;
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetail build() {

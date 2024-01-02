@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayRouteTableRouteRuleDestinationArgs;
 import com.pulumi.oci.ServiceMesh.inputs.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs;
 import java.lang.Boolean;
@@ -398,8 +399,12 @@ public final class IngressGatewayRouteTableRouteRuleArgs extends com.pulumi.reso
         }
 
         public IngressGatewayRouteTableRouteRuleArgs build() {
-            $.destinations = Objects.requireNonNull($.destinations, "expected parameter 'destinations' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.destinations == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayRouteTableRouteRuleArgs", "destinations");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("IngressGatewayRouteTableRouteRuleArgs", "type");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog;
 import java.lang.Boolean;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
 
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder summarizedEventsLogs(List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog> summarizedEventsLogs) {
-            this.summarizedEventsLogs = Objects.requireNonNull(summarizedEventsLogs);
+            if (summarizedEventsLogs == null) {
+              throw new MissingRequiredPropertyException("GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis", "summarizedEventsLogs");
+            }
+            this.summarizedEventsLogs = summarizedEventsLogs;
             return this;
         }
         public Builder summarizedEventsLogs(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog... summarizedEventsLogs) {

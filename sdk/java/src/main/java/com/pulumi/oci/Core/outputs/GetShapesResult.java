@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetShapesFilter;
 import com.pulumi.oci.Core.outputs.GetShapesShape;
 import java.lang.String;
@@ -85,16 +86,21 @@ public final class GetShapesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -103,17 +109,24 @@ public final class GetShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder shapes(List<GetShapesShape> shapes) {
-            this.shapes = Objects.requireNonNull(shapes);
+            if (shapes == null) {
+              throw new MissingRequiredPropertyException("GetShapesResult", "shapes");
+            }
+            this.shapes = shapes;
             return this;
         }
         public Builder shapes(GetShapesShape... shapes) {

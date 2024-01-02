@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.CaptureFilterVtapCaptureFilterRuleIcmpOptions;
 import com.pulumi.oci.Core.outputs.CaptureFilterVtapCaptureFilterRuleTcpOptions;
 import com.pulumi.oci.Core.outputs.CaptureFilterVtapCaptureFilterRuleUdpOptions;
@@ -159,41 +160,51 @@ public final class CaptureFilterVtapCaptureFilterRule {
 
         @CustomType.Setter
         public Builder destinationCidr(@Nullable String destinationCidr) {
+
             this.destinationCidr = destinationCidr;
             return this;
         }
         @CustomType.Setter
         public Builder icmpOptions(@Nullable CaptureFilterVtapCaptureFilterRuleIcmpOptions icmpOptions) {
+
             this.icmpOptions = icmpOptions;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
+
             this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder ruleAction(@Nullable String ruleAction) {
+
             this.ruleAction = ruleAction;
             return this;
         }
         @CustomType.Setter
         public Builder sourceCidr(@Nullable String sourceCidr) {
+
             this.sourceCidr = sourceCidr;
             return this;
         }
         @CustomType.Setter
         public Builder tcpOptions(@Nullable CaptureFilterVtapCaptureFilterRuleTcpOptions tcpOptions) {
+
             this.tcpOptions = tcpOptions;
             return this;
         }
         @CustomType.Setter
         public Builder trafficDirection(String trafficDirection) {
-            this.trafficDirection = Objects.requireNonNull(trafficDirection);
+            if (trafficDirection == null) {
+              throw new MissingRequiredPropertyException("CaptureFilterVtapCaptureFilterRule", "trafficDirection");
+            }
+            this.trafficDirection = trafficDirection;
             return this;
         }
         @CustomType.Setter
         public Builder udpOptions(@Nullable CaptureFilterVtapCaptureFilterRuleUdpOptions udpOptions) {
+
             this.udpOptions = udpOptions;
             return this;
         }

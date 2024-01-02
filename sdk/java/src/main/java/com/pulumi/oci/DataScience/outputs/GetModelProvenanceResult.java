@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -124,42 +125,66 @@ public final class GetModelProvenanceResult {
 
         @CustomType.Setter
         public Builder gitBranch(String gitBranch) {
-            this.gitBranch = Objects.requireNonNull(gitBranch);
+            if (gitBranch == null) {
+              throw new MissingRequiredPropertyException("GetModelProvenanceResult", "gitBranch");
+            }
+            this.gitBranch = gitBranch;
             return this;
         }
         @CustomType.Setter
         public Builder gitCommit(String gitCommit) {
-            this.gitCommit = Objects.requireNonNull(gitCommit);
+            if (gitCommit == null) {
+              throw new MissingRequiredPropertyException("GetModelProvenanceResult", "gitCommit");
+            }
+            this.gitCommit = gitCommit;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetModelProvenanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modelId(String modelId) {
-            this.modelId = Objects.requireNonNull(modelId);
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("GetModelProvenanceResult", "modelId");
+            }
+            this.modelId = modelId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(String repositoryUrl) {
-            this.repositoryUrl = Objects.requireNonNull(repositoryUrl);
+            if (repositoryUrl == null) {
+              throw new MissingRequiredPropertyException("GetModelProvenanceResult", "repositoryUrl");
+            }
+            this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
         public Builder scriptDir(String scriptDir) {
-            this.scriptDir = Objects.requireNonNull(scriptDir);
+            if (scriptDir == null) {
+              throw new MissingRequiredPropertyException("GetModelProvenanceResult", "scriptDir");
+            }
+            this.scriptDir = scriptDir;
             return this;
         }
         @CustomType.Setter
         public Builder trainingId(String trainingId) {
-            this.trainingId = Objects.requireNonNull(trainingId);
+            if (trainingId == null) {
+              throw new MissingRequiredPropertyException("GetModelProvenanceResult", "trainingId");
+            }
+            this.trainingId = trainingId;
             return this;
         }
         @CustomType.Setter
         public Builder trainingScript(String trainingScript) {
-            this.trainingScript = Objects.requireNonNull(trainingScript);
+            if (trainingScript == null) {
+              throw new MissingRequiredPropertyException("GetModelProvenanceResult", "trainingScript");
+            }
+            this.trainingScript = trainingScript;
             return this;
         }
         public GetModelProvenanceResult build() {

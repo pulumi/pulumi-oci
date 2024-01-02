@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetListingResourceVersionsAppCatalogListingResourceVersion;
 import com.pulumi.oci.Core.outputs.GetListingResourceVersionsFilter;
 import java.lang.String;
@@ -64,7 +65,10 @@ public final class GetListingResourceVersionsResult {
 
         @CustomType.Setter
         public Builder appCatalogListingResourceVersions(List<GetListingResourceVersionsAppCatalogListingResourceVersion> appCatalogListingResourceVersions) {
-            this.appCatalogListingResourceVersions = Objects.requireNonNull(appCatalogListingResourceVersions);
+            if (appCatalogListingResourceVersions == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionsResult", "appCatalogListingResourceVersions");
+            }
+            this.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
             return this;
         }
         public Builder appCatalogListingResourceVersions(GetListingResourceVersionsAppCatalogListingResourceVersion... appCatalogListingResourceVersions) {
@@ -72,6 +76,7 @@ public final class GetListingResourceVersionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetListingResourceVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,12 +85,18 @@ public final class GetListingResourceVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetListingResourceVersionsResult", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         public GetListingResourceVersionsResult build() {

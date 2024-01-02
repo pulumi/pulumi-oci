@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetTriggersTriggerCollectionItemActionFilter;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetTriggersTriggerCollectionItemAction {
 
         @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
-            this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
+            if (buildPipelineId == null) {
+              throw new MissingRequiredPropertyException("GetTriggersTriggerCollectionItemAction", "buildPipelineId");
+            }
+            this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(List<GetTriggersTriggerCollectionItemActionFilter> filters) {
-            this.filters = Objects.requireNonNull(filters);
+            if (filters == null) {
+              throw new MissingRequiredPropertyException("GetTriggersTriggerCollectionItemAction", "filters");
+            }
+            this.filters = filters;
             return this;
         }
         public Builder filters(GetTriggersTriggerCollectionItemActionFilter... filters) {
@@ -85,7 +92,10 @@ public final class GetTriggersTriggerCollectionItemAction {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetTriggersTriggerCollectionItemAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetTriggersTriggerCollectionItemAction build() {

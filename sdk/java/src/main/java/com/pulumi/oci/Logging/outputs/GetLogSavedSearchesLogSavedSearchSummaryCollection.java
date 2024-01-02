@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetLogSavedSearchesLogSavedSearchSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetLogSavedSearchesLogSavedSearchSummaryCollection {
 
         @CustomType.Setter
         public Builder items(List<GetLogSavedSearchesLogSavedSearchSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetLogSavedSearchesLogSavedSearchSummaryCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetLogSavedSearchesLogSavedSearchSummaryCollectionItem... items) {

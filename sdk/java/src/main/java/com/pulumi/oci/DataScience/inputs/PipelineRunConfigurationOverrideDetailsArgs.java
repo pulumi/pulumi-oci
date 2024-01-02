@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -189,7 +190,9 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
         }
 
         public PipelineRunConfigurationOverrideDetailsArgs build() {
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("PipelineRunConfigurationOverrideDetailsArgs", "type");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseGroupManagedDatabase;
 import java.lang.String;
 import java.util.List;
@@ -148,27 +149,42 @@ public final class GetManagedDatabaseGroupResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseGroupId(String managedDatabaseGroupId) {
-            this.managedDatabaseGroupId = Objects.requireNonNull(managedDatabaseGroupId);
+            if (managedDatabaseGroupId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "managedDatabaseGroupId");
+            }
+            this.managedDatabaseGroupId = managedDatabaseGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabases(List<GetManagedDatabaseGroupManagedDatabase> managedDatabases) {
-            this.managedDatabases = Objects.requireNonNull(managedDatabases);
+            if (managedDatabases == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "managedDatabases");
+            }
+            this.managedDatabases = managedDatabases;
             return this;
         }
         public Builder managedDatabases(GetManagedDatabaseGroupManagedDatabase... managedDatabases) {
@@ -176,22 +192,34 @@ public final class GetManagedDatabaseGroupResult {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseGroupResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetManagedDatabaseGroupResult build() {

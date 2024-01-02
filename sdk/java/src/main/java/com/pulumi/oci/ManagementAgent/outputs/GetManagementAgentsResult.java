@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsFilter;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsManagementAgent;
 import java.lang.Boolean;
@@ -226,31 +227,39 @@ public final class GetManagementAgentsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityStatus(@Nullable String availabilityStatus) {
+
             this.availabilityStatus = availabilityStatus;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagementAgentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -259,6 +268,7 @@ public final class GetManagementAgentsResult {
         }
         @CustomType.Setter
         public Builder gatewayIds(@Nullable List<String> gatewayIds) {
+
             this.gatewayIds = gatewayIds;
             return this;
         }
@@ -267,27 +277,36 @@ public final class GetManagementAgentsResult {
         }
         @CustomType.Setter
         public Builder hostId(@Nullable String hostId) {
+
             this.hostId = hostId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder installType(@Nullable String installType) {
+
             this.installType = installType;
             return this;
         }
         @CustomType.Setter
         public Builder isCustomerDeployed(@Nullable Boolean isCustomerDeployed) {
+
             this.isCustomerDeployed = isCustomerDeployed;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgents(List<GetManagementAgentsManagementAgent> managementAgents) {
-            this.managementAgents = Objects.requireNonNull(managementAgents);
+            if (managementAgents == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsResult", "managementAgents");
+            }
+            this.managementAgents = managementAgents;
             return this;
         }
         public Builder managementAgents(GetManagementAgentsManagementAgent... managementAgents) {
@@ -295,6 +314,7 @@ public final class GetManagementAgentsResult {
         }
         @CustomType.Setter
         public Builder platformTypes(@Nullable List<String> platformTypes) {
+
             this.platformTypes = platformTypes;
             return this;
         }
@@ -303,6 +323,7 @@ public final class GetManagementAgentsResult {
         }
         @CustomType.Setter
         public Builder pluginNames(@Nullable List<String> pluginNames) {
+
             this.pluginNames = pluginNames;
             return this;
         }
@@ -311,11 +332,13 @@ public final class GetManagementAgentsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder versions(@Nullable List<String> versions) {
+
             this.versions = versions;
             return this;
         }

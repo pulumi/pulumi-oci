@@ -88,21 +88,25 @@ public final class PoolConfiguration {
 
         @CustomType.Setter
         public Builder max(@Nullable Integer max) {
+
             this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(@Nullable Integer min) {
+
             this.min = min;
             return this;
         }
         @CustomType.Setter
         public Builder shape(@Nullable String shape) {
+
             this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder shapeConfig(@Nullable PoolConfigurationShapeConfig shapeConfig) {
+
             this.shapeConfig = shapeConfig;
             return this;
         }

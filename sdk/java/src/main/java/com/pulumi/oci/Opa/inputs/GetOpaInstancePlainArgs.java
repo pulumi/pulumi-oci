@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opa.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetOpaInstancePlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetOpaInstancePlainArgs build() {
-            $.opaInstanceId = Objects.requireNonNull($.opaInstanceId, "expected parameter 'opaInstanceId' to be non-null");
+            if ($.opaInstanceId == null) {
+                throw new MissingRequiredPropertyException("GetOpaInstancePlainArgs", "opaInstanceId");
+            }
             return $;
         }
     }

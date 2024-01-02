@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.DiscoveryJobDiscoveryDetailsCredentialsItemProperties;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItem {
 
         @CustomType.Setter
         public Builder credentialName(String credentialName) {
-            this.credentialName = Objects.requireNonNull(credentialName);
+            if (credentialName == null) {
+              throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsCredentialsItem", "credentialName");
+            }
+            this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(String credentialType) {
-            this.credentialType = Objects.requireNonNull(credentialType);
+            if (credentialType == null) {
+              throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsCredentialsItem", "credentialType");
+            }
+            this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder properties(DiscoveryJobDiscoveryDetailsCredentialsItemProperties properties) {
-            this.properties = Objects.requireNonNull(properties);
+            if (properties == null) {
+              throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsCredentialsItem", "properties");
+            }
+            this.properties = properties;
             return this;
         }
         public DiscoveryJobDiscoveryDetailsCredentialsItem build() {

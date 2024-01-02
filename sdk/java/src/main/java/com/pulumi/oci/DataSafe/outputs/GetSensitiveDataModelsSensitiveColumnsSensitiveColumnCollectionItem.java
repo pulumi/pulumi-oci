@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -337,7 +338,10 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
 
         @CustomType.Setter
         public Builder appDefinedChildColumnKeys(List<String> appDefinedChildColumnKeys) {
-            this.appDefinedChildColumnKeys = Objects.requireNonNull(appDefinedChildColumnKeys);
+            if (appDefinedChildColumnKeys == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "appDefinedChildColumnKeys");
+            }
+            this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             return this;
         }
         public Builder appDefinedChildColumnKeys(String... appDefinedChildColumnKeys) {
@@ -345,12 +349,18 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
         }
         @CustomType.Setter
         public Builder appName(String appName) {
-            this.appName = Objects.requireNonNull(appName);
+            if (appName == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "appName");
+            }
+            this.appName = appName;
             return this;
         }
         @CustomType.Setter
         public Builder columnGroups(List<String> columnGroups) {
-            this.columnGroups = Objects.requireNonNull(columnGroups);
+            if (columnGroups == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "columnGroups");
+            }
+            this.columnGroups = columnGroups;
             return this;
         }
         public Builder columnGroups(String... columnGroups) {
@@ -358,17 +368,26 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
         }
         @CustomType.Setter
         public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+            if (columnName == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "columnName");
+            }
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder dbDefinedChildColumnKeys(List<String> dbDefinedChildColumnKeys) {
-            this.dbDefinedChildColumnKeys = Objects.requireNonNull(dbDefinedChildColumnKeys);
+            if (dbDefinedChildColumnKeys == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "dbDefinedChildColumnKeys");
+            }
+            this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             return this;
         }
         public Builder dbDefinedChildColumnKeys(String... dbDefinedChildColumnKeys) {
@@ -376,32 +395,50 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
         }
         @CustomType.Setter
         public Builder estimatedDataValueCount(String estimatedDataValueCount) {
-            this.estimatedDataValueCount = Objects.requireNonNull(estimatedDataValueCount);
+            if (estimatedDataValueCount == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "estimatedDataValueCount");
+            }
+            this.estimatedDataValueCount = estimatedDataValueCount;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder parentColumnKeys(List<String> parentColumnKeys) {
-            this.parentColumnKeys = Objects.requireNonNull(parentColumnKeys);
+            if (parentColumnKeys == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "parentColumnKeys");
+            }
+            this.parentColumnKeys = parentColumnKeys;
             return this;
         }
         public Builder parentColumnKeys(String... parentColumnKeys) {
@@ -409,12 +446,18 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
         }
         @CustomType.Setter
         public Builder relationType(String relationType) {
-            this.relationType = Objects.requireNonNull(relationType);
+            if (relationType == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "relationType");
+            }
+            this.relationType = relationType;
             return this;
         }
         @CustomType.Setter
         public Builder sampleDataValues(List<String> sampleDataValues) {
-            this.sampleDataValues = Objects.requireNonNull(sampleDataValues);
+            if (sampleDataValues == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "sampleDataValues");
+            }
+            this.sampleDataValues = sampleDataValues;
             return this;
         }
         public Builder sampleDataValues(String... sampleDataValues) {
@@ -422,42 +465,66 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
-            this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+            if (sensitiveDataModelId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "sensitiveDataModelId");
+            }
+            this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+            if (sensitiveTypeId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "sensitiveTypeId");
+            }
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetDataGuardAssociationArgs extends com.pulumi.resources.Invo
         }
 
         public GetDataGuardAssociationArgs build() {
-            $.dataGuardAssociationId = Objects.requireNonNull($.dataGuardAssociationId, "expected parameter 'dataGuardAssociationId' to be non-null");
-            $.databaseId = Objects.requireNonNull($.databaseId, "expected parameter 'databaseId' to be non-null");
+            if ($.dataGuardAssociationId == null) {
+                throw new MissingRequiredPropertyException("GetDataGuardAssociationArgs", "dataGuardAssociationId");
+            }
+            if ($.databaseId == null) {
+                throw new MissingRequiredPropertyException("GetDataGuardAssociationArgs", "databaseId");
+            }
             return $;
         }
     }

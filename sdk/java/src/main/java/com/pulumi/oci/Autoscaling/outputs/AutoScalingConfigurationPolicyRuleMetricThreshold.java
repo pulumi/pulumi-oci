@@ -61,11 +61,13 @@ public final class AutoScalingConfigurationPolicyRuleMetricThreshold {
 
         @CustomType.Setter
         public Builder operator(@Nullable String operator) {
+
             this.operator = operator;
             return this;
         }
         @CustomType.Setter
         public Builder value(@Nullable Integer value) {
+
             this.value = value;
             return this;
         }

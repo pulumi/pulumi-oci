@@ -4,6 +4,7 @@
 package com.pulumi.oci.Limits.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Limits.outputs.GetQuotasFilter;
 import com.pulumi.oci.Limits.outputs.GetQuotasQuota;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetQuotasResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetQuotasResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetQuotasFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,17 +127,24 @@ public final class GetQuotasResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetQuotasResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder quotas(List<GetQuotasQuota> quotas) {
-            this.quotas = Objects.requireNonNull(quotas);
+            if (quotas == null) {
+              throw new MissingRequiredPropertyException("GetQuotasResult", "quotas");
+            }
+            this.quotas = quotas;
             return this;
         }
         public Builder quotas(GetQuotasQuota... quotas) {
@@ -140,6 +152,7 @@ public final class GetQuotasResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -44,6 +44,7 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionConfiguration {
 
         @CustomType.Setter
         public Builder reverseConnectionsSourceIps(@Nullable List<DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp> reverseConnectionsSourceIps) {
+
             this.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
             return this;
         }

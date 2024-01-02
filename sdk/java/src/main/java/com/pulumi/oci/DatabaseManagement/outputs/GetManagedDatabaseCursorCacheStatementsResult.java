@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseCursorCacheStatementsFilter;
 import java.lang.Integer;
@@ -94,7 +95,10 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
 
         @CustomType.Setter
         public Builder cursorCacheStatementCollections(List<GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection> cursorCacheStatementCollections) {
-            this.cursorCacheStatementCollections = Objects.requireNonNull(cursorCacheStatementCollections);
+            if (cursorCacheStatementCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseCursorCacheStatementsResult", "cursorCacheStatementCollections");
+            }
+            this.cursorCacheStatementCollections = cursorCacheStatementCollections;
             return this;
         }
         public Builder cursorCacheStatementCollections(GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollection... cursorCacheStatementCollections) {
@@ -102,6 +106,7 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseCursorCacheStatementsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -110,21 +115,29 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseCursorCacheStatementsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseCursorCacheStatementsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder sqlText(@Nullable String sqlText) {
+
             this.sqlText = sqlText;
             return this;
         }

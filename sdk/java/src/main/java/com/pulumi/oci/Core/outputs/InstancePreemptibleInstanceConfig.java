@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.InstancePreemptibleInstanceConfigPreemptionAction;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class InstancePreemptibleInstanceConfig {
 
         @CustomType.Setter
         public Builder preemptionAction(InstancePreemptibleInstanceConfigPreemptionAction preemptionAction) {
-            this.preemptionAction = Objects.requireNonNull(preemptionAction);
+            if (preemptionAction == null) {
+              throw new MissingRequiredPropertyException("InstancePreemptibleInstanceConfig", "preemptionAction");
+            }
+            this.preemptionAction = preemptionAction;
             return this;
         }
         public InstancePreemptibleInstanceConfig build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApisApiCollection;
 import com.pulumi.oci.ApiGateway.outputs.GetApisFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetApisResult {
 
         @CustomType.Setter
         public Builder apiCollections(List<GetApisApiCollection> apiCollections) {
-            this.apiCollections = Objects.requireNonNull(apiCollections);
+            if (apiCollections == null) {
+              throw new MissingRequiredPropertyException("GetApisResult", "apiCollections");
+            }
+            this.apiCollections = apiCollections;
             return this;
         }
         public Builder apiCollections(GetApisApiCollection... apiCollections) {
@@ -117,16 +121,21 @@ public final class GetApisResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApisResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetApisFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetApisResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApisResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

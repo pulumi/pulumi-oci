@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetProfileLevelItemMetric;
 import java.lang.Integer;
 import java.lang.String;
@@ -129,12 +130,18 @@ public final class GetProfileLevelItem {
 
         @CustomType.Setter
         public Builder defaultInterval(Integer defaultInterval) {
-            this.defaultInterval = Objects.requireNonNull(defaultInterval);
+            if (defaultInterval == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItem", "defaultInterval");
+            }
+            this.defaultInterval = defaultInterval;
             return this;
         }
         @CustomType.Setter
         public Builder metrics(List<GetProfileLevelItemMetric> metrics) {
-            this.metrics = Objects.requireNonNull(metrics);
+            if (metrics == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItem", "metrics");
+            }
+            this.metrics = metrics;
             return this;
         }
         public Builder metrics(GetProfileLevelItemMetric... metrics) {
@@ -142,27 +149,42 @@ public final class GetProfileLevelItem {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationName(String recommendationName) {
-            this.recommendationName = Objects.requireNonNull(recommendationName);
+            if (recommendationName == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItem", "recommendationName");
+            }
+            this.recommendationName = recommendationName;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder validIntervals(List<Integer> validIntervals) {
-            this.validIntervals = Objects.requireNonNull(validIntervals);
+            if (validIntervals == null) {
+              throw new MissingRequiredPropertyException("GetProfileLevelItem", "validIntervals");
+            }
+            this.validIntervals = validIntervals;
             return this;
         }
         public Builder validIntervals(Integer... validIntervals) {

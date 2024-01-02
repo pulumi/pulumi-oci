@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesColumnsColumn;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabasesColumnsFilter;
 import java.lang.String;
@@ -139,11 +140,13 @@ public final class GetTargetDatabasesColumnsResult {
 
         @CustomType.Setter
         public Builder columnNameContains(@Nullable String columnNameContains) {
+
             this.columnNameContains = columnNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder columnNames(@Nullable List<String> columnNames) {
+
             this.columnNames = columnNames;
             return this;
         }
@@ -152,7 +155,10 @@ public final class GetTargetDatabasesColumnsResult {
         }
         @CustomType.Setter
         public Builder columns(List<GetTargetDatabasesColumnsColumn> columns) {
-            this.columns = Objects.requireNonNull(columns);
+            if (columns == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsResult", "columns");
+            }
+            this.columns = columns;
             return this;
         }
         public Builder columns(GetTargetDatabasesColumnsColumn... columns) {
@@ -160,6 +166,7 @@ public final class GetTargetDatabasesColumnsResult {
         }
         @CustomType.Setter
         public Builder datatypes(@Nullable List<String> datatypes) {
+
             this.datatypes = datatypes;
             return this;
         }
@@ -168,6 +175,7 @@ public final class GetTargetDatabasesColumnsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTargetDatabasesColumnsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -176,16 +184,21 @@ public final class GetTargetDatabasesColumnsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNameContains(@Nullable String schemaNameContains) {
+
             this.schemaNameContains = schemaNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder schemaNames(@Nullable List<String> schemaNames) {
+
             this.schemaNames = schemaNames;
             return this;
         }
@@ -194,11 +207,13 @@ public final class GetTargetDatabasesColumnsResult {
         }
         @CustomType.Setter
         public Builder tableNameContains(@Nullable String tableNameContains) {
+
             this.tableNameContains = tableNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder tableNames(@Nullable List<String> tableNames) {
+
             this.tableNames = tableNames;
             return this;
         }
@@ -207,7 +222,10 @@ public final class GetTargetDatabasesColumnsResult {
         }
         @CustomType.Setter
         public Builder targetDatabaseId(String targetDatabaseId) {
-            this.targetDatabaseId = Objects.requireNonNull(targetDatabaseId);
+            if (targetDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsResult", "targetDatabaseId");
+            }
+            this.targetDatabaseId = targetDatabaseId;
             return this;
         }
         public GetTargetDatabasesColumnsResult build() {

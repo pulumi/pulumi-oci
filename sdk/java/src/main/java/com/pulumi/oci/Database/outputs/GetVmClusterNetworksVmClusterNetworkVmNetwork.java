@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClusterNetworksVmClusterNetworkVmNetworkNode;
 import java.lang.String;
 import java.util.List;
@@ -114,27 +115,42 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetwork {
 
         @CustomType.Setter
         public Builder domainName(String domainName) {
-            this.domainName = Objects.requireNonNull(domainName);
+            if (domainName == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksVmClusterNetworkVmNetwork", "domainName");
+            }
+            this.domainName = domainName;
             return this;
         }
         @CustomType.Setter
         public Builder gateway(String gateway) {
-            this.gateway = Objects.requireNonNull(gateway);
+            if (gateway == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksVmClusterNetworkVmNetwork", "gateway");
+            }
+            this.gateway = gateway;
             return this;
         }
         @CustomType.Setter
         public Builder netmask(String netmask) {
-            this.netmask = Objects.requireNonNull(netmask);
+            if (netmask == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksVmClusterNetworkVmNetwork", "netmask");
+            }
+            this.netmask = netmask;
             return this;
         }
         @CustomType.Setter
         public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+            if (networkType == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksVmClusterNetworkVmNetwork", "networkType");
+            }
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
         public Builder nodes(List<GetVmClusterNetworksVmClusterNetworkVmNetworkNode> nodes) {
-            this.nodes = Objects.requireNonNull(nodes);
+            if (nodes == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksVmClusterNetworkVmNetwork", "nodes");
+            }
+            this.nodes = nodes;
             return this;
         }
         public Builder nodes(GetVmClusterNetworksVmClusterNetworkVmNetworkNode... nodes) {
@@ -142,7 +158,10 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetwork {
         }
         @CustomType.Setter
         public Builder vlanId(String vlanId) {
-            this.vlanId = Objects.requireNonNull(vlanId);
+            if (vlanId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterNetworksVmClusterNetworkVmNetwork", "vlanId");
+            }
+            this.vlanId = vlanId;
             return this;
         }
         public GetVmClusterNetworksVmClusterNetworkVmNetwork build() {

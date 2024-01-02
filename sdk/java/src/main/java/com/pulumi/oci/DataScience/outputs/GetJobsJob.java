@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobLogConfigurationDetail;
@@ -288,77 +289,122 @@ public final class GetJobsJob {
 
         @CustomType.Setter
         public Builder artifactContentDisposition(String artifactContentDisposition) {
-            this.artifactContentDisposition = Objects.requireNonNull(artifactContentDisposition);
+            if (artifactContentDisposition == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "artifactContentDisposition");
+            }
+            this.artifactContentDisposition = artifactContentDisposition;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentLength(String artifactContentLength) {
-            this.artifactContentLength = Objects.requireNonNull(artifactContentLength);
+            if (artifactContentLength == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "artifactContentLength");
+            }
+            this.artifactContentLength = artifactContentLength;
             return this;
         }
         @CustomType.Setter
         public Builder artifactContentMd5(String artifactContentMd5) {
-            this.artifactContentMd5 = Objects.requireNonNull(artifactContentMd5);
+            if (artifactContentMd5 == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "artifactContentMd5");
+            }
+            this.artifactContentMd5 = artifactContentMd5;
             return this;
         }
         @CustomType.Setter
         public Builder artifactLastModified(String artifactLastModified) {
-            this.artifactLastModified = Objects.requireNonNull(artifactLastModified);
+            if (artifactLastModified == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "artifactLastModified");
+            }
+            this.artifactLastModified = artifactLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deleteRelatedJobRuns(Boolean deleteRelatedJobRuns) {
-            this.deleteRelatedJobRuns = Objects.requireNonNull(deleteRelatedJobRuns);
+            if (deleteRelatedJobRuns == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "deleteRelatedJobRuns");
+            }
+            this.deleteRelatedJobRuns = deleteRelatedJobRuns;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder emptyArtifact(Boolean emptyArtifact) {
-            this.emptyArtifact = Objects.requireNonNull(emptyArtifact);
+            if (emptyArtifact == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "emptyArtifact");
+            }
+            this.emptyArtifact = emptyArtifact;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder jobArtifact(String jobArtifact) {
-            this.jobArtifact = Objects.requireNonNull(jobArtifact);
+            if (jobArtifact == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "jobArtifact");
+            }
+            this.jobArtifact = jobArtifact;
             return this;
         }
         @CustomType.Setter
         public Builder jobConfigurationDetails(List<GetJobsJobJobConfigurationDetail> jobConfigurationDetails) {
-            this.jobConfigurationDetails = Objects.requireNonNull(jobConfigurationDetails);
+            if (jobConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "jobConfigurationDetails");
+            }
+            this.jobConfigurationDetails = jobConfigurationDetails;
             return this;
         }
         public Builder jobConfigurationDetails(GetJobsJobJobConfigurationDetail... jobConfigurationDetails) {
@@ -366,7 +412,10 @@ public final class GetJobsJob {
         }
         @CustomType.Setter
         public Builder jobInfrastructureConfigurationDetails(List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails) {
-            this.jobInfrastructureConfigurationDetails = Objects.requireNonNull(jobInfrastructureConfigurationDetails);
+            if (jobInfrastructureConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "jobInfrastructureConfigurationDetails");
+            }
+            this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             return this;
         }
         public Builder jobInfrastructureConfigurationDetails(GetJobsJobJobInfrastructureConfigurationDetail... jobInfrastructureConfigurationDetails) {
@@ -374,7 +423,10 @@ public final class GetJobsJob {
         }
         @CustomType.Setter
         public Builder jobLogConfigurationDetails(List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails) {
-            this.jobLogConfigurationDetails = Objects.requireNonNull(jobLogConfigurationDetails);
+            if (jobLogConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "jobLogConfigurationDetails");
+            }
+            this.jobLogConfigurationDetails = jobLogConfigurationDetails;
             return this;
         }
         public Builder jobLogConfigurationDetails(GetJobsJobJobLogConfigurationDetail... jobLogConfigurationDetails) {
@@ -382,7 +434,10 @@ public final class GetJobsJob {
         }
         @CustomType.Setter
         public Builder jobStorageMountConfigurationDetailsLists(List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
-            this.jobStorageMountConfigurationDetailsLists = Objects.requireNonNull(jobStorageMountConfigurationDetailsLists);
+            if (jobStorageMountConfigurationDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "jobStorageMountConfigurationDetailsLists");
+            }
+            this.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             return this;
         }
         public Builder jobStorageMountConfigurationDetailsLists(GetJobsJobJobStorageMountConfigurationDetailsList... jobStorageMountConfigurationDetailsLists) {
@@ -390,22 +445,34 @@ public final class GetJobsJob {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetJobsJob build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetVmwareVmCustomerTag;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -186,12 +187,18 @@ public final class GetAssetVmwareVm {
 
         @CustomType.Setter
         public Builder cluster(String cluster) {
-            this.cluster = Objects.requireNonNull(cluster);
+            if (cluster == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "cluster");
+            }
+            this.cluster = cluster;
             return this;
         }
         @CustomType.Setter
         public Builder customerFields(List<String> customerFields) {
-            this.customerFields = Objects.requireNonNull(customerFields);
+            if (customerFields == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "customerFields");
+            }
+            this.customerFields = customerFields;
             return this;
         }
         public Builder customerFields(String... customerFields) {
@@ -199,7 +206,10 @@ public final class GetAssetVmwareVm {
         }
         @CustomType.Setter
         public Builder customerTags(List<GetAssetVmwareVmCustomerTag> customerTags) {
-            this.customerTags = Objects.requireNonNull(customerTags);
+            if (customerTags == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "customerTags");
+            }
+            this.customerTags = customerTags;
             return this;
         }
         public Builder customerTags(GetAssetVmwareVmCustomerTag... customerTags) {
@@ -207,42 +217,66 @@ public final class GetAssetVmwareVm {
         }
         @CustomType.Setter
         public Builder faultToleranceBandwidth(Integer faultToleranceBandwidth) {
-            this.faultToleranceBandwidth = Objects.requireNonNull(faultToleranceBandwidth);
+            if (faultToleranceBandwidth == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "faultToleranceBandwidth");
+            }
+            this.faultToleranceBandwidth = faultToleranceBandwidth;
             return this;
         }
         @CustomType.Setter
         public Builder faultToleranceSecondaryLatency(Integer faultToleranceSecondaryLatency) {
-            this.faultToleranceSecondaryLatency = Objects.requireNonNull(faultToleranceSecondaryLatency);
+            if (faultToleranceSecondaryLatency == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "faultToleranceSecondaryLatency");
+            }
+            this.faultToleranceSecondaryLatency = faultToleranceSecondaryLatency;
             return this;
         }
         @CustomType.Setter
         public Builder faultToleranceState(String faultToleranceState) {
-            this.faultToleranceState = Objects.requireNonNull(faultToleranceState);
+            if (faultToleranceState == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "faultToleranceState");
+            }
+            this.faultToleranceState = faultToleranceState;
             return this;
         }
         @CustomType.Setter
         public Builder instanceUuid(String instanceUuid) {
-            this.instanceUuid = Objects.requireNonNull(instanceUuid);
+            if (instanceUuid == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "instanceUuid");
+            }
+            this.instanceUuid = instanceUuid;
             return this;
         }
         @CustomType.Setter
         public Builder isDisksCbtEnabled(Boolean isDisksCbtEnabled) {
-            this.isDisksCbtEnabled = Objects.requireNonNull(isDisksCbtEnabled);
+            if (isDisksCbtEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "isDisksCbtEnabled");
+            }
+            this.isDisksCbtEnabled = isDisksCbtEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isDisksUuidEnabled(Boolean isDisksUuidEnabled) {
-            this.isDisksUuidEnabled = Objects.requireNonNull(isDisksUuidEnabled);
+            if (isDisksUuidEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "isDisksUuidEnabled");
+            }
+            this.isDisksUuidEnabled = isDisksUuidEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder vmwareToolsStatus(String vmwareToolsStatus) {
-            this.vmwareToolsStatus = Objects.requireNonNull(vmwareToolsStatus);
+            if (vmwareToolsStatus == null) {
+              throw new MissingRequiredPropertyException("GetAssetVmwareVm", "vmwareToolsStatus");
+            }
+            this.vmwareToolsStatus = vmwareToolsStatus;
             return this;
         }
         public GetAssetVmwareVm build() {

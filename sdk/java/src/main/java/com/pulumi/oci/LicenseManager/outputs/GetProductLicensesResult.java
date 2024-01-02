@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.outputs.GetProductLicensesFilter;
 import com.pulumi.oci.LicenseManager.outputs.GetProductLicensesProductLicenseCollection;
 import java.lang.Boolean;
@@ -88,11 +89,15 @@ public final class GetProductLicensesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProductLicensesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,17 +106,24 @@ public final class GetProductLicensesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCompartmentIdInSubtree(@Nullable Boolean isCompartmentIdInSubtree) {
+
             this.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder productLicenseCollections(List<GetProductLicensesProductLicenseCollection> productLicenseCollections) {
-            this.productLicenseCollections = Objects.requireNonNull(productLicenseCollections);
+            if (productLicenseCollections == null) {
+              throw new MissingRequiredPropertyException("GetProductLicensesResult", "productLicenseCollections");
+            }
+            this.productLicenseCollections = productLicenseCollections;
             return this;
         }
         public Builder productLicenseCollections(GetProductLicensesProductLicenseCollection... productLicenseCollections) {

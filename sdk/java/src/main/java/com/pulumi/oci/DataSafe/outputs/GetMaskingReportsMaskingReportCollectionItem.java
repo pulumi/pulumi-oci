@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -295,97 +296,154 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
-            this.isDropTempTablesEnabled = Objects.requireNonNull(isDropTempTablesEnabled);
+            if (isDropTempTablesEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "isDropTempTablesEnabled");
+            }
+            this.isDropTempTablesEnabled = isDropTempTablesEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
-            this.isRedoLoggingEnabled = Objects.requireNonNull(isRedoLoggingEnabled);
+            if (isRedoLoggingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "isRedoLoggingEnabled");
+            }
+            this.isRedoLoggingEnabled = isRedoLoggingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
-            this.isRefreshStatsEnabled = Objects.requireNonNull(isRefreshStatsEnabled);
+            if (isRefreshStatsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "isRefreshStatsEnabled");
+            }
+            this.isRefreshStatsEnabled = isRefreshStatsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maskingPolicyId(String maskingPolicyId) {
-            this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
+            if (maskingPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "maskingPolicyId");
+            }
+            this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder maskingWorkRequestId(String maskingWorkRequestId) {
-            this.maskingWorkRequestId = Objects.requireNonNull(maskingWorkRequestId);
+            if (maskingWorkRequestId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "maskingWorkRequestId");
+            }
+            this.maskingWorkRequestId = maskingWorkRequestId;
             return this;
         }
         @CustomType.Setter
         public Builder parallelDegree(String parallelDegree) {
-            this.parallelDegree = Objects.requireNonNull(parallelDegree);
+            if (parallelDegree == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "parallelDegree");
+            }
+            this.parallelDegree = parallelDegree;
             return this;
         }
         @CustomType.Setter
         public Builder recompile(String recompile) {
-            this.recompile = Objects.requireNonNull(recompile);
+            if (recompile == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "recompile");
+            }
+            this.recompile = recompile;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaskingFinished(String timeMaskingFinished) {
-            this.timeMaskingFinished = Objects.requireNonNull(timeMaskingFinished);
+            if (timeMaskingFinished == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "timeMaskingFinished");
+            }
+            this.timeMaskingFinished = timeMaskingFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeMaskingStarted(String timeMaskingStarted) {
-            this.timeMaskingStarted = Objects.requireNonNull(timeMaskingStarted);
+            if (timeMaskingStarted == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "timeMaskingStarted");
+            }
+            this.timeMaskingStarted = timeMaskingStarted;
             return this;
         }
         @CustomType.Setter
         public Builder totalMaskedColumns(String totalMaskedColumns) {
-            this.totalMaskedColumns = Objects.requireNonNull(totalMaskedColumns);
+            if (totalMaskedColumns == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "totalMaskedColumns");
+            }
+            this.totalMaskedColumns = totalMaskedColumns;
             return this;
         }
         @CustomType.Setter
         public Builder totalMaskedObjects(String totalMaskedObjects) {
-            this.totalMaskedObjects = Objects.requireNonNull(totalMaskedObjects);
+            if (totalMaskedObjects == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "totalMaskedObjects");
+            }
+            this.totalMaskedObjects = totalMaskedObjects;
             return this;
         }
         @CustomType.Setter
         public Builder totalMaskedSchemas(String totalMaskedSchemas) {
-            this.totalMaskedSchemas = Objects.requireNonNull(totalMaskedSchemas);
+            if (totalMaskedSchemas == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "totalMaskedSchemas");
+            }
+            this.totalMaskedSchemas = totalMaskedSchemas;
             return this;
         }
         @CustomType.Setter
         public Builder totalMaskedSensitiveTypes(String totalMaskedSensitiveTypes) {
-            this.totalMaskedSensitiveTypes = Objects.requireNonNull(totalMaskedSensitiveTypes);
+            if (totalMaskedSensitiveTypes == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "totalMaskedSensitiveTypes");
+            }
+            this.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
             return this;
         }
         @CustomType.Setter
         public Builder totalMaskedValues(String totalMaskedValues) {
-            this.totalMaskedValues = Objects.requireNonNull(totalMaskedValues);
+            if (totalMaskedValues == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsMaskingReportCollectionItem", "totalMaskedValues");
+            }
+            this.totalMaskedValues = totalMaskedValues;
             return this;
         }
         public GetMaskingReportsMaskingReportCollectionItem build() {

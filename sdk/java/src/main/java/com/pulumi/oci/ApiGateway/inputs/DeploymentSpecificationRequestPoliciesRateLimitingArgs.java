@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class DeploymentSpecificationRequestPoliciesRateLimitingArgs extend
         }
 
         public DeploymentSpecificationRequestPoliciesRateLimitingArgs build() {
-            $.rateInRequestsPerSecond = Objects.requireNonNull($.rateInRequestsPerSecond, "expected parameter 'rateInRequestsPerSecond' to be non-null");
-            $.rateKey = Objects.requireNonNull($.rateKey, "expected parameter 'rateKey' to be non-null");
+            if ($.rateInRequestsPerSecond == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesRateLimitingArgs", "rateInRequestsPerSecond");
+            }
+            if ($.rateKey == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesRateLimitingArgs", "rateKey");
+            }
             return $;
         }
     }

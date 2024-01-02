@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -238,8 +239,12 @@ public final class DiscoveryScheduleArgs extends com.pulumi.resources.ResourceAr
         }
 
         public DiscoveryScheduleArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.executionRecurrences = Objects.requireNonNull($.executionRecurrences, "expected parameter 'executionRecurrences' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DiscoveryScheduleArgs", "compartmentId");
+            }
+            if ($.executionRecurrences == null) {
+                throw new MissingRequiredPropertyException("DiscoveryScheduleArgs", "executionRecurrences");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHub;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailSetting;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetail {
 
         @CustomType.Setter
         public Builder hubs(List<GetMigrationsMigrationCollectionItemGoldenGateDetailHub> hubs) {
-            this.hubs = Objects.requireNonNull(hubs);
+            if (hubs == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemGoldenGateDetail", "hubs");
+            }
+            this.hubs = hubs;
             return this;
         }
         public Builder hubs(GetMigrationsMigrationCollectionItemGoldenGateDetailHub... hubs) {
@@ -66,7 +70,10 @@ public final class GetMigrationsMigrationCollectionItemGoldenGateDetail {
         }
         @CustomType.Setter
         public Builder settings(List<GetMigrationsMigrationCollectionItemGoldenGateDetailSetting> settings) {
-            this.settings = Objects.requireNonNull(settings);
+            if (settings == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollectionItemGoldenGateDetail", "settings");
+            }
+            this.settings = settings;
             return this;
         }
         public Builder settings(GetMigrationsMigrationCollectionItemGoldenGateDetailSetting... settings) {

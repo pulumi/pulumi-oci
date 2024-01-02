@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetManagedInstanceGroupPlainArgs extends com.pulumi.resources
         }
 
         public GetManagedInstanceGroupPlainArgs build() {
-            $.managedInstanceGroupId = Objects.requireNonNull($.managedInstanceGroupId, "expected parameter 'managedInstanceGroupId' to be non-null");
+            if ($.managedInstanceGroupId == null) {
+                throw new MissingRequiredPropertyException("GetManagedInstanceGroupPlainArgs", "managedInstanceGroupId");
+            }
             return $;
         }
     }

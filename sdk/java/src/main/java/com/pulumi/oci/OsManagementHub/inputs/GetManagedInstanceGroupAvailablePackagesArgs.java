@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.GetManagedInstanceGroupAvailablePackagesFilterArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -258,7 +259,9 @@ public final class GetManagedInstanceGroupAvailablePackagesArgs extends com.pulu
         }
 
         public GetManagedInstanceGroupAvailablePackagesArgs build() {
-            $.managedInstanceGroupId = Objects.requireNonNull($.managedInstanceGroupId, "expected parameter 'managedInstanceGroupId' to be non-null");
+            if ($.managedInstanceGroupId == null) {
+                throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailablePackagesArgs", "managedInstanceGroupId");
+            }
             return $;
         }
     }

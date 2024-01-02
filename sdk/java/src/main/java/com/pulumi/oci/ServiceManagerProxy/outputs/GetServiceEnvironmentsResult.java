@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceManagerProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentsFilter;
 import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentsServiceEnvironmentCollection;
 import java.lang.String;
@@ -107,16 +108,21 @@ public final class GetServiceEnvironmentsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetServiceEnvironmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -125,12 +131,18 @@ public final class GetServiceEnvironmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceEnvironmentCollections(List<GetServiceEnvironmentsServiceEnvironmentCollection> serviceEnvironmentCollections) {
-            this.serviceEnvironmentCollections = Objects.requireNonNull(serviceEnvironmentCollections);
+            if (serviceEnvironmentCollections == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsResult", "serviceEnvironmentCollections");
+            }
+            this.serviceEnvironmentCollections = serviceEnvironmentCollections;
             return this;
         }
         public Builder serviceEnvironmentCollections(GetServiceEnvironmentsServiceEnvironmentCollection... serviceEnvironmentCollections) {
@@ -138,11 +150,13 @@ public final class GetServiceEnvironmentsResult {
         }
         @CustomType.Setter
         public Builder serviceEnvironmentId(@Nullable String serviceEnvironmentId) {
+
             this.serviceEnvironmentId = serviceEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder serviceEnvironmentType(@Nullable String serviceEnvironmentType) {
+
             this.serviceEnvironmentType = serviceEnvironmentType;
             return this;
         }

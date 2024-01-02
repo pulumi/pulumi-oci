@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail;
 import java.lang.Object;
 import java.lang.String;
@@ -200,42 +201,66 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder taskDetails(List<GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail> taskDetails) {
-            this.taskDetails = Objects.requireNonNull(taskDetails);
+            if (taskDetails == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "taskDetails");
+            }
+            this.taskDetails = taskDetails;
             return this;
         }
         public Builder taskDetails(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail... taskDetails) {
@@ -243,22 +268,34 @@ public final class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem
         }
         @CustomType.Setter
         public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestIds(List<String> workRequestIds) {
-            this.workRequestIds = Objects.requireNonNull(workRequestIds);
+            if (workRequestIds == null) {
+              throw new MissingRequiredPropertyException("GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem", "workRequestIds");
+            }
+            this.workRequestIds = workRequestIds;
             return this;
         }
         public Builder workRequestIds(String... workRequestIds) {

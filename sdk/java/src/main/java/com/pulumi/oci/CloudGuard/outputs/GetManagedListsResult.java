@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetManagedListsFilter;
 import com.pulumi.oci.CloudGuard.outputs.GetManagedListsManagedListCollection;
 import java.lang.Boolean;
@@ -142,26 +143,33 @@ public final class GetManagedListsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedListsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedListsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -170,17 +178,24 @@ public final class GetManagedListsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedListsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listType(@Nullable String listType) {
+
             this.listType = listType;
             return this;
         }
         @CustomType.Setter
         public Builder managedListCollections(List<GetManagedListsManagedListCollection> managedListCollections) {
-            this.managedListCollections = Objects.requireNonNull(managedListCollections);
+            if (managedListCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedListsResult", "managedListCollections");
+            }
+            this.managedListCollections = managedListCollections;
             return this;
         }
         public Builder managedListCollections(GetManagedListsManagedListCollection... managedListCollections) {
@@ -188,11 +203,13 @@ public final class GetManagedListsResult {
         }
         @CustomType.Setter
         public Builder resourceMetadataOnly(@Nullable Boolean resourceMetadataOnly) {
+
             this.resourceMetadataOnly = resourceMetadataOnly;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

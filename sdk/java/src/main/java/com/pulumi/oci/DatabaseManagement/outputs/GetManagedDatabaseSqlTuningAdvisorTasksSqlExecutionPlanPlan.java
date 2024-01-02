@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -436,147 +437,234 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan {
 
         @CustomType.Setter
         public Builder accessPredicates(String accessPredicates) {
-            this.accessPredicates = Objects.requireNonNull(accessPredicates);
+            if (accessPredicates == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "accessPredicates");
+            }
+            this.accessPredicates = accessPredicates;
             return this;
         }
         @CustomType.Setter
         public Builder attribute(String attribute) {
-            this.attribute = Objects.requireNonNull(attribute);
+            if (attribute == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "attribute");
+            }
+            this.attribute = attribute;
             return this;
         }
         @CustomType.Setter
         public Builder bytes(String bytes) {
-            this.bytes = Objects.requireNonNull(bytes);
+            if (bytes == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "bytes");
+            }
+            this.bytes = bytes;
             return this;
         }
         @CustomType.Setter
         public Builder cardinality(String cardinality) {
-            this.cardinality = Objects.requireNonNull(cardinality);
+            if (cardinality == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "cardinality");
+            }
+            this.cardinality = cardinality;
             return this;
         }
         @CustomType.Setter
         public Builder cost(Double cost) {
-            this.cost = Objects.requireNonNull(cost);
+            if (cost == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "cost");
+            }
+            this.cost = cost;
             return this;
         }
         @CustomType.Setter
         public Builder cpuCost(Double cpuCost) {
-            this.cpuCost = Objects.requireNonNull(cpuCost);
+            if (cpuCost == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "cpuCost");
+            }
+            this.cpuCost = cpuCost;
             return this;
         }
         @CustomType.Setter
         public Builder filterPredicates(String filterPredicates) {
-            this.filterPredicates = Objects.requireNonNull(filterPredicates);
+            if (filterPredicates == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "filterPredicates");
+            }
+            this.filterPredicates = filterPredicates;
             return this;
         }
         @CustomType.Setter
         public Builder ioCost(Double ioCost) {
-            this.ioCost = Objects.requireNonNull(ioCost);
+            if (ioCost == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "ioCost");
+            }
+            this.ioCost = ioCost;
             return this;
         }
         @CustomType.Setter
         public Builder numberOfSearchColumn(Integer numberOfSearchColumn) {
-            this.numberOfSearchColumn = Objects.requireNonNull(numberOfSearchColumn);
+            if (numberOfSearchColumn == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "numberOfSearchColumn");
+            }
+            this.numberOfSearchColumn = numberOfSearchColumn;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectNode(String objectNode) {
-            this.objectNode = Objects.requireNonNull(objectNode);
+            if (objectNode == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "objectNode");
+            }
+            this.objectNode = objectNode;
             return this;
         }
         @CustomType.Setter
         public Builder objectOwner(String objectOwner) {
-            this.objectOwner = Objects.requireNonNull(objectOwner);
+            if (objectOwner == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "objectOwner");
+            }
+            this.objectOwner = objectOwner;
             return this;
         }
         @CustomType.Setter
         public Builder objectPosition(Integer objectPosition) {
-            this.objectPosition = Objects.requireNonNull(objectPosition);
+            if (objectPosition == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "objectPosition");
+            }
+            this.objectPosition = objectPosition;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+            if (operation == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "operation");
+            }
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
         public Builder optimizerMode(String optimizerMode) {
-            this.optimizerMode = Objects.requireNonNull(optimizerMode);
+            if (optimizerMode == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "optimizerMode");
+            }
+            this.optimizerMode = optimizerMode;
             return this;
         }
         @CustomType.Setter
         public Builder options(String options) {
-            this.options = Objects.requireNonNull(options);
+            if (options == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "options");
+            }
+            this.options = options;
             return this;
         }
         @CustomType.Setter
         public Builder other(String other) {
-            this.other = Objects.requireNonNull(other);
+            if (other == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "other");
+            }
+            this.other = other;
             return this;
         }
         @CustomType.Setter
         public Builder otherTag(String otherTag) {
-            this.otherTag = Objects.requireNonNull(otherTag);
+            if (otherTag == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "otherTag");
+            }
+            this.otherTag = otherTag;
             return this;
         }
         @CustomType.Setter
         public Builder parentStepId(Integer parentStepId) {
-            this.parentStepId = Objects.requireNonNull(parentStepId);
+            if (parentStepId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "parentStepId");
+            }
+            this.parentStepId = parentStepId;
             return this;
         }
         @CustomType.Setter
         public Builder partitionId(Integer partitionId) {
-            this.partitionId = Objects.requireNonNull(partitionId);
+            if (partitionId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "partitionId");
+            }
+            this.partitionId = partitionId;
             return this;
         }
         @CustomType.Setter
         public Builder partitionStart(String partitionStart) {
-            this.partitionStart = Objects.requireNonNull(partitionStart);
+            if (partitionStart == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "partitionStart");
+            }
+            this.partitionStart = partitionStart;
             return this;
         }
         @CustomType.Setter
         public Builder partitionStop(String partitionStop) {
-            this.partitionStop = Objects.requireNonNull(partitionStop);
+            if (partitionStop == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "partitionStop");
+            }
+            this.partitionStop = partitionStop;
             return this;
         }
         @CustomType.Setter
         public Builder planHashValue(String planHashValue) {
-            this.planHashValue = Objects.requireNonNull(planHashValue);
+            if (planHashValue == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "planHashValue");
+            }
+            this.planHashValue = planHashValue;
             return this;
         }
         @CustomType.Setter
         public Builder position(Integer position) {
-            this.position = Objects.requireNonNull(position);
+            if (position == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "position");
+            }
+            this.position = position;
             return this;
         }
         @CustomType.Setter
         public Builder remarks(String remarks) {
-            this.remarks = Objects.requireNonNull(remarks);
+            if (remarks == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "remarks");
+            }
+            this.remarks = remarks;
             return this;
         }
         @CustomType.Setter
         public Builder stepId(Integer stepId) {
-            this.stepId = Objects.requireNonNull(stepId);
+            if (stepId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "stepId");
+            }
+            this.stepId = stepId;
             return this;
         }
         @CustomType.Setter
         public Builder tempSpace(String tempSpace) {
-            this.tempSpace = Objects.requireNonNull(tempSpace);
+            if (tempSpace == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "tempSpace");
+            }
+            this.tempSpace = tempSpace;
             return this;
         }
         @CustomType.Setter
         public Builder time(String time) {
-            this.time = Objects.requireNonNull(time);
+            if (time == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan", "time");
+            }
+            this.time = time;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan build() {

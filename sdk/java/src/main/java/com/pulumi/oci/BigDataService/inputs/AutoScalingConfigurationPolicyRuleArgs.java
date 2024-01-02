@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.AutoScalingConfigurationPolicyRuleMetricArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
         }
 
         public AutoScalingConfigurationPolicyRuleArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
-            $.metric = Objects.requireNonNull($.metric, "expected parameter 'metric' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyRuleArgs", "action");
+            }
+            if ($.metric == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyRuleArgs", "metric");
+            }
             return $;
         }
     }

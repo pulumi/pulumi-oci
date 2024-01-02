@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOption;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption;
 import com.pulumi.oci.Core.outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOption;
@@ -154,12 +155,18 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRule {
 
         @CustomType.Setter
         public Builder destinationCidr(String destinationCidr) {
-            this.destinationCidr = Objects.requireNonNull(destinationCidr);
+            if (destinationCidr == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRule", "destinationCidr");
+            }
+            this.destinationCidr = destinationCidr;
             return this;
         }
         @CustomType.Setter
         public Builder icmpOptions(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOption> icmpOptions) {
-            this.icmpOptions = Objects.requireNonNull(icmpOptions);
+            if (icmpOptions == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRule", "icmpOptions");
+            }
+            this.icmpOptions = icmpOptions;
             return this;
         }
         public Builder icmpOptions(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleIcmpOption... icmpOptions) {
@@ -167,22 +174,34 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRule {
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRule", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder ruleAction(String ruleAction) {
-            this.ruleAction = Objects.requireNonNull(ruleAction);
+            if (ruleAction == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRule", "ruleAction");
+            }
+            this.ruleAction = ruleAction;
             return this;
         }
         @CustomType.Setter
         public Builder sourceCidr(String sourceCidr) {
-            this.sourceCidr = Objects.requireNonNull(sourceCidr);
+            if (sourceCidr == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRule", "sourceCidr");
+            }
+            this.sourceCidr = sourceCidr;
             return this;
         }
         @CustomType.Setter
         public Builder tcpOptions(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption> tcpOptions) {
-            this.tcpOptions = Objects.requireNonNull(tcpOptions);
+            if (tcpOptions == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRule", "tcpOptions");
+            }
+            this.tcpOptions = tcpOptions;
             return this;
         }
         public Builder tcpOptions(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleTcpOption... tcpOptions) {
@@ -190,12 +209,18 @@ public final class GetCaptureFiltersCaptureFilterVtapCaptureFilterRule {
         }
         @CustomType.Setter
         public Builder trafficDirection(String trafficDirection) {
-            this.trafficDirection = Objects.requireNonNull(trafficDirection);
+            if (trafficDirection == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRule", "trafficDirection");
+            }
+            this.trafficDirection = trafficDirection;
             return this;
         }
         @CustomType.Setter
         public Builder udpOptions(List<GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOption> udpOptions) {
-            this.udpOptions = Objects.requireNonNull(udpOptions);
+            if (udpOptions == null) {
+              throw new MissingRequiredPropertyException("GetCaptureFiltersCaptureFilterVtapCaptureFilterRule", "udpOptions");
+            }
+            this.udpOptions = udpOptions;
             return this;
         }
         public Builder udpOptions(GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleUdpOption... udpOptions) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItemRequirem
 
         @CustomType.Setter
         public Builder minMemoryRequiredInMbs(String minMemoryRequiredInMbs) {
-            this.minMemoryRequiredInMbs = Objects.requireNonNull(minMemoryRequiredInMbs);
+            if (minMemoryRequiredInMbs == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement", "minMemoryRequiredInMbs");
+            }
+            this.minMemoryRequiredInMbs = minMemoryRequiredInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder policies(List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy> policies) {
-            this.policies = Objects.requireNonNull(policies);
+            if (policies == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement", "policies");
+            }
+            this.policies = policies;
             return this;
         }
         public Builder policies(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementPolicy... policies) {

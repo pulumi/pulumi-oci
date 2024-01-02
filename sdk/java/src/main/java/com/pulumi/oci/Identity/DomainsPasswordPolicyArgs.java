@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsPasswordPolicyGroupArgs;
 import com.pulumi.oci.Identity.inputs.DomainsPasswordPolicyTagArgs;
 import java.lang.Boolean;
@@ -3338,8 +3339,12 @@ public final class DomainsPasswordPolicyArgs extends com.pulumi.resources.Resour
         }
 
         public DomainsPasswordPolicyArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsPasswordPolicyArgs", "idcsEndpoint");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsPasswordPolicyArgs", "schemas");
+            }
             return $;
         }
     }

@@ -76,16 +76,19 @@ public final class BdsInstanceEdgeNodeShapeConfig {
 
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(@Nullable Integer nvmes) {
+
             this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Integer ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }

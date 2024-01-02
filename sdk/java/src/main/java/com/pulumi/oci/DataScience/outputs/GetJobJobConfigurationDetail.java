@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -86,22 +87,34 @@ public final class GetJobJobConfigurationDetail {
 
         @CustomType.Setter
         public Builder commandLineArguments(String commandLineArguments) {
-            this.commandLineArguments = Objects.requireNonNull(commandLineArguments);
+            if (commandLineArguments == null) {
+              throw new MissingRequiredPropertyException("GetJobJobConfigurationDetail", "commandLineArguments");
+            }
+            this.commandLineArguments = commandLineArguments;
             return this;
         }
         @CustomType.Setter
         public Builder environmentVariables(Map<String,Object> environmentVariables) {
-            this.environmentVariables = Objects.requireNonNull(environmentVariables);
+            if (environmentVariables == null) {
+              throw new MissingRequiredPropertyException("GetJobJobConfigurationDetail", "environmentVariables");
+            }
+            this.environmentVariables = environmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder jobType(String jobType) {
-            this.jobType = Objects.requireNonNull(jobType);
+            if (jobType == null) {
+              throw new MissingRequiredPropertyException("GetJobJobConfigurationDetail", "jobType");
+            }
+            this.jobType = jobType;
             return this;
         }
         @CustomType.Setter
         public Builder maximumRuntimeInMinutes(String maximumRuntimeInMinutes) {
-            this.maximumRuntimeInMinutes = Objects.requireNonNull(maximumRuntimeInMinutes);
+            if (maximumRuntimeInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetJobJobConfigurationDetail", "maximumRuntimeInMinutes");
+            }
+            this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
         public GetJobJobConfigurationDetail build() {

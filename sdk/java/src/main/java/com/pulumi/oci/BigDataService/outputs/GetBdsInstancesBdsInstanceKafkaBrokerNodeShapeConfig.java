@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig {
 
         @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder nvmes(Integer nvmes) {
-            this.nvmes = Objects.requireNonNull(nvmes);
+            if (nvmes == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig", "nvmes");
+            }
+            this.nvmes = nvmes;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(Integer ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+            if (ocpus == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig", "ocpus");
+            }
+            this.ocpus = ocpus;
             return this;
         }
         public GetBdsInstancesBdsInstanceKafkaBrokerNodeShapeConfig build() {

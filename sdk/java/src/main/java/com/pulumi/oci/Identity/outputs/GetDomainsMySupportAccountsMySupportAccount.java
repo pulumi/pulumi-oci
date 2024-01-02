@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMySupportAccountsMySupportAccountMeta;
@@ -315,32 +316,50 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
 
         @CustomType.Setter
         public Builder authorization(String authorization) {
-            this.authorization = Objects.requireNonNull(authorization);
+            if (authorization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "authorization");
+            }
+            this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMySupportAccountsMySupportAccountIdcsCreatedBy... idcsCreatedBies) {
@@ -348,12 +367,18 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -361,12 +386,18 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -374,7 +405,10 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsMySupportAccountsMySupportAccountMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMySupportAccountsMySupportAccountMeta... metas) {
@@ -382,22 +416,34 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
         }
         @CustomType.Setter
         public Builder mySupportAccountProvider(String mySupportAccountProvider) {
-            this.mySupportAccountProvider = Objects.requireNonNull(mySupportAccountProvider);
+            if (mySupportAccountProvider == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "mySupportAccountProvider");
+            }
+            this.mySupportAccountProvider = mySupportAccountProvider;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(String resourceTypeSchemaVersion) {
-            this.resourceTypeSchemaVersion = Objects.requireNonNull(resourceTypeSchemaVersion);
+            if (resourceTypeSchemaVersion == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "resourceTypeSchemaVersion");
+            }
+            this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -405,7 +451,10 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsMySupportAccountsMySupportAccountTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMySupportAccountsMySupportAccountTag... tags) {
@@ -413,22 +462,34 @@ public final class GetDomainsMySupportAccountsMySupportAccount {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder token(String token) {
-            this.token = Objects.requireNonNull(token);
+            if (token == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "token");
+            }
+            this.token = token;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         @CustomType.Setter
         public Builder users(List<GetDomainsMySupportAccountsMySupportAccountUser> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsMySupportAccount", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(GetDomainsMySupportAccountsMySupportAccountUser... users) {

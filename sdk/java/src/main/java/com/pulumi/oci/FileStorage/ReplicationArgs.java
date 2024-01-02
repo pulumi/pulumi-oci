@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -312,9 +313,15 @@ public final class ReplicationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ReplicationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.sourceId = Objects.requireNonNull($.sourceId, "expected parameter 'sourceId' to be non-null");
-            $.targetId = Objects.requireNonNull($.targetId, "expected parameter 'targetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ReplicationArgs", "compartmentId");
+            }
+            if ($.sourceId == null) {
+                throw new MissingRequiredPropertyException("ReplicationArgs", "sourceId");
+            }
+            if ($.targetId == null) {
+                throw new MissingRequiredPropertyException("ReplicationArgs", "targetId");
+            }
             return $;
         }
     }

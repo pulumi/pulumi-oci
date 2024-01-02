@@ -58,11 +58,13 @@ public final class MigrationAdvisorSettings {
 
         @CustomType.Setter
         public Builder isIgnoreErrors(@Nullable Boolean isIgnoreErrors) {
+
             this.isIgnoreErrors = isIgnoreErrors;
             return this;
         }
         @CustomType.Setter
         public Builder isSkipAdvisor(@Nullable Boolean isSkipAdvisor) {
+
             this.isSkipAdvisor = isSkipAdvisor;
             return this;
         }

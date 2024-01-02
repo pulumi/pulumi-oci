@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetMigrationPlansMigrationPlanCollectionItemStrategy {
 
         @CustomType.Setter
         public Builder adjustmentMultiplier(Double adjustmentMultiplier) {
-            this.adjustmentMultiplier = Objects.requireNonNull(adjustmentMultiplier);
+            if (adjustmentMultiplier == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemStrategy", "adjustmentMultiplier");
+            }
+            this.adjustmentMultiplier = adjustmentMultiplier;
             return this;
         }
         @CustomType.Setter
         public Builder metricTimeWindow(String metricTimeWindow) {
-            this.metricTimeWindow = Objects.requireNonNull(metricTimeWindow);
+            if (metricTimeWindow == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemStrategy", "metricTimeWindow");
+            }
+            this.metricTimeWindow = metricTimeWindow;
             return this;
         }
         @CustomType.Setter
         public Builder metricType(String metricType) {
-            this.metricType = Objects.requireNonNull(metricType);
+            if (metricType == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemStrategy", "metricType");
+            }
+            this.metricType = metricType;
             return this;
         }
         @CustomType.Setter
         public Builder percentile(String percentile) {
-            this.percentile = Objects.requireNonNull(percentile);
+            if (percentile == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemStrategy", "percentile");
+            }
+            this.percentile = percentile;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemStrategy", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+            if (strategyType == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlansMigrationPlanCollectionItemStrategy", "strategyType");
+            }
+            this.strategyType = strategyType;
             return this;
         }
         public GetMigrationPlansMigrationPlanCollectionItemStrategy build() {

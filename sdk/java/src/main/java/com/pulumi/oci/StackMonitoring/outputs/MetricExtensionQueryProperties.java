@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.MetricExtensionQueryPropertiesInParamDetail;
 import com.pulumi.oci.StackMonitoring.outputs.MetricExtensionQueryPropertiesOutParamDetails;
 import com.pulumi.oci.StackMonitoring.outputs.MetricExtensionQueryPropertiesScriptDetails;
@@ -246,36 +247,45 @@ public final class MetricExtensionQueryProperties {
 
         @CustomType.Setter
         public Builder arguments(@Nullable String arguments) {
+
             this.arguments = arguments;
             return this;
         }
         @CustomType.Setter
         public Builder autoRowPrefix(@Nullable String autoRowPrefix) {
+
             this.autoRowPrefix = autoRowPrefix;
             return this;
         }
         @CustomType.Setter
         public Builder collectionMethod(String collectionMethod) {
-            this.collectionMethod = Objects.requireNonNull(collectionMethod);
+            if (collectionMethod == null) {
+              throw new MissingRequiredPropertyException("MetricExtensionQueryProperties", "collectionMethod");
+            }
+            this.collectionMethod = collectionMethod;
             return this;
         }
         @CustomType.Setter
         public Builder command(@Nullable String command) {
+
             this.command = command;
             return this;
         }
         @CustomType.Setter
         public Builder delimiter(@Nullable String delimiter) {
+
             this.delimiter = delimiter;
             return this;
         }
         @CustomType.Setter
         public Builder identityMetric(@Nullable String identityMetric) {
+
             this.identityMetric = identityMetric;
             return this;
         }
         @CustomType.Setter
         public Builder inParamDetails(@Nullable List<MetricExtensionQueryPropertiesInParamDetail> inParamDetails) {
+
             this.inParamDetails = inParamDetails;
             return this;
         }
@@ -284,41 +294,49 @@ public final class MetricExtensionQueryProperties {
         }
         @CustomType.Setter
         public Builder isMetricServiceEnabled(@Nullable Boolean isMetricServiceEnabled) {
+
             this.isMetricServiceEnabled = isMetricServiceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder jmxAttributes(@Nullable String jmxAttributes) {
+
             this.jmxAttributes = jmxAttributes;
             return this;
         }
         @CustomType.Setter
         public Builder managedBeanQuery(@Nullable String managedBeanQuery) {
+
             this.managedBeanQuery = managedBeanQuery;
             return this;
         }
         @CustomType.Setter
         public Builder outParamDetails(@Nullable MetricExtensionQueryPropertiesOutParamDetails outParamDetails) {
+
             this.outParamDetails = outParamDetails;
             return this;
         }
         @CustomType.Setter
         public Builder scriptDetails(@Nullable MetricExtensionQueryPropertiesScriptDetails scriptDetails) {
+
             this.scriptDetails = scriptDetails;
             return this;
         }
         @CustomType.Setter
         public Builder sqlDetails(@Nullable MetricExtensionQueryPropertiesSqlDetails sqlDetails) {
+
             this.sqlDetails = sqlDetails;
             return this;
         }
         @CustomType.Setter
         public Builder sqlType(@Nullable String sqlType) {
+
             this.sqlType = sqlType;
             return this;
         }
         @CustomType.Setter
         public Builder startsWith(@Nullable String startsWith) {
+
             this.startsWith = startsWith;
             return this;
         }

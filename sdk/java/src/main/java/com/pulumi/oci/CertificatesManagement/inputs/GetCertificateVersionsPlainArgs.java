@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateVersionsFilter;
 import java.lang.String;
 import java.util.List;
@@ -111,7 +112,9 @@ public final class GetCertificateVersionsPlainArgs extends com.pulumi.resources.
         }
 
         public GetCertificateVersionsPlainArgs build() {
-            $.certificateId = Objects.requireNonNull($.certificateId, "expected parameter 'certificateId' to be non-null");
+            if ($.certificateId == null) {
+                throw new MissingRequiredPropertyException("GetCertificateVersionsPlainArgs", "certificateId");
+            }
             return $;
         }
     }

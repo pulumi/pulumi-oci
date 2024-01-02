@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,12 +72,18 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivate
 
         @CustomType.Setter
         public Builder networkChannelType(String networkChannelType) {
-            this.networkChannelType = Objects.requireNonNull(networkChannelType);
+            if (networkChannelType == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig", "networkChannelType");
+            }
+            this.networkChannelType = networkChannelType;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -84,7 +91,10 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivate
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig build() {

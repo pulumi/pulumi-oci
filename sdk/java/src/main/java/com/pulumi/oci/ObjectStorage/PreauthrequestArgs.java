@@ -5,6 +5,7 @@ package com.pulumi.oci.ObjectStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -363,10 +364,18 @@ public final class PreauthrequestArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public PreauthrequestArgs build() {
-            $.accessType = Objects.requireNonNull($.accessType, "expected parameter 'accessType' to be non-null");
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.timeExpires = Objects.requireNonNull($.timeExpires, "expected parameter 'timeExpires' to be non-null");
+            if ($.accessType == null) {
+                throw new MissingRequiredPropertyException("PreauthrequestArgs", "accessType");
+            }
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("PreauthrequestArgs", "bucket");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("PreauthrequestArgs", "namespace");
+            }
+            if ($.timeExpires == null) {
+                throw new MissingRequiredPropertyException("PreauthrequestArgs", "timeExpires");
+            }
             return $;
         }
     }

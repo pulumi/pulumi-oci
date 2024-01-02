@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDrgsDrg;
 import com.pulumi.oci.Core.outputs.GetDrgsFilter;
 import java.lang.String;
@@ -80,12 +81,18 @@ public final class GetDrgsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrgsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder drgs(List<GetDrgsDrg> drgs) {
-            this.drgs = Objects.requireNonNull(drgs);
+            if (drgs == null) {
+              throw new MissingRequiredPropertyException("GetDrgsResult", "drgs");
+            }
+            this.drgs = drgs;
             return this;
         }
         public Builder drgs(GetDrgsDrg... drgs) {
@@ -93,6 +100,7 @@ public final class GetDrgsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,7 +109,10 @@ public final class GetDrgsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDrgsResult build() {

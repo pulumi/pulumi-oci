@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetIpsecStatusFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -99,7 +100,9 @@ public final class GetIpsecStatusArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetIpsecStatusArgs build() {
-            $.ipsecId = Objects.requireNonNull($.ipsecId, "expected parameter 'ipsecId' to be non-null");
+            if ($.ipsecId == null) {
+                throw new MissingRequiredPropertyException("GetIpsecStatusArgs", "ipsecId");
+            }
             return $;
         }
     }

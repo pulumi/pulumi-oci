@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -226,10 +227,18 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         public ReportDefinitionColumnInfoArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.displayOrder = Objects.requireNonNull($.displayOrder, "expected parameter 'displayOrder' to be non-null");
-            $.fieldName = Objects.requireNonNull($.fieldName, "expected parameter 'fieldName' to be non-null");
-            $.isHidden = Objects.requireNonNull($.isHidden, "expected parameter 'isHidden' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnInfoArgs", "displayName");
+            }
+            if ($.displayOrder == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnInfoArgs", "displayOrder");
+            }
+            if ($.fieldName == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnInfoArgs", "fieldName");
+            }
+            if ($.isHidden == null) {
+                throw new MissingRequiredPropertyException("ReportDefinitionColumnInfoArgs", "isHidden");
+            }
             return $;
         }
     }

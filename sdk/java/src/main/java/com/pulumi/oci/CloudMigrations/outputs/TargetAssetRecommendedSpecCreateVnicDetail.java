@@ -236,36 +236,43 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
 
         @CustomType.Setter
         public Builder assignPrivateDnsRecord(@Nullable Boolean assignPrivateDnsRecord) {
+
             this.assignPrivateDnsRecord = assignPrivateDnsRecord;
             return this;
         }
         @CustomType.Setter
         public Builder assignPublicIp(@Nullable Boolean assignPublicIp) {
+
             this.assignPublicIp = assignPublicIp;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(@Nullable String hostnameLabel) {
+
             this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
+
             this.nsgIds = nsgIds;
             return this;
         }
@@ -274,21 +281,25 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
         }
         @CustomType.Setter
         public Builder privateIp(@Nullable String privateIp) {
+
             this.privateIp = privateIp;
             return this;
         }
         @CustomType.Setter
         public Builder skipSourceDestCheck(@Nullable Boolean skipSourceDestCheck) {
+
             this.skipSourceDestCheck = skipSourceDestCheck;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vlanId(@Nullable String vlanId) {
+
             this.vlanId = vlanId;
             return this;
         }

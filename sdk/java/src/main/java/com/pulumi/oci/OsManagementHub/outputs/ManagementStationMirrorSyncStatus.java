@@ -100,26 +100,31 @@ public final class ManagementStationMirrorSyncStatus {
 
         @CustomType.Setter
         public Builder failed(@Nullable Integer failed) {
+
             this.failed = failed;
             return this;
         }
         @CustomType.Setter
         public Builder queued(@Nullable Integer queued) {
+
             this.queued = queued;
             return this;
         }
         @CustomType.Setter
         public Builder synced(@Nullable Integer synced) {
+
             this.synced = synced;
             return this;
         }
         @CustomType.Setter
         public Builder syncing(@Nullable Integer syncing) {
+
             this.syncing = syncing;
             return this;
         }
         @CustomType.Setter
         public Builder unsynced(@Nullable Integer unsynced) {
+
             this.unsynced = unsynced;
             return this;
         }

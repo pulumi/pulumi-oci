@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -143,37 +144,58 @@ public final class GetManagementAgentPluginsManagementAgentPlugin {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsManagementAgentPlugin", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsManagementAgentPlugin", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsManagementAgentPlugin", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isConsoleDeployable(Boolean isConsoleDeployable) {
-            this.isConsoleDeployable = Objects.requireNonNull(isConsoleDeployable);
+            if (isConsoleDeployable == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsManagementAgentPlugin", "isConsoleDeployable");
+            }
+            this.isConsoleDeployable = isConsoleDeployable;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsManagementAgentPlugin", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsManagementAgentPlugin", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder supportedPlatformTypes(List<String> supportedPlatformTypes) {
-            this.supportedPlatformTypes = Objects.requireNonNull(supportedPlatformTypes);
+            if (supportedPlatformTypes == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsManagementAgentPlugin", "supportedPlatformTypes");
+            }
+            this.supportedPlatformTypes = supportedPlatformTypes;
             return this;
         }
         public Builder supportedPlatformTypes(String... supportedPlatformTypes) {
@@ -181,7 +203,10 @@ public final class GetManagementAgentPluginsManagementAgentPlugin {
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentPluginsManagementAgentPlugin", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetManagementAgentPluginsManagementAgentPlugin build() {

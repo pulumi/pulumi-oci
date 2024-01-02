@@ -5,6 +5,7 @@ package com.pulumi.oci.Opensearch;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -1053,25 +1054,63 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ClusterArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dataNodeCount = Objects.requireNonNull($.dataNodeCount, "expected parameter 'dataNodeCount' to be non-null");
-            $.dataNodeHostMemoryGb = Objects.requireNonNull($.dataNodeHostMemoryGb, "expected parameter 'dataNodeHostMemoryGb' to be non-null");
-            $.dataNodeHostOcpuCount = Objects.requireNonNull($.dataNodeHostOcpuCount, "expected parameter 'dataNodeHostOcpuCount' to be non-null");
-            $.dataNodeHostType = Objects.requireNonNull($.dataNodeHostType, "expected parameter 'dataNodeHostType' to be non-null");
-            $.dataNodeStorageGb = Objects.requireNonNull($.dataNodeStorageGb, "expected parameter 'dataNodeStorageGb' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.masterNodeCount = Objects.requireNonNull($.masterNodeCount, "expected parameter 'masterNodeCount' to be non-null");
-            $.masterNodeHostMemoryGb = Objects.requireNonNull($.masterNodeHostMemoryGb, "expected parameter 'masterNodeHostMemoryGb' to be non-null");
-            $.masterNodeHostOcpuCount = Objects.requireNonNull($.masterNodeHostOcpuCount, "expected parameter 'masterNodeHostOcpuCount' to be non-null");
-            $.masterNodeHostType = Objects.requireNonNull($.masterNodeHostType, "expected parameter 'masterNodeHostType' to be non-null");
-            $.opendashboardNodeCount = Objects.requireNonNull($.opendashboardNodeCount, "expected parameter 'opendashboardNodeCount' to be non-null");
-            $.opendashboardNodeHostMemoryGb = Objects.requireNonNull($.opendashboardNodeHostMemoryGb, "expected parameter 'opendashboardNodeHostMemoryGb' to be non-null");
-            $.opendashboardNodeHostOcpuCount = Objects.requireNonNull($.opendashboardNodeHostOcpuCount, "expected parameter 'opendashboardNodeHostOcpuCount' to be non-null");
-            $.softwareVersion = Objects.requireNonNull($.softwareVersion, "expected parameter 'softwareVersion' to be non-null");
-            $.subnetCompartmentId = Objects.requireNonNull($.subnetCompartmentId, "expected parameter 'subnetCompartmentId' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
-            $.vcnCompartmentId = Objects.requireNonNull($.vcnCompartmentId, "expected parameter 'vcnCompartmentId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "compartmentId");
+            }
+            if ($.dataNodeCount == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "dataNodeCount");
+            }
+            if ($.dataNodeHostMemoryGb == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "dataNodeHostMemoryGb");
+            }
+            if ($.dataNodeHostOcpuCount == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "dataNodeHostOcpuCount");
+            }
+            if ($.dataNodeHostType == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "dataNodeHostType");
+            }
+            if ($.dataNodeStorageGb == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "dataNodeStorageGb");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "displayName");
+            }
+            if ($.masterNodeCount == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "masterNodeCount");
+            }
+            if ($.masterNodeHostMemoryGb == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "masterNodeHostMemoryGb");
+            }
+            if ($.masterNodeHostOcpuCount == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "masterNodeHostOcpuCount");
+            }
+            if ($.masterNodeHostType == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "masterNodeHostType");
+            }
+            if ($.opendashboardNodeCount == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "opendashboardNodeCount");
+            }
+            if ($.opendashboardNodeHostMemoryGb == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "opendashboardNodeHostMemoryGb");
+            }
+            if ($.opendashboardNodeHostOcpuCount == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "opendashboardNodeHostOcpuCount");
+            }
+            if ($.softwareVersion == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "softwareVersion");
+            }
+            if ($.subnetCompartmentId == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "subnetCompartmentId");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "subnetId");
+            }
+            if ($.vcnCompartmentId == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "vcnCompartmentId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("ClusterArgs", "vcnId");
+            }
             return $;
         }
     }

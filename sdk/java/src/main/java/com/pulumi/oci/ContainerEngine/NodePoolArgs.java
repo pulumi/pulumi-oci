@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolInitialNodeLabelArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeConfigDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.NodePoolNodeEvictionNodePoolSettingsArgs;
@@ -819,9 +820,15 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public NodePoolArgs build() {
-            $.clusterId = Objects.requireNonNull($.clusterId, "expected parameter 'clusterId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.nodeShape = Objects.requireNonNull($.nodeShape, "expected parameter 'nodeShape' to be non-null");
+            if ($.clusterId == null) {
+                throw new MissingRequiredPropertyException("NodePoolArgs", "clusterId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("NodePoolArgs", "compartmentId");
+            }
+            if ($.nodeShape == null) {
+                throw new MissingRequiredPropertyException("NodePoolArgs", "nodeShape");
+            }
             return $;
         }
     }

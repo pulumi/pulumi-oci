@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollection
 
         @CustomType.Setter
         public Builder concurrentMaintenance(String concurrentMaintenance) {
-            this.concurrentMaintenance = Objects.requireNonNull(concurrentMaintenance);
+            if (concurrentMaintenance == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy", "concurrentMaintenance");
+            }
+            this.concurrentMaintenance = concurrentMaintenance;
             return this;
         }
         @CustomType.Setter
         public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
-            this.isMonthlyPatchingEnabled = Objects.requireNonNull(isMonthlyPatchingEnabled);
+            if (isMonthlyPatchingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy", "isMonthlyPatchingEnabled");
+            }
+            this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder quarterlyUpgradeBeginTimes(String quarterlyUpgradeBeginTimes) {
-            this.quarterlyUpgradeBeginTimes = Objects.requireNonNull(quarterlyUpgradeBeginTimes);
+            if (quarterlyUpgradeBeginTimes == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy", "quarterlyUpgradeBeginTimes");
+            }
+            this.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
             return this;
         }
         public GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy build() {

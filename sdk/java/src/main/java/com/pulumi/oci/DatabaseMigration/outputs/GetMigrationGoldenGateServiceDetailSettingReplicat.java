@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetMigrationGoldenGateServiceDetailSettingReplicat {
 
         @CustomType.Setter
         public Builder mapParallelism(Integer mapParallelism) {
-            this.mapParallelism = Objects.requireNonNull(mapParallelism);
+            if (mapParallelism == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailSettingReplicat", "mapParallelism");
+            }
+            this.mapParallelism = mapParallelism;
             return this;
         }
         @CustomType.Setter
         public Builder maxApplyParallelism(Integer maxApplyParallelism) {
-            this.maxApplyParallelism = Objects.requireNonNull(maxApplyParallelism);
+            if (maxApplyParallelism == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailSettingReplicat", "maxApplyParallelism");
+            }
+            this.maxApplyParallelism = maxApplyParallelism;
             return this;
         }
         @CustomType.Setter
         public Builder minApplyParallelism(Integer minApplyParallelism) {
-            this.minApplyParallelism = Objects.requireNonNull(minApplyParallelism);
+            if (minApplyParallelism == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetailSettingReplicat", "minApplyParallelism");
+            }
+            this.minApplyParallelism = minApplyParallelism;
             return this;
         }
         public GetMigrationGoldenGateServiceDetailSettingReplicat build() {

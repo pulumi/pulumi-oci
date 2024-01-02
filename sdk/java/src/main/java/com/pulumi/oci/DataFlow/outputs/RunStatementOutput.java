@@ -102,6 +102,7 @@ public final class RunStatementOutput {
 
         @CustomType.Setter
         public Builder datas(@Nullable List<RunStatementOutputData> datas) {
+
             this.datas = datas;
             return this;
         }
@@ -110,21 +111,25 @@ public final class RunStatementOutput {
         }
         @CustomType.Setter
         public Builder errorName(@Nullable String errorName) {
+
             this.errorName = errorName;
             return this;
         }
         @CustomType.Setter
         public Builder errorValue(@Nullable String errorValue) {
+
             this.errorValue = errorValue;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder tracebacks(@Nullable List<String> tracebacks) {
+
             this.tracebacks = tracebacks;
             return this;
         }

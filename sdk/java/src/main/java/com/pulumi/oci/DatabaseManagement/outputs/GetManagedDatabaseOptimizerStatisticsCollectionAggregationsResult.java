@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection;
 import java.lang.Integer;
@@ -104,11 +105,13 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsRe
 
         @CustomType.Setter
         public Builder endTimeLessThanOrEqualTo(@Nullable String endTimeLessThanOrEqualTo) {
+
             this.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -117,27 +120,40 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsRe
         }
         @CustomType.Setter
         public Builder groupType(String groupType) {
-            this.groupType = Objects.requireNonNull(groupType);
+            if (groupType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult", "groupType");
+            }
+            this.groupType = groupType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder limit(@Nullable Integer limit) {
+
             this.limit = limit;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder optimizerStatisticsCollectionAggregationsCollections(List<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection> optimizerStatisticsCollectionAggregationsCollections) {
-            this.optimizerStatisticsCollectionAggregationsCollections = Objects.requireNonNull(optimizerStatisticsCollectionAggregationsCollections);
+            if (optimizerStatisticsCollectionAggregationsCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult", "optimizerStatisticsCollectionAggregationsCollections");
+            }
+            this.optimizerStatisticsCollectionAggregationsCollections = optimizerStatisticsCollectionAggregationsCollections;
             return this;
         }
         public Builder optimizerStatisticsCollectionAggregationsCollections(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection... optimizerStatisticsCollectionAggregationsCollections) {
@@ -145,11 +161,13 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsRe
         }
         @CustomType.Setter
         public Builder startTimeGreaterThanOrEqualTo(@Nullable String startTimeGreaterThanOrEqualTo) {
+
             this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder taskType(@Nullable String taskType) {
+
             this.taskType = taskType;
             return this;
         }

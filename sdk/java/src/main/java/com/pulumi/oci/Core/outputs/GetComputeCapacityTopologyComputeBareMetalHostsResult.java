@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollection;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeBareMetalHostsFilter;
 import java.lang.String;
@@ -135,17 +136,22 @@ public final class GetComputeCapacityTopologyComputeBareMetalHostsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeBareMetalHostCollections(List<GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollection> computeBareMetalHostCollections) {
-            this.computeBareMetalHostCollections = Objects.requireNonNull(computeBareMetalHostCollections);
+            if (computeBareMetalHostCollections == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsResult", "computeBareMetalHostCollections");
+            }
+            this.computeBareMetalHostCollections = computeBareMetalHostCollections;
             return this;
         }
         public Builder computeBareMetalHostCollections(GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollection... computeBareMetalHostCollections) {
@@ -153,26 +159,33 @@ public final class GetComputeCapacityTopologyComputeBareMetalHostsResult {
         }
         @CustomType.Setter
         public Builder computeCapacityTopologyId(String computeCapacityTopologyId) {
-            this.computeCapacityTopologyId = Objects.requireNonNull(computeCapacityTopologyId);
+            if (computeCapacityTopologyId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsResult", "computeCapacityTopologyId");
+            }
+            this.computeCapacityTopologyId = computeCapacityTopologyId;
             return this;
         }
         @CustomType.Setter
         public Builder computeHpcIslandId(@Nullable String computeHpcIslandId) {
+
             this.computeHpcIslandId = computeHpcIslandId;
             return this;
         }
         @CustomType.Setter
         public Builder computeLocalBlockId(@Nullable String computeLocalBlockId) {
+
             this.computeLocalBlockId = computeLocalBlockId;
             return this;
         }
         @CustomType.Setter
         public Builder computeNetworkBlockId(@Nullable String computeNetworkBlockId) {
+
             this.computeNetworkBlockId = computeNetworkBlockId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeCapacityTopologyComputeBareMetalHostsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -181,7 +194,10 @@ public final class GetComputeCapacityTopologyComputeBareMetalHostsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeBareMetalHostsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetComputeCapacityTopologyComputeBareMetalHostsResult build() {

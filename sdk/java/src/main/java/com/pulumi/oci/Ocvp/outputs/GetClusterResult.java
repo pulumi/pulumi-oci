@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetClusterDatastore;
 import com.pulumi.oci.Ocvp.outputs.GetClusterNetworkConfiguration;
 import com.pulumi.oci.Ocvp.outputs.GetClusterUpgradeLicense;
@@ -400,32 +401,50 @@ public final class GetClusterResult {
 
         @CustomType.Setter
         public Builder actualEsxiHostsCount(Integer actualEsxiHostsCount) {
-            this.actualEsxiHostsCount = Objects.requireNonNull(actualEsxiHostsCount);
+            if (actualEsxiHostsCount == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "actualEsxiHostsCount");
+            }
+            this.actualEsxiHostsCount = actualEsxiHostsCount;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
-            this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
+            if (computeAvailabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "computeAvailabilityDomain");
+            }
+            this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder datastores(List<GetClusterDatastore> datastores) {
-            this.datastores = Objects.requireNonNull(datastores);
+            if (datastores == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "datastores");
+            }
+            this.datastores = datastores;
             return this;
         }
         public Builder datastores(GetClusterDatastore... datastores) {
@@ -433,62 +452,98 @@ public final class GetClusterResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder esxiHostsCount(Integer esxiHostsCount) {
-            this.esxiHostsCount = Objects.requireNonNull(esxiHostsCount);
+            if (esxiHostsCount == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "esxiHostsCount");
+            }
+            this.esxiHostsCount = esxiHostsCount;
             return this;
         }
         @CustomType.Setter
         public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
-            this.esxiSoftwareVersion = Objects.requireNonNull(esxiSoftwareVersion);
+            if (esxiSoftwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "esxiSoftwareVersion");
+            }
+            this.esxiSoftwareVersion = esxiSoftwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initialCommitment(String initialCommitment) {
-            this.initialCommitment = Objects.requireNonNull(initialCommitment);
+            if (initialCommitment == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "initialCommitment");
+            }
+            this.initialCommitment = initialCommitment;
             return this;
         }
         @CustomType.Setter
         public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
-            this.initialHostOcpuCount = Objects.requireNonNull(initialHostOcpuCount);
+            if (initialHostOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "initialHostOcpuCount");
+            }
+            this.initialHostOcpuCount = initialHostOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder initialHostShapeName(String initialHostShapeName) {
-            this.initialHostShapeName = Objects.requireNonNull(initialHostShapeName);
+            if (initialHostShapeName == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "initialHostShapeName");
+            }
+            this.initialHostShapeName = initialHostShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
-            this.instanceDisplayNamePrefix = Objects.requireNonNull(instanceDisplayNamePrefix);
+            if (instanceDisplayNamePrefix == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "instanceDisplayNamePrefix");
+            }
+            this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
-            this.isShieldedInstanceEnabled = Objects.requireNonNull(isShieldedInstanceEnabled);
+            if (isShieldedInstanceEnabled == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "isShieldedInstanceEnabled");
+            }
+            this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(List<GetClusterNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetClusterNetworkConfiguration... networkConfigurations) {
@@ -496,27 +551,42 @@ public final class GetClusterResult {
         }
         @CustomType.Setter
         public Builder sddcId(String sddcId) {
-            this.sddcId = Objects.requireNonNull(sddcId);
+            if (sddcId == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "sddcId");
+            }
+            this.sddcId = sddcId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder upgradeLicenses(List<GetClusterUpgradeLicense> upgradeLicenses) {
-            this.upgradeLicenses = Objects.requireNonNull(upgradeLicenses);
+            if (upgradeLicenses == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "upgradeLicenses");
+            }
+            this.upgradeLicenses = upgradeLicenses;
             return this;
         }
         public Builder upgradeLicenses(GetClusterUpgradeLicense... upgradeLicenses) {
@@ -524,17 +594,26 @@ public final class GetClusterResult {
         }
         @CustomType.Setter
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
-            this.vmwareSoftwareVersion = Objects.requireNonNull(vmwareSoftwareVersion);
+            if (vmwareSoftwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "vmwareSoftwareVersion");
+            }
+            this.vmwareSoftwareVersion = vmwareSoftwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder vsphereType(String vsphereType) {
-            this.vsphereType = Objects.requireNonNull(vsphereType);
+            if (vsphereType == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "vsphereType");
+            }
+            this.vsphereType = vsphereType;
             return this;
         }
         @CustomType.Setter
         public Builder vsphereUpgradeObjects(List<GetClusterVsphereUpgradeObject> vsphereUpgradeObjects) {
-            this.vsphereUpgradeObjects = Objects.requireNonNull(vsphereUpgradeObjects);
+            if (vsphereUpgradeObjects == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "vsphereUpgradeObjects");
+            }
+            this.vsphereUpgradeObjects = vsphereUpgradeObjects;
             return this;
         }
         public Builder vsphereUpgradeObjects(GetClusterVsphereUpgradeObject... vsphereUpgradeObjects) {
@@ -542,7 +621,10 @@ public final class GetClusterResult {
         }
         @CustomType.Setter
         public Builder workloadNetworkCidr(String workloadNetworkCidr) {
-            this.workloadNetworkCidr = Objects.requireNonNull(workloadNetworkCidr);
+            if (workloadNetworkCidr == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "workloadNetworkCidr");
+            }
+            this.workloadNetworkCidr = workloadNetworkCidr;
             return this;
         }
         public GetClusterResult build() {

@@ -64,6 +64,7 @@ public final class AppAccelerationPolicyResponseCachingPolicy {
 
         @CustomType.Setter
         public Builder isResponseHeaderBasedCachingEnabled(@Nullable Boolean isResponseHeaderBasedCachingEnabled) {
+
             this.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
             return this;
         }

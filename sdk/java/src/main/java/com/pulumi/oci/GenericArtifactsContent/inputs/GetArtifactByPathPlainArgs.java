@@ -4,6 +4,7 @@
 package com.pulumi.oci.GenericArtifactsContent.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -117,9 +118,15 @@ public final class GetArtifactByPathPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetArtifactByPathPlainArgs build() {
-            $.artifactPath = Objects.requireNonNull($.artifactPath, "expected parameter 'artifactPath' to be non-null");
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
-            $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
+            if ($.artifactPath == null) {
+                throw new MissingRequiredPropertyException("GetArtifactByPathPlainArgs", "artifactPath");
+            }
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetArtifactByPathPlainArgs", "repositoryId");
+            }
+            if ($.version == null) {
+                throw new MissingRequiredPropertyException("GetArtifactByPathPlainArgs", "version");
+            }
             return $;
         }
     }

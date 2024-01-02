@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmInstancesExternalAsmInstanceCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmInstancesFilter;
 import java.lang.String;
@@ -109,22 +110,28 @@ public final class GetExternalAsmInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalAsmId(@Nullable String externalAsmId) {
+
             this.externalAsmId = externalAsmId;
             return this;
         }
         @CustomType.Setter
         public Builder externalAsmInstanceCollections(List<GetExternalAsmInstancesExternalAsmInstanceCollection> externalAsmInstanceCollections) {
-            this.externalAsmInstanceCollections = Objects.requireNonNull(externalAsmInstanceCollections);
+            if (externalAsmInstanceCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmInstancesResult", "externalAsmInstanceCollections");
+            }
+            this.externalAsmInstanceCollections = externalAsmInstanceCollections;
             return this;
         }
         public Builder externalAsmInstanceCollections(GetExternalAsmInstancesExternalAsmInstanceCollection... externalAsmInstanceCollections) {
@@ -132,6 +139,7 @@ public final class GetExternalAsmInstancesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalAsmInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -140,7 +148,10 @@ public final class GetExternalAsmInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalAsmInstancesResult build() {

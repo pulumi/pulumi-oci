@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesBuildPipelineStageCollection;
 import com.pulumi.oci.DevOps.outputs.GetBuildPipelineStagesFilter;
 import java.lang.String;
@@ -123,12 +124,16 @@ public final class GetBuildPipelineStagesResult {
 
         @CustomType.Setter
         public Builder buildPipelineId(@Nullable String buildPipelineId) {
+
             this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder buildPipelineStageCollections(List<GetBuildPipelineStagesBuildPipelineStageCollection> buildPipelineStageCollections) {
-            this.buildPipelineStageCollections = Objects.requireNonNull(buildPipelineStageCollections);
+            if (buildPipelineStageCollections == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelineStagesResult", "buildPipelineStageCollections");
+            }
+            this.buildPipelineStageCollections = buildPipelineStageCollections;
             return this;
         }
         public Builder buildPipelineStageCollections(GetBuildPipelineStagesBuildPipelineStageCollection... buildPipelineStageCollections) {
@@ -136,16 +141,19 @@ public final class GetBuildPipelineStagesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBuildPipelineStagesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +162,13 @@ public final class GetBuildPipelineStagesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

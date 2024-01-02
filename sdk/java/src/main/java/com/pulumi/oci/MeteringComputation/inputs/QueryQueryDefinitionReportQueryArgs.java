@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionReportQueryForecastArgs;
 import com.pulumi.oci.MeteringComputation.inputs.QueryQueryDefinitionReportQueryGroupByTagArgs;
 import java.lang.Boolean;
@@ -508,8 +509,12 @@ public final class QueryQueryDefinitionReportQueryArgs extends com.pulumi.resour
         }
 
         public QueryQueryDefinitionReportQueryArgs build() {
-            $.granularity = Objects.requireNonNull($.granularity, "expected parameter 'granularity' to be non-null");
-            $.tenantId = Objects.requireNonNull($.tenantId, "expected parameter 'tenantId' to be non-null");
+            if ($.granularity == null) {
+                throw new MissingRequiredPropertyException("QueryQueryDefinitionReportQueryArgs", "granularity");
+            }
+            if ($.tenantId == null) {
+                throw new MissingRequiredPropertyException("QueryQueryDefinitionReportQueryArgs", "tenantId");
+            }
             return $;
         }
     }

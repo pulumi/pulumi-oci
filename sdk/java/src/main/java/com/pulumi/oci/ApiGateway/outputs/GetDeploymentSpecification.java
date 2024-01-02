@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationLoggingPolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRoute;
@@ -73,7 +74,10 @@ public final class GetDeploymentSpecification {
 
         @CustomType.Setter
         public Builder loggingPolicies(List<GetDeploymentSpecificationLoggingPolicy> loggingPolicies) {
-            this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
+            if (loggingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecification", "loggingPolicies");
+            }
+            this.loggingPolicies = loggingPolicies;
             return this;
         }
         public Builder loggingPolicies(GetDeploymentSpecificationLoggingPolicy... loggingPolicies) {
@@ -81,7 +85,10 @@ public final class GetDeploymentSpecification {
         }
         @CustomType.Setter
         public Builder requestPolicies(List<GetDeploymentSpecificationRequestPolicy> requestPolicies) {
-            this.requestPolicies = Objects.requireNonNull(requestPolicies);
+            if (requestPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecification", "requestPolicies");
+            }
+            this.requestPolicies = requestPolicies;
             return this;
         }
         public Builder requestPolicies(GetDeploymentSpecificationRequestPolicy... requestPolicies) {
@@ -89,7 +96,10 @@ public final class GetDeploymentSpecification {
         }
         @CustomType.Setter
         public Builder routes(List<GetDeploymentSpecificationRoute> routes) {
-            this.routes = Objects.requireNonNull(routes);
+            if (routes == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecification", "routes");
+            }
+            this.routes = routes;
             return this;
         }
         public Builder routes(GetDeploymentSpecificationRoute... routes) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.GetCustomTablesFilter;
 import java.lang.String;
 import java.util.List;
@@ -111,8 +112,12 @@ public final class GetCustomTablesPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetCustomTablesPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.savedReportId = Objects.requireNonNull($.savedReportId, "expected parameter 'savedReportId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetCustomTablesPlainArgs", "compartmentId");
+            }
+            if ($.savedReportId == null) {
+                throw new MissingRequiredPropertyException("GetCustomTablesPlainArgs", "savedReportId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesDatabaseParameterItemAllowedValue;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -360,7 +361,10 @@ public final class GetManagedDatabasesDatabaseParameterItem {
 
         @CustomType.Setter
         public Builder allowedValues(List<GetManagedDatabasesDatabaseParameterItemAllowedValue> allowedValues) {
-            this.allowedValues = Objects.requireNonNull(allowedValues);
+            if (allowedValues == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "allowedValues");
+            }
+            this.allowedValues = allowedValues;
             return this;
         }
         public Builder allowedValues(GetManagedDatabasesDatabaseParameterItemAllowedValue... allowedValues) {
@@ -368,112 +372,178 @@ public final class GetManagedDatabasesDatabaseParameterItem {
         }
         @CustomType.Setter
         public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
         public Builder constraint(String constraint) {
-            this.constraint = Objects.requireNonNull(constraint);
+            if (constraint == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "constraint");
+            }
+            this.constraint = constraint;
             return this;
         }
         @CustomType.Setter
         public Builder containerId(Double containerId) {
-            this.containerId = Objects.requireNonNull(containerId);
+            if (containerId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "containerId");
+            }
+            this.containerId = containerId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayValue(String displayValue) {
-            this.displayValue = Objects.requireNonNull(displayValue);
+            if (displayValue == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "displayValue");
+            }
+            this.displayValue = displayValue;
             return this;
         }
         @CustomType.Setter
         public Builder isAdjusted(Boolean isAdjusted) {
-            this.isAdjusted = Objects.requireNonNull(isAdjusted);
+            if (isAdjusted == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isAdjusted");
+            }
+            this.isAdjusted = isAdjusted;
             return this;
         }
         @CustomType.Setter
         public Builder isBasic(Boolean isBasic) {
-            this.isBasic = Objects.requireNonNull(isBasic);
+            if (isBasic == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isBasic");
+            }
+            this.isBasic = isBasic;
             return this;
         }
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder isDeprecated(Boolean isDeprecated) {
-            this.isDeprecated = Objects.requireNonNull(isDeprecated);
+            if (isDeprecated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isDeprecated");
+            }
+            this.isDeprecated = isDeprecated;
             return this;
         }
         @CustomType.Setter
         public Builder isInstanceModifiable(Boolean isInstanceModifiable) {
-            this.isInstanceModifiable = Objects.requireNonNull(isInstanceModifiable);
+            if (isInstanceModifiable == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isInstanceModifiable");
+            }
+            this.isInstanceModifiable = isInstanceModifiable;
             return this;
         }
         @CustomType.Setter
         public Builder isModified(String isModified) {
-            this.isModified = Objects.requireNonNull(isModified);
+            if (isModified == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isModified");
+            }
+            this.isModified = isModified;
             return this;
         }
         @CustomType.Setter
         public Builder isPdbModifiable(Boolean isPdbModifiable) {
-            this.isPdbModifiable = Objects.requireNonNull(isPdbModifiable);
+            if (isPdbModifiable == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isPdbModifiable");
+            }
+            this.isPdbModifiable = isPdbModifiable;
             return this;
         }
         @CustomType.Setter
         public Builder isSessionModifiable(Boolean isSessionModifiable) {
-            this.isSessionModifiable = Objects.requireNonNull(isSessionModifiable);
+            if (isSessionModifiable == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isSessionModifiable");
+            }
+            this.isSessionModifiable = isSessionModifiable;
             return this;
         }
         @CustomType.Setter
         public Builder isSpecified(Boolean isSpecified) {
-            this.isSpecified = Objects.requireNonNull(isSpecified);
+            if (isSpecified == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isSpecified");
+            }
+            this.isSpecified = isSpecified;
             return this;
         }
         @CustomType.Setter
         public Builder isSystemModifiable(String isSystemModifiable) {
-            this.isSystemModifiable = Objects.requireNonNull(isSystemModifiable);
+            if (isSystemModifiable == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "isSystemModifiable");
+            }
+            this.isSystemModifiable = isSystemModifiable;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder number(Double number) {
-            this.number = Objects.requireNonNull(number);
+            if (number == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "number");
+            }
+            this.number = number;
             return this;
         }
         @CustomType.Setter
         public Builder ordinal(Double ordinal) {
-            this.ordinal = Objects.requireNonNull(ordinal);
+            if (ordinal == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "ordinal");
+            }
+            this.ordinal = ordinal;
             return this;
         }
         @CustomType.Setter
         public Builder sid(String sid) {
-            this.sid = Objects.requireNonNull(sid);
+            if (sid == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "sid");
+            }
+            this.sid = sid;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder updateComment(String updateComment) {
-            this.updateComment = Objects.requireNonNull(updateComment);
+            if (updateComment == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "updateComment");
+            }
+            this.updateComment = updateComment;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesDatabaseParameterItem", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetManagedDatabasesDatabaseParameterItem build() {

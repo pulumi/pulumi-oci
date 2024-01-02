@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.inputs.VirtualDeploymentAccessLoggingArgs;
 import com.pulumi.oci.ServiceMesh.inputs.VirtualDeploymentListenerArgs;
 import com.pulumi.oci.ServiceMesh.inputs.VirtualDeploymentServiceDiscoveryArgs;
@@ -400,8 +401,12 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
         }
 
         public VirtualDeploymentArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.virtualServiceId = Objects.requireNonNull($.virtualServiceId, "expected parameter 'virtualServiceId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VirtualDeploymentArgs", "compartmentId");
+            }
+            if ($.virtualServiceId == null) {
+                throw new MissingRequiredPropertyException("VirtualDeploymentArgs", "virtualServiceId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbHomePatchHistoryEntriesFilter;
 import com.pulumi.oci.Database.outputs.GetDbHomePatchHistoryEntriesPatchHistoryEntry;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetDbHomePatchHistoryEntriesResult {
 
         @CustomType.Setter
         public Builder dbHomeId(String dbHomeId) {
-            this.dbHomeId = Objects.requireNonNull(dbHomeId);
+            if (dbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomePatchHistoryEntriesResult", "dbHomeId");
+            }
+            this.dbHomeId = dbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDbHomePatchHistoryEntriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetDbHomePatchHistoryEntriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbHomePatchHistoryEntriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder patchHistoryEntries(List<GetDbHomePatchHistoryEntriesPatchHistoryEntry> patchHistoryEntries) {
-            this.patchHistoryEntries = Objects.requireNonNull(patchHistoryEntries);
+            if (patchHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetDbHomePatchHistoryEntriesResult", "patchHistoryEntries");
+            }
+            this.patchHistoryEntries = patchHistoryEntries;
             return this;
         }
         public Builder patchHistoryEntries(GetDbHomePatchHistoryEntriesPatchHistoryEntry... patchHistoryEntries) {

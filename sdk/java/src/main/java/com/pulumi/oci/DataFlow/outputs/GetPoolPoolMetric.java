@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetPoolPoolMetricActivelyUsedNodeCount;
 import java.lang.String;
 import java.util.List;
@@ -114,12 +115,18 @@ public final class GetPoolPoolMetric {
 
         @CustomType.Setter
         public Builder activeRunsCount(String activeRunsCount) {
-            this.activeRunsCount = Objects.requireNonNull(activeRunsCount);
+            if (activeRunsCount == null) {
+              throw new MissingRequiredPropertyException("GetPoolPoolMetric", "activeRunsCount");
+            }
+            this.activeRunsCount = activeRunsCount;
             return this;
         }
         @CustomType.Setter
         public Builder activelyUsedNodeCounts(List<GetPoolPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts) {
-            this.activelyUsedNodeCounts = Objects.requireNonNull(activelyUsedNodeCounts);
+            if (activelyUsedNodeCounts == null) {
+              throw new MissingRequiredPropertyException("GetPoolPoolMetric", "activelyUsedNodeCounts");
+            }
+            this.activelyUsedNodeCounts = activelyUsedNodeCounts;
             return this;
         }
         public Builder activelyUsedNodeCounts(GetPoolPoolMetricActivelyUsedNodeCount... activelyUsedNodeCounts) {
@@ -127,22 +134,34 @@ public final class GetPoolPoolMetric {
         }
         @CustomType.Setter
         public Builder timeLastMetricsUpdated(String timeLastMetricsUpdated) {
-            this.timeLastMetricsUpdated = Objects.requireNonNull(timeLastMetricsUpdated);
+            if (timeLastMetricsUpdated == null) {
+              throw new MissingRequiredPropertyException("GetPoolPoolMetric", "timeLastMetricsUpdated");
+            }
+            this.timeLastMetricsUpdated = timeLastMetricsUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastStarted(String timeLastStarted) {
-            this.timeLastStarted = Objects.requireNonNull(timeLastStarted);
+            if (timeLastStarted == null) {
+              throw new MissingRequiredPropertyException("GetPoolPoolMetric", "timeLastStarted");
+            }
+            this.timeLastStarted = timeLastStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastStopped(String timeLastStopped) {
-            this.timeLastStopped = Objects.requireNonNull(timeLastStopped);
+            if (timeLastStopped == null) {
+              throw new MissingRequiredPropertyException("GetPoolPoolMetric", "timeLastStopped");
+            }
+            this.timeLastStopped = timeLastStopped;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUsed(String timeLastUsed) {
-            this.timeLastUsed = Objects.requireNonNull(timeLastUsed);
+            if (timeLastUsed == null) {
+              throw new MissingRequiredPropertyException("GetPoolPoolMetric", "timeLastUsed");
+            }
+            this.timeLastUsed = timeLastUsed;
             return this;
         }
         public GetPoolPoolMetric build() {

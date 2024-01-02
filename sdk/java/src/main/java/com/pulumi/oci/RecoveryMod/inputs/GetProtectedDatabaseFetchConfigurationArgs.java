@@ -5,6 +5,7 @@ package com.pulumi.oci.RecoveryMod.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -131,7 +132,9 @@ public final class GetProtectedDatabaseFetchConfigurationArgs extends com.pulumi
         }
 
         public GetProtectedDatabaseFetchConfigurationArgs build() {
-            $.protectedDatabaseId = Objects.requireNonNull($.protectedDatabaseId, "expected parameter 'protectedDatabaseId' to be non-null");
+            if ($.protectedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetProtectedDatabaseFetchConfigurationArgs", "protectedDatabaseId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDrgAttachmentsDrgAttachment;
 import com.pulumi.oci.Core.outputs.GetDrgAttachmentsFilter;
 import java.lang.String;
@@ -163,22 +164,30 @@ public final class GetDrgAttachmentsResult {
 
         @CustomType.Setter
         public Builder attachmentType(@Nullable String attachmentType) {
+
             this.attachmentType = attachmentType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drgAttachments(List<GetDrgAttachmentsDrgAttachment> drgAttachments) {
-            this.drgAttachments = Objects.requireNonNull(drgAttachments);
+            if (drgAttachments == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsResult", "drgAttachments");
+            }
+            this.drgAttachments = drgAttachments;
             return this;
         }
         public Builder drgAttachments(GetDrgAttachmentsDrgAttachment... drgAttachments) {
@@ -186,16 +195,19 @@ public final class GetDrgAttachmentsResult {
         }
         @CustomType.Setter
         public Builder drgId(@Nullable String drgId) {
+
             this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder drgRouteTableId(@Nullable String drgRouteTableId) {
+
             this.drgRouteTableId = drgRouteTableId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgAttachmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -204,21 +216,27 @@ public final class GetDrgAttachmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgAttachmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkId(@Nullable String networkId) {
+
             this.networkId = networkId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

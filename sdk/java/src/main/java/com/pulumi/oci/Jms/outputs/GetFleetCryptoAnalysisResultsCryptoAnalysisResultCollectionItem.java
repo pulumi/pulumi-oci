@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -267,87 +268,138 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionIt
 
         @CustomType.Setter
         public Builder aggregationMode(String aggregationMode) {
-            this.aggregationMode = Objects.requireNonNull(aggregationMode);
+            if (aggregationMode == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "aggregationMode");
+            }
+            this.aggregationMode = aggregationMode;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder cryptoRoadmapVersion(String cryptoRoadmapVersion) {
-            this.cryptoRoadmapVersion = Objects.requireNonNull(cryptoRoadmapVersion);
+            if (cryptoRoadmapVersion == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "cryptoRoadmapVersion");
+            }
+            this.cryptoRoadmapVersion = cryptoRoadmapVersion;
             return this;
         }
         @CustomType.Setter
         public Builder findingCount(Integer findingCount) {
-            this.findingCount = Objects.requireNonNull(findingCount);
+            if (findingCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "findingCount");
+            }
+            this.findingCount = findingCount;
             return this;
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceId(String managedInstanceId) {
-            this.managedInstanceId = Objects.requireNonNull(managedInstanceId);
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder nonCompliantFindingCount(Integer nonCompliantFindingCount) {
-            this.nonCompliantFindingCount = Objects.requireNonNull(nonCompliantFindingCount);
+            if (nonCompliantFindingCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "nonCompliantFindingCount");
+            }
+            this.nonCompliantFindingCount = nonCompliantFindingCount;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder summarizedEventCount(Integer summarizedEventCount) {
-            this.summarizedEventCount = Objects.requireNonNull(summarizedEventCount);
+            if (summarizedEventCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "summarizedEventCount");
+            }
+            this.summarizedEventCount = summarizedEventCount;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeFirstEvent(String timeFirstEvent) {
-            this.timeFirstEvent = Objects.requireNonNull(timeFirstEvent);
+            if (timeFirstEvent == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "timeFirstEvent");
+            }
+            this.timeFirstEvent = timeFirstEvent;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastEvent(String timeLastEvent) {
-            this.timeLastEvent = Objects.requireNonNull(timeLastEvent);
+            if (timeLastEvent == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "timeLastEvent");
+            }
+            this.timeLastEvent = timeLastEvent;
             return this;
         }
         @CustomType.Setter
         public Builder totalEventCount(Integer totalEventCount) {
-            this.totalEventCount = Objects.requireNonNull(totalEventCount);
+            if (totalEventCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "totalEventCount");
+            }
+            this.totalEventCount = totalEventCount;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem build() {

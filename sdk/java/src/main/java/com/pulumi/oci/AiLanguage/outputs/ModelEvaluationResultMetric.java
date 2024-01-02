@@ -170,51 +170,61 @@ public final class ModelEvaluationResultMetric {
 
         @CustomType.Setter
         public Builder accuracy(@Nullable Double accuracy) {
+
             this.accuracy = accuracy;
             return this;
         }
         @CustomType.Setter
         public Builder macroF1(@Nullable Double macroF1) {
+
             this.macroF1 = macroF1;
             return this;
         }
         @CustomType.Setter
         public Builder macroPrecision(@Nullable Double macroPrecision) {
+
             this.macroPrecision = macroPrecision;
             return this;
         }
         @CustomType.Setter
         public Builder macroRecall(@Nullable Double macroRecall) {
+
             this.macroRecall = macroRecall;
             return this;
         }
         @CustomType.Setter
         public Builder microF1(@Nullable Double microF1) {
+
             this.microF1 = microF1;
             return this;
         }
         @CustomType.Setter
         public Builder microPrecision(@Nullable Double microPrecision) {
+
             this.microPrecision = microPrecision;
             return this;
         }
         @CustomType.Setter
         public Builder microRecall(@Nullable Double microRecall) {
+
             this.microRecall = microRecall;
             return this;
         }
         @CustomType.Setter
         public Builder weightedF1(@Nullable Double weightedF1) {
+
             this.weightedF1 = weightedF1;
             return this;
         }
         @CustomType.Setter
         public Builder weightedPrecision(@Nullable Double weightedPrecision) {
+
             this.weightedPrecision = weightedPrecision;
             return this;
         }
         @CustomType.Setter
         public Builder weightedRecall(@Nullable Double weightedRecall) {
+
             this.weightedRecall = weightedRecall;
             return this;
         }

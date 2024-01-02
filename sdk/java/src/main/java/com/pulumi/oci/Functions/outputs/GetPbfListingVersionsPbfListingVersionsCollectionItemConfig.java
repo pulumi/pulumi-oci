@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItemConfig {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItemConfig", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isOptional(Boolean isOptional) {
-            this.isOptional = Objects.requireNonNull(isOptional);
+            if (isOptional == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItemConfig", "isOptional");
+            }
+            this.isOptional = isOptional;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItemConfig", "key");
+            }
+            this.key = key;
             return this;
         }
         public GetPbfListingVersionsPbfListingVersionsCollectionItemConfig build() {

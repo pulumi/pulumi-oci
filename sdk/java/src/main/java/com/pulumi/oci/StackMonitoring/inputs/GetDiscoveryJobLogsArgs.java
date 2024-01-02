@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,9 @@ public final class GetDiscoveryJobLogsArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetDiscoveryJobLogsArgs build() {
-            $.discoveryJobId = Objects.requireNonNull($.discoveryJobId, "expected parameter 'discoveryJobId' to be non-null");
+            if ($.discoveryJobId == null) {
+                throw new MissingRequiredPropertyException("GetDiscoveryJobLogsArgs", "discoveryJobId");
+            }
             return $;
         }
     }

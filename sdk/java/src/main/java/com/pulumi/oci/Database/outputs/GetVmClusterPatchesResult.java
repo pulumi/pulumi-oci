@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClusterPatchesFilter;
 import com.pulumi.oci.Database.outputs.GetVmClusterPatchesPatch;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetVmClusterPatchesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVmClusterPatchesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,12 +82,18 @@ public final class GetVmClusterPatchesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder patches(List<GetVmClusterPatchesPatch> patches) {
-            this.patches = Objects.requireNonNull(patches);
+            if (patches == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesResult", "patches");
+            }
+            this.patches = patches;
             return this;
         }
         public Builder patches(GetVmClusterPatchesPatch... patches) {
@@ -93,7 +101,10 @@ public final class GetVmClusterPatchesResult {
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchesResult", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetVmClusterPatchesResult build() {

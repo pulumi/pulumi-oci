@@ -89,11 +89,13 @@ public final class TargetTargetResponderRecipeResponderRuleDetails {
 
         @CustomType.Setter
         public Builder condition(@Nullable String condition) {
+
             this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(@Nullable List<TargetTargetResponderRecipeResponderRuleDetailsConfiguration> configurations) {
+
             this.configurations = configurations;
             return this;
         }
@@ -102,11 +104,13 @@ public final class TargetTargetResponderRecipeResponderRuleDetails {
         }
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder mode(@Nullable String mode) {
+
             this.mode = mode;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceAliasesCredential;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class MonitoredResourceAliases {
 
         @CustomType.Setter
         public Builder credential(MonitoredResourceAliasesCredential credential) {
-            this.credential = Objects.requireNonNull(credential);
+            if (credential == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceAliases", "credential");
+            }
+            this.credential = credential;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceAliases", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("MonitoredResourceAliases", "source");
+            }
+            this.source = source;
             return this;
         }
         public MonitoredResourceAliases build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDrgRouteTablesDrgRouteTable;
 import com.pulumi.oci.Core.outputs.GetDrgRouteTablesFilter;
 import java.lang.String;
@@ -123,17 +124,24 @@ public final class GetDrgRouteTablesResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+            if (drgId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTablesResult", "drgId");
+            }
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder drgRouteTables(List<GetDrgRouteTablesDrgRouteTable> drgRouteTables) {
-            this.drgRouteTables = Objects.requireNonNull(drgRouteTables);
+            if (drgRouteTables == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTablesResult", "drgRouteTables");
+            }
+            this.drgRouteTables = drgRouteTables;
             return this;
         }
         public Builder drgRouteTables(GetDrgRouteTablesDrgRouteTable... drgRouteTables) {
@@ -141,6 +149,7 @@ public final class GetDrgRouteTablesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgRouteTablesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -149,16 +158,21 @@ public final class GetDrgRouteTablesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteTablesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder importDrgRouteDistributionId(@Nullable String importDrgRouteDistributionId) {
+
             this.importDrgRouteDistributionId = importDrgRouteDistributionId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

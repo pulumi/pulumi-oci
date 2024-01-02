@@ -174,21 +174,25 @@ public final class DomainsIdentitySettingMyProfile {
 
         @CustomType.Setter
         public Builder allowEndUsersToChangeTheirPassword(@Nullable Boolean allowEndUsersToChangeTheirPassword) {
+
             this.allowEndUsersToChangeTheirPassword = allowEndUsersToChangeTheirPassword;
             return this;
         }
         @CustomType.Setter
         public Builder allowEndUsersToLinkTheirSupportAccount(@Nullable Boolean allowEndUsersToLinkTheirSupportAccount) {
+
             this.allowEndUsersToLinkTheirSupportAccount = allowEndUsersToLinkTheirSupportAccount;
             return this;
         }
         @CustomType.Setter
         public Builder allowEndUsersToManageTheirCapabilities(@Nullable Boolean allowEndUsersToManageTheirCapabilities) {
+
             this.allowEndUsersToManageTheirCapabilities = allowEndUsersToManageTheirCapabilities;
             return this;
         }
         @CustomType.Setter
         public Builder allowEndUsersToUpdateTheirSecuritySettings(@Nullable Boolean allowEndUsersToUpdateTheirSecuritySettings) {
+
             this.allowEndUsersToUpdateTheirSecuritySettings = allowEndUsersToUpdateTheirSecuritySettings;
             return this;
         }

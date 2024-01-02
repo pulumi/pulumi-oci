@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.CrossConnectMacsecPropertiesPrimaryKeyArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -189,7 +190,9 @@ public final class CrossConnectMacsecPropertiesArgs extends com.pulumi.resources
         }
 
         public CrossConnectMacsecPropertiesArgs build() {
-            $.state = Objects.requireNonNull($.state, "expected parameter 'state' to be non-null");
+            if ($.state == null) {
+                throw new MissingRequiredPropertyException("CrossConnectMacsecPropertiesArgs", "state");
+            }
             return $;
         }
     }

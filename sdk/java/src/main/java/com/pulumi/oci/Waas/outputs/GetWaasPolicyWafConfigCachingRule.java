@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetWaasPolicyWafConfigCachingRuleCriteria;
 import java.lang.Boolean;
 import java.lang.String;
@@ -129,22 +130,34 @@ public final class GetWaasPolicyWafConfigCachingRule {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigCachingRule", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder cachingDuration(String cachingDuration) {
-            this.cachingDuration = Objects.requireNonNull(cachingDuration);
+            if (cachingDuration == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigCachingRule", "cachingDuration");
+            }
+            this.cachingDuration = cachingDuration;
             return this;
         }
         @CustomType.Setter
         public Builder clientCachingDuration(String clientCachingDuration) {
-            this.clientCachingDuration = Objects.requireNonNull(clientCachingDuration);
+            if (clientCachingDuration == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigCachingRule", "clientCachingDuration");
+            }
+            this.clientCachingDuration = clientCachingDuration;
             return this;
         }
         @CustomType.Setter
         public Builder criterias(List<GetWaasPolicyWafConfigCachingRuleCriteria> criterias) {
-            this.criterias = Objects.requireNonNull(criterias);
+            if (criterias == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigCachingRule", "criterias");
+            }
+            this.criterias = criterias;
             return this;
         }
         public Builder criterias(GetWaasPolicyWafConfigCachingRuleCriteria... criterias) {
@@ -152,17 +165,26 @@ public final class GetWaasPolicyWafConfigCachingRule {
         }
         @CustomType.Setter
         public Builder isClientCachingEnabled(Boolean isClientCachingEnabled) {
-            this.isClientCachingEnabled = Objects.requireNonNull(isClientCachingEnabled);
+            if (isClientCachingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigCachingRule", "isClientCachingEnabled");
+            }
+            this.isClientCachingEnabled = isClientCachingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigCachingRule", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigCachingRule", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetWaasPolicyWafConfigCachingRule build() {

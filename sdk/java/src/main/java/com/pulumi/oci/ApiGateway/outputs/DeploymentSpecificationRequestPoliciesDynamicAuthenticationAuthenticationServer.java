@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetail;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
 
         @CustomType.Setter
         public Builder authenticationServerDetail(DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetail authenticationServerDetail) {
-            this.authenticationServerDetail = Objects.requireNonNull(authenticationServerDetail);
+            if (authenticationServerDetail == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer", "authenticationServerDetail");
+            }
+            this.authenticationServerDetail = authenticationServerDetail;
             return this;
         }
         @CustomType.Setter
         public Builder key(DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer", "key");
+            }
+            this.key = key;
             return this;
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetTagNamespacesFilter;
 import com.pulumi.oci.Identity.outputs.GetTagNamespacesTagNamespace;
 import java.lang.Boolean;
@@ -102,11 +103,15 @@ public final class GetTagNamespacesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTagNamespacesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTagNamespacesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -115,22 +120,30 @@ public final class GetTagNamespacesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTagNamespacesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder includeSubcompartments(@Nullable Boolean includeSubcompartments) {
+
             this.includeSubcompartments = includeSubcompartments;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tagNamespaces(List<GetTagNamespacesTagNamespace> tagNamespaces) {
-            this.tagNamespaces = Objects.requireNonNull(tagNamespaces);
+            if (tagNamespaces == null) {
+              throw new MissingRequiredPropertyException("GetTagNamespacesResult", "tagNamespaces");
+            }
+            this.tagNamespaces = tagNamespaces;
             return this;
         }
         public Builder tagNamespaces(GetTagNamespacesTagNamespace... tagNamespaces) {

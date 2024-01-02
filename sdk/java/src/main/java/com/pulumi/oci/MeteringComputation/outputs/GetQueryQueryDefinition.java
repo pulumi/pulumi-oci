@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueryQueryDefinitionCostAnalysisUi;
 import com.pulumi.oci.MeteringComputation.outputs.GetQueryQueryDefinitionReportQuery;
 import java.lang.Double;
@@ -88,7 +89,10 @@ public final class GetQueryQueryDefinition {
 
         @CustomType.Setter
         public Builder costAnalysisUis(List<GetQueryQueryDefinitionCostAnalysisUi> costAnalysisUis) {
-            this.costAnalysisUis = Objects.requireNonNull(costAnalysisUis);
+            if (costAnalysisUis == null) {
+              throw new MissingRequiredPropertyException("GetQueryQueryDefinition", "costAnalysisUis");
+            }
+            this.costAnalysisUis = costAnalysisUis;
             return this;
         }
         public Builder costAnalysisUis(GetQueryQueryDefinitionCostAnalysisUi... costAnalysisUis) {
@@ -96,12 +100,18 @@ public final class GetQueryQueryDefinition {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetQueryQueryDefinition", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder reportQueries(List<GetQueryQueryDefinitionReportQuery> reportQueries) {
-            this.reportQueries = Objects.requireNonNull(reportQueries);
+            if (reportQueries == null) {
+              throw new MissingRequiredPropertyException("GetQueryQueryDefinition", "reportQueries");
+            }
+            this.reportQueries = reportQueries;
             return this;
         }
         public Builder reportQueries(GetQueryQueryDefinitionReportQuery... reportQueries) {
@@ -109,7 +119,10 @@ public final class GetQueryQueryDefinition {
         }
         @CustomType.Setter
         public Builder version(Double version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetQueryQueryDefinition", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetQueryQueryDefinition build() {

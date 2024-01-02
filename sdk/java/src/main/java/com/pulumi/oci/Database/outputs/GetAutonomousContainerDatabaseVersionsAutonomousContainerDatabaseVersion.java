@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
 
         @CustomType.Setter
         public Builder details(String details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion", "details");
+            }
+            this.details = details;
             return this;
         }
         @CustomType.Setter
         public Builder supportedApps(List<GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp> supportedApps) {
-            this.supportedApps = Objects.requireNonNull(supportedApps);
+            if (supportedApps == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion", "supportedApps");
+            }
+            this.supportedApps = supportedApps;
             return this;
         }
         public Builder supportedApps(GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersionSupportedApp... supportedApps) {
@@ -85,7 +92,10 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion build() {

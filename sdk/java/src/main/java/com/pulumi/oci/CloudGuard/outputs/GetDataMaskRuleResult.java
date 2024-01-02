@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataMaskRuleTargetSelected;
 import java.lang.Object;
 import java.lang.String;
@@ -248,12 +249,18 @@ public final class GetDataMaskRuleResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dataMaskCategories(List<String> dataMaskCategories) {
-            this.dataMaskCategories = Objects.requireNonNull(dataMaskCategories);
+            if (dataMaskCategories == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "dataMaskCategories");
+            }
+            this.dataMaskCategories = dataMaskCategories;
             return this;
         }
         public Builder dataMaskCategories(String... dataMaskCategories) {
@@ -261,62 +268,98 @@ public final class GetDataMaskRuleResult {
         }
         @CustomType.Setter
         public Builder dataMaskRuleId(String dataMaskRuleId) {
-            this.dataMaskRuleId = Objects.requireNonNull(dataMaskRuleId);
+            if (dataMaskRuleId == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "dataMaskRuleId");
+            }
+            this.dataMaskRuleId = dataMaskRuleId;
             return this;
         }
         @CustomType.Setter
         public Builder dataMaskRuleStatus(String dataMaskRuleStatus) {
-            this.dataMaskRuleStatus = Objects.requireNonNull(dataMaskRuleStatus);
+            if (dataMaskRuleStatus == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "dataMaskRuleStatus");
+            }
+            this.dataMaskRuleStatus = dataMaskRuleStatus;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder iamGroupId(String iamGroupId) {
-            this.iamGroupId = Objects.requireNonNull(iamGroupId);
+            if (iamGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "iamGroupId");
+            }
+            this.iamGroupId = iamGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+            if (lifecyleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "lifecyleDetails");
+            }
+            this.lifecyleDetails = lifecyleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetSelecteds(List<GetDataMaskRuleTargetSelected> targetSelecteds) {
-            this.targetSelecteds = Objects.requireNonNull(targetSelecteds);
+            if (targetSelecteds == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "targetSelecteds");
+            }
+            this.targetSelecteds = targetSelecteds;
             return this;
         }
         public Builder targetSelecteds(GetDataMaskRuleTargetSelected... targetSelecteds) {
@@ -324,12 +367,18 @@ public final class GetDataMaskRuleResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDataMaskRuleResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDataMaskRuleResult build() {

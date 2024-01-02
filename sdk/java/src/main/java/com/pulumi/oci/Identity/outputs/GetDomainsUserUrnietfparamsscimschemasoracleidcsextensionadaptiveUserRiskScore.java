@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadap
 
         @CustomType.Setter
         public Builder lastUpdateTimestamp(String lastUpdateTimestamp) {
-            this.lastUpdateTimestamp = Objects.requireNonNull(lastUpdateTimestamp);
+            if (lastUpdateTimestamp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "lastUpdateTimestamp");
+            }
+            this.lastUpdateTimestamp = lastUpdateTimestamp;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+            if (riskLevel == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "riskLevel");
+            }
+            this.riskLevel = riskLevel;
             return this;
         }
         @CustomType.Setter
         public Builder score(Integer score) {
-            this.score = Objects.requireNonNull(score);
+            if (score == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "score");
+            }
+            this.score = score;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore build() {

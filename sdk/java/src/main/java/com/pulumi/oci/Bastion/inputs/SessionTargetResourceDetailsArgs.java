@@ -5,6 +5,7 @@ package com.pulumi.oci.Bastion.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -311,7 +312,9 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
         }
 
         public SessionTargetResourceDetailsArgs build() {
-            $.sessionType = Objects.requireNonNull($.sessionType, "expected parameter 'sessionType' to be non-null");
+            if ($.sessionType == null) {
+                throw new MissingRequiredPropertyException("SessionTargetResourceDetailsArgs", "sessionType");
+            }
             return $;
         }
     }

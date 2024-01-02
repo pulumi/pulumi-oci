@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetBackupsBackupCollectionItemDbSystemDetail;
 import java.lang.Integer;
 import java.lang.Object;
@@ -285,17 +286,26 @@ public final class GetBackupsBackupCollectionItem {
 
         @CustomType.Setter
         public Builder backupSize(Integer backupSize) {
-            this.backupSize = Objects.requireNonNull(backupSize);
+            if (backupSize == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "backupSize");
+            }
+            this.backupSize = backupSize;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemDetails(List<GetBackupsBackupCollectionItemDbSystemDetail> dbSystemDetails) {
-            this.dbSystemDetails = Objects.requireNonNull(dbSystemDetails);
+            if (dbSystemDetails == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "dbSystemDetails");
+            }
+            this.dbSystemDetails = dbSystemDetails;
             return this;
         }
         public Builder dbSystemDetails(GetBackupsBackupCollectionItemDbSystemDetail... dbSystemDetails) {
@@ -303,77 +313,122 @@ public final class GetBackupsBackupCollectionItem {
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastAcceptedRequestToken(String lastAcceptedRequestToken) {
-            this.lastAcceptedRequestToken = Objects.requireNonNull(lastAcceptedRequestToken);
+            if (lastAcceptedRequestToken == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "lastAcceptedRequestToken");
+            }
+            this.lastAcceptedRequestToken = lastAcceptedRequestToken;
             return this;
         }
         @CustomType.Setter
         public Builder lastCompletedRequestToken(String lastCompletedRequestToken) {
-            this.lastCompletedRequestToken = Objects.requireNonNull(lastCompletedRequestToken);
+            if (lastCompletedRequestToken == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "lastCompletedRequestToken");
+            }
+            this.lastCompletedRequestToken = lastCompletedRequestToken;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder retentionPeriod(Integer retentionPeriod) {
-            this.retentionPeriod = Objects.requireNonNull(retentionPeriod);
+            if (retentionPeriod == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "retentionPeriod");
+            }
+            this.retentionPeriod = retentionPeriod;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBackupsBackupCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetBackupsBackupCollectionItem build() {

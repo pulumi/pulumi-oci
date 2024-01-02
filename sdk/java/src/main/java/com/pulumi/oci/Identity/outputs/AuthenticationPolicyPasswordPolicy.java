@@ -121,31 +121,37 @@ public final class AuthenticationPolicyPasswordPolicy {
 
         @CustomType.Setter
         public Builder isLowercaseCharactersRequired(@Nullable Boolean isLowercaseCharactersRequired) {
+
             this.isLowercaseCharactersRequired = isLowercaseCharactersRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isNumericCharactersRequired(@Nullable Boolean isNumericCharactersRequired) {
+
             this.isNumericCharactersRequired = isNumericCharactersRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isSpecialCharactersRequired(@Nullable Boolean isSpecialCharactersRequired) {
+
             this.isSpecialCharactersRequired = isSpecialCharactersRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isUppercaseCharactersRequired(@Nullable Boolean isUppercaseCharactersRequired) {
+
             this.isUppercaseCharactersRequired = isUppercaseCharactersRequired;
             return this;
         }
         @CustomType.Setter
         public Builder isUsernameContainmentAllowed(@Nullable Boolean isUsernameContainmentAllowed) {
+
             this.isUsernameContainmentAllowed = isUsernameContainmentAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder minimumPasswordLength(@Nullable Integer minimumPasswordLength) {
+
             this.minimumPasswordLength = minimumPasswordLength;
             return this;
         }

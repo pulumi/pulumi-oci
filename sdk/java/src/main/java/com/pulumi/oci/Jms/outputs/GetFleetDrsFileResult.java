@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -147,47 +148,74 @@ public final class GetFleetDrsFileResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder checksumType(String checksumType) {
-            this.checksumType = Objects.requireNonNull(checksumType);
+            if (checksumType == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "checksumType");
+            }
+            this.checksumType = checksumType;
             return this;
         }
         @CustomType.Setter
         public Builder checksumValue(String checksumValue) {
-            this.checksumValue = Objects.requireNonNull(checksumValue);
+            if (checksumValue == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "checksumValue");
+            }
+            this.checksumValue = checksumValue;
             return this;
         }
         @CustomType.Setter
         public Builder drsFileKey(String drsFileKey) {
-            this.drsFileKey = Objects.requireNonNull(drsFileKey);
+            if (drsFileKey == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "drsFileKey");
+            }
+            this.drsFileKey = drsFileKey;
             return this;
         }
         @CustomType.Setter
         public Builder drsFileName(String drsFileName) {
-            this.drsFileName = Objects.requireNonNull(drsFileName);
+            if (drsFileName == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "drsFileName");
+            }
+            this.drsFileName = drsFileName;
             return this;
         }
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFileResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         public GetFleetDrsFileResult build() {

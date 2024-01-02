@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth;
 import java.lang.Boolean;
@@ -175,12 +176,18 @@ public final class GetCloudAutonomousVmClusterMaintenanceWindowDetail {
 
         @CustomType.Setter
         public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
-            this.customActionTimeoutInMins = Objects.requireNonNull(customActionTimeoutInMins);
+            if (customActionTimeoutInMins == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "customActionTimeoutInMins");
+            }
+            this.customActionTimeoutInMins = customActionTimeoutInMins;
             return this;
         }
         @CustomType.Setter
         public Builder daysOfWeeks(List<GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek> daysOfWeeks) {
-            this.daysOfWeeks = Objects.requireNonNull(daysOfWeeks);
+            if (daysOfWeeks == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "daysOfWeeks");
+            }
+            this.daysOfWeeks = daysOfWeeks;
             return this;
         }
         public Builder daysOfWeeks(GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek... daysOfWeeks) {
@@ -188,7 +195,10 @@ public final class GetCloudAutonomousVmClusterMaintenanceWindowDetail {
         }
         @CustomType.Setter
         public Builder hoursOfDays(List<Integer> hoursOfDays) {
-            this.hoursOfDays = Objects.requireNonNull(hoursOfDays);
+            if (hoursOfDays == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "hoursOfDays");
+            }
+            this.hoursOfDays = hoursOfDays;
             return this;
         }
         public Builder hoursOfDays(Integer... hoursOfDays) {
@@ -196,22 +206,34 @@ public final class GetCloudAutonomousVmClusterMaintenanceWindowDetail {
         }
         @CustomType.Setter
         public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
-            this.isCustomActionTimeoutEnabled = Objects.requireNonNull(isCustomActionTimeoutEnabled);
+            if (isCustomActionTimeoutEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "isCustomActionTimeoutEnabled");
+            }
+            this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
-            this.isMonthlyPatchingEnabled = Objects.requireNonNull(isMonthlyPatchingEnabled);
+            if (isMonthlyPatchingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "isMonthlyPatchingEnabled");
+            }
+            this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder leadTimeInWeeks(Integer leadTimeInWeeks) {
-            this.leadTimeInWeeks = Objects.requireNonNull(leadTimeInWeeks);
+            if (leadTimeInWeeks == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "leadTimeInWeeks");
+            }
+            this.leadTimeInWeeks = leadTimeInWeeks;
             return this;
         }
         @CustomType.Setter
         public Builder months(List<GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth> months) {
-            this.months = Objects.requireNonNull(months);
+            if (months == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "months");
+            }
+            this.months = months;
             return this;
         }
         public Builder months(GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth... months) {
@@ -219,17 +241,26 @@ public final class GetCloudAutonomousVmClusterMaintenanceWindowDetail {
         }
         @CustomType.Setter
         public Builder patchingMode(String patchingMode) {
-            this.patchingMode = Objects.requireNonNull(patchingMode);
+            if (patchingMode == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "patchingMode");
+            }
+            this.patchingMode = patchingMode;
             return this;
         }
         @CustomType.Setter
         public Builder preference(String preference) {
-            this.preference = Objects.requireNonNull(preference);
+            if (preference == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "preference");
+            }
+            this.preference = preference;
             return this;
         }
         @CustomType.Setter
         public Builder weeksOfMonths(List<Integer> weeksOfMonths) {
-            this.weeksOfMonths = Objects.requireNonNull(weeksOfMonths);
+            if (weeksOfMonths == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterMaintenanceWindowDetail", "weeksOfMonths");
+            }
+            this.weeksOfMonths = weeksOfMonths;
             return this;
         }
         public Builder weeksOfMonths(Integer... weeksOfMonths) {

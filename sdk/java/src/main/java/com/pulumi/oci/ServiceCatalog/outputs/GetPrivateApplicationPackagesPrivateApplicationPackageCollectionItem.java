@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -124,42 +125,66 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
 
         @CustomType.Setter
         public Builder contentUrl(String contentUrl) {
-            this.contentUrl = Objects.requireNonNull(contentUrl);
+            if (contentUrl == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem", "contentUrl");
+            }
+            this.contentUrl = contentUrl;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mimeType(String mimeType) {
-            this.mimeType = Objects.requireNonNull(mimeType);
+            if (mimeType == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem", "mimeType");
+            }
+            this.mimeType = mimeType;
             return this;
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder privateApplicationId(String privateApplicationId) {
-            this.privateApplicationId = Objects.requireNonNull(privateApplicationId);
+            if (privateApplicationId == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem", "privateApplicationId");
+            }
+            this.privateApplicationId = privateApplicationId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem build() {

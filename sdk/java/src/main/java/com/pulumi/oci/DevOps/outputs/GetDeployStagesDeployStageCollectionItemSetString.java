@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemSetStringItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDeployStagesDeployStageCollectionItemSetString {
 
         @CustomType.Setter
         public Builder items(List<GetDeployStagesDeployStageCollectionItemSetStringItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItemSetString", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDeployStagesDeployStageCollectionItemSetStringItem... items) {

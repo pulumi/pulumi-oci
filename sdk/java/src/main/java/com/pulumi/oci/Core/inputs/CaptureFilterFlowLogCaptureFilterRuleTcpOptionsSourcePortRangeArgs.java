@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRang
         }
 
         public CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs build() {
-            $.max = Objects.requireNonNull($.max, "expected parameter 'max' to be non-null");
-            $.min = Objects.requireNonNull($.min, "expected parameter 'min' to be non-null");
+            if ($.max == null) {
+                throw new MissingRequiredPropertyException("CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs", "max");
+            }
+            if ($.min == null) {
+                throw new MissingRequiredPropertyException("CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs", "min");
+            }
             return $;
         }
     }

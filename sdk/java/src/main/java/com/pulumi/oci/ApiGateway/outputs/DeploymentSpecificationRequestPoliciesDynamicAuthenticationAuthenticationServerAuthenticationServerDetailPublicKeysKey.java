@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -157,26 +158,33 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
 
         @CustomType.Setter
         public Builder alg(@Nullable String alg) {
+
             this.alg = alg;
             return this;
         }
         @CustomType.Setter
         public Builder e(@Nullable String e) {
+
             this.e = e;
             return this;
         }
         @CustomType.Setter
         public Builder format(String format) {
-            this.format = Objects.requireNonNull(format);
+            if (format == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey", "format");
+            }
+            this.format = format;
             return this;
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder keyOps(@Nullable List<String> keyOps) {
+
             this.keyOps = keyOps;
             return this;
         }
@@ -185,21 +193,25 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
         @CustomType.Setter
         public Builder kid(@Nullable String kid) {
+
             this.kid = kid;
             return this;
         }
         @CustomType.Setter
         public Builder kty(@Nullable String kty) {
+
             this.kty = kty;
             return this;
         }
         @CustomType.Setter
         public Builder n(@Nullable String n) {
+
             this.n = n;
             return this;
         }
         @CustomType.Setter
         public Builder use(@Nullable String use) {
+
             this.use = use;
             return this;
         }

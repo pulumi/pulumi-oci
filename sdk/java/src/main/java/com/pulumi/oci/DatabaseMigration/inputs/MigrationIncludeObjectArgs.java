@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -188,8 +189,12 @@ public final class MigrationIncludeObjectArgs extends com.pulumi.resources.Resou
         }
 
         public MigrationIncludeObjectArgs build() {
-            $.object = Objects.requireNonNull($.object, "expected parameter 'object' to be non-null");
-            $.owner = Objects.requireNonNull($.owner, "expected parameter 'owner' to be non-null");
+            if ($.object == null) {
+                throw new MissingRequiredPropertyException("MigrationIncludeObjectArgs", "object");
+            }
+            if ($.owner == null) {
+                throw new MissingRequiredPropertyException("MigrationIncludeObjectArgs", "owner");
+            }
             return $;
         }
     }

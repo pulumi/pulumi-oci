@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetKeyVersionsKeyVersionExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.GetKeyVersionsKeyVersionReplicaDetail;
 import java.lang.Boolean;
@@ -248,12 +249,18 @@ public final class GetKeyVersionsKeyVersion {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder externalKeyReferenceDetails(List<GetKeyVersionsKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails) {
-            this.externalKeyReferenceDetails = Objects.requireNonNull(externalKeyReferenceDetails);
+            if (externalKeyReferenceDetails == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "externalKeyReferenceDetails");
+            }
+            this.externalKeyReferenceDetails = externalKeyReferenceDetails;
             return this;
         }
         public Builder externalKeyReferenceDetails(GetKeyVersionsKeyVersionExternalKeyReferenceDetail... externalKeyReferenceDetails) {
@@ -261,42 +268,66 @@ public final class GetKeyVersionsKeyVersion {
         }
         @CustomType.Setter
         public Builder externalKeyVersionId(String externalKeyVersionId) {
-            this.externalKeyVersionId = Objects.requireNonNull(externalKeyVersionId);
+            if (externalKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "externalKeyVersionId");
+            }
+            this.externalKeyVersionId = externalKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isPrimary(Boolean isPrimary) {
-            this.isPrimary = Objects.requireNonNull(isPrimary);
+            if (isPrimary == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "isPrimary");
+            }
+            this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
         public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+            if (keyId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "keyId");
+            }
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
         public Builder keyVersionId(String keyVersionId) {
-            this.keyVersionId = Objects.requireNonNull(keyVersionId);
+            if (keyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "keyVersionId");
+            }
+            this.keyVersionId = keyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+            if (managementEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "managementEndpoint");
+            }
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder publicKey(String publicKey) {
-            this.publicKey = Objects.requireNonNull(publicKey);
+            if (publicKey == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "publicKey");
+            }
+            this.publicKey = publicKey;
             return this;
         }
         @CustomType.Setter
         public Builder replicaDetails(List<GetKeyVersionsKeyVersionReplicaDetail> replicaDetails) {
-            this.replicaDetails = Objects.requireNonNull(replicaDetails);
+            if (replicaDetails == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "replicaDetails");
+            }
+            this.replicaDetails = replicaDetails;
             return this;
         }
         public Builder replicaDetails(GetKeyVersionsKeyVersionReplicaDetail... replicaDetails) {
@@ -304,32 +335,50 @@ public final class GetKeyVersionsKeyVersion {
         }
         @CustomType.Setter
         public Builder restoredFromKeyId(String restoredFromKeyId) {
-            this.restoredFromKeyId = Objects.requireNonNull(restoredFromKeyId);
+            if (restoredFromKeyId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "restoredFromKeyId");
+            }
+            this.restoredFromKeyId = restoredFromKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder restoredFromKeyVersionId(String restoredFromKeyVersionId) {
-            this.restoredFromKeyVersionId = Objects.requireNonNull(restoredFromKeyVersionId);
+            if (restoredFromKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "restoredFromKeyVersionId");
+            }
+            this.restoredFromKeyVersionId = restoredFromKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfDeletion(String timeOfDeletion) {
-            this.timeOfDeletion = Objects.requireNonNull(timeOfDeletion);
+            if (timeOfDeletion == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "timeOfDeletion");
+            }
+            this.timeOfDeletion = timeOfDeletion;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsKeyVersion", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         public GetKeyVersionsKeyVersion build() {

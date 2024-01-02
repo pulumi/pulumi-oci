@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetIpsecConfigTunnel {
 
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConfigTunnel", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder sharedSecret(String sharedSecret) {
-            this.sharedSecret = Objects.requireNonNull(sharedSecret);
+            if (sharedSecret == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConfigTunnel", "sharedSecret");
+            }
+            this.sharedSecret = sharedSecret;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetIpsecConfigTunnel", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetIpsecConfigTunnel build() {

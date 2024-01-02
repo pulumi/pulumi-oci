@@ -58,11 +58,13 @@ public final class MysqlDbSystemPointInTimeRecoveryDetail {
 
         @CustomType.Setter
         public Builder timeEarliestRecoveryPoint(@Nullable String timeEarliestRecoveryPoint) {
+
             this.timeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
             return this;
         }
         @CustomType.Setter
         public Builder timeLatestRecoveryPoint(@Nullable String timeLatestRecoveryPoint) {
+
             this.timeLatestRecoveryPoint = timeLatestRecoveryPoint;
             return this;
         }

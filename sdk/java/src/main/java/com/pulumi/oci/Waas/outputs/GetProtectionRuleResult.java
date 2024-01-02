@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetProtectionRuleExclusion;
 import java.lang.String;
 import java.util.List;
@@ -154,17 +155,26 @@ public final class GetProtectionRuleResult {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder exclusions(List<GetProtectionRuleExclusion> exclusions) {
-            this.exclusions = Objects.requireNonNull(exclusions);
+            if (exclusions == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "exclusions");
+            }
+            this.exclusions = exclusions;
             return this;
         }
         public Builder exclusions(GetProtectionRuleExclusion... exclusions) {
@@ -172,17 +182,26 @@ public final class GetProtectionRuleResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<String> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(String... labels) {
@@ -190,7 +209,10 @@ public final class GetProtectionRuleResult {
         }
         @CustomType.Setter
         public Builder modSecurityRuleIds(List<String> modSecurityRuleIds) {
-            this.modSecurityRuleIds = Objects.requireNonNull(modSecurityRuleIds);
+            if (modSecurityRuleIds == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "modSecurityRuleIds");
+            }
+            this.modSecurityRuleIds = modSecurityRuleIds;
             return this;
         }
         public Builder modSecurityRuleIds(String... modSecurityRuleIds) {
@@ -198,17 +220,26 @@ public final class GetProtectionRuleResult {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder protectionRuleKey(String protectionRuleKey) {
-            this.protectionRuleKey = Objects.requireNonNull(protectionRuleKey);
+            if (protectionRuleKey == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "protectionRuleKey");
+            }
+            this.protectionRuleKey = protectionRuleKey;
             return this;
         }
         @CustomType.Setter
         public Builder waasPolicyId(String waasPolicyId) {
-            this.waasPolicyId = Objects.requireNonNull(waasPolicyId);
+            if (waasPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetProtectionRuleResult", "waasPolicyId");
+            }
+            this.waasPolicyId = waasPolicyId;
             return this;
         }
         public GetProtectionRuleResult build() {

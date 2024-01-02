@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -129,36 +130,45 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDe
 
         @CustomType.Setter
         public Builder device(@Nullable String device) {
+
             this.device = device;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isReadOnly(@Nullable Boolean isReadOnly) {
+
             this.isReadOnly = isReadOnly;
             return this;
         }
         @CustomType.Setter
         public Builder isShareable(@Nullable Boolean isShareable) {
+
             this.isShareable = isShareable;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetails", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder useChap(@Nullable Boolean useChap) {
+
             this.useChap = useChap;
             return this;
         }

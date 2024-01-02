@@ -4,6 +4,7 @@
 package com.pulumi.oci.Redis.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetRedisClusterPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetRedisClusterPlainArgs build() {
-            $.redisClusterId = Objects.requireNonNull($.redisClusterId, "expected parameter 'redisClusterId' to be non-null");
+            if ($.redisClusterId == null) {
+                throw new MissingRequiredPropertyException("GetRedisClusterPlainArgs", "redisClusterId");
+            }
             return $;
         }
     }

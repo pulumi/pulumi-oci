@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetImageShapesImageShapeCompatibilityMemoryConstraint;
 import com.pulumi.oci.Core.outputs.GetImageShapesImageShapeCompatibilityOcpuConstraint;
 import java.lang.String;
@@ -87,12 +88,18 @@ public final class GetImageShapesImageShapeCompatibility {
 
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetImageShapesImageShapeCompatibility", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder memoryConstraints(List<GetImageShapesImageShapeCompatibilityMemoryConstraint> memoryConstraints) {
-            this.memoryConstraints = Objects.requireNonNull(memoryConstraints);
+            if (memoryConstraints == null) {
+              throw new MissingRequiredPropertyException("GetImageShapesImageShapeCompatibility", "memoryConstraints");
+            }
+            this.memoryConstraints = memoryConstraints;
             return this;
         }
         public Builder memoryConstraints(GetImageShapesImageShapeCompatibilityMemoryConstraint... memoryConstraints) {
@@ -100,7 +107,10 @@ public final class GetImageShapesImageShapeCompatibility {
         }
         @CustomType.Setter
         public Builder ocpuConstraints(List<GetImageShapesImageShapeCompatibilityOcpuConstraint> ocpuConstraints) {
-            this.ocpuConstraints = Objects.requireNonNull(ocpuConstraints);
+            if (ocpuConstraints == null) {
+              throw new MissingRequiredPropertyException("GetImageShapesImageShapeCompatibility", "ocpuConstraints");
+            }
+            this.ocpuConstraints = ocpuConstraints;
             return this;
         }
         public Builder ocpuConstraints(GetImageShapesImageShapeCompatibilityOcpuConstraint... ocpuConstraints) {
@@ -108,7 +118,10 @@ public final class GetImageShapesImageShapeCompatibility {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetImageShapesImageShapeCompatibility", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         public GetImageShapesImageShapeCompatibility build() {

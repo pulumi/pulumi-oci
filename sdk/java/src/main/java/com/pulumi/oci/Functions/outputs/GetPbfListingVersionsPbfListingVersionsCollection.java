@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsPbfListingVersionsCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetPbfListingVersionsPbfListingVersionsCollection {
 
         @CustomType.Setter
         public Builder items(List<GetPbfListingVersionsPbfListingVersionsCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetPbfListingVersionsPbfListingVersionsCollectionItem... items) {

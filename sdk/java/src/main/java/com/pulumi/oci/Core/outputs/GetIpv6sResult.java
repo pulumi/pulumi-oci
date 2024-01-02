@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetIpv6sFilter;
 import com.pulumi.oci.Core.outputs.GetIpv6sIpv6;
 import java.lang.String;
@@ -109,6 +110,7 @@ public final class GetIpv6sResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetIpv6sFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -117,17 +119,24 @@ public final class GetIpv6sResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetIpv6sResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6s(List<GetIpv6sIpv6> ipv6s) {
-            this.ipv6s = Objects.requireNonNull(ipv6s);
+            if (ipv6s == null) {
+              throw new MissingRequiredPropertyException("GetIpv6sResult", "ipv6s");
+            }
+            this.ipv6s = ipv6s;
             return this;
         }
         public Builder ipv6s(GetIpv6sIpv6... ipv6s) {
@@ -135,11 +144,13 @@ public final class GetIpv6sResult {
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vnicId(@Nullable String vnicId) {
+
             this.vnicId = vnicId;
             return this;
         }

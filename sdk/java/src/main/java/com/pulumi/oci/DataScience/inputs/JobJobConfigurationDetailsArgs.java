@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -189,7 +190,9 @@ public final class JobJobConfigurationDetailsArgs extends com.pulumi.resources.R
         }
 
         public JobJobConfigurationDetailsArgs build() {
-            $.jobType = Objects.requireNonNull($.jobType, "expected parameter 'jobType' to be non-null");
+            if ($.jobType == null) {
+                throw new MissingRequiredPropertyException("JobJobConfigurationDetailsArgs", "jobType");
+            }
             return $;
         }
     }

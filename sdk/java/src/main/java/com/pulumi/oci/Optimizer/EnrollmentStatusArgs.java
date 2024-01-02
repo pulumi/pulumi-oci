@@ -5,6 +5,7 @@ package com.pulumi.oci.Optimizer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class EnrollmentStatusArgs extends com.pulumi.resources.ResourceArg
         }
 
         public EnrollmentStatusArgs build() {
-            $.enrollmentStatusId = Objects.requireNonNull($.enrollmentStatusId, "expected parameter 'enrollmentStatusId' to be non-null");
-            $.status = Objects.requireNonNull($.status, "expected parameter 'status' to be non-null");
+            if ($.enrollmentStatusId == null) {
+                throw new MissingRequiredPropertyException("EnrollmentStatusArgs", "enrollmentStatusId");
+            }
+            if ($.status == null) {
+                throw new MissingRequiredPropertyException("EnrollmentStatusArgs", "status");
+            }
             return $;
         }
     }

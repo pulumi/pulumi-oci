@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -452,7 +453,9 @@ public final class DomainsCloudGateIdcsCreatedByArgs extends com.pulumi.resource
         }
 
         public DomainsCloudGateIdcsCreatedByArgs build() {
-            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
+            if ($.value == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateIdcsCreatedByArgs", "value");
+            }
             return $;
         }
     }

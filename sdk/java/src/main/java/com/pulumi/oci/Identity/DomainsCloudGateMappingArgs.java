@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsCloudGateMappingCloudGateArgs;
 import com.pulumi.oci.Identity.inputs.DomainsCloudGateMappingGatewayAppArgs;
 import com.pulumi.oci.Identity.inputs.DomainsCloudGateMappingServerArgs;
@@ -1208,13 +1209,27 @@ public final class DomainsCloudGateMappingArgs extends com.pulumi.resources.Reso
         }
 
         public DomainsCloudGateMappingArgs build() {
-            $.cloudGate = Objects.requireNonNull($.cloudGate, "expected parameter 'cloudGate' to be non-null");
-            $.gatewayApp = Objects.requireNonNull($.gatewayApp, "expected parameter 'gatewayApp' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.policyName = Objects.requireNonNull($.policyName, "expected parameter 'policyName' to be non-null");
-            $.resourcePrefix = Objects.requireNonNull($.resourcePrefix, "expected parameter 'resourcePrefix' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
-            $.server = Objects.requireNonNull($.server, "expected parameter 'server' to be non-null");
+            if ($.cloudGate == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "cloudGate");
+            }
+            if ($.gatewayApp == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "gatewayApp");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "idcsEndpoint");
+            }
+            if ($.policyName == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "policyName");
+            }
+            if ($.resourcePrefix == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "resourcePrefix");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "schemas");
+            }
+            if ($.server == null) {
+                throw new MissingRequiredPropertyException("DomainsCloudGateMappingArgs", "server");
+            }
             return $;
         }
     }

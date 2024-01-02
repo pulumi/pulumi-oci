@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeDetectorRuleDetails;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping;
 import java.lang.String;
@@ -251,36 +252,47 @@ public final class TargetTargetDetectorRecipeDetectorRule {
 
         @CustomType.Setter
         public Builder dataSourceId(@Nullable String dataSourceId) {
+
             this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder details(TargetTargetDetectorRecipeDetectorRuleDetails details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("TargetTargetDetectorRecipeDetectorRule", "details");
+            }
+            this.details = details;
             return this;
         }
         @CustomType.Setter
         public Builder detector(@Nullable String detector) {
+
             this.detector = detector;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRuleId(String detectorRuleId) {
-            this.detectorRuleId = Objects.requireNonNull(detectorRuleId);
+            if (detectorRuleId == null) {
+              throw new MissingRequiredPropertyException("TargetTargetDetectorRecipeDetectorRule", "detectorRuleId");
+            }
+            this.detectorRuleId = detectorRuleId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder entitiesMappings(@Nullable List<TargetTargetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings) {
+
             this.entitiesMappings = entitiesMappings;
             return this;
         }
@@ -289,11 +301,13 @@ public final class TargetTargetDetectorRecipeDetectorRule {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder managedListTypes(@Nullable List<String> managedListTypes) {
+
             this.managedListTypes = managedListTypes;
             return this;
         }
@@ -302,31 +316,37 @@ public final class TargetTargetDetectorRecipeDetectorRule {
         }
         @CustomType.Setter
         public Builder recommendation(@Nullable String recommendation) {
+
             this.recommendation = recommendation;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder serviceType(@Nullable String serviceType) {
+
             this.serviceType = serviceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }

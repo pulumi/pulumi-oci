@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeployEnvironmentComputeInstanceGroupSelector;
 import com.pulumi.oci.DevOps.outputs.GetDeployEnvironmentNetworkChannel;
 import java.lang.Object;
@@ -277,17 +278,26 @@ public final class GetDeployEnvironmentResult {
 
         @CustomType.Setter
         public Builder clusterId(String clusterId) {
-            this.clusterId = Objects.requireNonNull(clusterId);
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "clusterId");
+            }
+            this.clusterId = clusterId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeInstanceGroupSelectors(List<GetDeployEnvironmentComputeInstanceGroupSelector> computeInstanceGroupSelectors) {
-            this.computeInstanceGroupSelectors = Objects.requireNonNull(computeInstanceGroupSelectors);
+            if (computeInstanceGroupSelectors == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "computeInstanceGroupSelectors");
+            }
+            this.computeInstanceGroupSelectors = computeInstanceGroupSelectors;
             return this;
         }
         public Builder computeInstanceGroupSelectors(GetDeployEnvironmentComputeInstanceGroupSelector... computeInstanceGroupSelectors) {
@@ -295,52 +305,82 @@ public final class GetDeployEnvironmentResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deployEnvironmentId(String deployEnvironmentId) {
-            this.deployEnvironmentId = Objects.requireNonNull(deployEnvironmentId);
+            if (deployEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "deployEnvironmentId");
+            }
+            this.deployEnvironmentId = deployEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder deployEnvironmentType(String deployEnvironmentType) {
-            this.deployEnvironmentType = Objects.requireNonNull(deployEnvironmentType);
+            if (deployEnvironmentType == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "deployEnvironmentType");
+            }
+            this.deployEnvironmentType = deployEnvironmentType;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+            if (functionId == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "functionId");
+            }
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder networkChannels(List<GetDeployEnvironmentNetworkChannel> networkChannels) {
-            this.networkChannels = Objects.requireNonNull(networkChannels);
+            if (networkChannels == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "networkChannels");
+            }
+            this.networkChannels = networkChannels;
             return this;
         }
         public Builder networkChannels(GetDeployEnvironmentNetworkChannel... networkChannels) {
@@ -348,27 +388,42 @@ public final class GetDeployEnvironmentResult {
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDeployEnvironmentResult build() {

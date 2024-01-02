@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetOnpremConnectorPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetOnpremConnectorPlainArgs build() {
-            $.onPremConnectorId = Objects.requireNonNull($.onPremConnectorId, "expected parameter 'onPremConnectorId' to be non-null");
+            if ($.onPremConnectorId == null) {
+                throw new MissingRequiredPropertyException("GetOnpremConnectorPlainArgs", "onPremConnectorId");
+            }
             return $;
         }
     }

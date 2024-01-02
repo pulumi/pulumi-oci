@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
 
         @CustomType.Setter
         public Builder apexUrl(String apexUrl) {
-            this.apexUrl = Objects.requireNonNull(apexUrl);
+            if (apexUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "apexUrl");
+            }
+            this.apexUrl = apexUrl;
             return this;
         }
         @CustomType.Setter
         public Builder databaseTransformsUrl(String databaseTransformsUrl) {
-            this.databaseTransformsUrl = Objects.requireNonNull(databaseTransformsUrl);
+            if (databaseTransformsUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "databaseTransformsUrl");
+            }
+            this.databaseTransformsUrl = databaseTransformsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder graphStudioUrl(String graphStudioUrl) {
-            this.graphStudioUrl = Objects.requireNonNull(graphStudioUrl);
+            if (graphStudioUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "graphStudioUrl");
+            }
+            this.graphStudioUrl = graphStudioUrl;
             return this;
         }
         @CustomType.Setter
         public Builder machineLearningNotebookUrl(String machineLearningNotebookUrl) {
-            this.machineLearningNotebookUrl = Objects.requireNonNull(machineLearningNotebookUrl);
+            if (machineLearningNotebookUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "machineLearningNotebookUrl");
+            }
+            this.machineLearningNotebookUrl = machineLearningNotebookUrl;
             return this;
         }
         @CustomType.Setter
         public Builder machineLearningUserManagementUrl(String machineLearningUserManagementUrl) {
-            this.machineLearningUserManagementUrl = Objects.requireNonNull(machineLearningUserManagementUrl);
+            if (machineLearningUserManagementUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "machineLearningUserManagementUrl");
+            }
+            this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
             return this;
         }
         @CustomType.Setter
         public Builder mongoDbUrl(String mongoDbUrl) {
-            this.mongoDbUrl = Objects.requireNonNull(mongoDbUrl);
+            if (mongoDbUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "mongoDbUrl");
+            }
+            this.mongoDbUrl = mongoDbUrl;
             return this;
         }
         @CustomType.Setter
         public Builder ordsUrl(String ordsUrl) {
-            this.ordsUrl = Objects.requireNonNull(ordsUrl);
+            if (ordsUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "ordsUrl");
+            }
+            this.ordsUrl = ordsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder sqlDevWebUrl(String sqlDevWebUrl) {
-            this.sqlDevWebUrl = Objects.requireNonNull(sqlDevWebUrl);
+            if (sqlDevWebUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionUrl", "sqlDevWebUrl");
+            }
+            this.sqlDevWebUrl = sqlDevWebUrl;
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseConnectionUrl build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstancesFilter;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstancesManagedInstance;
 import java.lang.String;
@@ -109,16 +110,21 @@ public final class GetManagedInstancesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -127,12 +133,18 @@ public final class GetManagedInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstances(List<GetManagedInstancesManagedInstance> managedInstances) {
-            this.managedInstances = Objects.requireNonNull(managedInstances);
+            if (managedInstances == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstancesResult", "managedInstances");
+            }
+            this.managedInstances = managedInstances;
             return this;
         }
         public Builder managedInstances(GetManagedInstancesManagedInstance... managedInstances) {
@@ -140,6 +152,7 @@ public final class GetManagedInstancesResult {
         }
         @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
+
             this.osFamily = osFamily;
             return this;
         }

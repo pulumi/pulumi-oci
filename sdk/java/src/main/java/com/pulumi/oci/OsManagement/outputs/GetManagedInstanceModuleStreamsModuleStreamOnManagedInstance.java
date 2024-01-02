@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile;
 import java.lang.String;
 import java.util.List;
@@ -114,12 +115,18 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
 
         @CustomType.Setter
         public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+            if (moduleName == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance", "moduleName");
+            }
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
         public Builder profiles(List<GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile> profiles) {
-            this.profiles = Objects.requireNonNull(profiles);
+            if (profiles == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance", "profiles");
+            }
+            this.profiles = profiles;
             return this;
         }
         public Builder profiles(GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfile... profiles) {
@@ -127,22 +134,34 @@ public final class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance 
         }
         @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+            if (softwareSourceId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance", "softwareSourceId");
+            }
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+            if (streamName == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance", "streamName");
+            }
+            this.streamName = streamName;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         public GetManagedInstanceModuleStreamsModuleStreamOnManagedInstance build() {

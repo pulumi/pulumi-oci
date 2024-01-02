@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRoute;
@@ -73,7 +74,10 @@ public final class GetDeploymentsDeploymentCollectionSpecification {
 
         @CustomType.Setter
         public Builder loggingPolicies(List<GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy> loggingPolicies) {
-            this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
+            if (loggingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecification", "loggingPolicies");
+            }
+            this.loggingPolicies = loggingPolicies;
             return this;
         }
         public Builder loggingPolicies(GetDeploymentsDeploymentCollectionSpecificationLoggingPolicy... loggingPolicies) {
@@ -81,7 +85,10 @@ public final class GetDeploymentsDeploymentCollectionSpecification {
         }
         @CustomType.Setter
         public Builder requestPolicies(List<GetDeploymentsDeploymentCollectionSpecificationRequestPolicy> requestPolicies) {
-            this.requestPolicies = Objects.requireNonNull(requestPolicies);
+            if (requestPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecification", "requestPolicies");
+            }
+            this.requestPolicies = requestPolicies;
             return this;
         }
         public Builder requestPolicies(GetDeploymentsDeploymentCollectionSpecificationRequestPolicy... requestPolicies) {
@@ -89,7 +96,10 @@ public final class GetDeploymentsDeploymentCollectionSpecification {
         }
         @CustomType.Setter
         public Builder routes(List<GetDeploymentsDeploymentCollectionSpecificationRoute> routes) {
-            this.routes = Objects.requireNonNull(routes);
+            if (routes == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecification", "routes");
+            }
+            this.routes = routes;
             return this;
         }
         public Builder routes(GetDeploymentsDeploymentCollectionSpecificationRoute... routes) {

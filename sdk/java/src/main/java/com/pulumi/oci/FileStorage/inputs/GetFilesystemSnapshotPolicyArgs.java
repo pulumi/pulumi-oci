@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetFilesystemSnapshotPolicyArgs extends com.pulumi.resources.
         }
 
         public GetFilesystemSnapshotPolicyArgs build() {
-            $.filesystemSnapshotPolicyId = Objects.requireNonNull($.filesystemSnapshotPolicyId, "expected parameter 'filesystemSnapshotPolicyId' to be non-null");
+            if ($.filesystemSnapshotPolicyId == null) {
+                throw new MissingRequiredPropertyException("GetFilesystemSnapshotPolicyArgs", "filesystemSnapshotPolicyId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetConsoleHistoriesConsoleHistory;
 import com.pulumi.oci.Core.outputs.GetConsoleHistoriesFilter;
 import java.lang.String;
@@ -123,17 +124,24 @@ public final class GetConsoleHistoriesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConsoleHistoriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder consoleHistories(List<GetConsoleHistoriesConsoleHistory> consoleHistories) {
-            this.consoleHistories = Objects.requireNonNull(consoleHistories);
+            if (consoleHistories == null) {
+              throw new MissingRequiredPropertyException("GetConsoleHistoriesResult", "consoleHistories");
+            }
+            this.consoleHistories = consoleHistories;
             return this;
         }
         public Builder consoleHistories(GetConsoleHistoriesConsoleHistory... consoleHistories) {
@@ -141,6 +149,7 @@ public final class GetConsoleHistoriesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetConsoleHistoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -149,16 +158,21 @@ public final class GetConsoleHistoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConsoleHistoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(@Nullable String instanceId) {
+
             this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

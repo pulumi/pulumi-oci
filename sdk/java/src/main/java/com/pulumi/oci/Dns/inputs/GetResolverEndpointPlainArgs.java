@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -119,8 +120,12 @@ public final class GetResolverEndpointPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetResolverEndpointPlainArgs build() {
-            $.resolverEndpointName = Objects.requireNonNull($.resolverEndpointName, "expected parameter 'resolverEndpointName' to be non-null");
-            $.resolverId = Objects.requireNonNull($.resolverId, "expected parameter 'resolverId' to be non-null");
+            if ($.resolverEndpointName == null) {
+                throw new MissingRequiredPropertyException("GetResolverEndpointPlainArgs", "resolverEndpointName");
+            }
+            if ($.resolverId == null) {
+                throw new MissingRequiredPropertyException("GetResolverEndpointPlainArgs", "resolverId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -149,9 +150,15 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItemArgs extends com.p
         }
 
         public DiscoveryJobDiscoveryDetailsCredentialsItemArgs build() {
-            $.credentialName = Objects.requireNonNull($.credentialName, "expected parameter 'credentialName' to be non-null");
-            $.credentialType = Objects.requireNonNull($.credentialType, "expected parameter 'credentialType' to be non-null");
-            $.properties = Objects.requireNonNull($.properties, "expected parameter 'properties' to be non-null");
+            if ($.credentialName == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsCredentialsItemArgs", "credentialName");
+            }
+            if ($.credentialType == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsCredentialsItemArgs", "credentialType");
+            }
+            if ($.properties == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsCredentialsItemArgs", "properties");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetNamespaceStorageOverlappingRecallsOverlappingRecallCollect
 
         @CustomType.Setter
         public Builder items(List<GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetNamespaceStorageOverlappingRecallsOverlappingRecallCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespaceStorageOverlappingRecallsOverlappingRecallCollectionItem... items) {

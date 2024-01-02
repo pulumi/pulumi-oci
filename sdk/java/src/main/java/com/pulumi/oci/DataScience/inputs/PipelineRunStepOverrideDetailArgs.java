@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
         }
 
         public PipelineRunStepOverrideDetailArgs build() {
-            $.stepConfigurationDetails = Objects.requireNonNull($.stepConfigurationDetails, "expected parameter 'stepConfigurationDetails' to be non-null");
-            $.stepName = Objects.requireNonNull($.stepName, "expected parameter 'stepName' to be non-null");
+            if ($.stepConfigurationDetails == null) {
+                throw new MissingRequiredPropertyException("PipelineRunStepOverrideDetailArgs", "stepConfigurationDetails");
+            }
+            if ($.stepName == null) {
+                throw new MissingRequiredPropertyException("PipelineRunStepOverrideDetailArgs", "stepName");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollection {
 
         @CustomType.Setter
         public Builder items(List<GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsLifecycleEnvironmentCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItem... items) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -91,32 +92,48 @@ public final class GetRunLogResult {
 
         @CustomType.Setter
         public Builder base64EncodeContent(@Nullable Boolean base64EncodeContent) {
+
             this.base64EncodeContent = base64EncodeContent;
             return this;
         }
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetRunLogResult", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetRunLogResult", "contentType");
+            }
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRunLogResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetRunLogResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder runId(String runId) {
-            this.runId = Objects.requireNonNull(runId);
+            if (runId == null) {
+              throw new MissingRequiredPropertyException("GetRunLogResult", "runId");
+            }
+            this.runId = runId;
             return this;
         }
         public GetRunLogResult build() {

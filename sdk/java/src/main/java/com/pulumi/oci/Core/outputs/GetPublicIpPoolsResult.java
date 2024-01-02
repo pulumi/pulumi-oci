@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetPublicIpPoolsFilter;
 import com.pulumi.oci.Core.outputs.GetPublicIpPoolsPublicIpPoolCollection;
 import java.lang.String;
@@ -101,21 +102,27 @@ public final class GetPublicIpPoolsResult {
 
         @CustomType.Setter
         public Builder byoipRangeId(@Nullable String byoipRangeId) {
+
             this.byoipRangeId = byoipRangeId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpPoolsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPublicIpPoolsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,12 +131,18 @@ public final class GetPublicIpPoolsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpPoolsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder publicIpPoolCollections(List<GetPublicIpPoolsPublicIpPoolCollection> publicIpPoolCollections) {
-            this.publicIpPoolCollections = Objects.requireNonNull(publicIpPoolCollections);
+            if (publicIpPoolCollections == null) {
+              throw new MissingRequiredPropertyException("GetPublicIpPoolsResult", "publicIpPoolCollections");
+            }
+            this.publicIpPoolCollections = publicIpPoolCollections;
             return this;
         }
         public Builder publicIpPoolCollections(GetPublicIpPoolsPublicIpPoolCollection... publicIpPoolCollections) {

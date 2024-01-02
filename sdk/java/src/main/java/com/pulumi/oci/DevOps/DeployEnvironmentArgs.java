@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.DeployEnvironmentComputeInstanceGroupSelectorsArgs;
 import com.pulumi.oci.DevOps.inputs.DeployEnvironmentNetworkChannelArgs;
 import java.lang.Object;
@@ -425,8 +426,12 @@ public final class DeployEnvironmentArgs extends com.pulumi.resources.ResourceAr
         }
 
         public DeployEnvironmentArgs build() {
-            $.deployEnvironmentType = Objects.requireNonNull($.deployEnvironmentType, "expected parameter 'deployEnvironmentType' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.deployEnvironmentType == null) {
+                throw new MissingRequiredPropertyException("DeployEnvironmentArgs", "deployEnvironmentType");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("DeployEnvironmentArgs", "projectId");
+            }
             return $;
         }
     }

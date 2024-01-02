@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.util.Objects;
 
@@ -140,42 +141,66 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapa
 
         @CustomType.Setter
         public Builder canUseApiKeys(Boolean canUseApiKeys) {
-            this.canUseApiKeys = Objects.requireNonNull(canUseApiKeys);
+            if (canUseApiKeys == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", "canUseApiKeys");
+            }
+            this.canUseApiKeys = canUseApiKeys;
             return this;
         }
         @CustomType.Setter
         public Builder canUseAuthTokens(Boolean canUseAuthTokens) {
-            this.canUseAuthTokens = Objects.requireNonNull(canUseAuthTokens);
+            if (canUseAuthTokens == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", "canUseAuthTokens");
+            }
+            this.canUseAuthTokens = canUseAuthTokens;
             return this;
         }
         @CustomType.Setter
         public Builder canUseConsole(Boolean canUseConsole) {
-            this.canUseConsole = Objects.requireNonNull(canUseConsole);
+            if (canUseConsole == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", "canUseConsole");
+            }
+            this.canUseConsole = canUseConsole;
             return this;
         }
         @CustomType.Setter
         public Builder canUseConsolePassword(Boolean canUseConsolePassword) {
-            this.canUseConsolePassword = Objects.requireNonNull(canUseConsolePassword);
+            if (canUseConsolePassword == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", "canUseConsolePassword");
+            }
+            this.canUseConsolePassword = canUseConsolePassword;
             return this;
         }
         @CustomType.Setter
         public Builder canUseCustomerSecretKeys(Boolean canUseCustomerSecretKeys) {
-            this.canUseCustomerSecretKeys = Objects.requireNonNull(canUseCustomerSecretKeys);
+            if (canUseCustomerSecretKeys == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", "canUseCustomerSecretKeys");
+            }
+            this.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
             return this;
         }
         @CustomType.Setter
         public Builder canUseDbCredentials(Boolean canUseDbCredentials) {
-            this.canUseDbCredentials = Objects.requireNonNull(canUseDbCredentials);
+            if (canUseDbCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", "canUseDbCredentials");
+            }
+            this.canUseDbCredentials = canUseDbCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder canUseOauth2clientCredentials(Boolean canUseOauth2clientCredentials) {
-            this.canUseOauth2clientCredentials = Objects.requireNonNull(canUseOauth2clientCredentials);
+            if (canUseOauth2clientCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", "canUseOauth2clientCredentials");
+            }
+            this.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
             return this;
         }
         @CustomType.Setter
         public Builder canUseSmtpCredentials(Boolean canUseSmtpCredentials) {
-            this.canUseSmtpCredentials = Objects.requireNonNull(canUseSmtpCredentials);
+            if (canUseSmtpCredentials == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser", "canUseSmtpCredentials");
+            }
+            this.canUseSmtpCredentials = canUseSmtpCredentials;
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser build() {

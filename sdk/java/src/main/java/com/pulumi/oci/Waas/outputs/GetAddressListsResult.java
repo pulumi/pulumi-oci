@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetAddressListsAddressList;
 import com.pulumi.oci.Waas.outputs.GetAddressListsFilter;
 import java.lang.String;
@@ -111,7 +112,10 @@ public final class GetAddressListsResult {
 
         @CustomType.Setter
         public Builder addressLists(List<GetAddressListsAddressList> addressLists) {
-            this.addressLists = Objects.requireNonNull(addressLists);
+            if (addressLists == null) {
+              throw new MissingRequiredPropertyException("GetAddressListsResult", "addressLists");
+            }
+            this.addressLists = addressLists;
             return this;
         }
         public Builder addressLists(GetAddressListsAddressList... addressLists) {
@@ -119,11 +123,15 @@ public final class GetAddressListsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAddressListsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAddressListsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -132,11 +140,15 @@ public final class GetAddressListsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAddressListsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ids(@Nullable List<String> ids) {
+
             this.ids = ids;
             return this;
         }
@@ -145,6 +157,7 @@ public final class GetAddressListsResult {
         }
         @CustomType.Setter
         public Builder names(@Nullable List<String> names) {
+
             this.names = names;
             return this;
         }
@@ -153,6 +166,7 @@ public final class GetAddressListsResult {
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -161,11 +175,13 @@ public final class GetAddressListsResult {
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }

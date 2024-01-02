@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetStreamPoolCustomEncryptionKey {
 
         @CustomType.Setter
         public Builder keyState(String keyState) {
-            this.keyState = Objects.requireNonNull(keyState);
+            if (keyState == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolCustomEncryptionKey", "keyState");
+            }
+            this.keyState = keyState;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolCustomEncryptionKey", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         public GetStreamPoolCustomEncryptionKey build() {

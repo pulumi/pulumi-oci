@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
 
         @CustomType.Setter
         public Builder grantOption(String grantOption) {
-            this.grantOption = Objects.requireNonNull(grantOption);
+            if (grantOption == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem", "grantOption");
+            }
+            this.grantOption = grantOption;
             return this;
         }
         @CustomType.Setter
         public Builder initialGroup(String initialGroup) {
-            this.initialGroup = Objects.requireNonNull(initialGroup);
+            if (initialGroup == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem", "initialGroup");
+            }
+            this.initialGroup = initialGroup;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollectionItem build() {

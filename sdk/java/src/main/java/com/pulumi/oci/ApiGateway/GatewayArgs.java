@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.GatewayCaBundleArgs;
 import com.pulumi.oci.ApiGateway.inputs.GatewayResponseCacheDetailsArgs;
 import java.lang.Object;
@@ -446,9 +447,15 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public GatewayArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.endpointType = Objects.requireNonNull($.endpointType, "expected parameter 'endpointType' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GatewayArgs", "compartmentId");
+            }
+            if ($.endpointType == null) {
+                throw new MissingRequiredPropertyException("GatewayArgs", "endpointType");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("GatewayArgs", "subnetId");
+            }
             return $;
         }
     }

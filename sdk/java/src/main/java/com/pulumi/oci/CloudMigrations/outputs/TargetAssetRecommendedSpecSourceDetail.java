@@ -124,31 +124,37 @@ public final class TargetAssetRecommendedSpecSourceDetail {
 
         @CustomType.Setter
         public Builder bootVolumeId(@Nullable String bootVolumeId) {
+
             this.bootVolumeId = bootVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeSizeInGbs(@Nullable String bootVolumeSizeInGbs) {
+
             this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeVpusPerGb(@Nullable String bootVolumeVpusPerGb) {
+
             this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(@Nullable String imageId) {
+
             this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
             this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(@Nullable String sourceType) {
+
             this.sourceType = sourceType;
             return this;
         }

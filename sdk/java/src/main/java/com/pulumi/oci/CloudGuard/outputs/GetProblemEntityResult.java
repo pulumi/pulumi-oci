@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetProblemEntityItem;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetProblemEntityResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetProblemEntityItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetProblemEntityItem... items) {
@@ -85,7 +92,10 @@ public final class GetProblemEntityResult {
         }
         @CustomType.Setter
         public Builder problemId(String problemId) {
-            this.problemId = Objects.requireNonNull(problemId);
+            if (problemId == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntityResult", "problemId");
+            }
+            this.problemId = problemId;
             return this;
         }
         public GetProblemEntityResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetVirtualNodePoolTaint {
 
         @CustomType.Setter
         public Builder effect(String effect) {
-            this.effect = Objects.requireNonNull(effect);
+            if (effect == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolTaint", "effect");
+            }
+            this.effect = effect;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolTaint", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolTaint", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetVirtualNodePoolTaint build() {

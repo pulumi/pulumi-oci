@@ -72,16 +72,19 @@ public final class SddcHcxOnPremLicense {
 
         @CustomType.Setter
         public Builder activationKey(@Nullable String activationKey) {
+
             this.activationKey = activationKey;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemName(@Nullable String systemName) {
+
             this.systemName = systemName;
             return this;
         }

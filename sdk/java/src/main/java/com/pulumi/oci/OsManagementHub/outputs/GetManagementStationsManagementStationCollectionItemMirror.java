@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetManagementStationsManagementStationCollectionItemMirror {
 
         @CustomType.Setter
         public Builder directory(String directory) {
-            this.directory = Objects.requireNonNull(directory);
+            if (directory == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirror", "directory");
+            }
+            this.directory = directory;
             return this;
         }
         @CustomType.Setter
         public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirror", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder sslcert(String sslcert) {
-            this.sslcert = Objects.requireNonNull(sslcert);
+            if (sslcert == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirror", "sslcert");
+            }
+            this.sslcert = sslcert;
             return this;
         }
         @CustomType.Setter
         public Builder sslport(String sslport) {
-            this.sslport = Objects.requireNonNull(sslport);
+            if (sslport == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationsManagementStationCollectionItemMirror", "sslport");
+            }
+            this.sslport = sslport;
             return this;
         }
         public GetManagementStationsManagementStationCollectionItemMirror build() {

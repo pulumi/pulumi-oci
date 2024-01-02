@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -135,17 +136,24 @@ public final class DomainsSecurityQuestionQuestionText {
 
         @CustomType.Setter("default")
         public Builder default_(@Nullable Boolean default_) {
+
             this.default_ = default_;
             return this;
         }
         @CustomType.Setter
         public Builder locale(String locale) {
-            this.locale = Objects.requireNonNull(locale);
+            if (locale == null) {
+              throw new MissingRequiredPropertyException("DomainsSecurityQuestionQuestionText", "locale");
+            }
+            this.locale = locale;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsSecurityQuestionQuestionText", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsSecurityQuestionQuestionText build() {

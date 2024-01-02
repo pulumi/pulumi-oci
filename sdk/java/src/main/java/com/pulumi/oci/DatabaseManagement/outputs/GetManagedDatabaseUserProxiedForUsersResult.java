@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserProxiedForUsersFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection;
 import java.lang.String;
@@ -93,6 +94,7 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseUserProxiedForUsersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -101,22 +103,32 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserProxiedForUsersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserProxiedForUsersResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder proxiedForUserCollections(List<GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection> proxiedForUserCollections) {
-            this.proxiedForUserCollections = Objects.requireNonNull(proxiedForUserCollections);
+            if (proxiedForUserCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserProxiedForUsersResult", "proxiedForUserCollections");
+            }
+            this.proxiedForUserCollections = proxiedForUserCollections;
             return this;
         }
         public Builder proxiedForUserCollections(GetManagedDatabaseUserProxiedForUsersProxiedForUserCollection... proxiedForUserCollections) {
@@ -124,7 +136,10 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
         }
         @CustomType.Setter
         public Builder userName(String userName) {
-            this.userName = Objects.requireNonNull(userName);
+            if (userName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserProxiedForUsersResult", "userName");
+            }
+            this.userName = userName;
             return this;
         }
         public GetManagedDatabaseUserProxiedForUsersResult build() {

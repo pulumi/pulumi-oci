@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetServiceCatalogAssociationsServiceCatalogAssociationCollect
 
         @CustomType.Setter
         public Builder entityId(String entityId) {
-            this.entityId = Objects.requireNonNull(entityId);
+            if (entityId == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem", "entityId");
+            }
+            this.entityId = entityId;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+            if (entityType == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem", "entityType");
+            }
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder serviceCatalogId(String serviceCatalogId) {
-            this.serviceCatalogId = Objects.requireNonNull(serviceCatalogId);
+            if (serviceCatalogId == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem", "serviceCatalogId");
+            }
+            this.serviceCatalogId = serviceCatalogId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItem build() {

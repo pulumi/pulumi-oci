@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkLoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -274,10 +275,18 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ListenerArgs build() {
-            $.defaultBackendSetName = Objects.requireNonNull($.defaultBackendSetName, "expected parameter 'defaultBackendSetName' to be non-null");
-            $.networkLoadBalancerId = Objects.requireNonNull($.networkLoadBalancerId, "expected parameter 'networkLoadBalancerId' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
+            if ($.defaultBackendSetName == null) {
+                throw new MissingRequiredPropertyException("ListenerArgs", "defaultBackendSetName");
+            }
+            if ($.networkLoadBalancerId == null) {
+                throw new MissingRequiredPropertyException("ListenerArgs", "networkLoadBalancerId");
+            }
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("ListenerArgs", "port");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("ListenerArgs", "protocol");
+            }
             return $;
         }
     }

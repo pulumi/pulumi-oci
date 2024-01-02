@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetRemotePeeringConnectionsFilter;
 import com.pulumi.oci.Core.outputs.GetRemotePeeringConnectionsRemotePeeringConnection;
 import java.lang.String;
@@ -95,16 +96,21 @@ public final class GetRemotePeeringConnectionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder drgId(@Nullable String drgId) {
+
             this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRemotePeeringConnectionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -113,12 +119,18 @@ public final class GetRemotePeeringConnectionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder remotePeeringConnections(List<GetRemotePeeringConnectionsRemotePeeringConnection> remotePeeringConnections) {
-            this.remotePeeringConnections = Objects.requireNonNull(remotePeeringConnections);
+            if (remotePeeringConnections == null) {
+              throw new MissingRequiredPropertyException("GetRemotePeeringConnectionsResult", "remotePeeringConnections");
+            }
+            this.remotePeeringConnections = remotePeeringConnections;
             return this;
         }
         public Builder remotePeeringConnections(GetRemotePeeringConnectionsRemotePeeringConnection... remotePeeringConnections) {

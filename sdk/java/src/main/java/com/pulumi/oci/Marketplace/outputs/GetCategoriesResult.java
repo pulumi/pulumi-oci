@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetCategoriesCategory;
 import com.pulumi.oci.Marketplace.outputs.GetCategoriesFilter;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetCategoriesResult {
 
         @CustomType.Setter
         public Builder categories(List<GetCategoriesCategory> categories) {
-            this.categories = Objects.requireNonNull(categories);
+            if (categories == null) {
+              throw new MissingRequiredPropertyException("GetCategoriesResult", "categories");
+            }
+            this.categories = categories;
             return this;
         }
         public Builder categories(GetCategoriesCategory... categories) {
@@ -81,11 +85,13 @@ public final class GetCategoriesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCategoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -94,7 +100,10 @@ public final class GetCategoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCategoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetCategoriesResult build() {

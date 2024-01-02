@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -91,27 +92,42 @@ public final class GetRegionSubscriptionsRegionSubscription {
 
         @CustomType.Setter
         public Builder isHomeRegion(Boolean isHomeRegion) {
-            this.isHomeRegion = Objects.requireNonNull(isHomeRegion);
+            if (isHomeRegion == null) {
+              throw new MissingRequiredPropertyException("GetRegionSubscriptionsRegionSubscription", "isHomeRegion");
+            }
+            this.isHomeRegion = isHomeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder regionKey(String regionKey) {
-            this.regionKey = Objects.requireNonNull(regionKey);
+            if (regionKey == null) {
+              throw new MissingRequiredPropertyException("GetRegionSubscriptionsRegionSubscription", "regionKey");
+            }
+            this.regionKey = regionKey;
             return this;
         }
         @CustomType.Setter
         public Builder regionName(String regionName) {
-            this.regionName = Objects.requireNonNull(regionName);
+            if (regionName == null) {
+              throw new MissingRequiredPropertyException("GetRegionSubscriptionsRegionSubscription", "regionName");
+            }
+            this.regionName = regionName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRegionSubscriptionsRegionSubscription", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
-            this.tenancyId = Objects.requireNonNull(tenancyId);
+            if (tenancyId == null) {
+              throw new MissingRequiredPropertyException("GetRegionSubscriptionsRegionSubscription", "tenancyId");
+            }
+            this.tenancyId = tenancyId;
             return this;
         }
         public GetRegionSubscriptionsRegionSubscription build() {

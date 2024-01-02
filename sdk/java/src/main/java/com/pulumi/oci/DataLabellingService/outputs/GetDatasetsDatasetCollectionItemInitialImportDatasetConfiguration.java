@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigura
 
         @CustomType.Setter
         public Builder importFormats(List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat> importFormats) {
-            this.importFormats = Objects.requireNonNull(importFormats);
+            if (importFormats == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration", "importFormats");
+            }
+            this.importFormats = importFormats;
             return this;
         }
         public Builder importFormats(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormat... importFormats) {
@@ -66,7 +70,10 @@ public final class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigura
         }
         @CustomType.Setter
         public Builder importMetadataPaths(List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath> importMetadataPaths) {
-            this.importMetadataPaths = Objects.requireNonNull(importMetadataPaths);
+            if (importMetadataPaths == null) {
+              throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration", "importMetadataPaths");
+            }
+            this.importMetadataPaths = importMetadataPaths;
             return this;
         }
         public Builder importMetadataPaths(GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPath... importMetadataPaths) {

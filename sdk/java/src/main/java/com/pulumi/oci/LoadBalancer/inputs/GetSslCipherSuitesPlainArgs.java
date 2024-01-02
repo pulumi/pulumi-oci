@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.GetSslCipherSuitesFilter;
 import java.lang.String;
 import java.util.List;
@@ -84,7 +85,9 @@ public final class GetSslCipherSuitesPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetSslCipherSuitesPlainArgs build() {
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("GetSslCipherSuitesPlainArgs", "loadBalancerId");
+            }
             return $;
         }
     }

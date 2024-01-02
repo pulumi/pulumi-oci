@@ -214,66 +214,79 @@ public final class MonitoredResourcesListMemberItem {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(@Nullable String externalId) {
+
             this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
+
             this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder license(@Nullable String license) {
+
             this.license = license;
             return this;
         }
         @CustomType.Setter
         public Builder parentId(@Nullable String parentId) {
+
             this.parentId = parentId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceDisplayName(@Nullable String resourceDisplayName) {
+
             this.resourceDisplayName = resourceDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(@Nullable String resourceId) {
+
             this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(@Nullable String resourceName) {
+
             this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(@Nullable String resourceType) {
+
             this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+
             this.systemTags = systemTags;
             return this;
         }

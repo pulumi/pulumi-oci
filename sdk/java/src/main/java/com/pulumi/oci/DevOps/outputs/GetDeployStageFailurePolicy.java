@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDeployStageFailurePolicy {
 
         @CustomType.Setter
         public Builder failureCount(Integer failureCount) {
-            this.failureCount = Objects.requireNonNull(failureCount);
+            if (failureCount == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageFailurePolicy", "failureCount");
+            }
+            this.failureCount = failureCount;
             return this;
         }
         @CustomType.Setter
         public Builder failurePercentage(Integer failurePercentage) {
-            this.failurePercentage = Objects.requireNonNull(failurePercentage);
+            if (failurePercentage == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageFailurePolicy", "failurePercentage");
+            }
+            this.failurePercentage = failurePercentage;
             return this;
         }
         @CustomType.Setter
         public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+            if (policyType == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageFailurePolicy", "policyType");
+            }
+            this.policyType = policyType;
             return this;
         }
         public GetDeployStageFailurePolicy build() {

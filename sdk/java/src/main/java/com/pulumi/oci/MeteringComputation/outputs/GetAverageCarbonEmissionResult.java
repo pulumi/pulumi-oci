@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetAverageCarbonEmissionResult {
 
         @CustomType.Setter
         public Builder averageCarbonEmission(Double averageCarbonEmission) {
-            this.averageCarbonEmission = Objects.requireNonNull(averageCarbonEmission);
+            if (averageCarbonEmission == null) {
+              throw new MissingRequiredPropertyException("GetAverageCarbonEmissionResult", "averageCarbonEmission");
+            }
+            this.averageCarbonEmission = averageCarbonEmission;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAverageCarbonEmissionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder skuPartNumber(String skuPartNumber) {
-            this.skuPartNumber = Objects.requireNonNull(skuPartNumber);
+            if (skuPartNumber == null) {
+              throw new MissingRequiredPropertyException("GetAverageCarbonEmissionResult", "skuPartNumber");
+            }
+            this.skuPartNumber = skuPartNumber;
             return this;
         }
         public GetAverageCarbonEmissionResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicy;
@@ -255,6 +256,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
 
         @CustomType.Setter
         public Builder audiences(@Nullable List<String> audiences) {
+
             this.audiences = audiences;
             return this;
         }
@@ -263,6 +265,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
         @CustomType.Setter
         public Builder cacheKeys(@Nullable List<String> cacheKeys) {
+
             this.cacheKeys = cacheKeys;
             return this;
         }
@@ -271,16 +274,19 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
         @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
+
             this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder isAnonymousAccessAllowed(@Nullable Boolean isAnonymousAccessAllowed) {
+
             this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder issuers(@Nullable List<String> issuers) {
+
             this.issuers = issuers;
             return this;
         }
@@ -289,51 +295,63 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
         @CustomType.Setter
         public Builder maxClockSkewInSeconds(@Nullable Double maxClockSkewInSeconds) {
+
             this.maxClockSkewInSeconds = maxClockSkewInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder parameters(@Nullable Map<String,Object> parameters) {
+
             this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
         public Builder publicKeys(@Nullable DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys publicKeys) {
+
             this.publicKeys = publicKeys;
             return this;
         }
         @CustomType.Setter
         public Builder tokenAuthScheme(@Nullable String tokenAuthScheme) {
+
             this.tokenAuthScheme = tokenAuthScheme;
             return this;
         }
         @CustomType.Setter
         public Builder tokenHeader(@Nullable String tokenHeader) {
+
             this.tokenHeader = tokenHeader;
             return this;
         }
         @CustomType.Setter
         public Builder tokenQueryParam(@Nullable String tokenQueryParam) {
+
             this.tokenQueryParam = tokenQueryParam;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder validationFailurePolicy(@Nullable DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy validationFailurePolicy) {
+
             this.validationFailurePolicy = validationFailurePolicy;
             return this;
         }
         @CustomType.Setter
         public Builder validationPolicy(@Nullable DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicy validationPolicy) {
+
             this.validationPolicy = validationPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder verifyClaims(@Nullable List<DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaim> verifyClaims) {
+
             this.verifyClaims = verifyClaims;
             return this;
         }

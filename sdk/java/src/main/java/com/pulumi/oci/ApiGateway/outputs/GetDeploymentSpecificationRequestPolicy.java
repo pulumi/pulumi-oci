@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthentication;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyCor;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthentication;
@@ -118,7 +119,10 @@ public final class GetDeploymentSpecificationRequestPolicy {
 
         @CustomType.Setter
         public Builder authentications(List<GetDeploymentSpecificationRequestPolicyAuthentication> authentications) {
-            this.authentications = Objects.requireNonNull(authentications);
+            if (authentications == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicy", "authentications");
+            }
+            this.authentications = authentications;
             return this;
         }
         public Builder authentications(GetDeploymentSpecificationRequestPolicyAuthentication... authentications) {
@@ -126,7 +130,10 @@ public final class GetDeploymentSpecificationRequestPolicy {
         }
         @CustomType.Setter
         public Builder cors(List<GetDeploymentSpecificationRequestPolicyCor> cors) {
-            this.cors = Objects.requireNonNull(cors);
+            if (cors == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicy", "cors");
+            }
+            this.cors = cors;
             return this;
         }
         public Builder cors(GetDeploymentSpecificationRequestPolicyCor... cors) {
@@ -134,7 +141,10 @@ public final class GetDeploymentSpecificationRequestPolicy {
         }
         @CustomType.Setter
         public Builder dynamicAuthentications(List<GetDeploymentSpecificationRequestPolicyDynamicAuthentication> dynamicAuthentications) {
-            this.dynamicAuthentications = Objects.requireNonNull(dynamicAuthentications);
+            if (dynamicAuthentications == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicy", "dynamicAuthentications");
+            }
+            this.dynamicAuthentications = dynamicAuthentications;
             return this;
         }
         public Builder dynamicAuthentications(GetDeploymentSpecificationRequestPolicyDynamicAuthentication... dynamicAuthentications) {
@@ -142,7 +152,10 @@ public final class GetDeploymentSpecificationRequestPolicy {
         }
         @CustomType.Setter
         public Builder mutualTls(List<GetDeploymentSpecificationRequestPolicyMutualTl> mutualTls) {
-            this.mutualTls = Objects.requireNonNull(mutualTls);
+            if (mutualTls == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicy", "mutualTls");
+            }
+            this.mutualTls = mutualTls;
             return this;
         }
         public Builder mutualTls(GetDeploymentSpecificationRequestPolicyMutualTl... mutualTls) {
@@ -150,7 +163,10 @@ public final class GetDeploymentSpecificationRequestPolicy {
         }
         @CustomType.Setter
         public Builder rateLimitings(List<GetDeploymentSpecificationRequestPolicyRateLimiting> rateLimitings) {
-            this.rateLimitings = Objects.requireNonNull(rateLimitings);
+            if (rateLimitings == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicy", "rateLimitings");
+            }
+            this.rateLimitings = rateLimitings;
             return this;
         }
         public Builder rateLimitings(GetDeploymentSpecificationRequestPolicyRateLimiting... rateLimitings) {
@@ -158,7 +174,10 @@ public final class GetDeploymentSpecificationRequestPolicy {
         }
         @CustomType.Setter
         public Builder usagePlans(List<GetDeploymentSpecificationRequestPolicyUsagePlan> usagePlans) {
-            this.usagePlans = Objects.requireNonNull(usagePlans);
+            if (usagePlans == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicy", "usagePlans");
+            }
+            this.usagePlans = usagePlans;
             return this;
         }
         public Builder usagePlans(GetDeploymentSpecificationRequestPolicyUsagePlan... usagePlans) {

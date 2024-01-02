@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetCertificateVersionRevocationStatus {
 
         @CustomType.Setter
         public Builder revocationReason(String revocationReason) {
-            this.revocationReason = Objects.requireNonNull(revocationReason);
+            if (revocationReason == null) {
+              throw new MissingRequiredPropertyException("GetCertificateVersionRevocationStatus", "revocationReason");
+            }
+            this.revocationReason = revocationReason;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfRevocation(String timeOfRevocation) {
-            this.timeOfRevocation = Objects.requireNonNull(timeOfRevocation);
+            if (timeOfRevocation == null) {
+              throw new MissingRequiredPropertyException("GetCertificateVersionRevocationStatus", "timeOfRevocation");
+            }
+            this.timeOfRevocation = timeOfRevocation;
             return this;
         }
         public GetCertificateVersionRevocationStatus build() {

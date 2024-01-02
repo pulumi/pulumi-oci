@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class DeployStageCanaryStrategyArgs extends com.pulumi.resources.Re
         }
 
         public DeployStageCanaryStrategyArgs build() {
-            $.ingressName = Objects.requireNonNull($.ingressName, "expected parameter 'ingressName' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.strategyType = Objects.requireNonNull($.strategyType, "expected parameter 'strategyType' to be non-null");
+            if ($.ingressName == null) {
+                throw new MissingRequiredPropertyException("DeployStageCanaryStrategyArgs", "ingressName");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("DeployStageCanaryStrategyArgs", "namespace");
+            }
+            if ($.strategyType == null) {
+                throw new MissingRequiredPropertyException("DeployStageCanaryStrategyArgs", "strategyType");
+            }
             return $;
         }
     }

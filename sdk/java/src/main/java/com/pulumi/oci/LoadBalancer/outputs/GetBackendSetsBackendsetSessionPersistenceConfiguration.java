@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetBackendSetsBackendsetSessionPersistenceConfiguration {
 
         @CustomType.Setter
         public Builder cookieName(String cookieName) {
-            this.cookieName = Objects.requireNonNull(cookieName);
+            if (cookieName == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSessionPersistenceConfiguration", "cookieName");
+            }
+            this.cookieName = cookieName;
             return this;
         }
         @CustomType.Setter
         public Builder disableFallback(Boolean disableFallback) {
-            this.disableFallback = Objects.requireNonNull(disableFallback);
+            if (disableFallback == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetSessionPersistenceConfiguration", "disableFallback");
+            }
+            this.disableFallback = disableFallback;
             return this;
         }
         public GetBackendSetsBackendsetSessionPersistenceConfiguration build() {

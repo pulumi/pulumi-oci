@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfoAction;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetBuildRunBuildRunSourceTriggerInfo {
 
         @CustomType.Setter
         public Builder actions(List<GetBuildRunBuildRunSourceTriggerInfoAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfo", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetBuildRunBuildRunSourceTriggerInfoAction... actions) {
@@ -66,7 +70,10 @@ public final class GetBuildRunBuildRunSourceTriggerInfo {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfo", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         public GetBuildRunBuildRunSourceTriggerInfo build() {

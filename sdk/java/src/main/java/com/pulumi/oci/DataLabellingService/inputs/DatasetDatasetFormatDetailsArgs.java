@@ -5,6 +5,7 @@ package com.pulumi.oci.DataLabellingService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -114,7 +115,9 @@ public final class DatasetDatasetFormatDetailsArgs extends com.pulumi.resources.
         }
 
         public DatasetDatasetFormatDetailsArgs build() {
-            $.formatType = Objects.requireNonNull($.formatType, "expected parameter 'formatType' to be non-null");
+            if ($.formatType == null) {
+                throw new MissingRequiredPropertyException("DatasetDatasetFormatDetailsArgs", "formatType");
+            }
             return $;
         }
     }

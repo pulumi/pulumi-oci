@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetTunnelSecurityAssociationsFilter;
 import com.pulumi.oci.Core.outputs.GetTunnelSecurityAssociationsTunnelSecurityAssociation;
 import java.lang.String;
@@ -78,6 +79,7 @@ public final class GetTunnelSecurityAssociationsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetTunnelSecurityAssociationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -86,22 +88,34 @@ public final class GetTunnelSecurityAssociationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipsecId(String ipsecId) {
-            this.ipsecId = Objects.requireNonNull(ipsecId);
+            if (ipsecId == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsResult", "ipsecId");
+            }
+            this.ipsecId = ipsecId;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelId(String tunnelId) {
-            this.tunnelId = Objects.requireNonNull(tunnelId);
+            if (tunnelId == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsResult", "tunnelId");
+            }
+            this.tunnelId = tunnelId;
             return this;
         }
         @CustomType.Setter
         public Builder tunnelSecurityAssociations(List<GetTunnelSecurityAssociationsTunnelSecurityAssociation> tunnelSecurityAssociations) {
-            this.tunnelSecurityAssociations = Objects.requireNonNull(tunnelSecurityAssociations);
+            if (tunnelSecurityAssociations == null) {
+              throw new MissingRequiredPropertyException("GetTunnelSecurityAssociationsResult", "tunnelSecurityAssociations");
+            }
+            this.tunnelSecurityAssociations = tunnelSecurityAssociations;
             return this;
         }
         public Builder tunnelSecurityAssociations(GetTunnelSecurityAssociationsTunnelSecurityAssociation... tunnelSecurityAssociations) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetListenerPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetListenerPlainArgs build() {
-            $.listenerName = Objects.requireNonNull($.listenerName, "expected parameter 'listenerName' to be non-null");
-            $.networkLoadBalancerId = Objects.requireNonNull($.networkLoadBalancerId, "expected parameter 'networkLoadBalancerId' to be non-null");
+            if ($.listenerName == null) {
+                throw new MissingRequiredPropertyException("GetListenerPlainArgs", "listenerName");
+            }
+            if ($.networkLoadBalancerId == null) {
+                throw new MissingRequiredPropertyException("GetListenerPlainArgs", "networkLoadBalancerId");
+            }
             return $;
         }
     }

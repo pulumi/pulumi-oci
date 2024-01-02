@@ -5,6 +5,7 @@ package com.pulumi.oci.FusionApps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -201,9 +202,15 @@ public final class FusionEnvironmentServiceAttachmentArgs extends com.pulumi.res
         }
 
         public FusionEnvironmentServiceAttachmentArgs build() {
-            $.fusionEnvironmentId = Objects.requireNonNull($.fusionEnvironmentId, "expected parameter 'fusionEnvironmentId' to be non-null");
-            $.serviceInstanceId = Objects.requireNonNull($.serviceInstanceId, "expected parameter 'serviceInstanceId' to be non-null");
-            $.serviceInstanceType = Objects.requireNonNull($.serviceInstanceType, "expected parameter 'serviceInstanceType' to be non-null");
+            if ($.fusionEnvironmentId == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentServiceAttachmentArgs", "fusionEnvironmentId");
+            }
+            if ($.serviceInstanceId == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentServiceAttachmentArgs", "serviceInstanceId");
+            }
+            if ($.serviceInstanceType == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentServiceAttachmentArgs", "serviceInstanceType");
+            }
             return $;
         }
     }

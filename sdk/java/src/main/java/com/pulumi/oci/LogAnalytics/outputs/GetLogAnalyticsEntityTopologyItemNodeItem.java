@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -255,82 +256,130 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
 
         @CustomType.Setter
         public Builder areLogsCollected(Boolean areLogsCollected) {
-            this.areLogsCollected = Objects.requireNonNull(areLogsCollected);
+            if (areLogsCollected == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "areLogsCollected");
+            }
+            this.areLogsCollected = areLogsCollected;
             return this;
         }
         @CustomType.Setter
         public Builder cloudResourceId(String cloudResourceId) {
-            this.cloudResourceId = Objects.requireNonNull(cloudResourceId);
+            if (cloudResourceId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "cloudResourceId");
+            }
+            this.cloudResourceId = cloudResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder entityTypeInternalName(String entityTypeInternalName) {
-            this.entityTypeInternalName = Objects.requireNonNull(entityTypeInternalName);
+            if (entityTypeInternalName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "entityTypeInternalName");
+            }
+            this.entityTypeInternalName = entityTypeInternalName;
             return this;
         }
         @CustomType.Setter
         public Builder entityTypeName(String entityTypeName) {
-            this.entityTypeName = Objects.requireNonNull(entityTypeName);
+            if (entityTypeName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "entityTypeName");
+            }
+            this.entityTypeName = entityTypeName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder managementAgentId(String managementAgentId) {
-            this.managementAgentId = Objects.requireNonNull(managementAgentId);
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+            if (sourceId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "sourceId");
+            }
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timezoneRegion(String timezoneRegion) {
-            this.timezoneRegion = Objects.requireNonNull(timezoneRegion);
+            if (timezoneRegion == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "timezoneRegion");
+            }
+            this.timezoneRegion = timezoneRegion;
             return this;
         }
         public GetLogAnalyticsEntityTopologyItemNodeItem build() {

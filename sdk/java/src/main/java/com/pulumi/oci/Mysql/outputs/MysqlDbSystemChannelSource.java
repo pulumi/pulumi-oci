@@ -132,6 +132,7 @@ public final class MysqlDbSystemChannelSource {
 
         @CustomType.Setter
         public Builder anonymousTransactionsHandlings(@Nullable List<MysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings) {
+
             this.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
             return this;
         }
@@ -140,21 +141,25 @@ public final class MysqlDbSystemChannelSource {
         }
         @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
+
             this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(@Nullable String sourceType) {
+
             this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sslCaCertificates(@Nullable List<MysqlDbSystemChannelSourceSslCaCertificate> sslCaCertificates) {
+
             this.sslCaCertificates = sslCaCertificates;
             return this;
         }
@@ -163,11 +168,13 @@ public final class MysqlDbSystemChannelSource {
         }
         @CustomType.Setter
         public Builder sslMode(@Nullable String sslMode) {
+
             this.sslMode = sslMode;
             return this;
         }
         @CustomType.Setter
         public Builder username(@Nullable String username) {
+
             this.username = username;
             return this;
         }

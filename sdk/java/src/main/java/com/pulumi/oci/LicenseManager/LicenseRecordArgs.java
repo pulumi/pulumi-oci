@@ -5,6 +5,7 @@ package com.pulumi.oci.LicenseManager;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -425,10 +426,18 @@ public final class LicenseRecordArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public LicenseRecordArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.isPerpetual = Objects.requireNonNull($.isPerpetual, "expected parameter 'isPerpetual' to be non-null");
-            $.isUnlimited = Objects.requireNonNull($.isUnlimited, "expected parameter 'isUnlimited' to be non-null");
-            $.productLicenseId = Objects.requireNonNull($.productLicenseId, "expected parameter 'productLicenseId' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("LicenseRecordArgs", "displayName");
+            }
+            if ($.isPerpetual == null) {
+                throw new MissingRequiredPropertyException("LicenseRecordArgs", "isPerpetual");
+            }
+            if ($.isUnlimited == null) {
+                throw new MissingRequiredPropertyException("LicenseRecordArgs", "isUnlimited");
+            }
+            if ($.productLicenseId == null) {
+                throw new MissingRequiredPropertyException("LicenseRecordArgs", "productLicenseId");
+            }
             return $;
         }
     }

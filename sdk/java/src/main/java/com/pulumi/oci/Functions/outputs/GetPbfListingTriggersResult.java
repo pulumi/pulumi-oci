@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetPbfListingTriggersFilter;
 import com.pulumi.oci.Functions.outputs.GetPbfListingTriggersTriggersCollection;
 import java.lang.String;
@@ -81,6 +82,7 @@ public final class GetPbfListingTriggersResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPbfListingTriggersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -89,17 +91,24 @@ public final class GetPbfListingTriggersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingTriggersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder triggersCollections(List<GetPbfListingTriggersTriggersCollection> triggersCollections) {
-            this.triggersCollections = Objects.requireNonNull(triggersCollections);
+            if (triggersCollections == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingTriggersResult", "triggersCollections");
+            }
+            this.triggersCollections = triggersCollections;
             return this;
         }
         public Builder triggersCollections(GetPbfListingTriggersTriggersCollection... triggersCollections) {

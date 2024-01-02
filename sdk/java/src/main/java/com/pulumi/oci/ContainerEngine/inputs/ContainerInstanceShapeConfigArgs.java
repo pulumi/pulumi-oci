@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -188,7 +189,9 @@ public final class ContainerInstanceShapeConfigArgs extends com.pulumi.resources
         }
 
         public ContainerInstanceShapeConfigArgs build() {
-            $.ocpus = Objects.requireNonNull($.ocpus, "expected parameter 'ocpus' to be non-null");
+            if ($.ocpus == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceShapeConfigArgs", "ocpus");
+            }
             return $;
         }
     }

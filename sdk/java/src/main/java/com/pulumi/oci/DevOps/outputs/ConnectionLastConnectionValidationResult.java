@@ -72,16 +72,19 @@ public final class ConnectionLastConnectionValidationResult {
 
         @CustomType.Setter
         public Builder message(@Nullable String message) {
+
             this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder result(@Nullable String result) {
+
             this.result = result;
             return this;
         }
         @CustomType.Setter
         public Builder timeValidated(@Nullable String timeValidated) {
+
             this.timeValidated = timeValidated;
             return this;
         }

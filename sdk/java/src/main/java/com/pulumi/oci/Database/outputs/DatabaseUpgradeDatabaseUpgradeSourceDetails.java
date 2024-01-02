@@ -100,21 +100,25 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
 
         @CustomType.Setter
         public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
+
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder dbVersion(@Nullable String dbVersion) {
+
             this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder options(@Nullable String options) {
+
             this.options = options;
             return this;
         }
         @CustomType.Setter
         public Builder source(@Nullable String source) {
+
             this.source = source;
             return this;
         }

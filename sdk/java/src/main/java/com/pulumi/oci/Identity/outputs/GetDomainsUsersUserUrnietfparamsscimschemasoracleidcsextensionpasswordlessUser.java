@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder factorIdentifiers(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier> factorIdentifiers) {
-            this.factorIdentifiers = Objects.requireNonNull(factorIdentifiers);
+            if (factorIdentifiers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser", "factorIdentifiers");
+            }
+            this.factorIdentifiers = factorIdentifiers;
             return this;
         }
         public Builder factorIdentifiers(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier... factorIdentifiers) {
@@ -80,12 +84,18 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder factorMethod(String factorMethod) {
-            this.factorMethod = Objects.requireNonNull(factorMethod);
+            if (factorMethod == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser", "factorMethod");
+            }
+            this.factorMethod = factorMethod;
             return this;
         }
         @CustomType.Setter
         public Builder factorType(String factorType) {
-            this.factorType = Objects.requireNonNull(factorType);
+            if (factorType == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser", "factorType");
+            }
+            this.factorType = factorType;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser build() {

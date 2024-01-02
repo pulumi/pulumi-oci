@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,37 +72,58 @@ public final class GetTargetDatabaseRoleRole {
 
         @CustomType.Setter
         public Builder authenticationType(String authenticationType) {
-            this.authenticationType = Objects.requireNonNull(authenticationType);
+            if (authenticationType == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleRole", "authenticationType");
+            }
+            this.authenticationType = authenticationType;
             return this;
         }
         @CustomType.Setter
         public Builder isCommon(Boolean isCommon) {
-            this.isCommon = Objects.requireNonNull(isCommon);
+            if (isCommon == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleRole", "isCommon");
+            }
+            this.isCommon = isCommon;
             return this;
         }
         @CustomType.Setter
         public Builder isImplicit(Boolean isImplicit) {
-            this.isImplicit = Objects.requireNonNull(isImplicit);
+            if (isImplicit == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleRole", "isImplicit");
+            }
+            this.isImplicit = isImplicit;
             return this;
         }
         @CustomType.Setter
         public Builder isInherited(Boolean isInherited) {
-            this.isInherited = Objects.requireNonNull(isInherited);
+            if (isInherited == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleRole", "isInherited");
+            }
+            this.isInherited = isInherited;
             return this;
         }
         @CustomType.Setter
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
-            this.isOracleMaintained = Objects.requireNonNull(isOracleMaintained);
+            if (isOracleMaintained == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleRole", "isOracleMaintained");
+            }
+            this.isOracleMaintained = isOracleMaintained;
             return this;
         }
         @CustomType.Setter
         public Builder isPasswordRequired(Boolean isPasswordRequired) {
-            this.isPasswordRequired = Objects.requireNonNull(isPasswordRequired);
+            if (isPasswordRequired == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleRole", "isPasswordRequired");
+            }
+            this.isPasswordRequired = isPasswordRequired;
             return this;
         }
         @CustomType.Setter
         public Builder roleName(String roleName) {
-            this.roleName = Objects.requireNonNull(roleName);
+            if (roleName == null) {
+              throw new MissingRequiredPropertyException("GetTargetDatabaseRoleRole", "roleName");
+            }
+            this.roleName = roleName;
             return this;
         }
         public GetTargetDatabaseRoleRole build() {

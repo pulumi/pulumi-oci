@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -180,9 +181,15 @@ public final class ExternalNonContainerDatabaseManagementArgs extends com.pulumi
         }
 
         public ExternalNonContainerDatabaseManagementArgs build() {
-            $.enableManagement = Objects.requireNonNull($.enableManagement, "expected parameter 'enableManagement' to be non-null");
-            $.externalDatabaseConnectorId = Objects.requireNonNull($.externalDatabaseConnectorId, "expected parameter 'externalDatabaseConnectorId' to be non-null");
-            $.externalNonContainerDatabaseId = Objects.requireNonNull($.externalNonContainerDatabaseId, "expected parameter 'externalNonContainerDatabaseId' to be non-null");
+            if ($.enableManagement == null) {
+                throw new MissingRequiredPropertyException("ExternalNonContainerDatabaseManagementArgs", "enableManagement");
+            }
+            if ($.externalDatabaseConnectorId == null) {
+                throw new MissingRequiredPropertyException("ExternalNonContainerDatabaseManagementArgs", "externalDatabaseConnectorId");
+            }
+            if ($.externalNonContainerDatabaseId == null) {
+                throw new MissingRequiredPropertyException("ExternalNonContainerDatabaseManagementArgs", "externalNonContainerDatabaseId");
+            }
             return $;
         }
     }

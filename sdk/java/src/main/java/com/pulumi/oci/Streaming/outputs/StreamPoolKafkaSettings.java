@@ -88,21 +88,25 @@ public final class StreamPoolKafkaSettings {
 
         @CustomType.Setter
         public Builder autoCreateTopicsEnable(@Nullable Boolean autoCreateTopicsEnable) {
+
             this.autoCreateTopicsEnable = autoCreateTopicsEnable;
             return this;
         }
         @CustomType.Setter
         public Builder bootstrapServers(@Nullable String bootstrapServers) {
+
             this.bootstrapServers = bootstrapServers;
             return this;
         }
         @CustomType.Setter
         public Builder logRetentionHours(@Nullable Integer logRetentionHours) {
+
             this.logRetentionHours = logRetentionHours;
             return this;
         }
         @CustomType.Setter
         public Builder numPartitions(@Nullable Integer numPartitions) {
+
             this.numPartitions = numPartitions;
             return this;
         }

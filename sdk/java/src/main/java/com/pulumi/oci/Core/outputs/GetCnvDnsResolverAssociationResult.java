@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -78,22 +79,34 @@ public final class GetCnvDnsResolverAssociationResult {
 
         @CustomType.Setter
         public Builder dnsResolverId(String dnsResolverId) {
-            this.dnsResolverId = Objects.requireNonNull(dnsResolverId);
+            if (dnsResolverId == null) {
+              throw new MissingRequiredPropertyException("GetCnvDnsResolverAssociationResult", "dnsResolverId");
+            }
+            this.dnsResolverId = dnsResolverId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCnvDnsResolverAssociationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCnvDnsResolverAssociationResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetCnvDnsResolverAssociationResult", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetCnvDnsResolverAssociationResult build() {

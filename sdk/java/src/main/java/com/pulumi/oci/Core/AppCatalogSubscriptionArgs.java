@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -310,12 +311,24 @@ public final class AppCatalogSubscriptionArgs extends com.pulumi.resources.Resou
         }
 
         public AppCatalogSubscriptionArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.listingId = Objects.requireNonNull($.listingId, "expected parameter 'listingId' to be non-null");
-            $.listingResourceVersion = Objects.requireNonNull($.listingResourceVersion, "expected parameter 'listingResourceVersion' to be non-null");
-            $.oracleTermsOfUseLink = Objects.requireNonNull($.oracleTermsOfUseLink, "expected parameter 'oracleTermsOfUseLink' to be non-null");
-            $.signature = Objects.requireNonNull($.signature, "expected parameter 'signature' to be non-null");
-            $.timeRetrieved = Objects.requireNonNull($.timeRetrieved, "expected parameter 'timeRetrieved' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AppCatalogSubscriptionArgs", "compartmentId");
+            }
+            if ($.listingId == null) {
+                throw new MissingRequiredPropertyException("AppCatalogSubscriptionArgs", "listingId");
+            }
+            if ($.listingResourceVersion == null) {
+                throw new MissingRequiredPropertyException("AppCatalogSubscriptionArgs", "listingResourceVersion");
+            }
+            if ($.oracleTermsOfUseLink == null) {
+                throw new MissingRequiredPropertyException("AppCatalogSubscriptionArgs", "oracleTermsOfUseLink");
+            }
+            if ($.signature == null) {
+                throw new MissingRequiredPropertyException("AppCatalogSubscriptionArgs", "signature");
+            }
+            if ($.timeRetrieved == null) {
+                throw new MissingRequiredPropertyException("AppCatalogSubscriptionArgs", "timeRetrieved");
+            }
             return $;
         }
     }

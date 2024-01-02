@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class ResolverAttachedView {
 
         @CustomType.Setter
         public Builder viewId(String viewId) {
-            this.viewId = Objects.requireNonNull(viewId);
+            if (viewId == null) {
+              throw new MissingRequiredPropertyException("ResolverAttachedView", "viewId");
+            }
+            this.viewId = viewId;
             return this;
         }
         public ResolverAttachedView build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -156,17 +157,26 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotEndpoint {
 
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder modes(List<String> modes) {
-            this.modes = Objects.requireNonNull(modes);
+            if (modes == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "modes");
+            }
+            this.modes = modes;
             return this;
         }
         public Builder modes(String... modes) {
@@ -174,32 +184,50 @@ public final class GetMysqlBackupsBackupDbSystemSnapshotEndpoint {
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder portX(Integer portX) {
-            this.portX = Objects.requireNonNull(portX);
+            if (portX == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "portX");
+            }
+            this.portX = portX;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceType(String resourceType) {
-            this.resourceType = Objects.requireNonNull(resourceType);
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder statusDetails(String statusDetails) {
-            this.statusDetails = Objects.requireNonNull(statusDetails);
+            if (statusDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshotEndpoint", "statusDetails");
+            }
+            this.statusDetails = statusDetails;
             return this;
         }
         public GetMysqlBackupsBackupDbSystemSnapshotEndpoint build() {

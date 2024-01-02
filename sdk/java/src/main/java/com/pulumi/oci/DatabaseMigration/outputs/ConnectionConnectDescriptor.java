@@ -87,21 +87,25 @@ public final class ConnectionConnectDescriptor {
 
         @CustomType.Setter
         public Builder connectString(@Nullable String connectString) {
+
             this.connectString = connectString;
             return this;
         }
         @CustomType.Setter
         public Builder databaseServiceName(@Nullable String databaseServiceName) {
+
             this.databaseServiceName = databaseServiceName;
             return this;
         }
         @CustomType.Setter
         public Builder host(@Nullable String host) {
+
             this.host = host;
             return this;
         }
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }

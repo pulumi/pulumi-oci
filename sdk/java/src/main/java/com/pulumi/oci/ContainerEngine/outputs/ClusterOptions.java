@@ -120,31 +120,37 @@ public final class ClusterOptions {
 
         @CustomType.Setter
         public Builder addOns(@Nullable ClusterOptionsAddOns addOns) {
+
             this.addOns = addOns;
             return this;
         }
         @CustomType.Setter
         public Builder admissionControllerOptions(@Nullable ClusterOptionsAdmissionControllerOptions admissionControllerOptions) {
+
             this.admissionControllerOptions = admissionControllerOptions;
             return this;
         }
         @CustomType.Setter
         public Builder kubernetesNetworkConfig(@Nullable ClusterOptionsKubernetesNetworkConfig kubernetesNetworkConfig) {
+
             this.kubernetesNetworkConfig = kubernetesNetworkConfig;
             return this;
         }
         @CustomType.Setter
         public Builder persistentVolumeConfig(@Nullable ClusterOptionsPersistentVolumeConfig persistentVolumeConfig) {
+
             this.persistentVolumeConfig = persistentVolumeConfig;
             return this;
         }
         @CustomType.Setter
         public Builder serviceLbConfig(@Nullable ClusterOptionsServiceLbConfig serviceLbConfig) {
+
             this.serviceLbConfig = serviceLbConfig;
             return this;
         }
         @CustomType.Setter
         public Builder serviceLbSubnetIds(@Nullable List<String> serviceLbSubnetIds) {
+
             this.serviceLbSubnetIds = serviceLbSubnetIds;
             return this;
         }

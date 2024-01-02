@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -563,10 +564,18 @@ public final class SensitiveDataModelsSensitiveColumnArgs extends com.pulumi.res
         }
 
         public SensitiveDataModelsSensitiveColumnArgs build() {
-            $.columnName = Objects.requireNonNull($.columnName, "expected parameter 'columnName' to be non-null");
-            $.object = Objects.requireNonNull($.object, "expected parameter 'object' to be non-null");
-            $.schemaName = Objects.requireNonNull($.schemaName, "expected parameter 'schemaName' to be non-null");
-            $.sensitiveDataModelId = Objects.requireNonNull($.sensitiveDataModelId, "expected parameter 'sensitiveDataModelId' to be non-null");
+            if ($.columnName == null) {
+                throw new MissingRequiredPropertyException("SensitiveDataModelsSensitiveColumnArgs", "columnName");
+            }
+            if ($.object == null) {
+                throw new MissingRequiredPropertyException("SensitiveDataModelsSensitiveColumnArgs", "object");
+            }
+            if ($.schemaName == null) {
+                throw new MissingRequiredPropertyException("SensitiveDataModelsSensitiveColumnArgs", "schemaName");
+            }
+            if ($.sensitiveDataModelId == null) {
+                throw new MissingRequiredPropertyException("SensitiveDataModelsSensitiveColumnArgs", "sensitiveDataModelId");
+            }
             return $;
         }
     }

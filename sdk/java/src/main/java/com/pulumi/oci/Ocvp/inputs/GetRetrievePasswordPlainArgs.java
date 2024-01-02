@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetRetrievePasswordPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetRetrievePasswordPlainArgs build() {
-            $.sddcId = Objects.requireNonNull($.sddcId, "expected parameter 'sddcId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.sddcId == null) {
+                throw new MissingRequiredPropertyException("GetRetrievePasswordPlainArgs", "sddcId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("GetRetrievePasswordPlainArgs", "type");
+            }
             return $;
         }
     }

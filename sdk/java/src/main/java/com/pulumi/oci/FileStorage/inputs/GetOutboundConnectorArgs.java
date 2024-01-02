@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetOutboundConnectorArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetOutboundConnectorArgs build() {
-            $.outboundConnectorId = Objects.requireNonNull($.outboundConnectorId, "expected parameter 'outboundConnectorId' to be non-null");
+            if ($.outboundConnectorId == null) {
+                throw new MissingRequiredPropertyException("GetOutboundConnectorArgs", "outboundConnectorId");
+            }
             return $;
         }
     }

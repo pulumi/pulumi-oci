@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetNewsReportContentType {
 
         @CustomType.Setter
         public Builder capacityPlanningResources(List<String> capacityPlanningResources) {
-            this.capacityPlanningResources = Objects.requireNonNull(capacityPlanningResources);
+            if (capacityPlanningResources == null) {
+              throw new MissingRequiredPropertyException("GetNewsReportContentType", "capacityPlanningResources");
+            }
+            this.capacityPlanningResources = capacityPlanningResources;
             return this;
         }
         public Builder capacityPlanningResources(String... capacityPlanningResources) {

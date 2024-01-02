@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -117,9 +118,15 @@ public final class GetAddressRulePlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetAddressRulePlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.countryCode = Objects.requireNonNull($.countryCode, "expected parameter 'countryCode' to be non-null");
-            $.ospHomeRegion = Objects.requireNonNull($.ospHomeRegion, "expected parameter 'ospHomeRegion' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetAddressRulePlainArgs", "compartmentId");
+            }
+            if ($.countryCode == null) {
+                throw new MissingRequiredPropertyException("GetAddressRulePlainArgs", "countryCode");
+            }
+            if ($.ospHomeRegion == null) {
+                throw new MissingRequiredPropertyException("GetAddressRulePlainArgs", "ospHomeRegion");
+            }
             return $;
         }
     }

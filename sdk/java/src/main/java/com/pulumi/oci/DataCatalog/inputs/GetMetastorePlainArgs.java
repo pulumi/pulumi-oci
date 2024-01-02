@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetMetastorePlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetMetastorePlainArgs build() {
-            $.metastoreId = Objects.requireNonNull($.metastoreId, "expected parameter 'metastoreId' to be non-null");
+            if ($.metastoreId == null) {
+                throw new MissingRequiredPropertyException("GetMetastorePlainArgs", "metastoreId");
+            }
             return $;
         }
     }

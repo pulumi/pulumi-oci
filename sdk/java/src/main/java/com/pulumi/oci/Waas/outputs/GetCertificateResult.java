@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.outputs.GetCertificateExtension;
 import com.pulumi.oci.Waas.outputs.GetCertificateIssuerName;
 import com.pulumi.oci.Waas.outputs.GetCertificatePublicKeyInfo;
@@ -307,32 +308,50 @@ public final class GetCertificateResult {
 
         @CustomType.Setter
         public Builder certificateData(String certificateData) {
-            this.certificateData = Objects.requireNonNull(certificateData);
+            if (certificateData == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "certificateData");
+            }
+            this.certificateData = certificateData;
             return this;
         }
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
-            this.certificateId = Objects.requireNonNull(certificateId);
+            if (certificateId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "certificateId");
+            }
+            this.certificateId = certificateId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder extensions(List<GetCertificateExtension> extensions) {
-            this.extensions = Objects.requireNonNull(extensions);
+            if (extensions == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "extensions");
+            }
+            this.extensions = extensions;
             return this;
         }
         public Builder extensions(GetCertificateExtension... extensions) {
@@ -340,27 +359,42 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isTrustVerificationDisabled(Boolean isTrustVerificationDisabled) {
-            this.isTrustVerificationDisabled = Objects.requireNonNull(isTrustVerificationDisabled);
+            if (isTrustVerificationDisabled == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "isTrustVerificationDisabled");
+            }
+            this.isTrustVerificationDisabled = isTrustVerificationDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder issuedBy(String issuedBy) {
-            this.issuedBy = Objects.requireNonNull(issuedBy);
+            if (issuedBy == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "issuedBy");
+            }
+            this.issuedBy = issuedBy;
             return this;
         }
         @CustomType.Setter
         public Builder issuerNames(List<GetCertificateIssuerName> issuerNames) {
-            this.issuerNames = Objects.requireNonNull(issuerNames);
+            if (issuerNames == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "issuerNames");
+            }
+            this.issuerNames = issuerNames;
             return this;
         }
         public Builder issuerNames(GetCertificateIssuerName... issuerNames) {
@@ -368,12 +402,18 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder privateKeyData(String privateKeyData) {
-            this.privateKeyData = Objects.requireNonNull(privateKeyData);
+            if (privateKeyData == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "privateKeyData");
+            }
+            this.privateKeyData = privateKeyData;
             return this;
         }
         @CustomType.Setter
         public Builder publicKeyInfos(List<GetCertificatePublicKeyInfo> publicKeyInfos) {
-            this.publicKeyInfos = Objects.requireNonNull(publicKeyInfos);
+            if (publicKeyInfos == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "publicKeyInfos");
+            }
+            this.publicKeyInfos = publicKeyInfos;
             return this;
         }
         public Builder publicKeyInfos(GetCertificatePublicKeyInfo... publicKeyInfos) {
@@ -381,22 +421,34 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
-            this.serialNumber = Objects.requireNonNull(serialNumber);
+            if (serialNumber == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "serialNumber");
+            }
+            this.serialNumber = serialNumber;
             return this;
         }
         @CustomType.Setter
         public Builder signatureAlgorithm(String signatureAlgorithm) {
-            this.signatureAlgorithm = Objects.requireNonNull(signatureAlgorithm);
+            if (signatureAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "signatureAlgorithm");
+            }
+            this.signatureAlgorithm = signatureAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subjectNames(List<GetCertificateSubjectName> subjectNames) {
-            this.subjectNames = Objects.requireNonNull(subjectNames);
+            if (subjectNames == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "subjectNames");
+            }
+            this.subjectNames = subjectNames;
             return this;
         }
         public Builder subjectNames(GetCertificateSubjectName... subjectNames) {
@@ -404,22 +456,34 @@ public final class GetCertificateResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeNotValidAfter(String timeNotValidAfter) {
-            this.timeNotValidAfter = Objects.requireNonNull(timeNotValidAfter);
+            if (timeNotValidAfter == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "timeNotValidAfter");
+            }
+            this.timeNotValidAfter = timeNotValidAfter;
             return this;
         }
         @CustomType.Setter
         public Builder timeNotValidBefore(String timeNotValidBefore) {
-            this.timeNotValidBefore = Objects.requireNonNull(timeNotValidBefore);
+            if (timeNotValidBefore == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "timeNotValidBefore");
+            }
+            this.timeNotValidBefore = timeNotValidBefore;
             return this;
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetCertificateResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetTableReplica {
 
         @CustomType.Setter
         public Builder capacityMode(String capacityMode) {
-            this.capacityMode = Objects.requireNonNull(capacityMode);
+            if (capacityMode == null) {
+              throw new MissingRequiredPropertyException("GetTableReplica", "capacityMode");
+            }
+            this.capacityMode = capacityMode;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetTableReplica", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maxWriteUnits(Integer maxWriteUnits) {
-            this.maxWriteUnits = Objects.requireNonNull(maxWriteUnits);
+            if (maxWriteUnits == null) {
+              throw new MissingRequiredPropertyException("GetTableReplica", "maxWriteUnits");
+            }
+            this.maxWriteUnits = maxWriteUnits;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetTableReplica", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetTableReplica", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tableId(String tableId) {
-            this.tableId = Objects.requireNonNull(tableId);
+            if (tableId == null) {
+              throw new MissingRequiredPropertyException("GetTableReplica", "tableId");
+            }
+            this.tableId = tableId;
             return this;
         }
         public GetTableReplica build() {

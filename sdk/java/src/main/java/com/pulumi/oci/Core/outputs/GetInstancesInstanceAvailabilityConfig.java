@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetInstancesInstanceAvailabilityConfig {
 
         @CustomType.Setter
         public Builder isLiveMigrationPreferred(Boolean isLiveMigrationPreferred) {
-            this.isLiveMigrationPreferred = Objects.requireNonNull(isLiveMigrationPreferred);
+            if (isLiveMigrationPreferred == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceAvailabilityConfig", "isLiveMigrationPreferred");
+            }
+            this.isLiveMigrationPreferred = isLiveMigrationPreferred;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryAction(String recoveryAction) {
-            this.recoveryAction = Objects.requireNonNull(recoveryAction);
+            if (recoveryAction == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceAvailabilityConfig", "recoveryAction");
+            }
+            this.recoveryAction = recoveryAction;
             return this;
         }
         public GetInstancesInstanceAvailabilityConfig build() {

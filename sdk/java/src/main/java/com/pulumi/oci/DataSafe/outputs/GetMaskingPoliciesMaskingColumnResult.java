@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingColumnMaskingFormat;
 import java.lang.Boolean;
 import java.lang.String;
@@ -267,7 +268,10 @@ public final class GetMaskingPoliciesMaskingColumnResult {
 
         @CustomType.Setter
         public Builder childColumns(List<String> childColumns) {
-            this.childColumns = Objects.requireNonNull(childColumns);
+            if (childColumns == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "childColumns");
+            }
+            this.childColumns = childColumns;
             return this;
         }
         public Builder childColumns(String... childColumns) {
@@ -275,47 +279,74 @@ public final class GetMaskingPoliciesMaskingColumnResult {
         }
         @CustomType.Setter
         public Builder columnName(String columnName) {
-            this.columnName = Objects.requireNonNull(columnName);
+            if (columnName == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "columnName");
+            }
+            this.columnName = columnName;
             return this;
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+            if (dataType == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "dataType");
+            }
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isMaskingEnabled(Boolean isMaskingEnabled) {
-            this.isMaskingEnabled = Objects.requireNonNull(isMaskingEnabled);
+            if (isMaskingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "isMaskingEnabled");
+            }
+            this.isMaskingEnabled = isMaskingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maskingColumnGroup(String maskingColumnGroup) {
-            this.maskingColumnGroup = Objects.requireNonNull(maskingColumnGroup);
+            if (maskingColumnGroup == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "maskingColumnGroup");
+            }
+            this.maskingColumnGroup = maskingColumnGroup;
             return this;
         }
         @CustomType.Setter
         public Builder maskingColumnKey(String maskingColumnKey) {
-            this.maskingColumnKey = Objects.requireNonNull(maskingColumnKey);
+            if (maskingColumnKey == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "maskingColumnKey");
+            }
+            this.maskingColumnKey = maskingColumnKey;
             return this;
         }
         @CustomType.Setter
         public Builder maskingFormats(List<GetMaskingPoliciesMaskingColumnMaskingFormat> maskingFormats) {
-            this.maskingFormats = Objects.requireNonNull(maskingFormats);
+            if (maskingFormats == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "maskingFormats");
+            }
+            this.maskingFormats = maskingFormats;
             return this;
         }
         public Builder maskingFormats(GetMaskingPoliciesMaskingColumnMaskingFormat... maskingFormats) {
@@ -323,42 +354,66 @@ public final class GetMaskingPoliciesMaskingColumnResult {
         }
         @CustomType.Setter
         public Builder maskingPolicyId(String maskingPolicyId) {
-            this.maskingPolicyId = Objects.requireNonNull(maskingPolicyId);
+            if (maskingPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "maskingPolicyId");
+            }
+            this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
         public Builder schemaName(String schemaName) {
-            this.schemaName = Objects.requireNonNull(schemaName);
+            if (schemaName == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "schemaName");
+            }
+            this.schemaName = schemaName;
             return this;
         }
         @CustomType.Setter
         public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+            if (sensitiveTypeId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "sensitiveTypeId");
+            }
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingColumnResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMaskingPoliciesMaskingColumnResult build() {

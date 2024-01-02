@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackend;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy;
@@ -117,7 +118,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
 
         @CustomType.Setter
         public Builder backends(List<GetDeploymentsDeploymentCollectionSpecificationRouteBackend> backends) {
-            this.backends = Objects.requireNonNull(backends);
+            if (backends == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRoute", "backends");
+            }
+            this.backends = backends;
             return this;
         }
         public Builder backends(GetDeploymentsDeploymentCollectionSpecificationRouteBackend... backends) {
@@ -125,7 +129,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         }
         @CustomType.Setter
         public Builder loggingPolicies(List<GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy> loggingPolicies) {
-            this.loggingPolicies = Objects.requireNonNull(loggingPolicies);
+            if (loggingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRoute", "loggingPolicies");
+            }
+            this.loggingPolicies = loggingPolicies;
             return this;
         }
         public Builder loggingPolicies(GetDeploymentsDeploymentCollectionSpecificationRouteLoggingPolicy... loggingPolicies) {
@@ -133,7 +140,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         }
         @CustomType.Setter
         public Builder methods(List<String> methods) {
-            this.methods = Objects.requireNonNull(methods);
+            if (methods == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRoute", "methods");
+            }
+            this.methods = methods;
             return this;
         }
         public Builder methods(String... methods) {
@@ -141,12 +151,18 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRoute", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder requestPolicies(List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy> requestPolicies) {
-            this.requestPolicies = Objects.requireNonNull(requestPolicies);
+            if (requestPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRoute", "requestPolicies");
+            }
+            this.requestPolicies = requestPolicies;
             return this;
         }
         public Builder requestPolicies(GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicy... requestPolicies) {
@@ -154,7 +170,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRoute {
         }
         @CustomType.Setter
         public Builder responsePolicies(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy> responsePolicies) {
-            this.responsePolicies = Objects.requireNonNull(responsePolicies);
+            if (responsePolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRoute", "responsePolicies");
+            }
+            this.responsePolicies = responsePolicies;
             return this;
         }
         public Builder responsePolicies(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy... responsePolicies) {

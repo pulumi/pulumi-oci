@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetSubscribedServicesFilter;
 import com.pulumi.oci.OneSubsription.outputs.GetSubscribedServicesSubscribedService;
 import java.lang.String;
@@ -115,11 +116,15 @@ public final class GetSubscribedServicesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscribedServicesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,22 +133,30 @@ public final class GetSubscribedServicesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder orderLineId(@Nullable String orderLineId) {
+
             this.orderLineId = orderLineId;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder subscribedServices(List<GetSubscribedServicesSubscribedService> subscribedServices) {
-            this.subscribedServices = Objects.requireNonNull(subscribedServices);
+            if (subscribedServices == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesResult", "subscribedServices");
+            }
+            this.subscribedServices = subscribedServices;
             return this;
         }
         public Builder subscribedServices(GetSubscribedServicesSubscribedService... subscribedServices) {
@@ -151,7 +164,10 @@ public final class GetSubscribedServicesResult {
         }
         @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
-            this.subscriptionId = Objects.requireNonNull(subscriptionId);
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetSubscribedServicesResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
             return this;
         }
         public GetSubscribedServicesResult build() {

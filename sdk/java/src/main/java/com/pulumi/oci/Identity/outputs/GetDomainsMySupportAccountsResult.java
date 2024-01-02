@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsMySupportAccountsMySupportAccount;
 import java.lang.Integer;
 import java.lang.String;
@@ -141,42 +142,58 @@ public final class GetDomainsMySupportAccountsResult {
 
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder itemsPerPage(Integer itemsPerPage) {
-            this.itemsPerPage = Objects.requireNonNull(itemsPerPage);
+            if (itemsPerPage == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsResult", "itemsPerPage");
+            }
+            this.itemsPerPage = itemsPerPage;
             return this;
         }
         @CustomType.Setter
         public Builder mySupportAccountCount(@Nullable Integer mySupportAccountCount) {
+
             this.mySupportAccountCount = mySupportAccountCount;
             return this;
         }
         @CustomType.Setter
         public Builder mySupportAccountFilter(@Nullable String mySupportAccountFilter) {
+
             this.mySupportAccountFilter = mySupportAccountFilter;
             return this;
         }
         @CustomType.Setter
         public Builder mySupportAccounts(List<GetDomainsMySupportAccountsMySupportAccount> mySupportAccounts) {
-            this.mySupportAccounts = Objects.requireNonNull(mySupportAccounts);
+            if (mySupportAccounts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsResult", "mySupportAccounts");
+            }
+            this.mySupportAccounts = mySupportAccounts;
             return this;
         }
         public Builder mySupportAccounts(GetDomainsMySupportAccountsMySupportAccount... mySupportAccounts) {
@@ -184,12 +201,16 @@ public final class GetDomainsMySupportAccountsResult {
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -197,22 +218,28 @@ public final class GetDomainsMySupportAccountsResult {
         }
         @CustomType.Setter
         public Builder sortBy(@Nullable String sortBy) {
+
             this.sortBy = sortBy;
             return this;
         }
         @CustomType.Setter
         public Builder sortOrder(@Nullable String sortOrder) {
+
             this.sortOrder = sortOrder;
             return this;
         }
         @CustomType.Setter
         public Builder startIndex(@Nullable Integer startIndex) {
+
             this.startIndex = startIndex;
             return this;
         }
         @CustomType.Setter
         public Builder totalResults(Integer totalResults) {
-            this.totalResults = Objects.requireNonNull(totalResults);
+            if (totalResults == null) {
+              throw new MissingRequiredPropertyException("GetDomainsMySupportAccountsResult", "totalResults");
+            }
+            this.totalResults = totalResults;
             return this;
         }
         public GetDomainsMySupportAccountsResult build() {

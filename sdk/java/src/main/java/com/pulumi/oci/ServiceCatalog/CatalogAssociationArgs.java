@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceCatalog;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -162,8 +163,12 @@ public final class CatalogAssociationArgs extends com.pulumi.resources.ResourceA
         }
 
         public CatalogAssociationArgs build() {
-            $.entityId = Objects.requireNonNull($.entityId, "expected parameter 'entityId' to be non-null");
-            $.serviceCatalogId = Objects.requireNonNull($.serviceCatalogId, "expected parameter 'serviceCatalogId' to be non-null");
+            if ($.entityId == null) {
+                throw new MissingRequiredPropertyException("CatalogAssociationArgs", "entityId");
+            }
+            if ($.serviceCatalogId == null) {
+                throw new MissingRequiredPropertyException("CatalogAssociationArgs", "serviceCatalogId");
+            }
             return $;
         }
     }

@@ -59,11 +59,13 @@ public final class IpsecConnectionTunnelManagementDpdConfig {
 
         @CustomType.Setter
         public Builder dpdMode(@Nullable String dpdMode) {
+
             this.dpdMode = dpdMode;
             return this;
         }
         @CustomType.Setter
         public Builder dpdTimeoutInSec(@Nullable Integer dpdTimeoutInSec) {
+
             this.dpdTimeoutInSec = dpdTimeoutInSec;
             return this;
         }

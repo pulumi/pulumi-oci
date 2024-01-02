@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetConfigsConfigCollection;
 import com.pulumi.oci.StackMonitoring.outputs.GetConfigsFilter;
 import java.lang.String;
@@ -115,12 +116,18 @@ public final class GetConfigsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetConfigsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configCollections(List<GetConfigsConfigCollection> configCollections) {
-            this.configCollections = Objects.requireNonNull(configCollections);
+            if (configCollections == null) {
+              throw new MissingRequiredPropertyException("GetConfigsResult", "configCollections");
+            }
+            this.configCollections = configCollections;
             return this;
         }
         public Builder configCollections(GetConfigsConfigCollection... configCollections) {
@@ -128,11 +135,13 @@ public final class GetConfigsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetConfigsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,16 +150,21 @@ public final class GetConfigsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConfigsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

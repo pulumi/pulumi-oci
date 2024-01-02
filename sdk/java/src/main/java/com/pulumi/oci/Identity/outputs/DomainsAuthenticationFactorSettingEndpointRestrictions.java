@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -205,27 +206,42 @@ public final class DomainsAuthenticationFactorSettingEndpointRestrictions {
 
         @CustomType.Setter
         public Builder maxEndpointTrustDurationInDays(Integer maxEndpointTrustDurationInDays) {
-            this.maxEndpointTrustDurationInDays = Objects.requireNonNull(maxEndpointTrustDurationInDays);
+            if (maxEndpointTrustDurationInDays == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictions", "maxEndpointTrustDurationInDays");
+            }
+            this.maxEndpointTrustDurationInDays = maxEndpointTrustDurationInDays;
             return this;
         }
         @CustomType.Setter
         public Builder maxEnrolledDevices(Integer maxEnrolledDevices) {
-            this.maxEnrolledDevices = Objects.requireNonNull(maxEnrolledDevices);
+            if (maxEnrolledDevices == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictions", "maxEnrolledDevices");
+            }
+            this.maxEnrolledDevices = maxEnrolledDevices;
             return this;
         }
         @CustomType.Setter
         public Builder maxIncorrectAttempts(Integer maxIncorrectAttempts) {
-            this.maxIncorrectAttempts = Objects.requireNonNull(maxIncorrectAttempts);
+            if (maxIncorrectAttempts == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictions", "maxIncorrectAttempts");
+            }
+            this.maxIncorrectAttempts = maxIncorrectAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder maxTrustedEndpoints(Integer maxTrustedEndpoints) {
-            this.maxTrustedEndpoints = Objects.requireNonNull(maxTrustedEndpoints);
+            if (maxTrustedEndpoints == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictions", "maxTrustedEndpoints");
+            }
+            this.maxTrustedEndpoints = maxTrustedEndpoints;
             return this;
         }
         @CustomType.Setter
         public Builder trustedEndpointsEnabled(Boolean trustedEndpointsEnabled) {
-            this.trustedEndpointsEnabled = Objects.requireNonNull(trustedEndpointsEnabled);
+            if (trustedEndpointsEnabled == null) {
+              throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingEndpointRestrictions", "trustedEndpointsEnabled");
+            }
+            this.trustedEndpointsEnabled = trustedEndpointsEnabled;
             return this;
         }
         public DomainsAuthenticationFactorSettingEndpointRestrictions build() {

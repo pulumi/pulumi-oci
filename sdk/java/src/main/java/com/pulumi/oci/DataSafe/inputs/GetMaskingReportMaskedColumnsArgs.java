@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetMaskingReportMaskedColumnsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -371,7 +372,9 @@ public final class GetMaskingReportMaskedColumnsArgs extends com.pulumi.resource
         }
 
         public GetMaskingReportMaskedColumnsArgs build() {
-            $.maskingReportId = Objects.requireNonNull($.maskingReportId, "expected parameter 'maskingReportId' to be non-null");
+            if ($.maskingReportId == null) {
+                throw new MissingRequiredPropertyException("GetMaskingReportMaskedColumnsArgs", "maskingReportId");
+            }
             return $;
         }
     }

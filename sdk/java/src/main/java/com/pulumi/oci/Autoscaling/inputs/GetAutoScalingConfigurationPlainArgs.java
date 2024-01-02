@@ -4,6 +4,7 @@
 package com.pulumi.oci.Autoscaling.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetAutoScalingConfigurationPlainArgs extends com.pulumi.resou
         }
 
         public GetAutoScalingConfigurationPlainArgs build() {
-            $.autoScalingConfigurationId = Objects.requireNonNull($.autoScalingConfigurationId, "expected parameter 'autoScalingConfigurationId' to be non-null");
+            if ($.autoScalingConfigurationId == null) {
+                throw new MissingRequiredPropertyException("GetAutoScalingConfigurationPlainArgs", "autoScalingConfigurationId");
+            }
             return $;
         }
     }

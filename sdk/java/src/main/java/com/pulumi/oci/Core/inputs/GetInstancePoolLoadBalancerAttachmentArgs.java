@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetInstancePoolLoadBalancerAttachmentArgs extends com.pulumi.
         }
 
         public GetInstancePoolLoadBalancerAttachmentArgs build() {
-            $.instancePoolId = Objects.requireNonNull($.instancePoolId, "expected parameter 'instancePoolId' to be non-null");
-            $.instancePoolLoadBalancerAttachmentId = Objects.requireNonNull($.instancePoolLoadBalancerAttachmentId, "expected parameter 'instancePoolLoadBalancerAttachmentId' to be non-null");
+            if ($.instancePoolId == null) {
+                throw new MissingRequiredPropertyException("GetInstancePoolLoadBalancerAttachmentArgs", "instancePoolId");
+            }
+            if ($.instancePoolLoadBalancerAttachmentId == null) {
+                throw new MissingRequiredPropertyException("GetInstancePoolLoadBalancerAttachmentArgs", "instancePoolLoadBalancerAttachmentId");
+            }
             return $;
         }
     }

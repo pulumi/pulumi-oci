@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingReportsMaskingReportCollection;
 import java.lang.Boolean;
@@ -122,21 +123,27 @@ public final class GetMaskingReportsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMaskingReportsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -145,17 +152,24 @@ public final class GetMaskingReportsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
+
             this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder maskingReportCollections(List<GetMaskingReportsMaskingReportCollection> maskingReportCollections) {
-            this.maskingReportCollections = Objects.requireNonNull(maskingReportCollections);
+            if (maskingReportCollections == null) {
+              throw new MissingRequiredPropertyException("GetMaskingReportsResult", "maskingReportCollections");
+            }
+            this.maskingReportCollections = maskingReportCollections;
             return this;
         }
         public Builder maskingReportCollections(GetMaskingReportsMaskingReportCollection... maskingReportCollections) {
@@ -163,6 +177,7 @@ public final class GetMaskingReportsResult {
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }

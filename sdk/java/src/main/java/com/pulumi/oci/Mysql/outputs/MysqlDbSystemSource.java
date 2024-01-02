@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -100,26 +101,33 @@ public final class MysqlDbSystemSource {
 
         @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
+
             this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(@Nullable String dbSystemId) {
+
             this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder recoveryPoint(@Nullable String recoveryPoint) {
+
             this.recoveryPoint = recoveryPoint;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("MysqlDbSystemSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         @CustomType.Setter
         public Builder sourceUrl(@Nullable String sourceUrl) {
+
             this.sourceUrl = sourceUrl;
             return this;
         }

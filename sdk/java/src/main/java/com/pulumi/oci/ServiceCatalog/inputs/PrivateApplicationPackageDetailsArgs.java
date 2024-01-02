@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceCatalog.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -130,8 +131,12 @@ public final class PrivateApplicationPackageDetailsArgs extends com.pulumi.resou
         }
 
         public PrivateApplicationPackageDetailsArgs build() {
-            $.packageType = Objects.requireNonNull($.packageType, "expected parameter 'packageType' to be non-null");
-            $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
+            if ($.packageType == null) {
+                throw new MissingRequiredPropertyException("PrivateApplicationPackageDetailsArgs", "packageType");
+            }
+            if ($.version == null) {
+                throw new MissingRequiredPropertyException("PrivateApplicationPackageDetailsArgs", "version");
+            }
             return $;
         }
     }

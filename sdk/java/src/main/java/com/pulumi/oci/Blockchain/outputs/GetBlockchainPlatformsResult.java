@@ -4,6 +4,7 @@
 package com.pulumi.oci.Blockchain.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsBlockchainPlatformCollection;
 import com.pulumi.oci.Blockchain.outputs.GetBlockchainPlatformsFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetBlockchainPlatformsResult {
 
         @CustomType.Setter
         public Builder blockchainPlatformCollections(List<GetBlockchainPlatformsBlockchainPlatformCollection> blockchainPlatformCollections) {
-            this.blockchainPlatformCollections = Objects.requireNonNull(blockchainPlatformCollections);
+            if (blockchainPlatformCollections == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsResult", "blockchainPlatformCollections");
+            }
+            this.blockchainPlatformCollections = blockchainPlatformCollections;
             return this;
         }
         public Builder blockchainPlatformCollections(GetBlockchainPlatformsBlockchainPlatformCollection... blockchainPlatformCollections) {
@@ -117,16 +121,21 @@ public final class GetBlockchainPlatformsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBlockchainPlatformsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetBlockchainPlatformsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBlockchainPlatformsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

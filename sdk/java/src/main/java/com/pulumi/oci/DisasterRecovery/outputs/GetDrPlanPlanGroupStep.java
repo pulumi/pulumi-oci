@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanPlanGroupStepUserDefinedStep;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -158,47 +159,74 @@ public final class GetDrPlanPlanGroupStep {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder errorMode(String errorMode) {
-            this.errorMode = Objects.requireNonNull(errorMode);
+            if (errorMode == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "errorMode");
+            }
+            this.errorMode = errorMode;
             return this;
         }
         @CustomType.Setter
         public Builder groupId(String groupId) {
-            this.groupId = Objects.requireNonNull(groupId);
+            if (groupId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "groupId");
+            }
+            this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder memberId(String memberId) {
-            this.memberId = Objects.requireNonNull(memberId);
+            if (memberId == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "memberId");
+            }
+            this.memberId = memberId;
             return this;
         }
         @CustomType.Setter
         public Builder timeout(Integer timeout) {
-            this.timeout = Objects.requireNonNull(timeout);
+            if (timeout == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "timeout");
+            }
+            this.timeout = timeout;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userDefinedSteps(List<GetDrPlanPlanGroupStepUserDefinedStep> userDefinedSteps) {
-            this.userDefinedSteps = Objects.requireNonNull(userDefinedSteps);
+            if (userDefinedSteps == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanPlanGroupStep", "userDefinedSteps");
+            }
+            this.userDefinedSteps = userDefinedSteps;
             return this;
         }
         public Builder userDefinedSteps(GetDrPlanPlanGroupStepUserDefinedStep... userDefinedSteps) {

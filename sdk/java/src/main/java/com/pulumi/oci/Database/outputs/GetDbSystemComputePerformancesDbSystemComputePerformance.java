@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
 
         @CustomType.Setter
         public Builder computePerformanceLists(List<GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList> computePerformanceLists) {
-            this.computePerformanceLists = Objects.requireNonNull(computePerformanceLists);
+            if (computePerformanceLists == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesDbSystemComputePerformance", "computePerformanceLists");
+            }
+            this.computePerformanceLists = computePerformanceLists;
             return this;
         }
         public Builder computePerformanceLists(GetDbSystemComputePerformancesDbSystemComputePerformanceComputePerformanceList... computePerformanceLists) {
@@ -66,7 +70,10 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemComputePerformancesDbSystemComputePerformance", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         public GetDbSystemComputePerformancesDbSystemComputePerformance build() {

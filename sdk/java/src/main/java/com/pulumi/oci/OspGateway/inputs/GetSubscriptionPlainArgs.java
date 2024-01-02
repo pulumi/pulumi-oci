@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -117,9 +118,15 @@ public final class GetSubscriptionPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetSubscriptionPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.ospHomeRegion = Objects.requireNonNull($.ospHomeRegion, "expected parameter 'ospHomeRegion' to be non-null");
-            $.subscriptionId = Objects.requireNonNull($.subscriptionId, "expected parameter 'subscriptionId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionPlainArgs", "compartmentId");
+            }
+            if ($.ospHomeRegion == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionPlainArgs", "ospHomeRegion");
+            }
+            if ($.subscriptionId == null) {
+                throw new MissingRequiredPropertyException("GetSubscriptionPlainArgs", "subscriptionId");
+            }
             return $;
         }
     }

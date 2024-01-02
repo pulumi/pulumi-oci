@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetEmWarehousePlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetEmWarehousePlainArgs build() {
-            $.emWarehouseId = Objects.requireNonNull($.emWarehouseId, "expected parameter 'emWarehouseId' to be non-null");
+            if ($.emWarehouseId == null) {
+                throw new MissingRequiredPropertyException("GetEmWarehousePlainArgs", "emWarehouseId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmSynthetics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigAvailabilityConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigMaintenanceWindowScheduleArgs;
@@ -824,11 +825,21 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConfigArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.monitorType = Objects.requireNonNull($.monitorType, "expected parameter 'monitorType' to be non-null");
-            $.repeatIntervalInSeconds = Objects.requireNonNull($.repeatIntervalInSeconds, "expected parameter 'repeatIntervalInSeconds' to be non-null");
-            $.vantagePoints = Objects.requireNonNull($.vantagePoints, "expected parameter 'vantagePoints' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "apmDomainId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "displayName");
+            }
+            if ($.monitorType == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "monitorType");
+            }
+            if ($.repeatIntervalInSeconds == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "repeatIntervalInSeconds");
+            }
+            if ($.vantagePoints == null) {
+                throw new MissingRequiredPropertyException("ConfigArgs", "vantagePoints");
+            }
             return $;
         }
     }

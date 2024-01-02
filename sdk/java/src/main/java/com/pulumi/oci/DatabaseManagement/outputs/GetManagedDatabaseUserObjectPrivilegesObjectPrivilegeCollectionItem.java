@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -154,47 +155,74 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
 
         @CustomType.Setter
         public Builder common(String common) {
-            this.common = Objects.requireNonNull(common);
+            if (common == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "common");
+            }
+            this.common = common;
             return this;
         }
         @CustomType.Setter
         public Builder grantOption(String grantOption) {
-            this.grantOption = Objects.requireNonNull(grantOption);
+            if (grantOption == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "grantOption");
+            }
+            this.grantOption = grantOption;
             return this;
         }
         @CustomType.Setter
         public Builder grantor(String grantor) {
-            this.grantor = Objects.requireNonNull(grantor);
+            if (grantor == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "grantor");
+            }
+            this.grantor = grantor;
             return this;
         }
         @CustomType.Setter
         public Builder hierarchy(String hierarchy) {
-            this.hierarchy = Objects.requireNonNull(hierarchy);
+            if (hierarchy == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "hierarchy");
+            }
+            this.hierarchy = hierarchy;
             return this;
         }
         @CustomType.Setter
         public Builder inherited(String inherited) {
-            this.inherited = Objects.requireNonNull(inherited);
+            if (inherited == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "inherited");
+            }
+            this.inherited = inherited;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder owner(String owner) {
-            this.owner = Objects.requireNonNull(owner);
+            if (owner == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "owner");
+            }
+            this.owner = owner;
             return this;
         }
         @CustomType.Setter
         public Builder schemaType(String schemaType) {
-            this.schemaType = Objects.requireNonNull(schemaType);
+            if (schemaType == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem", "schemaType");
+            }
+            this.schemaType = schemaType;
             return this;
         }
         public GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingAnalyticsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingAnalyticsMaskingAnalyticsCollection;
 import java.lang.Boolean;
@@ -106,16 +107,21 @@ public final class GetMaskingAnalyticsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMaskingAnalyticsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,17 +130,24 @@ public final class GetMaskingAnalyticsResult {
         }
         @CustomType.Setter
         public Builder groupBy(@Nullable String groupBy) {
+
             this.groupBy = groupBy;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder maskingAnalyticsCollections(List<GetMaskingAnalyticsMaskingAnalyticsCollection> maskingAnalyticsCollections) {
-            this.maskingAnalyticsCollections = Objects.requireNonNull(maskingAnalyticsCollections);
+            if (maskingAnalyticsCollections == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticsResult", "maskingAnalyticsCollections");
+            }
+            this.maskingAnalyticsCollections = maskingAnalyticsCollections;
             return this;
         }
         public Builder maskingAnalyticsCollections(GetMaskingAnalyticsMaskingAnalyticsCollection... maskingAnalyticsCollections) {
@@ -142,11 +155,13 @@ public final class GetMaskingAnalyticsResult {
         }
         @CustomType.Setter
         public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
+
             this.maskingPolicyId = maskingPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }

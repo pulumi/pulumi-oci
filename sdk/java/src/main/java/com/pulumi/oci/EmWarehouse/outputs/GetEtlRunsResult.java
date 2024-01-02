@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.EmWarehouse.outputs.GetEtlRunsEtlRunCollection;
 import com.pulumi.oci.EmWarehouse.outputs.GetEtlRunsFilter;
 import java.lang.String;
@@ -101,22 +102,30 @@ public final class GetEtlRunsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder emWarehouseId(String emWarehouseId) {
-            this.emWarehouseId = Objects.requireNonNull(emWarehouseId);
+            if (emWarehouseId == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsResult", "emWarehouseId");
+            }
+            this.emWarehouseId = emWarehouseId;
             return this;
         }
         @CustomType.Setter
         public Builder etlRunCollections(List<GetEtlRunsEtlRunCollection> etlRunCollections) {
-            this.etlRunCollections = Objects.requireNonNull(etlRunCollections);
+            if (etlRunCollections == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsResult", "etlRunCollections");
+            }
+            this.etlRunCollections = etlRunCollections;
             return this;
         }
         public Builder etlRunCollections(GetEtlRunsEtlRunCollection... etlRunCollections) {
@@ -124,6 +133,7 @@ public final class GetEtlRunsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetEtlRunsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -132,7 +142,10 @@ public final class GetEtlRunsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetEtlRunsResult build() {

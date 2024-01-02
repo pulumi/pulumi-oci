@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunsFilter;
 import com.pulumi.oci.Adm.outputs.GetRemediationRunsRemediationRunCollection;
 import java.lang.String;
@@ -123,16 +124,19 @@ public final class GetRemediationRunsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRemediationRunsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,17 +145,22 @@ public final class GetRemediationRunsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRecipeId(@Nullable String remediationRecipeId) {
+
             this.remediationRecipeId = remediationRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder remediationRunCollections(List<GetRemediationRunsRemediationRunCollection> remediationRunCollections) {
-            this.remediationRunCollections = Objects.requireNonNull(remediationRunCollections);
+            if (remediationRunCollections == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRunsResult", "remediationRunCollections");
+            }
+            this.remediationRunCollections = remediationRunCollections;
             return this;
         }
         public Builder remediationRunCollections(GetRemediationRunsRemediationRunCollection... remediationRunCollections) {
@@ -159,6 +168,7 @@ public final class GetRemediationRunsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

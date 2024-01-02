@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabaseStackMo
 
         @CustomType.Setter
         public Builder stackMonitoringConnectorId(String stackMonitoringConnectorId) {
-            this.stackMonitoringConnectorId = Objects.requireNonNull(stackMonitoringConnectorId);
+            if (stackMonitoringConnectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig", "stackMonitoringConnectorId");
+            }
+            this.stackMonitoringConnectorId = stackMonitoringConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder stackMonitoringStatus(String stackMonitoringStatus) {
-            this.stackMonitoringStatus = Objects.requireNonNull(stackMonitoringStatus);
+            if (stackMonitoringStatus == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig", "stackMonitoringStatus");
+            }
+            this.stackMonitoringStatus = stackMonitoringStatus;
             return this;
         }
         public GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetApplicationPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetApplicationPlainArgs build() {
-            $.applicationId = Objects.requireNonNull($.applicationId, "expected parameter 'applicationId' to be non-null");
+            if ($.applicationId == null) {
+                throw new MissingRequiredPropertyException("GetApplicationPlainArgs", "applicationId");
+            }
             return $;
         }
     }

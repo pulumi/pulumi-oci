@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetReplicationSchedulesFilter;
 import com.pulumi.oci.CloudMigrations.outputs.GetReplicationSchedulesReplicationScheduleCollection;
 import java.lang.String;
@@ -115,16 +116,19 @@ public final class GetReplicationSchedulesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetReplicationSchedulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,12 +137,18 @@ public final class GetReplicationSchedulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSchedulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder replicationScheduleCollections(List<GetReplicationSchedulesReplicationScheduleCollection> replicationScheduleCollections) {
-            this.replicationScheduleCollections = Objects.requireNonNull(replicationScheduleCollections);
+            if (replicationScheduleCollections == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSchedulesResult", "replicationScheduleCollections");
+            }
+            this.replicationScheduleCollections = replicationScheduleCollections;
             return this;
         }
         public Builder replicationScheduleCollections(GetReplicationSchedulesReplicationScheduleCollection... replicationScheduleCollections) {
@@ -146,11 +156,13 @@ public final class GetReplicationSchedulesResult {
         }
         @CustomType.Setter
         public Builder replicationScheduleId(@Nullable String replicationScheduleId) {
+
             this.replicationScheduleId = replicationScheduleId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

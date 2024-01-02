@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -142,12 +143,18 @@ public final class GetExportsExportExportOption {
 
         @CustomType.Setter
         public Builder access(String access) {
-            this.access = Objects.requireNonNull(access);
+            if (access == null) {
+              throw new MissingRequiredPropertyException("GetExportsExportExportOption", "access");
+            }
+            this.access = access;
             return this;
         }
         @CustomType.Setter
         public Builder allowedAuths(List<String> allowedAuths) {
-            this.allowedAuths = Objects.requireNonNull(allowedAuths);
+            if (allowedAuths == null) {
+              throw new MissingRequiredPropertyException("GetExportsExportExportOption", "allowedAuths");
+            }
+            this.allowedAuths = allowedAuths;
             return this;
         }
         public Builder allowedAuths(String... allowedAuths) {
@@ -155,32 +162,50 @@ public final class GetExportsExportExportOption {
         }
         @CustomType.Setter
         public Builder anonymousGid(String anonymousGid) {
-            this.anonymousGid = Objects.requireNonNull(anonymousGid);
+            if (anonymousGid == null) {
+              throw new MissingRequiredPropertyException("GetExportsExportExportOption", "anonymousGid");
+            }
+            this.anonymousGid = anonymousGid;
             return this;
         }
         @CustomType.Setter
         public Builder anonymousUid(String anonymousUid) {
-            this.anonymousUid = Objects.requireNonNull(anonymousUid);
+            if (anonymousUid == null) {
+              throw new MissingRequiredPropertyException("GetExportsExportExportOption", "anonymousUid");
+            }
+            this.anonymousUid = anonymousUid;
             return this;
         }
         @CustomType.Setter
         public Builder identitySquash(String identitySquash) {
-            this.identitySquash = Objects.requireNonNull(identitySquash);
+            if (identitySquash == null) {
+              throw new MissingRequiredPropertyException("GetExportsExportExportOption", "identitySquash");
+            }
+            this.identitySquash = identitySquash;
             return this;
         }
         @CustomType.Setter
         public Builder isAnonymousAccessAllowed(Boolean isAnonymousAccessAllowed) {
-            this.isAnonymousAccessAllowed = Objects.requireNonNull(isAnonymousAccessAllowed);
+            if (isAnonymousAccessAllowed == null) {
+              throw new MissingRequiredPropertyException("GetExportsExportExportOption", "isAnonymousAccessAllowed");
+            }
+            this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder requirePrivilegedSourcePort(Boolean requirePrivilegedSourcePort) {
-            this.requirePrivilegedSourcePort = Objects.requireNonNull(requirePrivilegedSourcePort);
+            if (requirePrivilegedSourcePort == null) {
+              throw new MissingRequiredPropertyException("GetExportsExportExportOption", "requirePrivilegedSourcePort");
+            }
+            this.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetExportsExportExportOption", "source");
+            }
+            this.source = source;
             return this;
         }
         public GetExportsExportExportOption build() {

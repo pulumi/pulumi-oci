@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendsBackendCollection;
 import com.pulumi.oci.NetworkLoadBalancer.outputs.GetBackendsFilter;
 import java.lang.String;
@@ -78,7 +79,10 @@ public final class GetBackendsResult {
 
         @CustomType.Setter
         public Builder backendCollections(List<GetBackendsBackendCollection> backendCollections) {
-            this.backendCollections = Objects.requireNonNull(backendCollections);
+            if (backendCollections == null) {
+              throw new MissingRequiredPropertyException("GetBackendsResult", "backendCollections");
+            }
+            this.backendCollections = backendCollections;
             return this;
         }
         public Builder backendCollections(GetBackendsBackendCollection... backendCollections) {
@@ -86,11 +90,15 @@ public final class GetBackendsResult {
         }
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+            if (backendSetName == null) {
+              throw new MissingRequiredPropertyException("GetBackendsResult", "backendSetName");
+            }
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBackendsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -99,12 +107,18 @@ public final class GetBackendsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBackendsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetBackendsResult", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         public GetBackendsResult build() {

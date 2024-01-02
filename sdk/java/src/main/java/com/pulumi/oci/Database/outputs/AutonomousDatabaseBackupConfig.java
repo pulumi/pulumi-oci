@@ -58,11 +58,13 @@ public final class AutonomousDatabaseBackupConfig {
 
         @CustomType.Setter
         public Builder manualBackupBucketName(@Nullable String manualBackupBucketName) {
+
             this.manualBackupBucketName = manualBackupBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder manualBackupType(@Nullable String manualBackupType) {
+
             this.manualBackupType = manualBackupType;
             return this;
         }

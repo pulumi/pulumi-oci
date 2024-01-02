@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder softwareSourceType(String softwareSourceType) {
-            this.softwareSourceType = Objects.requireNonNull(softwareSourceType);
+            if (softwareSourceType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource", "softwareSourceType");
+            }
+            this.softwareSourceType = softwareSourceType;
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSource build() {

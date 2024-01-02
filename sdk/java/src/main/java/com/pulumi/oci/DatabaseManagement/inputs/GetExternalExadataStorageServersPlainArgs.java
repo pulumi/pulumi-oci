@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetExternalExadataStorageServersFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,8 +139,12 @@ public final class GetExternalExadataStorageServersPlainArgs extends com.pulumi.
         }
 
         public GetExternalExadataStorageServersPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.externalExadataInfrastructureId = Objects.requireNonNull($.externalExadataInfrastructureId, "expected parameter 'externalExadataInfrastructureId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetExternalExadataStorageServersPlainArgs", "compartmentId");
+            }
+            if ($.externalExadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("GetExternalExadataStorageServersPlainArgs", "externalExadataInfrastructureId");
+            }
             return $;
         }
     }

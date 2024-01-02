@@ -44,6 +44,7 @@ public final class DeploymentDeploymentArguments {
 
         @CustomType.Setter
         public Builder items(@Nullable List<DeploymentDeploymentArgumentsItem> items) {
+
             this.items = items;
             return this;
         }

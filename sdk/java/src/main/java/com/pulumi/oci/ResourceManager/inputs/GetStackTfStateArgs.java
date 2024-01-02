@@ -5,6 +5,7 @@ package com.pulumi.oci.ResourceManager.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -91,8 +92,12 @@ public final class GetStackTfStateArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetStackTfStateArgs build() {
-            $.localPath = Objects.requireNonNull($.localPath, "expected parameter 'localPath' to be non-null");
-            $.stackId = Objects.requireNonNull($.stackId, "expected parameter 'stackId' to be non-null");
+            if ($.localPath == null) {
+                throw new MissingRequiredPropertyException("GetStackTfStateArgs", "localPath");
+            }
+            if ($.stackId == null) {
+                throw new MissingRequiredPropertyException("GetStackTfStateArgs", "stackId");
+            }
             return $;
         }
     }

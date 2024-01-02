@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost;
 import java.lang.String;
 import java.util.List;
@@ -48,7 +49,10 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCon
 
         @CustomType.Setter
         public Builder hosts(List<GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost> hosts) {
-            this.hosts = Objects.requireNonNull(hosts);
+            if (hosts == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail", "hosts");
+            }
+            this.hosts = hosts;
             return this;
         }
         public Builder hosts(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost... hosts) {
@@ -56,12 +60,18 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCon
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(String serviceName) {
-            this.serviceName = Objects.requireNonNull(serviceName);
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail", "serviceName");
+            }
+            this.serviceName = serviceName;
             return this;
         }
         public GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail build() {

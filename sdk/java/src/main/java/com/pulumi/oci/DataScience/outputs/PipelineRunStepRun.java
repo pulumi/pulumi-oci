@@ -128,36 +128,43 @@ public final class PipelineRunStepRun {
 
         @CustomType.Setter
         public Builder jobRunId(@Nullable String jobRunId) {
+
             this.jobRunId = jobRunId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stepName(@Nullable String stepName) {
+
             this.stepName = stepName;
             return this;
         }
         @CustomType.Setter
         public Builder stepType(@Nullable String stepType) {
+
             this.stepType = stepType;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(@Nullable String timeFinished) {
+
             this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
+
             this.timeStarted = timeStarted;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -128,37 +129,58 @@ public final class GetRrsetsRrsetItem {
 
         @CustomType.Setter
         public Builder domain(String domain) {
-            this.domain = Objects.requireNonNull(domain);
+            if (domain == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrsetItem", "domain");
+            }
+            this.domain = domain;
             return this;
         }
         @CustomType.Setter
         public Builder isProtected(Boolean isProtected) {
-            this.isProtected = Objects.requireNonNull(isProtected);
+            if (isProtected == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrsetItem", "isProtected");
+            }
+            this.isProtected = isProtected;
             return this;
         }
         @CustomType.Setter
         public Builder rdata(String rdata) {
-            this.rdata = Objects.requireNonNull(rdata);
+            if (rdata == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrsetItem", "rdata");
+            }
+            this.rdata = rdata;
             return this;
         }
         @CustomType.Setter
         public Builder recordHash(String recordHash) {
-            this.recordHash = Objects.requireNonNull(recordHash);
+            if (recordHash == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrsetItem", "recordHash");
+            }
+            this.recordHash = recordHash;
             return this;
         }
         @CustomType.Setter
         public Builder rrsetVersion(String rrsetVersion) {
-            this.rrsetVersion = Objects.requireNonNull(rrsetVersion);
+            if (rrsetVersion == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrsetItem", "rrsetVersion");
+            }
+            this.rrsetVersion = rrsetVersion;
             return this;
         }
         @CustomType.Setter
         public Builder rtype(String rtype) {
-            this.rtype = Objects.requireNonNull(rtype);
+            if (rtype == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrsetItem", "rtype");
+            }
+            this.rtype = rtype;
             return this;
         }
         @CustomType.Setter
         public Builder ttl(Integer ttl) {
-            this.ttl = Objects.requireNonNull(ttl);
+            if (ttl == null) {
+              throw new MissingRequiredPropertyException("GetRrsetsRrsetItem", "ttl");
+            }
+            this.ttl = ttl;
             return this;
         }
         public GetRrsetsRrsetItem build() {

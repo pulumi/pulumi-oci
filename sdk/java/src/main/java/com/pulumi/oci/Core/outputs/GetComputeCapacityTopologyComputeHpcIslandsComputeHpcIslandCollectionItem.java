@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCo
 
         @CustomType.Setter
         public Builder computeCapacityTopologyId(String computeCapacityTopologyId) {
-            this.computeCapacityTopologyId = Objects.requireNonNull(computeCapacityTopologyId);
+            if (computeCapacityTopologyId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem", "computeCapacityTopologyId");
+            }
+            this.computeCapacityTopologyId = computeCapacityTopologyId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalComputeBareMetalHostCount(String totalComputeBareMetalHostCount) {
-            this.totalComputeBareMetalHostCount = Objects.requireNonNull(totalComputeBareMetalHostCount);
+            if (totalComputeBareMetalHostCount == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem", "totalComputeBareMetalHostCount");
+            }
+            this.totalComputeBareMetalHostCount = totalComputeBareMetalHostCount;
             return this;
         }
         public GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem build() {

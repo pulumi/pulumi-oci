@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationsFilter;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationsMigrationCollection;
 import java.lang.String;
@@ -115,16 +116,19 @@ public final class GetMigrationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMigrationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,12 +137,18 @@ public final class GetMigrationsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder migrationCollections(List<GetMigrationsMigrationCollection> migrationCollections) {
-            this.migrationCollections = Objects.requireNonNull(migrationCollections);
+            if (migrationCollections == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsResult", "migrationCollections");
+            }
+            this.migrationCollections = migrationCollections;
             return this;
         }
         public Builder migrationCollections(GetMigrationsMigrationCollection... migrationCollections) {
@@ -146,11 +156,13 @@ public final class GetMigrationsResult {
         }
         @CustomType.Setter
         public Builder migrationId(@Nullable String migrationId) {
+
             this.migrationId = migrationId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

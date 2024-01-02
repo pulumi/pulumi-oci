@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +72,10 @@ public final class GetDbSystemNetworkDetail {
 
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemNetworkDetail", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -79,12 +83,18 @@ public final class GetDbSystemNetworkDetail {
         }
         @CustomType.Setter
         public Builder primaryDbEndpointPrivateIp(String primaryDbEndpointPrivateIp) {
-            this.primaryDbEndpointPrivateIp = Objects.requireNonNull(primaryDbEndpointPrivateIp);
+            if (primaryDbEndpointPrivateIp == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemNetworkDetail", "primaryDbEndpointPrivateIp");
+            }
+            this.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemNetworkDetail", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetDbSystemNetworkDetail build() {

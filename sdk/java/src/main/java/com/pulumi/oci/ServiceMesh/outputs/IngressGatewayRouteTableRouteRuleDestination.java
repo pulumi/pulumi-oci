@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -73,16 +74,21 @@ public final class IngressGatewayRouteTableRouteRuleDestination {
 
         @CustomType.Setter
         public Builder port(@Nullable Integer port) {
+
             this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder virtualServiceId(String virtualServiceId) {
-            this.virtualServiceId = Objects.requireNonNull(virtualServiceId);
+            if (virtualServiceId == null) {
+              throw new MissingRequiredPropertyException("IngressGatewayRouteTableRouteRuleDestination", "virtualServiceId");
+            }
+            this.virtualServiceId = virtualServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder weight(@Nullable Integer weight) {
+
             this.weight = weight;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetDomainsUserEmail {
 
         @CustomType.Setter
         public Builder pendingVerificationData(String pendingVerificationData) {
-            this.pendingVerificationData = Objects.requireNonNull(pendingVerificationData);
+            if (pendingVerificationData == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserEmail", "pendingVerificationData");
+            }
+            this.pendingVerificationData = pendingVerificationData;
             return this;
         }
         @CustomType.Setter
         public Builder primary(Boolean primary) {
-            this.primary = Objects.requireNonNull(primary);
+            if (primary == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserEmail", "primary");
+            }
+            this.primary = primary;
             return this;
         }
         @CustomType.Setter
         public Builder secondary(Boolean secondary) {
-            this.secondary = Objects.requireNonNull(secondary);
+            if (secondary == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserEmail", "secondary");
+            }
+            this.secondary = secondary;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserEmail", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserEmail", "value");
+            }
+            this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder verified(Boolean verified) {
-            this.verified = Objects.requireNonNull(verified);
+            if (verified == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserEmail", "verified");
+            }
+            this.verified = verified;
             return this;
         }
         public GetDomainsUserEmail build() {

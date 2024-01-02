@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetTriggerActionFilterExcludeFileFilter {
 
         @CustomType.Setter
         public Builder filePaths(List<String> filePaths) {
-            this.filePaths = Objects.requireNonNull(filePaths);
+            if (filePaths == null) {
+              throw new MissingRequiredPropertyException("GetTriggerActionFilterExcludeFileFilter", "filePaths");
+            }
+            this.filePaths = filePaths;
             return this;
         }
         public Builder filePaths(String... filePaths) {

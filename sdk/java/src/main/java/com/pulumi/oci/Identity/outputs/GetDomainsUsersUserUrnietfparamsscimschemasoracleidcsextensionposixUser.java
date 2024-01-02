@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder gecos(String gecos) {
-            this.gecos = Objects.requireNonNull(gecos);
+            if (gecos == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser", "gecos");
+            }
+            this.gecos = gecos;
             return this;
         }
         @CustomType.Setter
         public Builder gidNumber(Integer gidNumber) {
-            this.gidNumber = Objects.requireNonNull(gidNumber);
+            if (gidNumber == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser", "gidNumber");
+            }
+            this.gidNumber = gidNumber;
             return this;
         }
         @CustomType.Setter
         public Builder homeDirectory(String homeDirectory) {
-            this.homeDirectory = Objects.requireNonNull(homeDirectory);
+            if (homeDirectory == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser", "homeDirectory");
+            }
+            this.homeDirectory = homeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder loginShell(String loginShell) {
-            this.loginShell = Objects.requireNonNull(loginShell);
+            if (loginShell == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser", "loginShell");
+            }
+            this.loginShell = loginShell;
             return this;
         }
         @CustomType.Setter
         public Builder uidNumber(Integer uidNumber) {
-            this.uidNumber = Objects.requireNonNull(uidNumber);
+            if (uidNumber == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser", "uidNumber");
+            }
+            this.uidNumber = uidNumber;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser build() {

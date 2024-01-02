@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetMessageItem {
 
         @CustomType.Setter
         public Builder deploymentMessage(String deploymentMessage) {
-            this.deploymentMessage = Objects.requireNonNull(deploymentMessage);
+            if (deploymentMessage == null) {
+              throw new MissingRequiredPropertyException("GetMessageItem", "deploymentMessage");
+            }
+            this.deploymentMessage = deploymentMessage;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentMessageStatus(String deploymentMessageStatus) {
-            this.deploymentMessageStatus = Objects.requireNonNull(deploymentMessageStatus);
+            if (deploymentMessageStatus == null) {
+              throw new MissingRequiredPropertyException("GetMessageItem", "deploymentMessageStatus");
+            }
+            this.deploymentMessageStatus = deploymentMessageStatus;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMessageItem", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetMessageItem build() {

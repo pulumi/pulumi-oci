@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetProjectsFilter;
 import com.pulumi.oci.DevOps.outputs.GetProjectsProjectCollection;
 import java.lang.String;
@@ -109,11 +110,15 @@ public final class GetProjectsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProjectsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProjectsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -122,17 +127,22 @@ public final class GetProjectsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder projectCollections(List<GetProjectsProjectCollection> projectCollections) {
-            this.projectCollections = Objects.requireNonNull(projectCollections);
+            if (projectCollections == null) {
+              throw new MissingRequiredPropertyException("GetProjectsResult", "projectCollections");
+            }
+            this.projectCollections = projectCollections;
             return this;
         }
         public Builder projectCollections(GetProjectsProjectCollection... projectCollections) {
@@ -140,6 +150,7 @@ public final class GetProjectsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

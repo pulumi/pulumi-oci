@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
 
         @CustomType.Setter
         public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+            if (entityType == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource", "entityType");
+            }
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbManagemen
 
         @CustomType.Setter
         public Builder connectorId(String connectorId) {
-            this.connectorId = Objects.requireNonNull(connectorId);
+            if (connectorId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig", "connectorId");
+            }
+            this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagementStatus(String databaseManagementStatus) {
-            this.databaseManagementStatus = Objects.requireNonNull(databaseManagementStatus);
+            if (databaseManagementStatus == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig", "databaseManagementStatus");
+            }
+            this.databaseManagementStatus = databaseManagementStatus;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(String licenseModel) {
-            this.licenseModel = Objects.requireNonNull(licenseModel);
+            if (licenseModel == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig", "licenseModel");
+            }
+            this.licenseModel = licenseModel;
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig build() {

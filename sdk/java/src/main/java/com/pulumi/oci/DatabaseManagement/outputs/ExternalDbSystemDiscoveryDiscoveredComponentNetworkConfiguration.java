@@ -73,16 +73,19 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurat
 
         @CustomType.Setter
         public Builder networkNumber(@Nullable Integer networkNumber) {
+
             this.networkNumber = networkNumber;
             return this;
         }
         @CustomType.Setter
         public Builder networkType(@Nullable String networkType) {
+
             this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
         public Builder subnet(@Nullable String subnet) {
+
             this.subnet = subnet;
             return this;
         }

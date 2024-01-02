@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsFilter;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointsSqlEndpointCollection;
 import java.lang.String;
@@ -115,16 +116,19 @@ public final class GetSqlEndpointsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSqlEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -133,12 +137,18 @@ public final class GetSqlEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder sqlEndpointCollections(List<GetSqlEndpointsSqlEndpointCollection> sqlEndpointCollections) {
-            this.sqlEndpointCollections = Objects.requireNonNull(sqlEndpointCollections);
+            if (sqlEndpointCollections == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointsResult", "sqlEndpointCollections");
+            }
+            this.sqlEndpointCollections = sqlEndpointCollections;
             return this;
         }
         public Builder sqlEndpointCollections(GetSqlEndpointsSqlEndpointCollection... sqlEndpointCollections) {
@@ -146,11 +156,13 @@ public final class GetSqlEndpointsResult {
         }
         @CustomType.Setter
         public Builder sqlEndpointId(@Nullable String sqlEndpointId) {
+
             this.sqlEndpointId = sqlEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

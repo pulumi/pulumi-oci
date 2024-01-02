@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class RepositoryMirrorRepositoryConfigTriggerScheduleArgs extends c
         }
 
         public RepositoryMirrorRepositoryConfigTriggerScheduleArgs build() {
-            $.scheduleType = Objects.requireNonNull($.scheduleType, "expected parameter 'scheduleType' to be non-null");
+            if ($.scheduleType == null) {
+                throw new MissingRequiredPropertyException("RepositoryMirrorRepositoryConfigTriggerScheduleArgs", "scheduleType");
+            }
             return $;
         }
     }

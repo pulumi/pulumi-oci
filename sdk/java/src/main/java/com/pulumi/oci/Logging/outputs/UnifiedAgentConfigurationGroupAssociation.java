@@ -44,6 +44,7 @@ public final class UnifiedAgentConfigurationGroupAssociation {
 
         @CustomType.Setter
         public Builder groupLists(@Nullable List<String> groupLists) {
+
             this.groupLists = groupLists;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetUsagePlanArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetUsagePlanArgs build() {
-            $.usagePlanId = Objects.requireNonNull($.usagePlanId, "expected parameter 'usagePlanId' to be non-null");
+            if ($.usagePlanId == null) {
+                throw new MissingRequiredPropertyException("GetUsagePlanArgs", "usagePlanId");
+            }
             return $;
         }
     }

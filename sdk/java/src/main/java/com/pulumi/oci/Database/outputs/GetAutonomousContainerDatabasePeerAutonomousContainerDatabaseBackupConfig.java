@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail;
 import java.lang.Integer;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetAutonomousContainerDatabasePeerAutonomousContainerDatabase
 
         @CustomType.Setter
         public Builder backupDestinationDetails(List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
-            this.backupDestinationDetails = Objects.requireNonNull(backupDestinationDetails);
+            if (backupDestinationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig", "backupDestinationDetails");
+            }
+            this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
         public Builder backupDestinationDetails(GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail... backupDestinationDetails) {
@@ -66,7 +70,10 @@ public final class GetAutonomousContainerDatabasePeerAutonomousContainerDatabase
         }
         @CustomType.Setter
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
-            this.recoveryWindowInDays = Objects.requireNonNull(recoveryWindowInDays);
+            if (recoveryWindowInDays == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig", "recoveryWindowInDays");
+            }
+            this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }
         public GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -184,17 +185,26 @@ public final class GetAuditPolicyAuditSpecification {
 
         @CustomType.Setter
         public Builder auditPolicyCategory(String auditPolicyCategory) {
-            this.auditPolicyCategory = Objects.requireNonNull(auditPolicyCategory);
+            if (auditPolicyCategory == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "auditPolicyCategory");
+            }
+            this.auditPolicyCategory = auditPolicyCategory;
             return this;
         }
         @CustomType.Setter
         public Builder auditPolicyName(String auditPolicyName) {
-            this.auditPolicyName = Objects.requireNonNull(auditPolicyName);
+            if (auditPolicyName == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "auditPolicyName");
+            }
+            this.auditPolicyName = auditPolicyName;
             return this;
         }
         @CustomType.Setter
         public Builder databasePolicyNames(List<String> databasePolicyNames) {
-            this.databasePolicyNames = Objects.requireNonNull(databasePolicyNames);
+            if (databasePolicyNames == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "databasePolicyNames");
+            }
+            this.databasePolicyNames = databasePolicyNames;
             return this;
         }
         public Builder databasePolicyNames(String... databasePolicyNames) {
@@ -202,42 +212,66 @@ public final class GetAuditPolicyAuditSpecification {
         }
         @CustomType.Setter
         public Builder enableStatus(String enableStatus) {
-            this.enableStatus = Objects.requireNonNull(enableStatus);
+            if (enableStatus == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "enableStatus");
+            }
+            this.enableStatus = enableStatus;
             return this;
         }
         @CustomType.Setter
         public Builder enabledEntities(String enabledEntities) {
-            this.enabledEntities = Objects.requireNonNull(enabledEntities);
+            if (enabledEntities == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "enabledEntities");
+            }
+            this.enabledEntities = enabledEntities;
             return this;
         }
         @CustomType.Setter
         public Builder isCreated(Boolean isCreated) {
-            this.isCreated = Objects.requireNonNull(isCreated);
+            if (isCreated == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "isCreated");
+            }
+            this.isCreated = isCreated;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabledForAllUsers(Boolean isEnabledForAllUsers) {
-            this.isEnabledForAllUsers = Objects.requireNonNull(isEnabledForAllUsers);
+            if (isEnabledForAllUsers == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "isEnabledForAllUsers");
+            }
+            this.isEnabledForAllUsers = isEnabledForAllUsers;
             return this;
         }
         @CustomType.Setter
         public Builder isSeededInDataSafe(Boolean isSeededInDataSafe) {
-            this.isSeededInDataSafe = Objects.requireNonNull(isSeededInDataSafe);
+            if (isSeededInDataSafe == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "isSeededInDataSafe");
+            }
+            this.isSeededInDataSafe = isSeededInDataSafe;
             return this;
         }
         @CustomType.Setter
         public Builder isSeededInTarget(Boolean isSeededInTarget) {
-            this.isSeededInTarget = Objects.requireNonNull(isSeededInTarget);
+            if (isSeededInTarget == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "isSeededInTarget");
+            }
+            this.isSeededInTarget = isSeededInTarget;
             return this;
         }
         @CustomType.Setter
         public Builder isViewOnly(Boolean isViewOnly) {
-            this.isViewOnly = Objects.requireNonNull(isViewOnly);
+            if (isViewOnly == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "isViewOnly");
+            }
+            this.isViewOnly = isViewOnly;
             return this;
         }
         @CustomType.Setter
         public Builder partiallyEnabledMsg(String partiallyEnabledMsg) {
-            this.partiallyEnabledMsg = Objects.requireNonNull(partiallyEnabledMsg);
+            if (partiallyEnabledMsg == null) {
+              throw new MissingRequiredPropertyException("GetAuditPolicyAuditSpecification", "partiallyEnabledMsg");
+            }
+            this.partiallyEnabledMsg = partiallyEnabledMsg;
             return this;
         }
         public GetAuditPolicyAuditSpecification build() {

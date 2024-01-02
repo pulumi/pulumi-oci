@@ -59,11 +59,13 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
 
         @CustomType.Setter
         public Builder asn(@Nullable Integer asn) {
+
             this.asn = asn;
             return this;
         }
         @CustomType.Setter
         public Builder ip(@Nullable String ip) {
+
             this.ip = ip;
             return this;
         }

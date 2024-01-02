@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -83,8 +84,12 @@ public final class GetRemediationRunsFilter extends com.pulumi.resources.InvokeA
         }
 
         public GetRemediationRunsFilter build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.values = Objects.requireNonNull($.values, "expected parameter 'values' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("GetRemediationRunsFilter", "name");
+            }
+            if ($.values == null) {
+                throw new MissingRequiredPropertyException("GetRemediationRunsFilter", "values");
+            }
             return $;
         }
     }

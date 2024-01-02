@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -322,9 +323,15 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RecordArgs build() {
-            $.domain = Objects.requireNonNull($.domain, "expected parameter 'domain' to be non-null");
-            $.rtype = Objects.requireNonNull($.rtype, "expected parameter 'rtype' to be non-null");
-            $.zoneNameOrId = Objects.requireNonNull($.zoneNameOrId, "expected parameter 'zoneNameOrId' to be non-null");
+            if ($.domain == null) {
+                throw new MissingRequiredPropertyException("RecordArgs", "domain");
+            }
+            if ($.rtype == null) {
+                throw new MissingRequiredPropertyException("RecordArgs", "rtype");
+            }
+            if ($.zoneNameOrId == null) {
+                throw new MissingRequiredPropertyException("RecordArgs", "zoneNameOrId");
+            }
             return $;
         }
     }

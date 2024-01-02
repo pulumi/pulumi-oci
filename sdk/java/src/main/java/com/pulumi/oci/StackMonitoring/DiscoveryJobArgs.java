@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -314,8 +315,12 @@ public final class DiscoveryJobArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DiscoveryJobArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.discoveryDetails = Objects.requireNonNull($.discoveryDetails, "expected parameter 'discoveryDetails' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobArgs", "compartmentId");
+            }
+            if ($.discoveryDetails == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobArgs", "discoveryDetails");
+            }
             return $;
         }
     }

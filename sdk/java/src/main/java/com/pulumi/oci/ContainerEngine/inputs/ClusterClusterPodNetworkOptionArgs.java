@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class ClusterClusterPodNetworkOptionArgs extends com.pulumi.resourc
         }
 
         public ClusterClusterPodNetworkOptionArgs build() {
-            $.cniType = Objects.requireNonNull($.cniType, "expected parameter 'cniType' to be non-null");
+            if ($.cniType == null) {
+                throw new MissingRequiredPropertyException("ClusterClusterPodNetworkOptionArgs", "cniType");
+            }
             return $;
         }
     }

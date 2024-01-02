@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanMigrationPlanStat;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanStrategy;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationPlanTargetEnvironment;
@@ -278,52 +279,82 @@ public final class GetMigrationPlanResult {
 
         @CustomType.Setter
         public Builder calculatedLimits(Map<String,Object> calculatedLimits) {
-            this.calculatedLimits = Objects.requireNonNull(calculatedLimits);
+            if (calculatedLimits == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "calculatedLimits");
+            }
+            this.calculatedLimits = calculatedLimits;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder migrationId(String migrationId) {
-            this.migrationId = Objects.requireNonNull(migrationId);
+            if (migrationId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "migrationId");
+            }
+            this.migrationId = migrationId;
             return this;
         }
         @CustomType.Setter
         public Builder migrationPlanId(String migrationPlanId) {
-            this.migrationPlanId = Objects.requireNonNull(migrationPlanId);
+            if (migrationPlanId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "migrationPlanId");
+            }
+            this.migrationPlanId = migrationPlanId;
             return this;
         }
         @CustomType.Setter
         public Builder migrationPlanStats(List<GetMigrationPlanMigrationPlanStat> migrationPlanStats) {
-            this.migrationPlanStats = Objects.requireNonNull(migrationPlanStats);
+            if (migrationPlanStats == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "migrationPlanStats");
+            }
+            this.migrationPlanStats = migrationPlanStats;
             return this;
         }
         public Builder migrationPlanStats(GetMigrationPlanMigrationPlanStat... migrationPlanStats) {
@@ -331,22 +362,34 @@ public final class GetMigrationPlanResult {
         }
         @CustomType.Setter
         public Builder referenceToRmsStack(String referenceToRmsStack) {
-            this.referenceToRmsStack = Objects.requireNonNull(referenceToRmsStack);
+            if (referenceToRmsStack == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "referenceToRmsStack");
+            }
+            this.referenceToRmsStack = referenceToRmsStack;
             return this;
         }
         @CustomType.Setter
         public Builder sourceMigrationPlanId(String sourceMigrationPlanId) {
-            this.sourceMigrationPlanId = Objects.requireNonNull(sourceMigrationPlanId);
+            if (sourceMigrationPlanId == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "sourceMigrationPlanId");
+            }
+            this.sourceMigrationPlanId = sourceMigrationPlanId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder strategies(List<GetMigrationPlanStrategy> strategies) {
-            this.strategies = Objects.requireNonNull(strategies);
+            if (strategies == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "strategies");
+            }
+            this.strategies = strategies;
             return this;
         }
         public Builder strategies(GetMigrationPlanStrategy... strategies) {
@@ -354,12 +397,18 @@ public final class GetMigrationPlanResult {
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetEnvironments(List<GetMigrationPlanTargetEnvironment> targetEnvironments) {
-            this.targetEnvironments = Objects.requireNonNull(targetEnvironments);
+            if (targetEnvironments == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "targetEnvironments");
+            }
+            this.targetEnvironments = targetEnvironments;
             return this;
         }
         public Builder targetEnvironments(GetMigrationPlanTargetEnvironment... targetEnvironments) {
@@ -367,12 +416,18 @@ public final class GetMigrationPlanResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMigrationPlanResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMigrationPlanResult build() {

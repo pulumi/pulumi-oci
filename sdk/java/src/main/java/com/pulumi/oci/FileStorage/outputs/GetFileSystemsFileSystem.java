@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetFileSystemsFileSystemSourceDetail;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -285,77 +286,122 @@ public final class GetFileSystemsFileSystem {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filesystemSnapshotPolicyId(String filesystemSnapshotPolicyId) {
-            this.filesystemSnapshotPolicyId = Objects.requireNonNull(filesystemSnapshotPolicyId);
+            if (filesystemSnapshotPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "filesystemSnapshotPolicyId");
+            }
+            this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCloneParent(Boolean isCloneParent) {
-            this.isCloneParent = Objects.requireNonNull(isCloneParent);
+            if (isCloneParent == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "isCloneParent");
+            }
+            this.isCloneParent = isCloneParent;
             return this;
         }
         @CustomType.Setter
         public Builder isHydrated(Boolean isHydrated) {
-            this.isHydrated = Objects.requireNonNull(isHydrated);
+            if (isHydrated == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "isHydrated");
+            }
+            this.isHydrated = isHydrated;
             return this;
         }
         @CustomType.Setter
         public Builder isTargetable(Boolean isTargetable) {
-            this.isTargetable = Objects.requireNonNull(isTargetable);
+            if (isTargetable == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "isTargetable");
+            }
+            this.isTargetable = isTargetable;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder meteredBytes(String meteredBytes) {
-            this.meteredBytes = Objects.requireNonNull(meteredBytes);
+            if (meteredBytes == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "meteredBytes");
+            }
+            this.meteredBytes = meteredBytes;
             return this;
         }
         @CustomType.Setter
         public Builder replicationTargetId(String replicationTargetId) {
-            this.replicationTargetId = Objects.requireNonNull(replicationTargetId);
+            if (replicationTargetId == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "replicationTargetId");
+            }
+            this.replicationTargetId = replicationTargetId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDetails(List<GetFileSystemsFileSystemSourceDetail> sourceDetails) {
-            this.sourceDetails = Objects.requireNonNull(sourceDetails);
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
             return this;
         }
         public Builder sourceDetails(GetFileSystemsFileSystemSourceDetail... sourceDetails) {
@@ -363,17 +409,26 @@ public final class GetFileSystemsFileSystem {
         }
         @CustomType.Setter
         public Builder sourceSnapshotId(String sourceSnapshotId) {
-            this.sourceSnapshotId = Objects.requireNonNull(sourceSnapshotId);
+            if (sourceSnapshotId == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "sourceSnapshotId");
+            }
+            this.sourceSnapshotId = sourceSnapshotId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetFileSystemsFileSystem build() {

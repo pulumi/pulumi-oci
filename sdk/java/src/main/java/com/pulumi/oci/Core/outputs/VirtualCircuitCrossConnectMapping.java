@@ -169,36 +169,43 @@ public final class VirtualCircuitCrossConnectMapping {
 
         @CustomType.Setter
         public Builder bgpMd5authKey(@Nullable String bgpMd5authKey) {
+
             this.bgpMd5authKey = bgpMd5authKey;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectOrCrossConnectGroupId(@Nullable String crossConnectOrCrossConnectGroupId) {
+
             this.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder customerBgpPeeringIp(@Nullable String customerBgpPeeringIp) {
+
             this.customerBgpPeeringIp = customerBgpPeeringIp;
             return this;
         }
         @CustomType.Setter
         public Builder customerBgpPeeringIpv6(@Nullable String customerBgpPeeringIpv6) {
+
             this.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
             return this;
         }
         @CustomType.Setter
         public Builder oracleBgpPeeringIp(@Nullable String oracleBgpPeeringIp) {
+
             this.oracleBgpPeeringIp = oracleBgpPeeringIp;
             return this;
         }
         @CustomType.Setter
         public Builder oracleBgpPeeringIpv6(@Nullable String oracleBgpPeeringIpv6) {
+
             this.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
             return this;
         }
         @CustomType.Setter
         public Builder vlan(@Nullable Integer vlan) {
+
             this.vlan = vlan;
             return this;
         }

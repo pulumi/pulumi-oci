@@ -5,6 +5,7 @@ package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.inputs.ApplicationImagePolicyConfigKeyDetailArgs;
 import java.lang.Boolean;
 import java.util.List;
@@ -125,7 +126,9 @@ public final class ApplicationImagePolicyConfigArgs extends com.pulumi.resources
         }
 
         public ApplicationImagePolicyConfigArgs build() {
-            $.isPolicyEnabled = Objects.requireNonNull($.isPolicyEnabled, "expected parameter 'isPolicyEnabled' to be non-null");
+            if ($.isPolicyEnabled == null) {
+                throw new MissingRequiredPropertyException("ApplicationImagePolicyConfigArgs", "isPolicyEnabled");
+            }
             return $;
         }
     }

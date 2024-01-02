@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -86,21 +87,27 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilter {
 
         @CustomType.Setter
         public Builder filterType(String filterType) {
-            this.filterType = Objects.requireNonNull(filterType);
+            if (filterType == null) {
+              throw new MissingRequiredPropertyException("SoftwareSourceCustomSoftwareSourceFilterPackageFilter", "filterType");
+            }
+            this.filterType = filterType;
             return this;
         }
         @CustomType.Setter
         public Builder packageName(@Nullable String packageName) {
+
             this.packageName = packageName;
             return this;
         }
         @CustomType.Setter
         public Builder packageNamePattern(@Nullable String packageNamePattern) {
+
             this.packageNamePattern = packageNamePattern;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(@Nullable String packageVersion) {
+
             this.packageVersion = packageVersion;
             return this;
         }

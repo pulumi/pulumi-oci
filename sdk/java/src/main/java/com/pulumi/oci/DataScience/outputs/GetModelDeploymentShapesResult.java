@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentShapesFilter;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentShapesModelDeploymentShape;
 import java.lang.String;
@@ -72,11 +73,15 @@ public final class GetModelDeploymentShapesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetModelDeploymentShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -85,12 +90,18 @@ public final class GetModelDeploymentShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder modelDeploymentShapes(List<GetModelDeploymentShapesModelDeploymentShape> modelDeploymentShapes) {
-            this.modelDeploymentShapes = Objects.requireNonNull(modelDeploymentShapes);
+            if (modelDeploymentShapes == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentShapesResult", "modelDeploymentShapes");
+            }
+            this.modelDeploymentShapes = modelDeploymentShapes;
             return this;
         }
         public Builder modelDeploymentShapes(GetModelDeploymentShapesModelDeploymentShape... modelDeploymentShapes) {

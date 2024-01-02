@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemConnectorConnectionInfoArgs;
 import java.lang.String;
 import java.util.List;
@@ -248,8 +249,12 @@ public final class ExternalDbSystemConnectorArgs extends com.pulumi.resources.Re
         }
 
         public ExternalDbSystemConnectorArgs build() {
-            $.connectorType = Objects.requireNonNull($.connectorType, "expected parameter 'connectorType' to be non-null");
-            $.externalDbSystemId = Objects.requireNonNull($.externalDbSystemId, "expected parameter 'externalDbSystemId' to be non-null");
+            if ($.connectorType == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemConnectorArgs", "connectorType");
+            }
+            if ($.externalDbSystemId == null) {
+                throw new MissingRequiredPropertyException("ExternalDbSystemConnectorArgs", "externalDbSystemId");
+            }
             return $;
         }
     }

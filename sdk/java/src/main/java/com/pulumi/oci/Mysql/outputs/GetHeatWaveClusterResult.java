@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetHeatWaveClusterClusterNode;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -164,7 +165,10 @@ public final class GetHeatWaveClusterResult {
 
         @CustomType.Setter
         public Builder clusterNodes(List<GetHeatWaveClusterClusterNode> clusterNodes) {
-            this.clusterNodes = Objects.requireNonNull(clusterNodes);
+            if (clusterNodes == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "clusterNodes");
+            }
+            this.clusterNodes = clusterNodes;
             return this;
         }
         public Builder clusterNodes(GetHeatWaveClusterClusterNode... clusterNodes) {
@@ -172,47 +176,74 @@ public final class GetHeatWaveClusterResult {
         }
         @CustomType.Setter
         public Builder clusterSize(Integer clusterSize) {
-            this.clusterSize = Objects.requireNonNull(clusterSize);
+            if (clusterSize == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "clusterSize");
+            }
+            this.clusterSize = clusterSize;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
-            this.isLakehouseEnabled = Objects.requireNonNull(isLakehouseEnabled);
+            if (isLakehouseEnabled == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "isLakehouseEnabled");
+            }
+            this.isLakehouseEnabled = isLakehouseEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetHeatWaveClusterResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetHeatWaveClusterResult build() {

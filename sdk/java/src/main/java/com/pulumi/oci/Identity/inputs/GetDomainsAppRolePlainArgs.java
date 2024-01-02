@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -211,8 +212,12 @@ public final class GetDomainsAppRolePlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetDomainsAppRolePlainArgs build() {
-            $.appRoleId = Objects.requireNonNull($.appRoleId, "expected parameter 'appRoleId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.appRoleId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsAppRolePlainArgs", "appRoleId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsAppRolePlainArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

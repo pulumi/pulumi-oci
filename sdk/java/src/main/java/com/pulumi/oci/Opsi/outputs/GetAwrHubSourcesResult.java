@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubSourcesAwrHubSourceSummaryCollection;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubSourcesFilter;
 import java.lang.String;
@@ -149,17 +150,24 @@ public final class GetAwrHubSourcesResult {
 
         @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
-            this.awrHubId = Objects.requireNonNull(awrHubId);
+            if (awrHubId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourcesResult", "awrHubId");
+            }
+            this.awrHubId = awrHubId;
             return this;
         }
         @CustomType.Setter
         public Builder awrHubSourceId(@Nullable String awrHubSourceId) {
+
             this.awrHubSourceId = awrHubSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder awrHubSourceSummaryCollections(List<GetAwrHubSourcesAwrHubSourceSummaryCollection> awrHubSourceSummaryCollections) {
-            this.awrHubSourceSummaryCollections = Objects.requireNonNull(awrHubSourceSummaryCollections);
+            if (awrHubSourceSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourcesResult", "awrHubSourceSummaryCollections");
+            }
+            this.awrHubSourceSummaryCollections = awrHubSourceSummaryCollections;
             return this;
         }
         public Builder awrHubSourceSummaryCollections(GetAwrHubSourcesAwrHubSourceSummaryCollection... awrHubSourceSummaryCollections) {
@@ -167,11 +175,13 @@ public final class GetAwrHubSourcesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAwrHubSourcesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -180,16 +190,21 @@ public final class GetAwrHubSourcesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubSourcesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder sourceTypes(@Nullable List<String> sourceTypes) {
+
             this.sourceTypes = sourceTypes;
             return this;
         }
@@ -198,6 +213,7 @@ public final class GetAwrHubSourcesResult {
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -206,6 +222,7 @@ public final class GetAwrHubSourcesResult {
         }
         @CustomType.Setter
         public Builder statuses(@Nullable List<String> statuses) {
+
             this.statuses = statuses;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.outputs.GetPingProbeResultsFilter;
 import com.pulumi.oci.HealthChecks.outputs.GetPingProbeResultsPingProbeResult;
 import java.lang.Double;
@@ -108,6 +109,7 @@ public final class GetPingProbeResultsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPingProbeResultsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,12 +118,18 @@ public final class GetPingProbeResultsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder pingProbeResults(List<GetPingProbeResultsPingProbeResult> pingProbeResults) {
-            this.pingProbeResults = Objects.requireNonNull(pingProbeResults);
+            if (pingProbeResults == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsResult", "pingProbeResults");
+            }
+            this.pingProbeResults = pingProbeResults;
             return this;
         }
         public Builder pingProbeResults(GetPingProbeResultsPingProbeResult... pingProbeResults) {
@@ -129,21 +137,27 @@ public final class GetPingProbeResultsResult {
         }
         @CustomType.Setter
         public Builder probeConfigurationId(String probeConfigurationId) {
-            this.probeConfigurationId = Objects.requireNonNull(probeConfigurationId);
+            if (probeConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetPingProbeResultsResult", "probeConfigurationId");
+            }
+            this.probeConfigurationId = probeConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder startTimeGreaterThanOrEqualTo(@Nullable Double startTimeGreaterThanOrEqualTo) {
+
             this.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder startTimeLessThanOrEqualTo(@Nullable Double startTimeLessThanOrEqualTo) {
+
             this.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder target(@Nullable String target) {
+
             this.target = target;
             return this;
         }

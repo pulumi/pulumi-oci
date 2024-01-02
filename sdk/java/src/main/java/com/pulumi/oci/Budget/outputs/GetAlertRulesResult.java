@@ -4,6 +4,7 @@
 package com.pulumi.oci.Budget.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Budget.outputs.GetAlertRulesAlertRule;
 import com.pulumi.oci.Budget.outputs.GetAlertRulesFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetAlertRulesResult {
 
         @CustomType.Setter
         public Builder alertRules(List<GetAlertRulesAlertRule> alertRules) {
-            this.alertRules = Objects.requireNonNull(alertRules);
+            if (alertRules == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesResult", "alertRules");
+            }
+            this.alertRules = alertRules;
             return this;
         }
         public Builder alertRules(GetAlertRulesAlertRule... alertRules) {
@@ -117,16 +121,21 @@ public final class GetAlertRulesResult {
         }
         @CustomType.Setter
         public Builder budgetId(String budgetId) {
-            this.budgetId = Objects.requireNonNull(budgetId);
+            if (budgetId == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesResult", "budgetId");
+            }
+            this.budgetId = budgetId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAlertRulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetAlertRulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

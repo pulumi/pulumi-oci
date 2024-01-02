@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetDiscoveryJobLogsDiscoveryJobLogCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollection {
 
         @CustomType.Setter
         public Builder items(List<GetDiscoveryJobLogsDiscoveryJobLogCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobLogsDiscoveryJobLogCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetDiscoveryJobLogsDiscoveryJobLogCollectionItem... items) {

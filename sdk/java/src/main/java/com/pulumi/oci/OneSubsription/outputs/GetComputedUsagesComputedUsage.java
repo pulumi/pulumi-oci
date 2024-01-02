@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetComputedUsagesComputedUsageParentProduct;
 import com.pulumi.oci.OneSubsription.outputs.GetComputedUsagesComputedUsageProduct;
 import java.lang.Boolean;
@@ -388,67 +389,106 @@ public final class GetComputedUsagesComputedUsage {
 
         @CustomType.Setter
         public Builder commitmentServiceId(String commitmentServiceId) {
-            this.commitmentServiceId = Objects.requireNonNull(commitmentServiceId);
+            if (commitmentServiceId == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "commitmentServiceId");
+            }
+            this.commitmentServiceId = commitmentServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder computeSource(String computeSource) {
-            this.computeSource = Objects.requireNonNull(computeSource);
+            if (computeSource == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "computeSource");
+            }
+            this.computeSource = computeSource;
             return this;
         }
         @CustomType.Setter
         public Builder computedUsageId(String computedUsageId) {
-            this.computedUsageId = Objects.requireNonNull(computedUsageId);
+            if (computedUsageId == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "computedUsageId");
+            }
+            this.computedUsageId = computedUsageId;
             return this;
         }
         @CustomType.Setter
         public Builder cost(String cost) {
-            this.cost = Objects.requireNonNull(cost);
+            if (cost == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "cost");
+            }
+            this.cost = cost;
             return this;
         }
         @CustomType.Setter
         public Builder costRounded(String costRounded) {
-            this.costRounded = Objects.requireNonNull(costRounded);
+            if (costRounded == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "costRounded");
+            }
+            this.costRounded = costRounded;
             return this;
         }
         @CustomType.Setter
         public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+            if (currencyCode == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "currencyCode");
+            }
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+            if (dataCenter == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "dataCenter");
+            }
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isInvoiced(Boolean isInvoiced) {
-            this.isInvoiced = Objects.requireNonNull(isInvoiced);
+            if (isInvoiced == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "isInvoiced");
+            }
+            this.isInvoiced = isInvoiced;
             return this;
         }
         @CustomType.Setter
         public Builder mqsMessageId(String mqsMessageId) {
-            this.mqsMessageId = Objects.requireNonNull(mqsMessageId);
+            if (mqsMessageId == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "mqsMessageId");
+            }
+            this.mqsMessageId = mqsMessageId;
             return this;
         }
         @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder originalUsageNumber(String originalUsageNumber) {
-            this.originalUsageNumber = Objects.requireNonNull(originalUsageNumber);
+            if (originalUsageNumber == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "originalUsageNumber");
+            }
+            this.originalUsageNumber = originalUsageNumber;
             return this;
         }
         @CustomType.Setter
         public Builder parentProducts(List<GetComputedUsagesComputedUsageParentProduct> parentProducts) {
-            this.parentProducts = Objects.requireNonNull(parentProducts);
+            if (parentProducts == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "parentProducts");
+            }
+            this.parentProducts = parentProducts;
             return this;
         }
         public Builder parentProducts(GetComputedUsagesComputedUsageParentProduct... parentProducts) {
@@ -456,17 +496,26 @@ public final class GetComputedUsagesComputedUsage {
         }
         @CustomType.Setter
         public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
-            this.parentSubscribedServiceId = Objects.requireNonNull(parentSubscribedServiceId);
+            if (parentSubscribedServiceId == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "parentSubscribedServiceId");
+            }
+            this.parentSubscribedServiceId = parentSubscribedServiceId;
             return this;
         }
         @CustomType.Setter
         public Builder planNumber(String planNumber) {
-            this.planNumber = Objects.requireNonNull(planNumber);
+            if (planNumber == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "planNumber");
+            }
+            this.planNumber = planNumber;
             return this;
         }
         @CustomType.Setter
         public Builder products(List<GetComputedUsagesComputedUsageProduct> products) {
-            this.products = Objects.requireNonNull(products);
+            if (products == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "products");
+            }
+            this.products = products;
             return this;
         }
         public Builder products(GetComputedUsagesComputedUsageProduct... products) {
@@ -474,52 +523,82 @@ public final class GetComputedUsagesComputedUsage {
         }
         @CustomType.Setter
         public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder rateCardId(String rateCardId) {
-            this.rateCardId = Objects.requireNonNull(rateCardId);
+            if (rateCardId == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "rateCardId");
+            }
+            this.rateCardId = rateCardId;
             return this;
         }
         @CustomType.Setter
         public Builder rateCardTierdId(String rateCardTierdId) {
-            this.rateCardTierdId = Objects.requireNonNull(rateCardTierdId);
+            if (rateCardTierdId == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "rateCardTierdId");
+            }
+            this.rateCardTierdId = rateCardTierdId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeMeteredOn(String timeMeteredOn) {
-            this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
+            if (timeMeteredOn == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "timeMeteredOn");
+            }
+            this.timeMeteredOn = timeMeteredOn;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfArrival(String timeOfArrival) {
-            this.timeOfArrival = Objects.requireNonNull(timeOfArrival);
+            if (timeOfArrival == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "timeOfArrival");
+            }
+            this.timeOfArrival = timeOfArrival;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder unitOfMeasure(String unitOfMeasure) {
-            this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
+            if (unitOfMeasure == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "unitOfMeasure");
+            }
+            this.unitOfMeasure = unitOfMeasure;
             return this;
         }
         @CustomType.Setter
         public Builder usageNumber(String usageNumber) {
-            this.usageNumber = Objects.requireNonNull(usageNumber);
+            if (usageNumber == null) {
+              throw new MissingRequiredPropertyException("GetComputedUsagesComputedUsage", "usageNumber");
+            }
+            this.usageNumber = usageNumber;
             return this;
         }
         public GetComputedUsagesComputedUsage build() {

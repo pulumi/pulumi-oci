@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -128,37 +129,58 @@ public final class GetBackendSetsBackendsetBackend {
 
         @CustomType.Setter
         public Builder backup(Boolean backup) {
-            this.backup = Objects.requireNonNull(backup);
+            if (backup == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetBackend", "backup");
+            }
+            this.backup = backup;
             return this;
         }
         @CustomType.Setter
         public Builder drain(Boolean drain) {
-            this.drain = Objects.requireNonNull(drain);
+            if (drain == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetBackend", "drain");
+            }
+            this.drain = drain;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetBackend", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetBackend", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder offline(Boolean offline) {
-            this.offline = Objects.requireNonNull(offline);
+            if (offline == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetBackend", "offline");
+            }
+            this.offline = offline;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetBackend", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder weight(Integer weight) {
-            this.weight = Objects.requireNonNull(weight);
+            if (weight == null) {
+              throw new MissingRequiredPropertyException("GetBackendSetsBackendsetBackend", "weight");
+            }
+            this.weight = weight;
             return this;
         }
         public GetBackendSetsBackendsetBackend build() {

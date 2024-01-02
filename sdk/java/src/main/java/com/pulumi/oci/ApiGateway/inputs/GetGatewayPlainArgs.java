@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetGatewayPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetGatewayPlainArgs build() {
-            $.gatewayId = Objects.requireNonNull($.gatewayId, "expected parameter 'gatewayId' to be non-null");
+            if ($.gatewayId == null) {
+                throw new MissingRequiredPropertyException("GetGatewayPlainArgs", "gatewayId");
+            }
             return $;
         }
     }

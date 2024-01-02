@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetad
 
         @CustomType.Setter
         public Builder objectCount(String objectCount) {
-            this.objectCount = Objects.requireNonNull(objectCount);
+            if (objectCount == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList", "objectCount");
+            }
+            this.objectCount = objectCount;
             return this;
         }
         @CustomType.Setter
         public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+            if (objectType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList", "objectType");
+            }
+            this.objectType = objectType;
             return this;
         }
         public GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList build() {

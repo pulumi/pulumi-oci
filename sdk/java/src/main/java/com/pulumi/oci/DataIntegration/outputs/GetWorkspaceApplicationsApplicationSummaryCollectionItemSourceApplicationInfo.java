@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,27 +91,42 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemSourc
 
         @CustomType.Setter
         public Builder applicationKey(String applicationKey) {
-            this.applicationKey = Objects.requireNonNull(applicationKey);
+            if (applicationKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo", "applicationKey");
+            }
+            this.applicationKey = applicationKey;
             return this;
         }
         @CustomType.Setter
         public Builder applicationVersion(String applicationVersion) {
-            this.applicationVersion = Objects.requireNonNull(applicationVersion);
+            if (applicationVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo", "applicationVersion");
+            }
+            this.applicationVersion = applicationVersion;
             return this;
         }
         @CustomType.Setter
         public Builder copyType(String copyType) {
-            this.copyType = Objects.requireNonNull(copyType);
+            if (copyType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo", "copyType");
+            }
+            this.copyType = copyType;
             return this;
         }
         @CustomType.Setter
         public Builder lastPatchKey(String lastPatchKey) {
-            this.lastPatchKey = Objects.requireNonNull(lastPatchKey);
+            if (lastPatchKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo", "lastPatchKey");
+            }
+            this.lastPatchKey = lastPatchKey;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo build() {

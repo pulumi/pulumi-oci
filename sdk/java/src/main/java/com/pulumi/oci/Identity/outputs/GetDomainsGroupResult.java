@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsGroupMember;
@@ -401,6 +402,7 @@ public final class GetDomainsGroupResult {
 
         @CustomType.Setter
         public Builder attributeSets(@Nullable List<String> attributeSets) {
+
             this.attributeSets = attributeSets;
             return this;
         }
@@ -409,52 +411,78 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder attributes(@Nullable String attributes) {
+
             this.attributes = attributes;
             return this;
         }
         @CustomType.Setter
         public Builder authorization(@Nullable String authorization) {
+
             this.authorization = authorization;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+            if (compartmentOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "compartmentOcid");
+            }
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
         public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+            if (deleteInProgress == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "deleteInProgress");
+            }
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+            if (domainOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "domainOcid");
+            }
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+            if (externalId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "externalId");
+            }
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder groupId(String groupId) {
-            this.groupId = Objects.requireNonNull(groupId);
+            if (groupId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "groupId");
+            }
+            this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idcsCreatedBies(List<GetDomainsGroupIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+            if (idcsCreatedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "idcsCreatedBies");
+            }
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsGroupIdcsCreatedBy... idcsCreatedBies) {
@@ -462,12 +490,18 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder idcsEndpoint(String idcsEndpoint) {
-            this.idcsEndpoint = Objects.requireNonNull(idcsEndpoint);
+            if (idcsEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "idcsEndpoint");
+            }
+            this.idcsEndpoint = idcsEndpoint;
             return this;
         }
         @CustomType.Setter
         public Builder idcsLastModifiedBies(List<GetDomainsGroupIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+            if (idcsLastModifiedBies == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "idcsLastModifiedBies");
+            }
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsGroupIdcsLastModifiedBy... idcsLastModifiedBies) {
@@ -475,12 +509,18 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+            if (idcsLastUpgradedInRelease == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "idcsLastUpgradedInRelease");
+            }
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
         public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+            if (idcsPreventedOperations == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "idcsPreventedOperations");
+            }
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
@@ -488,7 +528,10 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder members(List<GetDomainsGroupMember> members) {
-            this.members = Objects.requireNonNull(members);
+            if (members == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "members");
+            }
+            this.members = members;
             return this;
         }
         public Builder members(GetDomainsGroupMember... members) {
@@ -496,7 +539,10 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder metas(List<GetDomainsGroupMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+            if (metas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "metas");
+            }
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsGroupMeta... metas) {
@@ -504,22 +550,32 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder nonUniqueDisplayName(String nonUniqueDisplayName) {
-            this.nonUniqueDisplayName = Objects.requireNonNull(nonUniqueDisplayName);
+            if (nonUniqueDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "nonUniqueDisplayName");
+            }
+            this.nonUniqueDisplayName = nonUniqueDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+            if (ocid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "ocid");
+            }
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder resourceTypeSchemaVersion(@Nullable String resourceTypeSchemaVersion) {
+
             this.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
@@ -527,7 +583,10 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder tags(List<GetDomainsGroupTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+            if (tags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "tags");
+            }
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsGroupTag... tags) {
@@ -535,12 +594,18 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+            if (tenancyOcid == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "tenancyOcid");
+            }
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag> urnietfparamsscimschemasoracleidcsextensionOciTags) {
-            this.urnietfparamsscimschemasoracleidcsextensionOciTags = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionOciTags);
+            if (urnietfparamsscimschemasoracleidcsextensionOciTags == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "urnietfparamsscimschemasoracleidcsextensionOciTags");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionOciTags = urnietfparamsscimschemasoracleidcsextensionOciTags;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionOciTags(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTag... urnietfparamsscimschemasoracleidcsextensionOciTags) {
@@ -548,7 +613,10 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensiondbcsGroups(List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup> urnietfparamsscimschemasoracleidcsextensiondbcsGroups) {
-            this.urnietfparamsscimschemasoracleidcsextensiondbcsGroups = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiondbcsGroups);
+            if (urnietfparamsscimschemasoracleidcsextensiondbcsGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "urnietfparamsscimschemasoracleidcsextensiondbcsGroups");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensiondbcsGroups = urnietfparamsscimschemasoracleidcsextensiondbcsGroups;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiondbcsGroups(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup... urnietfparamsscimschemasoracleidcsextensiondbcsGroups) {
@@ -556,7 +624,10 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensiondynamicGroups(List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup> urnietfparamsscimschemasoracleidcsextensiondynamicGroups) {
-            this.urnietfparamsscimschemasoracleidcsextensiondynamicGroups = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiondynamicGroups);
+            if (urnietfparamsscimschemasoracleidcsextensiondynamicGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "urnietfparamsscimschemasoracleidcsextensiondynamicGroups");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensiondynamicGroups = urnietfparamsscimschemasoracleidcsextensiondynamicGroups;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiondynamicGroups(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup... urnietfparamsscimschemasoracleidcsextensiondynamicGroups) {
@@ -564,7 +635,10 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensiongroupGroups(List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups) {
-            this.urnietfparamsscimschemasoracleidcsextensiongroupGroups = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiongroupGroups);
+            if (urnietfparamsscimschemasoracleidcsextensiongroupGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "urnietfparamsscimschemasoracleidcsextensiongroupGroups");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensiongroupGroups = urnietfparamsscimschemasoracleidcsextensiongroupGroups;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiongroupGroups(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup... urnietfparamsscimschemasoracleidcsextensiongroupGroups) {
@@ -572,7 +646,10 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionposixGroups(List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup> urnietfparamsscimschemasoracleidcsextensionposixGroups) {
-            this.urnietfparamsscimschemasoracleidcsextensionposixGroups = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionposixGroups);
+            if (urnietfparamsscimschemasoracleidcsextensionposixGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "urnietfparamsscimschemasoracleidcsextensionposixGroups");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionposixGroups = urnietfparamsscimschemasoracleidcsextensionposixGroups;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionposixGroups(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup... urnietfparamsscimschemasoracleidcsextensionposixGroups) {
@@ -580,7 +657,10 @@ public final class GetDomainsGroupResult {
         }
         @CustomType.Setter
         public Builder urnietfparamsscimschemasoracleidcsextensionrequestableGroups(List<GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup> urnietfparamsscimschemasoracleidcsextensionrequestableGroups) {
-            this.urnietfparamsscimschemasoracleidcsextensionrequestableGroups = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionrequestableGroups);
+            if (urnietfparamsscimschemasoracleidcsextensionrequestableGroups == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupResult", "urnietfparamsscimschemasoracleidcsextensionrequestableGroups");
+            }
+            this.urnietfparamsscimschemasoracleidcsextensionrequestableGroups = urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionrequestableGroups(GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup... urnietfparamsscimschemasoracleidcsextensionrequestableGroups) {

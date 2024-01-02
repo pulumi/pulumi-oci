@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimension;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -256,27 +257,42 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
 
         @CustomType.Setter
         public Builder batchRolloverSizeInMbs(Integer batchRolloverSizeInMbs) {
-            this.batchRolloverSizeInMbs = Objects.requireNonNull(batchRolloverSizeInMbs);
+            if (batchRolloverSizeInMbs == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "batchRolloverSizeInMbs");
+            }
+            this.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder batchRolloverTimeInMs(Integer batchRolloverTimeInMs) {
-            this.batchRolloverTimeInMs = Objects.requireNonNull(batchRolloverTimeInMs);
+            if (batchRolloverTimeInMs == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "batchRolloverTimeInMs");
+            }
+            this.batchRolloverTimeInMs = batchRolloverTimeInMs;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dimensions(List<GetServiceConnectorsServiceConnectorCollectionItemTargetDimension> dimensions) {
-            this.dimensions = Objects.requireNonNull(dimensions);
+            if (dimensions == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "dimensions");
+            }
+            this.dimensions = dimensions;
             return this;
         }
         public Builder dimensions(GetServiceConnectorsServiceConnectorCollectionItemTargetDimension... dimensions) {
@@ -284,57 +300,90 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTarget {
         }
         @CustomType.Setter
         public Builder enableFormattedMessaging(Boolean enableFormattedMessaging) {
-            this.enableFormattedMessaging = Objects.requireNonNull(enableFormattedMessaging);
+            if (enableFormattedMessaging == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "enableFormattedMessaging");
+            }
+            this.enableFormattedMessaging = enableFormattedMessaging;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(String functionId) {
-            this.functionId = Objects.requireNonNull(functionId);
+            if (functionId == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "functionId");
+            }
+            this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logSourceIdentifier(String logSourceIdentifier) {
-            this.logSourceIdentifier = Objects.requireNonNull(logSourceIdentifier);
+            if (logSourceIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "logSourceIdentifier");
+            }
+            this.logSourceIdentifier = logSourceIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder metric(String metric) {
-            this.metric = Objects.requireNonNull(metric);
+            if (metric == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "metric");
+            }
+            this.metric = metric;
             return this;
         }
         @CustomType.Setter
         public Builder metricNamespace(String metricNamespace) {
-            this.metricNamespace = Objects.requireNonNull(metricNamespace);
+            if (metricNamespace == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "metricNamespace");
+            }
+            this.metricNamespace = metricNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectNamePrefix(String objectNamePrefix) {
-            this.objectNamePrefix = Objects.requireNonNull(objectNamePrefix);
+            if (objectNamePrefix == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "objectNamePrefix");
+            }
+            this.objectNamePrefix = objectNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder streamId(String streamId) {
-            this.streamId = Objects.requireNonNull(streamId);
+            if (streamId == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "streamId");
+            }
+            this.streamId = streamId;
             return this;
         }
         @CustomType.Setter
         public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+            if (topicId == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemTarget", "topicId");
+            }
+            this.topicId = topicId;
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemTarget build() {

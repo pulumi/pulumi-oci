@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemConfig;
 import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement;
 import com.pulumi.oci.Functions.outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger;
@@ -216,12 +217,18 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItem {
 
         @CustomType.Setter
         public Builder changeSummary(String changeSummary) {
-            this.changeSummary = Objects.requireNonNull(changeSummary);
+            if (changeSummary == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "changeSummary");
+            }
+            this.changeSummary = changeSummary;
             return this;
         }
         @CustomType.Setter
         public Builder configs(List<GetPbfListingVersionsPbfListingVersionsCollectionItemConfig> configs) {
-            this.configs = Objects.requireNonNull(configs);
+            if (configs == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "configs");
+            }
+            this.configs = configs;
             return this;
         }
         public Builder configs(GetPbfListingVersionsPbfListingVersionsCollectionItemConfig... configs) {
@@ -229,32 +236,50 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItem {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pbfListingId(String pbfListingId) {
-            this.pbfListingId = Objects.requireNonNull(pbfListingId);
+            if (pbfListingId == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "pbfListingId");
+            }
+            this.pbfListingId = pbfListingId;
             return this;
         }
         @CustomType.Setter
         public Builder requirements(List<GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement> requirements) {
-            this.requirements = Objects.requireNonNull(requirements);
+            if (requirements == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "requirements");
+            }
+            this.requirements = requirements;
             return this;
         }
         public Builder requirements(GetPbfListingVersionsPbfListingVersionsCollectionItemRequirement... requirements) {
@@ -262,27 +287,42 @@ public final class GetPbfListingVersionsPbfListingVersionsCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder triggers(List<GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger> triggers) {
-            this.triggers = Objects.requireNonNull(triggers);
+            if (triggers == null) {
+              throw new MissingRequiredPropertyException("GetPbfListingVersionsPbfListingVersionsCollectionItem", "triggers");
+            }
+            this.triggers = triggers;
             return this;
         }
         public Builder triggers(GetPbfListingVersionsPbfListingVersionsCollectionItemTrigger... triggers) {

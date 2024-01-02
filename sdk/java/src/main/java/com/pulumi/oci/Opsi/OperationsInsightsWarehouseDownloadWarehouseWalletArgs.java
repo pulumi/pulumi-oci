@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -123,8 +124,12 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletArgs extend
         }
 
         public OperationsInsightsWarehouseDownloadWarehouseWalletArgs build() {
-            $.operationsInsightsWarehouseId = Objects.requireNonNull($.operationsInsightsWarehouseId, "expected parameter 'operationsInsightsWarehouseId' to be non-null");
-            $.operationsInsightsWarehouseWalletPassword = Objects.requireNonNull($.operationsInsightsWarehouseWalletPassword, "expected parameter 'operationsInsightsWarehouseWalletPassword' to be non-null");
+            if ($.operationsInsightsWarehouseId == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseDownloadWarehouseWalletArgs", "operationsInsightsWarehouseId");
+            }
+            if ($.operationsInsightsWarehouseWalletPassword == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsWarehouseDownloadWarehouseWalletArgs", "operationsInsightsWarehouseWalletPassword");
+            }
             return $;
         }
     }

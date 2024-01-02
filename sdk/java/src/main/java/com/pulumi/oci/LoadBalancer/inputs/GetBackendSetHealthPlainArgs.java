@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetBackendSetHealthPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetBackendSetHealthPlainArgs build() {
-            $.backendSetName = Objects.requireNonNull($.backendSetName, "expected parameter 'backendSetName' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
+            if ($.backendSetName == null) {
+                throw new MissingRequiredPropertyException("GetBackendSetHealthPlainArgs", "backendSetName");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("GetBackendSetHealthPlainArgs", "loadBalancerId");
+            }
             return $;
         }
     }

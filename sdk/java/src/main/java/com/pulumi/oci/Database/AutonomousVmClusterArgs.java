@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousVmClusterMaintenanceWindowDetailArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -781,10 +782,18 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         public AutonomousVmClusterArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.exadataInfrastructureId = Objects.requireNonNull($.exadataInfrastructureId, "expected parameter 'exadataInfrastructureId' to be non-null");
-            $.vmClusterNetworkId = Objects.requireNonNull($.vmClusterNetworkId, "expected parameter 'vmClusterNetworkId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AutonomousVmClusterArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AutonomousVmClusterArgs", "displayName");
+            }
+            if ($.exadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("AutonomousVmClusterArgs", "exadataInfrastructureId");
+            }
+            if ($.vmClusterNetworkId == null) {
+                throw new MissingRequiredPropertyException("AutonomousVmClusterArgs", "vmClusterNetworkId");
+            }
             return $;
         }
     }

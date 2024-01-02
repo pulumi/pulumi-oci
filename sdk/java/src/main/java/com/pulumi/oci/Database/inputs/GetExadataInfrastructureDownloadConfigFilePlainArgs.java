@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -79,7 +80,9 @@ public final class GetExadataInfrastructureDownloadConfigFilePlainArgs extends c
         }
 
         public GetExadataInfrastructureDownloadConfigFilePlainArgs build() {
-            $.exadataInfrastructureId = Objects.requireNonNull($.exadataInfrastructureId, "expected parameter 'exadataInfrastructureId' to be non-null");
+            if ($.exadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("GetExadataInfrastructureDownloadConfigFilePlainArgs", "exadataInfrastructureId");
+            }
             return $;
         }
     }

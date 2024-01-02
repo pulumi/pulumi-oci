@@ -4,6 +4,7 @@
 package com.pulumi.oci.Analytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWh
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder whitelistedIps(List<String> whitelistedIps) {
-            this.whitelistedIps = Objects.requireNonNull(whitelistedIps);
+            if (whitelistedIps == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn", "whitelistedIps");
+            }
+            this.whitelistedIps = whitelistedIps;
             return this;
         }
         public Builder whitelistedIps(String... whitelistedIps) {

@@ -5,6 +5,7 @@ package com.pulumi.oci.AiLanguage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.inputs.ModelTestStrategyTestingDatasetArgs;
 import com.pulumi.oci.AiLanguage.inputs.ModelTestStrategyValidationDatasetArgs;
 import java.lang.String;
@@ -152,8 +153,12 @@ public final class ModelTestStrategyArgs extends com.pulumi.resources.ResourceAr
         }
 
         public ModelTestStrategyArgs build() {
-            $.strategyType = Objects.requireNonNull($.strategyType, "expected parameter 'strategyType' to be non-null");
-            $.testingDataset = Objects.requireNonNull($.testingDataset, "expected parameter 'testingDataset' to be non-null");
+            if ($.strategyType == null) {
+                throw new MissingRequiredPropertyException("ModelTestStrategyArgs", "strategyType");
+            }
+            if ($.testingDataset == null) {
+                throw new MissingRequiredPropertyException("ModelTestStrategyArgs", "testingDataset");
+            }
             return $;
         }
     }

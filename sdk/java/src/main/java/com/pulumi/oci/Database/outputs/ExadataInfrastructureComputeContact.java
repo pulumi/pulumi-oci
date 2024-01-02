@@ -101,26 +101,31 @@ public final class ExadataInfrastructureComputeContact {
 
         @CustomType.Setter
         public Builder email(@Nullable String email) {
+
             this.email = email;
             return this;
         }
         @CustomType.Setter
         public Builder isContactMosValidated(@Nullable Boolean isContactMosValidated) {
+
             this.isContactMosValidated = isContactMosValidated;
             return this;
         }
         @CustomType.Setter
         public Builder isPrimary(@Nullable Boolean isPrimary) {
+
             this.isPrimary = isPrimary;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder phoneNumber(@Nullable String phoneNumber) {
+
             this.phoneNumber = phoneNumber;
             return this;
         }

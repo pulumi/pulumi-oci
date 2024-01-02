@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetBackupsBackupCollection;
 import com.pulumi.oci.Psql.outputs.GetBackupsFilter;
 import java.lang.String;
@@ -127,7 +128,10 @@ public final class GetBackupsResult {
 
         @CustomType.Setter
         public Builder backupCollections(List<GetBackupsBackupCollection> backupCollections) {
-            this.backupCollections = Objects.requireNonNull(backupCollections);
+            if (backupCollections == null) {
+              throw new MissingRequiredPropertyException("GetBackupsResult", "backupCollections");
+            }
+            this.backupCollections = backupCollections;
             return this;
         }
         public Builder backupCollections(GetBackupsBackupCollection... backupCollections) {
@@ -135,21 +139,25 @@ public final class GetBackupsResult {
         }
         @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
+
             this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBackupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -158,21 +166,25 @@ public final class GetBackupsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(@Nullable String timeEnded) {
+
             this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
+
             this.timeStarted = timeStarted;
             return this;
         }

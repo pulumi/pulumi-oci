@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationLoggingPolicies;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPolicies;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRoute;
@@ -75,17 +76,22 @@ public final class DeploymentSpecification {
 
         @CustomType.Setter
         public Builder loggingPolicies(@Nullable DeploymentSpecificationLoggingPolicies loggingPolicies) {
+
             this.loggingPolicies = loggingPolicies;
             return this;
         }
         @CustomType.Setter
         public Builder requestPolicies(@Nullable DeploymentSpecificationRequestPolicies requestPolicies) {
+
             this.requestPolicies = requestPolicies;
             return this;
         }
         @CustomType.Setter
         public Builder routes(List<DeploymentSpecificationRoute> routes) {
-            this.routes = Objects.requireNonNull(routes);
+            if (routes == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecification", "routes");
+            }
+            this.routes = routes;
             return this;
         }
         public Builder routes(DeploymentSpecificationRoute... routes) {

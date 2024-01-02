@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition;
 import java.lang.Boolean;
 import java.lang.String;
@@ -73,12 +74,18 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
 
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder parametersDefinitions(List<GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition> parametersDefinitions) {
-            this.parametersDefinitions = Objects.requireNonNull(parametersDefinitions);
+            if (parametersDefinitions == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy", "parametersDefinitions");
+            }
+            this.parametersDefinitions = parametersDefinitions;
             return this;
         }
         public Builder parametersDefinitions(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition... parametersDefinitions) {
@@ -86,7 +93,10 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
         }
         @CustomType.Setter
         public Builder strategyName(String strategyName) {
-            this.strategyName = Objects.requireNonNull(strategyName);
+            if (strategyName == null) {
+              throw new MissingRequiredPropertyException("GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy", "strategyName");
+            }
+            this.strategyName = strategyName;
             return this;
         }
         public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy build() {

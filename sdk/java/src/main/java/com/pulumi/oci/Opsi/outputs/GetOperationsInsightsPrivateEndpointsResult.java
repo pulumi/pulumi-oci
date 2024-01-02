@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsPrivateEndpointsFilter;
 import com.pulumi.oci.Opsi.outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection;
 import java.lang.Boolean;
@@ -150,21 +151,25 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOperationsInsightsPrivateEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -173,17 +178,24 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isUsedForRacDbs(@Nullable Boolean isUsedForRacDbs) {
+
             this.isUsedForRacDbs = isUsedForRacDbs;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsPrivateEndpointCollections(List<GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection> operationsInsightsPrivateEndpointCollections) {
-            this.operationsInsightsPrivateEndpointCollections = Objects.requireNonNull(operationsInsightsPrivateEndpointCollections);
+            if (operationsInsightsPrivateEndpointCollections == null) {
+              throw new MissingRequiredPropertyException("GetOperationsInsightsPrivateEndpointsResult", "operationsInsightsPrivateEndpointCollections");
+            }
+            this.operationsInsightsPrivateEndpointCollections = operationsInsightsPrivateEndpointCollections;
             return this;
         }
         public Builder operationsInsightsPrivateEndpointCollections(GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection... operationsInsightsPrivateEndpointCollections) {
@@ -191,11 +203,13 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
+
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -204,6 +218,7 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

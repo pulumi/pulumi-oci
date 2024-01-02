@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetDbSystemSource {
 
         @CustomType.Setter
         public Builder backupId(String backupId) {
-            this.backupId = Objects.requireNonNull(backupId);
+            if (backupId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemSource", "backupId");
+            }
+            this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder isHavingRestoreConfigOverrides(Boolean isHavingRestoreConfigOverrides) {
-            this.isHavingRestoreConfigOverrides = Objects.requireNonNull(isHavingRestoreConfigOverrides);
+            if (isHavingRestoreConfigOverrides == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemSource", "isHavingRestoreConfigOverrides");
+            }
+            this.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemSource", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public GetDbSystemSource build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -87,6 +88,7 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItem {
 
         @CustomType.Setter
         public Builder computeInstanceIds(@Nullable List<String> computeInstanceIds) {
+
             this.computeInstanceIds = computeInstanceIds;
             return this;
         }
@@ -95,17 +97,22 @@ public final class DeployEnvironmentComputeInstanceGroupSelectorsItem {
         }
         @CustomType.Setter
         public Builder query(@Nullable String query) {
+
             this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder selectorType(String selectorType) {
-            this.selectorType = Objects.requireNonNull(selectorType);
+            if (selectorType == null) {
+              throw new MissingRequiredPropertyException("DeployEnvironmentComputeInstanceGroupSelectorsItem", "selectorType");
+            }
+            this.selectorType = selectorType;
             return this;
         }
         public DeployEnvironmentComputeInstanceGroupSelectorsItem build() {

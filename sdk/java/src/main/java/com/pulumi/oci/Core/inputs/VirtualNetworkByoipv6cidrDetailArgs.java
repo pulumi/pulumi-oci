@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -71,8 +72,12 @@ public final class VirtualNetworkByoipv6cidrDetailArgs extends com.pulumi.resour
         }
 
         public VirtualNetworkByoipv6cidrDetailArgs build() {
-            $.byoipv6rangeId = Objects.requireNonNull($.byoipv6rangeId, "expected parameter 'byoipv6rangeId' to be non-null");
-            $.ipv6cidrBlock = Objects.requireNonNull($.ipv6cidrBlock, "expected parameter 'ipv6cidrBlock' to be non-null");
+            if ($.byoipv6rangeId == null) {
+                throw new MissingRequiredPropertyException("VirtualNetworkByoipv6cidrDetailArgs", "byoipv6rangeId");
+            }
+            if ($.ipv6cidrBlock == null) {
+                throw new MissingRequiredPropertyException("VirtualNetworkByoipv6cidrDetailArgs", "ipv6cidrBlock");
+            }
             return $;
         }
     }

@@ -161,16 +161,19 @@ public final class JobProgressPhase {
 
         @CustomType.Setter
         public Builder action(@Nullable String action) {
+
             this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder durationInMs(@Nullable Integer durationInMs) {
+
             this.durationInMs = durationInMs;
             return this;
         }
         @CustomType.Setter
         public Builder extracts(@Nullable List<JobProgressPhaseExtract> extracts) {
+
             this.extracts = extracts;
             return this;
         }
@@ -179,16 +182,19 @@ public final class JobProgressPhase {
         }
         @CustomType.Setter
         public Builder isAdvisorReportAvailable(@Nullable Boolean isAdvisorReportAvailable) {
+
             this.isAdvisorReportAvailable = isAdvisorReportAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder issue(@Nullable String issue) {
+
             this.issue = issue;
             return this;
         }
         @CustomType.Setter
         public Builder logLocations(@Nullable List<JobProgressPhaseLogLocation> logLocations) {
+
             this.logLocations = logLocations;
             return this;
         }
@@ -197,16 +203,19 @@ public final class JobProgressPhase {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder progress(@Nullable Integer progress) {
+
             this.progress = progress;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }

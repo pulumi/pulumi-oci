@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetVirtualDeploymentPlainArgs extends com.pulumi.resources.In
         }
 
         public GetVirtualDeploymentPlainArgs build() {
-            $.virtualDeploymentId = Objects.requireNonNull($.virtualDeploymentId, "expected parameter 'virtualDeploymentId' to be non-null");
+            if ($.virtualDeploymentId == null) {
+                throw new MissingRequiredPropertyException("GetVirtualDeploymentPlainArgs", "virtualDeploymentId");
+            }
             return $;
         }
     }

@@ -184,56 +184,67 @@ public final class TargetAssetEstimatedCostCompute {
 
         @CustomType.Setter
         public Builder gpuCount(@Nullable Double gpuCount) {
+
             this.gpuCount = gpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder gpuPerHour(@Nullable Double gpuPerHour) {
+
             this.gpuPerHour = gpuPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder gpuPerHourBySubscription(@Nullable Double gpuPerHourBySubscription) {
+
             this.gpuPerHourBySubscription = gpuPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
         public Builder memoryAmountGb(@Nullable Double memoryAmountGb) {
+
             this.memoryAmountGb = memoryAmountGb;
             return this;
         }
         @CustomType.Setter
         public Builder memoryGbPerHour(@Nullable Double memoryGbPerHour) {
+
             this.memoryGbPerHour = memoryGbPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder memoryGbPerHourBySubscription(@Nullable Double memoryGbPerHourBySubscription) {
+
             this.memoryGbPerHourBySubscription = memoryGbPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuCount(@Nullable Double ocpuCount) {
+
             this.ocpuCount = ocpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuPerHour(@Nullable Double ocpuPerHour) {
+
             this.ocpuPerHour = ocpuPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder ocpuPerHourBySubscription(@Nullable Double ocpuPerHourBySubscription) {
+
             this.ocpuPerHourBySubscription = ocpuPerHourBySubscription;
             return this;
         }
         @CustomType.Setter
         public Builder totalPerHour(@Nullable Double totalPerHour) {
+
             this.totalPerHour = totalPerHour;
             return this;
         }
         @CustomType.Setter
         public Builder totalPerHourBySubscription(@Nullable Double totalPerHourBySubscription) {
+
             this.totalPerHourBySubscription = totalPerHourBySubscription;
             return this;
         }

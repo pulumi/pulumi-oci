@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -176,42 +177,66 @@ public final class GetSoftwareSourceModuleStreamResult {
 
         @CustomType.Setter
         public Builder archType(String archType) {
-            this.archType = Objects.requireNonNull(archType);
+            if (archType == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "archType");
+            }
+            this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDefault(Boolean isDefault) {
-            this.isDefault = Objects.requireNonNull(isDefault);
+            if (isDefault == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "isDefault");
+            }
+            this.isDefault = isDefault;
             return this;
         }
         @CustomType.Setter
         public Builder isLatest(Boolean isLatest) {
-            this.isLatest = Objects.requireNonNull(isLatest);
+            if (isLatest == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "isLatest");
+            }
+            this.isLatest = isLatest;
             return this;
         }
         @CustomType.Setter
         public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+            if (moduleName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "moduleName");
+            }
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder packages(List<String> packages) {
-            this.packages = Objects.requireNonNull(packages);
+            if (packages == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "packages");
+            }
+            this.packages = packages;
             return this;
         }
         public Builder packages(String... packages) {
@@ -219,7 +244,10 @@ public final class GetSoftwareSourceModuleStreamResult {
         }
         @CustomType.Setter
         public Builder profiles(List<String> profiles) {
-            this.profiles = Objects.requireNonNull(profiles);
+            if (profiles == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "profiles");
+            }
+            this.profiles = profiles;
             return this;
         }
         public Builder profiles(String... profiles) {
@@ -227,12 +255,18 @@ public final class GetSoftwareSourceModuleStreamResult {
         }
         @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+            if (softwareSourceId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "softwareSourceId");
+            }
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+            if (streamName == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceModuleStreamResult", "streamName");
+            }
+            this.streamName = streamName;
             return this;
         }
         public GetSoftwareSourceModuleStreamResult build() {

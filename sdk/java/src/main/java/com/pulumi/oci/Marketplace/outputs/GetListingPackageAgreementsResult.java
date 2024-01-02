@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackageAgreementsAgreement;
 import com.pulumi.oci.Marketplace.outputs.GetListingPackageAgreementsFilter;
 import java.lang.String;
@@ -93,7 +94,10 @@ public final class GetListingPackageAgreementsResult {
 
         @CustomType.Setter
         public Builder agreements(List<GetListingPackageAgreementsAgreement> agreements) {
-            this.agreements = Objects.requireNonNull(agreements);
+            if (agreements == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageAgreementsResult", "agreements");
+            }
+            this.agreements = agreements;
             return this;
         }
         public Builder agreements(GetListingPackageAgreementsAgreement... agreements) {
@@ -101,11 +105,13 @@ public final class GetListingPackageAgreementsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetListingPackageAgreementsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -114,17 +120,26 @@ public final class GetListingPackageAgreementsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageAgreementsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageAgreementsResult", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetListingPackageAgreementsResult", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         public GetListingPackageAgreementsResult build() {

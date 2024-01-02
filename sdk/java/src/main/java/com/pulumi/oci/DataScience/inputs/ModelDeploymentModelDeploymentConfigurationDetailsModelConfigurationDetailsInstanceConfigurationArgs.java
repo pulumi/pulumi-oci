@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -114,7 +115,9 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs build() {
-            $.instanceShapeName = Objects.requireNonNull($.instanceShapeName, "expected parameter 'instanceShapeName' to be non-null");
+            if ($.instanceShapeName == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs", "instanceShapeName");
+            }
             return $;
         }
     }

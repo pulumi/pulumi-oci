@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetRuleSetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetRuleSetArgs build() {
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("GetRuleSetArgs", "loadBalancerId");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("GetRuleSetArgs", "name");
+            }
             return $;
         }
     }

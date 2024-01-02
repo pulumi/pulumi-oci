@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceKafkaBrokerNodeShapeConfigArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -206,9 +207,15 @@ public final class BdsInstanceKafkaBrokerNodeArgs extends com.pulumi.resources.R
         }
 
         public BdsInstanceKafkaBrokerNodeArgs build() {
-            $.numberOfKafkaNodes = Objects.requireNonNull($.numberOfKafkaNodes, "expected parameter 'numberOfKafkaNodes' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.numberOfKafkaNodes == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceKafkaBrokerNodeArgs", "numberOfKafkaNodes");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceKafkaBrokerNodeArgs", "shape");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceKafkaBrokerNodeArgs", "subnetId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigIt
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder unit(String unit) {
-            this.unit = Objects.requireNonNull(unit);
+            if (unit == null) {
+              throw new MissingRequiredPropertyException("GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail", "unit");
+            }
+            this.unit = unit;
             return this;
         }
         public GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetail build() {

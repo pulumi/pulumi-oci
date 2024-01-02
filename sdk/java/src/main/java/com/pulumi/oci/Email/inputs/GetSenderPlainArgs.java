@@ -4,6 +4,7 @@
 package com.pulumi.oci.Email.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetSenderPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSenderPlainArgs build() {
-            $.senderId = Objects.requireNonNull($.senderId, "expected parameter 'senderId' to be non-null");
+            if ($.senderId == null) {
+                throw new MissingRequiredPropertyException("GetSenderPlainArgs", "senderId");
+            }
             return $;
         }
     }

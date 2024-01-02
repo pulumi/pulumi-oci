@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetDomainsAppsAppScope {
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppScope", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppScope", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder fqs(String fqs) {
-            this.fqs = Objects.requireNonNull(fqs);
+            if (fqs == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppScope", "fqs");
+            }
+            this.fqs = fqs;
             return this;
         }
         @CustomType.Setter
         public Builder readOnly(Boolean readOnly) {
-            this.readOnly = Objects.requireNonNull(readOnly);
+            if (readOnly == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppScope", "readOnly");
+            }
+            this.readOnly = readOnly;
             return this;
         }
         @CustomType.Setter
         public Builder requiresConsent(Boolean requiresConsent) {
-            this.requiresConsent = Objects.requireNonNull(requiresConsent);
+            if (requiresConsent == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppScope", "requiresConsent");
+            }
+            this.requiresConsent = requiresConsent;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppScope", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsAppsAppScope build() {

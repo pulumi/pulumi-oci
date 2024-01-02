@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsAccountRecoverySettingTagArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -877,12 +878,24 @@ public final class DomainsAccountRecoverySettingArgs extends com.pulumi.resource
         }
 
         public DomainsAccountRecoverySettingArgs build() {
-            $.accountRecoverySettingId = Objects.requireNonNull($.accountRecoverySettingId, "expected parameter 'accountRecoverySettingId' to be non-null");
-            $.factors = Objects.requireNonNull($.factors, "expected parameter 'factors' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.lockoutDuration = Objects.requireNonNull($.lockoutDuration, "expected parameter 'lockoutDuration' to be non-null");
-            $.maxIncorrectAttempts = Objects.requireNonNull($.maxIncorrectAttempts, "expected parameter 'maxIncorrectAttempts' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.accountRecoverySettingId == null) {
+                throw new MissingRequiredPropertyException("DomainsAccountRecoverySettingArgs", "accountRecoverySettingId");
+            }
+            if ($.factors == null) {
+                throw new MissingRequiredPropertyException("DomainsAccountRecoverySettingArgs", "factors");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsAccountRecoverySettingArgs", "idcsEndpoint");
+            }
+            if ($.lockoutDuration == null) {
+                throw new MissingRequiredPropertyException("DomainsAccountRecoverySettingArgs", "lockoutDuration");
+            }
+            if ($.maxIncorrectAttempts == null) {
+                throw new MissingRequiredPropertyException("DomainsAccountRecoverySettingArgs", "maxIncorrectAttempts");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsAccountRecoverySettingArgs", "schemas");
+            }
             return $;
         }
     }

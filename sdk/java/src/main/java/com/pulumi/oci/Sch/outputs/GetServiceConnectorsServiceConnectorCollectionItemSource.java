@@ -4,6 +4,7 @@
 package com.pulumi.oci.Sch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceCursor;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource;
 import com.pulumi.oci.Sch.outputs.GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource;
@@ -102,7 +103,10 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
 
         @CustomType.Setter
         public Builder cursors(List<GetServiceConnectorsServiceConnectorCollectionItemSourceCursor> cursors) {
-            this.cursors = Objects.requireNonNull(cursors);
+            if (cursors == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemSource", "cursors");
+            }
+            this.cursors = cursors;
             return this;
         }
         public Builder cursors(GetServiceConnectorsServiceConnectorCollectionItemSourceCursor... cursors) {
@@ -110,12 +114,18 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
         }
         @CustomType.Setter
         public Builder kind(String kind) {
-            this.kind = Objects.requireNonNull(kind);
+            if (kind == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemSource", "kind");
+            }
+            this.kind = kind;
             return this;
         }
         @CustomType.Setter
         public Builder logSources(List<GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource> logSources) {
-            this.logSources = Objects.requireNonNull(logSources);
+            if (logSources == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemSource", "logSources");
+            }
+            this.logSources = logSources;
             return this;
         }
         public Builder logSources(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource... logSources) {
@@ -123,7 +133,10 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
         }
         @CustomType.Setter
         public Builder monitoringSources(List<GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource> monitoringSources) {
-            this.monitoringSources = Objects.requireNonNull(monitoringSources);
+            if (monitoringSources == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemSource", "monitoringSources");
+            }
+            this.monitoringSources = monitoringSources;
             return this;
         }
         public Builder monitoringSources(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource... monitoringSources) {
@@ -131,7 +144,10 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemSource {
         }
         @CustomType.Setter
         public Builder streamId(String streamId) {
-            this.streamId = Objects.requireNonNull(streamId);
+            if (streamId == null) {
+              throw new MissingRequiredPropertyException("GetServiceConnectorsServiceConnectorCollectionItemSource", "streamId");
+            }
+            this.streamId = streamId;
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemSource build() {

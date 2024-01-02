@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,10 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
 
         @CustomType.Setter
         public Builder entityNames(List<String> entityNames) {
-            this.entityNames = Objects.requireNonNull(entityNames);
+            if (entityNames == null) {
+              throw new MissingRequiredPropertyException("GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition", "entityNames");
+            }
+            this.entityNames = entityNames;
             return this;
         }
         public Builder entityNames(String... entityNames) {
@@ -93,17 +97,26 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
         }
         @CustomType.Setter
         public Builder entitySelection(String entitySelection) {
-            this.entitySelection = Objects.requireNonNull(entitySelection);
+            if (entitySelection == null) {
+              throw new MissingRequiredPropertyException("GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition", "entitySelection");
+            }
+            this.entitySelection = entitySelection;
             return this;
         }
         @CustomType.Setter
         public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+            if (entityType == null) {
+              throw new MissingRequiredPropertyException("GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition", "entityType");
+            }
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
         public Builder operationStatus(String operationStatus) {
-            this.operationStatus = Objects.requireNonNull(operationStatus);
+            if (operationStatus == null) {
+              throw new MissingRequiredPropertyException("GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition", "operationStatus");
+            }
+            this.operationStatus = operationStatus;
             return this;
         }
         public GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition build() {

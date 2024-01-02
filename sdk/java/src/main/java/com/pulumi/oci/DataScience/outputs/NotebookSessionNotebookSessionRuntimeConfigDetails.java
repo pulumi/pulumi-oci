@@ -61,11 +61,13 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetails {
 
         @CustomType.Setter
         public Builder customEnvironmentVariables(@Nullable Map<String,Object> customEnvironmentVariables) {
+
             this.customEnvironmentVariables = customEnvironmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder notebookSessionGitConfigDetails(@Nullable NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails notebookSessionGitConfigDetails) {
+
             this.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
             return this;
         }

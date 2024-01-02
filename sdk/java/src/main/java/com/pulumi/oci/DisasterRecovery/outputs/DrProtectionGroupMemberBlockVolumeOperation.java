@@ -74,16 +74,19 @@ public final class DrProtectionGroupMemberBlockVolumeOperation {
 
         @CustomType.Setter
         public Builder attachmentDetails(@Nullable DrProtectionGroupMemberBlockVolumeOperationAttachmentDetails attachmentDetails) {
+
             this.attachmentDetails = attachmentDetails;
             return this;
         }
         @CustomType.Setter
         public Builder blockVolumeId(@Nullable String blockVolumeId) {
+
             this.blockVolumeId = blockVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder mountDetails(@Nullable DrProtectionGroupMemberBlockVolumeOperationMountDetails mountDetails) {
+
             this.mountDetails = mountDetails;
             return this;
         }

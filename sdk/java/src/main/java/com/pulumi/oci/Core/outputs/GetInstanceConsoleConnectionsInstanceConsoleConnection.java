@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -176,57 +177,90 @@ public final class GetInstanceConsoleConnectionsInstanceConsoleConnection {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionString(String connectionString) {
-            this.connectionString = Objects.requireNonNull(connectionString);
+            if (connectionString == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "connectionString");
+            }
+            this.connectionString = connectionString;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder fingerprint(String fingerprint) {
-            this.fingerprint = Objects.requireNonNull(fingerprint);
+            if (fingerprint == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "fingerprint");
+            }
+            this.fingerprint = fingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder publicKey(String publicKey) {
-            this.publicKey = Objects.requireNonNull(publicKey);
+            if (publicKey == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "publicKey");
+            }
+            this.publicKey = publicKey;
             return this;
         }
         @CustomType.Setter
         public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
-            this.serviceHostKeyFingerprint = Objects.requireNonNull(serviceHostKeyFingerprint);
+            if (serviceHostKeyFingerprint == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "serviceHostKeyFingerprint");
+            }
+            this.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vncConnectionString(String vncConnectionString) {
-            this.vncConnectionString = Objects.requireNonNull(vncConnectionString);
+            if (vncConnectionString == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConsoleConnectionsInstanceConsoleConnection", "vncConnectionString");
+            }
+            this.vncConnectionString = vncConnectionString;
             return this;
         }
         public GetInstanceConsoleConnectionsInstanceConsoleConnection build() {

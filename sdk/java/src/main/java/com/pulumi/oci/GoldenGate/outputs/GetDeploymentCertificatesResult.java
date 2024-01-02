@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentCertificatesCertificateCollection;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentCertificatesFilter;
 import java.lang.String;
@@ -87,7 +88,10 @@ public final class GetDeploymentCertificatesResult {
 
         @CustomType.Setter
         public Builder certificateCollections(List<GetDeploymentCertificatesCertificateCollection> certificateCollections) {
-            this.certificateCollections = Objects.requireNonNull(certificateCollections);
+            if (certificateCollections == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesResult", "certificateCollections");
+            }
+            this.certificateCollections = certificateCollections;
             return this;
         }
         public Builder certificateCollections(GetDeploymentCertificatesCertificateCollection... certificateCollections) {
@@ -95,11 +99,15 @@ public final class GetDeploymentCertificatesResult {
         }
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesResult", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDeploymentCertificatesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,11 +116,15 @@ public final class GetDeploymentCertificatesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetAssetsAssetCollection {
 
         @CustomType.Setter
         public Builder items(List<GetAssetsAssetCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAssetsAssetCollectionItem... items) {

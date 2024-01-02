@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeCloud.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
 
         @CustomType.Setter
         public Builder currentVersion(String currentVersion) {
-            this.currentVersion = Objects.requireNonNull(currentVersion);
+            if (currentVersion == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation", "currentVersion");
+            }
+            this.currentVersion = currentVersion;
             return this;
         }
         @CustomType.Setter
         public Builder isActive(Boolean isActive) {
-            this.isActive = Objects.requireNonNull(isActive);
+            if (isActive == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation", "isActive");
+            }
+            this.isActive = isActive;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledUpgradeDuration(String scheduledUpgradeDuration) {
-            this.scheduledUpgradeDuration = Objects.requireNonNull(scheduledUpgradeDuration);
+            if (scheduledUpgradeDuration == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation", "scheduledUpgradeDuration");
+            }
+            this.scheduledUpgradeDuration = scheduledUpgradeDuration;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfScheduledUpgrade(String timeOfScheduledUpgrade) {
-            this.timeOfScheduledUpgrade = Objects.requireNonNull(timeOfScheduledUpgrade);
+            if (timeOfScheduledUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation", "timeOfScheduledUpgrade");
+            }
+            this.timeOfScheduledUpgrade = timeOfScheduledUpgrade;
             return this;
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformation build() {

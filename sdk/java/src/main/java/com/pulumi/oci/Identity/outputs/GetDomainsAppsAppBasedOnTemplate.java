@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDomainsAppsAppBasedOnTemplate {
 
         @CustomType.Setter
         public Builder lastModified(String lastModified) {
-            this.lastModified = Objects.requireNonNull(lastModified);
+            if (lastModified == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppBasedOnTemplate", "lastModified");
+            }
+            this.lastModified = lastModified;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppBasedOnTemplate", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppBasedOnTemplate", "value");
+            }
+            this.value = value;
             return this;
         }
         @CustomType.Setter
         public Builder wellKnownId(String wellKnownId) {
-            this.wellKnownId = Objects.requireNonNull(wellKnownId);
+            if (wellKnownId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppsAppBasedOnTemplate", "wellKnownId");
+            }
+            this.wellKnownId = wellKnownId;
             return this;
         }
         public GetDomainsAppsAppBasedOnTemplate build() {

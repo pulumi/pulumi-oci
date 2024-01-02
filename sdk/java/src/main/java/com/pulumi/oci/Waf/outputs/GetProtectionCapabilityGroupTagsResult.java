@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetProtectionCapabilityGroupTagsFilter;
 import com.pulumi.oci.Waf.outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection;
 import java.lang.String;
@@ -93,11 +94,15 @@ public final class GetProtectionCapabilityGroupTagsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilityGroupTagsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProtectionCapabilityGroupTagsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -106,17 +111,24 @@ public final class GetProtectionCapabilityGroupTagsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilityGroupTagsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder protectionCapabilityGroupTagCollections(List<GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection> protectionCapabilityGroupTagCollections) {
-            this.protectionCapabilityGroupTagCollections = Objects.requireNonNull(protectionCapabilityGroupTagCollections);
+            if (protectionCapabilityGroupTagCollections == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilityGroupTagsResult", "protectionCapabilityGroupTagCollections");
+            }
+            this.protectionCapabilityGroupTagCollections = protectionCapabilityGroupTagCollections;
             return this;
         }
         public Builder protectionCapabilityGroupTagCollections(GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection... protectionCapabilityGroupTagCollections) {
@@ -124,6 +136,7 @@ public final class GetProtectionCapabilityGroupTagsResult {
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }

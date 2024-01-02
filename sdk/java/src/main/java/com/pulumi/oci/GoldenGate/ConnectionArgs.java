@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionAdditionalAttributeArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionBootstrapServerArgs;
 import java.lang.Boolean;
@@ -2686,10 +2687,18 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConnectionArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.connectionType = Objects.requireNonNull($.connectionType, "expected parameter 'connectionType' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.technologyType = Objects.requireNonNull($.technologyType, "expected parameter 'technologyType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "compartmentId");
+            }
+            if ($.connectionType == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "connectionType");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "displayName");
+            }
+            if ($.technologyType == null) {
+                throw new MissingRequiredPropertyException("ConnectionArgs", "technologyType");
+            }
             return $;
         }
     }

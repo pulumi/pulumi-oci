@@ -5,6 +5,7 @@ package com.pulumi.oci.OperatorAccessControl;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -684,13 +685,27 @@ public final class OperatorControlAssignmentArgs extends com.pulumi.resources.Re
         }
 
         public OperatorControlAssignmentArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.isEnforcedAlways = Objects.requireNonNull($.isEnforcedAlways, "expected parameter 'isEnforcedAlways' to be non-null");
-            $.operatorControlId = Objects.requireNonNull($.operatorControlId, "expected parameter 'operatorControlId' to be non-null");
-            $.resourceCompartmentId = Objects.requireNonNull($.resourceCompartmentId, "expected parameter 'resourceCompartmentId' to be non-null");
-            $.resourceId = Objects.requireNonNull($.resourceId, "expected parameter 'resourceId' to be non-null");
-            $.resourceName = Objects.requireNonNull($.resourceName, "expected parameter 'resourceName' to be non-null");
-            $.resourceType = Objects.requireNonNull($.resourceType, "expected parameter 'resourceType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("OperatorControlAssignmentArgs", "compartmentId");
+            }
+            if ($.isEnforcedAlways == null) {
+                throw new MissingRequiredPropertyException("OperatorControlAssignmentArgs", "isEnforcedAlways");
+            }
+            if ($.operatorControlId == null) {
+                throw new MissingRequiredPropertyException("OperatorControlAssignmentArgs", "operatorControlId");
+            }
+            if ($.resourceCompartmentId == null) {
+                throw new MissingRequiredPropertyException("OperatorControlAssignmentArgs", "resourceCompartmentId");
+            }
+            if ($.resourceId == null) {
+                throw new MissingRequiredPropertyException("OperatorControlAssignmentArgs", "resourceId");
+            }
+            if ($.resourceName == null) {
+                throw new MissingRequiredPropertyException("OperatorControlAssignmentArgs", "resourceName");
+            }
+            if ($.resourceType == null) {
+                throw new MissingRequiredPropertyException("OperatorControlAssignmentArgs", "resourceType");
+            }
             return $;
         }
     }

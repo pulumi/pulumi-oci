@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalExadataStorageConnectorCredentialInfoArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -235,11 +236,21 @@ public final class ExternalExadataStorageConnectorArgs extends com.pulumi.resour
         }
 
         public ExternalExadataStorageConnectorArgs build() {
-            $.agentId = Objects.requireNonNull($.agentId, "expected parameter 'agentId' to be non-null");
-            $.connectionUri = Objects.requireNonNull($.connectionUri, "expected parameter 'connectionUri' to be non-null");
-            $.connectorName = Objects.requireNonNull($.connectorName, "expected parameter 'connectorName' to be non-null");
-            $.credentialInfo = Objects.requireNonNull($.credentialInfo, "expected parameter 'credentialInfo' to be non-null");
-            $.storageServerId = Objects.requireNonNull($.storageServerId, "expected parameter 'storageServerId' to be non-null");
+            if ($.agentId == null) {
+                throw new MissingRequiredPropertyException("ExternalExadataStorageConnectorArgs", "agentId");
+            }
+            if ($.connectionUri == null) {
+                throw new MissingRequiredPropertyException("ExternalExadataStorageConnectorArgs", "connectionUri");
+            }
+            if ($.connectorName == null) {
+                throw new MissingRequiredPropertyException("ExternalExadataStorageConnectorArgs", "connectorName");
+            }
+            if ($.credentialInfo == null) {
+                throw new MissingRequiredPropertyException("ExternalExadataStorageConnectorArgs", "credentialInfo");
+            }
+            if ($.storageServerId == null) {
+                throw new MissingRequiredPropertyException("ExternalExadataStorageConnectorArgs", "storageServerId");
+            }
             return $;
         }
     }

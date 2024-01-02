@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -200,9 +201,15 @@ public final class CloudGuardConfigurationArgs extends com.pulumi.resources.Reso
         }
 
         public CloudGuardConfigurationArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.reportingRegion = Objects.requireNonNull($.reportingRegion, "expected parameter 'reportingRegion' to be non-null");
-            $.status = Objects.requireNonNull($.status, "expected parameter 'status' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CloudGuardConfigurationArgs", "compartmentId");
+            }
+            if ($.reportingRegion == null) {
+                throw new MissingRequiredPropertyException("CloudGuardConfigurationArgs", "reportingRegion");
+            }
+            if ($.status == null) {
+                throw new MissingRequiredPropertyException("CloudGuardConfigurationArgs", "status");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs;
 import java.util.List;
@@ -123,8 +124,12 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAr
         }
 
         public DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs build() {
-            $.authenticationServers = Objects.requireNonNull($.authenticationServers, "expected parameter 'authenticationServers' to be non-null");
-            $.selectionSource = Objects.requireNonNull($.selectionSource, "expected parameter 'selectionSource' to be non-null");
+            if ($.authenticationServers == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs", "authenticationServers");
+            }
+            if ($.selectionSource == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs", "selectionSource");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -318,107 +319,170 @@ public final class GetAuditTrailsAuditTrailCollectionItem {
 
         @CustomType.Setter
         public Builder auditCollectionStartTime(String auditCollectionStartTime) {
-            this.auditCollectionStartTime = Objects.requireNonNull(auditCollectionStartTime);
+            if (auditCollectionStartTime == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "auditCollectionStartTime");
+            }
+            this.auditCollectionStartTime = auditCollectionStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
-            this.auditProfileId = Objects.requireNonNull(auditProfileId);
+            if (auditProfileId == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "auditProfileId");
+            }
+            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
         public Builder auditTrailId(String auditTrailId) {
-            this.auditTrailId = Objects.requireNonNull(auditTrailId);
+            if (auditTrailId == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "auditTrailId");
+            }
+            this.auditTrailId = auditTrailId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoPurgeEnabled(Boolean isAutoPurgeEnabled) {
-            this.isAutoPurgeEnabled = Objects.requireNonNull(isAutoPurgeEnabled);
+            if (isAutoPurgeEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "isAutoPurgeEnabled");
+            }
+            this.isAutoPurgeEnabled = isAutoPurgeEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder resumeTrigger(Integer resumeTrigger) {
-            this.resumeTrigger = Objects.requireNonNull(resumeTrigger);
+            if (resumeTrigger == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "resumeTrigger");
+            }
+            this.resumeTrigger = resumeTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastCollected(String timeLastCollected) {
-            this.timeLastCollected = Objects.requireNonNull(timeLastCollected);
+            if (timeLastCollected == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "timeLastCollected");
+            }
+            this.timeLastCollected = timeLastCollected;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder trailLocation(String trailLocation) {
-            this.trailLocation = Objects.requireNonNull(trailLocation);
+            if (trailLocation == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "trailLocation");
+            }
+            this.trailLocation = trailLocation;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailsAuditTrailCollectionItem", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetAuditTrailsAuditTrailCollectionItem build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs;
 import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs;
 import java.lang.Boolean;
@@ -601,9 +602,15 @@ public final class SddcInitialConfigurationInitialClusterConfigurationArgs exten
         }
 
         public SddcInitialConfigurationInitialClusterConfigurationArgs build() {
-            $.computeAvailabilityDomain = Objects.requireNonNull($.computeAvailabilityDomain, "expected parameter 'computeAvailabilityDomain' to be non-null");
-            $.esxiHostsCount = Objects.requireNonNull($.esxiHostsCount, "expected parameter 'esxiHostsCount' to be non-null");
-            $.vsphereType = Objects.requireNonNull($.vsphereType, "expected parameter 'vsphereType' to be non-null");
+            if ($.computeAvailabilityDomain == null) {
+                throw new MissingRequiredPropertyException("SddcInitialConfigurationInitialClusterConfigurationArgs", "computeAvailabilityDomain");
+            }
+            if ($.esxiHostsCount == null) {
+                throw new MissingRequiredPropertyException("SddcInitialConfigurationInitialClusterConfigurationArgs", "esxiHostsCount");
+            }
+            if ($.vsphereType == null) {
+                throw new MissingRequiredPropertyException("SddcInitialConfigurationInitialClusterConfigurationArgs", "vsphereType");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetSddcsSddcCollectionHcxOnPremLicense {
 
         @CustomType.Setter
         public Builder activationKey(String activationKey) {
-            this.activationKey = Objects.requireNonNull(activationKey);
+            if (activationKey == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionHcxOnPremLicense", "activationKey");
+            }
+            this.activationKey = activationKey;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionHcxOnPremLicense", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemName(String systemName) {
-            this.systemName = Objects.requireNonNull(systemName);
+            if (systemName == null) {
+              throw new MissingRequiredPropertyException("GetSddcsSddcCollectionHcxOnPremLicense", "systemName");
+            }
+            this.systemName = systemName;
             return this;
         }
         public GetSddcsSddcCollectionHcxOnPremLicense build() {

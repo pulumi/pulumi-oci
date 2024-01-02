@@ -200,26 +200,31 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
 
         @CustomType.Setter
         public Builder maxIdle(@Nullable Integer maxIdle) {
+
             this.maxIdle = maxIdle;
             return this;
         }
         @CustomType.Setter
         public Builder maxObjects(@Nullable Integer maxObjects) {
+
             this.maxObjects = maxObjects;
             return this;
         }
         @CustomType.Setter
         public Builder maxWait(@Nullable Integer maxWait) {
+
             this.maxWait = maxWait;
             return this;
         }
         @CustomType.Setter
         public Builder minEvictableIdleTimeMillis(@Nullable Integer minEvictableIdleTimeMillis) {
+
             this.minEvictableIdleTimeMillis = minEvictableIdleTimeMillis;
             return this;
         }
         @CustomType.Setter
         public Builder minIdle(@Nullable Integer minIdle) {
+
             this.minIdle = minIdle;
             return this;
         }

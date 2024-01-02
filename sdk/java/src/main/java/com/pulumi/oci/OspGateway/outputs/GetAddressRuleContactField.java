@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleContactFieldFormat;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleContactFieldLabel;
 import java.lang.Boolean;
@@ -102,7 +103,10 @@ public final class GetAddressRuleContactField {
 
         @CustomType.Setter
         public Builder formats(List<GetAddressRuleContactFieldFormat> formats) {
-            this.formats = Objects.requireNonNull(formats);
+            if (formats == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleContactField", "formats");
+            }
+            this.formats = formats;
             return this;
         }
         public Builder formats(GetAddressRuleContactFieldFormat... formats) {
@@ -110,12 +114,18 @@ public final class GetAddressRuleContactField {
         }
         @CustomType.Setter
         public Builder isRequired(Boolean isRequired) {
-            this.isRequired = Objects.requireNonNull(isRequired);
+            if (isRequired == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleContactField", "isRequired");
+            }
+            this.isRequired = isRequired;
             return this;
         }
         @CustomType.Setter
         public Builder labels(List<GetAddressRuleContactFieldLabel> labels) {
-            this.labels = Objects.requireNonNull(labels);
+            if (labels == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleContactField", "labels");
+            }
+            this.labels = labels;
             return this;
         }
         public Builder labels(GetAddressRuleContactFieldLabel... labels) {
@@ -123,12 +133,18 @@ public final class GetAddressRuleContactField {
         }
         @CustomType.Setter
         public Builder language(String language) {
-            this.language = Objects.requireNonNull(language);
+            if (language == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleContactField", "language");
+            }
+            this.language = language;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleContactField", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetAddressRuleContactField build() {

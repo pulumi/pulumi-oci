@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -168,52 +169,82 @@ public final class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollecti
 
         @CustomType.Setter
         public Builder architecture(String architecture) {
-            this.architecture = Objects.requireNonNull(architecture);
+            if (architecture == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "architecture");
+            }
+            this.architecture = architecture;
             return this;
         }
         @CustomType.Setter
         public Builder downloadSourceId(String downloadSourceId) {
-            this.downloadSourceId = Objects.requireNonNull(downloadSourceId);
+            if (downloadSourceId == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "downloadSourceId");
+            }
+            this.downloadSourceId = downloadSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder downloadType(String downloadType) {
-            this.downloadType = Objects.requireNonNull(downloadType);
+            if (downloadType == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "downloadType");
+            }
+            this.downloadType = downloadType;
             return this;
         }
         @CustomType.Setter
         public Builder familyDisplayName(String familyDisplayName) {
-            this.familyDisplayName = Objects.requireNonNull(familyDisplayName);
+            if (familyDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "familyDisplayName");
+            }
+            this.familyDisplayName = familyDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder familyVersion(String familyVersion) {
-            this.familyVersion = Objects.requireNonNull(familyVersion);
+            if (familyVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "familyVersion");
+            }
+            this.familyVersion = familyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(String osFamily) {
-            this.osFamily = Objects.requireNonNull(osFamily);
+            if (osFamily == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "osFamily");
+            }
+            this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageTypeDetail(String packageTypeDetail) {
-            this.packageTypeDetail = Objects.requireNonNull(packageTypeDetail);
+            if (packageTypeDetail == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "packageTypeDetail");
+            }
+            this.packageTypeDetail = packageTypeDetail;
             return this;
         }
         @CustomType.Setter
         public Builder releaseVersion(String releaseVersion) {
-            this.releaseVersion = Objects.requireNonNull(releaseVersion);
+            if (releaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "releaseVersion");
+            }
+            this.releaseVersion = releaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeDownloaded(String timeDownloaded) {
-            this.timeDownloaded = Objects.requireNonNull(timeDownloaded);
+            if (timeDownloaded == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem", "timeDownloaded");
+            }
+            this.timeDownloaded = timeDownloaded;
             return this;
         }
         public GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem build() {

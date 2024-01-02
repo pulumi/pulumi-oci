@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.inputs.GetDataAssetsFilter;
 import java.lang.String;
 import java.util.List;
@@ -283,7 +284,9 @@ public final class GetDataAssetsPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetDataAssetsPlainArgs build() {
-            $.catalogId = Objects.requireNonNull($.catalogId, "expected parameter 'catalogId' to be non-null");
+            if ($.catalogId == null) {
+                throw new MissingRequiredPropertyException("GetDataAssetsPlainArgs", "catalogId");
+            }
             return $;
         }
     }

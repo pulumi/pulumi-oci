@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentsIgnoredTarget;
 import com.pulumi.oci.DataSafe.outputs.GetUserAssessmentsUserAssessment;
@@ -209,26 +210,33 @@ public final class GetUserAssessmentsResult {
 
         @CustomType.Setter
         public Builder accessLevel(@Nullable String accessLevel) {
+
             this.accessLevel = accessLevel;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetUserAssessmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -237,12 +245,18 @@ public final class GetUserAssessmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ignoredTargets(List<GetUserAssessmentsIgnoredTarget> ignoredTargets) {
-            this.ignoredTargets = Objects.requireNonNull(ignoredTargets);
+            if (ignoredTargets == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentsResult", "ignoredTargets");
+            }
+            this.ignoredTargets = ignoredTargets;
             return this;
         }
         public Builder ignoredTargets(GetUserAssessmentsIgnoredTarget... ignoredTargets) {
@@ -250,52 +264,64 @@ public final class GetUserAssessmentsResult {
         }
         @CustomType.Setter
         public Builder isBaseline(@Nullable Boolean isBaseline) {
+
             this.isBaseline = isBaseline;
             return this;
         }
         @CustomType.Setter
         public Builder isScheduleAssessment(@Nullable Boolean isScheduleAssessment) {
+
             this.isScheduleAssessment = isScheduleAssessment;
             return this;
         }
         @CustomType.Setter
         public Builder scheduleUserAssessmentId(@Nullable String scheduleUserAssessmentId) {
+
             this.scheduleUserAssessmentId = scheduleUserAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
+
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreatedLessThan(@Nullable String timeCreatedLessThan) {
+
             this.timeCreatedLessThan = timeCreatedLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder triggeredBy(@Nullable String triggeredBy) {
+
             this.triggeredBy = triggeredBy;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder userAssessments(List<GetUserAssessmentsUserAssessment> userAssessments) {
-            this.userAssessments = Objects.requireNonNull(userAssessments);
+            if (userAssessments == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentsResult", "userAssessments");
+            }
+            this.userAssessments = userAssessments;
             return this;
         }
         public Builder userAssessments(GetUserAssessmentsUserAssessment... userAssessments) {

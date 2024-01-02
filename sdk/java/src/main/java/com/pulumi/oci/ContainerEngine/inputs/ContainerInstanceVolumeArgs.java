@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeConfigArgs;
 import java.lang.String;
 import java.util.List;
@@ -199,8 +200,12 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
         }
 
         public ContainerInstanceVolumeArgs build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.volumeType = Objects.requireNonNull($.volumeType, "expected parameter 'volumeType' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceVolumeArgs", "name");
+            }
+            if ($.volumeType == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceVolumeArgs", "volumeType");
+            }
             return $;
         }
     }

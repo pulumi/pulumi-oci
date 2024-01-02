@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection {
 
         @CustomType.Setter
         public Builder items(List<GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourceSoftwarePackagesSoftwarePackageCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem... items) {

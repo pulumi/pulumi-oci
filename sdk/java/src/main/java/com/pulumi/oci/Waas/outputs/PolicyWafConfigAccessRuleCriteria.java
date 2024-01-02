@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -123,17 +124,24 @@ public final class PolicyWafConfigAccessRuleCriteria {
 
         @CustomType.Setter
         public Builder condition(String condition) {
-            this.condition = Objects.requireNonNull(condition);
+            if (condition == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleCriteria", "condition");
+            }
+            this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder isCaseSensitive(@Nullable Boolean isCaseSensitive) {
+
             this.isCaseSensitive = isCaseSensitive;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigAccessRuleCriteria", "value");
+            }
+            this.value = value;
             return this;
         }
         public PolicyWafConfigAccessRuleCriteria build() {

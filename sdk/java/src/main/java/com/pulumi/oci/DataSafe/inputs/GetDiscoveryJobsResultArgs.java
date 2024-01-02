@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetDiscoveryJobsResultArgs extends com.pulumi.resources.Invok
         }
 
         public GetDiscoveryJobsResultArgs build() {
-            $.discoveryJobId = Objects.requireNonNull($.discoveryJobId, "expected parameter 'discoveryJobId' to be non-null");
-            $.resultKey = Objects.requireNonNull($.resultKey, "expected parameter 'resultKey' to be non-null");
+            if ($.discoveryJobId == null) {
+                throw new MissingRequiredPropertyException("GetDiscoveryJobsResultArgs", "discoveryJobId");
+            }
+            if ($.resultKey == null) {
+                throw new MissingRequiredPropertyException("GetDiscoveryJobsResultArgs", "resultKey");
+            }
             return $;
         }
     }

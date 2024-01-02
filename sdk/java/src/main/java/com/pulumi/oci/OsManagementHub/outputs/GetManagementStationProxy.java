@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -86,12 +87,18 @@ public final class GetManagementStationProxy {
 
         @CustomType.Setter
         public Builder forward(String forward) {
-            this.forward = Objects.requireNonNull(forward);
+            if (forward == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationProxy", "forward");
+            }
+            this.forward = forward;
             return this;
         }
         @CustomType.Setter
         public Builder hosts(List<String> hosts) {
-            this.hosts = Objects.requireNonNull(hosts);
+            if (hosts == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationProxy", "hosts");
+            }
+            this.hosts = hosts;
             return this;
         }
         public Builder hosts(String... hosts) {
@@ -99,12 +106,18 @@ public final class GetManagementStationProxy {
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationProxy", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder port(String port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetManagementStationProxy", "port");
+            }
+            this.port = port;
             return this;
         }
         public GetManagementStationProxy build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -238,9 +239,15 @@ public final class HeatWaveClusterArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public HeatWaveClusterArgs build() {
-            $.clusterSize = Objects.requireNonNull($.clusterSize, "expected parameter 'clusterSize' to be non-null");
-            $.dbSystemId = Objects.requireNonNull($.dbSystemId, "expected parameter 'dbSystemId' to be non-null");
-            $.shapeName = Objects.requireNonNull($.shapeName, "expected parameter 'shapeName' to be non-null");
+            if ($.clusterSize == null) {
+                throw new MissingRequiredPropertyException("HeatWaveClusterArgs", "clusterSize");
+            }
+            if ($.dbSystemId == null) {
+                throw new MissingRequiredPropertyException("HeatWaveClusterArgs", "dbSystemId");
+            }
+            if ($.shapeName == null) {
+                throw new MissingRequiredPropertyException("HeatWaveClusterArgs", "shapeName");
+            }
             return $;
         }
     }

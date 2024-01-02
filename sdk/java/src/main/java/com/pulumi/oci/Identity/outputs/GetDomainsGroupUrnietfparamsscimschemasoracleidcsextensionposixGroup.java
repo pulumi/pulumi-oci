@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionpos
 
         @CustomType.Setter
         public Builder gidNumber(Integer gidNumber) {
-            this.gidNumber = Objects.requireNonNull(gidNumber);
+            if (gidNumber == null) {
+              throw new MissingRequiredPropertyException("GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup", "gidNumber");
+            }
+            this.gidNumber = gidNumber;
             return this;
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup build() {

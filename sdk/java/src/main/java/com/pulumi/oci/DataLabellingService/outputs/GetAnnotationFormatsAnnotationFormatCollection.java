@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.outputs.GetAnnotationFormatsAnnotationFormatCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetAnnotationFormatsAnnotationFormatCollection {
 
         @CustomType.Setter
         public Builder items(List<GetAnnotationFormatsAnnotationFormatCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAnnotationFormatsAnnotationFormatCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAnnotationFormatsAnnotationFormatCollectionItem... items) {

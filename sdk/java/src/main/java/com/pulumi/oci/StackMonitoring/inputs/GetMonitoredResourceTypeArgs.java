@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetMonitoredResourceTypeArgs extends com.pulumi.resources.Inv
         }
 
         public GetMonitoredResourceTypeArgs build() {
-            $.monitoredResourceTypeId = Objects.requireNonNull($.monitoredResourceTypeId, "expected parameter 'monitoredResourceTypeId' to be non-null");
+            if ($.monitoredResourceTypeId == null) {
+                throw new MissingRequiredPropertyException("GetMonitoredResourceTypeArgs", "monitoredResourceTypeId");
+            }
             return $;
         }
     }

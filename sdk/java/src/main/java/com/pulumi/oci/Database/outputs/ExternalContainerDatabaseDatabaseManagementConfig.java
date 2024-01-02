@@ -72,16 +72,19 @@ public final class ExternalContainerDatabaseDatabaseManagementConfig {
 
         @CustomType.Setter
         public Builder databaseManagementConnectionId(@Nullable String databaseManagementConnectionId) {
+
             this.databaseManagementConnectionId = databaseManagementConnectionId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagementStatus(@Nullable String databaseManagementStatus) {
+
             this.databaseManagementStatus = databaseManagementStatus;
             return this;
         }
         @CustomType.Setter
         public Builder licenseModel(@Nullable String licenseModel) {
+
             this.licenseModel = licenseModel;
             return this;
         }

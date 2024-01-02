@@ -44,6 +44,7 @@ public final class ManagedInstanceAutonomouse {
 
         @CustomType.Setter
         public Builder isAutoUpdateEnabled(@Nullable Boolean isAutoUpdateEnabled) {
+
             this.isAutoUpdateEnabled = isAutoUpdateEnabled;
             return this;
         }

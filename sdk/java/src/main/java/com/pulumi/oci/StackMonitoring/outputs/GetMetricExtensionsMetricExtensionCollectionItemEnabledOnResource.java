@@ -4,6 +4,7 @@
 package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetMetricExtensionsMetricExtensionCollectionItemEnabledOnReso
 
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         public GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource build() {

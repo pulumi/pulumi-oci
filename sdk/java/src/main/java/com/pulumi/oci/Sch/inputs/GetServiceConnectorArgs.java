@@ -5,6 +5,7 @@ package com.pulumi.oci.Sch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetServiceConnectorArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetServiceConnectorArgs build() {
-            $.serviceConnectorId = Objects.requireNonNull($.serviceConnectorId, "expected parameter 'serviceConnectorId' to be non-null");
+            if ($.serviceConnectorId == null) {
+                throw new MissingRequiredPropertyException("GetServiceConnectorArgs", "serviceConnectorId");
+            }
             return $;
         }
     }

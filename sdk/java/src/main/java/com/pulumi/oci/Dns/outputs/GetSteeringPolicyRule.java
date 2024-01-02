@@ -4,6 +4,7 @@
 package com.pulumi.oci.Dns.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.outputs.GetSteeringPolicyRuleCase;
 import com.pulumi.oci.Dns.outputs.GetSteeringPolicyRuleDefaultAnswerData;
 import java.lang.Integer;
@@ -102,7 +103,10 @@ public final class GetSteeringPolicyRule {
 
         @CustomType.Setter
         public Builder cases(List<GetSteeringPolicyRuleCase> cases) {
-            this.cases = Objects.requireNonNull(cases);
+            if (cases == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyRule", "cases");
+            }
+            this.cases = cases;
             return this;
         }
         public Builder cases(GetSteeringPolicyRuleCase... cases) {
@@ -110,7 +114,10 @@ public final class GetSteeringPolicyRule {
         }
         @CustomType.Setter
         public Builder defaultAnswerDatas(List<GetSteeringPolicyRuleDefaultAnswerData> defaultAnswerDatas) {
-            this.defaultAnswerDatas = Objects.requireNonNull(defaultAnswerDatas);
+            if (defaultAnswerDatas == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyRule", "defaultAnswerDatas");
+            }
+            this.defaultAnswerDatas = defaultAnswerDatas;
             return this;
         }
         public Builder defaultAnswerDatas(GetSteeringPolicyRuleDefaultAnswerData... defaultAnswerDatas) {
@@ -118,17 +125,26 @@ public final class GetSteeringPolicyRule {
         }
         @CustomType.Setter
         public Builder defaultCount(Integer defaultCount) {
-            this.defaultCount = Objects.requireNonNull(defaultCount);
+            if (defaultCount == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyRule", "defaultCount");
+            }
+            this.defaultCount = defaultCount;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder ruleType(String ruleType) {
-            this.ruleType = Objects.requireNonNull(ruleType);
+            if (ruleType == null) {
+              throw new MissingRequiredPropertyException("GetSteeringPolicyRule", "ruleType");
+            }
+            this.ruleType = ruleType;
             return this;
         }
         public GetSteeringPolicyRule build() {

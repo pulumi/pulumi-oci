@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs;
 import java.lang.String;
@@ -152,8 +153,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
         }
 
         public ModelDeploymentModelDeploymentConfigurationDetailsArgs build() {
-            $.deploymentType = Objects.requireNonNull($.deploymentType, "expected parameter 'deploymentType' to be non-null");
-            $.modelConfigurationDetails = Objects.requireNonNull($.modelConfigurationDetails, "expected parameter 'modelConfigurationDetails' to be non-null");
+            if ($.deploymentType == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsArgs", "deploymentType");
+            }
+            if ($.modelConfigurationDetails == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsArgs", "modelConfigurationDetails");
+            }
             return $;
         }
     }

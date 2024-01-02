@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -226,7 +227,9 @@ public final class MountTargetKerberosArgs extends com.pulumi.resources.Resource
         }
 
         public MountTargetKerberosArgs build() {
-            $.kerberosRealm = Objects.requireNonNull($.kerberosRealm, "expected parameter 'kerberosRealm' to be non-null");
+            if ($.kerberosRealm == null) {
+                throw new MissingRequiredPropertyException("MountTargetKerberosArgs", "kerberosRealm");
+            }
             return $;
         }
     }

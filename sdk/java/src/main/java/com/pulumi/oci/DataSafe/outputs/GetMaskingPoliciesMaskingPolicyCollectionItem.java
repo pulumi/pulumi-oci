@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -278,12 +279,18 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
 
         @CustomType.Setter
         public Builder addMaskingColumnsFromSdmTrigger(Integer addMaskingColumnsFromSdmTrigger) {
-            this.addMaskingColumnsFromSdmTrigger = Objects.requireNonNull(addMaskingColumnsFromSdmTrigger);
+            if (addMaskingColumnsFromSdmTrigger == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "addMaskingColumnsFromSdmTrigger");
+            }
+            this.addMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder columnSources(List<GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource> columnSources) {
-            this.columnSources = Objects.requireNonNull(columnSources);
+            if (columnSources == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "columnSources");
+            }
+            this.columnSources = columnSources;
             return this;
         }
         public Builder columnSources(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource... columnSources) {
@@ -291,82 +298,130 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
-            this.isDropTempTablesEnabled = Objects.requireNonNull(isDropTempTablesEnabled);
+            if (isDropTempTablesEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "isDropTempTablesEnabled");
+            }
+            this.isDropTempTablesEnabled = isDropTempTablesEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
-            this.isRedoLoggingEnabled = Objects.requireNonNull(isRedoLoggingEnabled);
+            if (isRedoLoggingEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "isRedoLoggingEnabled");
+            }
+            this.isRedoLoggingEnabled = isRedoLoggingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
-            this.isRefreshStatsEnabled = Objects.requireNonNull(isRefreshStatsEnabled);
+            if (isRefreshStatsEnabled == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "isRefreshStatsEnabled");
+            }
+            this.isRefreshStatsEnabled = isRefreshStatsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder parallelDegree(String parallelDegree) {
-            this.parallelDegree = Objects.requireNonNull(parallelDegree);
+            if (parallelDegree == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "parallelDegree");
+            }
+            this.parallelDegree = parallelDegree;
             return this;
         }
         @CustomType.Setter
         public Builder postMaskingScript(String postMaskingScript) {
-            this.postMaskingScript = Objects.requireNonNull(postMaskingScript);
+            if (postMaskingScript == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "postMaskingScript");
+            }
+            this.postMaskingScript = postMaskingScript;
             return this;
         }
         @CustomType.Setter
         public Builder preMaskingScript(String preMaskingScript) {
-            this.preMaskingScript = Objects.requireNonNull(preMaskingScript);
+            if (preMaskingScript == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "preMaskingScript");
+            }
+            this.preMaskingScript = preMaskingScript;
             return this;
         }
         @CustomType.Setter
         public Builder recompile(String recompile) {
-            this.recompile = Objects.requireNonNull(recompile);
+            if (recompile == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "recompile");
+            }
+            this.recompile = recompile;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMaskingPoliciesMaskingPolicyCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMaskingPoliciesMaskingPolicyCollectionItem build() {

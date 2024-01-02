@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.outputs.CustomTableSavedCustomTableGroupByTag;
 import java.lang.Double;
 import java.lang.String;
@@ -117,6 +118,7 @@ public final class CustomTableSavedCustomTable {
 
         @CustomType.Setter
         public Builder columnGroupBies(@Nullable List<String> columnGroupBies) {
+
             this.columnGroupBies = columnGroupBies;
             return this;
         }
@@ -125,16 +127,21 @@ public final class CustomTableSavedCustomTable {
         }
         @CustomType.Setter
         public Builder compartmentDepth(@Nullable Double compartmentDepth) {
+
             this.compartmentDepth = compartmentDepth;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("CustomTableSavedCustomTable", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder groupByTags(@Nullable List<CustomTableSavedCustomTableGroupByTag> groupByTags) {
+
             this.groupByTags = groupByTags;
             return this;
         }
@@ -143,6 +150,7 @@ public final class CustomTableSavedCustomTable {
         }
         @CustomType.Setter
         public Builder rowGroupBies(@Nullable List<String> rowGroupBies) {
+
             this.rowGroupBies = rowGroupBies;
             return this;
         }
@@ -151,6 +159,7 @@ public final class CustomTableSavedCustomTable {
         }
         @CustomType.Setter
         public Builder version(@Nullable Double version) {
+
             this.version = version;
             return this;
         }

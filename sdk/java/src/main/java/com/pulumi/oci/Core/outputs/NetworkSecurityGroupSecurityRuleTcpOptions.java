@@ -43,11 +43,13 @@ public final class NetworkSecurityGroupSecurityRuleTcpOptions {
 
         @CustomType.Setter
         public Builder destinationPortRange(@Nullable NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRange destinationPortRange) {
+
             this.destinationPortRange = destinationPortRange;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePortRange(@Nullable NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRange sourcePortRange) {
+
             this.sourcePortRange = sourcePortRange;
             return this;
         }

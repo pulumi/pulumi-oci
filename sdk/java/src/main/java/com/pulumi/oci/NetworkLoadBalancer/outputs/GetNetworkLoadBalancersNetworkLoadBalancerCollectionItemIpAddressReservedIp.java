@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAdd
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIp build() {

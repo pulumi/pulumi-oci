@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.GetClustersClusterCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetClustersClusterCollection {
 
         @CustomType.Setter
         public Builder items(List<GetClustersClusterCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetClustersClusterCollectionItem... items) {

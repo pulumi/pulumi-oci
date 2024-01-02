@@ -58,11 +58,13 @@ public final class ProfileLevelsConfigurationItem {
 
         @CustomType.Setter
         public Builder level(@Nullable String level) {
+
             this.level = level;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationId(@Nullable String recommendationId) {
+
             this.recommendationId = recommendationId;
             return this;
         }

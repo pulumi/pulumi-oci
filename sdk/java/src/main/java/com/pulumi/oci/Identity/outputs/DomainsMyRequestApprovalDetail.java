@@ -269,36 +269,43 @@ public final class DomainsMyRequestApprovalDetail {
 
         @CustomType.Setter
         public Builder approvalType(@Nullable String approvalType) {
+
             this.approvalType = approvalType;
             return this;
         }
         @CustomType.Setter
         public Builder approverDisplayName(@Nullable String approverDisplayName) {
+
             this.approverDisplayName = approverDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder approverId(@Nullable String approverId) {
+
             this.approverId = approverId;
             return this;
         }
         @CustomType.Setter
         public Builder justification(@Nullable String justification) {
+
             this.justification = justification;
             return this;
         }
         @CustomType.Setter
         public Builder order(@Nullable Integer order) {
+
             this.order = order;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable String status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }

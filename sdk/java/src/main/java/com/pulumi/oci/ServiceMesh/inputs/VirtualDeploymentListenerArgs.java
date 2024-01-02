@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -188,8 +189,12 @@ public final class VirtualDeploymentListenerArgs extends com.pulumi.resources.Re
         }
 
         public VirtualDeploymentListenerArgs build() {
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("VirtualDeploymentListenerArgs", "port");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("VirtualDeploymentListenerArgs", "protocol");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -117,6 +118,7 @@ public final class DeploymentSpecificationRequestPoliciesCors {
 
         @CustomType.Setter
         public Builder allowedHeaders(@Nullable List<String> allowedHeaders) {
+
             this.allowedHeaders = allowedHeaders;
             return this;
         }
@@ -125,6 +127,7 @@ public final class DeploymentSpecificationRequestPoliciesCors {
         }
         @CustomType.Setter
         public Builder allowedMethods(@Nullable List<String> allowedMethods) {
+
             this.allowedMethods = allowedMethods;
             return this;
         }
@@ -133,7 +136,10 @@ public final class DeploymentSpecificationRequestPoliciesCors {
         }
         @CustomType.Setter
         public Builder allowedOrigins(List<String> allowedOrigins) {
-            this.allowedOrigins = Objects.requireNonNull(allowedOrigins);
+            if (allowedOrigins == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesCors", "allowedOrigins");
+            }
+            this.allowedOrigins = allowedOrigins;
             return this;
         }
         public Builder allowedOrigins(String... allowedOrigins) {
@@ -141,6 +147,7 @@ public final class DeploymentSpecificationRequestPoliciesCors {
         }
         @CustomType.Setter
         public Builder exposedHeaders(@Nullable List<String> exposedHeaders) {
+
             this.exposedHeaders = exposedHeaders;
             return this;
         }
@@ -149,11 +156,13 @@ public final class DeploymentSpecificationRequestPoliciesCors {
         }
         @CustomType.Setter
         public Builder isAllowCredentialsEnabled(@Nullable Boolean isAllowCredentialsEnabled) {
+
             this.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder maxAgeInSeconds(@Nullable Integer maxAgeInSeconds) {
+
             this.maxAgeInSeconds = maxAgeInSeconds;
             return this;
         }

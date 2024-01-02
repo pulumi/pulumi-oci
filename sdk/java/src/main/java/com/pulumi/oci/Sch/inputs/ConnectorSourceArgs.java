@@ -5,6 +5,7 @@ package com.pulumi.oci.Sch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceCursorArgs;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceLogSourceArgs;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceMonitoringSourceArgs;
@@ -248,7 +249,9 @@ public final class ConnectorSourceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public ConnectorSourceArgs build() {
-            $.kind = Objects.requireNonNull($.kind, "expected parameter 'kind' to be non-null");
+            if ($.kind == null) {
+                throw new MissingRequiredPropertyException("ConnectorSourceArgs", "kind");
+            }
             return $;
         }
     }

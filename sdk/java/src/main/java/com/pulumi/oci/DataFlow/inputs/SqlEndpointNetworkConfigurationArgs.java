@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.inputs.SqlEndpointNetworkConfigurationAccessControlRuleArgs;
 import java.lang.String;
 import java.util.List;
@@ -310,7 +311,9 @@ public final class SqlEndpointNetworkConfigurationArgs extends com.pulumi.resour
         }
 
         public SqlEndpointNetworkConfigurationArgs build() {
-            $.networkType = Objects.requireNonNull($.networkType, "expected parameter 'networkType' to be non-null");
+            if ($.networkType == null) {
+                throw new MissingRequiredPropertyException("SqlEndpointNetworkConfigurationArgs", "networkType");
+            }
             return $;
         }
     }

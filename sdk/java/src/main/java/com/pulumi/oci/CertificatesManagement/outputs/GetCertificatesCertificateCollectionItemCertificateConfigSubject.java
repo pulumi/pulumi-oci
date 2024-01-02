@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -266,87 +267,138 @@ public final class GetCertificatesCertificateCollectionItemCertificateConfigSubj
 
         @CustomType.Setter
         public Builder commonName(String commonName) {
-            this.commonName = Objects.requireNonNull(commonName);
+            if (commonName == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "commonName");
+            }
+            this.commonName = commonName;
             return this;
         }
         @CustomType.Setter
         public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+            if (country == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "country");
+            }
+            this.country = country;
             return this;
         }
         @CustomType.Setter
         public Builder distinguishedNameQualifier(String distinguishedNameQualifier) {
-            this.distinguishedNameQualifier = Objects.requireNonNull(distinguishedNameQualifier);
+            if (distinguishedNameQualifier == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "distinguishedNameQualifier");
+            }
+            this.distinguishedNameQualifier = distinguishedNameQualifier;
             return this;
         }
         @CustomType.Setter
         public Builder domainComponent(String domainComponent) {
-            this.domainComponent = Objects.requireNonNull(domainComponent);
+            if (domainComponent == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "domainComponent");
+            }
+            this.domainComponent = domainComponent;
             return this;
         }
         @CustomType.Setter
         public Builder generationQualifier(String generationQualifier) {
-            this.generationQualifier = Objects.requireNonNull(generationQualifier);
+            if (generationQualifier == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "generationQualifier");
+            }
+            this.generationQualifier = generationQualifier;
             return this;
         }
         @CustomType.Setter
         public Builder givenName(String givenName) {
-            this.givenName = Objects.requireNonNull(givenName);
+            if (givenName == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "givenName");
+            }
+            this.givenName = givenName;
             return this;
         }
         @CustomType.Setter
         public Builder initials(String initials) {
-            this.initials = Objects.requireNonNull(initials);
+            if (initials == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "initials");
+            }
+            this.initials = initials;
             return this;
         }
         @CustomType.Setter
         public Builder localityName(String localityName) {
-            this.localityName = Objects.requireNonNull(localityName);
+            if (localityName == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "localityName");
+            }
+            this.localityName = localityName;
             return this;
         }
         @CustomType.Setter
         public Builder organization(String organization) {
-            this.organization = Objects.requireNonNull(organization);
+            if (organization == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "organization");
+            }
+            this.organization = organization;
             return this;
         }
         @CustomType.Setter
         public Builder organizationalUnit(String organizationalUnit) {
-            this.organizationalUnit = Objects.requireNonNull(organizationalUnit);
+            if (organizationalUnit == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "organizationalUnit");
+            }
+            this.organizationalUnit = organizationalUnit;
             return this;
         }
         @CustomType.Setter
         public Builder pseudonym(String pseudonym) {
-            this.pseudonym = Objects.requireNonNull(pseudonym);
+            if (pseudonym == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "pseudonym");
+            }
+            this.pseudonym = pseudonym;
             return this;
         }
         @CustomType.Setter
         public Builder serialNumber(String serialNumber) {
-            this.serialNumber = Objects.requireNonNull(serialNumber);
+            if (serialNumber == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "serialNumber");
+            }
+            this.serialNumber = serialNumber;
             return this;
         }
         @CustomType.Setter
         public Builder stateOrProvinceName(String stateOrProvinceName) {
-            this.stateOrProvinceName = Objects.requireNonNull(stateOrProvinceName);
+            if (stateOrProvinceName == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "stateOrProvinceName");
+            }
+            this.stateOrProvinceName = stateOrProvinceName;
             return this;
         }
         @CustomType.Setter
         public Builder street(String street) {
-            this.street = Objects.requireNonNull(street);
+            if (street == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "street");
+            }
+            this.street = street;
             return this;
         }
         @CustomType.Setter
         public Builder surname(String surname) {
-            this.surname = Objects.requireNonNull(surname);
+            if (surname == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "surname");
+            }
+            this.surname = surname;
             return this;
         }
         @CustomType.Setter
         public Builder title(String title) {
-            this.title = Objects.requireNonNull(title);
+            if (title == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "title");
+            }
+            this.title = title;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateCollectionItemCertificateConfigSubject", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetCertificatesCertificateCollectionItemCertificateConfigSubject build() {

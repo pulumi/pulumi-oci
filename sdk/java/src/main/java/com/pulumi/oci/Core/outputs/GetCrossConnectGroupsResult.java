@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCrossConnectGroupsCrossConnectGroup;
 import com.pulumi.oci.Core.outputs.GetCrossConnectGroupsFilter;
 import java.lang.String;
@@ -109,12 +110,18 @@ public final class GetCrossConnectGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectGroups(List<GetCrossConnectGroupsCrossConnectGroup> crossConnectGroups) {
-            this.crossConnectGroups = Objects.requireNonNull(crossConnectGroups);
+            if (crossConnectGroups == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsResult", "crossConnectGroups");
+            }
+            this.crossConnectGroups = crossConnectGroups;
             return this;
         }
         public Builder crossConnectGroups(GetCrossConnectGroupsCrossConnectGroup... crossConnectGroups) {
@@ -122,11 +129,13 @@ public final class GetCrossConnectGroupsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCrossConnectGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetCrossConnectGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

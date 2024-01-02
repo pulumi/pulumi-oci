@@ -103,26 +103,31 @@ public final class VbInstanceAttachment {
 
         @CustomType.Setter
         public Builder isImplicit(@Nullable Boolean isImplicit) {
+
             this.isImplicit = isImplicit;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
+
             this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetInstanceUrl(@Nullable String targetInstanceUrl) {
+
             this.targetInstanceUrl = targetInstanceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder targetRole(@Nullable String targetRole) {
+
             this.targetRole = targetRole;
             return this;
         }
         @CustomType.Setter
         public Builder targetServiceType(@Nullable String targetServiceType) {
+
             this.targetServiceType = targetServiceType;
             return this;
         }

@@ -66,6 +66,7 @@ public final class DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsexte
 
         @CustomType.Setter
         public Builder allowSelfChange(@Nullable Boolean allowSelfChange) {
+
             this.allowSelfChange = allowSelfChange;
             return this;
         }

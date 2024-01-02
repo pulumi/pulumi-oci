@@ -58,11 +58,13 @@ public final class ExternalNonContainerDatabaseStackMonitoringConfig {
 
         @CustomType.Setter
         public Builder stackMonitoringConnectorId(@Nullable String stackMonitoringConnectorId) {
+
             this.stackMonitoringConnectorId = stackMonitoringConnectorId;
             return this;
         }
         @CustomType.Setter
         public Builder stackMonitoringStatus(@Nullable String stackMonitoringStatus) {
+
             this.stackMonitoringStatus = stackMonitoringStatus;
             return this;
         }

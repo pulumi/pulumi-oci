@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -201,8 +202,12 @@ public final class DbNodeConsoleConnectionArgs extends com.pulumi.resources.Reso
         }
 
         public DbNodeConsoleConnectionArgs build() {
-            $.dbNodeId = Objects.requireNonNull($.dbNodeId, "expected parameter 'dbNodeId' to be non-null");
-            $.publicKey = Objects.requireNonNull($.publicKey, "expected parameter 'publicKey' to be non-null");
+            if ($.dbNodeId == null) {
+                throw new MissingRequiredPropertyException("DbNodeConsoleConnectionArgs", "dbNodeId");
+            }
+            if ($.publicKey == null) {
+                throw new MissingRequiredPropertyException("DbNodeConsoleConnectionArgs", "publicKey");
+            }
             return $;
         }
     }

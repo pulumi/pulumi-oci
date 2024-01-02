@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -290,97 +291,154 @@ public final class GetLicenseRecordResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder expirationDate(String expirationDate) {
-            this.expirationDate = Objects.requireNonNull(expirationDate);
+            if (expirationDate == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "expirationDate");
+            }
+            this.expirationDate = expirationDate;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isPerpetual(Boolean isPerpetual) {
-            this.isPerpetual = Objects.requireNonNull(isPerpetual);
+            if (isPerpetual == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "isPerpetual");
+            }
+            this.isPerpetual = isPerpetual;
             return this;
         }
         @CustomType.Setter
         public Builder isUnlimited(Boolean isUnlimited) {
-            this.isUnlimited = Objects.requireNonNull(isUnlimited);
+            if (isUnlimited == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "isUnlimited");
+            }
+            this.isUnlimited = isUnlimited;
             return this;
         }
         @CustomType.Setter
         public Builder licenseCount(Integer licenseCount) {
-            this.licenseCount = Objects.requireNonNull(licenseCount);
+            if (licenseCount == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "licenseCount");
+            }
+            this.licenseCount = licenseCount;
             return this;
         }
         @CustomType.Setter
         public Builder licenseRecordId(String licenseRecordId) {
-            this.licenseRecordId = Objects.requireNonNull(licenseRecordId);
+            if (licenseRecordId == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "licenseRecordId");
+            }
+            this.licenseRecordId = licenseRecordId;
             return this;
         }
         @CustomType.Setter
         public Builder licenseUnit(String licenseUnit) {
-            this.licenseUnit = Objects.requireNonNull(licenseUnit);
+            if (licenseUnit == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "licenseUnit");
+            }
+            this.licenseUnit = licenseUnit;
             return this;
         }
         @CustomType.Setter
         public Builder productId(String productId) {
-            this.productId = Objects.requireNonNull(productId);
+            if (productId == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "productId");
+            }
+            this.productId = productId;
             return this;
         }
         @CustomType.Setter
         public Builder productLicense(String productLicense) {
-            this.productLicense = Objects.requireNonNull(productLicense);
+            if (productLicense == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "productLicense");
+            }
+            this.productLicense = productLicense;
             return this;
         }
         @CustomType.Setter
         public Builder productLicenseId(String productLicenseId) {
-            this.productLicenseId = Objects.requireNonNull(productLicenseId);
+            if (productLicenseId == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "productLicenseId");
+            }
+            this.productLicenseId = productLicenseId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder supportEndDate(String supportEndDate) {
-            this.supportEndDate = Objects.requireNonNull(supportEndDate);
+            if (supportEndDate == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "supportEndDate");
+            }
+            this.supportEndDate = supportEndDate;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetLicenseRecordResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection;
 import com.pulumi.oci.Opsi.outputs.GetEnterpriseManagerBridgesFilter;
 import java.lang.Boolean;
@@ -116,22 +117,28 @@ public final class GetEnterpriseManagerBridgesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder enterpriseManagerBridgeCollections(List<GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection> enterpriseManagerBridgeCollections) {
-            this.enterpriseManagerBridgeCollections = Objects.requireNonNull(enterpriseManagerBridgeCollections);
+            if (enterpriseManagerBridgeCollections == null) {
+              throw new MissingRequiredPropertyException("GetEnterpriseManagerBridgesResult", "enterpriseManagerBridgeCollections");
+            }
+            this.enterpriseManagerBridgeCollections = enterpriseManagerBridgeCollections;
             return this;
         }
         public Builder enterpriseManagerBridgeCollections(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection... enterpriseManagerBridgeCollections) {
@@ -139,6 +146,7 @@ public final class GetEnterpriseManagerBridgesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetEnterpriseManagerBridgesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -147,11 +155,13 @@ public final class GetEnterpriseManagerBridgesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -58,12 +59,16 @@ public final class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDe
 
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetails", "type");
+            }
+            this.type = type;
             return this;
         }
         public InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetails build() {

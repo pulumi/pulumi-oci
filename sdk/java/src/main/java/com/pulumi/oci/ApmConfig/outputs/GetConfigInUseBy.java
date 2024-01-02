@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmConfig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetConfigInUseBy {
 
         @CustomType.Setter
         public Builder configType(String configType) {
-            this.configType = Objects.requireNonNull(configType);
+            if (configType == null) {
+              throw new MissingRequiredPropertyException("GetConfigInUseBy", "configType");
+            }
+            this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetConfigInUseBy", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConfigInUseBy", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder optionsGroup(String optionsGroup) {
-            this.optionsGroup = Objects.requireNonNull(optionsGroup);
+            if (optionsGroup == null) {
+              throw new MissingRequiredPropertyException("GetConfigInUseBy", "optionsGroup");
+            }
+            this.optionsGroup = optionsGroup;
             return this;
         }
         public GetConfigInUseBy build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
@@ -113,32 +114,50 @@ public final class GetTopUtilizedResourcesItem {
 
         @CustomType.Setter
         public Builder resourceCompartmentId(String resourceCompartmentId) {
-            this.resourceCompartmentId = Objects.requireNonNull(resourceCompartmentId);
+            if (resourceCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesItem", "resourceCompartmentId");
+            }
+            this.resourceCompartmentId = resourceCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceCompartmentName(String resourceCompartmentName) {
-            this.resourceCompartmentName = Objects.requireNonNull(resourceCompartmentName);
+            if (resourceCompartmentName == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesItem", "resourceCompartmentName");
+            }
+            this.resourceCompartmentName = resourceCompartmentName;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesItem", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesItem", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder totalUnits(Double totalUnits) {
-            this.totalUnits = Objects.requireNonNull(totalUnits);
+            if (totalUnits == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesItem", "totalUnits");
+            }
+            this.totalUnits = totalUnits;
             return this;
         }
         @CustomType.Setter
         public Builder unitType(String unitType) {
-            this.unitType = Objects.requireNonNull(unitType);
+            if (unitType == null) {
+              throw new MissingRequiredPropertyException("GetTopUtilizedResourcesItem", "unitType");
+            }
+            this.unitType = unitType;
             return this;
         }
         public GetTopUtilizedResourcesItem build() {

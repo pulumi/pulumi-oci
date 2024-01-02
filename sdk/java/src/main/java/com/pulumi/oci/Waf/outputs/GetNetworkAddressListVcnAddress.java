@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetNetworkAddressListVcnAddress {
 
         @CustomType.Setter
         public Builder addresses(String addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+            if (addresses == null) {
+              throw new MissingRequiredPropertyException("GetNetworkAddressListVcnAddress", "addresses");
+            }
+            this.addresses = addresses;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkAddressListVcnAddress", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetNetworkAddressListVcnAddress build() {

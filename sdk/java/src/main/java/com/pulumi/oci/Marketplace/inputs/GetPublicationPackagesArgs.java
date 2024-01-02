@@ -5,6 +5,7 @@ package com.pulumi.oci.Marketplace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -173,7 +174,9 @@ public final class GetPublicationPackagesArgs extends com.pulumi.resources.Invok
         }
 
         public GetPublicationPackagesArgs build() {
-            $.publicationId = Objects.requireNonNull($.publicationId, "expected parameter 'publicationId' to be non-null");
+            if ($.publicationId == null) {
+                throw new MissingRequiredPropertyException("GetPublicationPackagesArgs", "publicationId");
+            }
             return $;
         }
     }

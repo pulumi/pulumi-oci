@@ -5,6 +5,7 @@ package com.pulumi.oci.DataCatalog.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetCatalogPrivateEndpointArgs extends com.pulumi.resources.In
         }
 
         public GetCatalogPrivateEndpointArgs build() {
-            $.catalogPrivateEndpointId = Objects.requireNonNull($.catalogPrivateEndpointId, "expected parameter 'catalogPrivateEndpointId' to be non-null");
+            if ($.catalogPrivateEndpointId == null) {
+                throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointArgs", "catalogPrivateEndpointId");
+            }
             return $;
         }
     }

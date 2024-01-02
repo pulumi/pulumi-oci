@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstancesCapacityReservationInstance;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstancesFilter;
 import java.lang.String;
@@ -101,17 +102,24 @@ public final class GetComputeCapacityReservationInstancesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
-            this.capacityReservationId = Objects.requireNonNull(capacityReservationId);
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstancesResult", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationInstances(List<GetComputeCapacityReservationInstancesCapacityReservationInstance> capacityReservationInstances) {
-            this.capacityReservationInstances = Objects.requireNonNull(capacityReservationInstances);
+            if (capacityReservationInstances == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstancesResult", "capacityReservationInstances");
+            }
+            this.capacityReservationInstances = capacityReservationInstances;
             return this;
         }
         public Builder capacityReservationInstances(GetComputeCapacityReservationInstancesCapacityReservationInstance... capacityReservationInstances) {
@@ -119,11 +127,13 @@ public final class GetComputeCapacityReservationInstancesResult {
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetComputeCapacityReservationInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -132,7 +142,10 @@ public final class GetComputeCapacityReservationInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetComputeCapacityReservationInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetComputeCapacityReservationInstancesResult build() {

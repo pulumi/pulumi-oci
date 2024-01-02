@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetBackendHealthHealthCheckResult {
 
         @CustomType.Setter
         public Builder healthCheckStatus(String healthCheckStatus) {
-            this.healthCheckStatus = Objects.requireNonNull(healthCheckStatus);
+            if (healthCheckStatus == null) {
+              throw new MissingRequiredPropertyException("GetBackendHealthHealthCheckResult", "healthCheckStatus");
+            }
+            this.healthCheckStatus = healthCheckStatus;
             return this;
         }
         @CustomType.Setter
         public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+            if (timestamp == null) {
+              throw new MissingRequiredPropertyException("GetBackendHealthHealthCheckResult", "timestamp");
+            }
+            this.timestamp = timestamp;
             return this;
         }
         public GetBackendHealthHealthCheckResult build() {

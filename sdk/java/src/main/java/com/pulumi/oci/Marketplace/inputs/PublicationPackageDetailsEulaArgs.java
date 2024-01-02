@@ -5,6 +5,7 @@ package com.pulumi.oci.Marketplace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -113,7 +114,9 @@ public final class PublicationPackageDetailsEulaArgs extends com.pulumi.resource
         }
 
         public PublicationPackageDetailsEulaArgs build() {
-            $.eulaType = Objects.requireNonNull($.eulaType, "expected parameter 'eulaType' to be non-null");
+            if ($.eulaType == null) {
+                throw new MissingRequiredPropertyException("PublicationPackageDetailsEulaArgs", "eulaType");
+            }
             return $;
         }
     }

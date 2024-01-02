@@ -72,16 +72,19 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
 
         @CustomType.Setter
         public Builder adrHomeDirectory(@Nullable String adrHomeDirectory) {
+
             this.adrHomeDirectory = adrHomeDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(@Nullable String hostName) {
+
             this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceName(@Nullable String instanceName) {
+
             this.instanceName = instanceName;
             return this;
         }

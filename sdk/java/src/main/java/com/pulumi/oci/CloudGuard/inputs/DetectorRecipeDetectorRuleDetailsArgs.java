@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsConfigurationArgs;
 import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs;
 import java.lang.Boolean;
@@ -443,8 +444,12 @@ public final class DetectorRecipeDetectorRuleDetailsArgs extends com.pulumi.reso
         }
 
         public DetectorRecipeDetectorRuleDetailsArgs build() {
-            $.isEnabled = Objects.requireNonNull($.isEnabled, "expected parameter 'isEnabled' to be non-null");
-            $.riskLevel = Objects.requireNonNull($.riskLevel, "expected parameter 'riskLevel' to be non-null");
+            if ($.isEnabled == null) {
+                throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetailsArgs", "isEnabled");
+            }
+            if ($.riskLevel == null) {
+                throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetailsArgs", "riskLevel");
+            }
             return $;
         }
     }

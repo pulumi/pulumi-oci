@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,7 +151,9 @@ public final class MaskingPolicyColumnSourceArgs extends com.pulumi.resources.Re
         }
 
         public MaskingPolicyColumnSourceArgs build() {
-            $.columnSource = Objects.requireNonNull($.columnSource, "expected parameter 'columnSource' to be non-null");
+            if ($.columnSource == null) {
+                throw new MissingRequiredPropertyException("MaskingPolicyColumnSourceArgs", "columnSource");
+            }
             return $;
         }
     }

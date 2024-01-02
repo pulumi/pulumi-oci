@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -154,47 +155,74 @@ public final class GetBuildRunBuildOutputDeliveredArtifactItem {
 
         @CustomType.Setter
         public Builder artifactRepositoryId(String artifactRepositoryId) {
-            this.artifactRepositoryId = Objects.requireNonNull(artifactRepositoryId);
+            if (artifactRepositoryId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "artifactRepositoryId");
+            }
+            this.artifactRepositoryId = artifactRepositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder artifactType(String artifactType) {
-            this.artifactType = Objects.requireNonNull(artifactType);
+            if (artifactType == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "artifactType");
+            }
+            this.artifactType = artifactType;
             return this;
         }
         @CustomType.Setter
         public Builder deliveredArtifactHash(String deliveredArtifactHash) {
-            this.deliveredArtifactHash = Objects.requireNonNull(deliveredArtifactHash);
+            if (deliveredArtifactHash == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "deliveredArtifactHash");
+            }
+            this.deliveredArtifactHash = deliveredArtifactHash;
             return this;
         }
         @CustomType.Setter
         public Builder deliveredArtifactId(String deliveredArtifactId) {
-            this.deliveredArtifactId = Objects.requireNonNull(deliveredArtifactId);
+            if (deliveredArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "deliveredArtifactId");
+            }
+            this.deliveredArtifactId = deliveredArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactId(String deployArtifactId) {
-            this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
+            if (deployArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "deployArtifactId");
+            }
+            this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder imageUri(String imageUri) {
-            this.imageUri = Objects.requireNonNull(imageUri);
+            if (imageUri == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "imageUri");
+            }
+            this.imageUri = imageUri;
             return this;
         }
         @CustomType.Setter
         public Builder outputArtifactName(String outputArtifactName) {
-            this.outputArtifactName = Objects.requireNonNull(outputArtifactName);
+            if (outputArtifactName == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "outputArtifactName");
+            }
+            this.outputArtifactName = outputArtifactName;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutputDeliveredArtifactItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetBuildRunBuildOutputDeliveredArtifactItem build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfigurationInitVariable;
 import com.pulumi.oci.Mysql.outputs.GetMysqlConfigurationsConfigurationVariable;
 import java.lang.Object;
@@ -229,37 +230,58 @@ public final class GetMysqlConfigurationsConfiguration {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initVariables(List<GetMysqlConfigurationsConfigurationInitVariable> initVariables) {
-            this.initVariables = Objects.requireNonNull(initVariables);
+            if (initVariables == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "initVariables");
+            }
+            this.initVariables = initVariables;
             return this;
         }
         public Builder initVariables(GetMysqlConfigurationsConfigurationInitVariable... initVariables) {
@@ -267,37 +289,58 @@ public final class GetMysqlConfigurationsConfiguration {
         }
         @CustomType.Setter
         public Builder parentConfigurationId(String parentConfigurationId) {
-            this.parentConfigurationId = Objects.requireNonNull(parentConfigurationId);
+            if (parentConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "parentConfigurationId");
+            }
+            this.parentConfigurationId = parentConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder variables(List<GetMysqlConfigurationsConfigurationVariable> variables) {
-            this.variables = Objects.requireNonNull(variables);
+            if (variables == null) {
+              throw new MissingRequiredPropertyException("GetMysqlConfigurationsConfiguration", "variables");
+            }
+            this.variables = variables;
             return this;
         }
         public Builder variables(GetMysqlConfigurationsConfigurationVariable... variables) {

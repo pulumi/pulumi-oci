@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -272,92 +273,146 @@ public final class GetManagedDatabaseSqlPlanBaselineResult {
 
         @CustomType.Setter
         public Builder accepted(String accepted) {
-            this.accepted = Objects.requireNonNull(accepted);
+            if (accepted == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "accepted");
+            }
+            this.accepted = accepted;
             return this;
         }
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder adaptive(String adaptive) {
-            this.adaptive = Objects.requireNonNull(adaptive);
+            if (adaptive == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "adaptive");
+            }
+            this.adaptive = adaptive;
             return this;
         }
         @CustomType.Setter
         public Builder autoPurge(String autoPurge) {
-            this.autoPurge = Objects.requireNonNull(autoPurge);
+            if (autoPurge == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "autoPurge");
+            }
+            this.autoPurge = autoPurge;
             return this;
         }
         @CustomType.Setter
         public Builder enabled(String enabled) {
-            this.enabled = Objects.requireNonNull(enabled);
+            if (enabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "enabled");
+            }
+            this.enabled = enabled;
             return this;
         }
         @CustomType.Setter
         public Builder executionPlan(String executionPlan) {
-            this.executionPlan = Objects.requireNonNull(executionPlan);
+            if (executionPlan == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "executionPlan");
+            }
+            this.executionPlan = executionPlan;
             return this;
         }
         @CustomType.Setter
         public Builder fixed(String fixed) {
-            this.fixed = Objects.requireNonNull(fixed);
+            if (fixed == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "fixed");
+            }
+            this.fixed = fixed;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder module(String module) {
-            this.module = Objects.requireNonNull(module);
+            if (module == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "module");
+            }
+            this.module = module;
             return this;
         }
         @CustomType.Setter
         public Builder origin(String origin) {
-            this.origin = Objects.requireNonNull(origin);
+            if (origin == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "origin");
+            }
+            this.origin = origin;
             return this;
         }
         @CustomType.Setter
         public Builder planName(String planName) {
-            this.planName = Objects.requireNonNull(planName);
+            if (planName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "planName");
+            }
+            this.planName = planName;
             return this;
         }
         @CustomType.Setter
         public Builder reproduced(String reproduced) {
-            this.reproduced = Objects.requireNonNull(reproduced);
+            if (reproduced == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "reproduced");
+            }
+            this.reproduced = reproduced;
             return this;
         }
         @CustomType.Setter
         public Builder sqlHandle(String sqlHandle) {
-            this.sqlHandle = Objects.requireNonNull(sqlHandle);
+            if (sqlHandle == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "sqlHandle");
+            }
+            this.sqlHandle = sqlHandle;
             return this;
         }
         @CustomType.Setter
         public Builder sqlText(String sqlText) {
-            this.sqlText = Objects.requireNonNull(sqlText);
+            if (sqlText == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "sqlText");
+            }
+            this.sqlText = sqlText;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastExecuted(String timeLastExecuted) {
-            this.timeLastExecuted = Objects.requireNonNull(timeLastExecuted);
+            if (timeLastExecuted == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "timeLastExecuted");
+            }
+            this.timeLastExecuted = timeLastExecuted;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastModified(String timeLastModified) {
-            this.timeLastModified = Objects.requireNonNull(timeLastModified);
+            if (timeLastModified == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineResult", "timeLastModified");
+            }
+            this.timeLastModified = timeLastModified;
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineResult build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -299,11 +300,21 @@ public final class PolicyWafConfigCaptchaArgs extends com.pulumi.resources.Resou
         }
 
         public PolicyWafConfigCaptchaArgs build() {
-            $.failureMessage = Objects.requireNonNull($.failureMessage, "expected parameter 'failureMessage' to be non-null");
-            $.sessionExpirationInSeconds = Objects.requireNonNull($.sessionExpirationInSeconds, "expected parameter 'sessionExpirationInSeconds' to be non-null");
-            $.submitLabel = Objects.requireNonNull($.submitLabel, "expected parameter 'submitLabel' to be non-null");
-            $.title = Objects.requireNonNull($.title, "expected parameter 'title' to be non-null");
-            $.url = Objects.requireNonNull($.url, "expected parameter 'url' to be non-null");
+            if ($.failureMessage == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigCaptchaArgs", "failureMessage");
+            }
+            if ($.sessionExpirationInSeconds == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigCaptchaArgs", "sessionExpirationInSeconds");
+            }
+            if ($.submitLabel == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigCaptchaArgs", "submitLabel");
+            }
+            if ($.title == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigCaptchaArgs", "title");
+            }
+            if ($.url == null) {
+                throw new MissingRequiredPropertyException("PolicyWafConfigCaptchaArgs", "url");
+            }
             return $;
         }
     }

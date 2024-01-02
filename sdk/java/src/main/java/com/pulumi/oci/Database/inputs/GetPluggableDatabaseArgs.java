@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetPluggableDatabaseArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetPluggableDatabaseArgs build() {
-            $.pluggableDatabaseId = Objects.requireNonNull($.pluggableDatabaseId, "expected parameter 'pluggableDatabaseId' to be non-null");
+            if ($.pluggableDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetPluggableDatabaseArgs", "pluggableDatabaseId");
+            }
             return $;
         }
     }

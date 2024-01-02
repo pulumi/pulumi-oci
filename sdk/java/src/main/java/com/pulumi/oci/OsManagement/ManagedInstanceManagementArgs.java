@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagement.inputs.ManagedInstanceManagementChildSoftwareSourceArgs;
 import com.pulumi.oci.OsManagement.inputs.ManagedInstanceManagementManagedInstanceGroupArgs;
 import com.pulumi.oci.OsManagement.inputs.ManagedInstanceManagementParentSoftwareSourceArgs;
@@ -211,7 +212,9 @@ public final class ManagedInstanceManagementArgs extends com.pulumi.resources.Re
         }
 
         public ManagedInstanceManagementArgs build() {
-            $.managedInstanceId = Objects.requireNonNull($.managedInstanceId, "expected parameter 'managedInstanceId' to be non-null");
+            if ($.managedInstanceId == null) {
+                throw new MissingRequiredPropertyException("ManagedInstanceManagementArgs", "managedInstanceId");
+            }
             return $;
         }
     }

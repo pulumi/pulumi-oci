@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyItemLink;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyItemNode;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetLogAnalyticsEntityTopologyItem {
 
         @CustomType.Setter
         public Builder links(List<GetLogAnalyticsEntityTopologyItemLink> links) {
-            this.links = Objects.requireNonNull(links);
+            if (links == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItem", "links");
+            }
+            this.links = links;
             return this;
         }
         public Builder links(GetLogAnalyticsEntityTopologyItemLink... links) {
@@ -66,7 +70,10 @@ public final class GetLogAnalyticsEntityTopologyItem {
         }
         @CustomType.Setter
         public Builder nodes(List<GetLogAnalyticsEntityTopologyItemNode> nodes) {
-            this.nodes = Objects.requireNonNull(nodes);
+            if (nodes == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItem", "nodes");
+            }
+            this.nodes = nodes;
             return this;
         }
         public Builder nodes(GetLogAnalyticsEntityTopologyItemNode... nodes) {

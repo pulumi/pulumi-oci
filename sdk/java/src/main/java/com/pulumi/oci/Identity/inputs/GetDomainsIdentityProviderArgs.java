@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsIdentityProviderArgs extends com.pulumi.resources.I
         }
 
         public GetDomainsIdentityProviderArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.identityProviderId = Objects.requireNonNull($.identityProviderId, "expected parameter 'identityProviderId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsIdentityProviderArgs", "idcsEndpoint");
+            }
+            if ($.identityProviderId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsIdentityProviderArgs", "identityProviderId");
+            }
             return $;
         }
     }

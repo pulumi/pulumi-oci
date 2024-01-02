@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -86,22 +87,34 @@ public final class GetStreamPoolKafkaSetting {
 
         @CustomType.Setter
         public Builder autoCreateTopicsEnable(Boolean autoCreateTopicsEnable) {
-            this.autoCreateTopicsEnable = Objects.requireNonNull(autoCreateTopicsEnable);
+            if (autoCreateTopicsEnable == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolKafkaSetting", "autoCreateTopicsEnable");
+            }
+            this.autoCreateTopicsEnable = autoCreateTopicsEnable;
             return this;
         }
         @CustomType.Setter
         public Builder bootstrapServers(String bootstrapServers) {
-            this.bootstrapServers = Objects.requireNonNull(bootstrapServers);
+            if (bootstrapServers == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolKafkaSetting", "bootstrapServers");
+            }
+            this.bootstrapServers = bootstrapServers;
             return this;
         }
         @CustomType.Setter
         public Builder logRetentionHours(Integer logRetentionHours) {
-            this.logRetentionHours = Objects.requireNonNull(logRetentionHours);
+            if (logRetentionHours == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolKafkaSetting", "logRetentionHours");
+            }
+            this.logRetentionHours = logRetentionHours;
             return this;
         }
         @CustomType.Setter
         public Builder numPartitions(Integer numPartitions) {
-            this.numPartitions = Objects.requireNonNull(numPartitions);
+            if (numPartitions == null) {
+              throw new MissingRequiredPropertyException("GetStreamPoolKafkaSetting", "numPartitions");
+            }
+            this.numPartitions = numPartitions;
             return this;
         }
         public GetStreamPoolKafkaSetting build() {

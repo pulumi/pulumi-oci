@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -435,11 +436,21 @@ public final class OperationsInsightsPrivateEndpointArgs extends com.pulumi.reso
         }
 
         public OperationsInsightsPrivateEndpointArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.isUsedForRacDbs = Objects.requireNonNull($.isUsedForRacDbs, "expected parameter 'isUsedForRacDbs' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsPrivateEndpointArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsPrivateEndpointArgs", "displayName");
+            }
+            if ($.isUsedForRacDbs == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsPrivateEndpointArgs", "isUsedForRacDbs");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsPrivateEndpointArgs", "subnetId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("OperationsInsightsPrivateEndpointArgs", "vcnId");
+            }
             return $;
         }
     }

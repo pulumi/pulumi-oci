@@ -142,41 +142,49 @@ public final class AutonomousDatabaseConnectionUrl {
 
         @CustomType.Setter
         public Builder apexUrl(@Nullable String apexUrl) {
+
             this.apexUrl = apexUrl;
             return this;
         }
         @CustomType.Setter
         public Builder databaseTransformsUrl(@Nullable String databaseTransformsUrl) {
+
             this.databaseTransformsUrl = databaseTransformsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder graphStudioUrl(@Nullable String graphStudioUrl) {
+
             this.graphStudioUrl = graphStudioUrl;
             return this;
         }
         @CustomType.Setter
         public Builder machineLearningNotebookUrl(@Nullable String machineLearningNotebookUrl) {
+
             this.machineLearningNotebookUrl = machineLearningNotebookUrl;
             return this;
         }
         @CustomType.Setter
         public Builder machineLearningUserManagementUrl(@Nullable String machineLearningUserManagementUrl) {
+
             this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
             return this;
         }
         @CustomType.Setter
         public Builder mongoDbUrl(@Nullable String mongoDbUrl) {
+
             this.mongoDbUrl = mongoDbUrl;
             return this;
         }
         @CustomType.Setter
         public Builder ordsUrl(@Nullable String ordsUrl) {
+
             this.ordsUrl = ordsUrl;
             return this;
         }
         @CustomType.Setter
         public Builder sqlDevWebUrl(@Nullable String sqlDevWebUrl) {
+
             this.sqlDevWebUrl = sqlDevWebUrl;
             return this;
         }

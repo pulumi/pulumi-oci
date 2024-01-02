@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.inputs.VaultExternalKeyManagerMetadataArgs;
 import com.pulumi.oci.Kms.inputs.VaultRestoreFromFileArgs;
 import com.pulumi.oci.Kms.inputs.VaultRestoreFromObjectStoreArgs;
@@ -407,9 +408,15 @@ public final class VaultArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public VaultArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.vaultType = Objects.requireNonNull($.vaultType, "expected parameter 'vaultType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("VaultArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("VaultArgs", "displayName");
+            }
+            if ($.vaultType == null) {
+                throw new MissingRequiredPropertyException("VaultArgs", "vaultType");
+            }
             return $;
         }
     }

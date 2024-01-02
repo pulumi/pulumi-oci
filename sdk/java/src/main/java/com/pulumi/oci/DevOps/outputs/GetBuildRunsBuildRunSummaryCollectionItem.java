@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource;
@@ -251,17 +252,26 @@ public final class GetBuildRunsBuildRunSummaryCollectionItem {
 
         @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
-            this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
+            if (buildPipelineId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "buildPipelineId");
+            }
+            this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder buildRunArguments(GetBuildRunsBuildRunSummaryCollectionItemBuildRunArguments buildRunArguments) {
-            this.buildRunArguments = Objects.requireNonNull(buildRunArguments);
+            if (buildRunArguments == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "buildRunArguments");
+            }
+            this.buildRunArguments = buildRunArguments;
             return this;
         }
         @CustomType.Setter
         public Builder buildRunProgressSummaries(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary> buildRunProgressSummaries) {
-            this.buildRunProgressSummaries = Objects.requireNonNull(buildRunProgressSummaries);
+            if (buildRunProgressSummaries == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "buildRunProgressSummaries");
+            }
+            this.buildRunProgressSummaries = buildRunProgressSummaries;
             return this;
         }
         public Builder buildRunProgressSummaries(GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary... buildRunProgressSummaries) {
@@ -269,7 +279,10 @@ public final class GetBuildRunsBuildRunSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder buildRunSources(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource> buildRunSources) {
-            this.buildRunSources = Objects.requireNonNull(buildRunSources);
+            if (buildRunSources == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "buildRunSources");
+            }
+            this.buildRunSources = buildRunSources;
             return this;
         }
         public Builder buildRunSources(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSource... buildRunSources) {
@@ -277,62 +290,98 @@ public final class GetBuildRunsBuildRunSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder commitInfo(GetBuildRunsBuildRunSummaryCollectionItemCommitInfo commitInfo) {
-            this.commitInfo = Objects.requireNonNull(commitInfo);
+            if (commitInfo == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "commitInfo");
+            }
+            this.commitInfo = commitInfo;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItem build() {

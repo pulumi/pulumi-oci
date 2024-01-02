@@ -50,6 +50,7 @@ public final class FunctionTraceConfig {
 
         @CustomType.Setter
         public Builder isEnabled(@Nullable Boolean isEnabled) {
+
             this.isEnabled = isEnabled;
             return this;
         }

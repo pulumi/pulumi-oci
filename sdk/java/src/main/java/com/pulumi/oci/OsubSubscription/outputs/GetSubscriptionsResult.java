@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsubSubscription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsubSubscription.outputs.GetSubscriptionsFilter;
 import com.pulumi.oci.OsubSubscription.outputs.GetSubscriptionsSubscription;
 import java.lang.Boolean;
@@ -110,16 +111,21 @@ public final class GetSubscriptionsResult {
 
         @CustomType.Setter
         public Builder buyerEmail(@Nullable String buyerEmail) {
+
             this.buyerEmail = buyerEmail;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -128,27 +134,36 @@ public final class GetSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isCommitInfoRequired(@Nullable Boolean isCommitInfoRequired) {
+
             this.isCommitInfoRequired = isCommitInfoRequired;
             return this;
         }
         @CustomType.Setter
         public Builder planNumber(@Nullable String planNumber) {
+
             this.planNumber = planNumber;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptionId(@Nullable String subscriptionId) {
+
             this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptions(List<GetSubscriptionsSubscription> subscriptions) {
-            this.subscriptions = Objects.requireNonNull(subscriptions);
+            if (subscriptions == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "subscriptions");
+            }
+            this.subscriptions = subscriptions;
             return this;
         }
         public Builder subscriptions(GetSubscriptionsSubscription... subscriptions) {
@@ -156,11 +171,13 @@ public final class GetSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder xOneGatewaySubscriptionId(@Nullable String xOneGatewaySubscriptionId) {
+
             this.xOneGatewaySubscriptionId = xOneGatewaySubscriptionId;
             return this;
         }
         @CustomType.Setter
         public Builder xOneOriginRegion(@Nullable String xOneOriginRegion) {
+
             this.xOneOriginRegion = xOneOriginRegion;
             return this;
         }

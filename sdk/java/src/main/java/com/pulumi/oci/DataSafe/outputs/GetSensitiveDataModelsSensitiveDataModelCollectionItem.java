@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -284,62 +285,98 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
 
         @CustomType.Setter
         public Builder appSuiteName(String appSuiteName) {
-            this.appSuiteName = Objects.requireNonNull(appSuiteName);
+            if (appSuiteName == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "appSuiteName");
+            }
+            this.appSuiteName = appSuiteName;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAppDefinedRelationDiscoveryEnabled(Boolean isAppDefinedRelationDiscoveryEnabled) {
-            this.isAppDefinedRelationDiscoveryEnabled = Objects.requireNonNull(isAppDefinedRelationDiscoveryEnabled);
+            if (isAppDefinedRelationDiscoveryEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "isAppDefinedRelationDiscoveryEnabled");
+            }
+            this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isIncludeAllSchemas(Boolean isIncludeAllSchemas) {
-            this.isIncludeAllSchemas = Objects.requireNonNull(isIncludeAllSchemas);
+            if (isIncludeAllSchemas == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "isIncludeAllSchemas");
+            }
+            this.isIncludeAllSchemas = isIncludeAllSchemas;
             return this;
         }
         @CustomType.Setter
         public Builder isIncludeAllSensitiveTypes(Boolean isIncludeAllSensitiveTypes) {
-            this.isIncludeAllSensitiveTypes = Objects.requireNonNull(isIncludeAllSensitiveTypes);
+            if (isIncludeAllSensitiveTypes == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "isIncludeAllSensitiveTypes");
+            }
+            this.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
             return this;
         }
         @CustomType.Setter
         public Builder isSampleDataCollectionEnabled(Boolean isSampleDataCollectionEnabled) {
-            this.isSampleDataCollectionEnabled = Objects.requireNonNull(isSampleDataCollectionEnabled);
+            if (isSampleDataCollectionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "isSampleDataCollectionEnabled");
+            }
+            this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder schemasForDiscoveries(List<String> schemasForDiscoveries) {
-            this.schemasForDiscoveries = Objects.requireNonNull(schemasForDiscoveries);
+            if (schemasForDiscoveries == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "schemasForDiscoveries");
+            }
+            this.schemasForDiscoveries = schemasForDiscoveries;
             return this;
         }
         public Builder schemasForDiscoveries(String... schemasForDiscoveries) {
@@ -347,7 +384,10 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
         }
         @CustomType.Setter
         public Builder sensitiveTypeIdsForDiscoveries(List<String> sensitiveTypeIdsForDiscoveries) {
-            this.sensitiveTypeIdsForDiscoveries = Objects.requireNonNull(sensitiveTypeIdsForDiscoveries);
+            if (sensitiveTypeIdsForDiscoveries == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "sensitiveTypeIdsForDiscoveries");
+            }
+            this.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
             return this;
         }
         public Builder sensitiveTypeIdsForDiscoveries(String... sensitiveTypeIdsForDiscoveries) {
@@ -355,27 +395,42 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveDataModelCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetSensitiveDataModelsSensitiveDataModelCollectionItem build() {

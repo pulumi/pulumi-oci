@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetReplicationStatusPlainArgs extends com.pulumi.resources.In
         }
 
         public GetReplicationStatusPlainArgs build() {
-            $.managementEndpoint = Objects.requireNonNull($.managementEndpoint, "expected parameter 'managementEndpoint' to be non-null");
-            $.replicationId = Objects.requireNonNull($.replicationId, "expected parameter 'replicationId' to be non-null");
+            if ($.managementEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetReplicationStatusPlainArgs", "managementEndpoint");
+            }
+            if ($.replicationId == null) {
+                throw new MissingRequiredPropertyException("GetReplicationStatusPlainArgs", "replicationId");
+            }
             return $;
         }
     }

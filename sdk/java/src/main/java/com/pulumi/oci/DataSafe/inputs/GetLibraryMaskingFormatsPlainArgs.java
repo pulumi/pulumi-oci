@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetLibraryMaskingFormatsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -313,7 +314,9 @@ public final class GetLibraryMaskingFormatsPlainArgs extends com.pulumi.resource
         }
 
         public GetLibraryMaskingFormatsPlainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetLibraryMaskingFormatsPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

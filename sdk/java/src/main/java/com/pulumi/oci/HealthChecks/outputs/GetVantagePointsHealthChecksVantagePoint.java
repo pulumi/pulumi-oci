@@ -4,6 +4,7 @@
 package com.pulumi.oci.HealthChecks.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.outputs.GetVantagePointsHealthChecksVantagePointGeo;
 import com.pulumi.oci.HealthChecks.outputs.GetVantagePointsHealthChecksVantagePointRouting;
 import java.lang.String;
@@ -101,12 +102,18 @@ public final class GetVantagePointsHealthChecksVantagePoint {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePoint", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder geos(List<GetVantagePointsHealthChecksVantagePointGeo> geos) {
-            this.geos = Objects.requireNonNull(geos);
+            if (geos == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePoint", "geos");
+            }
+            this.geos = geos;
             return this;
         }
         public Builder geos(GetVantagePointsHealthChecksVantagePointGeo... geos) {
@@ -114,17 +121,26 @@ public final class GetVantagePointsHealthChecksVantagePoint {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePoint", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder providerName(String providerName) {
-            this.providerName = Objects.requireNonNull(providerName);
+            if (providerName == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePoint", "providerName");
+            }
+            this.providerName = providerName;
             return this;
         }
         @CustomType.Setter
         public Builder routings(List<GetVantagePointsHealthChecksVantagePointRouting> routings) {
-            this.routings = Objects.requireNonNull(routings);
+            if (routings == null) {
+              throw new MissingRequiredPropertyException("GetVantagePointsHealthChecksVantagePoint", "routings");
+            }
+            this.routings = routings;
             return this;
         }
         public Builder routings(GetVantagePointsHealthChecksVantagePointRouting... routings) {

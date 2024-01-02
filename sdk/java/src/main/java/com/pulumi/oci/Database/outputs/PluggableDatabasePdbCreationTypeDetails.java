@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails;
 import java.lang.String;
 import java.util.Objects;
@@ -115,32 +116,42 @@ public final class PluggableDatabasePdbCreationTypeDetails {
 
         @CustomType.Setter
         public Builder creationType(String creationType) {
-            this.creationType = Objects.requireNonNull(creationType);
+            if (creationType == null) {
+              throw new MissingRequiredPropertyException("PluggableDatabasePdbCreationTypeDetails", "creationType");
+            }
+            this.creationType = creationType;
             return this;
         }
         @CustomType.Setter
         public Builder dblinkUserPassword(@Nullable String dblinkUserPassword) {
+
             this.dblinkUserPassword = dblinkUserPassword;
             return this;
         }
         @CustomType.Setter
         public Builder dblinkUsername(@Nullable String dblinkUsername) {
+
             this.dblinkUsername = dblinkUsername;
             return this;
         }
         @CustomType.Setter
         public Builder refreshableCloneDetails(@Nullable PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails refreshableCloneDetails) {
+
             this.refreshableCloneDetails = refreshableCloneDetails;
             return this;
         }
         @CustomType.Setter
         public Builder sourceContainerDatabaseAdminPassword(@Nullable String sourceContainerDatabaseAdminPassword) {
+
             this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder sourcePluggableDatabaseId(String sourcePluggableDatabaseId) {
-            this.sourcePluggableDatabaseId = Objects.requireNonNull(sourcePluggableDatabaseId);
+            if (sourcePluggableDatabaseId == null) {
+              throw new MissingRequiredPropertyException("PluggableDatabasePdbCreationTypeDetails", "sourcePluggableDatabaseId");
+            }
+            this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
             return this;
         }
         public PluggableDatabasePdbCreationTypeDetails build() {

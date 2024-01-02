@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailOptionBlockVolume;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetail;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailOptionSecondaryVnic;
@@ -73,7 +74,10 @@ public final class GetInstanceConfigurationInstanceDetailOption {
 
         @CustomType.Setter
         public Builder blockVolumes(List<GetInstanceConfigurationInstanceDetailOptionBlockVolume> blockVolumes) {
-            this.blockVolumes = Objects.requireNonNull(blockVolumes);
+            if (blockVolumes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOption", "blockVolumes");
+            }
+            this.blockVolumes = blockVolumes;
             return this;
         }
         public Builder blockVolumes(GetInstanceConfigurationInstanceDetailOptionBlockVolume... blockVolumes) {
@@ -81,7 +85,10 @@ public final class GetInstanceConfigurationInstanceDetailOption {
         }
         @CustomType.Setter
         public Builder launchDetails(List<GetInstanceConfigurationInstanceDetailOptionLaunchDetail> launchDetails) {
-            this.launchDetails = Objects.requireNonNull(launchDetails);
+            if (launchDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOption", "launchDetails");
+            }
+            this.launchDetails = launchDetails;
             return this;
         }
         public Builder launchDetails(GetInstanceConfigurationInstanceDetailOptionLaunchDetail... launchDetails) {
@@ -89,7 +96,10 @@ public final class GetInstanceConfigurationInstanceDetailOption {
         }
         @CustomType.Setter
         public Builder secondaryVnics(List<GetInstanceConfigurationInstanceDetailOptionSecondaryVnic> secondaryVnics) {
-            this.secondaryVnics = Objects.requireNonNull(secondaryVnics);
+            if (secondaryVnics == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailOption", "secondaryVnics");
+            }
+            this.secondaryVnics = secondaryVnics;
             return this;
         }
         public Builder secondaryVnics(GetInstanceConfigurationInstanceDetailOptionSecondaryVnic... secondaryVnics) {

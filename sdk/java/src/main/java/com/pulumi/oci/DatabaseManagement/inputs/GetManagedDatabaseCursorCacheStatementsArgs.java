@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseCursorCacheStatementsFilterArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -154,7 +155,9 @@ public final class GetManagedDatabaseCursorCacheStatementsArgs extends com.pulum
         }
 
         public GetManagedDatabaseCursorCacheStatementsArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseCursorCacheStatementsArgs", "managedDatabaseId");
+            }
             return $;
         }
     }

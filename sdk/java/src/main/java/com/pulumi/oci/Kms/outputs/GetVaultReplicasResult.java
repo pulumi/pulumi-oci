@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetVaultReplicasFilter;
 import com.pulumi.oci.Kms.outputs.GetVaultReplicasVaultReplica;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetVaultReplicasResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVaultReplicasFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetVaultReplicasResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVaultReplicasResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(String vaultId) {
-            this.vaultId = Objects.requireNonNull(vaultId);
+            if (vaultId == null) {
+              throw new MissingRequiredPropertyException("GetVaultReplicasResult", "vaultId");
+            }
+            this.vaultId = vaultId;
             return this;
         }
         @CustomType.Setter
         public Builder vaultReplicas(List<GetVaultReplicasVaultReplica> vaultReplicas) {
-            this.vaultReplicas = Objects.requireNonNull(vaultReplicas);
+            if (vaultReplicas == null) {
+              throw new MissingRequiredPropertyException("GetVaultReplicasResult", "vaultReplicas");
+            }
+            this.vaultReplicas = vaultReplicas;
             return this;
         }
         public Builder vaultReplicas(GetVaultReplicasVaultReplica... vaultReplicas) {

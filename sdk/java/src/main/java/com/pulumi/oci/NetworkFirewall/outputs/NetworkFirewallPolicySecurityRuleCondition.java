@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -99,7 +100,10 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
 
         @CustomType.Setter
         public Builder applications(List<String> applications) {
-            this.applications = Objects.requireNonNull(applications);
+            if (applications == null) {
+              throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleCondition", "applications");
+            }
+            this.applications = applications;
             return this;
         }
         public Builder applications(String... applications) {
@@ -107,7 +111,10 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
         }
         @CustomType.Setter
         public Builder destinationAddresses(List<String> destinationAddresses) {
-            this.destinationAddresses = Objects.requireNonNull(destinationAddresses);
+            if (destinationAddresses == null) {
+              throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleCondition", "destinationAddresses");
+            }
+            this.destinationAddresses = destinationAddresses;
             return this;
         }
         public Builder destinationAddresses(String... destinationAddresses) {
@@ -115,7 +122,10 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
         }
         @CustomType.Setter
         public Builder services(List<String> services) {
-            this.services = Objects.requireNonNull(services);
+            if (services == null) {
+              throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleCondition", "services");
+            }
+            this.services = services;
             return this;
         }
         public Builder services(String... services) {
@@ -123,7 +133,10 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
         }
         @CustomType.Setter
         public Builder sourceAddresses(List<String> sourceAddresses) {
-            this.sourceAddresses = Objects.requireNonNull(sourceAddresses);
+            if (sourceAddresses == null) {
+              throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleCondition", "sourceAddresses");
+            }
+            this.sourceAddresses = sourceAddresses;
             return this;
         }
         public Builder sourceAddresses(String... sourceAddresses) {
@@ -131,7 +144,10 @@ public final class NetworkFirewallPolicySecurityRuleCondition {
         }
         @CustomType.Setter
         public Builder urls(List<String> urls) {
-            this.urls = Objects.requireNonNull(urls);
+            if (urls == null) {
+              throw new MissingRequiredPropertyException("NetworkFirewallPolicySecurityRuleCondition", "urls");
+            }
+            this.urls = urls;
             return this;
         }
         public Builder urls(String... urls) {

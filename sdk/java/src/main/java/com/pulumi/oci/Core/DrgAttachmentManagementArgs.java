@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.DrgAttachmentManagementNetworkDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -540,9 +541,15 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
         }
 
         public DrgAttachmentManagementArgs build() {
-            $.attachmentType = Objects.requireNonNull($.attachmentType, "expected parameter 'attachmentType' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.drgId = Objects.requireNonNull($.drgId, "expected parameter 'drgId' to be non-null");
+            if ($.attachmentType == null) {
+                throw new MissingRequiredPropertyException("DrgAttachmentManagementArgs", "attachmentType");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DrgAttachmentManagementArgs", "compartmentId");
+            }
+            if ($.drgId == null) {
+                throw new MissingRequiredPropertyException("DrgAttachmentManagementArgs", "drgId");
+            }
             return $;
         }
     }

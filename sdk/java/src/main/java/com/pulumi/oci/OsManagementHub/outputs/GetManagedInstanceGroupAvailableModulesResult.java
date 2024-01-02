@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailableModulesFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection;
 import java.lang.String;
@@ -99,11 +100,13 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedInstanceGroupAvailableModulesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -112,12 +115,18 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailableModulesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedInstanceGroupAvailableModuleCollections(List<GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection> managedInstanceGroupAvailableModuleCollections) {
-            this.managedInstanceGroupAvailableModuleCollections = Objects.requireNonNull(managedInstanceGroupAvailableModuleCollections);
+            if (managedInstanceGroupAvailableModuleCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailableModulesResult", "managedInstanceGroupAvailableModuleCollections");
+            }
+            this.managedInstanceGroupAvailableModuleCollections = managedInstanceGroupAvailableModuleCollections;
             return this;
         }
         public Builder managedInstanceGroupAvailableModuleCollections(GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection... managedInstanceGroupAvailableModuleCollections) {
@@ -125,16 +134,21 @@ public final class GetManagedInstanceGroupAvailableModulesResult {
         }
         @CustomType.Setter
         public Builder managedInstanceGroupId(String managedInstanceGroupId) {
-            this.managedInstanceGroupId = Objects.requireNonNull(managedInstanceGroupId);
+            if (managedInstanceGroupId == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceGroupAvailableModulesResult", "managedInstanceGroupId");
+            }
+            this.managedInstanceGroupId = managedInstanceGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }

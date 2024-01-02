@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetVnicPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetVnicPlainArgs build() {
-            $.vnicId = Objects.requireNonNull($.vnicId, "expected parameter 'vnicId' to be non-null");
+            if ($.vnicId == null) {
+                throw new MissingRequiredPropertyException("GetVnicPlainArgs", "vnicId");
+            }
             return $;
         }
     }

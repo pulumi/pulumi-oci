@@ -118,31 +118,37 @@ public final class ExternalDatabaseConnectorConnectionCredentials {
 
         @CustomType.Setter
         public Builder credentialName(@Nullable String credentialName) {
+
             this.credentialName = credentialName;
             return this;
         }
         @CustomType.Setter
         public Builder credentialType(@Nullable String credentialType) {
+
             this.credentialType = credentialType;
             return this;
         }
         @CustomType.Setter
         public Builder password(@Nullable String password) {
+
             this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder role(@Nullable String role) {
+
             this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder sslSecretId(@Nullable String sslSecretId) {
+
             this.sslSecretId = sslSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder username(@Nullable String username) {
+
             this.username = username;
             return this;
         }

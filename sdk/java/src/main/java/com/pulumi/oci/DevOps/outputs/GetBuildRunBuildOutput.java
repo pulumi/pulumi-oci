@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildOutputArtifactOverrideParameter;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildOutputDeliveredArtifact;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildOutputExportedVariable;
@@ -88,7 +89,10 @@ public final class GetBuildRunBuildOutput {
 
         @CustomType.Setter
         public Builder artifactOverrideParameters(List<GetBuildRunBuildOutputArtifactOverrideParameter> artifactOverrideParameters) {
-            this.artifactOverrideParameters = Objects.requireNonNull(artifactOverrideParameters);
+            if (artifactOverrideParameters == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutput", "artifactOverrideParameters");
+            }
+            this.artifactOverrideParameters = artifactOverrideParameters;
             return this;
         }
         public Builder artifactOverrideParameters(GetBuildRunBuildOutputArtifactOverrideParameter... artifactOverrideParameters) {
@@ -96,7 +100,10 @@ public final class GetBuildRunBuildOutput {
         }
         @CustomType.Setter
         public Builder deliveredArtifacts(List<GetBuildRunBuildOutputDeliveredArtifact> deliveredArtifacts) {
-            this.deliveredArtifacts = Objects.requireNonNull(deliveredArtifacts);
+            if (deliveredArtifacts == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutput", "deliveredArtifacts");
+            }
+            this.deliveredArtifacts = deliveredArtifacts;
             return this;
         }
         public Builder deliveredArtifacts(GetBuildRunBuildOutputDeliveredArtifact... deliveredArtifacts) {
@@ -104,7 +111,10 @@ public final class GetBuildRunBuildOutput {
         }
         @CustomType.Setter
         public Builder exportedVariables(List<GetBuildRunBuildOutputExportedVariable> exportedVariables) {
-            this.exportedVariables = Objects.requireNonNull(exportedVariables);
+            if (exportedVariables == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutput", "exportedVariables");
+            }
+            this.exportedVariables = exportedVariables;
             return this;
         }
         public Builder exportedVariables(GetBuildRunBuildOutputExportedVariable... exportedVariables) {
@@ -112,7 +122,10 @@ public final class GetBuildRunBuildOutput {
         }
         @CustomType.Setter
         public Builder vulnerabilityAuditSummaryCollections(List<GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection> vulnerabilityAuditSummaryCollections) {
-            this.vulnerabilityAuditSummaryCollections = Objects.requireNonNull(vulnerabilityAuditSummaryCollections);
+            if (vulnerabilityAuditSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildOutput", "vulnerabilityAuditSummaryCollections");
+            }
+            this.vulnerabilityAuditSummaryCollections = vulnerabilityAuditSummaryCollections;
             return this;
         }
         public Builder vulnerabilityAuditSummaryCollections(GetBuildRunBuildOutputVulnerabilityAuditSummaryCollection... vulnerabilityAuditSummaryCollections) {

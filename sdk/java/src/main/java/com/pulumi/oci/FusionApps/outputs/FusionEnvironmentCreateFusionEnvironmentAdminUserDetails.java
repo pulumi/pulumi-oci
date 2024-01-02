@@ -4,6 +4,7 @@
 package com.pulumi.oci.FusionApps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetails {
 
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetails", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+            if (firstName == null) {
+              throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetails", "firstName");
+            }
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+            if (lastName == null) {
+              throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetails", "lastName");
+            }
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetails", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetails", "username");
+            }
+            this.username = username;
             return this;
         }
         public FusionEnvironmentCreateFusionEnvironmentAdminUserDetails build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetVmClusterRecommendedNetworkVmNetworkNode {
 
         @CustomType.Setter
         public Builder dbServerId(String dbServerId) {
-            this.dbServerId = Objects.requireNonNull(dbServerId);
+            if (dbServerId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkVmNetworkNode", "dbServerId");
+            }
+            this.dbServerId = dbServerId;
             return this;
         }
         @CustomType.Setter
         public Builder hostname(String hostname) {
-            this.hostname = Objects.requireNonNull(hostname);
+            if (hostname == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkVmNetworkNode", "hostname");
+            }
+            this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder ip(String ip) {
-            this.ip = Objects.requireNonNull(ip);
+            if (ip == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkVmNetworkNode", "ip");
+            }
+            this.ip = ip;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkVmNetworkNode", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vip(String vip) {
-            this.vip = Objects.requireNonNull(vip);
+            if (vip == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkVmNetworkNode", "vip");
+            }
+            this.vip = vip;
             return this;
         }
         @CustomType.Setter
         public Builder vipHostname(String vipHostname) {
-            this.vipHostname = Objects.requireNonNull(vipHostname);
+            if (vipHostname == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkVmNetworkNode", "vipHostname");
+            }
+            this.vipHostname = vipHostname;
             return this;
         }
         public GetVmClusterRecommendedNetworkVmNetworkNode build() {

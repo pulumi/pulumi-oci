@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceMesh.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceMesh.outputs.GetVirtualServicesFilter;
 import com.pulumi.oci.ServiceMesh.outputs.GetVirtualServicesVirtualServiceCollection;
 import java.lang.String;
@@ -123,11 +124,15 @@ public final class GetVirtualServicesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServicesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualServicesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -136,27 +141,34 @@ public final class GetVirtualServicesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder meshId(@Nullable String meshId) {
+
             this.meshId = meshId;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder virtualServiceCollections(List<GetVirtualServicesVirtualServiceCollection> virtualServiceCollections) {
-            this.virtualServiceCollections = Objects.requireNonNull(virtualServiceCollections);
+            if (virtualServiceCollections == null) {
+              throw new MissingRequiredPropertyException("GetVirtualServicesResult", "virtualServiceCollections");
+            }
+            this.virtualServiceCollections = virtualServiceCollections;
             return this;
         }
         public Builder virtualServiceCollections(GetVirtualServicesVirtualServiceCollection... virtualServiceCollections) {

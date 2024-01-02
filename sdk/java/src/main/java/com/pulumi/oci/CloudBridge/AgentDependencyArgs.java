@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -460,12 +461,24 @@ public final class AgentDependencyArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public AgentDependencyArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dependencyName = Objects.requireNonNull($.dependencyName, "expected parameter 'dependencyName' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.object = Objects.requireNonNull($.object, "expected parameter 'object' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("AgentDependencyArgs", "bucket");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AgentDependencyArgs", "compartmentId");
+            }
+            if ($.dependencyName == null) {
+                throw new MissingRequiredPropertyException("AgentDependencyArgs", "dependencyName");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AgentDependencyArgs", "displayName");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("AgentDependencyArgs", "namespace");
+            }
+            if ($.object == null) {
+                throw new MissingRequiredPropertyException("AgentDependencyArgs", "object");
+            }
             return $;
         }
     }

@@ -74,16 +74,19 @@ public final class BuildRunBuildRunProgress {
 
         @CustomType.Setter
         public Builder buildPipelineStageRunProgress(@Nullable Map<String,Object> buildPipelineStageRunProgress) {
+
             this.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
             return this;
         }
         @CustomType.Setter
         public Builder timeFinished(@Nullable String timeFinished) {
+
             this.timeFinished = timeFinished;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
+
             this.timeStarted = timeStarted;
             return this;
         }

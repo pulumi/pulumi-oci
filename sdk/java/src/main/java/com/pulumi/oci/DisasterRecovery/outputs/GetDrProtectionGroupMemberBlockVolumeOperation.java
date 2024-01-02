@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBlockVolumeOperationMountDetail;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperation {
 
         @CustomType.Setter
         public Builder attachmentDetails(List<GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail> attachmentDetails) {
-            this.attachmentDetails = Objects.requireNonNull(attachmentDetails);
+            if (attachmentDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberBlockVolumeOperation", "attachmentDetails");
+            }
+            this.attachmentDetails = attachmentDetails;
             return this;
         }
         public Builder attachmentDetails(GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail... attachmentDetails) {
@@ -81,12 +85,18 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperation {
         }
         @CustomType.Setter
         public Builder blockVolumeId(String blockVolumeId) {
-            this.blockVolumeId = Objects.requireNonNull(blockVolumeId);
+            if (blockVolumeId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberBlockVolumeOperation", "blockVolumeId");
+            }
+            this.blockVolumeId = blockVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder mountDetails(List<GetDrProtectionGroupMemberBlockVolumeOperationMountDetail> mountDetails) {
-            this.mountDetails = Objects.requireNonNull(mountDetails);
+            if (mountDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberBlockVolumeOperation", "mountDetails");
+            }
+            this.mountDetails = mountDetails;
             return this;
         }
         public Builder mountDetails(GetDrProtectionGroupMemberBlockVolumeOperationMountDetail... mountDetails) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
 
         @CustomType.Setter
         public Builder attachmentDetails(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail> attachmentDetails) {
-            this.attachmentDetails = Objects.requireNonNull(attachmentDetails);
+            if (attachmentDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation", "attachmentDetails");
+            }
+            this.attachmentDetails = attachmentDetails;
             return this;
         }
         public Builder attachmentDetails(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail... attachmentDetails) {
@@ -81,12 +85,18 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
         }
         @CustomType.Setter
         public Builder blockVolumeId(String blockVolumeId) {
-            this.blockVolumeId = Objects.requireNonNull(blockVolumeId);
+            if (blockVolumeId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation", "blockVolumeId");
+            }
+            this.blockVolumeId = blockVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder mountDetails(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail> mountDetails) {
-            this.mountDetails = Objects.requireNonNull(mountDetails);
+            if (mountDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation", "mountDetails");
+            }
+            this.mountDetails = mountDetails;
             return this;
         }
         public Builder mountDetails(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail... mountDetails) {

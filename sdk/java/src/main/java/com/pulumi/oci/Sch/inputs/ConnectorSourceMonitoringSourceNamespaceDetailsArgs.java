@@ -5,6 +5,7 @@ package com.pulumi.oci.Sch.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Sch.inputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs;
 import java.lang.String;
 import java.util.List;
@@ -123,8 +124,12 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsArgs extends c
         }
 
         public ConnectorSourceMonitoringSourceNamespaceDetailsArgs build() {
-            $.kind = Objects.requireNonNull($.kind, "expected parameter 'kind' to be non-null");
-            $.namespaces = Objects.requireNonNull($.namespaces, "expected parameter 'namespaces' to be non-null");
+            if ($.kind == null) {
+                throw new MissingRequiredPropertyException("ConnectorSourceMonitoringSourceNamespaceDetailsArgs", "kind");
+            }
+            if ($.namespaces == null) {
+                throw new MissingRequiredPropertyException("ConnectorSourceMonitoringSourceNamespaceDetailsArgs", "namespaces");
+            }
             return $;
         }
     }

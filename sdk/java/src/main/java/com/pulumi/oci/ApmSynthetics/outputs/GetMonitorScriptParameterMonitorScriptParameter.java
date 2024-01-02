@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetMonitorScriptParameterMonitorScriptParameter {
 
         @CustomType.Setter
         public Builder paramName(String paramName) {
-            this.paramName = Objects.requireNonNull(paramName);
+            if (paramName == null) {
+              throw new MissingRequiredPropertyException("GetMonitorScriptParameterMonitorScriptParameter", "paramName");
+            }
+            this.paramName = paramName;
             return this;
         }
         @CustomType.Setter
         public Builder paramValue(String paramValue) {
-            this.paramValue = Objects.requireNonNull(paramValue);
+            if (paramValue == null) {
+              throw new MissingRequiredPropertyException("GetMonitorScriptParameterMonitorScriptParameter", "paramValue");
+            }
+            this.paramValue = paramValue;
             return this;
         }
         public GetMonitorScriptParameterMonitorScriptParameter build() {

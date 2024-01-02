@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedIn
 
         @CustomType.Setter
         public Builder moduleName(String moduleName) {
-            this.moduleName = Objects.requireNonNull(moduleName);
+            if (moduleName == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance", "moduleName");
+            }
+            this.moduleName = moduleName;
             return this;
         }
         @CustomType.Setter
         public Builder profileName(String profileName) {
-            this.profileName = Objects.requireNonNull(profileName);
+            if (profileName == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance", "profileName");
+            }
+            this.profileName = profileName;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder streamName(String streamName) {
-            this.streamName = Objects.requireNonNull(streamName);
+            if (streamName == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance", "streamName");
+            }
+            this.streamName = streamName;
             return this;
         }
         @CustomType.Setter
         public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+            if (timeModified == null) {
+              throw new MissingRequiredPropertyException("GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance", "timeModified");
+            }
+            this.timeModified = timeModified;
             return this;
         }
         public GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstance build() {

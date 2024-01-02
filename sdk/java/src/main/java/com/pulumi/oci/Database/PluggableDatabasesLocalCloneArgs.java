@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -237,8 +238,12 @@ public final class PluggableDatabasesLocalCloneArgs extends com.pulumi.resources
         }
 
         public PluggableDatabasesLocalCloneArgs build() {
-            $.clonedPdbName = Objects.requireNonNull($.clonedPdbName, "expected parameter 'clonedPdbName' to be non-null");
-            $.pluggableDatabaseId = Objects.requireNonNull($.pluggableDatabaseId, "expected parameter 'pluggableDatabaseId' to be non-null");
+            if ($.clonedPdbName == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabasesLocalCloneArgs", "clonedPdbName");
+            }
+            if ($.pluggableDatabaseId == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabasesLocalCloneArgs", "pluggableDatabaseId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceMeasuredBootReportMeasurement;
 import java.lang.Boolean;
 import java.lang.String;
@@ -79,22 +80,34 @@ public final class GetInstanceMeasuredBootReportResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportResult", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder isPolicyVerificationSuccessful(Boolean isPolicyVerificationSuccessful) {
-            this.isPolicyVerificationSuccessful = Objects.requireNonNull(isPolicyVerificationSuccessful);
+            if (isPolicyVerificationSuccessful == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportResult", "isPolicyVerificationSuccessful");
+            }
+            this.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
             return this;
         }
         @CustomType.Setter
         public Builder measurements(List<GetInstanceMeasuredBootReportMeasurement> measurements) {
-            this.measurements = Objects.requireNonNull(measurements);
+            if (measurements == null) {
+              throw new MissingRequiredPropertyException("GetInstanceMeasuredBootReportResult", "measurements");
+            }
+            this.measurements = measurements;
             return this;
         }
         public Builder measurements(GetInstanceMeasuredBootReportMeasurement... measurements) {

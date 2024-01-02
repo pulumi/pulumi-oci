@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotEndpoint;
@@ -387,17 +388,26 @@ public final class GetMysqlBackupDbSystemSnapshot {
 
         @CustomType.Setter
         public Builder adminUsername(String adminUsername) {
-            this.adminUsername = Objects.requireNonNull(adminUsername);
+            if (adminUsername == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "adminUsername");
+            }
+            this.adminUsername = adminUsername;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder backupPolicies(List<GetMysqlBackupDbSystemSnapshotBackupPolicy> backupPolicies) {
-            this.backupPolicies = Objects.requireNonNull(backupPolicies);
+            if (backupPolicies == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "backupPolicies");
+            }
+            this.backupPolicies = backupPolicies;
             return this;
         }
         public Builder backupPolicies(GetMysqlBackupDbSystemSnapshotBackupPolicy... backupPolicies) {
@@ -405,37 +415,58 @@ public final class GetMysqlBackupDbSystemSnapshot {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder configurationId(String configurationId) {
-            this.configurationId = Objects.requireNonNull(configurationId);
+            if (configurationId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "configurationId");
+            }
+            this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
         public Builder crashRecovery(String crashRecovery) {
-            this.crashRecovery = Objects.requireNonNull(crashRecovery);
+            if (crashRecovery == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "crashRecovery");
+            }
+            this.crashRecovery = crashRecovery;
             return this;
         }
         @CustomType.Setter
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
-            this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
+            if (dataStorageSizeInGb == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "dataStorageSizeInGb");
+            }
+            this.dataStorageSizeInGb = dataStorageSizeInGb;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagement(String databaseManagement) {
-            this.databaseManagement = Objects.requireNonNull(databaseManagement);
+            if (databaseManagement == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "databaseManagement");
+            }
+            this.databaseManagement = databaseManagement;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deletionPolicies(List<GetMysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies) {
-            this.deletionPolicies = Objects.requireNonNull(deletionPolicies);
+            if (deletionPolicies == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "deletionPolicies");
+            }
+            this.deletionPolicies = deletionPolicies;
             return this;
         }
         public Builder deletionPolicies(GetMysqlBackupDbSystemSnapshotDeletionPolicy... deletionPolicies) {
@@ -443,17 +474,26 @@ public final class GetMysqlBackupDbSystemSnapshot {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(List<GetMysqlBackupDbSystemSnapshotEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+            if (endpoints == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "endpoints");
+            }
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetMysqlBackupDbSystemSnapshotEndpoint... endpoints) {
@@ -461,37 +501,58 @@ public final class GetMysqlBackupDbSystemSnapshot {
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
-            this.faultDomain = Objects.requireNonNull(faultDomain);
+            if (faultDomain == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "faultDomain");
+            }
+            this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
-            this.isHighlyAvailable = Objects.requireNonNull(isHighlyAvailable);
+            if (isHighlyAvailable == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "isHighlyAvailable");
+            }
+            this.isHighlyAvailable = isHighlyAvailable;
             return this;
         }
         @CustomType.Setter
         public Builder maintenances(List<GetMysqlBackupDbSystemSnapshotMaintenance> maintenances) {
-            this.maintenances = Objects.requireNonNull(maintenances);
+            if (maintenances == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "maintenances");
+            }
+            this.maintenances = maintenances;
             return this;
         }
         public Builder maintenances(GetMysqlBackupDbSystemSnapshotMaintenance... maintenances) {
@@ -499,27 +560,42 @@ public final class GetMysqlBackupDbSystemSnapshot {
         }
         @CustomType.Setter
         public Builder mysqlVersion(String mysqlVersion) {
-            this.mysqlVersion = Objects.requireNonNull(mysqlVersion);
+            if (mysqlVersion == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "mysqlVersion");
+            }
+            this.mysqlVersion = mysqlVersion;
             return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+            if (port == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "port");
+            }
+            this.port = port;
             return this;
         }
         @CustomType.Setter
         public Builder portX(Integer portX) {
-            this.portX = Objects.requireNonNull(portX);
+            if (portX == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "portX");
+            }
+            this.portX = portX;
             return this;
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public GetMysqlBackupDbSystemSnapshot build() {

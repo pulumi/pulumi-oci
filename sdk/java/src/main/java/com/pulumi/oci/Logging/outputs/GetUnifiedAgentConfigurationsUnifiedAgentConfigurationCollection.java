@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollect
 
         @CustomType.Setter
         public Builder items(List<GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem... items) {

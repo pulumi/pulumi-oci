@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -62,12 +63,18 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRang
 
         @CustomType.Setter
         public Builder max(Integer max) {
-            this.max = Objects.requireNonNull(max);
+            if (max == null) {
+              throw new MissingRequiredPropertyException("NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange", "max");
+            }
+            this.max = max;
             return this;
         }
         @CustomType.Setter
         public Builder min(Integer min) {
-            this.min = Objects.requireNonNull(min);
+            if (min == null) {
+              throw new MissingRequiredPropertyException("NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange", "min");
+            }
+            this.min = min;
             return this;
         }
         public NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRange build() {

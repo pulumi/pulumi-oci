@@ -4,6 +4,7 @@
 package com.pulumi.oci.ServiceManagerProxy.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder environmentType(String environmentType) {
-            this.environmentType = Objects.requireNonNull(environmentType);
+            if (environmentType == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint", "environmentType");
+            }
+            this.environmentType = environmentType;
             return this;
         }
         @CustomType.Setter
         public Builder url(String url) {
-            this.url = Objects.requireNonNull(url);
+            if (url == null) {
+              throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint", "url");
+            }
+            this.url = url;
             return this;
         }
         public GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint build() {

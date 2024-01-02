@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -185,10 +186,18 @@ public final class DeployStageBlueGreenStrategyArgs extends com.pulumi.resources
         }
 
         public DeployStageBlueGreenStrategyArgs build() {
-            $.ingressName = Objects.requireNonNull($.ingressName, "expected parameter 'ingressName' to be non-null");
-            $.namespaceA = Objects.requireNonNull($.namespaceA, "expected parameter 'namespaceA' to be non-null");
-            $.namespaceB = Objects.requireNonNull($.namespaceB, "expected parameter 'namespaceB' to be non-null");
-            $.strategyType = Objects.requireNonNull($.strategyType, "expected parameter 'strategyType' to be non-null");
+            if ($.ingressName == null) {
+                throw new MissingRequiredPropertyException("DeployStageBlueGreenStrategyArgs", "ingressName");
+            }
+            if ($.namespaceA == null) {
+                throw new MissingRequiredPropertyException("DeployStageBlueGreenStrategyArgs", "namespaceA");
+            }
+            if ($.namespaceB == null) {
+                throw new MissingRequiredPropertyException("DeployStageBlueGreenStrategyArgs", "namespaceB");
+            }
+            if ($.strategyType == null) {
+                throw new MissingRequiredPropertyException("DeployStageBlueGreenStrategyArgs", "strategyType");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.outputs.GetMediaAssetMediaAssetTag;
 import com.pulumi.oci.MediaServices.outputs.GetMediaAssetMetadata;
 import java.lang.Object;
@@ -361,47 +362,74 @@ public final class GetMediaAssetResult {
 
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder masterMediaAssetId(String masterMediaAssetId) {
-            this.masterMediaAssetId = Objects.requireNonNull(masterMediaAssetId);
+            if (masterMediaAssetId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "masterMediaAssetId");
+            }
+            this.masterMediaAssetId = masterMediaAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder mediaAssetId(String mediaAssetId) {
-            this.mediaAssetId = Objects.requireNonNull(mediaAssetId);
+            if (mediaAssetId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "mediaAssetId");
+            }
+            this.mediaAssetId = mediaAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder mediaAssetTags(List<GetMediaAssetMediaAssetTag> mediaAssetTags) {
-            this.mediaAssetTags = Objects.requireNonNull(mediaAssetTags);
+            if (mediaAssetTags == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "mediaAssetTags");
+            }
+            this.mediaAssetTags = mediaAssetTags;
             return this;
         }
         public Builder mediaAssetTags(GetMediaAssetMediaAssetTag... mediaAssetTags) {
@@ -409,12 +437,18 @@ public final class GetMediaAssetResult {
         }
         @CustomType.Setter
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
-            this.mediaWorkflowJobId = Objects.requireNonNull(mediaWorkflowJobId);
+            if (mediaWorkflowJobId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "mediaWorkflowJobId");
+            }
+            this.mediaWorkflowJobId = mediaWorkflowJobId;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(List<GetMediaAssetMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "metadatas");
+            }
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetMediaAssetMetadata... metadatas) {
@@ -422,67 +456,106 @@ public final class GetMediaAssetResult {
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectEtag(String objectEtag) {
-            this.objectEtag = Objects.requireNonNull(objectEtag);
+            if (objectEtag == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "objectEtag");
+            }
+            this.objectEtag = objectEtag;
             return this;
         }
         @CustomType.Setter
         public Builder parentMediaAssetId(String parentMediaAssetId) {
-            this.parentMediaAssetId = Objects.requireNonNull(parentMediaAssetId);
+            if (parentMediaAssetId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "parentMediaAssetId");
+            }
+            this.parentMediaAssetId = parentMediaAssetId;
             return this;
         }
         @CustomType.Setter
         public Builder segmentRangeEndIndex(String segmentRangeEndIndex) {
-            this.segmentRangeEndIndex = Objects.requireNonNull(segmentRangeEndIndex);
+            if (segmentRangeEndIndex == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "segmentRangeEndIndex");
+            }
+            this.segmentRangeEndIndex = segmentRangeEndIndex;
             return this;
         }
         @CustomType.Setter
         public Builder segmentRangeStartIndex(String segmentRangeStartIndex) {
-            this.segmentRangeStartIndex = Objects.requireNonNull(segmentRangeStartIndex);
+            if (segmentRangeStartIndex == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "segmentRangeStartIndex");
+            }
+            this.segmentRangeStartIndex = segmentRangeStartIndex;
             return this;
         }
         @CustomType.Setter
         public Builder sourceMediaWorkflowId(String sourceMediaWorkflowId) {
-            this.sourceMediaWorkflowId = Objects.requireNonNull(sourceMediaWorkflowId);
+            if (sourceMediaWorkflowId == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "sourceMediaWorkflowId");
+            }
+            this.sourceMediaWorkflowId = sourceMediaWorkflowId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceMediaWorkflowVersion(String sourceMediaWorkflowVersion) {
-            this.sourceMediaWorkflowVersion = Objects.requireNonNull(sourceMediaWorkflowVersion);
+            if (sourceMediaWorkflowVersion == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "sourceMediaWorkflowVersion");
+            }
+            this.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetMediaAssetResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetMediaAssetResult build() {

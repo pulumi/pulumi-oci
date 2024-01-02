@@ -74,11 +74,13 @@ public final class DeployPipelineDeployPipelineEnvironmentItem {
 
         @CustomType.Setter
         public Builder deployEnvironmentId(@Nullable String deployEnvironmentId) {
+
             this.deployEnvironmentId = deployEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder deployPipelineStages(@Nullable List<DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage> deployPipelineStages) {
+
             this.deployPipelineStages = deployPipelineStages;
             return this;
         }
@@ -87,6 +89,7 @@ public final class DeployPipelineDeployPipelineEnvironmentItem {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }

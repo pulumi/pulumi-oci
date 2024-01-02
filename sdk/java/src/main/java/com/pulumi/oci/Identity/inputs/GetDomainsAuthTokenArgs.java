@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsAuthTokenArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetDomainsAuthTokenArgs build() {
-            $.authTokenId = Objects.requireNonNull($.authTokenId, "expected parameter 'authTokenId' to be non-null");
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.authTokenId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsAuthTokenArgs", "authTokenId");
+            }
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsAuthTokenArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

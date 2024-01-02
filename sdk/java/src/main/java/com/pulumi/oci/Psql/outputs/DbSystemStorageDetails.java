@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -93,22 +94,30 @@ public final class DbSystemStorageDetails {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder iops(@Nullable String iops) {
+
             this.iops = iops;
             return this;
         }
         @CustomType.Setter
         public Builder isRegionallyDurable(Boolean isRegionallyDurable) {
-            this.isRegionallyDurable = Objects.requireNonNull(isRegionallyDurable);
+            if (isRegionallyDurable == null) {
+              throw new MissingRequiredPropertyException("DbSystemStorageDetails", "isRegionallyDurable");
+            }
+            this.isRegionallyDurable = isRegionallyDurable;
             return this;
         }
         @CustomType.Setter
         public Builder systemType(String systemType) {
-            this.systemType = Objects.requireNonNull(systemType);
+            if (systemType == null) {
+              throw new MissingRequiredPropertyException("DbSystemStorageDetails", "systemType");
+            }
+            this.systemType = systemType;
             return this;
         }
         public DbSystemStorageDetails build() {

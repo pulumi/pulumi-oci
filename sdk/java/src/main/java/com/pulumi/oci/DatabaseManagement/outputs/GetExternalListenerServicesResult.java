@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerServicesExternalListenerServiceCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalListenerServicesFilter;
 import java.lang.String;
@@ -86,12 +87,18 @@ public final class GetExternalListenerServicesResult {
 
         @CustomType.Setter
         public Builder externalListenerId(String externalListenerId) {
-            this.externalListenerId = Objects.requireNonNull(externalListenerId);
+            if (externalListenerId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerServicesResult", "externalListenerId");
+            }
+            this.externalListenerId = externalListenerId;
             return this;
         }
         @CustomType.Setter
         public Builder externalListenerServiceCollections(List<GetExternalListenerServicesExternalListenerServiceCollection> externalListenerServiceCollections) {
-            this.externalListenerServiceCollections = Objects.requireNonNull(externalListenerServiceCollections);
+            if (externalListenerServiceCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerServicesResult", "externalListenerServiceCollections");
+            }
+            this.externalListenerServiceCollections = externalListenerServiceCollections;
             return this;
         }
         public Builder externalListenerServiceCollections(GetExternalListenerServicesExternalListenerServiceCollection... externalListenerServiceCollections) {
@@ -99,6 +106,7 @@ public final class GetExternalListenerServicesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalListenerServicesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -107,12 +115,18 @@ public final class GetExternalListenerServicesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerServicesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetExternalListenerServicesResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         public GetExternalListenerServicesResult build() {

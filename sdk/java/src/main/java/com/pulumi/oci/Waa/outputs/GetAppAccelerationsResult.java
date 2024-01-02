@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationsFilter;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationsWebAppAccelerationCollection;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetAppAccelerationsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAppAccelerationsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,11 +147,13 @@ public final class GetAppAccelerationsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder states(@Nullable List<String> states) {
+
             this.states = states;
             return this;
         }
@@ -154,7 +162,10 @@ public final class GetAppAccelerationsResult {
         }
         @CustomType.Setter
         public Builder webAppAccelerationCollections(List<GetAppAccelerationsWebAppAccelerationCollection> webAppAccelerationCollections) {
-            this.webAppAccelerationCollections = Objects.requireNonNull(webAppAccelerationCollections);
+            if (webAppAccelerationCollections == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationsResult", "webAppAccelerationCollections");
+            }
+            this.webAppAccelerationCollections = webAppAccelerationCollections;
             return this;
         }
         public Builder webAppAccelerationCollections(GetAppAccelerationsWebAppAccelerationCollection... webAppAccelerationCollections) {
@@ -162,6 +173,7 @@ public final class GetAppAccelerationsResult {
         }
         @CustomType.Setter
         public Builder webAppAccelerationPolicyId(@Nullable String webAppAccelerationPolicyId) {
+
             this.webAppAccelerationPolicyId = webAppAccelerationPolicyId;
             return this;
         }

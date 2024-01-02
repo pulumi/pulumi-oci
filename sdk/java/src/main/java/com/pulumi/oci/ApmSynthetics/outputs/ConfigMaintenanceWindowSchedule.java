@@ -58,11 +58,13 @@ public final class ConfigMaintenanceWindowSchedule {
 
         @CustomType.Setter
         public Builder timeEnded(@Nullable String timeEnded) {
+
             this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(@Nullable String timeStarted) {
+
             this.timeStarted = timeStarted;
             return this;
         }

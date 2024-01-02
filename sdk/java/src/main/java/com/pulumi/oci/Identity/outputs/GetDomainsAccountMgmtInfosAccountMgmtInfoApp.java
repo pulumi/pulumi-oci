@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -295,97 +296,154 @@ public final class GetDomainsAccountMgmtInfosAccountMgmtInfoApp {
 
         @CustomType.Setter
         public Builder active(Boolean active) {
-            this.active = Objects.requireNonNull(active);
+            if (active == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "active");
+            }
+            this.active = active;
             return this;
         }
         @CustomType.Setter
         public Builder appIcon(String appIcon) {
-            this.appIcon = Objects.requireNonNull(appIcon);
+            if (appIcon == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "appIcon");
+            }
+            this.appIcon = appIcon;
             return this;
         }
         @CustomType.Setter
         public Builder appThumbnail(String appThumbnail) {
-            this.appThumbnail = Objects.requireNonNull(appThumbnail);
+            if (appThumbnail == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "appThumbnail");
+            }
+            this.appThumbnail = appThumbnail;
             return this;
         }
         @CustomType.Setter
         public Builder audience(String audience) {
-            this.audience = Objects.requireNonNull(audience);
+            if (audience == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "audience");
+            }
+            this.audience = audience;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder display(String display) {
-            this.display = Objects.requireNonNull(display);
+            if (display == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "display");
+            }
+            this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder isAliasApp(Boolean isAliasApp) {
-            this.isAliasApp = Objects.requireNonNull(isAliasApp);
+            if (isAliasApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "isAliasApp");
+            }
+            this.isAliasApp = isAliasApp;
             return this;
         }
         @CustomType.Setter
         public Builder isAuthoritative(Boolean isAuthoritative) {
-            this.isAuthoritative = Objects.requireNonNull(isAuthoritative);
+            if (isAuthoritative == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "isAuthoritative");
+            }
+            this.isAuthoritative = isAuthoritative;
             return this;
         }
         @CustomType.Setter
         public Builder isLoginTarget(Boolean isLoginTarget) {
-            this.isLoginTarget = Objects.requireNonNull(isLoginTarget);
+            if (isLoginTarget == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "isLoginTarget");
+            }
+            this.isLoginTarget = isLoginTarget;
             return this;
         }
         @CustomType.Setter
         public Builder isManagedApp(Boolean isManagedApp) {
-            this.isManagedApp = Objects.requireNonNull(isManagedApp);
+            if (isManagedApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "isManagedApp");
+            }
+            this.isManagedApp = isManagedApp;
             return this;
         }
         @CustomType.Setter
         public Builder isOauthResource(Boolean isOauthResource) {
-            this.isOauthResource = Objects.requireNonNull(isOauthResource);
+            if (isOauthResource == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "isOauthResource");
+            }
+            this.isOauthResource = isOauthResource;
             return this;
         }
         @CustomType.Setter
         public Builder isOpcService(Boolean isOpcService) {
-            this.isOpcService = Objects.requireNonNull(isOpcService);
+            if (isOpcService == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "isOpcService");
+            }
+            this.isOpcService = isOpcService;
             return this;
         }
         @CustomType.Setter
         public Builder isUnmanagedApp(Boolean isUnmanagedApp) {
-            this.isUnmanagedApp = Objects.requireNonNull(isUnmanagedApp);
+            if (isUnmanagedApp == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "isUnmanagedApp");
+            }
+            this.isUnmanagedApp = isUnmanagedApp;
             return this;
         }
         @CustomType.Setter
         public Builder loginMechanism(String loginMechanism) {
-            this.loginMechanism = Objects.requireNonNull(loginMechanism);
+            if (loginMechanism == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "loginMechanism");
+            }
+            this.loginMechanism = loginMechanism;
             return this;
         }
         @CustomType.Setter
         public Builder meterAsOpcService(Boolean meterAsOpcService) {
-            this.meterAsOpcService = Objects.requireNonNull(meterAsOpcService);
+            if (meterAsOpcService == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "meterAsOpcService");
+            }
+            this.meterAsOpcService = meterAsOpcService;
             return this;
         }
         @CustomType.Setter
         public Builder ref(String ref) {
-            this.ref = Objects.requireNonNull(ref);
+            if (ref == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "ref");
+            }
+            this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder serviceTypeUrn(String serviceTypeUrn) {
-            this.serviceTypeUrn = Objects.requireNonNull(serviceTypeUrn);
+            if (serviceTypeUrn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "serviceTypeUrn");
+            }
+            this.serviceTypeUrn = serviceTypeUrn;
             return this;
         }
         @CustomType.Setter
         public Builder showInMyApps(Boolean showInMyApps) {
-            this.showInMyApps = Objects.requireNonNull(showInMyApps);
+            if (showInMyApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "showInMyApps");
+            }
+            this.showInMyApps = showInMyApps;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAccountMgmtInfosAccountMgmtInfoApp", "value");
+            }
+            this.value = value;
             return this;
         }
         public GetDomainsAccountMgmtInfosAccountMgmtInfoApp build() {

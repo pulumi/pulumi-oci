@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetPrivateIpsFilter;
 import com.pulumi.oci.Core.outputs.GetPrivateIpsPrivateIp;
 import java.lang.String;
@@ -123,6 +124,7 @@ public final class GetPrivateIpsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetPrivateIpsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -131,17 +133,24 @@ public final class GetPrivateIpsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPrivateIpsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(@Nullable String ipAddress) {
+
             this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder privateIps(List<GetPrivateIpsPrivateIp> privateIps) {
-            this.privateIps = Objects.requireNonNull(privateIps);
+            if (privateIps == null) {
+              throw new MissingRequiredPropertyException("GetPrivateIpsResult", "privateIps");
+            }
+            this.privateIps = privateIps;
             return this;
         }
         public Builder privateIps(GetPrivateIpsPrivateIp... privateIps) {
@@ -149,16 +158,19 @@ public final class GetPrivateIpsResult {
         }
         @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
+
             this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder vlanId(@Nullable String vlanId) {
+
             this.vlanId = vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vnicId(@Nullable String vnicId) {
+
             this.vnicId = vnicId;
             return this;
         }

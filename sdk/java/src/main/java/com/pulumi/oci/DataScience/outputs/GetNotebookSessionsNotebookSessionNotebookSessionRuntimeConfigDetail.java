@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail;
 import java.lang.Object;
 import java.lang.String;
@@ -60,12 +61,18 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfi
 
         @CustomType.Setter
         public Builder customEnvironmentVariables(Map<String,Object> customEnvironmentVariables) {
-            this.customEnvironmentVariables = Objects.requireNonNull(customEnvironmentVariables);
+            if (customEnvironmentVariables == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail", "customEnvironmentVariables");
+            }
+            this.customEnvironmentVariables = customEnvironmentVariables;
             return this;
         }
         @CustomType.Setter
         public Builder notebookSessionGitConfigDetails(List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails) {
-            this.notebookSessionGitConfigDetails = Objects.requireNonNull(notebookSessionGitConfigDetails);
+            if (notebookSessionGitConfigDetails == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail", "notebookSessionGitConfigDetails");
+            }
+            this.notebookSessionGitConfigDetails = notebookSessionGitConfigDetails;
             return this;
         }
         public Builder notebookSessionGitConfigDetails(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail... notebookSessionGitConfigDetails) {

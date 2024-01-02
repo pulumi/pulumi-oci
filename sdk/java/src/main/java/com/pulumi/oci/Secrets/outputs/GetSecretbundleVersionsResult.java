@@ -4,6 +4,7 @@
 package com.pulumi.oci.Secrets.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Secrets.outputs.GetSecretbundleVersionsFilter;
 import com.pulumi.oci.Secrets.outputs.GetSecretbundleVersionsSecretBundleVersion;
 import java.lang.String;
@@ -80,6 +81,7 @@ public final class GetSecretbundleVersionsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSecretbundleVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +90,18 @@ public final class GetSecretbundleVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder secretBundleVersions(List<GetSecretbundleVersionsSecretBundleVersion> secretBundleVersions) {
-            this.secretBundleVersions = Objects.requireNonNull(secretBundleVersions);
+            if (secretBundleVersions == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsResult", "secretBundleVersions");
+            }
+            this.secretBundleVersions = secretBundleVersions;
             return this;
         }
         public Builder secretBundleVersions(GetSecretbundleVersionsSecretBundleVersion... secretBundleVersions) {
@@ -101,7 +109,10 @@ public final class GetSecretbundleVersionsResult {
         }
         @CustomType.Setter
         public Builder secretId(String secretId) {
-            this.secretId = Objects.requireNonNull(secretId);
+            if (secretId == null) {
+              throw new MissingRequiredPropertyException("GetSecretbundleVersionsResult", "secretId");
+            }
+            this.secretId = secretId;
             return this;
         }
         public GetSecretbundleVersionsResult build() {

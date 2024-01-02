@@ -5,6 +5,7 @@ package com.pulumi.oci.Jms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -160,9 +161,15 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordArgs extends com.pulu
         }
 
         public JavaDownloadsJavaLicenseAcceptanceRecordArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.licenseAcceptanceStatus = Objects.requireNonNull($.licenseAcceptanceStatus, "expected parameter 'licenseAcceptanceStatus' to be non-null");
-            $.licenseType = Objects.requireNonNull($.licenseType, "expected parameter 'licenseType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaLicenseAcceptanceRecordArgs", "compartmentId");
+            }
+            if ($.licenseAcceptanceStatus == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaLicenseAcceptanceRecordArgs", "licenseAcceptanceStatus");
+            }
+            if ($.licenseType == null) {
+                throw new MissingRequiredPropertyException("JavaDownloadsJavaLicenseAcceptanceRecordArgs", "licenseType");
+            }
             return $;
         }
     }

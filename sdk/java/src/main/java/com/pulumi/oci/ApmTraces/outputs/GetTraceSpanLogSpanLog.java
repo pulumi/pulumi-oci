@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetTraceSpanLogSpanLog {
 
         @CustomType.Setter
         public Builder logKey(String logKey) {
-            this.logKey = Objects.requireNonNull(logKey);
+            if (logKey == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanLogSpanLog", "logKey");
+            }
+            this.logKey = logKey;
             return this;
         }
         @CustomType.Setter
         public Builder logValue(String logValue) {
-            this.logValue = Objects.requireNonNull(logValue);
+            if (logValue == null) {
+              throw new MissingRequiredPropertyException("GetTraceSpanLogSpanLog", "logValue");
+            }
+            this.logValue = logValue;
             return this;
         }
         public GetTraceSpanLogSpanLog build() {

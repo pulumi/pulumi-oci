@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.SubscriberClientArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -300,9 +301,15 @@ public final class SubscriberArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SubscriberArgs build() {
-            $.clients = Objects.requireNonNull($.clients, "expected parameter 'clients' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.usagePlans = Objects.requireNonNull($.usagePlans, "expected parameter 'usagePlans' to be non-null");
+            if ($.clients == null) {
+                throw new MissingRequiredPropertyException("SubscriberArgs", "clients");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SubscriberArgs", "compartmentId");
+            }
+            if ($.usagePlans == null) {
+                throw new MissingRequiredPropertyException("SubscriberArgs", "usagePlans");
+            }
             return $;
         }
     }

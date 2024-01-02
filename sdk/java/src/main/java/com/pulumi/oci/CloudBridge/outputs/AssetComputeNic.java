@@ -115,6 +115,7 @@ public final class AssetComputeNic {
 
         @CustomType.Setter
         public Builder ipAddresses(@Nullable List<String> ipAddresses) {
+
             this.ipAddresses = ipAddresses;
             return this;
         }
@@ -123,26 +124,31 @@ public final class AssetComputeNic {
         }
         @CustomType.Setter
         public Builder label(@Nullable String label) {
+
             this.label = label;
             return this;
         }
         @CustomType.Setter
         public Builder macAddress(@Nullable String macAddress) {
+
             this.macAddress = macAddress;
             return this;
         }
         @CustomType.Setter
         public Builder macAddressType(@Nullable String macAddressType) {
+
             this.macAddressType = macAddressType;
             return this;
         }
         @CustomType.Setter
         public Builder networkName(@Nullable String networkName) {
+
             this.networkName = networkName;
             return this;
         }
         @CustomType.Setter
         public Builder switchName(@Nullable String switchName) {
+
             this.switchName = switchName;
             return this;
         }

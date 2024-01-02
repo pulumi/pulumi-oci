@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetApplianceImagesApplianceImageCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetApplianceImagesApplianceImageCollection {
 
         @CustomType.Setter
         public Builder items(List<GetApplianceImagesApplianceImageCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetApplianceImagesApplianceImageCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetApplianceImagesApplianceImageCollectionItem... items) {

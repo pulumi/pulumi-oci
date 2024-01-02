@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -78,21 +79,27 @@ public final class ScheduleQueryPropertiesDateRange {
 
         @CustomType.Setter
         public Builder dateRangeType(String dateRangeType) {
-            this.dateRangeType = Objects.requireNonNull(dateRangeType);
+            if (dateRangeType == null) {
+              throw new MissingRequiredPropertyException("ScheduleQueryPropertiesDateRange", "dateRangeType");
+            }
+            this.dateRangeType = dateRangeType;
             return this;
         }
         @CustomType.Setter
         public Builder dynamicDateRangeType(@Nullable String dynamicDateRangeType) {
+
             this.dynamicDateRangeType = dynamicDateRangeType;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(@Nullable String timeUsageEnded) {
+
             this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(@Nullable String timeUsageStarted) {
+
             this.timeUsageStarted = timeUsageStarted;
             return this;
         }

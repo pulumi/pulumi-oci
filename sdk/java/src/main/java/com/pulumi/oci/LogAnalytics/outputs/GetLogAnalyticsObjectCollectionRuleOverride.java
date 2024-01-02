@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -52,22 +53,34 @@ public final class GetLogAnalyticsObjectCollectionRuleOverride {
 
         @CustomType.Setter
         public Builder matchType(String matchType) {
-            this.matchType = Objects.requireNonNull(matchType);
+            if (matchType == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleOverride", "matchType");
+            }
+            this.matchType = matchType;
             return this;
         }
         @CustomType.Setter
         public Builder matchValue(String matchValue) {
-            this.matchValue = Objects.requireNonNull(matchValue);
+            if (matchValue == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleOverride", "matchValue");
+            }
+            this.matchValue = matchValue;
             return this;
         }
         @CustomType.Setter
         public Builder propertyName(String propertyName) {
-            this.propertyName = Objects.requireNonNull(propertyName);
+            if (propertyName == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleOverride", "propertyName");
+            }
+            this.propertyName = propertyName;
             return this;
         }
         @CustomType.Setter
         public Builder propertyValue(String propertyValue) {
-            this.propertyValue = Objects.requireNonNull(propertyValue);
+            if (propertyValue == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsObjectCollectionRuleOverride", "propertyValue");
+            }
+            this.propertyValue = propertyValue;
             return this;
         }
         public GetLogAnalyticsObjectCollectionRuleOverride build() {

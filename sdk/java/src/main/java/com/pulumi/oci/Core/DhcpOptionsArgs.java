@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.DhcpOptionsOptionArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -324,9 +325,15 @@ public final class DhcpOptionsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DhcpOptionsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.options = Objects.requireNonNull($.options, "expected parameter 'options' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DhcpOptionsArgs", "compartmentId");
+            }
+            if ($.options == null) {
+                throw new MissingRequiredPropertyException("DhcpOptionsArgs", "options");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("DhcpOptionsArgs", "vcnId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseOptimizerStatisticsCollectionOperationTask;
 import java.lang.Double;
@@ -255,12 +256,18 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationResul
 
         @CustomType.Setter
         public Builder completedCount(Integer completedCount) {
-            this.completedCount = Objects.requireNonNull(completedCount);
+            if (completedCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "completedCount");
+            }
+            this.completedCount = completedCount;
             return this;
         }
         @CustomType.Setter
         public Builder databases(List<GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+            if (databases == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "databases");
+            }
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetManagedDatabaseOptimizerStatisticsCollectionOperationDatabase... databases) {
@@ -268,67 +275,106 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationResul
         }
         @CustomType.Setter
         public Builder durationInSeconds(Double durationInSeconds) {
-            this.durationInSeconds = Objects.requireNonNull(durationInSeconds);
+            if (durationInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "durationInSeconds");
+            }
+            this.durationInSeconds = durationInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder endTime(String endTime) {
-            this.endTime = Objects.requireNonNull(endTime);
+            if (endTime == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "endTime");
+            }
+            this.endTime = endTime;
             return this;
         }
         @CustomType.Setter
         public Builder failedCount(Integer failedCount) {
-            this.failedCount = Objects.requireNonNull(failedCount);
+            if (failedCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "failedCount");
+            }
+            this.failedCount = failedCount;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inProgressCount(Integer inProgressCount) {
-            this.inProgressCount = Objects.requireNonNull(inProgressCount);
+            if (inProgressCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "inProgressCount");
+            }
+            this.inProgressCount = inProgressCount;
             return this;
         }
         @CustomType.Setter
         public Builder jobName(String jobName) {
-            this.jobName = Objects.requireNonNull(jobName);
+            if (jobName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "jobName");
+            }
+            this.jobName = jobName;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder operationName(String operationName) {
-            this.operationName = Objects.requireNonNull(operationName);
+            if (operationName == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "operationName");
+            }
+            this.operationName = operationName;
             return this;
         }
         @CustomType.Setter
         public Builder optimizerStatisticsCollectionOperationId(Double optimizerStatisticsCollectionOperationId) {
-            this.optimizerStatisticsCollectionOperationId = Objects.requireNonNull(optimizerStatisticsCollectionOperationId);
+            if (optimizerStatisticsCollectionOperationId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "optimizerStatisticsCollectionOperationId");
+            }
+            this.optimizerStatisticsCollectionOperationId = optimizerStatisticsCollectionOperationId;
             return this;
         }
         @CustomType.Setter
         public Builder startTime(String startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "target");
+            }
+            this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder tasks(List<GetManagedDatabaseOptimizerStatisticsCollectionOperationTask> tasks) {
-            this.tasks = Objects.requireNonNull(tasks);
+            if (tasks == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "tasks");
+            }
+            this.tasks = tasks;
             return this;
         }
         public Builder tasks(GetManagedDatabaseOptimizerStatisticsCollectionOperationTask... tasks) {
@@ -336,12 +382,18 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationResul
         }
         @CustomType.Setter
         public Builder timedOutCount(Integer timedOutCount) {
-            this.timedOutCount = Objects.requireNonNull(timedOutCount);
+            if (timedOutCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "timedOutCount");
+            }
+            this.timedOutCount = timedOutCount;
             return this;
         }
         @CustomType.Setter
         public Builder totalObjectsCount(Integer totalObjectsCount) {
-            this.totalObjectsCount = Objects.requireNonNull(totalObjectsCount);
+            if (totalObjectsCount == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionOperationResult", "totalObjectsCount");
+            }
+            this.totalObjectsCount = totalObjectsCount;
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationResult build() {

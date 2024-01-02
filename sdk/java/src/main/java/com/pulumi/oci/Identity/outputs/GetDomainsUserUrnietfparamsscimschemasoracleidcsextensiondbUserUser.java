@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier;
 import java.lang.Boolean;
 import java.lang.String;
@@ -101,7 +102,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUs
 
         @CustomType.Setter
         public Builder dbGlobalRoles(List<String> dbGlobalRoles) {
-            this.dbGlobalRoles = Objects.requireNonNull(dbGlobalRoles);
+            if (dbGlobalRoles == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser", "dbGlobalRoles");
+            }
+            this.dbGlobalRoles = dbGlobalRoles;
             return this;
         }
         public Builder dbGlobalRoles(String... dbGlobalRoles) {
@@ -109,22 +113,34 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUs
         }
         @CustomType.Setter
         public Builder domainLevelSchema(String domainLevelSchema) {
-            this.domainLevelSchema = Objects.requireNonNull(domainLevelSchema);
+            if (domainLevelSchema == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser", "domainLevelSchema");
+            }
+            this.domainLevelSchema = domainLevelSchema;
             return this;
         }
         @CustomType.Setter
         public Builder instanceLevelSchema(String instanceLevelSchema) {
-            this.instanceLevelSchema = Objects.requireNonNull(instanceLevelSchema);
+            if (instanceLevelSchema == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser", "instanceLevelSchema");
+            }
+            this.instanceLevelSchema = instanceLevelSchema;
             return this;
         }
         @CustomType.Setter
         public Builder isDbUser(Boolean isDbUser) {
-            this.isDbUser = Objects.requireNonNull(isDbUser);
+            if (isDbUser == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser", "isDbUser");
+            }
+            this.isDbUser = isDbUser;
             return this;
         }
         @CustomType.Setter
         public Builder passwordVerifiers(List<GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers) {
-            this.passwordVerifiers = Objects.requireNonNull(passwordVerifiers);
+            if (passwordVerifiers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser", "passwordVerifiers");
+            }
+            this.passwordVerifiers = passwordVerifiers;
             return this;
         }
         public Builder passwordVerifiers(GetDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier... passwordVerifiers) {

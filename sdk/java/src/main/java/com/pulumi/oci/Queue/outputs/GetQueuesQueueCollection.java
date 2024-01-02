@@ -4,6 +4,7 @@
 package com.pulumi.oci.Queue.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Queue.outputs.GetQueuesQueueCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetQueuesQueueCollection {
 
         @CustomType.Setter
         public Builder items(List<GetQueuesQueueCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetQueuesQueueCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetQueuesQueueCollectionItem... items) {

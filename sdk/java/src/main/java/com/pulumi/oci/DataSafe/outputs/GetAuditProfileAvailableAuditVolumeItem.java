@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetAuditProfileAvailableAuditVolumeItem {
 
         @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
-            this.auditProfileId = Objects.requireNonNull(auditProfileId);
+            if (auditProfileId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumeItem", "auditProfileId");
+            }
+            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
         public Builder monthInConsideration(String monthInConsideration) {
-            this.monthInConsideration = Objects.requireNonNull(monthInConsideration);
+            if (monthInConsideration == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumeItem", "monthInConsideration");
+            }
+            this.monthInConsideration = monthInConsideration;
             return this;
         }
         @CustomType.Setter
         public Builder trailLocation(String trailLocation) {
-            this.trailLocation = Objects.requireNonNull(trailLocation);
+            if (trailLocation == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumeItem", "trailLocation");
+            }
+            this.trailLocation = trailLocation;
             return this;
         }
         @CustomType.Setter
         public Builder volume(String volume) {
-            this.volume = Objects.requireNonNull(volume);
+            if (volume == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumeItem", "volume");
+            }
+            this.volume = volume;
             return this;
         }
         public GetAuditProfileAvailableAuditVolumeItem build() {

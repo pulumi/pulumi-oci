@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetProblemEntitiesFilter;
 import com.pulumi.oci.CloudGuard.outputs.GetProblemEntitiesProblemEntityCollection;
 import java.lang.String;
@@ -80,6 +81,7 @@ public final class GetProblemEntitiesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetProblemEntitiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +90,18 @@ public final class GetProblemEntitiesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntitiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder problemEntityCollections(List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections) {
-            this.problemEntityCollections = Objects.requireNonNull(problemEntityCollections);
+            if (problemEntityCollections == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntitiesResult", "problemEntityCollections");
+            }
+            this.problemEntityCollections = problemEntityCollections;
             return this;
         }
         public Builder problemEntityCollections(GetProblemEntitiesProblemEntityCollection... problemEntityCollections) {
@@ -101,7 +109,10 @@ public final class GetProblemEntitiesResult {
         }
         @CustomType.Setter
         public Builder problemId(String problemId) {
-            this.problemId = Objects.requireNonNull(problemId);
+            if (problemId == null) {
+              throw new MissingRequiredPropertyException("GetProblemEntitiesResult", "problemId");
+            }
+            this.problemId = problemId;
             return this;
         }
         public GetProblemEntitiesResult build() {

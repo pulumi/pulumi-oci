@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.ExternalDatabaseConnectorConnectionCredentialsArgs;
 import com.pulumi.oci.Database.inputs.ExternalDatabaseConnectorConnectionStringArgs;
 import java.lang.Object;
@@ -351,11 +352,21 @@ public final class ExternalDatabaseConnectorArgs extends com.pulumi.resources.Re
         }
 
         public ExternalDatabaseConnectorArgs build() {
-            $.connectionCredentials = Objects.requireNonNull($.connectionCredentials, "expected parameter 'connectionCredentials' to be non-null");
-            $.connectionString = Objects.requireNonNull($.connectionString, "expected parameter 'connectionString' to be non-null");
-            $.connectorAgentId = Objects.requireNonNull($.connectorAgentId, "expected parameter 'connectorAgentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.externalDatabaseId = Objects.requireNonNull($.externalDatabaseId, "expected parameter 'externalDatabaseId' to be non-null");
+            if ($.connectionCredentials == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorArgs", "connectionCredentials");
+            }
+            if ($.connectionString == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorArgs", "connectionString");
+            }
+            if ($.connectorAgentId == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorArgs", "connectorAgentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorArgs", "displayName");
+            }
+            if ($.externalDatabaseId == null) {
+                throw new MissingRequiredPropertyException("ExternalDatabaseConnectorArgs", "externalDatabaseId");
+            }
             return $;
         }
     }

@@ -75,11 +75,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnecti
 
         @CustomType.Setter
         public Builder componentType(@Nullable String componentType) {
+
             this.componentType = componentType;
             return this;
         }
         @CustomType.Setter
         public Builder connectionCredentials(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential> connectionCredentials) {
+
             this.connectionCredentials = connectionCredentials;
             return this;
         }
@@ -88,6 +90,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnecti
         }
         @CustomType.Setter
         public Builder connectionStrings(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString> connectionStrings) {
+
             this.connectionStrings = connectionStrings;
             return this;
         }

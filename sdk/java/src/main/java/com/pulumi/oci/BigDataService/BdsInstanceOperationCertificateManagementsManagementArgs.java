@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -370,11 +371,21 @@ public final class BdsInstanceOperationCertificateManagementsManagementArgs exte
         }
 
         public BdsInstanceOperationCertificateManagementsManagementArgs build() {
-            $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
-            $.clusterAdminPassword = Objects.requireNonNull($.clusterAdminPassword, "expected parameter 'clusterAdminPassword' to be non-null");
-            $.enableOperationCertificateManagement = Objects.requireNonNull($.enableOperationCertificateManagement, "expected parameter 'enableOperationCertificateManagement' to be non-null");
-            $.renewOperationCertificateManagement = Objects.requireNonNull($.renewOperationCertificateManagement, "expected parameter 'renewOperationCertificateManagement' to be non-null");
-            $.services = Objects.requireNonNull($.services, "expected parameter 'services' to be non-null");
+            if ($.bdsInstanceId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceOperationCertificateManagementsManagementArgs", "bdsInstanceId");
+            }
+            if ($.clusterAdminPassword == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceOperationCertificateManagementsManagementArgs", "clusterAdminPassword");
+            }
+            if ($.enableOperationCertificateManagement == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceOperationCertificateManagementsManagementArgs", "enableOperationCertificateManagement");
+            }
+            if ($.renewOperationCertificateManagement == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceOperationCertificateManagementsManagementArgs", "renewOperationCertificateManagement");
+            }
+            if ($.services == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceOperationCertificateManagementsManagementArgs", "services");
+            }
             return $;
         }
     }

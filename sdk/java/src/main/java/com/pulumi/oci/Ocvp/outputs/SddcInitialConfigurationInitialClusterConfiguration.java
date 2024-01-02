@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ocvp.outputs.SddcInitialConfigurationInitialClusterConfigurationDatastore;
 import com.pulumi.oci.Ocvp.outputs.SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration;
 import java.lang.Boolean;
@@ -246,21 +247,27 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
 
         @CustomType.Setter
         public Builder actualEsxiHostsCount(@Nullable Integer actualEsxiHostsCount) {
+
             this.actualEsxiHostsCount = actualEsxiHostsCount;
             return this;
         }
         @CustomType.Setter
         public Builder capacityReservationId(@Nullable String capacityReservationId) {
+
             this.capacityReservationId = capacityReservationId;
             return this;
         }
         @CustomType.Setter
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
-            this.computeAvailabilityDomain = Objects.requireNonNull(computeAvailabilityDomain);
+            if (computeAvailabilityDomain == null) {
+              throw new MissingRequiredPropertyException("SddcInitialConfigurationInitialClusterConfiguration", "computeAvailabilityDomain");
+            }
+            this.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder datastores(@Nullable List<SddcInitialConfigurationInitialClusterConfigurationDatastore> datastores) {
+
             this.datastores = datastores;
             return this;
         }
@@ -269,51 +276,65 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder esxiHostsCount(Integer esxiHostsCount) {
-            this.esxiHostsCount = Objects.requireNonNull(esxiHostsCount);
+            if (esxiHostsCount == null) {
+              throw new MissingRequiredPropertyException("SddcInitialConfigurationInitialClusterConfiguration", "esxiHostsCount");
+            }
+            this.esxiHostsCount = esxiHostsCount;
             return this;
         }
         @CustomType.Setter
         public Builder initialCommitment(@Nullable String initialCommitment) {
+
             this.initialCommitment = initialCommitment;
             return this;
         }
         @CustomType.Setter
         public Builder initialHostOcpuCount(@Nullable Double initialHostOcpuCount) {
+
             this.initialHostOcpuCount = initialHostOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder initialHostShapeName(@Nullable String initialHostShapeName) {
+
             this.initialHostShapeName = initialHostShapeName;
             return this;
         }
         @CustomType.Setter
         public Builder instanceDisplayNamePrefix(@Nullable String instanceDisplayNamePrefix) {
+
             this.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             return this;
         }
         @CustomType.Setter
         public Builder isShieldedInstanceEnabled(@Nullable Boolean isShieldedInstanceEnabled) {
+
             this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfiguration(@Nullable SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration networkConfiguration) {
+
             this.networkConfiguration = networkConfiguration;
             return this;
         }
         @CustomType.Setter
         public Builder vsphereType(String vsphereType) {
-            this.vsphereType = Objects.requireNonNull(vsphereType);
+            if (vsphereType == null) {
+              throw new MissingRequiredPropertyException("SddcInitialConfigurationInitialClusterConfiguration", "vsphereType");
+            }
+            this.vsphereType = vsphereType;
             return this;
         }
         @CustomType.Setter
         public Builder workloadNetworkCidr(@Nullable String workloadNetworkCidr) {
+
             this.workloadNetworkCidr = workloadNetworkCidr;
             return this;
         }

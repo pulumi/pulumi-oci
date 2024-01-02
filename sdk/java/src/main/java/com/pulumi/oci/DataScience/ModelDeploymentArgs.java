@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentCategoryLogDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsArgs;
 import java.lang.Object;
@@ -388,9 +389,15 @@ public final class ModelDeploymentArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public ModelDeploymentArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.modelDeploymentConfigurationDetails = Objects.requireNonNull($.modelDeploymentConfigurationDetails, "expected parameter 'modelDeploymentConfigurationDetails' to be non-null");
-            $.projectId = Objects.requireNonNull($.projectId, "expected parameter 'projectId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentArgs", "compartmentId");
+            }
+            if ($.modelDeploymentConfigurationDetails == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentArgs", "modelDeploymentConfigurationDetails");
+            }
+            if ($.projectId == null) {
+                throw new MissingRequiredPropertyException("ModelDeploymentArgs", "projectId");
+            }
             return $;
         }
     }

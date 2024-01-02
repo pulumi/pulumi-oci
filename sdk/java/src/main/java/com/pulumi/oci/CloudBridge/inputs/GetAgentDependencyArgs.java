@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetAgentDependencyArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetAgentDependencyArgs build() {
-            $.agentDependencyId = Objects.requireNonNull($.agentDependencyId, "expected parameter 'agentDependencyId' to be non-null");
+            if ($.agentDependencyId == null) {
+                throw new MissingRequiredPropertyException("GetAgentDependencyArgs", "agentDependencyId");
+            }
             return $;
         }
     }

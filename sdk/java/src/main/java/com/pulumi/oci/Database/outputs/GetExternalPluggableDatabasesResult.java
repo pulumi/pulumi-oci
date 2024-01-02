@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesExternalPluggableDatabase;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesFilter;
 import java.lang.String;
@@ -123,22 +124,30 @@ public final class GetExternalPluggableDatabasesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalContainerDatabaseId(@Nullable String externalContainerDatabaseId) {
+
             this.externalContainerDatabaseId = externalContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder externalPluggableDatabases(List<GetExternalPluggableDatabasesExternalPluggableDatabase> externalPluggableDatabases) {
-            this.externalPluggableDatabases = Objects.requireNonNull(externalPluggableDatabases);
+            if (externalPluggableDatabases == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesResult", "externalPluggableDatabases");
+            }
+            this.externalPluggableDatabases = externalPluggableDatabases;
             return this;
         }
         public Builder externalPluggableDatabases(GetExternalPluggableDatabasesExternalPluggableDatabase... externalPluggableDatabases) {
@@ -146,6 +155,7 @@ public final class GetExternalPluggableDatabasesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalPluggableDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +164,15 @@ public final class GetExternalPluggableDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

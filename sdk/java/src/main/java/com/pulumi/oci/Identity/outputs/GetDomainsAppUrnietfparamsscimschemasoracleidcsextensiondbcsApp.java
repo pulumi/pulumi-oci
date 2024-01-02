@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsA
 
         @CustomType.Setter
         public Builder domainApps(List<GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp> domainApps) {
-            this.domainApps = Objects.requireNonNull(domainApps);
+            if (domainApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp", "domainApps");
+            }
+            this.domainApps = domainApps;
             return this;
         }
         public Builder domainApps(GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp... domainApps) {
@@ -66,7 +70,10 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsA
         }
         @CustomType.Setter
         public Builder domainName(String domainName) {
-            this.domainName = Objects.requireNonNull(domainName);
+            if (domainName == null) {
+              throw new MissingRequiredPropertyException("GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp", "domainName");
+            }
+            this.domainName = domainName;
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp build() {

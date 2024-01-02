@@ -59,11 +59,13 @@ public final class MigrationDataTransferMediumDetails {
 
         @CustomType.Setter
         public Builder databaseLinkDetails(@Nullable MigrationDataTransferMediumDetailsDatabaseLinkDetails databaseLinkDetails) {
+
             this.databaseLinkDetails = databaseLinkDetails;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageDetails(@Nullable MigrationDataTransferMediumDetailsObjectStorageDetails objectStorageDetails) {
+
             this.objectStorageDetails = objectStorageDetails;
             return this;
         }

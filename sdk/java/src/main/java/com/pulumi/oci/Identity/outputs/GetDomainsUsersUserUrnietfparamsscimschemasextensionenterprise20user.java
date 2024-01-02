@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager;
 import java.lang.String;
 import java.util.List;
@@ -114,27 +115,42 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasextensionenterpris
 
         @CustomType.Setter
         public Builder costCenter(String costCenter) {
-            this.costCenter = Objects.requireNonNull(costCenter);
+            if (costCenter == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user", "costCenter");
+            }
+            this.costCenter = costCenter;
             return this;
         }
         @CustomType.Setter
         public Builder department(String department) {
-            this.department = Objects.requireNonNull(department);
+            if (department == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user", "department");
+            }
+            this.department = department;
             return this;
         }
         @CustomType.Setter
         public Builder division(String division) {
-            this.division = Objects.requireNonNull(division);
+            if (division == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user", "division");
+            }
+            this.division = division;
             return this;
         }
         @CustomType.Setter
         public Builder employeeNumber(String employeeNumber) {
-            this.employeeNumber = Objects.requireNonNull(employeeNumber);
+            if (employeeNumber == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user", "employeeNumber");
+            }
+            this.employeeNumber = employeeNumber;
             return this;
         }
         @CustomType.Setter
         public Builder managers(List<GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager> managers) {
-            this.managers = Objects.requireNonNull(managers);
+            if (managers == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user", "managers");
+            }
+            this.managers = managers;
             return this;
         }
         public Builder managers(GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20userManager... managers) {
@@ -142,7 +158,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasextensionenterpris
         }
         @CustomType.Setter
         public Builder organization(String organization) {
-            this.organization = Objects.requireNonNull(organization);
+            if (organization == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user", "organization");
+            }
+            this.organization = organization;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasextensionenterprise20user build() {

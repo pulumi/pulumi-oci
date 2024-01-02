@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.DbSystemDbHomeDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.DbSystemDbHomeDatabaseDbBackupConfig;
 import java.lang.Object;
@@ -391,26 +392,33 @@ public final class DbSystemDbHomeDatabase {
 
         @CustomType.Setter
         public Builder adminPassword(String adminPassword) {
-            this.adminPassword = Objects.requireNonNull(adminPassword);
+            if (adminPassword == null) {
+              throw new MissingRequiredPropertyException("DbSystemDbHomeDatabase", "adminPassword");
+            }
+            this.adminPassword = adminPassword;
             return this;
         }
         @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
+
             this.backupId = backupId;
             return this;
         }
         @CustomType.Setter
         public Builder backupTdePassword(@Nullable String backupTdePassword) {
+
             this.backupTdePassword = backupTdePassword;
             return this;
         }
         @CustomType.Setter
         public Builder characterSet(@Nullable String characterSet) {
+
             this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
         public Builder connectionStrings(@Nullable List<DbSystemDbHomeDatabaseConnectionString> connectionStrings) {
+
             this.connectionStrings = connectionStrings;
             return this;
         }
@@ -419,81 +427,97 @@ public final class DbSystemDbHomeDatabase {
         }
         @CustomType.Setter
         public Builder databaseId(@Nullable String databaseId) {
+
             this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(@Nullable String databaseSoftwareImageId) {
+
             this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder dbBackupConfig(@Nullable DbSystemDbHomeDatabaseDbBackupConfig dbBackupConfig) {
+
             this.dbBackupConfig = dbBackupConfig;
             return this;
         }
         @CustomType.Setter
         public Builder dbDomain(@Nullable String dbDomain) {
+
             this.dbDomain = dbDomain;
             return this;
         }
         @CustomType.Setter
         public Builder dbName(@Nullable String dbName) {
+
             this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(@Nullable String dbUniqueName) {
+
             this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder dbWorkload(@Nullable String dbWorkload) {
+
             this.dbWorkload = dbWorkload;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
+
             this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder kmsKeyVersionId(@Nullable String kmsKeyVersionId) {
+
             this.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder ncharacterSet(@Nullable String ncharacterSet) {
+
             this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
         public Builder pdbName(@Nullable String pdbName) {
+
             this.pdbName = pdbName;
             return this;
         }
         @CustomType.Setter
         public Builder pluggableDatabases(@Nullable List<String> pluggableDatabases) {
+
             this.pluggableDatabases = pluggableDatabases;
             return this;
         }
@@ -502,26 +526,31 @@ public final class DbSystemDbHomeDatabase {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tdeWalletPassword(@Nullable String tdeWalletPassword) {
+
             this.tdeWalletPassword = tdeWalletPassword;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeStampForPointInTimeRecovery(@Nullable String timeStampForPointInTimeRecovery) {
+
             this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             return this;
         }
         @CustomType.Setter
         public Builder vaultId(@Nullable String vaultId) {
+
             this.vaultId = vaultId;
             return this;
         }

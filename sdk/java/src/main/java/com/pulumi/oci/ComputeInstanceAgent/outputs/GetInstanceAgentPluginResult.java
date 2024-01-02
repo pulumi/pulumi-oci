@@ -4,6 +4,7 @@
 package com.pulumi.oci.ComputeInstanceAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -116,42 +117,66 @@ public final class GetInstanceAgentPluginResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceagentId(String instanceagentId) {
-            this.instanceagentId = Objects.requireNonNull(instanceagentId);
+            if (instanceagentId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginResult", "instanceagentId");
+            }
+            this.instanceagentId = instanceagentId;
             return this;
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginResult", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder pluginName(String pluginName) {
-            this.pluginName = Objects.requireNonNull(pluginName);
+            if (pluginName == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginResult", "pluginName");
+            }
+            this.pluginName = pluginName;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUpdatedUtc(String timeLastUpdatedUtc) {
-            this.timeLastUpdatedUtc = Objects.requireNonNull(timeLastUpdatedUtc);
+            if (timeLastUpdatedUtc == null) {
+              throw new MissingRequiredPropertyException("GetInstanceAgentPluginResult", "timeLastUpdatedUtc");
+            }
+            this.timeLastUpdatedUtc = timeLastUpdatedUtc;
             return this;
         }
         public GetInstanceAgentPluginResult build() {

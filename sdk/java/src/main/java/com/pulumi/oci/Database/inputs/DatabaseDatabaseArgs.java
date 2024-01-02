@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -772,8 +773,12 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         public DatabaseDatabaseArgs build() {
-            $.adminPassword = Objects.requireNonNull($.adminPassword, "expected parameter 'adminPassword' to be non-null");
-            $.dbName = Objects.requireNonNull($.dbName, "expected parameter 'dbName' to be non-null");
+            if ($.adminPassword == null) {
+                throw new MissingRequiredPropertyException("DatabaseDatabaseArgs", "adminPassword");
+            }
+            if ($.dbName == null) {
+                throw new MissingRequiredPropertyException("DatabaseDatabaseArgs", "dbName");
+            }
             return $;
         }
     }

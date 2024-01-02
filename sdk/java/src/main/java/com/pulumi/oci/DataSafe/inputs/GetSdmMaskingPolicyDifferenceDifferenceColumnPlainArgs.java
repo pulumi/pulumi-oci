@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnPlainArgs extend
         }
 
         public GetSdmMaskingPolicyDifferenceDifferenceColumnPlainArgs build() {
-            $.differenceColumnKey = Objects.requireNonNull($.differenceColumnKey, "expected parameter 'differenceColumnKey' to be non-null");
-            $.sdmMaskingPolicyDifferenceId = Objects.requireNonNull($.sdmMaskingPolicyDifferenceId, "expected parameter 'sdmMaskingPolicyDifferenceId' to be non-null");
+            if ($.differenceColumnKey == null) {
+                throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceDifferenceColumnPlainArgs", "differenceColumnKey");
+            }
+            if ($.sdmMaskingPolicyDifferenceId == null) {
+                throw new MissingRequiredPropertyException("GetSdmMaskingPolicyDifferenceDifferenceColumnPlainArgs", "sdmMaskingPolicyDifferenceId");
+            }
             return $;
         }
     }

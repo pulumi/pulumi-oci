@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
 
         @CustomType.Setter
         public Builder objectStorageBucketName(String objectStorageBucketName) {
-            this.objectStorageBucketName = Objects.requireNonNull(objectStorageBucketName);
+            if (objectStorageBucketName == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig", "objectStorageBucketName");
+            }
+            this.objectStorageBucketName = objectStorageBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageNamespace(String objectStorageNamespace) {
-            this.objectStorageNamespace = Objects.requireNonNull(objectStorageNamespace);
+            if (objectStorageNamespace == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig", "objectStorageNamespace");
+            }
+            this.objectStorageNamespace = objectStorageNamespace;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageObjectNameFormat(String objectStorageObjectNameFormat) {
-            this.objectStorageObjectNameFormat = Objects.requireNonNull(objectStorageObjectNameFormat);
+            if (objectStorageObjectNameFormat == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig", "objectStorageObjectNameFormat");
+            }
+            this.objectStorageObjectNameFormat = objectStorageObjectNameFormat;
             return this;
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfig build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetSmtpCredentialsFilter;
 import com.pulumi.oci.Identity.outputs.GetSmtpCredentialsSmtpCredential;
 import java.lang.String;
@@ -80,6 +81,7 @@ public final class GetSmtpCredentialsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSmtpCredentialsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -88,12 +90,18 @@ public final class GetSmtpCredentialsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder smtpCredentials(List<GetSmtpCredentialsSmtpCredential> smtpCredentials) {
-            this.smtpCredentials = Objects.requireNonNull(smtpCredentials);
+            if (smtpCredentials == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsResult", "smtpCredentials");
+            }
+            this.smtpCredentials = smtpCredentials;
             return this;
         }
         public Builder smtpCredentials(GetSmtpCredentialsSmtpCredential... smtpCredentials) {
@@ -101,7 +109,10 @@ public final class GetSmtpCredentialsResult {
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetSmtpCredentialsResult", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetSmtpCredentialsResult build() {

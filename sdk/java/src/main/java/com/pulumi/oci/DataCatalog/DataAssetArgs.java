@@ -5,6 +5,7 @@ package com.pulumi.oci.DataCatalog;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -218,9 +219,15 @@ public final class DataAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DataAssetArgs build() {
-            $.catalogId = Objects.requireNonNull($.catalogId, "expected parameter 'catalogId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.typeKey = Objects.requireNonNull($.typeKey, "expected parameter 'typeKey' to be non-null");
+            if ($.catalogId == null) {
+                throw new MissingRequiredPropertyException("DataAssetArgs", "catalogId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DataAssetArgs", "displayName");
+            }
+            if ($.typeKey == null) {
+                throw new MissingRequiredPropertyException("DataAssetArgs", "typeKey");
+            }
             return $;
         }
     }

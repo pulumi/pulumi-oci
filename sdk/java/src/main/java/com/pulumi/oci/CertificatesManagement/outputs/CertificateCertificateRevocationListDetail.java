@@ -59,6 +59,7 @@ public final class CertificateCertificateRevocationListDetail {
 
         @CustomType.Setter
         public Builder customFormattedUrls(@Nullable List<String> customFormattedUrls) {
+
             this.customFormattedUrls = customFormattedUrls;
             return this;
         }
@@ -67,6 +68,7 @@ public final class CertificateCertificateRevocationListDetail {
         }
         @CustomType.Setter
         public Builder objectStorageConfigs(@Nullable List<CertificateCertificateRevocationListDetailObjectStorageConfig> objectStorageConfigs) {
+
             this.objectStorageConfigs = objectStorageConfigs;
             return this;
         }

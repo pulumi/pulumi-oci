@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetModelDeploymentArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetModelDeploymentArgs build() {
-            $.modelDeploymentId = Objects.requireNonNull($.modelDeploymentId, "expected parameter 'modelDeploymentId' to be non-null");
+            if ($.modelDeploymentId == null) {
+                throw new MissingRequiredPropertyException("GetModelDeploymentArgs", "modelDeploymentId");
+            }
             return $;
         }
     }

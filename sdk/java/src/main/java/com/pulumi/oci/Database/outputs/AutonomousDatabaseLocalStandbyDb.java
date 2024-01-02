@@ -101,26 +101,31 @@ public final class AutonomousDatabaseLocalStandbyDb {
 
         @CustomType.Setter
         public Builder lagTimeInSeconds(@Nullable Integer lagTimeInSeconds) {
+
             this.lagTimeInSeconds = lagTimeInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeDataGuardRoleChanged(@Nullable String timeDataGuardRoleChanged) {
+
             this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             return this;
         }
         @CustomType.Setter
         public Builder timeDisasterRecoveryRoleChanged(@Nullable String timeDisasterRecoveryRoleChanged) {
+
             this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
             return this;
         }

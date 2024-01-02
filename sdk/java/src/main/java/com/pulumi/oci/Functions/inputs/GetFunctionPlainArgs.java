@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetFunctionPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetFunctionPlainArgs build() {
-            $.functionId = Objects.requireNonNull($.functionId, "expected parameter 'functionId' to be non-null");
+            if ($.functionId == null) {
+                throw new MissingRequiredPropertyException("GetFunctionPlainArgs", "functionId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -101,27 +102,42 @@ public final class GetIntegrationInstanceAttachment {
 
         @CustomType.Setter
         public Builder isImplicit(Boolean isImplicit) {
-            this.isImplicit = Objects.requireNonNull(isImplicit);
+            if (isImplicit == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceAttachment", "isImplicit");
+            }
+            this.isImplicit = isImplicit;
             return this;
         }
         @CustomType.Setter
         public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+            if (targetId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceAttachment", "targetId");
+            }
+            this.targetId = targetId;
             return this;
         }
         @CustomType.Setter
         public Builder targetInstanceUrl(String targetInstanceUrl) {
-            this.targetInstanceUrl = Objects.requireNonNull(targetInstanceUrl);
+            if (targetInstanceUrl == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceAttachment", "targetInstanceUrl");
+            }
+            this.targetInstanceUrl = targetInstanceUrl;
             return this;
         }
         @CustomType.Setter
         public Builder targetRole(String targetRole) {
-            this.targetRole = Objects.requireNonNull(targetRole);
+            if (targetRole == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceAttachment", "targetRole");
+            }
+            this.targetRole = targetRole;
             return this;
         }
         @CustomType.Setter
         public Builder targetServiceType(String targetServiceType) {
-            this.targetServiceType = Objects.requireNonNull(targetServiceType);
+            if (targetServiceType == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceAttachment", "targetServiceType");
+            }
+            this.targetServiceType = targetServiceType;
             return this;
         }
         public GetIntegrationInstanceAttachment build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.inputs.ExportExportOptionArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -300,9 +301,15 @@ public final class ExportArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ExportArgs build() {
-            $.exportSetId = Objects.requireNonNull($.exportSetId, "expected parameter 'exportSetId' to be non-null");
-            $.fileSystemId = Objects.requireNonNull($.fileSystemId, "expected parameter 'fileSystemId' to be non-null");
-            $.path = Objects.requireNonNull($.path, "expected parameter 'path' to be non-null");
+            if ($.exportSetId == null) {
+                throw new MissingRequiredPropertyException("ExportArgs", "exportSetId");
+            }
+            if ($.fileSystemId == null) {
+                throw new MissingRequiredPropertyException("ExportArgs", "fileSystemId");
+            }
+            if ($.path == null) {
+                throw new MissingRequiredPropertyException("ExportArgs", "path");
+            }
             return $;
         }
     }

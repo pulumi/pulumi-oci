@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsMountTargetKerbero;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsMountTargetLdapIdmap;
 import java.lang.Object;
@@ -269,57 +270,90 @@ public final class GetMountTargetsMountTarget {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exportSetId(String exportSetId) {
-            this.exportSetId = Objects.requireNonNull(exportSetId);
+            if (exportSetId == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "exportSetId");
+            }
+            this.exportSetId = exportSetId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameLabel(String hostnameLabel) {
-            this.hostnameLabel = Objects.requireNonNull(hostnameLabel);
+            if (hostnameLabel == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "hostnameLabel");
+            }
+            this.hostnameLabel = hostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder idmapType(String idmapType) {
-            this.idmapType = Objects.requireNonNull(idmapType);
+            if (idmapType == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "idmapType");
+            }
+            this.idmapType = idmapType;
             return this;
         }
         @CustomType.Setter
         public Builder ipAddress(String ipAddress) {
-            this.ipAddress = Objects.requireNonNull(ipAddress);
+            if (ipAddress == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "ipAddress");
+            }
+            this.ipAddress = ipAddress;
             return this;
         }
         @CustomType.Setter
         public Builder kerberos(List<GetMountTargetsMountTargetKerbero> kerberos) {
-            this.kerberos = Objects.requireNonNull(kerberos);
+            if (kerberos == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "kerberos");
+            }
+            this.kerberos = kerberos;
             return this;
         }
         public Builder kerberos(GetMountTargetsMountTargetKerbero... kerberos) {
@@ -327,7 +361,10 @@ public final class GetMountTargetsMountTarget {
         }
         @CustomType.Setter
         public Builder ldapIdmaps(List<GetMountTargetsMountTargetLdapIdmap> ldapIdmaps) {
-            this.ldapIdmaps = Objects.requireNonNull(ldapIdmaps);
+            if (ldapIdmaps == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "ldapIdmaps");
+            }
+            this.ldapIdmaps = ldapIdmaps;
             return this;
         }
         public Builder ldapIdmaps(GetMountTargetsMountTargetLdapIdmap... ldapIdmaps) {
@@ -335,12 +372,18 @@ public final class GetMountTargetsMountTarget {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
-            this.nsgIds = Objects.requireNonNull(nsgIds);
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
@@ -348,7 +391,10 @@ public final class GetMountTargetsMountTarget {
         }
         @CustomType.Setter
         public Builder privateIpIds(List<String> privateIpIds) {
-            this.privateIpIds = Objects.requireNonNull(privateIpIds);
+            if (privateIpIds == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "privateIpIds");
+            }
+            this.privateIpIds = privateIpIds;
             return this;
         }
         public Builder privateIpIds(String... privateIpIds) {
@@ -356,17 +402,26 @@ public final class GetMountTargetsMountTarget {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetMountTargetsMountTarget build() {

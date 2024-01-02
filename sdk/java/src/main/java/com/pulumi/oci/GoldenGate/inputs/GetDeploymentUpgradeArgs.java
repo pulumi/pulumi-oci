@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetDeploymentUpgradeArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetDeploymentUpgradeArgs build() {
-            $.deploymentUpgradeId = Objects.requireNonNull($.deploymentUpgradeId, "expected parameter 'deploymentUpgradeId' to be non-null");
+            if ($.deploymentUpgradeId == null) {
+                throw new MissingRequiredPropertyException("GetDeploymentUpgradeArgs", "deploymentUpgradeId");
+            }
             return $;
         }
     }

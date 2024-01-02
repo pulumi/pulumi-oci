@@ -74,6 +74,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
 
         @CustomType.Setter
         public Builder hosts(@Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost> hosts) {
+
             this.hosts = hosts;
             return this;
         }
@@ -82,11 +83,13 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
         }
         @CustomType.Setter
         public Builder protocol(@Nullable String protocol) {
+
             this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
+
             this.serviceName = serviceName;
             return this;
         }

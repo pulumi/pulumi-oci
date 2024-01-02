@@ -121,31 +121,37 @@ public final class TableReplica {
 
         @CustomType.Setter
         public Builder capacityMode(@Nullable String capacityMode) {
+
             this.capacityMode = capacityMode;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+
             this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder maxWriteUnits(@Nullable Integer maxWriteUnits) {
+
             this.maxWriteUnits = maxWriteUnits;
             return this;
         }
         @CustomType.Setter
         public Builder region(@Nullable String region) {
+
             this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder tableId(@Nullable String tableId) {
+
             this.tableId = tableId;
             return this;
         }

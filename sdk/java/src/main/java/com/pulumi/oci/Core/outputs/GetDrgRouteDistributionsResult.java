@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDrgRouteDistributionsDrgRouteDistribution;
 import com.pulumi.oci.Core.outputs.GetDrgRouteDistributionsFilter;
 import java.lang.String;
@@ -109,17 +110,24 @@ public final class GetDrgRouteDistributionsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+            if (drgId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionsResult", "drgId");
+            }
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder drgRouteDistributions(List<GetDrgRouteDistributionsDrgRouteDistribution> drgRouteDistributions) {
-            this.drgRouteDistributions = Objects.requireNonNull(drgRouteDistributions);
+            if (drgRouteDistributions == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionsResult", "drgRouteDistributions");
+            }
+            this.drgRouteDistributions = drgRouteDistributions;
             return this;
         }
         public Builder drgRouteDistributions(GetDrgRouteDistributionsDrgRouteDistribution... drgRouteDistributions) {
@@ -127,6 +135,7 @@ public final class GetDrgRouteDistributionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDrgRouteDistributionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetDrgRouteDistributionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteDistributionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

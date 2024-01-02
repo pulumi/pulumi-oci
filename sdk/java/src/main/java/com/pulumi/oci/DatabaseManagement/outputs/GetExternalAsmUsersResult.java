@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmUsersExternalAsmUserCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalAsmUsersFilter;
 import java.lang.String;
@@ -72,12 +73,18 @@ public final class GetExternalAsmUsersResult {
 
         @CustomType.Setter
         public Builder externalAsmId(String externalAsmId) {
-            this.externalAsmId = Objects.requireNonNull(externalAsmId);
+            if (externalAsmId == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmUsersResult", "externalAsmId");
+            }
+            this.externalAsmId = externalAsmId;
             return this;
         }
         @CustomType.Setter
         public Builder externalAsmUserCollections(List<GetExternalAsmUsersExternalAsmUserCollection> externalAsmUserCollections) {
-            this.externalAsmUserCollections = Objects.requireNonNull(externalAsmUserCollections);
+            if (externalAsmUserCollections == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmUsersResult", "externalAsmUserCollections");
+            }
+            this.externalAsmUserCollections = externalAsmUserCollections;
             return this;
         }
         public Builder externalAsmUserCollections(GetExternalAsmUsersExternalAsmUserCollection... externalAsmUserCollections) {
@@ -85,6 +92,7 @@ public final class GetExternalAsmUsersResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalAsmUsersFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -93,7 +101,10 @@ public final class GetExternalAsmUsersResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalAsmUsersResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetExternalAsmUsersResult build() {

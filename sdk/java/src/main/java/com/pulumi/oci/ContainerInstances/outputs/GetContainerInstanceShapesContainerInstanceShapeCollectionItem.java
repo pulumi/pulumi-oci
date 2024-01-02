@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerInstances.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption;
@@ -102,7 +103,10 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
 
         @CustomType.Setter
         public Builder memoryOptions(List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption> memoryOptions) {
-            this.memoryOptions = Objects.requireNonNull(memoryOptions);
+            if (memoryOptions == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItem", "memoryOptions");
+            }
+            this.memoryOptions = memoryOptions;
             return this;
         }
         public Builder memoryOptions(GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption... memoryOptions) {
@@ -110,12 +114,18 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkingBandwidthOptions(List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption> networkingBandwidthOptions) {
-            this.networkingBandwidthOptions = Objects.requireNonNull(networkingBandwidthOptions);
+            if (networkingBandwidthOptions == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItem", "networkingBandwidthOptions");
+            }
+            this.networkingBandwidthOptions = networkingBandwidthOptions;
             return this;
         }
         public Builder networkingBandwidthOptions(GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOption... networkingBandwidthOptions) {
@@ -123,7 +133,10 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
         }
         @CustomType.Setter
         public Builder ocpuOptions(List<GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption> ocpuOptions) {
-            this.ocpuOptions = Objects.requireNonNull(ocpuOptions);
+            if (ocpuOptions == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItem", "ocpuOptions");
+            }
+            this.ocpuOptions = ocpuOptions;
             return this;
         }
         public Builder ocpuOptions(GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOption... ocpuOptions) {
@@ -131,7 +144,10 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
         }
         @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
-            this.processorDescription = Objects.requireNonNull(processorDescription);
+            if (processorDescription == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceShapesContainerInstanceShapeCollectionItem", "processorDescription");
+            }
+            this.processorDescription = processorDescription;
             return this;
         }
         public GetContainerInstanceShapesContainerInstanceShapeCollectionItem build() {

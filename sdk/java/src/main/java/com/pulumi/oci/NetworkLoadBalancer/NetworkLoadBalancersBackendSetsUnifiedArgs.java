@@ -5,6 +5,7 @@ package com.pulumi.oci.NetworkLoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancersBackendSetsUnifiedBackendArgs;
 import com.pulumi.oci.NetworkLoadBalancer.inputs.NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs;
 import java.lang.Boolean;
@@ -340,9 +341,15 @@ public final class NetworkLoadBalancersBackendSetsUnifiedArgs extends com.pulumi
         }
 
         public NetworkLoadBalancersBackendSetsUnifiedArgs build() {
-            $.healthChecker = Objects.requireNonNull($.healthChecker, "expected parameter 'healthChecker' to be non-null");
-            $.networkLoadBalancerId = Objects.requireNonNull($.networkLoadBalancerId, "expected parameter 'networkLoadBalancerId' to be non-null");
-            $.policy = Objects.requireNonNull($.policy, "expected parameter 'policy' to be non-null");
+            if ($.healthChecker == null) {
+                throw new MissingRequiredPropertyException("NetworkLoadBalancersBackendSetsUnifiedArgs", "healthChecker");
+            }
+            if ($.networkLoadBalancerId == null) {
+                throw new MissingRequiredPropertyException("NetworkLoadBalancersBackendSetsUnifiedArgs", "networkLoadBalancerId");
+            }
+            if ($.policy == null) {
+                throw new MissingRequiredPropertyException("NetworkLoadBalancersBackendSetsUnifiedArgs", "policy");
+            }
             return $;
         }
     }

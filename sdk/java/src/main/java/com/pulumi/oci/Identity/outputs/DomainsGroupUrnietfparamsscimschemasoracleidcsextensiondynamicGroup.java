@@ -106,11 +106,13 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynami
 
         @CustomType.Setter
         public Builder membershipRule(@Nullable String membershipRule) {
+
             this.membershipRule = membershipRule;
             return this;
         }
         @CustomType.Setter
         public Builder membershipType(@Nullable String membershipType) {
+
             this.membershipType = membershipType;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder termsOfUseConsents(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent> termsOfUseConsents) {
-            this.termsOfUseConsents = Objects.requireNonNull(termsOfUseConsents);
+            if (termsOfUseConsents == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser", "termsOfUseConsents");
+            }
+            this.termsOfUseConsents = termsOfUseConsents;
             return this;
         }
         public Builder termsOfUseConsents(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent... termsOfUseConsents) {

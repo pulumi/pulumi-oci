@@ -4,6 +4,7 @@
 package com.pulumi.oci.Monitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetAlarmHistoryCollectionEntry {
 
         @CustomType.Setter
         public Builder summary(String summary) {
-            this.summary = Objects.requireNonNull(summary);
+            if (summary == null) {
+              throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionEntry", "summary");
+            }
+            this.summary = summary;
             return this;
         }
         @CustomType.Setter
         public Builder timestamp(String timestamp) {
-            this.timestamp = Objects.requireNonNull(timestamp);
+            if (timestamp == null) {
+              throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionEntry", "timestamp");
+            }
+            this.timestamp = timestamp;
             return this;
         }
         @CustomType.Setter
         public Builder timestampTriggered(String timestampTriggered) {
-            this.timestampTriggered = Objects.requireNonNull(timestampTriggered);
+            if (timestampTriggered == null) {
+              throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionEntry", "timestampTriggered");
+            }
+            this.timestampTriggered = timestampTriggered;
             return this;
         }
         public GetAlarmHistoryCollectionEntry build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.PluggableDatabasePdbCreationTypeDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -545,8 +546,12 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
         }
 
         public PluggableDatabaseArgs build() {
-            $.containerDatabaseId = Objects.requireNonNull($.containerDatabaseId, "expected parameter 'containerDatabaseId' to be non-null");
-            $.pdbName = Objects.requireNonNull($.pdbName, "expected parameter 'pdbName' to be non-null");
+            if ($.containerDatabaseId == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseArgs", "containerDatabaseId");
+            }
+            if ($.pdbName == null) {
+                throw new MissingRequiredPropertyException("PluggableDatabaseArgs", "pdbName");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagement;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -460,9 +461,15 @@ public final class SoftwareSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public SoftwareSourceArgs build() {
-            $.archType = Objects.requireNonNull($.archType, "expected parameter 'archType' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.archType == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "archType");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("SoftwareSourceArgs", "displayName");
+            }
             return $;
         }
     }

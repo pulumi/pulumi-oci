@@ -4,6 +4,7 @@
 package com.pulumi.oci.Budget.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -242,77 +243,122 @@ public final class GetAlertRulesAlertRule {
 
         @CustomType.Setter
         public Builder budgetId(String budgetId) {
-            this.budgetId = Objects.requireNonNull(budgetId);
+            if (budgetId == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "budgetId");
+            }
+            this.budgetId = budgetId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder message(String message) {
-            this.message = Objects.requireNonNull(message);
+            if (message == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "message");
+            }
+            this.message = message;
             return this;
         }
         @CustomType.Setter
         public Builder recipients(String recipients) {
-            this.recipients = Objects.requireNonNull(recipients);
+            if (recipients == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "recipients");
+            }
+            this.recipients = recipients;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder threshold(Double threshold) {
-            this.threshold = Objects.requireNonNull(threshold);
+            if (threshold == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "threshold");
+            }
+            this.threshold = threshold;
             return this;
         }
         @CustomType.Setter
         public Builder thresholdType(String thresholdType) {
-            this.thresholdType = Objects.requireNonNull(thresholdType);
+            if (thresholdType == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "thresholdType");
+            }
+            this.thresholdType = thresholdType;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder version(Integer version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetAlertRulesAlertRule", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetAlertRulesAlertRule build() {

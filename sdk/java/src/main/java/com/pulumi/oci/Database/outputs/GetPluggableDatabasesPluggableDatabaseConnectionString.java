@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -72,17 +73,26 @@ public final class GetPluggableDatabasesPluggableDatabaseConnectionString {
 
         @CustomType.Setter
         public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
-            this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
+            if (allConnectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabaseConnectionString", "allConnectionStrings");
+            }
+            this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
         public Builder pdbDefault(String pdbDefault) {
-            this.pdbDefault = Objects.requireNonNull(pdbDefault);
+            if (pdbDefault == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabaseConnectionString", "pdbDefault");
+            }
+            this.pdbDefault = pdbDefault;
             return this;
         }
         @CustomType.Setter
         public Builder pdbIpDefault(String pdbIpDefault) {
-            this.pdbIpDefault = Objects.requireNonNull(pdbIpDefault);
+            if (pdbIpDefault == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabaseConnectionString", "pdbIpDefault");
+            }
+            this.pdbIpDefault = pdbIpDefault;
             return this;
         }
         public GetPluggableDatabasesPluggableDatabaseConnectionString build() {

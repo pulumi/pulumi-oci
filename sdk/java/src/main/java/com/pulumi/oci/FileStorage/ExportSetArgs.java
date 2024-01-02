@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -199,7 +200,9 @@ public final class ExportSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ExportSetArgs build() {
-            $.mountTargetId = Objects.requireNonNull($.mountTargetId, "expected parameter 'mountTargetId' to be non-null");
+            if ($.mountTargetId == null) {
+                throw new MissingRequiredPropertyException("ExportSetArgs", "mountTargetId");
+            }
             return $;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetCaptureFilterArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetCaptureFilterArgs build() {
-            $.captureFilterId = Objects.requireNonNull($.captureFilterId, "expected parameter 'captureFilterId' to be non-null");
+            if ($.captureFilterId == null) {
+                throw new MissingRequiredPropertyException("GetCaptureFilterArgs", "captureFilterId");
+            }
             return $;
         }
     }

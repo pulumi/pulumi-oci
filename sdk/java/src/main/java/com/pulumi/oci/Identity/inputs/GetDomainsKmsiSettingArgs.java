@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -272,8 +273,12 @@ public final class GetDomainsKmsiSettingArgs extends com.pulumi.resources.Invoke
         }
 
         public GetDomainsKmsiSettingArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.kmsiSettingId = Objects.requireNonNull($.kmsiSettingId, "expected parameter 'kmsiSettingId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsKmsiSettingArgs", "idcsEndpoint");
+            }
+            if ($.kmsiSettingId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsKmsiSettingArgs", "kmsiSettingId");
+            }
             return $;
         }
     }

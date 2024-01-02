@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetailQuerySt
 
         @CustomType.Setter
         public Builder queryStartTime(String queryStartTime) {
-            this.queryStartTime = Objects.requireNonNull(queryStartTime);
+            if (queryStartTime == null) {
+              throw new MissingRequiredPropertyException("GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime", "queryStartTime");
+            }
+            this.queryStartTime = queryStartTime;
             return this;
         }
         @CustomType.Setter
         public Builder startPolicyType(String startPolicyType) {
-            this.startPolicyType = Objects.requireNonNull(startPolicyType);
+            if (startPolicyType == null) {
+              throw new MissingRequiredPropertyException("GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime", "startPolicyType");
+            }
+            this.startPolicyType = startPolicyType;
             return this;
         }
         public GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime build() {

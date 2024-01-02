@@ -5,6 +5,7 @@ package com.pulumi.oci.ObjectStorage;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.inputs.StorageObjectSourceUriDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -651,9 +652,15 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public StorageObjectArgs build() {
-            $.bucket = Objects.requireNonNull($.bucket, "expected parameter 'bucket' to be non-null");
-            $.namespace = Objects.requireNonNull($.namespace, "expected parameter 'namespace' to be non-null");
-            $.object = Objects.requireNonNull($.object, "expected parameter 'object' to be non-null");
+            if ($.bucket == null) {
+                throw new MissingRequiredPropertyException("StorageObjectArgs", "bucket");
+            }
+            if ($.namespace == null) {
+                throw new MissingRequiredPropertyException("StorageObjectArgs", "namespace");
+            }
+            if ($.object == null) {
+                throw new MissingRequiredPropertyException("StorageObjectArgs", "object");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiValidationValidationDetail;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetApiValidationValidation {
 
         @CustomType.Setter
         public Builder details(List<GetApiValidationValidationDetail> details) {
-            this.details = Objects.requireNonNull(details);
+            if (details == null) {
+              throw new MissingRequiredPropertyException("GetApiValidationValidation", "details");
+            }
+            this.details = details;
             return this;
         }
         public Builder details(GetApiValidationValidationDetail... details) {
@@ -80,12 +84,18 @@ public final class GetApiValidationValidation {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetApiValidationValidation", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder result(String result) {
-            this.result = Objects.requireNonNull(result);
+            if (result == null) {
+              throw new MissingRequiredPropertyException("GetApiValidationValidation", "result");
+            }
+            this.result = result;
             return this;
         }
         public GetApiValidationValidation build() {

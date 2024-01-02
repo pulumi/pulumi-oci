@@ -5,6 +5,7 @@ package com.pulumi.oci.Adm.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.inputs.GetRemediationRunApplicationDependencyRecommendationsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -136,7 +137,9 @@ public final class GetRemediationRunApplicationDependencyRecommendationsArgs ext
         }
 
         public GetRemediationRunApplicationDependencyRecommendationsArgs build() {
-            $.remediationRunId = Objects.requireNonNull($.remediationRunId, "expected parameter 'remediationRunId' to be non-null");
+            if ($.remediationRunId == null) {
+                throw new MissingRequiredPropertyException("GetRemediationRunApplicationDependencyRecommendationsArgs", "remediationRunId");
+            }
             return $;
         }
     }

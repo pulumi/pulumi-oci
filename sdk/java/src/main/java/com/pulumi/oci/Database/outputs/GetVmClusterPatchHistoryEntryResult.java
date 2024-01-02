@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -138,47 +139,74 @@ public final class GetVmClusterPatchHistoryEntryResult {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder patchHistoryEntryId(String patchHistoryEntryId) {
-            this.patchHistoryEntryId = Objects.requireNonNull(patchHistoryEntryId);
+            if (patchHistoryEntryId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "patchHistoryEntryId");
+            }
+            this.patchHistoryEntryId = patchHistoryEntryId;
             return this;
         }
         @CustomType.Setter
         public Builder patchId(String patchId) {
-            this.patchId = Objects.requireNonNull(patchId);
+            if (patchId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "patchId");
+            }
+            this.patchId = patchId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterPatchHistoryEntryResult", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetVmClusterPatchHistoryEntryResult build() {

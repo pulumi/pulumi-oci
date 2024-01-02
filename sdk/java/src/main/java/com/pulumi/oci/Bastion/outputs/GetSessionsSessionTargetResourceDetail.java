@@ -4,6 +4,7 @@
 package com.pulumi.oci.Bastion.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -127,37 +128,58 @@ public final class GetSessionsSessionTargetResourceDetail {
 
         @CustomType.Setter
         public Builder sessionType(String sessionType) {
-            this.sessionType = Objects.requireNonNull(sessionType);
+            if (sessionType == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSessionTargetResourceDetail", "sessionType");
+            }
+            this.sessionType = sessionType;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceDisplayName(String targetResourceDisplayName) {
-            this.targetResourceDisplayName = Objects.requireNonNull(targetResourceDisplayName);
+            if (targetResourceDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSessionTargetResourceDetail", "targetResourceDisplayName");
+            }
+            this.targetResourceDisplayName = targetResourceDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceFqdn(String targetResourceFqdn) {
-            this.targetResourceFqdn = Objects.requireNonNull(targetResourceFqdn);
+            if (targetResourceFqdn == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSessionTargetResourceDetail", "targetResourceFqdn");
+            }
+            this.targetResourceFqdn = targetResourceFqdn;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceId(String targetResourceId) {
-            this.targetResourceId = Objects.requireNonNull(targetResourceId);
+            if (targetResourceId == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSessionTargetResourceDetail", "targetResourceId");
+            }
+            this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceOperatingSystemUserName(String targetResourceOperatingSystemUserName) {
-            this.targetResourceOperatingSystemUserName = Objects.requireNonNull(targetResourceOperatingSystemUserName);
+            if (targetResourceOperatingSystemUserName == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSessionTargetResourceDetail", "targetResourceOperatingSystemUserName");
+            }
+            this.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourcePort(Integer targetResourcePort) {
-            this.targetResourcePort = Objects.requireNonNull(targetResourcePort);
+            if (targetResourcePort == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSessionTargetResourceDetail", "targetResourcePort");
+            }
+            this.targetResourcePort = targetResourcePort;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourcePrivateIpAddress(String targetResourcePrivateIpAddress) {
-            this.targetResourcePrivateIpAddress = Objects.requireNonNull(targetResourcePrivateIpAddress);
+            if (targetResourcePrivateIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetSessionsSessionTargetResourceDetail", "targetResourcePrivateIpAddress");
+            }
+            this.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
             return this;
         }
         public GetSessionsSessionTargetResourceDetail build() {

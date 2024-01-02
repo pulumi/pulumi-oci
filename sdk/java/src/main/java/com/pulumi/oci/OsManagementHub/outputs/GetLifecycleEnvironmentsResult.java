@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentsFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetLifecycleEnvironmentsLifecycleEnvironmentCollection;
 import java.lang.String;
@@ -157,21 +158,25 @@ public final class GetLifecycleEnvironmentsResult {
 
         @CustomType.Setter
         public Builder archType(@Nullable String archType) {
+
             this.archType = archType;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayNameContains(@Nullable String displayNameContains) {
+
             this.displayNameContains = displayNameContains;
             return this;
         }
         @CustomType.Setter
         public Builder displayNames(@Nullable List<String> displayNames) {
+
             this.displayNames = displayNames;
             return this;
         }
@@ -180,6 +185,7 @@ public final class GetLifecycleEnvironmentsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLifecycleEnvironmentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -188,12 +194,18 @@ public final class GetLifecycleEnvironmentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleEnvironmentCollections(List<GetLifecycleEnvironmentsLifecycleEnvironmentCollection> lifecycleEnvironmentCollections) {
-            this.lifecycleEnvironmentCollections = Objects.requireNonNull(lifecycleEnvironmentCollections);
+            if (lifecycleEnvironmentCollections == null) {
+              throw new MissingRequiredPropertyException("GetLifecycleEnvironmentsResult", "lifecycleEnvironmentCollections");
+            }
+            this.lifecycleEnvironmentCollections = lifecycleEnvironmentCollections;
             return this;
         }
         public Builder lifecycleEnvironmentCollections(GetLifecycleEnvironmentsLifecycleEnvironmentCollection... lifecycleEnvironmentCollections) {
@@ -201,16 +213,19 @@ public final class GetLifecycleEnvironmentsResult {
         }
         @CustomType.Setter
         public Builder lifecycleEnvironmentId(@Nullable String lifecycleEnvironmentId) {
+
             this.lifecycleEnvironmentId = lifecycleEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder osFamily(@Nullable String osFamily) {
+
             this.osFamily = osFamily;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageApprovalPolicy;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageBlueBackendIp;
 import com.pulumi.oci.DevOps.outputs.GetDeployStageBlueGreenStrategy;
@@ -1007,7 +1008,10 @@ public final class GetDeployStageResult {
 
         @CustomType.Setter
         public Builder approvalPolicies(List<GetDeployStageApprovalPolicy> approvalPolicies) {
-            this.approvalPolicies = Objects.requireNonNull(approvalPolicies);
+            if (approvalPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "approvalPolicies");
+            }
+            this.approvalPolicies = approvalPolicies;
             return this;
         }
         public Builder approvalPolicies(GetDeployStageApprovalPolicy... approvalPolicies) {
@@ -1015,12 +1019,18 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder areHooksEnabled(Boolean areHooksEnabled) {
-            this.areHooksEnabled = Objects.requireNonNull(areHooksEnabled);
+            if (areHooksEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "areHooksEnabled");
+            }
+            this.areHooksEnabled = areHooksEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder blueBackendIps(List<GetDeployStageBlueBackendIp> blueBackendIps) {
-            this.blueBackendIps = Objects.requireNonNull(blueBackendIps);
+            if (blueBackendIps == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "blueBackendIps");
+            }
+            this.blueBackendIps = blueBackendIps;
             return this;
         }
         public Builder blueBackendIps(GetDeployStageBlueBackendIp... blueBackendIps) {
@@ -1028,7 +1038,10 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder blueGreenStrategies(List<GetDeployStageBlueGreenStrategy> blueGreenStrategies) {
-            this.blueGreenStrategies = Objects.requireNonNull(blueGreenStrategies);
+            if (blueGreenStrategies == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "blueGreenStrategies");
+            }
+            this.blueGreenStrategies = blueGreenStrategies;
             return this;
         }
         public Builder blueGreenStrategies(GetDeployStageBlueGreenStrategy... blueGreenStrategies) {
@@ -1036,7 +1049,10 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder canaryStrategies(List<GetDeployStageCanaryStrategy> canaryStrategies) {
-            this.canaryStrategies = Objects.requireNonNull(canaryStrategies);
+            if (canaryStrategies == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "canaryStrategies");
+            }
+            this.canaryStrategies = canaryStrategies;
             return this;
         }
         public Builder canaryStrategies(GetDeployStageCanaryStrategy... canaryStrategies) {
@@ -1044,42 +1060,66 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder commandSpecDeployArtifactId(String commandSpecDeployArtifactId) {
-            this.commandSpecDeployArtifactId = Objects.requireNonNull(commandSpecDeployArtifactId);
+            if (commandSpecDeployArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "commandSpecDeployArtifactId");
+            }
+            this.commandSpecDeployArtifactId = commandSpecDeployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder computeInstanceGroupBlueGreenDeploymentDeployStageId(String computeInstanceGroupBlueGreenDeploymentDeployStageId) {
-            this.computeInstanceGroupBlueGreenDeploymentDeployStageId = Objects.requireNonNull(computeInstanceGroupBlueGreenDeploymentDeployStageId);
+            if (computeInstanceGroupBlueGreenDeploymentDeployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "computeInstanceGroupBlueGreenDeploymentDeployStageId");
+            }
+            this.computeInstanceGroupBlueGreenDeploymentDeployStageId = computeInstanceGroupBlueGreenDeploymentDeployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder computeInstanceGroupCanaryDeployStageId(String computeInstanceGroupCanaryDeployStageId) {
-            this.computeInstanceGroupCanaryDeployStageId = Objects.requireNonNull(computeInstanceGroupCanaryDeployStageId);
+            if (computeInstanceGroupCanaryDeployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "computeInstanceGroupCanaryDeployStageId");
+            }
+            this.computeInstanceGroupCanaryDeployStageId = computeInstanceGroupCanaryDeployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder computeInstanceGroupCanaryTrafficShiftDeployStageId(String computeInstanceGroupCanaryTrafficShiftDeployStageId) {
-            this.computeInstanceGroupCanaryTrafficShiftDeployStageId = Objects.requireNonNull(computeInstanceGroupCanaryTrafficShiftDeployStageId);
+            if (computeInstanceGroupCanaryTrafficShiftDeployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "computeInstanceGroupCanaryTrafficShiftDeployStageId");
+            }
+            this.computeInstanceGroupCanaryTrafficShiftDeployStageId = computeInstanceGroupCanaryTrafficShiftDeployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder computeInstanceGroupDeployEnvironmentId(String computeInstanceGroupDeployEnvironmentId) {
-            this.computeInstanceGroupDeployEnvironmentId = Objects.requireNonNull(computeInstanceGroupDeployEnvironmentId);
+            if (computeInstanceGroupDeployEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "computeInstanceGroupDeployEnvironmentId");
+            }
+            this.computeInstanceGroupDeployEnvironmentId = computeInstanceGroupDeployEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder config(Map<String,Object> config) {
-            this.config = Objects.requireNonNull(config);
+            if (config == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "config");
+            }
+            this.config = config;
             return this;
         }
         @CustomType.Setter
         public Builder containerConfigs(List<GetDeployStageContainerConfig> containerConfigs) {
-            this.containerConfigs = Objects.requireNonNull(containerConfigs);
+            if (containerConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "containerConfigs");
+            }
+            this.containerConfigs = containerConfigs;
             return this;
         }
         public Builder containerConfigs(GetDeployStageContainerConfig... containerConfigs) {
@@ -1087,17 +1127,26 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactId(String deployArtifactId) {
-            this.deployArtifactId = Objects.requireNonNull(deployArtifactId);
+            if (deployArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deployArtifactId");
+            }
+            this.deployArtifactId = deployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder deployArtifactIds(List<String> deployArtifactIds) {
-            this.deployArtifactIds = Objects.requireNonNull(deployArtifactIds);
+            if (deployArtifactIds == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deployArtifactIds");
+            }
+            this.deployArtifactIds = deployArtifactIds;
             return this;
         }
         public Builder deployArtifactIds(String... deployArtifactIds) {
@@ -1105,27 +1154,42 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder deployEnvironmentIdA(String deployEnvironmentIdA) {
-            this.deployEnvironmentIdA = Objects.requireNonNull(deployEnvironmentIdA);
+            if (deployEnvironmentIdA == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deployEnvironmentIdA");
+            }
+            this.deployEnvironmentIdA = deployEnvironmentIdA;
             return this;
         }
         @CustomType.Setter
         public Builder deployEnvironmentIdB(String deployEnvironmentIdB) {
-            this.deployEnvironmentIdB = Objects.requireNonNull(deployEnvironmentIdB);
+            if (deployEnvironmentIdB == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deployEnvironmentIdB");
+            }
+            this.deployEnvironmentIdB = deployEnvironmentIdB;
             return this;
         }
         @CustomType.Setter
         public Builder deployPipelineId(String deployPipelineId) {
-            this.deployPipelineId = Objects.requireNonNull(deployPipelineId);
+            if (deployPipelineId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deployPipelineId");
+            }
+            this.deployPipelineId = deployPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder deployStageId(String deployStageId) {
-            this.deployStageId = Objects.requireNonNull(deployStageId);
+            if (deployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deployStageId");
+            }
+            this.deployStageId = deployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder deployStagePredecessorCollections(List<GetDeployStageDeployStagePredecessorCollection> deployStagePredecessorCollections) {
-            this.deployStagePredecessorCollections = Objects.requireNonNull(deployStagePredecessorCollections);
+            if (deployStagePredecessorCollections == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deployStagePredecessorCollections");
+            }
+            this.deployStagePredecessorCollections = deployStagePredecessorCollections;
             return this;
         }
         public Builder deployStagePredecessorCollections(GetDeployStageDeployStagePredecessorCollection... deployStagePredecessorCollections) {
@@ -1133,32 +1197,50 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder deployStageType(String deployStageType) {
-            this.deployStageType = Objects.requireNonNull(deployStageType);
+            if (deployStageType == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deployStageType");
+            }
+            this.deployStageType = deployStageType;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentSpecDeployArtifactId(String deploymentSpecDeployArtifactId) {
-            this.deploymentSpecDeployArtifactId = Objects.requireNonNull(deploymentSpecDeployArtifactId);
+            if (deploymentSpecDeployArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "deploymentSpecDeployArtifactId");
+            }
+            this.deploymentSpecDeployArtifactId = deploymentSpecDeployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder dockerImageDeployArtifactId(String dockerImageDeployArtifactId) {
-            this.dockerImageDeployArtifactId = Objects.requireNonNull(dockerImageDeployArtifactId);
+            if (dockerImageDeployArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "dockerImageDeployArtifactId");
+            }
+            this.dockerImageDeployArtifactId = dockerImageDeployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder failurePolicies(List<GetDeployStageFailurePolicy> failurePolicies) {
-            this.failurePolicies = Objects.requireNonNull(failurePolicies);
+            if (failurePolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "failurePolicies");
+            }
+            this.failurePolicies = failurePolicies;
             return this;
         }
         public Builder failurePolicies(GetDeployStageFailurePolicy... failurePolicies) {
@@ -1166,22 +1248,34 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder functionDeployEnvironmentId(String functionDeployEnvironmentId) {
-            this.functionDeployEnvironmentId = Objects.requireNonNull(functionDeployEnvironmentId);
+            if (functionDeployEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "functionDeployEnvironmentId");
+            }
+            this.functionDeployEnvironmentId = functionDeployEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder functionTimeoutInSeconds(Integer functionTimeoutInSeconds) {
-            this.functionTimeoutInSeconds = Objects.requireNonNull(functionTimeoutInSeconds);
+            if (functionTimeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "functionTimeoutInSeconds");
+            }
+            this.functionTimeoutInSeconds = functionTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder greenBackendIps(List<GetDeployStageGreenBackendIp> greenBackendIps) {
-            this.greenBackendIps = Objects.requireNonNull(greenBackendIps);
+            if (greenBackendIps == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "greenBackendIps");
+            }
+            this.greenBackendIps = greenBackendIps;
             return this;
         }
         public Builder greenBackendIps(GetDeployStageGreenBackendIp... greenBackendIps) {
@@ -1189,37 +1283,58 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder helmChartDeployArtifactId(String helmChartDeployArtifactId) {
-            this.helmChartDeployArtifactId = Objects.requireNonNull(helmChartDeployArtifactId);
+            if (helmChartDeployArtifactId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "helmChartDeployArtifactId");
+            }
+            this.helmChartDeployArtifactId = helmChartDeployArtifactId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAsync(Boolean isAsync) {
-            this.isAsync = Objects.requireNonNull(isAsync);
+            if (isAsync == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "isAsync");
+            }
+            this.isAsync = isAsync;
             return this;
         }
         @CustomType.Setter
         public Builder isDebugEnabled(Boolean isDebugEnabled) {
-            this.isDebugEnabled = Objects.requireNonNull(isDebugEnabled);
+            if (isDebugEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "isDebugEnabled");
+            }
+            this.isDebugEnabled = isDebugEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isForceEnabled(Boolean isForceEnabled) {
-            this.isForceEnabled = Objects.requireNonNull(isForceEnabled);
+            if (isForceEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "isForceEnabled");
+            }
+            this.isForceEnabled = isForceEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isValidationEnabled(Boolean isValidationEnabled) {
-            this.isValidationEnabled = Objects.requireNonNull(isValidationEnabled);
+            if (isValidationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "isValidationEnabled");
+            }
+            this.isValidationEnabled = isValidationEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder kubernetesManifestDeployArtifactIds(List<String> kubernetesManifestDeployArtifactIds) {
-            this.kubernetesManifestDeployArtifactIds = Objects.requireNonNull(kubernetesManifestDeployArtifactIds);
+            if (kubernetesManifestDeployArtifactIds == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "kubernetesManifestDeployArtifactIds");
+            }
+            this.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
             return this;
         }
         public Builder kubernetesManifestDeployArtifactIds(String... kubernetesManifestDeployArtifactIds) {
@@ -1227,12 +1342,18 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerConfigs(List<GetDeployStageLoadBalancerConfig> loadBalancerConfigs) {
-            this.loadBalancerConfigs = Objects.requireNonNull(loadBalancerConfigs);
+            if (loadBalancerConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "loadBalancerConfigs");
+            }
+            this.loadBalancerConfigs = loadBalancerConfigs;
             return this;
         }
         public Builder loadBalancerConfigs(GetDeployStageLoadBalancerConfig... loadBalancerConfigs) {
@@ -1240,42 +1361,66 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder maxHistory(Integer maxHistory) {
-            this.maxHistory = Objects.requireNonNull(maxHistory);
+            if (maxHistory == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "maxHistory");
+            }
+            this.maxHistory = maxHistory;
             return this;
         }
         @CustomType.Setter
         public Builder maxMemoryInMbs(String maxMemoryInMbs) {
-            this.maxMemoryInMbs = Objects.requireNonNull(maxMemoryInMbs);
+            if (maxMemoryInMbs == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "maxMemoryInMbs");
+            }
+            this.maxMemoryInMbs = maxMemoryInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder okeBlueGreenDeployStageId(String okeBlueGreenDeployStageId) {
-            this.okeBlueGreenDeployStageId = Objects.requireNonNull(okeBlueGreenDeployStageId);
+            if (okeBlueGreenDeployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "okeBlueGreenDeployStageId");
+            }
+            this.okeBlueGreenDeployStageId = okeBlueGreenDeployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder okeCanaryDeployStageId(String okeCanaryDeployStageId) {
-            this.okeCanaryDeployStageId = Objects.requireNonNull(okeCanaryDeployStageId);
+            if (okeCanaryDeployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "okeCanaryDeployStageId");
+            }
+            this.okeCanaryDeployStageId = okeCanaryDeployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder okeCanaryTrafficShiftDeployStageId(String okeCanaryTrafficShiftDeployStageId) {
-            this.okeCanaryTrafficShiftDeployStageId = Objects.requireNonNull(okeCanaryTrafficShiftDeployStageId);
+            if (okeCanaryTrafficShiftDeployStageId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "okeCanaryTrafficShiftDeployStageId");
+            }
+            this.okeCanaryTrafficShiftDeployStageId = okeCanaryTrafficShiftDeployStageId;
             return this;
         }
         @CustomType.Setter
         public Builder okeClusterDeployEnvironmentId(String okeClusterDeployEnvironmentId) {
-            this.okeClusterDeployEnvironmentId = Objects.requireNonNull(okeClusterDeployEnvironmentId);
+            if (okeClusterDeployEnvironmentId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "okeClusterDeployEnvironmentId");
+            }
+            this.okeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             return this;
         }
         @CustomType.Setter
         public Builder productionLoadBalancerConfigs(List<GetDeployStageProductionLoadBalancerConfig> productionLoadBalancerConfigs) {
-            this.productionLoadBalancerConfigs = Objects.requireNonNull(productionLoadBalancerConfigs);
+            if (productionLoadBalancerConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "productionLoadBalancerConfigs");
+            }
+            this.productionLoadBalancerConfigs = productionLoadBalancerConfigs;
             return this;
         }
         public Builder productionLoadBalancerConfigs(GetDeployStageProductionLoadBalancerConfig... productionLoadBalancerConfigs) {
@@ -1283,17 +1428,26 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder releaseName(String releaseName) {
-            this.releaseName = Objects.requireNonNull(releaseName);
+            if (releaseName == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "releaseName");
+            }
+            this.releaseName = releaseName;
             return this;
         }
         @CustomType.Setter
         public Builder rollbackPolicies(List<GetDeployStageRollbackPolicy> rollbackPolicies) {
-            this.rollbackPolicies = Objects.requireNonNull(rollbackPolicies);
+            if (rollbackPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "rollbackPolicies");
+            }
+            this.rollbackPolicies = rollbackPolicies;
             return this;
         }
         public Builder rollbackPolicies(GetDeployStageRollbackPolicy... rollbackPolicies) {
@@ -1301,7 +1455,10 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder rolloutPolicies(List<GetDeployStageRolloutPolicy> rolloutPolicies) {
-            this.rolloutPolicies = Objects.requireNonNull(rolloutPolicies);
+            if (rolloutPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "rolloutPolicies");
+            }
+            this.rolloutPolicies = rolloutPolicies;
             return this;
         }
         public Builder rolloutPolicies(GetDeployStageRolloutPolicy... rolloutPolicies) {
@@ -1309,7 +1466,10 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder setStrings(List<GetDeployStageSetString> setStrings) {
-            this.setStrings = Objects.requireNonNull(setStrings);
+            if (setStrings == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "setStrings");
+            }
+            this.setStrings = setStrings;
             return this;
         }
         public Builder setStrings(GetDeployStageSetString... setStrings) {
@@ -1317,7 +1477,10 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder setValues(List<GetDeployStageSetValue> setValues) {
-            this.setValues = Objects.requireNonNull(setValues);
+            if (setValues == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "setValues");
+            }
+            this.setValues = setValues;
             return this;
         }
         public Builder setValues(GetDeployStageSetValue... setValues) {
@@ -1325,47 +1488,74 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder shouldCleanupOnFail(Boolean shouldCleanupOnFail) {
-            this.shouldCleanupOnFail = Objects.requireNonNull(shouldCleanupOnFail);
+            if (shouldCleanupOnFail == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "shouldCleanupOnFail");
+            }
+            this.shouldCleanupOnFail = shouldCleanupOnFail;
             return this;
         }
         @CustomType.Setter
         public Builder shouldNotWait(Boolean shouldNotWait) {
-            this.shouldNotWait = Objects.requireNonNull(shouldNotWait);
+            if (shouldNotWait == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "shouldNotWait");
+            }
+            this.shouldNotWait = shouldNotWait;
             return this;
         }
         @CustomType.Setter
         public Builder shouldResetValues(Boolean shouldResetValues) {
-            this.shouldResetValues = Objects.requireNonNull(shouldResetValues);
+            if (shouldResetValues == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "shouldResetValues");
+            }
+            this.shouldResetValues = shouldResetValues;
             return this;
         }
         @CustomType.Setter
         public Builder shouldReuseValues(Boolean shouldReuseValues) {
-            this.shouldReuseValues = Objects.requireNonNull(shouldReuseValues);
+            if (shouldReuseValues == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "shouldReuseValues");
+            }
+            this.shouldReuseValues = shouldReuseValues;
             return this;
         }
         @CustomType.Setter
         public Builder shouldSkipCrds(Boolean shouldSkipCrds) {
-            this.shouldSkipCrds = Objects.requireNonNull(shouldSkipCrds);
+            if (shouldSkipCrds == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "shouldSkipCrds");
+            }
+            this.shouldSkipCrds = shouldSkipCrds;
             return this;
         }
         @CustomType.Setter
         public Builder shouldSkipRenderSubchartNotes(Boolean shouldSkipRenderSubchartNotes) {
-            this.shouldSkipRenderSubchartNotes = Objects.requireNonNull(shouldSkipRenderSubchartNotes);
+            if (shouldSkipRenderSubchartNotes == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "shouldSkipRenderSubchartNotes");
+            }
+            this.shouldSkipRenderSubchartNotes = shouldSkipRenderSubchartNotes;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder testLoadBalancerConfigs(List<GetDeployStageTestLoadBalancerConfig> testLoadBalancerConfigs) {
-            this.testLoadBalancerConfigs = Objects.requireNonNull(testLoadBalancerConfigs);
+            if (testLoadBalancerConfigs == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "testLoadBalancerConfigs");
+            }
+            this.testLoadBalancerConfigs = testLoadBalancerConfigs;
             return this;
         }
         public Builder testLoadBalancerConfigs(GetDeployStageTestLoadBalancerConfig... testLoadBalancerConfigs) {
@@ -1373,27 +1563,42 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+            if (timeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "timeoutInSeconds");
+            }
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder trafficShiftTarget(String trafficShiftTarget) {
-            this.trafficShiftTarget = Objects.requireNonNull(trafficShiftTarget);
+            if (trafficShiftTarget == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "trafficShiftTarget");
+            }
+            this.trafficShiftTarget = trafficShiftTarget;
             return this;
         }
         @CustomType.Setter
         public Builder valuesArtifactIds(List<String> valuesArtifactIds) {
-            this.valuesArtifactIds = Objects.requireNonNull(valuesArtifactIds);
+            if (valuesArtifactIds == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "valuesArtifactIds");
+            }
+            this.valuesArtifactIds = valuesArtifactIds;
             return this;
         }
         public Builder valuesArtifactIds(String... valuesArtifactIds) {
@@ -1401,7 +1606,10 @@ public final class GetDeployStageResult {
         }
         @CustomType.Setter
         public Builder waitCriterias(List<GetDeployStageWaitCriteria> waitCriterias) {
-            this.waitCriterias = Objects.requireNonNull(waitCriterias);
+            if (waitCriterias == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageResult", "waitCriterias");
+            }
+            this.waitCriterias = waitCriterias;
             return this;
         }
         public Builder waitCriterias(GetDeployStageWaitCriteria... waitCriterias) {

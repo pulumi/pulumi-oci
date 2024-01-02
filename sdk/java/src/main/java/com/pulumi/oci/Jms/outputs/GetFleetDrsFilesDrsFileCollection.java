@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetFleetDrsFilesDrsFileCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetFleetDrsFilesDrsFileCollection {
 
         @CustomType.Setter
         public Builder items(List<GetFleetDrsFilesDrsFileCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetFleetDrsFilesDrsFileCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetFleetDrsFilesDrsFileCollectionItem... items) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderTransformati
 
         @CustomType.Setter
         public Builder items(List<DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeaders", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItem... items) {

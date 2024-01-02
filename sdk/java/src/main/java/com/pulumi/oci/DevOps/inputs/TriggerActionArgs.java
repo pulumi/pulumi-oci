@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.TriggerActionFilterArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -151,8 +152,12 @@ public final class TriggerActionArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public TriggerActionArgs build() {
-            $.buildPipelineId = Objects.requireNonNull($.buildPipelineId, "expected parameter 'buildPipelineId' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.buildPipelineId == null) {
+                throw new MissingRequiredPropertyException("TriggerActionArgs", "buildPipelineId");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("TriggerActionArgs", "type");
+            }
             return $;
         }
     }

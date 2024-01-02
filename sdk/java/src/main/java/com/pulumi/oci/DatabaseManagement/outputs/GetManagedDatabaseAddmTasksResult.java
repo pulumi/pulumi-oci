@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTasksAddmTasksCollection;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseAddmTasksFilter;
 import java.lang.String;
@@ -92,7 +93,10 @@ public final class GetManagedDatabaseAddmTasksResult {
 
         @CustomType.Setter
         public Builder addmTasksCollections(List<GetManagedDatabaseAddmTasksAddmTasksCollection> addmTasksCollections) {
-            this.addmTasksCollections = Objects.requireNonNull(addmTasksCollections);
+            if (addmTasksCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTasksResult", "addmTasksCollections");
+            }
+            this.addmTasksCollections = addmTasksCollections;
             return this;
         }
         public Builder addmTasksCollections(GetManagedDatabaseAddmTasksAddmTasksCollection... addmTasksCollections) {
@@ -100,6 +104,7 @@ public final class GetManagedDatabaseAddmTasksResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabaseAddmTasksFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,22 +113,34 @@ public final class GetManagedDatabaseAddmTasksResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTasksResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTasksResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnd(String timeEnd) {
-            this.timeEnd = Objects.requireNonNull(timeEnd);
+            if (timeEnd == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTasksResult", "timeEnd");
+            }
+            this.timeEnd = timeEnd;
             return this;
         }
         @CustomType.Setter
         public Builder timeStart(String timeStart) {
-            this.timeStart = Objects.requireNonNull(timeStart);
+            if (timeStart == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTasksResult", "timeStart");
+            }
+            this.timeStart = timeStart;
             return this;
         }
         public GetManagedDatabaseAddmTasksResult build() {

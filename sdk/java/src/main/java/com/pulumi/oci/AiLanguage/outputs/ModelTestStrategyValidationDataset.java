@@ -4,6 +4,7 @@
 package com.pulumi.oci.AiLanguage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.ModelTestStrategyValidationDatasetLocationDetails;
 import java.lang.String;
 import java.util.Objects;
@@ -73,16 +74,21 @@ public final class ModelTestStrategyValidationDataset {
 
         @CustomType.Setter
         public Builder datasetId(@Nullable String datasetId) {
+
             this.datasetId = datasetId;
             return this;
         }
         @CustomType.Setter
         public Builder datasetType(String datasetType) {
-            this.datasetType = Objects.requireNonNull(datasetType);
+            if (datasetType == null) {
+              throw new MissingRequiredPropertyException("ModelTestStrategyValidationDataset", "datasetType");
+            }
+            this.datasetType = datasetType;
             return this;
         }
         @CustomType.Setter
         public Builder locationDetails(@Nullable ModelTestStrategyValidationDatasetLocationDetails locationDetails) {
+
             this.locationDetails = locationDetails;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -202,67 +203,106 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
 
         @CustomType.Setter
         public Builder accessType(String accessType) {
-            this.accessType = Objects.requireNonNull(accessType);
+            if (accessType == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "accessType");
+            }
+            this.accessType = accessType;
             return this;
         }
         @CustomType.Setter
         public Builder accessUri(String accessUri) {
-            this.accessUri = Objects.requireNonNull(accessUri);
+            if (accessUri == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "accessUri");
+            }
+            this.accessUri = accessUri;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder bucketListingAction(String bucketListingAction) {
-            this.bucketListingAction = Objects.requireNonNull(bucketListingAction);
+            if (bucketListingAction == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "bucketListingAction");
+            }
+            this.bucketListingAction = bucketListingAction;
             return this;
         }
         @CustomType.Setter
         public Builder fullPath(String fullPath) {
-            this.fullPath = Objects.requireNonNull(fullPath);
+            if (fullPath == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "fullPath");
+            }
+            this.fullPath = fullPath;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+            if (object == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "object");
+            }
+            this.object = object;
             return this;
         }
         @CustomType.Setter
         public Builder objectName(String objectName) {
-            this.objectName = Objects.requireNonNull(objectName);
+            if (objectName == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "objectName");
+            }
+            this.objectName = objectName;
             return this;
         }
         @CustomType.Setter
         public Builder parId(String parId) {
-            this.parId = Objects.requireNonNull(parId);
+            if (parId == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "parId");
+            }
+            this.parId = parId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeExpires(String timeExpires) {
-            this.timeExpires = Objects.requireNonNull(timeExpires);
+            if (timeExpires == null) {
+              throw new MissingRequiredPropertyException("GetPreauthrequestsPreauthenticatedRequest", "timeExpires");
+            }
+            this.timeExpires = timeExpires;
             return this;
         }
         public GetPreauthrequestsPreauthenticatedRequest build() {

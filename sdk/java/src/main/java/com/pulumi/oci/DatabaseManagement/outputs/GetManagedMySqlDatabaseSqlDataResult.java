@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseSqlDataFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseSqlDataMySqlDataCollection;
 import java.lang.String;
@@ -91,16 +92,21 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
 
         @CustomType.Setter
         public Builder endTime(String endTime) {
-            this.endTime = Objects.requireNonNull(endTime);
+            if (endTime == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataResult", "endTime");
+            }
+            this.endTime = endTime;
             return this;
         }
         @CustomType.Setter
         public Builder filterColumn(@Nullable String filterColumn) {
+
             this.filterColumn = filterColumn;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedMySqlDatabaseSqlDataFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -109,17 +115,26 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedMySqlDatabaseId(String managedMySqlDatabaseId) {
-            this.managedMySqlDatabaseId = Objects.requireNonNull(managedMySqlDatabaseId);
+            if (managedMySqlDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataResult", "managedMySqlDatabaseId");
+            }
+            this.managedMySqlDatabaseId = managedMySqlDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder mySqlDataCollections(List<GetManagedMySqlDatabaseSqlDataMySqlDataCollection> mySqlDataCollections) {
-            this.mySqlDataCollections = Objects.requireNonNull(mySqlDataCollections);
+            if (mySqlDataCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataResult", "mySqlDataCollections");
+            }
+            this.mySqlDataCollections = mySqlDataCollections;
             return this;
         }
         public Builder mySqlDataCollections(GetManagedMySqlDatabaseSqlDataMySqlDataCollection... mySqlDataCollections) {
@@ -127,7 +142,10 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
         }
         @CustomType.Setter
         public Builder startTime(String startTime) {
-            this.startTime = Objects.requireNonNull(startTime);
+            if (startTime == null) {
+              throw new MissingRequiredPropertyException("GetManagedMySqlDatabaseSqlDataResult", "startTime");
+            }
+            this.startTime = startTime;
             return this;
         }
         public GetManagedMySqlDatabaseSqlDataResult build() {

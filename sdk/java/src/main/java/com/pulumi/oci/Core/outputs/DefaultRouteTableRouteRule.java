@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -78,31 +79,39 @@ public final class DefaultRouteTableRouteRule {
 
         @CustomType.Setter
         public Builder cidrBlock(@Nullable String cidrBlock) {
+
             this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder destination(@Nullable String destination) {
+
             this.destination = destination;
             return this;
         }
         @CustomType.Setter
         public Builder destinationType(@Nullable String destinationType) {
+
             this.destinationType = destinationType;
             return this;
         }
         @CustomType.Setter
         public Builder networkEntityId(String networkEntityId) {
-            this.networkEntityId = Objects.requireNonNull(networkEntityId);
+            if (networkEntityId == null) {
+              throw new MissingRequiredPropertyException("DefaultRouteTableRouteRule", "networkEntityId");
+            }
+            this.networkEntityId = networkEntityId;
             return this;
         }
         @CustomType.Setter
         public Builder routeType(@Nullable String routeType) {
+
             this.routeType = routeType;
             return this;
         }

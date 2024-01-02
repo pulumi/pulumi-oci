@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsFilter;
 import java.lang.String;
 import java.util.List;
@@ -273,7 +274,9 @@ public final class GetRepositoryCommitsPlainArgs extends com.pulumi.resources.In
         }
 
         public GetRepositoryCommitsPlainArgs build() {
-            $.repositoryId = Objects.requireNonNull($.repositoryId, "expected parameter 'repositoryId' to be non-null");
+            if ($.repositoryId == null) {
+                throw new MissingRequiredPropertyException("GetRepositoryCommitsPlainArgs", "repositoryId");
+            }
             return $;
         }
     }

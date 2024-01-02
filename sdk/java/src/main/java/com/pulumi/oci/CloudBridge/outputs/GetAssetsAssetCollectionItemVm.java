@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetAssetsAssetCollectionItemVm {
 
         @CustomType.Setter
         public Builder hypervisorHost(String hypervisorHost) {
-            this.hypervisorHost = Objects.requireNonNull(hypervisorHost);
+            if (hypervisorHost == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemVm", "hypervisorHost");
+            }
+            this.hypervisorHost = hypervisorHost;
             return this;
         }
         @CustomType.Setter
         public Builder hypervisorVendor(String hypervisorVendor) {
-            this.hypervisorVendor = Objects.requireNonNull(hypervisorVendor);
+            if (hypervisorVendor == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemVm", "hypervisorVendor");
+            }
+            this.hypervisorVendor = hypervisorVendor;
             return this;
         }
         @CustomType.Setter
         public Builder hypervisorVersion(String hypervisorVersion) {
-            this.hypervisorVersion = Objects.requireNonNull(hypervisorVersion);
+            if (hypervisorVersion == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemVm", "hypervisorVersion");
+            }
+            this.hypervisorVersion = hypervisorVersion;
             return this;
         }
         public GetAssetsAssetCollectionItemVm build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MeteringComputation.inputs.UsageCarbonEmissionsQueryQueryDefinitionArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class UsageCarbonEmissionsQueryArgs extends com.pulumi.resources.Re
         }
 
         public UsageCarbonEmissionsQueryArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.queryDefinition = Objects.requireNonNull($.queryDefinition, "expected parameter 'queryDefinition' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryArgs", "compartmentId");
+            }
+            if ($.queryDefinition == null) {
+                throw new MissingRequiredPropertyException("UsageCarbonEmissionsQueryArgs", "queryDefinition");
+            }
             return $;
         }
     }

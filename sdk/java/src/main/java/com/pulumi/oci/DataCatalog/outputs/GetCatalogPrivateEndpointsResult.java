@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogPrivateEndpointsCatalogPrivateEndpoint;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogPrivateEndpointsFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetCatalogPrivateEndpointsResult {
 
         @CustomType.Setter
         public Builder catalogPrivateEndpoints(List<GetCatalogPrivateEndpointsCatalogPrivateEndpoint> catalogPrivateEndpoints) {
-            this.catalogPrivateEndpoints = Objects.requireNonNull(catalogPrivateEndpoints);
+            if (catalogPrivateEndpoints == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsResult", "catalogPrivateEndpoints");
+            }
+            this.catalogPrivateEndpoints = catalogPrivateEndpoints;
             return this;
         }
         public Builder catalogPrivateEndpoints(GetCatalogPrivateEndpointsCatalogPrivateEndpoint... catalogPrivateEndpoints) {
@@ -117,16 +121,21 @@ public final class GetCatalogPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCatalogPrivateEndpointsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetCatalogPrivateEndpointsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.ObjectStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetReplicationSourcesReplicationSource {
 
         @CustomType.Setter
         public Builder policyName(String policyName) {
-            this.policyName = Objects.requireNonNull(policyName);
+            if (policyName == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSourcesReplicationSource", "policyName");
+            }
+            this.policyName = policyName;
             return this;
         }
         @CustomType.Setter
         public Builder sourceBucketName(String sourceBucketName) {
-            this.sourceBucketName = Objects.requireNonNull(sourceBucketName);
+            if (sourceBucketName == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSourcesReplicationSource", "sourceBucketName");
+            }
+            this.sourceBucketName = sourceBucketName;
             return this;
         }
         @CustomType.Setter
         public Builder sourceRegionName(String sourceRegionName) {
-            this.sourceRegionName = Objects.requireNonNull(sourceRegionName);
+            if (sourceRegionName == null) {
+              throw new MissingRequiredPropertyException("GetReplicationSourcesReplicationSource", "sourceRegionName");
+            }
+            this.sourceRegionName = sourceRegionName;
             return this;
         }
         public GetReplicationSourcesReplicationSource build() {

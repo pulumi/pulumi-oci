@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetDataSourceDataSourceDetectorMappingInfo {
 
         @CustomType.Setter
         public Builder detectorRecipeId(String detectorRecipeId) {
-            this.detectorRecipeId = Objects.requireNonNull(detectorRecipeId);
+            if (detectorRecipeId == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetectorMappingInfo", "detectorRecipeId");
+            }
+            this.detectorRecipeId = detectorRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder detectorRuleId(String detectorRuleId) {
-            this.detectorRuleId = Objects.requireNonNull(detectorRuleId);
+            if (detectorRuleId == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceDataSourceDetectorMappingInfo", "detectorRuleId");
+            }
+            this.detectorRuleId = detectorRuleId;
             return this;
         }
         public GetDataSourceDataSourceDetectorMappingInfo build() {

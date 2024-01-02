@@ -4,6 +4,7 @@
 package com.pulumi.oci.OsManagementHub.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcePackageGroupsFilter;
 import com.pulumi.oci.OsManagementHub.outputs.GetSoftwareSourcePackageGroupsPackageGroupCollection;
 import java.lang.String;
@@ -113,11 +114,13 @@ public final class GetSoftwareSourcePackageGroupsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSoftwareSourcePackageGroupsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -126,6 +129,7 @@ public final class GetSoftwareSourcePackageGroupsResult {
         }
         @CustomType.Setter
         public Builder groupTypes(@Nullable List<String> groupTypes) {
+
             this.groupTypes = groupTypes;
             return this;
         }
@@ -134,22 +138,30 @@ public final class GetSoftwareSourcePackageGroupsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }
         @CustomType.Setter
         public Builder packageGroupCollections(List<GetSoftwareSourcePackageGroupsPackageGroupCollection> packageGroupCollections) {
-            this.packageGroupCollections = Objects.requireNonNull(packageGroupCollections);
+            if (packageGroupCollections == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsResult", "packageGroupCollections");
+            }
+            this.packageGroupCollections = packageGroupCollections;
             return this;
         }
         public Builder packageGroupCollections(GetSoftwareSourcePackageGroupsPackageGroupCollection... packageGroupCollections) {
@@ -157,7 +169,10 @@ public final class GetSoftwareSourcePackageGroupsResult {
         }
         @CustomType.Setter
         public Builder softwareSourceId(String softwareSourceId) {
-            this.softwareSourceId = Objects.requireNonNull(softwareSourceId);
+            if (softwareSourceId == null) {
+              throw new MissingRequiredPropertyException("GetSoftwareSourcePackageGroupsResult", "softwareSourceId");
+            }
+            this.softwareSourceId = softwareSourceId;
             return this;
         }
         public GetSoftwareSourcePackageGroupsResult build() {

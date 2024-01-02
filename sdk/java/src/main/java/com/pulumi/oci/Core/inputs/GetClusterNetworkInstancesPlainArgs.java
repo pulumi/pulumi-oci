@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetClusterNetworkInstancesFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,8 +139,12 @@ public final class GetClusterNetworkInstancesPlainArgs extends com.pulumi.resour
         }
 
         public GetClusterNetworkInstancesPlainArgs build() {
-            $.clusterNetworkId = Objects.requireNonNull($.clusterNetworkId, "expected parameter 'clusterNetworkId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            if ($.clusterNetworkId == null) {
+                throw new MissingRequiredPropertyException("GetClusterNetworkInstancesPlainArgs", "clusterNetworkId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetClusterNetworkInstancesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

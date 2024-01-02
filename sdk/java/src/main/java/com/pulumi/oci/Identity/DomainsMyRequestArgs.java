@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestApprovalDetailArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestingArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestorArgs;
@@ -915,10 +916,18 @@ public final class DomainsMyRequestArgs extends com.pulumi.resources.ResourceArg
         }
 
         public DomainsMyRequestArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.justification = Objects.requireNonNull($.justification, "expected parameter 'justification' to be non-null");
-            $.requesting = Objects.requireNonNull($.requesting, "expected parameter 'requesting' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsMyRequestArgs", "idcsEndpoint");
+            }
+            if ($.justification == null) {
+                throw new MissingRequiredPropertyException("DomainsMyRequestArgs", "justification");
+            }
+            if ($.requesting == null) {
+                throw new MissingRequiredPropertyException("DomainsMyRequestArgs", "requesting");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsMyRequestArgs", "schemas");
+            }
             return $;
         }
     }

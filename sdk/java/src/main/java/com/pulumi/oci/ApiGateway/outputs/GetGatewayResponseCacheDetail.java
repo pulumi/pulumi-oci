@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayResponseCacheDetailServer;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -158,42 +159,66 @@ public final class GetGatewayResponseCacheDetail {
 
         @CustomType.Setter
         public Builder authenticationSecretId(String authenticationSecretId) {
-            this.authenticationSecretId = Objects.requireNonNull(authenticationSecretId);
+            if (authenticationSecretId == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "authenticationSecretId");
+            }
+            this.authenticationSecretId = authenticationSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder authenticationSecretVersionNumber(String authenticationSecretVersionNumber) {
-            this.authenticationSecretVersionNumber = Objects.requireNonNull(authenticationSecretVersionNumber);
+            if (authenticationSecretVersionNumber == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "authenticationSecretVersionNumber");
+            }
+            this.authenticationSecretVersionNumber = authenticationSecretVersionNumber;
             return this;
         }
         @CustomType.Setter
         public Builder connectTimeoutInMs(Integer connectTimeoutInMs) {
-            this.connectTimeoutInMs = Objects.requireNonNull(connectTimeoutInMs);
+            if (connectTimeoutInMs == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "connectTimeoutInMs");
+            }
+            this.connectTimeoutInMs = connectTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder isSslEnabled(Boolean isSslEnabled) {
-            this.isSslEnabled = Objects.requireNonNull(isSslEnabled);
+            if (isSslEnabled == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "isSslEnabled");
+            }
+            this.isSslEnabled = isSslEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
-            this.isSslVerifyDisabled = Objects.requireNonNull(isSslVerifyDisabled);
+            if (isSslVerifyDisabled == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "isSslVerifyDisabled");
+            }
+            this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder readTimeoutInMs(Integer readTimeoutInMs) {
-            this.readTimeoutInMs = Objects.requireNonNull(readTimeoutInMs);
+            if (readTimeoutInMs == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "readTimeoutInMs");
+            }
+            this.readTimeoutInMs = readTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder sendTimeoutInMs(Integer sendTimeoutInMs) {
-            this.sendTimeoutInMs = Objects.requireNonNull(sendTimeoutInMs);
+            if (sendTimeoutInMs == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "sendTimeoutInMs");
+            }
+            this.sendTimeoutInMs = sendTimeoutInMs;
             return this;
         }
         @CustomType.Setter
         public Builder servers(List<GetGatewayResponseCacheDetailServer> servers) {
-            this.servers = Objects.requireNonNull(servers);
+            if (servers == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "servers");
+            }
+            this.servers = servers;
             return this;
         }
         public Builder servers(GetGatewayResponseCacheDetailServer... servers) {
@@ -201,7 +226,10 @@ public final class GetGatewayResponseCacheDetail {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResponseCacheDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetGatewayResponseCacheDetail build() {

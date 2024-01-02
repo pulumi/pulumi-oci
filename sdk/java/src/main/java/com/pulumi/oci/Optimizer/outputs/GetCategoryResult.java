@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetCategoryRecommendationCount;
 import com.pulumi.oci.Optimizer.outputs.GetCategoryResourceCount;
 import java.lang.Double;
@@ -208,47 +209,74 @@ public final class GetCategoryResult {
 
         @CustomType.Setter
         public Builder categoryId(String categoryId) {
-            this.categoryId = Objects.requireNonNull(categoryId);
+            if (categoryId == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "categoryId");
+            }
+            this.categoryId = categoryId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentName(String compartmentName) {
-            this.compartmentName = Objects.requireNonNull(compartmentName);
+            if (compartmentName == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "compartmentName");
+            }
+            this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder estimatedCostSaving(Double estimatedCostSaving) {
-            this.estimatedCostSaving = Objects.requireNonNull(estimatedCostSaving);
+            if (estimatedCostSaving == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "estimatedCostSaving");
+            }
+            this.estimatedCostSaving = estimatedCostSaving;
             return this;
         }
         @CustomType.Setter
         public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
-            this.extendedMetadata = Objects.requireNonNull(extendedMetadata);
+            if (extendedMetadata == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "extendedMetadata");
+            }
+            this.extendedMetadata = extendedMetadata;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder recommendationCounts(List<GetCategoryRecommendationCount> recommendationCounts) {
-            this.recommendationCounts = Objects.requireNonNull(recommendationCounts);
+            if (recommendationCounts == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "recommendationCounts");
+            }
+            this.recommendationCounts = recommendationCounts;
             return this;
         }
         public Builder recommendationCounts(GetCategoryRecommendationCount... recommendationCounts) {
@@ -256,7 +284,10 @@ public final class GetCategoryResult {
         }
         @CustomType.Setter
         public Builder resourceCounts(List<GetCategoryResourceCount> resourceCounts) {
-            this.resourceCounts = Objects.requireNonNull(resourceCounts);
+            if (resourceCounts == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "resourceCounts");
+            }
+            this.resourceCounts = resourceCounts;
             return this;
         }
         public Builder resourceCounts(GetCategoryResourceCount... resourceCounts) {
@@ -264,17 +295,26 @@ public final class GetCategoryResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetCategoryResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetCategoryResult build() {

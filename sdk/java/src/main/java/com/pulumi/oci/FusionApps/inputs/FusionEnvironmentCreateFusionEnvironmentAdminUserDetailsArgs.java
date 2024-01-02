@@ -5,6 +5,7 @@ package com.pulumi.oci.FusionApps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -222,11 +223,21 @@ public final class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs 
         }
 
         public FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs build() {
-            $.emailAddress = Objects.requireNonNull($.emailAddress, "expected parameter 'emailAddress' to be non-null");
-            $.firstName = Objects.requireNonNull($.firstName, "expected parameter 'firstName' to be non-null");
-            $.lastName = Objects.requireNonNull($.lastName, "expected parameter 'lastName' to be non-null");
-            $.password = Objects.requireNonNull($.password, "expected parameter 'password' to be non-null");
-            $.username = Objects.requireNonNull($.username, "expected parameter 'username' to be non-null");
+            if ($.emailAddress == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs", "emailAddress");
+            }
+            if ($.firstName == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs", "firstName");
+            }
+            if ($.lastName == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs", "lastName");
+            }
+            if ($.password == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs", "password");
+            }
+            if ($.username == null) {
+                throw new MissingRequiredPropertyException("FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs", "username");
+            }
             return $;
         }
     }

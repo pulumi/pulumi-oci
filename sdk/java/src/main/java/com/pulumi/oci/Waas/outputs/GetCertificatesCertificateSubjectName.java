@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -126,37 +127,58 @@ public final class GetCertificatesCertificateSubjectName {
 
         @CustomType.Setter
         public Builder commonName(String commonName) {
-            this.commonName = Objects.requireNonNull(commonName);
+            if (commonName == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateSubjectName", "commonName");
+            }
+            this.commonName = commonName;
             return this;
         }
         @CustomType.Setter
         public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+            if (country == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateSubjectName", "country");
+            }
+            this.country = country;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateSubjectName", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder locality(String locality) {
-            this.locality = Objects.requireNonNull(locality);
+            if (locality == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateSubjectName", "locality");
+            }
+            this.locality = locality;
             return this;
         }
         @CustomType.Setter
         public Builder organization(String organization) {
-            this.organization = Objects.requireNonNull(organization);
+            if (organization == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateSubjectName", "organization");
+            }
+            this.organization = organization;
             return this;
         }
         @CustomType.Setter
         public Builder organizationalUnit(String organizationalUnit) {
-            this.organizationalUnit = Objects.requireNonNull(organizationalUnit);
+            if (organizationalUnit == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateSubjectName", "organizationalUnit");
+            }
+            this.organizationalUnit = organizationalUnit;
             return this;
         }
         @CustomType.Setter
         public Builder stateProvince(String stateProvince) {
-            this.stateProvince = Objects.requireNonNull(stateProvince);
+            if (stateProvince == null) {
+              throw new MissingRequiredPropertyException("GetCertificatesCertificateSubjectName", "stateProvince");
+            }
+            this.stateProvince = stateProvince;
             return this;
         }
         public GetCertificatesCertificateSubjectName build() {

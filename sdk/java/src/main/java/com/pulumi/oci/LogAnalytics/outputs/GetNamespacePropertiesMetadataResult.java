@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacePropertiesMetadataFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection;
 import java.lang.String;
@@ -113,16 +114,19 @@ public final class GetNamespacePropertiesMetadataResult {
 
         @CustomType.Setter
         public Builder constraints(@Nullable String constraints) {
+
             this.constraints = constraints;
             return this;
         }
         @CustomType.Setter
         public Builder displayText(@Nullable String displayText) {
+
             this.displayText = displayText;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetNamespacePropertiesMetadataFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -131,27 +135,38 @@ public final class GetNamespacePropertiesMetadataResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder level(@Nullable String level) {
+
             this.level = level;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder propertyMetadataSummaryCollections(List<GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection> propertyMetadataSummaryCollections) {
-            this.propertyMetadataSummaryCollections = Objects.requireNonNull(propertyMetadataSummaryCollections);
+            if (propertyMetadataSummaryCollections == null) {
+              throw new MissingRequiredPropertyException("GetNamespacePropertiesMetadataResult", "propertyMetadataSummaryCollections");
+            }
+            this.propertyMetadataSummaryCollections = propertyMetadataSummaryCollections;
             return this;
         }
         public Builder propertyMetadataSummaryCollections(GetNamespacePropertiesMetadataPropertyMetadataSummaryCollection... propertyMetadataSummaryCollections) {

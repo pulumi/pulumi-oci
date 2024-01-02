@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -72,11 +73,15 @@ public final class BuildPipelineStagePrivateAccessConfig {
 
         @CustomType.Setter
         public Builder networkChannelType(String networkChannelType) {
-            this.networkChannelType = Objects.requireNonNull(networkChannelType);
+            if (networkChannelType == null) {
+              throw new MissingRequiredPropertyException("BuildPipelineStagePrivateAccessConfig", "networkChannelType");
+            }
+            this.networkChannelType = networkChannelType;
             return this;
         }
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
+
             this.nsgIds = nsgIds;
             return this;
         }
@@ -85,7 +90,10 @@ public final class BuildPipelineStagePrivateAccessConfig {
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("BuildPipelineStagePrivateAccessConfig", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         public BuildPipelineStagePrivateAccessConfig build() {

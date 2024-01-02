@@ -4,6 +4,7 @@
 package com.pulumi.oci.EmWarehouse.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.EmWarehouse.outputs.GetEtlRunsEtlRunCollectionItemItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetEtlRunsEtlRunCollectionItem {
 
         @CustomType.Setter
         public Builder items(List<GetEtlRunsEtlRunCollectionItemItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetEtlRunsEtlRunCollectionItem", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetEtlRunsEtlRunCollectionItemItem... items) {

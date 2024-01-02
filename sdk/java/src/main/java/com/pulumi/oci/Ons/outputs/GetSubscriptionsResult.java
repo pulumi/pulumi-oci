@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ons.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ons.outputs.GetSubscriptionsFilter;
 import com.pulumi.oci.Ons.outputs.GetSubscriptionsSubscription;
 import java.lang.String;
@@ -95,11 +96,15 @@ public final class GetSubscriptionsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetSubscriptionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,12 +113,18 @@ public final class GetSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder subscriptions(List<GetSubscriptionsSubscription> subscriptions) {
-            this.subscriptions = Objects.requireNonNull(subscriptions);
+            if (subscriptions == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsResult", "subscriptions");
+            }
+            this.subscriptions = subscriptions;
             return this;
         }
         public Builder subscriptions(GetSubscriptionsSubscription... subscriptions) {
@@ -121,6 +132,7 @@ public final class GetSubscriptionsResult {
         }
         @CustomType.Setter
         public Builder topicId(@Nullable String topicId) {
+
             this.topicId = topicId;
             return this;
         }

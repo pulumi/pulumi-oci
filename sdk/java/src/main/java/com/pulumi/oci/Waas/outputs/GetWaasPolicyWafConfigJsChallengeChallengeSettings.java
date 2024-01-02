@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -155,47 +156,74 @@ public final class GetWaasPolicyWafConfigJsChallengeChallengeSettings {
 
         @CustomType.Setter
         public Builder blockAction(String blockAction) {
-            this.blockAction = Objects.requireNonNull(blockAction);
+            if (blockAction == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "blockAction");
+            }
+            this.blockAction = blockAction;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageCode(String blockErrorPageCode) {
-            this.blockErrorPageCode = Objects.requireNonNull(blockErrorPageCode);
+            if (blockErrorPageCode == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "blockErrorPageCode");
+            }
+            this.blockErrorPageCode = blockErrorPageCode;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageDescription(String blockErrorPageDescription) {
-            this.blockErrorPageDescription = Objects.requireNonNull(blockErrorPageDescription);
+            if (blockErrorPageDescription == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "blockErrorPageDescription");
+            }
+            this.blockErrorPageDescription = blockErrorPageDescription;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageMessage(String blockErrorPageMessage) {
-            this.blockErrorPageMessage = Objects.requireNonNull(blockErrorPageMessage);
+            if (blockErrorPageMessage == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "blockErrorPageMessage");
+            }
+            this.blockErrorPageMessage = blockErrorPageMessage;
             return this;
         }
         @CustomType.Setter
         public Builder blockResponseCode(Integer blockResponseCode) {
-            this.blockResponseCode = Objects.requireNonNull(blockResponseCode);
+            if (blockResponseCode == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "blockResponseCode");
+            }
+            this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder captchaFooter(String captchaFooter) {
-            this.captchaFooter = Objects.requireNonNull(captchaFooter);
+            if (captchaFooter == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "captchaFooter");
+            }
+            this.captchaFooter = captchaFooter;
             return this;
         }
         @CustomType.Setter
         public Builder captchaHeader(String captchaHeader) {
-            this.captchaHeader = Objects.requireNonNull(captchaHeader);
+            if (captchaHeader == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "captchaHeader");
+            }
+            this.captchaHeader = captchaHeader;
             return this;
         }
         @CustomType.Setter
         public Builder captchaSubmitLabel(String captchaSubmitLabel) {
-            this.captchaSubmitLabel = Objects.requireNonNull(captchaSubmitLabel);
+            if (captchaSubmitLabel == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "captchaSubmitLabel");
+            }
+            this.captchaSubmitLabel = captchaSubmitLabel;
             return this;
         }
         @CustomType.Setter
         public Builder captchaTitle(String captchaTitle) {
-            this.captchaTitle = Objects.requireNonNull(captchaTitle);
+            if (captchaTitle == null) {
+              throw new MissingRequiredPropertyException("GetWaasPolicyWafConfigJsChallengeChallengeSettings", "captchaTitle");
+            }
+            this.captchaTitle = captchaTitle;
             return this;
         }
         public GetWaasPolicyWafConfigJsChallengeChallengeSettings build() {

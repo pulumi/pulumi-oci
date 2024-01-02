@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -58,27 +59,42 @@ public final class GetExternalExadataStorageConnectorCredentialInfo {
 
         @CustomType.Setter
         public Builder password(String password) {
-            this.password = Objects.requireNonNull(password);
+            if (password == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorCredentialInfo", "password");
+            }
+            this.password = password;
             return this;
         }
         @CustomType.Setter
         public Builder sslTrustStoreLocation(String sslTrustStoreLocation) {
-            this.sslTrustStoreLocation = Objects.requireNonNull(sslTrustStoreLocation);
+            if (sslTrustStoreLocation == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorCredentialInfo", "sslTrustStoreLocation");
+            }
+            this.sslTrustStoreLocation = sslTrustStoreLocation;
             return this;
         }
         @CustomType.Setter
         public Builder sslTrustStorePassword(String sslTrustStorePassword) {
-            this.sslTrustStorePassword = Objects.requireNonNull(sslTrustStorePassword);
+            if (sslTrustStorePassword == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorCredentialInfo", "sslTrustStorePassword");
+            }
+            this.sslTrustStorePassword = sslTrustStorePassword;
             return this;
         }
         @CustomType.Setter
         public Builder sslTrustStoreType(String sslTrustStoreType) {
-            this.sslTrustStoreType = Objects.requireNonNull(sslTrustStoreType);
+            if (sslTrustStoreType == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorCredentialInfo", "sslTrustStoreType");
+            }
+            this.sslTrustStoreType = sslTrustStoreType;
             return this;
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorCredentialInfo", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetExternalExadataStorageConnectorCredentialInfo build() {

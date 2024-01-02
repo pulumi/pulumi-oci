@@ -5,6 +5,7 @@ package com.pulumi.oci.Autoscaling.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyRuleActionArgs;
 import com.pulumi.oci.Autoscaling.inputs.AutoScalingConfigurationPolicyRuleMetricArgs;
 import java.lang.String;
@@ -169,7 +170,9 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
         }
 
         public AutoScalingConfigurationPolicyRuleArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicyRuleArgs", "displayName");
+            }
             return $;
         }
     }

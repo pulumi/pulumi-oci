@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.inputs.DomainsKmsiSettingTagArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -1178,9 +1179,15 @@ public final class DomainsKmsiSettingArgs extends com.pulumi.resources.ResourceA
         }
 
         public DomainsKmsiSettingArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.kmsiSettingId = Objects.requireNonNull($.kmsiSettingId, "expected parameter 'kmsiSettingId' to be non-null");
-            $.schemas = Objects.requireNonNull($.schemas, "expected parameter 'schemas' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("DomainsKmsiSettingArgs", "idcsEndpoint");
+            }
+            if ($.kmsiSettingId == null) {
+                throw new MissingRequiredPropertyException("DomainsKmsiSettingArgs", "kmsiSettingId");
+            }
+            if ($.schemas == null) {
+                throw new MissingRequiredPropertyException("DomainsKmsiSettingArgs", "schemas");
+            }
             return $;
         }
     }

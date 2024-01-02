@@ -4,6 +4,7 @@
 package com.pulumi.oci.MeteringComputation.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -76,22 +77,34 @@ public final class GetSchedulesScheduleCollectionItemQueryPropertyDateRange {
 
         @CustomType.Setter
         public Builder dateRangeType(String dateRangeType) {
-            this.dateRangeType = Objects.requireNonNull(dateRangeType);
+            if (dateRangeType == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItemQueryPropertyDateRange", "dateRangeType");
+            }
+            this.dateRangeType = dateRangeType;
             return this;
         }
         @CustomType.Setter
         public Builder dynamicDateRangeType(String dynamicDateRangeType) {
-            this.dynamicDateRangeType = Objects.requireNonNull(dynamicDateRangeType);
+            if (dynamicDateRangeType == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItemQueryPropertyDateRange", "dynamicDateRangeType");
+            }
+            this.dynamicDateRangeType = dynamicDateRangeType;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageEnded(String timeUsageEnded) {
-            this.timeUsageEnded = Objects.requireNonNull(timeUsageEnded);
+            if (timeUsageEnded == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItemQueryPropertyDateRange", "timeUsageEnded");
+            }
+            this.timeUsageEnded = timeUsageEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeUsageStarted(String timeUsageStarted) {
-            this.timeUsageStarted = Objects.requireNonNull(timeUsageStarted);
+            if (timeUsageStarted == null) {
+              throw new MissingRequiredPropertyException("GetSchedulesScheduleCollectionItemQueryPropertyDateRange", "timeUsageStarted");
+            }
+            this.timeUsageStarted = timeUsageStarted;
             return this;
         }
         public GetSchedulesScheduleCollectionItemQueryPropertyDateRange build() {

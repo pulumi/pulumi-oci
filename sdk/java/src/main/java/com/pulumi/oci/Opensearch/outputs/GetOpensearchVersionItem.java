@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opensearch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetOpensearchVersionItem {
 
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchVersionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetOpensearchVersionItem build() {

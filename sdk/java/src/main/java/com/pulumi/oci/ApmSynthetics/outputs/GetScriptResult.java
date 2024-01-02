@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetScriptMonitorStatusCountMap;
 import com.pulumi.oci.ApmSynthetics.outputs.GetScriptParameter;
 import java.lang.Integer;
@@ -228,52 +229,82 @@ public final class GetScriptResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder content(String content) {
-            this.content = Objects.requireNonNull(content);
+            if (content == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "content");
+            }
+            this.content = content;
             return this;
         }
         @CustomType.Setter
         public Builder contentFileName(String contentFileName) {
-            this.contentFileName = Objects.requireNonNull(contentFileName);
+            if (contentFileName == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "contentFileName");
+            }
+            this.contentFileName = contentFileName;
             return this;
         }
         @CustomType.Setter
         public Builder contentSizeInBytes(Integer contentSizeInBytes) {
-            this.contentSizeInBytes = Objects.requireNonNull(contentSizeInBytes);
+            if (contentSizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "contentSizeInBytes");
+            }
+            this.contentSizeInBytes = contentSizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder contentType(String contentType) {
-            this.contentType = Objects.requireNonNull(contentType);
+            if (contentType == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "contentType");
+            }
+            this.contentType = contentType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder monitorStatusCountMaps(List<GetScriptMonitorStatusCountMap> monitorStatusCountMaps) {
-            this.monitorStatusCountMaps = Objects.requireNonNull(monitorStatusCountMaps);
+            if (monitorStatusCountMaps == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "monitorStatusCountMaps");
+            }
+            this.monitorStatusCountMaps = monitorStatusCountMaps;
             return this;
         }
         public Builder monitorStatusCountMaps(GetScriptMonitorStatusCountMap... monitorStatusCountMaps) {
@@ -281,7 +312,10 @@ public final class GetScriptResult {
         }
         @CustomType.Setter
         public Builder parameters(List<GetScriptParameter> parameters) {
-            this.parameters = Objects.requireNonNull(parameters);
+            if (parameters == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "parameters");
+            }
+            this.parameters = parameters;
             return this;
         }
         public Builder parameters(GetScriptParameter... parameters) {
@@ -289,22 +323,34 @@ public final class GetScriptResult {
         }
         @CustomType.Setter
         public Builder scriptId(String scriptId) {
-            this.scriptId = Objects.requireNonNull(scriptId);
+            if (scriptId == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "scriptId");
+            }
+            this.scriptId = scriptId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUploaded(String timeUploaded) {
-            this.timeUploaded = Objects.requireNonNull(timeUploaded);
+            if (timeUploaded == null) {
+              throw new MissingRequiredPropertyException("GetScriptResult", "timeUploaded");
+            }
+            this.timeUploaded = timeUploaded;
             return this;
         }
         public GetScriptResult build() {

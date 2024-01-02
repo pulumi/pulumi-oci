@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs;
 import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleTcpOptionsArgs;
 import com.pulumi.oci.Core.inputs.NetworkSecurityGroupSecurityRuleUdpOptionsArgs;
@@ -551,9 +552,15 @@ public final class NetworkSecurityGroupSecurityRuleArgs extends com.pulumi.resou
         }
 
         public NetworkSecurityGroupSecurityRuleArgs build() {
-            $.direction = Objects.requireNonNull($.direction, "expected parameter 'direction' to be non-null");
-            $.networkSecurityGroupId = Objects.requireNonNull($.networkSecurityGroupId, "expected parameter 'networkSecurityGroupId' to be non-null");
-            $.protocol = Objects.requireNonNull($.protocol, "expected parameter 'protocol' to be non-null");
+            if ($.direction == null) {
+                throw new MissingRequiredPropertyException("NetworkSecurityGroupSecurityRuleArgs", "direction");
+            }
+            if ($.networkSecurityGroupId == null) {
+                throw new MissingRequiredPropertyException("NetworkSecurityGroupSecurityRuleArgs", "networkSecurityGroupId");
+            }
+            if ($.protocol == null) {
+                throw new MissingRequiredPropertyException("NetworkSecurityGroupSecurityRuleArgs", "protocol");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicensesFilter;
 import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicensesJavaLicenseCollection;
 import java.lang.String;
@@ -95,11 +96,13 @@ public final class GetJavaDownloadsJavaLicensesResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetJavaDownloadsJavaLicensesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,12 +111,18 @@ public final class GetJavaDownloadsJavaLicensesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicensesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder javaLicenseCollections(List<GetJavaDownloadsJavaLicensesJavaLicenseCollection> javaLicenseCollections) {
-            this.javaLicenseCollections = Objects.requireNonNull(javaLicenseCollections);
+            if (javaLicenseCollections == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaLicensesResult", "javaLicenseCollections");
+            }
+            this.javaLicenseCollections = javaLicenseCollections;
             return this;
         }
         public Builder javaLicenseCollections(GetJavaDownloadsJavaLicensesJavaLicenseCollection... javaLicenseCollections) {
@@ -121,6 +130,7 @@ public final class GetJavaDownloadsJavaLicensesResult {
         }
         @CustomType.Setter
         public Builder licenseType(@Nullable String licenseType) {
+
             this.licenseType = licenseType;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabase;
 import com.pulumi.oci.Database.outputs.GetDatabasesFilter;
 import java.lang.String;
@@ -129,12 +130,18 @@ public final class GetDatabasesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databases(List<GetDatabasesDatabase> databases) {
-            this.databases = Objects.requireNonNull(databases);
+            if (databases == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesResult", "databases");
+            }
+            this.databases = databases;
             return this;
         }
         public Builder databases(GetDatabasesDatabase... databases) {
@@ -142,16 +149,19 @@ public final class GetDatabasesResult {
         }
         @CustomType.Setter
         public Builder dbHomeId(@Nullable String dbHomeId) {
+
             this.dbHomeId = dbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder dbName(@Nullable String dbName) {
+
             this.dbName = dbName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -160,16 +170,21 @@ public final class GetDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemId(@Nullable String systemId) {
+
             this.systemId = systemId;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthorityVersionsFilter;
 import java.lang.String;
@@ -95,12 +96,18 @@ public final class GetCertificateAuthorityVersionsResult {
 
         @CustomType.Setter
         public Builder certificateAuthorityId(String certificateAuthorityId) {
-            this.certificateAuthorityId = Objects.requireNonNull(certificateAuthorityId);
+            if (certificateAuthorityId == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityVersionsResult", "certificateAuthorityId");
+            }
+            this.certificateAuthorityId = certificateAuthorityId;
             return this;
         }
         @CustomType.Setter
         public Builder certificateAuthorityVersionCollections(List<GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection> certificateAuthorityVersionCollections) {
-            this.certificateAuthorityVersionCollections = Objects.requireNonNull(certificateAuthorityVersionCollections);
+            if (certificateAuthorityVersionCollections == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityVersionsResult", "certificateAuthorityVersionCollections");
+            }
+            this.certificateAuthorityVersionCollections = certificateAuthorityVersionCollections;
             return this;
         }
         public Builder certificateAuthorityVersionCollections(GetCertificateAuthorityVersionsCertificateAuthorityVersionCollection... certificateAuthorityVersionCollections) {
@@ -108,6 +115,7 @@ public final class GetCertificateAuthorityVersionsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCertificateAuthorityVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -116,11 +124,15 @@ public final class GetCertificateAuthorityVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder versionNumber(@Nullable String versionNumber) {
+
             this.versionNumber = versionNumber;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
@@ -100,27 +101,42 @@ public final class GetDeployStageRolloutPolicy {
 
         @CustomType.Setter
         public Builder batchCount(Integer batchCount) {
-            this.batchCount = Objects.requireNonNull(batchCount);
+            if (batchCount == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageRolloutPolicy", "batchCount");
+            }
+            this.batchCount = batchCount;
             return this;
         }
         @CustomType.Setter
         public Builder batchDelayInSeconds(Integer batchDelayInSeconds) {
-            this.batchDelayInSeconds = Objects.requireNonNull(batchDelayInSeconds);
+            if (batchDelayInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageRolloutPolicy", "batchDelayInSeconds");
+            }
+            this.batchDelayInSeconds = batchDelayInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder batchPercentage(Integer batchPercentage) {
-            this.batchPercentage = Objects.requireNonNull(batchPercentage);
+            if (batchPercentage == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageRolloutPolicy", "batchPercentage");
+            }
+            this.batchPercentage = batchPercentage;
             return this;
         }
         @CustomType.Setter
         public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+            if (policyType == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageRolloutPolicy", "policyType");
+            }
+            this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
         public Builder rampLimitPercent(Double rampLimitPercent) {
-            this.rampLimitPercent = Objects.requireNonNull(rampLimitPercent);
+            if (rampLimitPercent == null) {
+              throw new MissingRequiredPropertyException("GetDeployStageRolloutPolicy", "rampLimitPercent");
+            }
+            this.rampLimitPercent = rampLimitPercent;
             return this;
         }
         public GetDeployStageRolloutPolicy build() {

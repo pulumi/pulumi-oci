@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -90,8 +91,12 @@ public final class GetVmClusterUpdateHistoryEntryPlainArgs extends com.pulumi.re
         }
 
         public GetVmClusterUpdateHistoryEntryPlainArgs build() {
-            $.updateHistoryEntryId = Objects.requireNonNull($.updateHistoryEntryId, "expected parameter 'updateHistoryEntryId' to be non-null");
-            $.vmClusterId = Objects.requireNonNull($.vmClusterId, "expected parameter 'vmClusterId' to be non-null");
+            if ($.updateHistoryEntryId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntryPlainArgs", "updateHistoryEntryId");
+            }
+            if ($.vmClusterId == null) {
+                throw new MissingRequiredPropertyException("GetVmClusterUpdateHistoryEntryPlainArgs", "vmClusterId");
+            }
             return $;
         }
     }

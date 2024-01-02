@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -77,26 +78,37 @@ public final class GetConsoleHistoryDataResult {
 
         @CustomType.Setter
         public Builder consoleHistoryId(String consoleHistoryId) {
-            this.consoleHistoryId = Objects.requireNonNull(consoleHistoryId);
+            if (consoleHistoryId == null) {
+              throw new MissingRequiredPropertyException("GetConsoleHistoryDataResult", "consoleHistoryId");
+            }
+            this.consoleHistoryId = consoleHistoryId;
             return this;
         }
         @CustomType.Setter
         public Builder data(String data) {
-            this.data = Objects.requireNonNull(data);
+            if (data == null) {
+              throw new MissingRequiredPropertyException("GetConsoleHistoryDataResult", "data");
+            }
+            this.data = data;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConsoleHistoryDataResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder length(@Nullable Integer length) {
+
             this.length = length;
             return this;
         }
         @CustomType.Setter
         public Builder offset(@Nullable Integer offset) {
+
             this.offset = offset;
             return this;
         }

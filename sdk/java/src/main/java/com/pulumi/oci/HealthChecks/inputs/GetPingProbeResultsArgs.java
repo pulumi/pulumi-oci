@@ -5,6 +5,7 @@ package com.pulumi.oci.HealthChecks.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsFilterArgs;
 import java.lang.Double;
 import java.lang.String;
@@ -211,7 +212,9 @@ public final class GetPingProbeResultsArgs extends com.pulumi.resources.InvokeAr
         }
 
         public GetPingProbeResultsArgs build() {
-            $.probeConfigurationId = Objects.requireNonNull($.probeConfigurationId, "expected parameter 'probeConfigurationId' to be non-null");
+            if ($.probeConfigurationId == null) {
+                throw new MissingRequiredPropertyException("GetPingProbeResultsArgs", "probeConfigurationId");
+            }
             return $;
         }
     }

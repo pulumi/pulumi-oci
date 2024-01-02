@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -107,17 +108,26 @@ public final class GetInfrastructureTargetVersionResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInfrastructureTargetVersionResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInfrastructureTargetVersionResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder targetDbVersionHistoryEntries(List<String> targetDbVersionHistoryEntries) {
-            this.targetDbVersionHistoryEntries = Objects.requireNonNull(targetDbVersionHistoryEntries);
+            if (targetDbVersionHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetInfrastructureTargetVersionResult", "targetDbVersionHistoryEntries");
+            }
+            this.targetDbVersionHistoryEntries = targetDbVersionHistoryEntries;
             return this;
         }
         public Builder targetDbVersionHistoryEntries(String... targetDbVersionHistoryEntries) {
@@ -125,17 +135,22 @@ public final class GetInfrastructureTargetVersionResult {
         }
         @CustomType.Setter
         public Builder targetResourceId(@Nullable String targetResourceId) {
+
             this.targetResourceId = targetResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder targetResourceType(@Nullable String targetResourceType) {
+
             this.targetResourceType = targetResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder targetStorageVersionHistoryEntries(List<String> targetStorageVersionHistoryEntries) {
-            this.targetStorageVersionHistoryEntries = Objects.requireNonNull(targetStorageVersionHistoryEntries);
+            if (targetStorageVersionHistoryEntries == null) {
+              throw new MissingRequiredPropertyException("GetInfrastructureTargetVersionResult", "targetStorageVersionHistoryEntries");
+            }
+            this.targetStorageVersionHistoryEntries = targetStorageVersionHistoryEntries;
             return this;
         }
         public Builder targetStorageVersionHistoryEntries(String... targetStorageVersionHistoryEntries) {

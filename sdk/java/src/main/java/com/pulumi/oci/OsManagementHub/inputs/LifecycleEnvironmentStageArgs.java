@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.inputs.LifecycleEnvironmentStageManagedInstanceIdArgs;
 import com.pulumi.oci.OsManagementHub.inputs.LifecycleEnvironmentStageSoftwareSourceIdArgs;
 import java.lang.Integer;
@@ -669,8 +670,12 @@ public final class LifecycleEnvironmentStageArgs extends com.pulumi.resources.Re
         }
 
         public LifecycleEnvironmentStageArgs build() {
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.rank = Objects.requireNonNull($.rank, "expected parameter 'rank' to be non-null");
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("LifecycleEnvironmentStageArgs", "displayName");
+            }
+            if ($.rank == null) {
+                throw new MissingRequiredPropertyException("LifecycleEnvironmentStageArgs", "rank");
+            }
             return $;
         }
     }

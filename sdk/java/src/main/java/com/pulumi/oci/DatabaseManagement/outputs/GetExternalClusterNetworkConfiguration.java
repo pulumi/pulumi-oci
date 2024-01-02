@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -71,17 +72,26 @@ public final class GetExternalClusterNetworkConfiguration {
 
         @CustomType.Setter
         public Builder networkNumber(Integer networkNumber) {
-            this.networkNumber = Objects.requireNonNull(networkNumber);
+            if (networkNumber == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterNetworkConfiguration", "networkNumber");
+            }
+            this.networkNumber = networkNumber;
             return this;
         }
         @CustomType.Setter
         public Builder networkType(String networkType) {
-            this.networkType = Objects.requireNonNull(networkType);
+            if (networkType == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterNetworkConfiguration", "networkType");
+            }
+            this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
         public Builder subnet(String subnet) {
-            this.subnet = Objects.requireNonNull(subnet);
+            if (subnet == null) {
+              throw new MissingRequiredPropertyException("GetExternalClusterNetworkConfiguration", "subnet");
+            }
+            this.subnet = subnet;
             return this;
         }
         public GetExternalClusterNetworkConfiguration build() {

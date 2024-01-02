@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesManagedDatabaseCollection;
 import java.lang.String;
@@ -129,21 +130,27 @@ public final class GetManagedDatabasesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(@Nullable String deploymentType) {
+
             this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder externalExadataInfrastructureId(@Nullable String externalExadataInfrastructureId) {
+
             this.externalExadataInfrastructureId = externalExadataInfrastructureId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetManagedDatabasesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -152,12 +159,16 @@ public final class GetManagedDatabasesResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseCollections(List<GetManagedDatabasesManagedDatabaseCollection> managedDatabaseCollections) {
-            this.managedDatabaseCollections = Objects.requireNonNull(managedDatabaseCollections);
+            if (managedDatabaseCollections == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabasesResult", "managedDatabaseCollections");
+            }
+            this.managedDatabaseCollections = managedDatabaseCollections;
             return this;
         }
         public Builder managedDatabaseCollections(GetManagedDatabasesManagedDatabaseCollection... managedDatabaseCollections) {
@@ -165,11 +176,13 @@ public final class GetManagedDatabasesResult {
         }
         @CustomType.Setter
         public Builder managementOption(@Nullable String managementOption) {
+
             this.managementOption = managementOption;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }

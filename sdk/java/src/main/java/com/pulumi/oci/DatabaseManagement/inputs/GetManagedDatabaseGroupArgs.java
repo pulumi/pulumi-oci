@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetManagedDatabaseGroupArgs extends com.pulumi.resources.Invo
         }
 
         public GetManagedDatabaseGroupArgs build() {
-            $.managedDatabaseGroupId = Objects.requireNonNull($.managedDatabaseGroupId, "expected parameter 'managedDatabaseGroupId' to be non-null");
+            if ($.managedDatabaseGroupId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseGroupArgs", "managedDatabaseGroupId");
+            }
             return $;
         }
     }

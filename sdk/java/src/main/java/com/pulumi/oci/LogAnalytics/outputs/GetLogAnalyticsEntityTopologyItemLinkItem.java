@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetLogAnalyticsEntityTopologyItemLinkItem {
 
         @CustomType.Setter
         public Builder destinationEntityId(String destinationEntityId) {
-            this.destinationEntityId = Objects.requireNonNull(destinationEntityId);
+            if (destinationEntityId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemLinkItem", "destinationEntityId");
+            }
+            this.destinationEntityId = destinationEntityId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceEntityId(String sourceEntityId) {
-            this.sourceEntityId = Objects.requireNonNull(sourceEntityId);
+            if (sourceEntityId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemLinkItem", "sourceEntityId");
+            }
+            this.sourceEntityId = sourceEntityId;
             return this;
         }
         public GetLogAnalyticsEntityTopologyItemLinkItem build() {

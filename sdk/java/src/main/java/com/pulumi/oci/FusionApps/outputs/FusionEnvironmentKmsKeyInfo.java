@@ -72,36 +72,43 @@ public final class FusionEnvironmentKmsKeyInfo {
 
         @CustomType.Setter
         public Builder activeKeyId(@Nullable String activeKeyId) {
+
             this.activeKeyId = activeKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder activeKeyVersion(@Nullable String activeKeyVersion) {
+
             this.activeKeyVersion = activeKeyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder currentKeyLifecycleState(@Nullable String currentKeyLifecycleState) {
+
             this.currentKeyLifecycleState = currentKeyLifecycleState;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledKeyId(@Nullable String scheduledKeyId) {
+
             this.scheduledKeyId = scheduledKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledKeyStatus(@Nullable String scheduledKeyStatus) {
+
             this.scheduledKeyStatus = scheduledKeyStatus;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledKeyVersion(@Nullable String scheduledKeyVersion) {
+
             this.scheduledKeyVersion = scheduledKeyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledLifecycleState(@Nullable String scheduledLifecycleState) {
+
             this.scheduledLifecycleState = scheduledLifecycleState;
             return this;
         }

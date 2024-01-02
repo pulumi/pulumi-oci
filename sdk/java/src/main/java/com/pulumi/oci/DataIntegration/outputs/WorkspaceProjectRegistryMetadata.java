@@ -103,21 +103,25 @@ public final class WorkspaceProjectRegistryMetadata {
 
         @CustomType.Setter
         public Builder aggregatorKey(@Nullable String aggregatorKey) {
+
             this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
         public Builder isFavorite(@Nullable Boolean isFavorite) {
+
             this.isFavorite = isFavorite;
             return this;
         }
         @CustomType.Setter
         public Builder key(@Nullable String key) {
+
             this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
+
             this.labels = labels;
             return this;
         }
@@ -126,6 +130,7 @@ public final class WorkspaceProjectRegistryMetadata {
         }
         @CustomType.Setter
         public Builder registryVersion(@Nullable Integer registryVersion) {
+
             this.registryVersion = registryVersion;
             return this;
         }

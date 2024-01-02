@@ -4,6 +4,7 @@
 package com.pulumi.oci.OneSubsription.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OneSubsription.outputs.GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct;
 import java.lang.String;
 import java.util.List;
@@ -142,27 +143,42 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
 
         @CustomType.Setter
         public Builder cost(String cost) {
-            this.cost = Objects.requireNonNull(cost);
+            if (cost == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage", "cost");
+            }
+            this.cost = cost;
             return this;
         }
         @CustomType.Setter
         public Builder costUnrounded(String costUnrounded) {
-            this.costUnrounded = Objects.requireNonNull(costUnrounded);
+            if (costUnrounded == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage", "costUnrounded");
+            }
+            this.costUnrounded = costUnrounded;
             return this;
         }
         @CustomType.Setter
         public Builder dataCenter(String dataCenter) {
-            this.dataCenter = Objects.requireNonNull(dataCenter);
+            if (dataCenter == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage", "dataCenter");
+            }
+            this.dataCenter = dataCenter;
             return this;
         }
         @CustomType.Setter
         public Builder netUnitPrice(String netUnitPrice) {
-            this.netUnitPrice = Objects.requireNonNull(netUnitPrice);
+            if (netUnitPrice == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage", "netUnitPrice");
+            }
+            this.netUnitPrice = netUnitPrice;
             return this;
         }
         @CustomType.Setter
         public Builder products(List<GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct> products) {
-            this.products = Objects.requireNonNull(products);
+            if (products == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage", "products");
+            }
+            this.products = products;
             return this;
         }
         public Builder products(GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsageProduct... products) {
@@ -170,17 +186,26 @@ public final class GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedC
         }
         @CustomType.Setter
         public Builder quantity(String quantity) {
-            this.quantity = Objects.requireNonNull(quantity);
+            if (quantity == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage", "quantity");
+            }
+            this.quantity = quantity;
             return this;
         }
         @CustomType.Setter
         public Builder timeMeteredOn(String timeMeteredOn) {
-            this.timeMeteredOn = Objects.requireNonNull(timeMeteredOn);
+            if (timeMeteredOn == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage", "timeMeteredOn");
+            }
+            this.timeMeteredOn = timeMeteredOn;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetAggregatedComputedUsagesAggregatedComputedUsageAggregatedComputedUsage build() {

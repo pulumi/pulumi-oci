@@ -117,11 +117,13 @@ public final class MonitoredResourcesSearchAssociationItem {
 
         @CustomType.Setter
         public Builder associationType(@Nullable String associationType) {
+
             this.associationType = associationType;
             return this;
         }
         @CustomType.Setter
         public Builder destinationResourceDetails(@Nullable List<MonitoredResourcesSearchAssociationItemDestinationResourceDetail> destinationResourceDetails) {
+
             this.destinationResourceDetails = destinationResourceDetails;
             return this;
         }
@@ -130,11 +132,13 @@ public final class MonitoredResourcesSearchAssociationItem {
         }
         @CustomType.Setter
         public Builder destinationResourceId(@Nullable String destinationResourceId) {
+
             this.destinationResourceId = destinationResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceResourceDetails(@Nullable List<MonitoredResourcesSearchAssociationItemSourceResourceDetail> sourceResourceDetails) {
+
             this.sourceResourceDetails = sourceResourceDetails;
             return this;
         }
@@ -143,11 +147,13 @@ public final class MonitoredResourcesSearchAssociationItem {
         }
         @CustomType.Setter
         public Builder sourceResourceId(@Nullable String sourceResourceId) {
+
             this.sourceResourceId = sourceResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(@Nullable String timeCreated) {
+
             this.timeCreated = timeCreated;
             return this;
         }

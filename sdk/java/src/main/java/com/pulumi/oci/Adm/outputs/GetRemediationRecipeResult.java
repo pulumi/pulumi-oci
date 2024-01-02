@@ -4,6 +4,7 @@
 package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Adm.outputs.GetRemediationRecipeDetectConfiguration;
 import com.pulumi.oci.Adm.outputs.GetRemediationRecipeNetworkConfiguration;
 import com.pulumi.oci.Adm.outputs.GetRemediationRecipeScmConfiguration;
@@ -252,17 +253,26 @@ public final class GetRemediationRecipeResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder detectConfigurations(List<GetRemediationRecipeDetectConfiguration> detectConfigurations) {
-            this.detectConfigurations = Objects.requireNonNull(detectConfigurations);
+            if (detectConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "detectConfigurations");
+            }
+            this.detectConfigurations = detectConfigurations;
             return this;
         }
         public Builder detectConfigurations(GetRemediationRecipeDetectConfiguration... detectConfigurations) {
@@ -270,32 +280,50 @@ public final class GetRemediationRecipeResult {
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRunTriggeredOnKbChange(Boolean isRunTriggeredOnKbChange) {
-            this.isRunTriggeredOnKbChange = Objects.requireNonNull(isRunTriggeredOnKbChange);
+            if (isRunTriggeredOnKbChange == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "isRunTriggeredOnKbChange");
+            }
+            this.isRunTriggeredOnKbChange = isRunTriggeredOnKbChange;
             return this;
         }
         @CustomType.Setter
         public Builder knowledgeBaseId(String knowledgeBaseId) {
-            this.knowledgeBaseId = Objects.requireNonNull(knowledgeBaseId);
+            if (knowledgeBaseId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "knowledgeBaseId");
+            }
+            this.knowledgeBaseId = knowledgeBaseId;
             return this;
         }
         @CustomType.Setter
         public Builder networkConfigurations(List<GetRemediationRecipeNetworkConfiguration> networkConfigurations) {
-            this.networkConfigurations = Objects.requireNonNull(networkConfigurations);
+            if (networkConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "networkConfigurations");
+            }
+            this.networkConfigurations = networkConfigurations;
             return this;
         }
         public Builder networkConfigurations(GetRemediationRecipeNetworkConfiguration... networkConfigurations) {
@@ -303,12 +331,18 @@ public final class GetRemediationRecipeResult {
         }
         @CustomType.Setter
         public Builder remediationRecipeId(String remediationRecipeId) {
-            this.remediationRecipeId = Objects.requireNonNull(remediationRecipeId);
+            if (remediationRecipeId == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "remediationRecipeId");
+            }
+            this.remediationRecipeId = remediationRecipeId;
             return this;
         }
         @CustomType.Setter
         public Builder scmConfigurations(List<GetRemediationRecipeScmConfiguration> scmConfigurations) {
-            this.scmConfigurations = Objects.requireNonNull(scmConfigurations);
+            if (scmConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "scmConfigurations");
+            }
+            this.scmConfigurations = scmConfigurations;
             return this;
         }
         public Builder scmConfigurations(GetRemediationRecipeScmConfiguration... scmConfigurations) {
@@ -316,27 +350,42 @@ public final class GetRemediationRecipeResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder verifyConfigurations(List<GetRemediationRecipeVerifyConfiguration> verifyConfigurations) {
-            this.verifyConfigurations = Objects.requireNonNull(verifyConfigurations);
+            if (verifyConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetRemediationRecipeResult", "verifyConfigurations");
+            }
+            this.verifyConfigurations = verifyConfigurations;
             return this;
         }
         public Builder verifyConfigurations(GetRemediationRecipeVerifyConfiguration... verifyConfigurations) {

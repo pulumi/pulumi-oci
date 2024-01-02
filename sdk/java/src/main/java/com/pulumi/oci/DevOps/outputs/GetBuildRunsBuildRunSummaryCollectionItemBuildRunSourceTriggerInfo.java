@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction;
 import java.lang.String;
 import java.util.List;
@@ -72,7 +73,10 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
 
         @CustomType.Setter
         public Builder actions(List<GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction> actions) {
-            this.actions = Objects.requireNonNull(actions);
+            if (actions == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo", "actions");
+            }
+            this.actions = actions;
             return this;
         }
         public Builder actions(GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoAction... actions) {
@@ -80,12 +84,18 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder triggerId(String triggerId) {
-            this.triggerId = Objects.requireNonNull(triggerId);
+            if (triggerId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo", "triggerId");
+            }
+            this.triggerId = triggerId;
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfo build() {

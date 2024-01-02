@@ -223,6 +223,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
 
         @CustomType.Setter
         public Builder dbGlobalRoles(@Nullable List<String> dbGlobalRoles) {
+
             this.dbGlobalRoles = dbGlobalRoles;
             return this;
         }
@@ -231,21 +232,25 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
         }
         @CustomType.Setter
         public Builder domainLevelSchema(@Nullable String domainLevelSchema) {
+
             this.domainLevelSchema = domainLevelSchema;
             return this;
         }
         @CustomType.Setter
         public Builder instanceLevelSchema(@Nullable String instanceLevelSchema) {
+
             this.instanceLevelSchema = instanceLevelSchema;
             return this;
         }
         @CustomType.Setter
         public Builder isDbUser(@Nullable Boolean isDbUser) {
+
             this.isDbUser = isDbUser;
             return this;
         }
         @CustomType.Setter
         public Builder passwordVerifiers(@Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier> passwordVerifiers) {
+
             this.passwordVerifiers = passwordVerifiers;
             return this;
         }

@@ -102,26 +102,31 @@ public final class ContainerInstanceContainerSecurityContext {
 
         @CustomType.Setter
         public Builder isNonRootUserCheckEnabled(@Nullable Boolean isNonRootUserCheckEnabled) {
+
             this.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isRootFileSystemReadonly(@Nullable Boolean isRootFileSystemReadonly) {
+
             this.isRootFileSystemReadonly = isRootFileSystemReadonly;
             return this;
         }
         @CustomType.Setter
         public Builder runAsGroup(@Nullable Integer runAsGroup) {
+
             this.runAsGroup = runAsGroup;
             return this;
         }
         @CustomType.Setter
         public Builder runAsUser(@Nullable Integer runAsUser) {
+
             this.runAsUser = runAsUser;
             return this;
         }
         @CustomType.Setter
         public Builder securityContextType(@Nullable String securityContextType) {
+
             this.securityContextType = securityContextType;
             return this;
         }

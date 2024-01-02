@@ -58,11 +58,13 @@ public final class InvokeRunExecutorShapeConfig {
 
         @CustomType.Setter
         public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+
             this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
+
             this.ocpus = ocpus;
             return this;
         }

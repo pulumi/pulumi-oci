@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemConditionArgs;
 import com.pulumi.oci.LoadBalancer.inputs.RuleSetItemRedirectUriArgs;
 import java.lang.Boolean;
@@ -777,7 +778,9 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RuleSetItemArgs build() {
-            $.action = Objects.requireNonNull($.action, "expected parameter 'action' to be non-null");
+            if ($.action == null) {
+                throw new MissingRequiredPropertyException("RuleSetItemArgs", "action");
+            }
             return $;
         }
     }

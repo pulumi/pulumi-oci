@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -150,8 +151,12 @@ public final class VaultRestoreFromFileArgs extends com.pulumi.resources.Resourc
         }
 
         public VaultRestoreFromFileArgs build() {
-            $.contentLength = Objects.requireNonNull($.contentLength, "expected parameter 'contentLength' to be non-null");
-            $.restoreVaultFromFileDetails = Objects.requireNonNull($.restoreVaultFromFileDetails, "expected parameter 'restoreVaultFromFileDetails' to be non-null");
+            if ($.contentLength == null) {
+                throw new MissingRequiredPropertyException("VaultRestoreFromFileArgs", "contentLength");
+            }
+            if ($.restoreVaultFromFileDetails == null) {
+                throw new MissingRequiredPropertyException("VaultRestoreFromFileArgs", "restoreVaultFromFileDetails");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesFilter;
 import java.lang.String;
 import java.util.List;
@@ -117,7 +118,9 @@ public final class GetDbSystemStoragePerformancesPlainArgs extends com.pulumi.re
         }
 
         public GetDbSystemStoragePerformancesPlainArgs build() {
-            $.storageManagement = Objects.requireNonNull($.storageManagement, "expected parameter 'storageManagement' to be non-null");
+            if ($.storageManagement == null) {
+                throw new MissingRequiredPropertyException("GetDbSystemStoragePerformancesPlainArgs", "storageManagement");
+            }
             return $;
         }
     }

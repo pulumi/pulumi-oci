@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef;
@@ -394,22 +395,34 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
 
         @CustomType.Setter
         public Builder applicationVersion(Integer applicationVersion) {
-            this.applicationVersion = Objects.requireNonNull(applicationVersion);
+            if (applicationVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "applicationVersion");
+            }
+            this.applicationVersion = applicationVersion;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder dependentObjectMetadatas(List<GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata> dependentObjectMetadatas) {
-            this.dependentObjectMetadatas = Objects.requireNonNull(dependentObjectMetadatas);
+            if (dependentObjectMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "dependentObjectMetadatas");
+            }
+            this.dependentObjectMetadatas = dependentObjectMetadatas;
             return this;
         }
         public Builder dependentObjectMetadatas(GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata... dependentObjectMetadatas) {
@@ -417,42 +430,66 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+            if (identifier == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "identifier");
+            }
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder keyMap(Map<String,Object> keyMap) {
-            this.keyMap = Objects.requireNonNull(keyMap);
+            if (keyMap == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "keyMap");
+            }
+            this.keyMap = keyMap;
             return this;
         }
         @CustomType.Setter
         public Builder metadatas(List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata> metadatas) {
-            this.metadatas = Objects.requireNonNull(metadatas);
+            if (metadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "metadatas");
+            }
+            this.metadatas = metadatas;
             return this;
         }
         public Builder metadatas(GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata... metadatas) {
@@ -460,32 +497,50 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
-            this.modelType = Objects.requireNonNull(modelType);
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
         public Builder modelVersion(String modelVersion) {
-            this.modelVersion = Objects.requireNonNull(modelVersion);
+            if (modelVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "modelVersion");
+            }
+            this.modelVersion = modelVersion;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectStatus(Integer objectStatus) {
-            this.objectStatus = Objects.requireNonNull(objectStatus);
+            if (objectStatus == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "objectStatus");
+            }
+            this.objectStatus = objectStatus;
             return this;
         }
         @CustomType.Setter
         public Builder objectVersion(Integer objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+            if (objectVersion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "objectVersion");
+            }
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
         public Builder parentReves(List<GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef> parentReves) {
-            this.parentReves = Objects.requireNonNull(parentReves);
+            if (parentReves == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "parentReves");
+            }
+            this.parentReves = parentReves;
             return this;
         }
         public Builder parentReves(GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRef... parentReves) {
@@ -493,7 +548,10 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder publishedObjectMetadatas(List<GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata> publishedObjectMetadatas) {
-            this.publishedObjectMetadatas = Objects.requireNonNull(publishedObjectMetadatas);
+            if (publishedObjectMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "publishedObjectMetadatas");
+            }
+            this.publishedObjectMetadatas = publishedObjectMetadatas;
             return this;
         }
         public Builder publishedObjectMetadatas(GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadata... publishedObjectMetadatas) {
@@ -501,7 +559,10 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder registryMetadatas(List<GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata> registryMetadatas) {
-            this.registryMetadatas = Objects.requireNonNull(registryMetadatas);
+            if (registryMetadatas == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "registryMetadatas");
+            }
+            this.registryMetadatas = registryMetadatas;
             return this;
         }
         public Builder registryMetadatas(GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata... registryMetadatas) {
@@ -509,7 +570,10 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder sourceApplicationInfos(List<GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo> sourceApplicationInfos) {
-            this.sourceApplicationInfos = Objects.requireNonNull(sourceApplicationInfos);
+            if (sourceApplicationInfos == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "sourceApplicationInfos");
+            }
+            this.sourceApplicationInfos = sourceApplicationInfos;
             return this;
         }
         public Builder sourceApplicationInfos(GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo... sourceApplicationInfos) {
@@ -517,27 +581,42 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timePatched(String timePatched) {
-            this.timePatched = Objects.requireNonNull(timePatched);
+            if (timePatched == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "timePatched");
+            }
+            this.timePatched = timePatched;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceApplicationsApplicationSummaryCollectionItem build() {

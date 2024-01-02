@@ -5,6 +5,7 @@ package com.pulumi.oci.LoadBalancer;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -365,10 +366,18 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BackendArgs build() {
-            $.backendsetName = Objects.requireNonNull($.backendsetName, "expected parameter 'backendsetName' to be non-null");
-            $.ipAddress = Objects.requireNonNull($.ipAddress, "expected parameter 'ipAddress' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.port = Objects.requireNonNull($.port, "expected parameter 'port' to be non-null");
+            if ($.backendsetName == null) {
+                throw new MissingRequiredPropertyException("BackendArgs", "backendsetName");
+            }
+            if ($.ipAddress == null) {
+                throw new MissingRequiredPropertyException("BackendArgs", "ipAddress");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("BackendArgs", "loadBalancerId");
+            }
+            if ($.port == null) {
+                throw new MissingRequiredPropertyException("BackendArgs", "port");
+            }
             return $;
         }
     }

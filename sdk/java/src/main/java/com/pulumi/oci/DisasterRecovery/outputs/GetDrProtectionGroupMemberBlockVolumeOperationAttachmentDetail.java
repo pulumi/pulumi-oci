@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -42,7 +43,10 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetai
 
         @CustomType.Setter
         public Builder volumeAttachmentReferenceInstanceId(String volumeAttachmentReferenceInstanceId) {
-            this.volumeAttachmentReferenceInstanceId = Objects.requireNonNull(volumeAttachmentReferenceInstanceId);
+            if (volumeAttachmentReferenceInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail", "volumeAttachmentReferenceInstanceId");
+            }
+            this.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
             return this;
         }
         public GetDrProtectionGroupMemberBlockVolumeOperationAttachmentDetail build() {

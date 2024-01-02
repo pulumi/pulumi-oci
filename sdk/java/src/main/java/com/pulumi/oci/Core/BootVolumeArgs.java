@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.BootVolumeAutotunePolicyArgs;
 import com.pulumi.oci.Core.inputs.BootVolumeBootVolumeReplicaArgs;
 import com.pulumi.oci.Core.inputs.BootVolumeSourceDetailsArgs;
@@ -568,9 +569,15 @@ public final class BootVolumeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public BootVolumeArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.sourceDetails = Objects.requireNonNull($.sourceDetails, "expected parameter 'sourceDetails' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("BootVolumeArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("BootVolumeArgs", "compartmentId");
+            }
+            if ($.sourceDetails == null) {
+                throw new MissingRequiredPropertyException("BootVolumeArgs", "sourceDetails");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.VnMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -168,52 +169,82 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestination
 
         @CustomType.Setter
         public Builder address(String address) {
-            this.address = Objects.requireNonNull(address);
+            if (address == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "address");
+            }
+            this.address = address;
             return this;
         }
         @CustomType.Setter
         public Builder instanceId(String instanceId) {
-            this.instanceId = Objects.requireNonNull(instanceId);
+            if (instanceId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "instanceId");
+            }
+            this.instanceId = instanceId;
             return this;
         }
         @CustomType.Setter
         public Builder listenerId(String listenerId) {
-            this.listenerId = Objects.requireNonNull(listenerId);
+            if (listenerId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "listenerId");
+            }
+            this.listenerId = listenerId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
-            this.networkLoadBalancerId = Objects.requireNonNull(networkLoadBalancerId);
+            if (networkLoadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "networkLoadBalancerId");
+            }
+            this.networkLoadBalancerId = networkLoadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetId(String subnetId) {
-            this.subnetId = Objects.requireNonNull(subnetId);
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder vlanId(String vlanId) {
-            this.vlanId = Objects.requireNonNull(vlanId);
+            if (vlanId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "vlanId");
+            }
+            this.vlanId = vlanId;
             return this;
         }
         @CustomType.Setter
         public Builder vnicId(String vnicId) {
-            this.vnicId = Objects.requireNonNull(vnicId);
+            if (vnicId == null) {
+              throw new MissingRequiredPropertyException("GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint", "vnicId");
+            }
+            this.vnicId = vnicId;
             return this;
         }
         public GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpoint build() {

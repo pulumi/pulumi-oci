@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -868,10 +869,18 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         public CloudAutonomousVmClusterArgs build() {
-            $.cloudExadataInfrastructureId = Objects.requireNonNull($.cloudExadataInfrastructureId, "expected parameter 'cloudExadataInfrastructureId' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
+            if ($.cloudExadataInfrastructureId == null) {
+                throw new MissingRequiredPropertyException("CloudAutonomousVmClusterArgs", "cloudExadataInfrastructureId");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("CloudAutonomousVmClusterArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("CloudAutonomousVmClusterArgs", "displayName");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("CloudAutonomousVmClusterArgs", "subnetId");
+            }
             return $;
         }
     }

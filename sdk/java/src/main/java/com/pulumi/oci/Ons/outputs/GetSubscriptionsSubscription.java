@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ons.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Ons.outputs.GetSubscriptionsSubscriptionDeliveryPolicy;
 import java.lang.Object;
 import java.lang.String;
@@ -178,22 +179,34 @@ public final class GetSubscriptionsSubscription {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder createdTime(String createdTime) {
-            this.createdTime = Objects.requireNonNull(createdTime);
+            if (createdTime == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "createdTime");
+            }
+            this.createdTime = createdTime;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deliveryPolicies(List<GetSubscriptionsSubscriptionDeliveryPolicy> deliveryPolicies) {
-            this.deliveryPolicies = Objects.requireNonNull(deliveryPolicies);
+            if (deliveryPolicies == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "deliveryPolicies");
+            }
+            this.deliveryPolicies = deliveryPolicies;
             return this;
         }
         public Builder deliveryPolicies(GetSubscriptionsSubscriptionDeliveryPolicy... deliveryPolicies) {
@@ -201,37 +214,58 @@ public final class GetSubscriptionsSubscription {
         }
         @CustomType.Setter
         public Builder endpoint(String endpoint) {
-            this.endpoint = Objects.requireNonNull(endpoint);
+            if (endpoint == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "endpoint");
+            }
+            this.endpoint = endpoint;
             return this;
         }
         @CustomType.Setter
         public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+            if (etag == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "etag");
+            }
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+            if (protocol == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "protocol");
+            }
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder topicId(String topicId) {
-            this.topicId = Objects.requireNonNull(topicId);
+            if (topicId == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscription", "topicId");
+            }
+            this.topicId = topicId;
             return this;
         }
         public GetSubscriptionsSubscription build() {

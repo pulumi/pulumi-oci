@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waf.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollection {
 
         @CustomType.Setter
         public Builder items(List<GetProtectionCapabilitiesProtectionCapabilityCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetProtectionCapabilitiesProtectionCapabilityCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetProtectionCapabilitiesProtectionCapabilityCollectionItem... items) {

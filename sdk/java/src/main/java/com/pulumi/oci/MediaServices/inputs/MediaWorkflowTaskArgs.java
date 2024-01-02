@@ -5,6 +5,7 @@ package com.pulumi.oci.MediaServices.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -323,10 +324,18 @@ public final class MediaWorkflowTaskArgs extends com.pulumi.resources.ResourceAr
         }
 
         public MediaWorkflowTaskArgs build() {
-            $.key = Objects.requireNonNull($.key, "expected parameter 'key' to be non-null");
-            $.parameters = Objects.requireNonNull($.parameters, "expected parameter 'parameters' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
-            $.version = Objects.requireNonNull($.version, "expected parameter 'version' to be non-null");
+            if ($.key == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowTaskArgs", "key");
+            }
+            if ($.parameters == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowTaskArgs", "parameters");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowTaskArgs", "type");
+            }
+            if ($.version == null) {
+                throw new MissingRequiredPropertyException("MediaWorkflowTaskArgs", "version");
+            }
             return $;
         }
     }

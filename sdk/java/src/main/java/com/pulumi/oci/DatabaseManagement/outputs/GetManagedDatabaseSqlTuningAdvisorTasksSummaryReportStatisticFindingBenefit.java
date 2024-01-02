@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatistic
 
         @CustomType.Setter
         public Builder dbTimeAfterImplemented(Integer dbTimeAfterImplemented) {
-            this.dbTimeAfterImplemented = Objects.requireNonNull(dbTimeAfterImplemented);
+            if (dbTimeAfterImplemented == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit", "dbTimeAfterImplemented");
+            }
+            this.dbTimeAfterImplemented = dbTimeAfterImplemented;
             return this;
         }
         @CustomType.Setter
         public Builder dbTimeAfterRecommended(Integer dbTimeAfterRecommended) {
-            this.dbTimeAfterRecommended = Objects.requireNonNull(dbTimeAfterRecommended);
+            if (dbTimeAfterRecommended == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit", "dbTimeAfterRecommended");
+            }
+            this.dbTimeAfterRecommended = dbTimeAfterRecommended;
             return this;
         }
         @CustomType.Setter
         public Builder dbTimeBeforeImplemented(Integer dbTimeBeforeImplemented) {
-            this.dbTimeBeforeImplemented = Objects.requireNonNull(dbTimeBeforeImplemented);
+            if (dbTimeBeforeImplemented == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit", "dbTimeBeforeImplemented");
+            }
+            this.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
             return this;
         }
         @CustomType.Setter
         public Builder dbTimeBeforeRecommended(Integer dbTimeBeforeRecommended) {
-            this.dbTimeBeforeRecommended = Objects.requireNonNull(dbTimeBeforeRecommended);
+            if (dbTimeBeforeRecommended == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit", "dbTimeBeforeRecommended");
+            }
+            this.dbTimeBeforeRecommended = dbTimeBeforeRecommended;
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportStatisticFindingBenefit build() {

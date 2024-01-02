@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabaseItem {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder timeRegistered(String timeRegistered) {
-            this.timeRegistered = Objects.requireNonNull(timeRegistered);
+            if (timeRegistered == null) {
+              throw new MissingRequiredPropertyException("GetDbManagementPrivateEndpointAssociatedDatabaseItem", "timeRegistered");
+            }
+            this.timeRegistered = timeRegistered;
             return this;
         }
         public GetDbManagementPrivateEndpointAssociatedDatabaseItem build() {

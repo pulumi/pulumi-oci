@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -195,67 +196,106 @@ public final class GetDbSystemsUpgradeHistoryEntryResult {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = Objects.requireNonNull(dbSystemId);
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder newGiVersion(String newGiVersion) {
-            this.newGiVersion = Objects.requireNonNull(newGiVersion);
+            if (newGiVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "newGiVersion");
+            }
+            this.newGiVersion = newGiVersion;
             return this;
         }
         @CustomType.Setter
         public Builder newOsVersion(String newOsVersion) {
-            this.newOsVersion = Objects.requireNonNull(newOsVersion);
+            if (newOsVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "newOsVersion");
+            }
+            this.newOsVersion = newOsVersion;
             return this;
         }
         @CustomType.Setter
         public Builder oldGiVersion(String oldGiVersion) {
-            this.oldGiVersion = Objects.requireNonNull(oldGiVersion);
+            if (oldGiVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "oldGiVersion");
+            }
+            this.oldGiVersion = oldGiVersion;
             return this;
         }
         @CustomType.Setter
         public Builder oldOsVersion(String oldOsVersion) {
-            this.oldOsVersion = Objects.requireNonNull(oldOsVersion);
+            if (oldOsVersion == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "oldOsVersion");
+            }
+            this.oldOsVersion = oldOsVersion;
             return this;
         }
         @CustomType.Setter
         public Builder snapshotRetentionPeriodInDays(Integer snapshotRetentionPeriodInDays) {
-            this.snapshotRetentionPeriodInDays = Objects.requireNonNull(snapshotRetentionPeriodInDays);
+            if (snapshotRetentionPeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "snapshotRetentionPeriodInDays");
+            }
+            this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
         public Builder upgradeHistoryEntryId(String upgradeHistoryEntryId) {
-            this.upgradeHistoryEntryId = Objects.requireNonNull(upgradeHistoryEntryId);
+            if (upgradeHistoryEntryId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsUpgradeHistoryEntryResult", "upgradeHistoryEntryId");
+            }
+            this.upgradeHistoryEntryId = upgradeHistoryEntryId;
             return this;
         }
         public GetDbSystemsUpgradeHistoryEntryResult build() {

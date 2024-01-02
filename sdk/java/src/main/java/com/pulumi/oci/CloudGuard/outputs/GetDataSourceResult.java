@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceDataSourceDetail;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceDataSourceDetectorMappingInfo;
 import com.pulumi.oci.CloudGuard.outputs.GetDataSourceRegionStatusDetail;
@@ -236,12 +237,18 @@ public final class GetDataSourceResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dataSourceDetails(List<GetDataSourceDataSourceDetail> dataSourceDetails) {
-            this.dataSourceDetails = Objects.requireNonNull(dataSourceDetails);
+            if (dataSourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "dataSourceDetails");
+            }
+            this.dataSourceDetails = dataSourceDetails;
             return this;
         }
         public Builder dataSourceDetails(GetDataSourceDataSourceDetail... dataSourceDetails) {
@@ -249,7 +256,10 @@ public final class GetDataSourceResult {
         }
         @CustomType.Setter
         public Builder dataSourceDetectorMappingInfos(List<GetDataSourceDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos) {
-            this.dataSourceDetectorMappingInfos = Objects.requireNonNull(dataSourceDetectorMappingInfos);
+            if (dataSourceDetectorMappingInfos == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "dataSourceDetectorMappingInfos");
+            }
+            this.dataSourceDetectorMappingInfos = dataSourceDetectorMappingInfos;
             return this;
         }
         public Builder dataSourceDetectorMappingInfos(GetDataSourceDataSourceDetectorMappingInfo... dataSourceDetectorMappingInfos) {
@@ -257,37 +267,58 @@ public final class GetDataSourceResult {
         }
         @CustomType.Setter
         public Builder dataSourceFeedProvider(String dataSourceFeedProvider) {
-            this.dataSourceFeedProvider = Objects.requireNonNull(dataSourceFeedProvider);
+            if (dataSourceFeedProvider == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "dataSourceFeedProvider");
+            }
+            this.dataSourceFeedProvider = dataSourceFeedProvider;
             return this;
         }
         @CustomType.Setter
         public Builder dataSourceId(String dataSourceId) {
-            this.dataSourceId = Objects.requireNonNull(dataSourceId);
+            if (dataSourceId == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "dataSourceId");
+            }
+            this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder regionStatusDetails(List<GetDataSourceRegionStatusDetail> regionStatusDetails) {
-            this.regionStatusDetails = Objects.requireNonNull(regionStatusDetails);
+            if (regionStatusDetails == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "regionStatusDetails");
+            }
+            this.regionStatusDetails = regionStatusDetails;
             return this;
         }
         public Builder regionStatusDetails(GetDataSourceRegionStatusDetail... regionStatusDetails) {
@@ -295,27 +326,42 @@ public final class GetDataSourceResult {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDataSourceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDataSourceResult build() {

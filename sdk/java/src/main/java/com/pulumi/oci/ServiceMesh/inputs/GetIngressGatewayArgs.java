@@ -5,6 +5,7 @@ package com.pulumi.oci.ServiceMesh.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetIngressGatewayArgs extends com.pulumi.resources.InvokeArgs
         }
 
         public GetIngressGatewayArgs build() {
-            $.ingressGatewayId = Objects.requireNonNull($.ingressGatewayId, "expected parameter 'ingressGatewayId' to be non-null");
+            if ($.ingressGatewayId == null) {
+                throw new MissingRequiredPropertyException("GetIngressGatewayArgs", "ingressGatewayId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -85,22 +86,34 @@ public final class GetNotebookSessionShapesNotebookSessionShape {
 
         @CustomType.Setter
         public Builder coreCount(Integer coreCount) {
-            this.coreCount = Objects.requireNonNull(coreCount);
+            if (coreCount == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionShapesNotebookSessionShape", "coreCount");
+            }
+            this.coreCount = coreCount;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+            if (memoryInGbs == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionShapesNotebookSessionShape", "memoryInGbs");
+            }
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionShapesNotebookSessionShape", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder shapeSeries(String shapeSeries) {
-            this.shapeSeries = Objects.requireNonNull(shapeSeries);
+            if (shapeSeries == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionShapesNotebookSessionShape", "shapeSeries");
+            }
+            this.shapeSeries = shapeSeries;
             return this;
         }
         public GetNotebookSessionShapesNotebookSessionShape build() {

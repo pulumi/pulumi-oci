@@ -5,6 +5,7 @@ package com.pulumi.oci.ApmConfig.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmConfig.inputs.GetConfigsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -398,7 +399,9 @@ public final class GetConfigsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetConfigsArgs build() {
-            $.apmDomainId = Objects.requireNonNull($.apmDomainId, "expected parameter 'apmDomainId' to be non-null");
+            if ($.apmDomainId == null) {
+                throw new MissingRequiredPropertyException("GetConfigsArgs", "apmDomainId");
+            }
             return $;
         }
     }

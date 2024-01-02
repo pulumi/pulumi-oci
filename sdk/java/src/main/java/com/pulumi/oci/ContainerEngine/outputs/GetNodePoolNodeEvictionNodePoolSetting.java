@@ -4,6 +4,7 @@
 package com.pulumi.oci.ContainerEngine.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetNodePoolNodeEvictionNodePoolSetting {
 
         @CustomType.Setter
         public Builder evictionGraceDuration(String evictionGraceDuration) {
-            this.evictionGraceDuration = Objects.requireNonNull(evictionGraceDuration);
+            if (evictionGraceDuration == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolNodeEvictionNodePoolSetting", "evictionGraceDuration");
+            }
+            this.evictionGraceDuration = evictionGraceDuration;
             return this;
         }
         @CustomType.Setter
         public Builder isForceDeleteAfterGraceDuration(Boolean isForceDeleteAfterGraceDuration) {
-            this.isForceDeleteAfterGraceDuration = Objects.requireNonNull(isForceDeleteAfterGraceDuration);
+            if (isForceDeleteAfterGraceDuration == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolNodeEvictionNodePoolSetting", "isForceDeleteAfterGraceDuration");
+            }
+            this.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
             return this;
         }
         public GetNodePoolNodeEvictionNodePoolSetting build() {

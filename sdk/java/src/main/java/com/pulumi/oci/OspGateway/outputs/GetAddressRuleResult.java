@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleAddress;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleContact;
 import com.pulumi.oci.OspGateway.outputs.GetAddressRuleTax;
@@ -114,7 +115,10 @@ public final class GetAddressRuleResult {
 
         @CustomType.Setter
         public Builder addresses(List<GetAddressRuleAddress> addresses) {
-            this.addresses = Objects.requireNonNull(addresses);
+            if (addresses == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleResult", "addresses");
+            }
+            this.addresses = addresses;
             return this;
         }
         public Builder addresses(GetAddressRuleAddress... addresses) {
@@ -122,12 +126,18 @@ public final class GetAddressRuleResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder contacts(List<GetAddressRuleContact> contacts) {
-            this.contacts = Objects.requireNonNull(contacts);
+            if (contacts == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleResult", "contacts");
+            }
+            this.contacts = contacts;
             return this;
         }
         public Builder contacts(GetAddressRuleContact... contacts) {
@@ -135,22 +145,34 @@ public final class GetAddressRuleResult {
         }
         @CustomType.Setter
         public Builder countryCode(String countryCode) {
-            this.countryCode = Objects.requireNonNull(countryCode);
+            if (countryCode == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleResult", "countryCode");
+            }
+            this.countryCode = countryCode;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
-            this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
+            if (ospHomeRegion == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleResult", "ospHomeRegion");
+            }
+            this.ospHomeRegion = ospHomeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder taxes(List<GetAddressRuleTax> taxes) {
-            this.taxes = Objects.requireNonNull(taxes);
+            if (taxes == null) {
+              throw new MissingRequiredPropertyException("GetAddressRuleResult", "taxes");
+            }
+            this.taxes = taxes;
             return this;
         }
         public Builder taxes(GetAddressRuleTax... taxes) {

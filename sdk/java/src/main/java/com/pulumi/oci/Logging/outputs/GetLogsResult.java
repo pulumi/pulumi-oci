@@ -4,6 +4,7 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Logging.outputs.GetLogsFilter;
 import com.pulumi.oci.Logging.outputs.GetLogsLog;
 import java.lang.String;
@@ -135,11 +136,13 @@ public final class GetLogsResult {
 
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLogsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -148,22 +151,32 @@ public final class GetLogsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("GetLogsResult", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder logType(@Nullable String logType) {
+
             this.logType = logType;
             return this;
         }
         @CustomType.Setter
         public Builder logs(List<GetLogsLog> logs) {
-            this.logs = Objects.requireNonNull(logs);
+            if (logs == null) {
+              throw new MissingRequiredPropertyException("GetLogsResult", "logs");
+            }
+            this.logs = logs;
             return this;
         }
         public Builder logs(GetLogsLog... logs) {
@@ -171,16 +184,19 @@ public final class GetLogsResult {
         }
         @CustomType.Setter
         public Builder sourceResource(@Nullable String sourceResource) {
+
             this.sourceResource = sourceResource;
             return this;
         }
         @CustomType.Setter
         public Builder sourceService(@Nullable String sourceService) {
+
             this.sourceService = sourceService;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetProfileLevelsConfiguration;
 import com.pulumi.oci.Optimizer.outputs.GetProfileTargetCompartment;
 import com.pulumi.oci.Optimizer.outputs.GetProfileTargetTag;
@@ -229,37 +230,58 @@ public final class GetProfileResult {
 
         @CustomType.Setter
         public Builder aggregationIntervalInDays(Integer aggregationIntervalInDays) {
-            this.aggregationIntervalInDays = Objects.requireNonNull(aggregationIntervalInDays);
+            if (aggregationIntervalInDays == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "aggregationIntervalInDays");
+            }
+            this.aggregationIntervalInDays = aggregationIntervalInDays;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder levelsConfigurations(List<GetProfileLevelsConfiguration> levelsConfigurations) {
-            this.levelsConfigurations = Objects.requireNonNull(levelsConfigurations);
+            if (levelsConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "levelsConfigurations");
+            }
+            this.levelsConfigurations = levelsConfigurations;
             return this;
         }
         public Builder levelsConfigurations(GetProfileLevelsConfiguration... levelsConfigurations) {
@@ -267,27 +289,42 @@ public final class GetProfileResult {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder profileId(String profileId) {
-            this.profileId = Objects.requireNonNull(profileId);
+            if (profileId == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "profileId");
+            }
+            this.profileId = profileId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetCompartments(List<GetProfileTargetCompartment> targetCompartments) {
-            this.targetCompartments = Objects.requireNonNull(targetCompartments);
+            if (targetCompartments == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "targetCompartments");
+            }
+            this.targetCompartments = targetCompartments;
             return this;
         }
         public Builder targetCompartments(GetProfileTargetCompartment... targetCompartments) {
@@ -295,7 +332,10 @@ public final class GetProfileResult {
         }
         @CustomType.Setter
         public Builder targetTags(List<GetProfileTargetTag> targetTags) {
-            this.targetTags = Objects.requireNonNull(targetTags);
+            if (targetTags == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "targetTags");
+            }
+            this.targetTags = targetTags;
             return this;
         }
         public Builder targetTags(GetProfileTargetTag... targetTags) {
@@ -303,12 +343,18 @@ public final class GetProfileResult {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetProfileResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetProfileResult build() {

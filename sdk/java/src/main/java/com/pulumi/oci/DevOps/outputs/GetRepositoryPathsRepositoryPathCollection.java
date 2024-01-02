@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryPathsRepositoryPathCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetRepositoryPathsRepositoryPathCollection {
 
         @CustomType.Setter
         public Builder items(List<GetRepositoryPathsRepositoryPathCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryPathsRepositoryPathCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetRepositoryPathsRepositoryPathCollectionItem... items) {

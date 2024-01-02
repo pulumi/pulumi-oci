@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetBuildRunBuildRunSourceTriggerInfoActionFilter;
 import java.lang.String;
 import java.util.List;
@@ -72,12 +73,18 @@ public final class GetBuildRunBuildRunSourceTriggerInfoAction {
 
         @CustomType.Setter
         public Builder buildPipelineId(String buildPipelineId) {
-            this.buildPipelineId = Objects.requireNonNull(buildPipelineId);
+            if (buildPipelineId == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoAction", "buildPipelineId");
+            }
+            this.buildPipelineId = buildPipelineId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(List<GetBuildRunBuildRunSourceTriggerInfoActionFilter> filters) {
-            this.filters = Objects.requireNonNull(filters);
+            if (filters == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoAction", "filters");
+            }
+            this.filters = filters;
             return this;
         }
         public Builder filters(GetBuildRunBuildRunSourceTriggerInfoActionFilter... filters) {
@@ -85,7 +92,10 @@ public final class GetBuildRunBuildRunSourceTriggerInfoAction {
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetBuildRunBuildRunSourceTriggerInfoAction", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetBuildRunBuildRunSourceTriggerInfoAction build() {

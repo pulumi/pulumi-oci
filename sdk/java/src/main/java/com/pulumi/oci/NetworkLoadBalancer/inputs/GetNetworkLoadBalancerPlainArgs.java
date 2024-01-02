@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkLoadBalancer.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetNetworkLoadBalancerPlainArgs extends com.pulumi.resources.
         }
 
         public GetNetworkLoadBalancerPlainArgs build() {
-            $.networkLoadBalancerId = Objects.requireNonNull($.networkLoadBalancerId, "expected parameter 'networkLoadBalancerId' to be non-null");
+            if ($.networkLoadBalancerId == null) {
+                throw new MissingRequiredPropertyException("GetNetworkLoadBalancerPlainArgs", "networkLoadBalancerId");
+            }
             return $;
         }
     }

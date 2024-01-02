@@ -4,6 +4,7 @@
 package com.pulumi.oci.Marketplace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationPackageOperatingSystem;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationPackageVariable;
 import java.lang.String;
@@ -225,37 +226,58 @@ public final class GetPublicationPackageResult {
 
         @CustomType.Setter
         public Builder appCatalogListingId(String appCatalogListingId) {
-            this.appCatalogListingId = Objects.requireNonNull(appCatalogListingId);
+            if (appCatalogListingId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "appCatalogListingId");
+            }
+            this.appCatalogListingId = appCatalogListingId;
             return this;
         }
         @CustomType.Setter
         public Builder appCatalogListingResourceVersion(String appCatalogListingResourceVersion) {
-            this.appCatalogListingResourceVersion = Objects.requireNonNull(appCatalogListingResourceVersion);
+            if (appCatalogListingResourceVersion == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "appCatalogListingResourceVersion");
+            }
+            this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder listingId(String listingId) {
-            this.listingId = Objects.requireNonNull(listingId);
+            if (listingId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "listingId");
+            }
+            this.listingId = listingId;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystems(List<GetPublicationPackageOperatingSystem> operatingSystems) {
-            this.operatingSystems = Objects.requireNonNull(operatingSystems);
+            if (operatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "operatingSystems");
+            }
+            this.operatingSystems = operatingSystems;
             return this;
         }
         public Builder operatingSystems(GetPublicationPackageOperatingSystem... operatingSystems) {
@@ -263,37 +285,58 @@ public final class GetPublicationPackageResult {
         }
         @CustomType.Setter
         public Builder packageType(String packageType) {
-            this.packageType = Objects.requireNonNull(packageType);
+            if (packageType == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "packageType");
+            }
+            this.packageType = packageType;
             return this;
         }
         @CustomType.Setter
         public Builder packageVersion(String packageVersion) {
-            this.packageVersion = Objects.requireNonNull(packageVersion);
+            if (packageVersion == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "packageVersion");
+            }
+            this.packageVersion = packageVersion;
             return this;
         }
         @CustomType.Setter
         public Builder publicationId(String publicationId) {
-            this.publicationId = Objects.requireNonNull(publicationId);
+            if (publicationId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "publicationId");
+            }
+            this.publicationId = publicationId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceId(String resourceId) {
-            this.resourceId = Objects.requireNonNull(resourceId);
+            if (resourceId == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "resourceId");
+            }
+            this.resourceId = resourceId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceLink(String resourceLink) {
-            this.resourceLink = Objects.requireNonNull(resourceLink);
+            if (resourceLink == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "resourceLink");
+            }
+            this.resourceLink = resourceLink;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder variables(List<GetPublicationPackageVariable> variables) {
-            this.variables = Objects.requireNonNull(variables);
+            if (variables == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "variables");
+            }
+            this.variables = variables;
             return this;
         }
         public Builder variables(GetPublicationPackageVariable... variables) {
@@ -301,7 +344,10 @@ public final class GetPublicationPackageResult {
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetPublicationPackageResult", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetPublicationPackageResult build() {

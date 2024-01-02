@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -349,10 +350,18 @@ public final class AppFirewallArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AppFirewallArgs build() {
-            $.backendType = Objects.requireNonNull($.backendType, "expected parameter 'backendType' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.loadBalancerId = Objects.requireNonNull($.loadBalancerId, "expected parameter 'loadBalancerId' to be non-null");
-            $.webAppFirewallPolicyId = Objects.requireNonNull($.webAppFirewallPolicyId, "expected parameter 'webAppFirewallPolicyId' to be non-null");
+            if ($.backendType == null) {
+                throw new MissingRequiredPropertyException("AppFirewallArgs", "backendType");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AppFirewallArgs", "compartmentId");
+            }
+            if ($.loadBalancerId == null) {
+                throw new MissingRequiredPropertyException("AppFirewallArgs", "loadBalancerId");
+            }
+            if ($.webAppFirewallPolicyId == null) {
+                throw new MissingRequiredPropertyException("AppFirewallArgs", "webAppFirewallPolicyId");
+            }
             return $;
         }
     }

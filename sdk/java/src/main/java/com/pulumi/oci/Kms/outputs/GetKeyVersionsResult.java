@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Kms.outputs.GetKeyVersionsFilter;
 import com.pulumi.oci.Kms.outputs.GetKeyVersionsKeyVersion;
 import java.lang.String;
@@ -86,6 +87,7 @@ public final class GetKeyVersionsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetKeyVersionsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -94,17 +96,26 @@ public final class GetKeyVersionsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder keyId(String keyId) {
-            this.keyId = Objects.requireNonNull(keyId);
+            if (keyId == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsResult", "keyId");
+            }
+            this.keyId = keyId;
             return this;
         }
         @CustomType.Setter
         public Builder keyVersions(List<GetKeyVersionsKeyVersion> keyVersions) {
-            this.keyVersions = Objects.requireNonNull(keyVersions);
+            if (keyVersions == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsResult", "keyVersions");
+            }
+            this.keyVersions = keyVersions;
             return this;
         }
         public Builder keyVersions(GetKeyVersionsKeyVersion... keyVersions) {
@@ -112,7 +123,10 @@ public final class GetKeyVersionsResult {
         }
         @CustomType.Setter
         public Builder managementEndpoint(String managementEndpoint) {
-            this.managementEndpoint = Objects.requireNonNull(managementEndpoint);
+            if (managementEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetKeyVersionsResult", "managementEndpoint");
+            }
+            this.managementEndpoint = managementEndpoint;
             return this;
         }
         public GetKeyVersionsResult build() {

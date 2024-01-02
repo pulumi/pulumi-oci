@@ -5,6 +5,7 @@ package com.pulumi.oci.MeteringComputation.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetCustomTableArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetCustomTableArgs build() {
-            $.customTableId = Objects.requireNonNull($.customTableId, "expected parameter 'customTableId' to be non-null");
+            if ($.customTableId == null) {
+                throw new MissingRequiredPropertyException("GetCustomTableArgs", "customTableId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallsNetworkFirewallCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetNetworkFirewallsNetworkFirewallCollection {
 
         @CustomType.Setter
         public Builder items(List<GetNetworkFirewallsNetworkFirewallCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallsNetworkFirewallCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetNetworkFirewallsNetworkFirewallCollectionItem... items) {

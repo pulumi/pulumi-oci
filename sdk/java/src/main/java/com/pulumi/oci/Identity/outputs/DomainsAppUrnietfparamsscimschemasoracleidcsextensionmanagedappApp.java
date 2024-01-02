@@ -890,16 +890,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
 
         @CustomType.Setter
         public Builder accountFormVisible(@Nullable Boolean accountFormVisible) {
+
             this.accountFormVisible = accountFormVisible;
             return this;
         }
         @CustomType.Setter
         public Builder adminConsentGranted(@Nullable Boolean adminConsentGranted) {
+
             this.adminConsentGranted = adminConsentGranted;
             return this;
         }
         @CustomType.Setter
         public Builder bundleConfigurationProperties(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationProperty> bundleConfigurationProperties) {
+
             this.bundleConfigurationProperties = bundleConfigurationProperties;
             return this;
         }
@@ -908,21 +911,25 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
         @CustomType.Setter
         public Builder bundlePoolConfiguration(@Nullable DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfiguration bundlePoolConfiguration) {
+
             this.bundlePoolConfiguration = bundlePoolConfiguration;
             return this;
         }
         @CustomType.Setter
         public Builder canBeAuthoritative(@Nullable Boolean canBeAuthoritative) {
+
             this.canBeAuthoritative = canBeAuthoritative;
             return this;
         }
         @CustomType.Setter
         public Builder connected(@Nullable Boolean connected) {
+
             this.connected = connected;
             return this;
         }
         @CustomType.Setter
         public Builder connectorBundles(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle> connectorBundles) {
+
             this.connectorBundles = connectorBundles;
             return this;
         }
@@ -931,21 +938,25 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
         @CustomType.Setter
         public Builder enableAuthSyncNewUserNotification(@Nullable Boolean enableAuthSyncNewUserNotification) {
+
             this.enableAuthSyncNewUserNotification = enableAuthSyncNewUserNotification;
             return this;
         }
         @CustomType.Setter
         public Builder enableSync(@Nullable Boolean enableSync) {
+
             this.enableSync = enableSync;
             return this;
         }
         @CustomType.Setter
         public Builder enableSyncSummaryReportNotification(@Nullable Boolean enableSyncSummaryReportNotification) {
+
             this.enableSyncSummaryReportNotification = enableSyncSummaryReportNotification;
             return this;
         }
         @CustomType.Setter
         public Builder flatFileBundleConfigurationProperties(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty> flatFileBundleConfigurationProperties) {
+
             this.flatFileBundleConfigurationProperties = flatFileBundleConfigurationProperties;
             return this;
         }
@@ -954,11 +965,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
         @CustomType.Setter
         public Builder flatFileConnectorBundle(@Nullable DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle flatFileConnectorBundle) {
+
             this.flatFileConnectorBundle = flatFileConnectorBundle;
             return this;
         }
         @CustomType.Setter
         public Builder identityBridges(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridge> identityBridges) {
+
             this.identityBridges = identityBridges;
             return this;
         }
@@ -967,41 +980,49 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
         @CustomType.Setter
         public Builder isAuthoritative(@Nullable Boolean isAuthoritative) {
+
             this.isAuthoritative = isAuthoritative;
             return this;
         }
         @CustomType.Setter
         public Builder isDirectory(@Nullable Boolean isDirectory) {
+
             this.isDirectory = isDirectory;
             return this;
         }
         @CustomType.Setter
         public Builder isOnPremiseApp(@Nullable Boolean isOnPremiseApp) {
+
             this.isOnPremiseApp = isOnPremiseApp;
             return this;
         }
         @CustomType.Setter
         public Builder isSchemaCustomizationSupported(@Nullable Boolean isSchemaCustomizationSupported) {
+
             this.isSchemaCustomizationSupported = isSchemaCustomizationSupported;
             return this;
         }
         @CustomType.Setter
         public Builder isSchemaDiscoverySupported(@Nullable Boolean isSchemaDiscoverySupported) {
+
             this.isSchemaDiscoverySupported = isSchemaDiscoverySupported;
             return this;
         }
         @CustomType.Setter
         public Builder isThreeLeggedOauthEnabled(@Nullable Boolean isThreeLeggedOauthEnabled) {
+
             this.isThreeLeggedOauthEnabled = isThreeLeggedOauthEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTwoLeggedOauthEnabled(@Nullable Boolean isTwoLeggedOauthEnabled) {
+
             this.isTwoLeggedOauthEnabled = isTwoLeggedOauthEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder objectClasses(@Nullable List<DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass> objectClasses) {
+
             this.objectClasses = objectClasses;
             return this;
         }
@@ -1010,16 +1031,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
         @CustomType.Setter
         public Builder syncConfigLastModified(@Nullable String syncConfigLastModified) {
+
             this.syncConfigLastModified = syncConfigLastModified;
             return this;
         }
         @CustomType.Setter
         public Builder threeLeggedOauthCredential(@Nullable DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential threeLeggedOauthCredential) {
+
             this.threeLeggedOauthCredential = threeLeggedOauthCredential;
             return this;
         }
         @CustomType.Setter
         public Builder threeLeggedOauthProviderName(@Nullable String threeLeggedOauthProviderName) {
+
             this.threeLeggedOauthProviderName = threeLeggedOauthProviderName;
             return this;
         }

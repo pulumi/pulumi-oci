@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -40,12 +41,18 @@ public final class GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIp
 
         @CustomType.Setter
         public Builder ipv6Address(String ipv6Address) {
-            this.ipv6Address = Objects.requireNonNull(ipv6Address);
+            if (ipv6Address == null) {
+              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6Address");
+            }
+            this.ipv6Address = ipv6Address;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6SubnetCidr(String ipv6SubnetCidr) {
-            this.ipv6SubnetCidr = Objects.requireNonNull(ipv6SubnetCidr);
+            if (ipv6SubnetCidr == null) {
+              throw new MissingRequiredPropertyException("GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail", "ipv6SubnetCidr");
+            }
+            this.ipv6SubnetCidr = ipv6SubnetCidr;
             return this;
         }
         public GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail build() {

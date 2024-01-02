@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
 
         @CustomType.Setter
         public Builder timeToLiveInSeconds(Integer timeToLiveInSeconds) {
-            this.timeToLiveInSeconds = Objects.requireNonNull(timeToLiveInSeconds);
+            if (timeToLiveInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore", "timeToLiveInSeconds");
+            }
+            this.timeToLiveInSeconds = timeToLiveInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore build() {

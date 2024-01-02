@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetIntegrationInstanceIdcsInfo {
 
         @CustomType.Setter
         public Builder idcsAppDisplayName(String idcsAppDisplayName) {
-            this.idcsAppDisplayName = Objects.requireNonNull(idcsAppDisplayName);
+            if (idcsAppDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceIdcsInfo", "idcsAppDisplayName");
+            }
+            this.idcsAppDisplayName = idcsAppDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAppId(String idcsAppId) {
-            this.idcsAppId = Objects.requireNonNull(idcsAppId);
+            if (idcsAppId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceIdcsInfo", "idcsAppId");
+            }
+            this.idcsAppId = idcsAppId;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAppLocationUrl(String idcsAppLocationUrl) {
-            this.idcsAppLocationUrl = Objects.requireNonNull(idcsAppLocationUrl);
+            if (idcsAppLocationUrl == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceIdcsInfo", "idcsAppLocationUrl");
+            }
+            this.idcsAppLocationUrl = idcsAppLocationUrl;
             return this;
         }
         @CustomType.Setter
         public Builder idcsAppName(String idcsAppName) {
-            this.idcsAppName = Objects.requireNonNull(idcsAppName);
+            if (idcsAppName == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceIdcsInfo", "idcsAppName");
+            }
+            this.idcsAppName = idcsAppName;
             return this;
         }
         @CustomType.Setter
         public Builder instancePrimaryAudienceUrl(String instancePrimaryAudienceUrl) {
-            this.instancePrimaryAudienceUrl = Objects.requireNonNull(instancePrimaryAudienceUrl);
+            if (instancePrimaryAudienceUrl == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstanceIdcsInfo", "instancePrimaryAudienceUrl");
+            }
+            this.instancePrimaryAudienceUrl = instancePrimaryAudienceUrl;
             return this;
         }
         public GetIntegrationInstanceIdcsInfo build() {

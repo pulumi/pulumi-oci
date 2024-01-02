@@ -72,16 +72,19 @@ public final class BlockchainPlatformReplicas {
 
         @CustomType.Setter
         public Builder caCount(@Nullable Integer caCount) {
+
             this.caCount = caCount;
             return this;
         }
         @CustomType.Setter
         public Builder consoleCount(@Nullable Integer consoleCount) {
+
             this.consoleCount = consoleCount;
             return this;
         }
         @CustomType.Setter
         public Builder proxyCount(@Nullable Integer proxyCount) {
+
             this.proxyCount = proxyCount;
             return this;
         }

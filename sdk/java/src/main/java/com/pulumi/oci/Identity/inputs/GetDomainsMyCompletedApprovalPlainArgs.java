@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -146,8 +147,12 @@ public final class GetDomainsMyCompletedApprovalPlainArgs extends com.pulumi.res
         }
 
         public GetDomainsMyCompletedApprovalPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
-            $.myCompletedApprovalId = Objects.requireNonNull($.myCompletedApprovalId, "expected parameter 'myCompletedApprovalId' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalPlainArgs", "idcsEndpoint");
+            }
+            if ($.myCompletedApprovalId == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMyCompletedApprovalPlainArgs", "myCompletedApprovalId");
+            }
             return $;
         }
     }

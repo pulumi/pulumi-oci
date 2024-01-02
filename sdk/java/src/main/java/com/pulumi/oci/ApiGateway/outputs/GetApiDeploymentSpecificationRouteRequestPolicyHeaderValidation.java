@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader;
 import java.lang.String;
 import java.util.List;
@@ -50,7 +51,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidati
 
         @CustomType.Setter
         public Builder headers(List<GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader> headers) {
-            this.headers = Objects.requireNonNull(headers);
+            if (headers == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation", "headers");
+            }
+            this.headers = headers;
             return this;
         }
         public Builder headers(GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeader... headers) {
@@ -58,7 +62,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidati
         }
         @CustomType.Setter
         public Builder validationMode(String validationMode) {
-            this.validationMode = Objects.requireNonNull(validationMode);
+            if (validationMode == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation", "validationMode");
+            }
+            this.validationMode = validationMode;
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidation build() {

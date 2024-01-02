@@ -216,66 +216,79 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectionDetails(@Nullable ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails connectionDetails) {
+
             this.connectionDetails = connectionDetails;
             return this;
         }
         @CustomType.Setter
         public Builder credentialDetails(@Nullable ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails credentialDetails) {
+
             this.credentialDetails = credentialDetails;
             return this;
         }
         @CustomType.Setter
         public Builder databaseId(@Nullable String databaseId) {
+
             this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseResourceType(@Nullable String databaseResourceType) {
+
             this.databaseResourceType = databaseResourceType;
             return this;
         }
         @CustomType.Setter
         public Builder dbmPrivateEndpointId(@Nullable String dbmPrivateEndpointId) {
+
             this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentType(@Nullable String deploymentType) {
+
             this.deploymentType = deploymentType;
             return this;
         }
         @CustomType.Setter
         public Builder entitySource(@Nullable String entitySource) {
+
             this.entitySource = entitySource;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+
             this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder opsiPrivateEndpointId(@Nullable String opsiPrivateEndpointId) {
+
             this.opsiPrivateEndpointId = opsiPrivateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
+
             this.serviceName = serviceName;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+
             this.systemTags = systemTags;
             return this;
         }

@@ -44,6 +44,7 @@ public final class DeploymentIngressIp {
 
         @CustomType.Setter
         public Builder ingressIp(@Nullable String ingressIp) {
+
             this.ingressIp = ingressIp;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetNewsReportPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         public GetNewsReportPlainArgs build() {
-            $.newsReportId = Objects.requireNonNull($.newsReportId, "expected parameter 'newsReportId' to be non-null");
+            if ($.newsReportId == null) {
+                throw new MissingRequiredPropertyException("GetNewsReportPlainArgs", "newsReportId");
+            }
             return $;
         }
     }

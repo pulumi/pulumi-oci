@@ -74,6 +74,7 @@ public final class SoftwareSourceCustomSoftwareSourceFilter {
 
         @CustomType.Setter
         public Builder moduleStreamProfileFilters(@Nullable List<SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilter> moduleStreamProfileFilters) {
+
             this.moduleStreamProfileFilters = moduleStreamProfileFilters;
             return this;
         }
@@ -82,6 +83,7 @@ public final class SoftwareSourceCustomSoftwareSourceFilter {
         }
         @CustomType.Setter
         public Builder packageFilters(@Nullable List<SoftwareSourceCustomSoftwareSourceFilterPackageFilter> packageFilters) {
+
             this.packageFilters = packageFilters;
             return this;
         }
@@ -90,6 +92,7 @@ public final class SoftwareSourceCustomSoftwareSourceFilter {
         }
         @CustomType.Setter
         public Builder packageGroupFilters(@Nullable List<SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter> packageGroupFilters) {
+
             this.packageGroupFilters = packageGroupFilters;
             return this;
         }

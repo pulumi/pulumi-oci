@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetSecurityAssessmentFindingsFilter;
 import java.lang.Boolean;
 import java.lang.String;
@@ -220,7 +221,9 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         }
 
         public GetSecurityAssessmentFindingsPlainArgs build() {
-            $.securityAssessmentId = Objects.requireNonNull($.securityAssessmentId, "expected parameter 'securityAssessmentId' to be non-null");
+            if ($.securityAssessmentId == null) {
+                throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsPlainArgs", "securityAssessmentId");
+            }
             return $;
         }
     }

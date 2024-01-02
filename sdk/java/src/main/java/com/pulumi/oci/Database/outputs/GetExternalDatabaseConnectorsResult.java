@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExternalDatabaseConnectorsExternalDatabaseConnector;
 import com.pulumi.oci.Database.outputs.GetExternalDatabaseConnectorsFilter;
 import java.lang.String;
@@ -123,17 +124,24 @@ public final class GetExternalDatabaseConnectorsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalDatabaseConnectors(List<GetExternalDatabaseConnectorsExternalDatabaseConnector> externalDatabaseConnectors) {
-            this.externalDatabaseConnectors = Objects.requireNonNull(externalDatabaseConnectors);
+            if (externalDatabaseConnectors == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsResult", "externalDatabaseConnectors");
+            }
+            this.externalDatabaseConnectors = externalDatabaseConnectors;
             return this;
         }
         public Builder externalDatabaseConnectors(GetExternalDatabaseConnectorsExternalDatabaseConnector... externalDatabaseConnectors) {
@@ -141,11 +149,15 @@ public final class GetExternalDatabaseConnectorsResult {
         }
         @CustomType.Setter
         public Builder externalDatabaseId(String externalDatabaseId) {
-            this.externalDatabaseId = Objects.requireNonNull(externalDatabaseId);
+            if (externalDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsResult", "externalDatabaseId");
+            }
+            this.externalDatabaseId = externalDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetExternalDatabaseConnectorsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +166,15 @@ public final class GetExternalDatabaseConnectorsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

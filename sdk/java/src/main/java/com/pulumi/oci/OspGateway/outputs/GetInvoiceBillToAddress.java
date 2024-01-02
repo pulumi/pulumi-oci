@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetInvoiceBillToAddressCountry;
 import java.lang.String;
 import java.util.List;
@@ -226,42 +227,66 @@ public final class GetInvoiceBillToAddress {
 
         @CustomType.Setter
         public Builder addressLine1(String addressLine1) {
-            this.addressLine1 = Objects.requireNonNull(addressLine1);
+            if (addressLine1 == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "addressLine1");
+            }
+            this.addressLine1 = addressLine1;
             return this;
         }
         @CustomType.Setter
         public Builder addressLine2(String addressLine2) {
-            this.addressLine2 = Objects.requireNonNull(addressLine2);
+            if (addressLine2 == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "addressLine2");
+            }
+            this.addressLine2 = addressLine2;
             return this;
         }
         @CustomType.Setter
         public Builder addressLine3(String addressLine3) {
-            this.addressLine3 = Objects.requireNonNull(addressLine3);
+            if (addressLine3 == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "addressLine3");
+            }
+            this.addressLine3 = addressLine3;
             return this;
         }
         @CustomType.Setter
         public Builder addressLine4(String addressLine4) {
-            this.addressLine4 = Objects.requireNonNull(addressLine4);
+            if (addressLine4 == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "addressLine4");
+            }
+            this.addressLine4 = addressLine4;
             return this;
         }
         @CustomType.Setter
         public Builder city(String city) {
-            this.city = Objects.requireNonNull(city);
+            if (city == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "city");
+            }
+            this.city = city;
             return this;
         }
         @CustomType.Setter
         public Builder companyName(String companyName) {
-            this.companyName = Objects.requireNonNull(companyName);
+            if (companyName == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "companyName");
+            }
+            this.companyName = companyName;
             return this;
         }
         @CustomType.Setter
         public Builder contactName(String contactName) {
-            this.contactName = Objects.requireNonNull(contactName);
+            if (contactName == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "contactName");
+            }
+            this.contactName = contactName;
             return this;
         }
         @CustomType.Setter
         public Builder countries(List<GetInvoiceBillToAddressCountry> countries) {
-            this.countries = Objects.requireNonNull(countries);
+            if (countries == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "countries");
+            }
+            this.countries = countries;
             return this;
         }
         public Builder countries(GetInvoiceBillToAddressCountry... countries) {
@@ -269,32 +294,50 @@ public final class GetInvoiceBillToAddress {
         }
         @CustomType.Setter
         public Builder county(String county) {
-            this.county = Objects.requireNonNull(county);
+            if (county == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "county");
+            }
+            this.county = county;
             return this;
         }
         @CustomType.Setter
         public Builder postalCode(String postalCode) {
-            this.postalCode = Objects.requireNonNull(postalCode);
+            if (postalCode == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "postalCode");
+            }
+            this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
         public Builder province(String province) {
-            this.province = Objects.requireNonNull(province);
+            if (province == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "province");
+            }
+            this.province = province;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streetName(String streetName) {
-            this.streetName = Objects.requireNonNull(streetName);
+            if (streetName == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "streetName");
+            }
+            this.streetName = streetName;
             return this;
         }
         @CustomType.Setter
         public Builder streetNumber(String streetNumber) {
-            this.streetNumber = Objects.requireNonNull(streetNumber);
+            if (streetNumber == null) {
+              throw new MissingRequiredPropertyException("GetInvoiceBillToAddress", "streetNumber");
+            }
+            this.streetNumber = streetNumber;
             return this;
         }
         public GetInvoiceBillToAddress build() {

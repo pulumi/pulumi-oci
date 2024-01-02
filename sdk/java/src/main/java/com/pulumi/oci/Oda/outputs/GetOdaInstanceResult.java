@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Oda.outputs.GetOdaInstanceRestrictedOperation;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -361,7 +362,10 @@ public final class GetOdaInstanceResult {
 
         @CustomType.Setter
         public Builder attachmentIds(List<String> attachmentIds) {
-            this.attachmentIds = Objects.requireNonNull(attachmentIds);
+            if (attachmentIds == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "attachmentIds");
+            }
+            this.attachmentIds = attachmentIds;
             return this;
         }
         public Builder attachmentIds(String... attachmentIds) {
@@ -369,7 +373,10 @@ public final class GetOdaInstanceResult {
         }
         @CustomType.Setter
         public Builder attachmentTypes(List<String> attachmentTypes) {
-            this.attachmentTypes = Objects.requireNonNull(attachmentTypes);
+            if (attachmentTypes == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "attachmentTypes");
+            }
+            this.attachmentTypes = attachmentTypes;
             return this;
         }
         public Builder attachmentTypes(String... attachmentTypes) {
@@ -377,57 +384,90 @@ public final class GetOdaInstanceResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectorUrl(String connectorUrl) {
-            this.connectorUrl = Objects.requireNonNull(connectorUrl);
+            if (connectorUrl == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "connectorUrl");
+            }
+            this.connectorUrl = connectorUrl;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder identityAppConsoleUrl(String identityAppConsoleUrl) {
-            this.identityAppConsoleUrl = Objects.requireNonNull(identityAppConsoleUrl);
+            if (identityAppConsoleUrl == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "identityAppConsoleUrl");
+            }
+            this.identityAppConsoleUrl = identityAppConsoleUrl;
             return this;
         }
         @CustomType.Setter
         public Builder identityAppGuid(String identityAppGuid) {
-            this.identityAppGuid = Objects.requireNonNull(identityAppGuid);
+            if (identityAppGuid == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "identityAppGuid");
+            }
+            this.identityAppGuid = identityAppGuid;
             return this;
         }
         @CustomType.Setter
         public Builder identityDomain(String identityDomain) {
-            this.identityDomain = Objects.requireNonNull(identityDomain);
+            if (identityDomain == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "identityDomain");
+            }
+            this.identityDomain = identityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder importedPackageIds(List<String> importedPackageIds) {
-            this.importedPackageIds = Objects.requireNonNull(importedPackageIds);
+            if (importedPackageIds == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "importedPackageIds");
+            }
+            this.importedPackageIds = importedPackageIds;
             return this;
         }
         public Builder importedPackageIds(String... importedPackageIds) {
@@ -435,7 +475,10 @@ public final class GetOdaInstanceResult {
         }
         @CustomType.Setter
         public Builder importedPackageNames(List<String> importedPackageNames) {
-            this.importedPackageNames = Objects.requireNonNull(importedPackageNames);
+            if (importedPackageNames == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "importedPackageNames");
+            }
+            this.importedPackageNames = importedPackageNames;
             return this;
         }
         public Builder importedPackageNames(String... importedPackageNames) {
@@ -443,22 +486,34 @@ public final class GetOdaInstanceResult {
         }
         @CustomType.Setter
         public Builder isRoleBasedAccess(Boolean isRoleBasedAccess) {
-            this.isRoleBasedAccess = Objects.requireNonNull(isRoleBasedAccess);
+            if (isRoleBasedAccess == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "isRoleBasedAccess");
+            }
+            this.isRoleBasedAccess = isRoleBasedAccess;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubState(String lifecycleSubState) {
-            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+            if (lifecycleSubState == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "lifecycleSubState");
+            }
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
         public Builder odaInstanceId(String odaInstanceId) {
-            this.odaInstanceId = Objects.requireNonNull(odaInstanceId);
+            if (odaInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "odaInstanceId");
+            }
+            this.odaInstanceId = odaInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder restrictedOperations(List<GetOdaInstanceRestrictedOperation> restrictedOperations) {
-            this.restrictedOperations = Objects.requireNonNull(restrictedOperations);
+            if (restrictedOperations == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "restrictedOperations");
+            }
+            this.restrictedOperations = restrictedOperations;
             return this;
         }
         public Builder restrictedOperations(GetOdaInstanceRestrictedOperation... restrictedOperations) {
@@ -466,32 +521,50 @@ public final class GetOdaInstanceResult {
         }
         @CustomType.Setter
         public Builder shapeName(String shapeName) {
-            this.shapeName = Objects.requireNonNull(shapeName);
+            if (shapeName == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "shapeName");
+            }
+            this.shapeName = shapeName;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateMessage(String stateMessage) {
-            this.stateMessage = Objects.requireNonNull(stateMessage);
+            if (stateMessage == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "stateMessage");
+            }
+            this.stateMessage = stateMessage;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder webAppUrl(String webAppUrl) {
-            this.webAppUrl = Objects.requireNonNull(webAppUrl);
+            if (webAppUrl == null) {
+              throw new MissingRequiredPropertyException("GetOdaInstanceResult", "webAppUrl");
+            }
+            this.webAppUrl = webAppUrl;
             return this;
         }
         public GetOdaInstanceResult build() {

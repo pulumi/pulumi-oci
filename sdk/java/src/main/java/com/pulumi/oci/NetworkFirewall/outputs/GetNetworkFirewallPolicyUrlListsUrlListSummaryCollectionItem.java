@@ -4,6 +4,7 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrl;
 import java.lang.Integer;
 import java.lang.String;
@@ -101,27 +102,42 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem 
 
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder networkFirewallPolicyId(String networkFirewallPolicyId) {
-            this.networkFirewallPolicyId = Objects.requireNonNull(networkFirewallPolicyId);
+            if (networkFirewallPolicyId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem", "networkFirewallPolicyId");
+            }
+            this.networkFirewallPolicyId = networkFirewallPolicyId;
             return this;
         }
         @CustomType.Setter
         public Builder parentResourceId(String parentResourceId) {
-            this.parentResourceId = Objects.requireNonNull(parentResourceId);
+            if (parentResourceId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem", "parentResourceId");
+            }
+            this.parentResourceId = parentResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder totalUrls(Integer totalUrls) {
-            this.totalUrls = Objects.requireNonNull(totalUrls);
+            if (totalUrls == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem", "totalUrls");
+            }
+            this.totalUrls = totalUrls;
             return this;
         }
         @CustomType.Setter
         public Builder urls(List<GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrl> urls) {
-            this.urls = Objects.requireNonNull(urls);
+            if (urls == null) {
+              throw new MissingRequiredPropertyException("GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItem", "urls");
+            }
+            this.urls = urls;
             return this;
         }
         public Builder urls(GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrl... urls) {

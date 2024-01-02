@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -57,12 +58,18 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder lockDate(String lockDate) {
-            this.lockDate = Objects.requireNonNull(lockDate);
+            if (lockDate == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked", "lockDate");
+            }
+            this.lockDate = lockDate;
             return this;
         }
         @CustomType.Setter
         public Builder on(Boolean on) {
-            this.on = Objects.requireNonNull(on);
+            if (on == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked", "on");
+            }
+            this.on = on;
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked build() {

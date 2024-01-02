@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetRouteTablesFilter;
 import com.pulumi.oci.Core.outputs.GetRouteTablesRouteTable;
 import java.lang.String;
@@ -123,16 +124,21 @@ public final class GetRouteTablesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRouteTablesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -141,12 +147,18 @@ public final class GetRouteTablesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder routeTables(List<GetRouteTablesRouteTable> routeTables) {
-            this.routeTables = Objects.requireNonNull(routeTables);
+            if (routeTables == null) {
+              throw new MissingRequiredPropertyException("GetRouteTablesResult", "routeTables");
+            }
+            this.routeTables = routeTables;
             return this;
         }
         public Builder routeTables(GetRouteTablesRouteTable... routeTables) {
@@ -154,11 +166,13 @@ public final class GetRouteTablesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder vcnId(@Nullable String vcnId) {
+
             this.vcnId = vcnId;
             return this;
         }

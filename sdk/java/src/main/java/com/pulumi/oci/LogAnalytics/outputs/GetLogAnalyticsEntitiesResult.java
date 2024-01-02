@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesFilter;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollection;
 import java.lang.String;
@@ -195,16 +196,21 @@ public final class GetLogAnalyticsEntitiesResult {
 
         @CustomType.Setter
         public Builder cloudResourceId(@Nullable String cloudResourceId) {
+
             this.cloudResourceId = cloudResourceId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder entityTypeNames(@Nullable List<String> entityTypeNames) {
+
             this.entityTypeNames = entityTypeNames;
             return this;
         }
@@ -213,6 +219,7 @@ public final class GetLogAnalyticsEntitiesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLogAnalyticsEntitiesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -221,32 +228,42 @@ public final class GetLogAnalyticsEntitiesResult {
         }
         @CustomType.Setter
         public Builder hostname(@Nullable String hostname) {
+
             this.hostname = hostname;
             return this;
         }
         @CustomType.Setter
         public Builder hostnameContains(@Nullable String hostnameContains) {
+
             this.hostnameContains = hostnameContains;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isManagementAgentIdNull(@Nullable String isManagementAgentIdNull) {
+
             this.isManagementAgentIdNull = isManagementAgentIdNull;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetailsContains(@Nullable String lifecycleDetailsContains) {
+
             this.lifecycleDetailsContains = lifecycleDetailsContains;
             return this;
         }
         @CustomType.Setter
         public Builder logAnalyticsEntityCollections(List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollection> logAnalyticsEntityCollections) {
-            this.logAnalyticsEntityCollections = Objects.requireNonNull(logAnalyticsEntityCollections);
+            if (logAnalyticsEntityCollections == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesResult", "logAnalyticsEntityCollections");
+            }
+            this.logAnalyticsEntityCollections = logAnalyticsEntityCollections;
             return this;
         }
         public Builder logAnalyticsEntityCollections(GetLogAnalyticsEntitiesLogAnalyticsEntityCollection... logAnalyticsEntityCollections) {
@@ -254,26 +271,33 @@ public final class GetLogAnalyticsEntitiesResult {
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder nameContains(@Nullable String nameContains) {
+
             this.nameContains = nameContains;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetLogAnalyticsEntitiesResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder sourceId(@Nullable String sourceId) {
+
             this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

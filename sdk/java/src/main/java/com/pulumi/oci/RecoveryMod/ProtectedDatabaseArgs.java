@@ -5,6 +5,7 @@ package com.pulumi.oci.RecoveryMod;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.RecoveryMod.inputs.ProtectedDatabaseRecoveryServiceSubnetArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -461,12 +462,24 @@ public final class ProtectedDatabaseArgs extends com.pulumi.resources.ResourceAr
         }
 
         public ProtectedDatabaseArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.dbUniqueName = Objects.requireNonNull($.dbUniqueName, "expected parameter 'dbUniqueName' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.password = Objects.requireNonNull($.password, "expected parameter 'password' to be non-null");
-            $.protectionPolicyId = Objects.requireNonNull($.protectionPolicyId, "expected parameter 'protectionPolicyId' to be non-null");
-            $.recoveryServiceSubnets = Objects.requireNonNull($.recoveryServiceSubnets, "expected parameter 'recoveryServiceSubnets' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ProtectedDatabaseArgs", "compartmentId");
+            }
+            if ($.dbUniqueName == null) {
+                throw new MissingRequiredPropertyException("ProtectedDatabaseArgs", "dbUniqueName");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ProtectedDatabaseArgs", "displayName");
+            }
+            if ($.password == null) {
+                throw new MissingRequiredPropertyException("ProtectedDatabaseArgs", "password");
+            }
+            if ($.protectionPolicyId == null) {
+                throw new MissingRequiredPropertyException("ProtectedDatabaseArgs", "protectionPolicyId");
+            }
+            if ($.recoveryServiceSubnets == null) {
+                throw new MissingRequiredPropertyException("ProtectedDatabaseArgs", "recoveryServiceSubnets");
+            }
             return $;
         }
     }

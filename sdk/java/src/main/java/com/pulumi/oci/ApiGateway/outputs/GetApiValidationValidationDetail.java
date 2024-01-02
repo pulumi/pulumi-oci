@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetApiValidationValidationDetailSrc;
 import java.lang.String;
 import java.util.List;
@@ -72,17 +73,26 @@ public final class GetApiValidationValidationDetail {
 
         @CustomType.Setter
         public Builder msg(String msg) {
-            this.msg = Objects.requireNonNull(msg);
+            if (msg == null) {
+              throw new MissingRequiredPropertyException("GetApiValidationValidationDetail", "msg");
+            }
+            this.msg = msg;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetApiValidationValidationDetail", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder srcs(List<GetApiValidationValidationDetailSrc> srcs) {
-            this.srcs = Objects.requireNonNull(srcs);
+            if (srcs == null) {
+              throw new MissingRequiredPropertyException("GetApiValidationValidationDetail", "srcs");
+            }
+            this.srcs = srcs;
             return this;
         }
         public Builder srcs(GetApiValidationValidationDetailSrc... srcs) {

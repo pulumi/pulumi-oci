@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.inputs.GetMediaWorkflowJobFactsFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetMediaWorkflowJobFactsPlainArgs extends com.pulumi.resource
         }
 
         public GetMediaWorkflowJobFactsPlainArgs build() {
-            $.mediaWorkflowJobId = Objects.requireNonNull($.mediaWorkflowJobId, "expected parameter 'mediaWorkflowJobId' to be non-null");
+            if ($.mediaWorkflowJobId == null) {
+                throw new MissingRequiredPropertyException("GetMediaWorkflowJobFactsPlainArgs", "mediaWorkflowJobId");
+            }
             return $;
         }
     }

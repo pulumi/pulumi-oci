@@ -36,6 +36,7 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterExcludeFileFilte
 
         @CustomType.Setter
         public Builder filePaths(@Nullable List<String> filePaths) {
+
             this.filePaths = filePaths;
             return this;
         }

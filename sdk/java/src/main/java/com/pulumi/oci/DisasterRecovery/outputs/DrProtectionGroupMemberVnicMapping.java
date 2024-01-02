@@ -101,6 +101,7 @@ public final class DrProtectionGroupMemberVnicMapping {
 
         @CustomType.Setter
         public Builder destinationNsgIdLists(@Nullable List<String> destinationNsgIdLists) {
+
             this.destinationNsgIdLists = destinationNsgIdLists;
             return this;
         }
@@ -109,21 +110,25 @@ public final class DrProtectionGroupMemberVnicMapping {
         }
         @CustomType.Setter
         public Builder destinationPrimaryPrivateIpAddress(@Nullable String destinationPrimaryPrivateIpAddress) {
+
             this.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
             return this;
         }
         @CustomType.Setter
         public Builder destinationPrimaryPrivateIpHostnameLabel(@Nullable String destinationPrimaryPrivateIpHostnameLabel) {
+
             this.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
             return this;
         }
         @CustomType.Setter
         public Builder destinationSubnetId(@Nullable String destinationSubnetId) {
+
             this.destinationSubnetId = destinationSubnetId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceVnicId(@Nullable String sourceVnicId) {
+
             this.sourceVnicId = sourceVnicId;
             return this;
         }

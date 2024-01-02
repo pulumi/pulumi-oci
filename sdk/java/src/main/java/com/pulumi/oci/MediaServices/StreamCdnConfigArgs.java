@@ -5,6 +5,7 @@ package com.pulumi.oci.MediaServices;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.inputs.StreamCdnConfigConfigArgs;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -277,9 +278,15 @@ public final class StreamCdnConfigArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public StreamCdnConfigArgs build() {
-            $.config = Objects.requireNonNull($.config, "expected parameter 'config' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.distributionChannelId = Objects.requireNonNull($.distributionChannelId, "expected parameter 'distributionChannelId' to be non-null");
+            if ($.config == null) {
+                throw new MissingRequiredPropertyException("StreamCdnConfigArgs", "config");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("StreamCdnConfigArgs", "displayName");
+            }
+            if ($.distributionChannelId == null) {
+                throw new MissingRequiredPropertyException("StreamCdnConfigArgs", "distributionChannelId");
+            }
             return $;
         }
     }

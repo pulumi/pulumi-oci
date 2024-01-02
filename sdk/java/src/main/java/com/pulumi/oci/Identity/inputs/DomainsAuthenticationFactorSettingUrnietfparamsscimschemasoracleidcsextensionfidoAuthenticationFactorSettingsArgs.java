@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -808,14 +809,30 @@ public final class DomainsAuthenticationFactorSettingUrnietfparamsscimschemasora
         }
 
         public DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs build() {
-            $.attestation = Objects.requireNonNull($.attestation, "expected parameter 'attestation' to be non-null");
-            $.authenticatorSelectionAttachment = Objects.requireNonNull($.authenticatorSelectionAttachment, "expected parameter 'authenticatorSelectionAttachment' to be non-null");
-            $.authenticatorSelectionRequireResidentKey = Objects.requireNonNull($.authenticatorSelectionRequireResidentKey, "expected parameter 'authenticatorSelectionRequireResidentKey' to be non-null");
-            $.authenticatorSelectionResidentKey = Objects.requireNonNull($.authenticatorSelectionResidentKey, "expected parameter 'authenticatorSelectionResidentKey' to be non-null");
-            $.authenticatorSelectionUserVerification = Objects.requireNonNull($.authenticatorSelectionUserVerification, "expected parameter 'authenticatorSelectionUserVerification' to be non-null");
-            $.excludeCredentials = Objects.requireNonNull($.excludeCredentials, "expected parameter 'excludeCredentials' to be non-null");
-            $.publicKeyTypes = Objects.requireNonNull($.publicKeyTypes, "expected parameter 'publicKeyTypes' to be non-null");
-            $.timeout = Objects.requireNonNull($.timeout, "expected parameter 'timeout' to be non-null");
+            if ($.attestation == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs", "attestation");
+            }
+            if ($.authenticatorSelectionAttachment == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs", "authenticatorSelectionAttachment");
+            }
+            if ($.authenticatorSelectionRequireResidentKey == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs", "authenticatorSelectionRequireResidentKey");
+            }
+            if ($.authenticatorSelectionResidentKey == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs", "authenticatorSelectionResidentKey");
+            }
+            if ($.authenticatorSelectionUserVerification == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs", "authenticatorSelectionUserVerification");
+            }
+            if ($.excludeCredentials == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs", "excludeCredentials");
+            }
+            if ($.publicKeyTypes == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs", "publicKeyTypes");
+            }
+            if ($.timeout == null) {
+                throw new MissingRequiredPropertyException("DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs", "timeout");
+            }
             return $;
         }
     }

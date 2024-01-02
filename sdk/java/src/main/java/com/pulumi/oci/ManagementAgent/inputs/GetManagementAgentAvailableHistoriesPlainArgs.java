@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,7 +139,9 @@ public final class GetManagementAgentAvailableHistoriesPlainArgs extends com.pul
         }
 
         public GetManagementAgentAvailableHistoriesPlainArgs build() {
-            $.managementAgentId = Objects.requireNonNull($.managementAgentId, "expected parameter 'managementAgentId' to be non-null");
+            if ($.managementAgentId == null) {
+                throw new MissingRequiredPropertyException("GetManagementAgentAvailableHistoriesPlainArgs", "managementAgentId");
+            }
             return $;
         }
     }

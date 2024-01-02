@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail;
 import java.lang.String;
 import java.util.List;
@@ -128,27 +129,42 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
 
         @CustomType.Setter
         public Builder bootVolumeId(String bootVolumeId) {
-            this.bootVolumeId = Objects.requireNonNull(bootVolumeId);
+            if (bootVolumeId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail", "bootVolumeId");
+            }
+            this.bootVolumeId = bootVolumeId;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeSizeInGbs(String bootVolumeSizeInGbs) {
-            this.bootVolumeSizeInGbs = Objects.requireNonNull(bootVolumeSizeInGbs);
+            if (bootVolumeSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail", "bootVolumeSizeInGbs");
+            }
+            this.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
         public Builder bootVolumeVpusPerGb(String bootVolumeVpusPerGb) {
-            this.bootVolumeVpusPerGb = Objects.requireNonNull(bootVolumeVpusPerGb);
+            if (bootVolumeVpusPerGb == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail", "bootVolumeVpusPerGb");
+            }
+            this.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
             return this;
         }
         @CustomType.Setter
         public Builder imageId(String imageId) {
-            this.imageId = Objects.requireNonNull(imageId);
+            if (imageId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail", "imageId");
+            }
+            this.imageId = imageId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceSourceImageFilterDetails(List<GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail> instanceSourceImageFilterDetails) {
-            this.instanceSourceImageFilterDetails = Objects.requireNonNull(instanceSourceImageFilterDetails);
+            if (instanceSourceImageFilterDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail", "instanceSourceImageFilterDetails");
+            }
+            this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
             return this;
         }
         public Builder instanceSourceImageFilterDetails(GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetail... instanceSourceImageFilterDetails) {
@@ -156,12 +172,18 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetai
         }
         @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+            if (kmsKeyId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail", "kmsKeyId");
+            }
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder sourceType(String sourceType) {
-            this.sourceType = Objects.requireNonNull(sourceType);
+            if (sourceType == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail", "sourceType");
+            }
+            this.sourceType = sourceType;
             return this;
         }
         public GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetail build() {

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs;
 import com.pulumi.oci.Database.inputs.ExadataInfrastructureStorageMaintenanceWindowMonthArgs;
 import java.lang.Integer;
@@ -161,7 +162,9 @@ public final class ExadataInfrastructureStorageMaintenanceWindowArgs extends com
         }
 
         public ExadataInfrastructureStorageMaintenanceWindowArgs build() {
-            $.preference = Objects.requireNonNull($.preference, "expected parameter 'preference' to be non-null");
+            if ($.preference == null) {
+                throw new MissingRequiredPropertyException("ExadataInfrastructureStorageMaintenanceWindowArgs", "preference");
+            }
             return $;
         }
     }

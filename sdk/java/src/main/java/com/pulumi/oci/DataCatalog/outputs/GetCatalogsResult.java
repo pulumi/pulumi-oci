@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogsCatalog;
 import com.pulumi.oci.DataCatalog.outputs.GetCatalogsFilter;
 import java.lang.String;
@@ -109,7 +110,10 @@ public final class GetCatalogsResult {
 
         @CustomType.Setter
         public Builder catalogs(List<GetCatalogsCatalog> catalogs) {
-            this.catalogs = Objects.requireNonNull(catalogs);
+            if (catalogs == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsResult", "catalogs");
+            }
+            this.catalogs = catalogs;
             return this;
         }
         public Builder catalogs(GetCatalogsCatalog... catalogs) {
@@ -117,16 +121,21 @@ public final class GetCatalogsResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCatalogsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -135,11 +144,15 @@ public final class GetCatalogsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCatalogsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

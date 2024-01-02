@@ -5,6 +5,7 @@ package com.pulumi.oci.DisasterRecovery.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackendSetMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeOperationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberExportMappingArgs;
@@ -772,8 +773,12 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         public DrProtectionGroupMemberArgs build() {
-            $.memberId = Objects.requireNonNull($.memberId, "expected parameter 'memberId' to be non-null");
-            $.memberType = Objects.requireNonNull($.memberType, "expected parameter 'memberType' to be non-null");
+            if ($.memberId == null) {
+                throw new MissingRequiredPropertyException("DrProtectionGroupMemberArgs", "memberId");
+            }
+            if ($.memberType == null) {
+                throw new MissingRequiredPropertyException("DrProtectionGroupMemberArgs", "memberType");
+            }
             return $;
         }
     }

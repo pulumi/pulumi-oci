@@ -44,6 +44,7 @@ public final class BuildRunBuildOutputArtifactOverrideParameter {
 
         @CustomType.Setter
         public Builder items(@Nullable List<BuildRunBuildOutputArtifactOverrideParameterItem> items) {
+
             this.items = items;
             return this;
         }

@@ -5,6 +5,7 @@ package com.pulumi.oci.Dns.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Dns.inputs.SteeringPolicyRuleCaseArgs;
 import com.pulumi.oci.Dns.inputs.SteeringPolicyRuleDefaultAnswerDataArgs;
 import java.lang.Integer;
@@ -248,7 +249,9 @@ public final class SteeringPolicyRuleArgs extends com.pulumi.resources.ResourceA
         }
 
         public SteeringPolicyRuleArgs build() {
-            $.ruleType = Objects.requireNonNull($.ruleType, "expected parameter 'ruleType' to be non-null");
+            if ($.ruleType == null) {
+                throw new MissingRequiredPropertyException("SteeringPolicyRuleArgs", "ruleType");
+            }
             return $;
         }
     }

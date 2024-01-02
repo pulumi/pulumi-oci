@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsDomain;
 import com.pulumi.oci.Identity.outputs.GetDomainsFilter;
 import java.lang.Boolean;
@@ -186,17 +187,24 @@ public final class GetDomainsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder domains(List<GetDomainsDomain> domains) {
-            this.domains = Objects.requireNonNull(domains);
+            if (domains == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResult", "domains");
+            }
+            this.domains = domains;
             return this;
         }
         public Builder domains(GetDomainsDomain... domains) {
@@ -204,6 +212,7 @@ public final class GetDomainsResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDomainsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -212,41 +221,51 @@ public final class GetDomainsResult {
         }
         @CustomType.Setter
         public Builder homeRegionUrl(@Nullable String homeRegionUrl) {
+
             this.homeRegionUrl = homeRegionUrl;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDomainsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isHiddenOnLogin(@Nullable Boolean isHiddenOnLogin) {
+
             this.isHiddenOnLogin = isHiddenOnLogin;
             return this;
         }
         @CustomType.Setter
         public Builder licenseType(@Nullable String licenseType) {
+
             this.licenseType = licenseType;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder url(@Nullable String url) {
+
             this.url = url;
             return this;
         }

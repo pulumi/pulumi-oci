@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -98,27 +99,42 @@ public final class GetFleetExportStatusResult {
 
         @CustomType.Setter
         public Builder fleetId(String fleetId) {
-            this.fleetId = Objects.requireNonNull(fleetId);
+            if (fleetId == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportStatusResult", "fleetId");
+            }
+            this.fleetId = fleetId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportStatusResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder latestRunStatus(String latestRunStatus) {
-            this.latestRunStatus = Objects.requireNonNull(latestRunStatus);
+            if (latestRunStatus == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportStatusResult", "latestRunStatus");
+            }
+            this.latestRunStatus = latestRunStatus;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastRun(String timeLastRun) {
-            this.timeLastRun = Objects.requireNonNull(timeLastRun);
+            if (timeLastRun == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportStatusResult", "timeLastRun");
+            }
+            this.timeLastRun = timeLastRun;
             return this;
         }
         @CustomType.Setter
         public Builder timeNextRun(String timeNextRun) {
-            this.timeNextRun = Objects.requireNonNull(timeNextRun);
+            if (timeNextRun == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportStatusResult", "timeNextRun");
+            }
+            this.timeNextRun = timeNextRun;
             return this;
         }
         public GetFleetExportStatusResult build() {

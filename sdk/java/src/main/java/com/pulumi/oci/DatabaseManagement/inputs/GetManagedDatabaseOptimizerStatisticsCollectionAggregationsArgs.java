@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -265,8 +266,12 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsAr
         }
 
         public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs build() {
-            $.groupType = Objects.requireNonNull($.groupType, "expected parameter 'groupType' to be non-null");
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
+            if ($.groupType == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs", "groupType");
+            }
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs", "managedDatabaseId");
+            }
             return $;
         }
     }

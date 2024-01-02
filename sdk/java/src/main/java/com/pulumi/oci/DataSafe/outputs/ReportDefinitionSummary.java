@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -122,31 +123,41 @@ public final class ReportDefinitionSummary {
 
         @CustomType.Setter
         public Builder countOf(@Nullable String countOf) {
+
             this.countOf = countOf;
             return this;
         }
         @CustomType.Setter
         public Builder displayOrder(Integer displayOrder) {
-            this.displayOrder = Objects.requireNonNull(displayOrder);
+            if (displayOrder == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionSummary", "displayOrder");
+            }
+            this.displayOrder = displayOrder;
             return this;
         }
         @CustomType.Setter
         public Builder groupByFieldName(@Nullable String groupByFieldName) {
+
             this.groupByFieldName = groupByFieldName;
             return this;
         }
         @CustomType.Setter
         public Builder isHidden(@Nullable Boolean isHidden) {
+
             this.isHidden = isHidden;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("ReportDefinitionSummary", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder scimFilter(@Nullable String scimFilter) {
+
             this.scimFilter = scimFilter;
             return this;
         }

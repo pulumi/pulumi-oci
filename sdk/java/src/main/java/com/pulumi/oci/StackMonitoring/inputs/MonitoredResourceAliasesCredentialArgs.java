@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -148,9 +149,15 @@ public final class MonitoredResourceAliasesCredentialArgs extends com.pulumi.res
         }
 
         public MonitoredResourceAliasesCredentialArgs build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.service = Objects.requireNonNull($.service, "expected parameter 'service' to be non-null");
-            $.source = Objects.requireNonNull($.source, "expected parameter 'source' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceAliasesCredentialArgs", "name");
+            }
+            if ($.service == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceAliasesCredentialArgs", "service");
+            }
+            if ($.source == null) {
+                throw new MissingRequiredPropertyException("MonitoredResourceAliasesCredentialArgs", "source");
+            }
             return $;
         }
     }

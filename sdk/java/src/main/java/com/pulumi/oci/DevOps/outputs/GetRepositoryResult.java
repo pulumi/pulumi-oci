@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryMirrorRepositoryConfig;
 import java.lang.Integer;
 import java.lang.Object;
@@ -368,36 +369,55 @@ public final class GetRepositoryResult {
 
         @CustomType.Setter
         public Builder branchCount(Integer branchCount) {
-            this.branchCount = Objects.requireNonNull(branchCount);
+            if (branchCount == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "branchCount");
+            }
+            this.branchCount = branchCount;
             return this;
         }
         @CustomType.Setter
         public Builder commitCount(Integer commitCount) {
-            this.commitCount = Objects.requireNonNull(commitCount);
+            if (commitCount == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "commitCount");
+            }
+            this.commitCount = commitCount;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder defaultBranch(String defaultBranch) {
-            this.defaultBranch = Objects.requireNonNull(defaultBranch);
+            if (defaultBranch == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "defaultBranch");
+            }
+            this.defaultBranch = defaultBranch;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder fields(@Nullable List<String> fields) {
+
             this.fields = fields;
             return this;
         }
@@ -406,27 +426,42 @@ public final class GetRepositoryResult {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder httpUrl(String httpUrl) {
-            this.httpUrl = Objects.requireNonNull(httpUrl);
+            if (httpUrl == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "httpUrl");
+            }
+            this.httpUrl = httpUrl;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecyleDetails(String lifecyleDetails) {
-            this.lifecyleDetails = Objects.requireNonNull(lifecyleDetails);
+            if (lifecyleDetails == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "lifecyleDetails");
+            }
+            this.lifecyleDetails = lifecyleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder mirrorRepositoryConfigs(List<GetRepositoryMirrorRepositoryConfig> mirrorRepositoryConfigs) {
-            this.mirrorRepositoryConfigs = Objects.requireNonNull(mirrorRepositoryConfigs);
+            if (mirrorRepositoryConfigs == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "mirrorRepositoryConfigs");
+            }
+            this.mirrorRepositoryConfigs = mirrorRepositoryConfigs;
             return this;
         }
         public Builder mirrorRepositoryConfigs(GetRepositoryMirrorRepositoryConfig... mirrorRepositoryConfigs) {
@@ -434,67 +469,106 @@ public final class GetRepositoryResult {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "namespace");
+            }
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
         public Builder projectId(String projectId) {
-            this.projectId = Objects.requireNonNull(projectId);
+            if (projectId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "projectId");
+            }
+            this.projectId = projectId;
             return this;
         }
         @CustomType.Setter
         public Builder projectName(String projectName) {
-            this.projectName = Objects.requireNonNull(projectName);
+            if (projectName == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "projectName");
+            }
+            this.projectName = projectName;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryId(String repositoryId) {
-            this.repositoryId = Objects.requireNonNull(repositoryId);
+            if (repositoryId == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "repositoryId");
+            }
+            this.repositoryId = repositoryId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryType(String repositoryType) {
-            this.repositoryType = Objects.requireNonNull(repositoryType);
+            if (repositoryType == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "repositoryType");
+            }
+            this.repositoryType = repositoryType;
             return this;
         }
         @CustomType.Setter
         public Builder sizeInBytes(String sizeInBytes) {
-            this.sizeInBytes = Objects.requireNonNull(sizeInBytes);
+            if (sizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "sizeInBytes");
+            }
+            this.sizeInBytes = sizeInBytes;
             return this;
         }
         @CustomType.Setter
         public Builder sshUrl(String sshUrl) {
-            this.sshUrl = Objects.requireNonNull(sshUrl);
+            if (sshUrl == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "sshUrl");
+            }
+            this.sshUrl = sshUrl;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder triggerBuildEvents(List<String> triggerBuildEvents) {
-            this.triggerBuildEvents = Objects.requireNonNull(triggerBuildEvents);
+            if (triggerBuildEvents == null) {
+              throw new MissingRequiredPropertyException("GetRepositoryResult", "triggerBuildEvents");
+            }
+            this.triggerBuildEvents = triggerBuildEvents;
             return this;
         }
         public Builder triggerBuildEvents(String... triggerBuildEvents) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsFilter;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsMountTarget;
 import java.lang.String;
@@ -137,26 +138,35 @@ public final class GetMountTargetsResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsResult", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder exportSetId(@Nullable String exportSetId) {
+
             this.exportSetId = exportSetId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMountTargetsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -165,12 +175,16 @@ public final class GetMountTargetsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder mountTargets(List<GetMountTargetsMountTarget> mountTargets) {
-            this.mountTargets = Objects.requireNonNull(mountTargets);
+            if (mountTargets == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsResult", "mountTargets");
+            }
+            this.mountTargets = mountTargets;
             return this;
         }
         public Builder mountTargets(GetMountTargetsMountTarget... mountTargets) {
@@ -178,6 +192,7 @@ public final class GetMountTargetsResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

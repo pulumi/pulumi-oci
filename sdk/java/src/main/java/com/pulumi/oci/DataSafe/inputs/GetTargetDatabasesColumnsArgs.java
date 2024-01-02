@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabasesColumnsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -398,7 +399,9 @@ public final class GetTargetDatabasesColumnsArgs extends com.pulumi.resources.In
         }
 
         public GetTargetDatabasesColumnsArgs build() {
-            $.targetDatabaseId = Objects.requireNonNull($.targetDatabaseId, "expected parameter 'targetDatabaseId' to be non-null");
+            if ($.targetDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetTargetDatabasesColumnsArgs", "targetDatabaseId");
+            }
             return $;
         }
     }

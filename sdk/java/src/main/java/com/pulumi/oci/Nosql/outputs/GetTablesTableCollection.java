@@ -4,6 +4,7 @@
 package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionReplica;
 import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionSchema;
 import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionTableLimit;
@@ -270,57 +271,90 @@ public final class GetTablesTableCollection {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder ddlStatement(String ddlStatement) {
-            this.ddlStatement = Objects.requireNonNull(ddlStatement);
+            if (ddlStatement == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "ddlStatement");
+            }
+            this.ddlStatement = ddlStatement;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
-            this.isAutoReclaimable = Objects.requireNonNull(isAutoReclaimable);
+            if (isAutoReclaimable == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "isAutoReclaimable");
+            }
+            this.isAutoReclaimable = isAutoReclaimable;
             return this;
         }
         @CustomType.Setter
         public Builder isMultiRegion(Boolean isMultiRegion) {
-            this.isMultiRegion = Objects.requireNonNull(isMultiRegion);
+            if (isMultiRegion == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "isMultiRegion");
+            }
+            this.isMultiRegion = isMultiRegion;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder localReplicaInitializationInPercent(Integer localReplicaInitializationInPercent) {
-            this.localReplicaInitializationInPercent = Objects.requireNonNull(localReplicaInitializationInPercent);
+            if (localReplicaInitializationInPercent == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "localReplicaInitializationInPercent");
+            }
+            this.localReplicaInitializationInPercent = localReplicaInitializationInPercent;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder replicas(List<GetTablesTableCollectionReplica> replicas) {
-            this.replicas = Objects.requireNonNull(replicas);
+            if (replicas == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "replicas");
+            }
+            this.replicas = replicas;
             return this;
         }
         public Builder replicas(GetTablesTableCollectionReplica... replicas) {
@@ -328,12 +362,18 @@ public final class GetTablesTableCollection {
         }
         @CustomType.Setter
         public Builder schemaState(String schemaState) {
-            this.schemaState = Objects.requireNonNull(schemaState);
+            if (schemaState == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "schemaState");
+            }
+            this.schemaState = schemaState;
             return this;
         }
         @CustomType.Setter
         public Builder schemas(List<GetTablesTableCollectionSchema> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+            if (schemas == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "schemas");
+            }
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(GetTablesTableCollectionSchema... schemas) {
@@ -341,17 +381,26 @@ public final class GetTablesTableCollection {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder tableLimits(List<GetTablesTableCollectionTableLimit> tableLimits) {
-            this.tableLimits = Objects.requireNonNull(tableLimits);
+            if (tableLimits == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "tableLimits");
+            }
+            this.tableLimits = tableLimits;
             return this;
         }
         public Builder tableLimits(GetTablesTableCollectionTableLimit... tableLimits) {
@@ -359,17 +408,26 @@ public final class GetTablesTableCollection {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfExpiration(String timeOfExpiration) {
-            this.timeOfExpiration = Objects.requireNonNull(timeOfExpiration);
+            if (timeOfExpiration == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "timeOfExpiration");
+            }
+            this.timeOfExpiration = timeOfExpiration;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetTablesTableCollection", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetTablesTableCollection build() {

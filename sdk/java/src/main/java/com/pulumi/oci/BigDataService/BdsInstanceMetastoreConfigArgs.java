@@ -5,6 +5,7 @@ package com.pulumi.oci.BigDataService;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -311,11 +312,21 @@ public final class BdsInstanceMetastoreConfigArgs extends com.pulumi.resources.R
         }
 
         public BdsInstanceMetastoreConfigArgs build() {
-            $.bdsApiKeyId = Objects.requireNonNull($.bdsApiKeyId, "expected parameter 'bdsApiKeyId' to be non-null");
-            $.bdsApiKeyPassphrase = Objects.requireNonNull($.bdsApiKeyPassphrase, "expected parameter 'bdsApiKeyPassphrase' to be non-null");
-            $.bdsInstanceId = Objects.requireNonNull($.bdsInstanceId, "expected parameter 'bdsInstanceId' to be non-null");
-            $.clusterAdminPassword = Objects.requireNonNull($.clusterAdminPassword, "expected parameter 'clusterAdminPassword' to be non-null");
-            $.metastoreId = Objects.requireNonNull($.metastoreId, "expected parameter 'metastoreId' to be non-null");
+            if ($.bdsApiKeyId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceMetastoreConfigArgs", "bdsApiKeyId");
+            }
+            if ($.bdsApiKeyPassphrase == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceMetastoreConfigArgs", "bdsApiKeyPassphrase");
+            }
+            if ($.bdsInstanceId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceMetastoreConfigArgs", "bdsInstanceId");
+            }
+            if ($.clusterAdminPassword == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceMetastoreConfigArgs", "clusterAdminPassword");
+            }
+            if ($.metastoreId == null) {
+                throw new MissingRequiredPropertyException("BdsInstanceMetastoreConfigArgs", "metastoreId");
+            }
             return $;
         }
     }

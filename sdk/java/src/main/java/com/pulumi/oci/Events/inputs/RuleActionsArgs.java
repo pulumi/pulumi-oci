@@ -5,6 +5,7 @@ package com.pulumi.oci.Events.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Events.inputs.RuleActionsActionArgs;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,9 @@ public final class RuleActionsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RuleActionsArgs build() {
-            $.actions = Objects.requireNonNull($.actions, "expected parameter 'actions' to be non-null");
+            if ($.actions == null) {
+                throw new MissingRequiredPropertyException("RuleActionsArgs", "actions");
+            }
             return $;
         }
     }

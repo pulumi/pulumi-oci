@@ -4,6 +4,7 @@
 package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetCertificateAuthorityCurrentVersionValidity {
 
         @CustomType.Setter
         public Builder timeOfValidityNotAfter(String timeOfValidityNotAfter) {
-            this.timeOfValidityNotAfter = Objects.requireNonNull(timeOfValidityNotAfter);
+            if (timeOfValidityNotAfter == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersionValidity", "timeOfValidityNotAfter");
+            }
+            this.timeOfValidityNotAfter = timeOfValidityNotAfter;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfValidityNotBefore(String timeOfValidityNotBefore) {
-            this.timeOfValidityNotBefore = Objects.requireNonNull(timeOfValidityNotBefore);
+            if (timeOfValidityNotBefore == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityCurrentVersionValidity", "timeOfValidityNotBefore");
+            }
+            this.timeOfValidityNotBefore = timeOfValidityNotBefore;
             return this;
         }
         public GetCertificateAuthorityCurrentVersionValidity build() {

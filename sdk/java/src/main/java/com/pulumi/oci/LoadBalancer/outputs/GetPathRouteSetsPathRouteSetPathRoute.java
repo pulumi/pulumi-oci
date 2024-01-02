@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetPathRouteSetsPathRouteSetPathRoutePathMatchType;
 import java.lang.String;
 import java.util.Objects;
@@ -77,17 +78,26 @@ public final class GetPathRouteSetsPathRouteSetPathRoute {
 
         @CustomType.Setter
         public Builder backendSetName(String backendSetName) {
-            this.backendSetName = Objects.requireNonNull(backendSetName);
+            if (backendSetName == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsPathRouteSetPathRoute", "backendSetName");
+            }
+            this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder path(String path) {
-            this.path = Objects.requireNonNull(path);
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsPathRouteSetPathRoute", "path");
+            }
+            this.path = path;
             return this;
         }
         @CustomType.Setter
         public Builder pathMatchType(GetPathRouteSetsPathRouteSetPathRoutePathMatchType pathMatchType) {
-            this.pathMatchType = Objects.requireNonNull(pathMatchType);
+            if (pathMatchType == null) {
+              throw new MissingRequiredPropertyException("GetPathRouteSetsPathRouteSetPathRoute", "pathMatchType");
+            }
+            this.pathMatchType = pathMatchType;
             return this;
         }
         public GetPathRouteSetsPathRouteSetPathRoute build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetByoipRangeByoipRangeVcnIpv6allocation;
 import java.lang.Object;
 import java.lang.String;
@@ -256,12 +257,18 @@ public final class GetByoipRangeResult {
 
         @CustomType.Setter
         public Builder byoipRangeId(String byoipRangeId) {
-            this.byoipRangeId = Objects.requireNonNull(byoipRangeId);
+            if (byoipRangeId == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "byoipRangeId");
+            }
+            this.byoipRangeId = byoipRangeId;
             return this;
         }
         @CustomType.Setter
         public Builder byoipRangeVcnIpv6allocations(List<GetByoipRangeByoipRangeVcnIpv6allocation> byoipRangeVcnIpv6allocations) {
-            this.byoipRangeVcnIpv6allocations = Objects.requireNonNull(byoipRangeVcnIpv6allocations);
+            if (byoipRangeVcnIpv6allocations == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "byoipRangeVcnIpv6allocations");
+            }
+            this.byoipRangeVcnIpv6allocations = byoipRangeVcnIpv6allocations;
             return this;
         }
         public Builder byoipRangeVcnIpv6allocations(GetByoipRangeByoipRangeVcnIpv6allocation... byoipRangeVcnIpv6allocations) {
@@ -269,72 +276,114 @@ public final class GetByoipRangeResult {
         }
         @CustomType.Setter
         public Builder cidrBlock(String cidrBlock) {
-            this.cidrBlock = Objects.requireNonNull(cidrBlock);
+            if (cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "cidrBlock");
+            }
+            this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
-            this.ipv6cidrBlock = Objects.requireNonNull(ipv6cidrBlock);
+            if (ipv6cidrBlock == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "ipv6cidrBlock");
+            }
+            this.ipv6cidrBlock = ipv6cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeAdvertised(String timeAdvertised) {
-            this.timeAdvertised = Objects.requireNonNull(timeAdvertised);
+            if (timeAdvertised == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "timeAdvertised");
+            }
+            this.timeAdvertised = timeAdvertised;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeValidated(String timeValidated) {
-            this.timeValidated = Objects.requireNonNull(timeValidated);
+            if (timeValidated == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "timeValidated");
+            }
+            this.timeValidated = timeValidated;
             return this;
         }
         @CustomType.Setter
         public Builder timeWithdrawn(String timeWithdrawn) {
-            this.timeWithdrawn = Objects.requireNonNull(timeWithdrawn);
+            if (timeWithdrawn == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "timeWithdrawn");
+            }
+            this.timeWithdrawn = timeWithdrawn;
             return this;
         }
         @CustomType.Setter
         public Builder validationToken(String validationToken) {
-            this.validationToken = Objects.requireNonNull(validationToken);
+            if (validationToken == null) {
+              throw new MissingRequiredPropertyException("GetByoipRangeResult", "validationToken");
+            }
+            this.validationToken = validationToken;
             return this;
         }
         public GetByoipRangeResult build() {

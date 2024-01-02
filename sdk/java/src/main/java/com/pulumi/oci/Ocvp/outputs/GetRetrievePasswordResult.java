@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -70,22 +71,34 @@ public final class GetRetrievePasswordResult {
 
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRetrievePasswordResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder sddcId(String sddcId) {
-            this.sddcId = Objects.requireNonNull(sddcId);
+            if (sddcId == null) {
+              throw new MissingRequiredPropertyException("GetRetrievePasswordResult", "sddcId");
+            }
+            this.sddcId = sddcId;
             return this;
         }
         @CustomType.Setter
         public Builder sddcPassword(Map<String,Object> sddcPassword) {
-            this.sddcPassword = Objects.requireNonNull(sddcPassword);
+            if (sddcPassword == null) {
+              throw new MissingRequiredPropertyException("GetRetrievePasswordResult", "sddcPassword");
+            }
+            this.sddcPassword = sddcPassword;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetRetrievePasswordResult", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetRetrievePasswordResult build() {

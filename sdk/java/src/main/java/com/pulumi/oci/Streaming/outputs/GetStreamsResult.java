@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Streaming.outputs.GetStreamsFilter;
 import com.pulumi.oci.Streaming.outputs.GetStreamsStream;
 import java.lang.String;
@@ -123,11 +124,13 @@ public final class GetStreamsResult {
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetStreamsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -136,27 +139,34 @@ public final class GetStreamsResult {
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder streamPoolId(@Nullable String streamPoolId) {
+
             this.streamPoolId = streamPoolId;
             return this;
         }
         @CustomType.Setter
         public Builder streams(List<GetStreamsStream> streams) {
-            this.streams = Objects.requireNonNull(streams);
+            if (streams == null) {
+              throw new MissingRequiredPropertyException("GetStreamsResult", "streams");
+            }
+            this.streams = streams;
             return this;
         }
         public Builder streams(GetStreamsStream... streams) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentsAgentCollection;
 import com.pulumi.oci.CloudBridge.outputs.GetAgentsFilter;
 import java.lang.String;
@@ -137,7 +138,10 @@ public final class GetAgentsResult {
 
         @CustomType.Setter
         public Builder agentCollections(List<GetAgentsAgentCollection> agentCollections) {
-            this.agentCollections = Objects.requireNonNull(agentCollections);
+            if (agentCollections == null) {
+              throw new MissingRequiredPropertyException("GetAgentsResult", "agentCollections");
+            }
+            this.agentCollections = agentCollections;
             return this;
         }
         public Builder agentCollections(GetAgentsAgentCollection... agentCollections) {
@@ -145,26 +149,33 @@ public final class GetAgentsResult {
         }
         @CustomType.Setter
         public Builder agentId(@Nullable String agentId) {
+
             this.agentId = agentId;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAgentsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder environmentId(@Nullable String environmentId) {
+
             this.environmentId = environmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAgentsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -173,11 +184,15 @@ public final class GetAgentsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAgentsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetHistoriesHistoryCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,10 @@ public final class GetHistoriesHistoryCollection {
 
         @CustomType.Setter
         public Builder items(List<GetHistoriesHistoryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetHistoriesHistoryCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetHistoriesHistoryCollectionItem... items) {

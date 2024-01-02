@@ -4,6 +4,7 @@
 package com.pulumi.oci.LicenseManager.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LicenseManager.outputs.GetLicenseRecordsLicenseRecordCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetLicenseRecordsLicenseRecordCollection {
 
         @CustomType.Setter
         public Builder items(List<GetLicenseRecordsLicenseRecordCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetLicenseRecordsLicenseRecordCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetLicenseRecordsLicenseRecordCollectionItem... items) {

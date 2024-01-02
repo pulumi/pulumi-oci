@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -85,7 +86,10 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
 
         @CustomType.Setter
         public Builder computeInstanceIds(List<String> computeInstanceIds) {
-            this.computeInstanceIds = Objects.requireNonNull(computeInstanceIds);
+            if (computeInstanceIds == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem", "computeInstanceIds");
+            }
+            this.computeInstanceIds = computeInstanceIds;
             return this;
         }
         public Builder computeInstanceIds(String... computeInstanceIds) {
@@ -93,17 +97,26 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
         }
         @CustomType.Setter
         public Builder query(String query) {
-            this.query = Objects.requireNonNull(query);
+            if (query == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem", "query");
+            }
+            this.query = query;
             return this;
         }
         @CustomType.Setter
         public Builder region(String region) {
-            this.region = Objects.requireNonNull(region);
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem", "region");
+            }
+            this.region = region;
             return this;
         }
         @CustomType.Setter
         public Builder selectorType(String selectorType) {
-            this.selectorType = Objects.requireNonNull(selectorType);
+            if (selectorType == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem", "selectorType");
+            }
+            this.selectorType = selectorType;
             return this;
         }
         public GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem build() {

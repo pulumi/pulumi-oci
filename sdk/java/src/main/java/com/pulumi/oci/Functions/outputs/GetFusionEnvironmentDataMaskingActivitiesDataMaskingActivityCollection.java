@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityC
 
         @CustomType.Setter
         public Builder items(List<GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetFusionEnvironmentDataMaskingActivitiesDataMaskingActivityCollectionItem... items) {

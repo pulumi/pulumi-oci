@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudBridge;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -349,12 +350,24 @@ public final class AgentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public AgentArgs build() {
-            $.agentType = Objects.requireNonNull($.agentType, "expected parameter 'agentType' to be non-null");
-            $.agentVersion = Objects.requireNonNull($.agentVersion, "expected parameter 'agentVersion' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.environmentId = Objects.requireNonNull($.environmentId, "expected parameter 'environmentId' to be non-null");
-            $.osVersion = Objects.requireNonNull($.osVersion, "expected parameter 'osVersion' to be non-null");
+            if ($.agentType == null) {
+                throw new MissingRequiredPropertyException("AgentArgs", "agentType");
+            }
+            if ($.agentVersion == null) {
+                throw new MissingRequiredPropertyException("AgentArgs", "agentVersion");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("AgentArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AgentArgs", "displayName");
+            }
+            if ($.environmentId == null) {
+                throw new MissingRequiredPropertyException("AgentArgs", "environmentId");
+            }
+            if ($.osVersion == null) {
+                throw new MissingRequiredPropertyException("AgentArgs", "osVersion");
+            }
             return $;
         }
     }

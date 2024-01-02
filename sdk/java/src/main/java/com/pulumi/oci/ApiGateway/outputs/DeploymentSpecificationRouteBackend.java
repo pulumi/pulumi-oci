@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteBackendHeader;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteBackendRoutingBackend;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRouteBackendSelectionSource;
@@ -239,6 +240,7 @@ public final class DeploymentSpecificationRouteBackend {
 
         @CustomType.Setter
         public Builder allowedPostLogoutUris(@Nullable List<String> allowedPostLogoutUris) {
+
             this.allowedPostLogoutUris = allowedPostLogoutUris;
             return this;
         }
@@ -247,21 +249,25 @@ public final class DeploymentSpecificationRouteBackend {
         }
         @CustomType.Setter
         public Builder body(@Nullable String body) {
+
             this.body = body;
             return this;
         }
         @CustomType.Setter
         public Builder connectTimeoutInSeconds(@Nullable Double connectTimeoutInSeconds) {
+
             this.connectTimeoutInSeconds = connectTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
+
             this.functionId = functionId;
             return this;
         }
         @CustomType.Setter
         public Builder headers(@Nullable List<DeploymentSpecificationRouteBackendHeader> headers) {
+
             this.headers = headers;
             return this;
         }
@@ -270,21 +276,25 @@ public final class DeploymentSpecificationRouteBackend {
         }
         @CustomType.Setter
         public Builder isSslVerifyDisabled(@Nullable Boolean isSslVerifyDisabled) {
+
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             return this;
         }
         @CustomType.Setter
         public Builder postLogoutState(@Nullable String postLogoutState) {
+
             this.postLogoutState = postLogoutState;
             return this;
         }
         @CustomType.Setter
         public Builder readTimeoutInSeconds(@Nullable Double readTimeoutInSeconds) {
+
             this.readTimeoutInSeconds = readTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder routingBackends(@Nullable List<DeploymentSpecificationRouteBackendRoutingBackend> routingBackends) {
+
             this.routingBackends = routingBackends;
             return this;
         }
@@ -293,26 +303,33 @@ public final class DeploymentSpecificationRouteBackend {
         }
         @CustomType.Setter
         public Builder selectionSource(@Nullable DeploymentSpecificationRouteBackendSelectionSource selectionSource) {
+
             this.selectionSource = selectionSource;
             return this;
         }
         @CustomType.Setter
         public Builder sendTimeoutInSeconds(@Nullable Double sendTimeoutInSeconds) {
+
             this.sendTimeoutInSeconds = sendTimeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder status(@Nullable Integer status) {
+
             this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("DeploymentSpecificationRouteBackend", "type");
+            }
+            this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder url(@Nullable String url) {
+
             this.url = url;
             return this;
         }

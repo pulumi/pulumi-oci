@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class MetricExtensionQueryPropertiesOutParamDetailsArgs extends com
         }
 
         public MetricExtensionQueryPropertiesOutParamDetailsArgs build() {
-            $.outParamPosition = Objects.requireNonNull($.outParamPosition, "expected parameter 'outParamPosition' to be non-null");
-            $.outParamType = Objects.requireNonNull($.outParamType, "expected parameter 'outParamType' to be non-null");
+            if ($.outParamPosition == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionQueryPropertiesOutParamDetailsArgs", "outParamPosition");
+            }
+            if ($.outParamType == null) {
+                throw new MissingRequiredPropertyException("MetricExtensionQueryPropertiesOutParamDetailsArgs", "outParamType");
+            }
             return $;
         }
     }

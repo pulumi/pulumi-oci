@@ -5,6 +5,7 @@ package com.pulumi.oci.Waf.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyActionBodyArgs;
 import com.pulumi.oci.Waf.inputs.AppFirewallPolicyActionHeaderArgs;
 import java.lang.Integer;
@@ -352,8 +353,12 @@ public final class AppFirewallPolicyActionArgs extends com.pulumi.resources.Reso
         }
 
         public AppFirewallPolicyActionArgs build() {
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyActionArgs", "name");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("AppFirewallPolicyActionArgs", "type");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetAuditProfileAvailableAuditVolumeItem;
 import java.lang.String;
 import java.util.List;
@@ -106,17 +107,26 @@ public final class GetAuditProfileAvailableAuditVolumeResult {
 
         @CustomType.Setter
         public Builder auditProfileId(String auditProfileId) {
-            this.auditProfileId = Objects.requireNonNull(auditProfileId);
+            if (auditProfileId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumeResult", "auditProfileId");
+            }
+            this.auditProfileId = auditProfileId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumeResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetAuditProfileAvailableAuditVolumeItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumeResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAuditProfileAvailableAuditVolumeItem... items) {
@@ -124,22 +134,28 @@ public final class GetAuditProfileAvailableAuditVolumeResult {
         }
         @CustomType.Setter
         public Builder monthInConsiderationGreaterThan(@Nullable String monthInConsiderationGreaterThan) {
+
             this.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
             return this;
         }
         @CustomType.Setter
         public Builder monthInConsiderationLessThan(@Nullable String monthInConsiderationLessThan) {
+
             this.monthInConsiderationLessThan = monthInConsiderationLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder trailLocation(@Nullable String trailLocation) {
+
             this.trailLocation = trailLocation;
             return this;
         }
         @CustomType.Setter
         public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+            if (workRequestId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAvailableAuditVolumeResult", "workRequestId");
+            }
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetAuditProfileAvailableAuditVolumeResult build() {

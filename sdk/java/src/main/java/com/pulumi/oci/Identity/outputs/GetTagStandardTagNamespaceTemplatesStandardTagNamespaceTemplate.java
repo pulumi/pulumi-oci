@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTempla
 
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder standardTagNamespaceName(String standardTagNamespaceName) {
-            this.standardTagNamespaceName = Objects.requireNonNull(standardTagNamespaceName);
+            if (standardTagNamespaceName == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate", "standardTagNamespaceName");
+            }
+            this.standardTagNamespaceName = standardTagNamespaceName;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate", "status");
+            }
+            this.status = status;
             return this;
         }
         public GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate build() {

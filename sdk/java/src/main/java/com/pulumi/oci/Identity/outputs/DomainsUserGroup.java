@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -348,47 +349,58 @@ public final class DomainsUserGroup {
 
         @CustomType.Setter
         public Builder dateAdded(@Nullable String dateAdded) {
+
             this.dateAdded = dateAdded;
             return this;
         }
         @CustomType.Setter
         public Builder display(@Nullable String display) {
+
             this.display = display;
             return this;
         }
         @CustomType.Setter
         public Builder externalId(@Nullable String externalId) {
+
             this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
         public Builder membershipOcid(@Nullable String membershipOcid) {
+
             this.membershipOcid = membershipOcid;
             return this;
         }
         @CustomType.Setter
         public Builder nonUniqueDisplay(@Nullable String nonUniqueDisplay) {
+
             this.nonUniqueDisplay = nonUniqueDisplay;
             return this;
         }
         @CustomType.Setter
         public Builder ocid(@Nullable String ocid) {
+
             this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
         public Builder ref(@Nullable String ref) {
+
             this.ref = ref;
             return this;
         }
         @CustomType.Setter
         public Builder type(@Nullable String type) {
+
             this.type = type;
             return this;
         }
         @CustomType.Setter
         public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+            if (value == null) {
+              throw new MissingRequiredPropertyException("DomainsUserGroup", "value");
+            }
+            this.value = value;
             return this;
         }
         public DomainsUserGroup build() {

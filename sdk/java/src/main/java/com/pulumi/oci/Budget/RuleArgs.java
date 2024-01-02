@@ -5,6 +5,7 @@ package com.pulumi.oci.Budget;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
@@ -424,10 +425,18 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public RuleArgs build() {
-            $.budgetId = Objects.requireNonNull($.budgetId, "expected parameter 'budgetId' to be non-null");
-            $.threshold = Objects.requireNonNull($.threshold, "expected parameter 'threshold' to be non-null");
-            $.thresholdType = Objects.requireNonNull($.thresholdType, "expected parameter 'thresholdType' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.budgetId == null) {
+                throw new MissingRequiredPropertyException("RuleArgs", "budgetId");
+            }
+            if ($.threshold == null) {
+                throw new MissingRequiredPropertyException("RuleArgs", "threshold");
+            }
+            if ($.thresholdType == null) {
+                throw new MissingRequiredPropertyException("RuleArgs", "thresholdType");
+            }
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("RuleArgs", "type");
+            }
             return $;
         }
     }

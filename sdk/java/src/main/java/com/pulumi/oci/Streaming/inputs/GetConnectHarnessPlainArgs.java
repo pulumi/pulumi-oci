@@ -4,6 +4,7 @@
 package com.pulumi.oci.Streaming.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetConnectHarnessPlainArgs extends com.pulumi.resources.Invok
         }
 
         public GetConnectHarnessPlainArgs build() {
-            $.connectHarnessId = Objects.requireNonNull($.connectHarnessId, "expected parameter 'connectHarnessId' to be non-null");
+            if ($.connectHarnessId == null) {
+                throw new MissingRequiredPropertyException("GetConnectHarnessPlainArgs", "connectHarnessId");
+            }
             return $;
         }
     }

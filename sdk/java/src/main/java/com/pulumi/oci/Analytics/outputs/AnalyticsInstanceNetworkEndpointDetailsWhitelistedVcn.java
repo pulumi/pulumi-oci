@@ -59,11 +59,13 @@ public final class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn {
 
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder whitelistedIps(@Nullable List<String> whitelistedIps) {
+
             this.whitelistedIps = whitelistedIps;
             return this;
         }

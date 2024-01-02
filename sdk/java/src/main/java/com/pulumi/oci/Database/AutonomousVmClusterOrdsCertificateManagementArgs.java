@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -236,8 +237,12 @@ public final class AutonomousVmClusterOrdsCertificateManagementArgs extends com.
         }
 
         public AutonomousVmClusterOrdsCertificateManagementArgs build() {
-            $.autonomousVmClusterId = Objects.requireNonNull($.autonomousVmClusterId, "expected parameter 'autonomousVmClusterId' to be non-null");
-            $.certificateGenerationType = Objects.requireNonNull($.certificateGenerationType, "expected parameter 'certificateGenerationType' to be non-null");
+            if ($.autonomousVmClusterId == null) {
+                throw new MissingRequiredPropertyException("AutonomousVmClusterOrdsCertificateManagementArgs", "autonomousVmClusterId");
+            }
+            if ($.certificateGenerationType == null) {
+                throw new MissingRequiredPropertyException("AutonomousVmClusterOrdsCertificateManagementArgs", "certificateGenerationType");
+            }
             return $;
         }
     }

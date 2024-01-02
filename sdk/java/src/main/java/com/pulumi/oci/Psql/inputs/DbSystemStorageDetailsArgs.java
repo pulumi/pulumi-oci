@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -200,8 +201,12 @@ public final class DbSystemStorageDetailsArgs extends com.pulumi.resources.Resou
         }
 
         public DbSystemStorageDetailsArgs build() {
-            $.isRegionallyDurable = Objects.requireNonNull($.isRegionallyDurable, "expected parameter 'isRegionallyDurable' to be non-null");
-            $.systemType = Objects.requireNonNull($.systemType, "expected parameter 'systemType' to be non-null");
+            if ($.isRegionallyDurable == null) {
+                throw new MissingRequiredPropertyException("DbSystemStorageDetailsArgs", "isRegionallyDurable");
+            }
+            if ($.systemType == null) {
+                throw new MissingRequiredPropertyException("DbSystemStorageDetailsArgs", "systemType");
+            }
             return $;
         }
     }

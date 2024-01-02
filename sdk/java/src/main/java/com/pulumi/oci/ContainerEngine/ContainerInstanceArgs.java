@@ -5,6 +5,7 @@ package com.pulumi.oci.ContainerEngine;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceDnsConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceImagePullSecretArgs;
@@ -702,12 +703,24 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         public ContainerInstanceArgs build() {
-            $.availabilityDomain = Objects.requireNonNull($.availabilityDomain, "expected parameter 'availabilityDomain' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.containers = Objects.requireNonNull($.containers, "expected parameter 'containers' to be non-null");
-            $.shape = Objects.requireNonNull($.shape, "expected parameter 'shape' to be non-null");
-            $.shapeConfig = Objects.requireNonNull($.shapeConfig, "expected parameter 'shapeConfig' to be non-null");
-            $.vnics = Objects.requireNonNull($.vnics, "expected parameter 'vnics' to be non-null");
+            if ($.availabilityDomain == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceArgs", "availabilityDomain");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceArgs", "compartmentId");
+            }
+            if ($.containers == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceArgs", "containers");
+            }
+            if ($.shape == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceArgs", "shape");
+            }
+            if ($.shapeConfig == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceArgs", "shapeConfig");
+            }
+            if ($.vnics == null) {
+                throw new MissingRequiredPropertyException("ContainerInstanceArgs", "vnics");
+            }
             return $;
         }
     }

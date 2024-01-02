@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -424,152 +425,242 @@ public final class GetAddressResult {
 
         @CustomType.Setter
         public Builder addressId(String addressId) {
-            this.addressId = Objects.requireNonNull(addressId);
+            if (addressId == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "addressId");
+            }
+            this.addressId = addressId;
             return this;
         }
         @CustomType.Setter
         public Builder addressKey(String addressKey) {
-            this.addressKey = Objects.requireNonNull(addressKey);
+            if (addressKey == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "addressKey");
+            }
+            this.addressKey = addressKey;
             return this;
         }
         @CustomType.Setter
         public Builder city(String city) {
-            this.city = Objects.requireNonNull(city);
+            if (city == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "city");
+            }
+            this.city = city;
             return this;
         }
         @CustomType.Setter
         public Builder companyName(String companyName) {
-            this.companyName = Objects.requireNonNull(companyName);
+            if (companyName == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "companyName");
+            }
+            this.companyName = companyName;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder contributorClass(String contributorClass) {
-            this.contributorClass = Objects.requireNonNull(contributorClass);
+            if (contributorClass == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "contributorClass");
+            }
+            this.contributorClass = contributorClass;
             return this;
         }
         @CustomType.Setter
         public Builder country(String country) {
-            this.country = Objects.requireNonNull(country);
+            if (country == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "country");
+            }
+            this.country = country;
             return this;
         }
         @CustomType.Setter
         public Builder county(String county) {
-            this.county = Objects.requireNonNull(county);
+            if (county == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "county");
+            }
+            this.county = county;
             return this;
         }
         @CustomType.Setter
         public Builder departmentName(String departmentName) {
-            this.departmentName = Objects.requireNonNull(departmentName);
+            if (departmentName == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "departmentName");
+            }
+            this.departmentName = departmentName;
             return this;
         }
         @CustomType.Setter
         public Builder emailAddress(String emailAddress) {
-            this.emailAddress = Objects.requireNonNull(emailAddress);
+            if (emailAddress == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "emailAddress");
+            }
+            this.emailAddress = emailAddress;
             return this;
         }
         @CustomType.Setter
         public Builder firstName(String firstName) {
-            this.firstName = Objects.requireNonNull(firstName);
+            if (firstName == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "firstName");
+            }
+            this.firstName = firstName;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internalNumber(String internalNumber) {
-            this.internalNumber = Objects.requireNonNull(internalNumber);
+            if (internalNumber == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "internalNumber");
+            }
+            this.internalNumber = internalNumber;
             return this;
         }
         @CustomType.Setter
         public Builder jobTitle(String jobTitle) {
-            this.jobTitle = Objects.requireNonNull(jobTitle);
+            if (jobTitle == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "jobTitle");
+            }
+            this.jobTitle = jobTitle;
             return this;
         }
         @CustomType.Setter
         public Builder lastName(String lastName) {
-            this.lastName = Objects.requireNonNull(lastName);
+            if (lastName == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "lastName");
+            }
+            this.lastName = lastName;
             return this;
         }
         @CustomType.Setter
         public Builder line1(String line1) {
-            this.line1 = Objects.requireNonNull(line1);
+            if (line1 == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "line1");
+            }
+            this.line1 = line1;
             return this;
         }
         @CustomType.Setter
         public Builder line2(String line2) {
-            this.line2 = Objects.requireNonNull(line2);
+            if (line2 == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "line2");
+            }
+            this.line2 = line2;
             return this;
         }
         @CustomType.Setter
         public Builder line3(String line3) {
-            this.line3 = Objects.requireNonNull(line3);
+            if (line3 == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "line3");
+            }
+            this.line3 = line3;
             return this;
         }
         @CustomType.Setter
         public Builder line4(String line4) {
-            this.line4 = Objects.requireNonNull(line4);
+            if (line4 == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "line4");
+            }
+            this.line4 = line4;
             return this;
         }
         @CustomType.Setter
         public Builder middleName(String middleName) {
-            this.middleName = Objects.requireNonNull(middleName);
+            if (middleName == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "middleName");
+            }
+            this.middleName = middleName;
             return this;
         }
         @CustomType.Setter
         public Builder municipalInscription(String municipalInscription) {
-            this.municipalInscription = Objects.requireNonNull(municipalInscription);
+            if (municipalInscription == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "municipalInscription");
+            }
+            this.municipalInscription = municipalInscription;
             return this;
         }
         @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
-            this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
+            if (ospHomeRegion == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "ospHomeRegion");
+            }
+            this.ospHomeRegion = ospHomeRegion;
             return this;
         }
         @CustomType.Setter
         public Builder phoneCountryCode(String phoneCountryCode) {
-            this.phoneCountryCode = Objects.requireNonNull(phoneCountryCode);
+            if (phoneCountryCode == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "phoneCountryCode");
+            }
+            this.phoneCountryCode = phoneCountryCode;
             return this;
         }
         @CustomType.Setter
         public Builder phoneNumber(String phoneNumber) {
-            this.phoneNumber = Objects.requireNonNull(phoneNumber);
+            if (phoneNumber == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "phoneNumber");
+            }
+            this.phoneNumber = phoneNumber;
             return this;
         }
         @CustomType.Setter
         public Builder postalCode(String postalCode) {
-            this.postalCode = Objects.requireNonNull(postalCode);
+            if (postalCode == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "postalCode");
+            }
+            this.postalCode = postalCode;
             return this;
         }
         @CustomType.Setter
         public Builder province(String province) {
-            this.province = Objects.requireNonNull(province);
+            if (province == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "province");
+            }
+            this.province = province;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder stateInscription(String stateInscription) {
-            this.stateInscription = Objects.requireNonNull(stateInscription);
+            if (stateInscription == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "stateInscription");
+            }
+            this.stateInscription = stateInscription;
             return this;
         }
         @CustomType.Setter
         public Builder streetName(String streetName) {
-            this.streetName = Objects.requireNonNull(streetName);
+            if (streetName == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "streetName");
+            }
+            this.streetName = streetName;
             return this;
         }
         @CustomType.Setter
         public Builder streetNumber(String streetNumber) {
-            this.streetNumber = Objects.requireNonNull(streetNumber);
+            if (streetNumber == null) {
+              throw new MissingRequiredPropertyException("GetAddressResult", "streetNumber");
+            }
+            this.streetNumber = streetNumber;
             return this;
         }
         public GetAddressResult build() {

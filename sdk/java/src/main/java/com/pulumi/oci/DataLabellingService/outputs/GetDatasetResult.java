@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataLabellingService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetDatasetFormatDetail;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetDatasetSourceDetail;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetInitialImportDatasetConfiguration;
@@ -308,22 +309,34 @@ public final class GetDatasetResult {
 
         @CustomType.Setter
         public Builder additionalProperties(Map<String,Object> additionalProperties) {
-            this.additionalProperties = Objects.requireNonNull(additionalProperties);
+            if (additionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "additionalProperties");
+            }
+            this.additionalProperties = additionalProperties;
             return this;
         }
         @CustomType.Setter
         public Builder annotationFormat(String annotationFormat) {
-            this.annotationFormat = Objects.requireNonNull(annotationFormat);
+            if (annotationFormat == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "annotationFormat");
+            }
+            this.annotationFormat = annotationFormat;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder datasetFormatDetails(List<GetDatasetDatasetFormatDetail> datasetFormatDetails) {
-            this.datasetFormatDetails = Objects.requireNonNull(datasetFormatDetails);
+            if (datasetFormatDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "datasetFormatDetails");
+            }
+            this.datasetFormatDetails = datasetFormatDetails;
             return this;
         }
         public Builder datasetFormatDetails(GetDatasetDatasetFormatDetail... datasetFormatDetails) {
@@ -331,12 +344,18 @@ public final class GetDatasetResult {
         }
         @CustomType.Setter
         public Builder datasetId(String datasetId) {
-            this.datasetId = Objects.requireNonNull(datasetId);
+            if (datasetId == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "datasetId");
+            }
+            this.datasetId = datasetId;
             return this;
         }
         @CustomType.Setter
         public Builder datasetSourceDetails(List<GetDatasetDatasetSourceDetail> datasetSourceDetails) {
-            this.datasetSourceDetails = Objects.requireNonNull(datasetSourceDetails);
+            if (datasetSourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "datasetSourceDetails");
+            }
+            this.datasetSourceDetails = datasetSourceDetails;
             return this;
         }
         public Builder datasetSourceDetails(GetDatasetDatasetSourceDetail... datasetSourceDetails) {
@@ -344,32 +363,50 @@ public final class GetDatasetResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder initialImportDatasetConfigurations(List<GetDatasetInitialImportDatasetConfiguration> initialImportDatasetConfigurations) {
-            this.initialImportDatasetConfigurations = Objects.requireNonNull(initialImportDatasetConfigurations);
+            if (initialImportDatasetConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "initialImportDatasetConfigurations");
+            }
+            this.initialImportDatasetConfigurations = initialImportDatasetConfigurations;
             return this;
         }
         public Builder initialImportDatasetConfigurations(GetDatasetInitialImportDatasetConfiguration... initialImportDatasetConfigurations) {
@@ -377,7 +414,10 @@ public final class GetDatasetResult {
         }
         @CustomType.Setter
         public Builder initialRecordGenerationConfigurations(List<GetDatasetInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations) {
-            this.initialRecordGenerationConfigurations = Objects.requireNonNull(initialRecordGenerationConfigurations);
+            if (initialRecordGenerationConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "initialRecordGenerationConfigurations");
+            }
+            this.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
             return this;
         }
         public Builder initialRecordGenerationConfigurations(GetDatasetInitialRecordGenerationConfiguration... initialRecordGenerationConfigurations) {
@@ -385,7 +425,10 @@ public final class GetDatasetResult {
         }
         @CustomType.Setter
         public Builder labelSets(List<GetDatasetLabelSet> labelSets) {
-            this.labelSets = Objects.requireNonNull(labelSets);
+            if (labelSets == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "labelSets");
+            }
+            this.labelSets = labelSets;
             return this;
         }
         public Builder labelSets(GetDatasetLabelSet... labelSets) {
@@ -393,32 +436,50 @@ public final class GetDatasetResult {
         }
         @CustomType.Setter
         public Builder labelingInstructions(String labelingInstructions) {
-            this.labelingInstructions = Objects.requireNonNull(labelingInstructions);
+            if (labelingInstructions == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "labelingInstructions");
+            }
+            this.labelingInstructions = labelingInstructions;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubstate(String lifecycleSubstate) {
-            this.lifecycleSubstate = Objects.requireNonNull(lifecycleSubstate);
+            if (lifecycleSubstate == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "lifecycleSubstate");
+            }
+            this.lifecycleSubstate = lifecycleSubstate;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDatasetResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDatasetResult build() {

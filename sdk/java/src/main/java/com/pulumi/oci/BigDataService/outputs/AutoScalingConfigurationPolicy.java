@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.AutoScalingConfigurationPolicyRule;
 import java.lang.String;
 import java.util.List;
@@ -58,12 +59,18 @@ public final class AutoScalingConfigurationPolicy {
 
         @CustomType.Setter
         public Builder policyType(String policyType) {
-            this.policyType = Objects.requireNonNull(policyType);
+            if (policyType == null) {
+              throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicy", "policyType");
+            }
+            this.policyType = policyType;
             return this;
         }
         @CustomType.Setter
         public Builder rules(List<AutoScalingConfigurationPolicyRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+            if (rules == null) {
+              throw new MissingRequiredPropertyException("AutoScalingConfigurationPolicy", "rules");
+            }
+            this.rules = rules;
             return this;
         }
         public Builder rules(AutoScalingConfigurationPolicyRule... rules) {

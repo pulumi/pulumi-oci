@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVolumeBackupPoliciesVolumeBackupPolicySchedule;
 import java.lang.Object;
 import java.lang.String;
@@ -144,37 +145,58 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicy {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicy", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicy", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder destinationRegion(String destinationRegion) {
-            this.destinationRegion = Objects.requireNonNull(destinationRegion);
+            if (destinationRegion == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicy", "destinationRegion");
+            }
+            this.destinationRegion = destinationRegion;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicy", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicy", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicy", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder schedules(List<GetVolumeBackupPoliciesVolumeBackupPolicySchedule> schedules) {
-            this.schedules = Objects.requireNonNull(schedules);
+            if (schedules == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicy", "schedules");
+            }
+            this.schedules = schedules;
             return this;
         }
         public Builder schedules(GetVolumeBackupPoliciesVolumeBackupPolicySchedule... schedules) {
@@ -182,7 +204,10 @@ public final class GetVolumeBackupPoliciesVolumeBackupPolicy {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupPoliciesVolumeBackupPolicy", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetVolumeBackupPoliciesVolumeBackupPolicy build() {

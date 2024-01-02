@@ -60,6 +60,7 @@ public final class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBac
 
         @CustomType.Setter
         public Builder backupDestinationDetails(@Nullable List<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail> backupDestinationDetails) {
+
             this.backupDestinationDetails = backupDestinationDetails;
             return this;
         }
@@ -68,6 +69,7 @@ public final class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBac
         }
         @CustomType.Setter
         public Builder recoveryWindowInDays(@Nullable Integer recoveryWindowInDays) {
+
             this.recoveryWindowInDays = recoveryWindowInDays;
             return this;
         }

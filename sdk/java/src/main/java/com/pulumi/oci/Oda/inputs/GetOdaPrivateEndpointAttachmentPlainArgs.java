@@ -4,6 +4,7 @@
 package com.pulumi.oci.Oda.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetOdaPrivateEndpointAttachmentPlainArgs extends com.pulumi.r
         }
 
         public GetOdaPrivateEndpointAttachmentPlainArgs build() {
-            $.odaPrivateEndpointAttachmentId = Objects.requireNonNull($.odaPrivateEndpointAttachmentId, "expected parameter 'odaPrivateEndpointAttachmentId' to be non-null");
+            if ($.odaPrivateEndpointAttachmentId == null) {
+                throw new MissingRequiredPropertyException("GetOdaPrivateEndpointAttachmentPlainArgs", "odaPrivateEndpointAttachmentId");
+            }
             return $;
         }
     }

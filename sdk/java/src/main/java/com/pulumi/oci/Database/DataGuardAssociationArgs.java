@@ -5,6 +5,7 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DataGuardAssociationDataCollectionOptionsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -1401,12 +1402,24 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         public DataGuardAssociationArgs build() {
-            $.creationType = Objects.requireNonNull($.creationType, "expected parameter 'creationType' to be non-null");
-            $.databaseAdminPassword = Objects.requireNonNull($.databaseAdminPassword, "expected parameter 'databaseAdminPassword' to be non-null");
-            $.databaseId = Objects.requireNonNull($.databaseId, "expected parameter 'databaseId' to be non-null");
-            $.deleteStandbyDbHomeOnDelete = Objects.requireNonNull($.deleteStandbyDbHomeOnDelete, "expected parameter 'deleteStandbyDbHomeOnDelete' to be non-null");
-            $.protectionMode = Objects.requireNonNull($.protectionMode, "expected parameter 'protectionMode' to be non-null");
-            $.transportType = Objects.requireNonNull($.transportType, "expected parameter 'transportType' to be non-null");
+            if ($.creationType == null) {
+                throw new MissingRequiredPropertyException("DataGuardAssociationArgs", "creationType");
+            }
+            if ($.databaseAdminPassword == null) {
+                throw new MissingRequiredPropertyException("DataGuardAssociationArgs", "databaseAdminPassword");
+            }
+            if ($.databaseId == null) {
+                throw new MissingRequiredPropertyException("DataGuardAssociationArgs", "databaseId");
+            }
+            if ($.deleteStandbyDbHomeOnDelete == null) {
+                throw new MissingRequiredPropertyException("DataGuardAssociationArgs", "deleteStandbyDbHomeOnDelete");
+            }
+            if ($.protectionMode == null) {
+                throw new MissingRequiredPropertyException("DataGuardAssociationArgs", "protectionMode");
+            }
+            if ($.transportType == null) {
+                throw new MissingRequiredPropertyException("DataGuardAssociationArgs", "transportType");
+            }
             return $;
         }
     }

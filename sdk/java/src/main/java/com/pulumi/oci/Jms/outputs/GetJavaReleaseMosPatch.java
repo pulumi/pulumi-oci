@@ -4,6 +4,7 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetJavaReleaseMosPatch {
 
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseMosPatch", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder patchUrl(String patchUrl) {
-            this.patchUrl = Objects.requireNonNull(patchUrl);
+            if (patchUrl == null) {
+              throw new MissingRequiredPropertyException("GetJavaReleaseMosPatch", "patchUrl");
+            }
+            this.patchUrl = patchUrl;
             return this;
         }
         public GetJavaReleaseMosPatch build() {

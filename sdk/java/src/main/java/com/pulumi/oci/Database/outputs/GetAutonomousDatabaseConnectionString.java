@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseConnectionStringProfile;
 import java.lang.Object;
 import java.lang.String;
@@ -116,32 +117,50 @@ public final class GetAutonomousDatabaseConnectionString {
 
         @CustomType.Setter
         public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
-            this.allConnectionStrings = Objects.requireNonNull(allConnectionStrings);
+            if (allConnectionStrings == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseConnectionString", "allConnectionStrings");
+            }
+            this.allConnectionStrings = allConnectionStrings;
             return this;
         }
         @CustomType.Setter
         public Builder dedicated(String dedicated) {
-            this.dedicated = Objects.requireNonNull(dedicated);
+            if (dedicated == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseConnectionString", "dedicated");
+            }
+            this.dedicated = dedicated;
             return this;
         }
         @CustomType.Setter
         public Builder high(String high) {
-            this.high = Objects.requireNonNull(high);
+            if (high == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseConnectionString", "high");
+            }
+            this.high = high;
             return this;
         }
         @CustomType.Setter
         public Builder low(String low) {
-            this.low = Objects.requireNonNull(low);
+            if (low == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseConnectionString", "low");
+            }
+            this.low = low;
             return this;
         }
         @CustomType.Setter
         public Builder medium(String medium) {
-            this.medium = Objects.requireNonNull(medium);
+            if (medium == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseConnectionString", "medium");
+            }
+            this.medium = medium;
             return this;
         }
         @CustomType.Setter
         public Builder profiles(List<GetAutonomousDatabaseConnectionStringProfile> profiles) {
-            this.profiles = Objects.requireNonNull(profiles);
+            if (profiles == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseConnectionString", "profiles");
+            }
+            this.profiles = profiles;
             return this;
         }
         public Builder profiles(GetAutonomousDatabaseConnectionStringProfile... profiles) {

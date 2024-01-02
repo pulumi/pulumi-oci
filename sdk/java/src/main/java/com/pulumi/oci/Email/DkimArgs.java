@@ -5,6 +5,7 @@ package com.pulumi.oci.Email;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -254,7 +255,9 @@ public final class DkimArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DkimArgs build() {
-            $.emailDomainId = Objects.requireNonNull($.emailDomainId, "expected parameter 'emailDomainId' to be non-null");
+            if ($.emailDomainId == null) {
+                throw new MissingRequiredPropertyException("DkimArgs", "emailDomainId");
+            }
             return $;
         }
     }

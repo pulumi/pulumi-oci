@@ -4,6 +4,7 @@
 package com.pulumi.oci.DisasterRecovery.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupAssociation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupLogLocation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMember;
@@ -277,7 +278,10 @@ public final class GetDrProtectionGroupResult {
 
         @CustomType.Setter
         public Builder associations(List<GetDrProtectionGroupAssociation> associations) {
-            this.associations = Objects.requireNonNull(associations);
+            if (associations == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "associations");
+            }
+            this.associations = associations;
             return this;
         }
         public Builder associations(GetDrProtectionGroupAssociation... associations) {
@@ -285,52 +289,82 @@ public final class GetDrProtectionGroupResult {
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder disassociateTrigger(Integer disassociateTrigger) {
-            this.disassociateTrigger = Objects.requireNonNull(disassociateTrigger);
+            if (disassociateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "disassociateTrigger");
+            }
+            this.disassociateTrigger = disassociateTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drProtectionGroupId(String drProtectionGroupId) {
-            this.drProtectionGroupId = Objects.requireNonNull(drProtectionGroupId);
+            if (drProtectionGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "drProtectionGroupId");
+            }
+            this.drProtectionGroupId = drProtectionGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifeCycleDetails(String lifeCycleDetails) {
-            this.lifeCycleDetails = Objects.requireNonNull(lifeCycleDetails);
+            if (lifeCycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "lifeCycleDetails");
+            }
+            this.lifeCycleDetails = lifeCycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleSubState(String lifecycleSubState) {
-            this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+            if (lifecycleSubState == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "lifecycleSubState");
+            }
+            this.lifecycleSubState = lifecycleSubState;
             return this;
         }
         @CustomType.Setter
         public Builder logLocations(List<GetDrProtectionGroupLogLocation> logLocations) {
-            this.logLocations = Objects.requireNonNull(logLocations);
+            if (logLocations == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "logLocations");
+            }
+            this.logLocations = logLocations;
             return this;
         }
         public Builder logLocations(GetDrProtectionGroupLogLocation... logLocations) {
@@ -338,7 +372,10 @@ public final class GetDrProtectionGroupResult {
         }
         @CustomType.Setter
         public Builder members(List<GetDrProtectionGroupMember> members) {
-            this.members = Objects.requireNonNull(members);
+            if (members == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "members");
+            }
+            this.members = members;
             return this;
         }
         public Builder members(GetDrProtectionGroupMember... members) {
@@ -346,37 +383,58 @@ public final class GetDrProtectionGroupResult {
         }
         @CustomType.Setter
         public Builder peerId(String peerId) {
-            this.peerId = Objects.requireNonNull(peerId);
+            if (peerId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "peerId");
+            }
+            this.peerId = peerId;
             return this;
         }
         @CustomType.Setter
         public Builder peerRegion(String peerRegion) {
-            this.peerRegion = Objects.requireNonNull(peerRegion);
+            if (peerRegion == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "peerRegion");
+            }
+            this.peerRegion = peerRegion;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetDrProtectionGroupResult build() {

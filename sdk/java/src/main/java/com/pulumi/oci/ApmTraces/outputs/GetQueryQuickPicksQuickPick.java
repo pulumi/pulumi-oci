@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmTraces.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -56,12 +57,18 @@ public final class GetQueryQuickPicksQuickPick {
 
         @CustomType.Setter
         public Builder quickPickName(String quickPickName) {
-            this.quickPickName = Objects.requireNonNull(quickPickName);
+            if (quickPickName == null) {
+              throw new MissingRequiredPropertyException("GetQueryQuickPicksQuickPick", "quickPickName");
+            }
+            this.quickPickName = quickPickName;
             return this;
         }
         @CustomType.Setter
         public Builder quickPickQuery(String quickPickQuery) {
-            this.quickPickQuery = Objects.requireNonNull(quickPickQuery);
+            if (quickPickQuery == null) {
+              throw new MissingRequiredPropertyException("GetQueryQuickPicksQuickPick", "quickPickQuery");
+            }
+            this.quickPickQuery = quickPickQuery;
             return this;
         }
         public GetQueryQuickPicksQuickPick build() {

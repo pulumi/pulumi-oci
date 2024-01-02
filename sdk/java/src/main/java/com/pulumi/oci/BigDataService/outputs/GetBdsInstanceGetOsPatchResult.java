@@ -4,6 +4,7 @@
 package com.pulumi.oci.BigDataService.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceGetOsPatchFilter;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceGetOsPatchTargetPackage;
 import java.lang.Object;
@@ -144,11 +145,15 @@ public final class GetBdsInstanceGetOsPatchResult {
 
         @CustomType.Setter
         public Builder bdsInstanceId(String bdsInstanceId) {
-            this.bdsInstanceId = Objects.requireNonNull(bdsInstanceId);
+            if (bdsInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "bdsInstanceId");
+            }
+            this.bdsInstanceId = bdsInstanceId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetBdsInstanceGetOsPatchFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -157,37 +162,58 @@ public final class GetBdsInstanceGetOsPatchResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder minBdsVersion(String minBdsVersion) {
-            this.minBdsVersion = Objects.requireNonNull(minBdsVersion);
+            if (minBdsVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "minBdsVersion");
+            }
+            this.minBdsVersion = minBdsVersion;
             return this;
         }
         @CustomType.Setter
         public Builder minCompatibleOdhVersionMap(Map<String,Object> minCompatibleOdhVersionMap) {
-            this.minCompatibleOdhVersionMap = Objects.requireNonNull(minCompatibleOdhVersionMap);
+            if (minCompatibleOdhVersionMap == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "minCompatibleOdhVersionMap");
+            }
+            this.minCompatibleOdhVersionMap = minCompatibleOdhVersionMap;
             return this;
         }
         @CustomType.Setter
         public Builder osPatchVersion(String osPatchVersion) {
-            this.osPatchVersion = Objects.requireNonNull(osPatchVersion);
+            if (osPatchVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "osPatchVersion");
+            }
+            this.osPatchVersion = osPatchVersion;
             return this;
         }
         @CustomType.Setter
         public Builder patchType(String patchType) {
-            this.patchType = Objects.requireNonNull(patchType);
+            if (patchType == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "patchType");
+            }
+            this.patchType = patchType;
             return this;
         }
         @CustomType.Setter
         public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+            if (releaseDate == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "releaseDate");
+            }
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
         public Builder targetPackages(List<GetBdsInstanceGetOsPatchTargetPackage> targetPackages) {
-            this.targetPackages = Objects.requireNonNull(targetPackages);
+            if (targetPackages == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "targetPackages");
+            }
+            this.targetPackages = targetPackages;
             return this;
         }
         public Builder targetPackages(GetBdsInstanceGetOsPatchTargetPackage... targetPackages) {

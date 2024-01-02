@@ -58,11 +58,13 @@ public final class CertificateCurrentVersionRevocationStatus {
 
         @CustomType.Setter
         public Builder revocationReason(@Nullable String revocationReason) {
+
             this.revocationReason = revocationReason;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfRevocation(@Nullable String timeOfRevocation) {
+
             this.timeOfRevocation = timeOfRevocation;
             return this;
         }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetAssetsAssetCollectionItemComputeGpuDevice {
 
         @CustomType.Setter
         public Builder coresCount(Integer coresCount) {
-            this.coresCount = Objects.requireNonNull(coresCount);
+            if (coresCount == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeGpuDevice", "coresCount");
+            }
+            this.coresCount = coresCount;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeGpuDevice", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder manufacturer(String manufacturer) {
-            this.manufacturer = Objects.requireNonNull(manufacturer);
+            if (manufacturer == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeGpuDevice", "manufacturer");
+            }
+            this.manufacturer = manufacturer;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInMbs(String memoryInMbs) {
-            this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
+            if (memoryInMbs == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeGpuDevice", "memoryInMbs");
+            }
+            this.memoryInMbs = memoryInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemComputeGpuDevice", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetAssetsAssetCollectionItemComputeGpuDevice build() {

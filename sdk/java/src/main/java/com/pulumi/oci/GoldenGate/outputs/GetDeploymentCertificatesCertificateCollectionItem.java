@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -205,102 +206,162 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
 
         @CustomType.Setter
         public Builder authorityKeyId(String authorityKeyId) {
-            this.authorityKeyId = Objects.requireNonNull(authorityKeyId);
+            if (authorityKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "authorityKeyId");
+            }
+            this.authorityKeyId = authorityKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder certificateContent(String certificateContent) {
-            this.certificateContent = Objects.requireNonNull(certificateContent);
+            if (certificateContent == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "certificateContent");
+            }
+            this.certificateContent = certificateContent;
             return this;
         }
         @CustomType.Setter
         public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+            if (deploymentId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "deploymentId");
+            }
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
         public Builder isCa(Boolean isCa) {
-            this.isCa = Objects.requireNonNull(isCa);
+            if (isCa == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "isCa");
+            }
+            this.isCa = isCa;
             return this;
         }
         @CustomType.Setter
         public Builder isSelfSigned(Boolean isSelfSigned) {
-            this.isSelfSigned = Objects.requireNonNull(isSelfSigned);
+            if (isSelfSigned == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "isSelfSigned");
+            }
+            this.isSelfSigned = isSelfSigned;
             return this;
         }
         @CustomType.Setter
         public Builder issuer(String issuer) {
-            this.issuer = Objects.requireNonNull(issuer);
+            if (issuer == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "issuer");
+            }
+            this.issuer = issuer;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder md5hash(String md5hash) {
-            this.md5hash = Objects.requireNonNull(md5hash);
+            if (md5hash == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "md5hash");
+            }
+            this.md5hash = md5hash;
             return this;
         }
         @CustomType.Setter
         public Builder publicKey(String publicKey) {
-            this.publicKey = Objects.requireNonNull(publicKey);
+            if (publicKey == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "publicKey");
+            }
+            this.publicKey = publicKey;
             return this;
         }
         @CustomType.Setter
         public Builder publicKeyAlgorithm(String publicKeyAlgorithm) {
-            this.publicKeyAlgorithm = Objects.requireNonNull(publicKeyAlgorithm);
+            if (publicKeyAlgorithm == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "publicKeyAlgorithm");
+            }
+            this.publicKeyAlgorithm = publicKeyAlgorithm;
             return this;
         }
         @CustomType.Setter
         public Builder publicKeySize(String publicKeySize) {
-            this.publicKeySize = Objects.requireNonNull(publicKeySize);
+            if (publicKeySize == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "publicKeySize");
+            }
+            this.publicKeySize = publicKeySize;
             return this;
         }
         @CustomType.Setter
         public Builder serial(String serial) {
-            this.serial = Objects.requireNonNull(serial);
+            if (serial == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "serial");
+            }
+            this.serial = serial;
             return this;
         }
         @CustomType.Setter
         public Builder sha1hash(String sha1hash) {
-            this.sha1hash = Objects.requireNonNull(sha1hash);
+            if (sha1hash == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "sha1hash");
+            }
+            this.sha1hash = sha1hash;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subject(String subject) {
-            this.subject = Objects.requireNonNull(subject);
+            if (subject == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "subject");
+            }
+            this.subject = subject;
             return this;
         }
         @CustomType.Setter
         public Builder subjectKeyId(String subjectKeyId) {
-            this.subjectKeyId = Objects.requireNonNull(subjectKeyId);
+            if (subjectKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "subjectKeyId");
+            }
+            this.subjectKeyId = subjectKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeValidFrom(String timeValidFrom) {
-            this.timeValidFrom = Objects.requireNonNull(timeValidFrom);
+            if (timeValidFrom == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "timeValidFrom");
+            }
+            this.timeValidFrom = timeValidFrom;
             return this;
         }
         @CustomType.Setter
         public Builder timeValidTo(String timeValidTo) {
-            this.timeValidTo = Objects.requireNonNull(timeValidTo);
+            if (timeValidTo == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "timeValidTo");
+            }
+            this.timeValidTo = timeValidTo;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "version");
+            }
+            this.version = version;
             return this;
         }
         public GetDeploymentCertificatesCertificateCollectionItem build() {

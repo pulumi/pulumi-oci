@@ -115,31 +115,37 @@ public final class InstanceLaunchOptions {
 
         @CustomType.Setter
         public Builder bootVolumeType(@Nullable String bootVolumeType) {
+
             this.bootVolumeType = bootVolumeType;
             return this;
         }
         @CustomType.Setter
         public Builder firmware(@Nullable String firmware) {
+
             this.firmware = firmware;
             return this;
         }
         @CustomType.Setter
         public Builder isConsistentVolumeNamingEnabled(@Nullable Boolean isConsistentVolumeNamingEnabled) {
+
             this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
+
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder networkType(@Nullable String networkType) {
+
             this.networkType = networkType;
             return this;
         }
         @CustomType.Setter
         public Builder remoteDataVolumeType(@Nullable String remoteDataVolumeType) {
+
             this.remoteDataVolumeType = remoteDataVolumeType;
             return this;
         }

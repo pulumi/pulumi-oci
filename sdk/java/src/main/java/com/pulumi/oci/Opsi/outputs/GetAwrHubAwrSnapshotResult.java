@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSnapshotItem;
 import java.lang.String;
 import java.util.List;
@@ -84,22 +85,34 @@ public final class GetAwrHubAwrSnapshotResult {
 
         @CustomType.Setter
         public Builder awrHubId(String awrHubId) {
-            this.awrHubId = Objects.requireNonNull(awrHubId);
+            if (awrHubId == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotResult", "awrHubId");
+            }
+            this.awrHubId = awrHubId;
             return this;
         }
         @CustomType.Setter
         public Builder awrSourceDatabaseIdentifier(String awrSourceDatabaseIdentifier) {
-            this.awrSourceDatabaseIdentifier = Objects.requireNonNull(awrSourceDatabaseIdentifier);
+            if (awrSourceDatabaseIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotResult", "awrSourceDatabaseIdentifier");
+            }
+            this.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder items(List<GetAwrHubAwrSnapshotItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetAwrHubAwrSnapshotResult", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetAwrHubAwrSnapshotItem... items) {
@@ -107,11 +120,13 @@ public final class GetAwrHubAwrSnapshotResult {
         }
         @CustomType.Setter
         public Builder timeGreaterThanOrEqualTo(@Nullable String timeGreaterThanOrEqualTo) {
+
             this.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder timeLessThanOrEqualTo(@Nullable String timeLessThanOrEqualTo) {
+
             this.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
             return this;
         }

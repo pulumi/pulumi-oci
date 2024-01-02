@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsConfigurationValueArgs;
 import java.lang.String;
 import java.util.List;
@@ -236,8 +237,12 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
         }
 
         public DetectorRecipeDetectorRuleDetailsConfigurationArgs build() {
-            $.configKey = Objects.requireNonNull($.configKey, "expected parameter 'configKey' to be non-null");
-            $.name = Objects.requireNonNull($.name, "expected parameter 'name' to be non-null");
+            if ($.configKey == null) {
+                throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetailsConfigurationArgs", "configKey");
+            }
+            if ($.name == null) {
+                throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetailsConfigurationArgs", "name");
+            }
             return $;
         }
     }

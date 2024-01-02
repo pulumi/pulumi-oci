@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateServiceDetailGgsDeployment;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateServiceDetailSetting;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationGoldenGateServiceDetailSourceContainerDbCredential;
@@ -79,7 +80,10 @@ public final class GetMigrationGoldenGateServiceDetail {
 
         @CustomType.Setter
         public Builder ggsDeployments(List<GetMigrationGoldenGateServiceDetailGgsDeployment> ggsDeployments) {
-            this.ggsDeployments = Objects.requireNonNull(ggsDeployments);
+            if (ggsDeployments == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetail", "ggsDeployments");
+            }
+            this.ggsDeployments = ggsDeployments;
             return this;
         }
         public Builder ggsDeployments(GetMigrationGoldenGateServiceDetailGgsDeployment... ggsDeployments) {
@@ -87,7 +91,10 @@ public final class GetMigrationGoldenGateServiceDetail {
         }
         @CustomType.Setter
         public Builder settings(List<GetMigrationGoldenGateServiceDetailSetting> settings) {
-            this.settings = Objects.requireNonNull(settings);
+            if (settings == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetail", "settings");
+            }
+            this.settings = settings;
             return this;
         }
         public Builder settings(GetMigrationGoldenGateServiceDetailSetting... settings) {
@@ -95,7 +102,10 @@ public final class GetMigrationGoldenGateServiceDetail {
         }
         @CustomType.Setter
         public Builder sourceContainerDbCredentials(List<GetMigrationGoldenGateServiceDetailSourceContainerDbCredential> sourceContainerDbCredentials) {
-            this.sourceContainerDbCredentials = Objects.requireNonNull(sourceContainerDbCredentials);
+            if (sourceContainerDbCredentials == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetail", "sourceContainerDbCredentials");
+            }
+            this.sourceContainerDbCredentials = sourceContainerDbCredentials;
             return this;
         }
         public Builder sourceContainerDbCredentials(GetMigrationGoldenGateServiceDetailSourceContainerDbCredential... sourceContainerDbCredentials) {
@@ -103,7 +113,10 @@ public final class GetMigrationGoldenGateServiceDetail {
         }
         @CustomType.Setter
         public Builder sourceDbCredentials(List<GetMigrationGoldenGateServiceDetailSourceDbCredential> sourceDbCredentials) {
-            this.sourceDbCredentials = Objects.requireNonNull(sourceDbCredentials);
+            if (sourceDbCredentials == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetail", "sourceDbCredentials");
+            }
+            this.sourceDbCredentials = sourceDbCredentials;
             return this;
         }
         public Builder sourceDbCredentials(GetMigrationGoldenGateServiceDetailSourceDbCredential... sourceDbCredentials) {
@@ -111,7 +124,10 @@ public final class GetMigrationGoldenGateServiceDetail {
         }
         @CustomType.Setter
         public Builder targetDbCredentials(List<GetMigrationGoldenGateServiceDetailTargetDbCredential> targetDbCredentials) {
-            this.targetDbCredentials = Objects.requireNonNull(targetDbCredentials);
+            if (targetDbCredentials == null) {
+              throw new MissingRequiredPropertyException("GetMigrationGoldenGateServiceDetail", "targetDbCredentials");
+            }
+            this.targetDbCredentials = targetDbCredentials;
             return this;
         }
         public Builder targetDbCredentials(GetMigrationGoldenGateServiceDetailTargetDbCredential... targetDbCredentials) {

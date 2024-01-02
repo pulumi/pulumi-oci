@@ -4,6 +4,7 @@
 package com.pulumi.oci.MediaServices.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.MediaServices.inputs.GetStreamCdnConfigsFilter;
 import java.lang.String;
 import java.util.List;
@@ -165,7 +166,9 @@ public final class GetStreamCdnConfigsPlainArgs extends com.pulumi.resources.Inv
         }
 
         public GetStreamCdnConfigsPlainArgs build() {
-            $.distributionChannelId = Objects.requireNonNull($.distributionChannelId, "expected parameter 'distributionChannelId' to be non-null");
+            if ($.distributionChannelId == null) {
+                throw new MissingRequiredPropertyException("GetStreamCdnConfigsPlainArgs", "distributionChannelId");
+            }
             return $;
         }
     }

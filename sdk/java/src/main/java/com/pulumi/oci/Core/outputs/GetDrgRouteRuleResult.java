@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -183,62 +184,98 @@ public final class GetDrgRouteRuleResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder drgId(String drgId) {
-            this.drgId = Objects.requireNonNull(drgId);
+            if (drgId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "drgId");
+            }
+            this.drgId = drgId;
             return this;
         }
         @CustomType.Setter
         public Builder drgRouteTableId(String drgRouteTableId) {
-            this.drgRouteTableId = Objects.requireNonNull(drgRouteTableId);
+            if (drgRouteTableId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "drgRouteTableId");
+            }
+            this.drgRouteTableId = drgRouteTableId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder importDrgRouteDistributionId(String importDrgRouteDistributionId) {
-            this.importDrgRouteDistributionId = Objects.requireNonNull(importDrgRouteDistributionId);
+            if (importDrgRouteDistributionId == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "importDrgRouteDistributionId");
+            }
+            this.importDrgRouteDistributionId = importDrgRouteDistributionId;
             return this;
         }
         @CustomType.Setter
         public Builder isEcmpEnabled(Boolean isEcmpEnabled) {
-            this.isEcmpEnabled = Objects.requireNonNull(isEcmpEnabled);
+            if (isEcmpEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "isEcmpEnabled");
+            }
+            this.isEcmpEnabled = isEcmpEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder removeImportTrigger(Boolean removeImportTrigger) {
-            this.removeImportTrigger = Objects.requireNonNull(removeImportTrigger);
+            if (removeImportTrigger == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "removeImportTrigger");
+            }
+            this.removeImportTrigger = removeImportTrigger;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetDrgRouteRuleResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetDrgRouteRuleResult build() {

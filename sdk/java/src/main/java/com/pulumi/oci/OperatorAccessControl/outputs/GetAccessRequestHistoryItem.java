@@ -4,6 +4,7 @@
 package com.pulumi.oci.OperatorAccessControl.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -129,7 +130,10 @@ public final class GetAccessRequestHistoryItem {
 
         @CustomType.Setter
         public Builder actionsLists(List<String> actionsLists) {
-            this.actionsLists = Objects.requireNonNull(actionsLists);
+            if (actionsLists == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryItem", "actionsLists");
+            }
+            this.actionsLists = actionsLists;
             return this;
         }
         public Builder actionsLists(String... actionsLists) {
@@ -137,32 +141,50 @@ public final class GetAccessRequestHistoryItem {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder duration(Integer duration) {
-            this.duration = Objects.requireNonNull(duration);
+            if (duration == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryItem", "duration");
+            }
+            this.duration = duration;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoApproved(Boolean isAutoApproved) {
-            this.isAutoApproved = Objects.requireNonNull(isAutoApproved);
+            if (isAutoApproved == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryItem", "isAutoApproved");
+            }
+            this.isAutoApproved = isAutoApproved;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeOfAction(String timeOfAction) {
-            this.timeOfAction = Objects.requireNonNull(timeOfAction);
+            if (timeOfAction == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryItem", "timeOfAction");
+            }
+            this.timeOfAction = timeOfAction;
             return this;
         }
         @CustomType.Setter
         public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+            if (userId == null) {
+              throw new MissingRequiredPropertyException("GetAccessRequestHistoryItem", "userId");
+            }
+            this.userId = userId;
             return this;
         }
         public GetAccessRequestHistoryItem build() {

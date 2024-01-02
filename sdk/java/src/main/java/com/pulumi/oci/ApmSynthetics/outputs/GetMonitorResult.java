@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorAvailabilityConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorMaintenanceWindowSchedule;
@@ -372,12 +373,18 @@ public final class GetMonitorResult {
 
         @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
-            this.apmDomainId = Objects.requireNonNull(apmDomainId);
+            if (apmDomainId == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "apmDomainId");
+            }
+            this.apmDomainId = apmDomainId;
             return this;
         }
         @CustomType.Setter
         public Builder availabilityConfigurations(List<GetMonitorAvailabilityConfiguration> availabilityConfigurations) {
-            this.availabilityConfigurations = Objects.requireNonNull(availabilityConfigurations);
+            if (availabilityConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "availabilityConfigurations");
+            }
+            this.availabilityConfigurations = availabilityConfigurations;
             return this;
         }
         public Builder availabilityConfigurations(GetMonitorAvailabilityConfiguration... availabilityConfigurations) {
@@ -385,12 +392,18 @@ public final class GetMonitorResult {
         }
         @CustomType.Setter
         public Builder batchIntervalInSeconds(Integer batchIntervalInSeconds) {
-            this.batchIntervalInSeconds = Objects.requireNonNull(batchIntervalInSeconds);
+            if (batchIntervalInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "batchIntervalInSeconds");
+            }
+            this.batchIntervalInSeconds = batchIntervalInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(List<GetMonitorConfiguration> configurations) {
-            this.configurations = Objects.requireNonNull(configurations);
+            if (configurations == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "configurations");
+            }
+            this.configurations = configurations;
             return this;
         }
         public Builder configurations(GetMonitorConfiguration... configurations) {
@@ -398,37 +411,58 @@ public final class GetMonitorResult {
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isRunNow(Boolean isRunNow) {
-            this.isRunNow = Objects.requireNonNull(isRunNow);
+            if (isRunNow == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "isRunNow");
+            }
+            this.isRunNow = isRunNow;
             return this;
         }
         @CustomType.Setter
         public Builder isRunOnce(Boolean isRunOnce) {
-            this.isRunOnce = Objects.requireNonNull(isRunOnce);
+            if (isRunOnce == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "isRunOnce");
+            }
+            this.isRunOnce = isRunOnce;
             return this;
         }
         @CustomType.Setter
         public Builder maintenanceWindowSchedules(List<GetMonitorMaintenanceWindowSchedule> maintenanceWindowSchedules) {
-            this.maintenanceWindowSchedules = Objects.requireNonNull(maintenanceWindowSchedules);
+            if (maintenanceWindowSchedules == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "maintenanceWindowSchedules");
+            }
+            this.maintenanceWindowSchedules = maintenanceWindowSchedules;
             return this;
         }
         public Builder maintenanceWindowSchedules(GetMonitorMaintenanceWindowSchedule... maintenanceWindowSchedules) {
@@ -436,37 +470,58 @@ public final class GetMonitorResult {
         }
         @CustomType.Setter
         public Builder monitorId(String monitorId) {
-            this.monitorId = Objects.requireNonNull(monitorId);
+            if (monitorId == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "monitorId");
+            }
+            this.monitorId = monitorId;
             return this;
         }
         @CustomType.Setter
         public Builder monitorType(String monitorType) {
-            this.monitorType = Objects.requireNonNull(monitorType);
+            if (monitorType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "monitorType");
+            }
+            this.monitorType = monitorType;
             return this;
         }
         @CustomType.Setter
         public Builder repeatIntervalInSeconds(Integer repeatIntervalInSeconds) {
-            this.repeatIntervalInSeconds = Objects.requireNonNull(repeatIntervalInSeconds);
+            if (repeatIntervalInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "repeatIntervalInSeconds");
+            }
+            this.repeatIntervalInSeconds = repeatIntervalInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder schedulingPolicy(String schedulingPolicy) {
-            this.schedulingPolicy = Objects.requireNonNull(schedulingPolicy);
+            if (schedulingPolicy == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "schedulingPolicy");
+            }
+            this.schedulingPolicy = schedulingPolicy;
             return this;
         }
         @CustomType.Setter
         public Builder scriptId(String scriptId) {
-            this.scriptId = Objects.requireNonNull(scriptId);
+            if (scriptId == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "scriptId");
+            }
+            this.scriptId = scriptId;
             return this;
         }
         @CustomType.Setter
         public Builder scriptName(String scriptName) {
-            this.scriptName = Objects.requireNonNull(scriptName);
+            if (scriptName == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "scriptName");
+            }
+            this.scriptName = scriptName;
             return this;
         }
         @CustomType.Setter
         public Builder scriptParameters(List<GetMonitorScriptParameter> scriptParameters) {
-            this.scriptParameters = Objects.requireNonNull(scriptParameters);
+            if (scriptParameters == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "scriptParameters");
+            }
+            this.scriptParameters = scriptParameters;
             return this;
         }
         public Builder scriptParameters(GetMonitorScriptParameter... scriptParameters) {
@@ -474,37 +529,58 @@ public final class GetMonitorResult {
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder target(String target) {
-            this.target = Objects.requireNonNull(target);
+            if (target == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "target");
+            }
+            this.target = target;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+            if (timeoutInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "timeoutInSeconds");
+            }
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder vantagePointCount(Integer vantagePointCount) {
-            this.vantagePointCount = Objects.requireNonNull(vantagePointCount);
+            if (vantagePointCount == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "vantagePointCount");
+            }
+            this.vantagePointCount = vantagePointCount;
             return this;
         }
         @CustomType.Setter
         public Builder vantagePoints(List<GetMonitorVantagePoint> vantagePoints) {
-            this.vantagePoints = Objects.requireNonNull(vantagePoints);
+            if (vantagePoints == null) {
+              throw new MissingRequiredPropertyException("GetMonitorResult", "vantagePoints");
+            }
+            this.vantagePoints = vantagePoints;
             return this;
         }
         public Builder vantagePoints(GetMonitorVantagePoint... vantagePoints) {

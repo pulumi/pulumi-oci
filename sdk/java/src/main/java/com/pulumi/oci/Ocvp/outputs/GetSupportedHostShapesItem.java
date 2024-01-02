@@ -4,6 +4,7 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
@@ -215,47 +216,74 @@ public final class GetSupportedHostShapesItem {
 
         @CustomType.Setter
         public Builder defaultOcpuCount(Double defaultOcpuCount) {
-            this.defaultOcpuCount = Objects.requireNonNull(defaultOcpuCount);
+            if (defaultOcpuCount == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "defaultOcpuCount");
+            }
+            this.defaultOcpuCount = defaultOcpuCount;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder isSingleHostSddcSupported(Boolean isSingleHostSddcSupported) {
-            this.isSingleHostSddcSupported = Objects.requireNonNull(isSingleHostSddcSupported);
+            if (isSingleHostSddcSupported == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "isSingleHostSddcSupported");
+            }
+            this.isSingleHostSddcSupported = isSingleHostSddcSupported;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportMonthlyCommitment(Boolean isSupportMonthlyCommitment) {
-            this.isSupportMonthlyCommitment = Objects.requireNonNull(isSupportMonthlyCommitment);
+            if (isSupportMonthlyCommitment == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "isSupportMonthlyCommitment");
+            }
+            this.isSupportMonthlyCommitment = isSupportMonthlyCommitment;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportMonthlySku(Boolean isSupportMonthlySku) {
-            this.isSupportMonthlySku = Objects.requireNonNull(isSupportMonthlySku);
+            if (isSupportMonthlySku == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "isSupportMonthlySku");
+            }
+            this.isSupportMonthlySku = isSupportMonthlySku;
             return this;
         }
         @CustomType.Setter
         public Builder isSupportShieldedInstances(Boolean isSupportShieldedInstances) {
-            this.isSupportShieldedInstances = Objects.requireNonNull(isSupportShieldedInstances);
+            if (isSupportShieldedInstances == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "isSupportShieldedInstances");
+            }
+            this.isSupportShieldedInstances = isSupportShieldedInstances;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder shapeFamily(String shapeFamily) {
-            this.shapeFamily = Objects.requireNonNull(shapeFamily);
+            if (shapeFamily == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "shapeFamily");
+            }
+            this.shapeFamily = shapeFamily;
             return this;
         }
         @CustomType.Setter
         public Builder supportedOcpuCounts(List<Double> supportedOcpuCounts) {
-            this.supportedOcpuCounts = Objects.requireNonNull(supportedOcpuCounts);
+            if (supportedOcpuCounts == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "supportedOcpuCounts");
+            }
+            this.supportedOcpuCounts = supportedOcpuCounts;
             return this;
         }
         public Builder supportedOcpuCounts(Double... supportedOcpuCounts) {
@@ -263,7 +291,10 @@ public final class GetSupportedHostShapesItem {
         }
         @CustomType.Setter
         public Builder supportedOperations(List<String> supportedOperations) {
-            this.supportedOperations = Objects.requireNonNull(supportedOperations);
+            if (supportedOperations == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "supportedOperations");
+            }
+            this.supportedOperations = supportedOperations;
             return this;
         }
         public Builder supportedOperations(String... supportedOperations) {
@@ -271,7 +302,10 @@ public final class GetSupportedHostShapesItem {
         }
         @CustomType.Setter
         public Builder supportedSddcTypes(List<String> supportedSddcTypes) {
-            this.supportedSddcTypes = Objects.requireNonNull(supportedSddcTypes);
+            if (supportedSddcTypes == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "supportedSddcTypes");
+            }
+            this.supportedSddcTypes = supportedSddcTypes;
             return this;
         }
         public Builder supportedSddcTypes(String... supportedSddcTypes) {
@@ -279,7 +313,10 @@ public final class GetSupportedHostShapesItem {
         }
         @CustomType.Setter
         public Builder supportedVmwareSoftwareVersions(List<String> supportedVmwareSoftwareVersions) {
-            this.supportedVmwareSoftwareVersions = Objects.requireNonNull(supportedVmwareSoftwareVersions);
+            if (supportedVmwareSoftwareVersions == null) {
+              throw new MissingRequiredPropertyException("GetSupportedHostShapesItem", "supportedVmwareSoftwareVersions");
+            }
+            this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
             return this;
         }
         public Builder supportedVmwareSoftwareVersions(String... supportedVmwareSoftwareVersions) {

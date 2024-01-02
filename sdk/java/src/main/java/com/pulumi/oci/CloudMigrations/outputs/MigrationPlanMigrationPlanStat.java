@@ -75,11 +75,13 @@ public final class MigrationPlanMigrationPlanStat {
 
         @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
+
             this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder totalEstimatedCosts(@Nullable List<MigrationPlanMigrationPlanStatTotalEstimatedCost> totalEstimatedCosts) {
+
             this.totalEstimatedCosts = totalEstimatedCosts;
             return this;
         }
@@ -88,6 +90,7 @@ public final class MigrationPlanMigrationPlanStat {
         }
         @CustomType.Setter
         public Builder vmCount(@Nullable Integer vmCount) {
+
             this.vmCount = vmCount;
             return this;
         }

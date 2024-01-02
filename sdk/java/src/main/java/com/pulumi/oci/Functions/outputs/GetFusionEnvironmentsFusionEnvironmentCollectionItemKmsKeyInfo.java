@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,37 +71,58 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInf
 
         @CustomType.Setter
         public Builder activeKeyId(String activeKeyId) {
-            this.activeKeyId = Objects.requireNonNull(activeKeyId);
+            if (activeKeyId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo", "activeKeyId");
+            }
+            this.activeKeyId = activeKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder activeKeyVersion(String activeKeyVersion) {
-            this.activeKeyVersion = Objects.requireNonNull(activeKeyVersion);
+            if (activeKeyVersion == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo", "activeKeyVersion");
+            }
+            this.activeKeyVersion = activeKeyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder currentKeyLifecycleState(String currentKeyLifecycleState) {
-            this.currentKeyLifecycleState = Objects.requireNonNull(currentKeyLifecycleState);
+            if (currentKeyLifecycleState == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo", "currentKeyLifecycleState");
+            }
+            this.currentKeyLifecycleState = currentKeyLifecycleState;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledKeyId(String scheduledKeyId) {
-            this.scheduledKeyId = Objects.requireNonNull(scheduledKeyId);
+            if (scheduledKeyId == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo", "scheduledKeyId");
+            }
+            this.scheduledKeyId = scheduledKeyId;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledKeyStatus(String scheduledKeyStatus) {
-            this.scheduledKeyStatus = Objects.requireNonNull(scheduledKeyStatus);
+            if (scheduledKeyStatus == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo", "scheduledKeyStatus");
+            }
+            this.scheduledKeyStatus = scheduledKeyStatus;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledKeyVersion(String scheduledKeyVersion) {
-            this.scheduledKeyVersion = Objects.requireNonNull(scheduledKeyVersion);
+            if (scheduledKeyVersion == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo", "scheduledKeyVersion");
+            }
+            this.scheduledKeyVersion = scheduledKeyVersion;
             return this;
         }
         @CustomType.Setter
         public Builder scheduledLifecycleState(String scheduledLifecycleState) {
-            this.scheduledLifecycleState = Objects.requireNonNull(scheduledLifecycleState);
+            if (scheduledLifecycleState == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo", "scheduledLifecycleState");
+            }
+            this.scheduledLifecycleState = scheduledLifecycleState;
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo build() {

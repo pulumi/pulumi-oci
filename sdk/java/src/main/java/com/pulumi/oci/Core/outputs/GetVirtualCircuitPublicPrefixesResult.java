@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitPublicPrefixesFilter;
 import com.pulumi.oci.Core.outputs.GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix;
 import java.lang.String;
@@ -87,6 +88,7 @@ public final class GetVirtualCircuitPublicPrefixesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetVirtualCircuitPublicPrefixesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -95,22 +97,32 @@ public final class GetVirtualCircuitPublicPrefixesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitPublicPrefixesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder verificationState(@Nullable String verificationState) {
+
             this.verificationState = verificationState;
             return this;
         }
         @CustomType.Setter
         public Builder virtualCircuitId(String virtualCircuitId) {
-            this.virtualCircuitId = Objects.requireNonNull(virtualCircuitId);
+            if (virtualCircuitId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitPublicPrefixesResult", "virtualCircuitId");
+            }
+            this.virtualCircuitId = virtualCircuitId;
             return this;
         }
         @CustomType.Setter
         public Builder virtualCircuitPublicPrefixes(List<GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix> virtualCircuitPublicPrefixes) {
-            this.virtualCircuitPublicPrefixes = Objects.requireNonNull(virtualCircuitPublicPrefixes);
+            if (virtualCircuitPublicPrefixes == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitPublicPrefixesResult", "virtualCircuitPublicPrefixes");
+            }
+            this.virtualCircuitPublicPrefixes = virtualCircuitPublicPrefixes;
             return this;
         }
         public Builder virtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix... virtualCircuitPublicPrefixes) {

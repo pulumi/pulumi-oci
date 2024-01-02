@@ -5,6 +5,7 @@ package com.pulumi.oci.OsManagementHub;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -444,12 +445,24 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         public ManagedInstanceGroupArgs build() {
-            $.archType = Objects.requireNonNull($.archType, "expected parameter 'archType' to be non-null");
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.osFamily = Objects.requireNonNull($.osFamily, "expected parameter 'osFamily' to be non-null");
-            $.softwareSourceIds = Objects.requireNonNull($.softwareSourceIds, "expected parameter 'softwareSourceIds' to be non-null");
-            $.vendorName = Objects.requireNonNull($.vendorName, "expected parameter 'vendorName' to be non-null");
+            if ($.archType == null) {
+                throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "archType");
+            }
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "displayName");
+            }
+            if ($.osFamily == null) {
+                throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "osFamily");
+            }
+            if ($.softwareSourceIds == null) {
+                throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "softwareSourceIds");
+            }
+            if ($.vendorName == null) {
+                throw new MissingRequiredPropertyException("ManagedInstanceGroupArgs", "vendorName");
+            }
             return $;
         }
     }

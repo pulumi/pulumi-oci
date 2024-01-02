@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildRunnerShapeConfigArgs;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineStageBuildSourceCollectionArgs;
@@ -715,9 +716,15 @@ public final class BuildPipelineStageArgs extends com.pulumi.resources.ResourceA
         }
 
         public BuildPipelineStageArgs build() {
-            $.buildPipelineId = Objects.requireNonNull($.buildPipelineId, "expected parameter 'buildPipelineId' to be non-null");
-            $.buildPipelineStagePredecessorCollection = Objects.requireNonNull($.buildPipelineStagePredecessorCollection, "expected parameter 'buildPipelineStagePredecessorCollection' to be non-null");
-            $.buildPipelineStageType = Objects.requireNonNull($.buildPipelineStageType, "expected parameter 'buildPipelineStageType' to be non-null");
+            if ($.buildPipelineId == null) {
+                throw new MissingRequiredPropertyException("BuildPipelineStageArgs", "buildPipelineId");
+            }
+            if ($.buildPipelineStagePredecessorCollection == null) {
+                throw new MissingRequiredPropertyException("BuildPipelineStageArgs", "buildPipelineStagePredecessorCollection");
+            }
+            if ($.buildPipelineStageType == null) {
+                throw new MissingRequiredPropertyException("BuildPipelineStageArgs", "buildPipelineStageType");
+            }
             return $;
         }
     }

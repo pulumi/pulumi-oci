@@ -5,6 +5,7 @@ package com.pulumi.oci.AiDocument;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.inputs.ProcessorJobInputLocationArgs;
 import com.pulumi.oci.AiDocument.inputs.ProcessorJobOutputLocationArgs;
 import com.pulumi.oci.AiDocument.inputs.ProcessorJobProcessorConfigArgs;
@@ -227,10 +228,18 @@ public final class ProcessorJobArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ProcessorJobArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.inputLocation = Objects.requireNonNull($.inputLocation, "expected parameter 'inputLocation' to be non-null");
-            $.outputLocation = Objects.requireNonNull($.outputLocation, "expected parameter 'outputLocation' to be non-null");
-            $.processorConfig = Objects.requireNonNull($.processorConfig, "expected parameter 'processorConfig' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("ProcessorJobArgs", "compartmentId");
+            }
+            if ($.inputLocation == null) {
+                throw new MissingRequiredPropertyException("ProcessorJobArgs", "inputLocation");
+            }
+            if ($.outputLocation == null) {
+                throw new MissingRequiredPropertyException("ProcessorJobArgs", "outputLocation");
+            }
+            if ($.processorConfig == null) {
+                throw new MissingRequiredPropertyException("ProcessorJobArgs", "processorConfig");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostInstancesDedicatedVmHostInstance;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostInstancesFilter;
 import java.lang.String;
@@ -101,22 +102,32 @@ public final class GetDedicatedVmHostInstancesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstancesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHostId(String dedicatedVmHostId) {
-            this.dedicatedVmHostId = Objects.requireNonNull(dedicatedVmHostId);
+            if (dedicatedVmHostId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstancesResult", "dedicatedVmHostId");
+            }
+            this.dedicatedVmHostId = dedicatedVmHostId;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHostInstances(List<GetDedicatedVmHostInstancesDedicatedVmHostInstance> dedicatedVmHostInstances) {
-            this.dedicatedVmHostInstances = Objects.requireNonNull(dedicatedVmHostInstances);
+            if (dedicatedVmHostInstances == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstancesResult", "dedicatedVmHostInstances");
+            }
+            this.dedicatedVmHostInstances = dedicatedVmHostInstances;
             return this;
         }
         public Builder dedicatedVmHostInstances(GetDedicatedVmHostInstancesDedicatedVmHostInstance... dedicatedVmHostInstances) {
@@ -124,6 +135,7 @@ public final class GetDedicatedVmHostInstancesResult {
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDedicatedVmHostInstancesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -132,7 +144,10 @@ public final class GetDedicatedVmHostInstancesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstancesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDedicatedVmHostInstancesResult build() {

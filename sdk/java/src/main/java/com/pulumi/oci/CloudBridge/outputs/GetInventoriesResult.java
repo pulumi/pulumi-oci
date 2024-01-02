@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetInventoriesFilter;
 import com.pulumi.oci.CloudBridge.outputs.GetInventoriesInventoryCollection;
 import java.lang.String;
@@ -95,11 +96,15 @@ public final class GetInventoriesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInventoriesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInventoriesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -108,12 +113,18 @@ public final class GetInventoriesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInventoriesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder inventoryCollections(List<GetInventoriesInventoryCollection> inventoryCollections) {
-            this.inventoryCollections = Objects.requireNonNull(inventoryCollections);
+            if (inventoryCollections == null) {
+              throw new MissingRequiredPropertyException("GetInventoriesResult", "inventoryCollections");
+            }
+            this.inventoryCollections = inventoryCollections;
             return this;
         }
         public Builder inventoryCollections(GetInventoriesInventoryCollection... inventoryCollections) {
@@ -121,6 +132,7 @@ public final class GetInventoriesResult {
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

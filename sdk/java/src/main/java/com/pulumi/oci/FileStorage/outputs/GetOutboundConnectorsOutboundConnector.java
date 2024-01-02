@@ -4,6 +4,7 @@
 package com.pulumi.oci.FileStorage.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetOutboundConnectorsOutboundConnectorEndpoint;
 import java.lang.Integer;
 import java.lang.Object;
@@ -215,37 +216,58 @@ public final class GetOutboundConnectorsOutboundConnector {
 
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = Objects.requireNonNull(availabilityDomain);
+            if (availabilityDomain == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "availabilityDomain");
+            }
+            this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder bindDistinguishedName(String bindDistinguishedName) {
-            this.bindDistinguishedName = Objects.requireNonNull(bindDistinguishedName);
+            if (bindDistinguishedName == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "bindDistinguishedName");
+            }
+            this.bindDistinguishedName = bindDistinguishedName;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder connectorType(String connectorType) {
-            this.connectorType = Objects.requireNonNull(connectorType);
+            if (connectorType == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "connectorType");
+            }
+            this.connectorType = connectorType;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder endpoints(List<GetOutboundConnectorsOutboundConnectorEndpoint> endpoints) {
-            this.endpoints = Objects.requireNonNull(endpoints);
+            if (endpoints == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "endpoints");
+            }
+            this.endpoints = endpoints;
             return this;
         }
         public Builder endpoints(GetOutboundConnectorsOutboundConnectorEndpoint... endpoints) {
@@ -253,32 +275,50 @@ public final class GetOutboundConnectorsOutboundConnector {
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretId(String passwordSecretId) {
-            this.passwordSecretId = Objects.requireNonNull(passwordSecretId);
+            if (passwordSecretId == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "passwordSecretId");
+            }
+            this.passwordSecretId = passwordSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder passwordSecretVersion(Integer passwordSecretVersion) {
-            this.passwordSecretVersion = Objects.requireNonNull(passwordSecretVersion);
+            if (passwordSecretVersion == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "passwordSecretVersion");
+            }
+            this.passwordSecretVersion = passwordSecretVersion;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetOutboundConnectorsOutboundConnector", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetOutboundConnectorsOutboundConnector build() {

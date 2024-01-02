@@ -4,6 +4,7 @@
 package com.pulumi.oci.OspGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLinesFilter;
 import com.pulumi.oci.OspGateway.outputs.GetInvoicesInvoiceLinesInvoiceLineCollection;
 import java.lang.String;
@@ -84,11 +85,15 @@ public final class GetInvoicesInvoiceLinesResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetInvoicesInvoiceLinesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -97,17 +102,26 @@ public final class GetInvoicesInvoiceLinesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder internalInvoiceId(String internalInvoiceId) {
-            this.internalInvoiceId = Objects.requireNonNull(internalInvoiceId);
+            if (internalInvoiceId == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesResult", "internalInvoiceId");
+            }
+            this.internalInvoiceId = internalInvoiceId;
             return this;
         }
         @CustomType.Setter
         public Builder invoiceLineCollections(List<GetInvoicesInvoiceLinesInvoiceLineCollection> invoiceLineCollections) {
-            this.invoiceLineCollections = Objects.requireNonNull(invoiceLineCollections);
+            if (invoiceLineCollections == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesResult", "invoiceLineCollections");
+            }
+            this.invoiceLineCollections = invoiceLineCollections;
             return this;
         }
         public Builder invoiceLineCollections(GetInvoicesInvoiceLinesInvoiceLineCollection... invoiceLineCollections) {
@@ -115,7 +129,10 @@ public final class GetInvoicesInvoiceLinesResult {
         }
         @CustomType.Setter
         public Builder ospHomeRegion(String ospHomeRegion) {
-            this.ospHomeRegion = Objects.requireNonNull(ospHomeRegion);
+            if (ospHomeRegion == null) {
+              throw new MissingRequiredPropertyException("GetInvoicesInvoiceLinesResult", "ospHomeRegion");
+            }
+            this.ospHomeRegion = ospHomeRegion;
             return this;
         }
         public GetInvoicesInvoiceLinesResult build() {

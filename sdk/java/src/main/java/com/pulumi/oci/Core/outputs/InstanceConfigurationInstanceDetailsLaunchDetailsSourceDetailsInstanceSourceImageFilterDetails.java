@@ -88,21 +88,25 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetail
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTagsFilter(@Nullable Map<String,Object> definedTagsFilter) {
+
             this.definedTagsFilter = definedTagsFilter;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystem(@Nullable String operatingSystem) {
+
             this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(@Nullable String operatingSystemVersion) {
+
             this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }

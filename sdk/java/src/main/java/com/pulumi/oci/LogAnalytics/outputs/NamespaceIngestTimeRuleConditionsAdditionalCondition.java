@@ -4,6 +4,7 @@
 package com.pulumi.oci.LogAnalytics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class NamespaceIngestTimeRuleConditionsAdditionalCondition {
 
         @CustomType.Setter
         public Builder conditionField(String conditionField) {
-            this.conditionField = Objects.requireNonNull(conditionField);
+            if (conditionField == null) {
+              throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsAdditionalCondition", "conditionField");
+            }
+            this.conditionField = conditionField;
             return this;
         }
         @CustomType.Setter
         public Builder conditionOperator(String conditionOperator) {
-            this.conditionOperator = Objects.requireNonNull(conditionOperator);
+            if (conditionOperator == null) {
+              throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsAdditionalCondition", "conditionOperator");
+            }
+            this.conditionOperator = conditionOperator;
             return this;
         }
         @CustomType.Setter
         public Builder conditionValue(String conditionValue) {
-            this.conditionValue = Objects.requireNonNull(conditionValue);
+            if (conditionValue == null) {
+              throw new MissingRequiredPropertyException("NamespaceIngestTimeRuleConditionsAdditionalCondition", "conditionValue");
+            }
+            this.conditionValue = conditionValue;
             return this;
         }
         public NamespaceIngestTimeRuleConditionsAdditionalCondition build() {

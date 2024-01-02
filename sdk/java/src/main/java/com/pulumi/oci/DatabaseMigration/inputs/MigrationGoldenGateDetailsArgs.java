@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsHubArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationGoldenGateDetailsSettingsArgs;
 import java.util.Objects;
@@ -114,7 +115,9 @@ public final class MigrationGoldenGateDetailsArgs extends com.pulumi.resources.R
         }
 
         public MigrationGoldenGateDetailsArgs build() {
-            $.hub = Objects.requireNonNull($.hub, "expected parameter 'hub' to be non-null");
+            if ($.hub == null) {
+                throw new MissingRequiredPropertyException("MigrationGoldenGateDetailsArgs", "hub");
+            }
             return $;
         }
     }

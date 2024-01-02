@@ -4,6 +4,7 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -70,17 +71,26 @@ public final class GetBuildPipelinesBuildPipelineCollectionItemBuildPipelinePara
 
         @CustomType.Setter
         public Builder defaultValue(String defaultValue) {
-            this.defaultValue = Objects.requireNonNull(defaultValue);
+            if (defaultValue == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem", "defaultValue");
+            }
+            this.defaultValue = defaultValue;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterItem build() {

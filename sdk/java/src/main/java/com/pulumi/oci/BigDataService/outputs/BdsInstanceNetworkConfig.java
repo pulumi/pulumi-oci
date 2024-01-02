@@ -59,11 +59,13 @@ public final class BdsInstanceNetworkConfig {
 
         @CustomType.Setter
         public Builder cidrBlock(@Nullable String cidrBlock) {
+
             this.cidrBlock = cidrBlock;
             return this;
         }
         @CustomType.Setter
         public Builder isNatGatewayRequired(@Nullable Boolean isNatGatewayRequired) {
+
             this.isNatGatewayRequired = isNatGatewayRequired;
             return this;
         }

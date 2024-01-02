@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -41,7 +42,10 @@ public final class GetNetworkSourcesNetworkSourceVirtualSourceList {
 
         @CustomType.Setter
         public Builder ipRanges(List<String> ipRanges) {
-            this.ipRanges = Objects.requireNonNull(ipRanges);
+            if (ipRanges == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSourceVirtualSourceList", "ipRanges");
+            }
+            this.ipRanges = ipRanges;
             return this;
         }
         public Builder ipRanges(String... ipRanges) {
@@ -49,7 +53,10 @@ public final class GetNetworkSourcesNetworkSourceVirtualSourceList {
         }
         @CustomType.Setter
         public Builder vcnId(String vcnId) {
-            this.vcnId = Objects.requireNonNull(vcnId);
+            if (vcnId == null) {
+              throw new MissingRequiredPropertyException("GetNetworkSourcesNetworkSourceVirtualSourceList", "vcnId");
+            }
+            this.vcnId = vcnId;
             return this;
         }
         public GetNetworkSourcesNetworkSourceVirtualSourceList build() {

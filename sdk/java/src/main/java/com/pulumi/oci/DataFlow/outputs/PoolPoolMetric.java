@@ -116,11 +116,13 @@ public final class PoolPoolMetric {
 
         @CustomType.Setter
         public Builder activeRunsCount(@Nullable String activeRunsCount) {
+
             this.activeRunsCount = activeRunsCount;
             return this;
         }
         @CustomType.Setter
         public Builder activelyUsedNodeCounts(@Nullable List<PoolPoolMetricActivelyUsedNodeCount> activelyUsedNodeCounts) {
+
             this.activelyUsedNodeCounts = activelyUsedNodeCounts;
             return this;
         }
@@ -129,21 +131,25 @@ public final class PoolPoolMetric {
         }
         @CustomType.Setter
         public Builder timeLastMetricsUpdated(@Nullable String timeLastMetricsUpdated) {
+
             this.timeLastMetricsUpdated = timeLastMetricsUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastStarted(@Nullable String timeLastStarted) {
+
             this.timeLastStarted = timeLastStarted;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastStopped(@Nullable String timeLastStopped) {
+
             this.timeLastStopped = timeLastStopped;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastUsed(@Nullable String timeLastUsed) {
+
             this.timeLastUsed = timeLastUsed;
             return this;
         }

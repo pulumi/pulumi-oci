@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waa.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy;
 import com.pulumi.oci.Waa.outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy;
 import java.lang.Object;
@@ -201,37 +202,58 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder responseCachingPolicies(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy> responseCachingPolicies) {
-            this.responseCachingPolicies = Objects.requireNonNull(responseCachingPolicies);
+            if (responseCachingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "responseCachingPolicies");
+            }
+            this.responseCachingPolicies = responseCachingPolicies;
             return this;
         }
         public Builder responseCachingPolicies(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy... responseCachingPolicies) {
@@ -239,7 +261,10 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
         }
         @CustomType.Setter
         public Builder responseCompressionPolicies(List<GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy> responseCompressionPolicies) {
-            this.responseCompressionPolicies = Objects.requireNonNull(responseCompressionPolicies);
+            if (responseCompressionPolicies == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "responseCompressionPolicies");
+            }
+            this.responseCompressionPolicies = responseCompressionPolicies;
             return this;
         }
         public Builder responseCompressionPolicies(GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicy... responseCompressionPolicies) {
@@ -247,22 +272,34 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItem build() {

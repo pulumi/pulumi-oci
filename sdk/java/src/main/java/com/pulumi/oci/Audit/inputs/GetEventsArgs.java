@@ -5,6 +5,7 @@ package com.pulumi.oci.Audit.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Audit.inputs.GetEventsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -189,9 +190,15 @@ public final class GetEventsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetEventsArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.endTime = Objects.requireNonNull($.endTime, "expected parameter 'endTime' to be non-null");
-            $.startTime = Objects.requireNonNull($.startTime, "expected parameter 'startTime' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetEventsArgs", "compartmentId");
+            }
+            if ($.endTime == null) {
+                throw new MissingRequiredPropertyException("GetEventsArgs", "endTime");
+            }
+            if ($.startTime == null) {
+                throw new MissingRequiredPropertyException("GetEventsArgs", "startTime");
+            }
             return $;
         }
     }

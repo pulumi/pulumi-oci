@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetNotebookSessionPlainArgs extends com.pulumi.resources.Invo
         }
 
         public GetNotebookSessionPlainArgs build() {
-            $.notebookSessionId = Objects.requireNonNull($.notebookSessionId, "expected parameter 'notebookSessionId' to be non-null");
+            if ($.notebookSessionId == null) {
+                throw new MissingRequiredPropertyException("GetNotebookSessionPlainArgs", "notebookSessionId");
+            }
             return $;
         }
     }

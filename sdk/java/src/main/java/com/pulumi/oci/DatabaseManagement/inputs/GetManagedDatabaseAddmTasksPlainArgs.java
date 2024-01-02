@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseAddmTasksFilter;
 import java.lang.String;
 import java.util.List;
@@ -138,9 +139,15 @@ public final class GetManagedDatabaseAddmTasksPlainArgs extends com.pulumi.resou
         }
 
         public GetManagedDatabaseAddmTasksPlainArgs build() {
-            $.managedDatabaseId = Objects.requireNonNull($.managedDatabaseId, "expected parameter 'managedDatabaseId' to be non-null");
-            $.timeEnd = Objects.requireNonNull($.timeEnd, "expected parameter 'timeEnd' to be non-null");
-            $.timeStart = Objects.requireNonNull($.timeStart, "expected parameter 'timeStart' to be non-null");
+            if ($.managedDatabaseId == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTasksPlainArgs", "managedDatabaseId");
+            }
+            if ($.timeEnd == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTasksPlainArgs", "timeEnd");
+            }
+            if ($.timeStart == null) {
+                throw new MissingRequiredPropertyException("GetManagedDatabaseAddmTasksPlainArgs", "timeStart");
+            }
             return $;
         }
     }

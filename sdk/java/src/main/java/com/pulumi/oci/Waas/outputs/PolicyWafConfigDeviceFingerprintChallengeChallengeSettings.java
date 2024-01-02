@@ -157,46 +157,55 @@ public final class PolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
 
         @CustomType.Setter
         public Builder blockAction(@Nullable String blockAction) {
+
             this.blockAction = blockAction;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageCode(@Nullable String blockErrorPageCode) {
+
             this.blockErrorPageCode = blockErrorPageCode;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageDescription(@Nullable String blockErrorPageDescription) {
+
             this.blockErrorPageDescription = blockErrorPageDescription;
             return this;
         }
         @CustomType.Setter
         public Builder blockErrorPageMessage(@Nullable String blockErrorPageMessage) {
+
             this.blockErrorPageMessage = blockErrorPageMessage;
             return this;
         }
         @CustomType.Setter
         public Builder blockResponseCode(@Nullable Integer blockResponseCode) {
+
             this.blockResponseCode = blockResponseCode;
             return this;
         }
         @CustomType.Setter
         public Builder captchaFooter(@Nullable String captchaFooter) {
+
             this.captchaFooter = captchaFooter;
             return this;
         }
         @CustomType.Setter
         public Builder captchaHeader(@Nullable String captchaHeader) {
+
             this.captchaHeader = captchaHeader;
             return this;
         }
         @CustomType.Setter
         public Builder captchaSubmitLabel(@Nullable String captchaSubmitLabel) {
+
             this.captchaSubmitLabel = captchaSubmitLabel;
             return this;
         }
         @CustomType.Setter
         public Builder captchaTitle(@Nullable String captchaTitle) {
+
             this.captchaTitle = captchaTitle;
             return this;
         }

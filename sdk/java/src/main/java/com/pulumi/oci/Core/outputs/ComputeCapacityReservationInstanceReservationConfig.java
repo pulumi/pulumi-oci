@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.ComputeCapacityReservationInstanceReservationConfigClusterConfig;
 import com.pulumi.oci.Core.outputs.ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig;
 import java.lang.String;
@@ -140,31 +141,41 @@ public final class ComputeCapacityReservationInstanceReservationConfig {
 
         @CustomType.Setter
         public Builder clusterConfig(@Nullable ComputeCapacityReservationInstanceReservationConfigClusterConfig clusterConfig) {
+
             this.clusterConfig = clusterConfig;
             return this;
         }
         @CustomType.Setter
         public Builder faultDomain(@Nullable String faultDomain) {
+
             this.faultDomain = faultDomain;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShape(String instanceShape) {
-            this.instanceShape = Objects.requireNonNull(instanceShape);
+            if (instanceShape == null) {
+              throw new MissingRequiredPropertyException("ComputeCapacityReservationInstanceReservationConfig", "instanceShape");
+            }
+            this.instanceShape = instanceShape;
             return this;
         }
         @CustomType.Setter
         public Builder instanceShapeConfig(@Nullable ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig instanceShapeConfig) {
+
             this.instanceShapeConfig = instanceShapeConfig;
             return this;
         }
         @CustomType.Setter
         public Builder reservedCount(String reservedCount) {
-            this.reservedCount = Objects.requireNonNull(reservedCount);
+            if (reservedCount == null) {
+              throw new MissingRequiredPropertyException("ComputeCapacityReservationInstanceReservationConfig", "reservedCount");
+            }
+            this.reservedCount = reservedCount;
             return this;
         }
         @CustomType.Setter
         public Builder usedCount(@Nullable String usedCount) {
+
             this.usedCount = usedCount;
             return this;
         }

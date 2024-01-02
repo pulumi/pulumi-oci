@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -200,62 +201,98 @@ public final class GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry {
 
         @CustomType.Setter
         public Builder action(String action) {
-            this.action = Objects.requireNonNull(action);
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "action");
+            }
+            this.action = action;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder options(String options) {
-            this.options = Objects.requireNonNull(options);
+            if (options == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "options");
+            }
+            this.options = options;
             return this;
         }
         @CustomType.Setter
         public Builder source(String source) {
-            this.source = Objects.requireNonNull(source);
+            if (source == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "source");
+            }
+            this.source = source;
             return this;
         }
         @CustomType.Setter
         public Builder sourceDbHomeId(String sourceDbHomeId) {
-            this.sourceDbHomeId = Objects.requireNonNull(sourceDbHomeId);
+            if (sourceDbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "sourceDbHomeId");
+            }
+            this.sourceDbHomeId = sourceDbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder targetDatabaseSoftwareImageId(String targetDatabaseSoftwareImageId) {
-            this.targetDatabaseSoftwareImageId = Objects.requireNonNull(targetDatabaseSoftwareImageId);
+            if (targetDatabaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "targetDatabaseSoftwareImageId");
+            }
+            this.targetDatabaseSoftwareImageId = targetDatabaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
         public Builder targetDbHomeId(String targetDbHomeId) {
-            this.targetDbHomeId = Objects.requireNonNull(targetDbHomeId);
+            if (targetDbHomeId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "targetDbHomeId");
+            }
+            this.targetDbHomeId = targetDbHomeId;
             return this;
         }
         @CustomType.Setter
         public Builder targetDbVersion(String targetDbVersion) {
-            this.targetDbVersion = Objects.requireNonNull(targetDbVersion);
+            if (targetDbVersion == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "targetDbVersion");
+            }
+            this.targetDbVersion = targetDbVersion;
             return this;
         }
         @CustomType.Setter
         public Builder timeEnded(String timeEnded) {
-            this.timeEnded = Objects.requireNonNull(timeEnded);
+            if (timeEnded == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "timeEnded");
+            }
+            this.timeEnded = timeEnded;
             return this;
         }
         @CustomType.Setter
         public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+            if (timeStarted == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry", "timeStarted");
+            }
+            this.timeStarted = timeStarted;
             return this;
         }
         public GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry build() {

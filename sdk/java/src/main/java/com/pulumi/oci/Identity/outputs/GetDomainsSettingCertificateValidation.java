@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -170,52 +171,82 @@ public final class GetDomainsSettingCertificateValidation {
 
         @CustomType.Setter
         public Builder crlCheckOnOcspFailureEnabled(Boolean crlCheckOnOcspFailureEnabled) {
-            this.crlCheckOnOcspFailureEnabled = Objects.requireNonNull(crlCheckOnOcspFailureEnabled);
+            if (crlCheckOnOcspFailureEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "crlCheckOnOcspFailureEnabled");
+            }
+            this.crlCheckOnOcspFailureEnabled = crlCheckOnOcspFailureEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder crlEnabled(Boolean crlEnabled) {
-            this.crlEnabled = Objects.requireNonNull(crlEnabled);
+            if (crlEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "crlEnabled");
+            }
+            this.crlEnabled = crlEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder crlLocation(String crlLocation) {
-            this.crlLocation = Objects.requireNonNull(crlLocation);
+            if (crlLocation == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "crlLocation");
+            }
+            this.crlLocation = crlLocation;
             return this;
         }
         @CustomType.Setter
         public Builder crlRefreshInterval(Integer crlRefreshInterval) {
-            this.crlRefreshInterval = Objects.requireNonNull(crlRefreshInterval);
+            if (crlRefreshInterval == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "crlRefreshInterval");
+            }
+            this.crlRefreshInterval = crlRefreshInterval;
             return this;
         }
         @CustomType.Setter
         public Builder ocspEnabled(Boolean ocspEnabled) {
-            this.ocspEnabled = Objects.requireNonNull(ocspEnabled);
+            if (ocspEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "ocspEnabled");
+            }
+            this.ocspEnabled = ocspEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder ocspResponderUrl(String ocspResponderUrl) {
-            this.ocspResponderUrl = Objects.requireNonNull(ocspResponderUrl);
+            if (ocspResponderUrl == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "ocspResponderUrl");
+            }
+            this.ocspResponderUrl = ocspResponderUrl;
             return this;
         }
         @CustomType.Setter
         public Builder ocspSettingsResponderUrlPreferred(Boolean ocspSettingsResponderUrlPreferred) {
-            this.ocspSettingsResponderUrlPreferred = Objects.requireNonNull(ocspSettingsResponderUrlPreferred);
+            if (ocspSettingsResponderUrlPreferred == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "ocspSettingsResponderUrlPreferred");
+            }
+            this.ocspSettingsResponderUrlPreferred = ocspSettingsResponderUrlPreferred;
             return this;
         }
         @CustomType.Setter
         public Builder ocspSigningCertificateAlias(String ocspSigningCertificateAlias) {
-            this.ocspSigningCertificateAlias = Objects.requireNonNull(ocspSigningCertificateAlias);
+            if (ocspSigningCertificateAlias == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "ocspSigningCertificateAlias");
+            }
+            this.ocspSigningCertificateAlias = ocspSigningCertificateAlias;
             return this;
         }
         @CustomType.Setter
         public Builder ocspTimeoutDuration(Integer ocspTimeoutDuration) {
-            this.ocspTimeoutDuration = Objects.requireNonNull(ocspTimeoutDuration);
+            if (ocspTimeoutDuration == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "ocspTimeoutDuration");
+            }
+            this.ocspTimeoutDuration = ocspTimeoutDuration;
             return this;
         }
         @CustomType.Setter
         public Builder ocspUnknownResponseStatusAllowed(Boolean ocspUnknownResponseStatusAllowed) {
-            this.ocspUnknownResponseStatusAllowed = Objects.requireNonNull(ocspUnknownResponseStatusAllowed);
+            if (ocspUnknownResponseStatusAllowed == null) {
+              throw new MissingRequiredPropertyException("GetDomainsSettingCertificateValidation", "ocspUnknownResponseStatusAllowed");
+            }
+            this.ocspUnknownResponseStatusAllowed = ocspUnknownResponseStatusAllowed;
             return this;
         }
         public GetDomainsSettingCertificateValidation build() {

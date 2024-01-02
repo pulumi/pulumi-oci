@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceExportRequestExportedItem;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -304,32 +305,50 @@ public final class GetWorkspaceExportRequestResult {
 
         @CustomType.Setter
         public Builder areReferencesIncluded(Boolean areReferencesIncluded) {
-            this.areReferencesIncluded = Objects.requireNonNull(areReferencesIncluded);
+            if (areReferencesIncluded == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "areReferencesIncluded");
+            }
+            this.areReferencesIncluded = areReferencesIncluded;
             return this;
         }
         @CustomType.Setter
         public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+            if (bucket == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "bucket");
+            }
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
-            this.createdBy = Objects.requireNonNull(createdBy);
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "createdBy");
+            }
+            this.createdBy = createdBy;
             return this;
         }
         @CustomType.Setter
         public Builder errorMessages(Map<String,Object> errorMessages) {
-            this.errorMessages = Objects.requireNonNull(errorMessages);
+            if (errorMessages == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "errorMessages");
+            }
+            this.errorMessages = errorMessages;
             return this;
         }
         @CustomType.Setter
         public Builder exportRequestKey(String exportRequestKey) {
-            this.exportRequestKey = Objects.requireNonNull(exportRequestKey);
+            if (exportRequestKey == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "exportRequestKey");
+            }
+            this.exportRequestKey = exportRequestKey;
             return this;
         }
         @CustomType.Setter
         public Builder exportedItems(List<GetWorkspaceExportRequestExportedItem> exportedItems) {
-            this.exportedItems = Objects.requireNonNull(exportedItems);
+            if (exportedItems == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "exportedItems");
+            }
+            this.exportedItems = exportedItems;
             return this;
         }
         public Builder exportedItems(GetWorkspaceExportRequestExportedItem... exportedItems) {
@@ -337,12 +356,18 @@ public final class GetWorkspaceExportRequestResult {
         }
         @CustomType.Setter
         public Builder fileName(String fileName) {
-            this.fileName = Objects.requireNonNull(fileName);
+            if (fileName == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "fileName");
+            }
+            this.fileName = fileName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(List<String> filters) {
-            this.filters = Objects.requireNonNull(filters);
+            if (filters == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "filters");
+            }
+            this.filters = filters;
             return this;
         }
         public Builder filters(String... filters) {
@@ -350,27 +375,42 @@ public final class GetWorkspaceExportRequestResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isObjectOverwriteEnabled(Boolean isObjectOverwriteEnabled) {
-            this.isObjectOverwriteEnabled = Objects.requireNonNull(isObjectOverwriteEnabled);
+            if (isObjectOverwriteEnabled == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "isObjectOverwriteEnabled");
+            }
+            this.isObjectOverwriteEnabled = isObjectOverwriteEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+            if (key == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "key");
+            }
+            this.key = key;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "name");
+            }
+            this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder objectKeys(List<String> objectKeys) {
-            this.objectKeys = Objects.requireNonNull(objectKeys);
+            if (objectKeys == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "objectKeys");
+            }
+            this.objectKeys = objectKeys;
             return this;
         }
         public Builder objectKeys(String... objectKeys) {
@@ -378,42 +418,66 @@ public final class GetWorkspaceExportRequestResult {
         }
         @CustomType.Setter
         public Builder objectStorageRegion(String objectStorageRegion) {
-            this.objectStorageRegion = Objects.requireNonNull(objectStorageRegion);
+            if (objectStorageRegion == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "objectStorageRegion");
+            }
+            this.objectStorageRegion = objectStorageRegion;
             return this;
         }
         @CustomType.Setter
         public Builder objectStorageTenancyId(String objectStorageTenancyId) {
-            this.objectStorageTenancyId = Objects.requireNonNull(objectStorageTenancyId);
+            if (objectStorageTenancyId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "objectStorageTenancyId");
+            }
+            this.objectStorageTenancyId = objectStorageTenancyId;
             return this;
         }
         @CustomType.Setter
         public Builder referencedItems(String referencedItems) {
-            this.referencedItems = Objects.requireNonNull(referencedItems);
+            if (referencedItems == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "referencedItems");
+            }
+            this.referencedItems = referencedItems;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder timeEndedInMillis(String timeEndedInMillis) {
-            this.timeEndedInMillis = Objects.requireNonNull(timeEndedInMillis);
+            if (timeEndedInMillis == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "timeEndedInMillis");
+            }
+            this.timeEndedInMillis = timeEndedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder timeStartedInMillis(String timeStartedInMillis) {
-            this.timeStartedInMillis = Objects.requireNonNull(timeStartedInMillis);
+            if (timeStartedInMillis == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "timeStartedInMillis");
+            }
+            this.timeStartedInMillis = timeStartedInMillis;
             return this;
         }
         @CustomType.Setter
         public Builder totalExportedObjectCount(Integer totalExportedObjectCount) {
-            this.totalExportedObjectCount = Objects.requireNonNull(totalExportedObjectCount);
+            if (totalExportedObjectCount == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "totalExportedObjectCount");
+            }
+            this.totalExportedObjectCount = totalExportedObjectCount;
             return this;
         }
         @CustomType.Setter
         public Builder workspaceId(String workspaceId) {
-            this.workspaceId = Objects.requireNonNull(workspaceId);
+            if (workspaceId == null) {
+              throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "workspaceId");
+            }
+            this.workspaceId = workspaceId;
             return this;
         }
         public GetWorkspaceExportRequestResult build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -167,7 +168,10 @@ public final class GetVmClusterUpdateResult {
 
         @CustomType.Setter
         public Builder availableActions(List<String> availableActions) {
-            this.availableActions = Objects.requireNonNull(availableActions);
+            if (availableActions == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "availableActions");
+            }
+            this.availableActions = availableActions;
             return this;
         }
         public Builder availableActions(String... availableActions) {
@@ -175,52 +179,82 @@ public final class GetVmClusterUpdateResult {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lastAction(String lastAction) {
-            this.lastAction = Objects.requireNonNull(lastAction);
+            if (lastAction == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "lastAction");
+            }
+            this.lastAction = lastAction;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeReleased(String timeReleased) {
-            this.timeReleased = Objects.requireNonNull(timeReleased);
+            if (timeReleased == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "timeReleased");
+            }
+            this.timeReleased = timeReleased;
             return this;
         }
         @CustomType.Setter
         public Builder updateId(String updateId) {
-            this.updateId = Objects.requireNonNull(updateId);
+            if (updateId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "updateId");
+            }
+            this.updateId = updateId;
             return this;
         }
         @CustomType.Setter
         public Builder updateType(String updateType) {
-            this.updateType = Objects.requireNonNull(updateType);
+            if (updateType == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "updateType");
+            }
+            this.updateType = updateType;
             return this;
         }
         @CustomType.Setter
         public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+            if (version == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "version");
+            }
+            this.version = version;
             return this;
         }
         @CustomType.Setter
         public Builder vmClusterId(String vmClusterId) {
-            this.vmClusterId = Objects.requireNonNull(vmClusterId);
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
             return this;
         }
         public GetVmClusterUpdateResult build() {

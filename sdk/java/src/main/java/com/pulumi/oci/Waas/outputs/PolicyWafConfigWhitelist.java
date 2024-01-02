@@ -4,6 +4,7 @@
 package com.pulumi.oci.Waas.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -78,6 +79,7 @@ public final class PolicyWafConfigWhitelist {
 
         @CustomType.Setter
         public Builder addressLists(@Nullable List<String> addressLists) {
+
             this.addressLists = addressLists;
             return this;
         }
@@ -86,6 +88,7 @@ public final class PolicyWafConfigWhitelist {
         }
         @CustomType.Setter
         public Builder addresses(@Nullable List<String> addresses) {
+
             this.addresses = addresses;
             return this;
         }
@@ -94,7 +97,10 @@ public final class PolicyWafConfigWhitelist {
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("PolicyWafConfigWhitelist", "name");
+            }
+            this.name = name;
             return this;
         }
         public PolicyWafConfigWhitelist build() {

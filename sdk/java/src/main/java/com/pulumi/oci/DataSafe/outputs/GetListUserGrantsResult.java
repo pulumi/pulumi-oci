@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataSafe.outputs.GetListUserGrantsFilter;
 import com.pulumi.oci.DataSafe.outputs.GetListUserGrantsGrant;
 import java.lang.Integer;
@@ -154,21 +155,25 @@ public final class GetListUserGrantsResult {
 
         @CustomType.Setter
         public Builder depthLevel(@Nullable Integer depthLevel) {
+
             this.depthLevel = depthLevel;
             return this;
         }
         @CustomType.Setter
         public Builder depthLevelGreaterThanOrEqualTo(@Nullable Integer depthLevelGreaterThanOrEqualTo) {
+
             this.depthLevelGreaterThanOrEqualTo = depthLevelGreaterThanOrEqualTo;
             return this;
         }
         @CustomType.Setter
         public Builder depthLevelLessThan(@Nullable Integer depthLevelLessThan) {
+
             this.depthLevelLessThan = depthLevelLessThan;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetListUserGrantsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -177,17 +182,22 @@ public final class GetListUserGrantsResult {
         }
         @CustomType.Setter
         public Builder grantKey(@Nullable String grantKey) {
+
             this.grantKey = grantKey;
             return this;
         }
         @CustomType.Setter
         public Builder grantName(@Nullable String grantName) {
+
             this.grantName = grantName;
             return this;
         }
         @CustomType.Setter
         public Builder grants(List<GetListUserGrantsGrant> grants) {
-            this.grants = Objects.requireNonNull(grants);
+            if (grants == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsResult", "grants");
+            }
+            this.grants = grants;
             return this;
         }
         public Builder grants(GetListUserGrantsGrant... grants) {
@@ -195,27 +205,38 @@ public final class GetListUserGrantsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder privilegeCategory(@Nullable String privilegeCategory) {
+
             this.privilegeCategory = privilegeCategory;
             return this;
         }
         @CustomType.Setter
         public Builder privilegeType(@Nullable String privilegeType) {
+
             this.privilegeType = privilegeType;
             return this;
         }
         @CustomType.Setter
         public Builder userAssessmentId(String userAssessmentId) {
-            this.userAssessmentId = Objects.requireNonNull(userAssessmentId);
+            if (userAssessmentId == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsResult", "userAssessmentId");
+            }
+            this.userAssessmentId = userAssessmentId;
             return this;
         }
         @CustomType.Setter
         public Builder userKey(String userKey) {
-            this.userKey = Objects.requireNonNull(userKey);
+            if (userKey == null) {
+              throw new MissingRequiredPropertyException("GetListUserGrantsResult", "userKey");
+            }
+            this.userKey = userKey;
             return this;
         }
         public GetListUserGrantsResult build() {

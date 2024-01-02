@@ -5,6 +5,7 @@ package com.pulumi.oci.Waas;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Waas.inputs.PolicyOriginArgs;
 import com.pulumi.oci.Waas.inputs.PolicyOriginGroupArgs;
 import com.pulumi.oci.Waas.inputs.PolicyPolicyConfigArgs;
@@ -446,8 +447,12 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public PolicyArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.domain = Objects.requireNonNull($.domain, "expected parameter 'domain' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("PolicyArgs", "compartmentId");
+            }
+            if ($.domain == null) {
+                throw new MissingRequiredPropertyException("PolicyArgs", "domain");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -320,47 +321,74 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
 
         @CustomType.Setter
         public Builder applyLag(String applyLag) {
-            this.applyLag = Objects.requireNonNull(applyLag);
+            if (applyLag == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "applyLag");
+            }
+            this.applyLag = applyLag;
             return this;
         }
         @CustomType.Setter
         public Builder applyRate(String applyRate) {
-            this.applyRate = Objects.requireNonNull(applyRate);
+            if (applyRate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "applyRate");
+            }
+            this.applyRate = applyRate;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousContainerDatabaseDataguardAssociationId(Integer autonomousContainerDatabaseDataguardAssociationId) {
-            this.autonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull(autonomousContainerDatabaseDataguardAssociationId);
+            if (autonomousContainerDatabaseDataguardAssociationId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "autonomousContainerDatabaseDataguardAssociationId");
+            }
+            this.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
             return this;
         }
         @CustomType.Setter
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
-            this.autonomousContainerDatabaseId = Objects.requireNonNull(autonomousContainerDatabaseId);
+            if (autonomousContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "autonomousContainerDatabaseId");
+            }
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder fastStartFailOverLagLimitInSeconds(Integer fastStartFailOverLagLimitInSeconds) {
-            this.fastStartFailOverLagLimitInSeconds = Objects.requireNonNull(fastStartFailOverLagLimitInSeconds);
+            if (fastStartFailOverLagLimitInSeconds == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "fastStartFailOverLagLimitInSeconds");
+            }
+            this.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
-            this.isAutomaticFailoverEnabled = Objects.requireNonNull(isAutomaticFailoverEnabled);
+            if (isAutomaticFailoverEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "isAutomaticFailoverEnabled");
+            }
+            this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseBackupConfigs(List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs) {
-            this.peerAutonomousContainerDatabaseBackupConfigs = Objects.requireNonNull(peerAutonomousContainerDatabaseBackupConfigs);
+            if (peerAutonomousContainerDatabaseBackupConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerAutonomousContainerDatabaseBackupConfigs");
+            }
+            this.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
             return this;
         }
         public Builder peerAutonomousContainerDatabaseBackupConfigs(GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig... peerAutonomousContainerDatabaseBackupConfigs) {
@@ -368,77 +396,122 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         }
         @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseCompartmentId(String peerAutonomousContainerDatabaseCompartmentId) {
-            this.peerAutonomousContainerDatabaseCompartmentId = Objects.requireNonNull(peerAutonomousContainerDatabaseCompartmentId);
+            if (peerAutonomousContainerDatabaseCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerAutonomousContainerDatabaseCompartmentId");
+            }
+            this.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseDataguardAssociationId(String peerAutonomousContainerDatabaseDataguardAssociationId) {
-            this.peerAutonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull(peerAutonomousContainerDatabaseDataguardAssociationId);
+            if (peerAutonomousContainerDatabaseDataguardAssociationId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerAutonomousContainerDatabaseDataguardAssociationId");
+            }
+            this.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
             return this;
         }
         @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseDisplayName(String peerAutonomousContainerDatabaseDisplayName) {
-            this.peerAutonomousContainerDatabaseDisplayName = Objects.requireNonNull(peerAutonomousContainerDatabaseDisplayName);
+            if (peerAutonomousContainerDatabaseDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerAutonomousContainerDatabaseDisplayName");
+            }
+            this.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
             return this;
         }
         @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseId(String peerAutonomousContainerDatabaseId) {
-            this.peerAutonomousContainerDatabaseId = Objects.requireNonNull(peerAutonomousContainerDatabaseId);
+            if (peerAutonomousContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerAutonomousContainerDatabaseId");
+            }
+            this.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
-            this.peerCloudAutonomousVmClusterId = Objects.requireNonNull(peerCloudAutonomousVmClusterId);
+            if (peerCloudAutonomousVmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerCloudAutonomousVmClusterId");
+            }
+            this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             return this;
         }
         @CustomType.Setter
         public Builder peerLifecycleState(String peerLifecycleState) {
-            this.peerLifecycleState = Objects.requireNonNull(peerLifecycleState);
+            if (peerLifecycleState == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerLifecycleState");
+            }
+            this.peerLifecycleState = peerLifecycleState;
             return this;
         }
         @CustomType.Setter
         public Builder peerRole(String peerRole) {
-            this.peerRole = Objects.requireNonNull(peerRole);
+            if (peerRole == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "peerRole");
+            }
+            this.peerRole = peerRole;
             return this;
         }
         @CustomType.Setter
         public Builder protectionMode(String protectionMode) {
-            this.protectionMode = Objects.requireNonNull(protectionMode);
+            if (protectionMode == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "protectionMode");
+            }
+            this.protectionMode = protectionMode;
             return this;
         }
         @CustomType.Setter
         public Builder role(String role) {
-            this.role = Objects.requireNonNull(role);
+            if (role == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "role");
+            }
+            this.role = role;
             return this;
         }
         @CustomType.Setter
         public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
-            this.standbyMaintenanceBufferInDays = Objects.requireNonNull(standbyMaintenanceBufferInDays);
+            if (standbyMaintenanceBufferInDays == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "standbyMaintenanceBufferInDays");
+            }
+            this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastRoleChanged(String timeLastRoleChanged) {
-            this.timeLastRoleChanged = Objects.requireNonNull(timeLastRoleChanged);
+            if (timeLastRoleChanged == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "timeLastRoleChanged");
+            }
+            this.timeLastRoleChanged = timeLastRoleChanged;
             return this;
         }
         @CustomType.Setter
         public Builder timeLastSynced(String timeLastSynced) {
-            this.timeLastSynced = Objects.requireNonNull(timeLastSynced);
+            if (timeLastSynced == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "timeLastSynced");
+            }
+            this.timeLastSynced = timeLastSynced;
             return this;
         }
         @CustomType.Setter
         public Builder transportLag(String transportLag) {
-            this.transportLag = Objects.requireNonNull(transportLag);
+            if (transportLag == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation", "transportLag");
+            }
+            this.transportLag = transportLag;
             return this;
         }
         public GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation build() {

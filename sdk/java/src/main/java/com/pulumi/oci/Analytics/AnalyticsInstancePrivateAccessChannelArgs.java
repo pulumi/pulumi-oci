@@ -5,6 +5,7 @@ package com.pulumi.oci.Analytics;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs;
 import java.lang.String;
@@ -343,11 +344,21 @@ public final class AnalyticsInstancePrivateAccessChannelArgs extends com.pulumi.
         }
 
         public AnalyticsInstancePrivateAccessChannelArgs build() {
-            $.analyticsInstanceId = Objects.requireNonNull($.analyticsInstanceId, "expected parameter 'analyticsInstanceId' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.privateSourceDnsZones = Objects.requireNonNull($.privateSourceDnsZones, "expected parameter 'privateSourceDnsZones' to be non-null");
-            $.subnetId = Objects.requireNonNull($.subnetId, "expected parameter 'subnetId' to be non-null");
-            $.vcnId = Objects.requireNonNull($.vcnId, "expected parameter 'vcnId' to be non-null");
+            if ($.analyticsInstanceId == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstancePrivateAccessChannelArgs", "analyticsInstanceId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstancePrivateAccessChannelArgs", "displayName");
+            }
+            if ($.privateSourceDnsZones == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstancePrivateAccessChannelArgs", "privateSourceDnsZones");
+            }
+            if ($.subnetId == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstancePrivateAccessChannelArgs", "subnetId");
+            }
+            if ($.vcnId == null) {
+                throw new MissingRequiredPropertyException("AnalyticsInstancePrivateAccessChannelArgs", "vcnId");
+            }
             return $;
         }
     }

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetInstancePoolLoadBalancer;
 import com.pulumi.oci.Core.outputs.GetInstancePoolPlacementConfiguration;
 import java.lang.Integer;
@@ -236,57 +237,90 @@ public final class GetInstancePoolResult {
 
         @CustomType.Setter
         public Builder actualSize(Integer actualSize) {
-            this.actualSize = Objects.requireNonNull(actualSize);
+            if (actualSize == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "actualSize");
+            }
+            this.actualSize = actualSize;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder instanceConfigurationId(String instanceConfigurationId) {
-            this.instanceConfigurationId = Objects.requireNonNull(instanceConfigurationId);
+            if (instanceConfigurationId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "instanceConfigurationId");
+            }
+            this.instanceConfigurationId = instanceConfigurationId;
             return this;
         }
         @CustomType.Setter
         public Builder instanceDisplayNameFormatter(String instanceDisplayNameFormatter) {
-            this.instanceDisplayNameFormatter = Objects.requireNonNull(instanceDisplayNameFormatter);
+            if (instanceDisplayNameFormatter == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "instanceDisplayNameFormatter");
+            }
+            this.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
             return this;
         }
         @CustomType.Setter
         public Builder instanceHostnameFormatter(String instanceHostnameFormatter) {
-            this.instanceHostnameFormatter = Objects.requireNonNull(instanceHostnameFormatter);
+            if (instanceHostnameFormatter == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "instanceHostnameFormatter");
+            }
+            this.instanceHostnameFormatter = instanceHostnameFormatter;
             return this;
         }
         @CustomType.Setter
         public Builder instancePoolId(String instancePoolId) {
-            this.instancePoolId = Objects.requireNonNull(instancePoolId);
+            if (instancePoolId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "instancePoolId");
+            }
+            this.instancePoolId = instancePoolId;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancers(List<GetInstancePoolLoadBalancer> loadBalancers) {
-            this.loadBalancers = Objects.requireNonNull(loadBalancers);
+            if (loadBalancers == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "loadBalancers");
+            }
+            this.loadBalancers = loadBalancers;
             return this;
         }
         public Builder loadBalancers(GetInstancePoolLoadBalancer... loadBalancers) {
@@ -294,7 +328,10 @@ public final class GetInstancePoolResult {
         }
         @CustomType.Setter
         public Builder placementConfigurations(List<GetInstancePoolPlacementConfiguration> placementConfigurations) {
-            this.placementConfigurations = Objects.requireNonNull(placementConfigurations);
+            if (placementConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "placementConfigurations");
+            }
+            this.placementConfigurations = placementConfigurations;
             return this;
         }
         public Builder placementConfigurations(GetInstancePoolPlacementConfiguration... placementConfigurations) {
@@ -302,17 +339,26 @@ public final class GetInstancePoolResult {
         }
         @CustomType.Setter
         public Builder size(Integer size) {
-            this.size = Objects.requireNonNull(size);
+            if (size == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "size");
+            }
+            this.size = size;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         public GetInstancePoolResult build() {

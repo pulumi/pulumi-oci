@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -84,22 +85,34 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
 
         @CustomType.Setter
         public Builder clientId(String clientId) {
-            this.clientId = Objects.requireNonNull(clientId);
+            if (clientId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetail", "clientId");
+            }
+            this.clientId = clientId;
             return this;
         }
         @CustomType.Setter
         public Builder clientSecretId(String clientSecretId) {
-            this.clientSecretId = Objects.requireNonNull(clientSecretId);
+            if (clientSecretId == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetail", "clientSecretId");
+            }
+            this.clientSecretId = clientSecretId;
             return this;
         }
         @CustomType.Setter
         public Builder clientSecretVersionNumber(String clientSecretVersionNumber) {
-            this.clientSecretVersionNumber = Objects.requireNonNull(clientSecretVersionNumber);
+            if (clientSecretVersionNumber == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetail", "clientSecretVersionNumber");
+            }
+            this.clientSecretVersionNumber = clientSecretVersionNumber;
             return this;
         }
         @CustomType.Setter
         public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetail", "type");
+            }
+            this.type = type;
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetail build() {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter;
 import java.lang.Boolean;
@@ -194,7 +195,10 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
 
         @CustomType.Setter
         public Builder autoCaptureFilters(List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter> autoCaptureFilters) {
-            this.autoCaptureFilters = Objects.requireNonNull(autoCaptureFilters);
+            if (autoCaptureFilters == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "autoCaptureFilters");
+            }
+            this.autoCaptureFilters = autoCaptureFilters;
             return this;
         }
         public Builder autoCaptureFilters(GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter... autoCaptureFilters) {
@@ -202,7 +206,10 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
         }
         @CustomType.Setter
         public Builder autoSpmEvolveTaskParameters(List<GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter> autoSpmEvolveTaskParameters) {
-            this.autoSpmEvolveTaskParameters = Objects.requireNonNull(autoSpmEvolveTaskParameters);
+            if (autoSpmEvolveTaskParameters == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "autoSpmEvolveTaskParameters");
+            }
+            this.autoSpmEvolveTaskParameters = autoSpmEvolveTaskParameters;
             return this;
         }
         public Builder autoSpmEvolveTaskParameters(GetManagedDatabaseSqlPlanBaselineConfigurationAutoSpmEvolveTaskParameter... autoSpmEvolveTaskParameters) {
@@ -210,52 +217,82 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAutoSpmEvolveTaskEnabled(Boolean isAutoSpmEvolveTaskEnabled) {
-            this.isAutoSpmEvolveTaskEnabled = Objects.requireNonNull(isAutoSpmEvolveTaskEnabled);
+            if (isAutoSpmEvolveTaskEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "isAutoSpmEvolveTaskEnabled");
+            }
+            this.isAutoSpmEvolveTaskEnabled = isAutoSpmEvolveTaskEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isAutomaticInitialPlanCaptureEnabled(Boolean isAutomaticInitialPlanCaptureEnabled) {
-            this.isAutomaticInitialPlanCaptureEnabled = Objects.requireNonNull(isAutomaticInitialPlanCaptureEnabled);
+            if (isAutomaticInitialPlanCaptureEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "isAutomaticInitialPlanCaptureEnabled");
+            }
+            this.isAutomaticInitialPlanCaptureEnabled = isAutomaticInitialPlanCaptureEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isHighFrequencyAutoSpmEvolveTaskEnabled(Boolean isHighFrequencyAutoSpmEvolveTaskEnabled) {
-            this.isHighFrequencyAutoSpmEvolveTaskEnabled = Objects.requireNonNull(isHighFrequencyAutoSpmEvolveTaskEnabled);
+            if (isHighFrequencyAutoSpmEvolveTaskEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "isHighFrequencyAutoSpmEvolveTaskEnabled");
+            }
+            this.isHighFrequencyAutoSpmEvolveTaskEnabled = isHighFrequencyAutoSpmEvolveTaskEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isSqlPlanBaselinesUsageEnabled(Boolean isSqlPlanBaselinesUsageEnabled) {
-            this.isSqlPlanBaselinesUsageEnabled = Objects.requireNonNull(isSqlPlanBaselinesUsageEnabled);
+            if (isSqlPlanBaselinesUsageEnabled == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "isSqlPlanBaselinesUsageEnabled");
+            }
+            this.isSqlPlanBaselinesUsageEnabled = isSqlPlanBaselinesUsageEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder managedDatabaseId(String managedDatabaseId) {
-            this.managedDatabaseId = Objects.requireNonNull(managedDatabaseId);
+            if (managedDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "managedDatabaseId");
+            }
+            this.managedDatabaseId = managedDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder planRetentionWeeks(Integer planRetentionWeeks) {
-            this.planRetentionWeeks = Objects.requireNonNull(planRetentionWeeks);
+            if (planRetentionWeeks == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "planRetentionWeeks");
+            }
+            this.planRetentionWeeks = planRetentionWeeks;
             return this;
         }
         @CustomType.Setter
         public Builder spaceBudgetMb(Double spaceBudgetMb) {
-            this.spaceBudgetMb = Objects.requireNonNull(spaceBudgetMb);
+            if (spaceBudgetMb == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "spaceBudgetMb");
+            }
+            this.spaceBudgetMb = spaceBudgetMb;
             return this;
         }
         @CustomType.Setter
         public Builder spaceBudgetPercent(Double spaceBudgetPercent) {
-            this.spaceBudgetPercent = Objects.requireNonNull(spaceBudgetPercent);
+            if (spaceBudgetPercent == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "spaceBudgetPercent");
+            }
+            this.spaceBudgetPercent = spaceBudgetPercent;
             return this;
         }
         @CustomType.Setter
         public Builder spaceUsedMb(Double spaceUsedMb) {
-            this.spaceUsedMb = Objects.requireNonNull(spaceUsedMb);
+            if (spaceUsedMb == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseSqlPlanBaselineConfigurationResult", "spaceUsedMb");
+            }
+            this.spaceUsedMb = spaceUsedMb;
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineConfigurationResult build() {

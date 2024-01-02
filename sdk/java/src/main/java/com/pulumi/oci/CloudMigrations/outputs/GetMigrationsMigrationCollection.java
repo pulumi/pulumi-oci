@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudMigrations.outputs.GetMigrationsMigrationCollectionItem;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,10 @@ public final class GetMigrationsMigrationCollection {
 
         @CustomType.Setter
         public Builder items(List<GetMigrationsMigrationCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+            if (items == null) {
+              throw new MissingRequiredPropertyException("GetMigrationsMigrationCollection", "items");
+            }
+            this.items = items;
             return this;
         }
         public Builder items(GetMigrationsMigrationCollectionItem... items) {

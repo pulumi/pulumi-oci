@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudBridge.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemComputeDisk;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemComputeGpuDevice;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemComputeNic;
@@ -443,27 +444,42 @@ public final class GetAssetsAssetCollectionItemCompute {
 
         @CustomType.Setter
         public Builder connectedNetworks(Integer connectedNetworks) {
-            this.connectedNetworks = Objects.requireNonNull(connectedNetworks);
+            if (connectedNetworks == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "connectedNetworks");
+            }
+            this.connectedNetworks = connectedNetworks;
             return this;
         }
         @CustomType.Setter
         public Builder coresCount(Integer coresCount) {
-            this.coresCount = Objects.requireNonNull(coresCount);
+            if (coresCount == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "coresCount");
+            }
+            this.coresCount = coresCount;
             return this;
         }
         @CustomType.Setter
         public Builder cpuModel(String cpuModel) {
-            this.cpuModel = Objects.requireNonNull(cpuModel);
+            if (cpuModel == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "cpuModel");
+            }
+            this.cpuModel = cpuModel;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder disks(List<GetAssetsAssetCollectionItemComputeDisk> disks) {
-            this.disks = Objects.requireNonNull(disks);
+            if (disks == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "disks");
+            }
+            this.disks = disks;
             return this;
         }
         public Builder disks(GetAssetsAssetCollectionItemComputeDisk... disks) {
@@ -471,22 +487,34 @@ public final class GetAssetsAssetCollectionItemCompute {
         }
         @CustomType.Setter
         public Builder disksCount(Integer disksCount) {
-            this.disksCount = Objects.requireNonNull(disksCount);
+            if (disksCount == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "disksCount");
+            }
+            this.disksCount = disksCount;
             return this;
         }
         @CustomType.Setter
         public Builder dnsName(String dnsName) {
-            this.dnsName = Objects.requireNonNull(dnsName);
+            if (dnsName == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "dnsName");
+            }
+            this.dnsName = dnsName;
             return this;
         }
         @CustomType.Setter
         public Builder firmware(String firmware) {
-            this.firmware = Objects.requireNonNull(firmware);
+            if (firmware == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "firmware");
+            }
+            this.firmware = firmware;
             return this;
         }
         @CustomType.Setter
         public Builder gpuDevices(List<GetAssetsAssetCollectionItemComputeGpuDevice> gpuDevices) {
-            this.gpuDevices = Objects.requireNonNull(gpuDevices);
+            if (gpuDevices == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "gpuDevices");
+            }
+            this.gpuDevices = gpuDevices;
             return this;
         }
         public Builder gpuDevices(GetAssetsAssetCollectionItemComputeGpuDevice... gpuDevices) {
@@ -494,47 +522,74 @@ public final class GetAssetsAssetCollectionItemCompute {
         }
         @CustomType.Setter
         public Builder gpuDevicesCount(Integer gpuDevicesCount) {
-            this.gpuDevicesCount = Objects.requireNonNull(gpuDevicesCount);
+            if (gpuDevicesCount == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "gpuDevicesCount");
+            }
+            this.gpuDevicesCount = gpuDevicesCount;
             return this;
         }
         @CustomType.Setter
         public Builder guestState(String guestState) {
-            this.guestState = Objects.requireNonNull(guestState);
+            if (guestState == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "guestState");
+            }
+            this.guestState = guestState;
             return this;
         }
         @CustomType.Setter
         public Builder hardwareVersion(String hardwareVersion) {
-            this.hardwareVersion = Objects.requireNonNull(hardwareVersion);
+            if (hardwareVersion == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "hardwareVersion");
+            }
+            this.hardwareVersion = hardwareVersion;
             return this;
         }
         @CustomType.Setter
         public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+            if (hostName == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "hostName");
+            }
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
         public Builder isPmemEnabled(Boolean isPmemEnabled) {
-            this.isPmemEnabled = Objects.requireNonNull(isPmemEnabled);
+            if (isPmemEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "isPmemEnabled");
+            }
+            this.isPmemEnabled = isPmemEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder isTpmEnabled(Boolean isTpmEnabled) {
-            this.isTpmEnabled = Objects.requireNonNull(isTpmEnabled);
+            if (isTpmEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "isTpmEnabled");
+            }
+            this.isTpmEnabled = isTpmEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder latencySensitivity(String latencySensitivity) {
-            this.latencySensitivity = Objects.requireNonNull(latencySensitivity);
+            if (latencySensitivity == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "latencySensitivity");
+            }
+            this.latencySensitivity = latencySensitivity;
             return this;
         }
         @CustomType.Setter
         public Builder memoryInMbs(String memoryInMbs) {
-            this.memoryInMbs = Objects.requireNonNull(memoryInMbs);
+            if (memoryInMbs == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "memoryInMbs");
+            }
+            this.memoryInMbs = memoryInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder nics(List<GetAssetsAssetCollectionItemComputeNic> nics) {
-            this.nics = Objects.requireNonNull(nics);
+            if (nics == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "nics");
+            }
+            this.nics = nics;
             return this;
         }
         public Builder nics(GetAssetsAssetCollectionItemComputeNic... nics) {
@@ -542,12 +597,18 @@ public final class GetAssetsAssetCollectionItemCompute {
         }
         @CustomType.Setter
         public Builder nicsCount(Integer nicsCount) {
-            this.nicsCount = Objects.requireNonNull(nicsCount);
+            if (nicsCount == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "nicsCount");
+            }
+            this.nicsCount = nicsCount;
             return this;
         }
         @CustomType.Setter
         public Builder nvdimmControllers(List<GetAssetsAssetCollectionItemComputeNvdimmController> nvdimmControllers) {
-            this.nvdimmControllers = Objects.requireNonNull(nvdimmControllers);
+            if (nvdimmControllers == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "nvdimmControllers");
+            }
+            this.nvdimmControllers = nvdimmControllers;
             return this;
         }
         public Builder nvdimmControllers(GetAssetsAssetCollectionItemComputeNvdimmController... nvdimmControllers) {
@@ -555,7 +616,10 @@ public final class GetAssetsAssetCollectionItemCompute {
         }
         @CustomType.Setter
         public Builder nvdimms(List<GetAssetsAssetCollectionItemComputeNvdimm> nvdimms) {
-            this.nvdimms = Objects.requireNonNull(nvdimms);
+            if (nvdimms == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "nvdimms");
+            }
+            this.nvdimms = nvdimms;
             return this;
         }
         public Builder nvdimms(GetAssetsAssetCollectionItemComputeNvdimm... nvdimms) {
@@ -563,32 +627,50 @@ public final class GetAssetsAssetCollectionItemCompute {
         }
         @CustomType.Setter
         public Builder operatingSystem(String operatingSystem) {
-            this.operatingSystem = Objects.requireNonNull(operatingSystem);
+            if (operatingSystem == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "operatingSystem");
+            }
+            this.operatingSystem = operatingSystem;
             return this;
         }
         @CustomType.Setter
         public Builder operatingSystemVersion(String operatingSystemVersion) {
-            this.operatingSystemVersion = Objects.requireNonNull(operatingSystemVersion);
+            if (operatingSystemVersion == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "operatingSystemVersion");
+            }
+            this.operatingSystemVersion = operatingSystemVersion;
             return this;
         }
         @CustomType.Setter
         public Builder pmemInMbs(String pmemInMbs) {
-            this.pmemInMbs = Objects.requireNonNull(pmemInMbs);
+            if (pmemInMbs == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "pmemInMbs");
+            }
+            this.pmemInMbs = pmemInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder powerState(String powerState) {
-            this.powerState = Objects.requireNonNull(powerState);
+            if (powerState == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "powerState");
+            }
+            this.powerState = powerState;
             return this;
         }
         @CustomType.Setter
         public Builder primaryIp(String primaryIp) {
-            this.primaryIp = Objects.requireNonNull(primaryIp);
+            if (primaryIp == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "primaryIp");
+            }
+            this.primaryIp = primaryIp;
             return this;
         }
         @CustomType.Setter
         public Builder scsiControllers(List<GetAssetsAssetCollectionItemComputeScsiController> scsiControllers) {
-            this.scsiControllers = Objects.requireNonNull(scsiControllers);
+            if (scsiControllers == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "scsiControllers");
+            }
+            this.scsiControllers = scsiControllers;
             return this;
         }
         public Builder scsiControllers(GetAssetsAssetCollectionItemComputeScsiController... scsiControllers) {
@@ -596,12 +678,18 @@ public final class GetAssetsAssetCollectionItemCompute {
         }
         @CustomType.Setter
         public Builder storageProvisionedInMbs(String storageProvisionedInMbs) {
-            this.storageProvisionedInMbs = Objects.requireNonNull(storageProvisionedInMbs);
+            if (storageProvisionedInMbs == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "storageProvisionedInMbs");
+            }
+            this.storageProvisionedInMbs = storageProvisionedInMbs;
             return this;
         }
         @CustomType.Setter
         public Builder threadsPerCoreCount(Integer threadsPerCoreCount) {
-            this.threadsPerCoreCount = Objects.requireNonNull(threadsPerCoreCount);
+            if (threadsPerCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItemCompute", "threadsPerCoreCount");
+            }
+            this.threadsPerCoreCount = threadsPerCoreCount;
             return this;
         }
         public GetAssetsAssetCollectionItemCompute build() {

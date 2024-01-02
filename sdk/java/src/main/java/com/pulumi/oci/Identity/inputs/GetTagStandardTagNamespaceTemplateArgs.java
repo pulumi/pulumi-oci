@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -111,8 +112,12 @@ public final class GetTagStandardTagNamespaceTemplateArgs extends com.pulumi.res
         }
 
         public GetTagStandardTagNamespaceTemplateArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.standardTagNamespaceName = Objects.requireNonNull($.standardTagNamespaceName, "expected parameter 'standardTagNamespaceName' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplateArgs", "compartmentId");
+            }
+            if ($.standardTagNamespaceName == null) {
+                throw new MissingRequiredPropertyException("GetTagStandardTagNamespaceTemplateArgs", "standardTagNamespaceName");
+            }
             return $;
         }
     }

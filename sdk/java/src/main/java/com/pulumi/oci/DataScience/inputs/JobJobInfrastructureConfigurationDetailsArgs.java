@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -226,9 +227,15 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
         }
 
         public JobJobInfrastructureConfigurationDetailsArgs build() {
-            $.blockStorageSizeInGbs = Objects.requireNonNull($.blockStorageSizeInGbs, "expected parameter 'blockStorageSizeInGbs' to be non-null");
-            $.jobInfrastructureType = Objects.requireNonNull($.jobInfrastructureType, "expected parameter 'jobInfrastructureType' to be non-null");
-            $.shapeName = Objects.requireNonNull($.shapeName, "expected parameter 'shapeName' to be non-null");
+            if ($.blockStorageSizeInGbs == null) {
+                throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetailsArgs", "blockStorageSizeInGbs");
+            }
+            if ($.jobInfrastructureType == null) {
+                throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetailsArgs", "jobInfrastructureType");
+            }
+            if ($.shapeName == null) {
+                throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetailsArgs", "shapeName");
+            }
             return $;
         }
     }

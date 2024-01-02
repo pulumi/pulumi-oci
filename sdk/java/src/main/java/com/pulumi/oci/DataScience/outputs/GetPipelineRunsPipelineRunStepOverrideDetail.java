@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail;
 import java.lang.String;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
 
         @CustomType.Setter
         public Builder stepConfigurationDetails(List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails) {
-            this.stepConfigurationDetails = Objects.requireNonNull(stepConfigurationDetails);
+            if (stepConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepOverrideDetail", "stepConfigurationDetails");
+            }
+            this.stepConfigurationDetails = stepConfigurationDetails;
             return this;
         }
         public Builder stepConfigurationDetails(GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail... stepConfigurationDetails) {
@@ -66,7 +70,10 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
         }
         @CustomType.Setter
         public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+            if (stepName == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepOverrideDetail", "stepName");
+            }
+            this.stepName = stepName;
             return this;
         }
         public GetPipelineRunsPipelineRunStepOverrideDetail build() {

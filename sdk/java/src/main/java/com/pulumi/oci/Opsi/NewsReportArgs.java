@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.inputs.NewsReportContentTypesArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -424,12 +425,24 @@ public final class NewsReportArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public NewsReportArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.contentTypes = Objects.requireNonNull($.contentTypes, "expected parameter 'contentTypes' to be non-null");
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.locale = Objects.requireNonNull($.locale, "expected parameter 'locale' to be non-null");
-            $.newsFrequency = Objects.requireNonNull($.newsFrequency, "expected parameter 'newsFrequency' to be non-null");
-            $.onsTopicId = Objects.requireNonNull($.onsTopicId, "expected parameter 'onsTopicId' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("NewsReportArgs", "compartmentId");
+            }
+            if ($.contentTypes == null) {
+                throw new MissingRequiredPropertyException("NewsReportArgs", "contentTypes");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("NewsReportArgs", "description");
+            }
+            if ($.locale == null) {
+                throw new MissingRequiredPropertyException("NewsReportArgs", "locale");
+            }
+            if ($.newsFrequency == null) {
+                throw new MissingRequiredPropertyException("NewsReportArgs", "newsFrequency");
+            }
+            if ($.onsTopicId == null) {
+                throw new MissingRequiredPropertyException("NewsReportArgs", "onsTopicId");
+            }
             return $;
         }
     }

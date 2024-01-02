@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -163,8 +164,12 @@ public final class KeyKeyShapeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public KeyKeyShapeArgs build() {
-            $.algorithm = Objects.requireNonNull($.algorithm, "expected parameter 'algorithm' to be non-null");
-            $.length = Objects.requireNonNull($.length, "expected parameter 'length' to be non-null");
+            if ($.algorithm == null) {
+                throw new MissingRequiredPropertyException("KeyKeyShapeArgs", "algorithm");
+            }
+            if ($.length == null) {
+                throw new MissingRequiredPropertyException("KeyKeyShapeArgs", "length");
+            }
             return $;
         }
     }

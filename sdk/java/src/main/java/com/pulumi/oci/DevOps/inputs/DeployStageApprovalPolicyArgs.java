@@ -5,6 +5,7 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -112,8 +113,12 @@ public final class DeployStageApprovalPolicyArgs extends com.pulumi.resources.Re
         }
 
         public DeployStageApprovalPolicyArgs build() {
-            $.approvalPolicyType = Objects.requireNonNull($.approvalPolicyType, "expected parameter 'approvalPolicyType' to be non-null");
-            $.numberOfApprovalsRequired = Objects.requireNonNull($.numberOfApprovalsRequired, "expected parameter 'numberOfApprovalsRequired' to be non-null");
+            if ($.approvalPolicyType == null) {
+                throw new MissingRequiredPropertyException("DeployStageApprovalPolicyArgs", "approvalPolicyType");
+            }
+            if ($.numberOfApprovalsRequired == null) {
+                throw new MissingRequiredPropertyException("DeployStageApprovalPolicyArgs", "numberOfApprovalsRequired");
+            }
             return $;
         }
     }

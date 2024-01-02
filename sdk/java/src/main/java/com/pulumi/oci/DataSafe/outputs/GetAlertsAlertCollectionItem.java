@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -345,102 +346,162 @@ public final class GetAlertsAlertCollectionItem {
 
         @CustomType.Setter
         public Builder alertId(String alertId) {
-            this.alertId = Objects.requireNonNull(alertId);
+            if (alertId == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "alertId");
+            }
+            this.alertId = alertId;
             return this;
         }
         @CustomType.Setter
         public Builder alertType(String alertType) {
-            this.alertType = Objects.requireNonNull(alertType);
+            if (alertType == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "alertType");
+            }
+            this.alertType = alertType;
             return this;
         }
         @CustomType.Setter
         public Builder comment(String comment) {
-            this.comment = Objects.requireNonNull(comment);
+            if (comment == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "comment");
+            }
+            this.comment = comment;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder featureDetails(Map<String,Object> featureDetails) {
-            this.featureDetails = Objects.requireNonNull(featureDetails);
+            if (featureDetails == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "featureDetails");
+            }
+            this.featureDetails = featureDetails;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder operation(String operation) {
-            this.operation = Objects.requireNonNull(operation);
+            if (operation == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "operation");
+            }
+            this.operation = operation;
             return this;
         }
         @CustomType.Setter
         public Builder operationStatus(String operationStatus) {
-            this.operationStatus = Objects.requireNonNull(operationStatus);
+            if (operationStatus == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "operationStatus");
+            }
+            this.operationStatus = operationStatus;
             return this;
         }
         @CustomType.Setter
         public Builder operationTime(String operationTime) {
-            this.operationTime = Objects.requireNonNull(operationTime);
+            if (operationTime == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "operationTime");
+            }
+            this.operationTime = operationTime;
             return this;
         }
         @CustomType.Setter
         public Builder policyId(String policyId) {
-            this.policyId = Objects.requireNonNull(policyId);
+            if (policyId == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "policyId");
+            }
+            this.policyId = policyId;
             return this;
         }
         @CustomType.Setter
         public Builder resourceName(String resourceName) {
-            this.resourceName = Objects.requireNonNull(resourceName);
+            if (resourceName == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "resourceName");
+            }
+            this.resourceName = resourceName;
             return this;
         }
         @CustomType.Setter
         public Builder severity(String severity) {
-            this.severity = Objects.requireNonNull(severity);
+            if (severity == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "severity");
+            }
+            this.severity = severity;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+            if (status == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "status");
+            }
+            this.status = status;
             return this;
         }
         @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
         public Builder targetIds(List<String> targetIds) {
-            this.targetIds = Objects.requireNonNull(targetIds);
+            if (targetIds == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "targetIds");
+            }
+            this.targetIds = targetIds;
             return this;
         }
         public Builder targetIds(String... targetIds) {
@@ -448,7 +509,10 @@ public final class GetAlertsAlertCollectionItem {
         }
         @CustomType.Setter
         public Builder targetNames(List<String> targetNames) {
-            this.targetNames = Objects.requireNonNull(targetNames);
+            if (targetNames == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "targetNames");
+            }
+            this.targetNames = targetNames;
             return this;
         }
         public Builder targetNames(String... targetNames) {
@@ -456,12 +520,18 @@ public final class GetAlertsAlertCollectionItem {
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetAlertsAlertCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetAlertsAlertCollectionItem build() {

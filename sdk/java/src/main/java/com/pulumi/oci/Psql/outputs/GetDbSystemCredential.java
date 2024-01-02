@@ -4,6 +4,7 @@
 package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemCredentialPasswordDetail;
 import java.lang.String;
 import java.util.List;
@@ -42,7 +43,10 @@ public final class GetDbSystemCredential {
 
         @CustomType.Setter
         public Builder passwordDetails(List<GetDbSystemCredentialPasswordDetail> passwordDetails) {
-            this.passwordDetails = Objects.requireNonNull(passwordDetails);
+            if (passwordDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemCredential", "passwordDetails");
+            }
+            this.passwordDetails = passwordDetails;
             return this;
         }
         public Builder passwordDetails(GetDbSystemCredentialPasswordDetail... passwordDetails) {
@@ -50,7 +54,10 @@ public final class GetDbSystemCredential {
         }
         @CustomType.Setter
         public Builder username(String username) {
-            this.username = Objects.requireNonNull(username);
+            if (username == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemCredential", "username");
+            }
+            this.username = username;
             return this;
         }
         public GetDbSystemCredential build() {

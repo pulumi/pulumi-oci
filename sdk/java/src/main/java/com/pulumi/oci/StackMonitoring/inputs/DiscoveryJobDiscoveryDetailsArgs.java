@@ -5,6 +5,7 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsCredentialsArgs;
 import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsPropertiesArgs;
 import com.pulumi.oci.StackMonitoring.inputs.DiscoveryJobDiscoveryDetailsTagsArgs;
@@ -301,10 +302,18 @@ public final class DiscoveryJobDiscoveryDetailsArgs extends com.pulumi.resources
         }
 
         public DiscoveryJobDiscoveryDetailsArgs build() {
-            $.agentId = Objects.requireNonNull($.agentId, "expected parameter 'agentId' to be non-null");
-            $.properties = Objects.requireNonNull($.properties, "expected parameter 'properties' to be non-null");
-            $.resourceName = Objects.requireNonNull($.resourceName, "expected parameter 'resourceName' to be non-null");
-            $.resourceType = Objects.requireNonNull($.resourceType, "expected parameter 'resourceType' to be non-null");
+            if ($.agentId == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsArgs", "agentId");
+            }
+            if ($.properties == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsArgs", "properties");
+            }
+            if ($.resourceName == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsArgs", "resourceName");
+            }
+            if ($.resourceType == null) {
+                throw new MissingRequiredPropertyException("DiscoveryJobDiscoveryDetailsArgs", "resourceType");
+            }
             return $;
         }
     }

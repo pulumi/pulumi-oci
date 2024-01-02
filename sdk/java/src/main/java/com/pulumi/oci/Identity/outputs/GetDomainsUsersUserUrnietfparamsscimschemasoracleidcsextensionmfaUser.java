@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice;
 import com.pulumi.oci.Identity.outputs.GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice;
@@ -188,7 +189,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
 
         @CustomType.Setter
         public Builder bypassCodes(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode> bypassCodes) {
-            this.bypassCodes = Objects.requireNonNull(bypassCodes);
+            if (bypassCodes == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "bypassCodes");
+            }
+            this.bypassCodes = bypassCodes;
             return this;
         }
         public Builder bypassCodes(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode... bypassCodes) {
@@ -196,7 +200,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder devices(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice> devices) {
-            this.devices = Objects.requireNonNull(devices);
+            if (devices == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "devices");
+            }
+            this.devices = devices;
             return this;
         }
         public Builder devices(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice... devices) {
@@ -204,17 +211,26 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder loginAttempts(Integer loginAttempts) {
-            this.loginAttempts = Objects.requireNonNull(loginAttempts);
+            if (loginAttempts == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "loginAttempts");
+            }
+            this.loginAttempts = loginAttempts;
             return this;
         }
         @CustomType.Setter
         public Builder mfaEnabledOn(String mfaEnabledOn) {
-            this.mfaEnabledOn = Objects.requireNonNull(mfaEnabledOn);
+            if (mfaEnabledOn == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "mfaEnabledOn");
+            }
+            this.mfaEnabledOn = mfaEnabledOn;
             return this;
         }
         @CustomType.Setter
         public Builder mfaIgnoredApps(List<String> mfaIgnoredApps) {
-            this.mfaIgnoredApps = Objects.requireNonNull(mfaIgnoredApps);
+            if (mfaIgnoredApps == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "mfaIgnoredApps");
+            }
+            this.mfaIgnoredApps = mfaIgnoredApps;
             return this;
         }
         public Builder mfaIgnoredApps(String... mfaIgnoredApps) {
@@ -222,22 +238,34 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder mfaStatus(String mfaStatus) {
-            this.mfaStatus = Objects.requireNonNull(mfaStatus);
+            if (mfaStatus == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "mfaStatus");
+            }
+            this.mfaStatus = mfaStatus;
             return this;
         }
         @CustomType.Setter
         public Builder preferredAuthenticationFactor(String preferredAuthenticationFactor) {
-            this.preferredAuthenticationFactor = Objects.requireNonNull(preferredAuthenticationFactor);
+            if (preferredAuthenticationFactor == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "preferredAuthenticationFactor");
+            }
+            this.preferredAuthenticationFactor = preferredAuthenticationFactor;
             return this;
         }
         @CustomType.Setter
         public Builder preferredAuthenticationMethod(String preferredAuthenticationMethod) {
-            this.preferredAuthenticationMethod = Objects.requireNonNull(preferredAuthenticationMethod);
+            if (preferredAuthenticationMethod == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "preferredAuthenticationMethod");
+            }
+            this.preferredAuthenticationMethod = preferredAuthenticationMethod;
             return this;
         }
         @CustomType.Setter
         public Builder preferredDevices(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice> preferredDevices) {
-            this.preferredDevices = Objects.requireNonNull(preferredDevices);
+            if (preferredDevices == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "preferredDevices");
+            }
+            this.preferredDevices = preferredDevices;
             return this;
         }
         public Builder preferredDevices(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice... preferredDevices) {
@@ -245,12 +273,18 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         }
         @CustomType.Setter
         public Builder preferredThirdPartyVendor(String preferredThirdPartyVendor) {
-            this.preferredThirdPartyVendor = Objects.requireNonNull(preferredThirdPartyVendor);
+            if (preferredThirdPartyVendor == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "preferredThirdPartyVendor");
+            }
+            this.preferredThirdPartyVendor = preferredThirdPartyVendor;
             return this;
         }
         @CustomType.Setter
         public Builder trustedUserAgents(List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent> trustedUserAgents) {
-            this.trustedUserAgents = Objects.requireNonNull(trustedUserAgents);
+            if (trustedUserAgents == null) {
+              throw new MissingRequiredPropertyException("GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUser", "trustedUserAgents");
+            }
+            this.trustedUserAgents = trustedUserAgents;
             return this;
         }
         public Builder trustedUserAgents(GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgent... trustedUserAgents) {

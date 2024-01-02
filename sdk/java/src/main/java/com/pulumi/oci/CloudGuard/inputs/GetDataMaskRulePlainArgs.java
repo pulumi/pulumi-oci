@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -63,7 +64,9 @@ public final class GetDataMaskRulePlainArgs extends com.pulumi.resources.InvokeA
         }
 
         public GetDataMaskRulePlainArgs build() {
-            $.dataMaskRuleId = Objects.requireNonNull($.dataMaskRuleId, "expected parameter 'dataMaskRuleId' to be non-null");
+            if ($.dataMaskRuleId == null) {
+                throw new MissingRequiredPropertyException("GetDataMaskRulePlainArgs", "dataMaskRuleId");
+            }
             return $;
         }
     }

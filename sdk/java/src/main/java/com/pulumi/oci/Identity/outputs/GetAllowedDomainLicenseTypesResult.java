@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Identity.outputs.GetAllowedDomainLicenseTypesAllowedDomainLicenseType;
 import com.pulumi.oci.Identity.outputs.GetAllowedDomainLicenseTypesFilter;
 import java.lang.String;
@@ -73,7 +74,10 @@ public final class GetAllowedDomainLicenseTypesResult {
 
         @CustomType.Setter
         public Builder allowedDomainLicenseTypes(List<GetAllowedDomainLicenseTypesAllowedDomainLicenseType> allowedDomainLicenseTypes) {
-            this.allowedDomainLicenseTypes = Objects.requireNonNull(allowedDomainLicenseTypes);
+            if (allowedDomainLicenseTypes == null) {
+              throw new MissingRequiredPropertyException("GetAllowedDomainLicenseTypesResult", "allowedDomainLicenseTypes");
+            }
+            this.allowedDomainLicenseTypes = allowedDomainLicenseTypes;
             return this;
         }
         public Builder allowedDomainLicenseTypes(GetAllowedDomainLicenseTypesAllowedDomainLicenseType... allowedDomainLicenseTypes) {
@@ -81,11 +85,13 @@ public final class GetAllowedDomainLicenseTypesResult {
         }
         @CustomType.Setter
         public Builder currentLicenseTypeName(@Nullable String currentLicenseTypeName) {
+
             this.currentLicenseTypeName = currentLicenseTypeName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetAllowedDomainLicenseTypesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -94,7 +100,10 @@ public final class GetAllowedDomainLicenseTypesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetAllowedDomainLicenseTypesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetAllowedDomainLicenseTypesResult build() {

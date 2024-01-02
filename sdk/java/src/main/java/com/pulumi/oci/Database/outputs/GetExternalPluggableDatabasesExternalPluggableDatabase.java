@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig;
@@ -342,27 +343,42 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
 
         @CustomType.Setter
         public Builder characterSet(String characterSet) {
-            this.characterSet = Objects.requireNonNull(characterSet);
+            if (characterSet == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "characterSet");
+            }
+            this.characterSet = characterSet;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder databaseConfiguration(String databaseConfiguration) {
-            this.databaseConfiguration = Objects.requireNonNull(databaseConfiguration);
+            if (databaseConfiguration == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "databaseConfiguration");
+            }
+            this.databaseConfiguration = databaseConfiguration;
             return this;
         }
         @CustomType.Setter
         public Builder databaseEdition(String databaseEdition) {
-            this.databaseEdition = Objects.requireNonNull(databaseEdition);
+            if (databaseEdition == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "databaseEdition");
+            }
+            this.databaseEdition = databaseEdition;
             return this;
         }
         @CustomType.Setter
         public Builder databaseManagementConfigs(List<GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig> databaseManagementConfigs) {
-            this.databaseManagementConfigs = Objects.requireNonNull(databaseManagementConfigs);
+            if (databaseManagementConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "databaseManagementConfigs");
+            }
+            this.databaseManagementConfigs = databaseManagementConfigs;
             return this;
         }
         public Builder databaseManagementConfigs(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig... databaseManagementConfigs) {
@@ -370,62 +386,98 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         }
         @CustomType.Setter
         public Builder databaseVersion(String databaseVersion) {
-            this.databaseVersion = Objects.requireNonNull(databaseVersion);
+            if (databaseVersion == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "databaseVersion");
+            }
+            this.databaseVersion = databaseVersion;
             return this;
         }
         @CustomType.Setter
         public Builder dbId(String dbId) {
-            this.dbId = Objects.requireNonNull(dbId);
+            if (dbId == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "dbId");
+            }
+            this.dbId = dbId;
             return this;
         }
         @CustomType.Setter
         public Builder dbPacks(String dbPacks) {
-            this.dbPacks = Objects.requireNonNull(dbPacks);
+            if (dbPacks == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "dbPacks");
+            }
+            this.dbPacks = dbPacks;
             return this;
         }
         @CustomType.Setter
         public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = Objects.requireNonNull(dbUniqueName);
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder externalContainerDatabaseId(String externalContainerDatabaseId) {
-            this.externalContainerDatabaseId = Objects.requireNonNull(externalContainerDatabaseId);
+            if (externalContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "externalContainerDatabaseId");
+            }
+            this.externalContainerDatabaseId = externalContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
         public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = Objects.requireNonNull(ncharacterSet);
+            if (ncharacterSet == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "ncharacterSet");
+            }
+            this.ncharacterSet = ncharacterSet;
             return this;
         }
         @CustomType.Setter
         public Builder operationsInsightsConfigs(List<GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig> operationsInsightsConfigs) {
-            this.operationsInsightsConfigs = Objects.requireNonNull(operationsInsightsConfigs);
+            if (operationsInsightsConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "operationsInsightsConfigs");
+            }
+            this.operationsInsightsConfigs = operationsInsightsConfigs;
             return this;
         }
         public Builder operationsInsightsConfigs(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig... operationsInsightsConfigs) {
@@ -433,12 +485,18 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         }
         @CustomType.Setter
         public Builder sourceId(String sourceId) {
-            this.sourceId = Objects.requireNonNull(sourceId);
+            if (sourceId == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "sourceId");
+            }
+            this.sourceId = sourceId;
             return this;
         }
         @CustomType.Setter
         public Builder stackMonitoringConfigs(List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs) {
-            this.stackMonitoringConfigs = Objects.requireNonNull(stackMonitoringConfigs);
+            if (stackMonitoringConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "stackMonitoringConfigs");
+            }
+            this.stackMonitoringConfigs = stackMonitoringConfigs;
             return this;
         }
         public Builder stackMonitoringConfigs(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig... stackMonitoringConfigs) {
@@ -446,17 +504,26 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeZone(String timeZone) {
-            this.timeZone = Objects.requireNonNull(timeZone);
+            if (timeZone == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "timeZone");
+            }
+            this.timeZone = timeZone;
             return this;
         }
         public GetExternalPluggableDatabasesExternalPluggableDatabase build() {

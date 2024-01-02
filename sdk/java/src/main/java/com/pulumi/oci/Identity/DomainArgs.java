@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -609,11 +610,21 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public DomainArgs build() {
-            $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.description = Objects.requireNonNull($.description, "expected parameter 'description' to be non-null");
-            $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.homeRegion = Objects.requireNonNull($.homeRegion, "expected parameter 'homeRegion' to be non-null");
-            $.licenseType = Objects.requireNonNull($.licenseType, "expected parameter 'licenseType' to be non-null");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("DomainArgs", "compartmentId");
+            }
+            if ($.description == null) {
+                throw new MissingRequiredPropertyException("DomainArgs", "description");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("DomainArgs", "displayName");
+            }
+            if ($.homeRegion == null) {
+                throw new MissingRequiredPropertyException("DomainArgs", "homeRegion");
+            }
+            if ($.licenseType == null) {
+                throw new MissingRequiredPropertyException("DomainArgs", "licenseType");
+            }
             return $;
         }
     }

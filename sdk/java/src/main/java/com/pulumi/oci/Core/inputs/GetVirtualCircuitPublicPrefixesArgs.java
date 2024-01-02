@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetVirtualCircuitPublicPrefixesFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -144,7 +145,9 @@ public final class GetVirtualCircuitPublicPrefixesArgs extends com.pulumi.resour
         }
 
         public GetVirtualCircuitPublicPrefixesArgs build() {
-            $.virtualCircuitId = Objects.requireNonNull($.virtualCircuitId, "expected parameter 'virtualCircuitId' to be non-null");
+            if ($.virtualCircuitId == null) {
+                throw new MissingRequiredPropertyException("GetVirtualCircuitPublicPrefixesArgs", "virtualCircuitId");
+            }
             return $;
         }
     }

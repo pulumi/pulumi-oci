@@ -4,6 +4,7 @@
 package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.util.Objects;
@@ -99,27 +100,42 @@ public final class GetDeploymentsDeploymentCollectionItemMaintenanceConfiguratio
 
         @CustomType.Setter
         public Builder bundleReleaseUpgradePeriodInDays(Integer bundleReleaseUpgradePeriodInDays) {
-            this.bundleReleaseUpgradePeriodInDays = Objects.requireNonNull(bundleReleaseUpgradePeriodInDays);
+            if (bundleReleaseUpgradePeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration", "bundleReleaseUpgradePeriodInDays");
+            }
+            this.bundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder interimReleaseUpgradePeriodInDays(Integer interimReleaseUpgradePeriodInDays) {
-            this.interimReleaseUpgradePeriodInDays = Objects.requireNonNull(interimReleaseUpgradePeriodInDays);
+            if (interimReleaseUpgradePeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration", "interimReleaseUpgradePeriodInDays");
+            }
+            this.interimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder isInterimReleaseAutoUpgradeEnabled(Boolean isInterimReleaseAutoUpgradeEnabled) {
-            this.isInterimReleaseAutoUpgradeEnabled = Objects.requireNonNull(isInterimReleaseAutoUpgradeEnabled);
+            if (isInterimReleaseAutoUpgradeEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration", "isInterimReleaseAutoUpgradeEnabled");
+            }
+            this.isInterimReleaseAutoUpgradeEnabled = isInterimReleaseAutoUpgradeEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder majorReleaseUpgradePeriodInDays(Integer majorReleaseUpgradePeriodInDays) {
-            this.majorReleaseUpgradePeriodInDays = Objects.requireNonNull(majorReleaseUpgradePeriodInDays);
+            if (majorReleaseUpgradePeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration", "majorReleaseUpgradePeriodInDays");
+            }
+            this.majorReleaseUpgradePeriodInDays = majorReleaseUpgradePeriodInDays;
             return this;
         }
         @CustomType.Setter
         public Builder securityPatchUpgradePeriodInDays(Integer securityPatchUpgradePeriodInDays) {
-            this.securityPatchUpgradePeriodInDays = Objects.requireNonNull(securityPatchUpgradePeriodInDays);
+            if (securityPatchUpgradePeriodInDays == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration", "securityPatchUpgradePeriodInDays");
+            }
+            this.securityPatchUpgradePeriodInDays = securityPatchUpgradePeriodInDays;
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration build() {

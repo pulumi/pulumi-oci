@@ -4,6 +4,7 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeDetectorRuleDetailsConfiguration;
 import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeDetectorRuleDetailsEntitiesMapping;
 import java.lang.Boolean;
@@ -174,11 +175,13 @@ public final class DetectorRecipeDetectorRuleDetails {
 
         @CustomType.Setter
         public Builder condition(@Nullable String condition) {
+
             this.condition = condition;
             return this;
         }
         @CustomType.Setter
         public Builder configurations(@Nullable List<DetectorRecipeDetectorRuleDetailsConfiguration> configurations) {
+
             this.configurations = configurations;
             return this;
         }
@@ -187,16 +190,19 @@ public final class DetectorRecipeDetectorRuleDetails {
         }
         @CustomType.Setter
         public Builder dataSourceId(@Nullable String dataSourceId) {
+
             this.dataSourceId = dataSourceId;
             return this;
         }
         @CustomType.Setter
         public Builder description(@Nullable String description) {
+
             this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder entitiesMappings(@Nullable List<DetectorRecipeDetectorRuleDetailsEntitiesMapping> entitiesMappings) {
+
             this.entitiesMappings = entitiesMappings;
             return this;
         }
@@ -205,16 +211,21 @@ public final class DetectorRecipeDetectorRuleDetails {
         }
         @CustomType.Setter
         public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
+
             this.isConfigurationAllowed = isConfigurationAllowed;
             return this;
         }
         @CustomType.Setter
         public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+            if (isEnabled == null) {
+              throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetails", "isEnabled");
+            }
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
         public Builder labels(@Nullable List<String> labels) {
+
             this.labels = labels;
             return this;
         }
@@ -223,12 +234,16 @@ public final class DetectorRecipeDetectorRuleDetails {
         }
         @CustomType.Setter
         public Builder recommendation(@Nullable String recommendation) {
+
             this.recommendation = recommendation;
             return this;
         }
         @CustomType.Setter
         public Builder riskLevel(String riskLevel) {
-            this.riskLevel = Objects.requireNonNull(riskLevel);
+            if (riskLevel == null) {
+              throw new MissingRequiredPropertyException("DetectorRecipeDetectorRuleDetails", "riskLevel");
+            }
+            this.riskLevel = riskLevel;
             return this;
         }
         public DetectorRecipeDetectorRuleDetails build() {

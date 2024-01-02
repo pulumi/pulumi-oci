@@ -4,6 +4,7 @@
 package com.pulumi.oci.LoadBalancer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancerRoutingPoliciesFilter;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancerRoutingPoliciesRoutingPolicy;
 import java.lang.String;
@@ -72,6 +73,7 @@ public final class GetLoadBalancerRoutingPoliciesResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetLoadBalancerRoutingPoliciesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -80,17 +82,26 @@ public final class GetLoadBalancerRoutingPoliciesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPoliciesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(String loadBalancerId) {
-            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            if (loadBalancerId == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPoliciesResult", "loadBalancerId");
+            }
+            this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder routingPolicies(List<GetLoadBalancerRoutingPoliciesRoutingPolicy> routingPolicies) {
-            this.routingPolicies = Objects.requireNonNull(routingPolicies);
+            if (routingPolicies == null) {
+              throw new MissingRequiredPropertyException("GetLoadBalancerRoutingPoliciesResult", "routingPolicies");
+            }
+            this.routingPolicies = routingPolicies;
             return this;
         }
         public Builder routingPolicies(GetLoadBalancerRoutingPoliciesRoutingPolicy... routingPolicies) {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape;
 import com.pulumi.oci.Core.outputs.GetDedicatedVmHostInstanceShapesFilter;
 import java.lang.String;
@@ -93,17 +94,24 @@ public final class GetDedicatedVmHostInstanceShapesResult {
 
         @CustomType.Setter
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
             this.availabilityDomain = availabilityDomain;
             return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstanceShapesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder dedicatedVmHostInstanceShapes(List<GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape> dedicatedVmHostInstanceShapes) {
-            this.dedicatedVmHostInstanceShapes = Objects.requireNonNull(dedicatedVmHostInstanceShapes);
+            if (dedicatedVmHostInstanceShapes == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstanceShapesResult", "dedicatedVmHostInstanceShapes");
+            }
+            this.dedicatedVmHostInstanceShapes = dedicatedVmHostInstanceShapes;
             return this;
         }
         public Builder dedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShape... dedicatedVmHostInstanceShapes) {
@@ -111,11 +119,13 @@ public final class GetDedicatedVmHostInstanceShapesResult {
         }
         @CustomType.Setter
         public Builder dedicatedVmHostShape(@Nullable String dedicatedVmHostShape) {
+
             this.dedicatedVmHostShape = dedicatedVmHostShape;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetDedicatedVmHostInstanceShapesFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -124,7 +134,10 @@ public final class GetDedicatedVmHostInstanceShapesResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedVmHostInstanceShapesResult", "id");
+            }
+            this.id = id;
             return this;
         }
         public GetDedicatedVmHostInstanceShapesResult build() {

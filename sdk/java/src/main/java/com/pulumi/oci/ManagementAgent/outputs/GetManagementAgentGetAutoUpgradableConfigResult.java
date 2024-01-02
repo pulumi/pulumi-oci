@@ -4,6 +4,7 @@
 package com.pulumi.oci.ManagementAgent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -63,17 +64,26 @@ public final class GetManagementAgentGetAutoUpgradableConfigResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentGetAutoUpgradableConfigResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentGetAutoUpgradableConfigResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
-            this.isAgentAutoUpgradable = Objects.requireNonNull(isAgentAutoUpgradable);
+            if (isAgentAutoUpgradable == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentGetAutoUpgradableConfigResult", "isAgentAutoUpgradable");
+            }
+            this.isAgentAutoUpgradable = isAgentAutoUpgradable;
             return this;
         }
         public GetManagementAgentGetAutoUpgradableConfigResult build() {

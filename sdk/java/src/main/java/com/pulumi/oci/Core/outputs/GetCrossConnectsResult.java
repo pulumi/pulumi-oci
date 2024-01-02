@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCrossConnectsCrossConnect;
 import com.pulumi.oci.Core.outputs.GetCrossConnectsFilter;
 import java.lang.String;
@@ -123,17 +124,24 @@ public final class GetCrossConnectsResult {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnectGroupId(@Nullable String crossConnectGroupId) {
+
             this.crossConnectGroupId = crossConnectGroupId;
             return this;
         }
         @CustomType.Setter
         public Builder crossConnects(List<GetCrossConnectsCrossConnect> crossConnects) {
-            this.crossConnects = Objects.requireNonNull(crossConnects);
+            if (crossConnects == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsResult", "crossConnects");
+            }
+            this.crossConnects = crossConnects;
             return this;
         }
         public Builder crossConnects(GetCrossConnectsCrossConnect... crossConnects) {
@@ -141,11 +149,13 @@ public final class GetCrossConnectsResult {
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetCrossConnectsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -154,11 +164,15 @@ public final class GetCrossConnectsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

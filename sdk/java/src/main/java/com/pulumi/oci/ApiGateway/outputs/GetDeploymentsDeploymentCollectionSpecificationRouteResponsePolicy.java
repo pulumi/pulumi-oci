@@ -4,6 +4,7 @@
 package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore;
 import java.util.List;
@@ -58,7 +59,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
 
         @CustomType.Setter
         public Builder headerTransformations(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation> headerTransformations) {
-            this.headerTransformations = Objects.requireNonNull(headerTransformations);
+            if (headerTransformations == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy", "headerTransformations");
+            }
+            this.headerTransformations = headerTransformations;
             return this;
         }
         public Builder headerTransformations(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyHeaderTransformation... headerTransformations) {
@@ -66,7 +70,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
         }
         @CustomType.Setter
         public Builder responseCacheStores(List<GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore> responseCacheStores) {
-            this.responseCacheStores = Objects.requireNonNull(responseCacheStores);
+            if (responseCacheStores == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy", "responseCacheStores");
+            }
+            this.responseCacheStores = responseCacheStores;
             return this;
         }
         public Builder responseCacheStores(GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicyResponseCacheStore... responseCacheStores) {

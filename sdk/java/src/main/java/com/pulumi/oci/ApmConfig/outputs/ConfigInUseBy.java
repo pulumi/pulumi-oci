@@ -86,21 +86,25 @@ public final class ConfigInUseBy {
 
         @CustomType.Setter
         public Builder configType(@Nullable String configType) {
+
             this.configType = configType;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
+
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder id(@Nullable String id) {
+
             this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder optionsGroup(@Nullable String optionsGroup) {
+
             this.optionsGroup = optionsGroup;
             return this;
         }

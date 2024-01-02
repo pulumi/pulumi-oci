@@ -5,6 +5,7 @@ package com.pulumi.oci.FileStorage.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -74,7 +75,9 @@ public final class GetSnapshotArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         public GetSnapshotArgs build() {
-            $.snapshotId = Objects.requireNonNull($.snapshotId, "expected parameter 'snapshotId' to be non-null");
+            if ($.snapshotId == null) {
+                throw new MissingRequiredPropertyException("GetSnapshotArgs", "snapshotId");
+            }
             return $;
         }
     }

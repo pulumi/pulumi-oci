@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataFlow.outputs.GetRunStatementsFilter;
 import com.pulumi.oci.DataFlow.outputs.GetRunStatementsStatementCollection;
 import java.lang.String;
@@ -95,6 +96,7 @@ public final class GetRunStatementsResult {
 
         @CustomType.Setter
         public Builder filters(@Nullable List<GetRunStatementsFilter> filters) {
+
             this.filters = filters;
             return this;
         }
@@ -103,22 +105,32 @@ public final class GetRunStatementsResult {
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder runId(String runId) {
-            this.runId = Objects.requireNonNull(runId);
+            if (runId == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsResult", "runId");
+            }
+            this.runId = runId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder statementCollections(List<GetRunStatementsStatementCollection> statementCollections) {
-            this.statementCollections = Objects.requireNonNull(statementCollections);
+            if (statementCollections == null) {
+              throw new MissingRequiredPropertyException("GetRunStatementsResult", "statementCollections");
+            }
+            this.statementCollections = statementCollections;
             return this;
         }
         public Builder statementCollections(GetRunStatementsStatementCollection... statementCollections) {

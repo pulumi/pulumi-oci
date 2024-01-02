@@ -73,16 +73,19 @@ public final class RepositoryMirrorRepositoryConfig {
 
         @CustomType.Setter
         public Builder connectorId(@Nullable String connectorId) {
+
             this.connectorId = connectorId;
             return this;
         }
         @CustomType.Setter
         public Builder repositoryUrl(@Nullable String repositoryUrl) {
+
             this.repositoryUrl = repositoryUrl;
             return this;
         }
         @CustomType.Setter
         public Builder triggerSchedule(@Nullable RepositoryMirrorRepositoryConfigTriggerSchedule triggerSchedule) {
+
             this.triggerSchedule = triggerSchedule;
             return this;
         }

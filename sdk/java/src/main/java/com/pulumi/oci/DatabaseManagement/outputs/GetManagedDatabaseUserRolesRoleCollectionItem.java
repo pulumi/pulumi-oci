@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
 
@@ -112,32 +113,50 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
 
         @CustomType.Setter
         public Builder adminOption(String adminOption) {
-            this.adminOption = Objects.requireNonNull(adminOption);
+            if (adminOption == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesRoleCollectionItem", "adminOption");
+            }
+            this.adminOption = adminOption;
             return this;
         }
         @CustomType.Setter
         public Builder common(String common) {
-            this.common = Objects.requireNonNull(common);
+            if (common == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesRoleCollectionItem", "common");
+            }
+            this.common = common;
             return this;
         }
         @CustomType.Setter
         public Builder defaultRole(String defaultRole) {
-            this.defaultRole = Objects.requireNonNull(defaultRole);
+            if (defaultRole == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesRoleCollectionItem", "defaultRole");
+            }
+            this.defaultRole = defaultRole;
             return this;
         }
         @CustomType.Setter
         public Builder delegateOption(String delegateOption) {
-            this.delegateOption = Objects.requireNonNull(delegateOption);
+            if (delegateOption == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesRoleCollectionItem", "delegateOption");
+            }
+            this.delegateOption = delegateOption;
             return this;
         }
         @CustomType.Setter
         public Builder inherited(String inherited) {
-            this.inherited = Objects.requireNonNull(inherited);
+            if (inherited == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesRoleCollectionItem", "inherited");
+            }
+            this.inherited = inherited;
             return this;
         }
         @CustomType.Setter
         public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+            if (name == null) {
+              throw new MissingRequiredPropertyException("GetManagedDatabaseUserRolesRoleCollectionItem", "name");
+            }
+            this.name = name;
             return this;
         }
         public GetManagedDatabaseUserRolesRoleCollectionItem build() {

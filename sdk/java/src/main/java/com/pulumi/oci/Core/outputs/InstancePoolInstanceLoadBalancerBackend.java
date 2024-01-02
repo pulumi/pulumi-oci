@@ -100,26 +100,31 @@ public final class InstancePoolInstanceLoadBalancerBackend {
 
         @CustomType.Setter
         public Builder backendHealthStatus(@Nullable String backendHealthStatus) {
+
             this.backendHealthStatus = backendHealthStatus;
             return this;
         }
         @CustomType.Setter
         public Builder backendName(@Nullable String backendName) {
+
             this.backendName = backendName;
             return this;
         }
         @CustomType.Setter
         public Builder backendSetName(@Nullable String backendSetName) {
+
             this.backendSetName = backendSetName;
             return this;
         }
         @CustomType.Setter
         public Builder loadBalancerId(@Nullable String loadBalancerId) {
+
             this.loadBalancerId = loadBalancerId;
             return this;
         }
         @CustomType.Setter
         public Builder state(@Nullable String state) {
+
             this.state = state;
             return this;
         }

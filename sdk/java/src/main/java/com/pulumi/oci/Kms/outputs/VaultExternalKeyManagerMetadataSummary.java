@@ -88,11 +88,13 @@ public final class VaultExternalKeyManagerMetadataSummary {
 
         @CustomType.Setter
         public Builder externalVaultEndpointUrl(@Nullable String externalVaultEndpointUrl) {
+
             this.externalVaultEndpointUrl = externalVaultEndpointUrl;
             return this;
         }
         @CustomType.Setter
         public Builder oauthMetadataSummaries(@Nullable List<VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary> oauthMetadataSummaries) {
+
             this.oauthMetadataSummaries = oauthMetadataSummaries;
             return this;
         }
@@ -101,11 +103,13 @@ public final class VaultExternalKeyManagerMetadataSummary {
         }
         @CustomType.Setter
         public Builder privateEndpointId(@Nullable String privateEndpointId) {
+
             this.privateEndpointId = privateEndpointId;
             return this;
         }
         @CustomType.Setter
         public Builder vendor(@Nullable String vendor) {
+
             this.vendor = vendor;
             return this;
         }

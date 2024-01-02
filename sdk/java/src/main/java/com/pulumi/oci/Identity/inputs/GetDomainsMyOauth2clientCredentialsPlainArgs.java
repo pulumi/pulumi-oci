@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -240,7 +241,9 @@ public final class GetDomainsMyOauth2clientCredentialsPlainArgs extends com.pulu
         }
 
         public GetDomainsMyOauth2clientCredentialsPlainArgs build() {
-            $.idcsEndpoint = Objects.requireNonNull($.idcsEndpoint, "expected parameter 'idcsEndpoint' to be non-null");
+            if ($.idcsEndpoint == null) {
+                throw new MissingRequiredPropertyException("GetDomainsMyOauth2clientCredentialsPlainArgs", "idcsEndpoint");
+            }
             return $;
         }
     }

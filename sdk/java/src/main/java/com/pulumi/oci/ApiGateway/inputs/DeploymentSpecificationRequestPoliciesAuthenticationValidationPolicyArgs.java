@@ -5,6 +5,7 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs;
@@ -364,7 +365,9 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
         }
 
         public DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs build() {
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            if ($.type == null) {
+                throw new MissingRequiredPropertyException("DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs", "type");
+            }
             return $;
         }
     }

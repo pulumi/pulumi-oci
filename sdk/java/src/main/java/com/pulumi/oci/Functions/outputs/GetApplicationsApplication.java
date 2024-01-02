@@ -4,6 +4,7 @@
 package com.pulumi.oci.Functions.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetApplicationsApplicationImagePolicyConfig;
 import com.pulumi.oci.Functions.outputs.GetApplicationsApplicationTraceConfig;
 import java.lang.Object;
@@ -243,37 +244,58 @@ public final class GetApplicationsApplication {
 
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
         public Builder config(Map<String,Object> config) {
-            this.config = Objects.requireNonNull(config);
+            if (config == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "config");
+            }
+            this.config = config;
             return this;
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+            if (displayName == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "displayName");
+            }
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder imagePolicyConfigs(List<GetApplicationsApplicationImagePolicyConfig> imagePolicyConfigs) {
-            this.imagePolicyConfigs = Objects.requireNonNull(imagePolicyConfigs);
+            if (imagePolicyConfigs == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "imagePolicyConfigs");
+            }
+            this.imagePolicyConfigs = imagePolicyConfigs;
             return this;
         }
         public Builder imagePolicyConfigs(GetApplicationsApplicationImagePolicyConfig... imagePolicyConfigs) {
@@ -281,7 +303,10 @@ public final class GetApplicationsApplication {
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
-            this.networkSecurityGroupIds = Objects.requireNonNull(networkSecurityGroupIds);
+            if (networkSecurityGroupIds == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "networkSecurityGroupIds");
+            }
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
             return this;
         }
         public Builder networkSecurityGroupIds(String... networkSecurityGroupIds) {
@@ -289,17 +314,26 @@ public final class GetApplicationsApplication {
         }
         @CustomType.Setter
         public Builder shape(String shape) {
-            this.shape = Objects.requireNonNull(shape);
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "shape");
+            }
+            this.shape = shape;
             return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "state");
+            }
+            this.state = state;
             return this;
         }
         @CustomType.Setter
         public Builder subnetIds(List<String> subnetIds) {
-            this.subnetIds = Objects.requireNonNull(subnetIds);
+            if (subnetIds == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "subnetIds");
+            }
+            this.subnetIds = subnetIds;
             return this;
         }
         public Builder subnetIds(String... subnetIds) {
@@ -307,22 +341,34 @@ public final class GetApplicationsApplication {
         }
         @CustomType.Setter
         public Builder syslogUrl(String syslogUrl) {
-            this.syslogUrl = Objects.requireNonNull(syslogUrl);
+            if (syslogUrl == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "syslogUrl");
+            }
+            this.syslogUrl = syslogUrl;
             return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
         public Builder traceConfigs(List<GetApplicationsApplicationTraceConfig> traceConfigs) {
-            this.traceConfigs = Objects.requireNonNull(traceConfigs);
+            if (traceConfigs == null) {
+              throw new MissingRequiredPropertyException("GetApplicationsApplication", "traceConfigs");
+            }
+            this.traceConfigs = traceConfigs;
             return this;
         }
         public Builder traceConfigs(GetApplicationsApplicationTraceConfig... traceConfigs) {
